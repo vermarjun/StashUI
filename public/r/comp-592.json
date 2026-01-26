@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-592",
+  "title": "Comp 592",
+  "description": "Origin UI component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/origin-ui/comp-592.tsx",
+      "content": "\"use client\";\n\nimport { LayoutGridIcon, PlusIcon, SearchIcon } from \"lucide-react\";\nimport { useId, useState } from \"react\";\n\nimport InfoMenu from \"@/registry/origin-ui/info-menu\";\nimport NotificationMenu from \"@/registry/origin-ui/notification-menu\";\nimport SettingsMenu from \"@/registry/origin-ui/settings-menu\";\nimport { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { Switch } from \"@/components/ui/switch\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState<boolean>(true);\n\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Left side */}\n        <div className=\"relative flex-1\">\n          <Input\n            className=\"peer h-8 w-full max-w-xs ps-8 pe-2\"\n            id={`input-${id}`}\n            placeholder=\"Search...\"\n            type=\"search\"\n          />\n          <div className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 text-muted-foreground/80 peer-disabled:opacity-50\">\n            <SearchIcon size={16} />\n          </div>\n        </div>\n        {/* Right side */}\n        <div className=\"flex items-center gap-4\">\n          {/* Test mode */}\n          <div className=\"inline-flex items-center gap-2 max-md:hidden\">\n            <Label className=\"font-medium text-sm\" htmlFor={`switch-${id}`}>\n              Test mode\n            </Label>\n            <Switch\n              aria-label=\"Toggle switch\"\n              checked={checked}\n              className=\"data-[state=checked]:[&_span]:rtl:-translate-x-3 h-5 w-8 [&_span]:size-4 data-[state=checked]:[&_span]:translate-x-3\"\n              id={`switch-${id}`}\n              onCheckedChange={setChecked}\n            />\n          </div>\n          <div className=\"flex items-center gap-2\">\n            {/* Layout button */}\n            <Button\n              aria-label=\"Open layout menu\"\n              className=\"size-8 rounded-full text-muted-foreground shadow-none\"\n              size=\"icon\"\n              variant=\"ghost\"\n            >\n              <LayoutGridIcon aria-hidden=\"true\" size={16} />\n            </Button>\n            {/* Info menu */}\n            <InfoMenu />\n            {/* Notification */}\n            <NotificationMenu />\n            {/* Settings */}\n            <SettingsMenu />\n          </div>\n          {/* Add button */}\n          <Button\n            aria-label=\"Add new item\"\n            className=\"size-8 rounded-full\"\n            size=\"icon\"\n          >\n            <PlusIcon aria-hidden=\"true\" size={16} />\n          </Button>\n        </div>\n      </div>\n    </header>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/comp-592.tsx"
+    }
+  ],
+  "categories": [
+    "Origin UI"
+  ],
+  "type": "registry:component"
+}

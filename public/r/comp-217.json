@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-217",
+  "title": "Comp 217",
+  "description": "Origin UI component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/origin-ui/comp-217.tsx",
+      "content": "import { useId } from \"react\";\n\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"relative rounded-md border border-input bg-background shadow-xs outline-none transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-aria-invalid:border-destructive has-disabled:opacity-50 has-aria-invalid:ring-destructive/20 has-[input:is(:disabled)]:*:pointer-events-none dark:has-aria-invalid:ring-destructive/40\">\n      <label\n        className=\"block px-3 pt-2 font-medium text-foreground text-xs\"\n        htmlFor={id}\n      >\n        Select with inset label\n      </label>\n      <Select>\n        <SelectTrigger\n          className=\"border-none bg-transparent shadow-none focus:ring-0 focus:ring-offset-0\"\n          id={id}\n        >\n          <SelectValue placeholder=\"Select framework\" />\n        </SelectTrigger>\n        <SelectContent>\n          <SelectItem value=\"1\">React</SelectItem>\n          <SelectItem value=\"2\">Next.js</SelectItem>\n          <SelectItem value=\"3\">Astro</SelectItem>\n          <SelectItem value=\"4\">Gatsby</SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/comp-217.tsx"
+    }
+  ],
+  "categories": [
+    "Origin UI"
+  ],
+  "type": "registry:component"
+}

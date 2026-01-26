@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "border-beam",
+  "title": "Border Beam",
+  "description": "Animated glowing beam that travels along the border of its parent container, driven by CSS custom properties and a @keyframes animation.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/border-beam.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface BorderBeamProps extends React.HTMLAttributes<HTMLDivElement> {\n  /** Size of the beam head (px). */\n  size?: number;\n  /** Full rotation duration in milliseconds. */\n  duration?: number;\n  /** Beam width in px. */\n  borderWidth?: number;\n  /** Anchor position along the border (percentage). */\n  anchor?: number;\n  /** Start colour of the gradient beam. */\n  colorFrom?: string;\n  /** End colour of the gradient beam. */\n  colorTo?: string;\n  /** Animation start delay in milliseconds. */\n  delay?: number;\n}\n\n/**\n * Animates a glowing beam that travels along the border of its parent\n * element. Drop it inside any `relative` container with a `rounded-*` class.\n */\nexport const BorderBeam = React.forwardRef<HTMLDivElement, BorderBeamProps>(\n  (\n    {\n      className,\n      size = 200,\n      duration = 15000,\n      anchor = 90,\n      borderWidth = 1.5,\n      colorFrom = \"#ffaa40\",\n      colorTo = \"#9c40ff\",\n      delay = 0,\n      style,\n      ...props\n    },\n    ref,\n  ) => {\n    const durationSec = `${duration / 1000}s`;\n    const delaySec = `${delay / 1000}s`;\n\n    return (\n      <>\n        <style>{`\n          @keyframes border-beam-anim {\n            to { offset-distance: 100%; }\n          }\n        `}</style>\n        <div\n          ref={ref}\n          style={\n            {\n              \"--size\": size,\n              \"--duration\": durationSec,\n              \"--anchor\": anchor,\n              \"--border-width\": borderWidth,\n              \"--color-from\": colorFrom,\n              \"--color-to\": colorTo,\n              \"--delay\": `-${delaySec}`,\n              ...style,\n            } as React.CSSProperties\n          }\n          className={cn(\n            // Base: transparent border + mask to reveal only the border strip\n            \"pointer-events-none absolute inset-0 rounded-[inherit]\",\n            \"[border:calc(var(--border-width)*1px)_solid_transparent]\",\n            \"[mask-clip:padding-box,border-box]\",\n            \"[mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]\",\n            // Beam element via ::after\n            \"after:absolute after:aspect-square\",\n            \"after:w-[calc(var(--size)*1px)]\",\n            \"after:[animation-delay:var(--delay)]\",\n            \"after:[animation:border-beam-anim_var(--duration)_infinite_linear]\",\n            \"after:[background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)]\",\n            \"after:[offset-anchor:calc(var(--anchor)*1%)_50%]\",\n            \"after:[offset-path:rect(0_auto_auto_0_round_calc(var(--size)*1px))]\",\n            className,\n          )}\n          {...props}\n        />\n      </>\n    );\n  },\n);\nBorderBeam.displayName = \"BorderBeam\";\n",
+      "type": "registry:component",
+      "target": "components/ui/border-beam.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

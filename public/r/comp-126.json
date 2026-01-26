@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-126",
+  "title": "Comp 126",
+  "description": "Origin UI component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/origin-ui/comp-126.tsx",
+      "content": "\"use client\";\n\nimport { CircleUserRoundIcon, XIcon } from \"lucide-react\";\n\nimport { useFileUpload } from \"@/registry/origin-ui/use-file-upload\";\nimport { Button } from \"@/components/ui/button\";\n\nexport default function Component() {\n  const [{ files }, { removeFile, openFileDialog, getInputProps }] =\n    useFileUpload({\n      accept: \"image/*\",\n    });\n\n  const previewUrl = files[0]?.preview || null;\n  const fileName = files[0]?.file.name || null;\n\n  return (\n    <div className=\"flex flex-col items-center gap-2\">\n      <div className=\"relative inline-flex\">\n        <Button\n          aria-label={previewUrl ? \"Change image\" : \"Upload image\"}\n          className=\"relative size-16 overflow-hidden p-0 shadow-none\"\n          onClick={openFileDialog}\n          variant=\"outline\"\n        >\n          {previewUrl ? (\n            <img\n              alt=\"Upload preview\"\n              className=\"size-full object-cover\"\n              height={64}\n              src={previewUrl}\n              style={{ objectFit: \"cover\" }}\n              width={64}\n            />\n          ) : (\n            <div aria-hidden=\"true\">\n              <CircleUserRoundIcon className=\"size-4 opacity-60\" />\n            </div>\n          )}\n        </Button>\n        {previewUrl && (\n          <Button\n            aria-label=\"Remove image\"\n            className=\"-top-2 -right-2 absolute size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background\"\n            onClick={() => removeFile(files[0]?.id)}\n            size=\"icon\"\n          >\n            <XIcon className=\"size-3.5\" />\n          </Button>\n        )}\n        <input\n          {...getInputProps()}\n          aria-label=\"Upload image file\"\n          className=\"sr-only\"\n          tabIndex={-1}\n        />\n      </div>\n      {fileName && <p className=\"text-muted-foreground text-xs\">{fileName}</p>}\n      <p\n        aria-live=\"polite\"\n        className=\"mt-2 text-muted-foreground text-xs\"\n        role=\"region\"\n      >\n        Avatar upload button\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/comp-126.tsx"
+    }
+  ],
+  "categories": [
+    "Origin UI"
+  ],
+  "type": "registry:component"
+}

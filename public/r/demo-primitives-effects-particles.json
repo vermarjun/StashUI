@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-effects-particles",
+  "title": "Particles Demo",
+  "description": "Demo showing an animated particles.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@animate-ui/primitives-effects-particles"
+  ],
+  "files": [
+    {
+      "path": "registry/animate-ui/demo-primitives-effects-particles.tsx",
+      "content": "import {\n  Particles,\n  ParticlesEffect,\n  type ParticlesEffectProps,\n} from '@/components/animate-ui/primitives/effects/particles';\nimport { useState } from 'react';\n\nexport function ParticlesDemo(props: ParticlesEffectProps) {\n  const [key, setKey] = useState(0);\n\n  return (\n    <Particles key={key}>\n      <button\n        className=\"px-4 py-2 bg-accent\"\n        onClick={() => setKey((k) => k + 1)}\n      >\n        Particles\n      </button>\n      <ParticlesEffect className=\"bg-primary size-1 rounded-full\" {...props} />\n    </Particles>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/demo-primitives-effects-particles.tsx"
+    }
+  ],
+  "categories": [
+    "Animate UI"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-181",
+  "title": "Comp 181",
+  "description": "Origin UI component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/origin-ui/comp-181.tsx",
+      "content": "\"use client\";\n\nimport { MoonIcon, SunIcon } from \"lucide-react\";\nimport { useId, useState } from \"react\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { Switch } from \"@/components/ui/switch\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState<boolean>(true);\n\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Switch\n        aria-label=\"Toggle switch\"\n        checked={checked}\n        id={id}\n        onCheckedChange={setChecked}\n      />\n      <Label htmlFor={id}>\n        <span className=\"sr-only\">Toggle switch</span>\n        {checked ? (\n          <SunIcon aria-hidden=\"true\" size={16} />\n        ) : (\n          <MoonIcon aria-hidden=\"true\" size={16} />\n        )}\n      </Label>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/comp-181.tsx"
+    }
+  ],
+  "categories": [
+    "Origin UI"
+  ],
+  "type": "registry:component"
+}

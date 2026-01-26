@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "default-slider",
+  "title": "Default Slider",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "embla-carousel",
+    "lucide-react",
+    "embla-carousel-class-names",
+    "embla-carousel-react",
+    "embla-carousel-autoplay",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/default-slider.tsx",
+      "content": "'use client';\nimport {\n  Carousel,\n  Slider,\n  SliderContainer,\n  SliderDotButton,\n  SliderNextButton,\n  SliderPrevButton,\n} from '@/registry/ui-layouts/carousel';\nimport type { EmblaOptionsType } from 'embla-carousel';\nimport { ChevronLeft, ChevronRight } from 'lucide-react';\nimport React from 'react';\n\nfunction DefaultSlider() {\n  const OPTIONS: EmblaOptionsType = { loop: false };\n  return (\n    <>\n      <Carousel options={OPTIONS}>\n        <SliderContainer className='sm:h-120 h-110'>\n          <Slider className='w-full h-full'>\n            {/* <div className='bg-blue-500 md:h-[500px] sm:h-[400px] h-[300px] w-full rounded-lg'></div> */}\n            <img\n              src='https://images.unsplash.com/photo-1760389005000-bf02bf24f463?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1123'\n              alt='Nature slide 1'\n              className='w-full object-cover aspect-square'\n            />\n          </Slider>\n          <Slider className='w-full h-full'>\n            {/* <div className='bg-green-500 md:h-[500px] sm:h-[400px] h-[300px] w-full rounded-lg'></div> */}\n            <img\n              src='https://images.unsplash.com/photo-1761078980679-e89e25fe279b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687'\n              alt='Nature slide 2'\n              className='w-full object-cover aspect-square'\n            />\n          </Slider>\n          <Slider className='w-full h-full'>\n            {/* <div className='bg-yellow-500 md:h-[500px] sm:h-[400px] h-[300px] w-full rounded-lg'></div> */}\n            <img\n              src='https://images.unsplash.com/photo-1761882725885-d3d8bd2032d1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687'\n              alt='Nature slide 3'\n              className='w-full object-cover aspect-square'\n            />\n          </Slider>\n          <Slider className='w-full h-full'>\n            <img\n              src='https://images.unsplash.com/photo-1761775915848-467e41c1c4db?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=689'\n              alt='Nature slide 4'\n              className='w-full object-cover aspect-square'\n            />\n            {/* <div className='bg-red-500 md:h-[500px] sm:h-[400px] h-[300px] w-full rounded-lg'></div> */}\n          </Slider>\n        </SliderContainer>\n        <SliderPrevButton className='absolute top-[50%] p-2 border-2 rounded-full left-4 bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-xs text-primary disabled:opacity-20'>\n          <ChevronLeft className='w-8 h-8' />\n        </SliderPrevButton>\n        <SliderNextButton className='absolute right-4 p-2 border-2 rounded-full top-[50%] bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-xs text-primary disabled:opacity-20'>\n          <ChevronRight className='w-8 h-8' />\n        </SliderNextButton>\n        <div className='flex justify-center py-2'>\n          <SliderDotButton />\n        </div>\n      </Carousel>\n    </>\n  );\n}\n\nexport default DefaultSlider;\n",
+      "type": "registry:component",
+      "target": "components/ui/default-slider.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "autoscroll-slider",
+  "title": "Autoscroll Slider",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "embla-carousel",
+    "lucide-react",
+    "embla-carousel-class-names",
+    "embla-carousel-react",
+    "embla-carousel-autoplay",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/autoscroll-slider.tsx",
+      "content": "'use client';\nimport { Carousel, Slider, SliderContainer, SliderDotButton } from '@/registry/ui-layouts/carousel';\nimport type { EmblaOptionsType } from 'embla-carousel';\nimport AutoScroll from 'embla-carousel-auto-scroll';\n\nfunction AutoScrollSlider() {\n  const OPTIONS: EmblaOptionsType = { loop: true };\n  return (\n    <>\n      <Carousel\n        options={OPTIONS}\n        plugins={[\n          AutoScroll({\n            speed: 2,\n            stopOnInteraction: false,\n            stopOnMouseEnter: true,\n            startDelay: 100,\n          }),\n        ]}\n        className='w-4/5 mx-auto'\n      >\n        <SliderContainer className='gap-2 h-[400px] md:text-3xl text-md'>\n          <Slider className='w-[40%] bg-red-500 uppercase rounded-xl h-full grid place-items-center'>\n            <p>Slide 1</p>\n          </Slider>\n          <Slider className='w-[80%] bg-blue-500 uppercase rounded-xl h-full grid place-items-center'>\n            <p>Slide 2</p>\n          </Slider>\n          <Slider className='w-[40%] bg-green-500 uppercase rounded-xl h-full grid place-items-center'>\n            <p>Slide 3</p>\n          </Slider>\n          <Slider className='w-[80%] mr-2 bg-yellow-500 uppercase rounded-xl h-full grid place-items-center'>\n            <p>Slide 4</p>\n          </Slider>\n        </SliderContainer>\n      </Carousel>\n    </>\n  );\n}\n\nexport default AutoScrollSlider;\n",
+      "type": "registry:component",
+      "target": "components/ui/autoscroll-slider.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

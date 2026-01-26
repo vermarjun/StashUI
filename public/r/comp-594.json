@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-594",
+  "title": "Comp 594",
+  "description": "Origin UI component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/origin-ui/comp-594.tsx",
+      "content": "import { SparklesIcon, UploadIcon } from \"lucide-react\";\n\nimport AppToggle from \"@/registry/origin-ui/app-toggle\";\nimport TeamSwitcher from \"@/registry/origin-ui/team-switcher\";\nimport { Button } from \"@/components/ui/button\";\n\nconst teams = [\"Acme Inc.\", \"coss.com\", \"Junon\"];\n\nexport default function Component() {\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Left side */}\n        <div className=\"flex flex-1 items-center gap-2\">\n          <TeamSwitcher defaultTeam={teams[0]} teams={teams} />\n        </div>\n        {/* Middle area */}\n        <AppToggle />\n        {/* Right side */}\n        <div className=\"flex flex-1 items-center justify-end gap-2\">\n          <Button\n            className=\"text-sm max-sm:aspect-square max-sm:p-0\"\n            size=\"sm\"\n            variant=\"ghost\"\n          >\n            <UploadIcon\n              aria-hidden=\"true\"\n              className=\"sm:-ms-1 opacity-60\"\n              size={16}\n            />\n            <span className=\"max-sm:sr-only\">Export</span>\n          </Button>\n          <Button className=\"text-sm max-sm:aspect-square max-sm:p-0\" size=\"sm\">\n            <SparklesIcon\n              aria-hidden=\"true\"\n              className=\"sm:-ms-1 opacity-60\"\n              size={16}\n            />\n            <span className=\"max-sm:sr-only\">Upgrade</span>\n          </Button>\n        </div>\n      </div>\n    </header>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/comp-594.tsx"
+    }
+  ],
+  "categories": [
+    "Origin UI"
+  ],
+  "type": "registry:component"
+}

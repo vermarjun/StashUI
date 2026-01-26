@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-gradient-text",
+  "title": "Animated Gradient Text",
+  "description": "Inline text with a smoothly drifting gradient fill.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/text/animated-gradient-text.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface AnimatedGradientTextProps\n  extends React.ComponentPropsWithoutRef<\"span\"> {\n  /** Tailwind gradient stops, e.g. \"from-indigo-500 via-purple-500 to-pink-500\". */\n  gradient?: string;\n  /** Animation speed in seconds. */\n  speed?: number;\n}\n\n/**\n * Inline text with a smoothly drifting gradient fill.\n */\nexport const AnimatedGradientText = React.forwardRef<\n  HTMLSpanElement,\n  AnimatedGradientTextProps\n>(\n  (\n    {\n      className,\n      gradient = \"from-[var(--chart-2)] via-[var(--foreground)] to-[var(--chart-4)]\",\n      speed = 6,\n      style,\n      children,\n      ...props\n    },\n    ref,\n  ) => {\n    return (\n      <span\n        ref={ref}\n        style={\n          {\n            \"--gradient-x\": `${speed}s`,\n            backgroundSize: \"200% auto\",\n            animationDuration: `${speed}s`,\n            ...style,\n          } as React.CSSProperties\n        }\n        className={cn(\n          \"inline-block animate-gradient-x bg-gradient-to-r bg-clip-text text-transparent [background-size:200%_auto]\",\n          gradient,\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </span>\n    );\n  },\n);\n\nAnimatedGradientText.displayName = \"AnimatedGradientText\";\n",
+      "type": "registry:component",
+      "target": "components/ui/animated-gradient-text.tsx"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "--animate-gradient-x": "gradient-x 8s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes gradient-x": {
+      "0%, 100%": {
+        "background-position": "0% 50%"
+      },
+      "50%": {
+        "background-position": "100% 50%"
+      }
+    }
+  },
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-593",
+  "title": "Comp 593",
+  "description": "Origin UI component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/origin-ui/comp-593.tsx",
+      "content": "import { BookmarkIcon, HomeIcon } from \"lucide-react\";\n\nimport DatePicker from \"@/registry/origin-ui/date-picker\";\nimport Filters from \"@/registry/origin-ui/filters\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\nimport { Button } from \"@/components/ui/button\";\n\nexport default function Component() {\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Left side */}\n        <Breadcrumb>\n          <BreadcrumbList>\n            <BreadcrumbItem>\n              <BreadcrumbLink href=\"#\">\n                <HomeIcon aria-hidden=\"true\" size={16} />\n                <span className=\"sr-only\">Home</span>\n              </BreadcrumbLink>\n            </BreadcrumbItem>\n            <BreadcrumbSeparator />\n            <BreadcrumbItem>\n              <BreadcrumbPage>Reports</BreadcrumbPage>\n            </BreadcrumbItem>\n          </BreadcrumbList>\n        </Breadcrumb>\n        {/* Right side */}\n        <div className=\"flex items-center gap-2\">\n          {/* Date picker */}\n          <DatePicker />\n          {/* Filters */}\n          <Filters />\n          {/* Saved button */}\n          <Button\n            className=\"text-sm max-sm:aspect-square max-sm:p-0\"\n            size=\"sm\"\n            variant=\"outline\"\n          >\n            <BookmarkIcon\n              aria-hidden=\"true\"\n              className=\"sm:-ms-1 text-muted-foreground/80\"\n              size={16}\n            />\n            <span className=\"max-sm:sr-only\">Saved</span>\n          </Button>\n        </div>\n      </div>\n    </header>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/comp-593.tsx"
+    }
+  ],
+  "categories": [
+    "Origin UI"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-circular-progressbar",
+  "title": "Animated Circular Progress Bar",
+  "description": "An SVG circular gauge with a primary arc (filled) and a secondary arc (gap indicator), both driven by CSS stroke-dasharray transitions. Accepts min/max/value and custom stroke colors.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/animated-circular-progressbar.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface AnimatedCircularProgressBarProps {\n  max?: number\n  value?: number\n  min?: number\n  gaugePrimaryColor?: string\n  gaugeSecondaryColor?: string\n  className?: string\n  circleStrokeWidth?: number\n  showPercentage?: boolean\n  duration?: number\n}\n\nexport function AnimatedCircularProgressBar({\n  max = 100,\n  value = 0,\n  min = 0,\n  gaugePrimaryColor = \"rgb(79 70 229)\",\n  gaugeSecondaryColor = \"rgba(0, 0, 0, 0.1)\",\n  className,\n  circleStrokeWidth = 10,\n  showPercentage = true,\n  duration = 1,\n}: AnimatedCircularProgressBarProps) {\n  const circumference = 2 * Math.PI * 45\n  const percentPx = circumference / 100\n  const currentPercent = ((value - min) / (max - min)) * 100\n\n  const primaryDashArray = `${currentPercent * percentPx}px ${circumference}px`\n  // Secondary arc covers the gap (90 - currentPercent)\n  const secondaryPercent = Math.max(0, 90 - currentPercent)\n  const secondaryDashArray = `${secondaryPercent * percentPx}px ${circumference}px`\n\n  // Primary starts at -90deg\n  const primaryRotation = -90\n  // Secondary is inverted, starts from the tail end\n  const secondaryRotation = `rotate(calc(1turn - 90deg))`\n\n  return (\n    <div\n      className={cn(\"relative size-40 text-2xl font-semibold\", className)}\n      style={\n        {\n          \"--circumference\": circumference,\n          \"--percent-to-px\": `${percentPx}px`,\n          \"--gap-percent\": 5,\n          \"--percent-to-deg\": \"3.6deg\",\n          \"--duration\": `${duration}s`,\n          \"--primary-color\": gaugePrimaryColor,\n          \"--secondary-color\": gaugeSecondaryColor,\n        } as React.CSSProperties\n      }\n    >\n      <svg\n        fill=\"none\"\n        className=\"size-full\"\n        strokeWidth=\"2\"\n        viewBox=\"0 0 100 100\"\n      >\n        {currentPercent <= 90 && currentPercent >= 0 && (\n          <circle\n            cx=\"50\"\n            cy=\"50\"\n            r=\"45\"\n            strokeWidth={circleStrokeWidth}\n            strokeDashoffset=\"0\"\n            strokeLinecap=\"round\"\n            strokeLinejoin=\"round\"\n            stroke={gaugeSecondaryColor}\n            fill=\"none\"\n            style={{\n              strokeDasharray: secondaryDashArray,\n              transform: secondaryRotation,\n              transformOrigin: \"50px 50px\",\n              transition: `stroke-dasharray ${duration}s ease`,\n            }}\n          />\n        )}\n        <circle\n          cx=\"50\"\n          cy=\"50\"\n          r=\"45\"\n          strokeWidth={circleStrokeWidth}\n          strokeDashoffset=\"0\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          stroke={gaugePrimaryColor}\n          fill=\"none\"\n          style={{\n            strokeDasharray: primaryDashArray,\n            transform: `rotate(${primaryRotation}deg)`,\n            transformOrigin: \"50px 50px\",\n            transition: `stroke-dasharray ${duration}s ease`,\n          }}\n        />\n      </svg>\n      {showPercentage && (\n        <span className=\"absolute inset-0 m-auto flex size-fit items-center justify-center\">\n          {Math.round(currentPercent)}%\n        </span>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/animated-circular-progressbar.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

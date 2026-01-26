@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bg-silk",
+  "title": "Silk Background",
+  "description": "GLSL silk fabric shader (ShaderToy X3yXRd) rendered via the InspiraShaderToy/ShaderToy helper. Props: hue, saturation, brightness, speed. Written to /registry/inspira-react/bg-silk.tsx + .demo.tsx. Depends on helper files shader-toy.tsx and inspira-shader-toy.ts.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/bg-silk.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { ShaderToy } from \"@/registry/inspira-react/shader-toy\";\n\nconst SILK_SHADER = `\n// The MIT License\n// Copyright 2024 Giorgi Azmaipharashvili\n// ShaderToy: https://www.shadertoy.com/view/X3yXRd\n\n#define INVERT 1\n\nfloat noise(vec2 p) {\n    return smoothstep(-0.5, 0.9, sin((p.x - p.y) * 555.0) * sin(p.y * 1444.0)) - 0.4;\n}\n\nfloat fabric(vec2 p) {\n    const mat2 m = mat2(1.6, 1.2, -1.2, 1.6);\n    float f = 0.4 * noise(p);\n    f += 0.3 * noise(p = m * p);\n    f += 0.2 * noise(p = m * p);\n    return f + 0.1 * noise(m * p);\n}\n\nfloat silk(vec2 uv, float t) {\n    float s = sin(5.0 * (uv.x + uv.y + cos(2.0 * uv.x + 5.0 * uv.y)) + sin(12.0 * (uv.x + uv.y)) - t);\n    s = 0.7 + 0.3 * (s * s * 0.5 + s);\n    s *= 0.9 + 0.6 * fabric(uv * min(iResolution.x, iResolution.y) * 0.0006);\n    return s * 0.9 + 0.1;\n}\n\nfloat silkd(vec2 uv, float t) {\n    float xy = uv.x + uv.y;\n    float d = (5.0 * (1.0 - 2.0 * sin(2.0 * uv.x + 5.0 * uv.y)) + 12.0 * cos(12.0 * xy)) * cos(5.0 * (cos(2.0 * uv.x + 5.0 * uv.y) + xy) + sin(12.0 * xy) - t);\n    return 0.005 * d * (sign(d) + 3.0);\n}\n\nvoid mainImage(out vec4 fragColor, vec2 fragCoord) {\n    float mr = min(iResolution.x, iResolution.y);\n    vec2 uv = fragCoord / mr;\n\n    float t = iTime * iSpeed;\n    uv.y += 0.03 * sin(8.0 * uv.x - t);\n\n    if (iMouse.z > 1.0)\n        uv += smoothstep(0.5, 0.0, distance(iMouse.xy / mr, uv)) * 0.08;\n\n    float s = sqrt(silk(uv, t));\n    float d = silkd(uv, t);\n\n    vec3 c = vec3(s);\n    c += 0.7 * vec3(1, 0.83, 0.6) * d;\n    c *= 1.0 - max(0.0, 0.8 * d);\n#if INVERT\n    c = pow(c, 0.3 / vec3(0.52, 0.5, 0.4));\n    c = 1.0 - c;\n#else\n    c = pow(c, vec3(0.52, 0.5, 0.4));\n#endif\n\n    fragColor = vec4(c, 1);\n}\n`;\n\nexport interface BgSilkProps {\n  className?: string;\n  hue?: number;\n  saturation?: number;\n  brightness?: number;\n  speed?: number;\n}\n\nexport function BgSilk({\n  className,\n  hue = 300,\n  saturation = 0.5,\n  brightness = 1,\n  speed = 1,\n}: BgSilkProps) {\n  return (\n    <div className={cn(\"absolute inset-0\", className)}>\n      <ShaderToy\n        shaderCode={SILK_SHADER}\n        hue={hue}\n        saturation={saturation}\n        brightness={brightness}\n        speed={speed}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/bg-silk.tsx"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:component"
+}

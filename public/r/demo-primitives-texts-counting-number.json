@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-texts-counting-number",
+  "title": "Counting Number Demo",
+  "description": "Demo showing an animated counting number.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@animate-ui/primitives-texts-counting-number"
+  ],
+  "files": [
+    {
+      "path": "registry/animate-ui/demo-primitives-texts-counting-number.tsx",
+      "content": "import { CountingNumber } from '@/components/animate-ui/primitives/texts/counting-number';\n\ninterface CountingFromNumberDemoProps {\n  number: number;\n  fromNumber: number;\n  padStart: boolean;\n  decimalSeparator: string;\n  decimalPlaces: number;\n  delay: number;\n}\n\nexport const CountingFromNumberDemo = ({\n  number,\n  fromNumber,\n  padStart,\n  decimalSeparator,\n  decimalPlaces,\n  delay,\n}: CountingFromNumberDemoProps) => {\n  return (\n    <CountingNumber\n      key={delay}\n      delay={delay}\n      number={number}\n      fromNumber={fromNumber}\n      padStart={padStart}\n      decimalSeparator={decimalSeparator}\n      decimalPlaces={decimalPlaces}\n      className=\"text-4xl font-semibold\"\n    />\n  );\n};\n",
+      "type": "registry:component",
+      "target": "components/ui/demo-primitives-texts-counting-number.tsx"
+    }
+  ],
+  "categories": [
+    "Animate UI"
+  ],
+  "type": "registry:component"
+}

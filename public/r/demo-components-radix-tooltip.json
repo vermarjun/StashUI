@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-radix-tooltip",
+  "title": "Radix Tooltip Demo",
+  "description": "Demo showing a radix tooltip.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@animate-ui/components-radix-tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/animate-ui/demo-components-radix-tooltip.tsx",
+      "content": "import {\n  Tooltip,\n  TooltipTrigger,\n  TooltipContent,\n  type TooltipContentProps,\n} from '@/components/animate-ui/components/radix/tooltip';\nimport { Button } from '@/components/ui/button';\n\ninterface RadixTooltipDemoProps {\n  side: TooltipContentProps['side'];\n  sideOffset: TooltipContentProps['sideOffset'];\n  align: TooltipContentProps['align'];\n  alignOffset: TooltipContentProps['alignOffset'];\n  followCursor?: boolean | 'x' | 'y';\n}\n\nexport function RadixTooltipDemo({\n  side,\n  sideOffset,\n  align,\n  alignOffset,\n  followCursor,\n}: RadixTooltipDemoProps) {\n  return (\n    <Tooltip followCursor={followCursor}>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\">Hover</Button>\n      </TooltipTrigger>\n      <TooltipContent\n        side={side}\n        sideOffset={sideOffset}\n        align={align}\n        alignOffset={alignOffset}\n      >\n        <p>Add to library</p>\n      </TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/demo-components-radix-tooltip.tsx"
+    }
+  ],
+  "categories": [
+    "Animate UI"
+  ],
+  "type": "registry:component"
+}

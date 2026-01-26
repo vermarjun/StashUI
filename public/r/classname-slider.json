@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "classname-slider",
+  "title": "Classname Slider",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "embla-carousel",
+    "lucide-react",
+    "embla-carousel-class-names",
+    "embla-carousel-react",
+    "embla-carousel-autoplay",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/classname-slider.tsx",
+      "content": "'use client';\nimport { Carousel, Slider, SliderContainer, SliderDotButton } from '@/registry/ui-layouts/carousel';\nimport type { EmblaOptionsType } from 'embla-carousel';\nimport ClassNames from 'embla-carousel-class-names';\nimport React, { ReactNode } from 'react';\n\nfunction ClassName() {\n  const OPTIONS: EmblaOptionsType = { loop: true };\n  return (\n    <>\n      <Carousel options={OPTIONS} plugins={[ClassNames()]}>\n        <SliderContainer className='gap-2'>\n          <Slider\n            className='\n    w-4/5\n    transition-opacity duration-700 ease-out\n    [&.is-in-view]:opacity-20\n    [&.is-snapped]:opacity-100\n  '\n          >\n            <div className='h-[28em] pl-2 bg-red-500 rounded-xl'></div>\n          </Slider>\n\n          <Slider\n            className='\n    w-4/5 \n    transition-opacity duration-700 ease-out\n    [&.is-in-view]:opacity-20\n    [&.is-snapped]:opacity-100\n  '\n          >\n            <div className='h-[28em] bg-blue-500 rounded-xl'></div>\n          </Slider>\n\n          <Slider\n            className='\n    w-4/5\n    transition-opacity duration-700 ease-out\n    [&.is-in-view]:opacity-20\n    [&.is-snapped]:opacity-100\n  '\n          >\n            <div className='h-[28em] bg-green-500 rounded-xl'></div>\n          </Slider>\n\n          <Slider\n            className='\n    w-4/5\n    transition-opacity duration-700 ease-out\n    [&.is-in-view]:opacity-20\n    [&.is-snapped]:opacity-100\n  '\n          >\n            <div className='h-[28em] bg-yellow-500 rounded-xl'></div>\n          </Slider>\n        </SliderContainer>\n        <div className='flex justify-center py-2'>\n          <SliderDotButton />\n        </div>\n      </Carousel>\n    </>\n  );\n}\n\nexport default ClassName;\n",
+      "type": "registry:component",
+      "target": "components/ui/classname-slider.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

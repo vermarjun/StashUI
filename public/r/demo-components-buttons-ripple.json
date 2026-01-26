@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-buttons-ripple",
+  "title": "Ripple Button Demo",
+  "description": "Demo showing a ripple button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@animate-ui/components-buttons-ripple"
+  ],
+  "files": [
+    {
+      "path": "registry/animate-ui/demo-components-buttons-ripple.tsx",
+      "content": "import { PlusIcon } from 'lucide-react';\nimport {\n  RippleButton,\n  RippleButtonRipples,\n  type RippleButtonProps,\n} from '@/components/animate-ui/components/buttons/ripple';\n\ninterface RippleButtonDemoProps {\n  variant: RippleButtonProps['variant'];\n  size: RippleButtonProps['size'];\n}\n\nexport default function RippleButtonDemo({\n  variant,\n  size,\n}: RippleButtonDemoProps) {\n  return (\n    <RippleButton variant={variant} size={size}>\n      {size === 'icon' ? <PlusIcon /> : 'Click me'}\n      <RippleButtonRipples />\n    </RippleButton>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/demo-components-buttons-ripple.tsx"
+    }
+  ],
+  "categories": [
+    "Animate UI"
+  ],
+  "type": "registry:component"
+}

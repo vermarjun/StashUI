@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "box-reveal",
+  "title": "Box Reveal",
+  "description": "Reveals children with a sliding colour box animation using motion/react whileInView — box sweeps away left to expose the content underneath.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/box-reveal.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface BoxRevealProps extends React.HTMLAttributes<HTMLDivElement> {\n  /** Colour of the sliding reveal box. */\n  color?: string;\n  /** Animation duration in seconds. */\n  duration?: number;\n  /** Base delay in seconds (content fades in at delay*2). */\n  delay?: number;\n}\n\n/**\n * Reveals its children with a sliding colour box animation that sweeps\n * away to expose the content beneath.\n */\nexport const BoxReveal = React.forwardRef<HTMLDivElement, BoxRevealProps>(\n  (\n    {\n      className,\n      children,\n      color = \"#5046e6\",\n      duration = 0.5,\n      delay = 0.25,\n      ...props\n    },\n    ref,\n  ) => {\n    return (\n      <div ref={ref} className={cn(\"relative\", className)} {...props}>\n        {/* Content fades / slides up after the box exits */}\n        <motion.div\n          initial={{ opacity: 0, y: 25 }}\n          whileInView={{ opacity: 1, y: 0 }}\n          viewport={{ once: true }}\n          transition={{ duration, delay: delay * 2 }}\n        >\n          {children}\n        </motion.div>\n\n        {/* Sliding colour box */}\n        <motion.div\n          className=\"absolute inset-0 z-20\"\n          style={{ background: color }}\n          initial={{ left: \"0%\" }}\n          whileInView={{ left: \"100%\" }}\n          viewport={{ once: true }}\n          transition={{ duration, ease: \"easeIn\", delay }}\n        />\n      </div>\n    );\n  },\n);\nBoxReveal.displayName = \"BoxReveal\";\n",
+      "type": "registry:component",
+      "target": "components/ui/box-reveal.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

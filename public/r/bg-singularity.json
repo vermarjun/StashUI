@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bg-singularity",
+  "title": "Singularity Background",
+  "description": "GLSL blackhole/singularity swirl shader (ShaderToy 3csSWB by @XorDev) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-singularity.tsx + .demo.tsx.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/bg-singularity.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { ShaderToy } from \"@/registry/inspira-react/shader-toy\";\n\nconst SINGULARITY_SHADER = `\n// \"Singularity\" by @XorDev\n// ShaderToy: https://www.shadertoy.com/view/3csSWB\n\nvoid mainImage(out vec4 O, vec2 F)\n{\n  float i = .2, a;\n  vec2 r = iResolution.xy,\n    p = (F + F - r) / r.y / .7,\n    d = vec2(-1, 1),\n    b = p - i * d,\n    c = p * mat2(1, 1, d / (.1 + i / dot(b, b))),\n    v = c * mat2(cos(.5 * log(a = dot(c, c)) + iTime * iSpeed * i + vec4(0, 33, 11, 0))) / i,\n    w;\n\n  for (; i++ < 9.; w += 1. + sin(v))\n    v += .7 * sin(v.yx * i + iTime * iSpeed) / i + .5;\n  i = length(sin(v / .3) * .4 + c * (3. + d));\n  O = 1. - exp(-exp(c.x * vec4(.6, -.4, -1, 0))\n    / w.xyyx\n    / (2. + i * i / 4. - i)\n    / (.5 + 1. / a)\n    / (.03 + abs(length(p) - .7))\n  );\n}\n`;\n\nexport interface BgSingularityProps {\n  className?: string;\n  hue?: number;\n  saturation?: number;\n  brightness?: number;\n  speed?: number;\n  mouseSensitivity?: number;\n  damping?: number;\n  noise?: { opacity: number; scale: number };\n}\n\nexport function BgSingularity({\n  className,\n  hue = 0,\n  saturation = 1,\n  brightness = 1,\n  speed = 1,\n  mouseSensitivity = 0.5,\n  damping = 1,\n  noise,\n}: BgSingularityProps) {\n  return (\n    <div className={cn(\"absolute inset-0\", className)}>\n      <ShaderToy\n        shaderCode={SINGULARITY_SHADER}\n        hue={hue}\n        saturation={saturation}\n        brightness={brightness}\n        speed={speed}\n        mouseSensitivity={mouseSensitivity}\n        damping={damping}\n        noise={noise}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/bg-singularity.tsx"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:component"
+}
