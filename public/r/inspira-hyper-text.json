@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-hyper-text",
+  "title": "Hyper Text",
+  "description": "Text animation that scrambles each character through random uppercase letters before settling on the final string. Converted @vueuse/core useIntervalFn to setInterval/useRef; motion-v Motion component to motion/react motion.span; mouseenter triggers re-animation.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/hyper-text.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { motion } from \"motion/react\";\nimport { useCallback, useEffect, useRef, useState } from \"react\";\n\nconst ALPHABETS = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n\nfunction getRandomLetter() {\n  return ALPHABETS[Math.floor(Math.random() * ALPHABETS.length)];\n}\n\ninterface HyperTextProps {\n  text: string;\n  duration?: number;\n  animateOnLoad?: boolean;\n  className?: string;\n}\n\nexport function HyperText({\n  text,\n  duration = 800,\n  animateOnLoad = true,\n  className,\n}: HyperTextProps) {\n  const [displayText, setDisplayText] = useState<string[]>(text.split(\"\"));\n  const iterationsRef = useRef(0);\n  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);\n\n  const stopAnimation = useCallback(() => {\n    if (intervalRef.current !== null) {\n      clearInterval(intervalRef.current);\n      intervalRef.current = null;\n    }\n  }, []);\n\n  const triggerAnimation = useCallback(() => {\n    stopAnimation();\n    iterationsRef.current = 0;\n    const intervalMs = duration / (text.length * 10);\n\n    intervalRef.current = setInterval(() => {\n      if (iterationsRef.current < text.length) {\n        setDisplayText(\n          text.split(\"\").map((l, i) =>\n            l === \" \"\n              ? l\n              : i <= iterationsRef.current\n              ? text[i]\n              : getRandomLetter()\n          )\n        );\n        iterationsRef.current += 0.1;\n      } else {\n        stopAnimation();\n      }\n    }, intervalMs);\n  }, [text, duration, stopAnimation]);\n\n  // Reset display when text prop changes\n  useEffect(() => {\n    setDisplayText(text.split(\"\"));\n    triggerAnimation();\n  }, [text, triggerAnimation]);\n\n  // Animate on load\n  useEffect(() => {\n    if (animateOnLoad) {\n      triggerAnimation();\n    }\n    return stopAnimation;\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, []);\n\n  return (\n    <div\n      className={cn(\"flex scale-100 cursor-default overflow-hidden py-2\", className)}\n      onMouseEnter={triggerAnimation}\n    >\n      <div className=\"flex\">\n        {displayText.map((letter, i) => (\n          <motion.span\n            key={i}\n            initial={{ opacity: 0, y: -10 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ delay: i * (duration / (text.length * 10)) / 1000 }}\n            className={cn(\"inline-block font-mono\", letter === \" \" ? \"w-3\" : \"\")}\n          >\n            {letter.toUpperCase()}\n          </motion.span>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-hyper-text.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

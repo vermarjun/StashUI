@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud",
+  "title": "Logo Cloud",
+  "description": "Three variants: AnimatedLogoCloud (CSS marquee scroll of logo images), IconLogoCloud (icon grid), and StaticLogoCloud (static grid). All exported from a single file. CSS @keyframes logo-cloud injected via style tag.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/logo-cloud.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface Logo {\n  name: string\n  path: string\n}\n\ninterface LogoCloudProps {\n  className?: string\n  title?: string\n  logos?: Logo[]\n}\n\nexport function AnimatedLogoCloud({ className, title, logos = [] }: LogoCloudProps) {\n  return (\n    <div className=\"w-full py-12\">\n      <div className=\"mx-auto w-full px-4 md:px-8\">\n        {title && (\n          <div className=\"text-muted-foreground text-center font-medium\">{title}</div>\n        )}\n        <div\n          className={cn(\n            \"logo-cloud-mask group relative mt-6 flex gap-6 overflow-hidden p-2\",\n            className,\n          )}\n        >\n          {Array.from({ length: 5 }).map((_, i) => (\n            <div\n              key={i}\n              className=\"animate-logo-cloud flex shrink-0 flex-row justify-around gap-6\"\n            >\n              {logos.map((logo, key) => (\n                <img\n                  key={key}\n                  src={logo.path}\n                  alt={logo.name}\n                  className=\"h-10 w-28 px-2 brightness-0 dark:invert\"\n                />\n              ))}\n            </div>\n          ))}\n        </div>\n      </div>\n      <style>{`\n        .logo-cloud-mask {\n          mask-image: linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%);\n        }\n        .animate-logo-cloud {\n          animation: logo-cloud 30s linear infinite;\n        }\n        @keyframes logo-cloud {\n          0% { transform: translateX(0); }\n          100% { transform: translateX(calc(-100% - 4rem)); }\n        }\n      `}</style>\n    </div>\n  )\n}\n\nexport function IconLogoCloud({ className, title, logos = [] }: LogoCloudProps) {\n  return (\n    <div className=\"w-full py-12\">\n      <div className=\"flex w-full flex-col items-center justify-center gap-6 px-4 md:px-8\">\n        {title && (\n          <div className=\"text-muted-foreground font-medium\">{title}</div>\n        )}\n        <div className={cn(\"grid grid-cols-3 md:grid-cols-8 lg:grid-cols-8\", className)}>\n          {logos.map((logo, key) => (\n            <img\n              key={key}\n              src={logo.path}\n              alt={logo.name}\n              className=\"h-7 w-12 px-2 brightness-0 dark:invert\"\n            />\n          ))}\n        </div>\n      </div>\n    </div>\n  )\n}\n\nexport function StaticLogoCloud({ className, title, logos = [] }: LogoCloudProps) {\n  return (\n    <div className=\"w-full py-12\">\n      <div className=\"flex w-full flex-col items-center justify-center gap-4 px-4 md:px-8\">\n        {title && (\n          <div className=\"text-muted-foreground font-medium uppercase\">{title}</div>\n        )}\n        <div className={cn(\"grid grid-cols-3 gap-x-4 md:grid-cols-5 lg:grid-cols-8\", className)}>\n          {logos.map((logo, key) => (\n            <img\n              key={key}\n              src={logo.path}\n              alt={logo.name}\n              className=\"h-10 w-28 px-2 brightness-0 dark:invert\"\n            />\n          ))}\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/logo-cloud.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

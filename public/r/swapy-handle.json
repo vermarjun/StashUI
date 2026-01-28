@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "swapy-handle",
+  "title": "Swapy Handle",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "swapy"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/swapy-handle.tsx",
+      "content": "'use client';\nimport { DragHandle, SwapyItem, SwapyLayout, SwapySlot } from '@/registry/ui-layouts/swapy';\nimport { useMemo, useState } from 'react';\nimport { type SlotItemMapArray, utils } from 'swapy';\n\ntype Item = {\n  id: string;\n  title: string;\n  bgColor: string;\n  iconBgColor: string;\n  className?: string;\n};\n\nconst initialItems: Item[] = [\n  {\n    id: '1',\n    title: '⚡ Turbocharge Everything',\n    bgColor: 'bg-blue-400',\n    iconBgColor: 'bg-blue-100',\n    className: 'lg:col-span-4 sm:col-span-7 col-span-12',\n  },\n  {\n    id: '2',\n    title: '🧠 Brainy Decisions',\n    bgColor: 'bg-pink-300',\n    iconBgColor: 'bg-pink-100',\n    className: 'lg:col-span-3 sm:col-span-5 col-span-12',\n  },\n  {\n    id: '3',\n    title: '🌈 Magical Moments',\n    bgColor: 'bg-green-400',\n    iconBgColor: 'bg-green-100',\n    className: 'lg:col-span-5 sm:col-span-5 col-span-12',\n  },\n  {\n    id: '4',\n    title: '🚀 Innovate Like Crazy',\n    bgColor: 'bg-yellow-300',\n    iconBgColor: 'bg-yellow-100',\n    className: 'lg:col-span-5 sm:col-span-7 col-span-12',\n  },\n  {\n    id: '5',\n    title: '💰 Save Big, Smile More',\n    bgColor: 'bg-purple-300',\n    iconBgColor: 'bg-purple-100',\n    className: 'lg:col-span-4 sm:col-span-6 col-span-12',\n  },\n  {\n    id: '6',\n    title: '🔮 AI Vibes Only',\n    bgColor: 'bg-cyan-300',\n    iconBgColor: 'bg-cyan-100',\n    className: 'lg:col-span-3 sm:col-span-6 col-span-12',\n  },\n];\n\nfunction SwapyHandle() {\n  const [slotItemMap, setSlotItemMap] = useState<SlotItemMapArray>(\n    utils.initSlotItemMap(initialItems, 'id')\n  );\n\n  const slottedItems = useMemo(\n    () => utils.toSlottedItems(initialItems, 'id', slotItemMap),\n    [initialItems, slotItemMap]\n  );\n\n  return (\n    <SwapyLayout\n      id='swapy'\n      className='w-full'\n      config={{\n        swapMode: 'hover',\n      }}\n      onSwap={(event: { newSlotItemMap: { asArray: any } }) => {\n        console.log('Swap detected!', event.newSlotItemMap.asArray);\n      }}\n    >\n      <div className='grid w-full  grid-cols-12 gap-2 md:gap-4 py-4'>\n        {slottedItems.map(({ itemId }) => {\n          const item = initialItems.find((i) => i.id === itemId);\n          return (\n            <SwapySlot\n              key={itemId}\n              className={`swapyItem rounded-lg h-64 ${item?.className}`}\n              id={itemId}\n            >\n              <SwapyItem\n                id={itemId}\n                className={`relative rounded-lg w-full h-full flex flex-col justify-center items-center gap-2 p-8 ${item?.bgColor}`}\n              >\n                <DragHandle />\n                <h3 className='text-xl font-bold text-black '>{item?.title}</h3>\n              </SwapyItem>\n            </SwapySlot>\n          );\n        })}\n      </div>\n    </SwapyLayout>\n  );\n}\n\nexport default SwapyHandle;\n",
+      "type": "registry:component",
+      "target": "components/ui/swapy-handle.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

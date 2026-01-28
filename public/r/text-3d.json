@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-3d",
+  "title": "Text 3D",
+  "description": "3D-styled text with configurable stroke, shadow layers and a wiggle animation. CSS-variable-based v-bind styles converted to inline React CSSProperties with an injected @keyframes <style> block.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/text-3d.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport React from \"react\";\n\ninterface Text3dProps {\n  textColor?: string;\n  letterSpacing?: number;\n  strokeColor?: string;\n  shadowColor?: string;\n  strokeSize?: number;\n  shadow1Size?: number;\n  shadow2Size?: number;\n  className?: string;\n  animate?: boolean;\n  animationDuration?: number;\n  children?: React.ReactNode;\n}\n\nexport function Text3d({\n  textColor = \"white\",\n  letterSpacing = -0.1,\n  strokeColor = \"black\",\n  shadowColor = \"yellow\",\n  strokeSize = 20,\n  shadow1Size = 7,\n  shadow2Size = 10,\n  className,\n  animate = true,\n  animationDuration = 1500,\n  children,\n}: Text3dProps) {\n  const style: React.CSSProperties = {\n    paintOrder: \"stroke fill\",\n    letterSpacing: `${letterSpacing}ch`,\n    WebkitTextStroke: `${strokeSize}px ${strokeColor}`,\n    textShadow: `${shadow1Size}px ${shadow1Size}px 0px ${strokeColor}, ${shadow2Size}px ${shadow2Size}px 0px ${shadowColor}`,\n    color: textColor,\n    animation: animate\n      ? `text3dWiggle ${animationDuration}ms ease-in-out infinite alternate`\n      : undefined,\n    transformOrigin: \"center\",\n  };\n\n  return (\n    <>\n      <style>{`\n        @keyframes text3dWiggle {\n          0%   { transform: rotate(0deg); }\n          12%  { transform: rotate(5deg); }\n          25%  { transform: rotate(-5deg); }\n          38%  { transform: rotate(3deg); }\n          50%  { transform: rotate(0deg); }\n          100% { transform: rotate(0deg); }\n        }\n      `}</style>\n      <div\n        className={cn(\"flex items-center justify-center\", className)}\n        style={style}\n      >\n        {children}\n      </div>\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/text-3d.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "particle-image",
+  "title": "Particle Image",
+  "description": "Renders an image as an interactive particle field using a canvas-based particle engine (2D or WebGL). The Vue data-attribute bridge pattern preserved — the img element passes all config as data-* attributes which the InspiraImageParticle JS class reads. Helper JS copied verbatim to inspira-image-particles.js and dynamically imported in useEffect.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/particle-image.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { useEffect, useRef } from \"react\";\n\ninterface ParticleImageProps {\n  imageSrc: string;\n  className?: string;\n  canvasWidth?: string;\n  canvasHeight?: string;\n  gravity?: string;\n  particleSize?: string;\n  particleGap?: string;\n  mouseForce?: string;\n  renderer?: \"default\" | \"webgl\";\n  color?: string;\n  colorArr?: number[];\n  initPosition?: \"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"misplaced\" | \"none\";\n  initDirection?: \"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"none\";\n  fadePosition?: \"explode\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"random\" | \"none\";\n  fadeDirection?: \"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"none\";\n  noise?: number;\n  responsiveWidth?: boolean;\n}\n\nexport function ParticleImage({\n  imageSrc,\n  className,\n  canvasWidth,\n  canvasHeight,\n  gravity,\n  particleSize,\n  particleGap,\n  mouseForce,\n  renderer,\n  color,\n  colorArr,\n  initPosition,\n  initDirection,\n  fadePosition,\n  fadeDirection,\n  noise,\n  responsiveWidth,\n}: ParticleImageProps) {\n  const imageRef = useRef<HTMLImageElement>(null);\n\n  useEffect(() => {\n    if (!imageRef.current) return;\n\n    let particles: { stop?: () => void } = {};\n\n    import(\"@/registry/inspira-react/inspira-image-particles\").then((mod) => {\n      const { inspiraImageParticles } = mod;\n      const { InspiraImageParticle } = inspiraImageParticles();\n      particles = new InspiraImageParticle(imageRef.current);\n    });\n\n    return () => {\n      if (particles && typeof particles.stop === \"function\") {\n        particles.stop();\n      }\n    };\n  }, [imageSrc]);\n\n  return (\n    <img\n      ref={imageRef}\n      src={imageSrc}\n      data-particle-gap={particleGap}\n      data-width={canvasWidth}\n      data-height={canvasHeight}\n      data-gravity={gravity}\n      data-particle-size={particleSize}\n      data-mouse-force={mouseForce}\n      data-renderer={renderer}\n      data-color={color}\n      data-color-arr={colorArr ? JSON.stringify(colorArr) : undefined}\n      data-init-position={initPosition}\n      data-init-direction={initDirection}\n      data-fade-position={fadePosition}\n      data-fade-direction={fadeDirection}\n      data-noise={noise}\n      data-responsive-width={responsiveWidth}\n      className={cn(\"hidden h-32 w-32\", className)}\n      alt=\"\"\n      crossOrigin=\"anonymous\"\n    />\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/particle-image.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

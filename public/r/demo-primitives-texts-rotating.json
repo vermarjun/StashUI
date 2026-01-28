@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-texts-rotating",
+  "title": "Rotating Text Demo",
+  "description": "Demo showing an animated rotating text.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@animate-ui/primitives-texts-rotating"
+  ],
+  "files": [
+    {
+      "path": "registry/animate-ui/demo-primitives-texts-rotating.tsx",
+      "content": "import {\n  RotatingText,\n  RotatingTextContainer,\n} from '@/components/animate-ui/primitives/texts/rotating';\n\ninterface RotatingTextDemoProps {\n  delay: number;\n  y: number;\n  duration: number;\n}\n\nexport const RotatingTextDemo = ({\n  delay,\n  y,\n  duration,\n}: RotatingTextDemoProps) => {\n  return (\n    <RotatingTextContainer\n      key={delay}\n      delay={delay}\n      y={y}\n      duration={duration}\n      className=\"text-4xl font-semibold\"\n      text={['Rotating', 'Text', 'Demo']}\n    >\n      <RotatingText />\n    </RotatingTextContainer>\n  );\n};\n",
+      "type": "registry:component",
+      "target": "components/ui/demo-primitives-texts-rotating.tsx"
+    }
+  ],
+  "categories": [
+    "Animate UI"
+  ],
+  "type": "registry:component"
+}

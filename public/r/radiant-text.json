@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radiant-text",
+  "title": "Radiant Text",
+  "description": "Animated shining-highlight paragraph that sweeps a bright radiant band across text using background-clip:text and a CSS keyframe animation. Duration and band width are configurable.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/radiant-text.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst KEYFRAMES = `\n@keyframes radiant {\n  0%, 90%, 100% {\n    background-position: calc(-100% - var(--radiant-width)) 0;\n  }\n  30%, 60% {\n    background-position: calc(100% + var(--radiant-width)) 0;\n  }\n}\n.radiant-animation {\n  animation: radiant var(--radiant-anim-duration) infinite;\n}\n`;\n\nexport interface RadiantTextProps extends React.HTMLAttributes<HTMLParagraphElement> {\n  /** Animation cycle duration in seconds (default: 10). */\n  duration?: number;\n  /** Width of the radiant highlight in px (default: 100). */\n  radiantWidth?: number;\n}\n\nexport const RadiantText = React.forwardRef<HTMLParagraphElement, RadiantTextProps>(\n  ({ className, children, duration = 10, radiantWidth = 100, style, ...props }, ref) => {\n    return (\n      <>\n        <style>{KEYFRAMES}</style>\n        <p\n          ref={ref}\n          style={\n            {\n              \"--radiant-anim-duration\": `${duration}s`,\n              \"--radiant-width\": `${radiantWidth}px`,\n              ...style,\n            } as React.CSSProperties\n          }\n          className={cn(\n            \"radiant-animation\",\n            \"mx-auto max-w-md\",\n            \"bg-gradient-to-r from-transparent via-black via-50% to-transparent\",\n            \"bg-[length:var(--radiant-width)_100%] bg-clip-text bg-no-repeat\",\n            \"[background-position:0_0]\",\n            \"text-neutral-600/70\",\n            \"dark:via-white dark:text-neutral-400/70\",\n            className,\n          )}\n          {...props}\n        >\n          {children}\n        </p>\n      </>\n    );\n  },\n);\nRadiantText.displayName = \"RadiantText\";\n",
+      "type": "registry:component",
+      "target": "components/ui/radiant-text.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

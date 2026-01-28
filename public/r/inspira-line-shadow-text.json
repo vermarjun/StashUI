@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-line-shadow-text",
+  "title": "Line Shadow Text",
+  "description": "Animates a diagonal line-pattern shadow behind text using a CSS ::after pseudo-element with background-position keyframe animation. shadowColor is passed as a CSS custom property.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/line-shadow-text.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport React from \"react\";\n\ninterface LineShadowTextProps {\n  shadowColor?: string;\n  as?: keyof React.JSX.IntrinsicElements;\n  className?: string;\n  children: string;\n}\n\nexport function LineShadowText({\n  shadowColor = \"black\",\n  as: Component = \"span\",\n  className,\n  children,\n}: LineShadowTextProps) {\n  if (typeof children !== \"string\") {\n    throw new Error(\"LineShadowText only accepts string content\");\n  }\n\n  return (\n    <>\n      <style>{`\n        .line-shadow-text-animate::after {\n          animation: line-shadow-scroll 15s linear infinite;\n        }\n        @keyframes line-shadow-scroll {\n          0% { background-position: 0 0; }\n          100% { background-position: 100% -100%; }\n        }\n      `}</style>\n      <Component\n        data-text={children}\n        style={{ \"--shadow-color\": shadowColor } as React.CSSProperties}\n        className={cn(\n          \"line-shadow-text-animate relative z-0 inline-flex\",\n          \"after:absolute after:top-[0.04em] after:left-[0.04em] after:-z-10\",\n          \"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n          \"after:[background-size:0.06em_0.06em]\",\n          \"after:bg-clip-text after:text-transparent\",\n          \"after:content-[attr(data-text)]\",\n          className\n        )}\n      >\n        {children}\n      </Component>\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-line-shadow-text.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-highlight",
+  "title": "Text Highlight",
+  "description": "Animated background-size expansion that paints a highlight colour across text from left to right, with optional text colour transition at animation end. CSS animations injected inline with per-instance class names.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/text-highlight.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport React from \"react\";\n\ninterface TextHighlightProps {\n  delay?: number;\n  duration?: number;\n  className?: string;\n  textEndColor?: string;\n  highlightColor?: string;\n  children?: React.ReactNode;\n}\n\nexport function TextHighlight({\n  delay = 0,\n  duration = 2000,\n  className,\n  textEndColor,\n  highlightColor = \"hsl(var(--primary) / 0.3)\",\n  children,\n}: TextHighlightProps) {\n  const delayMs = `${delay}ms`;\n  const durationMs = `${duration}ms`;\n\n  const styleId = `th-${Math.random().toString(36).slice(2, 8)}`;\n\n  return (\n    <>\n      <style>{`\n        @keyframes background-expand-${styleId} {\n          0%   { background-size: 0% 100%; }\n          100% { background-size: 100% 100%; }\n        }\n        @keyframes text-color-change-${styleId} {\n          0%   { color: inherit; }\n          100% { color: ${textEndColor ?? \"inherit\"}; }\n        }\n        .${styleId} {\n          background-image: linear-gradient(${highlightColor}, ${highlightColor});\n          background-size: 0% 100%;\n          background-repeat: no-repeat;\n          background-position: left center;\n          animation:\n            background-expand-${styleId} ${durationMs} ease-in-out ${delayMs} forwards${textEndColor ? `,\\n            text-color-change-${styleId} ${durationMs} ease-in-out ${delayMs} forwards` : \"\"};\n        }\n      `}</style>\n      <span className={cn(`${styleId} inline-block px-1 pb-1`, className)}>\n        {children}\n      </span>\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/text-highlight.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

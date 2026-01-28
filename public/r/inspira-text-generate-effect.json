@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-text-generate-effect",
+  "title": "Text Generate Effect",
+  "description": "Words appear one-by-one from blurred/invisible to sharp/opaque with a staggered timeout. Direct DOM manipulation via querySelectorAll on a scopeRef, matching the original onMounted approach.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/text-generate-effect.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { useEffect, useRef } from \"react\";\n\ninterface TextGenerateEffectProps {\n  words: string;\n  filter?: boolean;\n  duration?: number;\n  delay?: number;\n  className?: string;\n}\n\nexport function TextGenerateEffect({\n  words,\n  filter = true,\n  duration = 0.7,\n  delay = 0,\n  className,\n}: TextGenerateEffectProps) {\n  const scopeRef = useRef<HTMLDivElement>(null);\n  const wordsArray = words.split(\" \");\n\n  useEffect(() => {\n    if (!scopeRef.current) return;\n    const spans = scopeRef.current.querySelectorAll<HTMLSpanElement>(\"span\");\n\n    const timer = setTimeout(() => {\n      spans.forEach((span, index) => {\n        setTimeout(() => {\n          span.style.opacity = \"1\";\n          span.style.filter = filter ? \"blur(0px)\" : \"none\";\n        }, index * 200);\n      });\n    }, delay);\n\n    return () => clearTimeout(timer);\n  }, [words, filter, delay, duration]);\n\n  return (\n    <div className={cn(\"leading-snug tracking-wide\", className)}>\n      <div ref={scopeRef}>\n        {wordsArray.map((word, idx) => (\n          <span\n            key={word + idx}\n            className=\"inline-block\"\n            style={{\n              opacity: 0,\n              filter: filter ? \"blur(10px)\" : \"none\",\n              transition: `opacity ${duration}s, filter ${duration}s`,\n            }}\n          >\n            {word}&nbsp;\n          </span>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-text-generate-effect.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

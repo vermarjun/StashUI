@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-marquee",
+  "title": "Marquee",
+  "description": "Horizontally or vertically scrolling marquee that repeats children N times. Supports reverse direction and pause-on-hover. Includes ReviewCard sub-component. CSS @keyframes marquee / marquee-vertical injected via style tag.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/marquee.tsx",
+      "content": "\"use client\"\n\nimport { type ReactNode, type CSSProperties } from \"react\"\nimport { cn } from \"@/lib/utils\"\n\ninterface MarqueeProps {\n  className?: string\n  reverse?: boolean\n  pauseOnHover?: boolean\n  vertical?: boolean\n  repeat?: number\n  children?: ReactNode\n  style?: CSSProperties\n}\n\nexport function Marquee({\n  className,\n  reverse = false,\n  pauseOnHover = false,\n  vertical = false,\n  repeat = 4,\n  children,\n  style,\n}: MarqueeProps) {\n  return (\n    <div\n      className={cn(\n        \"group flex gap-[--gap] overflow-hidden p-2 [--duration:40s] [--gap:1rem]\",\n        vertical ? \"flex-col\" : \"flex-row\",\n        className,\n      )}\n      style={style}\n    >\n      {Array.from({ length: repeat }).map((_, i) => (\n        <div\n          key={i}\n          style={{ animationDirection: reverse ? \"reverse\" : \"normal\" }}\n          className={cn(\n            \"flex shrink-0 justify-around gap-[--gap]\",\n            vertical\n              ? \"animate-marquee-vertical flex-col\"\n              : \"animate-marquee flex-row\",\n            pauseOnHover ? \"group-hover:[animation-play-state:paused]\" : \"\",\n          )}\n        >\n          {children}\n        </div>\n      ))}\n\n      <style>{`\n        .animate-marquee {\n          animation: marquee var(--duration) linear infinite;\n          animation-direction: reverse;\n        }\n        .animate-marquee-vertical {\n          animation: marquee-vertical var(--duration) linear infinite;\n        }\n        @keyframes marquee {\n          from { transform: translateX(0); }\n          to { transform: translateX(calc(-100% - var(--gap))); }\n        }\n        @keyframes marquee-vertical {\n          from { transform: translateY(0); }\n          to { transform: translateY(calc(-100% - var(--gap))); }\n        }\n      `}</style>\n    </div>\n  )\n}\n\ninterface ReviewCardProps {\n  img: string\n  name: string\n  username: string\n  body: string\n}\n\nexport function ReviewCard({ img, name, username, body }: ReviewCardProps) {\n  return (\n    <figure className=\"relative w-64 cursor-pointer overflow-hidden rounded-xl border border-gray-950/10 bg-gray-950/[.01] p-4 hover:bg-gray-950/[.05] dark:border-gray-50/10 dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]\">\n      <div className=\"flex flex-row items-center gap-2\">\n        <img src={img} className=\"rounded-full\" width={32} height={32} alt=\"\" />\n        <div className=\"flex flex-col\">\n          <span className=\"text-sm font-medium dark:text-white\">{name}</span>\n          <p className=\"text-xs font-medium dark:text-white/40\">{username}</p>\n        </div>\n      </div>\n      <blockquote className=\"mt-2 text-sm\">{body}</blockquote>\n    </figure>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-marquee.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

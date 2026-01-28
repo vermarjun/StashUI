@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbit",
+  "title": "Orbit",
+  "description": "Wraps children in a continuously orbiting animation using CSS keyframes injected via a style tag. Vue scoped CSS v-bind for radius/duration/delay/direction converted to dynamic keyframe name per radius and inline animation style. Optionally renders an SVG circle path at the orbit radius.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/orbit.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport type { ReactNode } from \"react\";\n\nexport const ORBIT_DIRECTION = {\n  Clockwise: \"normal\",\n  CounterClockwise: \"reverse\",\n} as const;\n\nexport type OrbitDirection = (typeof ORBIT_DIRECTION)[keyof typeof ORBIT_DIRECTION];\n\ninterface OrbitProps {\n  className?: string;\n  direction?: OrbitDirection;\n  duration?: number;\n  delay?: number;\n  radius?: number;\n  path?: boolean;\n  children?: ReactNode;\n}\n\nexport function Orbit({\n  className,\n  direction = ORBIT_DIRECTION.Clockwise,\n  duration = 20,\n  delay = 10,\n  radius = 50,\n  path = false,\n  children,\n}: OrbitProps) {\n  const negativeDelay = -delay;\n\n  const keyframes = `\n    @keyframes orbit-${radius} {\n      0% {\n        transform: rotate(0deg) translateY(${radius}px) rotate(0deg);\n      }\n      100% {\n        transform: rotate(360deg) translateY(${radius}px) rotate(-360deg);\n      }\n    }\n  `;\n\n  return (\n    <>\n      <style>{keyframes}</style>\n\n      {path && (\n        <svg className=\"pointer-events-none absolute inset-0 size-full\">\n          <circle\n            className=\"stroke-foreground/20 stroke-1\"\n            cx=\"50%\"\n            cy=\"50%\"\n            r={radius}\n            fill=\"none\"\n          />\n        </svg>\n      )}\n\n      <div\n        className={cn(\"absolute flex size-full transform-gpu\", className)}\n        style={{\n          animation: `orbit-${radius} ${duration}s linear infinite`,\n          animationDelay: `${negativeDelay}s`,\n          animationDirection: direction,\n        }}\n      >\n        {children}\n      </div>\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/orbit.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

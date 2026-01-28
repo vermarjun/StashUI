@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-gradient-button",
+  "title": "Gradient Button",
+  "description": "Rotating conic-gradient rainbow border button. Vue v-bind() in scoped CSS replaced with injected style tag keyframes and computed inline styles for border width, radius, blur and animation duration.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/gradient-button.tsx",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface GradientButtonProps {\n  borderWidth?: number;\n  colors?: string[];\n  duration?: number;\n  borderRadius?: number;\n  blur?: number;\n  className?: string;\n  bgColor?: string;\n  children?: React.ReactNode;\n  onClick?: React.MouseEventHandler<HTMLButtonElement>;\n}\n\nexport function GradientButton({\n  colors = [\"#FF0000\", \"#FFA500\", \"#FFFF00\", \"#008000\", \"#0000FF\", \"#4B0082\", \"#EE82EE\", \"#FF0000\"],\n  duration = 2500,\n  borderWidth = 2,\n  borderRadius = 8,\n  blur = 4,\n  bgColor = \"#000\",\n  className,\n  children,\n  onClick,\n}: GradientButtonProps) {\n  const allColors = colors.join(\", \");\n\n  const buttonStyle: React.CSSProperties = {\n    padding: `${borderWidth}px`,\n    borderRadius: `${borderRadius}px`,\n    position: \"relative\",\n    display: \"inline-flex\",\n    minHeight: \"40px\",\n    minWidth: \"112px\",\n    alignItems: \"center\",\n    justifyContent: \"center\",\n    overflow: \"hidden\",\n  };\n\n  const beforeStyle: React.CSSProperties = {\n    content: '\"\"',\n    position: \"absolute\",\n    inset: \"-200%\",\n    background: `conic-gradient(${allColors})`,\n    animation: `rotate-rainbow ${duration}ms linear infinite`,\n    filter: `blur(${blur}px)`,\n  };\n\n  const contentStyle: React.CSSProperties = {\n    borderRadius: `${borderRadius}px`,\n    backgroundColor: bgColor,\n    zIndex: 0,\n    display: \"inline-flex\",\n    width: \"100%\",\n    height: \"100%\",\n    alignItems: \"center\",\n    justifyContent: \"center\",\n    padding: \"8px 16px\",\n    position: \"relative\",\n  };\n\n  return (\n    <>\n      <style>{`\n        @keyframes rotate-rainbow {\n          0% { transform: rotate(0deg); }\n          100% { transform: rotate(360deg); }\n        }\n        .gradient-btn-before::before {\n          content: \"\";\n          position: absolute;\n          inset: -200%;\n          background: conic-gradient(${allColors});\n          animation: rotate-rainbow ${duration}ms linear infinite;\n          filter: blur(${blur}px);\n        }\n      `}</style>\n      <button\n        className={cn(\"gradient-btn-before relative overflow-hidden\", className)}\n        style={buttonStyle}\n        onClick={onClick}\n      >\n        <span style={beforeStyle as React.CSSProperties} aria-hidden=\"true\" />\n        <span style={contentStyle}>{children}</span>\n      </button>\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-gradient-button.tsx"
+    }
+  ],
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:component"
+}

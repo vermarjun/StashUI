@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "infinite-grid",
+  "title": "Infinite Grid",
+  "description": "OGL/WebGL-based infinite scrolling grid of card tiles with post-processing effects (barrel distortion, vignette). The 7 framework-agnostic TypeScript helper files (InfiniteGridClass, GridManager, EventHandler, DisposalManager, PostProcessShader, createTexture, shaders) are copied verbatim into infinite-grid-helpers/. The React component is a thin useEffect wrapper that instantiates the class on mount and disposes it on unmount.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/infinite-grid.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useMemo, useRef } from \"react\";\nimport { InfiniteGridClass } from \"@/registry/inspira-react/infinite-grid-helpers/InfiniteGridClass\";\nimport type { CardData, InfiniteGridOptions } from \"@/registry/inspira-react/infinite-grid-helpers/types\";\n\nexport type { CardData, InfiniteGridOptions };\n\ninterface InfiniteGridProps {\n  cardData: CardData[];\n  options?: Partial<InfiniteGridOptions>;\n  onTilesLoaded?: () => void;\n  onTileClicked?: (detail: unknown) => void;\n  className?: string;\n}\n\nconst DEFAULT_OPTIONS: InfiniteGridOptions = {\n  gridCols: 4,\n  gridRows: 4,\n  gridGap: 0,\n  tileSize: 3,\n  baseCameraZ: 10,\n  enablePostProcessing: true,\n  postProcessParams: {\n    distortionIntensity: -0.2,\n    vignetteOffset: 0.0,\n    vignetteDarkness: 0.0,\n  },\n};\n\nexport function InfiniteGrid({\n  cardData,\n  options,\n  onTilesLoaded,\n  onTileClicked,\n  className,\n}: InfiniteGridProps) {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  const instanceRef = useRef<InfiniteGridClass | null>(null);\n\n  const mergedOptions = useMemo<InfiniteGridOptions>(\n    () => ({\n      ...DEFAULT_OPTIONS,\n      ...options,\n      postProcessParams: {\n        ...DEFAULT_OPTIONS.postProcessParams,\n        ...options?.postProcessParams,\n      },\n    }),\n    [options]\n  );\n\n  useEffect(() => {\n    const container = containerRef.current;\n    if (!container) return;\n\n    let mounted = true;\n\n    const handleTileClicked = (event: Event) => {\n      const customEvent = event as CustomEvent;\n      onTileClicked?.(customEvent.detail);\n    };\n\n    async function init() {\n      if (!container || !mounted) return;\n\n      instanceRef.current = new InfiniteGridClass(\n        container,\n        cardData,\n        mergedOptions\n      );\n      await instanceRef.current.init();\n\n      if (!mounted) {\n        instanceRef.current?.dispose();\n        return;\n      }\n\n      onTilesLoaded?.();\n      container.addEventListener(\"tileClicked\", handleTileClicked);\n    }\n\n    init();\n\n    return () => {\n      mounted = false;\n      container.removeEventListener(\"tileClicked\", handleTileClicked);\n      if (instanceRef.current) {\n        instanceRef.current.dispose();\n        instanceRef.current = null;\n      }\n    };\n  }, [cardData, mergedOptions, onTilesLoaded, onTileClicked]);\n\n  return (\n    <div\n      ref={containerRef}\n      className={className}\n      style={{\n        position: \"relative\",\n        width: \"100%\",\n        height: \"100%\",\n        margin: 0,\n        padding: 0,\n        overflow: \"hidden\",\n        background: \"#000\",\n      }}\n    />\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/infinite-grid.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

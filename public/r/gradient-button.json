@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradient-button",
+  "title": "Gradient Button",
+  "description": "A pill button with an animated gradient border and soft inner glow.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/buttons/gradient-button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Slot } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface GradientButtonProps\n  extends React.ComponentPropsWithoutRef<\"button\"> {\n  /** Render as a child element (e.g. an anchor) instead of a button. */\n  asChild?: boolean;\n}\n\n/**\n * A pill button with an animated gradient border and a soft inner glow.\n * The gradient drifts continuously using the `gradient-x` keyframes.\n */\nexport const GradientButton = React.forwardRef<\n  HTMLButtonElement,\n  GradientButtonProps\n>(({ className, children, asChild = false, ...props }, ref) => {\n  const Comp = asChild ? Slot.Root : \"button\";\n  return (\n    <div className=\"group relative inline-flex rounded-full p-[1.5px] [background:linear-gradient(110deg,var(--chart-2),var(--chart-4),var(--foreground),var(--chart-2))] [background-size:200%_auto] animate-gradient-x\">\n      <Comp\n        ref={ref}\n        className={cn(\n          \"relative inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-full bg-background px-5 text-sm font-medium text-foreground\",\n          \"transition-colors duration-300 group-hover:bg-background/80\",\n          \"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </Comp>\n    </div>\n  );\n});\n\nGradientButton.displayName = \"GradientButton\";\n",
+      "type": "registry:component",
+      "target": "components/ui/gradient-button.tsx"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "--animate-gradient-x": "gradient-x 8s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes gradient-x": {
+      "0%, 100%": {
+        "background-position": "0% 50%"
+      },
+      "50%": {
+        "background-position": "100% 50%"
+      }
+    }
+  },
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:component"
+}

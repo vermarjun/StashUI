@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-lens",
+  "title": "Lens",
+  "description": "Magnifying-lens overlay that follows the cursor over any child content. Uses motion/react AnimatePresence for enter/exit, radial-gradient CSS mask to punch out the lens circle, and a scaled duplicate of children for the zoomed view.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/lens.tsx",
+      "content": "\"use client\";\n\nimport { useState, useRef, useCallback } from \"react\";\nimport { motion, AnimatePresence } from \"motion/react\";\n\ninterface LensProps {\n  zoomFactor?: number;\n  lensSize?: number;\n  position?: { x: number; y: number };\n  isStatic?: boolean;\n  hovering?: boolean;\n  onHoverUpdate?: (hovering: boolean) => void;\n  children: React.ReactNode;\n}\n\nexport function Lens({\n  zoomFactor = 1.5,\n  lensSize = 170,\n  position = { x: 200, y: 150 },\n  isStatic = false,\n  hovering,\n  onHoverUpdate,\n  children,\n}: LensProps) {\n  const [localIsHovering, setLocalIsHovering] = useState(false);\n  const [mousePosition, setMousePosition] = useState({ x: 100, y: 100 });\n\n  const isHovering = hovering !== undefined ? hovering : localIsHovering;\n\n  const handleSetHovering = useCallback(\n    (hover: boolean) => {\n      setLocalIsHovering(hover);\n      onHoverUpdate?.(hover);\n    },\n    [onHoverUpdate]\n  );\n\n  const handleMouseMove = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      const rect = e.currentTarget.getBoundingClientRect();\n      setMousePosition({\n        x: e.clientX - rect.left,\n        y: e.clientY - rect.top,\n      });\n    },\n    []\n  );\n\n  const pos = isStatic ? position : mousePosition;\n  const maskPosition = `circle ${lensSize / 2}px at ${pos.x}px ${pos.y}px`;\n  const transformOrigin = `${pos.x}px ${pos.y}px`;\n\n  return (\n    <div\n      className=\"relative z-20 overflow-hidden rounded-lg\"\n      onMouseEnter={() => handleSetHovering(true)}\n      onMouseLeave={() => handleSetHovering(false)}\n      onMouseMove={handleMouseMove}\n    >\n      {children}\n\n      <AnimatePresence>\n        {(isStatic || isHovering) && (\n          <motion.div\n            key=\"lens\"\n            initial={{ opacity: 0, scale: 0.58 }}\n            animate={{ opacity: 1, scale: 1 }}\n            exit={{ opacity: 0, scale: 0.8 }}\n            transition={{ duration: 0.3, ease: \"easeOut\" }}\n            className=\"absolute inset-0 overflow-hidden\"\n            style={{\n              maskImage: `radial-gradient(${maskPosition}, black 100%, transparent 100%)`,\n              WebkitMaskImage: `radial-gradient(${maskPosition}, black 100%, transparent 100%)`,\n              transformOrigin,\n            }}\n          >\n            <div\n              className=\"absolute inset-0\"\n              style={{\n                transform: `scale(${zoomFactor})`,\n                transformOrigin,\n              }}\n            >\n              {children}\n            </div>\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-lens.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

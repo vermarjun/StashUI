@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "image-trail-cursor",
+  "title": "Image Trail Cursor",
+  "description": "GSAP-powered cursor trail that cycles through images using 7 animation variants (fade, zoom, float, directional, rotating, speed-reactive, stacking). The trail-variants.ts helper is a direct port of the Vue source's trail-variants.ts — refactored into a shared base class. The React wrapper initialises the class on mount and cleans up on unmount.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/image-trail-cursor.tsx",
+      "content": "\"use client\";\n\nimport { variantMap } from \"@/registry/inspira-react/image-trail-variants\";\nimport { useEffect, useRef } from \"react\";\n\nexport type VariantType = \"type1\" | \"type2\" | \"type3\" | \"type4\" | \"type5\" | \"type6\" | \"type7\";\n\ninterface ImageTrailCursorProps {\n  images?: string[];\n  variant?: VariantType;\n}\n\nexport function ImageTrailCursor({\n  images = [],\n  variant = \"type1\",\n}: ImageTrailCursorProps) {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  const instanceRef = useRef<any>(null);\n\n  useEffect(() => {\n    if (!containerRef.current) return;\n\n    if (instanceRef.current && typeof instanceRef.current.destroy === \"function\") {\n      instanceRef.current.destroy();\n    }\n\n    const Variant = variantMap[variant] || variantMap.type1;\n    instanceRef.current = new Variant(containerRef.current);\n\n    return () => {\n      if (instanceRef.current && typeof instanceRef.current.destroy === \"function\") {\n        instanceRef.current.destroy();\n      }\n    };\n  }, [variant]);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"relative z-[100] h-full w-full overflow-visible rounded-lg bg-transparent\"\n    >\n      {images.map((image, i) => (\n        <div\n          key={variant + i}\n          className=\"content__img absolute top-0 left-0 aspect-[1.1] w-[190px] overflow-hidden rounded-[15px] opacity-0 will-change-[transform,filter]\"\n        >\n          <div\n            className=\"content__img-inner absolute top-[-10px] left-[-10px] h-[calc(100%+20px)] w-[calc(100%+20px)] bg-cover bg-center\"\n            style={{ backgroundImage: `url(${image})` }}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/image-trail-cursor.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-wavy-background",
+  "title": "Wavy Background",
+  "description": "Canvas-based animated wave background using simplex-noise 3D for smooth wave shapes. Handles Safari blur fallback. Resizes canvas to parent dimensions on mount and window resize.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/wavy-background.tsx",
+      "content": "\"use client\";\nimport React, { useEffect, useRef, useState } from \"react\";\nimport { createNoise3D } from \"simplex-noise\";\nimport { cn } from \"@/lib/utils\";\n\ninterface WavyBackgroundProps {\n  children?: React.ReactNode;\n  className?: string;\n  containerClass?: string;\n  colors?: string[];\n  waveWidth?: number;\n  backgroundFill?: string;\n  blur?: number;\n  speed?: \"slow\" | \"fast\";\n  waveOpacity?: number;\n}\n\nexport function WavyBackground({\n  children,\n  className,\n  containerClass,\n  colors = [\"#38bdf8\", \"#818cf8\", \"#c084fc\", \"#e879f9\", \"#22d3ee\"],\n  waveWidth = 50,\n  backgroundFill = \"black\",\n  blur = 10,\n  speed = \"fast\",\n  waveOpacity = 0.5,\n}: WavyBackgroundProps) {\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n  const [isSafari, setIsSafari] = useState(false);\n  const animationIdRef = useRef<number>(0);\n\n  const noiseRef = useRef(createNoise3D());\n  const ntRef = useRef(0);\n\n  useEffect(() => {\n    setIsSafari(\n      typeof window !== \"undefined\" &&\n        navigator.userAgent.includes(\"Safari\") &&\n        !navigator.userAgent.includes(\"Chrome\"),\n    );\n  }, []);\n\n  useEffect(() => {\n    const canvas = canvasRef.current;\n    if (!canvas) return;\n\n    const ctx = canvas.getContext(\"2d\");\n    if (!ctx) return;\n\n    const parent = canvas.parentElement;\n\n    function resize() {\n      if (parent && ctx && canvas) {\n        canvas.width = parent.clientWidth;\n        canvas.height = parent.clientHeight;\n        ctx.filter = `blur(${blur}px)`;\n      }\n    }\n\n    resize();\n\n    const getSpeed = () => (speed === \"slow\" ? 0.001 : 0.002);\n\n    function drawWave(n: number) {\n      ntRef.current += getSpeed();\n      const w = canvas!.width;\n      const h = canvas!.height;\n      for (let i = 0; i < n; i++) {\n        ctx!.beginPath();\n        ctx!.lineWidth = waveWidth;\n        ctx!.strokeStyle = colors[i % colors.length];\n        for (let x = 0; x < w; x += 5) {\n          const y = noiseRef.current(x / 800, 0.3 * i, ntRef.current) * 100;\n          ctx!.lineTo(x, y + h * 0.5);\n        }\n        ctx!.stroke();\n        ctx!.closePath();\n      }\n    }\n\n    function render() {\n      const w = canvas!.width;\n      const h = canvas!.height;\n      ctx!.fillStyle = backgroundFill;\n      ctx!.globalAlpha = waveOpacity;\n      ctx!.fillRect(0, 0, w, h);\n      drawWave(5);\n      animationIdRef.current = requestAnimationFrame(render);\n    }\n\n    render();\n\n    window.addEventListener(\"resize\", resize);\n    return () => {\n      cancelAnimationFrame(animationIdRef.current);\n      window.removeEventListener(\"resize\", resize);\n    };\n  }, [colors, waveWidth, backgroundFill, blur, speed, waveOpacity]);\n\n  return (\n    <div\n      className={cn(\n        \"flex h-screen flex-col items-center justify-center\",\n        containerClass,\n      )}\n    >\n      <canvas\n        ref={canvasRef}\n        className=\"absolute z-0\"\n        style={isSafari ? { filter: `blur(${blur}px)` } : undefined}\n      />\n      <div className={cn(\"relative z-10\", className)}>{children}</div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-wavy-background.tsx"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:component"
+}

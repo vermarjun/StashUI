@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "morphing-tabs",
+  "title": "Morphing Tabs",
+  "description": "Tab bar with a gooey SVG filter effect — adjacent tabs appear to morph together when the active tab is marked with expanded margins. Ported Vue `<script setup>` props/emits to typed React props with onTabChange callback. SVG filter inline in JSX.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/morphing-tabs.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface MorphingTabsProps {\n  tabs: string[];\n  activeTab: string;\n  onTabChange: (tab: string) => void;\n  margin?: number;\n  blurStdDeviation?: number;\n  className?: string;\n}\n\nexport function MorphingTabs({\n  tabs,\n  activeTab,\n  onTabChange,\n  margin = 20,\n  blurStdDeviation = 6,\n  className,\n}: MorphingTabsProps) {\n  if (!tabs.length) return null;\n\n  return (\n    <div\n      style={{ filter: \"url(#exclusionTabsGoo)\" }}\n      className={cn(\"relative\", className)}\n    >\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          className=\"bg-primary text-background px-4 py-2 transition-all duration-500\"\n          style={{\n            margin: `0 ${activeTab === tab ? margin : 0}px`,\n          }}\n          onClick={() => onTabChange(tab)}\n        >\n          {tab}\n        </button>\n      ))}\n\n      <div className=\"absolute w-full\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" style={{ position: \"absolute\", width: 0, height: 0 }}>\n          <defs>\n            <filter\n              id=\"exclusionTabsGoo\"\n              x=\"-50%\"\n              y=\"-50%\"\n              width=\"200%\"\n              height=\"200%\"\n              colorInterpolationFilters=\"sRGB\"\n            >\n              <feGaussianBlur\n                in=\"SourceGraphic\"\n                stdDeviation={blurStdDeviation}\n                result=\"blur\"\n              />\n              <feColorMatrix\n                in=\"blur\"\n                type=\"matrix\"\n                values={`\n                  1 0 0 0 0\n                  0 1 0 0 0\n                  0 0 1 0 0\n                  0 0 0 36 -12`}\n                result=\"goo\"\n              />\n              <feComposite in=\"SourceGraphic\" in2=\"goo\" operator=\"atop\" />\n            </filter>\n          </defs>\n        </svg>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/morphing-tabs.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

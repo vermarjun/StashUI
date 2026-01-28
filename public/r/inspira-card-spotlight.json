@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-card-spotlight",
+  "title": "Card Spotlight",
+  "description": "Card with a cursor-following radial spotlight overlay. Spotlight position, colour, size, and opacity are all configurable.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/card-spotlight.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface CardSpotlightProps extends React.HTMLAttributes<HTMLDivElement> {\n  /** Radius of the radial spotlight in pixels. */\n  gradientSize?: number;\n  /** Colour of the spotlight. */\n  gradientColor?: string;\n  /** Opacity of the spotlight overlay (0–1). */\n  gradientOpacity?: number;\n  /** Additional className for the inner slot wrapper. */\n  slotClassName?: string;\n}\n\n/**\n * A card with a cursor-following radial spotlight painted over it.\n */\nexport const CardSpotlight = React.forwardRef<HTMLDivElement, CardSpotlightProps>(\n  (\n    {\n      className,\n      slotClassName,\n      children,\n      gradientSize = 200,\n      gradientColor = \"#262626\",\n      gradientOpacity = 0.8,\n      ...props\n    },\n    ref,\n  ) => {\n    const [mousePos, setMousePos] = React.useState({\n      x: -gradientSize * 10,\n      y: -gradientSize * 10,\n    });\n\n    const handleMouseMove = React.useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        const rect = e.currentTarget.getBoundingClientRect();\n        setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });\n      },\n      [],\n    );\n\n    const handleMouseLeave = React.useCallback(() => {\n      setMousePos({ x: -gradientSize * 10, y: -gradientSize * 10 });\n    }, [gradientSize]);\n\n    const background = `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, ${gradientColor} 0%, rgba(0,0,0,0) 70%)`;\n\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"group relative flex size-full overflow-hidden rounded-xl border bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white\",\n          className,\n        )}\n        onMouseMove={handleMouseMove}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <div className={cn(\"relative z-10\", slotClassName)}>{children}</div>\n\n        {/* Spotlight overlay */}\n        <div\n          aria-hidden\n          className=\"pointer-events-none absolute inset-0 rounded-xl transition-opacity duration-300\"\n          style={{ background, opacity: gradientOpacity }}\n        />\n      </div>\n    );\n  },\n);\nCardSpotlight.displayName = \"CardSpotlight\";\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-card-spotlight.tsx"
+    }
+  ],
+  "categories": [
+    "cards"
+  ],
+  "type": "registry:component"
+}

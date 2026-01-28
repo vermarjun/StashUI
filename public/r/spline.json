@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spline",
+  "title": "Spline",
+  "description": "Wraps @splinetool/runtime (dynamically imported) in a responsive container with IntersectionObserver and ResizeObserver. Shows children slot as loading state. Requires @splinetool/runtime to be installed separately.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/spline.tsx",
+      "content": "\"use client\";\n\nimport React, {\n  useCallback,\n  useEffect,\n  useRef,\n  useState,\n  CSSProperties,\n  ReactNode,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// Lazy-load @splinetool/runtime only in the browser\n// to avoid SSR issues. The Application type is used for typing only.\n\ninterface SplineProps {\n  scene: string;\n  onLoad?: (app: unknown) => void;\n  renderOnDemand?: boolean;\n  style?: CSSProperties;\n  className?: string;\n  children?: ReactNode; // shown while loading\n}\n\nexport function Spline({\n  scene,\n  onLoad,\n  renderOnDemand = true,\n  style,\n  className,\n  children,\n}: SplineProps) {\n  const containerRef = useRef<HTMLDivElement>(null);\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n  const appRef = useRef<unknown>(null);\n  const [isLoading, setIsLoading] = useState(true);\n  const cleanupRef = useRef<() => void>(() => {});\n\n  const initSpline = useCallback(async () => {\n    if (!canvasRef.current) return;\n    setIsLoading(true);\n    try {\n      // Dynamically import to keep bundle split-friendly\n      const { Application } = await import(\"@splinetool/runtime\" as string as never) as {\n        Application: new (\n          canvas: HTMLCanvasElement,\n          options?: { renderOnDemand?: boolean },\n        ) => {\n          load: (url: string) => Promise<void>;\n          dispose: () => void;\n          requestRender: () => void;\n          setSize: (w: number, h: number) => void;\n        };\n      };\n\n      // Dispose previous instance\n      if (appRef.current) {\n        (appRef.current as { dispose: () => void }).dispose();\n        appRef.current = null;\n      }\n\n      const app = new Application(canvasRef.current, { renderOnDemand });\n      await app.load(scene);\n      appRef.current = app;\n      setIsLoading(false);\n      onLoad?.(app);\n    } catch (err) {\n      console.error(\"Spline initialization error:\", err);\n      setIsLoading(false);\n    }\n  }, [scene, renderOnDemand, onLoad]);\n\n  useEffect(() => {\n    initSpline();\n\n    // IntersectionObserver: re-init when visible\n    const observer = new IntersectionObserver(\n      ([entry]) => {\n        if (entry.isIntersecting && !appRef.current) {\n          initSpline();\n        }\n      },\n      { threshold: 0.1 },\n    );\n    if (canvasRef.current) observer.observe(canvasRef.current);\n\n    // ResizeObserver for canvas size sync\n    const resizeObserver = new ResizeObserver(() => {\n      if (canvasRef.current && appRef.current) {\n        const app = appRef.current as { setSize: (w: number, h: number) => void; requestRender: () => void };\n        app.setSize(canvasRef.current.clientWidth, canvasRef.current.clientHeight);\n        app.requestRender();\n      }\n    });\n    if (containerRef.current) resizeObserver.observe(containerRef.current);\n\n    cleanupRef.current = () => {\n      observer.disconnect();\n      resizeObserver.disconnect();\n      if (appRef.current) {\n        (appRef.current as { dispose: () => void }).dispose();\n        appRef.current = null;\n      }\n    };\n\n    return () => cleanupRef.current();\n  }, [initSpline]);\n\n  return (\n    <div\n      ref={containerRef}\n      className={cn(\"h-full w-full overflow-hidden\", className)}\n      style={style}\n    >\n      <canvas\n        ref={canvasRef}\n        style={{ display: \"block\", width: \"100%\", height: \"100%\" }}\n      />\n      {isLoading && children}\n    </div>\n  );\n}\n\nexport default Spline;\n",
+      "type": "registry:component",
+      "target": "components/ui/spline.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

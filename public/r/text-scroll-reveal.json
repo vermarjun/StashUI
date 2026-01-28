@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-scroll-reveal",
+  "title": "Text Scroll Reveal",
+  "description": "Reveals text word-by-word as the user scrolls. Uses a scroll listener and per-word opacity interpolation. No motion/react needed — pure React state.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/text-scroll-reveal.tsx",
+      "content": "\"use client\";\nimport React, { useEffect, useMemo, useRef, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ScrollWordProps {\n  word: string;\n  progress: number;\n  range: [number, number];\n}\n\nfunction ScrollWord({ word, progress, range }: ScrollWordProps) {\n  const [start, end] = range;\n  let opacity = 0;\n  if (progress >= end) {\n    opacity = 1;\n  } else if (progress > start) {\n    opacity = (progress - start) / (end - start);\n  }\n\n  return (\n    <span className=\"xl:lg-3 relative mx-1 lg:mx-2.5\">\n      <span className=\"absolute opacity-30 dark:opacity-70\">{word}</span>\n      <span style={{ opacity }} className=\"text-black dark:text-white\">\n        {word}\n      </span>\n    </span>\n  );\n}\n\ninterface TextScrollRevealProps {\n  text: string;\n  className?: string;\n}\n\nexport function TextScrollReveal({ text, className }: TextScrollRevealProps) {\n  const containerRef = useRef<HTMLDivElement>(null);\n  const [scrollYProgress, setScrollYProgress] = useState(0);\n\n  const words = useMemo(() => text.split(\" \"), [text]);\n\n  useEffect(() => {\n    function updateScrollYProgress() {\n      if (containerRef.current) {\n        const boundingRect = containerRef.current.getBoundingClientRect();\n        const windowHeight = window.innerHeight;\n        setScrollYProgress((boundingRect.y / windowHeight) * -1);\n      }\n    }\n\n    window.addEventListener(\"scroll\", updateScrollYProgress);\n    window.addEventListener(\"resize\", updateScrollYProgress);\n    updateScrollYProgress();\n\n    return () => {\n      window.removeEventListener(\"scroll\", updateScrollYProgress);\n      window.removeEventListener(\"resize\", updateScrollYProgress);\n    };\n  }, []);\n\n  return (\n    <div ref={containerRef} className={cn(\"relative z-0 h-[200vh]\", className)}>\n      <div className=\"sticky top-0 mx-auto flex h-1/2 max-w-4xl items-center bg-transparent px-4 py-20\">\n        <p className=\"flex flex-wrap p-5 text-2xl font-bold text-black/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl dark:text-white/20\">\n          {words.map((word, i) => (\n            <ScrollWord\n              key={i}\n              word={word}\n              progress={scrollYProgress}\n              range={[i / words.length, (i + 1) / words.length]}\n            />\n          ))}\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/text-scroll-reveal.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

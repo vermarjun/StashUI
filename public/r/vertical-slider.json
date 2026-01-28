@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "vertical-slider",
+  "title": "Vertical Slider",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "embla-carousel",
+    "lucide-react",
+    "embla-carousel-class-names",
+    "embla-carousel-react",
+    "embla-carousel-autoplay",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/vertical-slider.tsx",
+      "content": "'use client';\nimport {\n  Carousel,\n  Slider,\n  SliderContainer,\n  SliderDotButton,\n  SliderNextButton,\n  SliderPrevButton,\n} from '@/registry/ui-layouts/carousel';\nimport type { EmblaOptionsType } from 'embla-carousel';\nimport { ChevronDown, ChevronUp } from 'lucide-react';\n\nfunction VerticalCarousel() {\n  const OPTIONS: EmblaOptionsType = {\n    loop: true,\n    axis: 'y',\n  };\n\n  return (\n    <div className='w-full max-w-2xl mx-auto p-4 py-10'>\n      <Carousel options={OPTIONS} className='relative h-full'>\n        <SliderContainer className='h-[400px]'>\n          <Slider className='w-full h-full'>\n            <img\n              src='https://images.unsplash.com/photo-1759395073808-17782f3d8d66?q=80&w=1471&auto=format&fit=crop'\n              alt='Slide 1'\n              className='h-full w-full object-cover rounded-lg'\n            />\n          </Slider>\n\n          <Slider className='w-full h-full'>\n            <img\n              src='https://images.unsplash.com/photo-1759434192768-fe3facebd5f6?q=80&w=1471&auto=format&fit=crop'\n              alt='Slide 2'\n              className='h-full w-full object-cover rounded-lg'\n            />\n          </Slider>\n\n          <Slider className='w-full h-full'>\n            <img\n              src='https://images.unsplash.com/photo-1758641008040-28cdd59ca8fb?q=80&w=687&auto=format&fit=crop'\n              alt='Slide 3'\n              className='h-full w-full object-cover rounded-lg'\n            />\n          </Slider>\n\n          <Slider className='w-full h-full'>\n            <img\n              src='https://images.unsplash.com/photo-1618220649687-ba860f3176e7?q=80&w=1474&auto=format&fit=crop'\n              alt='Slide 4'\n              className='h-full w-full object-cover rounded-lg'\n            />\n          </Slider>\n        </SliderContainer>\n\n        <SliderPrevButton className='absolute top-4 left-1/2 -translate-x-1/2 p-2 border-2 rounded-full bg-white/90 dark:bg-black/90 backdrop-blur-xs hover:bg-white dark:hover:bg-black transition-colors disabled:opacity-20 z-10'>\n          <ChevronUp className='w-6 h-6' />\n        </SliderPrevButton>\n\n        <SliderNextButton className='absolute bottom-4 left-1/2 -translate-x-1/2 p-2 border-2 rounded-full bg-white/90 dark:bg-black/90 backdrop-blur-xs hover:bg-white dark:hover:bg-black transition-colors disabled:opacity-20 z-10'>\n          <ChevronDown className='w-6 h-6' />\n        </SliderNextButton>\n\n        <div className='absolute right-4 top-1/2 -translate-y-1/2'>\n          <SliderDotButton className='flex-col gap-2' />\n        </div>\n      </Carousel>\n    </div>\n  );\n}\n\nexport default VerticalCarousel;\n",
+      "type": "registry:component",
+      "target": "components/ui/vertical-slider.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

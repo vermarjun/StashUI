@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "expandable-gallery",
+  "title": "Expandable Gallery",
+  "description": "Horizontal image gallery where each panel expands (flex-[3]) on hover via CSS transition. Minimal pure-CSS implementation using Tailwind flex classes.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/expandable-gallery.tsx",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// ─── Types ────────────────────────────────────────────────────────────────────\ninterface ExpandableGalleryProps {\n  images: string[];\n  className?: string;\n}\n\n// ─── Component ────────────────────────────────────────────────────────────────\nexport function ExpandableGallery({ images, className }: ExpandableGalleryProps) {\n  return (\n    <div className={cn(\"flex h-96 w-full gap-2\", className)}>\n      {images.map((image) => (\n        <div\n          key={image}\n          className=\"relative flex h-full flex-1 cursor-pointer overflow-hidden rounded-xl transition-all duration-500 ease-in-out hover:flex-[3]\"\n        >\n          <img\n            className=\"relative h-full w-full object-cover\"\n            src={image}\n            alt={image}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/expandable-gallery.tsx"
+    }
+  ],
+  "categories": [
+    "cards"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee",
+  "title": "Marquee",
+  "description": "An infinite, seamless marquee with hover-pause and vertical support.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/effects/marquee.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface MarqueeProps extends React.ComponentPropsWithoutRef<\"div\"> {\n  /** Scroll vertically instead of horizontally. */\n  vertical?: boolean;\n  /** Reverse the scroll direction. */\n  reverse?: boolean;\n  /** Pause the animation on hover. */\n  pauseOnHover?: boolean;\n  /** Number of times to repeat the children for a seamless loop. */\n  repeat?: number;\n}\n\n/**\n * An infinite, seamless marquee. Wrap any set of children; they scroll\n * forever. Set `--duration` and `--gap` via style to tune speed/spacing.\n */\nexport const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(\n  (\n    {\n      className,\n      vertical = false,\n      reverse = false,\n      pauseOnHover = false,\n      repeat = 4,\n      children,\n      style,\n      ...props\n    },\n    ref,\n  ) => {\n    return (\n      <div\n        ref={ref}\n        style={\n          {\n            \"--duration\": \"40s\",\n            \"--gap\": \"1rem\",\n            ...style,\n          } as React.CSSProperties\n        }\n        className={cn(\n          \"group flex overflow-hidden p-2 [gap:var(--gap)]\",\n          vertical ? \"flex-col\" : \"flex-row\",\n          className,\n        )}\n        {...props}\n      >\n        {Array.from({ length: repeat }).map((_, i) => (\n          <div\n            key={i}\n            className={cn(\"flex shrink-0 justify-around [gap:var(--gap)]\", {\n              \"animate-marquee flex-row\": !vertical,\n              \"animate-marquee-vertical flex-col\": vertical,\n              \"group-hover:[animation-play-state:paused]\": pauseOnHover,\n              \"[animation-direction:reverse]\": reverse,\n            })}\n          >\n            {children}\n          </div>\n        ))}\n      </div>\n    );\n  },\n);\n\nMarquee.displayName = \"Marquee\";\n",
+      "type": "registry:component",
+      "target": "components/ui/marquee.tsx"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "--animate-marquee": "marquee var(--duration, 40s) linear infinite",
+      "--animate-marquee-vertical": "marquee-vertical var(--duration, 40s) linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes marquee": {
+      "from": {
+        "transform": "translateX(0)"
+      },
+      "to": {
+        "transform": "translateX(calc(-100% - var(--gap, 1rem)))"
+      }
+    },
+    "@keyframes marquee-vertical": {
+      "from": {
+        "transform": "translateY(0)"
+      },
+      "to": {
+        "transform": "translateY(calc(-100% - var(--gap, 1rem)))"
+      }
+    }
+  },
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

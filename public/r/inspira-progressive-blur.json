@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-progressive-blur",
+  "title": "Progressive Blur",
+  "description": "Layered backdrop-filter blur that fades in progressively along a chosen edge (top/bottom/left/right). motion/react Motion divs are used to allow animation prop pass-through matching the Vue motion-v usage.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/progressive-blur.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, type MotionProps } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nconst GRADIENT_ANGLES = {\n  top: 0,\n  right: 90,\n  bottom: 180,\n  left: 270,\n} as const;\n\nexport type ProgressiveBlurDirection = keyof typeof GRADIENT_ANGLES;\n\nexport interface ProgressiveBlurProps\n  extends Omit<MotionProps, \"children\">,\n    Omit<React.HTMLAttributes<HTMLDivElement>, keyof MotionProps> {\n  direction?: ProgressiveBlurDirection;\n  blurLayers?: number;\n  blurIntensity?: number;\n  children?: React.ReactNode;\n}\n\nexport const ProgressiveBlur = React.forwardRef<\n  HTMLDivElement,\n  ProgressiveBlurProps\n>(\n  (\n    {\n      direction = \"bottom\",\n      blurLayers = 8,\n      blurIntensity = 0.25,\n      className,\n      children,\n      style,\n      ...rest\n    },\n    ref,\n  ) => {\n    const layers = Math.max(blurLayers, 2);\n    const segmentSize = 1 / (blurLayers + 1);\n\n    const getGradientStyle = (index: number): string => {\n      const gradientStops = [\n        (index - 1) * segmentSize,\n        index * segmentSize,\n        (index + 1) * segmentSize,\n        (index + 2) * segmentSize,\n      ].map(\n        (pos, posIndex) =>\n          `rgba(255, 255, 255, ${posIndex === 1 || posIndex === 2 ? 1 : 0}) ${pos * 100}%`,\n      );\n      return `linear-gradient(${GRADIENT_ANGLES[direction]}deg, ${gradientStops.join(\", \")})`;\n    };\n\n    // Detect if the caller passed a position class\n    const hasPositionClass =\n      typeof className === \"string\" &&\n      /\\b(absolute|fixed|relative|sticky|static)\\b/.test(className);\n\n    return (\n      <div\n        ref={ref}\n        className={cn(!hasPositionClass && \"relative\", className)}\n        style={style}\n      >\n        {children}\n        {Array.from({ length: layers }, (_, i) => i + 1).map((index) => {\n          const gradient = getGradientStyle(index);\n          return (\n            <motion.div\n              key={index}\n              className=\"pointer-events-none absolute inset-0 rounded-[inherit]\"\n              style={{\n                maskImage: gradient,\n                WebkitMaskImage: gradient,\n                backdropFilter: `blur(${(index - 1) * blurIntensity}px)`,\n              }}\n              {...rest}\n            />\n          );\n        })}\n      </div>\n    );\n  },\n);\nProgressiveBlur.displayName = \"ProgressiveBlur\";\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-progressive-blur.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

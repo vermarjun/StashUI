@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-rainbow-button",
+  "title": "Rainbow Button",
+  "description": "Button with an animated rainbow gradient border and matching glow beneath via ::before. v-bind CSS variable trick for speed replaced with inline CSS custom property. Supports polymorphic `as` prop.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/rainbow-button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst KEYFRAMES = `\n@keyframes rainbow-bg {\n  0%   { background-position: 0; }\n  100% { background-position: 200%; }\n}\n.rainbow-button-anim,\n.rainbow-button-anim::before {\n  animation: rainbow-bg var(--rb-speed) infinite linear;\n}\n`;\n\nexport interface RainbowButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  /** Animation speed in seconds (default: 2). */\n  speed?: number;\n  /** Render as a different element, e.g. \"a\". Defaults to \"button\". */\n  as?: React.ElementType;\n}\n\nexport const RainbowButton = React.forwardRef<\n  HTMLButtonElement,\n  RainbowButtonProps\n>(({ className, children, speed = 2, as: Tag = \"button\", style, ...props }, ref) => {\n  return (\n    <>\n      <style>{KEYFRAMES}</style>\n      {/* @ts-expect-error polymorphic `as` prop */}\n      <Tag\n        ref={ref}\n        style={\n          {\n            \"--rb-speed\": `${speed}s`,\n            \"--color-1\": \"hsl(0 100% 63%)\",\n            \"--color-2\": \"hsl(270 100% 63%)\",\n            \"--color-3\": \"hsl(210 100% 63%)\",\n            \"--color-4\": \"hsl(195 100% 63%)\",\n            \"--color-5\": \"hsl(90 100% 63%)\",\n            ...style,\n          } as React.CSSProperties\n        }\n        className={cn(\n          \"rainbow-button-anim\",\n          // Layout\n          \"group relative inline-flex h-11 cursor-pointer items-center justify-center rounded-xl px-8 py-2\",\n          // Typography\n          \"font-medium text-primary-foreground\",\n          // Border trick: three layered backgrounds\n          \"[border:calc(0.08*1rem)_solid_transparent]\",\n          \"bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]\",\n          \"bg-[size:200%]\",\n          \"[background-clip:padding-box,border-box,border-box]\",\n          \"[background-origin:border-box]\",\n          // Dark variant\n          \"dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]\",\n          // Glow ::before\n          \"before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5\",\n          \"before:-translate-x-1/2\",\n          \"before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]\",\n          \"before:bg-[size:200%]\",\n          \"before:[filter:blur(calc(0.8*1rem))]\",\n          // States\n          \"transition-colors\",\n          \"focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring\",\n          \"disabled:pointer-events-none disabled:opacity-50\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </Tag>\n    </>\n  );\n});\nRainbowButton.displayName = \"RainbowButton\";\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-rainbow-button.tsx"
+    }
+  ],
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "vertical-thumbnail-autostart-slider",
+  "title": "Vertical Thumbnail Autostart Slider",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "embla-carousel",
+    "lucide-react",
+    "embla-carousel-class-names",
+    "embla-carousel-react",
+    "embla-carousel-autoplay",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/verticalthumbs-autostart-slider.tsx",
+      "content": "'use client';\nimport {\n  Carousel,\n  Slider,\n  SliderContainer,\n  SliderDotButton,\n  ThumbsSlider,\n} from '@/registry/ui-layouts/carousel';\nimport type { EmblaOptionsType } from 'embla-carousel';\nimport Autoplay from 'embla-carousel-autoplay';\nimport React, { ReactNode } from 'react';\n\nfunction VerticalthumbsAutostartSlider() {\n  const OPTIONS: EmblaOptionsType = {\n    loop: false,\n    axis: 'y',\n  };\n  return (\n    <>\n      <div className='py-10'>\n        <Carousel\n          options={OPTIONS}\n          plugins={[\n            Autoplay({\n              playOnInit: true,\n              delay: 2000,\n              stopOnMouseEnter: false,\n              stopOnInteraction: false,\n            }),\n          ]}\n          dir='ltr'\n          className='relative h-full'\n        >\n          <SliderContainer className='h-[400px]'>\n            <Slider\n              className='w-full h-full'\n              thumbnailSrc='https://images.unsplash.com/photo-1759395073808-17782f3d8d66?q=80&w=1471&auto=format&fit=crop'\n            >\n              <img\n                src='https://images.unsplash.com/photo-1759395073808-17782f3d8d66?q=80&w=1471&auto=format&fit=crop'\n                alt='Slide 1'\n                className='h-full w-full object-cover rounded-lg'\n              />\n            </Slider>\n\n            <Slider\n              className='w-full h-full'\n              thumbnailSrc='https://images.unsplash.com/photo-1759434192768-fe3facebd5f6?q=80&w=1471&auto=format&fit=crop'\n            >\n              <img\n                src='https://images.unsplash.com/photo-1759434192768-fe3facebd5f6?q=80&w=1471&auto=format&fit=crop'\n                alt='Slide 2'\n                className='h-full w-full object-cover rounded-lg'\n              />\n            </Slider>\n\n            <Slider\n              className='w-full h-full'\n              thumbnailSrc='https://images.unsplash.com/photo-1758641008040-28cdd59ca8fb?q=80&w=687&auto=format&fit=crop'\n            >\n              <img\n                src='https://images.unsplash.com/photo-1758641008040-28cdd59ca8fb?q=80&w=687&auto=format&fit=crop'\n                alt='Slide 3'\n                className='h-full w-full object-cover rounded-lg'\n              />\n            </Slider>\n\n            <Slider\n              className='w-full h-full'\n              thumbnailSrc='https://images.unsplash.com/photo-1618220649687-ba860f3176e7?q=80&w=1474&auto=format&fit=crop'\n            >\n              <img\n                src='https://images.unsplash.com/photo-1618220649687-ba860f3176e7?q=80&w=1474&auto=format&fit=crop'\n                alt='Slide 4'\n                className='h-full w-full object-cover rounded-lg'\n              />\n            </Slider>\n\n            <Slider\n              className='w-full h-full'\n              thumbnailSrc='https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?q=80&w=765&auto=format&fit=crop'\n            >\n              <img\n                src='https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?q=80&w=765&auto=format&fit=crop'\n                alt='Slide 5'\n                className='h-full w-full object-cover rounded-lg'\n              />\n            </Slider>\n          </SliderContainer>\n\n          <ThumbsSlider\n            className='absolute right-4 top-1/2 -translate-y-1/2 w-20'\n            thumbsSliderClassName='border-black'\n          />\n        </Carousel>\n      </div>\n    </>\n  );\n}\n\nexport default VerticalthumbsAutostartSlider;\n",
+      "type": "registry:component",
+      "target": "components/ui/vertical-thumbnail-autostart-slider.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-ripple-button",
+  "title": "Ripple Button",
+  "description": "Click-triggered ripple effect button. Mouse position is used to spawn animated circle overlays that fade out. Vue watchEffect + ref array converted to useState with setTimeout cleanup.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/ripple-button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst KEYFRAMES = `\n@keyframes rippling {\n  0%   { opacity: 1; transform: scale(0); }\n  100% { opacity: 0; transform: scale(2); }\n}\n`;\n\nexport interface RippleButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  /** Color of the ripple overlay (default: \"#ADD8E6\"). */\n  rippleColor?: string;\n  /** Duration of the ripple animation in ms (default: 600). */\n  duration?: number;\n}\n\ninterface RippleEntry {\n  x: number;\n  y: number;\n  size: number;\n  key: number;\n}\n\nexport const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(\n  (\n    {\n      className,\n      children,\n      rippleColor = \"#ADD8E6\",\n      duration = 600,\n      onClick,\n      style,\n      ...props\n    },\n    ref,\n  ) => {\n    const buttonRef = React.useRef<HTMLButtonElement | null>(null);\n    const [ripples, setRipples] = React.useState<RippleEntry[]>([]);\n\n    // Merge forwarded ref with internal ref\n    React.useImperativeHandle(ref, () => buttonRef.current!);\n\n    function createRipple(event: React.MouseEvent<HTMLButtonElement>) {\n      const button = buttonRef.current;\n      if (!button) return;\n\n      const rect = button.getBoundingClientRect();\n      const size = Math.max(rect.width, rect.height);\n      const x = event.clientX - rect.left - size / 2;\n      const y = event.clientY - rect.top - size / 2;\n      const key = Date.now() + Math.random();\n\n      setRipples((prev) => [...prev, { x, y, size, key }]);\n\n      // Auto-remove after animation completes\n      setTimeout(() => {\n        setRipples((prev) => prev.filter((r) => r.key !== key));\n      }, duration);\n    }\n\n    function handleClick(event: React.MouseEvent<HTMLButtonElement>) {\n      createRipple(event);\n      onClick?.(event);\n    }\n\n    return (\n      <>\n        <style>{KEYFRAMES}</style>\n        <button\n          ref={buttonRef}\n          style={{ \"--ripple-duration\": `${duration}ms`, ...style } as React.CSSProperties}\n          className={cn(\n            \"relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 px-4 py-2 text-center\",\n            \"bg-background text-primary\",\n            className,\n          )}\n          onClick={handleClick}\n          {...props}\n        >\n          <span className=\"relative z-10\">{children}</span>\n\n          <span className=\"pointer-events-none absolute inset-0\">\n            {ripples.map((ripple) => (\n              <span\n                key={ripple.key}\n                className=\"absolute rounded-full opacity-30\"\n                style={{\n                  width: `${ripple.size}px`,\n                  height: `${ripple.size}px`,\n                  top: `${ripple.y}px`,\n                  left: `${ripple.x}px`,\n                  backgroundColor: rippleColor,\n                  transform: \"scale(0)\",\n                  animation: `rippling ${duration}ms ease-out`,\n                }}\n              />\n            ))}\n          </span>\n        </button>\n      </>\n    );\n  },\n);\nRippleButton.displayName = \"RippleButton\";\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-ripple-button.tsx"
+    }
+  ],
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:component"
+}

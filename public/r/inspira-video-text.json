@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-video-text",
+  "title": "Video Text",
+  "description": "Masks a video element to only show through large text, using SVG data-URI as a CSS mask-image. Text content is extracted from children prop. Font size supports responsive vw units.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/video-text.tsx",
+      "content": "\"use client\";\nimport React, { useEffect, useMemo, useRef, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface VideoTextProps {\n  src: string;\n  children: React.ReactNode;\n  className?: string;\n  autoPlay?: boolean;\n  muted?: boolean;\n  loop?: boolean;\n  preload?: \"auto\" | \"metadata\" | \"none\";\n  fontSize?: string | number;\n  fontWeight?: string | number;\n  textAnchor?: string;\n  dominantBaseline?: string;\n  fontFamily?: string;\n}\n\nexport function VideoText({\n  src,\n  children,\n  className,\n  autoPlay = true,\n  muted = true,\n  loop = true,\n  preload = \"auto\",\n  fontSize = 20,\n  fontWeight = \"bold\",\n  textAnchor = \"middle\",\n  dominantBaseline = \"middle\",\n  fontFamily = \"sans-serif\",\n}: VideoTextProps) {\n  const [svgMask, setSvgMask] = useState(\"\");\n\n  // Extract text content from children\n  const textContent = useMemo(() => {\n    function extractText(node: React.ReactNode): string {\n      if (typeof node === \"string\" || typeof node === \"number\") {\n        return String(node);\n      }\n      if (Array.isArray(node)) {\n        return node.map(extractText).join(\"\");\n      }\n      if (React.isValidElement(node) && node.props) {\n        return extractText((node.props as { children?: React.ReactNode }).children);\n      }\n      return \"\";\n    }\n    return extractText(children);\n  }, [children]);\n\n  function buildSvgMask() {\n    const responsiveFontSize =\n      typeof fontSize === \"number\" ? `${fontSize}vw` : fontSize;\n    return `<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='50%' y='50%' font-size='${responsiveFontSize}' font-weight='${fontWeight}' text-anchor='${textAnchor}' dominant-baseline='${dominantBaseline}' font-family='${fontFamily}'>${textContent}</text></svg>`;\n  }\n\n  useEffect(() => {\n    setSvgMask(buildSvgMask());\n\n    const handleResize = () => setSvgMask(buildSvgMask());\n    window.addEventListener(\"resize\", handleResize);\n    return () => window.removeEventListener(\"resize\", handleResize);\n  }, [textContent, fontSize, fontWeight, textAnchor, dominantBaseline, fontFamily]);\n\n  const dataUrlMask = svgMask\n    ? `url(\"data:image/svg+xml,${encodeURIComponent(svgMask)}\")`\n    : undefined;\n\n  return (\n    <div className={cn(\"relative size-full\", className)}>\n      <div\n        className=\"absolute inset-0 flex items-center justify-center\"\n        style={{\n          maskImage: dataUrlMask,\n          WebkitMaskImage: dataUrlMask,\n          WebkitMaskSize: \"contain\",\n          maskRepeat: \"no-repeat\",\n          WebkitMaskRepeat: \"no-repeat\",\n          maskPosition: \"center\",\n          WebkitMaskPosition: \"center\",\n        }}\n      >\n        <video\n          className=\"size-full object-cover\"\n          autoPlay={autoPlay}\n          muted={muted}\n          loop={loop}\n          preload={preload}\n          playsInline\n        >\n          <source src={src} />\n          Your browser does not support the video tag.\n        </video>\n      </div>\n      <span className=\"sr-only\">{textContent}</span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-video-text.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}

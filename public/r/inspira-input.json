@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-input",
+  "title": "IInput",
+  "description": "An enhanced input with a radial gradient spotlight that follows the cursor on hover, styled with Tailwind and dark mode support. Converted Vue useVModel/v-bind to forwardRef/spread props; computed containerBg to inline style string derived from useState.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/input.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport {\n  InputHTMLAttributes,\n  forwardRef,\n  useCallback,\n  useRef,\n  useState,\n} from \"react\";\n\ninterface IInputProps extends InputHTMLAttributes<HTMLInputElement> {\n  containerClass?: string;\n}\n\nexport const IInput = forwardRef<HTMLInputElement, IInputProps>(\n  ({ className, containerClass, ...props }, ref) => {\n    const containerRef = useRef<HTMLDivElement | null>(null);\n    const [mouse, setMouse] = useState({ x: 0, y: 0 });\n    const [visible, setVisible] = useState(false);\n\n    const radius = 100;\n\n    const containerBg = `radial-gradient(\n      ${visible ? `${radius}px` : \"0px\"} circle at ${mouse.x}px ${mouse.y}px,\n      var(--blue-500, #3b82f6),\n      transparent 80%\n    )`;\n\n    const handleMouseMove = useCallback(\n      ({ clientX, clientY }: React.MouseEvent<HTMLDivElement>) => {\n        if (!containerRef.current) return;\n        const { left, top } = containerRef.current.getBoundingClientRect();\n        setMouse({ x: clientX - left, y: clientY - top });\n      },\n      []\n    );\n\n    return (\n      <div\n        ref={containerRef}\n        style={{ background: containerBg }}\n        className={cn(\n          \"group/input rounded-lg p-[2px] transition duration-300\",\n          containerClass\n        )}\n        onMouseLeave={() => setVisible(false)}\n        onMouseMove={handleMouseMove}\n        onMouseEnter={() => setVisible(true)}\n      >\n        <input\n          ref={ref}\n          className={cn(\n            \"flex h-10 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400\",\n            \"group-hover/input:shadow-none\",\n            \"file:border-0 file:bg-transparent file:text-sm file:font-medium\",\n            \"placeholder:text-neutral-400\",\n            \"focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:outline-none\",\n            \"disabled:cursor-not-allowed disabled:opacity-50\",\n            \"dark:bg-zinc-800 dark:text-white\",\n            \"dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]\",\n            \"dark:focus-visible:ring-neutral-600\",\n            className\n          )}\n          style={{\n            boxShadow:\n              \"0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)\",\n          }}\n          {...props}\n        />\n      </div>\n    );\n  }\n);\n\nIInput.displayName = \"IInput\";\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-input.tsx"
+    }
+  ],
+  "categories": [
+    "inputs"
+  ],
+  "type": "registry:component"
+}

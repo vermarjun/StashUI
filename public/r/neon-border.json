@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "neon-border",
+  "title": "Neon Border",
+  "description": "Container with a two-color neon glowing border using CSS filter drop-shadow and absolute positioned gradient layers. Vue v-bind CSS variables for dynamic color/duration replaced with inline React styles. Supports none/half/full animation width and configurable duration.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/neon-border.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport type { ReactNode } from \"react\";\n\ntype AnimationType = \"none\" | \"half\" | \"full\";\n\ninterface NeonBorderProps {\n  color1?: string;\n  color2?: string;\n  animationType?: AnimationType;\n  duration?: number;\n  className?: string;\n  children?: ReactNode;\n}\n\nfunction getWidth(animationType: AnimationType): number {\n  switch (animationType) {\n    case \"none\":\n      return 12;\n    case \"half\":\n      return 50;\n    case \"full\":\n      return 100;\n  }\n}\n\nexport function NeonBorder({\n  color1 = \"#0496ff\",\n  color2 = \"#ff0a54\",\n  animationType = \"half\",\n  duration = 6,\n  className,\n  children,\n}: NeonBorderProps) {\n  const animWidth = `${getWidth(animationType)}%`;\n  const durationStr = `${duration}s`;\n  const shouldAnimate = animationType !== \"none\";\n\n  return (\n    <div\n      style={{ \"--neon-border-duration\": durationStr } as React.CSSProperties}\n      className={cn(\n        \"relative z-10 inline-block h-10 w-full max-w-sm overflow-hidden rounded-lg p-px\",\n        className,\n      )}\n    >\n      {/* Layer 1 - color1 side */}\n      <div\n        style={\n          {\n            position: \"absolute\",\n            inset: 0,\n            overflow: \"hidden\",\n            width: \"100%\",\n            height: \"100%\",\n            filter: `blur(1px) drop-shadow(0 0 12px ${color1})`,\n            zIndex: -1,\n            borderRadius: \"inherit\",\n            ...(shouldAnimate\n              ? { animation: `neon-border-anim ${duration}s linear infinite` }\n              : {}),\n          } as React.CSSProperties\n        }\n      >\n        <div\n          style={{\n            position: \"absolute\",\n            top: 0,\n            left: 0,\n            width: animWidth,\n            height: \"100%\",\n            background: `linear-gradient(135deg, ${color1}, ${color1}, transparent, transparent)`,\n          }}\n        />\n      </div>\n\n      {/* Layer 2 - color2 side */}\n      <div\n        style={\n          {\n            position: \"absolute\",\n            inset: 0,\n            overflow: \"hidden\",\n            width: \"100%\",\n            height: \"100%\",\n            filter: `blur(1px) drop-shadow(0 0 12px ${color2})`,\n            zIndex: -1,\n            borderRadius: \"inherit\",\n            ...(shouldAnimate\n              ? { animation: `neon-border-anim ${duration}s linear infinite` }\n              : {}),\n          } as React.CSSProperties\n        }\n      >\n        <div\n          style={{\n            position: \"absolute\",\n            bottom: 0,\n            right: 0,\n            width: animWidth,\n            height: \"100%\",\n            background: `linear-gradient(135deg, transparent, transparent, ${color2}, ${color2})`,\n          }}\n        />\n      </div>\n\n      {/* Border overlay */}\n      <div\n        style={{\n          position: \"absolute\",\n          inset: 0,\n          borderRadius: \"inherit\",\n          border: `1px solid transparent`,\n          background: `linear-gradient(135deg, ${color1}, ${color2}) border-box`,\n          WebkitMask: \"linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)\",\n          WebkitMaskComposite: \"destination-out\",\n          maskComposite: \"exclude\",\n        }}\n      />\n\n      {children}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/neon-border.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

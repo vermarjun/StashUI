@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-timeline",
+  "title": "Timeline",
+  "description": "Vertical timeline with a scroll-driven animated progress bar using motion/react useScroll + useTransform. Items accept arbitrary ReactNode content via the items[].content prop.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/timeline.tsx",
+      "content": "\"use client\";\nimport React, { useEffect, useRef, useState } from \"react\";\nimport { motion, useScroll, useTransform } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface TimelineItem {\n  id: string;\n  label: string;\n  content?: React.ReactNode;\n}\n\ninterface TimelineProps {\n  items?: TimelineItem[];\n  title?: string;\n  description?: string;\n  containerClass?: string;\n  className?: string;\n}\n\nexport function Timeline({\n  items = [],\n  title,\n  description,\n  containerClass,\n  className,\n}: TimelineProps) {\n  const timelineRef = useRef<HTMLDivElement>(null);\n  const [height, setHeight] = useState(0);\n\n  useEffect(() => {\n    if (timelineRef.current) {\n      const rect = timelineRef.current.getBoundingClientRect();\n      setHeight(rect.height);\n    }\n  }, []);\n\n  const { scrollYProgress } = useScroll({\n    target: timelineRef,\n    offset: [\"start 10%\", \"end 50%\"],\n  });\n\n  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);\n  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);\n\n  return (\n    <div className={cn(\"w-full bg-white font-sans md:px-10 dark:bg-neutral-950\", containerClass)}>\n      <div className=\"mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10\">\n        {title && (\n          <h2 className=\"mb-4 max-w-4xl text-lg text-black md:text-4xl dark:text-white\">\n            {title}\n          </h2>\n        )}\n        {description && (\n          <p className=\"max-w-sm text-sm text-neutral-700 md:text-base dark:text-neutral-300\">\n            {description}\n          </p>\n        )}\n      </div>\n\n      <div ref={timelineRef} className={cn(\"relative z-0 mx-auto max-w-7xl pb-20\", className)}>\n        {items.map((item, index) => (\n          <div\n            key={item.id + index}\n            className=\"flex justify-start pt-10 md:gap-10 md:pt-40\"\n          >\n            <div className=\"sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm\">\n              <div className=\"absolute left-3 flex size-10 items-center justify-center rounded-full bg-white md:left-3 dark:bg-black\">\n                <div className=\"size-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800\" />\n              </div>\n              <h3 className=\"hidden text-xl font-bold text-neutral-500 md:block md:pl-20 md:text-5xl dark:text-neutral-500\">\n                {item.label}\n              </h3>\n            </div>\n            <div className=\"relative w-full pl-20 pr-4 md:pl-4\">\n              {item.content}\n            </div>\n          </div>\n        ))}\n\n        <div\n          style={{ height: `${height}px` }}\n          className=\"absolute top-0 left-8 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% via-neutral-200 to-transparent to-99% [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8 dark:via-neutral-700\"\n        >\n          <motion.div\n            style={{\n              height: heightTransform,\n              opacity: opacityTransform,\n            }}\n            className=\"absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-purple-500 from-0% via-blue-500 via-10% to-transparent\"\n          />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-timeline.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

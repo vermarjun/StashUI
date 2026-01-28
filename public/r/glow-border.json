@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "glow-border",
+  "title": "Glow Border",
+  "description": "Animated radial-gradient rotating border overlay using injected @keyframes and useMemo-computed inline styles. Vue v-bind() CSS replaced with CSS custom properties on the element style.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/glow-border.tsx",
+      "content": "\"use client\";\n\nimport React, { useMemo } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface GlowBorderProps {\n  borderRadius?: number;\n  color?: string | string[];\n  borderWidth?: number;\n  duration?: number;\n  className?: string;\n}\n\nexport function GlowBorder({\n  borderRadius = 10,\n  color = \"#FFF\",\n  borderWidth = 2,\n  duration = 10,\n  className,\n}: GlowBorderProps) {\n  const colorValue = Array.isArray(color) ? color.join(\",\") : color;\n\n  const styles: React.CSSProperties = useMemo(\n    () => ({\n      \"--border-radius\": `${borderRadius}px`,\n      \"--border-width\": `${borderWidth}px`,\n      \"--duration\": `${duration}s`,\n      backgroundImage: `radial-gradient(transparent,transparent, ${colorValue},transparent,transparent)`,\n      backgroundSize: \"300% 300%\",\n      mask: \"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)\",\n      WebkitMask: \"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)\",\n      WebkitMaskComposite: \"xor\",\n      maskComposite: \"exclude\",\n      padding: \"var(--border-width)\",\n      borderRadius: \"var(--border-radius)\",\n      animation: `glow-border-spin var(--duration) linear infinite`,\n    } as React.CSSProperties),\n    [borderRadius, borderWidth, duration, colorValue],\n  );\n\n  return (\n    <>\n      <style>{`\n        @keyframes glow-border-spin {\n          0% { background-position: 0% 0%; }\n          50% { background-position: 100% 100%; }\n          100% { background-position: 0% 0%; }\n        }\n      `}</style>\n      <div\n        style={styles}\n        className={cn(\n          \"pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position]\",\n          className,\n        )}\n      />\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/glow-border.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

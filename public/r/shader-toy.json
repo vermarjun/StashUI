@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shader-toy",
+  "title": "Shader Toy",
+  "description": "WebGL2 shader renderer that runs Shadertoy-compatible GLSL fragment shaders with iTime, iMouse, iResolution, iHSV, and iSpeed uniforms. Pre-existing files reused (shader-toy.tsx + inspira-shader-toy.ts); added shader-toy.demo.tsx. Written at registry/inspira-react/shader-toy.tsx.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/shader-toy.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { InspiraShaderToy, type MouseMode } from \"@/registry/inspira-react/inspira-shader-toy\";\n\ninterface NoiseConfig {\n  opacity: number;\n  scale: number;\n}\n\nexport interface ShaderToyProps {\n  shaderCode: string;\n  className?: string;\n  mouseMode?: MouseMode;\n  hue?: number;\n  saturation?: number;\n  brightness?: number;\n  speed?: number;\n  mouseSensitivity?: number;\n  damping?: number;\n  noise?: NoiseConfig;\n}\n\nexport const ShaderToy = React.forwardRef<HTMLDivElement, ShaderToyProps>(\n  (\n    {\n      shaderCode,\n      className,\n      mouseMode = \"click\",\n      hue = 0,\n      saturation = 1,\n      brightness = 1,\n      speed = 1,\n      mouseSensitivity = 1,\n      damping = 0,\n      noise,\n    },\n    ref,\n  ) => {\n    const containerRef = React.useRef<HTMLDivElement | null>(null);\n    const shaderRef = React.useRef<InspiraShaderToy | null>(null);\n\n    React.useImperativeHandle(ref, () => containerRef.current!);\n\n    React.useEffect(() => {\n      if (!containerRef.current) return;\n\n      let toy: InspiraShaderToy | null = null;\n      try {\n        toy = new InspiraShaderToy(containerRef.current, mouseMode);\n        const success = toy.setShader({ source: shaderCode });\n        if (!success) {\n          console.error(\"Failed to compile shader\");\n          return;\n        }\n        toy.setHSV({ hue, saturation, brightness });\n        toy.setSpeed(speed);\n        toy.setMouseSensitivity(mouseSensitivity);\n        toy.setMouseDamping(damping);\n        toy.play();\n        shaderRef.current = toy;\n      } catch (err) {\n        console.error(\"ShaderToy init error:\", err);\n      }\n\n      return () => {\n        toy?.dispose();\n        shaderRef.current = null;\n      };\n      // eslint-disable-next-line react-hooks/exhaustive-deps\n    }, [shaderCode, mouseMode]);\n\n    React.useEffect(() => {\n      shaderRef.current?.setHue(hue);\n    }, [hue]);\n\n    React.useEffect(() => {\n      shaderRef.current?.setSaturation(saturation);\n    }, [saturation]);\n\n    React.useEffect(() => {\n      shaderRef.current?.setBrightness(brightness);\n    }, [brightness]);\n\n    React.useEffect(() => {\n      shaderRef.current?.setSpeed(speed);\n    }, [speed]);\n\n    React.useEffect(() => {\n      shaderRef.current?.setMouseSensitivity(mouseSensitivity);\n    }, [mouseSensitivity]);\n\n    React.useEffect(() => {\n      shaderRef.current?.setMouseDamping(damping);\n    }, [damping]);\n\n    const backgroundSize = noise ? `${noise.scale * 200}%` : undefined;\n\n    return (\n      <div\n        ref={containerRef}\n        className={cn(\n          \"shadertoy-container isolate relative block h-full w-full [&_canvas]:block [&_canvas]:max-w-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:cursor-pointer\",\n          className,\n        )}\n      >\n        {noise && noise.opacity > 0 && (\n          <div\n            className=\"absolute inset-0 z-10 bg-[url(https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png)] bg-repeat\"\n            style={{\n              backgroundSize,\n              backgroundPosition: \"center\",\n              opacity: noise.opacity / 2,\n            }}\n          />\n        )}\n      </div>\n    );\n  },\n);\n\nShaderToy.displayName = \"ShaderToy\";\n",
+      "type": "registry:component",
+      "target": "components/ui/shader-toy.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

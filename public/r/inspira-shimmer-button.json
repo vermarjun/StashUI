@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-shimmer-button",
+  "title": "Shimmer Button",
+  "description": "Button with a conic-gradient shimmer animation that slides and spins within a masked overlay. Configurable shimmer color, speed, border radius, and background. Written at registry/inspira-react/shimmer-button.tsx.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/shimmer-button.tsx",
+      "content": "\"use client\";\nimport React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  shimmerColor?: string;\n  shimmerSize?: string;\n  borderRadius?: string;\n  shimmerDuration?: string;\n  background?: string;\n  className?: string;\n  children?: React.ReactNode;\n}\n\nexport function ShimmerButton({\n  shimmerColor = \"#ffffff\",\n  shimmerSize = \"0.05em\",\n  shimmerDuration = \"3s\",\n  borderRadius = \"100px\",\n  background = \"rgba(0, 0, 0, 1)\",\n  className,\n  children,\n  ...props\n}: ShimmerButtonProps) {\n  return (\n    <>\n      <style>{`\n        @keyframes shimmer-btn-shimmer-slide {\n          to {\n            transform: translate(calc(100cqw - 100%), 0);\n          }\n        }\n        @keyframes shimmer-btn-spin-around {\n          0% { transform: translateZ(0) rotate(0); }\n          15%, 35% { transform: translateZ(0) rotate(90deg); }\n          65%, 85% { transform: translateZ(0) rotate(270deg); }\n          100% { transform: translateZ(0) rotate(360deg); }\n        }\n        .shimmer-btn-slide {\n          animation: shimmer-btn-shimmer-slide var(--speed) ease-in-out infinite alternate;\n        }\n        .shimmer-btn-spin {\n          animation: shimmer-btn-spin-around calc(var(--speed) * 2) infinite linear;\n        }\n      `}</style>\n      <button\n        style={\n          {\n            \"--spread\": \"90deg\",\n            \"--shimmer-color\": shimmerColor,\n            \"--radius\": borderRadius,\n            \"--speed\": shimmerDuration,\n            \"--cut\": shimmerSize,\n            \"--bg\": background,\n          } as React.CSSProperties\n        }\n        className={cn(\n          \"group relative z-0 flex transform-gpu cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-6 py-3 text-white transition-transform duration-300 ease-in-out [background:var(--bg)] [border-radius:var(--radius)] active:translate-y-px dark:text-black\",\n          className,\n        )}\n        {...props}\n      >\n        <div className=\"absolute inset-0 -z-30 overflow-visible blur-[2px] [container-type:size]\">\n          <div className=\"shimmer-btn-slide absolute inset-0 aspect-[1] h-[100cqh] rounded-none [mask:none]\">\n            <div className=\"shimmer-btn-spin absolute -inset-full w-auto rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]\" />\n          </div>\n        </div>\n\n        {children}\n\n        <div className=\"absolute inset-0 size-full transform-gpu rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f] transition-all duration-300 ease-in-out group-hover:shadow-[inset_0_-6px_10px_#ffffff3f] group-active:shadow-[inset_0_-10px_10px_#ffffff3f]\" />\n\n        <div className=\"absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] inset-[var(--cut)]\" />\n      </button>\n    </>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-shimmer-button.tsx"
+    }
+  ],
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:component"
+}

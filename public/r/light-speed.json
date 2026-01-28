@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "light-speed",
+  "title": "Light Speed",
+  "description": "Three.js highway night-drive effect with instanced car lights, road markings, and postprocessing bloom. Logic split into light-speed.tsx (React wrapper), light-speed-app.ts (Three.js engine class), and light-speed-shaders.ts (GLSL shader strings). Requires three and postprocessing npm packages.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/light-speed.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useRef } from \"react\";\nimport type { LightSpeedOptions, LightSpeedProps } from \"@/registry/inspira-react/light-speed-app\";\nimport { defaultOptions, distortions, LightSpeedApp } from \"@/registry/inspira-react/light-speed-app\";\n\nexport function LightSpeed({ effectOptions }: LightSpeedProps) {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  useEffect(() => {\n    if (!containerRef.current) return;\n\n    const mergedOptions: LightSpeedOptions = {\n      ...defaultOptions,\n      ...effectOptions,\n    };\n\n    if (typeof mergedOptions.distortion === \"string\") {\n      mergedOptions.distortion = distortions[mergedOptions.distortion];\n    }\n\n    const lightSpeedApp = new LightSpeedApp(containerRef.current, mergedOptions);\n    lightSpeedApp.loadAssets().then(lightSpeedApp.init);\n\n    return () => {\n      lightSpeedApp.dispose();\n    };\n  }, [effectOptions]);\n\n  return <div ref={containerRef} className=\"block h-full w-full overflow-hidden\" />;\n}\n\nexport type { LightSpeedOptions, LightSpeedProps };\nexport { defaultOptions, distortions };\n",
+      "type": "registry:component",
+      "target": "components/ui/light-speed.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

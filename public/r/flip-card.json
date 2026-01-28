@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "flip-card",
+  "title": "Flip Card",
+  "description": "CSS 3D flip card with configurable rotation axis (x or y). Front content via children prop, back content via back prop. Uses Tailwind perspective and backface-visibility utilities.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/flip-card.tsx",
+      "content": "\"use client\";\n\nimport React, { ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// ─── Types ────────────────────────────────────────────────────────────────────\ninterface FlipCardProps {\n  rotate?: \"x\" | \"y\";\n  className?: string;\n  /** Front face content */\n  children?: ReactNode;\n  /** Back face content */\n  back?: ReactNode;\n}\n\n// ─── Rotation classes ─────────────────────────────────────────────────────────\nconst rotationClasses = {\n  x: {\n    hover: \"group-hover:[transform:rotateX(180deg)]\",\n    back: \"[transform:rotateX(180deg)]\",\n  },\n  y: {\n    hover: \"group-hover:[transform:rotateY(180deg)]\",\n    back: \"[transform:rotateY(180deg)]\",\n  },\n};\n\n// ─── Component ────────────────────────────────────────────────────────────────\nexport function FlipCard({\n  rotate = \"y\",\n  className,\n  children,\n  back,\n}: FlipCardProps) {\n  const { hover, back: backRotation } = rotationClasses[rotate];\n\n  return (\n    <div\n      className={cn(\n        \"group h-72 w-56 [perspective:1000px]\",\n        className\n      )}\n    >\n      <div\n        className={cn(\n          \"relative h-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d]\",\n          hover\n        )}\n      >\n        {/* Front */}\n        <div className=\"absolute size-full overflow-hidden rounded-2xl border [backface-visibility:hidden]\">\n          {children}\n        </div>\n\n        {/* Back */}\n        <div\n          className={cn(\n            \"absolute h-full w-full overflow-hidden rounded-2xl border bg-black/80 p-4 text-slate-200 [backface-visibility:hidden]\",\n            backRotation\n          )}\n        >\n          {back}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/flip-card.tsx"
+    }
+  ],
+  "categories": [
+    "cards"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-interactive-grid-pattern",
+  "title": "Interactive Grid Pattern",
+  "description": "SVG grid where each square highlights on hover with transition animations. State-driven with useState for hovered square tracking.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/interactive-grid-pattern.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface InteractiveGridPatternProps {\n  className?: string;\n  squaresClassName?: string;\n  width?: number;\n  height?: number;\n  squares?: [number, number];\n}\n\nexport function InteractiveGridPattern({\n  className,\n  squaresClassName,\n  width = 40,\n  height = 40,\n  squares = [24, 24],\n}: InteractiveGridPatternProps) {\n  const [horizontal, vertical] = squares;\n  const totalSquares = horizontal * vertical;\n  const [hoveredSquare, setHoveredSquare] = useState<number | null>(null);\n\n  const gridWidth = width * horizontal;\n  const gridHeight = height * vertical;\n\n  function getX(index: number) {\n    return (index % horizontal) * width;\n  }\n\n  function getY(index: number) {\n    return Math.floor(index / horizontal) * height;\n  }\n\n  return (\n    <svg\n      width={gridWidth}\n      height={gridHeight}\n      className={cn(\n        \"absolute inset-0 h-full w-full border border-gray-400/30\",\n        className\n      )}\n    >\n      {Array.from({ length: totalSquares }).map((_, index) => (\n        <rect\n          key={index}\n          x={getX(index)}\n          y={getY(index)}\n          width={width}\n          height={height}\n          className={cn(\n            \"stroke-gray-400/30 transition-all duration-100 ease-in-out\",\n            hoveredSquare === index ? \"fill-gray-300/30\" : \"fill-transparent\",\n            \"[&:not(:hover)]:duration-1000\",\n            squaresClassName\n          )}\n          onMouseEnter={() => setHoveredSquare(index)}\n          onMouseLeave={() => setHoveredSquare(null)}\n        />\n      ))}\n    </svg>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-interactive-grid-pattern.tsx"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:component"
+}

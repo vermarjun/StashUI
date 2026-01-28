@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-scales",
+  "title": "Scales",
+  "description": "Repeating linear-gradient pattern background with configurable orientation (horizontal/vertical/diagonal), size, and color. Written at registry/inspira-react/scales.tsx.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/scales.tsx",
+      "content": "\"use client\";\nimport React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ScalesProps {\n  orientation?: \"horizontal\" | \"vertical\" | \"diagonal\";\n  size?: number;\n  className?: string;\n  color?: string;\n  containerClassName?: string;\n  children?: React.ReactNode;\n}\n\nfunction getGradientAngle(orientation: \"horizontal\" | \"vertical\" | \"diagonal\"): string {\n  switch (orientation) {\n    case \"horizontal\":\n      return \"0deg\";\n    case \"vertical\":\n      return \"90deg\";\n    case \"diagonal\":\n    default:\n      return \"315deg\";\n  }\n}\n\nexport function Scales({\n  orientation = \"diagonal\",\n  size = 10,\n  color,\n  className,\n  containerClassName,\n  children,\n}: ScalesProps) {\n  const angle = getGradientAngle(orientation);\n\n  return (\n    <div className={cn(\"relative h-full w-full\", containerClassName)}>\n      <div\n        className={cn(\n          \"absolute inset-0 h-full w-full overflow-hidden\",\n          \"[--pattern-scales:oklch(0.145_0_0)]/10\",\n          \"dark:[--pattern-scales:white]/10\",\n          className,\n        )}\n        style={\n          {\n            \"--scales-size\": `${size}px`,\n            \"--scales-angle\": angle,\n            ...(color ? { \"--pattern-scales\": color } : {}),\n          } as React.CSSProperties\n        }\n      >\n        <div\n          className=\"h-full w-full bg-[repeating-linear-gradient(var(--scales-angle),var(--pattern-scales)_0,var(--pattern-scales)_1px,transparent_0,transparent_50%)]\"\n          style={{ backgroundSize: \"var(--scales-size) var(--scales-size)\" }}\n        />\n      </div>\n      <div className=\"relative z-10\">{children}</div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-scales.tsx"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:component"
+}

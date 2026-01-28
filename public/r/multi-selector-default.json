@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "multi-selector-default",
+  "title": "Multi Selector Default",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/multiple-selector.tsx",
+      "content": "'use client';\n\nimport { MultiSelect } from '@/registry/ui-layouts/multi-selector';\nimport { Cat, Dog, Fish, Rabbit, Turtle } from 'lucide-react';\nimport React, { useState } from 'react';\n\nconst frameworksList = [\n  { value: 'react', label: 'React', icon: Turtle, disable: true },\n  { value: 'nextjs', label: 'Nextjs', icon: Cat },\n  { value: 'vue', label: 'Vue', icon: Dog },\n  { value: 'svelte', label: 'Svelte', icon: Rabbit },\n  { value: 'ember', label: 'Ember', icon: Fish },\n];\n\nfunction Home() {\n  const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>(['nextjs', 'svelte']);\n\n  return (\n    <div className='py-20 w-96 mx-auto'>\n      <MultiSelect\n        options={frameworksList}\n        onValueChange={setSelectedFrameworks}\n        defaultValue={selectedFrameworks}\n        placeholder='Select frameworks'\n        popoverClass='w-96'\n        maxCount={3}\n      />\n      {/* <div className='mt-4'>\n        <h2 className='text-xl font-semibold'>Selected Frameworks:</h2>\n        <ul className='list-disc list-inside'>\n          {selectedFrameworks.map((framework) => (\n            <li key={framework}>{framework}</li>\n          ))}\n        </ul>\n      </div> */}\n    </div>\n  );\n}\n\nexport default Home;\n",
+      "type": "registry:component",
+      "target": "components/ui/multi-selector-default.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

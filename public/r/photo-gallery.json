@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "photo-gallery",
+  "title": "Photo Gallery",
+  "description": "CSS diamond clip-path gallery grid that expands hovered images to a rectangle and dims the rest using :has() selector. Scoped styles converted to an injected <style> block.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/photo-gallery.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// The gallery uses CSS :has() selector tricks for the hover dim effect,\n// and clip-path polygon animation on hover. These are injected as a global\n// <style> block because CSS :has() with pseudo-classes isn't expressible\n// in Tailwind utility classes alone.\n\nconst GALLERY_STYLES = `\n.pg-gallery {\n  --pg-size: 100px;\n  grid-auto-rows: var(--pg-size);\n  margin-bottom: var(--pg-size);\n}\n\n.pg-gallery:has(.pg-img:hover) .pg-img:not(:hover),\n.pg-gallery:has(.pg-img:focus) .pg-img:not(:focus) {\n  filter: brightness(0.5) contrast(0.5);\n}\n\n.pg-img {\n  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);\n  grid-column: auto / span 2;\n  transition: clip-path 75ms, filter 75ms;\n}\n\n.pg-img:nth-child(5n-1) {\n  grid-column: 2 / span 2;\n}\n\n.pg-img:hover,\n.pg-img:focus {\n  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);\n  z-index: 1;\n  transition: clip-path 0.25s, filter 0.25s;\n  filter: saturate(150%);\n}\n\n.pg-img:focus {\n  outline: 10px dashed black;\n  outline-offset: -5px;\n}\n`;\n\nexport interface PhotoGalleryItem {\n  src: string;\n}\n\nexport interface PhotoGalleryProps {\n  items: PhotoGalleryItem[];\n  containerClass?: string;\n  imageClass?: string;\n  /** Cell size in px (default 100) */\n  size?: number;\n}\n\nexport const PhotoGallery = React.forwardRef<\n  HTMLDivElement,\n  PhotoGalleryProps & React.HTMLAttributes<HTMLDivElement>\n>(({ items, containerClass, imageClass, size = 100, className, ...props }, ref) => {\n  return (\n    <>\n      <style>{GALLERY_STYLES}</style>\n      <div\n        ref={ref}\n        className={cn(\"pg-gallery grid grid-cols-6 gap-1\", containerClass, className)}\n        style={{ \"--pg-size\": `${size}px` } as React.CSSProperties}\n        {...props}\n      >\n        {items.map((image, index) => (\n          <img\n            key={index}\n            src={image.src}\n            alt={`image-${index}`}\n            // size * 2 for the diamond shape height/width\n            style={{ width: `${size * 2}px`, height: `${size * 2}px` }}\n            className={cn(\n              \"pg-img rounded object-cover\",\n              imageClass,\n            )}\n          />\n        ))}\n      </div>\n    </>\n  );\n});\nPhotoGallery.displayName = \"PhotoGallery\";\n",
+      "type": "registry:component",
+      "target": "components/ui/photo-gallery.tsx"
+    }
+  ],
+  "categories": [
+    "effects"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-island",
+  "title": "Scroll Island",
+  "description": "Fixed dynamic island that tracks page scroll percentage with an animated circular progress bar and expandable content panel. Uses motion/react spring transitions. Written at registry/inspira-react/scroll-island.tsx.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/scroll-island.tsx",
+      "content": "\"use client\";\nimport React, { useEffect, useRef, useState } from \"react\";\nimport { motion, MotionConfig } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\nimport { AnimatedCircularProgressBar } from \"@/registry/inspira-react/animated-circular-progressbar\";\n\ninterface ScrollIslandProps {\n  className?: string;\n  title?: string;\n  height?: number;\n  children?: React.ReactNode;\n}\n\nexport function ScrollIsland({\n  className = \"\",\n  title = \"Progress\",\n  height = 44,\n  children,\n}: ScrollIslandProps) {\n  const [open, setOpen] = useState(false);\n  const [scrollPercentage, setScrollPercentage] = useState(0);\n  const [isDark, setIsDark] = useState(false);\n  const hasChildren = Boolean(children);\n  const borderRadius = `${height / 2}px`;\n\n  useEffect(() => {\n    setIsDark(document.documentElement.classList.contains(\"dark\"));\n\n    const observer = new MutationObserver(() => {\n      setIsDark(document.documentElement.classList.contains(\"dark\"));\n    });\n    observer.observe(document.documentElement, { attributes: true, attributeFilter: [\"class\"] });\n\n    return () => observer.disconnect();\n  }, []);\n\n  useEffect(() => {\n    function updatePageScroll() {\n      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);\n      setScrollPercentage(isNaN(pct) ? 0 : pct);\n    }\n\n    window.addEventListener(\"scroll\", updatePageScroll);\n    updatePageScroll();\n    return () => window.removeEventListener(\"scroll\", updatePageScroll);\n  }, []);\n\n  return (\n    <MotionConfig\n      transition={{\n        duration: 0.7,\n        type: \"spring\",\n        bounce: 0.5,\n      }}\n    >\n      <div\n        className={cn(\n          \"fixed left-1/2 top-12 z-[999] -translate-x-1/2 bg-primary/90 backdrop-blur-lg\",\n          className,\n        )}\n        style={{ borderRadius }}\n        onClick={() => setOpen((v) => !v)}\n      >\n        <motion.div\n          layout\n          initial={{ height, width: 0 }}\n          animate={{\n            height: open && hasChildren ? \"auto\" : height,\n            width: open && hasChildren ? 320 : 260,\n          }}\n          className=\"relative cursor-pointer overflow-hidden bg-neutral-900 text-secondary\"\n        >\n          <header className=\"flex h-11 cursor-pointer items-center gap-2 px-4\">\n            <AnimatedCircularProgressBar\n              value={scrollPercentage * 100}\n              min={0}\n              max={100}\n              circleStrokeWidth={10}\n              className=\"w-6\"\n              showPercentage={false}\n              duration={0.3}\n              gaugeSecondaryColor={isDark ? \"#6b728055\" : \"#6b728099\"}\n              gaugePrimaryColor={isDark ? \"black\" : \"white\"}\n            />\n            <h1 className=\"grow text-center font-bold\">{title}</h1>\n            <span className=\"tabular-nums\">\n              {Math.round(scrollPercentage * 100)}%\n            </span>\n          </header>\n          {hasChildren && (\n            <motion.div className=\"mb-2 flex h-full max-h-60 flex-col gap-1 overflow-y-auto px-4 text-sm\">\n              {children}\n            </motion.div>\n          )}\n        </motion.div>\n      </div>\n    </MotionConfig>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/scroll-island.tsx"
+    }
+  ],
+  "categories": [
+    "misc"
+  ],
+  "type": "registry:component"
+}

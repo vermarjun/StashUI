@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stats-minimal",
+  "title": "Stats Minimal",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/stats-minimal.tsx",
+      "content": "import React from 'react'\r\n\r\nconst stats = [\r\n  { label: 'Active Users', value: '1.2M+' },\r\n  { label: 'Uptime', value: '99.9%' },\r\n  { label: 'Response Time', value: '42ms' },\r\n  { label: 'Global Edge', value: '250+' },\r\n]\r\n\r\nexport const MinimalStats = () => {\r\n  return (\r\n    <section className=\"bg-white min-h-screen flex flex-col justify-center font-manrope\">\r\n      <div className=\"max-w-7xl mx-auto px-5\">\r\n        <div className=\"flex justify-between\">\r\n          {stats.map((stat) => (\r\n            <div\r\n              key={stat.label}\r\n              className=\"flex flex-col gap-1 border-l border-zinc-200 px-6 py-2 hover:bg-zinc-200\"\r\n            >\r\n              <p className=\"text-3xl font-bold tracking-tight text-zinc-900 \">\r\n                {stat.value}\r\n              </p>\r\n              <p className=\"text-xs font-medium text-zinc-500 uppercase tracking-widest\">\r\n                {stat.label}\r\n              </p>\r\n            </div>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </section>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/ui/stats-minimal.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

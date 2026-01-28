@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spotlight-card",
+  "title": "Spotlight Card",
+  "description": "A card with a cursor-following radial spotlight over its surface.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/cards/spotlight-card.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface SpotlightCardProps\n  extends React.ComponentPropsWithoutRef<\"div\"> {\n  /** Radius of the spotlight in pixels. */\n  radius?: number;\n  /** Spotlight color (any valid CSS color). */\n  color?: string;\n}\n\n/**\n * A card with a cursor-following radial spotlight on its border/surface.\n * The spotlight is driven by CSS variables updated on pointer move.\n */\nexport const SpotlightCard = React.forwardRef<\n  HTMLDivElement,\n  SpotlightCardProps\n>(\n  (\n    {\n      radius = 350,\n      color = \"color-mix(in oklch, var(--foreground) 12%, transparent)\",\n      className,\n      children,\n      ...props\n    },\n    ref,\n  ) => {\n    const localRef = React.useRef<HTMLDivElement>(null);\n    React.useImperativeHandle(ref, () => localRef.current as HTMLDivElement);\n    const [active, setActive] = React.useState(false);\n\n    const onMove = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {\n      const el = localRef.current;\n      if (!el) return;\n      const rect = el.getBoundingClientRect();\n      el.style.setProperty(\"--x\", `${e.clientX - rect.left}px`);\n      el.style.setProperty(\"--y\", `${e.clientY - rect.top}px`);\n    }, []);\n\n    return (\n      <div\n        ref={localRef}\n        onMouseMove={onMove}\n        onMouseEnter={() => setActive(true)}\n        onMouseLeave={() => setActive(false)}\n        style={\n          {\n            \"--radius\": `${radius}px`,\n            \"--spotlight\": color,\n          } as React.CSSProperties\n        }\n        className={cn(\n          \"group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-card-foreground shadow-sm\",\n          className,\n        )}\n        {...props}\n      >\n        <div\n          aria-hidden\n          className=\"pointer-events-none absolute inset-0 transition-opacity duration-300\"\n          style={{\n            opacity: active ? 1 : 0,\n            background:\n              \"radial-gradient(var(--radius) circle at var(--x) var(--y), var(--spotlight), transparent 70%)\",\n          }}\n        />\n        <div className=\"relative\">{children}</div>\n      </div>\n    );\n  },\n);\n\nSpotlightCard.displayName = \"SpotlightCard\";\n",
+      "type": "registry:component",
+      "target": "components/ui/spotlight-card.tsx"
+    }
+  ],
+  "categories": [
+    "cards"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-texts-shimmering",
+  "title": "Shimmering Text Demo",
+  "description": "Demo showing an animated shimmering text.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@animate-ui/primitives-texts-shimmering"
+  ],
+  "files": [
+    {
+      "path": "registry/animate-ui/demo-primitives-texts-shimmering.tsx",
+      "content": "import { ShimmeringText } from '@/components/animate-ui/primitives/texts/shimmering';\n\ninterface ShimmeringTextDemoProps {\n  wave: boolean;\n  duration: number;\n}\n\nexport const ShimmeringTextDemo = ({\n  wave,\n  duration,\n}: ShimmeringTextDemoProps) => {\n  return (\n    <ShimmeringText\n      key={`${wave}-${duration}`}\n      className=\"text-4xl font-semibold\"\n      wave={wave}\n      duration={duration}\n      text=\"Shimmering Text\"\n    />\n  );\n};\n",
+      "type": "registry:component",
+      "target": "components/ui/demo-primitives-texts-shimmering.tsx"
+    }
+  ],
+  "categories": [
+    "Animate UI"
+  ],
+  "type": "registry:component"
+}

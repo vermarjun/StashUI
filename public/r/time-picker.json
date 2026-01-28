@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-picker",
+  "title": "Time Picker",
+  "description": "Ui-Layouts component.",
+  "dependencies": [
+    "chrono-node@latest",
+    "react-day-picker@^8.9.1"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/time-picker.tsx",
+      "content": "'use client';\n\nimport { SmartDatetimeInput } from '@/registry/ui-layouts/datetime-input';\nimport React, { useState } from 'react';\n\nexport default function Component() {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);\n\n  const handleDateChange = (date: Date) => {\n    setSelectedDate(date);\n    console.log('Selected date:', date);\n  };\n\n  return (\n    <div className='p-4 max-w-md mx-auto py-10'>\n      <SmartDatetimeInput\n        value={selectedDate}\n        showCalendar={false}\n        showTimePicker={true}\n        onValueChange={handleDateChange}\n        placeholder='Enter a date and time'\n        className='lg:w-96'\n      />\n      {/* {selectedDate && (\n        <p className='mt-4'>Selected Date: {selectedDate.toLocaleString()}</p>\n      )} */}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/time-picker.tsx"
+    }
+  ],
+  "categories": [
+    "Ui-Layouts"
+  ],
+  "type": "registry:component"
+}

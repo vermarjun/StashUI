@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inspira-spinning-text",
+  "title": "Spinning Text",
+  "description": "Circular spinning text where each character is positioned radially around a center point. Supports forward/reverse rotation, configurable radius and duration via framer-motion.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/inspira-react/spinning-text.tsx",
+      "content": "\"use client\";\n\nimport React, { useMemo } from \"react\";\nimport { motion } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface SpinningTextProps {\n  text: string;\n  duration?: number;\n  className?: string;\n  reverse?: boolean;\n  radius?: number;\n  transition?: {\n    duration?: number;\n    ease?: string;\n    [key: string]: unknown;\n  };\n  variants?: {\n    container?: Record<string, unknown>;\n    item?: Record<string, unknown>;\n  };\n}\n\nconst BASE_TRANSITION = {\n  repeat: Infinity,\n  ease: \"linear\" as const,\n};\n\nconst BASE_ITEM_VARIANTS = {\n  hidden: { opacity: 1 },\n  visible: { opacity: 1 },\n};\n\nexport function SpinningText({\n  text,\n  duration = 10,\n  className,\n  reverse = false,\n  radius = 5,\n  transition,\n  variants,\n}: SpinningTextProps) {\n  const letters = useMemo(() => {\n    const chars = text.split(\"\");\n    chars.push(\" \");\n    return chars;\n  }, [text]);\n\n  const finalTransition = useMemo(\n    () => ({\n      ...BASE_TRANSITION,\n      ...transition,\n      duration: transition?.duration ?? duration,\n    }),\n    [transition, duration],\n  );\n\n  const containerVariants = useMemo(\n    () => ({\n      hidden: {},\n      visible: { rotate: reverse ? -360 : 360 },\n      ...variants?.container,\n    }),\n    [reverse, variants?.container],\n  );\n\n  const itemVariants = useMemo(\n    () => ({\n      ...BASE_ITEM_VARIANTS,\n      ...variants?.item,\n    }),\n    [variants?.item],\n  );\n\n  return (\n    <motion.div\n      initial=\"hidden\"\n      animate=\"visible\"\n      variants={containerVariants}\n      transition={finalTransition}\n      className={cn(\"relative\", className)}\n    >\n      {letters.map((letter, index) => (\n        <motion.span\n          key={`${letter}-${index}`}\n          variants={itemVariants}\n          className=\"absolute top-1/2 left-1/2\"\n          style={{\n            transform: `\n              translate(-50%, -50%)\n              rotate(${(360 / letters.length) * index}deg)\n              translateY(${radius * -1}ch)\n            `,\n            transformOrigin: \"center\",\n          }}\n        >\n          {letter}\n        </motion.span>\n      ))}\n    </motion.div>\n  );\n}\n\nexport default SpinningText;\n",
+      "type": "registry:component",
+      "target": "components/ui/inspira-spinning-text.tsx"
+    }
+  ],
+  "categories": [
+    "text"
+  ],
+  "type": "registry:component"
+}
