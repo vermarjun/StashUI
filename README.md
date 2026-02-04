@@ -1,193 +1,89 @@
-# my/ui — personal component library
+# my/ui
 
-A clean, personal component library built on **shadcn** that aggregates
-**~2,000 components** from many open-source libraries into one searchable place —
-so you never hop between 15 bookmarked sites again.
+A personal component library with a built in gallery. Browse the components,
+preview them live, copy the source, or install any of them into a shadcn
+project with a single command.
 
-- 🔍 **Browse by library** + global `⌘K` search across everything
-- 🖼️ **Live previews** (lazy-loaded), **copy** source, and **install** any
-  component into any shadcn project: `npx shadcn@latest add <your-url>/r/<name>.json`
-- 🏷️ **React / Next.js badges** per component + **source attribution** on detail
-  pages for components imported as-is
-- 🌗 Minimal monochrome shell (Geist + neutral theme), light/dark
+It is one searchable home for the React components I reuse across projects.
 
-### What's inside (~2,055 components, 15 categories)
+## Features
 
-| Source | Count | | Source | Count |
-| --- | --- | --- | --- | --- |
-| Animate UI | 573 | | Aceternity UI | 116 |
-| Origin UI | 550 | | Cult UI | 72 |
-| Ui-Layouts | 235 | | Magic UI | 72 |
-| Gradients (WebGradients) | 174 | | **Mine** (hand-built + Vue ports) | 133 |
-| React Bits | 130 | | | |
-
-Imported libraries are **credited** (link on each detail page). **Inspira UI**
-(Vue) was **ported to React** and is treated as mine (no credit). Paid libraries
-(Skiper, Efferd) and Aceternity's Pro blocks were skipped automatically.
+- Browse and search the whole library with a `Cmd+K` command palette
+- Live, lazy loaded previews for every component
+- Copy the source, or install with `npx shadcn@latest add <url>/r/<name>.json`
+- A React and Next.js compatibility badge on each component
+- Minimal monochrome theme with light and dark modes
 
 ## Stack
 
-Next.js 15 (App Router) · React 19 · Tailwind v4 · shadcn (radix-nova) ·
-shiki (syntax highlighting) · next-themes.
+Next.js 15 (App Router), React 19, Tailwind v4, shadcn, shiki, next-themes.
 
-## Run it
+## Getting started
 
 ```bash
-npm run dev          # start the gallery (http://localhost:3000)
-npm run registry     # regenerate gallery data + build installable JSON
-npm run build        # production build (all detail pages prerender via SSG)
+npm install
+npm run dev        # start the gallery at http://localhost:3000
+npm run registry   # regenerate gallery data and installable JSON
+npm run build      # production build
 ```
-
-> Note: this machine has a stray root-owned npm cache. If an install fails with
-> `EACCES`, prefix the command with `npm_config_cache=/tmp/npmcache-myui` (or
-> run `sudo chown -R $(id -u):$(id -g) ~/.npm` once to fix it permanently).
 
 ## How it works
 
-There is **one source of truth on disk** and everything else is generated.
+There is one source of truth on disk and everything else is generated.
 
 ```
-registry.json                 ← the manifest: one entry per component
+registry.json                 the manifest, one entry per component
 registry/<category>/
-  <name>.tsx                  ← the component itself
-  <name>.demo.tsx             ← the live preview / usage example
-scripts/build-registry.mjs    ← generator (reads the two above)
-src/__registry__/*.gen.ts     ← GENERATED gallery data (do not edit)
-public/r/<name>.json          ← GENERATED installable items (shadcn build)
+  <name>.tsx                  the component
+  <name>.demo.tsx             a usage example shown as the live preview
+scripts/build-registry.mjs    the generator
+src/__registry__/*.gen.ts     generated gallery data (do not edit)
+public/r/<name>.json          generated installable items
 ```
 
-`npm run registry` runs the generator (which inlines each component's source +
-wires up its demo) and then `shadcn build` (which emits the installable
-`public/r/*.json`). The Next.js app reads the generated data to render the
-gallery and the per-component detail pages at `/c/<name>`.
+`npm run registry` runs the generator, which inlines each component's source and
+wires up its demo, then builds the installable `public/r/*.json` files. The app
+reads the generated data to render the gallery and the per component detail page
+at `/c/<name>`.
 
-## 📥 Importing more libraries (the pipeline)
+## Adding a component
 
-Bulk-importing is fully scripted. To add another shadcn-compatible registry:
-
-1. Add an entry to `scripts/libraries.json` (`indexUrl`, `perComponentUrl`
-   template, `attributionBase`, optional `indexTypeIn` filter).
-2. Run the pipeline:
-
-   ```bash
-   npm run import                  # fetch all components -> registry/<slug>/
-   node scripts/fix-imports.mjs    # normalize @/ui, @/lib/utils, @/hooks imports
-   node scripts/regen-demos.mjs    # fill missing demos (skips existing)
-   node scripts/validate-build.mjs --apply   # esbuild ground-truth: drop demos that can't compile
-   npm run registry                # regenerate data + build installable /r/*.json
-   ```
-
-What the scripts do:
-
-| Script | Job |
-| --- | --- |
-| `scripts/import-lib.mjs` | Fetches each component's registry JSON (concurrent), namespaces by library, rewrites internal imports, writes attribution to `registry/sources.json` |
-| `scripts/import-gradients.mjs` | Imports WebGradients presets as components |
-| `scripts/fix-imports.mjs` | Maps vendor `.../ui/*`, `.../lib/utils`, `.../hooks/*` imports onto our tree |
-| `scripts/validate-build.mjs` | Bundles every demo with esbuild (real resolution + syntax, matching Turbopack); removes only the demos that can't compile so the component stays listed without a preview |
-| `scripts/resolve-check.mjs` | Static import/primitive gap report |
-
-The `validate-build` step is what keeps the build green at this scale — a broken
-vendor component degrades to "Preview unavailable" instead of breaking the app.
-
-> Ported Vue components (Inspira UI) live in `registry/inspira-react/` and are
-> merged via `scripts/merge-ported.mjs` with `ported: true` (no credit shown).
-
-## ➕ Add a new component
-
-1. **Create two files** under a category folder, e.g. for a button:
+1. Create two files in a category folder:
 
    ```
-   registry/buttons/my-thing.tsx        # the component
-   registry/buttons/my-thing.demo.tsx   # default-exports a usage example
+   registry/buttons/my-thing.tsx        the component
+   registry/buttons/my-thing.demo.tsx   default exports a usage example
    ```
 
-   The component should only import from `@/lib/utils` (and any shadcn
-   primitives) so it installs cleanly into other projects. The demo imports the
-   component via `@/registry/<category>/my-thing`.
+   The component should only import from `@/lib/utils` and shadcn primitives so
+   it installs cleanly into other projects.
 
-2. **Add one entry to `registry.json`:**
+2. Add one entry to `registry.json` with the name, title, description, category,
+   dependencies, and file paths.
 
-   ```json
-   {
-     "name": "my-thing",
-     "type": "registry:component",
-     "title": "My Thing",
-     "description": "What it does, in one line.",
-     "categories": ["buttons"],
-     "registryDependencies": [],
-     "dependencies": [],
-     "files": [
-       {
-         "path": "registry/buttons/my-thing.tsx",
-         "type": "registry:component",
-         "target": "components/ui/my-thing.tsx"
-       }
-     ]
-   }
-   ```
+3. Run `npm run registry`. The component now has a live preview, a copy button,
+   a detail page, and an installable URL.
 
-   - `registryDependencies`: other shadcn components it needs (e.g. `"button"`).
-   - `dependencies`: npm packages it needs (e.g. `"motion"`).
-   - If it needs custom keyframes, add a `css` / `cssVars` block (see the
-     existing `marquee` / `shimmer-button` entries) so installs are
-     self-contained.
+## Cross framework compatibility
 
-3. **Regenerate:**
+Every component is universal. It installs and runs the same in plain React
+(Vite), Next.js, Remix, or Astro, and the install command is identical
+everywhere. Three rules keep it that way:
 
-   ```bash
-   npm run registry
-   ```
+1. No framework specific imports. Avoid `next/link`, `next/image`, and the like.
+   Use the `asChild` pattern for links and a plain `<img>` for images.
+2. `"use client"` is fine. It is a no op outside Next.js, so keep it on anything
+   that uses hooks or state.
+3. Guard browser APIs. Read `window` and `document` inside `useEffect` or behind
+   a mounted flag so server rendering does not break.
 
-   The component now has a live preview, a copy button, a detail page, and an
-   installable URL. New categories appear automatically.
-
-## Cross-framework compatibility (React + Next.js + …)
-
-Every component here is meant to be **universal** — it installs and runs the same
-in a plain React + TypeScript project (Vite/CRA), Next.js, Remix, Astro, etc.
-The install command is identical everywhere: `npx shadcn add <url>`.
-
-The gallery shows a **React / Next.js badge** on each component, and
-`npm run registry` **auto-checks** every component, warning you if one isn't
-portable. To stay universal, follow three rules when adding/pasting components:
-
-1. **No framework-specific imports.** Don't import `next/link`, `next/image`,
-   `next/navigation`, `next/font`, etc. The generator flags these automatically.
-   - Need a link? Use the polymorphic `asChild` pattern so the consumer supplies
-     their own link element (see `gradient-button.tsx`):
-     ```tsx
-     <GradientButton asChild>
-       <Link href="/x">Go</Link>   {/* or <a>, or Remix <Link> */}
-     </GradientButton>
-     ```
-   - Need an image? Take `src`/`alt` props and render a plain `<img>`.
-2. **`"use client"` is fine.** It's a no-op outside Next.js — bundlers ignore it.
-   Keep it on any component that uses hooks/state/effects.
-3. **Guard browser APIs.** Code that touches `window`/`document` during render
-   breaks Next's server render (it's fine in CSR-only Vite, so it's easy to miss).
-   Read them inside `useEffect`, or gate with a mounted flag:
-   ```tsx
-   const [mounted, setMounted] = React.useState(false);
-   React.useEffect(() => setMounted(true), []);
-   if (!mounted) return null; // or a skeleton
-   ```
-
-If a component genuinely must be Next-only, that's allowed — it'll just show a
-single **Next.js** badge instead of both.
-
-## Where things live
-
-| Path | What |
-| --- | --- |
-| `src/app/page.tsx` | The gallery (grouped by category) |
-| `src/app/c/[name]/page.tsx` | Per-component detail page |
-| `src/components/site/*` | Gallery shell (header, sidebar, previews, code, ⌘K) |
-| `src/components/ui/*` | shadcn primitives |
-| `registry/*` | Your components (the library itself) |
+`npm run registry` checks every component and warns if one is not portable.
 
 ## Deploy
 
-Push to GitHub and import on Vercel — zero config. After deploying, your
-install URLs become `https://<your-domain>/r/<name>.json`. The detail pages
-already show the live command with the correct origin.
+Push to GitHub and import the repo on Vercel with zero config. After deploying,
+the install URLs become `https://<your-domain>/r/<name>.json`.
+
+## License
+
+MIT
