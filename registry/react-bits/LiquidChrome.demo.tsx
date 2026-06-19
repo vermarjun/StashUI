@@ -4,7 +4,7 @@ import { LiquidChrome } from "@/registry/react-bits/LiquidChrome";
 
 export default function Demo() {
   return (
-    <div className="w-full h-[500px] rounded-lg overflow-hidden">
+    <div className="w-full h-[600px] rounded-lg overflow-hidden">
       <LiquidChrome
         baseColor={[0.1, 0.1, 0.1]}
         speed={0.2}

@@ -4,7 +4,7 @@ import { ParticlesBg } from "@/registry/inspira-react/particles-bg";
 
 export default function ParticlesBgDemo() {
   return (
-    <div className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border bg-background">
+    <div className="relative flex h-[600px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background">
       <ParticlesBg
         color="#6366f1"
         quantity={120}

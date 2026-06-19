@@ -5,11 +5,9 @@ import type { Metadata } from "next";
 
 import { getEntry } from "@/__registry__/registry.gen";
 import { highlight } from "@/lib/shiki";
-import { categoryConfig } from "@/lib/categories";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ComponentPreview } from "@/components/site/component-preview";
+import { DetailPreview } from "@/components/site/detail-preview";
 import { CodeBlock, InstallCommand } from "@/components/site/code-block";
 import { CopyButton } from "@/components/site/copy-button";
 import { FrameworkBadges } from "@/components/site/framework-badges";
@@ -80,13 +78,7 @@ export default async function ComponentPage({
       </div>
 
       <div className="mt-8 space-y-8">
-        <ComponentPreview
-          name={entry.name}
-          designWidth={categoryConfig(entry.category).designWidth}
-          eager
-          interactive
-          className="rounded-xl border border-border"
-        />
+        <DetailPreview name={entry.name} />
 
         <div>
           <h2 className="mb-2 text-sm font-semibold">Install</h2>

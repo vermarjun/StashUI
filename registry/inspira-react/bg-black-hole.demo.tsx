@@ -4,7 +4,7 @@ import { BlackHoleBackground } from "@/registry/inspira-react/bg-black-hole";
 
 export default function BlackHoleBackgroundDemo() {
   return (
-    <div className="relative h-96 w-full bg-white dark:bg-black">
+    <div className="relative h-[600px] w-full bg-white dark:bg-black">
       <BlackHoleBackground
         strokeColor="#737373"
         numberOfLines={50}

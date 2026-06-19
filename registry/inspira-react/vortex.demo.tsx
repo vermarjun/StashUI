@@ -4,7 +4,7 @@ import { Vortex } from "@/registry/inspira-react/vortex";
 
 export default function VortexDemo() {
   return (
-    <div className="h-screen w-full overflow-hidden">
+    <div className="relative h-[600px] w-full overflow-hidden">
       <Vortex
         backgroundColor="#000000"
         baseHue={220}

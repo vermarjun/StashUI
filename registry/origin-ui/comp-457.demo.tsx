@@ -1,5 +1,15 @@
+"use client";
+
+import { useState } from "react";
+
 import Cmp from "@/registry/origin-ui/comp-457";
 
 export default function Demo() {
-  return <Cmp />;
+  const [page, setPage] = useState(3);
+  const total = 10;
+  return (
+    <div className="w-full max-w-xs">
+      <Cmp currentPage={page} totalPages={total} />
+    </div>
+  );
 }

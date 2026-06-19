@@ -4,7 +4,7 @@ import Particles from "@/registry/react-bits/Particles";
 
 export default function Demo() {
   return (
-    <div className="w-full h-[400px] bg-black rounded-xl overflow-hidden relative">
+    <div className="w-full h-[600px] bg-black rounded-xl overflow-hidden relative">
       <Particles
         particleCount={200}
         particleSpread={10}

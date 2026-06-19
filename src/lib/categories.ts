@@ -48,6 +48,7 @@ export const CATEGORY_CONFIG: CategoryConfig[] = [
   { slug: "gradients", label: "Gradients", cols: 4, designWidth: 520 },
   { slug: "media", label: "Media", cols: 2, designWidth: 900 },
   { slug: "data-display", label: "Data Display", cols: 2, designWidth: 760 },
+  { slug: "dashboards", label: "Dashboards", cols: 1, designWidth: 1280 },
   { slug: "misc", label: "Misc", cols: 3, designWidth: 700 },
 ];
 

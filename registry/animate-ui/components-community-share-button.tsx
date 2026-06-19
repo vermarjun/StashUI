@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Share2, Github, X, Facebook } from 'lucide-react';
+import { Share2, X } from 'lucide-react';
+import { FaGithub, FaFacebookF } from 'react-icons/fa';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { HTMLMotionProps, motion, AnimatePresence } from 'motion/react';
 
@@ -154,7 +155,7 @@ function ShareIconGroup({
         className="group-hover:opacity-100 cursor-pointer py-3 rounded-lg box-border"
         onClick={(event) => handleIconClick('github', event)}
       >
-        <Github size={iconSize} />
+        <FaGithub size={iconSize} />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -180,7 +181,7 @@ function ShareIconGroup({
         className="group-hover:opacity-100 cursor-pointer py-3 rounded-lg box-border"
         onClick={(event) => handleIconClick('facebook', event)}
       >
-        <Facebook size={iconSize} />
+        <FaFacebookF size={iconSize} />
       </motion.div>
     </motion.div>
   );

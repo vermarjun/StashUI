@@ -17,11 +17,11 @@ export interface LibraryInfo {
   url: string;
 }
 
-export const categories = ["buttons","cards","effects","text","backgrounds","tooltips","carousels","media","navigation","inputs","heroes","gradients","misc","loaders","borders","modals","file-upload","data-display","testimonials","notifications","badges","avatars","sliders","accordions","forms","calendar","selects","pricing","footers","checkboxes","tables"] as const;
+export const categories = ["buttons","cards","effects","text","backgrounds","tooltips","carousels","media","navigation","inputs","heroes","gradients","misc","loaders","borders","modals","file-upload","data-display","testimonials","notifications","badges","avatars","sliders","accordions","forms","calendar","selects","pricing","footers","checkboxes","tables","dashboards"] as const;
 export type Category = (typeof categories)[number];
 
 /** Categories we authored or ported (treated as our own). */
-export const ownCategories = [] as const;
+export const ownCategories = ["dashboards"] as const;
 
 /** External libraries we imported components from (as-is, credited). */
 export const libraries: LibraryInfo[] = [
@@ -5773,6 +5773,7 @@ export const componentsMeta: ComponentMeta[] = [
     "description": "Ui-Layouts component.",
     "category": "accordions",
     "frameworks": [
+      "react",
       "next"
     ],
     "library": "Ui-Layouts",
@@ -6154,6 +6155,7 @@ export const componentsMeta: ComponentMeta[] = [
     "description": "Ui-Layouts component.",
     "category": "notifications",
     "frameworks": [
+      "react",
       "next"
     ],
     "library": "Ui-Layouts",
@@ -6638,6 +6640,7 @@ export const componentsMeta: ComponentMeta[] = [
     "description": "Ui-Layouts component.",
     "category": "modals",
     "frameworks": [
+      "react",
       "next"
     ],
     "library": "Ui-Layouts",
@@ -6649,6 +6652,7 @@ export const componentsMeta: ComponentMeta[] = [
     "description": "Ui-Layouts component.",
     "category": "modals",
     "frameworks": [
+      "react",
       "next"
     ],
     "library": "Ui-Layouts",
@@ -6684,6 +6688,7 @@ export const componentsMeta: ComponentMeta[] = [
     "description": "Ui-Layouts component.",
     "category": "modals",
     "frameworks": [
+      "react",
       "next"
     ],
     "library": "Ui-Layouts",
@@ -18239,5 +18244,17 @@ export const componentsMeta: ComponentMeta[] = [
     ],
     "library": "Animate UI",
     "librarySlug": "animate-ui"
+  },
+  {
+    "name": "proxy-admin",
+    "title": "Proxy Admin",
+    "description": "A drop-in admin dashboard for a proxykit LLM gateway: connect providers via OAuth or token paste, watch connection status and available models, and run live model tests. Talks to the proxykit REST API over a configurable base path.",
+    "category": "dashboards",
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
   }
 ];

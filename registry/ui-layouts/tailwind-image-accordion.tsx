@@ -1,11 +1,10 @@
 'use client';
-import Image from 'next/image';
 import React from 'react';
 
 const items = [
   {
     id: '1',
-    url: '/adrian.png',
+    url: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&auto=format&fit=crop',
     title: 'Adrian Paul',
     description: 'COO & Co-Founder',
     tags: ['Floral', 'Highlands', 'Wildflowers', 'Colorful', 'Resilience'],
@@ -13,14 +12,14 @@ const items = [
 
   {
     id: '2',
-    url: '/flualy.jpg',
+    url: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop',
     title: 'Flualy Cual',
     description: 'Founder & CEO',
     tags: ['Twilight', 'Peaks', 'Silhouette', 'Evening Sky', 'Peaceful'],
   },
   {
     id: '3',
-    url: '/naymur.png',
+    url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop',
     title: 'Naymur Rahman',
     description: 'CTO & Co-Founder',
     tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
@@ -47,12 +46,12 @@ function TailwindImageAccordion() {
                   {item?.description}
                 </span>
               </a>
-              <Image
+              <img
                 className='object-cover h-72 md:h-[420px]  w-full'
                 src={item?.url}
-                width='960'
-                height='480'
-                alt='Image 01'
+                width={960}
+                height={480}
+                alt={item?.title}
               />
             </article>
           );

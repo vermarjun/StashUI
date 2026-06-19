@@ -6,17 +6,14 @@ import {
 } from '@/registry/ui-layouts/directional-drawer';
 import { Edit } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 
 export default function DirectionalDrawerDefault() {
   return (
     <>
       <div className='flex justify-center'>
         <figure className='h-96 w-96 relative'>
-          <Image
-            src={'/myself2.webp'}
-            width={600}
-            height={600}
+          <img
+            src='https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800'
             className='h-full w-full object-cover rounded-lg'
             alt='profile_image'
           />

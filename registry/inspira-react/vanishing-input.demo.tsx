@@ -6,7 +6,7 @@ export default function VanishingInputDemo() {
   const [submitted, setSubmitted] = useState<string[]>([]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-8 bg-white p-8 dark:bg-zinc-900">
+    <div className="flex min-h-[340px] flex-col items-center justify-center gap-8 bg-white p-8 dark:bg-zinc-900">
       <div className="w-full max-w-xl">
         <h2 className="mb-6 text-center text-2xl font-bold text-neutral-800 dark:text-neutral-200">
           Vanishing Input

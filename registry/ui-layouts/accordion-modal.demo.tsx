@@ -1,5 +1,11 @@
-import Cmp from "@/registry/ui-layouts/accordion-modal";
+"use client";
+
+import AccordionModal from "@/registry/ui-layouts/accordion-modal";
 
 export default function Demo() {
-  return <Cmp />;
+  return (
+    <div className="relative h-full w-full overflow-hidden flex items-center justify-center">
+      <AccordionModal />
+    </div>
+  );
 }

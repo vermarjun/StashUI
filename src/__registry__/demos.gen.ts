@@ -1489,9 +1489,11 @@ export const demos: Record<string, LazyExoticComponent<ComponentType>> = {
   "components-backgrounds-gravity-stars": lazy(() => import("@/registry/animate-ui/components-backgrounds-gravity-stars.demo")),
   "components-backgrounds-fireworks": lazy(() => import("@/registry/animate-ui/components-backgrounds-fireworks.demo")),
   "components-backgrounds-stars": lazy(() => import("@/registry/animate-ui/components-backgrounds-stars.demo")),
+  "components-community-flip-card": lazy(() => import("@/registry/animate-ui/components-community-flip-card.demo")),
   "components-community-notification-list": lazy(() => import("@/registry/animate-ui/components-community-notification-list.demo")),
   "components-community-pin-list": lazy(() => import("@/registry/animate-ui/components-community-pin-list.demo")),
   "components-community-radial-intro": lazy(() => import("@/registry/animate-ui/components-community-radial-intro.demo")),
+  "components-community-share-button": lazy(() => import("@/registry/animate-ui/components-community-share-button.demo")),
   "components-community-radial-nav": lazy(() => import("@/registry/animate-ui/components-community-radial-nav.demo")),
   "primitives-animate-code-block": lazy(() => import("@/registry/animate-ui/primitives-animate-code-block.demo")),
   "primitives-animate-slot": lazy(() => import("@/registry/animate-ui/primitives-animate-slot.demo")),
@@ -1518,4 +1520,5 @@ export const demos: Record<string, LazyExoticComponent<ComponentType>> = {
   "primitives-texts-scrolling-number": lazy(() => import("@/registry/animate-ui/primitives-texts-scrolling-number.demo")),
   "primitives-texts-typing": lazy(() => import("@/registry/animate-ui/primitives-texts-typing.demo")),
   "primitives-texts-morphing": lazy(() => import("@/registry/animate-ui/primitives-texts-morphing.demo")),
+  "proxy-admin": lazy(() => import("@/registry/dashboards/proxy-admin.demo")),
 };

@@ -8,6 +8,7 @@ import {
 
 export default function PatternBackgroundDemo() {
   return (
+    <div className="h-[600px] w-full overflow-auto">
     <div className="flex flex-col gap-6 p-8">
       {/* Static grid */}
       <PatternBackground
@@ -43,6 +44,7 @@ export default function PatternBackgroundDemo() {
       >
         <p className="text-lg font-semibold">Big Dots – diagonal</p>
       </PatternBackground>
+    </div>
     </div>
   );
 }

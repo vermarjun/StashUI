@@ -4,7 +4,7 @@ import { InteractiveGridPattern } from "@/registry/inspira-react/interactive-gri
 
 export default function InteractiveGridPatternDemo() {
   return (
-    <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background">
+    <div className="relative flex h-[600px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background">
       <InteractiveGridPattern
         width={40}
         height={40}

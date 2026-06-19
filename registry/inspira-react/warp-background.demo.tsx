@@ -4,7 +4,7 @@ import { WarpBackground } from "@/registry/inspira-react/warp-background";
 
 export default function WarpBackgroundDemo() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral-950 p-8">
+    <div className="relative h-[600px] w-full overflow-hidden flex items-center justify-center bg-neutral-950 p-8">
       <WarpBackground
         className="w-full max-w-2xl text-center"
         beamsPerSide={4}

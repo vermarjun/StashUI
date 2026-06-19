@@ -5,7 +5,7 @@ import { Sparkles } from "@/registry/inspira-react/sparkles";
 
 export default function SparklesDemo() {
   return (
-    <div className="h-64 w-full rounded-xl overflow-hidden">
+    <div className="relative h-[600px] w-full overflow-hidden rounded-xl">
       <Sparkles
         background="#0d47a1"
         particleColor="#ffffff"

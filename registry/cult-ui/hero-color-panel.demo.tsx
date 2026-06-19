@@ -1,5 +1,11 @@
-import Cmp from "@/registry/cult-ui/hero-color-panel";
+"use client";
+
+import { HeroColorPanels } from "@/registry/cult-ui/hero-color-panel";
 
 export default function Demo() {
-  return <Cmp />;
+  return (
+    <div className="relative h-[640px] w-full overflow-hidden">
+      <HeroColorPanels />
+    </div>
+  );
 }

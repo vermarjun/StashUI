@@ -11,7 +11,7 @@ export default function Component() {
           alt="Mary Palmer"
           className="size-9 rounded-full"
           height={32}
-          src="/origin/avatar-32-01.jpg"
+          src="https://i.pravatar.cc/80?img=11"
           width={32}
         />
         <div className="flex grow flex-col gap-3">

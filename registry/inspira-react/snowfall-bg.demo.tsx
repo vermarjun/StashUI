@@ -9,7 +9,7 @@ export default function SnowfallBgDemo() {
       speed={1}
       maxRadius={3}
       minRadius={1}
-      className="relative h-64 w-full overflow-hidden rounded-lg bg-slate-900"
+      className="relative h-[600px] w-full overflow-hidden rounded-lg bg-slate-900"
     />
   );
 }

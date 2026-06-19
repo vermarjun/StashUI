@@ -2,7 +2,7 @@ import { FlickeringGrid } from "@/registry/inspira-react/flickering-grid";
 
 export default function FlickeringGridDemo() {
   return (
-    <div className="relative h-64 w-full overflow-hidden rounded-xl border">
+    <div className="relative h-[600px] w-full overflow-hidden rounded-xl border">
       <FlickeringGrid
         className="absolute inset-0"
         squareSize={4}

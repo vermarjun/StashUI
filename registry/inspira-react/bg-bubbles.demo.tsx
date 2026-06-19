@@ -4,9 +4,9 @@ import { BubblesBg } from "@/registry/inspira-react/bg-bubbles";
 
 export default function BubblesBgDemo() {
   return (
-    <div className="w-full">
+    <div className="relative h-[600px] w-full overflow-hidden [&>div]:h-full">
       <BubblesBg blur={2}>
-        <div className="flex h-full items-center justify-center py-12">
+        <div className="flex h-full items-center justify-center">
           <div className="text-center">
             <p className="text-2xl font-bold text-white drop-shadow">
               Bubbles Background

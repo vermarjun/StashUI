@@ -11,7 +11,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
 export default function ShaderToyDemo() {
   return (
-    <div className="h-64 w-full overflow-hidden rounded-lg">
+    <div className="relative h-[600px] w-full overflow-hidden rounded-lg">
       <ShaderToy shaderCode={DEMO_SHADER} speed={0.5} />
     </div>
   );

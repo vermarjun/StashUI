@@ -4,7 +4,7 @@ import SoftAurora from "@/registry/react-bits/SoftAurora";
 
 export default function Demo() {
   return (
-    <div className="w-full h-[500px] bg-black rounded-lg overflow-hidden">
+    <div className="w-full h-[600px] bg-black rounded-lg overflow-hidden">
       <SoftAurora
         speed={0.6}
         scale={1.5}

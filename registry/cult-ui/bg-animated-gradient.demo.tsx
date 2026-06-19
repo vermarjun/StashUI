@@ -34,10 +34,12 @@ const gradients = [
 
 export default function Demo() {
   return (
-    <div className="relative w-full h-64 rounded-xl overflow-hidden bg-slate-900">
+    <div className="relative h-[600px] w-full overflow-hidden rounded-xl bg-slate-900">
       <GradientAnimation gradients={gradients} animationDuration={4} />
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <p className="text-white text-xl font-semibold">Animated Gradient Background</p>
+      <div className="relative z-10 flex h-full items-center justify-center">
+        <p className="text-white text-2xl font-semibold tracking-tight">
+          Animated Gradient Background
+        </p>
       </div>
     </div>
   )

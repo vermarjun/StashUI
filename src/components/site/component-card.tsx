@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { ComponentPreview } from "@/components/site/component-preview";
+import { GridVideo } from "@/components/site/grid-video";
 import { FrameworkBadges } from "@/components/site/framework-badges";
+import { getPreview } from "@/__registry__/previews.gen";
 import { cn } from "@/lib/utils";
 import type { ComponentMeta } from "@/__registry__/meta.gen";
 
@@ -34,7 +36,11 @@ export function ComponentCard({
         className="absolute inset-0 z-20 rounded-[inherit] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
       />
       <div className="pointer-events-none select-none">
-        <ComponentPreview name={item.name} designWidth={designWidth} />
+        {getPreview(item.name).hasVideo ? (
+          <GridVideo name={item.name} title={item.title} />
+        ) : (
+          <ComponentPreview name={item.name} designWidth={designWidth} />
+        )}
       </div>
       <div className="relative z-30 mt-3 flex items-center justify-between gap-2 border-t border-border pt-2.5">
         <span className="truncate text-sm font-medium">{item.title}</span>

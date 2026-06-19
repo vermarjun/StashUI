@@ -15,6 +15,8 @@ export default function Demo() {
       <CodeBlock
         code={sampleCode}
         lang="typescript"
+        writing
+        duration={4000}
         inView
         className="p-4"
       />

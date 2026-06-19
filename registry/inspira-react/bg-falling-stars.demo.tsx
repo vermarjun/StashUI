@@ -4,7 +4,7 @@ import { FallingStarsBg } from "@/registry/inspira-react/bg-falling-stars";
 
 export default function FallingStarsBgDemo() {
   return (
-    <div className="relative h-96 w-full overflow-hidden rounded-xl bg-black">
+    <div className="relative h-[600px] w-full overflow-hidden rounded-xl bg-black">
       <FallingStarsBg color="#ffffff" count={200} />
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center">

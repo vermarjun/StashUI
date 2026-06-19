@@ -4,12 +4,10 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from '@/registry/ui-layouts/directional-drawer';
-import { useMediaQuery } from '@/hooks/use-media-query';
-import { Edit, X } from 'lucide-react';
+import { Edit } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import { useState } from 'react';
-import { Drawer } from 'vaul';
+
 export default function BottomDirectionalDrawer() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
@@ -51,11 +49,11 @@ export default function BottomDirectionalDrawer() {
       </DirectionalDrawer>
       <div className='flex justify-center'>
         <figure className='h-96 w-96 relative'>
-          <Image
-            src={'/myself.webp'}
+          <img
+            src='https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800'
             width={600}
             height={600}
-            className='h-full w-full object-cover rounded-lg '
+            className='h-full w-full object-cover rounded-lg'
             alt='profile_image'
           />
           <motion.button

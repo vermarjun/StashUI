@@ -3,18 +3,18 @@
 import { IconCloud } from "@/registry/inspira-react/icon-cloud";
 
 const DEMO_IMAGES = [
-  "https://simpleicons.org/icons/typescript.svg",
-  "https://simpleicons.org/icons/javascript.svg",
-  "https://simpleicons.org/icons/react.svg",
-  "https://simpleicons.org/icons/nextdotjs.svg",
-  "https://simpleicons.org/icons/nodedotjs.svg",
-  "https://simpleicons.org/icons/tailwindcss.svg",
-  "https://simpleicons.org/icons/git.svg",
-  "https://simpleicons.org/icons/github.svg",
-  "https://simpleicons.org/icons/docker.svg",
-  "https://simpleicons.org/icons/postgresql.svg",
-  "https://simpleicons.org/icons/redis.svg",
-  "https://simpleicons.org/icons/graphql.svg",
+  "https://cdn.simpleicons.org/typescript",
+  "https://cdn.simpleicons.org/javascript",
+  "https://cdn.simpleicons.org/react",
+  "https://cdn.simpleicons.org/nextdotjs",
+  "https://cdn.simpleicons.org/nodedotjs",
+  "https://cdn.simpleicons.org/tailwindcss",
+  "https://cdn.simpleicons.org/git",
+  "https://cdn.simpleicons.org/github",
+  "https://cdn.simpleicons.org/docker",
+  "https://cdn.simpleicons.org/postgresql",
+  "https://cdn.simpleicons.org/redis",
+  "https://cdn.simpleicons.org/graphql",
 ];
 
 export default function IconCloudDemo() {

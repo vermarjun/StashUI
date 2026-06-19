@@ -4,7 +4,7 @@ import LineWaves from "@/registry/react-bits/LineWaves";
 
 export default function Demo() {
   return (
-    <div className="w-full h-[500px] bg-black rounded-lg overflow-hidden">
+    <div className="w-full h-[600px] bg-black rounded-lg overflow-hidden">
       <LineWaves
         speed={0.3}
         innerLineCount={32}
