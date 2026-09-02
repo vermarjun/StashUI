@@ -27,7 +27,7 @@ export default async function PreviewPage({
     return (
       <div
         className={cn(
-          "min-h-screen w-full bg-background",
+          "min-h-screen w-full bg-background text-foreground",
           scrollable ? "overflow-y-auto" : "overflow-hidden",
           topAligned
             ? "flex flex-col"
@@ -44,7 +44,7 @@ export default async function PreviewPage({
   return (
     <div
       className={cn(
-        "relative flex h-screen w-screen items-center justify-center overflow-hidden bg-background p-6",
+        "relative flex h-screen w-screen items-center justify-center overflow-hidden bg-background text-foreground p-6",
         dark && "dark",
       )}
     >
