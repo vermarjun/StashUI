@@ -1,0 +1,22 @@
+{
+  "name": "animated-shiny-text",
+  "blurb": "A bright shimmer sweeps across text from left to right, looping continuously.",
+  "description": "Renders text with a moving highlight shine effect using CSS background-position animation. The shimmer width is configurable. Light effect works on both light and dark themes.",
+  "use_when": "Inline or block text wants a subtle, elegant shine effect that doesn't require JavaScript.",
+  "avoid_when": "When text must remain completely static or when shimmer width needs dynamic adjustment per character.",
+  "a11y": "Text is readable; shimmer is purely visual via CSS background-clip.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "shimmerWidth", "type": "number", "default": "100", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text", "badge"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "choice-poll",
+  "blurb": "Composable poll component with single/multi-select, results display, and vote tracking.",
+  "description": "Flexible poll/voting component built with composable sub-components. Supports single or multiple selections, result visualization with progress bars, percentage displays, and vote tracking. Controlled or uncontrolled modes via context.",
+  "use_when": "Building in-page polls, surveys, or voting interfaces with result visualization.",
+  "avoid_when": "Simple radio button groups or checkboxes where full poll features aren't needed.",
+  "a11y": "Built on semantic button elements with keyboard navigation. Context-driven for proper labeling. Check mark icon for visual feedback.",
+  "props": [
+    {"name": "value", "type": "string | string[]", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string | string[]", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string | string[]) => void", "default": null, "required": false},
+    {"name": "multiple", "type": "boolean", "default": "false", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "showResults", "type": "boolean", "default": "false", "required": false},
+    {"name": "votes", "type": "Record<string, number>", "default": null, "required": false},
+    {"name": "hasVoted", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": ["background", "text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "card"]
+}

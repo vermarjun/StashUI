@@ -1,0 +1,21 @@
+{
+  "name": "scroll-area",
+  "blurb": "Styled scroll container with custom rounded scrollbars.",
+  "description": "A wrapper around Radix UI's ScrollArea with themed scrollbars and support for both vertical and horizontal scrolling.",
+  "use_when": "Containing overflowing content with a custom scrollbar design that matches your theme.",
+  "avoid_when": "For simple overflow:auto containers — this adds styling overhead.",
+  "a11y": "Uses Radix's ScrollArea for keyboard navigation and screen reader support.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "none",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["body-text", "form-field"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "cult-ui-text-animate",
+  "blurb": "Text animates in with configurable entrance styles when scrolled into view.",
+  "description": "Renders text with multiple preset animation types: fadeIn, fadeInUp, popIn, shiftInUp, rollIn, whipIn, whipInUp, and calmInUp. Triggers on scroll visibility with staggered character/word timing.",
+  "use_when": "Headings need polished entrance animations with various choreography options.",
+  "avoid_when": "When constant re-animations are not desired as the element scrolls.",
+  "a11y": "Text is fully readable; animations are visual transitions only.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "type", "type": "AnimationType", "default": "whipInUp", "required": false},
+    {"name": "delay", "type": "number", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline"]
+}

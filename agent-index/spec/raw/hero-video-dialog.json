@@ -1,0 +1,24 @@
+{
+  "name": "hero-video-dialog",
+  "blurb": "Video thumbnail with a play button that opens a fullscreen modal with the video embedded.",
+  "description": "Displays a thumbnail image with an animated play button overlay. Click to open a modal with the embedded video (iframe). Modal animates in from configurable directions and dismisses on close button or Escape key.",
+  "use_when": "Hero sections or feature cards showcasing product demos or testimonials.",
+  "avoid_when": "When video must play inline without modal, or for mobile where fullscreen is default.",
+  "a11y": "Play button is semantic <button>. Modal has close button and Escape key support. Video iframe allows full browser controls.",
+  "props": [
+    {"name": "animationStyle", "type": "'from-bottom' | 'from-center' | 'from-top' | 'from-left' | 'from-right' | 'fade' | 'top-in-bottom-out' | 'left-in-right-out'", "default": "'from-center'", "required": false},
+    {"name": "videoSrc", "type": "string", "default": null, "required": true},
+    {"name": "thumbnailSrc", "type": "string", "default": null, "required": true},
+    {"name": "thumbnailAlt", "type": "string", "default": "'Video thumbnail'", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card"]
+}

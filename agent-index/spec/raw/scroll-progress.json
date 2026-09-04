@@ -1,0 +1,21 @@
+{
+  "name": "scroll-progress",
+  "blurb": "Progress bar at the top of the page showing scroll position.",
+  "description": "A fixed position bar that scales horizontally based on page scroll progress. Uses Framer Motion's useScroll hook with a hardcoded gradient background.",
+  "use_when": "A page indicator showing reading progress or engagement depth in long-form content.",
+  "avoid_when": "When page content doesn't have enough vertical space to scroll meaningfully.",
+  "a11y": "Decorative visual indicator only. Conveys scroll progress visually but has no semantic role, label, or keyboard interaction.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "ref", "type": "React.Ref<HTMLDivElement>", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "page-background"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "inspira-aurora-background",
+  "blurb": "Animated aurora (northern lights) effect with flowing coloured gradients.",
+  "description": "Full-screen gradient-based background with animated repeating linear gradients creating an aurora effect. Supports dark mode and optional radial gradient mask for vignetting.",
+  "use_when": "A dramatic full-page background for hero sections or landing pages with a magical, atmospheric feel.",
+  "avoid_when": "Limited viewport — component uses h-screen and is designed for full-screen contexts.",
+  "a11y": "Wrapper component; focus and keyboard behaviour come from children. Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "radialGradient", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

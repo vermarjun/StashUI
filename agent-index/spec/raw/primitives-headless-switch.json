@@ -1,0 +1,22 @@
+{
+  "name": "primitives-headless-switch",
+  "blurb": "Animated toggle switch with composable thumb and icon components.",
+  "description": "Switch primitive using Headless UI with Framer Motion. Features composable SwitchThumb and SwitchIcon components with spring animations.",
+  "use_when": "Building premium animated switches with custom icon positioning and fine-tuned motion control.",
+  "avoid_when": "When you need a simple switch without animation or custom composition.",
+  "a11y": "Built on Headless UI switch primitive with full keyboard and screen reader support.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode | ((bag: SwitchBag) => React.ReactNode)", "default": null, "required": false},
+    {"name": "checked", "type": "boolean", "default": null, "required": false},
+    {"name": "onChange", "type": "(checked: boolean) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "opacity", "scale"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

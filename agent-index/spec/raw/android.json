@@ -1,0 +1,23 @@
+{
+  "name": "android",
+  "blurb": "Android phone mockup SVG frame for displaying images or videos.",
+  "description": "Renders a realistic Android device bezel and screen in SVG. Accepts an image URL or video element as content to fill the display. Supports dark mode.",
+  "use_when": "Presenting app screenshots or videos in a phone mockup frame.",
+  "avoid_when": "When the content needs interactive controls or must respond to device viewport changes.",
+  "a11y": "Image has no alt text. Video is muted and plays automatically. No keyboard interactions.",
+  "props": [
+    {"name": "width", "type": "number", "default": "433", "required": false},
+    {"name": "height", "type": "number", "default": "882", "required": false},
+    {"name": "src", "type": "string", "default": null, "required": false},
+    {"name": "videoSrc", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["image"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media"]
+}

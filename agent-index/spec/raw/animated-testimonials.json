@@ -1,0 +1,21 @@
+{
+  "name": "animated-testimonials",
+  "blurb": "Carousel of testimonials with rotating images and word-by-word text reveal.",
+  "description": "Side-by-side layout with animated image carousel on left (rotating with random tilt, scale) and testimonial text on right. Text words animate in with blur effect. Includes previous/next buttons and optional autoplay.",
+  "use_when": "Showcasing customer testimonials with visual interest via stacked image animation and sequential text reveal.",
+  "avoid_when": "When motion should be minimal — multiple animation layers run continuously.",
+  "a11y": "Images have alt text (name). Navigation buttons should have aria-labels (not currently present). No prefers-reduced-motion guard for animations.",
+  "props": [
+    {"name": "testimonials", "type": "Array<{quote: string; name: string; designation: string; src: string}>", "default": null, "required": true},
+    {"name": "autoplay", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "timer"],
+    "motion": "pronounced",
+    "affects": ["image", "text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial"]
+}

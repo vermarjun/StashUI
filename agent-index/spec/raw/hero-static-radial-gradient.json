@@ -1,0 +1,29 @@
+{
+  "name": "hero-static-radial-gradient",
+  "blurb": "Hero with static radial gradient backdrop (magenta to green), tech badges.",
+  "description": "Responsive hero with heading, description, CTA, and tech badges. StaticRadialGradient shader (no animation) with radial blend from center (magenta→cyan→green). Desktop 1280×720, mobile responsive.",
+  "use_when": "AI/SDK product landing where a striking but calm (non-animating) gradient sets the scene.",
+  "avoid_when": "WebGL shader. Requires sized parent.",
+  "a11y": "Screen-reader title (srTitle). Buttons and links focusable. Shader is decorative.",
+  "props": [
+    {"name": "srTitle", "type": "string", "default": "AI SDK Agents", "required": false},
+    {"name": "title", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "subtitle", "type": "React.ReactNode", "default": "Copy and Paste", "required": false},
+    {"name": "description", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "showCta", "type": "boolean", "default": "true", "required": false},
+    {"name": "ctaProps", "type": "Partial<HeroStaticRadialGradientCTAProps>", "default": null, "required": false},
+    {"name": "showBadges", "type": "boolean", "default": "true", "required": false},
+    {"name": "techStack", "type": "HeroStaticRadialGradientTechItem[]", "default": null, "required": false},
+    {"name": "desktopShaderProps", "type": "Partial<StaticRadialGradientProps>", "default": null, "required": false},
+    {"name": "mobileShaderProps", "type": "Partial<StaticRadialGradientProps>", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "page-background"]
+}

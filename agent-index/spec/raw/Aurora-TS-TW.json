@@ -1,0 +1,24 @@
+{
+  "name": "Aurora-TS-TW",
+  "blurb": "Shimmering aurora borealis effect flowing horizontally across the canvas.",
+  "description": "WebGL background rendering an animated aurora using Perlin noise and color gradient ramps. Uses the ogl library to manage shader programs and rendering. Responds to window resize and accepts configurable color stops, amplitude, and blend.",
+  "use_when": "Hero sections or full-page backgrounds where a dramatic, otherworldly glow effect adds visual impact and motion.",
+  "avoid_when": "Low-end devices or when GPU resources are constrained; the WebGL canvas runs a continuous RAF loop.",
+  "a11y": "WebGL canvas; no keyboard navigation or semantic content. No prefers-reduced-motion guard; the effect runs continuously.",
+  "props": [
+    {"name": "colorStops", "type": "string[]", "default": "[\"#5227FF\", \"#7cff67\", \"#5227FF\"]", "required": false},
+    {"name": "amplitude", "type": "number", "default": "1.0", "required": false},
+    {"name": "blend", "type": "number", "default": "0.5", "required": false},
+    {"name": "time", "type": "number", "default": null, "required": false},
+    {"name": "speed", "type": "number", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

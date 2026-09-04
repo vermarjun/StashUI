@@ -1,0 +1,22 @@
+{
+  "name": "keyboard",
+  "blurb": "Renders an interactive computer keyboard with responsive clickable keys.",
+  "description": "A visual keyboard UI with styled keys that respond to physical keyboard events and mouse clicks. Includes optional keystroke preview and audio sprite sound effects.",
+  "use_when": "Visualizing keyboard input, creating interactive educational tools, or demonstrating keystroke capture in a UI.",
+  "avoid_when": "Capturing actual form input — use standard HTML inputs instead. Not suitable for touch-only interfaces.",
+  "a11y": "Button elements with mouse and keyboard handlers; no explicit focus management or prefers-reduced-motion guard.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "enableSound", "type": "boolean", "default": "false", "required": false},
+    {"name": "showPreview", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["keyboard", "pointer-move"],
+    "motion": "pronounced",
+    "affects": ["fill", "background"],
+    "tone": "technical",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "media"]
+}

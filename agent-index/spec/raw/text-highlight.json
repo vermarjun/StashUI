@@ -1,0 +1,25 @@
+{
+  "name": "text-highlight",
+  "blurb": "Highlight sweeps left to right behind inline text on mount, optionally fading text color.",
+  "description": "Wraps text in a span with an animated linear-gradient background that expands from 0% to 100% width. Can optionally animate text color simultaneously with configurable delay and duration.",
+  "use_when": "Call attention to key phrases in body text during page load, or sequential highlights across a sentence.",
+  "avoid_when": "Repeated animations that loop; the effect runs once on mount and may feel jarring if retriggered.",
+  "a11y": "Text is always readable and rendered in the DOM; animation cannot be paused with prefers-reduced-motion.",
+  "props": [
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "duration", "type": "number", "default": "2000", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "textEndColor", "type": "string", "default": null, "required": false},
+    {"name": "highlightColor", "type": "string", "default": "\"hsl(var(--primary) / 0.3)\"", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "headline"]
+}

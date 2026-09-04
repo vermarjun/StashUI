@@ -1,0 +1,23 @@
+{
+  "name": "card-spotlight",
+  "blurb": "Card with a radial spotlight and particle effect following cursor.",
+  "description": "A card that displays a spotlight effect tracking mouse movement. Uses a canvas layer underneath for particle animations. Radius and color are customizable. High z-index content stays above the effect.",
+  "use_when": "Hero cards, feature highlights, or attention-grabbing CTAs where the spotlight draws the eye.",
+  "avoid_when": "Touch-only or performance-sensitive contexts — canvas animation is CPU-demanding.",
+  "a11y": "Card content is readable text. Spotlight is visual effect only.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "radius", "type": "number", "default": "350", "required": false},
+    {"name": "color", "type": "string", "default": "\"#262626\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "hover"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "primary-cta"]
+}

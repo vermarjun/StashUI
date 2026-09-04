@@ -1,0 +1,26 @@
+{
+  "name": "primitives-effects-highlight",
+  "blurb": "Highlights child items with animated background that tracks hover or click state.",
+  "description": "Context-based component providing highlight functionality to child items. Items track hover/click state with smooth animated background transitions.",
+  "use_when": "Tab lists, navigation items, or menu-like components where highlighting active/hovered items provides clear visual feedback.",
+  "avoid_when": "Static content that does not require interactivity feedback.",
+  "a11y": "Highlight is visual; semantic meaning depends on child content structure.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "hover", "type": "boolean", "default": null, "required": false},
+    {"name": "click", "type": "boolean", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "mode", "type": "\"children\" | \"parent\"", "default": null, "required": false},
+    {"name": "controlledItems", "type": "boolean", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "form-field"]
+}

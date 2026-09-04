@@ -1,0 +1,26 @@
+{
+  "name": "image-mousetrail-default",
+  "blurb": "Images trail cursor movement, accumulating on screen.",
+  "description": "Container that displays a trail of images following cursor movement. Images accumulate until maximum count, then cycle. Uses CSS scale/opacity animations.",
+  "use_when": "Interactive portfolios, galleries, or showcase sections where image trails add visual interest.",
+  "avoid_when": "Mobile-only experiences or when persistent trails might clutter the viewport.",
+  "a11y": "Trail images are decorative overlays; semantic content via children prop.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "imgClass", "type": "string", "default": "\"w-40 h-48\"", "required": false},
+    {"name": "distance", "type": "number", "default": "20", "required": false},
+    {"name": "maxNumberOfImages", "type": "number", "default": "5", "required": false},
+    {"name": "fadeAnimation", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "drag"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

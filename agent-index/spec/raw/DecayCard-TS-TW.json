@@ -1,0 +1,28 @@
+{
+  "name": "DecayCard-TS-TW",
+  "blurb": "Image distorts and displaces as you move the cursor, stronger when you move faster.",
+  "description": "Renders an image with SVG turbulence and displacement filters that responds to cursor movement and velocity. The image translates and rotates slightly, with displacement intensity mapped to cursor speed.",
+  "use_when": "A featured image needs interactive visual feedback that rewards exploration and movement.",
+  "avoid_when": "Touch-only surfaces or performance-critical contexts — runs a continuous RAF loop even when idle.",
+  "a11y": "Cursor-tracking wrapper only; keyboard and touch users cannot trigger the effect, and there's no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "width", "type": "number", "default": "300", "required": false},
+    {"name": "height", "type": "number", "default": "400", "required": false},
+    {"name": "image", "type": "string", "default": "https://picsum.photos/300/400?grayscale", "required": false},
+    {"name": "baseFrequency", "type": "number", "default": "0.015", "required": false},
+    {"name": "numOctaves", "type": "number", "default": "5", "required": false},
+    {"name": "seed", "type": "number", "default": "4", "required": false},
+    {"name": "maxDisplacement", "type": "number", "default": "400", "required": false},
+    {"name": "movementBound", "type": "number", "default": "50", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "hero", "feature-card"]
+}

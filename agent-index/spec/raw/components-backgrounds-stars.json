@@ -1,0 +1,26 @@
+{
+  "name": "components-backgrounds-stars",
+  "blurb": "Three-layer starfield that parallaxes toward the pointer.",
+  "description": "Creates stars via box-shadow in three layers with different sizes and scroll speeds. The entire field shifts based on pointer position using a spring animation for smooth parallax.",
+  "use_when": "A space-like background that responds subtly to pointer movement, adding depth without overwhelming the page.",
+  "avoid_when": "Touch-only devices — parallax relies on pointer tracking and does nothing on touch. Continuous animation may impact performance on weaker devices.",
+  "a11y": "Passive background wrapper; focus and keyboard behaviour come from children. Parallax animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "factor", "type": "number", "default": "0.05", "required": false},
+    {"name": "speed", "type": "number", "default": "50", "required": false},
+    {"name": "transition", "type": "SpringOptions", "default": "{ stiffness: 50, damping: 20 }", "required": false},
+    {"name": "starColor", "type": "string", "default": "'#fff'", "required": false},
+    {"name": "pointerEvents", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

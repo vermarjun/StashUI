@@ -1,0 +1,20 @@
+{
+  "name": "primitives-headless-popover",
+  "blurb": "Floating panel scales in from center with spring animation.",
+  "description": "Headless UI popover with Framer Motion animations. Panel scales and fades in/out with spring physics. Supports backdrop, button, and group composition for managing multiple popovers.",
+  "use_when": "You need a lightweight, accessible popover with smooth scale animation.",
+  "avoid_when": "Fixed positioning is needed — this uses absolute positioning anchored to parent.",
+  "a11y": "Full Headless UI popover accessibility: keyboard navigation, focus management, Escape closes.",
+  "props": [
+    {"name": "transition", "type": "Transition", "default": "{type: \"spring\", stiffness: 300, damping: 25}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["tooltip", "form-field"]
+}

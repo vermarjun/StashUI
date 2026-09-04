@@ -1,0 +1,31 @@
+{
+  "name": "StickerPeel-TS-TW",
+  "blurb": "Draggable sticker with a corner peel effect on hover.",
+  "description": "Renders an image with a 3D peel-up corner effect that responds to hover and drag. Uses GSAP for animations and SVG filters for lighting and shadow.",
+  "use_when": "Interactive product showcases, promotional stickers, or playful UI elements that benefit from tactile feel.",
+  "avoid_when": "Dense layouts (stickers are large and draggable); low-contrast scenarios where shadow depth is critical.",
+  "a11y": "Draggable sticker; keyboard interaction depends on GSAP Draggable support. No built-in reduced-motion handling.",
+  "props": [
+    {"name": "imageSrc", "type": "string", "default": null, "required": true},
+    {"name": "rotate", "type": "number", "default": "30", "required": false},
+    {"name": "peelBackHoverPct", "type": "number", "default": "30", "required": false},
+    {"name": "peelBackActivePct", "type": "number", "default": "40", "required": false},
+    {"name": "peelEasing", "type": "string", "default": "\"power3.out\"", "required": false},
+    {"name": "peelHoverEasing", "type": "string", "default": "\"power2.out\"", "required": false},
+    {"name": "width", "type": "number", "default": "200", "required": false},
+    {"name": "shadowIntensity", "type": "number", "default": "0.6", "required": false},
+    {"name": "lightingIntensity", "type": "number", "default": "0.1", "required": false},
+    {"name": "initialPosition", "type": "string | object", "default": "\"center\"", "required": false},
+    {"name": "peelDirection", "type": "number", "default": "0", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "drag"],
+    "motion": "subtle",
+    "affects": ["fill", "shadow"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "feature-card", "hero"]
+}

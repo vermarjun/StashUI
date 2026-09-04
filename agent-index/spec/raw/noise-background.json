@@ -1,0 +1,27 @@
+{
+  "name": "noise-background",
+  "blurb": "Animated gradient layers moving with spring physics over noise texture.",
+  "description": "Motion-based background with multiple coloured gradient layers that move organically within the container. Layered with noise texture and optional backdrop blur.",
+  "use_when": "A sophisticated, animated container background with moving gradients and fine noise texture.",
+  "avoid_when": "Accessibility-sensitive contexts — continuous animation with no prefers-reduced-motion guard.",
+  "a11y": "Wrapper component with content slot (z-10). Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "gradientColors", "type": "string[]", "default": "[\"rgb(255, 100, 150)\", \"rgb(100, 150, 255)\", \"rgb(255, 200, 100)\"]", "required": false},
+    {"name": "noiseIntensity", "type": "number", "default": "0.2", "required": false},
+    {"name": "speed", "type": "number", "default": "0.1", "required": false},
+    {"name": "backdropBlur", "type": "boolean", "default": "false", "required": false},
+    {"name": "animating", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "feature-card"]
+}

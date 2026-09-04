@@ -1,0 +1,25 @@
+{
+  "name": "blur-reveal",
+  "blurb": "Child elements reveal from blur when they enter the viewport.",
+  "description": "Wraps each direct child with a viewport-triggered animation from blur+offset to sharp+in-place. Supports staggered timing.",
+  "use_when": "Progressive content reveals, entrance animations, or scroll-triggered text displays.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); rapidly scrolling content.",
+  "a11y": "Animation wrapper; motion-based only. Does not affect semantic content.",
+  "props": [
+    {"name": "duration", "type": "number", "default": "1", "required": false},
+    {"name": "delay", "type": "number", "default": "0.2", "required": false},
+    {"name": "blur", "type": "string", "default": "\"20px\"", "required": false},
+    {"name": "yOffset", "type": "number", "default": "20", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "feature-card", "hero"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "icon-cloud",
+  "blurb": "3D rotating cloud of icons or images rendered on canvas.",
+  "description": "Interactive canvas component rendering a rotating globe of icons or image URLs. Responds to mouse drag with momentum animation and smooth rotation.",
+  "use_when": "Tech stacks, skill showcases, or logo clouds for portfolios and landing pages.",
+  "avoid_when": "When icon accessibility is critical, or on devices with limited GPU.",
+  "a11y": "Canvas-rendered; no semantic structure or keyboard interaction. Purely visual.",
+  "props": [
+    {"name": "icons", "type": "React.ReactNode[]", "default": null, "required": false},
+    {"name": "images", "type": "string[]", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["feature-card", "media"]
+}

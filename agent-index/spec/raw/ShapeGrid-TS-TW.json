@@ -1,0 +1,68 @@
+{
+  "name": "ShapeGrid-TS-TW",
+  "blurb": "Grid of animated shapes shifting and flowing.",
+  "description": "Tessellated shape grid with wave-based animation and color variation.",
+  "use_when": "Structured but organic-feeling backgrounds.",
+  "avoid_when": "Low bandwidth scenarios.",
+  "a11y": "Decorative background. No keyboard or focus handling required.",
+  "props": [
+    {
+      "name": "direction",
+      "type": "'diagonal' | 'up' | 'right' | 'down' | 'left'",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "borderColor",
+      "type": "CanvasStrokeStyle",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "squareSize",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "hoverFillColor",
+      "type": "CanvasStrokeStyle",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "shape",
+      "type": "'square' | 'hexagon' | 'circle' | 'triangle'",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "hoverTrailAmount",
+      "type": "number",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "background"
+    ],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "page-background",
+    "section-background"
+  ]
+}

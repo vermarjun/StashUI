@@ -1,0 +1,20 @@
+{
+  "name": "logo-carousel",
+  "blurb": "Logos cycle through columns with staggered spring animations.",
+  "description": "Displays a set of logo SVGs distributed across columns, each logo swapping every 2 seconds with a blur-in spring transition. Columns stagger their animation start. Pre-built logos include Apple, Vercel, Stripe, TypeScript, and others.",
+  "use_when": "Showcasing partner or sponsor logos in a dynamic, eye-catching marquee.",
+  "avoid_when": "Motion-sensitive users—no prefers-reduced-motion guard; continuous animation on high-refresh displays.",
+  "a11y": "Logos are SVG elements with no alt text or ARIA labels. No keyboard interaction. Motion runs regardless of user preference.",
+  "props": [
+    {"name": "columnCount", "type": "number", "default": "2", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "section-background"]
+}

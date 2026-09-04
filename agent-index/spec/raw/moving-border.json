@@ -1,0 +1,22 @@
+{
+  "name": "moving-border",
+  "blurb": "Animated gradient border loops around button.",
+  "description": "A button with a continuously rotating conic-gradient border using Framer Motion, wrapped with a visible animated ring effect.",
+  "use_when": "You need an attention-grabbing CTA with constant border motion.",
+  "avoid_when": "On minimalist interfaces; the continuous motion can feel excessive.",
+  "a11y": "Standard button semantics. Border animation is visual only. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": "5", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "hero"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "motion-drawer",
+  "blurb": "Side drawer slides in with spring animation, drags to close.",
+  "description": "A full-height off-canvas drawer that slides from left or right with spring physics. Toggle button can merge into the drawer or stay/push. Draggable to close with threshold detection. Overlay fade on open.",
+  "use_when": "You need a mobile-friendly navigation drawer that feels responsive to touch and mouse drag.",
+  "avoid_when": "Your content is wider than the drawer — it will overflow without horizontal scroll.",
+  "a11y": "Button has basic click/tap handling. Overlay click closes. No focus trap or ARIA labels beyond click handlers.",
+  "props": [
+    {"name": "overlayColor", "type": "string", "default": "\"rgba(0, 0, 0, 0.3)\"", "required": false},
+    {"name": "width", "type": "number", "default": "250", "required": false},
+    {"name": "direction", "type": "\"left\" | \"right\"", "default": "\"left\"", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "\"#ffffff\"", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "isOpen", "type": "boolean", "default": null, "required": false},
+    {"name": "onToggle", "type": "(isOpen: boolean) => void", "default": null, "required": false},
+    {"name": "showToggleButton", "type": "boolean", "default": "true", "required": false},
+    {"name": "btnClassName", "type": "string", "default": "\"\"", "required": false},
+    {"name": "clsBtnClassName", "type": "string", "default": "\"\"", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "contentClassName", "type": "string", "default": "\"\"", "required": false},
+    {"name": "overlayClassName", "type": "string", "default": "\"\"", "required": false},
+    {"name": "animationConfig", "type": "AnimationConfig", "default": "{type: \"spring\", damping: 25, stiffness: 120}", "required": false},
+    {"name": "enableDrag", "type": "boolean", "default": "true", "required": false},
+    {"name": "dragThreshold", "type": "number", "default": "0.3", "required": false},
+    {"name": "buttonOpeningVariants", "type": "\"push\" | \"merge\" | \"stay\"", "default": "\"merge\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "sidebar"]
+}

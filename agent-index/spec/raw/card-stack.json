@@ -1,0 +1,22 @@
+{
+  "name": "card-stack",
+  "blurb": "Cards stack and fan out with smooth animations on scroll.",
+  "description": "Renders an array of cards in a stacked layout where they progressively fan out and scale. Configurable offset (gap between cards) and scaleFactor (how much smaller each card gets). Responsive animations as user scrolls or interacts.",
+  "use_when": "Testimonials, reviews, or showcases where stacked cards add visual depth and engagement.",
+  "avoid_when": "When cards need independent layouts — stacking constrains their positioning.",
+  "a11y": "Card content (name, designation, content) is readable. Stacking is visual effect only.",
+  "props": [
+    {"name": "items", "type": "Card[]", "default": null, "required": true},
+    {"name": "offset", "type": "number", "default": "10", "required": false},
+    {"name": "scaleFactor", "type": "number", "default": "0.06", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "testimonial"]
+}

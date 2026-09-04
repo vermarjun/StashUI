@@ -1,0 +1,34 @@
+{
+  "name": "TextPressure-TS-TW",
+  "blurb": "Variable font characteristics (weight, width, italic, opacity) respond to cursor proximity.",
+  "description": "Renders text where each character modulates its font-variation-settings based on distance to the cursor. Supports weight, width, italic, and alpha adjustments. Requires a variable font supporting these axes.",
+  "use_when": "An interactive heading wants to showcase a variable font's responsiveness and depth.",
+  "avoid_when": "On touch devices without hover capability or when using fonts without variable axes.",
+  "a11y": "Text is rendered as characters in spans; readable but font adjustments may impact legibility temporarily.",
+  "props": [
+    {"name": "text", "type": "string", "default": "Compressa", "required": false},
+    {"name": "fontFamily", "type": "string", "default": "Compressa VF", "required": false},
+    {"name": "fontUrl", "type": "string", "default": "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2", "required": false},
+    {"name": "width", "type": "boolean", "default": "true", "required": false},
+    {"name": "weight", "type": "boolean", "default": "true", "required": false},
+    {"name": "italic", "type": "boolean", "default": "true", "required": false},
+    {"name": "alpha", "type": "boolean", "default": "false", "required": false},
+    {"name": "flex", "type": "boolean", "default": "true", "required": false},
+    {"name": "stroke", "type": "boolean", "default": "false", "required": false},
+    {"name": "scale", "type": "boolean", "default": "false", "required": false},
+    {"name": "textColor", "type": "string", "default": "#FFFFFF", "required": false},
+    {"name": "strokeColor", "type": "string", "default": "#FF0000", "required": false},
+    {"name": "strokeWidth", "type": "number", "default": "2", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "minFontSize", "type": "number", "default": "24", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "headline"]
+}

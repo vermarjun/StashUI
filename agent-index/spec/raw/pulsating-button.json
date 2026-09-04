@@ -1,0 +1,21 @@
+{
+  "name": "pulsating-button",
+  "blurb": "Background expands and fades in a pulse loop.",
+  "description": "A button with a background that expands outward and fades using scale and opacity animation on loop.",
+  "use_when": "You want a subtle, eye-catching pulse effect on a prominent CTA.",
+  "avoid_when": "When animation should be minimal or responsive to interaction only.",
+  "a11y": "Standard button semantics. Pulse is visual only. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

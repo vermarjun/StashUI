@@ -1,0 +1,18 @@
+{
+  "name": "text-scroll-animation",
+  "blurb": "Full-page scroll sequence with text animations staggered by word, letter, or line.",
+  "description": "Wrapper component using Framer Motion's whileInView to reveal text sections as they scroll into view. Supports per-word, per-letter, or per-line animations with configurable direction and blur effects.",
+  "use_when": "Long-form landing pages or narrative sections where text should animate in gradually as users scroll.",
+  "avoid_when": "Mobile with scroll-jacking; performance-sensitive sites with many instances.",
+  "a11y": "Text fully rendered in the DOM; animations triggered by scroll intersection, does not respond to prefers-reduced-motion.",
+  "props": [],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "section-background"]
+}

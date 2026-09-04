@@ -1,0 +1,24 @@
+{
+  "name": "3d-globe",
+  "blurb": "Interactive 3D Earth globe with customizable markers and rotation.",
+  "description": "An interactive Three.js-based 3D globe with optional Earth texture, atmosphere effects, orbital controls, and customizable markers placed at geographic coordinates.",
+  "use_when": "Displaying geographic data, visualizing global operations, or creating impressive 3D globe visualizations.",
+  "avoid_when": "On low-end devices, mobile without WebGL support, or when a flat map would suffice.",
+  "a11y": "The 3D canvas itself is not accessible to screen readers; the globe is purely visual.",
+  "props": [
+    {"name": "markers", "type": "GlobeMarker[]", "default": null, "required": false},
+    {"name": "config", "type": "Globe3DConfig", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "onMarkerClick", "type": "(marker: GlobeMarker) => void", "default": null, "required": false},
+    {"name": "onMarkerHover", "type": "(marker: GlobeMarker | null) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media"]
+}

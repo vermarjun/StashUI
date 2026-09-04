@@ -1,0 +1,30 @@
+{
+  "name": "grid-beam",
+  "blurb": "Animated beams pulse along grid lines with customizable colour palettes.",
+  "description": "Canvas-based component with SVG grid lines and animated coloured beams that pulse through intersections. Supports multiple colour palettes (colorful, mono) and light/dark themes.",
+  "use_when": "A dramatic, animated container background that can hold content and respond to an active state toggle.",
+  "avoid_when": "Performance-sensitive contexts — continuous canvas animation. No prefers-reduced-motion support.",
+  "a11y": "Canvas marked aria-hidden; content renders in a separate z-stacked slot above beams. No keyboard interaction on animation.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "rows", "type": "number", "default": null, "required": false},
+    {"name": "cols", "type": "number", "default": null, "required": false},
+    {"name": "colorVariant", "type": "string", "default": null, "required": false},
+    {"name": "theme", "type": "string", "default": null, "required": false},
+    {"name": "active", "type": "boolean", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": null, "required": false},
+    {"name": "strength", "type": "number", "default": null, "required": false},
+    {"name": "breathe", "type": "boolean", "default": null, "required": false},
+    {"name": "borderRadius", "type": "number", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "feature-card", "hero"]
+}

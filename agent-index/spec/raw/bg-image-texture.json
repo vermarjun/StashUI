@@ -1,0 +1,23 @@
+{
+  "name": "bg-image-texture",
+  "blurb": "Applies a subtle repeating texture pattern overlay to any background.",
+  "description": "Static texture overlay component supporting five preset textures (fabric-of-squares, grid-noise, inflicted, debut-light, groovepaper) with adjustable opacity. Renders texture as an aria-hidden element.",
+  "use_when": "Adding tactile texture to solid-color sections without animation overhead.",
+  "avoid_when": "Complex animated backgrounds, or when texture PNG assets are unavailable.",
+  "a11y": "Texture overlay marked as aria-hidden=true; children handle their own accessibility.",
+  "props": [
+    {"name": "variant", "type": "\"fabric-of-squares\" | \"grid-noise\" | \"inflicted\" | \"debut-light\" | \"groovepaper\" | \"none\"", "default": "\"fabric-of-squares\"", "required": false},
+    {"name": "opacity", "type": "number", "default": "0.5", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background", "hero", "feature-card"]
+}

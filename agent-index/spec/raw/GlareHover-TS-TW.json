@@ -1,0 +1,33 @@
+{
+  "name": "GlareHover-TS-TW",
+  "blurb": "A glossy highlight sweeps diagonally across on hover.",
+  "description": "A container that animates a diagonal glare overlay sweeping across on mouse enter and leave. Uses CSS gradients and background positioning for smooth, GPU-accelerated animation with customizable angle, size, and timing.",
+  "use_when": "Cards, buttons, or showcase elements need a premium glossy or ice-like visual state on hover.",
+  "avoid_when": "Users expect rapid repeated interactions or have photosensitivity concerns.",
+  "a11y": "Visual hover effect only; no keyboard focus equivalent, and may trigger photosensitivity.",
+  "props": [
+    {"name": "width", "type": "string", "default": "\"500px\"", "required": false},
+    {"name": "height", "type": "string", "default": "\"500px\"", "required": false},
+    {"name": "background", "type": "string", "default": "\"#000\"", "required": false},
+    {"name": "borderRadius", "type": "string", "default": "\"10px\"", "required": false},
+    {"name": "borderColor", "type": "string", "default": "\"#333\"", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "glareColor", "type": "string", "default": "\"#ffffff\"", "required": false},
+    {"name": "glareOpacity", "type": "number", "default": "0.5", "required": false},
+    {"name": "glareAngle", "type": "number", "default": "-45", "required": false},
+    {"name": "glareSize", "type": "number", "default": "250", "required": false},
+    {"name": "transitionDuration", "type": "number", "default": "650", "required": false},
+    {"name": "playOnce", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": "{}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "primary-cta", "secondary-cta"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "inspira-video-text",
+  "blurb": "Text fills with video, showing moving imagery only within letter shapes.",
+  "description": "Masks a video element using text as an SVG shape, so video content plays only within the letterforms. Responsive sizing with configurable typography.",
+  "use_when": "Hero sections or dramatic statements where video imagery inside text creates striking visual impact.",
+  "avoid_when": "When video content must be described or captioned — the video is masked and not separately announced. Requires a sized container.",
+  "a11y": "Text content is in a screen-reader-only span. Video itself has no captions or description; only text is announced.",
+  "props": [
+    {"name": "src", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "autoPlay", "type": "boolean", "default": "true", "required": false},
+    {"name": "muted", "type": "boolean", "default": "true", "required": false},
+    {"name": "loop", "type": "boolean", "default": "true", "required": false},
+    {"name": "preload", "type": "\"auto\" | \"metadata\" | \"none\"", "default": "\"auto\"", "required": false},
+    {"name": "fontSize", "type": "string | number", "default": "20", "required": false},
+    {"name": "fontWeight", "type": "string | number", "default": "\"bold\"", "required": false},
+    {"name": "textAnchor", "type": "string", "default": "\"middle\"", "required": false},
+    {"name": "dominantBaseline", "type": "string", "default": "\"middle\"", "required": false},
+    {"name": "fontFamily", "type": "string", "default": "\"sans-serif\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill", "text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "headline"]
+}

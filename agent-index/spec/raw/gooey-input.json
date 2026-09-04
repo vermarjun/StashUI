@@ -1,0 +1,31 @@
+{
+  "name": "gooey-input",
+  "blurb": "Search input that expands and animates with a gooey morphing effect.",
+  "description": "An animated search input using Framer Motion that collapses to a circular button and smoothly expands into a full field, with an SVG gooey filter creating a liquid morphing visual effect.",
+  "use_when": "Building minimalist search interfaces or hero sections where visual polish and space efficiency enhance the experience.",
+  "avoid_when": "On projects requiring prefers-reduced-motion compliance or where animation overhead matters.",
+  "a11y": "Input is properly labeled and disabled state is respected, but the expand/collapse animation does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "placeholder", "type": "string", "default": "Type to search...", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "classNames", "type": "GooeyInputClassNames", "default": null, "required": false},
+    {"name": "collapsedWidth", "type": "number", "default": "115", "required": false},
+    {"name": "expandedWidth", "type": "number", "default": "200", "required": false},
+    {"name": "expandedOffset", "type": "number", "default": "50", "required": false},
+    {"name": "gooeyBlur", "type": "number", "default": "5", "required": false},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string", "default": "\"\"", "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "focus"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

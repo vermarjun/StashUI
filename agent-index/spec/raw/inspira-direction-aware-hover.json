@@ -1,0 +1,24 @@
+{
+  "name": "inspira-direction-aware-hover",
+  "blurb": "Card image reveal based on hover direction, with mobile touch support.",
+  "description": "Card wrapper that detects entry edge and reveals image from that direction. Includes mobile touch support with 3-second auto-dismiss.",
+  "use_when": "Interactive cards with directional image reveals that work on both desktop and touch devices.",
+  "avoid_when": "When direction detection isn't supported or desired.",
+  "a11y": "Detects hover and touch entry; image reveal has auto-dismiss on mobile.",
+  "props": [
+    {"name": "imageUrl", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "childrenClass", "type": "string", "default": null, "required": false},
+    {"name": "imageClass", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "drag"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["feature-card", "media"]
+}

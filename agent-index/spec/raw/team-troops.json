@@ -1,0 +1,26 @@
+{
+  "name": "team-troops",
+  "blurb": "Elements blur in and cascade down as they enter the viewport.",
+  "description": "Wraps children in a motion container that animates blur, opacity, and Y position with staggered delays when they come into view. Uses Framer Motion's viewport tracking.",
+  "use_when": "Showing process steps or timeline sequence where each stage needs staged reveal emphasis.",
+  "avoid_when": "Rapid scrolling or touch-only surfaces where viewport detection is imprecise.",
+  "a11y": "Wrapper only; focus handling not managed. Motion plays on viewport entry via useInView, respects custom variants.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "animationNum", "type": "number", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "timelineRef", "type": "React.RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "as", "type": "T", "default": null, "required": false},
+    {"name": "customVariants", "type": "Variants", "default": null, "required": false},
+    {"name": "once", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "pronounced",
+    "affects": ["text", "background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "section-background"]
+}

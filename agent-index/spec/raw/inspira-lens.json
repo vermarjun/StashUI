@@ -1,0 +1,26 @@
+{
+  "name": "inspira-lens",
+  "blurb": "Magnifying lens overlay that zooms in on hover.",
+  "description": "Wrapper creating a circular magnifying lens showing zoomed content. Lens follows cursor on hover or stays at fixed position if static.",
+  "use_when": "Product images, detailed inspections, or interactive galleries needing zoom magnification.",
+  "avoid_when": "Touch-only interfaces — hover and pointer tracking required.",
+  "a11y": "Wrapper only; focus and keyboard behavior come from children. Lens is visual enhancement.",
+  "props": [
+    {"name": "zoomFactor", "type": "number", "default": "1.5", "required": false},
+    {"name": "lensSize", "type": "number", "default": "170", "required": false},
+    {"name": "position", "type": "{ x: number; y: number }", "default": "{ x: 200, y: 150 }", "required": false},
+    {"name": "isStatic", "type": "boolean", "default": "false", "required": false},
+    {"name": "hovering", "type": "boolean", "default": null, "required": false},
+    {"name": "onHoverUpdate", "type": "(hovering: boolean) => void", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

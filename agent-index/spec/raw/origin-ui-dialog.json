@@ -1,0 +1,21 @@
+{
+  "name": "origin-ui-dialog",
+  "blurb": "Centered modal dialog with fade-in zoom and built-in close button.",
+  "description": "Radix UI Dialog wrapper with themed styling, overlay fade, and centered zoom animation. Includes composed components for header, title, description, and footer. Fully accessible with keyboard support.",
+  "use_when": "You need a standard, accessible modal with no custom animations.",
+  "avoid_when": "You need layout morphing or complex animations — this is CSS-based and fixed position.",
+  "a11y": "Full Radix Dialog accessibility: Escape closes, focus trap, ARIA labels, keyboard navigation. Built-in close button with visible focus ring.",
+  "props": [
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal"]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "neon-border",
+  "blurb": "Glowing neon border, optionally sweeping around the perimeter.",
+  "description": "Wraps children in a neon-glowing border made of two custom colours with drop-shadow blur. The border can stay static, sweep halfway around, or cycle fully around the perimeter. Driven by CSS animation.",
+  "use_when": "A hero card or high-impact CTA that should stand out with that cyberpunk neon aesthetic.",
+  "avoid_when": "Delicate or minimal designs where the bright glow would feel out of place.",
+  "a11y": "Wrapper only; no interactive elements or focus handling.",
+  "props": [
+    {"name": "color1", "type": "string", "default": "\"#0496ff\"", "required": false},
+    {"name": "color2", "type": "string", "default": "\"#ff0a54\"", "required": false},
+    {"name": "animationType", "type": "\"none\" | \"half\" | \"full\"", "default": "\"half\"", "required": false},
+    {"name": "duration", "type": "number", "default": "6", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["border"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "primary-cta", "hero"]
+}

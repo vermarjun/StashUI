@@ -1,0 +1,26 @@
+{
+  "name": "PixelCard-TS-TW",
+  "blurb": "Pixels reveal on hover with a radial wave animation emanating from center.",
+  "description": "A canvas-based card where pixels gradually appear on hover and disappear on blur. Individual pixels animate in a wave pattern based on distance from center. Supports four color variants (default, blue, yellow, pink). Respects prefers-reduced-motion.",
+  "use_when": "Interactive showcase cards where the reveal animation creates visual interest.",
+  "avoid_when": "Accessibility-first contexts — no keyboard equivalent for the reveal effect without focus styles.",
+  "a11y": "Card is tabbable (tabIndex=0 by default). Focus triggers the same reveal as hover. Respects prefers-reduced-motion.",
+  "props": [
+    {"name": "variant", "type": "'default' | 'blue' | 'yellow' | 'pink'", "default": "\"default\"", "required": false},
+    {"name": "gap", "type": "number", "default": null, "required": false},
+    {"name": "speed", "type": "number", "default": null, "required": false},
+    {"name": "colors", "type": "string", "default": null, "required": false},
+    {"name": "noFocus", "type": "boolean", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["feature-card", "hero"]
+}

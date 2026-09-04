@@ -1,0 +1,22 @@
+{
+  "name": "dialog",
+  "blurb": "Animated modal with fade-in overlay and slide-in content transitions.",
+  "description": "A FramerModal component using Framer Motion; fades and slides in on open; closes on Escape or backdrop click; supports controlled/uncontrolled state.",
+  "use_when": "Creating polished dialogs with smooth entrance/exit animations and responsive backdrop interactions.",
+  "avoid_when": "For simple lightweight dialogs without animation — use shadcn Dialog instead to reduce bundle size.",
+  "a11y": "Escape key closes the dialog; backdrop click closes it; body overflow prevented; focus is managed by AnimatePresence.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "setOpen", "type": "(open: boolean) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["background", "children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal"]
+}

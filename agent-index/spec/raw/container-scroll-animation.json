@@ -1,0 +1,21 @@
+{
+  "name": "container-scroll-animation",
+  "blurb": "3D card that rotates and scales into view as you scroll.",
+  "description": "Scroll-triggered 3D perspective animation using Framer Motion. Card rotates from 20deg down to 0 and scales in, with responsive mobile scaling. Title parallax translates upward.",
+  "use_when": "Feature showcases, product reveals, or immersive scroll experiences.",
+  "avoid_when": "Motion-sensitive users (scroll-driven, no prefers-reduced-motion); slow connections.",
+  "a11y": "Scroll-driven animation; does not affect semantic content. Mobile-aware with scale adjustments.",
+  "props": [
+    {"name": "titleComponent", "type": "string | ReactNode", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["fill", "layout"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "feature-card", "section-background"]
+}

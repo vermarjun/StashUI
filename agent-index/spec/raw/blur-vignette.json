@@ -1,0 +1,26 @@
+{
+  "name": "blur-vignette",
+  "blurb": "Container that fades edges to blur.",
+  "description": "Wraps children in a container that gradually blurs edges using CSS radial gradient and mask. Provides context for consistent vignette styling.",
+  "use_when": "Image galleries, carousel fade edges, or artistic framing.",
+  "avoid_when": "Accessibility-critical edge content (blur hides information).",
+  "a11y": "Wrapper only; does not affect semantic content. Motion-free.",
+  "props": [
+    {"name": "classname", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "radius", "type": "string", "default": "\"24px\"", "required": false},
+    {"name": "inset", "type": "string", "default": "\"20px\"", "required": false},
+    {"name": "transitionLength", "type": "string", "default": "\"44px\"", "required": false},
+    {"name": "blur", "type": "string", "default": "\"6px\"", "required": false},
+    {"name": "blurclassname", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

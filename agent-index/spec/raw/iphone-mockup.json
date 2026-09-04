@@ -1,0 +1,23 @@
+{
+  "name": "iphone-mockup",
+  "blurb": "SVG iPhone 15 mockup frame displays images with hardware notch.",
+  "description": "An SVG-rendered iPhone 15 Pro mockup displaying an image within the screen cutout. Includes accurate notch geometry, side buttons, and rounded corners via clip-path.",
+  "use_when": "App landing pages, product showcases, and marketing materials displaying mobile screenshots.",
+  "avoid_when": "When responsive sizing is needed; width/height are fixed props and don't scale automatically.",
+  "a11y": "SVG image element uses href; no native alt text support on embedded images.",
+  "props": [
+    {"name": "width", "type": "number | undefined", "default": "433", "required": false},
+    {"name": "height", "type": "number | undefined", "default": "882", "required": false},
+    {"name": "src", "type": "string | undefined", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

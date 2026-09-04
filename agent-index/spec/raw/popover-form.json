@@ -1,0 +1,28 @@
+{
+  "name": "popover-form",
+  "blurb": "Button animates to a form panel, shows success state on completion.",
+  "description": "A controlled popover that morphs from a button to a fixed-size form with success state display. Spring-animated with optional close button at top. Includes composed success screen and utility icons for visual polish.",
+  "use_when": "You need a form that feels lightweight and doesn't disrupt the page flow, with a dedicated success state.",
+  "avoid_when": "Complex multi-step forms — this is optimized for single-screen flows.",
+  "a11y": "Click-outside and Escape to close. Title aria-hidden in open state. Submit button with loading state. Success state is visual only, no additional ARIA.",
+  "props": [
+    {"name": "open", "type": "boolean", "default": null, "required": true},
+    {"name": "setOpen", "type": "(open: boolean) => void", "default": null, "required": true},
+    {"name": "openChild", "type": "ReactNode", "default": null, "required": false},
+    {"name": "successChild", "type": "ReactNode", "default": null, "required": false},
+    {"name": "showSuccess", "type": "boolean", "default": null, "required": true},
+    {"name": "width", "type": "string", "default": "\"364px\"", "required": false},
+    {"name": "height", "type": "string", "default": "\"192px\"", "required": false},
+    {"name": "showCloseButton", "type": "boolean", "default": "false", "required": false},
+    {"name": "title", "type": "string", "default": "\"Feedback\"", "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-submit", "tooltip"]
+}

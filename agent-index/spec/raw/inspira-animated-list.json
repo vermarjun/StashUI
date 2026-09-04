@@ -1,0 +1,22 @@
+{
+  "name": "inspira-animated-list",
+  "blurb": "Auto-cycling notification list with staggered enter/exit animations and delay control.",
+  "description": "AnimatedList component that receives children array and cycles through items at configurable delay via useEffect timer loop. Each item animates in with scale/opacity spring, older items exit. Also exports Notification component for individual styled items.",
+  "use_when": "You need an auto-playing notification feed showing activity timeline with animation.",
+  "avoid_when": "For interactive notification centers; use a popover-based system instead.",
+  "a11y": "Auto-cycling may be distracting; component respects prefers-reduced-motion via motion library.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode[]", "default": null, "required": true},
+    {"name": "delay", "type": "number", "default": "1000", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["sidebar", "decoration"]
+}

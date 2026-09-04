@@ -1,0 +1,20 @@
+{
+  "name": "background-beams",
+  "blurb": "Animated gradient beams sweep continuously across the viewport.",
+  "description": "Renders absolute-positioned SVG with animated gradient paths flowing downward. Beams use motion/react for staggered animations and hardcoded cyan-purple-blue colors.",
+  "use_when": "Hero section needing dramatic animated background without user interaction.",
+  "avoid_when": "Light theme, low contrast requirements, or touch devices with performance constraints.",
+  "a11y": "Passive background only; no interactive elements or focus handling.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

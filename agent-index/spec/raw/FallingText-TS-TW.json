@@ -1,0 +1,27 @@
+{
+  "name": "FallingText-TS-TW",
+  "blurb": "Words tumble and bounce with physics gravity when triggered, draggable with the mouse.",
+  "description": "Renders text as individual words that simulate physics using Matter.js. Words fall with gravity, collide with boundaries, and respond to mouse dragging. Trigger modes: auto, scroll, click, or hover.",
+  "use_when": "An interactive hero section needs eye-catching motion that feels tactile and responds to user input.",
+  "avoid_when": "Low-end devices or when content must remain static and readable — the physics simulation runs continuously.",
+  "a11y": "Text starts rendered as DOM elements but repositioned by canvas physics simulation. Not easily accessible to screen readers during animation.",
+  "props": [
+    {"name": "text", "type": "string", "default": "", "required": false},
+    {"name": "highlightWords", "type": "string[]", "default": "[]", "required": false},
+    {"name": "trigger", "type": "'auto' | 'scroll' | 'click' | 'hover'", "default": "auto", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "transparent", "required": false},
+    {"name": "wireframes", "type": "boolean", "default": "false", "required": false},
+    {"name": "gravity", "type": "number", "default": "1", "required": false},
+    {"name": "mouseConstraintStiffness", "type": "number", "default": "0.2", "required": false},
+    {"name": "fontSize", "type": "string", "default": "1rem", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "click", "hover", "viewport"],
+    "motion": "continuous",
+    "affects": ["layout", "text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero"]
+}

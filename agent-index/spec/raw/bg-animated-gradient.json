@@ -1,0 +1,22 @@
+{
+  "name": "bg-animated-gradient",
+  "blurb": "Radial gradients pulse and shift position in a continuous cycle.",
+  "description": "Animates multiple radial gradients with configurable colors and positions. Uses motion/react to smoothly transition gradient positions with infinite reverse repeat.",
+  "use_when": "Section needing animated gradient background with custom colors and durations.",
+  "avoid_when": "Browsers without animation support, or minimal-motion user preferences.",
+  "a11y": "Purely decorative animation; no interaction or accessibility controls.",
+  "props": [
+    {"name": "gradients", "type": "GradientType[]", "default": null, "required": true},
+    {"name": "animationDuration", "type": "number", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

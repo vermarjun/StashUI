@@ -1,0 +1,27 @@
+{
+  "name": "GradientText-TS-TW",
+  "blurb": "Text fills with an animated gradient that sweeps horizontally, vertically, or diagonally.",
+  "description": "Renders text with a moving linear gradient background. Gradient can sweep in three directions and toggle between ping-pong (yoyo) and seamless loop modes. Optionally pauses on hover and adds a matching border.",
+  "use_when": "A headline wants visual interest through smooth, continuous color flow without jarring animation.",
+  "avoid_when": "When text must have a stable theme color or when the animation might distract from content.",
+  "a11y": "Text is readable; gradient is purely visual. Supports pauseOnHover for users preferring reduced motion.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "colors", "type": "string[]", "default": "[\"#5227FF\", \"#FF9FFC\", \"#B497CF\"]", "required": false},
+    {"name": "animationSpeed", "type": "number", "default": "8", "required": false},
+    {"name": "showBorder", "type": "boolean", "default": "false", "required": false},
+    {"name": "direction", "type": "'horizontal' | 'vertical' | 'diagonal'", "default": "horizontal", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "yoyo", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "primary-cta"]
+}

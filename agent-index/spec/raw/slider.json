@@ -1,0 +1,48 @@
+{
+  "blurb": "Styled dual-range slider component with track fill.",
+  "description": "A DualRangeSlider component providing min/max selection with a filled track between thumbs.",
+  "use_when": "Range selection such as filtering or date spans.",
+  "avoid_when": "Single-value cases.",
+  "a11y": "Keyboard arrow keys adjust values. Standard slider semantics.",
+  "props": [
+    {
+      "name": "min",
+      "type": "number",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "[number,number]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "onValueChange",
+      "type": "(v:[number,number])=>void",
+      "default": null,
+      "required": true
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "drag"
+    ],
+    "motion": "none",
+    "affects": [
+      "fill"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "form-field"
+  ]
+}

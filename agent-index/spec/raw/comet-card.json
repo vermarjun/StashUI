@@ -1,0 +1,23 @@
+{
+  "name": "comet-card",
+  "blurb": "Card with 3D tilt and a glare comet effect following the cursor.",
+  "description": "Card that rotates and translates in 3D based on mouse position. A bright glare spot (comet) trails the cursor across the card surface. Highly customizable rotation and translation depth.",
+  "use_when": "Premium product cards, hero highlights, or visually striking CTAs where the comet adds polish.",
+  "avoid_when": "Touch devices or performance-constrained environments — the effect is computationally demanding.",
+  "a11y": "Card content is readable. Tilt and comet are visual effects only.",
+  "props": [
+    {"name": "rotateDepth", "type": "number", "default": "17.5", "required": false},
+    {"name": "translateDepth", "type": "number", "default": "20", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "primary-cta"]
+}

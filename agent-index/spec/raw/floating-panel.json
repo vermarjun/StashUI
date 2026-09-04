@@ -1,0 +1,21 @@
+{
+  "name": "floating-panel",
+  "blurb": "Floating panel that expands from a trigger button with spring animation.",
+  "description": "A FloatingPanelRoot with trigger button that animates into a floating panel; includes form components and footer buttons.",
+  "use_when": "Creating inline forms or quick-edit panels that expand from a trigger button without interrupting workflow.",
+  "avoid_when": "For complex multi-step forms — this is optimized for quick, lightweight interactions.",
+  "a11y": "Trigger button has aria-haspopup=dialog and aria-expanded; form elements are labeled; Escape closes panel.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal", "form-field"]
+}

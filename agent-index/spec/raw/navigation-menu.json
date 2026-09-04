@@ -1,0 +1,22 @@
+{
+  "name": "navigation-menu",
+  "blurb": "Radix-based navigation menu with keyboard support and animated content viewport.",
+  "description": "Composable wrapper around Radix UI's NavigationMenu primitive. Exports NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, NavigationMenuIndicator, and NavigationMenuViewport. Handles keyboard navigation and focus management automatically.",
+  "use_when": "Building accessible navigation menus that must support keyboard interaction and screen readers, especially for complex site hierarchies.",
+  "avoid_when": "Simple flat menus where a basic select or tabs would suffice. Overkill for minimal navigation.",
+  "a11y": "Full keyboard navigation (arrow keys, Enter, Escape). Proper ARIA attributes and focus management via Radix primitive. Works with screen readers.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "viewport", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "header"]
+}

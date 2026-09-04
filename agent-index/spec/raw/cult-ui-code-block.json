@@ -1,0 +1,23 @@
+{
+  "name": "cult-ui-code-block",
+  "blurb": "Tabbed code viewer with spring-animated tab indicator and copy button.",
+  "description": "Client component rendering code in tabs (or solo) with a bottom-border indicator that springs to the active tab. Supports copy-to-clipboard with animated icon transition. Tab switching slides code in/out with blur effect. Horizontal scrollbar appears only when code overflows.",
+  "use_when": "Showing code examples with language variants (TypeScript vs JavaScript, install vs usage).",
+  "avoid_when": "Very long code that scrolls heavily on smaller screens; animations impact performance on slower devices.",
+  "a11y": "Tab bar uses role=tablist and buttons have aria-selected. Copy button is labeled and focus-visible. No prefers-reduced-motion support.",
+  "props": [
+    {"name": "tabs", "type": "CodeTab[]", "default": null, "required": false},
+    {"name": "code", "type": "string", "default": null, "required": false},
+    {"name": "language", "type": "string", "default": "bash", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["text", "border"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "feature-card"]
+}

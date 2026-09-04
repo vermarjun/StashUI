@@ -1,0 +1,25 @@
+{
+  "name": "scratch-to-reveal",
+  "blurb": "Scratch the surface to reveal hidden content below.",
+  "description": "Canvas-based overlay where users scratch away a gradient layer to reveal children. Detects when scratched area exceeds threshold; triggers callback and animates completion.",
+  "use_when": "An interactive reveal for hidden information, promotions, or gamified interactions that reward engagement.",
+  "avoid_when": "When content must be immediately accessible or when you cannot fix width/height dimensions upfront.",
+  "a11y": "Scratch interaction requires pointer (mouse or touch); keyboard users cannot access. No fallback text or alternative method.",
+  "props": [
+    {"name": "width", "type": "number", "default": null, "required": true},
+    {"name": "height", "type": "number", "default": null, "required": true},
+    {"name": "minScratchPercentage", "type": "number", "default": "50", "required": false},
+    {"name": "gradientColors", "type": "[string, string, string]", "default": "[\"#A97CF8\", \"#F38CB8\", \"#FDCC92\"]", "required": false},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "decoration"]
+}

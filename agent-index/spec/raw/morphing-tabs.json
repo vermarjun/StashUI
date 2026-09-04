@@ -1,0 +1,25 @@
+{
+  "name": "morphing-tabs",
+  "blurb": "Tabs that morph together with a gooey fluid effect.",
+  "description": "Controlled tab component that expands the active tab with margin while an SVG filter creates a blob-like morphing effect between adjacent tabs. Uses CSS filters (feGaussianBlur + feColorMatrix) for the goo effect.",
+  "use_when": "Tab sets where the visual distinction and playful morphing animation enhances the UI, especially in modern dashboards or creative interfaces.",
+  "avoid_when": "When accessibility is critical; lacks keyboard navigation. Not suitable for dense tab lists where animation overhead is a concern.",
+  "a11y": "No built-in keyboard support or ARIA attributes. Relies on parent to handle focus management and tab semantics.",
+  "props": [
+    {"name": "tabs", "type": "string[]", "default": null, "required": true},
+    {"name": "activeTab", "type": "string", "default": null, "required": true},
+    {"name": "onTabChange", "type": "(tab: string) => void", "default": null, "required": true},
+    {"name": "margin", "type": "number", "default": "20", "required": false},
+    {"name": "blurStdDeviation", "type": "number", "default": "6", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["border", "fill"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "feature-card"]
+}

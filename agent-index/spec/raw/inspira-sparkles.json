@@ -1,0 +1,26 @@
+{
+  "name": "inspira-sparkles",
+  "blurb": "Animated particles that drift and pulse with opacity oscillation.",
+  "description": "Canvas-based particle system with animated sparkles. Each particle drifts with velocity, wraps at edges, and pulses via sine-wave opacity modulation.",
+  "use_when": "A decorative, full-screen animated particle background for immersive hero sections.",
+  "avoid_when": "Performance-sensitive contexts — continuous RAF animation with high particle density impacts responsiveness.",
+  "a11y": "Purely decorative canvas overlay; focus and keyboard behaviour come from overlaid content. Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "background", "type": "string", "default": "'#0d47a1'", "required": false},
+    {"name": "particleColor", "type": "string", "default": "'#ffffff'", "required": false},
+    {"name": "minSize", "type": "number", "default": "1", "required": false},
+    {"name": "maxSize", "type": "number", "default": "3", "required": false},
+    {"name": "speed", "type": "number", "default": "4", "required": false},
+    {"name": "particleDensity", "type": "number", "default": "120", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

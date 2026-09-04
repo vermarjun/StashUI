@@ -1,0 +1,26 @@
+{
+  "name": "marquee",
+  "blurb": "Content scrolls seamlessly in a continuous loop with optional hover pause.",
+  "description": "Repeats and scrolls child content in an infinite seamless loop. Supports horizontal and vertical scrolling, pause on hover, and customizable duration and gap via CSS variables.",
+  "use_when": "Scrolling tag lists, skill showcases, or content carousels that need smooth continuous motion.",
+  "avoid_when": "Content requiring keyboard pause control — hover pause is available but not keyboard-driven.",
+  "a11y": "Continuous scrolling can challenge some readers. Pauses on hover but lacks keyboard pause control.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "vertical", "type": "boolean", "default": "false", "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "repeat", "type": "number", "default": "4", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "logo-wall"]
+}

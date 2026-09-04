@@ -1,0 +1,32 @@
+{
+  "name": "LightPillar-TS-TW",
+  "blurb": "Rotating volumetric pillar with gradient colors and dynamic wave deformation.",
+  "description": "WebGL-rendered 3D pillar with animated wave patterns, gradient top-to-bottom coloring, and optional mouse-controlled rotation. Adapts quality settings for device performance.",
+  "use_when": "Abstract backgrounds, hero sections, or decorative elements where a rotating volumetric glow fits the aesthetic.",
+  "avoid_when": "Low-end devices without WebGL support, or contexts requiring motion to be disabled — shader runs continuously at the quality setting's target FPS.",
+  "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "topColor", "type": "string", "default": "#5227FF", "required": false},
+    {"name": "bottomColor", "type": "string", "default": "#FF9FFC", "required": false},
+    {"name": "intensity", "type": "number", "default": "1.0", "required": false},
+    {"name": "rotationSpeed", "type": "number", "default": "0.3", "required": false},
+    {"name": "interactive", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "glowAmount", "type": "number", "default": "0.005", "required": false},
+    {"name": "pillarWidth", "type": "number", "default": "3.0", "required": false},
+    {"name": "pillarHeight", "type": "number", "default": "0.4", "required": false},
+    {"name": "noiseIntensity", "type": "number", "default": "0.5", "required": false},
+    {"name": "mixBlendMode", "type": "React.CSSProperties['mixBlendMode']", "default": "screen", "required": false},
+    {"name": "pillarRotation", "type": "number", "default": "0", "required": false},
+    {"name": "quality", "type": "'low' | 'medium' | 'high'", "default": "high", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "page-background", "hero"]
+}

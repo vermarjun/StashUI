@@ -1,0 +1,21 @@
+{
+  "name": "texture-card",
+  "blurb": "Layered nested borders create depth and tactile surface texture.",
+  "description": "Compound card component with cascading border rings that increase perceived depth without shadows. CSS-only, theme-aware, composed of TextureCard, Header, Title, Description, Content, Footer, and Separator subcomponents.",
+  "use_when": "Cards need subtle depth and texture without heavy drop shadows; designing minimal or technical interfaces.",
+  "avoid_when": "Designs requiring motion or hover-triggered reveals; the component is static CSS.",
+  "a11y": "Semantic structure with sections and text layers; no interactive elements or motion to manage.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "pricing-card", "form-field"]
+}

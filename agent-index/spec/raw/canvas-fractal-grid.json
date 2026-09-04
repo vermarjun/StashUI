@@ -1,0 +1,29 @@
+{
+  "name": "canvas-fractal-grid",
+  "blurb": "Dot grid ripples on hover combined with animated gradient background.",
+  "description": "Canvas-rendered dot grid with configurable wave effects on pointer movement. Optional animated gradient background and noise overlay. Combines fractal dot animation with gradient transitions.",
+  "use_when": "Complex interactive background with layered dot grid and gradient effects.",
+  "avoid_when": "Performance-sensitive devices or minimal animation preferences.",
+  "a11y": "Decorative animation tied to mouse movement; no keyboard equivalent.",
+  "props": [
+    {"name": "dotSize", "type": "number", "default": null, "required": false},
+    {"name": "dotSpacing", "type": "number", "default": null, "required": false},
+    {"name": "dotOpacity", "type": "number", "default": null, "required": false},
+    {"name": "gradientAnimationDuration", "type": "number", "default": null, "required": false},
+    {"name": "mouseTrackingStiffness", "type": "number", "default": null, "required": false},
+    {"name": "mouseTrackingDamping", "type": "number", "default": null, "required": false},
+    {"name": "waveIntensity", "type": "number", "default": null, "required": false},
+    {"name": "waveRadius", "type": "number", "default": null, "required": false},
+    {"name": "dotColor", "type": "string", "default": null, "required": false},
+    {"name": "glowColor", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

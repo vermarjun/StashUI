@@ -1,0 +1,25 @@
+{
+  "name": "magic-ui-marquee",
+  "blurb": "Content scrolls continuously in a loop, horizontally or vertically.",
+  "description": "Repeats and scrolls child content continuously in a seamless loop. Can scroll horizontally or vertically and pause on hover.",
+  "use_when": "Logo walls, customer lists, or scrolling galleries where continuous looping adds visual flow.",
+  "avoid_when": "Content requiring user control to pause — `pauseOnHover` helps but there is no keyboard pause control.",
+  "a11y": "Continuous scrolling can be difficult for some readers. Pauses on hover but not keyboard-controllable.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "vertical", "type": "boolean", "default": "false", "required": false},
+    {"name": "repeat", "type": "number", "default": "4", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "decoration"]
+}

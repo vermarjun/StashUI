@@ -1,0 +1,31 @@
+{
+  "name": "BubbleMenu-TS-TW",
+  "blurb": "Menu items scale in from center with rotation and staggered timing.",
+  "description": "A GSAP-powered navigation menu that scales items in from the center with per-item rotation and stagger delay. Items have custom hover colors. Responsive: rotations disabled on mobile, full layout reflow on smaller screens.",
+  "use_when": "You want a polished, playful navigation menu with eye-catching entrance animations.",
+  "avoid_when": "Performance-sensitive contexts — GSAP animations have overhead; touch-only devices benefit less from rotations.",
+  "a11y": "Menu has aria-label and items have custom ariaLabel. Rotations disabled on mobile for clarity. Labels fade in/out with items.",
+  "props": [
+    {"name": "logo", "type": "ReactNode | string", "default": null, "required": true},
+    {"name": "onMenuClick", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false},
+    {"name": "menuAriaLabel", "type": "string", "default": "\"Toggle menu\"", "required": false},
+    {"name": "menuBg", "type": "string", "default": "\"#fff\"", "required": false},
+    {"name": "menuContentColor", "type": "string", "default": "\"#111\"", "required": false},
+    {"name": "useFixedPosition", "type": "boolean", "default": "false", "required": false},
+    {"name": "items", "type": "MenuItem[]", "default": null, "required": false},
+    {"name": "animationEase", "type": "string", "default": "\"back.out(1.5)\"", "required": false},
+    {"name": "animationDuration", "type": "number", "default": "0.5", "required": false},
+    {"name": "staggerDelay", "type": "number", "default": "0.12", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav"]
+}

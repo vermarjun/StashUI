@@ -1,0 +1,28 @@
+{
+  "name": "Masonry-TS-TW",
+  "blurb": "Responsive masonry grid with entry animations and scale-on-hover effects.",
+  "description": "Arranges images in columns that reflow on resize. Entry animations stagger items from a direction with optional blur fade. Hover scales items and can blend a gradient overlay.",
+  "use_when": "Showcasing a portfolio or product gallery with varied aspect ratios and pronounced visual entry.",
+  "avoid_when": "Static galleries or when images must be non-interactive. Requires a sized container and GSAP animations.",
+  "a11y": "Images render as background images, not img tags. Items are clickable but offer no keyboard interaction. No focus styles or prefers-reduced-motion support.",
+  "props": [
+    {"name": "items", "type": "Item[]", "default": null, "required": true},
+    {"name": "ease", "type": "string", "default": "'power3.out'", "required": false},
+    {"name": "duration", "type": "number", "default": "0.6", "required": false},
+    {"name": "stagger", "type": "number", "default": "0.05", "required": false},
+    {"name": "animateFrom", "type": "'bottom' | 'top' | 'left' | 'right' | 'center' | 'random'", "default": "'bottom'", "required": false},
+    {"name": "scaleOnHover", "type": "boolean", "default": "true", "required": false},
+    {"name": "hoverScale", "type": "number", "default": "0.95", "required": false},
+    {"name": "blurToFocus", "type": "boolean", "default": "true", "required": false},
+    {"name": "colorShiftOnHover", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["image", "layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media", "feature-card"]
+}

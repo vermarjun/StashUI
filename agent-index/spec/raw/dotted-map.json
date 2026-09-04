@@ -1,0 +1,29 @@
+{
+  "name": "dotted-map",
+  "blurb": "SVG world map with dotted background grid and pulsing location markers.",
+  "description": "Generates a stylized dotted world map from an SVG base. Accepts lat/lng markers that pulse on a loop. Dot grid is staggered and colors are customizable.",
+  "use_when": "Displaying global presence, office locations, or customer distribution on a dashboard.",
+  "avoid_when": "Accurate geographic data visualization or interactive mapping features.",
+  "a11y": "Purely visual. Markers are SVG circles without semantic meaning or labels.",
+  "props": [
+    {"name": "width", "type": "number", "default": "150", "required": false},
+    {"name": "height", "type": "number", "default": "75", "required": false},
+    {"name": "mapSamples", "type": "number", "default": "5000", "required": false},
+    {"name": "markers", "type": "Marker[]", "default": "[]", "required": false},
+    {"name": "dotColor", "type": "string", "default": "'currentColor'", "required": false},
+    {"name": "markerColor", "type": "string", "default": "'#FF6900'", "required": false},
+    {"name": "dotRadius", "type": "number", "default": "0.2", "required": false},
+    {"name": "stagger", "type": "boolean", "default": "true", "required": false},
+    {"name": "pulse", "type": "boolean", "default": "false", "required": false},
+    {"name": "renderMarkerOverlay", "type": "(args: any) => ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["data-table", "stat"]
+}

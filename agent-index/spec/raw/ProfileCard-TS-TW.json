@@ -1,0 +1,37 @@
+{
+  "name": "ProfileCard-TS-TW",
+  "blurb": "Holographic profile card with tilt effect and animated glow.",
+  "description": "A 3D tilting profile card that responds to mouse position. Shows user avatar, name, title, handle, and status. Includes optional behind-the-card glow, grain texture, and inner gradient. Supports mobile tilt. Tilt engine interpolates smoothly.",
+  "use_when": "Portfolio, team pages, or user testimonials where visual impact and interactivity draw attention.",
+  "avoid_when": "Touch-only interfaces where tilt is mouse-only. Mobile users may need simpler fallback.",
+  "a11y": "Card displays user info as text content. Tilt is visual only — no semantic change to content.",
+  "props": [
+    {"name": "avatarUrl", "type": "string", "default": null, "required": false},
+    {"name": "iconUrl", "type": "string", "default": null, "required": false},
+    {"name": "grainUrl", "type": "string", "default": null, "required": false},
+    {"name": "innerGradient", "type": "string", "default": null, "required": false},
+    {"name": "behindGlowEnabled", "type": "boolean", "default": null, "required": false},
+    {"name": "behindGlowColor", "type": "string", "default": null, "required": false},
+    {"name": "behindGlowSize", "type": "string", "default": null, "required": false},
+    {"name": "enableTilt", "type": "boolean", "default": null, "required": false},
+    {"name": "enableMobileTilt", "type": "boolean", "default": null, "required": false},
+    {"name": "mobileTiltSensitivity", "type": "number", "default": null, "required": false},
+    {"name": "miniAvatarUrl", "type": "string", "default": null, "required": false},
+    {"name": "name", "type": "string", "default": null, "required": false},
+    {"name": "title", "type": "string", "default": null, "required": false},
+    {"name": "handle", "type": "string", "default": null, "required": false},
+    {"name": "status", "type": "string", "default": null, "required": false},
+    {"name": "contactText", "type": "string", "default": null, "required": false},
+    {"name": "showUserInfo", "type": "boolean", "default": null, "required": false},
+    {"name": "onContactClick", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "hero"]
+}

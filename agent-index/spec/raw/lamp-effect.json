@@ -1,0 +1,23 @@
+{
+  "name": "lamp-effect",
+  "blurb": "CSS-animated overhead lamp with expanding conic gradients and light rays.",
+  "description": "Full-screen container with CSS-animated conic gradients creating a glowing lamp effect. Delay and duration customizable per animation.",
+  "use_when": "A striking full-screen hero background with animated lamp illumination.",
+  "avoid_when": "Limited viewport height — component requires min-h-screen for proper proportions.",
+  "a11y": "Full-screen wrapper with content slot (z-50); focus and keyboard behaviour come from children.",
+  "props": [
+    {"name": "delay", "type": "number", "default": "0.5", "required": false},
+    {"name": "duration", "type": "number", "default": "0.8", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero"]
+}

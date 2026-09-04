@@ -1,0 +1,22 @@
+{
+  "name": "resizable-navbar",
+  "blurb": "Sticky navbar with scroll-triggered blur background and responsive mobile menu.",
+  "description": "Multi-component navbar system (Navbar, NavBody, NavItems, MobileNav) with scroll detection via Framer Motion. Adds glass-morphism blur effect at scroll threshold and toggles mobile menu visibility using ResizeObserver.",
+  "use_when": "Creating a responsive header that needs to visually respond to scroll state, especially for landing pages or marketing sites.",
+  "avoid_when": "Fixed-position navbars that must be visible at all times without visual changes. High-traffic navigation where scroll events matter for performance.",
+  "a11y": "Mobile nav button lacks proper ARIA attributes. Keyboard navigation not fully supported. Focus management not built-in.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "visible", "type": "boolean", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["background", "blur"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "header"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "bg-neural",
+  "blurb": "WebGL shader renders fractal neural-like patterns animated by scroll and pointer.",
+  "description": "OGL-based WebGL background with shader-based fractal animation. Responds to pointer position and scroll progress. Supports hue, saturation, chroma adjustments.",
+  "use_when": "Tech-forward hero section with interactive shader background.",
+  "avoid_when": "Low-end devices, no WebGL support, or performance-critical applications.",
+  "a11y": "Purely decorative shader animation; no motion-reduced variant.",
+  "props": [
+    {"name": "hue", "type": "number", "default": null, "required": false},
+    {"name": "saturation", "type": "number", "default": null, "required": false},
+    {"name": "chroma", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move", "scroll"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

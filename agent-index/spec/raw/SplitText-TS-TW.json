@@ -1,0 +1,32 @@
+{
+  "name": "SplitText-TS-TW",
+  "blurb": "Characters or words animate in staggered fashion when scrolled into view.",
+  "description": "Uses GSAP SplitText to split text into characters, words, or lines and animate them from a starting state to an ending state with configurable stagger. Triggered by ScrollTrigger on scroll visibility.",
+  "use_when": "Headings or body text need a polished staggered reveal that's synchronized to scroll.",
+  "avoid_when": "When text must be immediately readable or when rapid scrolling should not trigger the animation.",
+  "a11y": "Text is split into character/word/line elements and animated. Fully readable; animation is purely visual.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "delay", "type": "number", "default": "50", "required": false},
+    {"name": "duration", "type": "number", "default": "1.25", "required": false},
+    {"name": "ease", "type": "string | ((t: number) => number)", "default": "power3.out", "required": false},
+    {"name": "splitType", "type": "'chars' | 'words' | 'lines' | 'words, chars'", "default": "chars", "required": false},
+    {"name": "from", "type": "gsap.TweenVars", "default": "{opacity: 0, y: 40}", "required": false},
+    {"name": "to", "type": "gsap.TweenVars", "default": "{opacity: 1, y: 0}", "required": false},
+    {"name": "threshold", "type": "number", "default": "0.1", "required": false},
+    {"name": "rootMargin", "type": "string", "default": "-100px", "required": false},
+    {"name": "tag", "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'", "default": "p", "required": false},
+    {"name": "textAlign", "type": "React.CSSProperties['textAlign']", "default": "center", "required": false},
+    {"name": "onLetterAnimationComplete", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

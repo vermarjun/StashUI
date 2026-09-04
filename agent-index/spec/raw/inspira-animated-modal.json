@@ -1,0 +1,24 @@
+{
+  "name": "inspira-animated-modal",
+  "blurb": "Modal with 3D flip spring animation and scroll locking.",
+  "description": "An AnimatedModal using Framer Motion with spring-based 3D flip effect; includes scroll lock, click-outside close, and Escape key support.",
+  "use_when": "Creating polished modals with eye-catching 3D entrance animations and controlled scroll behavior.",
+  "avoid_when": "For simple modals without animation — use shadcn Dialog instead to reduce bundle size.",
+  "a11y": "Escape key closes (when closeOnEsc=true); click-outside closes (when closeOnOutside=true); scroll locked; focus managed.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultOpen", "type": "boolean", "default": "false", "required": false},
+    {"name": "closeOnEsc", "type": "boolean", "default": "true", "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["children", "background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal"]
+}

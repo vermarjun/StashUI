@@ -1,0 +1,23 @@
+{
+  "name": "primitives-headless-dialog",
+  "blurb": "Dialog flips in from a direction with 3D perspective and blur.",
+  "description": "Headless UI dialog wrapped with Framer Motion that animates panel entrance with 3D perspective rotation. Direction configurable (top/bottom/left/right). Backdrop fades with blur. Composed header, title, description, and footer.",
+  "use_when": "You want a polished modal with directional entrance animations that feel dimensional.",
+  "avoid_when": "Older browsers or performance-sensitive contexts — 3D perspective has render costs.",
+  "a11y": "Built on Headless UI primitives with full keyboard support (Escape closes). Render prop pattern on DialogPanel for advanced composition.",
+  "props": [
+    {"name": "open", "type": "boolean", "default": null, "required": true},
+    {"name": "onClose", "type": "() => void", "default": null, "required": true},
+    {"name": "from", "type": "\"top\" | \"bottom\" | \"left\" | \"right\"", "default": "\"top\"", "required": false},
+    {"name": "transition", "type": "Transition", "default": "{type: \"spring\", stiffness: 150, damping: 25}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal"]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "interactive-hover-button",
+  "blurb": "Text slides left and new text slides in on hover.",
+  "description": "A button that animates outgoing text left while new text slides in from the right on hover.",
+  "use_when": "You need a playful hover interaction that reveals different text.",
+  "avoid_when": "On touch-only devices where hover is unreliable.",
+  "a11y": "Standard button semantics. Text swap is visual. No aria-label describing the swap state.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

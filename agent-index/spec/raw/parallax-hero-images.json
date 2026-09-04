@@ -1,0 +1,23 @@
+{
+  "name": "parallax-hero-images",
+  "blurb": "Images shift in depth based on cursor position, creating a layered parallax effect.",
+  "description": "Renders images positioned at different depths that move based on cursor position. Spring-based motion creates smooth parallax layers with configurable depth variants.",
+  "use_when": "Hero sections or immersive backgrounds where mouse-driven parallax creates visual depth and engagement.",
+  "avoid_when": "Touch-only devices or cursor-less interfaces — parallax requires pointer tracking.",
+  "a11y": "Parallax effect is visual only; no semantic content or keyboard interaction.",
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "imageClassName", "type": "string", "default": null, "required": false},
+    {"name": "variant", "type": "\"default\" | \"edge-focus\"", "default": "\"default\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero"]
+}

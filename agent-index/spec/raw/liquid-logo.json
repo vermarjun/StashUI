@@ -1,0 +1,28 @@
+{
+  "name": "liquid-logo",
+  "blurb": "Logo animates with flowing liquid distortion and refraction effects.",
+  "description": "Renders an image with WebGL-based liquid morphing effects including ripple distortion, refraction, and edge blur that evolve continuously.",
+  "use_when": "Brand logos or images that need organic, fluid motion without jarring animation.",
+  "avoid_when": "Low-performance devices or server-side rendering — WebGL is GPU-intensive. May be invisible in headless contexts.",
+  "a11y": "Image is rendered as WebGL texture; no alt text or semantic equivalent available.",
+  "props": [
+    {"name": "imageUrl", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "patternScale", "type": "number", "default": "2", "required": false},
+    {"name": "refraction", "type": "number", "default": "0.015", "required": false},
+    {"name": "edge", "type": "number", "default": "0.4", "required": false},
+    {"name": "patternBlur", "type": "number", "default": "0.005", "required": false},
+    {"name": "liquid", "type": "number", "default": "0.07", "required": false},
+    {"name": "speed", "type": "number", "default": "0.3", "required": false},
+    {"name": "showProcessing", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["logo-wall", "hero"]
+}

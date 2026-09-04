@@ -1,0 +1,27 @@
+{
+  "name": "orbiting-circles",
+  "blurb": "Multiple circles orbit around a center point with configurable speed and direction.",
+  "description": "Renders child circles positioned equidistantly around an orbit. Each child circles the center point with adjustable duration, speed, radius, and optional visual path.",
+  "use_when": "Data hubs, team structures, or interconnected concept displays where orbital arrangement visualizes relationships.",
+  "avoid_when": "Accessibility-critical contexts where motion might distract or confuse users.",
+  "a11y": "Pure orbital animation; semantic content and keyboard access depend on child elements.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "reverse", "type": "boolean", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": "20", "required": false},
+    {"name": "radius", "type": "number", "default": "160", "required": false},
+    {"name": "path", "type": "boolean", "default": "true", "required": false},
+    {"name": "iconSize", "type": "number", "default": "30", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "hero"]
+}

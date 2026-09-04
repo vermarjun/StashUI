@@ -1,0 +1,20 @@
+{
+  "name": "inspira-animated-tooltip",
+  "blurb": "Avatar stack with tooltips that rotate and translate based on cursor position within each image.",
+  "description": "Renders overlapping circular avatars. On hover, a tooltip appears above with name and designation, rotating and translating proportionally to cursor position within the image area.",
+  "use_when": "Team galleries or contributor lists that need playful, responsive interactions on desktop.",
+  "avoid_when": "Touch-only interfaces; relies on precise mouse tracking.",
+  "a11y": "Images have alt text; tooltips appear on hover only, not keyboard-accessible.",
+  "props": [
+    {"name": "items", "type": "{id: number, name: string, designation: string, image: string}[]", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["avatar", "decoration"]
+}

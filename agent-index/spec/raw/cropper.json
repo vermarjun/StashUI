@@ -1,0 +1,23 @@
+{
+  "name": "cropper",
+  "blurb": "Interactive image cropper with drag repositioning and scroll-to-zoom controls.",
+  "description": "Wraps @origin-space/image-cropper with styled sub-components. Displays an image with a draggable crop area overlay. Supports pinch zoom and scroll zoom within min/max bounds.",
+  "use_when": "User-facing image upload flows that require precise cropping before save.",
+  "avoid_when": "Read-only image galleries or touch-only interfaces without scroll wheel zoom.",
+  "a11y": "Image has a sr-only description. Crop area shows focus ring. Drag and scroll interactions lack keyboard alternatives.",
+  "props": [
+    {"name": "image", "type": "string", "default": null, "required": false},
+    {"name": "maxZoom", "type": "number", "default": null, "required": false},
+    {"name": "minZoom", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag", "scroll"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "modal"]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "morph-surface",
+  "blurb": "Button morphs into a textarea form, shows checkmark on success.",
+  "description": "A spring-animated feedback widget that expands from a compact button into a full textarea on click. Includes a success indicator, Cmd+Enter submission, and Escape to close. Fully customizable dimensions, labels, and submit callbacks.",
+  "use_when": "You want lightweight, in-situ feedback collection without leaving the page.",
+  "avoid_when": "Accessibility is critical — custom render props mean you must handle ARIA and keyboard behavior yourself.",
+  "a11y": "Core component provides focus-visible rings and basic button semantics. Escape closes; Cmd+Enter submits. Click-outside detection uses pointer events. If using custom renderContent, you must add ARIA labels.",
+  "props": [
+    {"name": "collapsedWidth", "type": "number | \"auto\"", "default": "360", "required": false},
+    {"name": "collapsedHeight", "type": "number", "default": "44", "required": false},
+    {"name": "expandedWidth", "type": "number", "default": "360", "required": false},
+    {"name": "expandedHeight", "type": "number", "default": "200", "required": false},
+    {"name": "animationSpeed", "type": "number", "default": "1", "required": false},
+    {"name": "springConfig", "type": "SpringConfig", "default": null, "required": false},
+    {"name": "triggerLabel", "type": "string", "default": "\"Feedback\"", "required": false},
+    {"name": "triggerIcon", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "placeholder", "type": "string", "default": "\"What's on your mind?\"", "required": false},
+    {"name": "submitLabel", "type": "string", "default": "\"⌘ Enter\"", "required": false},
+    {"name": "onSubmit", "type": "(data: FormData) => void | Promise<void>", "default": null, "required": false},
+    {"name": "onOpen", "type": "() => void", "default": null, "required": false},
+    {"name": "onClose", "type": "() => void", "default": null, "required": false},
+    {"name": "onSuccess", "type": "() => void", "default": null, "required": false},
+    {"name": "isOpen", "type": "boolean", "default": null, "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "triggerClassName", "type": "string", "default": null, "required": false},
+    {"name": "contentClassName", "type": "string", "default": null, "required": false},
+    {"name": "renderTrigger", "type": "(props: TriggerProps) => React.ReactNode", "default": null, "required": false},
+    {"name": "renderContent", "type": "(props: ContentProps) => React.ReactNode", "default": null, "required": false},
+    {"name": "renderIndicator", "type": "(props: IndicatorProps) => React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-submit", "modal"]
+}

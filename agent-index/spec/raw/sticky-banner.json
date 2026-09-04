@@ -1,0 +1,22 @@
+{
+  "name": "sticky-banner",
+  "blurb": "Sticky top banner with scroll-triggered hide and close button.",
+  "description": "Sticky positioned container that animates down from top on mount, hides on scroll (if hideOnScroll enabled) via useScroll and useMotionValueEvent, with toggle close button.",
+  "use_when": "You need a persistent banner that auto-hides when user scrolls, but can be reopened.",
+  "avoid_when": "For permanently visible headers; use a fixed header instead.",
+  "a11y": "Close button is keyboard accessible. Motion respects prefers-reduced-motion.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "hideOnScroll", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "header"]
+}

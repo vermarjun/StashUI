@@ -1,0 +1,35 @@
+{
+  "name": "GradientBlinds-TS-TW",
+  "blurb": "Animated gradient stripes with spotlight distortion and shine effects.",
+  "description": "WebGL shader rendering angled gradient blind stripes with configurable count, noise, and distortion. Includes optional spotlight effect with mouse dampening. Supports blend mode customization.",
+  "use_when": "Premium backgrounds where stylized gradient stripes add visual sophistication and movement.",
+  "avoid_when": "Minimalist designs or when multiple parallel elements compete for attention.",
+  "a11y": "WebGL canvas with mouse dampening support. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "dpr", "type": "number", "default": null, "required": false},
+    {"name": "paused", "type": "boolean", "default": "false", "required": false},
+    {"name": "gradientColors", "type": "string[]", "default": null, "required": false},
+    {"name": "angle", "type": "number", "default": "0", "required": false},
+    {"name": "noise", "type": "number", "default": "0.3", "required": false},
+    {"name": "blindCount", "type": "number", "default": "16", "required": false},
+    {"name": "blindMinWidth", "type": "number", "default": "60", "required": false},
+    {"name": "mouseDampening", "type": "number", "default": "0.15", "required": false},
+    {"name": "mirrorGradient", "type": "boolean", "default": "false", "required": false},
+    {"name": "spotlightRadius", "type": "number", "default": "0.5", "required": false},
+    {"name": "spotlightSoftness", "type": "number", "default": "1", "required": false},
+    {"name": "spotlightOpacity", "type": "number", "default": "1", "required": false},
+    {"name": "distortAmount", "type": "number", "default": "0", "required": false},
+    {"name": "shineDirection", "type": "\"left\" | \"right\"", "default": "\"left\"", "required": false},
+    {"name": "mixBlendMode", "type": "string", "default": "\"lighten\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

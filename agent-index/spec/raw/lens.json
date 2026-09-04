@@ -1,0 +1,26 @@
+{
+  "name": "lens",
+  "blurb": "Circular magnifying glass follows cursor, revealing zoomed content within the circle.",
+  "description": "Wraps content and creates a circular zoom lens that appears on hover. The lens position tracks pointer movement (or stays fixed), showing zoomed content within a radial mask.",
+  "use_when": "Product galleries or hero images where hover magnification reveals fine detail without blocking the full view.",
+  "avoid_when": "Touch-only devices or pointer-free interfaces — magnifier requires hover to appear.",
+  "a11y": "Magnification is visual only; focus and keyboard navigation of child content unaffected.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "zoomFactor", "type": "number", "default": "1.5", "required": false},
+    {"name": "lensSize", "type": "number", "default": "170", "required": false},
+    {"name": "position", "type": "{x: number; y: number}", "default": "{x: 200, y: 150}", "required": false},
+    {"name": "isStatic", "type": "boolean", "default": "false", "required": false},
+    {"name": "hovering", "type": "boolean", "default": null, "required": false},
+    {"name": "setHovering", "type": "(hovering: boolean) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "hero-dithering",
+  "blurb": "Hero with dithering pattern shader backdrop and AI SDK tech badges.",
+  "description": "Responsive hero with heading, description, CTA, and tech badges. Animated Dithering shader on desktop (swirl pattern, cyan on black, 1280×720) and mobile. Context-based with overridable parts.",
+  "use_when": "AI/SDK landing page with retro or pixel-art aesthetic via dithering effect.",
+  "avoid_when": "Shader-intensive. Requires sized parent. No prefers-reduced-motion guard.",
+  "a11y": "Screen-reader title (srTitle). Buttons and links focusable. Shader is decorative.",
+  "props": [
+    {"name": "srTitle", "type": "string", "default": "AI SDK Agents", "required": false},
+    {"name": "title", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "subtitle", "type": "React.ReactNode", "default": "Copy and Paste", "required": false},
+    {"name": "description", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "showCta", "type": "boolean", "default": "true", "required": false},
+    {"name": "ctaProps", "type": "Partial<HeroDitheringCTAProps>", "default": null, "required": false},
+    {"name": "showBadges", "type": "boolean", "default": "true", "required": false},
+    {"name": "techStack", "type": "HeroDitheringTechItem[]", "default": null, "required": false},
+    {"name": "desktopShaderProps", "type": "Partial<DitheringProps>", "default": null, "required": false},
+    {"name": "mobileShaderProps", "type": "Partial<DitheringProps>", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "playful",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "page-background"]
+}

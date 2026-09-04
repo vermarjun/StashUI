@@ -1,0 +1,36 @@
+{
+  "name": "RotatingText-TS-TW",
+  "blurb": "Text cycles through a list of strings with staggered character animations.",
+  "description": "Animates between multiple text options, with each character, word, or line entering and exiting with staggered timing. Auto-rotates on an interval or responds to imperative methods (next, previous, jumpTo, reset).",
+  "use_when": "A headline needs to showcase multiple related phrases or values with fluid, choreographed transitions.",
+  "avoid_when": "When only one text option is needed or when the staggered animation would be distracting.",
+  "a11y": "Current text is in sr-only; visual animation is aria-hidden. Supports programmatic navigation.",
+  "props": [
+    {"name": "texts", "type": "string[]", "default": null, "required": true},
+    {"name": "transition", "type": "Transition", "default": "{type: 'spring', damping: 25, stiffness: 300}", "required": false},
+    {"name": "initial", "type": "boolean | Target | VariantLabels", "default": "{y: '100%', opacity: 0}", "required": false},
+    {"name": "animate", "type": "boolean | VariantLabels | TargetAndTransition", "default": "{y: 0, opacity: 1}", "required": false},
+    {"name": "exit", "type": "Target | VariantLabels", "default": "{y: '-120%', opacity: 0}", "required": false},
+    {"name": "animatePresenceMode", "type": "'sync' | 'wait'", "default": "wait", "required": false},
+    {"name": "animatePresenceInitial", "type": "boolean", "default": "false", "required": false},
+    {"name": "rotationInterval", "type": "number", "default": "2000", "required": false},
+    {"name": "staggerDuration", "type": "number", "default": "0", "required": false},
+    {"name": "staggerFrom", "type": "'first' | 'last' | 'center' | 'random' | number", "default": "first", "required": false},
+    {"name": "loop", "type": "boolean", "default": "true", "required": false},
+    {"name": "auto", "type": "boolean", "default": "true", "required": false},
+    {"name": "splitBy", "type": "string", "default": "characters", "required": false},
+    {"name": "onNext", "type": "(index: number) => void", "default": null, "required": false},
+    {"name": "mainClassName", "type": "string", "default": null, "required": false},
+    {"name": "splitLevelClassName", "type": "string", "default": null, "required": false},
+    {"name": "elementLevelClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "click"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

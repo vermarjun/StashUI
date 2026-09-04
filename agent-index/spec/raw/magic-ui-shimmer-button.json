@@ -1,0 +1,21 @@
+{
+  "name": "magic-ui-shimmer-button",
+  "blurb": "Light sweep animates across button.",
+  "description": "A button with an animated shimmer effect that slides continuously from left to right using a conic-gradient background.",
+  "use_when": "You want an animated CTA that draws visual attention.",
+  "avoid_when": "When you need a static, minimal button.",
+  "a11y": "Standard button semantics. Shimmer is visual only. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

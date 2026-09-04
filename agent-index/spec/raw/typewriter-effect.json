@@ -1,0 +1,22 @@
+{
+  "name": "typewriter-effect",
+  "blurb": "Characters appear staggered in rapid sequence when section enters view, with a blinking cursor.",
+  "description": "Takes an array of word objects and renders them as characters that fade in with staggered timing when the component enters the viewport. Includes a blinking blue cursor bar.",
+  "use_when": "Hero sections or call-to-action copy that should feel animated and attention-grabbing on scroll.",
+  "avoid_when": "Large amounts of text; animation is triggered on every view and can feel repetitive.",
+  "a11y": "Text is rendered in the DOM and selectable; animation cannot be paused with prefers-reduced-motion.",
+  "props": [
+    {"name": "words", "type": "{text: string, className?: string}[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "cursorClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "headline"]
+}

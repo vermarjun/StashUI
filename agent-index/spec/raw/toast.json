@@ -1,0 +1,21 @@
+{
+  "name": "toast",
+  "blurb": "Radix UI toast primitives with viewport, actions, and close button.",
+  "description": "Toast system based on Radix UI Toast primitives. Exports ToastProvider, ToastViewport (fixed bottom-right on desktop, top on mobile), Toast root, ToastAction, and ToastClose. Supports default and destructive variants.",
+  "use_when": "You need a standardized toast notification system with Radix primitives.",
+  "avoid_when": "For simple notifications; this is more complex than needed unless using Radix UI ecosystem.",
+  "a11y": "Full Radix UI accessibility. Close button is keyboard accessible. Supports swipe-to-dismiss on touch.",
+  "props": [
+    {"name": "variant", "type": "'default' | 'destructive'", "default": "'default'", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["toast"]
+}

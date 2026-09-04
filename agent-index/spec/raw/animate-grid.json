@@ -1,0 +1,27 @@
+{
+  "name": "animate-grid",
+  "blurb": "Card grid that tilts cards on hover with 3D perspective and glow.",
+  "description": "Renders a 4x4 grid where each card scales and glows on hover. Hover spreads glow to adjacent cards using CSS transforms and filter effects.",
+  "use_when": "Portfolio galleries, feature grids, or product showcases where 3D depth is desired.",
+  "avoid_when": "Motion-sensitive users; dense layouts; small screens (4x4 doesn't adapt).",
+  "a11y": "Static grid with hover effects only. No keyboard navigation beyond card focus.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "textGlowStartColor", "type": "string", "default": "\"#38ef7d80\"", "required": false},
+    {"name": "textGlowEndColor", "type": "string", "default": "\"#38ef7d\"", "required": false},
+    {"name": "perspective", "type": "number", "default": "600", "required": false},
+    {"name": "rotateX", "type": "number", "default": "-1", "required": false},
+    {"name": "rotateY", "type": "number", "default": "-15", "required": false},
+    {"name": "cards", "type": "CardItem[]", "default": null, "required": true},
+    {"name": "renderCard", "type": "function", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill", "shadow"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "logo-wall"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "backlight",
+  "blurb": "Wraps children with blur and color saturation filter.",
+  "description": "Applies an SVG filter that blurs and increases saturation of child elements, creating a glow/backlight effect.",
+  "use_when": "Visual emphasis on text or elements, glowing badge effects, or artistic styling.",
+  "avoid_when": "Accessibility-critical text (blur harms readability); motion-sensitive users.",
+  "a11y": "Filter wrapper only. Does not affect semantic content or focus.",
+  "props": [
+    {"name": "children", "type": "ReactElement", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "blur", "type": "number", "default": "20", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "badge"]
+}

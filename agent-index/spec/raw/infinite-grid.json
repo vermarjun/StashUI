@@ -1,0 +1,24 @@
+{
+  "name": "infinite-grid",
+  "blurb": "3D grid of cards with click interaction, infinite panning, and shader effects.",
+  "description": "A WebGL-based card gallery that renders images in 3D space with mouse-controlled panning, distortion post-processing, and vignette effects. Emits events on tile load and click.",
+  "use_when": "Immersive media portfolios or galleries where 3D depth and interactive panning create visual impact.",
+  "avoid_when": "On low-end devices or without WebGL support. Requires explicit parent sizing or the component collapses.",
+  "a11y": "Click events dispatched via custom tile-clicked event; no native keyboard navigation or prefers-reduced-motion support in the code.",
+  "props": [
+    {"name": "cardData", "type": "CardData[]", "default": null, "required": true},
+    {"name": "options", "type": "Partial<InfiniteGridOptions> | undefined", "default": null, "required": false},
+    {"name": "onTilesLoaded", "type": "() => void", "default": null, "required": false},
+    {"name": "onTileClicked", "type": "(detail: unknown) => void", "default": null, "required": false},
+    {"name": "className", "type": "string | undefined", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media"]
+}

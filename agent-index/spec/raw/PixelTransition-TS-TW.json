@@ -1,0 +1,28 @@
+{
+  "name": "PixelTransition-TS-TW",
+  "blurb": "Reveals hidden content by dissolving a pixelated overlay on hover, focus, or click.",
+  "description": "GSAP-animated pixel grid that staggered-displays and hides in random order, transitioning between two content slots. Touch devices trigger on click; desktop uses hover/focus.",
+  "use_when": "Interactive cards, before/after comparisons, or reveal-on-interact UI patterns where a playful pixel effect enhances user engagement.",
+  "avoid_when": "Performance-critical mobile (GSAP animating 49+ DOM elements), or contexts where motion must be disabled.",
+  "a11y": "Two content slots with aria-hidden toggling based on state. Focusable via tabIndex and responds to keyboard (Enter/Space on focus).",
+  "props": [
+    {"name": "firstContent", "type": "React.ReactNode | string", "default": null, "required": true},
+    {"name": "secondContent", "type": "React.ReactNode | string", "default": null, "required": true},
+    {"name": "gridSize", "type": "number", "default": "7", "required": false},
+    {"name": "pixelColor", "type": "string", "default": "currentColor", "required": false},
+    {"name": "animationStepDuration", "type": "number", "default": "0.3", "required": false},
+    {"name": "once", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false},
+    {"name": "aspectRatio", "type": "string", "default": "100%", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "focus", "click"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "decoration", "testimonial"]
+}

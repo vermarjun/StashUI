@@ -1,0 +1,18 @@
+{
+  "name": "comp-484",
+  "blurb": "Paginated table with numbered page buttons and ellipsis between page ranges.",
+  "description": "Data table with smart pagination showing numbered page buttons (5 at a time), ellipsis for skipped ranges, previous/next buttons, and rows-per-page selector. Includes aria-live updates and aria-current on active page.",
+  "use_when": "Tables with many pages where users want to jump to specific page numbers, not just next/previous.",
+  "avoid_when": "Very large datasets (1000+ pages) — even with ellipsis, pagination buttons overwhelm the UI.",
+  "a11y": "Page buttons have aria-current=\"page\" when active. Previous/next buttons have aria-labels. Page info uses aria-live=\"polite\".",
+  "props": [],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["data-table"]
+}

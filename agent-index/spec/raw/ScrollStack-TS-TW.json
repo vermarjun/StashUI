@@ -1,0 +1,32 @@
+{
+  "name": "ScrollStack-TS-TW",
+  "blurb": "Cards stack and scale as you scroll, compressing into a deck.",
+  "description": "A scroll-triggered stacking animation where multiple cards compress and scale down as the user scrolls. Uses Lenis for smooth scrolling. Items accumulate at a stack position while earlier cards fade. Highly configurable: itemScale, rotation, blur, base scale.",
+  "use_when": "Showcasing process steps, feature highlights, or content flows in an engaging scroll narrative.",
+  "avoid_when": "Users with prefers-reduced-motion — heavy scroll animation may cause discomfort.",
+  "a11y": "Content is readable, but scroll-driven effects are visual-only. Consider skipping animation for motion-sensitive users.",
+  "props": [
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "itemDistance", "type": "number", "default": "100", "required": false},
+    {"name": "itemScale", "type": "number", "default": "0.03", "required": false},
+    {"name": "itemStackDistance", "type": "number", "default": "30", "required": false},
+    {"name": "stackPosition", "type": "string", "default": "\"20%\"", "required": false},
+    {"name": "scaleEndPosition", "type": "string", "default": "\"10%\"", "required": false},
+    {"name": "baseScale", "type": "number", "default": "0.85", "required": false},
+    {"name": "scaleDuration", "type": "number", "default": "0.5", "required": false},
+    {"name": "rotationAmount", "type": "number", "default": "0", "required": false},
+    {"name": "blurAmount", "type": "number", "default": "0", "required": false},
+    {"name": "useWindowScroll", "type": "boolean", "default": "false", "required": false},
+    {"name": "onStackComplete", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["section-background", "feature-card"]
+}

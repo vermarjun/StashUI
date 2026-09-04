@@ -1,0 +1,30 @@
+{
+  "name": "dia-text-reveal",
+  "blurb": "A color gradient band sweeps left to right across text, cycling through it.",
+  "description": "Renders text with an animated gradient band that sweeps across it. Supports repeating through multiple text strings with configurable timing. Respects prefers-reduced-motion.",
+  "use_when": "Inline text needs a smooth, elegant gradient sweep reveal with optional multi-text cycling.",
+  "avoid_when": "When the gradient sweep effect is unwanted or text must be immediately fully readable.",
+  "a11y": "Current text string is fully readable; gradient is visual effect only.",
+  "props": [
+    {"name": "text", "type": "string | string[]", "default": null, "required": true},
+    {"name": "colors", "type": "string[]", "default": "[\"#c679c4\", \"#fa3d1d\", \"#ffb005\", \"#e1e1fe\", \"#0358f7\"]", "required": false},
+    {"name": "textColor", "type": "string", "default": "var(--foreground)", "required": false},
+    {"name": "duration", "type": "number", "default": "1.5", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "repeat", "type": "boolean", "default": "false", "required": false},
+    {"name": "repeatDelay", "type": "number", "default": "0.5", "required": false},
+    {"name": "startOnView", "type": "boolean", "default": "true", "required": false},
+    {"name": "once", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "fixedWidth", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

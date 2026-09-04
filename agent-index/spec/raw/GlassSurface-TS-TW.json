@@ -1,0 +1,39 @@
+{
+  "name": "GlassSurface-TS-TW",
+  "blurb": "A glassy container with chromatic aberration and blur that distorts the background.",
+  "description": "A glass-morphism container using SVG displacement mapping and chromatic aberration to create realistic optical refraction effects. Adapts to light/dark mode with automatic fallback for browsers lacking SVG filter support.",
+  "use_when": "You want a premium frosted-glass effect around text or UI elements with optical distortion that refracts the background.",
+  "avoid_when": "Older browsers or environments where SVG filters are unsupported.",
+  "a11y": "Container only; focus and keyboard behavior depend on children. No motion guards.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "width", "type": "number | string", "default": "200", "required": false},
+    {"name": "height", "type": "number | string", "default": "80", "required": false},
+    {"name": "borderRadius", "type": "number", "default": "20", "required": false},
+    {"name": "borderWidth", "type": "number", "default": "0.07", "required": false},
+    {"name": "brightness", "type": "number", "default": "50", "required": false},
+    {"name": "opacity", "type": "number", "default": "0.93", "required": false},
+    {"name": "blur", "type": "number", "default": "11", "required": false},
+    {"name": "displace", "type": "number", "default": "0", "required": false},
+    {"name": "backgroundOpacity", "type": "number", "default": "0", "required": false},
+    {"name": "saturation", "type": "number", "default": "1", "required": false},
+    {"name": "distortionScale", "type": "number", "default": "-180", "required": false},
+    {"name": "redOffset", "type": "number", "default": "0", "required": false},
+    {"name": "greenOffset", "type": "number", "default": "10", "required": false},
+    {"name": "blueOffset", "type": "number", "default": "20", "required": false},
+    {"name": "xChannel", "type": "\"R\" | \"G\" | \"B\"", "default": "\"R\"", "required": false},
+    {"name": "yChannel", "type": "\"R\" | \"G\" | \"B\"", "default": "\"G\"", "required": false},
+    {"name": "mixBlendMode", "type": "string", "default": "\"difference\"", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": "{}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "feature-card", "body-text"]
+}

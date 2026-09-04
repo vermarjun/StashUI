@@ -1,0 +1,25 @@
+{
+  "name": "components-backgrounds-hole",
+  "blurb": "Discs and particles stream through an elliptical hole, animated continuously.",
+  "description": "Canvas-based background with concentric discs tweening downward through a central hole and particles falling through. Runs a continuous RAF loop with radial gradient overlays.",
+  "use_when": "A dramatic, animated page background that should command visual attention without user interaction.",
+  "avoid_when": "Performance-sensitive pages or mobile devices — the RAF loop runs constantly and never idles, consuming significant GPU/CPU resources.",
+  "a11y": "Passive background wrapper; focus and keyboard behaviour come from children. Continuous animation may cause motion sickness; no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "strokeColor", "type": "string", "default": "'#737373'", "required": false},
+    {"name": "numberOfLines", "type": "number", "default": "50", "required": false},
+    {"name": "numberOfDiscs", "type": "number", "default": "50", "required": false},
+    {"name": "particleRGBColor", "type": "[number, number, number]", "default": "[255, 255, 255]", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

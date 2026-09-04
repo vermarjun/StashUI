@@ -1,0 +1,25 @@
+{
+  "name": "animated-circular-progress-bar",
+  "blurb": "Animated circular progress bar with primary and secondary color arcs.",
+  "description": "An SVG-based circular progress indicator that animates a stroke around a circle, with primary and secondary color arcs and centered percentage text.",
+  "use_when": "Displaying progress in a compact circular format, like upload/download progress or loading states.",
+  "avoid_when": "When a linear progress bar is more appropriate or space is very limited.",
+  "a11y": "The percentage text is displayed; the SVG itself lacks aria labels.",
+  "props": [
+    {"name": "max", "type": "number", "default": "100", "required": false},
+    {"name": "min", "type": "number", "default": "0", "required": false},
+    {"name": "value", "type": "number", "default": null, "required": true},
+    {"name": "gaugePrimaryColor", "type": "string", "default": null, "required": true},
+    {"name": "gaugeSecondaryColor", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["fill", "border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["loading"]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "layout-grid",
+  "blurb": "Masonry grid cards expand to center when clicked with dark overlay.",
+  "description": "A responsive grid layout with click-to-expand functionality. Selected cards zoom to center with layout animation and dark backdrop, returning to grid when clicking outside.",
+  "use_when": "Photo galleries, project portfolios, and case study showcases with click-to-view detail interaction.",
+  "avoid_when": "Mobile-first designs; expanded cards center on viewport which may be off-screen on small devices.",
+  "a11y": "Click handlers on motion.div; no keyboard navigation, focus management, or escape key handling.",
+  "props": [
+    {"name": "cards", "type": "Card[]", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["feature-card", "media"]
+}

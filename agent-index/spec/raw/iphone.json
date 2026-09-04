@@ -1,0 +1,23 @@
+{
+  "name": "iphone",
+  "blurb": "iPhone frame mockup displays content via image or autoplay video.",
+  "description": "An SVG-rendered iPhone hardware frame with cutout screen area. Displays either a static image or autoplay video with accurate screen positioning, rounded corners, and bezel framing.",
+  "use_when": "Product landing pages, app demos, or marketing showcases displaying mobile app or web experiences.",
+  "avoid_when": "When responsive sizing per viewport is critical; fixed aspect ratio requires explicit parent width.",
+  "a11y": "SVG frame is decorative; video autoplays without user interaction control; alt text should be on content, not the frame.",
+  "props": [
+    {"name": "src", "type": "string | undefined", "default": null, "required": false},
+    {"name": "videoSrc", "type": "string | undefined", "default": null, "required": false},
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media", "feature-card"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "animated-modal",
+  "blurb": "3D spring-animated modal with blur backdrop and outside-click dismissal.",
+  "description": "A compound modal component with spring-driven 3D entrance animation, blurred background, automatic scroll locking, and keyboard/click-outside dismissal.",
+  "use_when": "Showing important dialogs with a polished, animated entrance that captures attention.",
+  "avoid_when": "For simple confirmations — standard alert-dialog is lighter weight.",
+  "a11y": "Has close button and keyboard dismissal; relies on children for semantic content. No explicit focus trap.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal"]
+}

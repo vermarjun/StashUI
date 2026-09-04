@@ -1,0 +1,21 @@
+{
+  "name": "inspira-tracing-beam",
+  "blurb": "Glowing line traces down content on scroll, marking progress through a page.",
+  "description": "Wraps content and renders a winding SVG line with a spring-animated gradient beam that follows scroll position down the page.",
+  "use_when": "Long-form documentation, timelines, or story-driven pages where visual progress tracking enhances navigation and engagement.",
+  "avoid_when": "Short single-viewport pages — the effect requires scrollable height to be meaningful.",
+  "a11y": "SVG is marked `aria-hidden`; focus and keyboard navigation work on child content. Visual progress tracking only.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "decoration"]
+}

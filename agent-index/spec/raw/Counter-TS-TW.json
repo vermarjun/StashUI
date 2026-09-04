@@ -1,0 +1,27 @@
+{
+  "name": "Counter-TS-TW",
+  "blurb": "Digit-by-digit animated number counter with sliding digits and gradient overlays.",
+  "description": "Sophisticated number counter using Framer Motion where each digit scrolls independently. Supports custom formatting, automatic place detection, and decorative gradient masks. Highly configurable styling and animation.",
+  "use_when": "Displaying counts or metrics where per-digit animation creates a premium feel.",
+  "avoid_when": "Simple number displays or performance-critical contexts where per-digit animation is overhead.",
+  "a11y": "Animated digits are visually-only; consider adding static number text for screen readers.",
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": true},
+    {"name": "fontSize", "type": "number", "default": "100", "required": false},
+    {"name": "padding", "type": "number", "default": "0", "required": false},
+    {"name": "places", "type": "PlaceValue[]", "default": "auto-detected", "required": false},
+    {"name": "gap", "type": "number", "default": "8", "required": false},
+    {"name": "textColor", "type": "string", "default": "inherit", "required": false},
+    {"name": "containerStyle", "type": "CSSProperties", "default": null, "required": false},
+    {"name": "digitStyle", "type": "CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["transform", "position"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["stat", "chart"]
+}

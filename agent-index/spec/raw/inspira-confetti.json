@@ -1,0 +1,24 @@
+{
+  "name": "inspira-confetti",
+  "blurb": "Canvas confetti animation triggered programmatically or on click.",
+  "description": "Wrapper component using canvas-confetti library that renders particles in configurable patterns. Includes ConfettiButton for immediate click-triggered celebrations.",
+  "use_when": "Success screens, form submissions, celebrations, or moments needing celebratory feedback.",
+  "avoid_when": "Animations that must respect prefers-reduced-motion, or high-frequency particle calls.",
+  "a11y": "Canvas-rendered animation; semantic content via children prop. Button variant is keyboard-accessible.",
+  "props": [
+    {"name": "options", "type": "ConfettiOptions", "default": null, "required": false},
+    {"name": "globalOptions", "type": "ConfettiGlobalOptions", "default": null, "required": false},
+    {"name": "manualstart", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "modal"]
+}

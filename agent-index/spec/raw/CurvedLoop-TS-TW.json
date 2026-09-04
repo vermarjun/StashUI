@@ -1,0 +1,25 @@
+{
+  "name": "CurvedLoop-TS-TW",
+  "blurb": "Text flows along a curved SVG path in a looping marquee, draggable to control.",
+  "description": "Renders text on a curved path using SVG textPath and continuously scrolls it. Supports drag-to-control and adjustable curve amount and speed.",
+  "use_when": "A decorative full-width marquee that needs curvature and fine-grained control over text flow.",
+  "avoid_when": "When SVG rendering is restricted or if complex text with bidirectional content is needed.",
+  "a11y": "Text is rendered in SVG; screen readers may struggle with textPath content. No keyboard navigation for drag control.",
+  "props": [
+    {"name": "marqueeText", "type": "string", "default": "", "required": false},
+    {"name": "speed", "type": "number", "default": "2", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "curveAmount", "type": "number", "default": "400", "required": false},
+    {"name": "direction", "type": "'left' | 'right'", "default": "left", "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "drag"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

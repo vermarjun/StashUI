@@ -1,0 +1,21 @@
+{
+  "name": "shimmer-button",
+  "blurb": "Light sweep slides across button.",
+  "description": "A button with a shimmer effect using a linear-gradient overlay that slides horizontally continuously.",
+  "use_when": "You want a polished interactive button with animated shimmer.",
+  "avoid_when": "On minimalist interfaces where motion should be reserved for interaction.",
+  "a11y": "Standard button semantics. Shimmer is visual only. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

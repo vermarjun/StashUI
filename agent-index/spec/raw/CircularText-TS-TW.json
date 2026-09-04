@@ -1,0 +1,23 @@
+{
+  "name": "CircularText-TS-TW",
+  "blurb": "Text letters orbit in a circle, speeding up or pausing on hover.",
+  "description": "Arranges text letters around a circle and rotates them continuously. On hover, responds with adjustable behaviors: speed up, slow down, pause, or spin wildly.",
+  "use_when": "A playful, interactive logo or decoration that draws attention through constant motion.",
+  "avoid_when": "Touch-only interfaces or pages where vestibular motion may cause discomfort — no reduced-motion guard.",
+  "a11y": "Text is laid out as individual letters in rotated spans; not linearized for screen readers. No keyboard interaction.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "spinDuration", "type": "number", "default": "20", "required": false},
+    {"name": "onHover", "type": "'slowDown' | 'speedUp' | 'pause' | 'goBonkers'", "default": "speedUp", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "decoration"]
+}

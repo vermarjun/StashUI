@@ -1,0 +1,32 @@
+{
+  "name": "cosmic-portal",
+  "blurb": "Animated 3D cosmic portal with rotating crystals, bloom effects, and shifting color schemes.",
+  "description": "Renders a Three.js WebGL scene with a rotating crystal portal, procedurally-generated geometry, and post-processing bloom. Colors and complexity are customizable. Includes ref methods to activate or shift dimensions.",
+  "use_when": "Hero sections or feature showcases needing an immersive, otherworldly visual impact.",
+  "avoid_when": "Performance-critical contexts, mobile devices, or when color schemes must stay static.",
+  "a11y": "Purely visual 3D scene. Buttons for activation are keyboard-accessible. No audio or interaction beyond controls.",
+  "props": [
+    {"name": "portalComplexity", "type": "number", "default": "4", "required": false},
+    {"name": "crystalCount", "type": "number", "default": "12", "required": false},
+    {"name": "primaryColor", "type": "string", "default": "'#9b59b6'", "required": false},
+    {"name": "secondaryColor", "type": "string", "default": "'#3498db'", "required": false},
+    {"name": "accentColor", "type": "string", "default": "'#e74c3c'", "required": false},
+    {"name": "vortexColor", "type": "string", "default": "'#2ecc71'", "required": false},
+    {"name": "rotationSpeed", "type": "number", "default": "0.3", "required": false},
+    {"name": "bloomStrength", "type": "number", "default": "1.2", "required": false},
+    {"name": "bloomRadius", "type": "number", "default": "0.7", "required": false},
+    {"name": "bloomThreshold", "type": "number", "default": "0.2", "required": false},
+    {"name": "dimensionShift", "type": "number", "default": "4", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClass", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "section-background"]
+}

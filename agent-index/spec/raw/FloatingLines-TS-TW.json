@@ -1,0 +1,34 @@
+{
+  "name": "FloatingLines-TS-TW",
+  "blurb": "Animated waves of flowing lines with interactive mouse bending.",
+  "description": "THREE.js shader rendering multiple layers of animated wave lines. Supports top, middle, and bottom wave layers with customizable gradients, line counts, and positions. Optional mouse interaction with parallax effect.",
+  "use_when": "Abstract, flowing backgrounds where layered wave patterns create visual depth and movement.",
+  "avoid_when": "When clean, minimal backgrounds are preferred; the layered waves add complexity.",
+  "a11y": "WebGL canvas with optional mouse interactivity. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "linesGradient", "type": "string[]", "default": null, "required": false},
+    {"name": "enabledWaves", "type": "Array<'top' | 'middle' | 'bottom'>", "default": null, "required": false},
+    {"name": "lineCount", "type": "number | number[]", "default": null, "required": false},
+    {"name": "lineDistance", "type": "number | number[]", "default": null, "required": false},
+    {"name": "topWavePosition", "type": "WavePosition", "default": null, "required": false},
+    {"name": "middleWavePosition", "type": "WavePosition", "default": null, "required": false},
+    {"name": "bottomWavePosition", "type": "WavePosition", "default": null, "required": false},
+    {"name": "animationSpeed", "type": "number", "default": null, "required": false},
+    {"name": "interactive", "type": "boolean", "default": null, "required": false},
+    {"name": "bendRadius", "type": "number", "default": null, "required": false},
+    {"name": "bendStrength", "type": "number", "default": null, "required": false},
+    {"name": "mouseDamping", "type": "number", "default": null, "required": false},
+    {"name": "parallax", "type": "boolean", "default": null, "required": false},
+    {"name": "parallaxStrength", "type": "number", "default": null, "required": false},
+    {"name": "mixBlendMode", "type": "React.CSSProperties['mixBlendMode']", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

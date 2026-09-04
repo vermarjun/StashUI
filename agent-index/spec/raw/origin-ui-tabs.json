@@ -1,0 +1,21 @@
+{
+  "name": "origin-ui-tabs",
+  "blurb": "Accessible tab group built on Radix UI primitives with consistent styling.",
+  "description": "Composable wrapper around Radix UI Tabs that exports Tabs, TabsList, TabsTrigger, and TabsContent. Provides keyboard navigation, ARIA attributes, and a neutral styled tab bar with smooth state transitions.",
+  "use_when": "Building accessible tab interfaces that need keyboard navigation (arrow keys, Home/End) and screen reader support without custom scripting.",
+  "avoid_when": "When you need custom animation; the component provides basic styling only. Not suitable for highly styled or animated tab experiences.",
+  "a11y": "Full keyboard support (arrow keys, Home/End, Enter). ARIA roles and live regions managed by Radix. Proper focus management and screen reader announcements.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["layout", "fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "feature-card"]
+}

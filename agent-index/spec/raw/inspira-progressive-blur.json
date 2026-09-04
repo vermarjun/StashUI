@@ -1,0 +1,24 @@
+{
+  "name": "inspira-progressive-blur",
+  "blurb": "Progressive blur effect fading from edges using backdrop-filter layers.",
+  "description": "Wrapper with layered backdrop-filter blur that gradually increases from a specified direction. Uses gradient masks and motion/react for smooth animations.",
+  "use_when": "Hero images, overlays, or content areas needing edge fading without sharp cutoffs.",
+  "avoid_when": "On browsers without backdrop-filter support.",
+  "a11y": "Blur layers are decorative overlays; semantic content provided via children.",
+  "props": [
+    {"name": "direction", "type": "\"top\" | \"bottom\" | \"left\" | \"right\"", "default": "\"bottom\"", "required": false},
+    {"name": "blurLayers", "type": "number", "default": "8", "required": false},
+    {"name": "blurIntensity", "type": "number", "default": "0.25", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

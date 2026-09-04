@@ -1,0 +1,21 @@
+{
+  "name": "text-hover-effect",
+  "blurb": "Rainbow gradient text reveals under the cursor as you hover, with initial stroke-dash animation.",
+  "description": "SVG text component with a radial mask gradient that follows the cursor, revealing a rainbow fill underneath. Initial stroke-dasharray animation draws the outline before hover.",
+  "use_when": "Large display headlines or hero text that should feel interactive and playful on desktop.",
+  "avoid_when": "Touch-only surfaces, as the effect requires pointer tracking. Does not work well on mobile.",
+  "a11y": "Text rendered as SVG; no alternative text content. Animation follows cursor only on hover, does not respond to prefers-reduced-motion.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "duration", "type": "number", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "hover"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "headline"]
+}

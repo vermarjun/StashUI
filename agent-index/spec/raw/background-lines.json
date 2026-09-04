@@ -1,0 +1,22 @@
+{
+  "name": "background-lines",
+  "blurb": "Animated SVG lines draw and fade in a continuous loop.",
+  "description": "Container with light/dark theme support rendering 42 animated SVG paths. Uses strokeDasharray/strokeDashoffset for draw animation with staggered repeat delays. Accepts children for content overlay.",
+  "use_when": "Section background with content needing animated line graphic, light and dark mode support required.",
+  "avoid_when": "Complex SVG rendering on mobile, or when animation delays must be deterministic.",
+  "a11y": "Purely decorative SVG; children handle their own focus and keyboard support.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "svgOptions", "type": "{duration?: number}", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "hero", "page-background"]
+}

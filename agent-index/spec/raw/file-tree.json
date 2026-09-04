@@ -1,0 +1,26 @@
+{
+  "name": "file-tree",
+  "blurb": "Expandable folder/file hierarchy with keyboard navigation and selection.",
+  "description": "Tree view component displaying a recursive file structure. Folders toggle open/closed via accordion; files show only when parent is expanded. Supports click-to-select, keyboard navigation with arrow keys, and custom folder/file icons. Items with isSelectable=false remain visible but unclickable.",
+  "use_when": "File explorers, documentation navigation trees, or project hierarchies where users browse and select items.",
+  "avoid_when": "Very deep trees (>15 levels) where navigation becomes cumbersome or when keyboard shortcuts conflict with the app.",
+  "a11y": "Folders and files are accordion buttons with full keyboard navigation (arrow keys, enter). Selected item indicated via context. No roving tabindex; focus must be managed by parent.",
+  "props": [
+    {"name": "elements", "type": "TreeViewElement[]", "default": null, "required": false},
+    {"name": "initialSelectedId", "type": "string", "default": null, "required": false},
+    {"name": "initialExpandedItems", "type": "string[]", "default": null, "required": false},
+    {"name": "indicator", "type": "boolean", "default": "true", "required": false},
+    {"name": "openIcon", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "closeIcon", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "sort", "type": "TreeSortMode", "default": "default", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["sidebar", "data-table"]
+}

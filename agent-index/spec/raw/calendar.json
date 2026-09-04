@@ -1,0 +1,21 @@
+{
+  "name": "calendar",
+  "blurb": "Interactive month/year grid with navigation.",
+  "description": "A date picker calendar using React hooks and date utilities. Displays a grid of dates for the selected month with navigation arrows.",
+  "use_when": "You need a date input in a compact calendar widget.",
+  "avoid_when": "When you need a date range picker; this selects single dates only.",
+  "a11y": "Calendar grid and nav buttons present; focus handling depends on implementation.",
+  "props": [
+    {"name": "value", "type": "Date | undefined", "default": null, "required": false},
+    {"name": "onChange", "type": "(date: Date) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": ["text", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "modal"]
+}

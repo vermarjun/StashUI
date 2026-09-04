@@ -1,0 +1,30 @@
+{
+  "name": "multi-selector",
+  "blurb": "Searchable multi-select with badges and select-all.",
+  "description": "A fully-featured multi-select component with search, optional badges showing selections, select-all option, and support for displaying extra count when exceeding maxCount.",
+  "use_when": "Users need to select multiple options with quick search and visual feedback.",
+  "avoid_when": "Single selection or simple multi-select lists.",
+  "a11y": "Keyboard navigable; search input; checkboxes show selection state.",
+  "props": [
+    {"name": "options", "type": "{label: string; value: string; icon?: React.ComponentType; disable?: boolean}[]", "default": null, "required": true},
+    {"name": "onValueChange", "type": "(value: string[]) => void", "default": null, "required": true},
+    {"name": "defaultValue", "type": "string[]", "default": "[]", "required": false},
+    {"name": "placeholder", "type": "string", "default": "\"Select options\"", "required": false},
+    {"name": "animation", "type": "number", "default": "0", "required": false},
+    {"name": "maxCount", "type": "number", "default": "3", "required": false},
+    {"name": "modalPopover", "type": "boolean", "default": "false", "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "popoverClass", "type": "string", "default": null, "required": false},
+    {"name": "showall", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

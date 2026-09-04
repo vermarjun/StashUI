@@ -1,0 +1,24 @@
+{
+  "name": "carousel-3d",
+  "blurb": "Three.js 3D spherical carousel with drag-to-rotate interaction.",
+  "description": "CSS3DRenderer-powered 3D carousel that arranges items on a sphere with auto-rotation. Supports drag interaction to manually rotate. Loads Three.js dynamically for SSR compatibility.",
+  "use_when": "Immersive product showcases or portfolio galleries requiring true 3D interaction.",
+  "avoid_when": "Low-spec devices or browsers without WebGL; requires a sized parent container.",
+  "a11y": "No keyboard interaction. Drag-only control makes it inaccessible without mouse input.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": "[]", "required": false},
+    {"name": "width", "type": "number", "default": "450", "required": false},
+    {"name": "height", "type": "number", "default": "600", "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag", "timer"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "feature-card", "gallery"]
+}

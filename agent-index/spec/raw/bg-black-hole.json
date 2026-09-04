@@ -1,0 +1,25 @@
+{
+  "name": "bg-black-hole",
+  "blurb": "Elliptical discs and particles spiral toward a central void.",
+  "description": "Canvas-rendered background with animated concentric discs, radial lines, and falling particles converging toward center. Includes light/dark overlay gradients and supports children elements.",
+  "use_when": "Immersive hero section with depth effect and particle dynamics.",
+  "avoid_when": "Low-spec devices, high frame rate requirements, or multiple instances.",
+  "a11y": "Purely decorative background animation; children must handle own a11y.",
+  "props": [
+    {"name": "strokeColor", "type": "string", "default": "\"#737373\"", "required": false},
+    {"name": "numberOfLines", "type": "number", "default": "50", "required": false},
+    {"name": "numberOfDiscs", "type": "number", "default": "50", "required": false},
+    {"name": "particleRGBColor", "type": "[number, number, number]", "default": "[255, 255, 255]", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

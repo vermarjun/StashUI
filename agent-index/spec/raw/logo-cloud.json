@@ -1,0 +1,22 @@
+{
+  "name": "logo-cloud",
+  "blurb": "Logos scroll in horizontal marquee with gradient fade edges.",
+  "description": "A horizontal scrolling marquee of logos with CSS animation and gradient mask fade on edges. Exports multiple variants: AnimatedLogoCloud (scrolling), IconLogoCloud (grid), and StaticLogoCloud.",
+  "use_when": "Landing pages, testimonial sections, or partner/customer showcases highlighting brand logos.",
+  "avoid_when": "When logos need interactive behavior; designed as decorative, non-clickable display.",
+  "a11y": "Images have alt text from logo names; CSS animations do not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "title", "type": "string | undefined", "default": null, "required": false},
+    {"name": "logos", "type": "Logo[]", "default": "[]", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall"]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "ScrollReveal-TS-TW",
+  "blurb": "Text words fade in and unblur with a stagger as the container rotates, all tied to scroll.",
+  "description": "Splits text into words and reveals them with staggered opacity and optional blur animations as the element scrolls into view. The container itself rotates from a base angle to zero. Uses GSAP ScrollTrigger.",
+  "use_when": "Body copy needs a polished reveal effect that's synchronized to scroll progress for reading guidance.",
+  "avoid_when": "When content must be legible without scrolling; constant blur impairs readability.",
+  "a11y": "Text is split into word spans and animated. Content is readable once fully revealed but animation may distract.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "scrollContainerRef", "type": "RefObject<HTMLElement>", "default": null, "required": false},
+    {"name": "enableBlur", "type": "boolean", "default": "true", "required": false},
+    {"name": "baseOpacity", "type": "number", "default": "0.1", "required": false},
+    {"name": "baseRotation", "type": "number", "default": "3", "required": false},
+    {"name": "blurStrength", "type": "number", "default": "4", "required": false},
+    {"name": "containerClassName", "type": "string", "default": "", "required": false},
+    {"name": "textClassName", "type": "string", "default": "", "required": false},
+    {"name": "rotationEnd", "type": "string", "default": "bottom bottom", "required": false},
+    {"name": "wordAnimationEnd", "type": "string", "default": "bottom bottom", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["text", "fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

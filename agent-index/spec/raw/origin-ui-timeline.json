@@ -1,0 +1,23 @@
+{
+  "name": "origin-ui-timeline",
+  "blurb": "Vertical or horizontal timeline with clickable steps and an active-step indicator.",
+  "description": "Compound component system (Timeline, TimelineItem, TimelineIndicator, TimelineDate, TimelineTitle, TimelineContent) for status/workflow tracking. Tracks active step via controlled (value prop) or uncontrolled (defaultValue) state. Steps are clickable; the active one is highlighted.",
+  "use_when": "Order tracking, onboarding flows, or process timelines where users follow sequential steps.",
+  "avoid_when": "Deeply nested timelines (3+ levels of nesting) — layout can become complex.",
+  "a11y": "Semantic time elements for dates. Timeline steps are buttons (clickable) with active state. Supports keyboard navigation if wrapped in proper focus management.",
+  "props": [
+    {"name": "defaultValue", "type": "number", "default": "1", "required": false},
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "orientation", "type": "horizontal | vertical", "default": "vertical", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["data-table", "body-text"]
+}

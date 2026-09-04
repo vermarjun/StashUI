@@ -1,0 +1,21 @@
+{
+  "name": "sticky-scroll-reveal",
+  "blurb": "Two-column layout that reveals sticky content as you scroll through text.",
+  "description": "A scroll-triggered reveal with text descriptions on the left and sticky content on the right. Background color animates based on the active item as the user scrolls.",
+  "use_when": "A features or walkthrough section that pairs descriptions with visual content.",
+  "avoid_when": "On mobile (content hidden on screens smaller than lg) or when descriptions don't fill the viewport.",
+  "a11y": "Titles and descriptions are in the DOM and screen-readable. Sticky visual content is hidden on mobile without alternative access.",
+  "props": [
+    {"name": "content", "type": "{title: string; description: string; content?: React.ReactNode}[]", "default": null, "required": true},
+    {"name": "contentClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["fill", "background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "body-text"]
+}

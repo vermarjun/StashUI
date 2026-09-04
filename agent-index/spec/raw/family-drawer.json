@@ -1,0 +1,26 @@
+{
+  "name": "family-drawer",
+  "blurb": "Multi-view drawer with smooth height transitions between views.",
+  "description": "A FamilyDrawer using vaul and Framer Motion; supports multiple nested views with animated height transitions; view switching is smooth.",
+  "use_when": "Creating multi-step flows, wizards, or nested drawers (e.g., Share → Copy Link or Send Email).",
+  "avoid_when": "For single-view drawers — use directional-drawer instead to reduce complexity.",
+  "a11y": "View switching is animated; Escape key closes drawer; focus management handled by vaul; keyboard navigation supported.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultOpen", "type": "boolean", "default": "false", "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "defaultView", "type": "string", "default": "'default'", "required": false},
+    {"name": "onViewChange", "type": "(view: string) => void", "default": null, "required": false},
+    {"name": "views", "type": "ViewsRegistry", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal", "sidebar"]
+}

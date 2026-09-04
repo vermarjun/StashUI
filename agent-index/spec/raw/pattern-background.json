@@ -1,0 +1,27 @@
+{
+  "name": "pattern-background",
+  "blurb": "Animated or static pattern backgrounds with grid, dot, or big-dot variants.",
+  "description": "CSS-based pattern background with three pattern types (grid, dot, big-dot) and five size options. Optionally animates via background-position in eight directions.",
+  "use_when": "A flexible, performance-conscious pattern background with optional directional animation.",
+  "avoid_when": "No significant limitations. CSS-based, fully customizable.",
+  "a11y": "Container with content slot; focus and keyboard behaviour come from children. Animation has no prefers-reduced-motion guard when enabled.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "animate", "type": "boolean", "default": "false", "required": false},
+    {"name": "direction", "type": "PatternBackgroundDirection", "default": null, "required": false},
+    {"name": "mask", "type": "string", "default": null, "required": false},
+    {"name": "speed", "type": "number", "default": null, "required": false},
+    {"name": "variant", "type": "'grid' | 'dot' | 'big-dot'", "default": "'grid'", "required": false},
+    {"name": "size", "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "default": "'md'", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "page-background"]
+}

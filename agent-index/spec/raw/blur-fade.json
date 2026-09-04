@@ -1,0 +1,29 @@
+{
+  "name": "blur-fade",
+  "blurb": "Elements fade and unblur as they enter the viewport.",
+  "description": "Wraps children in a blur/opacity fade animation triggered on viewport intersection. Customizable direction, duration, blur amount, and trigger.",
+  "use_when": "Scroll-triggered reveals, progressive content loading, or entrance animations.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion support); fast-scrolling content.",
+  "a11y": "Animation wrapper; motion-based only. Does not affect content accessibility.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "variant", "type": "object", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": "0.4", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "offset", "type": "number", "default": "6", "required": false},
+    {"name": "direction", "type": "string", "default": "\"down\"", "required": false},
+    {"name": "inView", "type": "boolean", "default": "false", "required": false},
+    {"name": "inViewMargin", "type": "string", "default": "\"-50px\"", "required": false},
+    {"name": "blur", "type": "string", "default": "\"6px\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "body-text", "feature-card"]
+}

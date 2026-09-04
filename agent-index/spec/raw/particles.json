@@ -1,0 +1,28 @@
+{
+  "name": "particles",
+  "blurb": "Animated particles that repel from the cursor and drift around.",
+  "description": "Canvas-based particle system where particles move with velocity and are repelled by pointer movement. Each particle drifts with configurable staticity and easing.",
+  "use_when": "An interactive background that responds to pointer movement with organic particle motion.",
+  "avoid_when": "Touch-only devices — particles only respond to mouse movement. High quantity values on low-end devices may impact performance.",
+  "a11y": "Canvas overlay with mouse-based interactivity. No touch support or keyboard alternatives.",
+  "props": [
+    {"name": "quantity", "type": "number", "default": "100", "required": false},
+    {"name": "staticity", "type": "number", "default": "50", "required": false},
+    {"name": "ease", "type": "number", "default": "50", "required": false},
+    {"name": "size", "type": "number", "default": "0.4", "required": false},
+    {"name": "color", "type": "string", "default": "'#ffffff'", "required": false},
+    {"name": "vx", "type": "number", "default": "0", "required": false},
+    {"name": "vy", "type": "number", "default": "0", "required": false},
+    {"name": "refresh", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

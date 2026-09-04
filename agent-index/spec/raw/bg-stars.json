@@ -1,0 +1,25 @@
+{
+  "name": "bg-stars",
+  "blurb": "Parallax starfield that shifts gently with mouse movement.",
+  "description": "CSS box-shadow stars rendered via motion/react spring physics. Follows pointer position with configurable stiffness/damping for subtle depth effect.",
+  "use_when": "Space-themed background with passive parallax motion following cursor.",
+  "avoid_when": "Touch-only devices without pointer tracking.",
+  "a11y": "Parallax motion can disorient; no keyboard equivalent for pointer tracking.",
+  "props": [
+    {"name": "factor", "type": "number", "default": "0.05", "required": false},
+    {"name": "speed", "type": "number", "default": "50", "required": false},
+    {"name": "transition", "type": "SpringOptions", "default": "{stiffness: 50, damping: 20}", "required": false},
+    {"name": "starColor", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

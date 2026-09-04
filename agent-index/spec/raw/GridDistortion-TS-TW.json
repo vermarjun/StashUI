@@ -1,0 +1,25 @@
+{
+  "name": "GridDistortion-TS-TW",
+  "blurb": "An image warps and ripples dynamically under your cursor.",
+  "description": "Three.js component rendering an image on a shader-based grid that distorts based on cursor movement. Uses a data texture to propagate distortion physics with relaxation, creating wave-like ripple effects.",
+  "use_when": "You want an interactive, tactile image effect that responds to user movement with smooth fluid distortion.",
+  "avoid_when": "Touch-only surfaces or performance-critical contexts — runs continuous WebGL rendering.",
+  "a11y": "Purely visual cursor-driven effect; no keyboard alternative or prefers-reduced-motion guard.",
+  "props": [
+    {"name": "imageSrc", "type": "string", "default": null, "required": true},
+    {"name": "grid", "type": "number", "default": "15", "required": false},
+    {"name": "mouse", "type": "number", "default": "0.1", "required": false},
+    {"name": "strength", "type": "number", "default": "0.15", "required": false},
+    {"name": "relaxation", "type": "number", "default": "0.9", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media", "hero", "feature-card"]
+}

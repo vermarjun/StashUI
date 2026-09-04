@@ -1,0 +1,23 @@
+{
+  "name": "google-gemini-effect",
+  "blurb": "SVG paths that animate based on scroll-driven motion values.",
+  "description": "Sticky section with animated SVG lines that draw based on motion values, typically driven by scroll events. Displays title, description, and button overlay.",
+  "use_when": "Hero sections or scroll-triggered animations in luxury/tech landing pages.",
+  "avoid_when": "When animation must respect prefers-reduced-motion, or on low-motion design systems.",
+  "a11y": "SVG paths are decorative; text content is semantic and accessible.",
+  "props": [
+    {"name": "pathLengths", "type": "MotionValue[]", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": "\"Build with Aceternity UI\"", "required": false},
+    {"name": "description", "type": "string", "default": "\"Scroll this component and see the bottom SVG come to life wow this works!\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "decoration"]
+}

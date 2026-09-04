@@ -1,0 +1,27 @@
+{
+  "name": "ai-instructions",
+  "blurb": "Searchable instruction picker with ability to create custom AI prompt modifiers.",
+  "description": "A component system for managing AI instructions with a popover interface. Includes search, preset groups, create dialog, and state management for active instructions.",
+  "use_when": "Building AI interfaces where users customize prompts or system instructions before sending.",
+  "avoid_when": "For simple button toggles — this provides a full UI for instruction management.",
+  "a11y": "Uses dialog and popover primitives with command palette search. Keyboard navigation via Command component.",
+  "props": [
+    {"name": "value", "type": "string[]", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string[]) => void", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string[]", "default": "[]", "required": false},
+    {"name": "instructions", "type": "Instruction[]", "default": null, "required": false},
+    {"name": "onInstructionsChange", "type": "(instructions: Instruction[]) => void", "default": null, "required": false},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["text", "fill"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["secondary-cta", "form-field"]
+}

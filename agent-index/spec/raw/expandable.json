@@ -1,0 +1,68 @@
+{
+  "name": "expandable",
+  "blurb": "Card that smoothly expands to reveal more content.",
+  "description": "Wrapper component using spring animation to expand/collapse content height. Wrapper for customizable card layouts.",
+  "use_when": "Rich content cards needing elegant progressive disclosure with motion.",
+  "avoid_when": "Static layouts, multiple independent sections (use Accordion).",
+  "a11y": "Trigger has aria-expanded. Motion-safe for users with prefers-reduced-motion.",
+  "props": [
+    {
+      "name": "initial",
+      "type": "TargetAndTransition",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "animate",
+      "type": "TargetAndTransition",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "exit",
+      "type": "TargetAndTransition",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "transition",
+      "type": "any",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "collapsedSize",
+      "type": "{ width?: number",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "feature-card",
+    "hero"
+  ]
+}

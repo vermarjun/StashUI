@@ -1,0 +1,24 @@
+{
+  "name": "direction-aware-hover",
+  "blurb": "Image and text slide based on which edge you hover from.",
+  "description": "Card with background image that detects which border (top/bottom/left/right) the mouse enters from and animates the image and overlay text in opposite directions.",
+  "use_when": "Image cards where hover direction should add visual feedback and detail to the interaction.",
+  "avoid_when": "Touch-only surfaces — direction detection requires hover events and pointer position.",
+  "a11y": "Detects mouse entry direction with no keyboard fallback. Image renders with empty alt text.",
+  "props": [
+    {"name": "imageUrl", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode | string", "default": null, "required": true},
+    {"name": "childrenClassName", "type": "string", "default": null, "required": false},
+    {"name": "imageClassName", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["feature-card", "media"]
+}

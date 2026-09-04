@@ -1,0 +1,23 @@
+{
+  "name": "testimonial-slider",
+  "blurb": "Testimonial carousel with rotating images and cross-fading quotes.",
+  "description": "Auto-rotating testimonial carousel with image carousel (60deg rotate + fade effect) and quote text that fades and translates. Includes previous/next navigation buttons (with aria-labels), pauses auto-rotation on manual interaction, then restarts. Dynamic height adjustment for variable quote lengths.",
+  "use_when": "Social proof sections where testimonials are presented as rotating carousel with both visual (images) and textual (quotes) emphasis.",
+  "avoid_when": "Static testimonial display — auto-rotation runs continuously regardless of user interaction depth.",
+  "a11y": "Navigation buttons have aria-labels. Images have alt text. Supports light/dark mode. Pauses on manual click then restarts, improving accessibility for screen readers.",
+  "props": [
+    {"name": "testimonials", "type": "Array<{img: string; quote: string; name: string; role: string}>", "default": "[]", "required": false},
+    {"name": "autoRotate", "type": "boolean", "default": "true", "required": false},
+    {"name": "duration", "type": "number", "default": "5", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "subtle",
+    "affects": ["image", "text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial"]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "hero-color-panel",
+  "blurb": "Hero with animated color-panel shader background and AI SDK tech stack badges.",
+  "description": "Responsive hero section with heading, description, CTA button, and tech badges (Next.js, AI SDK). Animated ColorPanels shader on desktop (1280×720), mobile version (responsive). Context-based composition with many overridable parts.",
+  "use_when": "AI/SDK-focused landing page or hero that showcases technical credibility with framework badges.",
+  "avoid_when": "ColorPanels is WebGL-expensive. Needs a sized parent; mobile visual is absolutely positioned. No prefers-reduced-motion for shader animation.",
+  "a11y": "Heading has screen-reader title (srTitle). Buttons and links focusable. Shader decorative. No built-in reduced-motion support.",
+  "props": [
+    {"name": "srTitle", "type": "string", "default": "AI SDK Agents", "required": false},
+    {"name": "title", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "subtitle", "type": "React.ReactNode", "default": "Copy and Paste", "required": false},
+    {"name": "description", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "showCta", "type": "boolean", "default": "true", "required": false},
+    {"name": "ctaProps", "type": "Partial<HeroColorPanelsCTAProps>", "default": null, "required": false},
+    {"name": "showBadges", "type": "boolean", "default": "true", "required": false},
+    {"name": "techStack", "type": "HeroColorPanelsTechItem[]", "default": null, "required": false},
+    {"name": "desktopShaderProps", "type": "Partial<ColorPanelsProps>", "default": null, "required": false},
+    {"name": "mobileShaderProps", "type": "Partial<ColorPanelsProps>", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "page-background"]
+}

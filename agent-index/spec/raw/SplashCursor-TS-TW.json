@@ -1,0 +1,35 @@
+{
+  "name": "SplashCursor-TS-TW",
+  "blurb": "Fluid ink simulation that responds to cursor movement and clicks.",
+  "description": "Renders a fluid dynamics simulation on canvas using WebGL. Pointer movement creates velocity forces, clicks trigger colored splats. Simulates advection, pressure, curl forces with real-time solver.",
+  "use_when": "Full-screen interactive art backgrounds or immersive hero sections that reward exploration.",
+  "avoid_when": "Touch-only devices (no pointer); high-traffic pages (RAF loop uses significant GPU/CPU); requires a sized parent.",
+  "a11y": "Canvas wrapper only; no keyboard interaction or prefers-reduced-motion support.",
+  "props": [
+    {"name": "SIM_RESOLUTION", "type": "number", "default": "128", "required": false},
+    {"name": "DYE_RESOLUTION", "type": "number", "default": "1440", "required": false},
+    {"name": "CAPTURE_RESOLUTION", "type": "number", "default": "512", "required": false},
+    {"name": "DENSITY_DISSIPATION", "type": "number", "default": "3.5", "required": false},
+    {"name": "VELOCITY_DISSIPATION", "type": "number", "default": "2", "required": false},
+    {"name": "PRESSURE", "type": "number", "default": "0.1", "required": false},
+    {"name": "PRESSURE_ITERATIONS", "type": "number", "default": "20", "required": false},
+    {"name": "CURL", "type": "number", "default": "3", "required": false},
+    {"name": "SPLAT_RADIUS", "type": "number", "default": "0.2", "required": false},
+    {"name": "SPLAT_FORCE", "type": "number", "default": "6000", "required": false},
+    {"name": "SHADING", "type": "boolean", "default": "true", "required": false},
+    {"name": "COLOR_UPDATE_SPEED", "type": "number", "default": "10", "required": false},
+    {"name": "BACK_COLOR", "type": "ColorRGB", "default": "{r: 0.5, g: 0, b: 0}", "required": false},
+    {"name": "TRANSPARENT", "type": "boolean", "default": "true", "required": false},
+    {"name": "RAINBOW_MODE", "type": "boolean", "default": "true", "required": false},
+    {"name": "COLOR", "type": "string", "default": "\"#ff0000\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "click"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero"]
+}

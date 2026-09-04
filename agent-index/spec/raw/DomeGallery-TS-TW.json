@@ -1,0 +1,36 @@
+{
+  "name": "DomeGallery-TS-TW",
+  "blurb": "Draggable image grid that expands selected tiles to full view.",
+  "description": "Arranges images on a responsive grid with gesture support. Click or drag an image to enlarge it in an overlay; drag gestures reposition the tile across the dome layout.",
+  "use_when": "A visual gallery where images deserve individual focus and exploration via drag and click.",
+  "avoid_when": "Touch-only devices with no primary pointer, or when image grids must remain static and non-interactive.",
+  "a11y": "Images accept alt text. Click and keyboard focus work on tiles; enlarged view requires click to close. No prefers-reduced-motion handling.",
+  "props": [
+    {"name": "images", "type": "ImageItem[]", "default": "DEFAULT_IMAGES", "required": false},
+    {"name": "fit", "type": "number", "default": "0.5", "required": false},
+    {"name": "fitBasis", "type": "'auto' | 'min' | 'max' | 'width' | 'height'", "default": "'auto'", "required": false},
+    {"name": "minRadius", "type": "number", "default": "600", "required": false},
+    {"name": "maxRadius", "type": "number", "default": "Infinity", "required": false},
+    {"name": "padFactor", "type": "number", "default": "0.25", "required": false},
+    {"name": "overlayBlurColor", "type": "string", "default": "'#120F17'", "required": false},
+    {"name": "maxVerticalRotationDeg", "type": "number", "default": "DEFAULTS.maxVerticalRotationDeg", "required": false},
+    {"name": "dragSensitivity", "type": "number", "default": "DEFAULTS.dragSensitivity", "required": false},
+    {"name": "enlargeTransitionMs", "type": "number", "default": "DEFAULTS.enlargeTransitionMs", "required": false},
+    {"name": "segments", "type": "number", "default": "DEFAULTS.segments", "required": false},
+    {"name": "dragDampening", "type": "number", "default": "2", "required": false},
+    {"name": "openedImageWidth", "type": "string", "default": "'400px'", "required": false},
+    {"name": "openedImageHeight", "type": "string", "default": "'400px'", "required": false},
+    {"name": "imageBorderRadius", "type": "string", "default": "'30px'", "required": false},
+    {"name": "openedImageBorderRadius", "type": "string", "default": "'30px'", "required": false},
+    {"name": "grayscale", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "pronounced",
+    "affects": ["image", "layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media", "feature-card"]
+}

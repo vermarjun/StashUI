@@ -1,0 +1,21 @@
+{
+  "name": "inspira-shimmer-button",
+  "blurb": "Light sweep slides across button on loop.",
+  "description": "A button with a continuously animated shimmer effect using a linear gradient that sweeps across from left to right.",
+  "use_when": "You want a loading or attention-grabbing shimmer effect on a button.",
+  "avoid_when": "When you need a clear, static CTA; the motion can distract from the action.",
+  "a11y": "Standard button semantics. Shimmer is visual only. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta", "loading"]
+}

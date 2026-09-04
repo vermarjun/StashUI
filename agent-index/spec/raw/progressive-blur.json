@@ -1,0 +1,23 @@
+{
+  "name": "progressive-blur",
+  "blurb": "Progressive blur overlay fades content from edges with layered blur effects.",
+  "description": "Renders a layered backdrop blur overlay that progressively obscures content from top, bottom, or both edges using CSS backdrop filters and mask gradients.",
+  "use_when": "Content overflow indicators, fade-to-obscurity effects, or elegantly blurring content at container edges.",
+  "avoid_when": "Accessibility-critical content that must not be obscured or hidden.",
+  "a11y": "Visual blur effect; non-interactive. No semantic content or keyboard interaction.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "height", "type": "string", "default": "\"30%\"", "required": false},
+    {"name": "position", "type": "\"top\" | \"bottom\" | \"both\"", "default": "\"bottom\"", "required": false},
+    {"name": "blurLevels", "type": "number[]", "default": "[0.5, 1, 2, 4, 8, 16, 32, 64]", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["section-background", "decoration"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "apple-card-carousel",
+  "blurb": "Horizontal scrollable card carousel with click-to-expand modal detail view.",
+  "description": "Carousel of large image cards that expands to a full-screen modal with shared layout animations when clicked. Includes blur-on-load for images, scroll buttons, and keyboard/outside-click close handling.",
+  "use_when": "Showcasing high-quality images or products in an Apple-like polished carousel with detail views.",
+  "avoid_when": "Mobile-only interfaces; the component is optimized for mouse scroll and click.",
+  "a11y": "Cards are clickable buttons with keyboard support (Escape to close). Modal has proper focus management and backdrop.",
+  "props": [
+    {"name": "items", "type": "React.ReactNode[]", "default": null, "required": true},
+    {"name": "initialScroll", "type": "number", "default": "0", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "gallery"]
+}

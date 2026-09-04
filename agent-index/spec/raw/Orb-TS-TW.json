@@ -1,0 +1,24 @@
+{
+  "name": "Orb-TS-TW",
+  "blurb": "Glowing animated orb that distorts and rotates when the cursor hovers near it.",
+  "description": "WebGL shader rendering a colorizable orb with Perlin noise-driven outer halo and inner core, responding to pointer proximity for distortion and optional rotation.",
+  "use_when": "Decorative hero sections, call-to-action zones, or backgrounds where a luminous, reactive focal point enhances engagement.",
+  "avoid_when": "WebGL-unsupported devices, touch-only surfaces, or performance-critical mobile contexts — the shader runs continuously.",
+  "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "hue", "type": "number", "default": "0", "required": false},
+    {"name": "hoverIntensity", "type": "number", "default": "0.2", "required": false},
+    {"name": "rotateOnHover", "type": "boolean", "default": "true", "required": false},
+    {"name": "forceHoverState", "type": "boolean", "default": "false", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "#000000", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "page-background", "decoration"]
+}

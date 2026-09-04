@@ -1,0 +1,22 @@
+{
+  "name": "primitives-headless-tabs",
+  "blurb": "Animated tab switcher with composable thumb and icon components.",
+  "description": "Tab switcher primitive using Headless UI with Framer Motion. Features composable SwitchThumb and SwitchIcon components for tab animation.",
+  "use_when": "Building animated tab interfaces with smooth transitions between content sections.",
+  "avoid_when": "When you need a simple tab switcher without animation or custom composition.",
+  "a11y": "Built on Headless UI primitives with full keyboard navigation and screen reader support.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode | ((bag: SwitchBag) => React.ReactNode)", "default": null, "required": false},
+    {"name": "checked", "type": "boolean", "default": null, "required": false},
+    {"name": "onChange", "type": "(checked: boolean) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "opacity", "scale"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "nav"]
+}

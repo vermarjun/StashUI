@@ -1,0 +1,28 @@
+{
+  "name": "link-preview",
+  "blurb": "Link that shows a website or image preview on hover, with spring-based motion and cursor tracking.",
+  "description": "Radix HoverCard-based link preview that displays a screenshot (live or static) with spring-animated entrance. Preview translates based on cursor position within the link.",
+  "use_when": "Rich link previews in documentation, blogs, or social feeds that need smooth spring physics.",
+  "avoid_when": "Touch-only interfaces; requires hover. External API dependency (microlink.io) may introduce delays.",
+  "a11y": "Link is keyboard-focusable and semantic; preview appears on hover only.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "url", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "width", "type": "number", "default": "200", "required": false},
+    {"name": "height", "type": "number", "default": "125", "required": false},
+    {"name": "quality", "type": "number", "default": "50", "required": false},
+    {"name": "layout", "type": "string", "default": "\"fixed\"", "required": false},
+    {"name": "isStatic", "type": "boolean", "default": "false", "required": false},
+    {"name": "imageSrc", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "decoration"]
+}

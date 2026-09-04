@@ -1,0 +1,44 @@
+{
+  "name": "comp-423",
+  "blurb": "Badge with an integrated checkbox for selection.",
+  "description": "Badge component wrapping a checkbox input for selectable tags.",
+  "use_when": "Multi-select tag interfaces, filtering, or bulk-action badges.",
+  "avoid_when": "Single-state labels without selection logic.",
+  "a11y": "Interactive checkbox. Native keyboard and focus support.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onChange",
+      "type": "(checked: boolean) => void",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "none",
+    "affects": [
+      "text"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "badge",
+    "form-field"
+  ]
+}

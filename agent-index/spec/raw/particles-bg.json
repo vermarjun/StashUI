@@ -1,0 +1,24 @@
+{
+  "name": "particles-bg",
+  "blurb": "Animated particles that respond to cursor movement with magnetism.",
+  "description": "Canvas-based particle background where particles move with velocity and are attracted toward pointer. Customizable quantity, colour, and physics parameters.",
+  "use_when": "An interactive background that engages users with pointer-responsive particle motion.",
+  "avoid_when": "Touch-only devices — particles only respond to mouse movement. High quantity values on low-end devices may impact performance.",
+  "a11y": "Canvas overlay with mouse-based interactivity. No touch support or keyboard alternatives.",
+  "props": [
+    {"name": "color", "type": "string", "default": "'#FFF'", "required": false},
+    {"name": "quantity", "type": "number", "default": "100", "required": false},
+    {"name": "staticity", "type": "number", "default": "50", "required": false},
+    {"name": "ease", "type": "number", "default": "50", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

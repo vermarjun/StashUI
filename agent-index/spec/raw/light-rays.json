@@ -1,0 +1,26 @@
+{
+  "name": "light-rays",
+  "blurb": "Animated light rays that swing and fade with opacity pulsing.",
+  "description": "Motion-based light ray effect with multiple rays that swing side-to-side while fading in and out. Includes radial gradient glow for atmospheric ambiance.",
+  "use_when": "An atmospheric animated background overlay that adds luminosity and motion without overwhelming the page.",
+  "avoid_when": "Performance-sensitive contexts — multiple simultaneous motion animations. Motion sickness risk with significant ray movement.",
+  "a11y": "Overlay with pointer-events-none; focus and keyboard behaviour come from content below. Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "count", "type": "number", "default": "7", "required": false},
+    {"name": "color", "type": "string", "default": "'rgba(160, 210, 255, 0.2)'", "required": false},
+    {"name": "blur", "type": "number", "default": "36", "required": false},
+    {"name": "speed", "type": "number", "default": "14", "required": false},
+    {"name": "length", "type": "string", "default": "'70vh'", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

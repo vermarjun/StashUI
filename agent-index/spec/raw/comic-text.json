@@ -1,0 +1,23 @@
+{
+  "name": "comic-text",
+  "blurb": "Text styled like a comic book headline with thick stroke, skew, and dot-pattern background.",
+  "description": "Renders text in a comic book aesthetic with black text stroke, skewed transform, drop shadow, red dot pattern fill, and a spring-based entry animation.",
+  "use_when": "A playful or onomatopoetic heading wants a bold, retro comic book appearance.",
+  "avoid_when": "Professional, serious, or accessibility-critical contexts.",
+  "a11y": "Text content is visible but styled with WebkitTextFillColor: transparent. Background pattern is purely visual.",
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false},
+    {"name": "fontSize", "type": "number", "default": "5", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "decoration"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "BlurText-TS-TW",
+  "blurb": "Text animates in with blur and opacity transition when scrolled into view.",
+  "description": "Wraps text and staggered-animates each word (or letter) to fade in and blur-out with configurable easing. Triggered by scroll visibility via IntersectionObserver.",
+  "use_when": "Body copy or headings need a polished reveal entrance as the page scrolls.",
+  "avoid_when": "When prefers-reduced-motion is set — the animation continues regardless.",
+  "a11y": "Text content is fully readable; uses motion/react for animation. No motion guard; runs for all users.",
+  "props": [
+    {"name": "text", "type": "string", "default": "", "required": false},
+    {"name": "delay", "type": "number", "default": "200", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "animateBy", "type": "'words' | 'letters'", "default": "words", "required": false},
+    {"name": "direction", "type": "'top' | 'bottom'", "default": "top", "required": false},
+    {"name": "threshold", "type": "number", "default": "0.1", "required": false},
+    {"name": "rootMargin", "type": "string", "default": "0px", "required": false},
+    {"name": "animationFrom", "type": "Record<string, string | number>", "default": null, "required": false},
+    {"name": "animationTo", "type": "Array<Record<string, string | number>>", "default": null, "required": false},
+    {"name": "easing", "type": "Easing | Easing[]", "default": "identity", "required": false},
+    {"name": "onAnimationComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "stepDuration", "type": "number", "default": "0.35", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "components-community-pin-list",
+  "blurb": "List items snap to top when clicked to pin, spring-animated into place.",
+  "description": "Interactive list where items toggle between pinned (top section) and unpinned (bottom section). Uses Framer Motion's layout animation to smoothly reorder items and shift sections. Pinned items show solid pins; unpinned items reveal the pin on hover.",
+  "use_when": "Organizing frequently-used items (nav, bookmarks, favorites) where users control visibility priority.",
+  "avoid_when": "Very large lists (layout animations scale poorly) or touch-only interfaces (pin toggle targets are small).",
+  "a11y": "Items are clickable divs, not buttons; focus and keyboard navigation not implemented. Layout animations do not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "items", "type": "PinListItem[]", "default": null, "required": true},
+    {"name": "labels", "type": "{pinned?: string; unpinned?: string}", "default": "{pinned: 'Pinned Items', unpinned: 'All Items'}", "required": false},
+    {"name": "transition", "type": "Transition", "default": "{stiffness: 320, damping: 20, mass: 0.8, type: 'spring'}", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "labelClassName", "type": "string", "default": null, "required": false},
+    {"name": "pinnedSectionClassName", "type": "string", "default": null, "required": false},
+    {"name": "unpinnedSectionClassName", "type": "string", "default": null, "required": false},
+    {"name": "zIndexResetDelay", "type": "number", "default": "500", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["list-item", "data-table"]
+}

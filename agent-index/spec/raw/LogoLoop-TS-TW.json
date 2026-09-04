@@ -1,0 +1,34 @@
+{
+  "name": "LogoLoop-TS-TW",
+  "blurb": "Continuous marquee carousel for logos or images with optional pause on hover.",
+  "description": "Renders a horizontal or vertical scrolling loop of logos with configurable speed. Logos repeat seamlessly; supports pause-on-hover, scale animations, and optional fade edges.",
+  "use_when": "Displaying partner, sponsor, or client logos in a continuous scrolling strip.",
+  "avoid_when": "When images must be interactive or clickable beyond optional link wrapping, or when motion must respect prefers-reduced-motion fully.",
+  "a11y": "Images accept alt text and optional titles. Links have aria-labels. Motion respects prefers-reduced-motion for transform changes but carousel still loops. Primary interaction is hover.",
+  "props": [
+    {"name": "logos", "type": "LogoItem[]", "default": null, "required": true},
+    {"name": "speed", "type": "number", "default": "120", "required": false},
+    {"name": "direction", "type": "'left' | 'right' | 'up' | 'down'", "default": "'left'", "required": false},
+    {"name": "width", "type": "number | string", "default": "'100%'", "required": false},
+    {"name": "logoHeight", "type": "number", "default": "28", "required": false},
+    {"name": "gap", "type": "number", "default": "32", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": null, "required": false},
+    {"name": "hoverSpeed", "type": "number", "default": null, "required": false},
+    {"name": "fadeOut", "type": "boolean", "default": "false", "required": false},
+    {"name": "fadeOutColor", "type": "string", "default": null, "required": false},
+    {"name": "scaleOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "renderItem", "type": "(item: LogoItem, key: React.Key) => React.ReactNode", "default": null, "required": false},
+    {"name": "ariaLabel", "type": "string", "default": "'Partner logos'", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "nav"]
+}

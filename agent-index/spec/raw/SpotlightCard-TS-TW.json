@@ -1,0 +1,22 @@
+{
+  "name": "SpotlightCard-TS-TW",
+  "blurb": "A radial spotlight follows your cursor across a dark card.",
+  "description": "Card with a circular spotlight effect that tracks mouse/focus position. The spot glows with a customizable color (default white rgba). Spotlight appears on hover and focus, fading out on blur/leave.",
+  "use_when": "Cards where you want subtle visual feedback that draws attention to content under the cursor.",
+  "avoid_when": "Touch-only interfaces — spotlight is mouse-dependent.",
+  "a11y": "Focus triggers the spotlight like hover does. Keyboard-navigable.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "spotlightColor", "type": "string (rgba format)", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "hover", "focus"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "section-background"]
+}

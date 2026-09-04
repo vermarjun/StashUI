@@ -1,0 +1,21 @@
+{
+  "name": "ImageTrail-TS-TW",
+  "blurb": "Images follow your cursor in a smooth, staggered trail.",
+  "description": "A cursor-following component that displays images from an array in a staggered trail effect. Uses GSAP animations with easing to create smooth motion along the pointer path.",
+  "use_when": "You want an interactive visual element that rewards cursor movement with animated imagery or a playful gallery.",
+  "avoid_when": "Touch-only devices or when consistent 60fps performance isn't guaranteed.",
+  "a11y": "Purely visual cursor tracking; no keyboard alternative or prefers-reduced-motion guard.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": "[]", "required": false},
+    {"name": "variant", "type": "number", "default": "1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "hero", "page-background"]
+}

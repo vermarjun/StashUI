@@ -1,0 +1,22 @@
+{
+  "name": "background-ripple-effect",
+  "blurb": "Grid of cells explodes in ripple waves on click.",
+  "description": "Absolute-positioned grid background with clickable cells. On click, triggers staggered ripple animation based on distance from click point using CSS custom properties for colors.",
+  "use_when": "Interactive background needing click feedback, suitable for hero sections with engagement.",
+  "avoid_when": "Touch devices without hover, or backgrounds that must be passive/decorative.",
+  "a11y": "Click handler on cells; no keyboard equivalent or focus ring visible on ripple trigger.",
+  "props": [
+    {"name": "rows", "type": "number", "default": "8", "required": false},
+    {"name": "cols", "type": "number", "default": "27", "required": false},
+    {"name": "cellSize", "type": "number", "default": "56", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

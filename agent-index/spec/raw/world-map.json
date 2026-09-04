@@ -1,0 +1,21 @@
+{
+  "name": "world-map",
+  "blurb": "Animated world map with curved connection lines between locations.",
+  "description": "Renders a dotted world map with theme-aware coloring via next-themes (dark/light backgrounds). Displays animated curved SVG paths connecting geographic coordinates with customizable line color.",
+  "use_when": "Team pages, dashboards, or landing pages showcasing global reach or distributed operations.",
+  "avoid_when": "When real geographic precision is needed; uses simplified Mercator projection for visual appeal.",
+  "a11y": "SVG-based map with alt text on background image; path animations are decorative.",
+  "props": [
+    {"name": "dots", "type": "Array<{start: {lat: number; lng: number; label?: string}; end: {lat: number; lng: number; label?: string}}>", "default": "[]", "required": false},
+    {"name": "lineColor", "type": "string", "default": "\"#0ea5e9\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "decoration"]
+}

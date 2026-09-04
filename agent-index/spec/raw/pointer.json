@@ -1,0 +1,22 @@
+{
+  "name": "pointer",
+  "blurb": "Custom animated cursor appears on hover, displaying child content at pointer position.",
+  "description": "Renders a custom animated cursor that tracks mouse position over the parent container and displays child content at the pointer location.",
+  "use_when": "Interactive zones or hover areas where a custom cursor provides visual feedback and enhanced engagement.",
+  "avoid_when": "Touch-only devices or contexts where cursor replacement is not appropriate.",
+  "a11y": "Custom cursor is visual only; no semantic content or keyboard interaction.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["cursor"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration"]
+}

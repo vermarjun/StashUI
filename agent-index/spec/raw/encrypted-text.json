@@ -1,0 +1,26 @@
+{
+  "name": "encrypted-text",
+  "blurb": "Text decrypts itself character by character, with unrevealed characters scrambling constantly.",
+  "description": "Renders text where characters progressively reveal from left to right when scrolled into view. Unrevealed characters continuously shuffle through random gibberish. Configurable reveal speed and character set.",
+  "use_when": "An engaging text reveal needs a tech/hacker aesthetic with animated decryption effect.",
+  "avoid_when": "When content must be immediately readable or when the scrambling might distract.",
+  "a11y": "Text has aria-label with the full content; characters are revealed progressively.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "revealDelayMs", "type": "number", "default": "50", "required": false},
+    {"name": "charset", "type": "string", "default": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+", "required": false},
+    {"name": "flipDelayMs", "type": "number", "default": "50", "required": false},
+    {"name": "encryptedClassName", "type": "string", "default": null, "required": false},
+    {"name": "revealedClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "color-picker",
+  "blurb": "Popover color picker with HSL/Hex input, saturation-lightness canvas, hue slider, presets.",
+  "description": "Controlled input component with hex/HSL conversion, 2D saturation-lightness picker (gradient canvas with crosshair), hue range slider (rainbow gradient), text input, and 12 color presets. Framer Motion animations on open/close and hover.",
+  "use_when": "Design tools, theme customizers, or any form needing color input without relying on native pickers.",
+  "avoid_when": "Mobile (native pickers are better). No keyboard-only color selection.",
+  "a11y": "Color input label is screen-reader only. Canvas picker requires mouse. Presets are buttons but no aria-label.",
+  "props": [
+    {"name": "color", "type": "string", "default": null, "required": true},
+    {"name": "onChange", "type": "(color: string) => void", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

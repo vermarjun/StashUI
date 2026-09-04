@@ -1,0 +1,22 @@
+{
+  "name": "tooltip-card",
+  "blurb": "Tooltip that follows the cursor and intelligently repositions to stay visible in the viewport.",
+  "description": "Custom tooltip that tracks mouse position and displays content with automatic edge detection and repositioning. Supports both mouse and touch events with spring-animated height transitions.",
+  "use_when": "Tooltips with rich content that need to follow cursor movement and adapt to screen edges.",
+  "avoid_when": "Simple text hints; the component is feature-rich and may be overkill for basic labels.",
+  "a11y": "Content is shown on hover or touch; not keyboard-accessible. Touch shows tooltip for 2 seconds then hides.",
+  "props": [
+    {"name": "content", "type": "string | React.ReactNode", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move", "touch"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["tooltip", "decoration"]
+}

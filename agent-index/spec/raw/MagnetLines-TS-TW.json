@@ -1,0 +1,28 @@
+{
+  "name": "MagnetLines-TS-TW",
+  "blurb": "Grid of short lines that rotate toward the cursor in real-time.",
+  "description": "A CSS Grid of lines that track pointer position and rotate individually to face the cursor, creating a rippling field effect.",
+  "use_when": "Abstract, technical backgrounds or hero sections where a subtle pointer-responsive pattern fits.",
+  "avoid_when": "Touch-only surfaces — pointer tracking is the core interaction and does not scale well to touch.",
+  "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "rows", "type": "number", "default": "9", "required": false},
+    {"name": "columns", "type": "number", "default": "9", "required": false},
+    {"name": "containerSize", "type": "string", "default": "80vmin", "required": false},
+    {"name": "lineColor", "type": "string", "default": "#efefef", "required": false},
+    {"name": "lineWidth", "type": "string", "default": "1vmin", "required": false},
+    {"name": "lineHeight", "type": "string", "default": "6vmin", "required": false},
+    {"name": "baseAngle", "type": "number", "default": "-10", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "decoration"]
+}

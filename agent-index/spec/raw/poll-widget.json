@@ -1,0 +1,35 @@
+{
+  "name": "poll-widget",
+  "blurb": "Full-featured poll with multiple rendering modes (inline, popover, dialog) and live result tallies.",
+  "description": "Compound component (Root, Content, Question, Options, Option, Results, Submit) for polls with three display modes. Tracks selection and votes. Shows results live and auto-collapses after voting. Supports success message feedback. Can be single or multi-select.",
+  "use_when": "In-app polls, surveys, or feature voting that should feel polished with multiple display options.",
+  "avoid_when": "Anonymous surveys (votes visible to all users at once).",
+  "a11y": "Fully keyboard-navigable options. Dialog mode uses aria-modal. Popover uses role=dialog. Success message announces via motion component.",
+  "props": [
+    {"name": "question", "type": "string", "default": null, "required": true},
+    {"name": "options", "type": "PollOption[]", "default": null, "required": true},
+    {"name": "description", "type": "string", "default": null, "required": false},
+    {"name": "value", "type": "string | string[]", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string | string[]", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string | string[]) => void", "default": null, "required": false},
+    {"name": "multiple", "type": "boolean", "default": "false", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "votes", "type": "Record<string, number>", "default": "{}", "required": false},
+    {"name": "hasVoted", "type": "boolean", "default": "false", "required": false},
+    {"name": "onVote", "type": "(selectedIds: string[]) => void", "default": null, "required": false},
+    {"name": "mode", "type": "inline | popover | dialog", "default": "inline", "required": false},
+    {"name": "autoCollapseDelay", "type": "number", "default": "2500", "required": false},
+    {"name": "successDuration", "type": "number", "default": "1500", "required": false},
+    {"name": "successTitle", "type": "string", "default": "Thanks for voting!", "required": false},
+    {"name": "successDescription", "type": "string", "default": "Your vote has been recorded", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["fill", "background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "modal"]
+}

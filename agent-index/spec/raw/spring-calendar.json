@@ -1,0 +1,22 @@
+{
+  "name": "spring-calendar",
+  "blurb": "Animated event calendar with spring transitions and morphing text.",
+  "description": "A calendar that shows events for selected days with spring physics animation. Clicking a date button shows that day's events with smooth layout transitions. TextMorph animates the day display. Height adjusts based on event count.",
+  "use_when": "A vibrant event calendar for dashboards or scheduling apps where animation adds polish.",
+  "avoid_when": "When prefers-reduced-motion is a priority — all transitions are motion-based.",
+  "a11y": "Buttons are clickable and keyboard-accessible. Event text is semantically rendered. No aria labels for animation.",
+  "props": [
+    {"name": "calendarData", "type": "CalendarDay[]", "default": null, "required": true},
+    {"name": "initialIndex", "type": "number", "default": "0", "required": false},
+    {"name": "onActiveIndexChange", "type": "(index: number) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "text"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "section-background"]
+}

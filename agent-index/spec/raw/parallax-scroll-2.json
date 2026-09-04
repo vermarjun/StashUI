@@ -1,0 +1,21 @@
+{
+  "name": "parallax-scroll-2",
+  "blurb": "Rotating parallax grid with Y/X offset and 3D rotation on scroll.",
+  "description": "A 3-column image grid with advanced parallax combining Y/X translation and rotateZ transforms per column. Effects are driven by scroll progress via motion/react useTransform.",
+  "use_when": "High-impact galleries or portfolio sections where rotated parallax creates dramatic visual depth and engagement.",
+  "avoid_when": "Motion-sensitive or vestibular-affected users; complex rotation + parallax combined can cause significant discomfort.",
+  "a11y": "Complex scroll-driven transform chain; no prefers-reduced-motion support; high risk for vestibular disorders.",
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "className", "type": "string | undefined", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media", "feature-card"]
+}

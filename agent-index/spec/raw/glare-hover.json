@@ -1,0 +1,29 @@
+{
+  "name": "glare-hover",
+  "blurb": "Glare sweep across element on hover using CSS gradient.",
+  "description": "Wrapper applying a configurable gradient glare effect that sweeps across children on hover. Controls angle, speed, size, and highlight color via CSS variables.",
+  "use_when": "Cards, tiles, or buttons that need a premium shimmer hover effect without animation libraries.",
+  "avoid_when": "Touch-only interfaces or when hover is unavailable.",
+  "a11y": "Wrapper only; focus and keyboard behavior come from children. Glare is purely visual.",
+  "props": [
+    {"name": "width", "type": "string", "default": null, "required": false},
+    {"name": "height", "type": "string", "default": null, "required": false},
+    {"name": "background", "type": "string", "default": "\"#000\"", "required": false},
+    {"name": "color", "type": "string", "default": "\"#ffffff\"", "required": false},
+    {"name": "opacity", "type": "number", "default": "0.5", "required": false},
+    {"name": "angle", "type": "number", "default": "-45", "required": false},
+    {"name": "size", "type": "number", "default": "250", "required": false},
+    {"name": "duration", "type": "number", "default": "650", "required": false},
+    {"name": "playOnce", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "stat"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "confetti",
+  "blurb": "Canvas-based confetti emitter with customizable particles.",
+  "description": "Wraps canvas-confetti library for imperative control. Renders a canvas and exposes fire() API to trigger confetti bursts with custom options.",
+  "use_when": "Celebration moments (form submission, game completion), rewards, or interactive celebrations.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); accessibility-required (animation only).",
+  "a11y": "Canvas animation only; no interactive elements. Motion-heavy, no text alternative.",
+  "props": [
+    {"name": "options", "type": "ConfettiOptions", "default": null, "required": false},
+    {"name": "globalOptions", "type": "ConfettiGlobalOptions", "default": "{resize: true, useWorker: true}", "required": false},
+    {"name": "manualstart", "type": "boolean", "default": "false", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "form-submit"]
+}

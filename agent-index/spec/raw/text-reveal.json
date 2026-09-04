@@ -1,0 +1,21 @@
+{
+  "name": "text-reveal",
+  "blurb": "Words fade in one by one as the page scrolls past this double-height section.",
+  "description": "Takes a string and splits it into words, each revealing via scroll-linked opacity animation. Component spans 200vh height with sticky positioning.",
+  "use_when": "Long-form narrative sections where text should unfold gradually as the reader scrolls through.",
+  "avoid_when": "Mobile with scrolling by tap; does not work well with scroll-jacking. Requires a string input, not rich content.",
+  "a11y": "Text is fully rendered in the DOM and readable; opacity animation responds to prefers-reduced-motion implicitly via scroll interaction.",
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "section-background"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "gradient-button",
+  "blurb": "Pill button with drifting gradient border.",
+  "description": "A button with an animated linear gradient border using animate-gradient-x keyframes, wrapping a soft inner background.",
+  "use_when": "You need a polished primary CTA with subtle continuous motion.",
+  "avoid_when": "When animation must be minimal or on sites with many animated elements.",
+  "a11y": "Standard button semantics with focus-visible ring. No prefers-reduced-motion guard; animation is always on.",
+  "props": [
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

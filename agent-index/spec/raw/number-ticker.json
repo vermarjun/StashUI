@@ -1,0 +1,25 @@
+{
+  "name": "number-ticker",
+  "blurb": "Counter animating from a start value to a target number when scrolled into view.",
+  "description": "Inline number counter using Framer Motion spring physics. Animates from startValue to value once the element enters the viewport. Supports configurable decimal places and direction (up/down). Delay can defer animation start by N seconds.",
+  "use_when": "Stat displays, KPI counters, or hero section metrics that reveal as the page scrolls.",
+  "avoid_when": "Very large numbers (100M+) or extreme precision (10+ decimals) — animation slowdown increases.",
+  "a11y": "Final number is rendered as text content, readable by screen readers. Animation triggers on viewport visibility.",
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": true},
+    {"name": "startValue", "type": "number", "default": "0", "required": false},
+    {"name": "direction", "type": "up | down", "default": "up", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "decimalPlaces", "type": "number", "default": "0", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["stat", "hero", "feature-card"]
+}

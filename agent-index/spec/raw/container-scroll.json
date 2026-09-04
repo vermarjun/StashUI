@@ -1,0 +1,24 @@
+{
+  "name": "container-scroll",
+  "blurb": "Card rotates and scales as you scroll, with parallax title.",
+  "description": "Scroll-driven 3D effect: content card rotates and scales on scroll, title parallax translates. Exports title, card, and container subcomponents.",
+  "use_when": "Product showcase sections, scroll-reveal demos, or 3D presentation flows.",
+  "avoid_when": "Motion-sensitive users (scroll-triggered, no prefers-reduced-motion); low-end devices.",
+  "a11y": "Scroll-driven animation only. No interactive elements beyond content.",
+  "props": [
+    {"name": "translate", "type": "number", "default": null, "required": true},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "rotate", "type": "number", "default": null, "required": true},
+    {"name": "scale", "type": "number", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["fill", "layout"],
+    "tone": "technical",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "feature-card"]
+}

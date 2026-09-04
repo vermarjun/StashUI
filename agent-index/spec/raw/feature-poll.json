@@ -1,0 +1,27 @@
+{
+  "name": "feature-poll",
+  "blurb": "Interactive poll collecting single or multi-vote feature requests with live result tallies.",
+  "description": "Compound component system (Root, Header, Title, Description, Options, Option, Indicator, Label, Footer) supporting single or multiple-choice voting. Shows vote counts and percentages, tracks selection state, keyboard-accessible option navigation.",
+  "use_when": "Feature voting or priority surveys where users pick options and results update live.",
+  "avoid_when": "Very large option counts (layout not designed for dense lists) or when results must be hidden until submission.",
+  "a11y": "Options are buttons with full keyboard navigation (arrow keys, enter). Supports both controlled (value prop) and uncontrolled (defaultValue) selection. Focus management and ARIA attributes via context.",
+  "props": [
+    {"name": "value", "type": "string | string[]", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string | string[]", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string | string[]) => void", "default": null, "required": false},
+    {"name": "multiple", "type": "boolean", "default": "false", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "showResults", "type": "boolean", "default": "false", "required": false},
+    {"name": "votes", "type": "Record<string, number>", "default": "{}", "required": false},
+    {"name": "hasVoted", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["background", "border", "shadow"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "feature-card"]
+}

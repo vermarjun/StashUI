@@ -1,0 +1,24 @@
+{
+  "name": "ui-layouts-spotlight",
+  "blurb": "Radial gradient highlights follow the cursor, illuminating child elements.",
+  "description": "Provider wrapper that enables cursor-tracking spotlight effects on child items. Three effects: proximity spotlights, hover focus, and local cursor gradients.",
+  "use_when": "Highlighting cards or features in a grid as the user moves—creates visual interest with proximity-based lighting.",
+  "avoid_when": "Touch-only devices without a pointer; small viewports where cursor is always centered.",
+  "a11y": "Listener on window mousemove; passive overlay with no focus impact. Content remains accessible.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "ProximitySpotlight", "type": "boolean", "default": "true", "required": false},
+    {"name": "HoverFocusSpotlight", "type": "boolean", "default": "false", "required": false},
+    {"name": "CursorFlowGradient", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "hover"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "section-background"]
+}

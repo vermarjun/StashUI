@@ -1,0 +1,25 @@
+{
+  "name": "ui-layouts-marquee",
+  "blurb": "Content scrolls continuously in a loop, horizontally or vertically.",
+  "description": "Duplicates children in a seamless scrolling marquee animation. Direction, duration, and pause-on-hover behavior are configurable.",
+  "use_when": "Showcasing a rolling list of logos, testimonials, or news items without user action.",
+  "avoid_when": "Touch-only interfaces where pause-on-hover cannot activate; content shorter than the viewport.",
+  "a11y": "Animation is purely visual; no focus or keyboard interaction. Content is still readable outside the marquee.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "reverse", "type": "boolean", "default": null, "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "vertical", "type": "boolean", "default": "false", "required": false},
+    {"name": "repeat", "type": "number", "default": "4", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "section-background"]
+}

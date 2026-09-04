@@ -1,0 +1,29 @@
+{
+  "name": "Stack-TS-TW",
+  "blurb": "Swipeable card stack that rotates and scales as cards are dragged away.",
+  "description": "Interactive 3D card stack with drag-to-swipe interaction. Cards rotate and scale based on position; dragging beyond sensitivity threshold sends the card to the back. Supports autoplay, optional random rotation, and mobile click-only mode.",
+  "use_when": "Card galleries, image stacks, or any UI where swiping through items feels natural and playful.",
+  "avoid_when": "Static content or devices with only mouse (no touch). Requires a sized parent container.",
+  "a11y": "Drag and click handlers for interaction; keyboard navigation not implemented. Mobile click-only mode improves touch accessibility.",
+  "props": [
+    {"name": "randomRotation", "type": "boolean", "default": "false", "required": false},
+    {"name": "sensitivity", "type": "number", "default": "200", "required": false},
+    {"name": "sendToBackOnClick", "type": "boolean", "default": "false", "required": false},
+    {"name": "cards", "type": "React.ReactNode[]", "default": "[]", "required": false},
+    {"name": "animationConfig", "type": "object", "default": "{stiffness: 260, damping: 20}", "required": false},
+    {"name": "autoplay", "type": "boolean", "default": "false", "required": false},
+    {"name": "autoplayDelay", "type": "number", "default": "3000", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "mobileClickOnly", "type": "boolean", "default": "false", "required": false},
+    {"name": "mobileBreakpoint", "type": "number", "default": "768", "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag", "click", "timer"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "feature-card", "media"]
+}

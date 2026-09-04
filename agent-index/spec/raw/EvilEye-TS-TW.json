@@ -1,0 +1,29 @@
+{
+  "name": "EvilEye-TS-TW",
+  "blurb": "An eye with animated irises that tracks your cursor and flickers.",
+  "description": "WebGL component rendering an eye with procedural-noise irises and a pupil that follows cursor position. Uses shader-based animation with continuous flickering and easing.",
+  "use_when": "You need a striking, hypnotic focal point that rewards interaction — hero sections or loading states.",
+  "avoid_when": "Touch-only surfaces, performance-critical contexts, or when the component cannot fill a sized parent container.",
+  "a11y": "Purely visual; cursor tracking has no keyboard alternative, and there's no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "eyeColor", "type": "string", "default": "#FF6F37", "required": false},
+    {"name": "intensity", "type": "number", "default": "1.5", "required": false},
+    {"name": "pupilSize", "type": "number", "default": "0.6", "required": false},
+    {"name": "irisWidth", "type": "number", "default": "0.25", "required": false},
+    {"name": "glowIntensity", "type": "number", "default": "0.35", "required": false},
+    {"name": "scale", "type": "number", "default": "0.8", "required": false},
+    {"name": "noiseScale", "type": "number", "default": "1.0", "required": false},
+    {"name": "pupilFollow", "type": "number", "default": "1.0", "required": false},
+    {"name": "flameSpeed", "type": "number", "default": "1.0", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "#000000", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "decoration", "loading"]
+}

@@ -1,0 +1,43 @@
+{
+  "blurb": "Searchable dropdown selecting multiple items with checkboxes.",
+  "description": "Renders a styled multi-select dropdown with search, checkboxes, and keyboard navigation via a command palette.",
+  "use_when": "Users need to select multiple options from a filterable list.",
+  "avoid_when": "Small lists where visual simplicity is critical, or mobile with limited screen space.",
+  "a11y": "Checkbox-based selection with arrow key navigation. No explicit focus visible indicator described.",
+  "props": [
+    {
+      "name": "options",
+      "type": "Array",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "defaultValue",
+      "type": "string[]",
+      "default": "[]",
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "default": "\"Select...\"",
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "none",
+    "affects": [
+      "text",
+      "border"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "form-field"
+  ]
+}

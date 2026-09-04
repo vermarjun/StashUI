@@ -1,0 +1,24 @@
+{
+  "name": "vanishing-input",
+  "blurb": "Input with rotating placeholders and canvas-based particle vanish animation.",
+  "description": "A controlled or uncontrolled input with rotating placeholder suggestions that cycle every 3 seconds, and a canvas-based particle animation when submitted that dissolves the text.",
+  "use_when": "Creating search or prompt interfaces where animated text effects and placeholder cycling enhance engagement.",
+  "avoid_when": "On devices where canvas animations impact performance or when prefers-reduced-motion compliance is needed.",
+  "a11y": "Input is semantic with keyboard support, but the particle animation does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "placeholders", "type": "string[]", "default": "[\"Placeholder 1\", \"Placeholder 2\", \"Placeholder 3\"]", "required": false},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "onChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "onSubmit", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "input", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["text", "background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "form-submit"]
+}

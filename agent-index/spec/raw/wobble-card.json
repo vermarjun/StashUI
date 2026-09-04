@@ -1,0 +1,22 @@
+{
+  "name": "wobble-card",
+  "blurb": "Card tilts and wobbles toward the cursor with parallax inner content.",
+  "description": "Motion wrapper that tracks pointer position and applies translate/scale transforms to create a 3D tilt effect. Outer card moves toward cursor while inner content scales and counter-translates for parallax depth. Includes noise texture overlay.",
+  "use_when": "Hero feature cards or CTAs that need eye-catching interactivity on desktop hover.",
+  "avoid_when": "Touch-only devices or dark-themed pages; component hardcodes indigo-800 background.",
+  "a11y": "No keyboard interaction; focus handling not managed. Motion plays on hover but children remain accessible.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["layout", "fill"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "primary-cta"]
+}

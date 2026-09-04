@@ -1,0 +1,22 @@
+{
+  "name": "typewriter",
+  "blurb": "Types out a base string, then cycles through alternating phrases with a blinking cursor.",
+  "description": "Animates character-by-character typing of a baseText, then cycles through a texts array repeatedly, typing and reversing each. Includes a blinking cursor sprite.",
+  "use_when": "Hero sections or call-to-action copy that should feel interactive and personable.",
+  "avoid_when": "Large amounts of text; animation harms readability and performance degrades with character count.",
+  "a11y": "Text is rendered in the DOM; blinking cursor animation does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "delay", "type": "number", "default": null, "required": true},
+    {"name": "texts", "type": "string[]", "default": null, "required": true},
+    {"name": "baseText", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "hero"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "background-gradient",
+  "blurb": "Animated radial gradient wrapper, glowing on hover with flowing colors.",
+  "description": "A container that wraps children with a continuously animated multi-color radial gradient background. Uses Framer Motion to shift backgroundPosition, with opacity and blur effects. Gradient opacity increases from 60% to 100% on hover.",
+  "use_when": "Card backgrounds, buttons, or sections needing a premium animated glow effect.",
+  "avoid_when": "High-performance mobile contexts; continuous animation may cause frame drops. Users with prefers-reduced-motion should disable it.",
+  "a11y": "Purely decorative wrapper. Animation runs unprompted; no `prefers-reduced-motion` guard detected. Content inside remains fully accessible.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "animate", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background", "border"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "decoration"]
+}

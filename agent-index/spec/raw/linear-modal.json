@@ -1,0 +1,21 @@
+{
+  "name": "linear-modal",
+  "blurb": "Modal that expands from a card with spring animation and layout morphing.",
+  "description": "A Dialog using Framer Motion with layoutId; expands from trigger card to full-screen modal with spring animation; includes image, title, description.",
+  "use_when": "Creating card-to-modal experiences with smooth layout transitions and spring animations.",
+  "avoid_when": "For simple modals without animation or layout morphing — use shadcn Dialog instead.",
+  "a11y": "Escape key closes modal; Tab cycles through focusables; first focusable auto-focused on open; body overflow locked.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "transition", "type": "Transition", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal", "card"]
+}

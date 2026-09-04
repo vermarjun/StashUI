@@ -1,0 +1,25 @@
+{
+  "name": "LetterGlitch-TS-TW",
+  "blurb": "Glitchy character grid with color-shifting and vignette effects.",
+  "description": "Canvas-rendered grid of random characters that shift colors and glitch. Supports customizable color palette, glitch speed, smooth transitions, and optional vignette effects. Characters interpolate smoothly between colors.",
+  "use_when": "Tech, digital, or cyberpunk-themed sections where visual glitch effects add character and atmosphere.",
+  "avoid_when": "Accessibility-focused designs; this effect is purely visual and adds noise to content.",
+  "a11y": "Canvas-based; no keyboard navigation or semantic content. No interactive elements. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "glitchColors", "type": "string[]", "default": "[\"#2b4539\", \"#61dca3\", \"#61b3dc\"]", "required": false},
+    {"name": "glitchSpeed", "type": "number", "default": "50", "required": false},
+    {"name": "centerVignette", "type": "boolean", "default": "false", "required": false},
+    {"name": "outerVignette", "type": "boolean", "default": "true", "required": false},
+    {"name": "smooth", "type": "boolean", "default": "true", "required": false},
+    {"name": "characters", "type": "string", "default": "\"ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "playful",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

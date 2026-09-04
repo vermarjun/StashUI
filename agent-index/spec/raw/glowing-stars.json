@@ -1,0 +1,21 @@
+{
+  "name": "glowing-stars",
+  "blurb": "Card with animated glowing stars grid that intensifies on hover.",
+  "description": "Card component wrapping an animated star grid that glows randomly on a loop. Brightness increases on hover. Includes helper components for title and description.",
+  "use_when": "Hero cards, feature cards, or testimonials with a tech/space aesthetic.",
+  "avoid_when": "When animation must respect prefers-reduced-motion.",
+  "a11y": "Animated stars are decorative. Card and text components are semantic and don't depend on animation.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "testimonial"]
+}

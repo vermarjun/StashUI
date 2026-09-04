@@ -1,0 +1,25 @@
+{
+  "name": "ASCIIText-TS-TW",
+  "blurb": "Text rendered as ASCII art with 3D waves and mouse-tracking tilt.",
+  "description": "Renders text as ASCII characters in a 3D plane with wave deformations and perspective tilt driven by mouse position. Uses WebGL shaders and canvas manipulation.",
+  "use_when": "A hero heading needs a striking retro-terminal effect with 3D depth and interactivity.",
+  "avoid_when": "On touch-only devices or low-end GPUs — requires WebGL and continuous canvas rendering.",
+  "a11y": "Text is rendered as canvas and ASCII output; screen readers cannot reach it. No keyboard interaction.",
+  "props": [
+    {"name": "text", "type": "string", "default": "David!", "required": false},
+    {"name": "asciiFontSize", "type": "number", "default": "8", "required": false},
+    {"name": "textFontSize", "type": "number", "default": "200", "required": false},
+    {"name": "textColor", "type": "string", "default": "#fdf9f3", "required": false},
+    {"name": "planeBaseHeight", "type": "number", "default": "8", "required": false},
+    {"name": "enableWaves", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "headline"]
+}

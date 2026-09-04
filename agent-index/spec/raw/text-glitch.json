@@ -1,0 +1,24 @@
+{
+  "name": "text-glitch",
+  "blurb": "Text shifts and tears with animated clip-path disruptions, red and cyan shadows trailing.",
+  "description": "Renders text with layered ::before and ::after pseudos that animate clip-path insets to create a digital glitch effect. Activates continuously or on hover with configurable speed.",
+  "use_when": "Cyberpunk or gaming interfaces, dystopian themes, headline text that needs aggressive visual impact.",
+  "avoid_when": "Continuous body text; animation harms readability. Component hardcodes dark backgrounds.",
+  "a11y": "Text is rendered in the DOM and accessible; animation cannot be paused with prefers-reduced-motion.",
+  "props": [
+    {"name": "text", "type": "string", "default": "\"\"", "required": false},
+    {"name": "speed", "type": "number", "default": "0.5", "required": false},
+    {"name": "enableShadows", "type": "boolean", "default": "true", "required": false},
+    {"name": "enableOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "decoration"]
+}

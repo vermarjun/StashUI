@@ -1,0 +1,30 @@
+{
+  "name": "ShinyText-TS-TW",
+  "blurb": "A bright highlight sweeps across text from left to right, looping continuously.",
+  "description": "Renders text with a moving linear gradient shine effect that sweeps horizontally. Supports directional control, yoyo (bidirectional) looping, configurable speed and spread angle, and optional pause on hover.",
+  "use_when": "A headline or CTA wants a subtle, elegant lighting effect that draws attention without distraction.",
+  "avoid_when": "Accessibility-critical text where the animation might interfere with readability.",
+  "a11y": "Text is readable; shine is a visual overlay using background-clip. Motion can be paused on hover.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "speed", "type": "number", "default": "2", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "color", "type": "string", "default": "#b5b5b5", "required": false},
+    {"name": "shineColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "spread", "type": "number", "default": "120", "required": false},
+    {"name": "yoyo", "type": "boolean", "default": "false", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "direction", "type": "'left' | 'right'", "default": "left", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "primary-cta"]
+}

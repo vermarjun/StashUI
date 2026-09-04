@@ -1,0 +1,21 @@
+{
+  "name": "edge-blur",
+  "blurb": "Graduated blur overlay at top or bottom edge using backdrop-filter masks.",
+  "description": "Fixed-position overlay with layered backdrop-filter blur fading via mask-image gradient. Provides TopBlur and BottomBlur convenience exports.",
+  "use_when": "Fading content at edges to prevent text cutoff or create aesthetic transitions between sections.",
+  "avoid_when": "On browsers without backdrop-filter support, or when blur must track scrollable content — uses fixed positioning.",
+  "a11y": "Purely decorative overlay with pointer-events-none and no semantic content.",
+  "props": [
+    {"name": "position", "type": "\"top\" | \"bottom\"", "default": "\"bottom\"", "required": false},
+    {"name": "height", "type": "number", "default": "75", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

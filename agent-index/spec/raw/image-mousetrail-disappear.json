@@ -1,0 +1,26 @@
+{
+  "name": "image-mousetrail-disappear",
+  "blurb": "Images trail cursor and fade out automatically.",
+  "description": "Container that displays a trail of images following cursor movement with automatic fade-out after 1.5 seconds. Same as default but with fadeAnimation enabled.",
+  "use_when": "Interactive portfolios where trails should auto-clear for a cleaner experience.",
+  "avoid_when": "Mobile-only experiences or low-performance devices.",
+  "a11y": "Trail images are decorative overlays; semantic content via children prop.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "imgClass", "type": "string", "default": "\"w-40 h-48\"", "required": false},
+    {"name": "distance", "type": "number", "default": "20", "required": false},
+    {"name": "maxNumberOfImages", "type": "number", "default": "5", "required": false},
+    {"name": "fadeAnimation", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "drag"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

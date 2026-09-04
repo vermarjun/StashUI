@@ -1,0 +1,23 @@
+{
+  "name": "scroll-island",
+  "blurb": "Floating progress indicator that shows scroll depth and collapses on scroll pause.",
+  "description": "Fixed-position floating island that displays scroll progress as a circular indicator and auto-collapses after scroll stops. Detects dark mode, respects user scroll position, and can display child content when expanded.",
+  "use_when": "Long-form content pages (docs, articles, guides) where showing reading progress improves user orientation without cluttering the viewport.",
+  "avoid_when": "Short pages or when scroll indicators add visual noise. Not suitable for pages with poor vertical navigation.",
+  "a11y": "No ARIA attributes or keyboard interaction. Visual-only indicator; does not expose progress to screen readers.",
+  "props": [
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "title", "type": "string", "default": "Progress", "required": false},
+    {"name": "height", "type": "number", "default": "44", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "sidebar"]
+}

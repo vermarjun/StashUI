@@ -1,0 +1,22 @@
+{
+  "name": "inspira-file-upload",
+  "blurb": "File upload with animated file list and optional grid pattern background.",
+  "description": "Drag-and-drop file uploader with animated file entries. Accepts children for background pattern (FileUploadGrid). Responds to drag, drop, click, and hover.",
+  "use_when": "Design-forward file uploads with customizable background patterns.",
+  "avoid_when": "Performance-critical contexts; animations may impact older devices.",
+  "a11y": "Input hidden but clickable. Drop zone responds to drag/drop events.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "onChange", "type": "(files: File[]) => void", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "drag", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "modal"]
+}

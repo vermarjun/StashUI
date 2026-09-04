@@ -1,0 +1,30 @@
+{
+  "name": "inspira-images-slider",
+  "blurb": "Full-screen image carousel with keyboard, touch, and optional auto-advance.",
+  "description": "Controlled or uncontrolled slider that displays images with configurable direction (vertical/horizontal) and perspective. Supports keyboard/touch navigation, optional autoplay, and a render-function child for overlay content.",
+  "use_when": "Displaying a portfolio, image gallery, or hero carousel with interactive controls and accessibility features.",
+  "avoid_when": "Images load from untrusted sources or require rapid loading—all images must preload before rendering.",
+  "a11y": "Keyboard navigation (arrow keys, focus management). Touch swipe support. Autoplay pauses on interaction. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "onChange", "type": "(index: number) => void", "default": null, "required": false},
+    {"name": "hideOverlay", "type": "boolean", "default": "false", "required": false},
+    {"name": "overlayClass", "type": "string", "default": "\"\"", "required": false},
+    {"name": "imageClass", "type": "string", "default": "\"object-cover w-full h-full\"", "required": false},
+    {"name": "autoplay", "type": "boolean | number", "default": "false", "required": false},
+    {"name": "direction", "type": "\"vertical\" | \"horizontal\"", "default": "\"vertical\"", "required": false},
+    {"name": "perspective", "type": "string", "default": "\"1000px\"", "required": false},
+    {"name": "children", "type": "ReactNode | ((currentIndex: number) => ReactNode)", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["keyboard", "drag", "timer"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero", "feature-card"]
+}

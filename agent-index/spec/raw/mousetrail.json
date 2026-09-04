@@ -1,0 +1,26 @@
+{
+  "name": "mousetrail",
+  "blurb": "Images follow cursor with spacing, appearing and fading as mouse moves.",
+  "description": "Renders images that appear near the cursor when moving. Images space themselves based on cursor distance and optionally fade after a delay.",
+  "use_when": "Interactive galleries or playful hover experiences where mouse movement reveals image previews.",
+  "avoid_when": "Touch-only interfaces — cursor tracking requires a mouse pointer.",
+  "a11y": "Images lack alt text and semantic labeling. Visual effect only; no keyboard interaction.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": null, "required": true},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "imgClass", "type": "string", "default": "\"w-40 h-48\"", "required": false},
+    {"name": "distance", "type": "number", "default": "20", "required": false},
+    {"name": "maxNumberOfImages", "type": "number", "default": "5", "required": false},
+    {"name": "fadeAnimation", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "decoration"]
+}

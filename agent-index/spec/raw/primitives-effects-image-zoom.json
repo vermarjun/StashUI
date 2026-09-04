@@ -1,0 +1,29 @@
+{
+  "name": "primitives-effects-image-zoom",
+  "blurb": "Image zooms in on hover or click, scaling smoothly from the pointer position.",
+  "description": "Wraps an image and applies spring-animated zoom on hover/click. The zoom origin follows pointer position, creating a smooth magnification effect.",
+  "use_when": "Product galleries, portfolio images, or detail-heavy imagery where zoom magnification aids discovery.",
+  "avoid_when": "Touch-only interfaces with no hover (though click zoom is supported).",
+  "a11y": "Zoom is visual enhancement; alt text and semantic content depend on child image.",
+  "props": [
+    {"name": "children", "type": "React.ReactElement", "default": null, "required": true},
+    {"name": "zoomScale", "type": "number", "default": "3", "required": false},
+    {"name": "transition", "type": "Transition", "default": "spring(200, 28)", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false},
+    {"name": "zoomOnClick", "type": "boolean", "default": "true", "required": false},
+    {"name": "zoomOnHover", "type": "boolean", "default": "true", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "width", "type": "CSSProperties['width']", "default": "\"100%\"", "required": false},
+    {"name": "height", "type": "CSSProperties['height']", "default": "\"100%\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["fill", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

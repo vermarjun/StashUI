@@ -1,0 +1,39 @@
+{
+  "name": "compare",
+  "blurb": "Side-by-side image slider with hover or drag to reveal and compare two images.",
+  "description": "Displays two images with a draggable divider. Move the slider by hovering or dragging to reveal portions of each image. Optional autoplay cycles between images. Includes decorative glow and star effects.",
+  "use_when": "Before-and-after comparisons, product variations, or demonstrating transformations side by side.",
+  "avoid_when": "Mobile-only contexts or when both images must be fully visible simultaneously.",
+  "a11y": "Images have alt text. Slider handle is keyboard-inaccessible. Autoplay plays automatically without user control.",
+  "props": [
+    {"name": "firstImage", "type": "string", "default": "''", "required": false},
+    {"name": "secondImage", "type": "string", "default": "''", "required": false},
+    {"name": "firstImageAlt", "type": "string", "default": "'First image'", "required": false},
+    {"name": "secondImageAlt", "type": "string", "default": "'Second image'", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "firstContentClass", "type": "string", "default": null, "required": false},
+    {"name": "secondContentClass", "type": "string", "default": null, "required": false},
+    {"name": "initialSliderPercentage", "type": "number", "default": "50", "required": false},
+    {"name": "slideMode", "type": "'hover' | 'drag'", "default": "'hover'", "required": false},
+    {"name": "showHandlebar", "type": "boolean", "default": "true", "required": false},
+    {"name": "autoplay", "type": "boolean", "default": "false", "required": false},
+    {"name": "autoplayDuration", "type": "number", "default": "5000", "required": false},
+    {"name": "onPercentageChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "onDragStart", "type": "() => void", "default": null, "required": false},
+    {"name": "onDragEnd", "type": "() => void", "default": null, "required": false},
+    {"name": "onHoverEnter", "type": "() => void", "default": null, "required": false},
+    {"name": "onHoverLeave", "type": "() => void", "default": null, "required": false},
+    {"name": "firstContent", "type": "ReactNode", "default": null, "required": false},
+    {"name": "secondContent", "type": "ReactNode", "default": null, "required": false},
+    {"name": "handle", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "drag", "always"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

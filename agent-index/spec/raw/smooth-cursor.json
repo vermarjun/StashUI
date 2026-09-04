@@ -1,0 +1,21 @@
+{
+  "name": "smooth-cursor",
+  "blurb": "Custom cursor that smoothly follows the mouse and rotates with velocity.",
+  "description": "Replaces the browser cursor with a smooth-following custom cursor using spring physics. Rotates based on velocity direction and scales slightly on movement.",
+  "use_when": "A desktop-only interactive experience that needs a branded or unique cursor behavior.",
+  "avoid_when": "On mobile or touch-only devices — the component auto-disables on non-desktop.",
+  "a11y": "Desktop-only feature using pointer events. Does not affect keyboard navigation.",
+  "props": [
+    {"name": "cursor", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "springConfig", "type": "{damping: number; stiffness: number; mass: number; restDelta: number}", "default": "{\"damping\": 45, \"stiffness\": 400, \"mass\": 1, \"restDelta\": 0.001}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["cursor"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration"]
+}

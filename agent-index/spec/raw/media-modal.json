@@ -1,0 +1,22 @@
+{
+  "name": "media-modal",
+  "blurb": "Image or video expands to fullscreen with backdrop blur and smooth zoom.",
+  "description": "A clickable image or video container that animates to fill the viewport on activation. Uses layout animation (Framer Motion) to morph the trigger into a centered fullscreen modal. Supports both static images and looping videos with controls.",
+  "use_when": "You want to let users zoom into photos or watch videos without leaving the page.",
+  "avoid_when": "You need a pre-sized container — this responds to its parent and collapses without one.",
+  "a11y": "Escape key closes. Backdrop click closes. ARIA label on close button for videos. No focus management beyond that.",
+  "props": [
+    {"name": "imgSrc", "type": "string", "default": null, "required": false},
+    {"name": "videoSrc", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["modal", "media"]
+}

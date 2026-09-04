@@ -1,0 +1,31 @@
+{
+  "name": "primitives-animate-code-block",
+  "blurb": "Code block that types out line-by-line then syntax-highlights with Shiki.",
+  "description": "Animated code display that optionally types out code character-by-character. Supports Shiki syntax highlighting with light/dark theme variants. Emits callbacks during typing (onWrite) and on completion (onDone). Triggers animation when element enters viewport.",
+  "use_when": "Tutorial pages or documentation showing how-to code examples with playful reveal.",
+  "avoid_when": "Very long code files (1000+ lines) — typing animation will run too long.",
+  "a11y": "Code text is fully rendered in DOM, readable by screen readers. No aria-live for typing progress — final highlighted HTML is semantic.",
+  "props": [
+    {"name": "code", "type": "string", "default": null, "required": true},
+    {"name": "lang", "type": "string", "default": null, "required": true},
+    {"name": "theme", "type": "light | dark", "default": "light", "required": false},
+    {"name": "themes", "type": "{light: string; dark: string}", "default": "{light: 'github-light', dark: 'github-dark'}", "required": false},
+    {"name": "writing", "type": "boolean", "default": "false", "required": false},
+    {"name": "duration", "type": "number", "default": "5000", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "onDone", "type": "() => void", "default": null, "required": false},
+    {"name": "onWrite", "type": "(info: {index: number; length: number; done: boolean}) => void", "default": null, "required": false},
+    {"name": "inView", "type": "boolean", "default": "false", "required": false},
+    {"name": "inViewOnce", "type": "boolean", "default": "true", "required": false},
+    {"name": "inViewMargin", "type": "string", "default": "0px", "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "viewport"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "code-block"]
+}

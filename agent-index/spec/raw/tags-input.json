@@ -1,0 +1,23 @@
+{
+  "name": "tags-input",
+  "blurb": "Tag input with inline editing and Add-via-Enter/comma functionality.",
+  "description": "A controlled tags input that displays tags as clickable pills, supports inline editing, and allows adding tags by pressing Enter or comma.",
+  "use_when": "Building forms for skills, interests, or any list of string values where users need to add, remove, and edit items.",
+  "avoid_when": "When tags are read-only or when a different UI pattern is preferred.",
+  "a11y": "Tags are clickable for editing, delete button uses click handler. Interactive elements work but lack explicit aria labels.",
+  "props": [
+    {"name": "tags", "type": "string[]", "default": null, "required": true},
+    {"name": "setTags", "type": "React.Dispatch<React.SetStateAction<string[]>>", "default": null, "required": true},
+    {"name": "editTag", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["input", "click"],
+    "motion": "none",
+    "affects": [],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

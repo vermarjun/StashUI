@@ -1,0 +1,26 @@
+{
+  "name": "image-mousetrail-small",
+  "blurb": "Compact image trail following cursor movement.",
+  "description": "Container with smaller trail images following cursor movement. Same component as default but with reduced image dimensions for subtle effects.",
+  "use_when": "Interactive sections where image trails should be less prominent or space-constrained.",
+  "avoid_when": "Mobile-only experiences or when larger visual impact is needed.",
+  "a11y": "Trail images are decorative overlays; semantic content via children prop.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "imgClass", "type": "string", "default": "\"w-20 h-24\"", "required": false},
+    {"name": "distance", "type": "number", "default": "20", "required": false},
+    {"name": "maxNumberOfImages", "type": "number", "default": "5", "required": false},
+    {"name": "fadeAnimation", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "drag"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

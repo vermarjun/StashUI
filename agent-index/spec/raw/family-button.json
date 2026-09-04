@@ -1,0 +1,20 @@
+{
+  "name": "family-button",
+  "blurb": "Expands from circle to panel on click, animating icon and content.",
+  "description": "A Framer Motion-powered button that morphs from a compact circular toggle to a full panel, swapping Plus/X icons and revealing staggered content.",
+  "use_when": "You need an interactive menu or action panel that starts compact and expands smoothly.",
+  "avoid_when": "When you need immediate content visibility or when the expanded size disrupts layout.",
+  "a11y": "Toggle handled via onClick; no aria-expanded or expanded/collapsed labels. Content fades in after expansion animation.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["secondary-cta", "decoration"]
+}

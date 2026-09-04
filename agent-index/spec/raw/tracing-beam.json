@@ -1,0 +1,21 @@
+{
+  "name": "tracing-beam",
+  "blurb": "Animated vertical beam that traces down the page following scroll progress.",
+  "description": "A scroll-linked vertical beam with animated gradient that traces from top to bottom. Includes an animated dot and SVG path responding to scroll velocity with spring physics.",
+  "use_when": "A timeline or step-by-step guide section where visual progress tracking enhances the narrative.",
+  "avoid_when": "When you need horizontal layouts or when motion might be distracting.",
+  "a11y": "SVG is decorative (aria-hidden). Children are fully accessible. Animation respects prefers-reduced-motion.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "feature-card"]
+}

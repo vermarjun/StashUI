@@ -1,0 +1,26 @@
+{
+  "name": "orbit",
+  "blurb": "Content orbits around a center point with configurable speed and direction.",
+  "description": "Renders child content that orbits around a center point. Supports clockwise/counter-clockwise rotation, customizable duration and radius, with optional visual path indicator.",
+  "use_when": "Hero sections, data visualizations, or displays where orbital motion around a focal point creates visual interest.",
+  "avoid_when": "Accessibility-critical contexts where motion might distract or confuse users.",
+  "a11y": "Pure orbital animation; semantic content and keyboard access depend on child elements.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "direction", "type": "\"normal\" | \"reverse\"", "default": "\"normal\"", "required": false},
+    {"name": "duration", "type": "number", "default": "20", "required": false},
+    {"name": "delay", "type": "number", "default": "10", "required": false},
+    {"name": "radius", "type": "number", "default": "50", "required": false},
+    {"name": "path", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "hero"]
+}

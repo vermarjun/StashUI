@@ -1,0 +1,26 @@
+{
+  "name": "images-slider",
+  "blurb": "Slides through images with auto-play and arrow-key navigation.",
+  "description": "Displays a sequence of images with fade-in animations and direction-based exit transitions. Auto-advances every 5 seconds or responds to arrow keys.",
+  "use_when": "Building a hero section with rotating imagery and optional overlay content.",
+  "avoid_when": "Images require external fetching—all images must preload before rendering begins.",
+  "a11y": "Keyboard navigation via arrow keys; no ARIA labels for images. Animation continues regardless of prefers-reduced-motion.",
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "overlay", "type": "React.ReactNode", "default": "true", "required": false},
+    {"name": "overlayClassName", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "autoplay", "type": "boolean", "default": "true", "required": false},
+    {"name": "direction", "type": "\"up\" | \"down\"", "default": "\"up\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero"]
+}

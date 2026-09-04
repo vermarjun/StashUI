@@ -1,0 +1,24 @@
+{
+  "name": "code-block",
+  "blurb": "Syntax-highlighted code display with copy button and optional file tabs.",
+  "description": "Code block using Prism syntax highlighter with filename display and copy-to-clipboard functionality. Supports multi-file tabs with per-tab language and highlighting.",
+  "use_when": "Displaying code snippets in documentation, tutorials, or blog posts with syntax coloring.",
+  "avoid_when": "When line-by-line editing is needed or when inline code is sufficient.",
+  "a11y": "Copy button has visual feedback. Tab navigation through keyboard. Code text is selectable.",
+  "props": [
+    {"name": "language", "type": "string", "default": null, "required": true},
+    {"name": "filename", "type": "string", "default": null, "required": true},
+    {"name": "code", "type": "string", "default": null, "required": true},
+    {"name": "highlightLines", "type": "number[]", "default": "[]", "required": false},
+    {"name": "tabs", "type": "Array<{name, code, language?, highlightLines?}>", "default": "[]", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": [],
+    "tone": "technical",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "chart"]
+}

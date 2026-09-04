@@ -1,0 +1,25 @@
+{
+  "name": "primitives-animate-slot",
+  "blurb": "Applies motion animations to child elements while preserving their native HTML structure.",
+  "description": "A slot component that wraps child elements and applies motion animation props without changing the child's element type. Merges className and refs transparently.",
+  "use_when": "Animating child components without adding wrapper divs or replacing the child's HTML element type.",
+  "avoid_when": "When explicit control over the rendered element type is required.",
+  "a11y": "Preserves child element semantics and accessibility; animations are purely visual.",
+  "props": [
+    {"name": "children", "type": "React.ReactElement", "default": null, "required": false},
+    {"name": "asChild", "type": "boolean", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "initial", "type": "TargetAndTransition", "default": null, "required": false},
+    {"name": "animate", "type": "TargetAndTransition", "default": null, "required": false},
+    {"name": "transition", "type": "Transition", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration"]
+}

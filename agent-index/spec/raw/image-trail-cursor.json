@@ -1,0 +1,21 @@
+{
+  "name": "image-trail-cursor",
+  "blurb": "Images trail cursor with multiple animation variants.",
+  "description": "Container with image elements that animate and follow cursor movement using one of 7 animation variants for different visual effects.",
+  "use_when": "Interactive portfolios, galleries, or showcases with cursor-following image animations.",
+  "avoid_when": "Touch-only interfaces or low-performance devices.",
+  "a11y": "Image trail is decorative animation with no semantic content or keyboard interaction.",
+  "props": [
+    {"name": "images", "type": "string[]", "default": "[]", "required": false},
+    {"name": "variant", "type": "\"type1\" | \"type2\" | \"type3\" | \"type4\" | \"type5\" | \"type6\" | \"type7\"", "default": "\"type1\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "decoration"]
+}

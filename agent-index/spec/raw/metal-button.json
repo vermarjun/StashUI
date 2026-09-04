@@ -1,0 +1,22 @@
+{
+  "name": "metal-button",
+  "blurb": "Metallic button with beveled edges and inset glow.",
+  "description": "A button with layered inset shadows creating a metallic, beveled appearance. Rendered as 'button' or polymorphic 'as' component.",
+  "use_when": "You need a button that looks tactile and dimensional with a beveled metal finish.",
+  "avoid_when": "On minimal or flat design systems.",
+  "a11y": "Standard button semantics. Beveled effect is purely visual; no semantic content.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "as", "type": "'button' | 'a'", "default": "'button'", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": ["shadow"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

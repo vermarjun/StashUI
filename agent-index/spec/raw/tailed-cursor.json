@@ -1,0 +1,32 @@
+{
+  "name": "tailed-cursor",
+  "blurb": "Multicolored WebGL-powered cursor trail with spring physics.",
+  "description": "A WebGL-rendered cursor trail effect using the OGL library. Multiple colored trails follow the cursor with customizable spring physics, fade, and shader wave effects.",
+  "use_when": "A high-performance interactive background or full-page effect requiring GPU acceleration.",
+  "avoid_when": "On low-end devices or when you need low resource usage — continuous rendering is GPU-intensive.",
+  "a11y": "Decorative cursor effect. Uses pointer-events-none; interactions pass through. No keyboard control.",
+  "props": [
+    {"name": "colors", "type": "string[]", "default": "[\"#ff9346\", \"#7cff67\", \"#ffee51\", \"#00d8ff\"]", "required": false},
+    {"name": "baseSpring", "type": "number", "default": "0.03", "required": false},
+    {"name": "baseFriction", "type": "number", "default": "0.9", "required": false},
+    {"name": "baseThickness", "type": "number", "default": "30", "required": false},
+    {"name": "offsetFactor", "type": "number", "default": "0.05", "required": false},
+    {"name": "maxAge", "type": "number", "default": "500", "required": false},
+    {"name": "pointCount", "type": "number", "default": "50", "required": false},
+    {"name": "speedMultiplier", "type": "number", "default": "0.6", "required": false},
+    {"name": "enableFade", "type": "boolean", "default": "false", "required": false},
+    {"name": "enableShaderEffect", "type": "boolean", "default": "false", "required": false},
+    {"name": "effectAmplitude", "type": "number", "default": "2", "required": false},
+    {"name": "backgroundColor", "type": "[number, number, number, number]", "default": "[0, 0, 0, 0]", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "decoration"]
+}

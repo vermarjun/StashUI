@@ -1,0 +1,24 @@
+{
+  "name": "container-text-flip",
+  "blurb": "Words flip through a cycle with the container growing and shrinking to fit each word.",
+  "description": "Cycles through a list of words with the container animating its width to fit each word. Letters fade in and blur-clear individually as words change. Uses layout animations.",
+  "use_when": "An inline word swap that needs smooth container resize animations alongside letter reveals.",
+  "avoid_when": "When word list is very long or words have drastically different widths.",
+  "a11y": "Current word is rendered and readable; letters are staggered but all DOM elements are present.",
+  "props": [
+    {"name": "words", "type": "string[]", "default": "[\"better\", \"modern\", \"beautiful\", \"awesome\"]", "required": false},
+    {"name": "interval", "type": "number", "default": "3000", "required": false},
+    {"name": "animationDuration", "type": "number", "default": "700", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "textClass", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["text", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

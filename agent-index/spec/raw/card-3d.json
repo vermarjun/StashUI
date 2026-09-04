@@ -1,0 +1,22 @@
+{
+  "name": "card-3d",
+  "blurb": "Card elements tilt in 3D response to cursor, with stacked depth layers.",
+  "description": "Composite card system: CardContainer tracks mouse and applies rotateY/X; CardBody is the card frame; CardItem elements translate on the Z-axis based on hover. Uses CSS perspective and 3D transforms. Similar to 3d-card but from inspira-react.",
+  "use_when": "Hero cards or feature showcases where layered 3D depth creates visual interest.",
+  "avoid_when": "Touch devices or low-motion preferences — 3D transforms are mouse-only.",
+  "a11y": "No keyboard navigation for 3D effects. Content is readable.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "hero"]
+}

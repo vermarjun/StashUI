@@ -1,0 +1,20 @@
+{
+  "name": "hero-parallax",
+  "blurb": "Scroll-driven 3D parallax gallery with rotating product cards.",
+  "description": "Takes 300vh of viewport scrolling to animate 15 product cards (5 per row, 3 rows) with 3D perspective, opacity, and horizontal translate. Cards tilt and rotate on scroll, reverse direction per row. Spring damping smooths the parallax effect.",
+  "use_when": "Showcase portfolio, case studies, or product gallery where scroll-depth matters.",
+  "avoid_when": "Long on low-end devices (will tank performance with 15 parallax cards). Requires scroll listener.",
+  "a11y": "Card images have alt text. Links are focusable but parallax breaks for keyboard nav (no prefers-reduced-motion).",
+  "props": [
+    {"name": "products", "type": "Array<{title: string; link: string; thumbnail: string}>", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "media"]
+}

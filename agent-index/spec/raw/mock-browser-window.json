@@ -1,0 +1,29 @@
+{
+  "name": "mock-browser-window",
+  "blurb": "Browser window mockup with configurable chrome style and sidebar.",
+  "description": "A browser frame mockup supporting Chrome, Safari, and generic variants with adjustable sizes, headers, address bar, and optional sidebar positioning. Renders children as page content within the frame.",
+  "use_when": "Landing pages, product demos, design portfolios, or marketing materials showcasing web interfaces.",
+  "avoid_when": "When actual browser functionality is needed; this is a decorative static mockup only.",
+  "a11y": "Browser frame is decorative; content accessibility depends on children components.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "size", "type": "\"sm\" | \"md\" | \"lg\" | \"xl\"", "default": null, "required": false},
+    {"name": "showSidebar", "type": "boolean", "default": null, "required": false},
+    {"name": "sidebarPosition", "type": "\"left\" | \"right\" | \"top\" | \"bottom\"", "default": null, "required": false},
+    {"name": "headerStyle", "type": "\"minimal\" | \"full\"", "default": null, "required": false},
+    {"name": "variant", "type": "\"chrome\" | \"safari\" | \"generic\"", "default": null, "required": false},
+    {"name": "theme", "type": "\"light\" | \"dark\" | \"auto\"", "default": null, "required": false},
+    {"name": "url", "type": "string | undefined", "default": null, "required": false},
+    {"name": "sidebarItems", "type": "Array<{icon?: ReactNode; label: string; active?: boolean; badge?: string | number}>", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

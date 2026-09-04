@@ -1,0 +1,20 @@
+{
+  "name": "animated-tooltip",
+  "blurb": "Avatar stack with tooltips showing name and designation on hover, tooltips tilt based on cursor position.",
+  "description": "Renders a list of circular avatar images in an overlapping row. On hover, a tooltip appears above with name and designation, rotating and translating based on mouse movement within the image.",
+  "use_when": "Team member galleries, contributor lists, or user avatars that need an interactive personal touch.",
+  "avoid_when": "Touch-only interfaces; relies on hover and mouse movement tracking.",
+  "a11y": "Images have alt text; tooltips appear on hover only, not accessible via keyboard.",
+  "props": [
+    {"name": "items", "type": "{id: number, name: string, designation: string, image: string}[]", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["avatar", "decoration"]
+}

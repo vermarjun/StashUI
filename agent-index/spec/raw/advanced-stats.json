@@ -1,0 +1,26 @@
+{
+  "name": "advanced-stats",
+  "blurb": "InView-triggered sequence animation with blur and vertical offset.",
+  "description": "Generic timeline animation component using Framer Motion. Triggers on InView with staggered animations (blur+offset), custom variants support. Renders as configurable element type.",
+  "use_when": "Animating multiple items sequentially as they enter viewport, like stats or feature lists.",
+  "avoid_when": "When you need simultaneous animations or continuous motion.",
+  "a11y": "Blur animation in motion may affect readability; consider prefers-reduced-motion. Content remains accessible.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "animationNum", "type": "number", "default": null, "required": true},
+    {"name": "timelineRef", "type": "React.RefObject<HTMLElement>", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "as", "type": "keyof HTMLElementTagNameMap", "default": "div", "required": false},
+    {"name": "customVariants", "type": "Variants", "default": null, "required": false},
+    {"name": "once", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["blur", "opacity", "transform"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "stat"]
+}

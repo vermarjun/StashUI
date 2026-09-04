@@ -1,0 +1,25 @@
+{
+  "name": "horizontal-progressive-carousel",
+  "blurb": "Auto-advancing carousel with per-slide progress bars for visual time tracking.",
+  "description": "Carousel with progress indicators under each navigation button showing time remaining before auto-advance. Supports fast-forward animation when manually clicking buttons. Configurable duration and supports vertical layout.",
+  "use_when": "Slideshows or galleries where users want to see progress and auto-advance timing.",
+  "avoid_when": "When explicit pause control is needed; auto-advance is always active.",
+  "a11y": "Navigation buttons are clickable; progress bars are visual only.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "duration", "type": "number", "default": "5000", "required": false},
+    {"name": "fastDuration", "type": "number", "default": "400", "required": false},
+    {"name": "vertical", "type": "boolean", "default": "false", "required": false},
+    {"name": "activeSlider", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "gallery", "feature-card"]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "toolbar-expandable",
+  "blurb": "Expandable toolbar with step-by-step progression and icon display.",
+  "description": "Multi-step expandable toolbar showing progress through labeled steps with icons and descriptions. Supports scroll area for overflow, badge labels, controlled/uncontrolled modes, and click-to-expand functionality.",
+  "use_when": "Complex workflows with sequential steps where a horizontal toolbar layout saves space. Useful for task tracking or process visualization.",
+  "avoid_when": "Mobile-only interfaces; horizontal scrolling can be awkward. Not suitable for very long step sequences (15+).",
+  "a11y": "Basic keyboard support via click handlers. No built-in ARIA attributes for step progression.",
+  "props": [
+    {"name": "steps", "type": "DynamicStep[]", "default": null, "required": true},
+    {"name": "badgeText", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "expanded", "type": "boolean", "default": null, "required": false},
+    {"name": "onExpandedChange", "type": "(expanded: boolean) => void", "default": null, "required": false},
+    {"name": "activeStep", "type": "string | null", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "feature-card"]
+}

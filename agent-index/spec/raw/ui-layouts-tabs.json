@@ -1,0 +1,22 @@
+{
+  "name": "ui-layouts-tabs",
+  "blurb": "Animated tabs with wobbly underline that follows active tab.",
+  "description": "Context-based animated tab system with TabsProvider, TabsBtn, and TabsContent. Active indicator animates with spring physics, creating a wobbly follow effect. Supports hover previews and directional slide animations.",
+  "use_when": "Modern UI layouts where playful animations and smooth tab switching enhance the visual experience. Great for portfolio or creative sites.",
+  "avoid_when": "Accessibility-focused applications; keyboard navigation not supported. Animations may distract from content-heavy interfaces.",
+  "a11y": "No built-in keyboard support or ARIA attributes. Focus and tab semantics must be managed externally.",
+  "props": [
+    {"name": "defaultValue", "type": "string", "default": null, "required": false},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "feature-card", "hero"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "placeholders-and-vanish-input",
+  "blurb": "Input with rotating placeholder text and a canvas particle dissolve animation on submit.",
+  "description": "An input field with cycling placeholder suggestions that change every 3 seconds, and a canvas-based particle animation when submitted that dissolves the text into vanishing particles.",
+  "use_when": "Creating interactive prompt or search interfaces where animated text effects and placeholder cycling enhance engagement.",
+  "avoid_when": "On devices where canvas animations impact performance or when prefers-reduced-motion compliance is needed.",
+  "a11y": "Input is semantic, submit button is disabled when empty, but the particle animation does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "placeholders", "type": "string[]", "default": null, "required": true},
+    {"name": "onChange", "type": "(e: React.ChangeEvent<HTMLInputElement>) => void", "default": null, "required": true},
+    {"name": "onSubmit", "type": "(e: React.FormEvent<HTMLFormElement>) => void", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["timer", "input", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["text", "background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "form-submit"]
+}

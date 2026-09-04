@@ -1,0 +1,26 @@
+{
+  "name": "DarkVeil-TS-TW",
+  "blurb": "Organic, flowing dark texture with scanline effect and hue shifts.",
+  "description": "WebGL shader using CPPN (Compositional Pattern Producing Network) to generate organic flowing textures. Includes hue shift, noise, scanline, and warp effects. Renders to canvas with continuous RAF animation.",
+  "use_when": "Dark-themed backgrounds where an organic, almost living texture adds depth without demanding attention.",
+  "avoid_when": "Light themes or when a clean background is required; this creates visual noise intentionally.",
+  "a11y": "WebGL canvas with no semantic content. No keyboard interaction. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "hueShift", "type": "number", "default": "0", "required": false},
+    {"name": "noiseIntensity", "type": "number", "default": "0", "required": false},
+    {"name": "scanlineIntensity", "type": "number", "default": "0", "required": false},
+    {"name": "speed", "type": "number", "default": "0.5", "required": false},
+    {"name": "scanlineFrequency", "type": "number", "default": "0", "required": false},
+    {"name": "warpAmount", "type": "number", "default": "0", "required": false},
+    {"name": "resolutionScale", "type": "number", "default": "1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

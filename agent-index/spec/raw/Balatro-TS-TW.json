@@ -1,0 +1,32 @@
+{
+  "name": "Balatro-TS-TW",
+  "blurb": "Spinning kaleidoscopic shader pattern that responds to mouse movement.",
+  "description": "Complex WebGL shader creating a rotating fractal-like pattern with three customizable colors. Responds to mouse position and includes pixelation, contrast, and spin controls. Uses ogl for shader management and runs continuous RAF animation.",
+  "use_when": "Interactive background for gaming or music-related sites, where the mouse-reactive effect creates engagement and visual feedback.",
+  "avoid_when": "Low-end devices or mobile; the continuous shader loop and mouse tracking are resource-intensive.",
+  "a11y": "WebGL canvas with no semantic content. Mouse interaction is optional (mouseInteraction prop). No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "spinRotation", "type": "number", "default": "-2.0", "required": false},
+    {"name": "spinSpeed", "type": "number", "default": "7.0", "required": false},
+    {"name": "offset", "type": "[number, number]", "default": "[0.0, 0.0]", "required": false},
+    {"name": "color1", "type": "string", "default": "\"#DE443B\"", "required": false},
+    {"name": "color2", "type": "string", "default": "\"#006BB4\"", "required": false},
+    {"name": "color3", "type": "string", "default": "\"#162325\"", "required": false},
+    {"name": "contrast", "type": "number", "default": "3.5", "required": false},
+    {"name": "lighting", "type": "number", "default": "0.4", "required": false},
+    {"name": "spinAmount", "type": "number", "default": "0.25", "required": false},
+    {"name": "pixelFilter", "type": "number", "default": "745.0", "required": false},
+    {"name": "spinEase", "type": "number", "default": "1.0", "required": false},
+    {"name": "isRotate", "type": "boolean", "default": "false", "required": false},
+    {"name": "mouseInteraction", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

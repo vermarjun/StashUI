@@ -1,0 +1,23 @@
+{
+  "name": "tweet-grid",
+  "blurb": "Responsive masonry grid of tweet cards with tunable columns and spacing.",
+  "description": "CSS-based masonry layout using CSS Columns to arrange tweets responsively. Supports 1-5 columns with configurable spacing between items. Uses break-inside-avoid to prevent tweet cards from splitting.",
+  "use_when": "Displaying multiple tweets in a gallery or wall format with automatic column wrapping.",
+  "avoid_when": "Older browsers without CSS Columns support; the component relies on break-inside-avoid.",
+  "a11y": "Semantic structure with proper spacing; no interactive elements beyond standard card behavior.",
+  "props": [
+    {"name": "tweets", "type": "string[]", "default": null, "required": true},
+    {"name": "columns", "type": "1 | 2 | 3 | 4 | 5", "default": "3", "required": false},
+    {"name": "spacing", "type": "\"sm\" | \"md\" | \"lg\"", "default": "\"md\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial", "logo-wall", "data-table"]
+}

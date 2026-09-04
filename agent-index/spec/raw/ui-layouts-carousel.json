@@ -1,0 +1,24 @@
+{
+  "name": "ui-layouts-carousel",
+  "blurb": "Embla-carousel with context, providing prev/next buttons, dots, and snaps display.",
+  "description": "Compound carousel system built on embla-carousel. Includes Carousel context provider, SliderContainer, Slider items, navigation buttons (prev/next), dot indicators, and snap counter. Supports vertical or horizontal orientation, looping, and scale effects.",
+  "use_when": "Building a featured carousel with full control over layout, navigation, and indicators.",
+  "avoid_when": "Simple image galleries—the context-based architecture requires multiple sub-components.",
+  "a11y": "Keyboard navigation (arrow keys, respects RTL direction). Previous/next buttons disable appropriately. Dot buttons have implied labels via carousel.js conventions. No ARIA labels for custom buttons.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "options", "type": "EmblaOptionsType", "default": "{}", "required": false},
+    {"name": "plugins", "type": "Parameters<typeof useEmblaCarousel>[1]", "default": "[]", "required": false},
+    {"name": "isScale", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["feature-card", "media", "section-background"]
+}

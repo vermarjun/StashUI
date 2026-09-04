@@ -1,0 +1,21 @@
+{
+  "name": "calendar-rac",
+  "blurb": "Date or range picker using React Aria Components.",
+  "description": "A DayPicker built on React Aria Components, supporting both single date and date range selection with keyboard navigation.",
+  "use_when": "You need an accessible calendar with keyboard support.",
+  "avoid_when": "When you need a lightweight calendar without external accessibility libraries.",
+  "a11y": "Full keyboard navigation via React Aria. aria-label and role attributes on all interactive elements.",
+  "props": [
+    {"name": "value", "type": "DateValue | RangeValue<DateValue> | undefined", "default": null, "required": false},
+    {"name": "onChange", "type": "(value: DateValue | RangeValue<DateValue>) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "modal"]
+}

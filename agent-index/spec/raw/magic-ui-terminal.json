@@ -1,0 +1,23 @@
+{
+  "name": "magic-ui-terminal",
+  "blurb": "Terminal emulator with text typing animation, animating child content in sequence.",
+  "description": "Terminal wrapper (Terminal, TypingAnimation, AnimatedSpan) simulating a CLI output. TypingAnimation character-by-character types a string at a configurable speed. AnimatedSpan fades in already-rendered lines. All animations can sequence (each waits for previous to complete) or run in parallel. Triggers on scroll into view by default.",
+  "use_when": "Showing code examples, CLI commands, or installation workflows with a playful reveal animation.",
+  "avoid_when": "Very long text (10,000+ characters); typing animation will run for a long time.",
+  "a11y": "Text is rendered character-by-character into the DOM, so it's readable. No aria-live for animations — screen readers will hear the final text. startOnView requires scrollable context.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "sequence", "type": "boolean", "default": "true", "required": false},
+    {"name": "startOnView", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "viewport"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "code-block"]
+}

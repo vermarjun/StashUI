@@ -1,0 +1,28 @@
+{
+  "name": "inspira-wavy-background",
+  "blurb": "Layered undulating waves with Simplex noise, flowing smoothly across the screen.",
+  "description": "Canvas-based animated waves using Simplex noise for organic motion. Multiple coloured layers create depth with customizable speed, opacity, and blur.",
+  "use_when": "A fluid, organic-feeling background for hero sections with a modern, flowing aesthetic.",
+  "avoid_when": "Performance-sensitive contexts — continuous canvas animation with Simplex noise is computationally intensive.",
+  "a11y": "Wrapper component with content slot; focus and keyboard behaviour come from overlaid children. Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClass", "type": "string", "default": null, "required": false},
+    {"name": "colors", "type": "string[]", "default": "[\"#38bdf8\", \"#818cf8\", \"#c084fc\", \"#e879f9\", \"#22d3ee\"]", "required": false},
+    {"name": "waveWidth", "type": "number", "default": "50", "required": false},
+    {"name": "backgroundFill", "type": "string", "default": "'black'", "required": false},
+    {"name": "blur", "type": "number", "default": "10", "required": false},
+    {"name": "speed", "type": "'slow' | 'fast'", "default": "'fast'", "required": false},
+    {"name": "waveOpacity", "type": "number", "default": "0.5", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

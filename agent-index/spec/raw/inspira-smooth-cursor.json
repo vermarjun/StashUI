@@ -1,0 +1,21 @@
+{
+  "name": "inspira-smooth-cursor",
+  "blurb": "Custom cursor follows pointer with spring physics and rotates to track direction.",
+  "description": "Replaces system cursor with a spring-animated custom cursor that tracks mouse position, rotates based on velocity, and scales briefly on movement.",
+  "use_when": "Premium experiences or interactive galleries where a polished custom cursor enhances the feel of motion.",
+  "avoid_when": "Touch-only devices or mouse-free environments — cursor tracking requires an active pointer.",
+  "a11y": "Replaces system cursor globally but does not affect keyboard focus or tab navigation. Rotation and position are visual only.",
+  "props": [
+    {"name": "cursor", "type": "React.ComponentType", "default": "DefaultCursor", "required": false},
+    {"name": "springConfig", "type": "SpringConfig", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["cursor"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration"]
+}

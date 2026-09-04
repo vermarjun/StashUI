@@ -1,0 +1,25 @@
+{
+  "name": "primitives-effects-theme-toggler",
+  "blurb": "Theme switcher with View Transition API animations and direction options.",
+  "description": "Primitive component for theme management with optional View Transition API animations. Accepts theme state and direction prop to customize clip animation path.",
+  "use_when": "Building theme switchers that need smooth transitions between light/dark/system modes with directional animations.",
+  "avoid_when": "When View Transition API is not supported or when browser compatibility is a concern.",
+  "a11y": "Render function receives theme state and toggleTheme callback. Accessibility depends on how the render function is implemented.",
+  "props": [
+    {"name": "theme", "type": "ThemeSelection", "default": null, "required": true},
+    {"name": "resolvedTheme", "type": "Resolved", "default": null, "required": true},
+    {"name": "setTheme", "type": "(theme: ThemeSelection) => void", "default": null, "required": true},
+    {"name": "direction", "type": "Direction", "default": "ltr", "required": false},
+    {"name": "onImmediateChange", "type": "(theme: ThemeSelection) => void", "default": null, "required": false},
+    {"name": "children", "type": "ChildrenRender", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration"]
+}

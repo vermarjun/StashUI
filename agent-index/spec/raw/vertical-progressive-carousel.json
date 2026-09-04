@@ -1,0 +1,25 @@
+{
+  "name": "vertical-progressive-carousel",
+  "blurb": "Vertical carousel with progress bars and auto-advance controls.",
+  "description": "Context-based carousel variant displaying slides vertically. Uses ProgressSlider with vertical={true} orientation. Includes progress indicator buttons and auto-advance on configurable duration.",
+  "use_when": "Displaying vertically-stacked content like testimonials or narrative steps with progress tracking.",
+  "avoid_when": "Wide content galleries—vertical layout severely constrains display area.",
+  "a11y": "Progress bar buttons have role='progressbar' with aria-valuenow. Arrow keys navigate vertically. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "duration", "type": "number", "default": "5000", "required": false},
+    {"name": "fastDuration", "type": "number", "default": "400", "required": false},
+    {"name": "vertical", "type": "boolean", "default": "true", "required": false},
+    {"name": "activeSlider", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["sidebar", "body-text"]
+}

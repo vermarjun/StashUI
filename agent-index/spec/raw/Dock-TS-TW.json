@@ -1,0 +1,27 @@
+{
+  "name": "Dock-TS-TW",
+  "blurb": "Hover-sensitive dock with magnifying icons and spring animations.",
+  "description": "A macOS-style dock using Framer Motion's mouseX tracking and spring physics. Icons magnify smoothly when cursor enters their distance threshold. Includes labels that fade in/out on hover. Fully customizable distance, magnification, and spring stiffness.",
+  "use_when": "You want a polished app launcher or navigation dock with premium feel.",
+  "avoid_when": "Touch-only interfaces — hover magnification is mouse-only.",
+  "a11y": "Dock has toolbar role and aria-label. Items have role='button' and focus support (onFocus/onBlur). Labels show on interaction.",
+  "props": [
+    {"name": "items", "type": "DockItemData[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "distance", "type": "number", "default": "200", "required": false},
+    {"name": "panelHeight", "type": "number", "default": "64", "required": false},
+    {"name": "baseItemSize", "type": "number", "default": "50", "required": false},
+    {"name": "dockHeight", "type": "number", "default": "256", "required": false},
+    {"name": "magnification", "type": "number", "default": "70", "required": false},
+    {"name": "spring", "type": "SpringOptions", "default": "{mass: 0.1, stiffness: 150, damping: 12}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "tone": "minimal",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav"]
+}

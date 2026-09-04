@@ -1,0 +1,28 @@
+{
+  "name": "dot-pattern",
+  "blurb": "SVG grid of dots that optionally glows with random pulsing.",
+  "description": "Responsive dot pattern rendered as SVG circles that fill the container. Optional glow mode adds opacity and scale animations to each dot with randomized delay and duration.",
+  "use_when": "A subtle, adaptable dot grid background that can be static or gently animated with configurable spacing.",
+  "avoid_when": "Very dense grids on low-end devices — calculating and rendering many dots may cause performance issues.",
+  "a11y": "Marked aria-hidden with pointer-events-none; purely decorative overlay. Glow animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "width", "type": "number", "default": "16", "required": false},
+    {"name": "height", "type": "number", "default": "16", "required": false},
+    {"name": "x", "type": "number", "default": "0", "required": false},
+    {"name": "y", "type": "number", "default": "0", "required": false},
+    {"name": "cx", "type": "number", "default": "1", "required": false},
+    {"name": "cy", "type": "number", "default": "1", "required": false},
+    {"name": "cr", "type": "number", "default": "1", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "glow", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background", "decoration"]
+}

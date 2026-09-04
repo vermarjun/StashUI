@@ -1,0 +1,22 @@
+{
+  "name": "github-globe",
+  "blurb": "3D spinning globe with animated arcs connecting geographic points.",
+  "description": "Renders an interactive Three.js globe with lat/lng data points. Arcs animate between start and end locations. Configurable colors, atmosphere, rotation speed, and ring effects.",
+  "use_when": "Displaying global connections, distributed teams, or data flows between regions.",
+  "avoid_when": "Performance-critical mobile contexts or when static map suffices.",
+  "a11y": "3D visualization is visual-only. No keyboard interaction or descriptive labels.",
+  "props": [
+    {"name": "globeConfig", "type": "GlobeConfig", "default": "{}", "required": false},
+    {"name": "data", "type": "Position[]", "default": "[]", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "stat"]
+}

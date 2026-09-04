@@ -1,0 +1,25 @@
+{
+  "name": "pricing-grow-business",
+  "blurb": "Animated timeline component that sequences child animations on scroll into view.",
+  "description": "TimelineAnimation component using motion and useInView to animate children in sequence with blur-in effect. Supports custom animation timing, customVariants, and once-per-scroll triggering.",
+  "use_when": "You need to animate a sequence of content blocks as they enter the viewport.",
+  "avoid_when": "For always-visible content; this is for scroll-triggered animations.",
+  "a11y": "Animation respects prefers-reduced-motion via motion library. Content remains accessible without animation.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "animationNum", "type": "number", "default": null, "required": true},
+    {"name": "timelineRef", "type": "React.RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "customVariants", "type": "Variants", "default": null, "required": false},
+    {"name": "once", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "feature-card"]
+}

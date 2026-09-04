@@ -1,0 +1,37 @@
+{
+  "name": "buyme-acoffee",
+  "blurb": "Animated coffee cup card that reveals text and scales on hover.",
+  "description": "A clickable card linking to a Buy Me Coffee profile with SVG graphics that transform via CSS animations on hover. The card is fully responsive and supports dark mode via theme tokens.",
+  "use_when": "You want a polished call-to-action link to a donation or support page that feels interactive and branded.",
+  "avoid_when": "The card requires 24rem height and width by default; it may overflow small viewports or confined containers without custom sizing.",
+  "a11y": "Renders an anchor element with proper link semantics. Focus and keyboard navigation are handled by the browser. No prefers-reduced-motion guard applied.",
+  "props": [
+    {
+      "name": "classname",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "iconClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "textSvgClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["fill", "transform"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["secondary-cta", "footer"]
+}

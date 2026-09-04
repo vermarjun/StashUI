@@ -1,0 +1,20 @@
+{
+  "name": "halo-search",
+  "blurb": "Search input with rotating aurora-like halos and gradient rings around the field.",
+  "description": "A decorative search input surrounded by animated conic-gradient halos that rotate continuously on the button and accelerate with additional rotations on hover and focus-within, using blur filters for an aurora effect.",
+  "use_when": "Creating premium, visually distinctive interfaces where the search field should be a focal design statement.",
+  "avoid_when": "When motion accessibility is critical; these CSS animations are continuous and computationally expensive.",
+  "a11y": "Input is semantic HTML but the halo animations do not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "continuous",
+    "affects": ["border", "background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

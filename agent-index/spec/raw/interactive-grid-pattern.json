@@ -1,0 +1,24 @@
+{
+  "name": "interactive-grid-pattern",
+  "blurb": "Grid of interactive squares that fill on hover with smooth transitions.",
+  "description": "SVG-based grid pattern with interactive rect elements that respond to pointer movement. Each square smoothly fills on hover with a transition delay on exit.",
+  "use_when": "An interactive background overlay that responds to mouse movement and engages the user.",
+  "avoid_when": "Touch-only devices or keyboard-only navigation — hover is the only interaction method.",
+  "a11y": "SVG rect elements with pointer events enabled but no keyboard support for individual squares.",
+  "props": [
+    {"name": "width", "type": "number", "default": "40", "required": false},
+    {"name": "height", "type": "number", "default": "40", "required": false},
+    {"name": "squares", "type": "[number, number]", "default": "[24, 24]", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "squaresClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

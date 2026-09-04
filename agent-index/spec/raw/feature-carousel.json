@@ -1,0 +1,29 @@
+{
+  "name": "feature-carousel",
+  "blurb": "Multi-step feature showcase with animated image transitions and step navigation.",
+  "description": "Animated carousel showcasing 4 feature steps with varying layouts. Each step has custom image positioning and animations (slide-in, fade-in, scale). Includes auto-play with 3s interval and clickable step indicators.",
+  "use_when": "Showcasing product features or workflow steps with rich animated transitions.",
+  "avoid_when": "Content that doesn't fit 4 discrete steps; requires image assets for all steps.",
+  "a11y": "Step indicators are clickable buttons with visual state indicators. No keyboard arrow navigation.",
+  "props": [
+    {"name": "image", "type": "ImageSet", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": null, "required": true},
+    {"name": "description", "type": "string", "default": null, "required": true},
+    {"name": "step1img1Class", "type": "string", "default": "defaultClasses.step1img1", "required": false},
+    {"name": "step1img2Class", "type": "string", "default": "defaultClasses.step1img2", "required": false},
+    {"name": "step2img1Class", "type": "string", "default": "defaultClasses.step2img1", "required": false},
+    {"name": "step2img2Class", "type": "string", "default": "defaultClasses.step2img2", "required": false},
+    {"name": "step3imgClass", "type": "string", "default": "defaultClasses.step3img", "required": false},
+    {"name": "step4imgClass", "type": "string", "default": "defaultClasses.step4img", "required": false},
+    {"name": "bgClass", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "timer"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill", "image"],
+    "tone": "dramatic",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "section-background"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "DecryptedText-TS-TW",
+  "blurb": "Text animates from encrypted gibberish to readable, triggered by hover, scroll, or click.",
+  "description": "Renders text as scrambled characters and progressively reveals the readable text character by character or randomly. Trigger modes: hover, scroll visibility, or click; can reverse back to encrypted.",
+  "use_when": "A reveal animation that wants to intrigue or disguise content until the user interacts.",
+  "avoid_when": "When the content must be immediately readable for SEO or accessibility compliance.",
+  "a11y": "Encrypted text is shown visually but hidden with aria-hidden; readable text is in sr-only for screen readers. Works correctly when decrypted.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "speed", "type": "number", "default": "50", "required": false},
+    {"name": "maxIterations", "type": "number", "default": "10", "required": false},
+    {"name": "sequential", "type": "boolean", "default": "false", "required": false},
+    {"name": "revealDirection", "type": "'start' | 'end' | 'center'", "default": "start", "required": false},
+    {"name": "useOriginalCharsOnly", "type": "boolean", "default": "false", "required": false},
+    {"name": "characters", "type": "string", "default": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()+", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "encryptedClassName", "type": "string", "default": "", "required": false},
+    {"name": "parentClassName", "type": "string", "default": "", "required": false},
+    {"name": "animateOn", "type": "'view' | 'hover' | 'inViewHover' | 'click'", "default": "hover", "required": false},
+    {"name": "clickMode", "type": "'once' | 'toggle'", "default": "once", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "click", "viewport"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

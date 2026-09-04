@@ -1,0 +1,24 @@
+{
+  "name": "svg-mask",
+  "blurb": "SVG mask that reveals content underneath as you hover and move the cursor.",
+  "description": "A two-layer reveal component using SVG masking. Mask grows from small to large on hover and follows cursor position to reveal the content layer.",
+  "use_when": "An interactive hero section or content reveal where hover interaction guides attention.",
+  "avoid_when": "On mobile or touch devices — no pointer to track. Requires external SVG mask asset.",
+  "a11y": "Both layers are in DOM but mask obscures one. No keyboard control over reveal timing.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "size", "type": "number", "default": "10", "required": false},
+    {"name": "revealSize", "type": "number", "default": "600", "required": false},
+    {"name": "base", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "reveal", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "section-background"]
+}

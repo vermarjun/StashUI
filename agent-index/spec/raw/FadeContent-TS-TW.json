@@ -1,0 +1,33 @@
+{
+  "name": "FadeContent-TS-TW",
+  "blurb": "Fades and unblurs content when it scrolls into view.",
+  "description": "Wrapper using GSAP ScrollTrigger to fade in and unblur children when they enter the viewport. Configurable delay, ease, blur intensity, and optional fade-out after visibility.",
+  "use_when": "Content should reveal progressively as the user scrolls, with a polished easing that feels intentional.",
+  "avoid_when": "The scroll container is non-standard, or animations should respect prefers-reduced-motion.",
+  "a11y": "Decorative animation on scroll; no keyboard interaction or prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "container", "type": "Element | string | null", "default": "null", "required": false},
+    {"name": "blur", "type": "boolean", "default": "false", "required": false},
+    {"name": "duration", "type": "number", "default": "1000", "required": false},
+    {"name": "ease", "type": "string", "default": "power2.out", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "threshold", "type": "number", "default": "0.1", "required": false},
+    {"name": "initialOpacity", "type": "number", "default": "0", "required": false},
+    {"name": "disappearAfter", "type": "number", "default": "0", "required": false},
+    {"name": "disappearDuration", "type": "number", "default": "0.5", "required": false},
+    {"name": "disappearEase", "type": "string", "default": "power2.in", "required": false},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "onDisappearanceComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "subtle",
+    "affects": ["opacity"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "feature-card", "body-text"]
+}

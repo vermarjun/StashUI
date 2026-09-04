@@ -1,0 +1,23 @@
+{
+  "name": "sortable-list",
+  "blurb": "Drag-to-reorder list with checkbox completion and spring-animated delete action.",
+  "description": "List component using Framer Motion's Reorder primitive for drag-to-sort functionality. Items can be marked complete (checked) which animates a delete button. Completed items slide out when deleted. Uses a render-function pattern (renderItem) for full layout control.",
+  "use_when": "Todo lists, task managers, or any interface where users reorder items by dragging.",
+  "avoid_when": "Very large lists (1000+ items) — drag performance degrades significantly.",
+  "a11y": "Reorder items are draggable but not keyboard-accessible for reordering. Checkboxes and delete buttons are keyboard-navigable.",
+  "props": [
+    {"name": "items", "type": "Item[]", "default": null, "required": true},
+    {"name": "setItems", "type": "Dispatch<SetStateAction<Item[]>>", "default": null, "required": true},
+    {"name": "onCompleteItem", "type": "(id: number) => void", "default": null, "required": true},
+    {"name": "renderItem", "type": "(item: Item, order: number, onCompleteItem: (id: number) => void, onRemoveItem: (id: number) => void) => ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill"],
+    "tone": "minimal",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["list-item", "data-table"]
+}

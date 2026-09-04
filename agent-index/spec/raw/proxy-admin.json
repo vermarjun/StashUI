@@ -1,0 +1,23 @@
+{
+  "name": "proxy-admin",
+  "blurb": "Dashboard for managing LLM provider credentials and model configuration.",
+  "description": "A control panel that connects to a proxykit API to display provider status, manage OAuth authentication, refresh tokens, and test LLM models with custom parameters.",
+  "use_when": "Building an admin interface for LLM gateway configuration, provider auth management, or model testing.",
+  "avoid_when": "When you don't need API integration or auth flows — this component depends on a live proxykit backend.",
+  "a11y": "Semantic HTML with buttons, forms, and lists. Uses toast notifications for user feedback.",
+  "props": [
+    {"name": "basePath", "type": "string", "default": "\"/api/proxy\"", "required": false},
+    {"name": "fetcher", "type": "typeof fetch", "default": null, "required": false},
+    {"name": "getAuthHeaders", "type": "() => Record<string, string> | Promise<Record<string, string>>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["text", "fill"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["dashboard"]
+}

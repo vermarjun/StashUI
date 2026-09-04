@@ -1,0 +1,24 @@
+{
+  "name": "bending-gallery",
+  "blurb": "WebGL gallery with images that bend and wave as you scroll.",
+  "description": "WebGL-rendered image gallery with text labels that deform and bend based on scroll position. Uses canvas text rendering and WebGL shaders for the bending effect. Supports customizable bend amount, text color, and border radius.",
+  "use_when": "High-impact portfolio or image gallery requiring smooth, technical scroll-driven deformation.",
+  "avoid_when": "Low-spec devices or browsers without WebGL support; requires a sized parent container.",
+  "a11y": "Visual-only effect; keyboard navigation not implemented. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "items", "type": "GalleryItem[]", "default": null, "required": false},
+    {"name": "bend", "type": "number", "default": null, "required": false},
+    {"name": "textColor", "type": "string", "default": null, "required": false},
+    {"name": "borderRadius", "type": "number", "default": null, "required": false},
+    {"name": "font", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "continuous",
+    "affects": ["image", "fill"],
+    "tone": "technical",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "gallery", "feature-card"]
+}

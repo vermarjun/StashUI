@@ -1,0 +1,27 @@
+{
+  "name": "inspira-ripple",
+  "blurb": "Concentric circles scale and pulse outward on a loop from center.",
+  "description": "Renders expanding circular borders that shrink and repeat from the center. Each circle animates with a staggered delay to create a radiating wave effect.",
+  "use_when": "Hero sections or immersive backgrounds that need a pulsing radial signal of activity.",
+  "avoid_when": "Overlapping interactive content — expanding circles can obscure elements. Requires a positioned parent.",
+  "a11y": "Passive background effect; child content provides focus and keyboard access. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "baseCircleSize", "type": "number", "default": "210", "required": false},
+    {"name": "baseCircleOpacity", "type": "number", "default": "0.24", "required": false},
+    {"name": "spaceBetweenCircle", "type": "number", "default": "70", "required": false},
+    {"name": "circleOpacityDowngradeRatio", "type": "number", "default": "0.03", "required": false},
+    {"name": "waveSpeed", "type": "number", "default": "80", "required": false},
+    {"name": "numberOfCircles", "type": "number", "default": "7", "required": false},
+    {"name": "circleClass", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "logo-origami",
+  "blurb": "Logos flip on center axis, cycling through items on a timer.",
+  "description": "Cycles through child content on a timer, with upper and lower halves rotating away and in on a 3D X-axis to reveal the next item.",
+  "use_when": "Logo walls or brand carousels where a flipping transition creates visual rhythm and engagement.",
+  "avoid_when": "Contexts requiring accessibility — no keyboard control to pause or navigate the carousel.",
+  "a11y": "Content cycles automatically; no pause control. Focus handling depends on child content.",
+  "props": [
+    {"name": "children", "type": "ReactNode[]", "default": "[]", "required": false},
+    {"name": "duration", "type": "number", "default": "1.5", "required": false},
+    {"name": "delay", "type": "number", "default": "2.5", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "hero"]
+}

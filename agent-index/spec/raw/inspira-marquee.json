@@ -1,0 +1,26 @@
+{
+  "name": "inspira-marquee",
+  "blurb": "Children scroll continuously in a loop, horizontally or vertically.",
+  "description": "Repeats children N times and animates them in a seamless marquee effect. Supports reverse direction, pause-on-hover, and both horizontal and vertical layouts. Inline CSS keyframes define the animation.",
+  "use_when": "Displaying rows of reviews, testimonials, logos, or any content that benefits from continuous scrolling emphasis.",
+  "avoid_when": "Motion-sensitive users—animation is always running without prefers-reduced-motion support.",
+  "a11y": "Children are rendered as-is; no ARIA for the loop. Pause on hover helps keyboard users. No keyboard controls to navigate.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "vertical", "type": "boolean", "default": "false", "required": false},
+    {"name": "repeat", "type": "number", "default": "4", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial", "logo-wall", "feature-card"]
+}

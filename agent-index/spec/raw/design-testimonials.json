@@ -1,0 +1,23 @@
+{
+  "name": "design-testimonials",
+  "blurb": "Full-page testimonial carousel with mouse-tracked number, word-by-word quotes, and rotating company ticker.",
+  "description": "Premium testimonial showcase with auto-rotating carousel. Features spring-physics-tracked large index number, word-by-word animated quotes, author/role info, company ticker, and previous/next navigation. Full-screen height layout with vertical progress indicator.",
+  "use_when": "Hero sections or dedicated testimonial pages where polished animations and large-scale visual impact matter.",
+  "avoid_when": "When multiple testimonials need to fit in compact spaces — full-screen layout not responsive to container size.",
+  "a11y": "Navigation buttons lack aria-labels. Quote text animates in word-by-word (readable but motion-heavy). No prefers-reduced-motion guard on auto-rotation.",
+  "props": [
+    {"name": "testimonials", "type": "Array<{quote: string; author: string; role: string; company: string}>", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": "'Testimonials'", "required": false},
+    {"name": "duration", "type": "number", "default": "6000", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["testimonial", "hero"]
+}

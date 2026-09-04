@@ -1,0 +1,20 @@
+{
+  "name": "file-upload",
+  "blurb": "Animated file upload with grid pattern background and layout motion.",
+  "description": "Drag-and-drop file uploader with animated file list display. Background has radial gradient grid pattern. Uses Framer Motion for layout animations.",
+  "use_when": "Polished, visually distinct file uploads with emphasis on animation and design.",
+  "avoid_when": "Performance-critical contexts; animations may strain older devices.",
+  "a11y": "Input hidden but accessible. Drop zone keyboard operable via click handler.",
+  "props": [
+    {"name": "onChange", "type": "(files: File[]) => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "modal"]
+}

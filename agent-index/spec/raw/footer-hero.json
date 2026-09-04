@@ -1,0 +1,26 @@
+{
+  "name": "footer-hero",
+  "blurb": "Staggered entrance animation triggered by scroll, blur and fade each element in sequence.",
+  "description": "A viewport-triggered animation component powered by Framer Motion. Animates elements with blur, opacity, and vertical shifts as they enter view, with configurable delay sequences. Accepts custom motion variants and respects viewport visibility via IntersectionObserver.",
+  "use_when": "Building hero sections or step-by-step processes with staggered animations on scroll.",
+  "avoid_when": "Users with prefers-reduced-motion enabled; the component lacks a motion preference guard.",
+  "a11y": "Uses semantic HTML with custom element support (as prop). No `prefers-reduced-motion` guard detected — motion plays regardless of user preferences.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "animationNum", "type": "number", "default": null, "required": true},
+    {"name": "timelineRef", "type": "React.RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "as", "type": "keyof HTMLElementTagNameMap", "default": "'div'", "required": false},
+    {"name": "customVariants", "type": "Variants", "default": null, "required": false},
+    {"name": "once", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "pronounced",
+    "affects": ["text", "opacity"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "section-background"]
+}

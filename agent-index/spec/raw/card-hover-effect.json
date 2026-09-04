@@ -1,0 +1,21 @@
+{
+  "name": "card-hover-effect",
+  "blurb": "Grid of cards with a smooth border glow on hover.",
+  "description": "Grid component that renders cards from an items array. Each card has title, description, and link. Hover effect adds a glowing border. Uses a smooth easing for the glow animation.",
+  "use_when": "Project showcases, service grids, or link collections where hover feedback adds polish.",
+  "avoid_when": "Touch-only interfaces — hover effects don't apply.",
+  "a11y": "Links are semantic. Cards are readable. Focus state should match hover for keyboard users.",
+  "props": [
+    {"name": "items", "type": "Array<{title, description, link}>", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "section-background"]
+}

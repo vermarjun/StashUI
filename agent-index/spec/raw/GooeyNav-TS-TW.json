@@ -1,0 +1,27 @@
+{
+  "name": "GooeyNav-TS-TW",
+  "blurb": "Navigation with gooey background fill and particle burst effect on click.",
+  "description": "A creative navigation menu where clicking an item triggers a particle burst animation using mathematical positioning and noise. Active item gets a smooth gooey background pill with custom easing. Text color inverts on active state.",
+  "use_when": "You want an eye-catching, premium navigation that delights users with playful micro-interactions.",
+  "avoid_when": "Accessibility-critical contexts — custom keyboard support is basic; particle effects may distract.",
+  "a11y": "Keyboard support: Enter/Space to activate items. Custom focus handling. ResizeObserver watches for layout changes. Particles are pointer-events-none.",
+  "props": [
+    {"name": "items", "type": "GooeyNavItem[]", "default": null, "required": true},
+    {"name": "animationTime", "type": "number", "default": "600", "required": false},
+    {"name": "particleCount", "type": "number", "default": "15", "required": false},
+    {"name": "particleDistances", "type": "[number, number]", "default": "[90, 10]", "required": false},
+    {"name": "particleR", "type": "number", "default": "100", "required": false},
+    {"name": "timeVariance", "type": "number", "default": "300", "required": false},
+    {"name": "colors", "type": "number[]", "default": "[1, 2, 3, 1, 2, 3, 1, 4]", "required": false},
+    {"name": "initialActiveIndex", "type": "number", "default": "0", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "playful",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav"]
+}

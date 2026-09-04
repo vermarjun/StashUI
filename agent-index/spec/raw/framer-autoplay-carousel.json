@@ -1,0 +1,20 @@
+{
+  "name": "framer-autoplay-carousel",
+  "blurb": "Auto-scrolling image carousel that pauses on hover with spring-based transitions.",
+  "description": "Full-width carousel that continuously scrolls through images with configurable interval. Pauses on hover, resumes when pointer leaves. Uses Framer Motion spring animation for smooth navigation.",
+  "use_when": "Auto-rotating image galleries, testimonials, or logo walls with minimal interaction.",
+  "avoid_when": "When users need full carousel control; auto-play can be distracting.",
+  "a11y": "No keyboard navigation. Pause-on-hover improves pause-ability but doesn't offer fine control.",
+  "props": [
+    {"name": "duration", "type": "number", "default": "3000", "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial", "logo-wall", "hero"]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "components-backgrounds-hexagon",
+  "blurb": "Tessellating hexagons that lighten on hover.",
+  "description": "Renders a responsive grid of clip-path hexagons that fills the viewport. Each hexagon lightens on hover with a smooth transition.",
+  "use_when": "A geometric background that needs subtle interaction to draw attention to hovered areas.",
+  "avoid_when": "When the viewport is very small or performance is critical — the grid recalculates on resize and may be heavy on mobile.",
+  "a11y": "Passive background wrapper; focus and keyboard behaviour come from children. No prefers-reduced-motion guard on hover effects.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "hexagonProps", "type": "React.ComponentProps<'div'>", "default": null, "required": false},
+    {"name": "hexagonSize", "type": "number", "default": "75", "required": false},
+    {"name": "hexagonMargin", "type": "number", "default": "3", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

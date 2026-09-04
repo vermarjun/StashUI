@@ -1,0 +1,27 @@
+{
+  "name": "animated-number",
+  "blurb": "Number that springs to new values with custom formatting.",
+  "description": "Spring-animated number using Framer Motion. Supports precision, custom formatting, and animation lifecycle callbacks. Configurable spring physics.",
+  "use_when": "Displaying metric changes, counters, or scores with smooth animation.",
+  "avoid_when": "When animation is disabled or in performance-critical contexts.",
+  "a11y": "Animated value updates via MotionValue. Screen readers see formatted text content.",
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": true},
+    {"name": "mass", "type": "number", "default": "0.8", "required": false},
+    {"name": "stiffness", "type": "number", "default": "75", "required": false},
+    {"name": "damping", "type": "number", "default": "15", "required": false},
+    {"name": "precision", "type": "number", "default": "0", "required": false},
+    {"name": "format", "type": "(value: number) => string", "default": "toLocaleString", "required": false},
+    {"name": "onAnimationStart", "type": "() => void", "default": null, "required": false},
+    {"name": "onAnimationComplete", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["stat", "chart"]
+}

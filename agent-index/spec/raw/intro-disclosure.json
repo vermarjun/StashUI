@@ -1,0 +1,27 @@
+{
+  "name": "intro-disclosure",
+  "blurb": "Multi-step feature tour with desktop dialog and mobile drawer views.",
+  "description": "An IntroDisclosure with configurable steps, media (image/video), actions, and responsive layout; desktop uses Dialog, mobile uses Drawer with swipe.",
+  "use_when": "Onboarding users with comprehensive feature tours that adapt to their device with step navigation and media.",
+  "avoid_when": "For simple one-step modals — this is designed for multi-step feature tours with rich media.",
+  "a11y": "Keyboard navigation (arrow keys); drag/swipe on mobile; focus management; skip option; don't-show-again persisted to localStorage.",
+  "props": [
+    {"name": "steps", "type": "Step[]", "default": null, "required": true},
+    {"name": "featureId", "type": "string", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": true},
+    {"name": "setOpen", "type": "(open: boolean) => void", "default": null, "required": true},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "onSkip", "type": "() => void", "default": null, "required": false},
+    {"name": "showProgressBar", "type": "boolean", "default": "true", "required": false},
+    {"name": "forceVariant", "type": "'mobile' | 'desktop'", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["text", "image", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal"]
+}

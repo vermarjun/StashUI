@@ -1,0 +1,36 @@
+{
+  "name": "inspira-animated-beam",
+  "blurb": "Animated SVG beam connecting two elements with gradient.",
+  "description": "Renders an animated SVG path with gradient connecting two referenced elements. Configurable curvature, colors, animation speed, and direction.",
+  "use_when": "Architecture diagrams, flow charts, or connection visualizations between components or concepts.",
+  "avoid_when": "Many simultaneous animations that could impact performance.",
+  "a11y": "SVG path is decorative; semantic content provided by the connected elements.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "fromRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "toRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "curvature", "type": "number", "default": "0", "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "pathColor", "type": "string", "default": "\"gray\"", "required": false},
+    {"name": "pathWidth", "type": "number", "default": "2", "required": false},
+    {"name": "pathOpacity", "type": "number", "default": "0.2", "required": false},
+    {"name": "gradientStartColor", "type": "string", "default": "\"#FFAA40\"", "required": false},
+    {"name": "gradientStopColor", "type": "string", "default": "\"#9C40FF\"", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "duration", "type": "number", "default": "Math.random() * 3 + 4", "required": false},
+    {"name": "startXOffset", "type": "number", "default": "0", "required": false},
+    {"name": "startYOffset", "type": "number", "default": "0", "required": false},
+    {"name": "endXOffset", "type": "number", "default": "0", "required": false},
+    {"name": "endYOffset", "type": "number", "default": "0", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["diagram", "decoration"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "meteors",
+  "blurb": "Meteors fall vertically with glowing trails and random timing.",
+  "description": "Renders animated meteors that fall vertically within a container. Each meteor has randomized delay and duration with a CSS-gradient glow trail.",
+  "use_when": "Background effects for hero sections or cosmic-themed pages where falling meteors add atmospheric drama.",
+  "avoid_when": "Performance-sensitive devices — many animated elements can impact rendering performance.",
+  "a11y": "Purely decorative animation with no semantic content or interactive elements.",
+  "props": [
+    {"name": "number", "type": "number", "default": "20", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

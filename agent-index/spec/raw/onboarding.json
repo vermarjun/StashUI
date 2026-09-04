@@ -1,0 +1,22 @@
+{
+  "name": "onboarding",
+  "blurb": "Multi-step onboarding flow with progress indicator, choice groups, and carousel.",
+  "description": "Composable onboarding system with StepIndicator, ChoiceGroup, FeatureCarousel, TipsList, and Onboarding context. Supports both dots and pills progress variants, controlled and uncontrolled modes, and state callbacks for step navigation.",
+  "use_when": "Building product walkthroughs, setup wizards, or feature tours that guide new users through sequential steps with visual feedback.",
+  "avoid_when": "Simple single-screen flows. Not ideal when steps can be skipped or accessed non-sequentially.",
+  "a11y": "Keyboard navigation for step transitions. Proper ARIA attributes on progress indicator. Role and live region support via composition.",
+  "props": [
+    {"name": "currentStep", "type": "number", "default": null, "required": true},
+    {"name": "totalSteps", "type": "number", "default": null, "required": true},
+    {"name": "variant", "type": "'dots' | 'pills'", "default": "dots", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "hero", "modal"]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "animated-circular-progressbar",
+  "blurb": "Animated circular progress bar with customizable colors, stroke width, and duration.",
+  "description": "An SVG-based circular progress indicator with configurable primary and secondary colors, stroke width, optional percentage display, and animation duration.",
+  "use_when": "Displaying progress in circular format with control over visual appearance and animation speed.",
+  "avoid_when": "When a linear progress bar is more appropriate or when visual customization isn't needed.",
+  "a11y": "Optional percentage text is displayed; the SVG itself lacks aria labels.",
+  "props": [
+    {"name": "max", "type": "number", "default": "100", "required": false},
+    {"name": "value", "type": "number", "default": "0", "required": false},
+    {"name": "min", "type": "number", "default": "0", "required": false},
+    {"name": "gaugePrimaryColor", "type": "string", "default": "\"rgb(79 70 229)\"", "required": false},
+    {"name": "gaugeSecondaryColor", "type": "string", "default": "\"rgba(0, 0, 0, 0.1)\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "circleStrokeWidth", "type": "number", "default": "10", "required": false},
+    {"name": "showPercentage", "type": "boolean", "default": "true", "required": false},
+    {"name": "duration", "type": "number", "default": "1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["loading"]
+}

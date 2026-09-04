@@ -1,0 +1,23 @@
+{
+  "name": "text-reveal-card",
+  "blurb": "Reveals hidden text by horizontal clip-path under a cursor-tracked gradient line.",
+  "description": "Card that tracks pointer position and animates a clip-path inset to reveal an overlay text. Includes animated star particles in the background. Supports both mouse and touch input.",
+  "use_when": "Revealing a hidden message or alternative text on hover; creating an interactive reveal effect.",
+  "avoid_when": "Static designs or devices without pointer input; the component hardcodes dark theme.",
+  "a11y": "Interaction driven by pointer movement; no keyboard alternative. Focus handling not managed; no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "revealText", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["text", "fill"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "decoration"]
+}

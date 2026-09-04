@@ -1,0 +1,23 @@
+{
+  "name": "Folder-TS-TW",
+  "blurb": "Interactive folder icon expands to reveal papers with hover offset.",
+  "description": "An interactive folder component that opens/closes on click to reveal stacked paper items inside (max 3). Papers respond to mouse movement with parallax-like offset when folder is open.",
+  "use_when": "Navigation, file explorers, or playful UI elements showcasing folder/file interaction metaphors.",
+  "avoid_when": "When actual file system functionality is needed; this is purely decorative and visual.",
+  "a11y": "Click to expand/collapse; no keyboard interaction or focus management; mouse movement-based hover offsets.",
+  "props": [
+    {"name": "color", "type": "string", "default": "\"#5227FF\"", "required": false},
+    {"name": "size", "type": "number", "default": "1", "required": false},
+    {"name": "items", "type": "React.ReactNode[]", "default": "[]", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "playful",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "sidebar"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "inspira-file-tree",
+  "blurb": "Hierarchical folder/file tree built with JSX children rather than data config.",
+  "description": "Component-based tree view (Tree, Folder, File) where the structure is declared via JSX composition, not a data array. Tracks selected item and expanded folders via state. Folders render with toggle icons; files are selectable buttons. Supports RTL/LTR direction.",
+  "use_when": "Custom, deeply-nested file structures where JSX composition is clearer than flat data arrays.",
+  "avoid_when": "Large dynamic trees (1000+ items) where data arrays are more efficient to generate.",
+  "a11y": "Folders and files are buttons with click handlers. No built-in roving tabindex or arrow-key navigation — focus must be managed externally.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "initialSelectedId", "type": "string", "default": null, "required": false},
+    {"name": "indicator", "type": "boolean", "default": "true", "required": false},
+    {"name": "elements", "type": "TreeViewElement[]", "default": null, "required": false},
+    {"name": "initialExpandedItems", "type": "string[]", "default": "[]", "required": false},
+    {"name": "direction", "type": "rtl | ltr", "default": "ltr", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["sidebar", "data-table"]
+}

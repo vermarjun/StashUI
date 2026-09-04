@@ -1,0 +1,34 @@
+{
+  "name": "border-beam-button",
+  "blurb": "Button wrapped in an animated colour-cycling border beam.",
+  "description": "Wraps a Button component in the BorderBeam library component, which renders an animated gradient beam that rotates around the button's border. Supports theme detection and customizable colors.",
+  "use_when": "A high-impact CTA that needs to draw attention with a premium, animated effect.",
+  "avoid_when": "Dense button groups or when the animation would compete with other interactive elements.",
+  "a11y": "Full keyboard support via underlying Button component. No motion restrictions.",
+  "props": [
+    {"name": "beamSize", "type": "BorderBeamSize", "default": "\"sm\"", "required": false},
+    {"name": "borderBeamClassName", "type": "string", "default": null, "required": false},
+    {"name": "borderBeamStyle", "type": "CSSProperties", "default": null, "required": false},
+    {"name": "theme", "type": "string", "default": "\"auto\"", "required": false},
+    {"name": "colorVariant", "type": "string", "default": null, "required": false},
+    {"name": "staticColors", "type": "any", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": null, "required": false},
+    {"name": "active", "type": "boolean", "default": null, "required": false},
+    {"name": "borderRadius", "type": "number", "default": null, "required": false},
+    {"name": "brightness", "type": "number", "default": null, "required": false},
+    {"name": "saturation", "type": "number", "default": null, "required": false},
+    {"name": "hueRange", "type": "number", "default": null, "required": false},
+    {"name": "strength", "type": "number", "default": null, "required": false},
+    {"name": "onActivate", "type": "() => void", "default": null, "required": false},
+    {"name": "onDeactivate", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta", "form-submit"]
+}

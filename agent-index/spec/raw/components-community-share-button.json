@@ -1,0 +1,24 @@
+{
+  "name": "components-community-share-button",
+  "blurb": "Share button reveals Github, X, and Facebook icons on hover.",
+  "description": "A Framer Motion-powered button that swaps between a label and animated social icons on hover, with staggered entrance animations and spring physics.",
+  "use_when": "You need an engaging way to show social share options without taking up initial space.",
+  "avoid_when": "On touch-only devices where hover is not reliable; the icons only appear on mouse enter.",
+  "a11y": "Button triggers content swap but no aria attributes for icon meanings. Social icons clickable but unlabeled beyond the platform name in context.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "size", "type": "'default' | 'sm' | 'md' | 'lg'", "default": "'default'", "required": false},
+    {"name": "icon", "type": "'prefix' | 'suffix'", "default": null, "required": false},
+    {"name": "onIconClick", "type": "(platform: 'github' | 'x' | 'facebook') => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["text", "children"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["secondary-cta", "footer"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "apple-cards-carousel",
+  "blurb": "Scrollable carousel with explicit arrow buttons and click-to-modal card expansion.",
+  "description": "Horizontal scrollable carousel with navigation buttons for left/right scroll. Cards expand to full-screen modal with backdrop blur. Uses Framer Motion layout animations for smooth transitions between states.",
+  "use_when": "Showcasing cards in a carousel with explicit scroll controls and click-to-detail modals.",
+  "avoid_when": "Touch-only interfaces where scroll buttons may be hard to use.",
+  "a11y": "Scroll buttons disabled when at carousel bounds. Cards handle Escape key and outside-click close. Modal has proper focus trapping.",
+  "props": [
+    {"name": "items", "type": "JSX.Element[]", "default": null, "required": true},
+    {"name": "initialScroll", "type": "number", "default": "0", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "fill"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "gallery"]
+}

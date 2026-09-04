@@ -1,0 +1,41 @@
+{
+  "name": "PixelBlast-TS-TW",
+  "blurb": "Pixelated background with animated ripples on click and optional liquid distortion on mouse move.",
+  "description": "WebGL shader rendering pixelated shapes (square, circle, triangle, diamond) with procedural noise animation. Click ripples radiate outward; pointer motion drives liquid distortion when enabled.",
+  "use_when": "Interactive hero backgrounds, game-inspired interfaces, or creative portfolios where tactile pixel feedback enhances user engagement.",
+  "avoid_when": "Performance-critical mobile, WebGL-unsupported devices, or contexts requiring motion to be disabled — continuous rendering and click tracking is computationally expensive.",
+  "a11y": "Interactive background; pointer events only. No keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "variant", "type": "'square' | 'circle' | 'triangle' | 'diamond'", "default": "square", "required": false},
+    {"name": "pixelSize", "type": "number", "default": "3", "required": false},
+    {"name": "color", "type": "string", "default": "#B497CF", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false},
+    {"name": "antialias", "type": "boolean", "default": "true", "required": false},
+    {"name": "patternScale", "type": "number", "default": "2", "required": false},
+    {"name": "patternDensity", "type": "number", "default": "1", "required": false},
+    {"name": "liquid", "type": "boolean", "default": "false", "required": false},
+    {"name": "liquidStrength", "type": "number", "default": "0.1", "required": false},
+    {"name": "liquidRadius", "type": "number", "default": "1", "required": false},
+    {"name": "pixelSizeJitter", "type": "number", "default": "0", "required": false},
+    {"name": "enableRipples", "type": "boolean", "default": "true", "required": false},
+    {"name": "rippleIntensityScale", "type": "number", "default": "1", "required": false},
+    {"name": "rippleThickness", "type": "number", "default": "0.1", "required": false},
+    {"name": "rippleSpeed", "type": "number", "default": "0.3", "required": false},
+    {"name": "liquidWobbleSpeed", "type": "number", "default": "4.5", "required": false},
+    {"name": "autoPauseOffscreen", "type": "boolean", "default": "true", "required": false},
+    {"name": "speed", "type": "number", "default": "0.5", "required": false},
+    {"name": "transparent", "type": "boolean", "default": "true", "required": false},
+    {"name": "edgeFade", "type": "number", "default": "0.5", "required": false},
+    {"name": "noiseAmount", "type": "number", "default": "0", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "click"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "decoration"]
+}

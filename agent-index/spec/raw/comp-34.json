@@ -1,0 +1,18 @@
+{
+  "name": "comp-34",
+  "blurb": "Text input showing current and maximum character count.",
+  "description": "A text input with maxLength 50 displaying character count as 'X/50' in the bottom right. Uses a custom useCharacterLimit hook to track input state.",
+  "use_when": "Forms where users need to see how much space they have left (bios, tweets, comments).",
+  "avoid_when": "The character limit is context-dependent or changes dynamically.",
+  "a11y": "Label linked to input. Counter has aria-live='polite' and role='status'. Input has aria-describedby linking to counter.",
+  "props": [],
+  "traits": {
+    "trigger": ["keyboard"],
+    "motion": "none",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

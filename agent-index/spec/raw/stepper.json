@@ -1,0 +1,22 @@
+{
+  "name": "stepper",
+  "blurb": "Progress stepper component showing step states (active, completed, inactive, loading).",
+  "description": "Composable stepper with Stepper, StepperItem, StepperTitle, StepperDescription, StepperIndicator, StepperTrigger, and StepperSeparator. Supports horizontal and vertical orientation, loading states, and click-to-navigate functionality via context.",
+  "use_when": "Multi-step forms, wizards, or workflows where showing progress and allowing step navigation improves user experience.",
+  "avoid_when": "Linear single-step flows where a progress bar suffices. Overkill for simple status indicators.",
+  "a11y": "Supports click-to-navigate via keyboard. Proper ARIA roles for step items and context-based state management. Focus management delegated to parent.",
+  "props": [
+    {"name": "activeStep", "type": "number", "default": null, "required": true},
+    {"name": "onStepChange", "type": "(step: number) => void", "default": null, "required": false},
+    {"name": "orientation", "type": "'horizontal' | 'vertical'", "default": "horizontal", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": ["fill", "text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "form-submit", "modal"]
+}

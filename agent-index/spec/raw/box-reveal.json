@@ -1,0 +1,24 @@
+{
+  "name": "box-reveal",
+  "blurb": "Content reveals as a colored box sweeps across and away.",
+  "description": "Triggers on viewport intersection: a colored overlay slides from left to right, revealing the content beneath which fades and slides up simultaneously.",
+  "use_when": "Entrance animations for text, headers, or feature content.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); high-frequency animations.",
+  "a11y": "Animation wrapper; motion-based only. Does not affect semantic content.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "color", "type": "string", "default": "\"#5046e6\"", "required": false},
+    {"name": "duration", "type": "number", "default": "0.5", "required": false},
+    {"name": "delay", "type": "number", "default": "0.25", "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "headline", "feature-card"]
+}

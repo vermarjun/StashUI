@@ -1,0 +1,29 @@
+{
+  "name": "PixelTrail-TS-TW",
+  "blurb": "Pixelated cursor trail that fades and dissipates with configurable grid resolution and velocity.",
+  "description": "React Three Fiber + drei useTrailTexture hook rendering a pixelated trail as the pointer moves. Trail fades based on age and interpolation easing.",
+  "use_when": "Interactive portfolio showcases, game-inspired UX, or creative interactions where cursor feedback enhances tactile feedback.",
+  "avoid_when": "Touch-only devices (no pointer), or performance-sensitive mobile contexts — three.js rendering is expensive.",
+  "a11y": "Interactive pointer effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "gridSize", "type": "number", "default": "40", "required": false},
+    {"name": "trailSize", "type": "number", "default": "0.1", "required": false},
+    {"name": "maxAge", "type": "number", "default": "250", "required": false},
+    {"name": "interpolate", "type": "number", "default": "5", "required": false},
+    {"name": "easingFunction", "type": "(x: number) => number", "default": "identity", "required": false},
+    {"name": "canvasProps", "type": "Partial<CanvasProps>", "default": null, "required": false},
+    {"name": "glProps", "type": "WebGLContextAttributes & { powerPreference?: string }", "default": "{antialias: false, powerPreference: 'high-performance', alpha: true}", "required": false},
+    {"name": "gooeyFilter", "type": "{ id: string; strength: number }", "default": null, "required": false},
+    {"name": "color", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "decoration"]
+}

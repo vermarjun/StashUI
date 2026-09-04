@@ -1,0 +1,25 @@
+{
+  "name": "book",
+  "blurb": "3D book mockup that rotates on hover, revealing colored spine and back cover.",
+  "description": "Renders a 3D book with front cover, spine, and back face using CSS 3D transforms. Rotates on hover unless static. Includes sub-components BookHeader, BookTitle, and BookDescription for layout.",
+  "use_when": "Showcasing literary works, courses, or content in an engaging 3D presentation.",
+  "avoid_when": "Mobile-first designs or when 3D transforms are not supported. Requires hover for interaction.",
+  "a11y": "Content inside is semantic (h1, p, div). 3D rotation is visual-only. No keyboard activation for the hover state.",
+  "props": [
+    {"name": "duration", "type": "number", "default": "1000", "required": false},
+    {"name": "color", "type": "BookColor", "default": "'zinc'", "required": false},
+    {"name": "isStatic", "type": "boolean", "default": "false", "required": false},
+    {"name": "size", "type": "'sm' | 'md' | 'lg' | 'xl'", "default": "'md'", "required": false},
+    {"name": "radius", "type": "'sm' | 'md' | 'lg' | 'xl'", "default": "'md'", "required": false},
+    {"name": "shadowSize", "type": "'sm' | 'md' | 'lg' | 'xl'", "default": "'lg'", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "decoration"]
+}

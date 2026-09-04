@@ -1,0 +1,26 @@
+{
+  "name": "feature-voting",
+  "blurb": "Vote-tallying list where users upvote features, each vote increments a live counter.",
+  "description": "Compound component (Root, Item, Trigger, Count, Title, Description) for feature voting. Tracks total votes per feature and which features the current user has voted for. Items show vote counts; clicking a trigger toggles user's vote and increments/decrements the tally.",
+  "use_when": "Feature request boards or priority voting where users upvote and results accumulate live.",
+  "avoid_when": "Touch-only devices (small vote button targets) or when votes should be anonymous from other viewers.",
+  "a11y": "Items and triggers are keyboard-accessible buttons. Controlled (value prop) and uncontrolled (defaultValue) modes supported. Data attributes reflect voted state.",
+  "props": [
+    {"name": "value", "type": "Record<string, number>", "default": null, "required": false},
+    {"name": "defaultValue", "type": "Record<string, number>", "default": "{}", "required": false},
+    {"name": "onValueChange", "type": "(value: Record<string, number>) => void", "default": null, "required": false},
+    {"name": "votedFeatures", "type": "Set<string>", "default": null, "required": false},
+    {"name": "defaultVotedFeatures", "type": "Set<string>", "default": null, "required": false},
+    {"name": "onVotedFeaturesChange", "type": "(votedFeatures: Set<string>) => void", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "data-table"]
+}

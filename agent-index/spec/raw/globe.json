@@ -1,0 +1,25 @@
+{
+  "name": "globe",
+  "blurb": "Draggable 3D globe with auto-rotation and spring physics for smooth interaction.",
+  "description": "Renders a COBE-powered interactive globe with location markers. Rotates automatically; drag to rotate manually with spring damping. Customizable colors, diffuse, and map samples.",
+  "use_when": "Hero sections or dashboards showcasing global reach or data distribution.",
+  "avoid_when": "Mobile-first designs or performance-sensitive pages. Requires canvas support.",
+  "a11y": "Purely visual 3D rendering. Drag is mouse/touch only, no keyboard alternative.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "config", "type": "Partial<COBEOptions>", "default": null, "required": false},
+    {"name": "mass", "type": "number", "default": "1", "required": false},
+    {"name": "tension", "type": "number", "default": "280", "required": false},
+    {"name": "friction", "type": "number", "default": "100", "required": false},
+    {"name": "precision", "type": "number", "default": "0.001", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "drag"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "technical",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "stat"]
+}

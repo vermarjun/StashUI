@@ -1,0 +1,22 @@
+{
+  "name": "inspira-animated-testimonials",
+  "blurb": "Carousel of testimonials with rotating image stack and staggered text reveal.",
+  "description": "Two-column testimonial carousel with animated image stack (rotating with scale/tilt based on active index) and word-by-word blurred text reveal. Includes previous/next navigation with aria-labels. Optional autoplay with configurable duration.",
+  "use_when": "Social proof section where testimonials need visual polish via image carousel and word-reveal animation.",
+  "avoid_when": "When animations should be minimal — multiple simultaneous animation layers run per transition.",
+  "a11y": "Navigation buttons have aria-labels. Images have alt text. Smooth transitions support readers but text animation is motion-heavy.",
+  "props": [
+    {"name": "testimonials", "type": "Array<{quote: string; name: string; designation: string; image: string}>", "default": "[]", "required": false},
+    {"name": "autoplay", "type": "boolean", "default": "false", "required": false},
+    {"name": "duration", "type": "number", "default": "5000", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "timer"],
+    "motion": "pronounced",
+    "affects": ["image", "text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "TextCursor-TS-TW",
+  "blurb": "Text characters trail behind the cursor with motion physics.",
+  "description": "Renders a customizable text/emoji trail that follows pointer movement. Characters spawn at intervals, rotate to face direction of motion, fade and exit.",
+  "use_when": "Interactive demos, playful hero sections, or engagement-focused pages where cursor trails are memorable.",
+  "avoid_when": "Dense text pages (distraction); high-traffic sites (per-pointer state overhead).",
+  "a11y": "Trail overlay; no keyboard interaction. No reduced-motion support.",
+  "props": [
+    {"name": "text", "type": "string", "default": "\"⚛️\"", "required": false},
+    {"name": "spacing", "type": "number", "default": "100", "required": false},
+    {"name": "followMouseDirection", "type": "boolean", "default": "true", "required": false},
+    {"name": "randomFloat", "type": "boolean", "default": "true", "required": false},
+    {"name": "exitDuration", "type": "number", "default": "0.5", "required": false},
+    {"name": "removalInterval", "type": "number", "default": "30", "required": false},
+    {"name": "maxPoints", "type": "number", "default": "5", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "hero"]
+}

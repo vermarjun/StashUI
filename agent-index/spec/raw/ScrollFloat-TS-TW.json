@@ -1,0 +1,28 @@
+{
+  "name": "ScrollFloat-TS-TW",
+  "blurb": "Characters float up and scale in as they scroll into view, with staggered timing.",
+  "description": "Splits text into characters and animates each to float upward with scale and opacity changes as the element scrolls into view. Uses GSAP ScrollTrigger to sync animation with scroll position.",
+  "use_when": "Body text or headings need an elegant reveal effect that's tied to scroll progress.",
+  "avoid_when": "When text must be readable immediately without scrolling to reveal.",
+  "a11y": "Text is split into character spans with opacity animation. Readable but animation may distract from content.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "scrollContainerRef", "type": "RefObject<HTMLElement>", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": "", "required": false},
+    {"name": "textClassName", "type": "string", "default": "", "required": false},
+    {"name": "animationDuration", "type": "number", "default": "1", "required": false},
+    {"name": "ease", "type": "string", "default": "back.inOut(2)", "required": false},
+    {"name": "scrollStart", "type": "string", "default": "center bottom+=50%", "required": false},
+    {"name": "scrollEnd", "type": "string", "default": "bottom bottom-=40%", "required": false},
+    {"name": "stagger", "type": "number", "default": "0.03", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "body-text"]
+}

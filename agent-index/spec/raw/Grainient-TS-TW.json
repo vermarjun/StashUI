@@ -1,0 +1,42 @@
+{
+  "name": "Grainient-TS-TW",
+  "blurb": "Animated textured gradient with warping, rotation, and film grain.",
+  "description": "WebGL shader combining gradient colors with procedural noise, grain texture, and warp distortion. Supports customizable blend angles, rotation, and gamma correction. Optional animated grain.",
+  "use_when": "Artistic backgrounds where texture and grain add vintage or organic character to gradients.",
+  "avoid_when": "Minimal or clean designs where grain would add unwanted visual noise.",
+  "a11y": "WebGL canvas with no interactive elements. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "timeSpeed", "type": "number", "default": null, "required": false},
+    {"name": "colorBalance", "type": "number", "default": null, "required": false},
+    {"name": "warpStrength", "type": "number", "default": null, "required": false},
+    {"name": "warpFrequency", "type": "number", "default": null, "required": false},
+    {"name": "warpSpeed", "type": "number", "default": null, "required": false},
+    {"name": "warpAmplitude", "type": "number", "default": null, "required": false},
+    {"name": "blendAngle", "type": "number", "default": null, "required": false},
+    {"name": "blendSoftness", "type": "number", "default": null, "required": false},
+    {"name": "rotationAmount", "type": "number", "default": null, "required": false},
+    {"name": "noiseScale", "type": "number", "default": null, "required": false},
+    {"name": "grainAmount", "type": "number", "default": null, "required": false},
+    {"name": "grainScale", "type": "number", "default": null, "required": false},
+    {"name": "grainAnimated", "type": "boolean", "default": null, "required": false},
+    {"name": "contrast", "type": "number", "default": null, "required": false},
+    {"name": "gamma", "type": "number", "default": null, "required": false},
+    {"name": "saturation", "type": "number", "default": null, "required": false},
+    {"name": "centerX", "type": "number", "default": null, "required": false},
+    {"name": "centerY", "type": "number", "default": null, "required": false},
+    {"name": "zoom", "type": "number", "default": null, "required": false},
+    {"name": "color1", "type": "string", "default": null, "required": false},
+    {"name": "color2", "type": "string", "default": null, "required": false},
+    {"name": "color3", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "datetime-input",
+  "blurb": "Smart date/time input with natural language parsing and visual calendar/time picker.",
+  "description": "SmartDatetimeInput component that accepts natural language input (via chrono-node) on one side and a calendar/time picker popover on the other. Configurable to show calendar, time picker, or both via showCalendar and showTimePicker props.",
+  "use_when": "Users need flexible date/time entry with both natural language ('tomorrow at 2pm') and visual selection.",
+  "avoid_when": "Minimal UI contexts where space is extremely constrained — the component needs room for input + picker buttons.",
+  "a11y": "Input is keyboard-accessible with focus states. Calendar and time picker use standard a11y patterns.",
+  "props": [
+    {"name": "value", "type": "Date", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(date: Date) => void", "default": null, "required": true},
+    {"name": "showCalendar", "type": "boolean", "default": "true", "required": false},
+    {"name": "showTimePicker", "type": "boolean", "default": "true", "required": false},
+    {"name": "placeholder", "type": "string", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "none",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

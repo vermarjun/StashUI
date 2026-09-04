@@ -1,0 +1,20 @@
+{
+  "name": "background-boxes",
+  "blurb": "Skewed grid of boxes that fill with color on hover.",
+  "description": "Renders 15,000-element grid with 3D skew/perspective transform. Boxes respond to hover with random color fill from a hardcoded palette. Positioned absolutely with complex transforms.",
+  "use_when": "Experimental interactive background for hero sections with modest screen sizes.",
+  "avoid_when": "Mobile, tablets, or performance-critical pages—rendering 15,000 DOM elements causes significant jank.",
+  "a11y": "Purely decorative; hover effects are visual only with no keyboard equivalents.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

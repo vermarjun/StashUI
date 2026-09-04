@@ -1,0 +1,32 @@
+{
+  "name": "DotGrid-TS-TW",
+  "blurb": "Grid of interactive dots with color gradient proximity and click-triggered shock waves.",
+  "description": "Canvas-rendered dot grid using gsap for inertia-based animation. Dots respond to mouse proximity with color interpolation and to clicks with radial shock waves. Supports elastic return animation.",
+  "use_when": "Interactive backgrounds where a playful, physics-based response to user input creates engagement.",
+  "avoid_when": "Touch-only surfaces or when static backgrounds are required; relies on mouse events.",
+  "a11y": "Mouse and click interactive; no keyboard control. No prefers-reduced-motion guard. Canvas is not semantically accessible.",
+  "props": [
+    {"name": "dotSize", "type": "number", "default": "16", "required": false},
+    {"name": "gap", "type": "number", "default": "32", "required": false},
+    {"name": "baseColor", "type": "string", "default": "\"#5227FF\"", "required": false},
+    {"name": "activeColor", "type": "string", "default": "\"#5227FF\"", "required": false},
+    {"name": "proximity", "type": "number", "default": "150", "required": false},
+    {"name": "speedTrigger", "type": "number", "default": "100", "required": false},
+    {"name": "shockRadius", "type": "number", "default": "250", "required": false},
+    {"name": "shockStrength", "type": "number", "default": "5", "required": false},
+    {"name": "maxSpeed", "type": "number", "default": "5000", "required": false},
+    {"name": "resistance", "type": "number", "default": "750", "required": false},
+    {"name": "returnDuration", "type": "number", "default": "1.5", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "click"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

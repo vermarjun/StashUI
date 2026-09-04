@@ -1,0 +1,22 @@
+{
+  "name": "liquid-gradient",
+  "blurb": "Animated gradient blob breathing and morphing on hover.",
+  "description": "Layered SVG gradients with Framer Motion animation. Cycles through transform sequences; animation slows on hover (50s cycle) and speeds up on blur (10s cycle).",
+  "use_when": "A hero background or visual feature where motion should respond to user attention without being distracting.",
+  "avoid_when": "Prefers-reduced-motion users; no skip flag. Expensive for multiple instances; large screens (1030px SVG × 7 layers).",
+  "a11y": "No focus or keyboard handling. Ignores prefers-reduced-motion; animation always runs.",
+  "props": [
+    {"name": "isHovered", "type": "boolean", "default": null, "required": true},
+    {"name": "colors", "type": "Colors", "default": null, "required": true},
+    {"name": "buttonType", "type": "boolean", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero"]
+}

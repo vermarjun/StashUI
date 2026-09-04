@@ -1,0 +1,24 @@
+{
+  "name": "phone-input",
+  "blurb": "Phone input with a searchable country selector and flag icons.",
+  "description": "A phone number input using react-phone-number-input with a popover country selector featuring flag icons, search capability, and calling codes.",
+  "use_when": "Building international forms where users need to select their country and enter validated phone numbers.",
+  "avoid_when": "When single-country phone inputs suffice or when space for a country selector is unavailable.",
+  "a11y": "Country selector is keyboard accessible with arrow keys and search, flag icons have country name titles.",
+  "props": [
+    {"name": "value", "type": "string", "default": null, "required": true},
+    {"name": "onChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "defaultCountry", "type": "string", "default": null, "required": false},
+    {"name": "placeholder", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["input", "click"],
+    "motion": "none",
+    "affects": [],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

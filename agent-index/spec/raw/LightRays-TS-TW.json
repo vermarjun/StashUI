@@ -1,0 +1,74 @@
+{
+  "name": "LightRays-TS-TW",
+  "blurb": "Light rays emanate from a direction with optional mouse tracking.",
+  "description": "WebGL light rays originating from configurable edge with pointer-following. Supports color, speed, pulsation, and distortion parameters.",
+  "use_when": "Hero backgrounds needing directional light effects with interactivity.",
+  "avoid_when": "Touch-only devices; WebGL rendering is GPU-dependent and may be unavailable.",
+  "a11y": "Decorative background. No keyboard or focus handling required.",
+  "props": [
+    {
+      "name": "raysOrigin",
+      "type": "RaysOrigin",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "raysColor",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "raysSpeed",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "lightSpread",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "rayLength",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "pulsating",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "fadeDistance",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "background"
+    ],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": [
+    "page-background",
+    "section-background"
+  ]
+}

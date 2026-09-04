@@ -1,0 +1,25 @@
+{
+  "name": "focus",
+  "blurb": "Words blur and sharpen in sequence with an animated corner-bracket highlight.",
+  "description": "Splits text into words and cycles focus with a glowing corner-bracket element animating to each. Focused word is sharp, others blur. Can cycle automatically or respond to hover.",
+  "use_when": "A heading wants to emphasize words sequentially with visual hierarchy and sci-fi aesthetic.",
+  "avoid_when": "When all words need simultaneous readability.",
+  "a11y": "All words remain in DOM; blur is visual only. Readable in any order.",
+  "props": [
+    {"name": "sentence", "type": "string", "default": "Inspira Focus", "required": false},
+    {"name": "manualMode", "type": "boolean", "default": "false", "required": false},
+    {"name": "blurAmount", "type": "number", "default": "5", "required": false},
+    {"name": "borderColor", "type": "string", "default": "green", "required": false},
+    {"name": "animationDuration", "type": "number", "default": "0.5", "required": false},
+    {"name": "pauseBetweenAnimations", "type": "number", "default": "1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline"]
+}

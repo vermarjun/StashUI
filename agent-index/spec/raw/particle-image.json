@@ -1,0 +1,36 @@
+{
+  "name": "particle-image",
+  "blurb": "Image breaks into particles that react to cursor movement with physics simulation.",
+  "description": "Renders an image as animated particles responding to cursor proximity. Physics-based simulation with configurable gravity, particle size, and motion behavior.",
+  "use_when": "Interactive hero sections or playful displays where particle effects create visual engagement and dynamism.",
+  "avoid_when": "Performance-sensitive devices — particle physics simulation can be GPU-intensive.",
+  "a11y": "Particle animation is visual only; no semantic content or keyboard interaction.",
+  "props": [
+    {"name": "imageSrc", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "canvasWidth", "type": "string", "default": null, "required": false},
+    {"name": "canvasHeight", "type": "string", "default": null, "required": false},
+    {"name": "gravity", "type": "string", "default": null, "required": false},
+    {"name": "particleSize", "type": "string", "default": null, "required": false},
+    {"name": "particleGap", "type": "string", "default": null, "required": false},
+    {"name": "mouseForce", "type": "string", "default": null, "required": false},
+    {"name": "renderer", "type": "\"default\" | \"webgl\"", "default": null, "required": false},
+    {"name": "color", "type": "string", "default": null, "required": false},
+    {"name": "colorArr", "type": "number[]", "default": null, "required": false},
+    {"name": "initPosition", "type": "\"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"misplaced\" | \"none\"", "default": null, "required": false},
+    {"name": "initDirection", "type": "\"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"none\"", "default": null, "required": false},
+    {"name": "fadePosition", "type": "\"explode\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"random\" | \"none\"", "default": null, "required": false},
+    {"name": "fadeDirection", "type": "\"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"none\"", "default": null, "required": false},
+    {"name": "noise", "type": "number", "default": null, "required": false},
+    {"name": "responsiveWidth", "type": "boolean", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "decoration"]
+}

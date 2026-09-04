@@ -1,0 +1,21 @@
+{
+  "name": "inspira-interactive-hover-button",
+  "blurb": "Button text slides up on hover.",
+  "description": "A button where the text slides up and fades in on hover, revealing an underline. Uses CSS transitions for smooth animation.",
+  "use_when": "You need a polished interactive button with smooth text-motion feedback.",
+  "avoid_when": "On touch-only devices where hover is unreliable.",
+  "a11y": "Standard button semantics. Text animation is visual feedback. No aria attributes needed.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

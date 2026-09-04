@@ -1,0 +1,24 @@
+{
+  "name": "tweet-card",
+  "blurb": "Renders a single tweet with metadata, links, photos, and videos.",
+  "description": "Server-side component that fetches and renders a tweet by ID using react-tweet API. Includes author info, verified badge, linked entities (URLs, hashtags), and media. Wraps result with Suspense and supports custom error handling and fallback states.",
+  "use_when": "Embedding tweets in articles, testimonials, or social proof sections where live tweet rendering is desired.",
+  "avoid_when": "Client-side-only apps without server rendering capability; the component requires server-side data fetching.",
+  "a11y": "Accessible tweet structure with semantic markup for author, content, and links. Photos and videos have alt text and proper media attributes.",
+  "props": [
+    {"name": "id", "type": "string", "default": null, "required": false},
+    {"name": "components", "type": "object", "default": null, "required": false},
+    {"name": "fallback", "type": "React.ReactNode", "default": "TweetSkeleton", "required": false},
+    {"name": "onError", "type": "function", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["text", "image"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial", "body-text", "data-table"]
+}

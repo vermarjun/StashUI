@@ -1,0 +1,37 @@
+{
+  "name": "TextType-TS-TW",
+  "blurb": "Text types out character by character, pauses, then deletes and repeats with a blinking cursor.",
+  "description": "Animates text typing and deleting in a loop through multiple text options. Supports a blinking cursor, variable colors per text, random typing speed, and reverse typing mode. Can trigger on scroll visibility.",
+  "use_when": "An engaging hero heading wants to cycle through multiple value propositions with typewriter effect.",
+  "avoid_when": "When content must be immediately readable or when the typing animation would distract from comprehension.",
+  "a11y": "Text builds character-by-character dynamically; screen readers see the final result after typing completes.",
+  "props": [
+    {"name": "text", "type": "string | string[]", "default": null, "required": true},
+    {"name": "as", "type": "ElementType", "default": "div", "required": false},
+    {"name": "typingSpeed", "type": "number", "default": "50", "required": false},
+    {"name": "initialDelay", "type": "number", "default": "0", "required": false},
+    {"name": "pauseDuration", "type": "number", "default": "2000", "required": false},
+    {"name": "deletingSpeed", "type": "number", "default": "30", "required": false},
+    {"name": "loop", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "showCursor", "type": "boolean", "default": "true", "required": false},
+    {"name": "hideCursorWhileTyping", "type": "boolean", "default": "false", "required": false},
+    {"name": "cursorCharacter", "type": "string | React.ReactNode", "default": "|", "required": false},
+    {"name": "cursorClassName", "type": "string", "default": "", "required": false},
+    {"name": "cursorBlinkDuration", "type": "number", "default": "0.5", "required": false},
+    {"name": "textColors", "type": "string[]", "default": "[]", "required": false},
+    {"name": "variableSpeed", "type": "{min: number; max: number}", "default": null, "required": false},
+    {"name": "onSentenceComplete", "type": "(sentence: string, index: number) => void", "default": null, "required": false},
+    {"name": "startOnVisible", "type": "boolean", "default": "false", "required": false},
+    {"name": "reverseMode", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "headline"]
+}

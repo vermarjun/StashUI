@@ -1,0 +1,27 @@
+{
+  "name": "AnimatedList-TS-TW",
+  "blurb": "Scrollable list with scale/opacity animations and keyboard navigation support.",
+  "description": "Interactive list with InView-triggered animations, arrow key navigation, optional gradient overlays, and selection callbacks. Uses Framer Motion for animations.",
+  "use_when": "Displaying selectable list items with smooth entry animations and keyboard accessibility.",
+  "avoid_when": "Very large lists where animation overhead could impact performance.",
+  "a11y": "Supports arrow keys, Tab, Shift+Tab for navigation and Enter to select. Selection state visible through background color change.",
+  "props": [
+    {"name": "items", "type": "string[]", "default": "[...15 items...]", "required": false},
+    {"name": "onItemSelect", "type": "(item: string, index: number) => void", "default": null, "required": false},
+    {"name": "showGradients", "type": "boolean", "default": "true", "required": false},
+    {"name": "enableArrowNavigation", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": "''", "required": false},
+    {"name": "itemClassName", "type": "string", "default": "''", "required": false},
+    {"name": "displayScrollbar", "type": "boolean", "default": "true", "required": false},
+    {"name": "initialSelectedIndex", "type": "number", "default": "-1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll", "keyboard", "click"],
+    "motion": "subtle",
+    "affects": ["scale", "opacity"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["data-table", "list-item"]
+}

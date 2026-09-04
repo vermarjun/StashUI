@@ -1,0 +1,38 @@
+{
+  "name": "ui-layouts-animated-beam",
+  "blurb": "Animated lines connect referenced elements with gradient trails.",
+  "description": "Draws SVG paths between positioned elements with continuous motion animation. Paths can be reversed, curved, and rendered as dotted lines.",
+  "use_when": "Illustrating connections or data flow between nodes in a diagram, dashboard, or network visualization.",
+  "avoid_when": "Performance-critical contexts with many instances—each runs a continuous animation loop.",
+  "a11y": "Purely decorative SVG; no interactive elements. Container and endpoint refs must be positioned.",
+  "props": [
+    {"name": "containerRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "fromRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "toRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "curvature", "type": "number", "default": "0", "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "duration", "type": "number", "default": "Math.random() * 3 + 4", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "pathColor", "type": "string", "default": "gray", "required": false},
+    {"name": "pathWidth", "type": "number", "default": "2", "required": false},
+    {"name": "pathOpacity", "type": "number", "default": "0.2", "required": false},
+    {"name": "gradientStartColor", "type": "string", "default": "#4d40ff", "required": false},
+    {"name": "gradientStopColor", "type": "string", "default": "#4043ff", "required": false},
+    {"name": "startXOffset", "type": "number", "default": "0", "required": false},
+    {"name": "startYOffset", "type": "number", "default": "0", "required": false},
+    {"name": "endXOffset", "type": "number", "default": "0", "required": false},
+    {"name": "endYOffset", "type": "number", "default": "0", "required": false},
+    {"name": "dotted", "type": "boolean", "default": "false", "required": false},
+    {"name": "dotSpacing", "type": "number", "default": "6", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "feature-card"]
+}

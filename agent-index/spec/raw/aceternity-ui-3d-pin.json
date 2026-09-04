@@ -1,0 +1,24 @@
+{
+  "name": "aceternity-ui-3d-pin",
+  "blurb": "Card that tilts in 3D on hover with a floating perspective effect.",
+  "description": "A clickable card container that rotates on the X-axis when hovered, scales down, and displays a floating perspective tooltip. Uses CSS 3D transforms and Motion for smooth transitions.",
+  "use_when": "Feature showcases, portfolio cards, or product displays where 3D depth enhances focus.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion support); mobile/touch (3D feels jarring).",
+  "a11y": "Wraps an anchor; hover effects only. No keyboard navigation beyond link focus.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": null, "required": false},
+    {"name": "href", "type": "string", "default": "\"/\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["fill", "border"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "pricing-card"]
+}

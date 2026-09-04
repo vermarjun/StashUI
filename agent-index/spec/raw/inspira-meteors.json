@@ -1,0 +1,21 @@
+{
+  "name": "inspira-meteors",
+  "blurb": "Falling meteors with glowing trails animated across the screen.",
+  "description": "CSS-animated meteor shower with randomized delay and duration per meteor. Each meteor is a small glowing dot with a trailing gradient that falls diagonally down the screen.",
+  "use_when": "A dramatic, animated background effect for hero sections or dark-themed pages.",
+  "avoid_when": "Performance-sensitive contexts where many simultaneous animations impact responsiveness.",
+  "a11y": "Purely decorative animated elements; focus and keyboard behaviour come from overlaid content. Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "count", "type": "number", "default": "20", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

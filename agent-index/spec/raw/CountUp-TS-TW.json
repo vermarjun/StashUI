@@ -1,0 +1,29 @@
+{
+  "name": "CountUp-TS-TW",
+  "blurb": "Animates numbers from one value to another with formatting and lifecycle callbacks.",
+  "description": "Number counter that smoothly animates between values using spring physics. Supports decimal formatting, separators, and triggers on InView. Configurable delay, duration, and callbacks.",
+  "use_when": "Displaying stats, metrics, or counters that need visual emphasis through animation.",
+  "avoid_when": "When animation is disabled in accessibility preferences or in performance-critical contexts.",
+  "a11y": "InView-triggered animation respects viewport. Text content updates for screen readers. Consider prefers-reduced-motion in usage.",
+  "props": [
+    {"name": "to", "type": "number", "default": null, "required": true},
+    {"name": "from", "type": "number", "default": "0", "required": false},
+    {"name": "direction", "type": "'up' | 'down'", "default": "up", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "duration", "type": "number", "default": "2", "required": false},
+    {"name": "className", "type": "string", "default": "''", "required": false},
+    {"name": "startWhen", "type": "boolean", "default": "true", "required": false},
+    {"name": "separator", "type": "string", "default": "''", "required": false},
+    {"name": "onStart", "type": "() => void", "default": null, "required": false},
+    {"name": "onEnd", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["stat", "chart"]
+}

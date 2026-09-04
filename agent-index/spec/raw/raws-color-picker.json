@@ -1,0 +1,22 @@
+{
+  "name": "raws-color-picker",
+  "blurb": "HSV color picker with saturation panel, hue slider, and hex input.",
+  "description": "A full-featured color picker with an HSV color selection panel, continuous hue slider, direct hex input, copy button, and optional eyedropper tool.",
+  "use_when": "Building design tools or color editors where precise HSV selection and eyedropper support are needed.",
+  "avoid_when": "When simple hex or RGB inputs suffice or when touch support is limited.",
+  "a11y": "Color selection uses mouse/touch events, buttons have sr-only labels, hex input has pattern validation.",
+  "props": [
+    {"name": "color", "type": "string", "default": null, "required": true},
+    {"name": "onChange", "type": "(color: string) => void", "default": null, "required": true},
+    {"name": "showEyedropper", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag", "input"],
+    "motion": "none",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

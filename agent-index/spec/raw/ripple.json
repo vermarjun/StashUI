@@ -1,0 +1,22 @@
+{
+  "name": "ripple",
+  "blurb": "Concentric circles pulse outward from center with staggered timing.",
+  "description": "Renders expanding circles from a center point with staggered animation delays and fading opacity. CSS-animated loops continuously; positioned absolutely and masks to transparent at bottom.",
+  "use_when": "A background effect behind a focal point or button to draw attention without blocking interaction.",
+  "avoid_when": "When you need responsiveness to user input — the ripple loops on its own and cannot pause or reverse.",
+  "a11y": "Purely decorative; uses pointer-events-none so interactions pass through to elements below. No focus or keyboard handling.",
+  "props": [
+    {"name": "mainCircleSize", "type": "number", "default": "210", "required": false},
+    {"name": "mainCircleOpacity", "type": "number", "default": "0.24", "required": false},
+    {"name": "numCircles", "type": "number", "default": "8", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["section-background", "decoration"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "components-backgrounds-gravity-stars",
+  "blurb": "Stars drift and orbit under simulated gravity, attracted or repelled by cursor.",
+  "description": "Canvas-based particle system with physics simulation. 75 stars affected by gravity, with optional mouse attraction/repulsion and star-to-star bounce or merge interactions.",
+  "use_when": "Interactive space-themed background with physics simulation.",
+  "avoid_when": "Performance-constrained devices or when static background needed.",
+  "a11y": "Cursor-based interaction has no keyboard equivalent.",
+  "props": [
+    {"name": "starsCount", "type": "number", "default": "75", "required": false},
+    {"name": "starsSize", "type": "number", "default": "2", "required": false},
+    {"name": "starsOpacity", "type": "number", "default": "0.75", "required": false},
+    {"name": "glowIntensity", "type": "number", "default": "15", "required": false},
+    {"name": "glowAnimation", "type": "\"instant\" | \"ease\" | \"spring\"", "default": "\"ease\"", "required": false},
+    {"name": "movementSpeed", "type": "number", "default": "0.3", "required": false},
+    {"name": "mouseInfluence", "type": "number", "default": "100", "required": false},
+    {"name": "mouseGravity", "type": "\"attract\" | \"repel\"", "default": "\"attract\"", "required": false},
+    {"name": "gravityStrength", "type": "number", "default": "75", "required": false},
+    {"name": "starsInteraction", "type": "boolean", "default": "false", "required": false},
+    {"name": "starsInteractionType", "type": "\"bounce\" | \"merge\"", "default": "\"bounce\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

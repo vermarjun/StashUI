@@ -1,0 +1,28 @@
+{
+  "name": "CardNav-TS-TW",
+  "blurb": "Navigation bar expands to reveal card-based submenu with staggered entrance.",
+  "description": "A GSAP-driven mega menu that animates from a 60px bar to full height on click. Cards slide up and fade in with stagger. Responsive: calculates dynamic height on mobile, maintains fixed height on desktop. Includes logo and icon-based links.",
+  "use_when": "You need a sophisticated navigation menu with grouped card-based categories.",
+  "avoid_when": "Simple linear navigation — this is optimized for multi-level hierarchies.",
+  "a11y": "Hamburger icon toggles menu. Links have ariaLabel. Resize events update height. No keyboard navigation beyond clicks.",
+  "props": [
+    {"name": "logo", "type": "string", "default": null, "required": true},
+    {"name": "logoAlt", "type": "string", "default": "\"Logo\"", "required": false},
+    {"name": "items", "type": "CardNavItem[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "ease", "type": "string", "default": "\"power3.out\"", "required": false},
+    {"name": "baseColor", "type": "string", "default": "\"#fff\"", "required": false},
+    {"name": "menuColor", "type": "string", "default": null, "required": false},
+    {"name": "buttonBgColor", "type": "string", "default": null, "required": false},
+    {"name": "buttonTextColor", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav"]
+}

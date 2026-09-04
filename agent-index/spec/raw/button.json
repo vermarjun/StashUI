@@ -1,0 +1,22 @@
+{
+  "name": "button",
+  "blurb": "Unstyled button with six semantic variants and flexible sizing.",
+  "description": "A versatile button component using CVA (class-variance-authority) for variant and size control. Supports six variants (default, secondary, outline, ghost, destructive, link) and four sizes (sm, default, lg, icon).",
+  "use_when": "Any button context where you need semantic styling and flexibility.",
+  "avoid_when": "When you need highly customized animations or effects.",
+  "a11y": "Full keyboard navigation and focus-visible ring. Supports disabled state.",
+  "props": [
+    {"name": "variant", "type": "\"default\" | \"secondary\" | \"outline\" | \"ghost\" | \"destructive\" | \"link\"", "default": "\"default\"", "required": false},
+    {"name": "size", "type": "\"sm\" | \"default\" | \"lg\" | \"icon\"", "default": "\"default\"", "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "shadow"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta", "form-submit", "nav"]
+}

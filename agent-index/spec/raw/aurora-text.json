@@ -1,0 +1,23 @@
+{
+  "name": "aurora-text",
+  "blurb": "Text fills with a multi-color gradient that shifts and cycles through aurora-like colors.",
+  "description": "Renders text with an animated background gradient that sweeps continuously, cycling through multiple color stops. Animation speed is configurable.",
+  "use_when": "A hero heading or inline accent wants a vibrant, multi-color gradient effect that feels organic.",
+  "avoid_when": "When text must have a corporate or professional single-color appearance.",
+  "a11y": "Text content is in sr-only; animated visual is aria-hidden.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "colors", "type": "string[]", "default": "[\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"]", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline"]
+}

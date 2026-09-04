@@ -1,0 +1,33 @@
+{
+  "name": "PixelSnow-TS-TW",
+  "blurb": "Falling pixelated snowflakes (or squares/circles) in a 3D depth-aware field.",
+  "description": "WebGL shader performing 3D ray-tracing of procedurally-placed flakes with depth sorting, wind direction, and density controls. Pauses rendering when offscreen.",
+  "use_when": "Seasonal or magical backgrounds, hero sections, or any context needing a continuous, subtle falling-particle effect.",
+  "avoid_when": "WebGL-unsupported devices, performance-critical mobile, or environments requiring motion to be disabled — the 128-iteration raymarching is expensive.",
+  "a11y": "Passive visual background; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "color", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "flakeSize", "type": "number", "default": "0.01", "required": false},
+    {"name": "minFlakeSize", "type": "number", "default": "1.25", "required": false},
+    {"name": "pixelResolution", "type": "number", "default": "200", "required": false},
+    {"name": "speed", "type": "number", "default": "1.25", "required": false},
+    {"name": "depthFade", "type": "number", "default": "8", "required": false},
+    {"name": "farPlane", "type": "number", "default": "20", "required": false},
+    {"name": "brightness", "type": "number", "default": "1", "required": false},
+    {"name": "gamma", "type": "number", "default": "0.4545", "required": false},
+    {"name": "density", "type": "number", "default": "0.3", "required": false},
+    {"name": "variant", "type": "'square' | 'round' | 'snowflake'", "default": "square", "required": false},
+    {"name": "direction", "type": "number", "default": "125", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "decoration", "hero"]
+}

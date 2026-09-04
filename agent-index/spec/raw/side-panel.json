@@ -1,0 +1,24 @@
+{
+  "name": "side-panel",
+  "blurb": "Narrow panel expands horizontally to reveal navigation with spring easing.",
+  "description": "A responsive side panel that animates from narrow to wide (97% width) using tween easing. Content height animates with spring physics. Measures child height dynamically with react-use-measure. Dark themed with rounded right edge.",
+  "use_when": "You need a collapsible navigation panel that feels natural on desktop and tablets.",
+  "avoid_when": "Mobile-first experiences — the horizontal expansion may be cramped on narrow screens.",
+  "a11y": "Custom button handled via renderButton prop. You must add ARIA labels and keyboard support yourself.",
+  "props": [
+    {"name": "panelOpen", "type": "boolean", "default": null, "required": true},
+    {"name": "handlePanelOpen", "type": "() => void", "default": null, "required": true},
+    {"name": "renderButton", "type": "(handleToggle: () => void) => ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "sidebar"]
+}

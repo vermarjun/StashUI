@@ -1,0 +1,20 @@
+{
+  "name": "carousel",
+  "blurb": "Image carousel with 3D tilt parallax on hover and click-to-navigate controls.",
+  "description": "Interactive image carousel where each slide scales and rotates in 3D on hover. Active slide shows content overlay with title and button. Image position parallaxes with mouse movement using RAF animation.",
+  "use_when": "Hero section or portfolio showcasing multiple high-impact images with interactive selection.",
+  "avoid_when": "Touch-only surfaces; the 3D parallax effect requires precise mouse tracking.",
+  "a11y": "Previous/next buttons have ARIA labels and focus states. Slides are keyboard accessible via buttons.",
+  "props": [
+    {"name": "slides", "type": "SlideData[]", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click", "pointer-move"],
+    "motion": "pronounced",
+    "affects": ["image", "fill", "layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "feature-card", "gallery"]
+}

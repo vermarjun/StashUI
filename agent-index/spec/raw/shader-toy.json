@@ -1,0 +1,44 @@
+{
+  "name": "shader-toy",
+  "blurb": "GLSL shader rendered live on canvas, fully customizable by code.",
+  "description": "Wraps a WebGL canvas rendering custom GLSL fragment shaders; passes uniforms (time, resolution, mouse) to animate effects.",
+  "use_when": "Unique generative or algorithmic visuals requiring low-level GPU control.",
+  "avoid_when": "Browsers without WebGL; complex shaders may cause performance issues on lower-end devices.",
+  "a11y": "Decorative visual only. No keyboard or focus handling.",
+  "props": [
+    {
+      "name": "shader",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "always"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "background"
+    ],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": [
+    "page-background",
+    "section-background"
+  ]
+}

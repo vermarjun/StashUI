@@ -1,0 +1,20 @@
+{
+  "name": "inspira-ripple-button",
+  "blurb": "Click spawns expanding ripple circles.",
+  "description": "A button that creates expanding circular ripples from the click point on top of the button, using clientX/clientY and animating opacity and scale.",
+  "use_when": "You want material-design-style ripple feedback on click.",
+  "avoid_when": "On touch devices where ripple position may be inaccurate; also CPU-heavy with many ripples.",
+  "a11y": "Standard button semantics. Ripples are visual feedback. No aria attributes for ripple state.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

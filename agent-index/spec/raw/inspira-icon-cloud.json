@@ -1,0 +1,21 @@
+{
+  "name": "inspira-icon-cloud",
+  "blurb": "3D rotating icon sphere responds to drag rotation and click-to-focus.",
+  "description": "A canvas-rendered 3D sphere of circular icons distributed via golden-ratio sphere packing. Rotates with mouse drag, smoothly animates when clicked to bring selected icon to face the viewer.",
+  "use_when": "Tech stack showcases, skill clouds, or immersive icon galleries requiring 3D visual depth and interactivity.",
+  "avoid_when": "Touch-only devices without mouse drag support; no keyboard navigation or built-in focus management.",
+  "a11y": "Canvas has aria-label; mouse drag rotation and click interaction are not keyboard accessible without external handling.",
+  "props": [
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "images", "type": "string[]", "default": "[]", "required": false}
+  ],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "playful",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration"]
+}

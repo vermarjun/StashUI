@@ -1,0 +1,35 @@
+{
+  "name": "youtube-video-player",
+  "blurb": "YouTube player with thumbnail preview and expand-to-play interaction.",
+  "description": "A YouTube video embed wrapper with thumbnail preview and click-to-expand player. Includes customizable play button overlay, optional title, and extensive className props for styling all elements.",
+  "use_when": "Video tutorials, testimonials, or content sections with custom-styled embedded YouTube players.",
+  "avoid_when": "When YouTube's native embed is sufficient; adds complexity via expand interaction pattern.",
+  "a11y": "Play button is keyboard accessible via Button component; YouTube iframe provides native accessibility after expansion.",
+  "props": [
+    {"name": "videoId", "type": "string", "default": null, "required": true},
+    {"name": "title", "type": "string | undefined", "default": null, "required": false},
+    {"name": "defaultExpanded", "type": "boolean", "default": "false", "required": false},
+    {"name": "customThumbnail", "type": "string | undefined", "default": null, "required": false},
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "expandedClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "thumbnailClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "thumbnailImageClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "playButtonClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "playIconClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "titleClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "controlsClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "expandButtonClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "backdropClassName", "type": "string | undefined", "default": null, "required": false},
+    {"name": "playerClassName", "type": "string | undefined", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media", "feature-card"]
+}

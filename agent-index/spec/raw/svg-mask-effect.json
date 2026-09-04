@@ -1,0 +1,24 @@
+{
+  "name": "svg-mask-effect",
+  "blurb": "SVG mask spotlight that expands on hover to reveal content.",
+  "description": "A two-layer reveal component using SVG masking with smooth motion animations. Spotlight mask follows cursor and expands on hover with background color transition.",
+  "use_when": "An interactive hero section or content reveal with animated spotlight effect.",
+  "avoid_when": "On mobile or touch devices — no cursor to track. Requires /mask.svg asset in public folder.",
+  "a11y": "Both layers are in DOM but mask obscures one. No keyboard control; animation is decorative.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "revealText", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "size", "type": "number", "default": "10", "required": false},
+    {"name": "revealSize", "type": "number", "default": "600", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["fill", "background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "section-background"]
+}

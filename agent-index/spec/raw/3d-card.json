@@ -1,0 +1,22 @@
+{
+  "name": "3d-card",
+  "blurb": "Card elements rotate and tilt in 3D space following cursor movement.",
+  "description": "Composite 3D card system: CardContainer tracks mouse position and applies rotateY/X transforms; CardBody is the card wrapper; CardItem elements translate and rotate in 3D on hover. Uses CSS perspective and preserve-3d.",
+  "use_when": "Hero cards, feature showcases, or product demonstrations where visual depth and interactivity impress.",
+  "avoid_when": "Mobile-only or accessibility-focused sites — 3D transforms don't work well on touch, and motion may disorient.",
+  "a11y": "No keyboard navigation for the 3D effect. Content inside is accessible, but visual depth is mouse-only.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "hero"]
+}

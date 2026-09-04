@@ -1,0 +1,27 @@
+{
+  "name": "expandable-screen",
+  "blurb": "Card morphs into full-screen modal with smooth layout animation.",
+  "description": "An ExpandableScreen using Framer Motion; trigger card animates into full-screen content with customizable animation duration; includes close button.",
+  "use_when": "Creating immersive card-to-fullscreen experiences like image galleries, portfolios, or modal reveals.",
+  "avoid_when": "For simple modals without animation — use shadcn Dialog to reduce bundle size.",
+  "a11y": "Close button has aria-label; body overflow locked when expanded; click outside or close button collapses.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "defaultExpanded", "type": "boolean", "default": "false", "required": false},
+    {"name": "onExpandChange", "type": "(expanded: boolean) => void", "default": null, "required": false},
+    {"name": "layoutId", "type": "string", "default": "'expandable-card'", "required": false},
+    {"name": "triggerRadius", "type": "string", "default": "'100px'", "required": false},
+    {"name": "contentRadius", "type": "string", "default": "'24px'", "required": false},
+    {"name": "animationDuration", "type": "number", "default": "0.3", "required": false},
+    {"name": "lockScroll", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal", "card"]
+}

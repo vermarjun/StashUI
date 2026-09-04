@@ -1,0 +1,21 @@
+{
+  "name": "linear-modal-center-content",
+  "blurb": "Animates from card to full-screen centered dialog with spring easing.",
+  "description": "A layered modal that morphs from a trigger element to a centered, expanded view. Animated with spring physics (Framer Motion). Content scales and fades in while a backdrop blurs and darkens, with support for images and scrollable descriptions.",
+  "use_when": "You need a dramatic reveal from a card or button to a large modal with rich, scrollable content.",
+  "avoid_when": "Users need instant, undecorated feedback — the spring animation adds 500ms latency.",
+  "a11y": "Full keyboard support: Tab cycles focus within modal, Escape closes, Enter/Space opens. Manages document scroll and body overflow. Provides ARIA labels for dialog role and semantic structure.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "transition", "type": "Transition", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["modal", "feature-card"]
+}

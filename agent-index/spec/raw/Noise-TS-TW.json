@@ -1,0 +1,24 @@
+{
+  "name": "Noise-TS-TW",
+  "blurb": "Animated film grain overlay that refreshes every few frames at a configurable rate.",
+  "description": "Canvas 2D-rendered random noise texture that updates periodically, creating a flickering film grain effect across the entire viewport.",
+  "use_when": "Cinematic or nostalgic aesthetic, adding texture to video backdrops or adding visual depth to solid-color backgrounds.",
+  "avoid_when": "Accessibility-sensitive contexts or low-bandwidth scenarios — continuous canvas updates consume battery and bandwidth.",
+  "a11y": "Passive visual overlay; pointer-events: none so it does not intercept interactions. No keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "patternSize", "type": "number", "default": "250", "required": false},
+    {"name": "patternScaleX", "type": "number", "default": "1", "required": false},
+    {"name": "patternScaleY", "type": "number", "default": "1", "required": false},
+    {"name": "patternRefreshInterval", "type": "number", "default": "2", "required": false},
+    {"name": "patternAlpha", "type": "number", "default": "15", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "decoration"]
+}

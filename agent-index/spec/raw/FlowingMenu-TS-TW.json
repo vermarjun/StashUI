@@ -1,0 +1,26 @@
+{
+  "name": "FlowingMenu-TS-TW",
+  "blurb": "Full-height menu with continuous marquee text and image reveal on hover.",
+  "description": "A GSAP-animated menu where each item is a full-height link with continuously scrolling marquee text and images. On hover, a marquee panel slides in from the nearest edge (top/bottom) with animated logo and images.",
+  "use_when": "You want a sophisticated, image-heavy navigation menu that feels premium and modern.",
+  "avoid_when": "Touch-only interfaces or accessibility-first designs — hover-based edge detection may not work well.",
+  "a11y": "Links are semantic and have href. Marquee content is hidden with pointer-events-none. Edge detection based on mouse position only.",
+  "props": [
+    {"name": "items", "type": "MenuItemData[]", "default": "[]", "required": false},
+    {"name": "speed", "type": "number", "default": "15", "required": false},
+    {"name": "textColor", "type": "string", "default": "\"#fff\"", "required": false},
+    {"name": "bgColor", "type": "string", "default": "\"#120F17\"", "required": false},
+    {"name": "marqueeBgColor", "type": "string", "default": "\"#fff\"", "required": false},
+    {"name": "marqueeTextColor", "type": "string", "default": "\"#120F17\"", "required": false},
+    {"name": "borderColor", "type": "string", "default": "\"#fff\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav"]
+}

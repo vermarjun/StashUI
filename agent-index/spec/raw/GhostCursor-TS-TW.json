@@ -1,0 +1,36 @@
+{
+  "name": "GhostCursor-TS-TW",
+  "blurb": "A luminous trail that follows your cursor and fades when you stop moving.",
+  "description": "Three.js component rendering a procedurally animated cursor trail with bloom and film grain effects. The trail follows mouse movement with inertia-based momentum and configurable fade delay.",
+  "use_when": "You want to add a subtle, premium interaction layer that rewards mouse movement across the entire page.",
+  "avoid_when": "Touch-only devices or when keyboard navigation is the primary input method.",
+  "a11y": "Purely visual cursor tracking; no keyboard alternative or prefers-reduced-motion guard.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "React.CSSProperties", "default": null, "required": false},
+    {"name": "trailLength", "type": "number", "default": "50", "required": false},
+    {"name": "inertia", "type": "number", "default": "0.5", "required": false},
+    {"name": "grainIntensity", "type": "number", "default": "0.05", "required": false},
+    {"name": "bloomStrength", "type": "number", "default": "0.1", "required": false},
+    {"name": "bloomRadius", "type": "number", "default": "1.0", "required": false},
+    {"name": "bloomThreshold", "type": "number", "default": "0.025", "required": false},
+    {"name": "brightness", "type": "number", "default": "1", "required": false},
+    {"name": "color", "type": "string", "default": "#B497CF", "required": false},
+    {"name": "mixBlendMode", "type": "React.CSSProperties[\"mixBlendMode\"]", "default": "\"screen\"", "required": false},
+    {"name": "edgeIntensity", "type": "number", "default": "0", "required": false},
+    {"name": "maxDevicePixelRatio", "type": "number", "default": "0.5", "required": false},
+    {"name": "targetPixels", "type": "number", "default": null, "required": false},
+    {"name": "fadeDelayMs", "type": "number", "default": null, "required": false},
+    {"name": "fadeDurationMs", "type": "number", "default": null, "required": false},
+    {"name": "zIndex", "type": "number", "default": "10", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["cursor"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "page-background"]
+}

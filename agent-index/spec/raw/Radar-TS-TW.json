@@ -1,0 +1,34 @@
+{
+  "name": "Radar-TS-TW",
+  "blurb": "Animated radar display with concentric rings, radial spokes, and a sweeping beam.",
+  "description": "WebGL shader rendering rings and spokes radiating from center, with an animated sweep beam. Optional mouse-tracking distortion shifts the center based on pointer position.",
+  "use_when": "Technical dashboards, sci-fi interfaces, or backgrounds where a sonar/radar aesthetic conveys data or monitoring themes.",
+  "avoid_when": "WebGL-unsupported devices, or motion-sensitive contexts — continuous rendering and infinite scroll of rings.",
+  "a11y": "Passive visual background; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "speed", "type": "number", "default": "1.0", "required": false},
+    {"name": "scale", "type": "number", "default": "0.5", "required": false},
+    {"name": "ringCount", "type": "number", "default": "10.0", "required": false},
+    {"name": "spokeCount", "type": "number", "default": "10.0", "required": false},
+    {"name": "ringThickness", "type": "number", "default": "0.05", "required": false},
+    {"name": "spokeThickness", "type": "number", "default": "0.01", "required": false},
+    {"name": "sweepSpeed", "type": "number", "default": "1.0", "required": false},
+    {"name": "sweepWidth", "type": "number", "default": "2.0", "required": false},
+    {"name": "sweepLobes", "type": "number", "default": "1.0", "required": false},
+    {"name": "color", "type": "string", "default": "#9f29ff", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "#000000", "required": false},
+    {"name": "falloff", "type": "number", "default": "2.0", "required": false},
+    {"name": "brightness", "type": "number", "default": "1.0", "required": false},
+    {"name": "enableMouseInteraction", "type": "boolean", "default": "true", "required": false},
+    {"name": "mouseInfluence", "type": "number", "default": "0.1", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "tone": "technical",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "decoration", "hero"]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "infinite-moving-cards",
+  "blurb": "Cards scroll continuously in a seamless loop, pausing on hover.",
+  "description": "Clones items to create an infinite scrolling marquee of cards with quote, name, and title fields. Configurable direction and speed; mask gradients fade edges.",
+  "use_when": "Displaying testimonials, reviews, or social proof in an eye-catching, continuously-cycling format.",
+  "avoid_when": "Motion-sensitive users—animation runs constantly and has no prefers-reduced-motion guard.",
+  "a11y": "Cards are read-only; no keyboard navigation. Animation pauses on hover. No ARIA labels for the loop or motion semantics.",
+  "props": [
+    {"name": "items", "type": "{quote: string; name: string; title: string;}[]", "default": null, "required": true},
+    {"name": "direction", "type": "\"left\" | \"right\"", "default": "\"left\"", "required": false},
+    {"name": "speed", "type": "\"fast\" | \"normal\" | \"slow\"", "default": "\"fast\"", "required": false},
+    {"name": "pauseOnHover", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["testimonial", "logo-wall", "feature-card"]
+}

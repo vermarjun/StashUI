@@ -1,0 +1,22 @@
+{
+  "name": "ascii-art",
+  "blurb": "Renders an image as stylized ASCII or Unicode characters.",
+  "description": "Converts an image to ASCII art using various character sets (blocks, symbols, braille, etc.). Dynamically computes character based on pixel brightness.",
+  "use_when": "Retro aesthetics, terminal-style interfaces, or artistic text overlays.",
+  "avoid_when": "Accessibility-critical content (ASCII may obscure meaning); small images (poor resolution).",
+  "a11y": "ASCII text output; screen readers will read character sequences literally.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "src", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "decoration"]
+}

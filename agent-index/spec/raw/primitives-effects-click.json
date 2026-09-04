@@ -1,0 +1,26 @@
+{
+  "name": "primitives-effects-click",
+  "blurb": "Click effects animate on interaction with ripple, ring, burst, or particle variants.",
+  "description": "Renders animated effects on click within child elements. Supports multiple effect variants (ripple, ring, crosshair, burst, particles) with customizable color, size, and duration.",
+  "use_when": "Buttons or interactive elements where visual feedback on click enhances perceived interactivity and response.",
+  "avoid_when": "Contexts where animation might distract from critical interactions.",
+  "a11y": "Click effects are visual feedback only; focus and keyboard interaction work normally on child content.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "variant", "type": "\"ripple\" | \"ring\" | \"crosshair\" | \"burst\" | \"particles\"", "default": "\"ring\"", "required": false},
+    {"name": "color", "type": "string", "default": "\"currentColor\"", "required": false},
+    {"name": "size", "type": "number", "default": "100", "required": false},
+    {"name": "duration", "type": "number", "default": "400", "required": false},
+    {"name": "scope", "type": "React.RefObject<HTMLElement>", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-submit", "primary-cta"]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "VariableProximity-TS-TW",
+  "blurb": "Each letter's font variations (weight, width) change based on cursor distance with falloff.",
+  "description": "Renders text where each letter interpolates between two font-variation-settings based on distance from the cursor. Supports linear, exponential, or gaussian falloff. Requires a variable font supporting the specified axes.",
+  "use_when": "An interactive heading wants to showcase a variable font with smooth, proximity-driven transformations.",
+  "avoid_when": "Touch-only devices without cursor support or fonts without variable axes.",
+  "a11y": "Visual letters are aria-hidden; readable text is in sr-only. Animation does not interfere with content.",
+  "props": [
+    {"name": "label", "type": "string", "default": null, "required": true},
+    {"name": "fromFontVariationSettings", "type": "string", "default": null, "required": true},
+    {"name": "toFontVariationSettings", "type": "string", "default": null, "required": true},
+    {"name": "containerRef", "type": "MutableRefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "radius", "type": "number", "default": "50", "required": false},
+    {"name": "falloff", "type": "'linear' | 'exponential' | 'gaussian'", "default": "linear", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "onClick", "type": "() => void", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline"]
+}

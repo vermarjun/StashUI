@@ -1,0 +1,20 @@
+{
+  "name": "code-tabs-mdx",
+  "blurb": "Syntax-highlighted code in tabbed panels, parsed from MDX children.",
+  "description": "Async server component extracting code blocks from MDX pre/code children, highlighting with Shiki, and rendering in tabs. One block displays solo; two blocks show tabbed as ui-layouts and shadcn variants.",
+  "use_when": "Showing code examples with language variants (component + install, TypeScript + JavaScript).",
+  "avoid_when": "Client-side rendering needed — it's an async server component only.",
+  "a11y": "Tab navigation uses shadcn Tabs (keyboard accessible, focus managed). Code content is read-only.",
+  "props": [
+    {"name": "children", "type": "any", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["text", "border"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "feature-card"]
+}

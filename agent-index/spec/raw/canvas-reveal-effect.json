@@ -1,0 +1,25 @@
+{
+  "name": "canvas-reveal-effect",
+  "blurb": "3D dot matrix that reveals from center using shader animation.",
+  "description": "Renders a Three.js dot matrix with WebGL shader that animates dots appearing from the center outward. Supports customizable colors, opacity, and animation speed.",
+  "use_when": "Hero sections, sci-fi aesthetics, or high-impact entrance effects.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); low-end devices (WebGL cost).",
+  "a11y": "3D canvas animation only; no interactive elements. Motion-heavy.",
+  "props": [
+    {"name": "animationSpeed", "type": "number", "default": "0.4", "required": false},
+    {"name": "opacities", "type": "number[]", "default": "[0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1]", "required": false},
+    {"name": "colors", "type": "number[][]", "default": "[[0, 255, 255]]", "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "dotSize", "type": "number", "default": "3", "required": false},
+    {"name": "showGradient", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "light",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

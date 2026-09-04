@@ -1,0 +1,31 @@
+{
+  "name": "loading-carousel",
+  "blurb": "Auto-rotating carousel of image tiles with progress indicators and optional navigation.",
+  "description": "Displays a carousel of tips with images, text, and progress bars. Uses embla-carousel for smooth looping and respects prefers-reduced-motion. Configurable autoplay, text position, navigation buttons, and progress bars.",
+  "use_when": "Highlighting multiple related items, tips, or features with images in a guided, self-advancing carousel.",
+  "avoid_when": "Fixed autoplay without user control can overwhelm screen reader users; provide showNavigation for accessibility.",
+  "a11y": "Keyboard and click navigation via indicator buttons. Respects prefers-reduced-motion. ARIA labels on buttons and indicators. Focus-visible rings.",
+  "props": [
+    {"name": "tips", "type": "Tip[]", "default": "defaultTips", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "autoplayInterval", "type": "number", "default": "4500", "required": false},
+    {"name": "showNavigation", "type": "boolean", "default": "false", "required": false},
+    {"name": "showIndicators", "type": "boolean", "default": "true", "required": false},
+    {"name": "showProgress", "type": "boolean", "default": "true", "required": false},
+    {"name": "aspectRatio", "type": "\"video\" | \"square\" | \"wide\"", "default": "\"video\"", "required": false},
+    {"name": "textPosition", "type": "\"top\" | \"bottom\"", "default": "\"bottom\"", "required": false},
+    {"name": "onTipChange", "type": "(index: number) => void", "default": null, "required": false},
+    {"name": "backgroundTips", "type": "boolean", "default": "false", "required": false},
+    {"name": "backgroundGradient", "type": "boolean", "default": "false", "required": false},
+    {"name": "shuffleTips", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "pronounced",
+    "affects": ["image", "layout", "text"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "section-background", "hero"]
+}

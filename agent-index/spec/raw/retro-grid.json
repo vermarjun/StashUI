@@ -1,0 +1,69 @@
+{
+  "name": "retro-grid",
+  "blurb": "Grid recedes into perspective, scrolling endlessly across the background.",
+  "description": "WebGL-rendered grid in perspective that scrolls continuously; responsive to angle, cellSize, and color props; includes CSS fallback for unsupported browsers.",
+  "use_when": "Large background effect for hero sections or immersive layouts needing retro 3D aesthetics.",
+  "avoid_when": "Browsers without WebGL support (CSS fallback is static); performance-sensitive contexts with many concurrent grids.",
+  "a11y": "Decorative background wrapper. Respects prefers-reduced-motion (animation pauses).",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "angle",
+      "type": "number",
+      "default": "65",
+      "required": false
+    },
+    {
+      "name": "cellSize",
+      "type": "number",
+      "default": "60",
+      "required": false
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "default": "0.5",
+      "required": false
+    },
+    {
+      "name": "lightLineColor",
+      "type": "string",
+      "default": "\"gray\"",
+      "required": false
+    },
+    {
+      "name": "darkLineColor",
+      "type": "string",
+      "default": "\"gray\"",
+      "required": false
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "default": null,
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "always"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "background"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": [
+    "page-background",
+    "section-background",
+    "hero"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "pagination",
+  "blurb": "Accessible pagination control with arrow buttons, numbered links, and ellipsis.",
+  "description": "Composable pagination built on semantic HTML (nav, ul, li) with PaginationLink, PaginationPrevious, PaginationNext, and PaginationEllipsis. Supports active/disabled states and keyboard focus management via inherited button styling.",
+  "use_when": "Navigating large datasets or search results where page-by-page browsing is expected. Integrates cleanly with any data-fetching pattern.",
+  "avoid_when": "Infinite scroll or virtualized lists where pagination adds unnecessary UI. Not suitable for very large page counts (100+) without custom UI.",
+  "a11y": "Semantic nav landmark and list structure. Links are keyboard focusable. Parent should set aria-current on active link and aria-label on nav.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "footer"]
+}

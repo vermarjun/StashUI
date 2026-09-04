@@ -1,0 +1,28 @@
+{
+  "name": "magic-ui-lens",
+  "blurb": "Circular magnifying lens follows cursor on hover, zooming and revealing detail.",
+  "description": "Wraps content and creates a circular magnification lens that appears on hover. The lens position tracks cursor movement and zooms content within a circular radial mask.",
+  "use_when": "Image galleries or product displays where hover magnification reveals fine detail in an elegant way.",
+  "avoid_when": "Touch-only devices — magnifier requires pointer hover to appear.",
+  "a11y": "Has aria-label and keyboard support (Escape to hide). Role region indicates interactive zoom area. Lens position is not keyboard-navigable.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "zoomFactor", "type": "number", "default": "1.3", "required": false},
+    {"name": "lensSize", "type": "number", "default": "170", "required": false},
+    {"name": "position", "type": "{x: number; y: number}", "default": "{x: 0, y: 0}", "required": false},
+    {"name": "defaultPosition", "type": "{x: number; y: number}", "default": null, "required": false},
+    {"name": "isStatic", "type": "boolean", "default": "false", "required": false},
+    {"name": "duration", "type": "number", "default": "0.1", "required": false},
+    {"name": "lensColor", "type": "string", "default": "\"black\"", "required": false},
+    {"name": "ariaLabel", "type": "string", "default": "\"Zoom Area\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["media", "feature-card"]
+}

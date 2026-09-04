@@ -1,0 +1,23 @@
+{
+  "name": "bg-media",
+  "blurb": "Displays an image or video background with optional overlay.",
+  "description": "Flexible media background component accepting image or video source. Applies configurable overlay (none, light, dark) using ::before pseudo-element for visual dimming.",
+  "use_when": "Hero section with full-bleed video or image requiring overlay for text contrast.",
+  "avoid_when": "When media auto-play would violate user preferences or battery concerns.",
+  "a11y": "Requires alt text for images; video requires controls or prefers-reduced-motion support.",
+  "props": [
+    {"name": "variant", "type": "\"none\" | \"light\" | \"dark\"", "default": "\"light\"", "required": false},
+    {"name": "type", "type": "\"image\" | \"video\"", "default": "\"image\"", "required": false},
+    {"name": "src", "type": "string", "default": null, "required": true},
+    {"name": "alt", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

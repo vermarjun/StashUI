@@ -1,0 +1,21 @@
+{
+  "name": "checkbox-tree",
+  "blurb": "Headless hierarchical checkbox component with parent/child state sync.",
+  "description": "Render-prop-based tree checkbox component. Manages nested checkbox state with parent-child synchronization: checking a parent checks all children; partially-checked parents show indeterminate state. Supports default-checked nodes.",
+  "use_when": "Category filters, permission trees, or hierarchical selections with automatic parent-child sync.",
+  "avoid_when": "Simple flat lists—the overhead of tree management isn't worth it.",
+  "a11y": "Fully headless; accessibility depends on renderNode implementation. Built with basic node/label assumptions.",
+  "props": [
+    {"name": "tree", "type": "TreeNode", "default": null, "required": true},
+    {"name": "renderNode", "type": "(props: {node: TreeNode; isChecked: boolean | \"indeterminate\"; onCheckedChange: () => void; children: React.ReactNode;}) => React.ReactNode", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": ["fill"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "sidebar"]
+}

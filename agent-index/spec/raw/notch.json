@@ -1,0 +1,25 @@
+{
+  "name": "notch",
+  "blurb": "Floating control panel pinned to viewport with grouped option toggles.",
+  "description": "Renders a floating notch UI (like dynamic island) with collapsible option groups that can be controlled or uncontrolled. Positioned fixed to top or bottom of viewport, with support for icons, selected value display, and smooth expand/collapse animations.",
+  "use_when": "Creating dynamic UI controls that persist across page scroll, like settings panels, filter groups, or contextual toolbars on modern dashboards.",
+  "avoid_when": "When space is constrained or fixed UI overlays are problematic. Not suitable for keyboard-focused workflows.",
+  "a11y": "Basic keyboard support via callback mechanism. No built-in ARIA attributes; parent should manage focus and role.",
+  "props": [
+    {"name": "items", "type": "NotchItem[]", "default": null, "required": true},
+    {"name": "position", "type": "'top' | 'bottom'", "default": "top", "required": false},
+    {"name": "align", "type": "'start' | 'center' | 'end'", "default": "center", "required": false},
+    {"name": "onItemChange", "type": "(itemId: string, optionId: string, option: NotchOption) => void", "default": null, "required": false},
+    {"name": "closeOnSelect", "type": "boolean", "default": "true", "required": false},
+    {"name": "showSelectedValue", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "modal"]
+}

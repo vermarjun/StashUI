@@ -1,0 +1,67 @@
+{
+  "blurb": "Multiple options selected as removable tags, searchable dropdown.",
+  "description": "Displays selected items as tags with optional icons, opens a searchable popover to add/remove selections. Supports a \"select all\" option.",
+  "use_when": "Choosing multiple items from a list where users need to see and manage all selections.",
+  "avoid_when": "Single-select scenarios, or when screen space is constrained.",
+  "a11y": "Keyboard navigable with Enter/Space to toggle, Escape to close popover. Focus management within the command list.",
+  "props": [
+    {
+      "name": "options",
+      "type": "{label:string;value:string;icon?:React.ComponentType;disable?:boolean}[]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value:string[])=>void",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "defaultValue",
+      "type": "string[]",
+      "default": "[]",
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "default": "\"Select options\"",
+      "required": false
+    },
+    {
+      "name": "maxCount",
+      "type": "number",
+      "default": "3",
+      "required": false
+    },
+    {
+      "name": "animation",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "modalPopover",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "none",
+    "affects": [
+      "text",
+      "border"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "form-field"
+  ]
+}

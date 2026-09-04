@@ -1,0 +1,25 @@
+{
+  "name": "inspira-scales",
+  "blurb": "Repeating line pattern with customizable orientation and spacing.",
+  "description": "CSS-based scales pattern using repeating linear gradients. Supports horizontal, vertical, or diagonal orientation with configurable line size and custom colour.",
+  "use_when": "A lightweight static pattern background with flexible orientation and customisation.",
+  "avoid_when": "Very fine line spacing on low-DPI displays may cause moiré patterns.",
+  "a11y": "Background pattern with content slot rendering children above (z-10). Purely decorative pattern.",
+  "props": [
+    {"name": "orientation", "type": "'horizontal' | 'vertical' | 'diagonal'", "default": "'diagonal'", "required": false},
+    {"name": "size", "type": "number", "default": "10", "required": false},
+    {"name": "color", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

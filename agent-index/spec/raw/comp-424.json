@@ -1,0 +1,38 @@
+{
+  "name": "comp-424",
+  "blurb": "Badge with an X button to dismiss or remove it.",
+  "description": "Badge component with integrated close button; typically stateful in parent.",
+  "use_when": "Removable tags, chip inputs, or dismissible labels.",
+  "avoid_when": "Static labels that should not be removed.",
+  "a11y": "Interactive close button. Keyboard accessible.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "onRemove",
+      "type": "() => void",
+      "default": null,
+      "required": true
+    }
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "none",
+    "affects": [
+      "text"
+    ],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": [
+    "badge",
+    "form-field"
+  ]
+}

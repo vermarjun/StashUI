@@ -1,0 +1,22 @@
+{
+  "name": "components-community-radial-intro",
+  "blurb": "Images orbit around a center point in a continuous loop.",
+  "description": "Animates items in orbital motion around a central stage. Uses Framer Motion spring physics for smooth rotation and item appearance.",
+  "use_when": "Logo walls, team showcases, or circular feature displays.",
+  "avoid_when": "Motion-sensitive users (continuous, no prefers-reduced-motion); low-bandwidth (animation overhead).",
+  "a11y": "Purely decorative animation loop. No interactive elements.",
+  "props": [
+    {"name": "orbitItems", "type": "OrbitItem[]", "default": null, "required": true},
+    {"name": "stageSize", "type": "number", "default": "320", "required": false},
+    {"name": "imageSize", "type": "number", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["logo-wall", "feature-card", "decoration"]
+}

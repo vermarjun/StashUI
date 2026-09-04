@@ -1,0 +1,22 @@
+{
+  "name": "origin-ui-popover",
+  "blurb": "Anchored float content with directional slide-in and optional arrow.",
+  "description": "Radix Popover wrapper with directional slide animations and zoom. Positions relative to trigger with configurable side and alignment. Supports optional arrow and customizable portal styling.",
+  "use_when": "You need quick settings or contextual info next to a button without obscuring much content.",
+  "avoid_when": "Mobile layouts where popovers may overflow — consider a modal drawer instead.",
+  "a11y": "Full Radix Popover accessibility: click to open, Escape to close, focus management. Supports anchored positioning to non-trigger elements.",
+  "props": [
+    {"name": "align", "type": "\"start\" | \"center\" | \"end\"", "default": "\"center\"", "required": false},
+    {"name": "sideOffset", "type": "number", "default": "4", "required": false},
+    {"name": "showArrow", "type": "boolean", "default": "false", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["tooltip", "form-field"]
+}

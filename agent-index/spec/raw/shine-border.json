@@ -1,0 +1,22 @@
+{
+  "name": "shine-border",
+  "blurb": "Light sweeps around the border in a continuous loop.",
+  "description": "An absolutely-positioned overlay that renders a radial gradient which moves around the border of its parent container. Uses CSS animation with prefers-reduced-motion support.",
+  "use_when": "A card or section border that needs subtle movement and polish without demanding attention.",
+  "avoid_when": "When you need the border to be interactive or visible on very small elements.",
+  "a11y": "Visual overlay only with pointer-events-none. Respects prefers-reduced-motion.",
+  "props": [
+    {"name": "borderWidth", "type": "number", "default": "1", "required": false},
+    {"name": "duration", "type": "number", "default": "14", "required": false},
+    {"name": "shineColor", "type": "string | string[]", "default": "\"#000000\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "primary-cta", "hero"]
+}

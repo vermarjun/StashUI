@@ -1,0 +1,21 @@
+{
+  "name": "3d-marquee",
+  "blurb": "3D-transformed image gallery with vertical scrolling columns and hover effects.",
+  "description": "An image gallery with CSS 3D perspective transforms that divides images into 4 columns, each scrolling vertically at different speeds with hover elevation effects.",
+  "use_when": "Creating visually impressive portfolio or image gallery sections with 3D effects.",
+  "avoid_when": "On browsers without 3D transform support or when motion accessibility is important.",
+  "a11y": "Images have alt text, but the 3D effects and animations do not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout", "transform"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["media"]
+}

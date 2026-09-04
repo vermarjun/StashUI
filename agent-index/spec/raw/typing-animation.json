@@ -1,0 +1,33 @@
+{
+  "name": "typing-animation",
+  "blurb": "Types out words character by character, optionally cycling through multiple phrases with delete animation.",
+  "description": "Renders text character-by-character with configurable typing and delete speeds. Can cycle through a words array with pause between cycles, or display a single children string. Includes configurable cursor (line, block, underscore).",
+  "use_when": "Hero text or call-to-action that cycles through several value propositions, with customizable pacing.",
+  "avoid_when": "Continuous animations; performance degrades with very long strings or many simultaneous instances.",
+  "a11y": "Text is rendered in the DOM; cursor animation responds to a custom animate-blink-cursor class, does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": false},
+    {"name": "words", "type": "string[]", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": "100", "required": false},
+    {"name": "typeSpeed", "type": "number", "default": null, "required": false},
+    {"name": "deleteSpeed", "type": "number", "default": null, "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "pauseDelay", "type": "number", "default": "1000", "required": false},
+    {"name": "loop", "type": "boolean", "default": "false", "required": false},
+    {"name": "as", "type": "MotionElementType", "default": "\"span\"", "required": false},
+    {"name": "startOnView", "type": "boolean", "default": "true", "required": false},
+    {"name": "showCursor", "type": "boolean", "default": "true", "required": false},
+    {"name": "blinkCursor", "type": "boolean", "default": "true", "required": false},
+    {"name": "cursorStyle", "type": "\"line\" | \"block\" | \"underscore\"", "default": "\"line\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "scroll"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "headline"]
+}

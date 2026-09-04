@@ -1,0 +1,24 @@
+{
+  "name": "ui-layouts-file-upload",
+  "blurb": "Drag-and-drop file uploader with keyboard navigation and validation.",
+  "description": "Composable file upload component using react-dropzone. Supports drag-and-drop or click-to-select, with file size and count validation, keyboard navigation (arrow keys, Enter, Space, Delete), and a context-based architecture for flexible layouts.",
+  "use_when": "You need a customizable file upload with full keyboard support and drag-and-drop functionality.",
+  "avoid_when": "The component requires react-dropzone and sonner toast notifications as dependencies.",
+  "a11y": "Keyboard accessible: arrow keys navigate files, Enter/Space opens picker, Delete removes files, Escape clears focus. Focus tracking via activeIndex. Uses aria-description for content holder.",
+  "props": [
+    {"name": "value", "type": "File[] | null", "default": null, "required": true},
+    {"name": "onValueChange", "type": "(value: File[] | null) => void", "default": null, "required": true},
+    {"name": "dropzoneOptions", "type": "DropzoneOptions", "default": null, "required": true},
+    {"name": "reSelect", "type": "boolean", "default": null, "required": false},
+    {"name": "orientation", "type": "'horizontal' | 'vertical'", "default": "vertical", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "none",
+    "affects": ["layout", "children"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

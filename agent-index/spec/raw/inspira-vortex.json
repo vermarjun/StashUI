@@ -1,0 +1,30 @@
+{
+  "name": "inspira-vortex",
+  "blurb": "Particles swirl in a vortex pattern with Simplex noise-driven motion.",
+  "description": "Canvas-based particle system creating a mesmerizing vortex effect using Simplex noise for organic motion. Supports customizable particle count, speed, radius, and hue.",
+  "use_when": "A dramatic, immersive full-page background that can wrap content with intricate particle animation.",
+  "avoid_when": "Performance-sensitive contexts — complex noise calculation and RAF animation loop consume significant resources.",
+  "a11y": "Wrapper component with content slot; focus and keyboard behaviour come from overlaid children. Animation has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClass", "type": "string", "default": null, "required": false},
+    {"name": "particleCount", "type": "number", "default": "700", "required": false},
+    {"name": "rangeY", "type": "number", "default": "100", "required": false},
+    {"name": "baseHue", "type": "number", "default": "220", "required": false},
+    {"name": "baseSpeed", "type": "number", "default": "0.0", "required": false},
+    {"name": "rangeSpeed", "type": "number", "default": "1.5", "required": false},
+    {"name": "baseRadius", "type": "number", "default": "1", "required": false},
+    {"name": "rangeRadius", "type": "number", "default": "2", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "'#000000'", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero", "section-background"]
+}

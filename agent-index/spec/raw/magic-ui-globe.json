@@ -1,0 +1,21 @@
+{
+  "name": "magic-ui-globe",
+  "blurb": "3D rotating globe responds to pointer movement with geographic markers.",
+  "description": "A WebGL-rendered 3D globe using the cobe library with pointer-driven rotation via spring physics. Displays geographic markers and supports customization via COBEOptions configuration.",
+  "use_when": "Landing pages, analytics dashboards, or global company pages showcasing geographic reach.",
+  "avoid_when": "Low-end devices without WebGL; pointer interaction unavailable on touch-only surfaces.",
+  "a11y": "Canvas with no native accessibility features; pointer movement only; no touch or keyboard support.",
+  "props": [
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "config", "type": "COBEOptions", "default": "GLOBE_CONFIG", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "light",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "decoration"]
+}

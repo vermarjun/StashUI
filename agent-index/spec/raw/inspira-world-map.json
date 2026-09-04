@@ -1,0 +1,24 @@
+{
+  "name": "inspira-world-map",
+  "blurb": "Animated paths and pulsing dots connect global locations on a dotted map.",
+  "description": "Renders a dotted world map with animated SVG paths drawing between geographic coordinates (start/end points). Includes pulsing circle animations at location markers and customizable gradient-colored connection lines.",
+  "use_when": "Team/company pages, dashboards, or landing pages showcasing global reach, distributed operations, or global connections.",
+  "avoid_when": "When real geographic accuracy is critical; uses simplified projection for visual appeal rather than precision.",
+  "a11y": "Map image has alt text; animations are decorative; no interactive elements or keyboard navigation; respects motion timing via SVG animate tags.",
+  "props": [
+    {"name": "dots", "type": "Dot[]", "default": "[]", "required": false},
+    {"name": "className", "type": "string | undefined", "default": null, "required": false},
+    {"name": "lineColor", "type": "string", "default": "\"#0EA5E9\"", "required": false},
+    {"name": "mapColor", "type": "string", "default": "\"#4B5563\"", "required": false},
+    {"name": "mapBgColor", "type": "string", "default": "\"transparent\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "decoration"]
+}

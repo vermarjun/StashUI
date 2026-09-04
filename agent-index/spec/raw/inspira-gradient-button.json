@@ -1,0 +1,28 @@
+{
+  "name": "inspira-gradient-button",
+  "blurb": "Button with rotating rainbow conic-gradient border.",
+  "description": "A button with a continuously rotating conic-gradient border using CSS keyframe animation. Accepts customizable colors, duration, blur, and border radius.",
+  "use_when": "You need an eye-catching CTA with colorful continuous motion.",
+  "avoid_when": "On accessible-first interfaces or when animation must be subtle.",
+  "a11y": "Standard button semantics. Animated border is purely visual. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "colors", "type": "string[]", "default": "[\"#FF0000\", \"#FFA500\", \"#FFFF00\", \"#008000\", \"#0000FF\", \"#4B0082\", \"#EE82EE\", \"#FF0000\"]", "required": false},
+    {"name": "duration", "type": "number", "default": "2500", "required": false},
+    {"name": "borderWidth", "type": "number", "default": "2", "required": false},
+    {"name": "borderRadius", "type": "number", "default": "8", "required": false},
+    {"name": "blur", "type": "number", "default": "4", "required": false},
+    {"name": "bgColor", "type": "string", "default": "\"#000\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "onClick", "type": "React.MouseEventHandler<HTMLButtonElement>", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta"]
+}

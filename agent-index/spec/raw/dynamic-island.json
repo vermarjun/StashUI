@@ -1,0 +1,21 @@
+{
+  "name": "dynamic-island",
+  "blurb": "Animating container morphs between size presets with spring physics.",
+  "description": "A motion-based container inspired by Apple's Dynamic Island that smoothly animates between size presets (compact, default, medium, large, ultra, massive, etc.). Spring physics and context-based state management.",
+  "use_when": "iOS-inspired UIs, status displays, notifications, or floating containers needing morphing effect.",
+  "avoid_when": "When complex nested layouts are needed; works best with simple content inside the island.",
+  "a11y": "Spring animations via motion/react; content accessibility depends on children components and DynamicTitle/Description.",
+  "props": [
+    {"name": "id", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["toast", "decoration"]
+}

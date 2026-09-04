@@ -1,0 +1,31 @@
+{
+  "name": "DotField-TS-TW",
+  "blurb": "Grid of dots that bulge and deflect under cursor proximity.",
+  "description": "Canvas-rendered particle field with mouse tracking. Dots respond to cursor movement with configurable bulge or push behavior. Includes gradient background, glow effect, optional wave animation, and sparkle effect.",
+  "use_when": "Interactive background where subtle cursor feedback adds engagement without overwhelming the content.",
+  "avoid_when": "Touch-only surfaces where mouse tracking doesn't apply, or when animation should be static.",
+  "a11y": "Mouse-interactive; no keyboard control or semantic content. No prefers-reduced-motion guard.",
+  "props": [
+    {"name": "dotRadius", "type": "number", "default": "1.5", "required": false},
+    {"name": "dotSpacing", "type": "number", "default": "14", "required": false},
+    {"name": "cursorRadius", "type": "number", "default": "500", "required": false},
+    {"name": "cursorForce", "type": "number", "default": "0.1", "required": false},
+    {"name": "bulgeOnly", "type": "boolean", "default": "true", "required": false},
+    {"name": "bulgeStrength", "type": "number", "default": "67", "required": false},
+    {"name": "glowRadius", "type": "number", "default": "160", "required": false},
+    {"name": "sparkle", "type": "boolean", "default": "false", "required": false},
+    {"name": "waveAmplitude", "type": "number", "default": "0", "required": false},
+    {"name": "gradientFrom", "type": "string", "default": "\"rgba(168, 85, 247, 0.35)\"", "required": false},
+    {"name": "gradientTo", "type": "string", "default": "\"rgba(180, 151, 207, 0.25)\"", "required": false},
+    {"name": "glowColor", "type": "string", "default": "\"#120F17\"", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "decorative",
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["page-background", "section-background", "hero"]
+}

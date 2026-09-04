@@ -1,0 +1,22 @@
+{
+  "name": "tabs",
+  "blurb": "Animated tabs with smooth content crossfade and sliding underline.",
+  "description": "Controlled tab component that animates the active tab indicator with Framer Motion spring physics. Renders tab buttons and animated content pane with fade-in effects. Includes FadeInDiv helper for content transitions.",
+  "use_when": "Tab interfaces where smooth content transitions and spring-based animations enhance perceived polish. Good for feature showcases or settings panels.",
+  "avoid_when": "Accessibility-critical interfaces; keyboard navigation not fully supported. Heavy animations may impact performance on slower devices.",
+  "a11y": "No built-in keyboard support or ARIA attributes. Focus management must be implemented by parent.",
+  "props": [
+    {"name": "tabs", "type": "Array<{value: string; label: string; content: React.ReactNode}>", "default": null, "required": true},
+    {"name": "activeTabValue", "type": "string", "default": null, "required": true},
+    {"name": "onTabChange", "type": "(value: string) => void", "default": null, "required": true}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["fill", "children"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "feature-card"]
+}

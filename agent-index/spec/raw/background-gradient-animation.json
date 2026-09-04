@@ -1,0 +1,33 @@
+{
+  "name": "background-gradient-animation",
+  "blurb": "Animated radial gradient blobs, optionally follows mouse cursor.",
+  "description": "Fullscreen background composing five continuously rotating radial gradients with customizable colors. When interactive=true, adds sixth gradient that tracks pointer position. Uses CSS variables and blend modes, applies blur filter.",
+  "use_when": "Full-page background needing cohesive animated gradient with optional interactivity.",
+  "avoid_when": "Embedded sections without viewport fill, or users with motion sensitivity.",
+  "a11y": "Decorative only; no motion-reduced variant in code. Pointer tracking does not affect keyboard navigation.",
+  "props": [
+    {"name": "gradientBackgroundStart", "type": "string", "default": "rgb(108, 0, 162)", "required": false},
+    {"name": "gradientBackgroundEnd", "type": "string", "default": "rgb(0, 17, 82)", "required": false},
+    {"name": "firstColor", "type": "string", "default": "18, 113, 255", "required": false},
+    {"name": "secondColor", "type": "string", "default": "221, 74, 255", "required": false},
+    {"name": "thirdColor", "type": "string", "default": "100, 220, 255", "required": false},
+    {"name": "fourthColor", "type": "string", "default": "200, 50, 50", "required": false},
+    {"name": "fifthColor", "type": "string", "default": "180, 180, 50", "required": false},
+    {"name": "pointerColor", "type": "string", "default": "140, 100, 255", "required": false},
+    {"name": "size", "type": "string", "default": "80%", "required": false},
+    {"name": "blendingValue", "type": "string", "default": "hard-light", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "hero"]
+}

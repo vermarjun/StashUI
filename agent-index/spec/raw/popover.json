@@ -1,0 +1,20 @@
+{
+  "name": "popover",
+  "blurb": "Button expands to a form with textarea, label, and action buttons.",
+  "description": "A custom popover built from Framer Motion that morphs from a button to a fixed-size form panel. Includes composed label (auto-hides when typing), textarea, footer with close/submit buttons, and spring animations.",
+  "use_when": "You need quick note-taking or inline forms that don't leave the current context.",
+  "avoid_when": "Mobile or narrow viewports — the 364px width is fixed and may overflow.",
+  "a11y": "Textarea autofocuses. Escape closes. Click-outside closes. ARIA label on close button. Label aria-hidden when field has content.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "tooltip"]
+}

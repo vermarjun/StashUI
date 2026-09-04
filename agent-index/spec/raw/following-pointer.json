@@ -1,0 +1,22 @@
+{
+  "name": "following-pointer",
+  "blurb": "Custom pointer with label follows cursor within a bounded area.",
+  "description": "Card wrapper that hides the native cursor and renders a custom pointer icon with optional label that tracks mouse movement. Uses motion/react for enter/exit animations.",
+  "use_when": "Interactive cards where a custom cursor adds polish and guides attention during hover.",
+  "avoid_when": "Touch-only surfaces or devices without pointer events.",
+  "a11y": "Custom cursor hides the native one with no keyboard fallback. Title is optional text content.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "title", "type": "string | React.ReactNode", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["cursor"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["feature-card", "media"]
+}

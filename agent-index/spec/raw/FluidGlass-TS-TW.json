@@ -1,0 +1,23 @@
+{
+  "name": "FluidGlass-TS-TW",
+  "blurb": "A 3D glass shape that distorts and refracts content as you scroll and move the cursor.",
+  "description": "Three.js component rendering a refractive glass geometry (lens, cube, or bar) using transmission materials. The glass follows pointer movement and parallax-scrolls content behind it for a premium, interactive effect.",
+  "use_when": "You want a striking, high-polish hero that showcases modern 3D design and rewards mouse movement.",
+  "avoid_when": "Touch-only surfaces, older devices without WebGL support, or when pointer tracking is unavailable.",
+  "a11y": "Purely visual 3D component; mouse tracking has no keyboard equivalent.",
+  "props": [
+    {"name": "mode", "type": "\"lens\" | \"bar\" | \"cube\"", "default": "\"lens\"", "required": false},
+    {"name": "lensProps", "type": "Record<string, unknown>", "default": "{}", "required": false},
+    {"name": "barProps", "type": "Record<string, unknown>", "default": "{}", "required": false},
+    {"name": "cubeProps", "type": "Record<string, unknown>", "default": "{}", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move", "scroll"],
+    "motion": "pronounced",
+    "affects": ["image", "background"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["hero", "page-background", "decoration"]
+}

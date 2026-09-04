@@ -1,0 +1,26 @@
+{
+  "name": "inspira-multi-step-loader",
+  "blurb": "Full-screen multi-step loader with progress animation and step indicators.",
+  "description": "A full-screen overlay loader that displays a sequence of steps with animations, icons for progress status (pending, loading, completed), and optional afterText labels.",
+  "use_when": "Showing sequential progress through a multi-step process like installation, deployment, or data processing.",
+  "avoid_when": "For simple loading spinners or when a modal isn't appropriate.",
+  "a11y": "Displays step text and icons, close button is visible when not preventClose. Steps are semantic text.",
+  "props": [
+    {"name": "steps", "type": "LoaderStep[]", "default": null, "required": true},
+    {"name": "loading", "type": "boolean", "default": "false", "required": false},
+    {"name": "defaultDuration", "type": "number", "default": "1500", "required": false},
+    {"name": "preventClose", "type": "boolean", "default": "false", "required": false},
+    {"name": "onStateChange", "type": "(index: number) => void", "default": null, "required": false},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "onClose", "type": "() => void", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["opacity", "layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["loading"]
+}

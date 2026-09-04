@@ -1,0 +1,22 @@
+{
+  "name": "toggle-group",
+  "blurb": "Group of toggle buttons with shared size and style variants.",
+  "description": "Toggle group built on Radix UI for managing multiple toggles with shared styling. Supports single or multiple selection via type prop. ToggleGroupItem respects parent size and variant.",
+  "use_when": "Building toolbar button groups, text formatting controls with multiple options, or segmented controls.",
+  "avoid_when": "When you need mutually exclusive radio buttons. Use RadioGroup for that.",
+  "a11y": "Built on Radix UI ToggleGroup with proper aria-pressed handling and focus management across items.",
+  "props": [
+    {"name": "size", "type": "'default' | 'lg' | 'sm'", "default": "default", "required": false},
+    {"name": "variant", "type": "'default' | 'outline'", "default": "default", "required": false},
+    {"name": "type", "type": "'single' | 'multiple'", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "none",
+    "affects": ["background", "text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "nav"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "code-comparison",
+  "blurb": "Side-by-side code comparison with syntax highlighting and diff notation.",
+  "description": "Before/after code comparison using Shiki with notation transformers for highlighting, diffs, and focus lines. Theme-aware and supports custom highlight color. Hover effects for focus.",
+  "use_when": "Showing code refactors, migrations, or before/after examples in documentation.",
+  "avoid_when": "When full code editing is needed or when code is very long.",
+  "a11y": "Focus highlighting helps visual comparison. Both panels are selectable text.",
+  "props": [
+    {"name": "beforeCode", "type": "string", "default": null, "required": true},
+    {"name": "afterCode", "type": "string", "default": null, "required": true},
+    {"name": "language", "type": "string", "default": null, "required": true},
+    {"name": "filename", "type": "string", "default": null, "required": true},
+    {"name": "lightTheme", "type": "string", "default": null, "required": true},
+    {"name": "darkTheme", "type": "string", "default": null, "required": true},
+    {"name": "highlightColor", "type": "string", "default": "#ff3333", "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["opacity", "blur"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text"]
+}

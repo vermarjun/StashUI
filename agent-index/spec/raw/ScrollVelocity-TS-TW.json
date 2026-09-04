@@ -1,0 +1,31 @@
+{
+  "name": "ScrollVelocity-TS-TW",
+  "blurb": "Text scrolls horizontally, accelerating and reversing direction based on page scroll speed.",
+  "description": "Renders multiple looping text rows that move horizontally. Scroll velocity controls speed and direction; alternating rows move in opposite directions. Uses motion/react with spring damping.",
+  "use_when": "A full-width marquee section wants dynamic responsiveness to user scroll behavior.",
+  "avoid_when": "When horizontal text flow might conflict with reading direction or cause motion sickness.",
+  "a11y": "Text is duplicated for continuous loop effect; each copy is readable but not linearized for screen readers.",
+  "props": [
+    {"name": "scrollContainerRef", "type": "React.RefObject<HTMLElement>", "default": null, "required": false},
+    {"name": "texts", "type": "React.ReactNode[]", "default": "[]", "required": false},
+    {"name": "velocity", "type": "number", "default": "100", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "damping", "type": "number", "default": "50", "required": false},
+    {"name": "stiffness", "type": "number", "default": "400", "required": false},
+    {"name": "numCopies", "type": "number", "default": "6", "required": false},
+    {"name": "velocityMapping", "type": "VelocityMapping", "default": "{input: [0, 1000], output: [0, 5]}", "required": false},
+    {"name": "parallaxClassName", "type": "string", "default": null, "required": false},
+    {"name": "scrollerClassName", "type": "string", "default": null, "required": false},
+    {"name": "parallaxStyle", "type": "React.CSSProperties", "default": null, "required": false},
+    {"name": "scrollerStyle", "type": "React.CSSProperties", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

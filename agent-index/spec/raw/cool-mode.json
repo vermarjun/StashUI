@@ -1,0 +1,25 @@
+{
+  "name": "cool-mode",
+  "blurb": "Particles spawn and drift away when clicking or hovering.",
+  "description": "Attaches particle emitter to DOM elements. Particles spawn on click/hover, drift upward with horizontal sway, and rotate. Uses SVG or custom particles.",
+  "use_when": "Interactive celebrations, playful CTAs, or engagement-focused UI.",
+  "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); performance-critical (particle overhead).",
+  "a11y": "Particle overlay; decorative only. Does not affect interaction.",
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "particle", "type": "string", "default": null, "required": false},
+    {"name": "size", "type": "number", "default": null, "required": false},
+    {"name": "particleCount", "type": "number", "default": null, "required": false},
+    {"name": "speedHorz", "type": "number", "default": null, "required": false},
+    {"name": "speedUp", "type": "number", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["children"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["primary-cta", "secondary-cta", "decoration"]
+}

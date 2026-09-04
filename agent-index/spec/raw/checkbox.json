@@ -1,0 +1,23 @@
+{
+  "name": "checkbox",
+  "blurb": "Basic checkbox with checked, indeterminate, and disabled states.",
+  "description": "Radix UI Checkbox wrapper with built-in states for checked, indeterminate, and disabled. Shows check mark or dash indicator. Includes focus ring and error states via aria-invalid.",
+  "use_when": "Simple boolean toggles in forms, lists, or settings.",
+  "avoid_when": "Radio groups—use radio buttons for mutually-exclusive options.",
+  "a11y": "Full keyboard support via Radix UI. Focus-visible ring. aria-invalid for error states. Indeterminate state support.",
+  "props": [
+    {"name": "checked", "type": "boolean | \"indeterminate\"", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "onCheckedChange", "type": "(checked: boolean | \"indeterminate\") => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["click", "focus"],
+    "motion": "none",
+    "affects": ["fill", "border"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field", "list-item"]
+}

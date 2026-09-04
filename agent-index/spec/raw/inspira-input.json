@@ -1,0 +1,20 @@
+{
+  "name": "inspira-input",
+  "blurb": "Input field with a spotlight radial glow that follows mouse movement.",
+  "description": "An input field with a container div that renders a radial gradient spotlight centered at the cursor, tracking mouse movement with useState and applying a smooth background transition.",
+  "use_when": "Creating interactive forms where cursor-tracking effects enhance visual engagement and interactivity feedback.",
+  "avoid_when": "On touch interfaces or when motion should be absent.",
+  "a11y": "Standard input accessibility applies; the spotlight effect is purely visual and non-interfering.",
+  "props": [
+    {"name": "containerClass", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["form-field"]
+}

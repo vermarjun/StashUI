@@ -1,0 +1,21 @@
+{
+  "name": "svg-shapes-animated",
+  "blurb": "Library of animated SVG geometric shapes with stroke-drawing entrance effects.",
+  "description": "A collection of 40+ animated SVG shape components (triangles, circles, stars, polygons, etc.) with stroke-based drawing animations. Each animates on scroll entrance and respects prefers-reduced-motion.",
+  "use_when": "Decorative geometric elements with entrance animations or interactive line-drawing effects.",
+  "avoid_when": "When you need filled shapes with complex gradients or when shapes need to be fully sized without parent constraints.",
+  "a11y": "Decorative SVG elements without alt text or labels. Animation respects prefers-reduced-motion user preference.",
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "flip", "type": "'none' | 'vertical' | 'horizontal' | 'both'", "default": "'none'", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "slot_hints": ["decoration", "divider", "section-background"]
+}

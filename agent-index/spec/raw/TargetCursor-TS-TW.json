@@ -1,0 +1,24 @@
+{
+  "name": "TargetCursor-TS-TW",
+  "blurb": "Spinning reticle cursor that locks onto hover targets.",
+  "description": "Replaces the default cursor with a rotating target reticle. Tracks pointer movement, spins continuously, and scales/animates when hovering over designated targets.",
+  "use_when": "Gaming interfaces, interactive dashboards, or sci-fi themed designs where a custom cursor enhances immersion.",
+  "avoid_when": "Touch devices (detection included, disables); users relying on standard cursor expectations.",
+  "a11y": "Custom cursor replacing default; no reduced-motion support. Mobile detection disables the feature.",
+  "props": [
+    {"name": "targetSelector", "type": "string", "default": "\".cursor-target\"", "required": false},
+    {"name": "spinDuration", "type": "number", "default": "2", "required": false},
+    {"name": "hideDefaultCursor", "type": "boolean", "default": "true", "required": false},
+    {"name": "hoverDuration", "type": "number", "default": "0.2", "required": false},
+    {"name": "parallaxOn", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["cursor"],
+    "tone": "technical",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "decoration"]
+}

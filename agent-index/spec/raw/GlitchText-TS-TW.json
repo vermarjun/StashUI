@@ -1,0 +1,24 @@
+{
+  "name": "GlitchText-TS-TW",
+  "blurb": "Text glitches with clipped overlays in cyan and red, like a VHS artifact.",
+  "description": "Renders text with CSS-animated pseudo-elements that clip and shift horizontally, creating a glitch effect with optional color shadows. Triggers continuously or on hover.",
+  "use_when": "A bold headline wants a cyberpunk or corrupted aesthetic that signals digital distortion.",
+  "avoid_when": "Accessibility-critical content or when constant motion might distract from readability.",
+  "a11y": "Text is readable in the main element; glitch overlays are hidden with aria-hidden. No keyboard interaction.",
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "speed", "type": "number", "default": "0.5", "required": false},
+    {"name": "enableShadows", "type": "boolean", "default": "true", "required": false},
+    {"name": "enableOnHover", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "dramatic",
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sidebar",
+  "blurb": "Collapsible sidebar with context provider and smooth open/close animations.",
+  "description": "Context-based sidebar system with SidebarProvider, Sidebar, SidebarBody, DesktopSidebar, MobileSidebar, and SidebarLink components. Uses Framer Motion for smooth collapse/expand and provides a custom hook for managing open state.",
+  "use_when": "Creating responsive layouts with collapsible navigation that works across desktop and mobile viewports with animation.",
+  "avoid_when": "Simple, non-collapsible layouts. Overkill for single-level navigation structures.",
+  "a11y": "Mobile menu button lacks ARIA attributes. Keyboard navigation not built-in. Focus management should be handled by parent.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "setOpen", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "animate", "type": "boolean", "default": "true", "required": false}
+  ],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["nav", "sidebar"]
+}

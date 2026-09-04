@@ -1,0 +1,21 @@
+{
+  "name": "background-beams-with-collision",
+  "blurb": "Animated beams fall from top, explode on collision with ground.",
+  "description": "Container with gradient background that animates falling beams. Detects collision with a bottom surface and triggers explosion particles on impact using motion/react. Supports light and dark themes.",
+  "use_when": "Interactive hero section or container needing constant animated particle effects with collision feedback.",
+  "avoid_when": "Performance-critical pages with many instances, or sites requiring prefers-reduced-motion support.",
+  "a11y": "Purely decorative background; children elements must handle their own accessibility.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["background", "children"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["section-background", "hero", "page-background"]
+}

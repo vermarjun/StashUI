@@ -1,0 +1,26 @@
+{
+  "name": "scroll-animation",
+  "blurb": "Fades and slides in from a direction when scrolled into view.",
+  "description": "Wraps children in a motion component that triggers animation via scroll. Animates blur, opacity, and translate from a specified direction; fires once when 30% of element is visible.",
+  "use_when": "Section intros or staggered card lists that should feel interactive as users scroll.",
+  "avoid_when": "When users are on low-end devices or when motion would be distracting — no prefers-reduced-motion guard.",
+  "a11y": "Content is not hidden from screen readers (always in DOM). Animation timing is not controllable by keyboard; only triggers on scroll.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "variants", "type": "{hidden?: any; visible?: any}", "default": null, "required": false},
+    {"name": "viewport", "type": "{amount?: number; margin?: string; once?: boolean}", "default": "{once: true, amount: 0.3, margin: '0px 0px -200px 0px'}", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "direction", "type": "'up' | 'down' | 'left' | 'right'", "default": "'down'", "required": false},
+    {"name": "as", "type": "'div' | 'span' | 'h1' | 'h2' | 'h3' | 'a' | 'p' | 'section' | 'figure' | 'button' | 'article'", "default": "'div'", "required": false}
+  ],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["body-text", "feature-card", "list-item"]
+}

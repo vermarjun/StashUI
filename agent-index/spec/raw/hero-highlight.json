@@ -1,0 +1,22 @@
+{
+  "name": "hero-highlight",
+  "blurb": "Container with dot-pattern background and mouse-tracked radial highlight on hover.",
+  "description": "Wrapper div tracking mouse position and revealing colored dot pattern in 200px radial gradient. Light and dark variants. Height 40rem, full width. Also exports Highlight span for inline gradient text animation.",
+  "use_when": "Hero section or container where you want subtle mouse-tracking polish without heavy effects.",
+  "avoid_when": "Touch-only devices; no pointer to track. Requires onMouseMove handler.",
+  "a11y": "Passive overlay; children content remains fully accessible. No interaction required.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "page-background"]
+}

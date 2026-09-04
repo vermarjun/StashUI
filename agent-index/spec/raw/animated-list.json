@@ -1,0 +1,22 @@
+{
+  "name": "animated-list",
+  "blurb": "Self-animating list that cycles child items with scale and fade entrance.",
+  "description": "Wrapper component that auto-plays a sequence of list item animations. Each child wraps in AnimatedListItem with configurable delay between cycles. Uses Framer Motion for spring-based scale and opacity transitions.",
+  "use_when": "Notification lists, activity feeds, or demo showcases where auto-playing animated items draw attention. Commonly used in dashboard widgets.",
+  "avoid_when": "Static content lists or when user attention should focus elsewhere. Continuous animation can be distracting and impact performance.",
+  "a11y": "No ARIA attributes or focus management. Animations are visual-only; content accessibility depends on structure of children.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "delay", "type": "number", "default": "1000", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["decoration", "notification", "list-item"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "word-rotate",
+  "blurb": "Words cycle in sequence, each fading in from top and out to bottom on a timer.",
+  "description": "Displays one word at a time from a list, rotating continuously. Each transition fades the old word out (downward) and the new word in (from above).",
+  "use_when": "Hero sections showing a list of attributes or values that should cycle automatically.",
+  "avoid_when": "Accessibility-focused interfaces; looping animations are distracting and do not respect prefers-reduced-motion.",
+  "a11y": "Current word is always in the DOM and accessible; animation continuously cycles and does not pause with prefers-reduced-motion.",
+  "props": [
+    {"name": "words", "type": "string[]", "default": null, "required": true},
+    {"name": "duration", "type": "number", "default": "2500", "required": false},
+    {"name": "motionProps", "type": "MotionProps", "default": "{initial: {opacity: 0, y: -50}, animate: {opacity: 1, y: 0}, exit: {opacity: 0, y: 50}, transition: {duration: 0.25, ease: \"easeOut\"}}", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline", "hero"]
+}

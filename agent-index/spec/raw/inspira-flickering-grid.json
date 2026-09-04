@@ -1,0 +1,27 @@
+{
+  "name": "inspira-flickering-grid",
+  "blurb": "Canvas grid of squares that flicker independently at random intervals.",
+  "description": "Canvas-based flickering grid background where each square randomly toggles between transparent and opaque. Fully responsive with configurable square size, spacing, and flicker speed.",
+  "use_when": "A performance-conscious animated grid background for subtle visual interest.",
+  "avoid_when": "Very small grid gaps may impact rendering performance on low-end devices.",
+  "a11y": "Decorative canvas overlay; focus and keyboard behaviour come from children. Flickering has no prefers-reduced-motion guard.",
+  "props": [
+    {"name": "squareSize", "type": "number", "default": "4", "required": false},
+    {"name": "gridGap", "type": "number", "default": "6", "required": false},
+    {"name": "flickerChance", "type": "number", "default": "0.3", "required": false},
+    {"name": "color", "type": "string", "default": "'rgb(0, 0, 0)'", "required": false},
+    {"name": "width", "type": "number", "default": null, "required": false},
+    {"name": "height", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "maxOpacity", "type": "number", "default": "0.3", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "tone": "minimal",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "section-background"]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "PrismaticBurst-TS-TW",
+  "blurb": "Raymarched prismatic bursts with configurable colors, animation modes, and optional cursor tracking.",
+  "description": "WebGL shader rendering procedurally-generated colorful rays radiating from a central point. Supports continuous rotation, 3D orbit, or cursor-responsive hover mode. Distortion and ray-count controls modulate the effect intensity.",
+  "use_when": "Hero sections, visual centerpieces, or backgrounds where a vibrant, energetic prismatic burst commands attention.",
+  "avoid_when": "WebGL-unsupported devices, touch-only surfaces (hover mode), performance-critical mobile — raymarching is compute-intensive.",
+  "a11y": "Passive visual background; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+  "props": [
+    {"name": "intensity", "type": "number", "default": "2", "required": false},
+    {"name": "speed", "type": "number", "default": "0.5", "required": false},
+    {"name": "animationType", "type": "'rotate' | 'rotate3d' | 'hover'", "default": "rotate3d", "required": false},
+    {"name": "colors", "type": "string[]", "default": null, "required": false},
+    {"name": "distort", "type": "number", "default": "0", "required": false},
+    {"name": "paused", "type": "boolean", "default": "false", "required": false},
+    {"name": "offset", "type": "{ x?: number | string; y?: number | string }", "default": "{x: 0, y: 0}", "required": false},
+    {"name": "hoverDampness", "type": "number", "default": "0", "required": false},
+    {"name": "rayCount", "type": "number", "default": null, "required": false},
+    {"name": "mixBlendMode", "type": "React.CSSProperties['mixBlendMode'] | 'none'", "default": "lighten", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "tone": "playful",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["hero", "page-background", "decoration"]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "FuzzyText-TS-TW",
+  "blurb": "Text pixelates and shimmers with a scanline fuzzy effect, intensified on hover.",
+  "description": "Renders text on canvas with a horizontal/vertical/both-axis scanline displacement that oscillates. Hover increases fuzz intensity; optional click effect and periodic glitch mode.",
+  "use_when": "A dramatic headline needs a retro CRT or glitchy aesthetic that responds to interaction.",
+  "avoid_when": "Small text or when precise readability is required — the fuzz effect reduces clarity.",
+  "a11y": "Text is rendered on canvas; not readable by screen readers. No keyboard interaction.",
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "fontSize", "type": "number | string", "default": "clamp(2rem, 8vw, 8rem)", "required": false},
+    {"name": "fontWeight", "type": "string | number", "default": "900", "required": false},
+    {"name": "fontFamily", "type": "string", "default": "inherit", "required": false},
+    {"name": "color", "type": "string", "default": "#fff", "required": false},
+    {"name": "enableHover", "type": "boolean", "default": "true", "required": false},
+    {"name": "baseIntensity", "type": "number", "default": "0.18", "required": false},
+    {"name": "hoverIntensity", "type": "number", "default": "0.5", "required": false},
+    {"name": "fuzzRange", "type": "number", "default": "30", "required": false},
+    {"name": "fps", "type": "number", "default": "60", "required": false},
+    {"name": "direction", "type": "'horizontal' | 'vertical' | 'both'", "default": "horizontal", "required": false},
+    {"name": "transitionDuration", "type": "number", "default": "0", "required": false},
+    {"name": "clickEffect", "type": "boolean", "default": "false", "required": false},
+    {"name": "glitchMode", "type": "boolean", "default": "false", "required": false},
+    {"name": "glitchInterval", "type": "number", "default": "2000", "required": false},
+    {"name": "glitchDuration", "type": "number", "default": "200", "required": false},
+    {"name": "gradient", "type": "string[] | null", "default": null, "required": false},
+    {"name": "letterSpacing", "type": "number", "default": "0", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false}
+  ],
+  "traits": {
+    "trigger": ["always", "hover", "click"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "tone": "dramatic",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["headline"]
+}

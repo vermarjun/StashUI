@@ -1,0 +1,25 @@
+{
+  "name": "sleek-line-cursor",
+  "blurb": "Colorful trailing lines follow the cursor with spring physics.",
+  "description": "A canvas-based cursor trail effect using spring-physics simulation. Multiple trailing lines follow mouse/touch position with wave-based HSL color animation.",
+  "use_when": "A full-page interactive effect for portfolios or creative experiences.",
+  "avoid_when": "When you need low CPU usage or minimalist interactions — the effect runs continuously and redraws every frame.",
+  "a11y": "Purely decorative effect. Uses pointer-events-none; interactions pass through. No keyboard interaction.",
+  "props": [
+    {"name": "friction", "type": "number", "default": "0.5", "required": false},
+    {"name": "trails", "type": "number", "default": "20", "required": false},
+    {"name": "size", "type": "number", "default": "50", "required": false},
+    {"name": "dampening", "type": "number", "default": "0.25", "required": false},
+    {"name": "tension", "type": "number", "default": "0.98", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "tone": "decorative",
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "slot_hints": ["page-background", "decoration"]
+}
