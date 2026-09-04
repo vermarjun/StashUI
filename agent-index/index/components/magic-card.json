@@ -1,0 +1,136 @@
+{
+ "name": "magic-card",
+ "title": "Magic Card",
+ "category": "cards",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "MagicCard"
+ ],
+ "npm_deps": [
+  "motion",
+  "next-themes"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "import { MagicCard } from \"@/components/ui/magic-card\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex gap-6 p-8\">\n      <MagicCard className=\"w-56 h-40 flex flex-col items-center justify-center gap-2 rounded-2xl p-6 cursor-pointer\">\n        <span className=\"text-2xl\">✦</span>\n        <p className=\"text-sm font-medium text-foreground\">Gradient mode</p>\n        <p className=\"text-xs text-muted-foreground text-center\">Hover to see the gradient follow</p>\n      </MagicCard>\n      <MagicCard\n        mode=\"orb\"\n        className=\"w-56 h-40 flex flex-col items-center justify-center gap-2 rounded-2xl p-6 cursor-pointer\"\n      >\n        <span className=\"text-2xl\">◎</span>\n        <p className=\"text-sm font-medium text-foreground\">Orb mode</p>\n        <p className=\"text-xs text-muted-foreground text-center\">Hover to see the glowing orb</p>\n      </MagicCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/magic-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magic-card.json",
+ "preview": "https://stashui.vercel.app/c/magic-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card with theme-aware pointer-tracked gradient glow (gradient or orb mode).",
+ "description": "A container with two rendering modes: gradient (radial glow) or orb (animated rotating glow). Gradient/glow position follows pointer. Theme-aware color defaults adapt to light/dark.",
+ "use_when": "Hero sections, premium feature cards, or interactive showcases where animated glows create visual magic and brand…",
+ "avoid_when": "Touch-only interfaces where pointer tracking won't work, or accessibility-critical flows where motion should be reduced.",
+ "a11y": "Card is a container; children are independent. Glow effects are purely visual. No prefers-reduced-motion guard; animations always play.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "gradientSize",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "gradientFrom",
+   "type": "string",
+   "default": "\"#9E7AFF\"",
+   "required": false
+  },
+  {
+   "name": "gradientTo",
+   "type": "string",
+   "default": "\"#FE8BBB\"",
+   "required": false
+  },
+  {
+   "name": "mode",
+   "type": "'gradient' | 'orb'",
+   "default": "\"gradient\"",
+   "required": false
+  },
+  {
+   "name": "gradientColor",
+   "type": "string",
+   "default": "\"#262626\"",
+   "required": false
+  },
+  {
+   "name": "gradientOpacity",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "glowFrom",
+   "type": "string",
+   "default": "'#ee4f27'",
+   "required": false
+  },
+  {
+   "name": "glowTo",
+   "type": "string",
+   "default": "'#6b21ef'",
+   "required": false
+  },
+  {
+   "name": "glowAngle",
+   "type": "number",
+   "default": "90",
+   "required": false
+  },
+  {
+   "name": "glowSize",
+   "type": "number",
+   "default": "420",
+   "required": false
+  },
+  {
+   "name": "glowBlur",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "glowOpacity",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "decoration"
+ ]
+}

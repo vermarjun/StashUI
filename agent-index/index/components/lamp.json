@@ -1,0 +1,63 @@
+{
+ "name": "lamp",
+ "title": "Lamp",
+ "category": "backgrounds",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "LampDemo",
+  "LampContainer"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "motion",
+  "16 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/lamp\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/lamp.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/lamp.json",
+ "preview": "https://stashui.vercel.app/c/lamp",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated overhead lamp effect with expanding conic gradients and light rays.",
+ "description": "Full-screen container with animated conic gradient layers creating a glowing lamp effect. Multiple masked gradients and blurs create depth and luminosity.",
+ "use_when": "A striking, full-screen hero background with a dramatic, illuminated aesthetic.",
+ "avoid_when": "Limited viewport height — component requires min-h-screen. Performance may be impacted by multiple simultaneous blur…",
+ "a11y": "Full-screen wrapper with content slot (z-50); focus and keyboard behaviour come from children.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

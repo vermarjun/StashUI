@@ -1,0 +1,90 @@
+{
+ "name": "orbit",
+ "title": "Orbit",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ORBIT_DIRECTION",
+  "Orbit"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { Orbit, ORBIT_DIRECTION } from \"@/components/ui/orbit\";\n\nexport default function OrbitDemo() {\n  return (\n    <div className=\"relative flex h-64 w-full items-center justify-center overflow-hidden\">\n      {/* Center element */}\n      <div className=\"z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold shadow-lg\">\n        Center\n      </div>\n\n      {/* Inner orbit */}\n      <Orbit radius={80} duration={8} delay={0} path>\n        <div className=\"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-white text-xs shadow\">\n          ⚡\n        </div>\n      </Orbit>\n\n      {/* Outer orbit — counter-clockwise */}\n      <Orbit\n        radius={130}\n        duration={14}\n        delay={5}\n        direction={ORBIT_DIRECTION.CounterClockwise}\n        path\n      >\n        <div className=\"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-pink-500 text-white text-sm shadow\">\n          🌙\n        </div>\n      </Orbit>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/orbit.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/orbit.json",
+ "preview": "https://stashui.vercel.app/c/orbit",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Content orbits around a center point with configurable speed and direction.",
+ "description": "Renders child content that orbits around a center point. Supports clockwise/counter-clockwise rotation, customizable duration and radius, with optional visual path indicator.",
+ "use_when": "Hero sections, data visualizations, or displays where orbital motion around a focal point creates visual interest.",
+ "avoid_when": "Accessibility-critical contexts where motion might distract or confuse users.",
+ "a11y": "Pure orbital animation; semantic content and keyboard access depend on child elements.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"stroke-foreground/20 stroke-1\"",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"normal\" | \"reverse\"",
+   "default": "ORBIT_DIRECTION.Clockwise",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "path",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "hero"
+ ]
+}

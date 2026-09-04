@@ -1,0 +1,85 @@
+{
+ "name": "inspira-progressive-blur",
+ "title": "Progressive Blur",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ProgressiveBlur"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ProgressiveBlur } from \"@/components/ui/progressive-blur\";\n\nexport default function ProgressiveBlurDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-12\">\n      {/* Blur from bottom */}\n      <div className=\"relative h-64 w-80 overflow-hidden rounded-2xl\">\n        <img\n          src=\"https://picsum.photos/seed/blur1/640/512\"\n          alt=\"demo\"\n          className=\"h-full w-full object-cover\"\n        />\n        <ProgressiveBlur\n          direction=\"bottom\"\n          blurLayers={8}\n          blurIntensity={0.3}\n          className=\"absolute inset-x-0 bottom-0 h-1/2\"\n        />\n        <p className=\"absolute bottom-4 left-0 right-0 text-center text-sm font-semibold text-white\">\n          Blur from bottom\n        </p>\n      </div>\n\n      {/* Blur from top */}\n      <div className=\"relative h-64 w-80 overflow-hidden rounded-2xl\">\n        <img\n          src=\"https://picsum.photos/seed/blur2/640/512\"\n          alt=\"demo\"\n          className=\"h-full w-full object-cover\"\n        />\n        <ProgressiveBlur\n          direction=\"top\"\n          blurLayers={10}\n          blurIntensity={0.4}\n          className=\"absolute inset-x-0 top-0 h-1/2\"\n        />\n        <p className=\"absolute top-4 left-0 right-0 text-center text-sm font-semibold text-white\">\n          Blur from top\n        </p>\n      </div>\n\n      {/* Blur from right */}\n      <div className=\"relative h-64 w-80 overflow-hidden rounded-2xl\">\n        <img\n          src=\"https://picsum.photos/seed/blur3/640/512\"\n          alt=\"demo\"\n          className=\"h-full w-full object-cover\"\n        />\n        <ProgressiveBlur\n          direction=\"right\"\n          blurLayers={8}\n          blurIntensity={0.35}\n          className=\"absolute inset-y-0 right-0 w-1/2\"\n        />\n        <p className=\"absolute right-4 top-1/2 -translate-y-1/2 -rotate-90 text-sm font-semibold text-white\">\n          Blur from right\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/progressive-blur.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-progressive-blur.json",
+ "preview": "https://stashui.vercel.app/c/inspira-progressive-blur",
+ "dupe_group": "progressiveblur",
+ "alternatives": [
+  {
+   "name": "progressive-blur",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 52
+  }
+ ],
+ "blurb": "Progressive blur effect fading from edges using backdrop-filter layers.",
+ "description": "Wrapper with layered backdrop-filter blur that gradually increases from a specified direction. Uses gradient masks and motion/react for smooth animations.",
+ "use_when": "Hero images, overlays, or content areas needing edge fading without sharp cutoffs.",
+ "avoid_when": "On browsers without backdrop-filter support.",
+ "a11y": "Blur layers are decorative overlays; semantic content provided via children.",
+ "props": [
+  {
+   "name": "direction",
+   "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+   "default": "\"bottom\"",
+   "required": false
+  },
+  {
+   "name": "blurLayers",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "blurIntensity",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(!hasPositionClass && \"relative\", className)}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "name": "comp-463",
+ "title": "Pagination Rows Per Page",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "label",
+  "pagination",
+  "select"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-463\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(1);\n  const total = 4;\n  return (\n    <div className=\"w-full max-w-2xl\">\n      <Cmp currentPage={page} totalPages={total} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-463.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-463.json",
+ "preview": "https://stashui.vercel.app/c/comp-463",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with rows per page selector.",
+ "description": "Pagination with dropdown to change results per page (items shown per result set).",
+ "use_when": "Pagination where users can adjust how many items appear per page.",
+ "avoid_when": "Fixed page size or when users don't need control over results per page.",
+ "a11y": "Semantic pagination with accessible dropdown for page size selection.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

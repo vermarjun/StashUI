@@ -1,0 +1,67 @@
+{
+ "name": "container-scroll-animation",
+ "title": "Container Scroll Animation",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ContainerScroll",
+  "Header",
+  "Card"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "3d",
+  "motion",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\nimport { ContainerScroll } from \"@/components/ui/container-scroll-animation\";\n\nexport default function Demo() {\n  return (\n    <ContainerScroll\n      titleComponent={\n        <div className=\"space-y-3 text-center\">\n          <p className=\"text-sm font-medium text-muted-foreground uppercase tracking-widest\">\n            Introducing\n          </p>\n          <h1 className=\"text-4xl md:text-5xl font-bold text-foreground\">\n            Scroll into view\n          </h1>\n          <p className=\"text-muted-foreground max-w-md mx-auto text-base\">\n            Scroll down to watch the card rotate from a dramatic 3-D tilt into\n            a flat, full-bleed presentation.\n          </p>\n        </div>\n      }\n    >\n      <div className=\"h-full w-full flex flex-col items-center justify-center gap-6 p-6 bg-background rounded-xl\">\n        <div className=\"grid grid-cols-3 gap-3 w-full max-w-lg\">\n          {Array.from({ length: 9 }).map((_, i) => (\n            <div\n              key={i}\n              className=\"aspect-square rounded-lg bg-muted flex items-center justify-center text-muted-foreground text-xs font-mono\"\n            >\n              {String(i + 1).padStart(2, \"0\")}\n            </div>\n          ))}\n        </div>\n        <p className=\"text-muted-foreground text-sm text-center max-w-xs\">\n          Component content renders here once the container is fully flat.\n        </p>\n      </div>\n    </ContainerScroll>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/container-scroll-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/container-scroll-animation.json",
+ "preview": "https://stashui.vercel.app/c/container-scroll-animation",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D card that rotates and scales into view as you scroll.",
+ "description": "Scroll-triggered 3D perspective animation using Framer Motion. Card rotates from 20deg down to 0 and scales in, with responsive mobile scaling. Title parallax translates upward.",
+ "use_when": "Feature showcases, product reveals, or immersive scroll experiences.",
+ "avoid_when": "Motion-sensitive users (scroll-driven, no prefers-reduced-motion); slow connections.",
+ "a11y": "Scroll-driven animation; does not affect semantic content. Mobile-aware with scale adjustments.",
+ "props": [
+  {
+   "name": "titleComponent",
+   "type": "string | ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "section-background"
+ ]
+}

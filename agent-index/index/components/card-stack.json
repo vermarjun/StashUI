@@ -1,0 +1,68 @@
+{
+ "name": "card-stack",
+ "title": "Card Stack",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CardStack"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\nimport { CardStack } from \"@/components/ui/card-stack\";\n\nconst CARDS = [\n  {\n    id: 0,\n    name: \"Alice Johnson\",\n    designation: \"Senior Engineer at Vercel\",\n    content: (\n      <p>\n        These cards are absolutely gorgeous. The stacking animation is so smooth\n        and the design is clean. I use them in all my projects now.\n      </p>\n    ),\n  },\n  {\n    id: 1,\n    name: \"Bob Martinez\",\n    designation: \"Product Designer at Figma\",\n    content: (\n      <p>\n        The attention to detail is incredible. Every pixel is perfectly placed\n        and the interactions feel natural and delightful.\n      </p>\n    ),\n  },\n  {\n    id: 2,\n    name: \"Carol Chen\",\n    designation: \"CTO at Startup\",\n    content: (\n      <p>\n        We integrated these components into our design system and the team loves\n        them. They save us so much time and always look professional.\n      </p>\n    ),\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full py-20\">\n      <CardStack items={CARDS} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/card-stack.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/card-stack.json",
+ "preview": "https://stashui.vercel.app/c/card-stack",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Cards stack and fan out with smooth animations on scroll.",
+ "description": "Renders an array of cards in a stacked layout where they progressively fan out and scale. Configurable offset (gap between cards) and scaleFactor (how much smaller each card gets). Responsive animations as user scrolls or interacts.",
+ "use_when": "Testimonials, reviews, or showcases where stacked cards add visual depth and engagement.",
+ "avoid_when": "When cards need independent layouts — stacking constrains their positioning.",
+ "a11y": "Card content (name, designation, content) is readable. Stacking is visual effect only.",
+ "props": [
+  {
+   "name": "items",
+   "type": "Card[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "offset",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "scaleFactor",
+   "type": "number",
+   "default": "0.06",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "testimonial"
+ ]
+}

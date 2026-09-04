@@ -1,0 +1,63 @@
+{
+ "name": "timeline",
+ "title": "Timeline",
+ "category": "data-display",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Timeline"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 20,
+ "flags": [
+  "motion",
+  "20 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Timeline } from \"@/components/ui/timeline\";\n\nexport default function Demo() {\n  const data = [\n    {\n      title: \"2024\",\n      content: (\n        <div>\n          <p className=\"text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4\">\n            Launched the new design system and component library with 50+ components.\n          </p>\n          <div className=\"grid grid-cols-2 gap-4\">\n            <img\n              src=\"https://picsum.photos/seed/timeline1/500/300\"\n              alt=\"Design system\"\n              className=\"rounded-lg object-cover w-full h-32\"\n            />\n            <img\n              src=\"https://picsum.photos/seed/timeline2/500/300\"\n              alt=\"Components\"\n              className=\"rounded-lg object-cover w-full h-32\"\n            />\n          </div>\n        </div>\n      ),\n    },\n    {\n      title: \"Early 2023\",\n      content: (\n        <div>\n          <p className=\"text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4\">\n            Joined a fast-growing startup as a senior frontend engineer.\n          </p>\n          <p className=\"text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4\">\n            Built and shipped the core product features that drove 3x user growth.\n          </p>\n          <div className=\"grid grid-cols-2 gap-4\">\n            <img\n              src=\"https://picsum.photos/seed/timeline3/500/300\"\n              alt=\"Startup\"\n              className=\"rounded-lg object-cover w-full h-32\"\n            />\n            <img\n              src=\"https://picsum.photos/seed/timeline4/500/300\"\n              alt=\"Team\"\n              className=\"rounded-lg object-cover w-full h-32\"\n            />\n          </div>\n        </div>\n      ),\n    },\n    {\n      title: \"2022\",\n      content: (\n        <div>\n          <p className=\"text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4\">\n            Graduated with a degree in Computer Science and started freelancing.\n          </p>\n          <div className=\"grid grid-cols-2 gap-4\">\n            <img\n              src=\"https://picsum.photos/seed/timeline5/500/300\"\n              alt=\"Graduation\"\n              className=\"rounded-lg object-cover w-full h-32\"\n            />\n            <img\n              src=\"https://picsum.photos/seed/timeline6/500/300\"\n              alt=\"Work\"\n              className=\"rounded-lg object-cover w-full h-32\"\n            />\n          </div>\n        </div>\n      ),\n    },\n    {\n      title: \"2020\",\n      content: (\n        <div>\n          <p className=\"text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4\">\n            Started learning web development through online courses and personal projects.\n          </p>\n          <img\n            src=\"https://picsum.photos/seed/timeline7/500/300\"\n            alt=\"Learning\"\n            className=\"rounded-lg object-cover w-full h-32 mb-4\"\n          />\n        </div>\n      ),\n    },\n  ];\n\n  return (\n    <div className=\"w-full\">\n      <Timeline data={data} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/timeline.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/timeline.json",
+ "preview": "https://stashui.vercel.app/c/timeline",
+ "dupe_group": "timeline",
+ "alternatives": [
+  {
+   "name": "origin-ui-timeline",
+   "origin": "Origin UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Vertical timeline connects entries with an animated gradient line as the user…",
+ "description": "Displays timeline entries with titles and content. An animated gradient line traces from top to bottom as the container scrolls into view. Built with Framer Motion and scroll-triggered animation.",
+ "use_when": "Chronological stories, journey narratives, or changelogs where visual progression matters.",
+ "avoid_when": "Lists with 100+ items; all entries render upfront, causing performance issues.",
+ "a11y": "Timeline entries render as divs within semantic structure. No explicit aria labels; depends on heading hierarchy for context.",
+ "props": [
+  {
+   "name": "data",
+   "type": "TimelineEntry[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "body-text"
+ ]
+}

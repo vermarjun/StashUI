@@ -1,0 +1,92 @@
+{
+ "name": "inspira-sparkles",
+ "title": "Sparkles",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Sparkles"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "canvas",
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { Sparkles } from \"@/components/ui/sparkles\";\n\nexport default function SparklesDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-xl\">\n      <Sparkles\n        background=\"#0d47a1\"\n        particleColor=\"#ffffff\"\n        particleDensity={100}\n        speed={3}\n        minSize={1}\n        maxSize={3}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/sparkles.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-sparkles.json",
+ "preview": "https://stashui.vercel.app/c/inspira-sparkles",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated particles that drift and pulse with opacity oscillation.",
+ "description": "Canvas-based particle system with animated sparkles. Each particle drifts with velocity, wraps at edges, and pulses via sine-wave opacity modulation.",
+ "use_when": "A decorative, full-screen animated particle background for immersive hero sections.",
+ "avoid_when": "Performance-sensitive contexts — continuous RAF animation with high particle density impacts responsiveness.",
+ "a11y": "Purely decorative canvas overlay; focus and keyboard behaviour come from overlaid content. Animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "background",
+   "type": "string",
+   "default": "\"#0d47a1\"",
+   "required": false
+  },
+  {
+   "name": "particleColor",
+   "type": "string",
+   "default": "\"#ffffff\"",
+   "required": false
+  },
+  {
+   "name": "minSize",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "maxSize",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "particleDensity",
+   "type": "number",
+   "default": "120",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative size-full overflow-hidden will-change-transfor",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

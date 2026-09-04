@@ -1,0 +1,55 @@
+{
+ "name": "liquid-background",
+ "title": "Liquid Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LiquidBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "pure"
+ ],
+ "usage": "\"use client\"\n\nimport { LiquidBackground } from \"@/components/ui/liquid-background\"\n\nexport default function LiquidBackgroundDemo() {\n  return (\n    <div className=\"relative w-full h-[600px] rounded-xl overflow-hidden\">\n      <LiquidBackground className=\"absolute inset-0\" />\n      <div className=\"absolute inset-0 flex items-center justify-center\">\n        <span className=\"text-white text-2xl font-bold drop-shadow-lg\">Liquid Background</span>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/liquid-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/liquid-background.json",
+ "preview": "https://stashui.vercel.app/c/liquid-background",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "GPU-rendered liquid waves using WebGL shaders and OGL.",
+ "description": "WebGL-based liquid effect using vertex and fragment shaders. Creates flowing, wavy animation through procedural noise and trigonometric waves.",
+ "use_when": "A cutting-edge, performance-intensive background for high-spec environments or special showcase sections.",
+ "avoid_when": "Low-end or mobile devices — requires WebGL support and significant GPU resources. May not render in headless capture…",
+ "a11y": "WebGL canvas overlay; focus and keyboard behaviour come from overlaid content.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "light",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "name": "framer-autoplay-carousel",
+ "title": "Framer Autoplay Carousel",
+ "category": "carousels",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "FramerAutoplayCarousel"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/framer-autoplay\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/framer-autoplay.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/framer-autoplay-carousel.json",
+ "preview": "https://stashui.vercel.app/c/framer-autoplay-carousel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Auto-scrolling image carousel that pauses on hover with spring-based…",
+ "description": "Full-width carousel that continuously scrolls through images with configurable interval. Pauses on hover, resumes when pointer leaves. Uses Framer Motion spring animation for smooth navigation.",
+ "use_when": "Auto-rotating image galleries, testimonials, or logo walls with minimal interaction.",
+ "avoid_when": "When users need full carousel control; auto-play can be distracting.",
+ "a11y": "No keyboard navigation. Pause-on-hover improves pause-ability but doesn't offer fine control.",
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "testimonial",
+  "logo-wall",
+  "hero"
+ ]
+}

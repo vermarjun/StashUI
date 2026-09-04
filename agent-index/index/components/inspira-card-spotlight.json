@@ -1,0 +1,92 @@
+{
+ "name": "inspira-card-spotlight",
+ "title": "Card Spotlight",
+ "category": "cards",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "CardSpotlight"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "pure",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { CardSpotlight } from \"@/components/ui/card-spotlight\";\n\nexport default function CardSpotlightDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-16\">\n      <CardSpotlight className=\"h-56 w-72 p-6\">\n        <h3 className=\"mb-2 text-lg font-bold\">Move your cursor</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          The spotlight follows your mouse across the card surface.\n        </p>\n      </CardSpotlight>\n\n      <CardSpotlight\n        className=\"h-56 w-72 p-6\"\n        gradientColor=\"#1a1a3e\"\n        gradientSize={300}\n        gradientOpacity={0.9}\n      >\n        <h3 className=\"mb-2 text-lg font-bold\">Indigo spotlight</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Larger radius with a deep indigo glow. Hover me!\n        </p>\n      </CardSpotlight>\n\n      <CardSpotlight\n        className=\"h-56 w-72 p-6\"\n        gradientColor=\"#3d1a00\"\n        gradientSize={150}\n        gradientOpacity={0.7}\n      >\n        <h3 className=\"mb-2 text-lg font-bold\">Warm glow</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Small, warm amber spotlight for a cosy feel.\n        </p>\n      </CardSpotlight>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/card-spotlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-card-spotlight.json",
+ "preview": "https://stashui.vercel.app/c/inspira-card-spotlight",
+ "dupe_group": "cardspotlight",
+ "alternatives": [
+  {
+   "name": "card-spotlight",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Card with cursor-tracked radial spotlight gradient overlay.",
+ "description": "A container card with a pointer-tracked radial gradient that creates a 'spotlight' effect. Gradient position follows mouse movement and resets on leave.",
+ "use_when": "Premium cards, product highlights, or hero sections where subtle spotlight effects add polish and draw focus.",
+ "avoid_when": "Touch-only interfaces or low-motion contexts where persistent spotlight tracking could be disruptive.",
+ "a11y": "Card is a container for children. Spotlight is purely visual embellishment; content remains accessible.",
+ "props": [
+  {
+   "name": "gradientSize",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "gradientColor",
+   "type": "string",
+   "default": "\"#262626\"",
+   "required": false
+  },
+  {
+   "name": "gradientOpacity",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "slotClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "hero",
+  "decoration"
+ ]
+}

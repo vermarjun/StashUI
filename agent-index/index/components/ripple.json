@@ -1,0 +1,72 @@
+{
+ "name": "ripple",
+ "title": "Ripple",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Ripple"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { Ripple } from \"@/components/ui/ripple\";\n\nexport default function Demo() {\n  return <Ripple />;\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/ripple.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ripple.json",
+ "preview": "https://stashui.vercel.app/c/ripple",
+ "dupe_group": "ripple",
+ "alternatives": [
+  {
+   "name": "inspira-ripple",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Concentric circles pulse outward from center with staggered timing.",
+ "description": "Renders expanding circles from a center point with staggered animation delays and fading opacity. CSS-animated loops continuously; positioned absolutely and masks to transparent at bottom.",
+ "use_when": "A background effect behind a focal point or button to draw attention without blocking interaction.",
+ "avoid_when": "When you need responsiveness to user input — the ripple loops on its own and cannot pause or reverse.",
+ "a11y": "Purely decorative; uses pointer-events-none so interactions pass through to elements below. No focus or keyboard handling.",
+ "props": [
+  {
+   "name": "mainCircleSize",
+   "type": "number",
+   "default": "210",
+   "required": false
+  },
+  {
+   "name": "mainCircleOpacity",
+   "type": "number",
+   "default": "0.24",
+   "required": false
+  },
+  {
+   "name": "numCircles",
+   "type": "number",
+   "default": "8",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "section-background",
+  "decoration"
+ ]
+}

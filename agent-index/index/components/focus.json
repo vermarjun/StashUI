@@ -1,0 +1,83 @@
+{
+ "name": "focus",
+ "title": "Word Focus Effect",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Focus"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { Focus } from \"@/components/ui/focus\";\n\nexport default function FocusDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-12 p-12 bg-neutral-950 min-h-[300px]\">\n      <Focus\n        sentence=\"Build Beautiful Interfaces\"\n        borderColor=\"#06b6d4\"\n        animationDuration={0.5}\n        pauseBetweenAnimations={1.5}\n      />\n      <Focus\n        sentence=\"Hover Each Word\"\n        manualMode\n        borderColor=\"#a855f7\"\n        blurAmount={4}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/focus.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/focus.json",
+ "preview": "https://stashui.vercel.app/c/focus",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Words blur and sharpen in sequence with an animated corner-bracket highlight.",
+ "description": "Splits text into words and cycles focus with a glowing corner-bracket element animating to each. Focused word is sharp, others blur. Can cycle automatically or respond to hover.",
+ "use_when": "A heading wants to emphasize words sequentially with visual hierarchy and sci-fi aesthetic.",
+ "avoid_when": "When all words need simultaneous readability.",
+ "a11y": "All words remain in DOM; blur is visual only. Readable in any order.",
+ "props": [
+  {
+   "name": "sentence",
+   "type": "string",
+   "default": "\"Inspira Focus\"",
+   "required": false
+  },
+  {
+   "name": "manualMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "blurAmount",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "borderColor",
+   "type": "string",
+   "default": "\"green\"",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "pauseBetweenAnimations",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

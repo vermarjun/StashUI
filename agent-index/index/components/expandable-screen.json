@@ -1,0 +1,101 @@
+{
+ "name": "expandable-screen",
+ "title": "Expandable Screen",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "ExpandableScreen",
+  "ExpandableScreenTrigger",
+  "ExpandableScreenContent",
+  "ExpandableScreenBackground"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  ExpandableScreen,\n  ExpandableScreenTrigger,\n  ExpandableScreenContent,\n} from \"@/components/ui/expandable-screen\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[480px]\">\n      <ExpandableScreen animationDuration={0.35}>\n        <ExpandableScreenTrigger>\n          <div className=\"group flex flex-col items-start gap-3 w-72 rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer transition-shadow hover:shadow-md\">\n            <img\n              src=\"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600\"\n              alt=\"Preview\"\n              className=\"w-full h-36 object-cover rounded-xl\"\n            />\n            <div>\n              <h3 className=\"font-semibold text-foreground text-base\">\n                Expand to Full Screen\n              </h3>\n              <p className=\"text-sm text-muted-foreground mt-0.5\">\n                Click this card to open an immersive view\n              </p>\n            </div>\n            <span className=\"text-xs font-medium text-primary\">\n              Tap to expand →\n            </span>\n          </div>\n        </ExpandableScreenTrigger>\n\n        <ExpandableScreenContent className=\"bg-neutral-900 flex flex-col\">\n          <div className=\"flex flex-col items-center justify-center h-full gap-6 px-8 text-center\">\n            <img\n              src=\"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200\"\n              alt=\"Full view\"\n              className=\"w-full max-w-2xl rounded-2xl object-cover max-h-64\"\n            />\n            <div className=\"text-white\">\n              <h2 className=\"text-3xl font-bold mb-3\">Full Screen Experience</h2>\n              <p className=\"text-neutral-300 max-w-md leading-relaxed\">\n                This panel morphed from the card. Press the × button or\n                Escape to collapse back.\n              </p>\n            </div>\n            <button\n              className=\"mt-2 px-6 py-2.5 rounded-full bg-white text-neutral-900 font-medium text-sm hover:bg-neutral-100 transition-colors\"\n              onClick={(e) => e.stopPropagation()}\n            >\n              Get Started\n            </button>\n          </div>\n        </ExpandableScreenContent>\n      </ExpandableScreen>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/expandable-screen.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/expandable-screen.json",
+ "preview": "https://stashui.vercel.app/c/expandable-screen",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card morphs into full-screen modal with smooth layout animation.",
+ "description": "An ExpandableScreen using Framer Motion; trigger card animates into full-screen content with customizable animation duration; includes close button.",
+ "use_when": "Creating immersive card-to-fullscreen experiences like image galleries, portfolios, or modal reveals.",
+ "avoid_when": "For simple modals without animation — use shadcn Dialog to reduce bundle size.",
+ "a11y": "Close button has aria-label; body overflow locked when expanded; click outside or close button collapses.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultExpanded",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onExpandChange",
+   "type": "(expanded: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "layoutId",
+   "type": "string",
+   "default": "\"expandable-card\"",
+   "required": false
+  },
+  {
+   "name": "triggerRadius",
+   "type": "string",
+   "default": "\"100px\"",
+   "required": false
+  },
+  {
+   "name": "contentRadius",
+   "type": "string",
+   "default": "\"24px\"",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "lockScroll",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

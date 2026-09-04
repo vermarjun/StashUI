@@ -1,0 +1,96 @@
+{
+ "name": "orbiting-circles",
+ "title": "Orbiting Circles",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "OrbitingCircles"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { OrbitingCircles } from \"@/components/ui/orbiting-circles\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden\">\n      {/* Inner orbit — faster, reverse direction */}\n      <OrbitingCircles radius={90} duration={18} reverse iconSize={32} speed={1.2}>\n        <span className=\"flex h-8 w-8 items-center justify-center rounded-full bg-violet-500 text-white text-xs font-bold shadow\">A</span>\n        <span className=\"flex h-8 w-8 items-center justify-center rounded-full bg-sky-500 text-white text-xs font-bold shadow\">B</span>\n        <span className=\"flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-white text-xs font-bold shadow\">C</span>\n      </OrbitingCircles>\n\n      {/* Outer orbit — slower, forward */}\n      <OrbitingCircles radius={170} duration={28} iconSize={36} speed={0.9}>\n        <span className=\"flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white text-xs font-bold shadow\">D</span>\n        <span className=\"flex h-9 w-9 items-center justify-center rounded-full bg-amber-500 text-white text-xs font-bold shadow\">E</span>\n        <span className=\"flex h-9 w-9 items-center justify-center rounded-full bg-indigo-500 text-white text-xs font-bold shadow\">F</span>\n        <span className=\"flex h-9 w-9 items-center justify-center rounded-full bg-teal-500 text-white text-xs font-bold shadow\">G</span>\n      </OrbitingCircles>\n\n      {/* Hub */}\n      <span className=\"absolute flex h-14 w-14 items-center justify-center rounded-full bg-background border shadow-lg text-muted-foreground text-sm font-semibold\">\n        Hub\n      </span>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/orbiting-circles.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/orbiting-circles.json",
+ "preview": "https://stashui.vercel.app/c/orbiting-circles",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Multiple circles orbit around a center point with configurable speed and…",
+ "description": "Renders child circles positioned equidistantly around an orbit. Each child circles the center point with adjustable duration, speed, radius, and optional visual path.",
+ "use_when": "Data hubs, team structures, or interconnected concept displays where orbital arrangement visualizes relationships.",
+ "avoid_when": "Accessibility-critical contexts where motion might distract or confuse users.",
+ "a11y": "Pure orbital animation; semantic content and keyboard access depend on child elements.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute inset-0 size-full\"",
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "160",
+   "required": false
+  },
+  {
+   "name": "path",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "iconSize",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "hero"
+ ]
+}

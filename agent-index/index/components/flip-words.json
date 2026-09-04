@@ -1,0 +1,75 @@
+{
+ "name": "flip-words",
+ "title": "Flip Words",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "FlipWords"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { FlipWords } from \"@/components/ui/flip-words\";\n\nexport default function Demo() {\n  const words = [\"beautiful\", \"modern\", \"powerful\", \"elegant\", \"stunning\"];\n\n  return (\n    <div className=\"w-full max-w-2xl mx-auto flex items-center justify-center py-16\">\n      <div className=\"text-4xl font-normal text-neutral-600 dark:text-neutral-400\">\n        Build <FlipWords words={words} className=\"text-black dark:text-white font-bold\" />\n        interfaces\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/flip-words.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/flip-words.json",
+ "preview": "https://stashui.vercel.app/c/flip-words",
+ "dupe_group": "flipwords",
+ "alternatives": [
+  {
+   "name": "inspira-flip-words",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Words cycle with staggered letter entry and exit animations.",
+ "description": "Cycles through a list of words with letters and sub-words animating in staggered fashion. Each word's letters blur and fade in, then the entire word blurs out and scales up before the next word appears.",
+ "use_when": "Inline word swaps with engaging entrance/exit choreography, like in taglines or feature lists.",
+ "avoid_when": "When word list changes frequently or readability is paramount.",
+ "a11y": "Current word is fully rendered and readable; animations are visual transitions.",
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

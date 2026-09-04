@@ -1,0 +1,81 @@
+{
+ "name": "TiltedCard-TS-TW",
+ "title": "Tilted Card",
+ "category": "cards",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "TiltedCard"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "3d",
+  "motion",
+  "2 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/TiltedCard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap gap-12 items-center justify-center p-8\">\n      <Cmp\n        imageSrc=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80\"\n        altText=\"Mountain landscape\"\n        containerHeight=\"320px\"\n        imageHeight=\"300px\"\n        imageWidth=\"220px\"\n        captionText=\"Mountains · Unsplash\"\n      />\n      <Cmp\n        imageSrc=\"https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80\"\n        altText=\"Starry night\"\n        captionText=\"Starry Night · Unsplash\"\n        containerHeight=\"320px\"\n        imageHeight=\"300px\"\n        imageWidth=\"220px\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/TiltedCard.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/TiltedCard-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/TiltedCard-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card with image that tilts in 3D space following cursor position.",
+ "description": "A card containing an image that rotates in 3D based on mouse position. Responds to cursor movement for tilt angles. Shows a caption below the image. Responsive height and width.",
+ "use_when": "Portfolio galleries, product showcases, or testimonial sections where 3D interactivity enhances visual appeal.",
+ "avoid_when": "Accessibility-focused sites or touch-only platforms — 3D transform doesn't convey information.",
+ "a11y": "Image has alt text. Caption is text content. Tilt effect is visual only.",
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "altText",
+   "type": "string",
+   "default": "'Tilted card image'",
+   "required": false
+  },
+  {
+   "name": "captionText",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "containerHeight",
+   "type": "CSSProperties['height']",
+   "default": "'300px'",
+   "required": false
+  },
+  {
+   "name": "containerWidth",
+   "type": "CSSProperties['width']",
+   "default": "'100%'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "name": "components-community-flip-card",
+ "title": "Flip Card",
+ "category": "cards",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "FlipCard"
+ ],
+ "npm_deps": [
+  "motion",
+  "class-variance-authority",
+  "lucide-react"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d",
+  "motion",
+  "heavy"
+ ],
+ "usage": "\"use client\";\n\nimport { FlipCard } from \"@/components/ui/components-community-flip-card\";\n\nconst DEMO_DATA = {\n  name: \"Alex Rivera\",\n  username: \"alexrivera\",\n  image: \"https://api.dicebear.com/9.x/avataaars/svg?seed=alexrivera\",\n  bio: \"Full-stack engineer & open-source contributor. Building tools that make developers' lives easier.\",\n  stats: {\n    following: 312,\n    followers: 4800,\n    posts: 127,\n  },\n  socialLinks: {\n    linkedin: \"https://linkedin.com\",\n    github: \"https://github.com\",\n    twitter: \"https://twitter.com\",\n  },\n};\n\nexport default function FlipCardDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[320px] w-full\">\n      <FlipCard data={DEMO_DATA} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-community-flip-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-community-flip-card.json",
+ "preview": "https://stashui.vercel.app/c/components-community-flip-card",
+ "dupe_group": "flipcard",
+ "alternatives": [
+  {
+   "name": "flip-card",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Profile card that flips on hover/click to reveal stats and social links.",
+ "description": "A card displaying front (name, image, bio) and back (stats, social links) sides. Flips on hover (desktop) or click (touch). Shows following, followers, and posts. Includes social media links.",
+ "use_when": "Team pages, community showcases, or profile networks where flip-reveal adds engagement.",
+ "avoid_when": "When all info should be immediately visible — flipping hides content.",
+ "a11y": "Flip mechanism should be keyboard-accessible. Social links are proper anchors.",
+ "props": [
+  {
+   "name": "data",
+   "type": "FlipCardData",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "avatar"
+ ]
+}

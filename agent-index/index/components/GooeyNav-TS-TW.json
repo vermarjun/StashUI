@@ -1,0 +1,95 @@
+{
+ "name": "GooeyNav-TS-TW",
+ "title": "GooeyNav",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "GooeyNav"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport GooeyNav from \"@/components/ui/GooeyNav\";\n\nconst items = [\n  { label: \"Home\", href: \"#home\" },\n  { label: \"About\", href: \"#about\" },\n  { label: \"Work\", href: \"#work\" },\n  { label: \"Contact\", href: \"#contact\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-24 bg-gray-900 rounded-xl p-8\">\n      <GooeyNav items={items} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/GooeyNav.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/GooeyNav-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/GooeyNav-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Navigation with gooey background fill and particle burst effect on click.",
+ "description": "A creative navigation menu where clicking an item triggers a particle burst animation using mathematical positioning and noise. Active item gets a smooth gooey background pill with custom easing. Text color inverts on active state.",
+ "use_when": "You want an eye-catching, premium navigation that delights users with playful micro-interactions.",
+ "avoid_when": "Accessibility-critical contexts — custom keyboard support is basic; particle effects may distract.",
+ "a11y": "Keyboard support: Enter/Space to activate items. Custom focus handling. ResizeObserver watches for layout changes. Particles are pointer-events-none.",
+ "props": [
+  {
+   "name": "items",
+   "type": "GooeyNavItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationTime",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "particleDistances",
+   "type": "[number, number]",
+   "default": "[90, 10]",
+   "required": false
+  },
+  {
+   "name": "particleR",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "timeVariance",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "number[]",
+   "default": "[1, 2, 3, 1, 2, 3, 1, 4]",
+   "required": false
+  },
+  {
+   "name": "initialActiveIndex",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

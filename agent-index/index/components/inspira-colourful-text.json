@@ -1,0 +1,80 @@
+{
+ "name": "inspira-colourful-text",
+ "title": "Colourful Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ColourfulText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "pure",
+  "11 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ColourfulText } from \"@/components/ui/colourful-text\";\n\nexport default function ColourfulTextDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-16\">\n      <h1 className=\"text-5xl font-bold tracking-tight\">\n        <ColourfulText text=\"Hello, World!\" />\n      </h1>\n\n      <p className=\"text-2xl font-semibold\">\n        <ColourfulText\n          text=\"Build beautiful UIs\"\n          colors={[\n            \"rgb(239,68,68)\",\n            \"rgb(249,115,22)\",\n            \"rgb(234,179,8)\",\n            \"rgb(34,197,94)\",\n            \"rgb(59,130,246)\",\n            \"rgb(168,85,247)\",\n          ]}\n          duration={0.4}\n        />\n      </p>\n\n      <p className=\"text-sm text-muted-foreground\">\n        Colors shuffle every 5 seconds.\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/colourful-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-colourful-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-colourful-text",
+ "dupe_group": "colourfultext",
+ "alternatives": [
+  {
+   "name": "colourful-text",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 10
+  }
+ ],
+ "blurb": "Characters pulse and shift through a color palette continuously.",
+ "description": "Renders text with each character animated to cycle through a color array every 5 seconds, with a subtle blur and scale pulse. Non-interactive.",
+ "use_when": "Decorative headline or accent text that should feel alive without interaction.",
+ "avoid_when": "Body text or accessibility-critical content — continuous animation is hard to read and respects no motion preferences.",
+ "a11y": "Renders plain text but runs unguarded continuous animation. No prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "DEFAULT_COLORS",
+   "required": false
+  },
+  {
+   "name": "startColor",
+   "type": "string",
+   "default": "\"rgb(255,255,255)\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "section-background"
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "name": "inspira-warp-background",
+ "title": "Warp Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "WarpBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3d",
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { WarpBackground } from \"@/components/ui/warp-background\";\n\nexport default function WarpBackgroundDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden flex items-center justify-center bg-neutral-950 p-8\">\n      <WarpBackground\n        className=\"w-full max-w-2xl text-center\"\n        beamsPerSide={4}\n        beamSize={5}\n        beamDuration={4}\n        perspective={200}\n      >\n        <h1 className=\"text-4xl font-bold text-white\">Warp Background</h1>\n        <p className=\"mt-4 text-neutral-400\">\n          A perspective grid with animated light beams shooting from all sides.\n        </p>\n        <button className=\"mt-6 rounded-lg bg-white px-6 py-2 font-semibold text-black transition hover:bg-white/90\">\n          Explore\n        </button>\n      </WarpBackground>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/warp-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-warp-background.json",
+ "preview": "https://stashui.vercel.app/c/inspira-warp-background",
+ "dupe_group": "warpbackground",
+ "alternatives": [
+  {
+   "name": "warp-background",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Coloured light beams streak downward with perspective, creating a warp effect.",
+ "description": "Motion-based beams with randomized hue animate downward through a perspective viewport. Supports customizable beam count per side and animation speed.",
+ "use_when": "A dramatic, immersive background for hero sections or pages with a hyperspace or warp theme.",
+ "avoid_when": "Motion-sensitive users — continuous downward beam animation may cause discomfort. No prefers-reduced-motion guard.",
+ "a11y": "Wrapper component with content slot; focus and keyboard behaviour come from overlaid children.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute top-0 left-0 size-full overflo",
+   "required": false
+  },
+  {
+   "name": "perspective",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "beamsPerSide",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "beamSize",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "beamDelayMax",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "beamDelayMin",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "beamDuration",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "gridColor",
+   "type": "string",
+   "default": "\"hsl(var(--border))\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

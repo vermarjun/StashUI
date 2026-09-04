@@ -1,0 +1,83 @@
+{
+ "name": "macbook-scroll",
+ "title": "Macbook Scroll",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "MacbookScroll",
+  "Lid",
+  "Trackpad",
+  "Keypad",
+  "KBtn",
+  "SpeakerGrid",
+  "OptionKey"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 32,
+ "flags": [
+  "3d",
+  "motion",
+  "32 colors"
+ ],
+ "usage": "import { MacbookScroll } from \"@/components/ui/macbook-scroll\";\n\nexport default function Demo() {\n  return <MacbookScroll />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/macbook-scroll.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/macbook-scroll.json",
+ "preview": "https://stashui.vercel.app/c/macbook-scroll",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D MacBook rotates into view on scroll, lid opening to reveal a display panel.",
+ "description": "Renders a 3D MacBook with animated opening on scroll. The device scales, rotates, and opens via scroll progress, revealing a keyboard and trackpad below.",
+ "use_when": "Product showcases or hero sections where scroll-triggered device opening creates dramatic visual impact.",
+ "avoid_when": "Non-scroll contexts or mobile designs — scroll-driven animations and 3D perspective may not render as intended.",
+ "a11y": "Scroll-driven animation with no keyboard interaction. Alt text for image content is used if provided; 3D effect itself is not announced.",
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{src}",
+   "required": false
+  },
+  {
+   "name": "showGradient",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string | React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "badge",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "name": "Carousel-TS-TW",
+ "title": "Animated Card Carousel",
+ "category": "carousels",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Carousel"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12",
+  "react-icons@^5.5.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 18,
+ "flags": [
+  "3d",
+  "motion",
+  "18 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/Carousel\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Carousel-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Carousel-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D perspective carousel with drag navigation and optional autoplay looping.",
+ "description": "Animated carousel with draggable cards that rotate in 3D perspective as they scroll. Supports autoplay with optional pause on hover, looping mode for infinite scroll, and configurable item width. Cards snap to spring physics.",
+ "use_when": "Showcasing multiple features or items with interactive navigation and 3D visual depth.",
+ "avoid_when": "Static content; the component is best for interactive item browsers.",
+ "a11y": "Keyboard navigation not implemented; drag/swipe only. Focus handling depends on card content.",
+ "props": [
+  {
+   "name": "items",
+   "type": "CarouselItem[]",
+   "default": "DEFAULT_ITEMS",
+   "required": false
+  },
+  {
+   "name": "baseWidth",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoplayDelay",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "round",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "testimonial",
+  "logo-wall"
+ ]
+}

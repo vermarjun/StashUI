@@ -1,0 +1,71 @@
+{
+ "name": "linear-modal",
+ "title": "Linear Modal",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Dialog",
+  "DialogClose",
+  "DialogContainer",
+  "DialogContent",
+  "DialogDescription",
+  "DialogImage",
+  "DialogSubtitle",
+  "DialogTitle",
+  "DialogTrigger"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  Dialog,\n  DialogClose,\n  DialogContainer,\n  DialogContent,\n  DialogDescription,\n  DialogImage,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/linear-modal\";\nimport { Plus } from \"lucide-react\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full items-center justify-center\">\n      <Dialog\n        transition={{\n          type: \"spring\",\n          bounce: 0.05,\n          duration: 0.5,\n        }}\n      >\n        <DialogTrigger\n          style={{ borderRadius: \"12px\" }}\n          className=\"flex w-64 flex-col overflow-hidden border dark:bg-black bg-white cursor-pointer\"\n        >\n          <DialogImage\n            src=\"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800\"\n            alt=\"Mountain landscape\"\n            className=\"h-44 w-full object-cover\"\n          />\n          <div className=\"flex grow flex-row items-end justify-between p-3\">\n            <div>\n              <DialogTitle className=\"text-base font-semibold text-primary\">\n                Mountain Vista\n              </DialogTitle>\n              <DialogDescription\n                disableLayoutAnimation\n                variants={{\n                  initial: { opacity: 0 },\n                  animate: { opacity: 1 },\n                  exit: { opacity: 0 },\n                }}\n              >\n                <span className=\"text-xs text-muted-foreground\">\n                  Click to expand\n                </span>\n              </DialogDescription>\n            </div>\n            <button className=\"p-2 bg-neutral-200 dark:bg-neutral-800 rounded-lg\">\n              <Plus className=\"w-4 h-4\" />\n            </button>\n          </div>\n        </DialogTrigger>\n\n        <DialogContainer className=\"grid place-items-center h-full\">\n          <DialogContent\n            style={{ borderRadius: \"24px\" }}\n            className=\"h-fit mx-auto border\"\n          >\n            <div className=\"flex flex-col relative dark:bg-neutral-900 bg-neutral-100 w-[480px] max-w-[90vw] overflow-hidden\">\n              <DialogImage\n                src=\"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800\"\n                alt=\"Mountain landscape\"\n                className=\"h-64 w-full object-cover\"\n              />\n              <div className=\"p-6\">\n                <DialogTitle className=\"text-3xl font-bold dark:text-white text-zinc-900\">\n                  Mountain Vista\n                </DialogTitle>\n                <DialogDescription\n                  disableLayoutAnimation\n                  variants={{\n                    initial: { opacity: 0, scale: 0.9, y: -20 },\n                    animate: { opacity: 1, scale: 1, y: 0 },\n                    exit: { opacity: 0, scale: 0.9, y: -20 },\n                  }}\n                >\n                  <p className=\"mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed\">\n                    A breathtaking alpine panorama captured at golden hour. The\n                    layered ridgelines fade into misty blue distance, offering a\n                    sense of boundless scale and serenity.\n                  </p>\n                  <div className=\"flex gap-2 mt-4\">\n                    <button className=\"px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg text-sm font-medium\">\n                      Download\n                    </button>\n                    <button className=\"px-4 py-2 border rounded-lg text-sm font-medium\">\n                      Share\n                    </button>\n                  </div>\n                </DialogDescription>\n              </div>\n              <DialogClose className=\"text-zinc-800 dark:text-zinc-100 bg-neutral-200 dark:bg-neutral-800 p-2 rounded-lg\" />\n            </div>\n          </DialogContent>\n        </DialogContainer>\n      </Dialog>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/linear-modal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/linear-modal.json",
+ "preview": "https://stashui.vercel.app/c/linear-modal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Modal that expands from a card with spring animation and layout morphing.",
+ "description": "A Dialog using Framer Motion with layoutId; expands from trigger card to full-screen modal with spring animation; includes image, title, description.",
+ "use_when": "Creating card-to-modal experiences with smooth layout transitions and spring animations.",
+ "avoid_when": "For simple modals without animation or layout morphing — use shadcn Dialog instead.",
+ "a11y": "Escape key closes modal; Tab cycles through focusables; first focusable auto-focused on open; body overflow locked.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

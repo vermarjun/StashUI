@@ -1,0 +1,120 @@
+{
+ "name": "ai-instructions",
+ "title": "AI Instructions Manager",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "Instructions",
+  "InstructionsTrigger",
+  "InstructionsContent",
+  "InstructionsSearch",
+  "InstructionsList",
+  "InstructionsEmpty",
+  "InstructionsGroup",
+  "InstructionsSeparator",
+  "InstructionsItem",
+  "InstructionsItemTitle",
+  "InstructionsItemDescription",
+  "InstructionsHoverCard",
+  "InstructionsFooter",
+  "InstructionsCreateTrigger",
+  "InstructionsCreateDialog",
+  "InstructionsWidget"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react"
+ ],
+ "registry_deps": [
+  "button",
+  "command",
+  "dialog",
+  "hover-card",
+  "input",
+  "popover",
+  "textarea"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport {\n  Instructions,\n  InstructionsTrigger,\n  InstructionsContent,\n  InstructionsSearch,\n  InstructionsList,\n  InstructionsEmpty,\n  InstructionsGroup,\n  InstructionsItem,\n  InstructionsFooter,\n  InstructionsCreateTrigger,\n  InstructionsCreateDialog,\n  type Instruction,\n} from \"@/components/ui/ai-instructions\"\n\nconst PRESET_INSTRUCTIONS: Instruction[] = [\n  {\n    id: \"concise\",\n    title: \"Be Concise\",\n    description: \"Keep responses short and to the point\",\n    content: \"Always provide the shortest possible answer that fully addresses the question. Avoid filler phrases.\",\n  },\n  {\n    id: \"code-comments\",\n    title: \"Add Code Comments\",\n    description: \"Annotate all code examples with inline comments\",\n    content: \"Every function and non-obvious line should have a brief comment explaining its purpose.\",\n  },\n  {\n    id: \"examples\",\n    title: \"Include Examples\",\n    description: \"Show a working example for every concept\",\n    content: \"After explaining a concept, always follow up with a concrete, runnable code or real-world example.\",\n  },\n  {\n    id: \"formal\",\n    title: \"Formal Tone\",\n    description: \"Use professional, formal language\",\n    content: \"Avoid contractions and casual language. Write in a neutral, professional register.\",\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full min-h-[480px] gap-6 p-8\">\n      <div className=\"flex flex-col items-center gap-2 text-center\">\n        <p className=\"text-sm text-muted-foreground\">\n          Customize how the AI responds\n        </p>\n        <Instructions instructions={PRESET_INSTRUCTIONS} defaultValue={[\"concise\"]}>\n          <InstructionsTrigger label=\"Instructions\" />\n          <InstructionsContent>\n            <InstructionsSearch />\n            <InstructionsList>\n              <InstructionsEmpty />\n              <InstructionsGroup heading=\"Presets\">\n                {PRESET_INSTRUCTIONS.map((instruction) => (\n                  <InstructionsItem\n                    key={instruction.id}\n                    instruction={instruction}\n                  />\n                ))}\n              </InstructionsGroup>\n            </InstructionsList>\n            <InstructionsFooter>\n              <InstructionsCreateTrigger />\n            </InstructionsFooter>\n          </InstructionsContent>\n          <InstructionsCreateDialog />\n        </Instructions>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/ai-instructions.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ai-instructions.json",
+ "preview": "https://stashui.vercel.app/c/ai-instructions",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Searchable instruction picker with ability to create custom AI prompt modifiers.",
+ "description": "A component system for managing AI instructions with a popover interface. Includes search, preset groups, create dialog, and state management for active instructions.",
+ "use_when": "Building AI interfaces where users customize prompts or system instructions before sending.",
+ "avoid_when": "For simple button toggles — this provides a full UI for instruction management.",
+ "a11y": "Uses dialog and popover primitives with command palette search. Keyboard navigation via Command component.",
+ "props": [
+  {
+   "name": "value",
+   "type": "string[]",
+   "default": "{instruction.title}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "instructions",
+   "type": "Instruction[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onInstructionsChange",
+   "type": "(instructions: Instruction[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": "{createDialogOpen}",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": "{handleOpenChange}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": "\"No instructions found.\"",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "secondary-cta",
+  "form-field"
+ ]
+}

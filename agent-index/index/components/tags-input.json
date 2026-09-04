@@ -1,0 +1,78 @@
+{
+ "name": "tags-input",
+ "title": "Tags Input",
+ "category": "inputs",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TagsInput"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "pure",
+  "10 colors"
+ ],
+ "usage": "'use client';\nimport { useState } from 'react';\nimport { TagsInput } from '@/components/ui/tags-input';\n\nexport default function Demo() {\n  const [tags, setTags] = useState<string[]>(['React', 'TypeScript', 'Tailwind']);\n\n  return (\n    <div className=\"w-full max-w-md mx-auto p-6\">\n      <label className=\"block text-sm font-medium text-gray-700 mb-2\">Skills</label>\n      <TagsInput tags={tags} setTags={setTags} editTag={true} />\n      <p className=\"mt-3 text-xs text-gray-500\">\n        Press Enter or comma to add a tag. Click a tag to edit it.\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/tags-input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tags-input.json",
+ "preview": "https://stashui.vercel.app/c/tags-input",
+ "dupe_group": "tagsinput",
+ "alternatives": [
+  {
+   "name": "tags-input-no-edit",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Tag input with inline editing and Add-via-Enter/comma functionality.",
+ "description": "A controlled tags input that displays tags as clickable pills, supports inline editing, and allows adding tags by pressing Enter or comma.",
+ "use_when": "Building forms for skills, interests, or any list of string values where users need to add, remove, and edit items.",
+ "avoid_when": "When tags are read-only or when a different UI pattern is preferred.",
+ "a11y": "Tags are clickable for editing, delete button uses click handler. Interactive elements work but lack explicit aria labels.",
+ "props": [
+  {
+   "name": "tags",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "setTags",
+   "type": "React.Dispatch<React.SetStateAction<string[]>>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "editTag",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

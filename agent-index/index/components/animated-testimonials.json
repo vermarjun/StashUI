@@ -1,0 +1,71 @@
+{
+ "name": "animated-testimonials",
+ "title": "Animated Testimonials",
+ "category": "testimonials",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "AnimatedTestimonials"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 14,
+ "flags": [
+  "motion",
+  "14 colors"
+ ],
+ "usage": "\"use client\";\nimport { AnimatedTestimonials } from \"@/components/ui/animated-testimonials\";\n\nconst testimonials = [\n  {\n    quote:\n      \"This product has completely transformed how our team collaborates. The intuitive design and powerful features make every workflow effortless.\",\n    name: \"Sarah Johnson\",\n    designation: \"Product Manager at TechCorp\",\n    src: \"https://picsum.photos/seed/t1/500/500\",\n  },\n  {\n    quote:\n      \"I've tried many tools over the years, but nothing comes close to the simplicity and effectiveness of this platform. Truly outstanding.\",\n    name: \"Michael Chen\",\n    designation: \"Lead Engineer at StartupXYZ\",\n    src: \"https://picsum.photos/seed/t2/500/500\",\n  },\n  {\n    quote:\n      \"Outstanding customer support and a product that truly delivers on its promises. Highly recommended for any growing team.\",\n    name: \"Emily Rodriguez\",\n    designation: \"CTO at InnovateCo\",\n    src: \"https://picsum.photos/seed/t3/500/500\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl\">\n      <AnimatedTestimonials testimonials={testimonials} autoplay={true} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/animated-testimonials.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-testimonials.json",
+ "preview": "https://stashui.vercel.app/c/animated-testimonials",
+ "dupe_group": "animatedtestimonials",
+ "alternatives": [
+  {
+   "name": "inspira-animated-testimonials",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 14
+  }
+ ],
+ "blurb": "Carousel of testimonials with rotating images and word-by-word text reveal.",
+ "description": "Side-by-side layout with animated image carousel on left (rotating with random tilt, scale) and testimonial text on right. Text words animate in with blur effect. Includes previous/next buttons and optional autoplay.",
+ "use_when": "Showcasing customer testimonials with visual interest via stacked image animation and sequential text reveal.",
+ "avoid_when": "When motion should be minimal — multiple animation layers run continuously.",
+ "a11y": "Images have alt text (name). Navigation buttons should have aria-labels (not currently present). No prefers-reduced-motion guard for animations.",
+ "props": [
+  {
+   "name": "testimonials",
+   "type": "Array<{quote: string; name: string; designation: string; src: string}>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "testimonial"
+ ]
+}

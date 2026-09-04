@@ -1,0 +1,80 @@
+{
+ "name": "proxy-admin",
+ "title": "Proxy Admin",
+ "category": "misc",
+ "origin": "StashUI",
+ "origin_short": "own",
+ "exports": [
+  "ProxyAdmin"
+ ],
+ "npm_deps": [
+  "sonner",
+  "lucide-react"
+ ],
+ "registry_deps": [
+  "badge",
+  "button",
+  "card",
+  "input",
+  "label",
+  "select",
+  "tabs"
+ ],
+ "css": false,
+ "hardcoded_colors": 72,
+ "flags": [
+  "72 colors"
+ ],
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\nimport { ProxyAdmin } from \"@/components/ui/proxy-admin\";\n\n// A self-contained demo: the dashboard normally talks to a live proxykit\n// backend over REST, but here we inject a mock `fetcher` that returns canned\n// responses so the preview renders a fully-populated control panel with no\n// server attached. The shapes below match the proxykit gateway API exactly.\n\nfunction json(data: unknown): Response {\n  return new Response(JSON.stringify(data), {\n    status: 200,\n    headers: { \"Content-Type\": \"application/json\" },\n  });\n}\n\nconst sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));\n\nfunction buildStatus() {\n  const now = Date.now();\n  const iso = (offsetMs: number) => new Date(now + offsetMs).toISOString();\n  return {\n    internalKeySet: true,\n    proxyBase: \"https://api.myapp.com/api/proxy/gateway/proxy\",\n    providers: [\n      {\n        provider: \"codex\",\n        baseURL: \"https://chatgpt.com/backend-api/codex\",\n        authKind: \"oauth-pkce\",\n        configured: true,\n        maskedToken: \"sk-proj-…a9F2\",\n        hasRefreshToken: true,\n        hasAccountId: true,\n        expiresAt: iso(6 * 60 * 60 * 1000), // 6h from now\n        updatedAt: iso(-12 * 60 * 1000), // 12m ago\n        updatedBy: \"admin\",\n        models: [\n          {\n            id: \"gpt-5-codex\",\n            label: \"gpt-5-codex\",\n            think: { reasoning_effort: \"high\", max_tokens: 4096 },\n            noThink: { reasoning_effort: \"low\", max_tokens: 1024 },\n          },\n          { id: \"gpt-5\", label: \"gpt-5\" },\n          { id: \"o4-mini\", label: \"o4-mini\" },\n        ],\n      },\n      {\n        provider: \"opencode\",\n        baseURL: \"https://opencode.ai/v1\",\n        authKind: \"static\",\n        configured: true,\n        maskedToken: \"oc-live-…4B1a\",\n        hasRefreshToken: false,\n        hasAccountId: false,\n        expiresAt: null,\n        updatedAt: iso(-2 * 60 * 60 * 1000), // 2h ago\n        updatedBy: \"admin\",\n        models: [\n          { id: \"claude-opus-4-8\", label: \"claude-opus-4-8\" },\n          { id: \"claude-sonnet-4-6\", label: \"claude-sonnet-4-6\" },\n        ],\n      },\n    ],\n  };\n}\n\nconst mockFetcher: typeof fetch = async (input, init) => {\n  const url = typeof input === \"string\" ? input : input.toString();\n  const method = (init?.method ?? \"GET\").toUpperCase();\n\n  if (url.includes(\"/admin/gateway/status\")) {\n    await sleep(450); // let the loading skeleton flash, then populate\n    return json(buildStatus());\n  }\n  if (url.includes(\"/admin/gateway/test\")) {\n    await sleep(600); // simulate a round-trip\n    return json({\n      success: true,\n      provider: \"codex\",\n      model: \"gpt-5-codex\",\n      latencyMs: 612,\n      httpStatus: 200,\n      reply: \"API OK\",\n      finishReason: \"stop\",\n      usage: { prompt_tokens: 14, completion_tokens: 3, total_tokens: 17 },\n      raw: {\n        id: \"chatcmpl-demo\",\n        object: \"chat.completion\",\n        choices: [\n          { index: 0, message: { role: \"assistant\", content: \"API OK\" }, finish_reason: \"stop\" },\n        ],\n      },\n    });\n  }\n  if (url.includes(\"/start-auth\")) {\n    return json({ oauthUrl: \"https://example.com/oauth/authorize?demo=1\" });\n  }\n  if (url.includes(\"/refresh\")) {\n    await sleep(400);\n    return json({ success: true, maskedToken: \"sk-proj-…b7C3\" });\n  }\n  if (method === \"PUT\" && url.includes(\"/admin/gateway/providers/\")) {\n    return json({ success: true, provider: url.split(\"/\").pop() });\n  }\n  return new Response(\"Not mocked\", { status: 404 });\n};\n\nexport default function ProxyAdminDemo() {\n  return (\n    <div className=\"mx-auto w-full max-w-4xl p-6\">\n      <ProxyAdmin basePath=\"/api/proxy\" fetcher={mockFetcher} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/dashboards/proxy-admin.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/proxy-admin.json",
+ "preview": "https://stashui.vercel.app/c/proxy-admin",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Dashboard for managing LLM provider credentials and model configuration.",
+ "description": "A control panel that connects to a proxykit API to display provider status, manage OAuth authentication, refresh tokens, and test LLM models with custom parameters.",
+ "use_when": "Building an admin interface for LLM gateway configuration, provider auth management, or model testing.",
+ "avoid_when": "When you don't need API integration or auth flows — this component depends on a live proxykit backend.",
+ "a11y": "Semantic HTML with buttons, forms, and lists. Uses toast notifications for user feedback.",
+ "props": [
+  {
+   "name": "basePath",
+   "type": "string",
+   "default": "{basePath}",
+   "required": false
+  },
+  {
+   "name": "fetcher",
+   "type": "typeof fetch",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "getAuthHeaders",
+   "type": "() => Record<string, string> | Promise<Record<string, string>>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"inline-flex items-center gap-0.5 text-[10px] text-muted-for",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

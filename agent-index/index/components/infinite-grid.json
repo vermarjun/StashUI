@@ -1,0 +1,77 @@
+{
+ "name": "infinite-grid",
+ "title": "Infinite Grid",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "InfiniteGrid"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { InfiniteGrid } from \"@/components/ui/infinite-grid\";\nimport type { CardData } from \"@/components/ui/infinite-grid\";\n\nconst CARD_DATA: CardData[] = [\n  {\n    title: \"Mountain Sunrise\",\n    badge: \"Nature\",\n    description: \"A stunning view of the mountains at dawn.\",\n    tags: [\"landscape\", \"sunrise\", \"nature\"],\n    date: \"2024-01-15\",\n    image: \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Urban Architecture\",\n    badge: \"City\",\n    description: \"Modern skyscrapers piercing the sky.\",\n    tags: [\"city\", \"architecture\", \"modern\"],\n    date: \"2024-02-20\",\n    image: \"https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Ocean Waves\",\n    badge: \"Sea\",\n    description: \"Powerful waves crashing on the shore.\",\n    tags: [\"ocean\", \"waves\", \"beach\"],\n    date: \"2024-03-10\",\n    image: \"https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Forest Path\",\n    badge: \"Nature\",\n    description: \"A serene path through an ancient forest.\",\n    tags: [\"forest\", \"nature\", \"trees\"],\n    date: \"2024-04-05\",\n    image: \"https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Desert Dunes\",\n    badge: \"Desert\",\n    description: \"The endless beauty of sand dunes.\",\n    tags: [\"desert\", \"sand\", \"arid\"],\n    date: \"2024-05-18\",\n    image: \"https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Snowy Peaks\",\n    badge: \"Winter\",\n    description: \"Snow-capped mountains in winter.\",\n    tags: [\"snow\", \"mountains\", \"winter\"],\n    date: \"2024-06-22\",\n    image: \"https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Tropical Beach\",\n    badge: \"Beach\",\n    description: \"Crystal clear waters and white sand.\",\n    tags: [\"beach\", \"tropical\", \"sea\"],\n    date: \"2024-07-01\",\n    image: \"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Autumn Leaves\",\n    badge: \"Season\",\n    description: \"Colors of fall in the park.\",\n    tags: [\"autumn\", \"leaves\", \"fall\"],\n    date: \"2024-08-14\",\n    image: \"https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Night Sky\",\n    badge: \"Astro\",\n    description: \"Milky Way stretching across the dark sky.\",\n    tags: [\"stars\", \"milky-way\", \"night\"],\n    date: \"2024-09-30\",\n    image: \"https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Waterfall\",\n    badge: \"Water\",\n    description: \"A cascading waterfall in the jungle.\",\n    tags: [\"waterfall\", \"jungle\", \"water\"],\n    date: \"2024-10-07\",\n    image: \"https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"City Lights\",\n    badge: \"Urban\",\n    description: \"A city alive with glowing lights at night.\",\n    tags: [\"city\", \"night\", \"lights\"],\n    date: \"2024-11-11\",\n    image: \"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=300&fit=crop\",\n  },\n  {\n    title: \"Rolling Hills\",\n    badge: \"Rural\",\n    description: \"Green rolling hills under a blue sky.\",\n    tags: [\"hills\", \"green\", \"countryside\"],\n    date: \"2024-12-25\",\n    image: \"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&h=300&fit=crop\",\n  },\n];\n\nexport default function InfiniteGridDemo() {\n  return (\n    <div className=\"h-[600px] w-full overflow-hidden rounded-xl\">\n      <InfiniteGrid\n        cardData={CARD_DATA}\n        options={{\n          gridCols: 4,\n          gridRows: 3,\n          enablePostProcessing: true,\n          postProcessParams: {\n            distortionIntensity: -0.15,\n          },\n        }}\n        onTilesLoaded={() => console.log(\"Tiles loaded!\")}\n        onTileClicked={(detail) => console.log(\"Tile clicked:\", detail)}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/infinite-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/infinite-grid.json",
+ "preview": "https://stashui.vercel.app/c/infinite-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D grid of cards with click interaction, infinite panning, and shader effects.",
+ "description": "A WebGL-based card gallery that renders images in 3D space with mouse-controlled panning, distortion post-processing, and vignette effects. Emits events on tile load and click.",
+ "use_when": "Immersive media portfolios or galleries where 3D depth and interactive panning create visual impact.",
+ "avoid_when": "On low-end devices or without WebGL support. Requires explicit parent sizing or the component collapses.",
+ "a11y": "Click events dispatched via custom tile-clicked event; no native keyboard navigation or prefers-reduced-motion support in the code.",
+ "props": [
+  {
+   "name": "cardData",
+   "type": "CardData[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "options",
+   "type": "Partial<InfiniteGridOptions> | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onTilesLoaded",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onTileClicked",
+   "type": "(detail: unknown) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": "{className}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media"
+ ]
+}

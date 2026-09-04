@@ -1,0 +1,187 @@
+{
+ "name": "hover-video-player",
+ "title": "Hover Video Player",
+ "category": "media",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "HoverVideoPlayer",
+  "HoverVideoPlayerControls",
+  "HoverVideoPlayerHoverOverlay",
+  "HoverVideoPlayerPausedOverlay",
+  "HoverVideoPlayerLoadingOverlay",
+  "HoverVideoPlayerPlayPauseButton",
+  "HoverVideoPlayerVolumeControl",
+  "HoverVideoPlayerProgressBar",
+  "HoverVideoPlayerPiPButton",
+  "HoverVideoPaddingWrapper"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "button",
+  "slider"
+ ],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { HoverVideoPlayer } from \"@/components/ui/hover-video-player\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-md p-4\">\n      <div className=\"relative w-full aspect-video rounded-xl overflow-hidden\">\n        <HoverVideoPlayer\n          videoSrc=\"https://www.w3schools.com/html/mov_bbb.mp4\"\n          thumbnailSrc=\"https://picsum.photos/seed/video1/800/450\"\n          className=\"w-full h-full rounded-xl\"\n          muted\n          loop\n        />\n      </div>\n      <p className=\"text-sm text-muted-foreground mt-2 text-center\">\n        Hover to play the video\n      </p>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/hover-video-player.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hover-video-player.json",
+ "preview": "https://stashui.vercel.app/c/hover-video-player",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Plays on hover, pauses when pointer leaves or screen scrolls out.",
+ "description": "A video player that activates on hover (or touch controls on mobile), with lazy loading via intersection observer, thumbnail support, and optional picture-in-picture. Context-based state management for controls, playback, and overlay…",
+ "use_when": "Product previews or media galleries where video should reveal on interaction without autoplay complexity.",
+ "avoid_when": "When video autoplay is required, or when Vimeo SDK cannot load. Needs explicit parent sizing or aspect-ratio padding.",
+ "a11y": "Play/pause, mute, and PiP buttons have aria-labels; respects prefers-reduced-motion for overlays; keyboard accessible through button controls; touch support on mobile.",
+ "props": [
+  {
+   "name": "videoSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "thumbnailSrc",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hoverOverlay",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "pausedOverlay",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "loadingOverlay",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "playbackStartDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "restartOnPaused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "unloadVideoOnPaused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "playbackRangeStart",
+   "type": "number | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "playbackRangeEnd",
+   "type": "number | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "muted",
+   "type": "boolean",
+   "default": "{muted}",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "preload",
+   "type": "\"auto\" | \"metadata\" | \"none\"",
+   "default": "\"metadata\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onHoverStart",
+   "type": "() => void",
+   "default": "{handleHoverStart}",
+   "required": false
+  },
+  {
+   "name": "onHoverEnd",
+   "type": "() => void",
+   "default": "{handleHoverEnd}",
+   "required": false
+  },
+  {
+   "name": "enableControls",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "cropTop",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "cropBottom",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "isVimeo",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media"
+ ]
+}

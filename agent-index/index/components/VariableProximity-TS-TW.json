@@ -1,0 +1,102 @@
+{
+ "name": "VariableProximity-TS-TW",
+ "title": "Variable Proximity",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "VariableProximity"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport { useRef } from \"react\"\nimport VariableProximity from \"@/components/ui/VariableProximity\"\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null)\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex flex-col items-center justify-center gap-8 p-16 min-h-[300px] select-none\"\n      style={{ fontFamily: '\"Roboto Flex\", sans-serif' }}\n    >\n      <VariableProximity\n        label=\"Move your cursor near the letters\"\n        fromFontVariationSettings=\"'wght' 100, 'wdth' 75\"\n        toFontVariationSettings=\"'wght' 900, 'wdth' 125\"\n        containerRef={containerRef}\n        radius={120}\n        falloff=\"gaussian\"\n        className=\"text-3xl text-center leading-tight\"\n      />\n      <VariableProximity\n        label=\"Variable font proximity effect\"\n        fromFontVariationSettings=\"'wght' 200, 'wdth' 80\"\n        toFontVariationSettings=\"'wght' 800, 'wdth' 110\"\n        containerRef={containerRef}\n        radius={100}\n        falloff=\"exponential\"\n        className=\"text-2xl text-gray-500 text-center\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/VariableProximity.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/VariableProximity-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/VariableProximity-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Each letter's font variations (weight, width) change based on cursor distance…",
+ "description": "Renders text where each letter interpolates between two font-variation-settings based on distance from the cursor. Supports linear, exponential, or gaussian falloff. Requires a variable font supporting the specified axes.",
+ "use_when": "An interactive heading wants to showcase a variable font with smooth, proximity-driven transformations.",
+ "avoid_when": "Touch-only devices without cursor support or fonts without variable axes.",
+ "a11y": "Visual letters are aria-hidden; readable text is in sr-only. Animation does not interfere with content.",
+ "props": [
+  {
+   "name": "label",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fromFontVariationSettings",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "toFontVariationSettings",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerRef",
+   "type": "MutableRefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "falloff",
+   "type": "'linear' | 'exponential' | 'gaussian'",
+   "default": "'linear'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "onClick",
+   "type": "() => void",
+   "default": "{onClick}",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

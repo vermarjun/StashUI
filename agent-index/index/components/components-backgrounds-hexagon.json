@@ -1,0 +1,78 @@
+{
+ "name": "components-backgrounds-hexagon",
+ "title": "Hexagon Background",
+ "category": "backgrounds",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "HexagonBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "pure",
+  "10 colors"
+ ],
+ "usage": "import { HexagonBackground } from \"@/components/ui/components-backgrounds-hexagon\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <HexagonBackground className=\"absolute inset-0 h-full w-full\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-backgrounds-hexagon.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-backgrounds-hexagon.json",
+ "preview": "https://stashui.vercel.app/c/components-backgrounds-hexagon",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Tessellating hexagons that lighten on hover.",
+ "description": "Renders a responsive grid of clip-path hexagons that fills the viewport. Each hexagon lightens on hover with a smooth transition.",
+ "use_when": "A geometric background that needs subtle interaction to draw attention to hovered areas.",
+ "avoid_when": "When the viewport is very small or performance is critical — the grid recalculates on resize and may be heavy on mobile.",
+ "a11y": "Passive background wrapper; focus and keyboard behaviour come from children. No prefers-reduced-motion guard on hover effects.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hexagonProps",
+   "type": "React.ComponentProps<'div'>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hexagonSize",
+   "type": "number",
+   "default": "75",
+   "required": false
+  },
+  {
+   "name": "hexagonMargin",
+   "type": "number",
+   "default": "3",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

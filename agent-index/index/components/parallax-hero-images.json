@@ -1,0 +1,74 @@
+{
+ "name": "parallax-hero-images",
+ "title": "Parallax Hero Images",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ParallaxHeroImages"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport { ParallaxHeroImages } from \"@/components/ui/parallax-hero-images\";\n\nconst images = [\n  \"https://picsum.photos/seed/ph1/400/300\",\n  \"https://picsum.photos/seed/ph2/400/300\",\n  \"https://picsum.photos/seed/ph3/400/300\",\n  \"https://picsum.photos/seed/ph4/400/300\",\n  \"https://picsum.photos/seed/ph5/400/300\",\n  \"https://picsum.photos/seed/ph6/400/300\",\n  \"https://picsum.photos/seed/ph7/400/300\",\n  \"https://picsum.photos/seed/ph8/400/300\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[600px] bg-gray-950 overflow-hidden\">\n      <div className=\"absolute inset-0 flex items-center justify-center z-10\">\n        <div className=\"text-center\">\n          <h1 className=\"text-4xl font-bold text-white\">Parallax Hero</h1>\n          <p className=\"text-gray-400 mt-2\">Move your mouse to see the effect</p>\n        </div>\n      </div>\n      <ParallaxHeroImages images={images} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/parallax-hero-images.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/parallax-hero-images.json",
+ "preview": "https://stashui.vercel.app/c/parallax-hero-images",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Images shift in depth based on cursor position, creating a layered parallax…",
+ "description": "Renders images positioned at different depths that move based on cursor position. Spring-based motion creates smooth parallax layers with configurable depth variants.",
+ "use_when": "Hero sections or immersive backgrounds where mouse-driven parallax creates visual depth and engagement.",
+ "avoid_when": "Touch-only devices or cursor-less interfaces — parallax requires pointer tracking.",
+ "a11y": "Parallax effect is visual only; no semantic content or keyboard interaction.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "imageClassName",
+   "type": "string",
+   "default": "{imageClassName}",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "\"default\" | \"edge-focus\"",
+   "default": "\"default\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

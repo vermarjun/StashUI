@@ -1,0 +1,59 @@
+{
+ "name": "linear-modal-center-content",
+ "title": "Linear Modal Centered",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "App"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "3d",
+  "motion",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\n\nimport App from \"@/components/ui/center-content\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center p-4\">\n      <App />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/center-content.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/linear-modal-center-content.json",
+ "preview": "https://stashui.vercel.app/c/linear-modal-center-content",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animates from card to full-screen centered dialog with spring easing.",
+ "description": "A layered modal that morphs from a trigger element to a centered, expanded view. Animated with spring physics (Framer Motion). Content scales and fades in while a backdrop blurs and darkens, with support for images and scrollable…",
+ "use_when": "You need a dramatic reveal from a card or button to a large modal with rich, scrollable content.",
+ "avoid_when": "Users need instant, undecorated feedback — the spring animation adds 500ms latency.",
+ "a11y": "Full keyboard support: Tab cycles focus within modal, Escape closes, Enter/Space opens. Manages document scroll and body overflow. Provides ARIA labels for dialog role and semantic structure.",
+ "props": [
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal",
+  "feature-card"
+ ]
+}

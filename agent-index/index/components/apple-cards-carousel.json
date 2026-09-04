@@ -1,0 +1,68 @@
+{
+ "name": "apple-cards-carousel",
+ "title": "Apple Cards Carousel",
+ "category": "carousels",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CarouselContext",
+  "Carousel",
+  "Card",
+  "BlurImage"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 20,
+ "flags": [
+  "motion",
+  "20 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  Carousel,\n  Card,\n} from \"@/components/ui/apple-cards-carousel\";\n\nconst cards = [\n  {\n    category: \"Nature\",\n    title: \"Mountains at Dawn\",\n    src: \"https://picsum.photos/seed/applecard1/1200/800\",\n    content: (\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Towering peaks bathed in golden morning light — a scene of quiet\n        grandeur that reminds us how vast the world truly is.\n      </p>\n    ),\n  },\n  {\n    category: \"Architecture\",\n    title: \"City of Glass\",\n    src: \"https://picsum.photos/seed/applecard2/1200/800\",\n    content: (\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Steel and glass reaching for the sky, reflecting clouds and ambition in\n        equal measure.\n      </p>\n    ),\n  },\n  {\n    category: \"Ocean\",\n    title: \"Deep Blue Horizon\",\n    src: \"https://picsum.photos/seed/applecard3/1200/800\",\n    content: (\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Where the sea meets the sky, endless possibility stretches before you.\n      </p>\n    ),\n  },\n  {\n    category: \"Forest\",\n    title: \"Into the Woods\",\n    src: \"https://picsum.photos/seed/applecard4/1200/800\",\n    content: (\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Ancient trees form a cathedral of green, hushing the noise of the\n        modern world.\n      </p>\n    ),\n  },\n  {\n    category: \"Desert\",\n    title: \"Golden Dunes\",\n    src: \"https://picsum.photos/seed/applecard5/1200/800\",\n    content: (\n      <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n        Waves of sand sculpted by wind into perfect curves of amber and ochre.\n      </p>\n    ),\n  },\n];\n\nexport default function Demo() {\n  const items = cards.map((card, index) => (\n    <Card key={card.src} card={card} index={index} layout />\n  ));\n\n  return (\n    <div className=\"w-full\">\n      <Carousel items={items} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/apple-cards-carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/apple-cards-carousel.json",
+ "preview": "https://stashui.vercel.app/c/apple-cards-carousel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Scrollable carousel with explicit arrow buttons and click-to-modal card…",
+ "description": "Horizontal scrollable carousel with navigation buttons for left/right scroll. Cards expand to full-screen modal with backdrop blur. Uses Framer Motion layout animations for smooth transitions between states.",
+ "use_when": "Showcasing cards in a carousel with explicit scroll controls and click-to-detail modals.",
+ "avoid_when": "Touch-only interfaces where scroll buttons may be hard to use.",
+ "a11y": "Scroll buttons disabled when at carousel bounds. Cards handle Escape key and outside-click close. Modal has proper focus trapping.",
+ "props": [
+  {
+   "name": "items",
+   "type": "JSX.Element[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "initialScroll",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "name": "tooltip-card",
+ "title": "Tooltip Card",
+ "category": "tooltips",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Tooltip"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "\"use client\";\nimport { Tooltip } from \"@/components/ui/tooltip-card\";\n\nconst cardContent = (\n  <div className=\"flex flex-col gap-1\">\n    <p className=\"font-semibold text-foreground\">Quick tip</p>\n    <p className=\"text-muted-foreground\">\n      This tooltip follows your cursor and smartly repositions itself to stay\n      within the viewport.\n    </p>\n  </div>\n);\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-8 p-12\">\n      <p className=\"text-sm text-muted-foreground\">Hover the buttons to reveal tooltips</p>\n      <div className=\"flex flex-wrap items-center justify-center gap-6\">\n        <Tooltip content={cardContent}>\n          <button className=\"rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted\">\n            Hover me\n          </button>\n        </Tooltip>\n        <Tooltip\n          content=\"A simple string tooltip — minimal and clean.\"\n        >\n          <button className=\"rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted\">\n            Or hover me\n          </button>\n        </Tooltip>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/tooltip-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tooltip-card.json",
+ "preview": "https://stashui.vercel.app/c/tooltip-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Tooltip that follows the cursor and intelligently repositions to stay visible…",
+ "description": "Custom tooltip that tracks mouse position and displays content with automatic edge detection and repositioning. Supports both mouse and touch events with spring-animated height transitions.",
+ "use_when": "Tooltips with rich content that need to follow cursor movement and adapt to screen edges.",
+ "avoid_when": "Simple text hints; the component is feature-rich and may be overkill for basic labels.",
+ "a11y": "Content is shown on hover or touch; not keyboard-accessible. Touch shows tooltip for 2 seconds then hides.",
+ "props": [
+  {
+   "name": "content",
+   "type": "string | React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "tooltip",
+  "decoration"
+ ]
+}

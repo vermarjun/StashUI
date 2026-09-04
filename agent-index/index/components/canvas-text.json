@@ -1,0 +1,102 @@
+{
+ "name": "canvas-text",
+ "title": "Canvas Text",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CanvasText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "pure",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\nimport { CanvasText } from \"@/components/ui/canvas-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full py-16\">\n      <span className=\"text-6xl font-black tracking-tighter\">\n        <CanvasText text=\"Canvas\" />\n      </span>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/canvas-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/canvas-text.json",
+ "preview": "https://stashui.vercel.app/c/canvas-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text filled with animated wavy colored lines that pulse and curve continuously.",
+ "description": "Renders text on canvas with horizontal wavy lines drawn inside the text boundaries. Lines animate with sine-wave motion and cycle through multiple colors. Responsive to theme changes.",
+ "use_when": "A display heading wants a dynamic, painterly effect with animated line art inside the letterforms.",
+ "avoid_when": "When text must be selectable or when canvas rendering is restricted.",
+ "a11y": "Text is rendered on canvas with aria-label; not selectable by users.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "backgroundClassName",
+   "type": "string",
+   "default": "\"bg-white dark:bg-neutral-950\"",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "[\"#ff6b6b\", \"#4ecdc4\", \"#45b7d1\", \"#96ceb4\", \"#ffeaa7\", \"#df",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "lineWidth",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "lineGap",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "curveIntensity",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "overlay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

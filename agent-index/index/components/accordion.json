@@ -1,0 +1,134 @@
+{
+ "name": "accordion",
+ "title": "Accordion",
+ "category": "accordions",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "AccordionContainer",
+  "AccordionWrapper",
+  "Accordion",
+  "AccordionItem",
+  "AccordionHeader",
+  "AccordionPanel"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 17,
+ "flags": [
+  "pure",
+  "17 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  Accordion,\n  AccordionItem,\n  AccordionHeader,\n  AccordionPanel,\n} from \"@/components/ui/accordion\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg mx-auto py-10 px-4\">\n      <Accordion defaultValue=\"item-1\">\n        <AccordionItem value=\"item-1\">\n          <AccordionHeader>What is a UI component?</AccordionHeader>\n          <AccordionPanel>\n            A UI component is a modular, reusable element that serves a specific function within a\n            graphical user interface — buttons, inputs, dropdowns, sliders, and more.\n          </AccordionPanel>\n        </AccordionItem>\n        <AccordionItem value=\"item-2\">\n          <AccordionHeader>Why are UI components important?</AccordionHeader>\n          <AccordionPanel>\n            Components promote consistency, efficiency, and scalability. They let developers reuse\n            code and maintain a cohesive look and feel across the entire application.\n          </AccordionPanel>\n        </AccordionItem>\n        <AccordionItem value=\"item-3\">\n          <AccordionHeader>Key characteristics of great components?</AccordionHeader>\n          <AccordionPanel>\n            Well-designed components are modular, customizable, and accessible. They have clear\n            functionality and adapt easily to any design language.\n          </AccordionPanel>\n        </AccordionItem>\n        <AccordionItem value=\"item-4\">\n          <AccordionHeader>How do components improve UX?</AccordionHeader>\n          <AccordionPanel>\n            Familiar, consistent interactions make navigation intuitive. Recognizable patterns reduce\n            cognitive load and help users accomplish tasks faster.\n          </AccordionPanel>\n        </AccordionItem>\n      </Accordion>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/accordion.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/accordion.json",
+ "preview": "https://stashui.vercel.app/c/accordion",
+ "dupe_group": "accordion",
+ "alternatives": [
+  {
+   "name": "origin-ui-accordion",
+   "origin": "Origin UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Click headers to toggle content visibility with smooth animation.",
+ "description": "Stack of collapsible sections with click-to-expand headers and animated content reveal. Supports single or multiple open sections via the `multiple` prop.",
+ "use_when": "Organizing lengthy content into scannable categories, FAQ pages, or documentation.",
+ "avoid_when": "When all content should be visible at once. Touch-heavy interfaces benefit from larger click targets.",
+ "a11y": "Headers are buttons with aria-expanded. Panels have role=region and aria-labelledby. Keyboard-navigable.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "multiple",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "customIcon",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "articleClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "fill",
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "section-background"
+ ]
+}

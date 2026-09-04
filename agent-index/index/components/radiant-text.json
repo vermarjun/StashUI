@@ -1,0 +1,55 @@
+{
+ "name": "radiant-text",
+ "title": "Radiant Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "RadiantText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { RadiantText } from \"@/components/ui/radiant-text\";\n\nexport default function RadiantTextDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-8 p-12\">\n      <RadiantText duration={8} radiantWidth={120} className=\"text-2xl font-bold\">\n        The quick brown fox jumps over the lazy dog\n      </RadiantText>\n\n      <RadiantText duration={12} radiantWidth={200} className=\"text-xl font-medium\">\n        Shine a light on what matters most in your product.\n      </RadiantText>\n\n      <RadiantText duration={6} radiantWidth={80} className=\"text-base\">\n        Fast radiant sweep — speed things up.\n      </RadiantText>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/radiant-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/radiant-text.json",
+ "preview": "https://stashui.vercel.app/c/radiant-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text radiates with an expanding glow effect.",
+ "description": "Text glows with an expanding and contracting aura or light emission, creating a pulsing radiance.",
+ "use_when": "Featured or important text that needs visual emphasis.",
+ "avoid_when": "Low-contrast backgrounds — glow may reduce readability.",
+ "a11y": "Text is readable but animation is continuous and uncontrolled.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "shadow",
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "name": "animate-grid",
+ "title": "3D Hover Grid",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimateGrid"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "3d",
+  "pure",
+  "9 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { AnimateGrid } from \"@/components/ui/animate-grid\"\n\nconst LOGOS = [\n  \"⚛️\", \"🔷\", \"🟢\", \"🦋\",\n  \"🔥\", \"💎\", \"🌊\", \"⚡\",\n  \"🎯\", \"🚀\", \"🌟\", \"🎨\",\n  \"🔮\", \"🌈\", \"🎭\", \"🔬\",\n]\n\nconst cards = LOGOS.map((logo) => ({ logo }))\n\nexport default function AnimateGridDemo() {\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center bg-white p-8 dark:bg-gray-950\">\n      <AnimateGrid\n        cards={cards}\n        perspective={800}\n        rotateX={-5}\n        rotateY={-15}\n        className=\"w-full max-w-md\"\n        renderCard={(logo) => (\n          <div className=\"flex h-16 w-full items-center justify-center text-3xl\">\n            {logo}\n          </div>\n        )}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/animate-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animate-grid.json",
+ "preview": "https://stashui.vercel.app/c/animate-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card grid that tilts cards on hover with 3D perspective and glow.",
+ "description": "Renders a 4x4 grid where each card scales and glows on hover. Hover spreads glow to adjacent cards using CSS transforms and filter effects.",
+ "use_when": "Portfolio galleries, feature grids, or product showcases where 3D depth is desired.",
+ "avoid_when": "Motion-sensitive users; dense layouts; small screens (4x4 doesn't adapt).",
+ "a11y": "Static grid with hover effects only. No keyboard navigation beyond card focus.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative w-full max-w-full items-center justify-center\"",
+   "required": false
+  },
+  {
+   "name": "textGlowStartColor",
+   "type": "string",
+   "default": "\"#38ef7d80\"",
+   "required": false
+  },
+  {
+   "name": "textGlowEndColor",
+   "type": "string",
+   "default": "\"#38ef7d\"",
+   "required": false
+  },
+  {
+   "name": "perspective",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "rotateX",
+   "type": "number",
+   "default": "-1",
+   "required": false
+  },
+  {
+   "name": "rotateY",
+   "type": "number",
+   "default": "-15",
+   "required": false
+  },
+  {
+   "name": "cards",
+   "type": "CardItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderCard",
+   "type": "function",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "shadow"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "logo-wall"
+ ]
+}

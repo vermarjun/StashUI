@@ -1,0 +1,69 @@
+{
+ "name": "bg-falling-stars",
+ "title": "Falling Stars Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "FallingStarsBg"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "canvas",
+  "3d",
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { FallingStarsBg } from \"@/components/ui/bg-falling-stars\";\n\nexport default function FallingStarsBgDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-xl bg-black\">\n      <FallingStarsBg color=\"#ffffff\" count={200} />\n      <div className=\"absolute inset-0 flex items-center justify-center\">\n        <div className=\"text-center\">\n          <p className=\"text-3xl font-bold text-white\">Falling Stars</p>\n          <p className=\"mt-2 text-sm text-white/60\">\n            Canvas-based 3D star field effect\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/bg-falling-stars.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-falling-stars.json",
+ "preview": "https://stashui.vercel.app/c/bg-falling-stars",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Stars stream toward the viewer with 3D perspective depth.",
+ "description": "Canvas-rendered animation with 200 configurable stars using 3D perspective projection. Stars fall from top with Z-depth creating hyperspace effect.",
+ "use_when": "Immersive sci-fi themed background, space-related content.",
+ "avoid_when": "Performance-sensitive contexts, or when animation should remain static.",
+ "a11y": "Purely decorative; no interactive elements or keyboard handling.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#FFF\"",
+   "required": false
+  },
+  {
+   "name": "count",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"absolute inset-0 h-full w-full\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

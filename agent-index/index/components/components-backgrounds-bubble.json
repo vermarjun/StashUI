@@ -1,0 +1,82 @@
+{
+ "name": "components-backgrounds-bubble",
+ "title": "Bubble Background",
+ "category": "backgrounds",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "BubbleBackground"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 14,
+ "flags": [
+  "3d",
+  "motion",
+  "14 colors"
+ ],
+ "usage": "import { BubbleBackground } from \"@/components/ui/components-backgrounds-bubble\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <BubbleBackground className=\"absolute inset-0 h-full w-full\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-backgrounds-bubble.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-backgrounds-bubble.json",
+ "preview": "https://stashui.vercel.app/c/components-backgrounds-bubble",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated blur orbs float and pulse across the background.",
+ "description": "Motion/react background with six configurable color orbs using blur effects. Optional interactive mode for pointer tracking with spring physics.",
+ "use_when": "Modern gradient background with soft blob aesthetic.",
+ "avoid_when": "Performance-critical pages or high frame rate requirements.",
+ "a11y": "Decorative animation; pointer tracking has no keyboard equivalent.",
+ "props": [
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "SpringOptions",
+   "default": "{ stiffness: 100, damping: 20 }",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "BubbleColors",
+   "default": "hardcoded RGB values",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

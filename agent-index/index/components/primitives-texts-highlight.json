@@ -1,0 +1,57 @@
+{
+ "name": "primitives-texts-highlight",
+ "title": "Highlight Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "HighlightText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { HighlightText } from '@/components/ui/primitives-texts-highlight';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 w-full p-10\">\n      <p className=\"text-2xl font-semibold leading-relaxed text-center max-w-xl\">\n        Build{' '}\n        <HighlightText\n          text=\"stunning interfaces\"\n          inView\n          style={{\n            backgroundImage: 'linear-gradient(120deg, hsl(var(--primary)/0.25) 0%, hsl(var(--primary)/0.25) 100%)',\n          }}\n        />{' '}\n        with smooth, composable{' '}\n        <HighlightText\n          text=\"animation primitives\"\n          inView\n          delay={600}\n          style={{\n            backgroundImage: 'linear-gradient(120deg, hsl(var(--primary)/0.2) 0%, hsl(var(--primary)/0.2) 100%)',\n          }}\n        />{' '}\n        that work anywhere.\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-highlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-highlight.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-highlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text glows with a highlight that pulses behind it.",
+ "description": "Renders text with a backdrop glow or highlight that animates in and out, emphasizing key words.",
+ "use_when": "Accent words or phrases within body copy that deserve visual pop.",
+ "avoid_when": "Full headings — a highlight every few words becomes chaotic.",
+ "a11y": "Text is readable. Animation is decorative with no interaction barrier.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "headline"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "name": "avatar-circles",
+ "title": "Avatar Circles",
+ "category": "avatars",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "AvatarCircles"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "pure",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\nimport { AvatarCircles } from \"@/components/ui/avatar-circles\";\n\nconst avatarUrls = [\n  {\n    imageUrl: \"https://picsum.photos/seed/av1/40/40\",\n    profileUrl: \"https://example.com/user1\",\n  },\n  {\n    imageUrl: \"https://picsum.photos/seed/av2/40/40\",\n    profileUrl: \"https://example.com/user2\",\n  },\n  {\n    imageUrl: \"https://picsum.photos/seed/av3/40/40\",\n    profileUrl: \"https://example.com/user3\",\n  },\n  {\n    imageUrl: \"https://picsum.photos/seed/av4/40/40\",\n    profileUrl: \"https://example.com/user4\",\n  },\n  {\n    imageUrl: \"https://picsum.photos/seed/av5/40/40\",\n    profileUrl: \"https://example.com/user5\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full max-w-md p-8\">\n      <AvatarCircles avatarUrls={avatarUrls} numPeople={99} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/avatar-circles.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/avatar-circles.json",
+ "preview": "https://stashui.vercel.app/c/avatar-circles",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Overlapping circular avatars in a compact stack.",
+ "description": "Multiple avatars stacked horizontally with negative margin (-space-x-4). Shows '+N' for overflow.",
+ "use_when": "Team views, group members, thread participants without wasting space.",
+ "avoid_when": "Individual avatar display.",
+ "a11y": "Each image has alt text. '+N' text describes count.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"h-10 w-10 rounded-full border-2 border-white dark:border-gr",
+   "required": false
+  },
+  {
+   "name": "numPeople",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "avatarUrls",
+   "type": "Avatar[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "avatar",
+  "logo-wall",
+  "testimonial"
+ ]
+}

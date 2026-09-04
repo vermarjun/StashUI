@@ -1,0 +1,154 @@
+{
+ "name": "DomeGallery-TS-TW",
+ "title": "DomeGallery",
+ "category": "media",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "DomeGallery"
+ ],
+ "npm_deps": [
+  "@use-gesture/react@^10.2.27"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "3d",
+  "8 colors"
+ ],
+ "usage": "\"use client\";\n\nimport DomeGallery from \"@/components/ui/DomeGallery\";\n\nconst IMAGES = Array.from({ length: 12 }, (_, i) => ({\n  src: `https://picsum.photos/seed/dome-${i + 1}/500/500`,\n  alt: `Gallery image ${i + 1}`,\n}));\n\nexport default function Demo() {\n  return (\n    <div className=\"h-[600px] w-full\">\n      <DomeGallery images={IMAGES} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/DomeGallery.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/DomeGallery-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/DomeGallery-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Draggable image grid that expands selected tiles to full view.",
+ "description": "Arranges images on a responsive grid with gesture support. Click or drag an image to enlarge it in an overlay; drag gestures reposition the tile across the dome layout.",
+ "use_when": "A visual gallery where images deserve individual focus and exploration via drag and click.",
+ "avoid_when": "Touch-only devices with no primary pointer, or when image grids must remain static and non-interactive.",
+ "a11y": "Images accept alt text. Click and keyboard focus work on tiles; enlarged view requires click to close. No prefers-reduced-motion handling.",
+ "props": [
+  {
+   "name": "images",
+   "type": "ImageItem[]",
+   "default": "DEFAULT_IMAGES",
+   "required": false
+  },
+  {
+   "name": "fit",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "fitBasis",
+   "type": "'auto' | 'min' | 'max' | 'width' | 'height'",
+   "default": "'auto'",
+   "required": false
+  },
+  {
+   "name": "minRadius",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "maxRadius",
+   "type": "number",
+   "default": "Infinity",
+   "required": false
+  },
+  {
+   "name": "padFactor",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "overlayBlurColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "maxVerticalRotationDeg",
+   "type": "number",
+   "default": "DEFAULTS.maxVerticalRotationDeg",
+   "required": false
+  },
+  {
+   "name": "dragSensitivity",
+   "type": "number",
+   "default": "DEFAULTS.dragSensitivity",
+   "required": false
+  },
+  {
+   "name": "enlargeTransitionMs",
+   "type": "number",
+   "default": "DEFAULTS.enlargeTransitionMs",
+   "required": false
+  },
+  {
+   "name": "segments",
+   "type": "number",
+   "default": "DEFAULTS.segments",
+   "required": false
+  },
+  {
+   "name": "dragDampening",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "openedImageWidth",
+   "type": "string",
+   "default": "'400px'",
+   "required": false
+  },
+  {
+   "name": "openedImageHeight",
+   "type": "string",
+   "default": "'400px'",
+   "required": false
+  },
+  {
+   "name": "imageBorderRadius",
+   "type": "string",
+   "default": "'30px'",
+   "required": false
+  },
+  {
+   "name": "openedImageBorderRadius",
+   "type": "string",
+   "default": "'30px'",
+   "required": false
+  },
+  {
+   "name": "grayscale",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

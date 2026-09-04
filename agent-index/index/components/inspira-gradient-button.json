@@ -1,0 +1,109 @@
+{
+ "name": "inspira-gradient-button",
+ "title": "Gradient Button",
+ "category": "buttons",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "GradientButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "pure",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { GradientButton } from \"@/components/ui/gradient-button\";\n\nexport default function GradientButtonDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12 bg-black min-h-[200px]\">\n      <GradientButton>\n        <span className=\"text-white font-semibold\">Click me</span>\n      </GradientButton>\n      <GradientButton\n        colors={[\"#06b6d4\", \"#3b82f6\", \"#8b5cf6\", \"#ec4899\", \"#06b6d4\"]}\n        duration={1500}\n        borderRadius={24}\n        bgColor=\"#0f172a\"\n      >\n        <span className=\"text-white font-semibold\">Custom Colors</span>\n      </GradientButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/gradient-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-gradient-button.json",
+ "preview": "https://stashui.vercel.app/c/inspira-gradient-button",
+ "dupe_group": "gradientbutton",
+ "alternatives": [
+  {
+   "name": "gradient-button",
+   "origin": "StashUI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Button with rotating rainbow conic-gradient border.",
+ "description": "A button with a continuously rotating conic-gradient border using CSS keyframe animation. Accepts customizable colors, duration, blur, and border radius.",
+ "use_when": "You need an eye-catching CTA with colorful continuous motion.",
+ "avoid_when": "On accessible-first interfaces or when animation must be subtle.",
+ "a11y": "Standard button semantics. Animated border is purely visual. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "[\"#FF0000\", \"#FFA500\", \"#FFFF00\", \"#008000\", \"#0000FF\", \"#4B",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2500",
+   "required": false
+  },
+  {
+   "name": "borderWidth",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "bgColor",
+   "type": "string",
+   "default": "\"#000\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"gradient-btn-before relative overflow-hidden\", classNam",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onClick",
+   "type": "React.MouseEventHandler<HTMLButtonElement>",
+   "default": "{onClick}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

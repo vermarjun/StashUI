@@ -1,0 +1,64 @@
+{
+ "name": "background-beams-with-collision",
+ "title": "Background Beams With Collision",
+ "category": "backgrounds",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "BackgroundBeamsWithCollision"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "motion",
+  "16 colors"
+ ],
+ "usage": "import { BackgroundBeamsWithCollision } from \"@/components/ui/background-beams-with-collision\";\n\nexport default function Demo() {\n  return (\n    <BackgroundBeamsWithCollision className=\"h-[600px]\">\n      <div className=\"flex items-center justify-center h-full\">\n        <p className=\"text-lg font-medium text-neutral-700 dark:text-neutral-300\">\n          Beams with Collision\n        </p>\n      </div>\n    </BackgroundBeamsWithCollision>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/background-beams-with-collision.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/background-beams-with-collision.json",
+ "preview": "https://stashui.vercel.app/c/background-beams-with-collision",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated beams fall from top, explode on collision with ground.",
+ "description": "Container with gradient background that animates falling beams. Detects collision with a bottom surface and triggers explosion particles on impact using motion/react. Supports light and dark themes.",
+ "use_when": "Interactive hero section or container needing constant animated particle effects with collision feedback.",
+ "avoid_when": "Performance-critical pages with many instances, or sites requiring prefers-reduced-motion support.",
+ "a11y": "Purely decorative background; children elements must handle their own accessibility.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "hero",
+  "page-background"
+ ]
+}

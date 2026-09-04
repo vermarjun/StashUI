@@ -1,0 +1,111 @@
+{
+ "name": "EvilEye-TS-TW",
+ "title": "Evil Eye",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "EvilEye"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport EvilEye from \"@/components/ui/EvilEye\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[500px] bg-black rounded-lg overflow-hidden\">\n      <EvilEye\n        eyeColor=\"#FF6F37\"\n        intensity={1.5}\n        pupilSize={0.6}\n        irisWidth={0.25}\n        glowIntensity={0.35}\n        scale={0.8}\n        noiseScale={1.0}\n        pupilFollow={1.0}\n        flameSpeed={1.0}\n        backgroundColor=\"#000000\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/EvilEye.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/EvilEye-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/EvilEye-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "An eye with animated irises that tracks your cursor and flickers.",
+ "description": "WebGL component rendering an eye with procedural-noise irises and a pupil that follows cursor position. Uses shader-based animation with continuous flickering and easing.",
+ "use_when": "You need a striking, hypnotic focal point that rewards interaction — hero sections or loading states.",
+ "avoid_when": "Touch-only surfaces, performance-critical contexts, or when the component cannot fill a sized parent container.",
+ "a11y": "Purely visual; cursor tracking has no keyboard alternative, and there's no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "eyeColor",
+   "type": "string",
+   "default": "'#FF6F37'",
+   "required": false
+  },
+  {
+   "name": "intensity",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "pupilSize",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "irisWidth",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "glowIntensity",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "noiseScale",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "pupilFollow",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "flameSpeed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "loading"
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "name": "Stepper-TS-TW",
+ "title": "Stepper",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Stepper",
+  "Step"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 18,
+ "flags": [
+  "motion",
+  "18 colors"
+ ],
+ "usage": "import Stepper, { Step } from \"@/components/ui/Stepper\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-full flex items-center justify-center p-6 bg-[#120F17] rounded-xl min-h-[360px]\">\n      <Stepper\n        initialStep={1}\n        onStepChange={(s) => console.log(\"step\", s)}\n        onFinalStepCompleted={() => console.log(\"done\")}\n        backButtonText=\"Back\"\n        nextButtonText=\"Continue\"\n      >\n        <Step>\n          <h2 className=\"text-lg font-semibold text-white mb-1\">Create account</h2>\n          <p className=\"text-sm text-neutral-400\">Enter your email and choose a password to get started.</p>\n        </Step>\n        <Step>\n          <h2 className=\"text-lg font-semibold text-white mb-1\">Verify email</h2>\n          <p className=\"text-sm text-neutral-400\">We sent a 6-digit code to your inbox. Paste it below.</p>\n        </Step>\n        <Step>\n          <h2 className=\"text-lg font-semibold text-white mb-1\">Set up profile</h2>\n          <p className=\"text-sm text-neutral-400\">Add a display name and avatar so teammates recognise you.</p>\n        </Step>\n      </Stepper>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Stepper.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Stepper-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Stepper-TS-TW",
+ "dupe_group": "stepper",
+ "alternatives": [
+  {
+   "name": "stepper",
+   "origin": "Origin UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Multi-step form with animated slide transitions between steps.",
+ "description": "Wizard component with numbered step indicators, slide-in content transitions, and back/next navigation. Framer Motion-powered animations with dynamic step completion.",
+ "use_when": "Onboarding flows and multi-step forms requiring clear progress indication and smooth content transitions.",
+ "avoid_when": "Simple single-page forms — adds Framer Motion dependency and animation overhead.",
+ "a11y": "Step indicators and navigation buttons semantic and clickable. No keyboard navigation between steps; animations ignore prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "initialStep",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "onStepChange",
+   "type": "(step: number) => void",
+   "default": "() => {}",
+   "required": false
+  },
+  {
+   "name": "onFinalStepCompleted",
+   "type": "() => void",
+   "default": "() => {}",
+   "required": false
+  },
+  {
+   "name": "stepCircleContainerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "stepContainerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "contentClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "footerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "backButtonProps",
+   "type": "React.ButtonHTMLAttributes<HTMLButtonElement>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "nextButtonProps",
+   "type": "React.ButtonHTMLAttributes<HTMLButtonElement>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "backButtonText",
+   "type": "string",
+   "default": "'Back'",
+   "required": false
+  },
+  {
+   "name": "nextButtonText",
+   "type": "string",
+   "default": "'Continue'",
+   "required": false
+  },
+  {
+   "name": "disableStepIndicators",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "renderStepIndicator",
+   "type": "(props: { step: number; currentStep: number; onStepClick: (clicked: number) => void; }) => ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

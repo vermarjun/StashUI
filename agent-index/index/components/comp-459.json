@@ -1,0 +1,47 @@
+{
+ "name": "comp-459",
+ "title": "Pagination With Ellipsis",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-459\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-lg\">\n      <Cmp currentPage={page} totalPages={total} paginationItemsToDisplay={5} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-459.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-459.json",
+ "preview": "https://stashui.vercel.app/c/comp-459",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with ellipsis for page range skipping.",
+ "description": "Pagination displaying page numbers with ellipsis (...) indicating skipped page ranges.",
+ "use_when": "Large result sets where showing all page numbers would be impractical.",
+ "avoid_when": "Pagination with few pages or when compact display is not needed.",
+ "a11y": "Semantic pagination with clickable page numbers and ellipsis indicating skipped pages.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

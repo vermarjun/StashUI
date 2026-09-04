@@ -1,0 +1,59 @@
+{
+ "name": "origin-ui-label",
+ "title": "Form Label",
+ "category": "misc",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Label"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import { Label } from \"@/components/ui/label\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-sm space-y-2\">\n      <Label htmlFor=\"username\">\n        Username <span className=\"text-destructive\">*</span>\n      </Label>\n      <input\n        id=\"username\"\n        type=\"text\"\n        placeholder=\"your_handle\"\n        className=\"flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring\"\n      />\n      <p className=\"text-xs text-muted-foreground\">\n        This is your public display name.\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/label.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/origin-ui-label.json",
+ "preview": "https://stashui.vercel.app/c/origin-ui-label",
+ "dupe_group": "formlabel",
+ "alternatives": [
+  {
+   "name": "label",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Form label with theme tokens and peer-disabled state styling.",
+ "description": "A wrapper around Radix UI's label primitive with semantic sizing, theme token colors, and dual disabled-state support via peer and group-data selectors.",
+ "use_when": "Labeling form inputs in a design system using theme tokens.",
+ "avoid_when": "For non-form text — use plain typography components instead.",
+ "a11y": "Native HTML label with htmlFor support. Respects both peer-disabled and group-data-[disabled] states for accessibility.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

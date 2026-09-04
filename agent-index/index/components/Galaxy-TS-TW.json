@@ -1,0 +1,147 @@
+{
+ "name": "Galaxy-TS-TW",
+ "title": "Galaxy",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Galaxy"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl"
+ ],
+ "usage": "\"use client\";\n\nimport Galaxy from \"@/components/ui/Galaxy\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[500px] bg-black rounded-lg overflow-hidden\">\n      <Galaxy\n        hueShift={200}\n        density={1.2}\n        starSpeed={0.5}\n        speed={1.0}\n        glowIntensity={0.4}\n        saturation={0.5}\n        twinkleIntensity={0.5}\n        rotationSpeed={0.08}\n        transparent={false}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Galaxy.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Galaxy-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Galaxy-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Rotating starfield with depth-layered parallax and mouse repulsion.",
+ "description": "WebGL shader rendering layered scrolling stars with parallax depth. Supports customizable hue shift, density, glow, saturation, and interactive mouse repulsion. Uses ogl library for rendering.",
+ "use_when": "Space-themed or cosmic backgrounds where a sense of infinite depth and motion enhances immersion.",
+ "avoid_when": "Static backgrounds or when performance is critical on low-end devices; continuously renders star layers.",
+ "a11y": "WebGL canvas with optional mouse interaction for repulsion. No keyboard navigation or semantic content. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "focal",
+   "type": "[number, number]",
+   "default": "[0.5, 0.5]",
+   "required": false
+  },
+  {
+   "name": "rotation",
+   "type": "[number, number]",
+   "default": "[1.0, 0.0]",
+   "required": false
+  },
+  {
+   "name": "starSpeed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "density",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "hueShift",
+   "type": "number",
+   "default": "140",
+   "required": false
+  },
+  {
+   "name": "disableAnimation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "mouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "glowIntensity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "mouseRepulsion",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "twinkleIntensity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "rotationSpeed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "repulsionStrength",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "autoCenterRepulsion",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "transparent",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

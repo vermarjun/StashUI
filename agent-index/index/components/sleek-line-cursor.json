@@ -1,0 +1,85 @@
+{
+ "name": "sleek-line-cursor",
+ "title": "Sleek Line Cursor",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "SleekLineCursor"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "canvas",
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport { SleekLineCursor } from \"@/components/ui/sleek-line-cursor\";\n\nexport default function SleekLineCursorDemo() {\n  return (\n    <div className=\"relative flex h-64 w-full items-center justify-center rounded-lg border bg-black\">\n      <SleekLineCursor trails={20} friction={0.5} size={50} dampening={0.25} tension={0.98} />\n      <p className=\"text-white text-sm\">Move your mouse to see the cursor trail effect</p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/sleek-line-cursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sleek-line-cursor.json",
+ "preview": "https://stashui.vercel.app/c/sleek-line-cursor",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Colorful trailing lines follow the cursor with spring physics.",
+ "description": "A canvas-based cursor trail effect using spring-physics simulation. Multiple trailing lines follow mouse/touch position with wave-based HSL color animation.",
+ "use_when": "A full-page interactive effect for portfolios or creative experiences.",
+ "avoid_when": "When you need low CPU usage or minimalist interactions — the effect runs continuously and redraws every frame.",
+ "a11y": "Purely decorative effect. Uses pointer-events-none; interactions pass through. No keyboard interaction.",
+ "props": [
+  {
+   "name": "friction",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "trails",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "dampening",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "tension",
+   "type": "number",
+   "default": "0.98",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"pointer-events-none fixed inset-0 z-50\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ]
+}

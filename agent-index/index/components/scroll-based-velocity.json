@@ -1,0 +1,56 @@
+{
+ "name": "scroll-based-velocity",
+ "title": "Scroll Based Velocity",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "ScrollVelocityContainer",
+  "ScrollVelocityRow"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "import { ScrollVelocityContainer } from \"@/components/ui/scroll-based-velocity\";\n\nexport default function Demo() {\n  return <ScrollVelocityContainer />;\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/scroll-based-velocity.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-based-velocity.json",
+ "preview": "https://stashui.vercel.app/c/scroll-based-velocity",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text row speed changes based on scroll velocity.",
+ "description": "Marquee-style text that scrolls horizontally, with speed tied to viewport scroll direction and speed.",
+ "use_when": "Section backgrounds or atmospheric text elements.",
+ "avoid_when": "Critical information — scroll velocity makes text hard to read.",
+ "a11y": "Text may move too fast to read. No pause control.",
+ "props": [
+  {
+   "name": "items",
+   "type": "React.ReactNode[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "section-background",
+  "decoration"
+ ]
+}

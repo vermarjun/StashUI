@@ -1,0 +1,72 @@
+{
+ "name": "image-tab2",
+ "title": "Image Tab Panel 2",
+ "category": "navigation",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TabsProvider",
+  "TabList",
+  "TabItem",
+  "TabHeader",
+  "TabDes",
+  "TabImageContainer",
+  "TabImage"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 15,
+ "flags": [
+  "pure",
+  "15 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  TabsProvider,\n  TabList,\n  TabItem,\n  TabHeader,\n  TabDes,\n  TabImageContainer,\n  TabImage,\n} from \"@/components/ui/image-tabs\";\n\nconst TABS = [\n  {\n    value: \"design\",\n    title: \"Design Systems\",\n    description:\n      \"A design system is a collection of reusable components guided by clear standards that teams use to build consistent digital products faster.\",\n    imageUrl: \"https://picsum.photos/seed/design42/1200/800\",\n  },\n  {\n    value: \"motion\",\n    title: \"Motion & Animation\",\n    description:\n      \"Purposeful motion guides attention, communicates state, and adds delight — making interfaces feel alive without sacrificing performance.\",\n    imageUrl: \"https://picsum.photos/seed/motion17/1200/800\",\n  },\n  {\n    value: \"typography\",\n    title: \"Typography\",\n    description:\n      \"Type is the voice of your interface. Hierarchy, scale, and rhythm turn raw text into a reading experience that carries users through content effortlessly.\",\n    imageUrl: \"https://picsum.photos/seed/typo88/1200/800\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-full p-6 flex items-center justify-center\">\n      <TabsProvider defaultValue=\"design\" className=\"max-w-4xl w-full\">\n        <div className=\"md:grid md:grid-cols-12 gap-4 items-start\">\n          <TabList className=\"md:col-span-5\">\n            {TABS.map((tab) => (\n              <TabItem key={tab.value} value={tab.value}>\n                <TabHeader value={tab.value}>{tab.title}</TabHeader>\n                <TabDes value={tab.value}>\n                  <p className=\"dark:bg-white bg-[#F2F2F2] text-black p-3 text-sm\">\n                    {tab.description}\n                  </p>\n                  <img\n                    src={tab.imageUrl}\n                    alt={tab.title}\n                    className=\"mb-2 max-w-full h-auto md:hidden block rounded-md object-cover\"\n                    width={1200}\n                    height={800}\n                  />\n                </TabDes>\n              </TabItem>\n            ))}\n          </TabList>\n\n          <TabImageContainer className=\"md:col-span-7\">\n            {TABS.map((tab) => (\n              <TabImage key={tab.value} value={tab.value}>\n                <img\n                  src={tab.imageUrl}\n                  alt={tab.title}\n                  className=\"w-full h-full object-cover rounded-md\"\n                  width={1200}\n                  height={800}\n                />\n              </TabImage>\n            ))}\n          </TabImageContainer>\n        </div>\n      </TabsProvider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/image-tabs.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/image-tab2.json",
+ "preview": "https://stashui.vercel.app/c/image-tab2",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Alternate image tabs layout with side-by-side preview.",
+ "description": "Tab layout variant (same component as image-tab1, different demo). Shows tabs on left, image preview on right. Uses TabsProvider and sub-components.",
+ "use_when": "Gallery or portfolio where side-by-side layout is preferred.",
+ "avoid_when": "Narrow viewports; side-by-side needs horizontal space.",
+ "a11y": "Tab buttons are keyboard-navigable. Images have alt text. Descriptions are semantic.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

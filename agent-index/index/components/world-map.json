@@ -1,0 +1,70 @@
+{
+ "name": "world-map",
+ "title": "World Map",
+ "category": "media",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "WorldMap"
+ ],
+ "npm_deps": [
+  "dotted-map",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "motion",
+  "5 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/world-map\";\n\nexport default function Demo() {\n  return (\n    <Cmp\n      dots={[\n        {\n          start: { lat: 40.7128, lng: -74.006, label: \"New York\" },\n          end: { lat: 51.5074, lng: -0.1278, label: \"London\" },\n        },\n        {\n          start: { lat: 35.6762, lng: 139.6503, label: \"Tokyo\" },\n          end: { lat: 37.7749, lng: -122.4194, label: \"San Francisco\" },\n        },\n        {\n          start: { lat: 48.8566, lng: 2.3522, label: \"Paris\" },\n          end: { lat: 28.6139, lng: 77.209, label: \"New Delhi\" },\n        },\n        {\n          start: { lat: -33.8688, lng: 151.2093, label: \"Sydney\" },\n          end: { lat: 1.3521, lng: 103.8198, label: \"Singapore\" },\n        },\n        {\n          start: { lat: -23.5505, lng: -46.6333, label: \"São Paulo\" },\n          end: { lat: 51.5074, lng: -0.1278, label: \"London\" },\n        },\n      ]}\n    />\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/world-map.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/world-map.json",
+ "preview": "https://stashui.vercel.app/c/world-map",
+ "dupe_group": "worldmap",
+ "alternatives": [
+  {
+   "name": "inspira-world-map",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Animated world map with curved connection lines between locations.",
+ "description": "Renders a dotted world map with theme-aware coloring via next-themes (dark/light backgrounds). Displays animated curved SVG paths connecting geographic coordinates with customizable line color.",
+ "use_when": "Team pages, dashboards, or landing pages showcasing global reach or distributed operations.",
+ "avoid_when": "When real geographic precision is needed; uses simplified Mercator projection for visual appeal.",
+ "a11y": "SVG-based map with alt text on background image; path animations are decorative.",
+ "props": [
+  {
+   "name": "dots",
+   "type": "Array<{start: {lat: number; lng: number; label?: string}; end: {lat: number; lng: number; label?: string}}>",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "lineColor",
+   "type": "string",
+   "default": "\"#0ea5e9\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "decoration"
+ ]
+}

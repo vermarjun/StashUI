@@ -1,0 +1,87 @@
+{
+ "name": "code-block",
+ "title": "Code Block",
+ "category": "data-display",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CodeBlock"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "react-syntax-highlighter"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "8 colors"
+ ],
+ "usage": "\"use client\";\nimport { CodeBlock } from \"@/components/ui/code-block\";\n\nconst singleCode = `import { useState } from \"react\";\n\nexport function Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div className=\"flex items-center gap-4 p-6\">\n      <button onClick={() => setCount(c => c - 1)}>-</button>\n      <span className=\"text-2xl font-mono\">{count}</span>\n      <button onClick={() => setCount(c => c + 1)}>+</button>\n    </div>\n  );\n}`;\n\nconst tabsCode = [\n  {\n    name: \"counter.tsx\",\n    language: \"tsx\",\n    code: singleCode,\n    highlightLines: [6, 7, 8, 9],\n  },\n  {\n    name: \"styles.css\",\n    language: \"css\",\n    code: `.counter {\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  padding: 1.5rem;\n}\n\n.counter button {\n  width: 2rem;\n  height: 2rem;\n  border-radius: 0.25rem;\n  border: 1px solid #333;\n  background: transparent;\n  cursor: pointer;\n}`,\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto px-4 py-6 space-y-6\">\n      <CodeBlock\n        language=\"tsx\"\n        filename=\"counter.tsx\"\n        code={singleCode}\n        highlightLines={[6, 7, 8, 9]}\n      />\n      <CodeBlock\n        language=\"tsx\"\n        filename=\"counter.tsx\"\n        tabs={tabsCode}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/code-block.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/code-block.json",
+ "preview": "https://stashui.vercel.app/c/code-block",
+ "dupe_group": "codeblock",
+ "alternatives": [
+  {
+   "name": "cult-ui-code-block",
+   "origin": "Cult UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 32
+  }
+ ],
+ "blurb": "Syntax-highlighted code display with copy button and optional file tabs.",
+ "description": "Code block using Prism syntax highlighter with filename display and copy-to-clipboard functionality. Supports multi-file tabs with per-tab language and highlighting.",
+ "use_when": "Displaying code snippets in documentation, tutorials, or blog posts with syntax coloring.",
+ "avoid_when": "When line-by-line editing is needed or when inline code is sufficient.",
+ "a11y": "Copy button has visual feedback. Tab navigation through keyboard. Code text is selectable.",
+ "props": [
+  {
+   "name": "language",
+   "type": "string",
+   "default": "{activeLanguage}",
+   "required": true
+  },
+  {
+   "name": "filename",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "code",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "highlightLines",
+   "type": "number[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "tabs",
+   "type": "Array<{name, code, language?, highlightLines?}>",
+   "default": "[]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "chart"
+ ]
+}

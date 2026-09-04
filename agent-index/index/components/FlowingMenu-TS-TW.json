@@ -1,0 +1,91 @@
+{
+ "name": "FlowingMenu-TS-TW",
+ "title": "FlowingMenu",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FlowingMenu"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "5 colors"
+ ],
+ "usage": "import FlowingMenu from \"@/components/ui/FlowingMenu\";\n\nconst items = [\n  { link: \"#\", text: \"Home\",     image: \"https://picsum.photos/seed/flow1/400/200\" },\n  { link: \"#\", text: \"Work\",     image: \"https://picsum.photos/seed/flow2/400/200\" },\n  { link: \"#\", text: \"About\",    image: \"https://picsum.photos/seed/flow3/400/200\" },\n  { link: \"#\", text: \"Contact\",  image: \"https://picsum.photos/seed/flow4/400/200\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[500px] rounded-xl overflow-hidden\">\n      <FlowingMenu items={items} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FlowingMenu.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FlowingMenu-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FlowingMenu-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Full-height menu with continuous marquee text and image reveal on hover.",
+ "description": "A GSAP-animated menu where each item is a full-height link with continuously scrolling marquee text and images. On hover, a marquee panel slides in from the nearest edge (top/bottom) with animated logo and images.",
+ "use_when": "You want a sophisticated, image-heavy navigation menu that feels premium and modern.",
+ "avoid_when": "Touch-only interfaces or accessibility-first designs — hover-based edge detection may not work well.",
+ "a11y": "Links are semantic and have href. Marquee content is hidden with pointer-events-none. Edge detection based on mouse position only.",
+ "props": [
+  {
+   "name": "items",
+   "type": "MenuItemData[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "bgColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "marqueeBgColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "marqueeTextColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "borderColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

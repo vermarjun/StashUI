@@ -1,0 +1,68 @@
+{
+ "name": "texture-card",
+ "title": "Texture Card",
+ "category": "cards",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "TextureCard",
+  "TextureCardHeader",
+  "TextureCardStyled",
+  "TextureCardFooter",
+  "TextureCardTitle",
+  "TextureSeparator",
+  "TextureCardDescription",
+  "TextureCardContent"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 29,
+ "flags": [
+  "pure",
+  "29 colors"
+ ],
+ "usage": "import {\n  TextureCard,\n  TextureCardHeader,\n  TextureCardTitle,\n  TextureCardDescription,\n  TextureCardContent,\n  TextureCardFooter,\n  TextureSeparator,\n} from \"@/components/ui/texture-card\";\n\nexport default function TextureCardDemo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <TextureCard className=\"w-[320px]\">\n        <TextureCardHeader className=\"px-6 pt-6 pb-3\">\n          <TextureCardTitle>Surface Texture</TextureCardTitle>\n          <TextureCardDescription>\n            Layered border rings create a subtle depth effect that works in both\n            light and dark themes.\n          </TextureCardDescription>\n        </TextureCardHeader>\n        <TextureSeparator />\n        <TextureCardContent>\n          <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n            Each border layer is independently styled so the card feels\n            tactile without relying on heavy shadows.\n          </p>\n        </TextureCardContent>\n        <TextureSeparator />\n        <TextureCardFooter>\n          <span className=\"text-xs text-neutral-400\">cult/ui</span>\n          <span className=\"text-xs font-medium text-neutral-600 dark:text-neutral-300\">\n            Explore →\n          </span>\n        </TextureCardFooter>\n      </TextureCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/texture-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/texture-card.json",
+ "preview": "https://stashui.vercel.app/c/texture-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Layered nested borders create depth and tactile surface texture.",
+ "description": "Compound card component with cascading border rings that increase perceived depth without shadows. CSS-only, theme-aware, composed of TextureCard, Header, Title, Description, Content, Footer, and Separator subcomponents.",
+ "use_when": "Cards need subtle depth and texture without heavy drop shadows; designing minimal or technical interfaces.",
+ "avoid_when": "Designs requiring motion or hover-triggered reveals; the component is static CSS.",
+ "a11y": "Semantic structure with sections and text layers; no interactive elements or motion to manage.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "pricing-card",
+  "form-field"
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "name": "inspira-smooth-cursor",
+ "title": "Smooth Cursor",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "SmoothCursor"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\nimport { SmoothCursor } from \"@/components/ui/smooth-cursor\";\n\nexport default function SmoothCursorDemo() {\n  return (\n    <div className=\"relative flex h-64 w-full items-center justify-center rounded-lg border bg-background\">\n      <SmoothCursor />\n      <p className=\"text-sm text-muted-foreground\">Move your mouse to see the smooth cursor</p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/smooth-cursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-smooth-cursor.json",
+ "preview": "https://stashui.vercel.app/c/inspira-smooth-cursor",
+ "dupe_group": "smoothcursor",
+ "alternatives": [
+  {
+   "name": "smooth-cursor",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Custom cursor follows pointer with spring physics and rotates to track…",
+ "description": "Replaces system cursor with a spring-animated custom cursor that tracks mouse position, rotates based on velocity, and scales briefly on movement.",
+ "use_when": "Premium experiences or interactive galleries where a polished custom cursor enhances the feel of motion.",
+ "avoid_when": "Touch-only devices or mouse-free environments — cursor tracking requires an active pointer.",
+ "a11y": "Replaces system cursor globally but does not affect keyboard focus or tab navigation. Rotation and position are visual only.",
+ "props": [
+  {
+   "name": "cursor",
+   "type": "React.ComponentType",
+   "default": "DefaultCursor",
+   "required": false
+  },
+  {
+   "name": "springConfig",
+   "type": "SpringConfig",
+   "default": "DEFAULT_SPRING",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

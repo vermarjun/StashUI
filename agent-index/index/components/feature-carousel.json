@@ -1,0 +1,114 @@
+{
+ "name": "feature-carousel",
+ "title": "Feature Carousel",
+ "category": "carousels",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "FeatureCarousel"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 28,
+ "flags": [
+  "motion",
+  "28 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { FeatureCarousel } from \"@/components/ui/feature-carousel\"\n\nconst image = {\n  step1light1: \"https://picsum.photos/seed/step1a/1200/630\",\n  step1light2: \"https://picsum.photos/seed/step1b/1200/630\",\n  step2light1: \"https://picsum.photos/seed/step2a/1200/630\",\n  step2light2: \"https://picsum.photos/seed/step2b/1200/630\",\n  step3light: \"https://picsum.photos/seed/step3/1200/630\",\n  step4light: \"https://picsum.photos/seed/step4/1200/630\",\n  alt: \"Feature screenshot\",\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl p-4\">\n      <FeatureCarousel\n        title=\"Powerful Features\"\n        description=\"Everything you need to build amazing products.\"\n        image={image}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/feature-carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/feature-carousel.json",
+ "preview": "https://stashui.vercel.app/c/feature-carousel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Multi-step feature showcase with animated image transitions and step navigation.",
+ "description": "Animated carousel showcasing 4 feature steps with varying layouts. Each step has custom image positioning and animations (slide-in, fade-in, scale). Includes auto-play with 3s interval and clickable step indicators.",
+ "use_when": "Showcasing product features or workflow steps with rich animated transitions.",
+ "avoid_when": "Content that doesn't fit 4 discrete steps; requires image assets for all steps.",
+ "a11y": "Step indicators are clickable buttons with visual state indicators. No keyboard arrow navigation.",
+ "props": [
+  {
+   "name": "image",
+   "type": "ImageSet",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "step1img1Class",
+   "type": "string",
+   "default": "defaultClasses.step1img1",
+   "required": false
+  },
+  {
+   "name": "step1img2Class",
+   "type": "string",
+   "default": "defaultClasses.step1img2",
+   "required": false
+  },
+  {
+   "name": "step2img1Class",
+   "type": "string",
+   "default": "defaultClasses.step2img1",
+   "required": false
+  },
+  {
+   "name": "step2img2Class",
+   "type": "string",
+   "default": "defaultClasses.step2img2",
+   "required": false
+  },
+  {
+   "name": "step3imgClass",
+   "type": "string",
+   "default": "defaultClasses.step3img",
+   "required": false
+  },
+  {
+   "name": "step4imgClass",
+   "type": "string",
+   "default": "defaultClasses.step4img",
+   "required": false
+  },
+  {
+   "name": "bgClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill",
+   "image"
+  ],
+  "tone": "dramatic",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "section-background"
+ ]
+}

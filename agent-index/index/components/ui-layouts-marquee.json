@@ -1,0 +1,102 @@
+{
+ "name": "ui-layouts-marquee",
+ "title": "Marquee",
+ "category": "effects",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Marquee"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { Marquee } from \"@/components/ui/marquee\";\n\nconst chips = [\n  \"React\", \"TypeScript\", \"Tailwind CSS\", \"Next.js\", \"Framer Motion\",\n  \"Node.js\", \"Radix UI\", \"shadcn/ui\", \"Vite\", \"Bun\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full py-8 flex flex-col gap-4 overflow-hidden\">\n      {/* forward */}\n      <Marquee pauseOnHover className=\"[--duration:28s]\">\n        {chips.map((label) => (\n          <span\n            key={label}\n            className=\"inline-flex items-center rounded-full border border-border bg-muted px-4 py-1.5 text-sm font-medium text-foreground mx-1 whitespace-nowrap\"\n          >\n            {label}\n          </span>\n        ))}\n      </Marquee>\n\n      {/* reverse */}\n      <Marquee reverse pauseOnHover className=\"[--duration:28s]\">\n        {chips.map((label) => (\n          <span\n            key={label}\n            className=\"inline-flex items-center rounded-full border border-border bg-muted px-4 py-1.5 text-sm font-medium text-muted-foreground mx-1 whitespace-nowrap\"\n          >\n            {label}\n          </span>\n        ))}\n      </Marquee>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/marquee.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-marquee.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-marquee",
+ "dupe_group": "marquee",
+ "alternatives": [
+  {
+   "name": "marquee",
+   "origin": "StashUI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "magic-ui-marquee",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "inspira-marquee",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Content scrolls continuously in a loop, horizontally or vertically.",
+ "description": "Duplicates children in a seamless scrolling marquee animation. Direction, duration, and pause-on-hover behavior are configurable.",
+ "use_when": "Showcasing a rolling list of logos, testimonials, or news items without user action.",
+ "avoid_when": "Touch-only interfaces where pause-on-hover cannot activate; content shorter than the viewport.",
+ "a11y": "Animation is purely visual; no focus or keyboard interaction. Content is still readable outside the marquee.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "vertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "number",
+   "default": "4",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "section-background"
+ ]
+}

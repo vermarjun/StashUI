@@ -1,0 +1,104 @@
+{
+ "name": "inspira-ripple",
+ "title": "Ripple",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Ripple",
+  "RippleContainer"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { Ripple, RippleContainer } from \"@/components/ui/ripple\";\n\nexport default function RippleDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-16 p-12\">\n      {/* Stand-alone ripple on a coloured background */}\n      <div className=\"relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-sky-50 dark:bg-sky-950\">\n        <span className=\"relative z-10 text-sm font-semibold\">Hover area</span>\n        <Ripple\n          numberOfCircles={5}\n          baseCircleSize={60}\n          spaceBetweenCircle={40}\n          baseCircleOpacity={0.3}\n        />\n      </div>\n\n      {/* RippleContainer wrapping content */}\n      <RippleContainer\n        className=\"flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-violet-50 dark:bg-violet-950\"\n        rippleProps={{\n          numberOfCircles: 6,\n          baseCircleSize: 80,\n          spaceBetweenCircle: 50,\n          waveSpeed: 100,\n          circleClass: \"border-violet-400\",\n        }}\n      >\n        <span className=\"relative z-10 text-sm font-semibold\">Ripple&nbsp;Container</span>\n      </RippleContainer>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/ripple.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-ripple.json",
+ "preview": "https://stashui.vercel.app/c/inspira-ripple",
+ "dupe_group": "ripple",
+ "alternatives": [
+  {
+   "name": "ripple",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Concentric circles scale and pulse outward on a loop from center.",
+ "description": "Renders expanding circular borders that shrink and repeat from the center. Each circle animates with a staggered delay to create a radiating wave effect.",
+ "use_when": "Hero sections or immersive backgrounds that need a pulsing radial signal of activity.",
+ "avoid_when": "Overlapping interactive content — expanding circles can obscure elements. Requires a positioned parent.",
+ "a11y": "Passive background effect; child content provides focus and keyboard access. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "baseCircleSize",
+   "type": "number",
+   "default": "210",
+   "required": false
+  },
+  {
+   "name": "baseCircleOpacity",
+   "type": "number",
+   "default": "0.24",
+   "required": false
+  },
+  {
+   "name": "spaceBetweenCircle",
+   "type": "number",
+   "default": "70",
+   "required": false
+  },
+  {
+   "name": "circleOpacityDowngradeRatio",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "waveSpeed",
+   "type": "number",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "numberOfCircles",
+   "type": "number",
+   "default": "7",
+   "required": false
+  },
+  {
+   "name": "circleClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"absolute shadow-xl rounded-full border\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

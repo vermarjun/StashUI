@@ -1,0 +1,68 @@
+{
+ "name": "github-globe",
+ "title": "GitHub Globe",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "GithubGlobe"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "webgl",
+  "3d",
+  "pure",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { GithubGlobe } from \"@/components/ui/github-globe\";\n\nconst GLOBE_DATA = [\n  { order: 1, startLat: 28.6, startLng: 77.2, endLat: 37.8, endLng: -122.4, arcAlt: 0.3, color: \"#06b6d4\" },\n  { order: 2, startLat: 51.5, startLng: -0.12, endLat: 40.7, endLng: -74.0, arcAlt: 0.2, color: \"#a855f7\" },\n  { order: 3, startLat: -33.9, startLng: 151.2, endLat: 35.7, endLng: 139.7, arcAlt: 0.25, color: \"#f59e0b\" },\n  { order: 4, startLat: 48.9, startLng: 2.35, endLat: 55.8, endLng: 37.6, arcAlt: 0.15, color: \"#10b981\" },\n  { order: 5, startLat: 1.35, startLng: 103.8, endLat: 22.3, endLng: 114.2, arcAlt: 0.1, color: \"#ef4444\" },\n];\n\nexport default function GithubGlobeDemo() {\n  return (\n    <div className=\"flex items-center justify-center bg-neutral-950 p-8 min-h-[450px]\">\n      <GithubGlobe\n        data={GLOBE_DATA}\n        globeConfig={{\n          globeColor: \"#1d072e\",\n          showAtmosphere: true,\n          atmosphereColor: \"#8b5cf6\",\n          atmosphereAltitude: 0.1,\n          polygonColor: \"rgba(255,255,255,0.5)\",\n          arcTime: 2000,\n          arcLength: 0.9,\n          rings: 1,\n          maxRings: 3,\n          autoRotate: true,\n          autoRotateSpeed: 0.5,\n        }}\n        className=\"h-96 w-96\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/github-globe.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/github-globe.json",
+ "preview": "https://stashui.vercel.app/c/github-globe",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D spinning globe with animated arcs connecting geographic points.",
+ "description": "Renders an interactive Three.js globe with lat/lng data points. Arcs animate between start and end locations. Configurable colors, atmosphere, rotation speed, and ring effects.",
+ "use_when": "Displaying global connections, distributed teams, or data flows between regions.",
+ "avoid_when": "Performance-critical mobile contexts or when static map suffices.",
+ "a11y": "3D visualization is visual-only. No keyboard interaction or descriptive labels.",
+ "props": [
+  {
+   "name": "globeConfig",
+   "type": "GlobeConfig",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "data",
+   "type": "Position[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"h-96 w-96\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "stat"
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "name": "FloatingLines-TS-TW",
+ "title": "Floating Lines",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FloatingLines"
+ ],
+ "npm_deps": [
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl"
+ ],
+ "usage": "import Cmp from \"@/components/ui/FloatingLines\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FloatingLines.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FloatingLines-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FloatingLines-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated waves of flowing lines with interactive mouse bending.",
+ "description": "THREE.js shader rendering multiple layers of animated wave lines. Supports top, middle, and bottom wave layers with customizable gradients, line counts, and positions. Optional mouse interaction with parallax effect.",
+ "use_when": "Abstract, flowing backgrounds where layered wave patterns create visual depth and movement.",
+ "avoid_when": "When clean, minimal backgrounds are preferred; the layered waves add complexity.",
+ "a11y": "WebGL canvas with optional mouse interactivity. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "linesGradient",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "enabledWaves",
+   "type": "Array<'top' | 'middle' | 'bottom'>",
+   "default": "['top', 'middle', 'bottom']",
+   "required": false
+  },
+  {
+   "name": "lineCount",
+   "type": "number | number[]",
+   "default": "[6]",
+   "required": false
+  },
+  {
+   "name": "lineDistance",
+   "type": "number | number[]",
+   "default": "[5]",
+   "required": false
+  },
+  {
+   "name": "topWavePosition",
+   "type": "WavePosition",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "middleWavePosition",
+   "type": "WavePosition",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "bottomWavePosition",
+   "type": "WavePosition",
+   "default": "{ x: 2.0, y: -0.7, rotate: -1 }",
+   "required": false
+  },
+  {
+   "name": "animationSpeed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "bendRadius",
+   "type": "number",
+   "default": "5.0",
+   "required": false
+  },
+  {
+   "name": "bendStrength",
+   "type": "number",
+   "default": "-0.5",
+   "required": false
+  },
+  {
+   "name": "mouseDamping",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "parallax",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "parallaxStrength",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "mixBlendMode",
+   "type": "React.CSSProperties['mixBlendMode']",
+   "default": "'screen'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

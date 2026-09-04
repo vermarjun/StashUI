@@ -1,0 +1,123 @@
+{
+ "name": "Ribbons-TS-TW",
+ "title": "Physics Ribbon Trail",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Ribbons"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "webgl",
+  "4 colors"
+ ],
+ "usage": "\"use client\"\n\nimport Ribbons from \"@/components/ui/Ribbons\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full max-w-2xl h-[400px] bg-black rounded-xl overflow-hidden\">\n      <Ribbons\n        colors={[\"#ff9346\", \"#7cff67\", \"#ffee51\", \"#5227FF\"]}\n        baseSpring={0.03}\n        baseFriction={0.9}\n        baseThickness={30}\n        enableFade={false}\n        enableShaderEffect={false}\n        pointCount={50}\n        speedMultiplier={0.6}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Ribbons.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Ribbons-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Ribbons-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Colored ribbons trail the cursor with spring physics.",
+ "description": "Renders WebGL ribbons following pointer position using spring physics. Each ribbon has independent physics parameters and optional shader wave effects or fade.",
+ "use_when": "Full-screen hero backgrounds or interactive effects on dark surfaces.",
+ "avoid_when": "Touch-only devices (tracks pointer only); requires a sized parent container.",
+ "a11y": "Canvas wrapper only; no keyboard interaction or prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#ff9346', '#7cff67', '#ffee51', '#5227FF']",
+   "required": false
+  },
+  {
+   "name": "baseSpring",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "baseFriction",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "baseThickness",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "offsetFactor",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "maxAge",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "pointCount",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "speedMultiplier",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "enableFade",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enableShaderEffect",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "effectAmplitude",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "number[]",
+   "default": "[0, 0, 0, 0]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

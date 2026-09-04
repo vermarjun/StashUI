@@ -1,0 +1,61 @@
+{
+ "name": "inspira-text-generate-effect",
+ "title": "Text Generate Effect",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextGenerateEffect"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { TextGenerateEffect } from \"@/components/ui/text-generate-effect\";\n\nexport default function TextGenerateEffectDemo() {\n  return (\n    <div className=\"flex min-h-[300px] items-center justify-center bg-background p-8\">\n      <TextGenerateEffect\n        words=\"Words generate one by one with a smooth blur-to-clear animation effect.\"\n        filter={true}\n        duration={0.7}\n        delay={0}\n        className=\"max-w-lg text-center text-2xl font-semibold text-foreground\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-generate-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-text-generate-effect.json",
+ "preview": "https://stashui.vercel.app/c/inspira-text-generate-effect",
+ "dupe_group": "textgenerateeffect",
+ "alternatives": [
+  {
+   "name": "text-generate-effect",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Text appears word-by-word as if being typed out.",
+ "description": "Displays text with a typewriter-like effect, words entering sequentially with staggered timing. Runs once on mount or scroll trigger.",
+ "use_when": "Narratives, announcements, or storytelling sections where sequence matters.",
+ "avoid_when": "Long passages — typing animation makes content unavailable until complete.",
+ "a11y": "Text is hidden until animation runs; screen readers may announce before animation completes.",
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.7",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "section-background"
+ ]
+}

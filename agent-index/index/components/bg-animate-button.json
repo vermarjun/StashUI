@@ -1,0 +1,104 @@
+{
+ "name": "bg-animate-button",
+ "title": "Animated Gradient Button",
+ "category": "buttons",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "BgAnimateButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "import { BgAnimateButton } from \"@/components/ui/bg-animate-button\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-8\">\n      <BgAnimateButton gradient=\"sunset\" animation=\"spin\" rounded=\"2xl\">\n        Get Started\n      </BgAnimateButton>\n      <BgAnimateButton gradient=\"ocean\" animation=\"spin-fast\" rounded=\"2xl\">\n        Explore\n      </BgAnimateButton>\n      <BgAnimateButton gradient=\"nebula\" animation=\"spin\" rounded=\"2xl\">\n        Continue\n      </BgAnimateButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/bg-animate-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-animate-button.json",
+ "preview": "https://stashui.vercel.app/c/bg-animate-button",
+ "dupe_group": "animatedgradientbutton",
+ "alternatives": [
+  {
+   "name": "btn-animated-gradient",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 10
+  }
+ ],
+ "blurb": "Button with optional rotating gradient background in six colour schemes.",
+ "description": "A styled button component that optionally renders a spinning conic-gradient background behind the button text. Supports multiple colour themes (sunset, ocean, nebula, etc.) and animation speeds.",
+ "use_when": "A primary call-to-action that needs to stand out with colour and motion without being overwhelming.",
+ "avoid_when": "When accessibility is paramount or the UI needs to stay minimal and calm.",
+ "a11y": "Standard button element with full keyboard support. Uses text children so the label is always accessible.",
+ "props": [
+  {
+   "name": "variant",
+   "type": "\"primary\" | \"success\" | \"secondary\" | \"destructive\" | \"ghost\"",
+   "default": "\"primary\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "\"sm\" | \"lg\" | \"default\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "shadow",
+   "type": "\"flat\" | \"soft\" | \"base\" | \"deep\" | \"deeper\"",
+   "default": "\"soft\"",
+   "required": false
+  },
+  {
+   "name": "rounded",
+   "type": "\"full\" | \"xl\" | \"2xl\" | \"3xl\" | \"sm\" | \"xs\" | \"base\"",
+   "default": "\"full\"",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showBackground",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animation",
+   "type": "\"spin\" | \"pulse\" | \"spin-slow\" | \"spin-fast\"",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "gradient",
+   "type": "\"sunrise\" | \"ocean\" | \"candy\" | \"default\" | \"forest\" | \"sunset\" | \"nebula\"",
+   "default": "null",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "form-submit"
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "name": "text-hover-effect",
+ "title": "Text Hover Effect",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "TextHoverEffect"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "motion",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\nimport { TextHoverEffect } from \"@/components/ui/text-hover-effect\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-48 w-full max-w-2xl items-center justify-center\">\n      <TextHoverEffect text=\"HOVER ME\" duration={0} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/text-hover-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-hover-effect.json",
+ "preview": "https://stashui.vercel.app/c/text-hover-effect",
+ "dupe_group": "texthovereffect",
+ "alternatives": [
+  {
+   "name": "inspira-text-hover-effect",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 9
+  }
+ ],
+ "blurb": "Rainbow gradient text reveals under the cursor as you hover, with initial…",
+ "description": "SVG text component with a radial mask gradient that follows the cursor, revealing a rainbow fill underneath. Initial stroke-dasharray animation draws the outline before hover.",
+ "use_when": "Large display headlines or hero text that should feel interactive and playful on desktop.",
+ "avoid_when": "Touch-only surfaces, as the effect requires pointer tracking. Does not work well on mobile.",
+ "a11y": "Text rendered as SVG; no alternative text content. Animation follows cursor only on hover, does not respond to prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "headline"
+ ]
+}

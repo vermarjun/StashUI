@@ -1,0 +1,126 @@
+{
+ "name": "SplitText-TS-TW",
+ "title": "SplitText",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "SplitText"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0",
+  "@gsap/react@^2.1.2"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\nimport SplitText from \"@/components/ui/SplitText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full min-h-[360px] gap-6 p-12 bg-background\">\n      <SplitText\n        text=\"Every letter has a story.\"\n        tag=\"h2\"\n        className=\"text-4xl font-bold text-foreground\"\n        splitType=\"chars\"\n        duration={1.1}\n        delay={40}\n        from={{ opacity: 0, y: 50 }}\n        to={{ opacity: 1, y: 0 }}\n      />\n      <SplitText\n        text=\"Watch them arrive one by one.\"\n        tag=\"p\"\n        className=\"text-xl text-muted-foreground\"\n        splitType=\"words\"\n        duration={0.9}\n        delay={80}\n        from={{ opacity: 0, y: 24 }}\n        to={{ opacity: 1, y: 0 }}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/SplitText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/SplitText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/SplitText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Characters or words animate in staggered fashion when scrolled into view.",
+ "description": "Uses GSAP SplitText to split text into characters, words, or lines and animate them from a starting state to an ending state with configurable stagger. Triggered by ScrollTrigger on scroll visibility.",
+ "use_when": "Headings or body text need a polished staggered reveal that's synchronized to scroll.",
+ "avoid_when": "When text must be immediately readable or when rapid scrolling should not trigger the animation.",
+ "a11y": "Text is split into character/word/line elements and animated. Fully readable; animation is purely visual.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.25",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string | ((t: number) => number)",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "splitType",
+   "type": "'chars' | 'words' | 'lines' | 'words, chars'",
+   "default": "'chars'",
+   "required": false
+  },
+  {
+   "name": "from",
+   "type": "gsap.TweenVars",
+   "default": "{ opacity: 0, y: 40 }",
+   "required": false
+  },
+  {
+   "name": "to",
+   "type": "gsap.TweenVars",
+   "default": "{ opacity: 1, y: 0 }",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "rootMargin",
+   "type": "string",
+   "default": "'-100px'",
+   "required": false
+  },
+  {
+   "name": "tag",
+   "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
+   "default": "'p'",
+   "required": false
+  },
+  {
+   "name": "textAlign",
+   "type": "React.CSSProperties['textAlign']",
+   "default": "'center'",
+   "required": false
+  },
+  {
+   "name": "onLetterAnimationComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

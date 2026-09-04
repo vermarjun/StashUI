@@ -1,0 +1,60 @@
+{
+ "name": "text-scroll-reveal",
+ "title": "Text Scroll Reveal",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextScrollReveal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { TextScrollReveal } from \"@/components/ui/text-scroll-reveal\";\n\nexport default function TextScrollRevealDemo() {\n  return (\n    <div className=\"bg-white dark:bg-neutral-950\">\n      <div className=\"flex h-screen items-center justify-center\">\n        <p className=\"text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300\">\n          Scroll down to see the effect\n        </p>\n      </div>\n      <TextScrollReveal text=\"This text reveals itself as you scroll down the page, word by word, creating a beautiful reading experience for your visitors.\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-scroll-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-scroll-reveal.json",
+ "preview": "https://stashui.vercel.app/c/text-scroll-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Words fade in one by one as the page scrolls past this double-height section.",
+ "description": "Takes a string and splits it into words, each revealing via scroll-linked opacity animation computed from window scroll position. Component spans 200vh height with sticky positioning.",
+ "use_when": "Long-form narrative sections where text should unfold gradually as the reader scrolls through.",
+ "avoid_when": "Mobile with scroll-jacking; does not work well with scroll-snapping. Requires a string input, not rich content.",
+ "a11y": "Text is fully rendered in the DOM and readable; opacity animation responds to scroll, does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "section-background"
+ ]
+}

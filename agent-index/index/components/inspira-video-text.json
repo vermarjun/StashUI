@@ -1,0 +1,120 @@
+{
+ "name": "inspira-video-text",
+ "title": "Video Text Mask",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "VideoText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { VideoText } from \"@/components/ui/video-text\";\n\nexport default function VideoTextDemo() {\n  return (\n    <div className=\"flex h-screen items-center justify-center bg-black\">\n      <div className=\"h-64 w-full max-w-4xl\">\n        <VideoText\n          src=\"https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4\"\n          fontSize={15}\n          fontWeight=\"900\"\n          fontFamily=\"Arial Black, sans-serif\"\n        >\n          HELLO\n        </VideoText>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/video-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-video-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-video-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text fills with video, showing moving imagery only within letter shapes.",
+ "description": "Masks a video element using text as an SVG shape, so video content plays only within the letterforms. Responsive sizing with configurable typography.",
+ "use_when": "Hero sections or dramatic statements where video imagery inside text creates striking visual impact.",
+ "avoid_when": "When video content must be described or captioned — the video is masked and not separately announced. Requires a sized…",
+ "a11y": "Text content is in a screen-reader-only span. Video itself has no captions or description; only text is announced.",
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute inset-0 flex items-center justify-center\"",
+   "required": false
+  },
+  {
+   "name": "autoPlay",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "muted",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "preload",
+   "type": "\"auto\" | \"metadata\" | \"none\"",
+   "default": "\"auto\"",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "string | number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "fontWeight",
+   "type": "string | number",
+   "default": "\"bold\"",
+   "required": false
+  },
+  {
+   "name": "textAnchor",
+   "type": "string",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "dominantBaseline",
+   "type": "string",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "fontFamily",
+   "type": "string",
+   "default": "\"sans-serif\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "headline"
+ ]
+}

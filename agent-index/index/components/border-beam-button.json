@@ -1,0 +1,141 @@
+{
+ "name": "border-beam-button",
+ "title": "Border Beam Button",
+ "category": "buttons",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "BorderBeamButton",
+  "BorderBeamIconButton"
+ ],
+ "npm_deps": [
+  "border-beam"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import { BorderBeamButton } from \"@/components/ui/border-beam-button\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-8\">\n      <BorderBeamButton>Get Started</BorderBeamButton>\n      <BorderBeamButton variant=\"outline\">Documentation</BorderBeamButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/border-beam-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/border-beam-button.json",
+ "preview": "https://stashui.vercel.app/c/border-beam-button",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Button wrapped in an animated colour-cycling border beam.",
+ "description": "Wraps a Button component in the BorderBeam library component, which renders an animated gradient beam that rotates around the button's border. Supports theme detection and customizable colors.",
+ "use_when": "A high-impact CTA that needs to draw attention with a premium, animated effect.",
+ "avoid_when": "Dense button groups or when the animation would compete with other interactive elements.",
+ "a11y": "Full keyboard support via underlying Button component. No motion restrictions.",
+ "props": [
+  {
+   "name": "beamSize",
+   "type": "BorderBeamSize",
+   "default": "\"sm\"",
+   "required": false
+  },
+  {
+   "name": "borderBeamClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "borderBeamStyle",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "theme",
+   "type": "string",
+   "default": "\"auto\"",
+   "required": false
+  },
+  {
+   "name": "colorVariant",
+   "type": "string",
+   "default": "{colorVariant}",
+   "required": false
+  },
+  {
+   "name": "staticColors",
+   "type": "any",
+   "default": "{staticColors}",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "{duration}",
+   "required": false
+  },
+  {
+   "name": "active",
+   "type": "boolean",
+   "default": "{active}",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "{borderRadius}",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "{brightness}",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "{saturation}",
+   "required": false
+  },
+  {
+   "name": "hueRange",
+   "type": "number",
+   "default": "{hueRange}",
+   "required": false
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "{strength}",
+   "required": false
+  },
+  {
+   "name": "onActivate",
+   "type": "() => void",
+   "default": "{onActivate}",
+   "required": false
+  },
+  {
+   "name": "onDeactivate",
+   "type": "() => void",
+   "default": "{onDeactivate}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "form-submit"
+ ]
+}

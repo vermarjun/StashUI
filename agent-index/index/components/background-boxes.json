@@ -1,0 +1,60 @@
+{
+ "name": "background-boxes",
+ "title": "Background Boxes",
+ "category": "backgrounds",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "BoxesCore",
+  "Boxes"
+ ],
+ "npm_deps": [
+  "mini-svg-data-uri",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "3d",
+  "motion",
+  "12 colors"
+ ],
+ "usage": "import { BoxesCore } from \"@/components/ui/background-boxes\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-slate-900\">\n      <BoxesCore />\n      <div className=\"relative z-10 flex h-full items-center justify-center\">\n        <p className=\"text-foreground text-2xl font-semibold\">Background Boxes</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/background-boxes.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/background-boxes.json",
+ "preview": "https://stashui.vercel.app/c/background-boxes",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Skewed grid of boxes that fill with color on hover.",
+ "description": "Renders 15,000-element grid with 3D skew/perspective transform. Boxes respond to hover with random color fill from a hardcoded palette. Positioned absolutely with complex transforms.",
+ "use_when": "Experimental interactive background for hero sections with modest screen sizes.",
+ "avoid_when": "Mobile, tablets, or performance-critical pages—rendering 15,000 DOM elements causes significant jank.",
+ "a11y": "Purely decorative; hover effects are visual only with no keyboard equivalents.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

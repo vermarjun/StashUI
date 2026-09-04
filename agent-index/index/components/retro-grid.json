@@ -1,0 +1,93 @@
+{
+ "name": "retro-grid",
+ "title": "Retro Grid",
+ "category": "backgrounds",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "RetroGrid"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "3d",
+  "pure",
+  "2 colors"
+ ],
+ "usage": "import { RetroGrid } from \"@/components/ui/retro-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <RetroGrid />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/retro-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/retro-grid.json",
+ "preview": "https://stashui.vercel.app/c/retro-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Grid recedes into perspective, scrolling endlessly across the background.",
+ "description": "WebGL-rendered grid in perspective that scrolls continuously; responsive to angle, cellSize, and color props; includes CSS fallback for unsupported browsers.",
+ "use_when": "Large background effect for hero sections or immersive layouts needing retro 3D aesthetics.",
+ "avoid_when": "Browsers without WebGL support (CSS fallback is static); performance-sensitive contexts with many concurrent grids.",
+ "a11y": "Decorative background wrapper. Respects prefers-reduced-motion (animation pauses).",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "angle",
+   "type": "number",
+   "default": "65",
+   "required": false
+  },
+  {
+   "name": "cellSize",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "lightLineColor",
+   "type": "string",
+   "default": "\"gray\"",
+   "required": false
+  },
+  {
+   "name": "darkLineColor",
+   "type": "string",
+   "default": "\"gray\"",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": "{gridStyles}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

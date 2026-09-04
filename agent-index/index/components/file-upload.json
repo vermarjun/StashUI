@@ -1,0 +1,74 @@
+{
+ "name": "file-upload",
+ "title": "File Upload",
+ "category": "file-upload",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "FileUpload",
+  "GridPattern"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "react-dropzone",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 29,
+ "flags": [
+  "motion",
+  "heavy",
+  "29 colors"
+ ],
+ "usage": "import { FileUpload } from \"@/components/ui/file-upload\";\n\nexport default function Demo() {\n  return <FileUpload />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/file-upload.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/file-upload.json",
+ "preview": "https://stashui.vercel.app/c/file-upload",
+ "dupe_group": "fileupload",
+ "alternatives": [
+  {
+   "name": "inspira-file-upload",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 25
+  },
+  {
+   "name": "ui-layouts-file-upload",
+   "origin": "Ui-Layouts",
+   "npm_deps": 3,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Animated file upload with grid pattern background and layout motion.",
+ "description": "Drag-and-drop file uploader with animated file list display. Background has radial gradient grid pattern. Uses Framer Motion for layout animations.",
+ "use_when": "Polished, visually distinct file uploads with emphasis on animation and design.",
+ "avoid_when": "Performance-critical contexts; animations may strain older devices.",
+ "a11y": "Input hidden but accessible. Drop zone keyboard operable via click handler.",
+ "props": [
+  {
+   "name": "onChange",
+   "type": "(files: File[]) => void",
+   "default": "{(e) => handleFileChange(Array.from(e.target.files || []))}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "modal"
+ ]
+}

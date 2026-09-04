@@ -1,0 +1,53 @@
+{
+ "name": "comp-484",
+ "title": "Table With Ellipsis Pagination",
+ "category": "tables",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [
+  "@tanstack/react-table"
+ ],
+ "registry_deps": [
+  "badge",
+  "button",
+  "checkbox",
+  "pagination",
+  "select",
+  "table"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import Cmp from \"@/components/ui/comp-484\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-484.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-484.json",
+ "preview": "https://stashui.vercel.app/c/comp-484",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Paginated table with numbered page buttons and ellipsis between page ranges.",
+ "description": "Data table with smart pagination showing numbered page buttons (5 at a time), ellipsis for skipped ranges, previous/next buttons, and rows-per-page selector. Includes aria-live updates and aria-current on active page.",
+ "use_when": "Tables with many pages where users want to jump to specific page numbers, not just next/previous.",
+ "avoid_when": "Very large datasets (1000+ pages) — even with ellipsis, pagination buttons overwhelm the UI.",
+ "a11y": "Page buttons have aria-current=\"page\" when active. Previous/next buttons have aria-labels. Page info uses aria-live=\"polite\".",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "data-table"
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "name": "primitives-texts-typing",
+ "title": "Typing Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "TypingText",
+  "TypingTextCursor"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view",
+  "@animate-ui/lib-get-strict-context"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { TypingText, TypingTextCursor } from '@/components/ui/primitives-texts-typing';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 w-full p-10\">\n      <div className=\"text-2xl font-mono font-semibold\">\n        <TypingText\n          text=\"Hello, World!\"\n          inView\n          duration={80}\n        >\n          <TypingTextCursor />\n        </TypingText>\n      </div>\n\n      <div className=\"text-xl font-mono text-neutral-600 dark:text-neutral-300\">\n        <TypingText\n          text={['Building beautiful UIs...', 'With smooth animations...', 'Using Animate UI!']}\n          inView\n          duration={60}\n          loop\n          holdDelay={1500}\n        >\n          <TypingTextCursor />\n        </TypingText>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-typing.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-typing.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-typing",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text appears character-by-character as if being typed.",
+ "description": "Animates text as a typewriter effect, revealing characters sequentially with optional cursor animation.",
+ "use_when": "Narratives, code snippets, or onboarding text.",
+ "avoid_when": "Body content — typing delay makes the text unavailable until animation completes.",
+ "a11y": "Content is hidden until typed. Screen readers may announce before visible.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "hero"
+ ]
+}

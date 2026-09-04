@@ -1,0 +1,124 @@
+{
+ "name": "hero-heatmap",
+ "title": "Hero Heatmap",
+ "category": "heroes",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "HeroHeatmapRoot",
+  "HeroHeatmapContainer",
+  "HeroHeatmapContent",
+  "HeroHeatmapHeading",
+  "HeroHeatmapDescription",
+  "HeroHeatmapActions",
+  "HeroHeatmapCTA",
+  "HeroHeatmapBadges",
+  "HeroHeatmapVisual",
+  "HeroHeatmapMobileVisual",
+  "HeroHeatmap",
+  "AISDKIcon",
+  "NextjsIcon"
+ ],
+ "npm_deps": [
+  "@paper-design/shaders-react"
+ ],
+ "registry_deps": [
+  "badge",
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "16 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { HeroHeatmap } from \"@/components/ui/hero-heatmap\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[640px] w-full overflow-hidden\">\n      <HeroHeatmap />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/hero-heatmap.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hero-heatmap.json",
+ "preview": "https://stashui.vercel.app/c/hero-heatmap",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Hero with colorful heatmap shader visualization and tech badges.",
+ "description": "Responsive hero with heading, description, CTA, and tech stack badges. Animated Heatmap shader over an icon image (cult-icon.svg) on desktop (1280×720) and mobile, with colorful spectrum (blue to magenta).",
+ "use_when": "AI/SDK product with data-visualization aesthetic; icon-based heatmap creates technical, analytical feel.",
+ "avoid_when": "Shader-intensive WebGL. Requires sized parent and /cult-icon.svg asset.",
+ "a11y": "Screen-reader title (srTitle). Buttons and links focusable. Shader is decorative.",
+ "props": [
+  {
+   "name": "srTitle",
+   "type": "string",
+   "default": "AI SDK Agents",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "React.ReactNode",
+   "default": "Copy and Paste",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showCta",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "ctaProps",
+   "type": "Partial<HeroHeatmapCTAProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showBadges",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "techStack",
+   "type": "HeroHeatmapTechItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "desktopShaderProps",
+   "type": "Partial<HeatmapProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mobileShaderProps",
+   "type": "Partial<HeatmapProps>",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ]
+}

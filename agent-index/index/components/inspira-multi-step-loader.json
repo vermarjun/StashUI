@@ -1,0 +1,96 @@
+{
+ "name": "inspira-multi-step-loader",
+ "title": "Multi Step Loader",
+ "category": "loaders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "MultiStepLoader"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { MultiStepLoader } from \"@/components/ui/multi-step-loader\";\n\nconst steps = [\n  { text: \"Initializing project...\", afterText: \"Project initialized!\" },\n  { text: \"Installing dependencies...\", afterText: \"Dependencies installed.\" },\n  { text: \"Configuring environment...\", afterText: \"Config ready.\" },\n  { text: \"Building assets...\", afterText: \"Build complete.\" },\n  { text: \"Deploying to production...\", afterText: \"Live! 🎉\" },\n];\n\nexport default function MultiStepLoaderDemo() {\n  const [loading, setLoading] = useState(false);\n\n  return (\n    <div className=\"flex min-h-32 flex-col items-center justify-center gap-4 p-8\">\n      <MultiStepLoader\n        steps={steps}\n        loading={loading}\n        defaultDuration={1200}\n        onComplete={() => setTimeout(() => setLoading(false), 800)}\n        onClose={() => setLoading(false)}\n      />\n      <button\n        onClick={() => setLoading(true)}\n        className=\"rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90\"\n      >\n        Start Loader\n      </button>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/multi-step-loader.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-multi-step-loader.json",
+ "preview": "https://stashui.vercel.app/c/inspira-multi-step-loader",
+ "dupe_group": "multisteploader",
+ "alternatives": [
+  {
+   "name": "multi-step-loader",
+   "origin": "Aceternity UI",
+   "npm_deps": 2,
+   "hardcoded_colors": 12
+  }
+ ],
+ "blurb": "Full-screen multi-step loader with progress animation and step indicators.",
+ "description": "A full-screen overlay loader that displays a sequence of steps with animations, icons for progress status (pending, loading, completed), and optional afterText labels.",
+ "use_when": "Showing sequential progress through a multi-step process like installation, deployment, or data processing.",
+ "avoid_when": "For simple loading spinners or when a modal isn't appropriate.",
+ "a11y": "Displays step text and icons, close button is visible when not preventClose. Steps are semantic text.",
+ "props": [
+  {
+   "name": "steps",
+   "type": "LoaderStep[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "loading",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "defaultDuration",
+   "type": "number",
+   "default": "1500",
+   "required": false
+  },
+  {
+   "name": "preventClose",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onStateChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onClose",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "loading"
+ ]
+}

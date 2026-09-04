@@ -1,0 +1,166 @@
+{
+ "name": "FaultyTerminal-TS-TW",
+ "title": "Faulty Terminal",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FaultyTerminal"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "webgl",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport FaultyTerminal from \"@/components/ui/FaultyTerminal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full rounded-xl overflow-hidden\" style={{ height: \"400px\" }}>\n      <FaultyTerminal\n        tint=\"#00ff88\"\n        glitchAmount={1}\n        scanlineIntensity={0.3}\n        curvature={0.2}\n        mouseReact={true}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FaultyTerminal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FaultyTerminal-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FaultyTerminal-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A retro CRT terminal with glitch, scanlines, and procedural digits that react…",
+ "description": "WebGL component rendering a procedurally generated terminal display with scanline effects, chromatic aberration, glitch artifacts, and curvature distortion. Optionally responds to cursor position and includes page-load fade-in animation.",
+ "use_when": "You need a striking tech aesthetic — hero sections, loading states, or full-screen backgrounds with retro appeal.",
+ "avoid_when": "Touch-only surfaces, users with motion sensitivity (no prefers-reduced-motion guard), or performance-constrained…",
+ "a11y": "Purely visual; cursor tracking has no keyboard alternative, and there's no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "gridMul",
+   "type": "[number, number]",
+   "default": "[2, 1]",
+   "required": false
+  },
+  {
+   "name": "digitSize",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "timeScale",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "pause",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "scanlineIntensity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "glitchAmount",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "flickerAmount",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "noiseAmp",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "chromaticAberration",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "dither",
+   "type": "number | boolean",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "curvature",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "tint",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "mouseReact",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseStrength",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "dpr",
+   "type": "number",
+   "default": "Math.min(window.devicePixelRatio || 1, 2)",
+   "required": false
+  },
+  {
+   "name": "pageLoadAnimation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration",
+  "loading"
+ ]
+}

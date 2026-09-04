@@ -1,0 +1,48 @@
+{
+ "name": "collapsible",
+ "title": "Collapsible",
+ "category": "accordions",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Collapsible",
+  "CollapsibleContent",
+  "CollapsibleTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\";\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <div className=\"w-full max-w-sm px-4\">\n      <Collapsible open={open} onOpenChange={setOpen} className=\"rounded-md border bg-background\">\n        <CollapsibleTrigger className=\"flex w-full items-center justify-between px-4 py-3 font-semibold text-sm [&[data-state=open]>svg]:rotate-180\">\n          What is a collapsible?\n          <ChevronDownIcon\n            aria-hidden=\"true\"\n            className=\"shrink-0 opacity-60 transition-transform duration-200\"\n            size={16}\n          />\n        </CollapsibleTrigger>\n        <CollapsibleContent className=\"overflow-hidden px-4 pb-3 text-muted-foreground text-sm transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down\">\n          A collapsible is a single expandable section that shows or hides its\n          content when triggered. It is simpler than an accordion and has no\n          concept of exclusive open state.\n        </CollapsibleContent>\n      </Collapsible>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/collapsible.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/collapsible.json",
+ "preview": "https://stashui.vercel.app/c/collapsible",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Single section that expands and collapses under a trigger.",
+ "description": "Radix UI Collapsible primitive. Click trigger to toggle content visibility. No multi-section state management.",
+ "use_when": "Single progressive disclosure section, advanced options, or side details.",
+ "avoid_when": "Multiple independent collapsible sections — use Accordion instead.",
+ "a11y": "Trigger button with aria-expanded. Radix-managed focus and keyboard navigation.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "form-field"
+ ]
+}

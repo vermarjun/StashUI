@@ -1,0 +1,85 @@
+{
+ "name": "origin-ui-timeline",
+ "title": "Timeline",
+ "category": "data-display",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Timeline",
+  "TimelineContent",
+  "TimelineDate",
+  "TimelineHeader",
+  "TimelineIndicator",
+  "TimelineItem",
+  "TimelineSeparator",
+  "TimelineTitle"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Timeline,\n  TimelineContent,\n  TimelineDate,\n  TimelineHeader,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineSeparator,\n  TimelineTitle,\n} from \"@/components/ui/timeline\";\n\nconst steps = [\n  {\n    step: 1,\n    title: \"Order placed\",\n    date: \"Jun 10, 2024\",\n    content: \"Your order #ORD-8821 has been received and is being processed.\",\n  },\n  {\n    step: 2,\n    title: \"Payment confirmed\",\n    date: \"Jun 10, 2024\",\n    content: \"Payment of $129.00 was successfully charged to your card.\",\n  },\n  {\n    step: 3,\n    title: \"Shipped\",\n    date: \"Jun 12, 2024\",\n    content: \"Your package is on its way — tracking ID: 1Z999AA10123456784.\",\n  },\n  {\n    step: 4,\n    title: \"Out for delivery\",\n    date: \"Jun 14, 2024\",\n    content: \"The carrier is en route. Estimated arrival: today by 8 pm.\",\n  },\n  {\n    step: 5,\n    title: \"Delivered\",\n    date: \"Jun 14, 2024\",\n    content: \"Package delivered. Thank you for your order!\",\n  },\n];\n\nexport default function Demo() {\n  const [active, setActive] = useState(3);\n\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8 w-full max-w-sm mx-auto\">\n      <div className=\"w-full\">\n        <p className=\"text-xs text-muted-foreground mb-1 uppercase tracking-wide\">\n          Order status\n        </p>\n        <h2 className=\"text-base font-semibold text-foreground mb-6\">\n          Track your shipment\n        </h2>\n        <Timeline value={active} onValueChange={setActive}>\n          {steps.map(({ step, title, date, content }) => (\n            <TimelineItem key={step} step={step}>\n              <TimelineIndicator />\n              <TimelineSeparator />\n              <TimelineHeader>\n                <TimelineDate>{date}</TimelineDate>\n                <TimelineTitle\n                  className=\"cursor-pointer hover:text-foreground transition-colors\"\n                  onClick={() => setActive(step)}\n                >\n                  {title}\n                </TimelineTitle>\n              </TimelineHeader>\n              <TimelineContent>{content}</TimelineContent>\n            </TimelineItem>\n          ))}\n        </Timeline>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/timeline.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/origin-ui-timeline.json",
+ "preview": "https://stashui.vercel.app/c/origin-ui-timeline",
+ "dupe_group": "timeline",
+ "alternatives": [
+  {
+   "name": "timeline",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 20
+  }
+ ],
+ "blurb": "Vertical or horizontal timeline with clickable steps and an active-step…",
+ "description": "Compound component system (Timeline, TimelineItem, TimelineIndicator, TimelineDate, TimelineTitle, TimelineContent) for status/workflow tracking. Tracks active step via controlled (value prop) or uncontrolled (defaultValue) state. Steps…",
+ "use_when": "Order tracking, onboarding flows, or process timelines where users follow sequential steps.",
+ "avoid_when": "Deeply nested timelines (3+ levels of nesting) — layout can become complex.",
+ "a11y": "Semantic time elements for dates. Timeline steps are buttons (clickable) with active state. Supports keyboard navigation if wrapped in proper focus management.",
+ "props": [
+  {
+   "name": "defaultValue",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "number",
+   "default": "{{ activeStep: currentStep, setActiveStep }}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "orientation",
+   "type": "horizontal | vertical",
+   "default": "\"vertical\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "data-table",
+  "body-text"
+ ]
+}

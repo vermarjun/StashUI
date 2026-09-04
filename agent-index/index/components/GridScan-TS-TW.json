@@ -1,0 +1,222 @@
+{
+ "name": "GridScan-TS-TW",
+ "title": "Grid Scan",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "GridScan"
+ ],
+ "npm_deps": [
+  "face-api.js@^0.22.2",
+  "postprocessing@^6.36.0",
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "webgl",
+  "heavy",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { GridScan } from \"@/components/ui/GridScan\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[560px] overflow-hidden\">\n      <GridScan />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/GridScan.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/GridScan-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/GridScan-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A 3D grid with animated scanning lines that responds to your face or cursor…",
+ "description": "WebGL component rendering a 3D perspective grid with animated scanning lines. Optionally detects faces via webcam and responds to face position, gyroscopic input, or mouse movement. Includes post-processing bloom and chromatic aberration…",
+ "use_when": "You need a tech-forward, sci-fi aesthetic for backgrounds or hero sections, especially with optional face tracking for…",
+ "avoid_when": "Webcam access is unavailable, performance is critical, or users have photosensitivity concerns.",
+ "a11y": "Primarily visual scanning effect; face detection is decorative. No keyboard alternative or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "enableWebcam",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showPreview",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "modelsPath",
+   "type": "string",
+   "default": "'https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@0",
+   "required": false
+  },
+  {
+   "name": "sensitivity",
+   "type": "number",
+   "default": "0.55",
+   "required": false
+  },
+  {
+   "name": "lineThickness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "linesColor",
+   "type": "string",
+   "default": "'#2F293A'",
+   "required": false
+  },
+  {
+   "name": "scanColor",
+   "type": "string",
+   "default": "'#FF9FFC'",
+   "required": false
+  },
+  {
+   "name": "scanOpacity",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "gridScale",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "lineStyle",
+   "type": "\"solid\" | \"dashed\" | \"dotted\"",
+   "default": "'solid'",
+   "required": false
+  },
+  {
+   "name": "lineJitter",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "scanDirection",
+   "type": "\"forward\" | \"backward\" | \"pingpong\"",
+   "default": "'pingpong'",
+   "required": false
+  },
+  {
+   "name": "enablePost",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "bloomIntensity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "bloomThreshold",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "bloomSmoothing",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "chromaticAberration",
+   "type": "number",
+   "default": "0.002",
+   "required": false
+  },
+  {
+   "name": "noiseIntensity",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "scanGlow",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scanSoftness",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "scanPhaseTaper",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "scanDuration",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "scanDelay",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "enableGyro",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "scanOnClick",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "snapBackDelay",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration"
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "name": "halo-search",
+ "title": "Halo Search",
+ "category": "inputs",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "HaloSearch"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 35,
+ "flags": [
+  "pure",
+  "35 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { HaloSearch } from \"@/components/ui/halo-search\";\n\nexport default function HaloSearchDemo() {\n  return (\n    <div className=\"flex min-h-[200px] items-center justify-center bg-black p-8\">\n      <HaloSearch />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/halo-search.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/halo-search.json",
+ "preview": "https://stashui.vercel.app/c/halo-search",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Search input with rotating aurora-like halos and gradient rings around the…",
+ "description": "A decorative search input surrounded by animated conic-gradient halos that rotate continuously on the button and accelerate with additional rotations on hover and focus-within, using blur filters for an aurora effect.",
+ "use_when": "Creating premium, visually distinctive interfaces where the search field should be a focal design statement.",
+ "avoid_when": "When motion accessibility is critical; these CSS animations are continuous and computationally expensive.",
+ "a11y": "Input is semantic HTML but the halo animations do not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"search-field\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

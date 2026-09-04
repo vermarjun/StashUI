@@ -1,0 +1,74 @@
+{
+ "name": "comet-card",
+ "title": "Comet Card",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CometCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "3d",
+  "pure",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { CometCard } from \"@/components/ui/comet-card\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[420px] p-10 bg-background\">\n      <CometCard className=\"max-w-xs w-full\">\n        <div className=\"rounded-2xl bg-card border border-border overflow-hidden\">\n          <div className=\"h-36 w-full bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center\">\n            <span className=\"text-4xl select-none\">🌠</span>\n          </div>\n          <div className=\"p-5\">\n            <h3 className=\"font-semibold text-foreground\">Comet Card</h3>\n            <p className=\"mt-1 text-sm text-muted-foreground\">\n              Move your cursor over the card to see 3-D tilt with a glare comet\n              following the pointer.\n            </p>\n          </div>\n        </div>\n      </CometCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/comet-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comet-card.json",
+ "preview": "https://stashui.vercel.app/c/comet-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card with 3D tilt and a glare comet effect following the cursor.",
+ "description": "Card that rotates and translates in 3D based on mouse position. A bright glare spot (comet) trails the cursor across the card surface. Highly customizable rotation and translation depth.",
+ "use_when": "Premium product cards, hero highlights, or visually striking CTAs where the comet adds polish.",
+ "avoid_when": "Touch devices or performance-constrained environments — the effect is computationally demanding.",
+ "a11y": "Card content is readable. Tilt and comet are visual effects only.",
+ "props": [
+  {
+   "name": "rotateDepth",
+   "type": "number",
+   "default": "17.5",
+   "required": false
+  },
+  {
+   "name": "translateDepth",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative rounded-2xl\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "primary-cta"
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "name": "framer-multi-carousel",
+ "title": "Framer Multi Carousel",
+ "category": "carousels",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "FramerMultiSlideCarousel"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/framer-multi-carousel\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/framer-multi-carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/framer-multi-carousel.json",
+ "preview": "https://stashui.vercel.app/c/framer-multi-carousel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Responsive carousel showing multiple slides with breakpoint-based responsive…",
+ "description": "Multi-slide carousel with responsive breakpoints. Shows 1 slide on mobile, 2 on tablet, 3 on desktop. Supports custom breakpoint configuration. Navigate with prev/next buttons, snap animation via spring physics.",
+ "use_when": "Product grids or image galleries where multiple items should be visible simultaneously.",
+ "avoid_when": "When only showing one item at a time is desired.",
+ "a11y": "Previous/next buttons provide navigation; keyboard support depends on button implementation.",
+ "props": [
+  {
+   "name": "breakpoints",
+   "type": "object",
+   "default": "{0: {slidesToShow: 1}, 768: {slidesToShow: 2}, 1024: {slidesToShow: 3}}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "testimonial"
+ ]
+}

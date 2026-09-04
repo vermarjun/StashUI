@@ -1,0 +1,60 @@
+{
+ "name": "inspira-spinning-text",
+ "title": "Spinning Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "SpinningText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { SpinningText } from \"@/components/ui/spinning-text\";\n\nexport default function SpinningTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center h-48 w-full\">\n      <SpinningText\n        text=\"Spinning Text • React Port •\"\n        duration={8}\n        radius={5}\n        className=\"text-sm font-semibold w-40 h-40\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/spinning-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-spinning-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-spinning-text",
+ "dupe_group": "spinningtext",
+ "alternatives": [
+  {
+   "name": "spinning-text",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text rotates continuously around its center axis.",
+ "description": "Text element spins on a loop with configurable speed. Non-interactive, purely decorative.",
+ "use_when": "Loading states, featured badges, or eye-catching accent elements.",
+ "avoid_when": "Body content or dense layouts — spinning is disorienting and harms reading.",
+ "a11y": "Text is readable at points in the rotation but not consistently. No pause or motion control.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "loading"
+ ]
+}

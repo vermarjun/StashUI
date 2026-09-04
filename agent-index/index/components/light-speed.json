@@ -1,0 +1,54 @@
+{
+ "name": "light-speed",
+ "title": "Light Speed",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LightSpeed"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { LightSpeed } from \"@/components/ui/light-speed\";\n\nexport default function LightSpeedDemo() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-xl bg-black\">\n      <LightSpeed\n        effectOptions={{\n          distortion: \"turbulentDistortion\",\n          length: 400,\n          roadWidth: 10,\n          islandWidth: 2,\n          lanesPerRoad: 4,\n          fov: 90,\n          fovSpeedUp: 150,\n          speedUp: 2,\n          carLightsFade: 0.4,\n          totalSideLightSticks: 20,\n          lightPairsPerRoadWay: 40,\n        }}\n      />\n      <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\n        <p className=\"text-2xl font-bold text-white drop-shadow-lg\">\n          Click &amp; hold to speed up\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/light-speed.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/light-speed.json",
+ "preview": "https://stashui.vercel.app/c/light-speed",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "First-person highway rushes toward viewer with streaming car lights and road…",
+ "description": "Renders a 3D WebGL highway scene using THREE.js with animated perspective, car lights, and distortion effects. Speed increases on pointer press.",
+ "use_when": "Premium hero sections or pages emphasizing speed, motion, or forward momentum. Immerses viewers in kinetic energy.",
+ "avoid_when": "Performance-sensitive contexts or low-end devices — WebGL rendering is GPU-intensive. Invisible on headless browsers.",
+ "a11y": "WebGL visual scene with no keyboard or focus interaction. Purely visual effect without accessible alternatives.",
+ "props": [
+  {
+   "name": "effectOptions",
+   "type": "Partial<LightSpeedOptions>",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

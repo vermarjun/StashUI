@@ -1,0 +1,79 @@
+{
+ "name": "box-reveal",
+ "title": "Box Reveal",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BoxReveal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { BoxReveal } from \"@/components/ui/box-reveal\";\n\nexport default function BoxRevealDemo() {\n  return (\n    <div className=\"flex flex-col items-start justify-center gap-3 p-16\">\n      <BoxReveal color=\"#5046e6\" duration={0.5}>\n        <h1 className=\"text-4xl font-bold\">Hello World</h1>\n      </BoxReveal>\n\n      <BoxReveal color=\"#ec4899\" duration={0.5} delay={0.4}>\n        <p className=\"text-lg text-muted-foreground\">\n          This text is revealed with a sliding box animation.\n        </p>\n      </BoxReveal>\n\n      <BoxReveal color=\"#22c55e\" duration={0.5} delay={0.6}>\n        <span className=\"inline-block rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground\">\n          Get started\n        </span>\n      </BoxReveal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/box-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/box-reveal.json",
+ "preview": "https://stashui.vercel.app/c/box-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Content reveals as a colored box sweeps across and away.",
+ "description": "Triggers on viewport intersection: a colored overlay slides from left to right, revealing the content beneath which fades and slides up simultaneously.",
+ "use_when": "Entrance animations for text, headers, or feature content.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); high-frequency animations.",
+ "a11y": "Animation wrapper; motion-based only. Does not affect semantic content.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute inset-0 z-20\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#5046e6\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "headline",
+  "feature-card"
+ ]
+}

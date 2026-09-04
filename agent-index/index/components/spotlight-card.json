@@ -1,0 +1,85 @@
+{
+ "name": "spotlight-card",
+ "title": "Spotlight Card",
+ "category": "cards",
+ "origin": "StashUI",
+ "origin_short": "own",
+ "exports": [
+  "SpotlightCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { Sparkles } from \"lucide-react\";\nimport { SpotlightCard } from \"@/components/ui/spotlight-card\";\n\nexport default function SpotlightCardDemo() {\n  return (\n    <SpotlightCard className=\"max-w-xs\">\n      <Sparkles className=\"size-5 text-muted-foreground\" />\n      <h3 className=\"mt-3 text-base font-semibold\">Spotlight Card</h3>\n      <p className=\"mt-1 text-sm text-muted-foreground\">\n        Move your cursor across the card to reveal the spotlight that tracks your pointer.\n      </p>\n    </SpotlightCard>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cards/spotlight-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/spotlight-card.json",
+ "preview": "https://stashui.vercel.app/c/spotlight-card",
+ "dupe_group": "spotlightcard",
+ "alternatives": [
+  {
+   "name": "SpotlightCard-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  },
+  {
+   "name": "spotlight-card2",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Card with pointer-tracked radial spotlight on border/surface.",
+ "description": "A rounded container card with a cursor-tracked radial spotlight. Spotlight position updates via CSS variables on pointer move; fades out on leave.",
+ "use_when": "Premium card designs or feature showcases where subtle spotlight effects add polish and draw focus to content.",
+ "avoid_when": "Touch-only interfaces where pointer tracking won't work or accessibility contexts where motion should be minimal.",
+ "a11y": "Card is a semantic container; children are independent. Spotlight is visual embellishment only. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "350",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"color-mix(in oklch, var(--foreground) 12%, transparent)\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "hero",
+  "decoration"
+ ]
+}

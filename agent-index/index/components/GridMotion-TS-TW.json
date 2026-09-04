@@ -1,0 +1,62 @@
+{
+ "name": "GridMotion-TS-TW",
+ "title": "Grid Motion",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "GridMotion"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Cmp from \"@/components/ui/GridMotion\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[640px] overflow-hidden bg-background\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/GridMotion.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/GridMotion-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/GridMotion-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A rotated grid of items that slides and shifts as you move your cursor.",
+ "description": "A grid component using GSAP animations that responds to cursor position. Each row moves in alternating directions with staggered inertia, creating a cascading parallax-like effect.",
+ "use_when": "You want a playful, interactive hero section that rewards cursor movement with smooth, polished animations.",
+ "avoid_when": "Touch-only surfaces or performance-constrained environments.",
+ "a11y": "Purely visual cursor-driven effect; no keyboard alternative or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "items",
+   "type": "(string | ReactNode)[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "gradientColor",
+   "type": "string",
+   "default": "\"black\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ]
+}

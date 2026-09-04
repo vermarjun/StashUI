@@ -1,0 +1,110 @@
+{
+ "name": "feature-poll",
+ "title": "Feature Poll",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "FeaturePoll",
+  "FeaturePollRoot",
+  "FeaturePollHeader",
+  "FeaturePollTitle",
+  "FeaturePollDescription",
+  "FeaturePollOptions",
+  "FeaturePollOption",
+  "FeaturePollIndicator",
+  "FeaturePollLabel",
+  "FeaturePollProgress",
+  "FeaturePollPercentage",
+  "FeaturePollFooter"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-use-controllable-state",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { FeaturePoll } from \"@/components/ui/feature-poll\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-md p-6\">\n      <FeaturePoll.Root\n        votes={{ performance: 312, dx: 201, ecosystem: 145, learning: 89 }}\n        hasVoted={false}\n        showResults={false}\n      >\n        <FeaturePoll.Header>\n          <FeaturePoll.Title>What matters most in a framework?</FeaturePoll.Title>\n          <FeaturePoll.Description>Help us prioritize what we build next.</FeaturePoll.Description>\n        </FeaturePoll.Header>\n        <FeaturePoll.Options>\n          <FeaturePoll.Option value=\"performance\">\n            <FeaturePoll.Indicator />\n            <FeaturePoll.Label>Performance</FeaturePoll.Label>\n          </FeaturePoll.Option>\n          <FeaturePoll.Option value=\"dx\">\n            <FeaturePoll.Indicator />\n            <FeaturePoll.Label>Developer Experience</FeaturePoll.Label>\n          </FeaturePoll.Option>\n          <FeaturePoll.Option value=\"ecosystem\">\n            <FeaturePoll.Indicator />\n            <FeaturePoll.Label>Ecosystem & Libraries</FeaturePoll.Label>\n          </FeaturePoll.Option>\n          <FeaturePoll.Option value=\"learning\">\n            <FeaturePoll.Indicator />\n            <FeaturePoll.Label>Learning Curve</FeaturePoll.Label>\n          </FeaturePoll.Option>\n        </FeaturePoll.Options>\n        <FeaturePoll.Footer />\n      </FeaturePoll.Root>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/feature-poll.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/feature-poll.json",
+ "preview": "https://stashui.vercel.app/c/feature-poll",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Interactive poll collecting single or multi-vote feature requests with live…",
+ "description": "Compound component system (Root, Header, Title, Description, Options, Option, Indicator, Label, Footer) supporting single or multiple-choice voting. Shows vote counts and percentages, tracks selection state, keyboard-accessible option…",
+ "use_when": "Feature voting or priority surveys where users pick options and results update live.",
+ "avoid_when": "Very large option counts (layout not designed for dense lists) or when results must be hidden until submission.",
+ "a11y": "Options are buttons with full keyboard navigation (arrow keys, enter). Supports both controlled (value prop) and uncontrolled (defaultValue) selection. Focus management and ARIA attributes via…",
+ "props": [
+  {
+   "name": "value",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string | string[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "multiple",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showResults",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "votes",
+   "type": "Record<string, number>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "hasVoted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "border",
+   "shadow"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "feature-card"
+ ]
+}

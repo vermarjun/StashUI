@@ -1,0 +1,80 @@
+{
+ "name": "inspira-meteors",
+ "title": "Meteors",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Meteors"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { Meteors } from \"@/components/ui/meteors\"\n\nexport default function MeteorsDemo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden rounded-xl bg-slate-950\">\n      <Meteors count={20} />\n      <div className=\"relative z-10 text-center\">\n        <h2 className=\"text-3xl font-bold text-white\">Meteors</h2>\n        <p className=\"mt-2 text-slate-400\">CSS-animated meteor shower effect</p>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/meteors.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-meteors.json",
+ "preview": "https://stashui.vercel.app/c/inspira-meteors",
+ "dupe_group": "meteors",
+ "alternatives": [
+  {
+   "name": "meteors",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  },
+  {
+   "name": "aceternity-ui-meteors",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  },
+  {
+   "name": "magic-ui-meteors",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  }
+ ],
+ "blurb": "Falling meteors with glowing trails animated across the screen.",
+ "description": "CSS-animated meteor shower with randomized delay and duration per meteor. Each meteor is a small glowing dot with a trailing gradient that falls diagonally down the screen.",
+ "use_when": "A dramatic, animated background effect for hero sections or dark-themed pages.",
+ "avoid_when": "Performance-sensitive contexts where many simultaneous animations impact responsiveness.",
+ "a11y": "Purely decorative animated elements; focus and keyboard behaviour come from overlaid content. Animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "count",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "name": "animated-list",
+ "title": "Animated List",
+ "category": "notifications",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "AnimatedListItem",
+  "AnimatedList"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { AnimatedList, AnimatedListItem } from \"@/components/ui/animated-list\";\n\nconst notifications = [\n  {\n    icon: \"💸\",\n    color: \"#00C9A7\",\n    title: \"Payment received\",\n    subtitle: \"$250 from Alice Johnson\",\n    time: \"just now\",\n  },\n  {\n    icon: \"👤\",\n    color: \"#FFB800\",\n    title: \"New follower\",\n    subtitle: \"Bob Carter started following you\",\n    time: \"2m ago\",\n  },\n  {\n    icon: \"💬\",\n    color: \"#FF3D71\",\n    title: \"New message\",\n    subtitle: \"Carol: Hey, are you free later?\",\n    time: \"5m ago\",\n  },\n  {\n    icon: \"📦\",\n    color: \"#1E86FF\",\n    title: \"Order shipped\",\n    subtitle: \"Your order #4821 is on its way\",\n    time: \"20m ago\",\n  },\n  {\n    icon: \"📅\",\n    color: \"#A855F7\",\n    title: \"Meeting reminder\",\n    subtitle: \"Team sync starts in 15 minutes\",\n    time: \"1h ago\",\n  },\n];\n\nfunction NotificationCard({\n  icon,\n  color,\n  title,\n  subtitle,\n  time,\n}: (typeof notifications)[number]) {\n  return (\n    <div className=\"relative mx-auto w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl bg-white p-4 shadow-sm transition-all duration-200 hover:scale-[102%] dark:bg-neutral-900 dark:border dark:border-neutral-700\">\n      <div className=\"flex flex-row items-center gap-3\">\n        <div\n          className=\"flex size-10 shrink-0 items-center justify-center rounded-2xl\"\n          style={{ backgroundColor: color }}\n        >\n          <span className=\"text-lg\">{icon}</span>\n        </div>\n        <div className=\"flex flex-col overflow-hidden\">\n          <div className=\"flex flex-row items-center gap-1 text-sm font-semibold dark:text-white\">\n            <span>{title}</span>\n            <span className=\"text-neutral-400\">·</span>\n            <span className=\"text-xs font-normal text-neutral-400\">{time}</span>\n          </div>\n          <p className=\"truncate text-xs text-neutral-500 dark:text-neutral-400\">\n            {subtitle}\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[500px] w-full items-center justify-center overflow-hidden bg-background p-8\">\n      <AnimatedList delay={900} className=\"w-full max-w-[420px]\">\n        {notifications.map((n, i) => (\n          <AnimatedListItem key={i}>\n            <NotificationCard {...n} />\n          </AnimatedListItem>\n        ))}\n      </AnimatedList>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/animated-list.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-list.json",
+ "preview": "https://stashui.vercel.app/c/animated-list",
+ "dupe_group": "animatedlist",
+ "alternatives": [
+  {
+   "name": "inspira-animated-list",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  },
+  {
+   "name": "AnimatedList-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 9
+  }
+ ],
+ "blurb": "Self-animating list that cycles child items with scale and fade entrance.",
+ "description": "Wrapper component that auto-plays a sequence of list item animations. Each child wraps in AnimatedListItem with configurable delay between cycles. Uses Framer Motion for spring-based scale and opacity transitions.",
+ "use_when": "Notification lists, activity feeds, or demo showcases where auto-playing animated items draw attention. Commonly used…",
+ "avoid_when": "Static content lists or when user attention should focus elsewhere. Continuous animation can be distracting and impact…",
+ "a11y": "No ARIA attributes or focus management. Animations are visual-only; content accessibility depends on structure of children.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(`flex flex-col items-center gap-4`, className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "list-item"
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "name": "wobble-card",
+ "title": "Wobble Card",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "WobbleCard"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "motion",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { WobbleCard } from \"@/components/ui/wobble-card\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] p-8 bg-background\">\n      <WobbleCard containerClassName=\"max-w-sm w-full\" className=\"min-h-[220px]\">\n        <h2 className=\"text-xl font-bold text-white mb-2\">Ship faster.</h2>\n        <p className=\"text-sm text-white/70\">\n          A wobble card that tilts and translates on mouse move, giving depth\n          through a parallax inner layer and a radial noise overlay.\n        </p>\n      </WobbleCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/wobble-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/wobble-card.json",
+ "preview": "https://stashui.vercel.app/c/wobble-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card tilts and wobbles toward the cursor with parallax inner content.",
+ "description": "Motion wrapper that tracks pointer position and applies translate/scale transforms to create a 3D tilt effect. Outer card moves toward cursor while inner content scales and counter-translates for parallax depth. Includes noise texture…",
+ "use_when": "Hero feature cards or CTAs that need eye-catching interactivity on desktop hover.",
+ "avoid_when": "Touch-only devices or dark-themed pages; component hardcodes indigo-800 background.",
+ "a11y": "No keyboard interaction; focus handling not managed. Motion plays on hover but children remain accessible.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "primary-cta"
+ ]
+}

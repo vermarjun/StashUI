@@ -1,0 +1,112 @@
+{
+ "name": "PrismaticBurst-TS-TW",
+ "title": "Prismatic Burst",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PrismaticBurst"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "3d"
+ ],
+ "usage": "\"use client\";\n\nimport PrismaticBurst from \"@/components/ui/PrismaticBurst\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[400px] bg-black rounded-xl overflow-hidden relative\">\n      <PrismaticBurst\n        intensity={2}\n        speed={0.5}\n        animationType=\"rotate3d\"\n        colors={[\"#ff0080\", \"#7928ca\", \"#0070f3\", \"#00dfd8\"]}\n        distort={0}\n        rayCount={6}\n        mixBlendMode=\"lighten\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/PrismaticBurst.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/PrismaticBurst-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/PrismaticBurst-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Raymarched prismatic bursts with configurable colors, animation modes, and…",
+ "description": "WebGL shader rendering procedurally-generated colorful rays radiating from a central point. Supports continuous rotation, 3D orbit, or cursor-responsive hover mode. Distortion and ray-count controls modulate the effect intensity.",
+ "use_when": "Hero sections, visual centerpieces, or backgrounds where a vibrant, energetic prismatic burst commands attention.",
+ "avoid_when": "WebGL-unsupported devices, touch-only surfaces (hover mode), performance-critical mobile — raymarching is…",
+ "a11y": "Passive visual background; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "intensity",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "animationType",
+   "type": "'rotate' | 'rotate3d' | 'hover'",
+   "default": "'rotate3d'",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "distort",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "offset",
+   "type": "{ x?: number | string; y?: number | string }",
+   "default": "{ x: 0, y: 0 }",
+   "required": false
+  },
+  {
+   "name": "hoverDampness",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "rayCount",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mixBlendMode",
+   "type": "React.CSSProperties['mixBlendMode'] | 'none'",
+   "default": "'lighten'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ]
+}

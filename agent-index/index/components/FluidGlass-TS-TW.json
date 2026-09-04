@@ -1,0 +1,81 @@
+{
+ "name": "FluidGlass-TS-TW",
+ "title": "FluidGlass",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FluidGlass"
+ ],
+ "npm_deps": [
+  "three@^0.167.1",
+  "@react-three/fiber@^9.3.0",
+  "@react-three/drei@^10.7.4",
+  "maath@^0.10.8"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "webgl",
+  "heavy",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/FluidGlass\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"560px\" }}>\n      <Cmp mode=\"lens\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FluidGlass.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FluidGlass-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FluidGlass-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A 3D glass shape that distorts and refracts content as you scroll and move the…",
+ "description": "Three.js component rendering a refractive glass geometry (lens, cube, or bar) using transmission materials. The glass follows pointer movement and parallax-scrolls content behind it for a premium, interactive effect.",
+ "use_when": "You want a striking, high-polish hero that showcases modern 3D design and rewards mouse movement.",
+ "avoid_when": "Touch-only surfaces, older devices without WebGL support, or when pointer tracking is unavailable.",
+ "a11y": "Purely visual 3D component; mouse tracking has no keyboard equivalent.",
+ "props": [
+  {
+   "name": "mode",
+   "type": "\"lens\" | \"bar\" | \"cube\"",
+   "default": "\"lens\"",
+   "required": false
+  },
+  {
+   "name": "lensProps",
+   "type": "Record<string, unknown>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "barProps",
+   "type": "Record<string, unknown>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "cubeProps",
+   "type": "Record<string, unknown>",
+   "default": "{}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ]
+}

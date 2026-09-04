@@ -1,0 +1,69 @@
+{
+ "name": "magic-ui-globe",
+ "title": "Globe",
+ "category": "media",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Globe"
+ ],
+ "npm_deps": [
+  "cobe@^0.6.4",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "import { Globe } from \"@/components/ui/globe\";\n\nexport default function Demo() {\n  return <Globe />;\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/globe.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magic-ui-globe.json",
+ "preview": "https://stashui.vercel.app/c/magic-ui-globe",
+ "dupe_group": "globe",
+ "alternatives": [
+  {
+   "name": "globe",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "3D rotating globe responds to pointer movement with geographic markers.",
+ "description": "A WebGL-rendered 3D globe using the cobe library with pointer-driven rotation via spring physics. Displays geographic markers and supports customization via COBEOptions configuration.",
+ "use_when": "Landing pages, analytics dashboards, or global company pages showcasing geographic reach.",
+ "avoid_when": "Low-end devices without WebGL; pointer interaction unavailable on touch-only surfaces.",
+ "a11y": "Canvas with no native accessibility features; pointer movement only; no touch or keyboard support.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "config",
+   "type": "COBEOptions",
+   "default": "GLOBE_CONFIG",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "light",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "name": "tailwindcss-buttons",
+ "title": "Tailwind CSS Buttons",
+ "category": "buttons",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ButtonsCard"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "6 colors"
+ ],
+ "usage": "\"use client\";\nimport { ButtonsCard } from \"@/components/ui/tailwindcss-buttons\";\n\nconst buttons = [\n  {\n    label: \"Get started\",\n    className:\n      \"px-6 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-neutral-800 transition-colors\",\n  },\n  {\n    label: \"Sign up free\",\n    className:\n      \"px-6 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 text-sm font-medium hover:border-neutral-500 transition-colors\",\n  },\n  {\n    label: \"Learn more\",\n    className:\n      \"px-6 py-2 rounded-md bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md\",\n  },\n  {\n    label: \"Explore docs\",\n    className:\n      \"px-6 py-2 rounded-md border-2 border-blue-600 text-blue-600 text-sm font-semibold hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors\",\n  },\n  {\n    label: \"Download\",\n    className:\n      \"px-6 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg\",\n  },\n  {\n    label: \"Contact sales\",\n    className:\n      \"px-6 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 text-sm font-medium hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors\",\n  },\n];\n\nexport default function TailwindcssButtonsDemo() {\n  return (\n    <div className=\"grid grid-cols-3 gap-4 p-6 w-full max-w-3xl mx-auto\">\n      {buttons.map((btn) => (\n        <ButtonsCard key={btn.label}>\n          <button className={btn.className}>{btn.label}</button>\n        </ButtonsCard>\n      ))}\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/tailwindcss-buttons.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tailwindcss-buttons.json",
+ "preview": "https://stashui.vercel.app/c/tailwindcss-buttons",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Collection of button styles with hover effects.",
+ "description": "A showcase component rendering multiple button variations (default, outline, secondary, ghost) with hover state transitions.",
+ "use_when": "You need a reference of button style patterns or a multi-variant button gallery.",
+ "avoid_when": "As a single button component; it is a showcase/demo card, not a reusable button.",
+ "a11y": "Buttons have standard semantics but lack individual labeling; meant as a demo.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "feature-card"
+ ]
+}

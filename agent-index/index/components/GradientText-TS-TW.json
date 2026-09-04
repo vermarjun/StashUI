@@ -1,0 +1,105 @@
+{
+ "name": "GradientText-TS-TW",
+ "title": "GradientText",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "GradientText"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\"\n\nimport GradientText from \"@/components/ui/GradientText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-12 min-h-[280px] bg-background\">\n      <GradientText\n        colors={[\"#5227FF\", \"#FF9FFC\", \"#B497CF\", \"#5227FF\"]}\n        animationSpeed={6}\n        direction=\"horizontal\"\n        yoyo={true}\n        className=\"text-4xl font-extrabold tracking-tight\"\n      >\n        Animated Gradient\n      </GradientText>\n      <GradientText\n        colors={[\"#06b6d4\", \"#a855f7\", \"#ec4899\", \"#06b6d4\"]}\n        animationSpeed={4}\n        direction=\"diagonal\"\n        showBorder={true}\n        className=\"text-xl font-semibold px-4 py-2\"\n      >\n        With border\n      </GradientText>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/GradientText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/GradientText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/GradientText-TS-TW",
+ "dupe_group": "gradienttext",
+ "alternatives": [
+  {
+   "name": "primitives-texts-gradient",
+   "origin": "Animate UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 5
+  }
+ ],
+ "blurb": "Text fills with an animated gradient that sweeps horizontally, vertically, or…",
+ "description": "Renders text with a moving linear gradient background. Gradient can sweep in three directions and toggle between ping-pong (yoyo) and seamless loop modes. Optionally pauses on hover and adds a matching border.",
+ "use_when": "A headline wants visual interest through smooth, continuous color flow without jarring animation.",
+ "avoid_when": "When text must have a stable theme color or when the animation might distract from content.",
+ "a11y": "Text is readable; gradient is purely visual. Supports pauseOnHover for users preferring reduced motion.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#5227FF', '#FF9FFC', '#B497CF']",
+   "required": false
+  },
+  {
+   "name": "animationSpeed",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "showBorder",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'horizontal' | 'vertical' | 'diagonal'",
+   "default": "'horizontal'",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "yoyo",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "primary-cta"
+ ]
+}

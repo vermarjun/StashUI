@@ -1,0 +1,111 @@
+{
+ "name": "CardSwap-TS-TW",
+ "title": "CardSwap",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Card",
+  "CardSwap"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "3d",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp, { Card } from \"@/components/ui/CardSwap\";\n\nconst CARDS = [\n  { label: \"Design Systems\", color: \"#4F46E5\", emoji: \"🎨\" },\n  { label: \"Motion & Animation\", color: \"#10B981\", emoji: \"✨\" },\n  { label: \"Component Libraries\", color: \"#F59E0B\", emoji: \"📦\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full overflow-hidden\">\n      <Cmp\n        width={320}\n        height={220}\n        cardDistance={50}\n        verticalDistance={60}\n        delay={3500}\n        pauseOnHover\n        easing=\"elastic\"\n      >\n        {CARDS.map((c, i) => (\n          <Card\n            key={i}\n            customClass=\"flex flex-col items-center justify-center gap-3 select-none\"\n            style={{ background: `linear-gradient(135deg, ${c.color}22, ${c.color}44)` }}\n          >\n            <span className=\"text-4xl\">{c.emoji}</span>\n            <span className=\"text-sm font-medium text-foreground\">{c.label}</span>\n          </Card>\n        ))}\n      </Cmp>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/CardSwap.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/CardSwap-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/CardSwap-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Cards cycle through a 3D stack with perspective transform and skew.",
+ "description": "Wraps Card children; cycles them through a 3D stack with configurable timing. Cards rotate and skew as they move through positions. Pauses on hover. Uses GSAP for 3D transforms.",
+ "use_when": "Testimonials, feature highlights, or rotating card stacks.",
+ "avoid_when": "Browsers without 3D CSS support; older IE versions.",
+ "a11y": "Cards are divs; children are accessible but sequence is visual. No keyboard navigation.",
+ "props": [
+  {
+   "name": "width",
+   "type": "number | string",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number | string",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "cardDistance",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "verticalDistance",
+   "type": "number",
+   "default": "70",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onCardClick",
+   "type": "(idx: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "skewAmount",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "\"linear\" | \"elastic\"",
+   "default": "'elastic'",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "testimonial"
+ ]
+}

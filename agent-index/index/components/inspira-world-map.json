@@ -1,0 +1,85 @@
+{
+ "name": "inspira-world-map",
+ "title": "World Map",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "WorldMap"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { WorldMap } from \"@/components/ui/world-map\";\n\nexport default function WorldMapDemo() {\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center bg-white p-8 dark:bg-black\">\n      <h2 className=\"mb-2 text-center text-2xl font-bold text-black dark:text-white\">\n        Global Connections\n      </h2>\n      <p className=\"mb-8 text-center text-sm text-neutral-500 dark:text-neutral-400\">\n        Visualize connections between locations around the world.\n      </p>\n      <WorldMap\n        mapColor=\"#3b82f6\"\n        mapBgColor=\"transparent\"\n        lineColor=\"#0EA5E9\"\n        dots={[\n          {\n            start: { lat: 40.7128, lng: -74.006, label: \"New York\" },\n            end: { lat: 51.5074, lng: -0.1278, label: \"London\" },\n          },\n          {\n            start: { lat: 35.6762, lng: 139.6503, label: \"Tokyo\" },\n            end: { lat: 37.7749, lng: -122.4194, label: \"San Francisco\" },\n          },\n          {\n            start: { lat: 48.8566, lng: 2.3522, label: \"Paris\" },\n            end: { lat: 28.6139, lng: 77.209, label: \"New Delhi\" },\n          },\n          {\n            start: { lat: -33.8688, lng: 151.2093, label: \"Sydney\" },\n            end: { lat: 1.3521, lng: 103.8198, label: \"Singapore\" },\n          },\n          {\n            start: { lat: -23.5505, lng: -46.6333, label: \"São Paulo\" },\n            end: { lat: 51.5074, lng: -0.1278, label: \"London\" },\n          },\n        ]}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/world-map.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-world-map.json",
+ "preview": "https://stashui.vercel.app/c/inspira-world-map",
+ "dupe_group": "worldmap",
+ "alternatives": [
+  {
+   "name": "world-map",
+   "origin": "Aceternity UI",
+   "npm_deps": 2,
+   "hardcoded_colors": 5
+  }
+ ],
+ "blurb": "Animated paths and pulsing dots connect global locations on a dotted map.",
+ "description": "Renders a dotted world map with animated SVG paths drawing between geographic coordinates (start/end points). Includes pulsing circle animations at location markers and customizable gradient-colored connection lines.",
+ "use_when": "Team/company pages, dashboards, or landing pages showcasing global reach, distributed operations, or global connections.",
+ "avoid_when": "When real geographic accuracy is critical; uses simplified projection for visual appeal rather than precision.",
+ "a11y": "Map image has alt text; animations are decorative; no interactive elements or keyboard navigation; respects motion timing via SVG animate tags.",
+ "props": [
+  {
+   "name": "dots",
+   "type": "Dot[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "lineColor",
+   "type": "string",
+   "default": "\"#0EA5E9\"",
+   "required": false
+  },
+  {
+   "name": "mapColor",
+   "type": "string",
+   "default": "\"#4B5563\"",
+   "required": false
+  },
+  {
+   "name": "mapBgColor",
+   "type": "string",
+   "default": "\"transparent\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "decoration"
+ ]
+}

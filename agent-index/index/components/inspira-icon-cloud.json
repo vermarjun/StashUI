@@ -1,0 +1,67 @@
+{
+ "name": "inspira-icon-cloud",
+ "title": "Icon Cloud",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "IconCloud"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "canvas",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { IconCloud } from \"@/components/ui/icon-cloud\";\n\nconst DEMO_IMAGES = [\n  \"https://cdn.simpleicons.org/typescript\",\n  \"https://cdn.simpleicons.org/javascript\",\n  \"https://cdn.simpleicons.org/react\",\n  \"https://cdn.simpleicons.org/nextdotjs\",\n  \"https://cdn.simpleicons.org/nodedotjs\",\n  \"https://cdn.simpleicons.org/tailwindcss\",\n  \"https://cdn.simpleicons.org/git\",\n  \"https://cdn.simpleicons.org/github\",\n  \"https://cdn.simpleicons.org/docker\",\n  \"https://cdn.simpleicons.org/postgresql\",\n  \"https://cdn.simpleicons.org/redis\",\n  \"https://cdn.simpleicons.org/graphql\",\n];\n\nexport default function IconCloudDemo() {\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center bg-black p-8\">\n      <IconCloud images={DEMO_IMAGES} className=\"size-[300px]\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/icon-cloud.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-icon-cloud.json",
+ "preview": "https://stashui.vercel.app/c/inspira-icon-cloud",
+ "dupe_group": "iconcloud",
+ "alternatives": [
+  {
+   "name": "icon-cloud",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "3D rotating icon sphere responds to drag rotation and click-to-focus.",
+ "description": "A canvas-rendered 3D sphere of circular icons distributed via golden-ratio sphere packing. Rotates with mouse drag, smoothly animates when clicked to bring selected icon to face the viewer.",
+ "use_when": "Tech stack showcases, skill clouds, or immersive icon galleries requiring 3D visual depth and interactivity.",
+ "avoid_when": "Touch-only devices without mouse drag support; no keyboard navigation or built-in focus management.",
+ "a11y": "Canvas has aria-label; mouse drag rotation and click interaction are not keyboard accessible without external handling.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": "{cn(\"rounded-lg cursor-grab active:cursor-grabbing\", classNa",
+   "required": false
+  },
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

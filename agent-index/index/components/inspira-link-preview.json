@@ -1,0 +1,103 @@
+{
+ "name": "inspira-link-preview",
+ "title": "Link Preview",
+ "category": "tooltips",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LinkPreview"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { LinkPreview } from \"@/components/ui/link-preview\"\n\nexport default function LinkPreviewDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12 min-h-48\">\n      <p className=\"text-neutral-500 text-sm\">Hover over the links below</p>\n      <div className=\"flex gap-8 text-lg font-semibold\">\n        <LinkPreview\n          url=\"https://vercel.com\"\n          isStatic={false}\n          width={200}\n          height={125}\n        >\n          <span className=\"underline cursor-pointer hover:text-blue-600 transition-colors\">\n            Vercel\n          </span>\n        </LinkPreview>\n\n        <LinkPreview\n          url=\"https://github.com\"\n          imageSrc=\"https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png\"\n          isStatic={true}\n          width={200}\n          height={125}\n        >\n          <span className=\"underline cursor-pointer hover:text-blue-600 transition-colors\">\n            GitHub (static)\n          </span>\n        </LinkPreview>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/link-preview.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-link-preview.json",
+ "preview": "https://stashui.vercel.app/c/inspira-link-preview",
+ "dupe_group": "linkpreview",
+ "alternatives": [
+  {
+   "name": "link-preview",
+   "origin": "Aceternity UI",
+   "npm_deps": 3,
+   "hardcoded_colors": 5
+  }
+ ],
+ "blurb": "Link that shows a website or image preview card on hover, with pop-in animation.",
+ "description": "Wraps a link and displays a preview screenshot on hover. Can fetch live screenshots via microlink.io API or use a static image. Preview card pops in and follows cursor position.",
+ "use_when": "Rich link previews in documentation, blogs, or social feeds.",
+ "avoid_when": "Touch-only interfaces; requires hover. External API dependency (microlink.io) may introduce delays.",
+ "a11y": "Link is keyboard-focusable; preview appears on hover only.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"text-black dark:text-white\", linkClass)}",
+   "required": false
+  },
+  {
+   "name": "linkClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "125",
+   "required": false
+  },
+  {
+   "name": "isStatic",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "url",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "decoration"
+ ]
+}

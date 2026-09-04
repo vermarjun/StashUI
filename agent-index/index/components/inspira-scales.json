@@ -1,0 +1,83 @@
+{
+ "name": "inspira-scales",
+ "title": "Scales",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Scales"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\nimport { Scales } from \"@/components/ui/scales\";\n\nexport default function ScalesDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <Scales orientation=\"diagonal\" size={14} className=\"rounded-lg border\">\n        <div className=\"flex h-full items-center justify-center p-8\">\n          <p className=\"text-xl font-semibold\">Diagonal Scales Pattern</p>\n        </div>\n      </Scales>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/scales.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-scales.json",
+ "preview": "https://stashui.vercel.app/c/inspira-scales",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Repeating line pattern with customizable orientation and spacing.",
+ "description": "CSS-based scales pattern using repeating linear gradients. Supports horizontal, vertical, or diagonal orientation with configurable line size and custom colour.",
+ "use_when": "A lightweight static pattern background with flexible orientation and customisation.",
+ "avoid_when": "Very fine line spacing on low-DPI displays may cause moiré patterns.",
+ "a11y": "Background pattern with content slot rendering children above (z-10). Purely decorative pattern.",
+ "props": [
+  {
+   "name": "orientation",
+   "type": "'horizontal' | 'vertical' | 'diagonal'",
+   "default": "\"diagonal\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

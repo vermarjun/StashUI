@@ -1,0 +1,104 @@
+{
+ "name": "ui-layouts-carousel",
+ "title": "Carousel",
+ "category": "carousels",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Carousel",
+  "SliderContainer",
+  "Slider",
+  "SliderPrevButton",
+  "SliderNextButton",
+  "SliderProgress",
+  "SliderSnapDisplay",
+  "SliderDotButton",
+  "CarouselIndicator",
+  "ThumbsSlider"
+ ],
+ "npm_deps": [
+  "embla-carousel",
+  "lucide-react",
+  "embla-carousel-class-names",
+  "embla-carousel-react",
+  "embla-carousel-autoplay",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "heavy",
+  "6 colors"
+ ],
+ "usage": "'use client';\nimport {\n  Carousel,\n  Slider,\n  SliderContainer,\n  SliderDotButton,\n  SliderNextButton,\n  SliderPrevButton,\n  SliderSnapDisplay,\n} from '@/components/ui/carousel';\nimport type { EmblaOptionsType } from 'embla-carousel';\nimport { ChevronLeft, ChevronRight } from 'lucide-react';\nimport React from 'react';\n\nconst SLIDES = [\n  { id: 1, src: 'https://picsum.photos/seed/uilc1/900/500', alt: 'Gallery image 1' },\n  { id: 2, src: 'https://picsum.photos/seed/uilc2/900/500', alt: 'Gallery image 2' },\n  { id: 3, src: 'https://picsum.photos/seed/uilc3/900/500', alt: 'Gallery image 3' },\n  { id: 4, src: 'https://picsum.photos/seed/uilc4/900/500', alt: 'Gallery image 4' },\n];\n\nexport default function Demo() {\n  const OPTIONS: EmblaOptionsType = { loop: true };\n  return (\n    <div className='w-full max-w-3xl mx-auto px-4 py-6'>\n      <Carousel options={OPTIONS}>\n        <SliderContainer className='h-[320px] sm:h-[380px]'>\n          {SLIDES.map((s) => (\n            <Slider key={s.id} className='w-full h-full'>\n              <img\n                src={s.src}\n                alt={s.alt}\n                className='w-full h-full object-cover rounded-xl'\n              />\n            </Slider>\n          ))}\n        </SliderContainer>\n\n        <SliderPrevButton className='absolute top-1/2 -translate-y-1/2 left-3 p-2 border-2 rounded-full bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-sm text-primary disabled:opacity-20'>\n          <ChevronLeft className='w-7 h-7' />\n        </SliderPrevButton>\n        <SliderNextButton className='absolute top-1/2 -translate-y-1/2 right-3 p-2 border-2 rounded-full bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-sm text-primary disabled:opacity-20'>\n          <ChevronRight className='w-7 h-7' />\n        </SliderNextButton>\n\n        <div className='flex items-center justify-between px-1 pt-2'>\n          <SliderSnapDisplay className='text-sm font-mono text-muted-foreground' />\n          <SliderDotButton />\n        </div>\n      </Carousel>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-carousel.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-carousel",
+ "dupe_group": "carousel",
+ "alternatives": [
+  {
+   "name": "carousel",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 10
+  }
+ ],
+ "blurb": "Embla-carousel with context, providing prev/next buttons, dots, and snaps…",
+ "description": "Compound carousel system built on embla-carousel. Includes Carousel context provider, SliderContainer, Slider items, navigation buttons (prev/next), dot indicators, and snap counter. Supports vertical or horizontal orientation, looping…",
+ "use_when": "Building a featured carousel with full control over layout, navigation, and indicators.",
+ "avoid_when": "Simple image galleries—the context-based architecture requires multiple sub-components.",
+ "a11y": "Keyboard navigation (arrow keys, respects RTL direction). Previous/next buttons disable appropriately. Dot buttons have implied labels via carousel.js conventions. No ARIA labels for custom buttons.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "options",
+   "type": "EmblaOptionsType",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "plugins",
+   "type": "Parameters<typeof useEmblaCarousel>[1]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "isScale",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('relative w-full focus:outline-hidden', className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "feature-card",
+  "media",
+  "section-background"
+ ]
+}

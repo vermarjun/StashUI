@@ -1,0 +1,56 @@
+{
+ "name": "comp-481",
+ "title": "Draggable Columns Table",
+ "category": "tables",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [
+  "@dnd-kit/core",
+  "@dnd-kit/modifiers",
+  "@dnd-kit/sortable",
+  "@dnd-kit/utilities",
+  "@tanstack/react-table"
+ ],
+ "registry_deps": [
+  "button",
+  "table"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "heavy"
+ ],
+ "usage": "import Cmp from \"@/components/ui/comp-481\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-481.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-481.json",
+ "preview": "https://stashui.vercel.app/c/comp-481",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Table columns reorderable by dragging, with grip handles and sort controls.",
+ "description": "Data table where column headers have drag handles to reorder columns horizontally. Each column can also be sorted via chevron button. Uses dnd-kit with horizontal-axis restriction and supports mouse, touch, and keyboard input.",
+ "use_when": "Users need flexible column arrangement combined with sorting capability.",
+ "avoid_when": "On touch-only devices — dragging columns feels awkward compared to native gestures.",
+ "a11y": "Drag handles have aria-label \"Drag to reorder\". Sort buttons are keyboard-accessible. Drag also works via keyboard.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "data-table"
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "name": "3d-globe",
+ "title": "3D Globe",
+ "category": "media",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Globe3D"
+ ],
+ "npm_deps": [
+  "three",
+  "@react-three/fiber",
+  "@react-three/drei"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "webgl",
+  "heavy",
+  "12 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/3d-globe\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/3d-globe.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/3d-globe.json",
+ "preview": "https://stashui.vercel.app/c/3d-globe",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Interactive 3D Earth globe with customizable markers and rotation.",
+ "description": "An interactive Three.js-based 3D globe with optional Earth texture, atmosphere effects, orbital controls, and customizable markers placed at geographic coordinates.",
+ "use_when": "Displaying geographic data, visualizing global operations, or creating impressive 3D globe visualizations.",
+ "avoid_when": "On low-end devices, mobile without WebGL support, or when a flat map would suffice.",
+ "a11y": "The 3D canvas itself is not accessible to screen readers; the globe is purely visual.",
+ "props": [
+  {
+   "name": "markers",
+   "type": "GlobeMarker[]",
+   "default": "{markers}",
+   "required": false
+  },
+  {
+   "name": "config",
+   "type": "Globe3DConfig",
+   "default": "{config}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onMarkerClick",
+   "type": "(marker: GlobeMarker) => void",
+   "default": "{onMarkerClick}",
+   "required": false
+  },
+  {
+   "name": "onMarkerHover",
+   "type": "(marker: GlobeMarker | null) => void",
+   "default": "{onMarkerHover}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media"
+ ]
+}

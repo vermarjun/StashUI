@@ -1,0 +1,145 @@
+{
+ "name": "dotted-glow-background",
+ "title": "Dotted Glow Background",
+ "category": "backgrounds",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "DottedGlowBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "canvas",
+  "pure",
+  "4 colors"
+ ],
+ "usage": "import { DottedGlowBackground } from \"@/components/ui/dotted-glow-background\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <DottedGlowBackground />\n      <div className=\"absolute inset-0 flex items-center justify-center pointer-events-none\">\n        <p className=\"text-lg font-medium text-foreground/50\">\n          Dotted Glow Background\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/dotted-glow-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dotted-glow-background.json",
+ "preview": "https://stashui.vercel.app/c/dotted-glow-background",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Grid of dots that pulse and glow individually with organic timing.",
+ "description": "Canvas-based dotted background with per-dot phase and speed for organic shimmering. Each dot pulses between dim and bright, with a glow halo when bright. Pauses rendering when off-screen via IntersectionObserver.",
+ "use_when": "A sophisticated, animated background that supports theme-aware CSS variable styling and needs to pause itself…",
+ "avoid_when": "Requires CSS variable setup; limited customization without passing specific color props. Falls back to…",
+ "a11y": "Purely decorative canvas overlay; focus and keyboard behaviour come from children. Continuous pulsing animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"rgba(0,0,0,0.7)\"",
+   "required": false
+  },
+  {
+   "name": "darkColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "\"rgba(0, 170, 255, 0.85)\"",
+   "required": false
+  },
+  {
+   "name": "darkGlowColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colorLightVar",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colorDarkVar",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "glowColorLightVar",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "glowColorDarkVar",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "backgroundOpacity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "speedMin",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "speedMax",
+   "type": "number",
+   "default": "1.3",
+   "required": false
+  },
+  {
+   "name": "speedScale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

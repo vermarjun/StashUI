@@ -1,0 +1,73 @@
+{
+ "name": "resizable-navbar",
+ "title": "Resizable Navbar",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Navbar",
+  "NavBody",
+  "NavItems",
+  "MobileNav",
+  "MobileNavHeader",
+  "MobileNavMenu",
+  "MobileNavToggle",
+  "NavbarLogo",
+  "NavbarButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 40,
+ "flags": [
+  "pure",
+  "40 colors"
+ ],
+ "usage": "\"use client\";\nimport { useState } from \"react\";\nimport {\n  Navbar,\n  NavBody,\n  NavItems,\n  NavbarLogo,\n  NavbarButton,\n  MobileNav,\n  MobileNavHeader,\n  MobileNavMenu,\n  MobileNavToggle,\n} from \"@/components/ui/resizable-navbar\";\n\nconst navItems = [\n  { name: \"Features\", link: \"#features\" },\n  { name: \"Pricing\", link: \"#pricing\" },\n  { name: \"About\", link: \"#about\" },\n  { name: \"Blog\", link: \"#blog\" },\n];\n\nexport default function Demo() {\n  const [mobileOpen, setMobileOpen] = useState(false);\n\n  return (\n    <div className=\"relative w-full min-h-[500px] bg-gray-50 dark:bg-neutral-950 overflow-y-auto\">\n      <Navbar>\n        <NavBody>\n          <NavbarLogo />\n          <NavItems items={navItems} />\n          <div className=\"flex items-center gap-2\">\n            <NavbarButton variant=\"secondary\" href=\"#\">Sign in</NavbarButton>\n            <NavbarButton variant=\"dark\" href=\"#\">Get Started</NavbarButton>\n          </div>\n        </NavBody>\n        <MobileNav>\n          <MobileNavHeader>\n            <NavbarLogo />\n            <MobileNavToggle isOpen={mobileOpen} onClick={() => setMobileOpen(!mobileOpen)} />\n          </MobileNavHeader>\n          <MobileNavMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)}>\n            {navItems.map((item) => (\n              <a key={item.name} href={item.link} className=\"text-neutral-700 dark:text-neutral-300 font-medium\">\n                {item.name}\n              </a>\n            ))}\n            <NavbarButton variant=\"dark\" href=\"#\" className=\"w-full\">Get Started</NavbarButton>\n          </MobileNavMenu>\n        </MobileNav>\n      </Navbar>\n      <div className=\"flex items-center justify-center\" style={{ height: \"400px\" }}>\n        <p className=\"text-muted-foreground text-sm\">Scroll down to see the navbar resize</p>\n      </div>\n      <div style={{ height: \"600px\" }} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/resizable-navbar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/resizable-navbar.json",
+ "preview": "https://stashui.vercel.app/c/resizable-navbar",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Sticky navbar with scroll-triggered blur background and responsive mobile menu.",
+ "description": "Multi-component navbar system (Navbar, NavBody, NavItems, MobileNav) with scroll detection via Framer Motion. Adds glass-morphism blur effect at scroll threshold and toggles mobile menu visibility using ResizeObserver.",
+ "use_when": "Creating a responsive header that needs to visually respond to scroll state, especially for landing pages or marketing…",
+ "avoid_when": "Fixed-position navbars that must be visible at all times without visual changes. High-traffic navigation where scroll…",
+ "a11y": "Mobile nav button lacks proper ARIA attributes. Keyboard navigation not fully supported. Focus management not built-in.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"sticky inset-x-0 top-20 z-40 w-full\", className)}",
+   "required": false
+  },
+  {
+   "name": "visible",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

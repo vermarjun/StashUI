@@ -1,0 +1,150 @@
+{
+ "name": "inspira-liquid-glass",
+ "title": "Liquid Glass",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LiquidGlass"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 15,
+ "flags": [
+  "pure",
+  "15 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { LiquidGlass } from \"@/components/ui/liquid-glass\"\n\nexport default function LiquidGlassDemo() {\n  return (\n    <div className=\"relative w-full h-96 flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400 rounded-xl overflow-hidden\">\n      <div\n        className=\"absolute inset-0\"\n        style={{\n          backgroundImage: `url(\"https://images.unsplash.com/photo-1557683316-973673baf926?w=800&q=80\")`,\n          backgroundSize: \"cover\",\n          backgroundPosition: \"center\",\n        }}\n      />\n      <LiquidGlass\n        radius={24}\n        frost={0.08}\n        containerClass=\"relative w-64 h-40\"\n        className=\"flex items-center justify-center\"\n      >\n        <div className=\"text-center p-4\">\n          <h3 className=\"text-white font-bold text-lg drop-shadow\">Liquid Glass</h3>\n          <p className=\"text-white/80 text-sm drop-shadow\">SVG displacement effect</p>\n        </div>\n      </LiquidGlass>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/liquid-glass.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-liquid-glass.json",
+ "preview": "https://stashui.vercel.app/c/inspira-liquid-glass",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Liquid glass morphism effect with SVG displacement mapping.",
+ "description": "Container creating frosted glass effect with SVG-based displacement distortion. Highly configurable blend modes, channels, and visual parameters.",
+ "use_when": "Premium UI elements, overlays, or cards with glass morphism aesthetics.",
+ "avoid_when": "Older browsers or when SVG displacement maps aren't supported.",
+ "a11y": "Glass effect is purely visual; semantic content provided via children.",
+ "props": [
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "border",
+   "type": "number",
+   "default": "0.07",
+   "required": false
+  },
+  {
+   "name": "lightness",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "displace",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "blend",
+   "type": "string",
+   "default": "\"difference\"",
+   "required": false
+  },
+  {
+   "name": "xChannel",
+   "type": "\"R\" | \"G\" | \"B\"",
+   "default": "\"R\"",
+   "required": false
+  },
+  {
+   "name": "yChannel",
+   "type": "\"R\" | \"G\" | \"B\"",
+   "default": "\"B\"",
+   "required": false
+  },
+  {
+   "name": "alpha",
+   "type": "number",
+   "default": "0.93",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "11",
+   "required": false
+  },
+  {
+   "name": "rOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "gOffset",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "bOffset",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "-180",
+   "required": false
+  },
+  {
+   "name": "frost",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"liquid-glass-effect\", containerClass)}",
+   "required": false
+  },
+  {
+   "name": "containerClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "modal"
+ ]
+}

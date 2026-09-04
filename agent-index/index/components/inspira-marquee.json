@@ -1,0 +1,111 @@
+{
+ "name": "inspira-marquee",
+ "title": "Marquee",
+ "category": "carousels",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Marquee",
+  "ReviewCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { Marquee, ReviewCard } from \"@/components/ui/marquee\"\n\nconst reviews = [\n  {\n    img: \"https://avatar.vercel.sh/alice\",\n    name: \"Alice\",\n    username: \"@alice\",\n    body: \"This component library is absolutely fantastic!\",\n  },\n  {\n    img: \"https://avatar.vercel.sh/bob\",\n    name: \"Bob\",\n    username: \"@bob\",\n    body: \"Love the animations. Smooth and performant.\",\n  },\n  {\n    img: \"https://avatar.vercel.sh/carol\",\n    name: \"Carol\",\n    username: \"@carol\",\n    body: \"Easy to use and looks great out of the box.\",\n  },\n  {\n    img: \"https://avatar.vercel.sh/dave\",\n    name: \"Dave\",\n    username: \"@dave\",\n    body: \"Best React component library I have used.\",\n  },\n  {\n    img: \"https://avatar.vercel.sh/eve\",\n    name: \"Eve\",\n    username: \"@eve\",\n    body: \"The Tailwind integration is top notch.\",\n  },\n  {\n    img: \"https://avatar.vercel.sh/frank\",\n    name: \"Frank\",\n    username: \"@frank\",\n    body: \"Highly recommend to any React developer.\",\n  },\n]\n\nexport default function MarqueeDemo() {\n  return (\n    <div className=\"relative flex w-full flex-col items-center justify-center overflow-hidden rounded-xl py-6\">\n      <Marquee pauseOnHover>\n        {reviews.map((review) => (\n          <ReviewCard key={review.username} {...review} />\n        ))}\n      </Marquee>\n      <Marquee reverse pauseOnHover>\n        {reviews.map((review) => (\n          <ReviewCard key={review.username} {...review} />\n        ))}\n      </Marquee>\n      <div className=\"pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-background\" />\n      <div className=\"pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-background\" />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/marquee.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-marquee.json",
+ "preview": "https://stashui.vercel.app/c/inspira-marquee",
+ "dupe_group": "marquee",
+ "alternatives": [
+  {
+   "name": "marquee",
+   "origin": "StashUI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "magic-ui-marquee",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "ui-layouts-marquee",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Children scroll continuously in a loop, horizontally or vertically.",
+ "description": "Repeats children N times and animates them in a seamless marquee effect. Supports reverse direction, pause-on-hover, and both horizontal and vertical layouts. Inline CSS keyframes define the animation.",
+ "use_when": "Displaying rows of reviews, testimonials, logos, or any content that benefits from continuous scrolling emphasis.",
+ "avoid_when": "Motion-sensitive users—animation is always running without prefers-reduced-motion support.",
+ "a11y": "Children are rendered as-is; no ARIA for the loop. Pause on hover helps keyboard users. No keyboard controls to navigate.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "vertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": "{style}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "testimonial",
+  "logo-wall",
+  "feature-card"
+ ]
+}

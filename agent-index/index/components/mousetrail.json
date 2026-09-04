@@ -1,0 +1,90 @@
+{
+ "name": "mousetrail",
+ "title": "Image Mouse Trail",
+ "category": "effects",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "ImageMouseTrail"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "'use client';\nimport ImageMouseTrail from '@/components/ui/mousetrail';\n\nexport default function Demo() {\n  const images = [\n    'https://picsum.photos/seed/trail1/400/480',\n    'https://picsum.photos/seed/trail2/400/480',\n    'https://picsum.photos/seed/trail3/400/480',\n    'https://picsum.photos/seed/trail4/400/480',\n    'https://picsum.photos/seed/trail5/400/480',\n    'https://picsum.photos/seed/trail6/400/480',\n    'https://picsum.photos/seed/trail7/400/480',\n  ];\n\n  return (\n    <div className=\"w-full max-w-3xl mx-auto\">\n      <ImageMouseTrail items={images} maxNumberOfImages={5} distance={15}>\n        <p className=\"text-2xl font-semibold text-gray-700 select-none pointer-events-none z-10\">\n          Move your mouse around\n        </p>\n      </ImageMouseTrail>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/mousetrail.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/mousetrail.json",
+ "preview": "https://stashui.vercel.app/c/mousetrail",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Images follow cursor with spacing, appearing and fading as mouse moves.",
+ "description": "Renders images that appear near the cursor when moving. Images space themselves based on cursor distance and optionally fade after a delay.",
+ "use_when": "Interactive galleries or playful hover experiences where mouse movement reveals image previews.",
+ "avoid_when": "Touch-only interfaces — cursor tracking requires a mouse pointer.",
+ "a11y": "Images lack alt text and semantic labeling. Visual effect only; no keyboard interaction.",
+ "props": [
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "imgClass",
+   "type": "string",
+   "default": "'w-40 h-48'",
+   "required": false
+  },
+  {
+   "name": "distance",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "maxNumberOfImages",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "fadeAnimation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "decoration"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "name": "comp-457",
+ "title": "Compact Page Pagination",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-457\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-xs\">\n      <Cmp currentPage={page} totalPages={total} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-457.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-457.json",
+ "preview": "https://stashui.vercel.app/c/comp-457",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Compact pagination with page and arrow controls.",
+ "description": "Pagination combining page counter display with previous/next buttons in compact layout.",
+ "use_when": "Space-constrained pagination showing position and navigation controls.",
+ "avoid_when": "When you need clickable page number list.",
+ "a11y": "Semantic pagination with counter and navigation buttons.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

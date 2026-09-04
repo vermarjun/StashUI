@@ -1,0 +1,91 @@
+{
+ "name": "grid-pattern",
+ "title": "Grid Pattern",
+ "category": "backgrounds",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "GridPattern"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "import { GridPattern } from \"@/components/ui/grid-pattern\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <GridPattern\n        squares={[\n          [4, 4], [5, 1], [8, 2], [5, 3], [5, 5],\n          [10, 10], [12, 15], [15, 10], [10, 15],\n          [2, 12], [14, 6], [7, 9], [11, 3],\n        ]}\n        className=\"[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/grid-pattern.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/grid-pattern.json",
+ "preview": "https://stashui.vercel.app/c/grid-pattern",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Static SVG grid with optional square highlights.",
+ "description": "SVG pattern overlay that renders a thin grid. Can highlight specific grid cells by passing an array of [x,y] coordinates.",
+ "use_when": "A lightweight, static grid background that needs selective highlighting via the squares prop.",
+ "avoid_when": "Heavy highlighting — each square is a separate SVG rect element, so hundreds of highlighted squares may impact…",
+ "a11y": "Marked aria-hidden with pointer-events-none; purely decorative overlay.",
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "x",
+   "type": "number",
+   "default": "-1",
+   "required": false
+  },
+  {
+   "name": "y",
+   "type": "number",
+   "default": "-1",
+   "required": false
+  },
+  {
+   "name": "strokeDasharray",
+   "type": "string",
+   "default": "\"0\"",
+   "required": false
+  },
+  {
+   "name": "squares",
+   "type": "Array<[x: number, y: number]>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "decoration"
+ ]
+}

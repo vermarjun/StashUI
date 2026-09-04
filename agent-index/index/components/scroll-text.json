@@ -1,0 +1,58 @@
+{
+ "name": "scroll-text",
+ "title": "Scroll Text Animation",
+ "category": "text",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TextAnimation"
+ ],
+ "npm_deps": [
+  "motion",
+  "@motionone/utils"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport TextAnimation from \"@/components/ui/scroll-text\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto py-12 px-4 space-y-6\">\n      <TextAnimation\n        text=\"Welcome to the future of design\"\n        as=\"h1\"\n        classname=\"text-4xl font-bold\"\n        direction=\"down\"\n      />\n      <TextAnimation\n        text=\"Build beautiful interfaces with animated text\"\n        as=\"p\"\n        classname=\"text-xl\"\n        direction=\"up\"\n        letterAnime\n      />\n      <TextAnimation\n        text=\"Scroll to reveal stunning animations\"\n        as=\"h2\"\n        classname=\"text-2xl font-semibold\"\n        direction=\"left\"\n        lineAnime\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/scroll-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-text.json",
+ "preview": "https://stashui.vercel.app/c/scroll-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text transforms as you scroll past it.",
+ "description": "Text animation driven by scroll position, changing opacity, scale, or color based on viewport intersection.",
+ "use_when": "Narrative or storytelling sections where scroll progression matters.",
+ "avoid_when": "Static pages or non-scroll contexts — animation never triggers.",
+ "a11y": "Content may be unreachable or invisible if scroll-tied animation stalls.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "section-background"
+ ]
+}

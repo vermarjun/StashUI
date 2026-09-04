@@ -1,0 +1,84 @@
+{
+ "name": "blur-reveal",
+ "title": "Blur Reveal",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BlurReveal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { BlurReveal } from \"@/components/ui/blur-reveal\";\n\nexport default function BlurRevealDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-4 bg-background p-8\">\n      <BlurReveal duration={0.8} delay={0.25} blur=\"16px\" yOffset={24}>\n        <h2 className=\"text-4xl font-bold tracking-tight\">Hello World</h2>\n        <p className=\"text-muted-foreground text-lg\">\n          Each child animates in with a blur-to-sharp reveal.\n        </p>\n        <p className=\"text-muted-foreground\">\n          Stagger, duration, blur, and Y-offset are all configurable.\n        </p>\n      </BlurReveal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/blur-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/blur-reveal.json",
+ "preview": "https://stashui.vercel.app/c/blur-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Child elements reveal from blur when they enter the viewport.",
+ "description": "Wraps each direct child with a viewport-triggered animation from blur+offset to sharp+in-place. Supports staggered timing.",
+ "use_when": "Progressive content reveals, entrance animations, or scroll-triggered text displays.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); rapidly scrolling content.",
+ "a11y": "Animation wrapper; motion-based only. Does not affect semantic content.",
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "string",
+   "default": "\"20px\"",
+   "required": false
+  },
+  {
+   "name": "yOffset",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "feature-card",
+  "hero"
+ ]
+}

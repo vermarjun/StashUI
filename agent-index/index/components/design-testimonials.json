@@ -1,0 +1,72 @@
+{
+ "name": "design-testimonials",
+ "title": "Design Testimonials",
+ "category": "testimonials",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "DesignTestimonials"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { DesignTestimonials, type TestimonialItem } from \"@/components/ui/design-testimonials\";\n\nconst testimonials: TestimonialItem[] = [\n  {\n    quote: \"This component library completely transformed how we build UIs. Absolutely stunning.\",\n    author: \"Sarah Chen\",\n    role: \"Lead Designer\",\n    company: \"Acme Corp\",\n  },\n  {\n    quote: \"The attention to detail and animation quality is unmatched. Our team loves it.\",\n    author: \"Marcus Johnson\",\n    role: \"Frontend Engineer\",\n    company: \"Vercel\",\n  },\n  {\n    quote: \"From prototype to production in record time. The components just work.\",\n    author: \"Priya Patel\",\n    role: \"Product Manager\",\n    company: \"Linear\",\n  },\n];\n\nexport default function DesignTestimonialsDemo() {\n  return <DesignTestimonials testimonials={testimonials} title=\"What they say\" duration={5000} />;\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/design-testimonials.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/design-testimonials.json",
+ "preview": "https://stashui.vercel.app/c/design-testimonials",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Full-page testimonial carousel with mouse-tracked number, word-by-word quotes…",
+ "description": "Premium testimonial showcase with auto-rotating carousel. Features spring-physics-tracked large index number, word-by-word animated quotes, author/role info, company ticker, and previous/next navigation. Full-screen height layout with…",
+ "use_when": "Hero sections or dedicated testimonial pages where polished animations and large-scale visual impact matter.",
+ "avoid_when": "When multiple testimonials need to fit in compact spaces — full-screen layout not responsive to container size.",
+ "a11y": "Navigation buttons lack aria-labels. Quote text animates in word-by-word (readable but motion-heavy). No prefers-reduced-motion guard on auto-rotation.",
+ "props": [
+  {
+   "name": "testimonials",
+   "type": "Array<{quote: string; author: string; role: string; company: string}>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Testimonials\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "6000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"text-foreground/[0.06] pointer-events-none absolute top-1/2",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "testimonial",
+  "hero"
+ ]
+}

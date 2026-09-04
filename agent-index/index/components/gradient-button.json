@@ -1,0 +1,72 @@
+{
+ "name": "gradient-button",
+ "title": "Gradient Button",
+ "category": "buttons",
+ "origin": "StashUI",
+ "origin_short": "own",
+ "exports": [
+  "GradientButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": true,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { ArrowRight } from \"lucide-react\";\nimport { GradientButton } from \"@/components/ui/gradient-button\";\n\nexport default function GradientButtonDemo() {\n  return (\n    <GradientButton>\n      Get started\n      <ArrowRight className=\"size-4\" />\n    </GradientButton>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/buttons/gradient-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/gradient-button.json",
+ "preview": "https://stashui.vercel.app/c/gradient-button",
+ "dupe_group": "gradientbutton",
+ "alternatives": [
+  {
+   "name": "inspira-gradient-button",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 9
+  }
+ ],
+ "blurb": "Pill button with drifting gradient border.",
+ "description": "A button with an animated linear gradient border using animate-gradient-x keyframes, wrapping a soft inner background.",
+ "use_when": "You need a polished primary CTA with subtle continuous motion.",
+ "avoid_when": "When animation must be minimal or on sites with many animated elements.",
+ "a11y": "Standard button semantics with focus-visible ring. No prefers-reduced-motion guard; animation is always on.",
+ "props": [
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

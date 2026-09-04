@@ -1,0 +1,67 @@
+{
+ "name": "inspira-hyper-text",
+ "title": "Hyper Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "HyperText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { HyperText } from \"@/components/ui/hyper-text\";\n\nexport default function HyperTextDemo() {\n  return (\n    <div className=\"flex min-h-[200px] items-center justify-center p-8\">\n      <HyperText\n        text=\"HyperText Animation\"\n        duration={1200}\n        animateOnLoad\n        className=\"text-2xl font-bold text-white\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/hyper-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-hyper-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-hyper-text",
+ "dupe_group": "hypertext",
+ "alternatives": [
+  {
+   "name": "hyper-text",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text unscrambles letter-by-letter from random symbols.",
+ "description": "Characters start hidden and resolve to the actual text progressively. Triggers on scroll into view or hover, with configurable duration and character set.",
+ "use_when": "Section headlines or CTAs that benefit from an entrance effect without layout shift.",
+ "avoid_when": "Long passages or accessibility-critical labels — animation duration makes content unavailable briefly.",
+ "a11y": "Content is hidden during animation; focus/keyboard cannot access it until reveal completes.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "800",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "section-background"
+ ]
+}

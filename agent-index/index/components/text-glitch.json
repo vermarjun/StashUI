@@ -1,0 +1,78 @@
+{
+ "name": "text-glitch",
+ "title": "Text Glitch",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextGlitch"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { TextGlitch } from \"@/components/ui/text-glitch\";\n\nexport default function TextGlitchDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-12 bg-[#060606] p-8\">\n      <TextGlitch text=\"GLITCH\" speed={0.5} enableShadows enableOnHover={false} />\n      <TextGlitch\n        text=\"HOVER ME\"\n        speed={0.4}\n        enableShadows\n        enableOnHover\n        className=\"text-4xl\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-glitch.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-glitch.json",
+ "preview": "https://stashui.vercel.app/c/text-glitch",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text shifts and tears with animated clip-path disruptions, red and cyan shadows…",
+ "description": "Renders text with layered ::before and ::after pseudos that animate clip-path insets to create a digital glitch effect. Activates continuously or on hover with configurable speed.",
+ "use_when": "Cyberpunk or gaming interfaces, dystopian themes, headline text that needs aggressive visual impact.",
+ "avoid_when": "Continuous body text; animation harms readability. Component hardcodes dark backgrounds.",
+ "a11y": "Text is rendered in the DOM and accessible; animation cannot be paused with prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "enableShadows",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(styleId, hoverClass, className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

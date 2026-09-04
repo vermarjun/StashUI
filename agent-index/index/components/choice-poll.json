@@ -1,0 +1,107 @@
+{
+ "name": "choice-poll",
+ "title": "Choice Poll",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "ChoicePoll",
+  "ChoicePollRoot",
+  "ChoicePollHeader",
+  "ChoicePollTitle",
+  "ChoicePollDescription",
+  "ChoicePollOptions",
+  "ChoicePollOption",
+  "ChoicePollIndicator",
+  "ChoicePollLabel",
+  "ChoicePollProgress",
+  "ChoicePollPercentage",
+  "ChoicePollFooter"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-use-controllable-state",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { ChoicePoll } from \"@/components/ui/choice-poll\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-md p-6\">\n      <ChoicePoll.Root\n        votes={{ react: 245, vue: 178, angular: 92, svelte: 134 }}\n        hasVoted={false}\n        showResults={false}\n      >\n        <ChoicePoll.Header>\n          <ChoicePoll.Title>What is your favorite frontend framework?</ChoicePoll.Title>\n          <ChoicePoll.Description>Vote for the framework you enjoy working with the most.</ChoicePoll.Description>\n        </ChoicePoll.Header>\n        <ChoicePoll.Options>\n          <ChoicePoll.Option value=\"react\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>React</ChoicePoll.Label>\n          </ChoicePoll.Option>\n          <ChoicePoll.Option value=\"vue\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>Vue</ChoicePoll.Label>\n          </ChoicePoll.Option>\n          <ChoicePoll.Option value=\"angular\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>Angular</ChoicePoll.Label>\n          </ChoicePoll.Option>\n          <ChoicePoll.Option value=\"svelte\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>Svelte</ChoicePoll.Label>\n          </ChoicePoll.Option>\n        </ChoicePoll.Options>\n      </ChoicePoll.Root>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/choice-poll.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/choice-poll.json",
+ "preview": "https://stashui.vercel.app/c/choice-poll",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Composable poll component with single/multi-select, results display, and vote…",
+ "description": "Flexible poll/voting component built with composable sub-components. Supports single or multiple selections, result visualization with progress bars, percentage displays, and vote tracking. Controlled or uncontrolled modes via context.",
+ "use_when": "Building in-page polls, surveys, or voting interfaces with result visualization.",
+ "avoid_when": "Simple radio button groups or checkboxes where full poll features aren't needed.",
+ "a11y": "Built on semantic button elements with keyboard navigation. Context-driven for proper labeling. Check mark icon for visual feedback.",
+ "props": [
+  {
+   "name": "value",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string | string[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "multiple",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showResults",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "votes",
+   "type": "Record<string, number>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "hasVoted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

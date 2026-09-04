@@ -1,0 +1,91 @@
+{
+ "name": "ScrambledText-TS-TW",
+ "title": "Scrambled Text",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ScrambledText"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport ScrambledText from \"@/components/ui/ScrambledText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[380px] bg-background p-8\">\n      <ScrambledText\n        className=\"text-foreground font-mono\"\n        radius={110}\n        duration={1.0}\n        speed={0.5}\n        scrambleChars=\".:\"\n      >\n        Move your cursor across the text to scramble it.\n      </ScrambledText>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ScrambledText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ScrambledText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ScrambledText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text scrambles with random characters as the cursor approaches, unscrambling…",
+ "description": "Uses GSAP with SplitText and ScrambleTextPlugin to split text into characters. Characters within a radius of the pointer animate to scrambled state, then back to normal as the pointer moves away.",
+ "use_when": "An interactive text element needs to respond dynamically to cursor proximity with a glitch-like effect.",
+ "avoid_when": "Touch-only interfaces or when rapid pointer tracking isn't supported; uses pointermove events.",
+ "a11y": "Text is split into character spans and animated; meaning is preserved in data attributes. Not directly accessible during animation.",
+ "props": [
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scrambleChars",
+   "type": "string",
+   "default": "'.:'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "name": "Particles-TS-TW",
+ "title": "Particles",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Particles"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "webgl",
+  "3d",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Particles from \"@/components/ui/Particles\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[600px] bg-black rounded-xl overflow-hidden relative\">\n      <Particles\n        particleCount={200}\n        particleSpread={10}\n        speed={0.1}\n        particleColors={[\"#ffffff\", \"#a855f7\", \"#06b6d4\"]}\n        alphaParticles={true}\n        particleBaseSize={100}\n        sizeRandomness={1}\n        cameraDistance={20}\n        moveParticlesOnHover={true}\n        className=\"w-full h-full\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Particles.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Particles-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Particles-TS-TW",
+ "dupe_group": "particles",
+ "alternatives": [
+  {
+   "name": "particles",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Particles float and interact across the space.",
+ "description": "Particle system with physics-based movement, collision, and optional interactivity.",
+ "use_when": "Interactive, dynamic backgrounds with depth.",
+ "avoid_when": "Devices without efficient GPU or canvas support.",
+ "a11y": "Decorative background. No keyboard or focus handling required.",
+ "props": [
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "particleSpread",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "particleColors",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "moveParticlesOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "particleHoverFactor",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "alphaParticles",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "particleBaseSize",
+   "type": "number",
+   "default": "100",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

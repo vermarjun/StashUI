@@ -1,0 +1,119 @@
+{
+ "name": "grid-beam",
+ "title": "Grid Beam",
+ "category": "backgrounds",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "PALETTES",
+  "GridBeamDividers",
+  "GridBeamCanvas",
+  "GridBeamContent",
+  "GridBeam"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 17,
+ "flags": [
+  "pure",
+  "17 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { GridBeam } from \"@/components/ui/grid-beam\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background p-8\">\n      <GridBeam\n        className=\"h-full w-full rounded-2xl border border-border\"\n        rows={4}\n        cols={5}\n        colorVariant=\"colorful\"\n        theme=\"dark\"\n        active\n        breathe\n        duration={3}\n        strength={1}\n        borderRadius={16}\n      >\n        <div className=\"flex h-full flex-col items-center justify-center gap-4 text-center\">\n          <h2 className=\"text-3xl font-bold tracking-tight text-foreground\">\n            Grid Beam\n          </h2>\n          <p className=\"max-w-xs text-sm text-muted-foreground\">\n            Glowing beams travel along a grid of intersecting lines.\n          </p>\n        </div>\n      </GridBeam>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/grid-beam.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/grid-beam.json",
+ "preview": "https://stashui.vercel.app/c/grid-beam",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated beams pulse along grid lines with customizable colour palettes.",
+ "description": "Canvas-based component with SVG grid lines and animated coloured beams that pulse through intersections. Supports multiple colour palettes (colorful, mono) and light/dark themes.",
+ "use_when": "A dramatic, animated container background that can hold content and respond to an active state toggle.",
+ "avoid_when": "Performance-sensitive contexts — continuous canvas animation. No prefers-reduced-motion support.",
+ "a11y": "Canvas marked aria-hidden; content renders in a separate z-stacked slot above beams. No keyboard interaction on animation.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "rows",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "cols",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colorVariant",
+   "type": "string",
+   "default": "\"colorful\"",
+   "required": false
+  },
+  {
+   "name": "theme",
+   "type": "string",
+   "default": "\"dark\"",
+   "required": false
+  },
+  {
+   "name": "active",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "breathe",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card",
+  "hero"
+ ]
+}

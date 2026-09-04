@@ -1,0 +1,72 @@
+{
+ "name": "motion-number-input",
+ "title": "Animated Number Input",
+ "category": "inputs",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Input",
+  "MotionNumberInput"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/motion-number-input\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/motion-number-input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/motion-number-input.json",
+ "preview": "https://stashui.vercel.app/c/motion-number-input",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Number input with animated digit transitions and increment/decrement buttons.",
+ "description": "A controlled number input using the NumberFlow library for smooth animated digit transitions, with +/- buttons to adjust value, input validation, and min/max bounds.",
+ "use_when": "Building counters, quantity selectors, or forms where animated number changes provide visual feedback.",
+ "avoid_when": "On systems where animation performance is critical or for simple unadorned number inputs.",
+ "a11y": "Semantic number input with keyboard support; +/- buttons are aria-hidden as they mirror direct input control.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": "Number.NEGATIVE_INFINITY",
+   "required": false
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": "Number.POSITIVE_INFINITY",
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

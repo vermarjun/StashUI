@@ -1,0 +1,103 @@
+{
+ "name": "BounceCards-TS-TW",
+ "title": "BounceCards",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "BounceCards"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/BounceCards\";\n\nconst IMAGES = [\n  \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=300&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=300&h=300&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=300&h=300&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=300&h=300&fit=crop&auto=format\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full flex items-center justify-center overflow-hidden\">\n      <Cmp\n        images={IMAGES}\n        containerWidth={500}\n        containerHeight={300}\n        animationDelay={0.3}\n        animationStagger={0.06}\n        enableHover\n        transformStyles={[\n          \"rotate(10deg) translate(-170px)\",\n          \"rotate(5deg) translate(-85px)\",\n          \"rotate(-3deg)\",\n          \"rotate(-10deg) translate(85px)\",\n          \"rotate(2deg) translate(170px)\",\n        ]}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/BounceCards.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/BounceCards-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/BounceCards-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Cards bounce into place with staggered elastic animation and hover effects.",
+ "description": "Arranges images as cards that scale and rotate into place with elastic easing. Staggered animation on mount. Optional hover elevation. Uses GSAP for animation timing.",
+ "use_when": "Image galleries, portfolio sections, or product showcases with visual interest.",
+ "avoid_when": "Long lists of items; animation cost scales linearly with card count.",
+ "a11y": "Images are displayed but have no alt text. Cards have no semantic meaning or keyboard interaction.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "containerWidth",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "containerHeight",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "animationDelay",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "animationStagger",
+   "type": "number",
+   "default": "0.06",
+   "required": false
+  },
+  {
+   "name": "easeType",
+   "type": "string",
+   "default": "'elastic.out(1, 0.8)'",
+   "required": false
+  },
+  {
+   "name": "transformStyles",
+   "type": "string[]",
+   "default": "[\"rotate(10deg) translate(-170px)\", \"rotate(5deg) translate(-85px)\", \"rotate(-3deg)\", \"rotate(-10deg) translate(85px)\", \"rotate(2deg) translate(170px)\"]",
+   "required": false
+  },
+  {
+   "name": "enableHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

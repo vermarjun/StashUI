@@ -1,0 +1,177 @@
+{
+ "name": "MetallicPaint-TS-TW",
+ "title": "Metallic Paint Shader",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "MetallicPaint"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "webgl",
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport MetallicPaint from \"@/components/ui/MetallicPaint\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-64 h-64 mx-auto\">\n      <MetallicPaint\n        imageSrc=\"https://picsum.photos/seed/metallic/600/600\"\n        speed={0.3}\n        scale={4}\n        brightness={2}\n        liquid={0.75}\n        mouseAnimation={false}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/MetallicPaint.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/MetallicPaint-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/MetallicPaint-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Applies a flowing metallic liquid effect to an image with chromatic aberration…",
+ "description": "WebGL2 shader that overlays a depth-based metallic paint animation on a supplied image, with controls for wave, distortion, and liquid flow direction.",
+ "use_when": "Product showcases, decorative image frames, or artistic displays where a luxe, kinetic metallic finish enhances the…",
+ "avoid_when": "WebGL2-unsupported devices, or images that should render cleanly without motion — the shader is always animating.",
+ "a11y": "Passive visual effect applied over an image. No keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "seed",
+   "type": "number",
+   "default": "42",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "refraction",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0.015",
+   "required": false
+  },
+  {
+   "name": "liquid",
+   "type": "number",
+   "default": "0.75",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "contrast",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "angle",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "fresnel",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "lightColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "darkColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  },
+  {
+   "name": "patternSharpness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "waveAmplitude",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "noiseScale",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "chromaticSpread",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "mouseAnimation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "distortion",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "contour",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "tintColor",
+   "type": "string",
+   "default": "'#feb3ff'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image",
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "decoration",
+  "feature-card"
+ ]
+}

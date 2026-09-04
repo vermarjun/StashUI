@@ -1,0 +1,113 @@
+{
+ "name": "PixelTrail-TS-TW",
+ "title": "Pixel Cursor Trail",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PixelTrail"
+ ],
+ "npm_deps": [
+  "@react-three/drei@^10.7.4",
+  "@react-three/fiber@^9.3.0",
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "heavy",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport PixelTrail from \"@/components/ui/PixelTrail\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden bg-black\">\n      <div className=\"absolute inset-0 flex items-center justify-center\">\n        <p className=\"text-white/20 text-lg font-medium select-none\">Move your cursor</p>\n      </div>\n      <PixelTrail\n        gridSize={40}\n        trailSize={0.1}\n        maxAge={250}\n        color=\"#ffffff\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/PixelTrail.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/PixelTrail-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/PixelTrail-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pixelated cursor trail that fades and dissipates with configurable grid…",
+ "description": "React Three Fiber + drei useTrailTexture hook rendering a pixelated trail as the pointer moves. Trail fades based on age and interpolation easing.",
+ "use_when": "Interactive portfolio showcases, game-inspired UX, or creative interactions where cursor feedback enhances tactile…",
+ "avoid_when": "Touch-only devices (no pointer), or performance-sensitive mobile contexts — three.js rendering is expensive.",
+ "a11y": "Interactive pointer effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "gridSize",
+   "type": "number",
+   "default": "{gridSize}",
+   "required": false
+  },
+  {
+   "name": "trailSize",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "maxAge",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "interpolate",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "easingFunction",
+   "type": "(x: number) => number",
+   "default": "identityEase",
+   "required": false
+  },
+  {
+   "name": "canvasProps",
+   "type": "Partial<CanvasProps>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "glProps",
+   "type": "WebGLContextAttributes & { powerPreference?: string }",
+   "default": "{antialias: false, powerPreference: 'high-performance', alpha: true}",
+   "required": false
+  },
+  {
+   "name": "gooeyFilter",
+   "type": "{ id: string; strength: number }",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ]
+}

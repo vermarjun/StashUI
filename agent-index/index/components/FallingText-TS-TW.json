@@ -1,0 +1,99 @@
+{
+ "name": "FallingText-TS-TW",
+ "title": "Falling Text",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FallingText"
+ ],
+ "npm_deps": [
+  "matter-js@^0.20.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "1 colors"
+ ],
+ "usage": "\"use client\"\n\nimport FallingText from \"@/components/ui/FallingText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[420px] bg-background\">\n      <FallingText\n        text=\"Hover to drop each word with physics-based gravity\"\n        highlightWords={[\"physics-based\"]}\n        trigger=\"hover\"\n        gravity={1}\n        fontSize=\"1.35rem\"\n        backgroundColor=\"transparent\"\n        wireframes={false}\n        mouseConstraintStiffness={0.2}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FallingText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FallingText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FallingText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Words tumble and bounce with physics gravity when triggered, draggable with the…",
+ "description": "Renders text as individual words that simulate physics using Matter.js. Words fall with gravity, collide with boundaries, and respond to mouse dragging. Trigger modes: auto, scroll, click, or hover.",
+ "use_when": "An interactive hero section needs eye-catching motion that feels tactile and responds to user input.",
+ "avoid_when": "Low-end devices or when content must remain static and readable — the physics simulation runs continuously.",
+ "a11y": "Text starts rendered as DOM elements but repositioned by canvas physics simulation. Not easily accessible to screen readers during animation.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "highlightWords",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "trigger",
+   "type": "'auto' | 'scroll' | 'click' | 'hover'",
+   "default": "'auto'",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'transparent'",
+   "required": false
+  },
+  {
+   "name": "wireframes",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "gravity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "mouseConstraintStiffness",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "string",
+   "default": "'1rem'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "click",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero"
+ ]
+}

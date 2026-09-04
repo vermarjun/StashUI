@@ -1,0 +1,79 @@
+{
+ "name": "border-beam",
+ "title": "Border Beam",
+ "category": "borders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BorderBeam"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { BorderBeam } from \"@/components/ui/border-beam\";\n\nexport default function BorderBeamDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-16\">\n      {/* Card 1 – default orange→purple beam */}\n      <div className=\"relative flex h-40 w-64 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border bg-card p-6 shadow-sm\">\n        <span className=\"text-sm font-semibold text-card-foreground\">Default beam</span>\n        <span className=\"text-xs text-muted-foreground\">#ffaa40 → #9c40ff</span>\n        <BorderBeam />\n      </div>\n\n      {/* Card 2 – custom cyan→pink beam, slower */}\n      <div className=\"relative flex h-40 w-64 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border bg-card p-6 shadow-sm\">\n        <span className=\"text-sm font-semibold text-card-foreground\">Custom beam</span>\n        <span className=\"text-xs text-muted-foreground\">cyan → pink, 8 s</span>\n        <BorderBeam\n          colorFrom=\"#06b6d4\"\n          colorTo=\"#ec4899\"\n          duration={8000}\n          borderWidth={2}\n          size={120}\n        />\n      </div>\n\n      {/* Card 3 – delayed start */}\n      <div className=\"relative flex h-40 w-64 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border bg-card p-6 shadow-sm\">\n        <span className=\"text-sm font-semibold text-card-foreground\">Delayed</span>\n        <span className=\"text-xs text-muted-foreground\">2 s delay</span>\n        <BorderBeam delay={2000} colorFrom=\"#22c55e\" colorTo=\"#3b82f6\" />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/border-beam.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/border-beam.json",
+ "preview": "https://stashui.vercel.app/c/border-beam",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Bright beam of light traverses around the border.",
+ "description": "Animated border with a traveling light streak using CSS mask and animation.",
+ "use_when": "Modern CTAs, premium cards, or high-tech interfaces.",
+ "avoid_when": "Layouts with minimal interactivity or calm aesthetics.",
+ "a11y": "Decorative border wrapper.",
+ "props": [
+  {
+   "name": "size",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "15000",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "colorFrom",
+   "type": "string",
+   "default": "\"#ffaa40\"",
+   "required": false
+  },
+  {
+   "name": "colorTo",
+   "type": "string",
+   "default": "\"#9c40ff\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "primary-cta",
+  "decoration"
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "name": "images-slider",
+ "title": "Images Slider",
+ "category": "carousels",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ImagesSlider"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "3d",
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ImagesSlider } from \"@/components/ui/images-slider\";\nimport { motion } from \"motion/react\";\n\nexport default function Demo() {\n  const images = [\n    \"https://picsum.photos/seed/slider1/1200/700\",\n    \"https://picsum.photos/seed/slider2/1200/700\",\n    \"https://picsum.photos/seed/slider3/1200/700\",\n    \"https://picsum.photos/seed/slider4/1200/700\",\n  ];\n\n  return (\n    <div className=\"w-full max-w-3xl mx-auto\" style={{ height: \"400px\" }}>\n      <ImagesSlider images={images} className=\"h-full\">\n        <motion.div\n          initial={{ opacity: 0, y: -80 }}\n          animate={{ opacity: 1, y: 0 }}\n          transition={{ duration: 0.6 }}\n          className=\"z-50 flex flex-col justify-center items-center\"\n        >\n          <motion.p className=\"font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4\">\n            The hero section slideshow <br /> nobody asked for\n          </motion.p>\n          <button className=\"px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4\">\n            <span>Explore now</span>\n            <div className=\"absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent\" />\n          </button>\n        </motion.div>\n      </ImagesSlider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/images-slider.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/images-slider.json",
+ "preview": "https://stashui.vercel.app/c/images-slider",
+ "dupe_group": "imagesslider",
+ "alternatives": [
+  {
+   "name": "inspira-images-slider",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Slides through images with auto-play and arrow-key navigation.",
+ "description": "Displays a sequence of images with fade-in animations and direction-based exit transitions. Auto-advances every 5 seconds or responds to arrow keys.",
+ "use_when": "Building a hero section with rotating imagery and optional overlay content.",
+ "avoid_when": "Images require external fetching—all images must preload before rendering begins.",
+ "a11y": "Keyboard navigation via arrow keys; no ARIA labels for images. Animation continues regardless of prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "overlay",
+   "type": "React.ReactNode",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "overlayClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"up\" | \"down\"",
+   "default": "\"up\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

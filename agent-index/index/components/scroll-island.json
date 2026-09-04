@@ -1,0 +1,72 @@
+{
+ "name": "scroll-island",
+ "title": "Scroll Island",
+ "category": "navigation",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ScrollIsland"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport { ScrollIsland } from \"@/components/ui/scroll-island\";\n\nexport default function ScrollIslandDemo() {\n  return (\n    <div className=\"relative h-[300vh] w-full bg-background\">\n      <ScrollIsland title=\"Page Progress\">\n        <p className=\"py-1 text-xs text-muted-foreground\">Introduction</p>\n        <p className=\"py-1 text-xs text-muted-foreground\">Section 1</p>\n        <p className=\"py-1 text-xs text-muted-foreground\">Section 2</p>\n        <p className=\"py-1 text-xs text-muted-foreground\">Conclusion</p>\n      </ScrollIsland>\n      <div className=\"flex flex-col items-center gap-8 py-32 px-8\">\n        <p className=\"text-lg font-semibold\">Scroll down to see the island update</p>\n        <p className=\"text-sm text-muted-foreground\">The floating island tracks your scroll progress.</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/scroll-island.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-island.json",
+ "preview": "https://stashui.vercel.app/c/scroll-island",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Floating progress indicator that shows scroll depth and collapses on scroll…",
+ "description": "Fixed-position floating island that displays scroll progress as a circular indicator and auto-collapses after scroll stops. Detects dark mode, respects user scroll position, and can display child content when expanded.",
+ "use_when": "Long-form content pages (docs, articles, guides) where showing reading progress improves user orientation without…",
+ "avoid_when": "Short pages or when scroll indicators add visual noise. Not suitable for pages with poor vertical navigation.",
+ "a11y": "No ARIA attributes or keyboard interaction. Visual-only indicator; does not expose progress to screen readers.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Progress\"",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "44",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "sidebar"
+ ]
+}

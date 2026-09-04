@@ -1,0 +1,159 @@
+{
+ "name": "RotatingText-TS-TW",
+ "title": "Rotating Text",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "RotatingText"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport RotatingText from \"@/components/ui/RotatingText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-32 gap-2 text-3xl font-bold\">\n      <span>We build</span>\n      <RotatingText\n        texts={[\"beautiful\", \"fast\", \"accessible\", \"modern\"]}\n        mainClassName=\"text-blue-500\"\n        rotationInterval={2000}\n      />\n      <span>apps.</span>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/RotatingText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/RotatingText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/RotatingText-TS-TW",
+ "dupe_group": "rotatingtext",
+ "alternatives": [
+  {
+   "name": "primitives-texts-rotating",
+   "origin": "Animate UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text cycles through a list of strings with staggered character animations.",
+ "description": "Animates between multiple text options, with each character, word, or line entering and exiting with staggered timing. Auto-rotates on an interval or responds to imperative methods (next, previous, jumpTo, reset).",
+ "use_when": "A headline needs to showcase multiple related phrases or values with fluid, choreographed transitions.",
+ "avoid_when": "When only one text option is needed or when the staggered animation would be distracting.",
+ "a11y": "Current text is in sr-only; visual animation is aria-hidden. Supports programmatic navigation.",
+ "props": [
+  {
+   "name": "texts",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ type: 'spring', damping: 25, stiffness: 300 }",
+   "required": false
+  },
+  {
+   "name": "initial",
+   "type": "boolean | Target | VariantLabels",
+   "default": "{ y: '100%', opacity: 0 }",
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "boolean | VariantLabels | TargetAndTransition",
+   "default": "{ y: 0, opacity: 1 }",
+   "required": false
+  },
+  {
+   "name": "exit",
+   "type": "Target | VariantLabels",
+   "default": "{ y: '-120%', opacity: 0 }",
+   "required": false
+  },
+  {
+   "name": "animatePresenceMode",
+   "type": "'sync' | 'wait'",
+   "default": "'wait'",
+   "required": false
+  },
+  {
+   "name": "animatePresenceInitial",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "rotationInterval",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "staggerDuration",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "staggerFrom",
+   "type": "'first' | 'last' | 'center' | 'random' | number",
+   "default": "'first'",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "auto",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "splitBy",
+   "type": "string",
+   "default": "'characters'",
+   "required": false
+  },
+  {
+   "name": "onNext",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mainClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "splitLevelClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "elementLevelClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

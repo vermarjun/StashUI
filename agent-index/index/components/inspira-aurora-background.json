@@ -1,0 +1,74 @@
+{
+ "name": "inspira-aurora-background",
+ "title": "Aurora Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AuroraBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "pure",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { AuroraBackground } from \"@/components/ui/aurora-background\";\n\nexport default function AuroraBackgroundDemo() {\n  return (\n    <AuroraBackground>\n      <div className=\"relative flex flex-col items-center justify-center gap-4 px-4 text-center\">\n        <p className=\"text-3xl font-bold text-slate-800 dark:text-white md:text-5xl\">\n          Hello from Aurora\n        </p>\n        <p className=\"text-base text-slate-600 dark:text-neutral-200\">\n          A beautiful aurora background effect, perfect for landing pages and\n          hero sections.\n        </p>\n        <button className=\"rounded-full bg-black px-6 py-2 text-white transition hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/80\">\n          Get Started\n        </button>\n      </div>\n    </AuroraBackground>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/aurora-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-aurora-background.json",
+ "preview": "https://stashui.vercel.app/c/inspira-aurora-background",
+ "dupe_group": "aurorabackground",
+ "alternatives": [
+  {
+   "name": "aurora-background",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 10
+  }
+ ],
+ "blurb": "Animated aurora (northern lights) effect with flowing coloured gradients.",
+ "description": "Full-screen gradient-based background with animated repeating linear gradients creating an aurora effect. Supports dark mode and optional radial gradient mask for vignetting.",
+ "use_when": "A dramatic full-page background for hero sections or landing pages with a magical, atmospheric feel.",
+ "avoid_when": "Limited viewport — component uses h-screen and is designed for full-screen contexts.",
+ "a11y": "Wrapper component; focus and keyboard behaviour come from children. Animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "radialGradient",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

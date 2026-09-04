@@ -1,0 +1,67 @@
+{
+ "name": "liquid-gradient",
+ "title": "Liquid Gradient",
+ "category": "gradients",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Liquid"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\nimport { useState } from 'react';\nimport { Liquid } from '@/components/ui/liquid-gradient';\n\nconst sampleColors = {\n  color1: '#ff6b6b',\n  color2: '#ffa36b',\n  color3: '#ffcc6b',\n  color4: '#a8ff6b',\n  color5: '#6bffa3',\n  color6: '#6bccff',\n  color7: '#6b8cff',\n  color8: '#a36bff',\n  color9: '#ff6bcf',\n  color10: '#ff6b8c',\n  color11: '#ff9f6b',\n  color12: '#6bffcc',\n  color13: '#6bffd4',\n  color14: '#6be8ff',\n  color15: '#8c6bff',\n  color16: '#cf6bff',\n  color17: '#ff6be8',\n};\n\nexport default function Demo() {\n  const [isHovered, setIsHovered] = useState(false);\n\n  return (\n    <div className=\"w-full max-w-2xl mx-auto flex items-center justify-center p-8\">\n      <div\n        className=\"relative w-[400px] h-[120px] overflow-hidden rounded-[60px] cursor-pointer\"\n        onMouseEnter={() => setIsHovered(true)}\n        onMouseLeave={() => setIsHovered(false)}\n      >\n        <Liquid isHovered={isHovered} colors={sampleColors} />\n        <span className=\"absolute inset-0 flex items-center justify-center text-white font-semibold text-lg z-10 select-none\">\n          Hover me\n        </span>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/liquid-gradient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/liquid-gradient.json",
+ "preview": "https://stashui.vercel.app/c/liquid-gradient",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated gradient blob breathing and morphing on hover.",
+ "description": "Layered SVG gradients with Framer Motion animation. Cycles through transform sequences; animation slows on hover (50s cycle) and speeds up on blur (10s cycle).",
+ "use_when": "A hero background or visual feature where motion should respond to user attention without being distracting.",
+ "avoid_when": "Prefers-reduced-motion users; no skip flag. Expensive for multiple instances; large screens (1030px SVG × 7 layers).",
+ "a11y": "No focus or keyboard handling. Ignores prefers-reduced-motion; animation always runs.",
+ "props": [
+  {
+   "name": "isHovered",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "colors",
+   "type": "Colors",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "buttonType",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "name": "creative-tab",
+ "title": "Creative Tab Switcher",
+ "category": "navigation",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TabsProvider",
+  "TabsBtn",
+  "TabsContent"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport { TabsProvider, TabsBtn, TabsContent } from \"@/components/ui/tab\";\n\nconst TABS = [\n  {\n    value: \"overview\",\n    label: \"Overview\",\n    content:\n      \"An overview gives stakeholders a concise picture of scope, goals, and current status. Keep it scannable — bullet-points and short sentences outperform dense paragraphs every time.\",\n  },\n  {\n    value: \"features\",\n    label: \"Features\",\n    content:\n      \"Features are the building blocks of your product. Prioritise ruthlessly: ship the 20 % that delivers 80 % of value first, then iterate based on real usage data.\",\n  },\n  {\n    value: \"pricing\",\n    label: \"Pricing\",\n    content:\n      \"Simple, transparent pricing builds trust. Three tiers — free, pro, and enterprise — cover most SaaS businesses without overwhelming prospective customers with choice.\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-full flex flex-col items-center justify-center p-8 gap-6\">\n      <TabsProvider defaultValue=\"overview\" wobbly>\n        {/* Tab bar */}\n        <div className=\"flex gap-1 p-1 rounded-lg bg-muted w-fit\">\n          {TABS.map((tab) => (\n            <TabsBtn key={tab.value} value={tab.value}>\n              <span className=\"relative z-10 text-sm font-medium px-1 select-none\">\n                {tab.label}\n              </span>\n            </TabsBtn>\n          ))}\n        </div>\n\n        {/* Tab panels */}\n        <div className=\"relative w-full max-w-lg min-h-[120px]\">\n          {TABS.map((tab) => (\n            <TabsContent key={tab.value} value={tab.value} yValue>\n              <p className=\"text-sm text-muted-foreground leading-relaxed\">{tab.content}</p>\n            </TabsContent>\n          ))}\n        </div>\n      </TabsProvider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/tab.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/creative-tab.json",
+ "preview": "https://stashui.vercel.app/c/creative-tab",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated tab switcher with wobbly or hover-triggered animations.",
+ "description": "Context-based tabs with motion. TabsProvider wraps TabsBtn and TabsContent. Supports wobbly indicator (spring animation) and hover triggering.",
+ "use_when": "Design systems or showcases where animated tabs are a visual centerpiece.",
+ "avoid_when": "Performance-critical UIs; animation adds rendering cost.",
+ "a11y": "Tab buttons are keyboard-navigable with proper ARIA roles. Content regions properly associated.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "wobbly",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ]
+}

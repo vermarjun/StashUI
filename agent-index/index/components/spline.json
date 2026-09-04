@@ -1,0 +1,83 @@
+{
+ "name": "spline",
+ "title": "Spline",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Spline"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { Spline } from \"@/components/ui/spline\";\n\nexport default function SplineDemo() {\n  return (\n    <div className=\"h-96 w-full rounded-xl overflow-hidden border\">\n      <Spline\n        scene=\"https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode\"\n        className=\"h-full w-full\"\n      >\n        <div className=\"flex items-center justify-center h-full text-muted-foreground text-sm\">\n          Loading 3D scene...\n        </div>\n      </Spline>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/spline.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/spline.json",
+ "preview": "https://stashui.vercel.app/c/spline",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Spline 3D scene viewer with lazy loading and render-on-demand option.",
+ "description": "Renders interactive 3D scenes from Spline.design via dynamic @splinetool/runtime import. Supports lazy loading, render-on-demand optimization, and children render as loading placeholder.",
+ "use_when": "Interactive 3D product showcases, immersive landing pages, or design portfolios featuring Spline scenes.",
+ "avoid_when": "Low-end devices; requires significant bundle size and GPU. Requires valid Spline.design scene URL.",
+ "a11y": "Canvas-based 3D rendering; no native accessibility for 3D objects; children render as loading fallback.",
+ "props": [
+  {
+   "name": "scene",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onLoad",
+   "type": "(app: unknown) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "renderOnDemand",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": "{style}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": "{cn(\"h-full w-full overflow-hidden\", className)}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "page-background"
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "name": "intro-disclosure",
+ "title": "Intro Disclosure",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "IntroDisclosure"
+ ],
+ "npm_deps": [
+  "motion",
+  "react-use-measure"
+ ],
+ "registry_deps": [
+  "aspect-ratio",
+  "button",
+  "checkbox",
+  "dialog",
+  "drawer",
+  "progress"
+ ],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport { IntroDisclosure } from \"@/components/ui/intro-disclosure\"\n\nconst steps = [\n  {\n    title: \"Welcome to the App\",\n    short_description: \"Let us show you around in just a few steps.\",\n    full_description: \"This quick tour will walk you through the key features that help you get the most out of your experience.\",\n    media: {\n      type: \"image\" as const,\n      src: \"https://picsum.photos/seed/intro1/800/450\",\n      alt: \"Welcome screen\",\n    },\n  },\n  {\n    title: \"Explore the Dashboard\",\n    short_description: \"Your central hub for all activity and insights.\",\n    full_description: \"The dashboard gives you an at-a-glance view of your projects, recent activity, and key metrics all in one place.\",\n    media: {\n      type: \"image\" as const,\n      src: \"https://picsum.photos/seed/intro2/800/450\",\n      alt: \"Dashboard overview\",\n    },\n  },\n  {\n    title: \"Collaborate with Your Team\",\n    short_description: \"Invite teammates and work together in real time.\",\n    full_description: \"Share projects, assign tasks, and communicate with your team without ever leaving the app.\",\n    action: {\n      label: \"Invite Teammates\",\n      onClick: () => console.log(\"Invite clicked\"),\n    },\n    media: {\n      type: \"image\" as const,\n      src: \"https://picsum.photos/seed/intro3/800/450\",\n      alt: \"Team collaboration\",\n    },\n  },\n]\n\nexport default function Demo() {\n  const [open, setOpen] = useState(true)\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full min-h-48 gap-4 p-8\">\n      {!open && (\n        <button\n          className=\"px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium\"\n          onClick={() => setOpen(true)}\n        >\n          Open Feature Tour\n        </button>\n      )}\n      <IntroDisclosure\n        steps={steps}\n        featureId=\"demo-tour\"\n        open={open}\n        setOpen={setOpen}\n        onComplete={() => console.log(\"Tour complete\")}\n        onSkip={() => console.log(\"Tour skipped\")}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/intro-disclosure.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/intro-disclosure.json",
+ "preview": "https://stashui.vercel.app/c/intro-disclosure",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Multi-step feature tour with desktop dialog and mobile drawer views.",
+ "description": "An IntroDisclosure with configurable steps, media (image/video), actions, and responsive layout; desktop uses Dialog, mobile uses Drawer with swipe.",
+ "use_when": "Onboarding users with comprehensive feature tours that adapt to their device with step navigation and media.",
+ "avoid_when": "For simple one-step modals — this is designed for multi-step feature tours with rich media.",
+ "a11y": "Keyboard navigation (arrow keys); drag/swipe on mobile; focus management; skip option; don't-show-again persisted to localStorage.",
+ "props": [
+  {
+   "name": "steps",
+   "type": "Step[]",
+   "default": "{steps}",
+   "required": true
+  },
+  {
+   "name": "featureId",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "setOpen",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onSkip",
+   "type": "() => void",
+   "default": "{handleSkip}",
+   "required": false
+  },
+  {
+   "name": "showProgressBar",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "forceVariant",
+   "type": "'mobile' | 'desktop'",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "image",
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

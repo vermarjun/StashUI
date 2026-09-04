@@ -1,0 +1,89 @@
+{
+ "name": "directional-drawer",
+ "title": "Directional Drawer",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "DirectionalDrawer",
+  "DrawerContent",
+  "DrawerTrigger"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  DirectionalDrawer,\n  DrawerContent,\n  DrawerTrigger,\n} from \"@/components/ui/directional-drawer\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] bg-background\">\n      <DirectionalDrawer direction=\"left\" outsideClose={true}>\n        <DrawerTrigger>\n          <button className=\"px-6 py-3 rounded-md bg-foreground text-background font-medium hover:opacity-90 transition-opacity\">\n            Open Drawer\n          </button>\n        </DrawerTrigger>\n        <DrawerContent className=\"p-8 pt-12 flex flex-col gap-6 h-full\">\n          <div>\n            <h2 className=\"text-xl font-semibold mb-1\">Navigation</h2>\n            <p className=\"text-sm text-muted-foreground\">\n              Slide-in panel from the left side of the screen.\n            </p>\n          </div>\n          <nav className=\"flex flex-col gap-2\">\n            {[\"Dashboard\", \"Projects\", \"Settings\", \"Profile\"].map((item) => (\n              <a\n                key={item}\n                href=\"#\"\n                className=\"px-4 py-2 rounded-md hover:bg-muted text-sm font-medium transition-colors\"\n              >\n                {item}\n              </a>\n            ))}\n          </nav>\n          <div className=\"mt-auto\">\n            <button className=\"w-full px-4 py-2 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity\">\n              Get Started\n            </button>\n          </div>\n        </DrawerContent>\n      </DirectionalDrawer>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/directional-drawer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/directional-drawer.json",
+ "preview": "https://stashui.vercel.app/c/directional-drawer",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Slide-out drawer from any direction with responsive mobile/desktop behavior.",
+ "description": "A DirectionalDrawer using vaul library with configurable direction (left/right/top/bottom); responsive 450px desktop or 90% mobile; dismissible on mobile with backdrop overlay.",
+ "use_when": "Creating navigation sidebars or slide-out panels that adapt to desktop and mobile screens.",
+ "avoid_when": "When you need the drawer to always fill the viewport — consider a full-height drawer instead.",
+ "a11y": "Dismissible on mobile; close button/handle visible; backdrop click closes drawer; Escape key supported via vaul.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": "{open}",
+   "required": false
+  },
+  {
+   "name": "setOpen",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'left' | 'right' | 'top' | 'bottom'",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "outsideClose",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "'fixed inset-0 dark:bg-black/40 bg-white/50 backdrop-blur-xs",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal",
+  "sidebar"
+ ]
+}

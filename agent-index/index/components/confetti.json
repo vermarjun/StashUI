@@ -1,0 +1,82 @@
+{
+ "name": "confetti",
+ "title": "Confetti",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Confetti",
+  "ConfettiButton"
+ ],
+ "npm_deps": [
+  "canvas-confetti",
+  "@types/canvas-confetti"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { Confetti, ConfettiButton, type ConfettiRef } from \"@/components/ui/confetti\"\n\nexport default function Demo() {\n  const confettiRef = useRef<ConfettiRef>(null)\n\n  return (\n    <div className=\"relative flex flex-col items-center justify-center gap-6 min-h-[300px] w-full\">\n      {/* Full-viewport canvas so confetti flies freely */}\n      <Confetti\n        ref={confettiRef}\n        className=\"pointer-events-none absolute inset-0 h-full w-full\"\n        manualstart\n      />\n\n      <p className=\"text-muted-foreground text-sm\">Click to burst</p>\n\n      <div className=\"flex gap-3\">\n        <ConfettiButton\n          options={{ spread: 90, startVelocity: 45, particleCount: 80 }}\n        >\n          🎉 Confetti\n        </ConfettiButton>\n\n        <ConfettiButton\n          options={{\n            spread: 60,\n            startVelocity: 35,\n            particleCount: 60,\n            colors: [\"#ff0000\", \"#ff7700\", \"#ffff00\"],\n          }}\n        >\n          🔥 Fire\n        </ConfettiButton>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/confetti.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/confetti.json",
+ "preview": "https://stashui.vercel.app/c/confetti",
+ "dupe_group": "confetti",
+ "alternatives": [
+  {
+   "name": "inspira-confetti",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Canvas-based confetti emitter with customizable particles.",
+ "description": "Wraps canvas-confetti library for imperative control. Renders a canvas and exposes fire() API to trigger confetti bursts with custom options.",
+ "use_when": "Celebration moments (form submission, game completion), rewards, or interactive celebrations.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); accessibility-required (animation only).",
+ "a11y": "Canvas animation only; no interactive elements. Motion-heavy, no text alternative.",
+ "props": [
+  {
+   "name": "options",
+   "type": "ConfettiOptions",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "globalOptions",
+   "type": "ConfettiGlobalOptions",
+   "default": "{ resize: true, useWorker: true }",
+   "required": false
+  },
+  {
+   "name": "manualstart",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "form-submit"
+ ]
+}

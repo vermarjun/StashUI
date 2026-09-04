@@ -1,0 +1,113 @@
+{
+ "name": "MetaBalls-TS-TW",
+ "title": "Liquid Metaballs",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "MetaBalls"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport MetaBalls from \"@/components/ui/MetaBalls\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg h-[400px] bg-black rounded-xl overflow-hidden\">\n      <MetaBalls\n        color=\"#ffffff\"\n        cursorBallColor=\"#9c40ff\"\n        cursorBallSize={3}\n        ballCount={12}\n        animationSize={30}\n        enableMouseInteraction\n        enableTransparency={false}\n        speed={0.3}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/MetaBalls.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/MetaBalls-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/MetaBalls-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Liquid-like shapes that orbit and blend, responding to cursor position.",
+ "description": "WebGL shader-rendered metaballs that flow in circular patterns, blending colors where they touch. Pointer-controlled ball follows the cursor when interactive, otherwise orbits the center.",
+ "use_when": "Playful, organic-feeling backgrounds or hero sections where a lively liquid effect fits the brand.",
+ "avoid_when": "WebGL-unsupported devices, touch-only surfaces, or low-end devices — rendering 50 metaballs is compute-intensive.",
+ "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "enableMouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hoverSmoothness",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "animationSize",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "ballCount",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "clumpFactor",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "cursorBallSize",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "cursorBallColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "enableTransparency",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ]
+}

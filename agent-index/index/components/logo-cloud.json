@@ -1,0 +1,66 @@
+{
+ "name": "logo-cloud",
+ "title": "Logo Cloud",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimatedLogoCloud",
+  "IconLogoCloud",
+  "StaticLogoCloud"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\"\n\nimport { AnimatedLogoCloud, StaticLogoCloud } from \"@/components/ui/logo-cloud\"\n\nconst logos = [\n  { name: \"Vercel\", path: \"https://www.vectorlogo.zone/logos/vercel/vercel-ar21.svg\" },\n  { name: \"React\", path: \"https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg\" },\n  { name: \"TypeScript\", path: \"https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-ar21.svg\" },\n  { name: \"Next.js\", path: \"https://www.vectorlogo.zone/logos/nextjs/nextjs-ar21.svg\" },\n  { name: \"Tailwind\", path: \"https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21.svg\" },\n]\n\nexport default function LogoCloudDemo() {\n  return (\n    <div className=\"w-full flex flex-col gap-8\">\n      <AnimatedLogoCloud\n        title=\"Trusted by developers worldwide\"\n        logos={logos}\n      />\n      <StaticLogoCloud\n        title=\"Built with\"\n        logos={logos}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/logo-cloud.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/logo-cloud.json",
+ "preview": "https://stashui.vercel.app/c/logo-cloud",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Logos scroll in horizontal marquee with gradient fade edges.",
+ "description": "A horizontal scrolling marquee of logos with CSS animation and gradient mask fade on edges. Exports multiple variants: AnimatedLogoCloud (scrolling), IconLogoCloud (grid), and StaticLogoCloud.",
+ "use_when": "Landing pages, testimonial sections, or partner/customer showcases highlighting brand logos.",
+ "avoid_when": "When logos need interactive behavior; designed as decorative, non-clickable display.",
+ "a11y": "Images have alt text from logo names; CSS animations do not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "logos",
+   "type": "Logo[]",
+   "default": "[]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall"
+ ]
+}

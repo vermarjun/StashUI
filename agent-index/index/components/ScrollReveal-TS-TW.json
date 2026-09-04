@@ -1,0 +1,108 @@
+{
+ "name": "ScrollReveal-TS-TW",
+ "title": "Scroll Reveal",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ScrollReveal"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport ScrollReveal from \"@/components/ui/ScrollReveal\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-3xl mx-auto px-8 py-16 space-y-12 bg-background\">\n      <ScrollReveal\n        enableBlur={true}\n        baseOpacity={0.08}\n        baseRotation={4}\n        blurStrength={5}\n        containerClassName=\"text-foreground\"\n        textClassName=\"text-foreground\"\n      >\n        Good design is as little design as possible. Less, but better — because it concentrates on the essential aspects.\n      </ScrollReveal>\n      <ScrollReveal\n        enableBlur={true}\n        baseOpacity={0.08}\n        baseRotation={3}\n        blurStrength={4}\n        containerClassName=\"text-muted-foreground\"\n        textClassName=\"text-muted-foreground\"\n      >\n        Scroll down to watch each word come into focus as it enters the viewport — a simple technique that guides the reader's attention.\n      </ScrollReveal>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ScrollReveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ScrollReveal-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ScrollReveal-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text words fade in and unblur with a stagger as the container rotates, all tied…",
+ "description": "Splits text into words and reveals them with staggered opacity and optional blur animations as the element scrolls into view. The container itself rotates from a base angle to zero. Uses GSAP ScrollTrigger.",
+ "use_when": "Body copy needs a polished reveal effect that's synchronized to scroll progress for reading guidance.",
+ "avoid_when": "When content must be legible without scrolling; constant blur impairs readability.",
+ "a11y": "Text is split into word spans and animated. Content is readable once fully revealed but animation may distract.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "scrollContainerRef",
+   "type": "RefObject<HTMLElement>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "enableBlur",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "baseOpacity",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "baseRotation",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "blurStrength",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "textClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "rotationEnd",
+   "type": "string",
+   "default": "'bottom bottom'",
+   "required": false
+  },
+  {
+   "name": "wordAnimationEnd",
+   "type": "string",
+   "default": "'bottom bottom'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

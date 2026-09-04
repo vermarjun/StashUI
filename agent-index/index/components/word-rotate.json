@@ -1,0 +1,73 @@
+{
+ "name": "word-rotate",
+ "title": "Word Rotate",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "WordRotate"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { WordRotate } from \"@/components/ui/word-rotate\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full max-w-md p-8\">\n      <WordRotate\n        className=\"text-4xl font-bold text-black dark:text-white\"\n        words={[\"Innovative\", \"Scalable\", \"Reliable\", \"Fast\", \"Beautiful\"]}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/word-rotate.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/word-rotate.json",
+ "preview": "https://stashui.vercel.app/c/word-rotate",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Words cycle in sequence, each fading in from top and out to bottom on a timer.",
+ "description": "Displays one word at a time from a list, rotating continuously. Each transition fades the old word out (downward) and the new word in (from above).",
+ "use_when": "Hero sections showing a list of attributes or values that should cycle automatically.",
+ "avoid_when": "Accessibility-focused interfaces; looping animations are distracting and do not respect prefers-reduced-motion.",
+ "a11y": "Current word is always in the DOM and accessible; animation continuously cycles and does not pause with prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2500",
+   "required": false
+  },
+  {
+   "name": "motionProps",
+   "type": "MotionProps",
+   "default": "{initial: {opacity: 0, y: -50}, animate: {opacity: 1, y: 0}, exit: {opacity: 0, y: 50}, transition: {duration: 0.25, ease: \"easeOut\"}}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "name": "inspira-file-tree",
+ "title": "File Tree",
+ "category": "data-display",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "File",
+  "Folder",
+  "Tree"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "import { Tree, Folder, File } from \"@/components/ui/file-tree\";\n\nexport default function FileTreeDemo() {\n  return (\n    <div className=\"w-80 rounded-xl border p-4\">\n      <Tree\n        initialSelectedId=\"index-ts\"\n        initialExpandedItems={[\"src\", \"components\"]}\n      >\n        <Folder id=\"src\" name=\"src\">\n          <Folder id=\"components\" name=\"components\">\n            <File id=\"button-tsx\" name=\"Button.tsx\" />\n            <File id=\"card-tsx\" name=\"Card.tsx\" />\n            <File id=\"modal-tsx\" name=\"Modal.tsx\" />\n          </Folder>\n          <Folder id=\"lib\" name=\"lib\">\n            <File id=\"utils-ts\" name=\"utils.ts\" />\n          </Folder>\n          <File id=\"index-ts\" name=\"index.ts\" />\n        </Folder>\n        <File id=\"readme\" name=\"README.md\" />\n        <File id=\"package-json\" name=\"package.json\" />\n      </Tree>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/file-tree.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-file-tree.json",
+ "preview": "https://stashui.vercel.app/c/inspira-file-tree",
+ "dupe_group": "filetree",
+ "alternatives": [
+  {
+   "name": "file-tree",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  },
+  {
+   "name": "tree",
+   "origin": "Origin UI",
+   "npm_deps": 3,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Hierarchical folder/file tree built with JSX children rather than data config.",
+ "description": "Component-based tree view (Tree, Folder, File) where the structure is declared via JSX composition, not a data array. Tracks selected item and expanded folders via state. Folders render with toggle icons; files are selectable buttons…",
+ "use_when": "Custom, deeply-nested file structures where JSX composition is clearer than flat data arrays.",
+ "avoid_when": "Large dynamic trees (1000+ items) where data arrays are more efficient to generate.",
+ "a11y": "Folders and files are buttons with click handlers. No built-in roving tabindex or arrow-key navigation — focus must be managed externally.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"bg-muted absolute left-1.5 h-full w-px rounded-md py-3 dura",
+   "required": false
+  },
+  {
+   "name": "initialSelectedId",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "indicator",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "elements",
+   "type": "TreeViewElement[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initialExpandedItems",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "rtl | ltr",
+   "default": "\"ltr\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "sidebar",
+  "data-table"
+ ]
+}

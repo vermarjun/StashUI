@@ -1,0 +1,168 @@
+{
+ "name": "poll-widget",
+ "title": "Poll Widget",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "PollWidgetRoot",
+  "PollWidgetTrigger",
+  "PollWidgetContent",
+  "PollWidgetSuccess",
+  "PollWidgetQuestion",
+  "PollWidgetOptions",
+  "PollWidgetOption",
+  "PollWidgetIndicator",
+  "PollWidgetLabel",
+  "PollWidgetPercentage",
+  "PollWidgetResults",
+  "PollWidgetSubmit",
+  "PollWidgetDialog",
+  "PollWidget"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-use-controllable-state",
+  "class-variance-authority",
+  "lucide-react",
+  "motion"
+ ],
+ "registry_deps": [
+  "button",
+  "dialog",
+  "popover"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "motion",
+  "heavy"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport {\n  PollWidget,\n  PollWidgetContent,\n  PollWidgetOptions,\n  PollWidgetOption,\n  PollWidgetQuestion,\n  PollWidgetResults,\n  PollWidgetSubmit,\n} from \"@/components/ui/poll-widget\"\n\nconst OPTIONS = [\n  { id: \"speed\", label: \"Faster build times\" },\n  { id: \"dx\", label: \"Better DX tooling\" },\n  { id: \"ai\", label: \"AI-assisted coding\" },\n  { id: \"collab\", label: \"Team collaboration\" },\n]\n\nconst BASE_VOTES: Record<string, number> = {\n  speed: 312,\n  dx: 241,\n  ai: 198,\n  collab: 155,\n}\n\nexport default function Demo() {\n  const [votes, setVotes] = useState(BASE_VOTES)\n  const [hasVoted, setHasVoted] = useState(false)\n\n  function handleVote(selected: string[]) {\n    setVotes((prev) => {\n      const next = { ...prev }\n      for (const id of selected) {\n        next[id] = (next[id] ?? 0) + 1\n      }\n      return next\n    })\n    setHasVoted(true)\n  }\n\n  return (\n    <div className=\"w-full max-w-md p-6\">\n      <PollWidget\n        question=\"What would improve your workflow the most?\"\n        description=\"Pick the improvement you care about most.\"\n        options={OPTIONS}\n        votes={votes}\n        hasVoted={hasVoted}\n        onVote={handleVote}\n        mode=\"inline\"\n        autoCollapseDelay={0}\n      >\n        <PollWidgetContent>\n          <PollWidgetQuestion />\n          <PollWidgetOptions>\n            {OPTIONS.map((opt) => (\n              <PollWidgetOption key={opt.id} value={opt.id} />\n            ))}\n          </PollWidgetOptions>\n          <PollWidgetResults />\n          <PollWidgetSubmit />\n        </PollWidgetContent>\n      </PollWidget>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/poll-widget.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/poll-widget.json",
+ "preview": "https://stashui.vercel.app/c/poll-widget",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Full-featured poll with multiple rendering modes (inline, popover, dialog) and…",
+ "description": "Compound component (Root, Content, Question, Options, Option, Results, Submit) for polls with three display modes. Tracks selection and votes. Shows results live and auto-collapses after voting. Supports success message feedback. Can be…",
+ "use_when": "In-app polls, surveys, or feature voting that should feel polished with multiple display options.",
+ "avoid_when": "Anonymous surveys (votes visible to all users at once).",
+ "a11y": "Fully keyboard-navigable options. Dialog mode uses aria-modal. Popover uses role=dialog. Success message announces via motion component.",
+ "props": [
+  {
+   "name": "question",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "options",
+   "type": "PollOption[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string | string[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "multiple",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "votes",
+   "type": "Record<string, number>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "hasVoted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onVote",
+   "type": "(selectedIds: string[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mode",
+   "type": "inline | popover | dialog",
+   "default": "\"inline\"",
+   "required": false
+  },
+  {
+   "name": "autoCollapseDelay",
+   "type": "number",
+   "default": "2500",
+   "required": false
+  },
+  {
+   "name": "successDuration",
+   "type": "number",
+   "default": "1500",
+   "required": false
+  },
+  {
+   "name": "successTitle",
+   "type": "string",
+   "default": "\"Thanks for voting!\"",
+   "required": false
+  },
+  {
+   "name": "successDescription",
+   "type": "string",
+   "default": "\"Your vote has been recorded\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "modal"
+ ]
+}

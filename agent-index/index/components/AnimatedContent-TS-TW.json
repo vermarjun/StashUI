@@ -1,0 +1,155 @@
+{
+ "name": "AnimatedContent-TS-TW",
+ "title": "Animated Content",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "AnimatedContent"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import AnimatedContent from \"@/components/ui/AnimatedContent\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-6 py-10 w-full\">\n      <AnimatedContent distance={60} direction=\"vertical\" duration={0.8} delay={0}>\n        <div className=\"rounded-xl border border-border bg-background px-8 py-6 text-center shadow-sm max-w-sm\">\n          <h2 className=\"text-xl font-semibold text-foreground mb-2\">Scroll-triggered animation</h2>\n          <p className=\"text-muted-foreground text-sm\">\n            This card slides in from below when it enters the viewport.\n          </p>\n        </div>\n      </AnimatedContent>\n\n      <AnimatedContent distance={60} direction=\"horizontal\" duration={0.9} delay={0.1}>\n        <div className=\"rounded-xl border border-border bg-background px-8 py-6 text-center shadow-sm max-w-sm\">\n          <h2 className=\"text-xl font-semibold text-foreground mb-2\">Horizontal slide</h2>\n          <p className=\"text-muted-foreground text-sm\">\n            This one glides in from the side with a short delay.\n          </p>\n        </div>\n      </AnimatedContent>\n\n      <AnimatedContent distance={40} direction=\"vertical\" reverse duration={1} delay={0.2} animateOpacity scale={0.9}>\n        <div className=\"rounded-xl border border-border bg-background px-8 py-6 text-center shadow-sm max-w-sm\">\n          <h2 className=\"text-xl font-semibold text-foreground mb-2\">Scale + fade</h2>\n          <p className=\"text-muted-foreground text-sm\">\n            Combines a slight scale-up with the translate for extra depth.\n          </p>\n        </div>\n      </AnimatedContent>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/AnimatedContent.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/AnimatedContent-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/AnimatedContent-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Content slides in from off-screen when scrolling it into view.",
+ "description": "Wraps children; animates slide-in on scroll with customizable distance, direction, scale, and opacity. Uses GSAP ScrollTrigger for scroll detection. Optionally disappears after a delay.",
+ "use_when": "Reveal content on scroll, add entrance animations to sections, or create depth with staggered reveals.",
+ "avoid_when": "Reduced motion preference; no prefers-reduced-motion handling. GSAP requires license considerations.",
+ "a11y": "Starts invisible; content becomes visible via animation. No aria attributes; depends on semantic structure.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "container",
+   "type": "Element | string | null",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "distance",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"vertical\" | \"horizontal\"",
+   "default": "'vertical'",
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "initialOpacity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "animateOpacity",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "disappearAfter",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "disappearDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "disappearEase",
+   "type": "string",
+   "default": "'power3.in'",
+   "required": false
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onDisappearanceComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "decoration"
+ ]
+}

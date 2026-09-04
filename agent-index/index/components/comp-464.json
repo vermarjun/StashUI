@@ -1,0 +1,49 @@
+{
+ "name": "comp-464",
+ "title": "Pagination Page Select",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "pagination",
+  "select"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-464\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(2);\n  const total = 8;\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Cmp currentPage={page} totalPages={total} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-464.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-464.json",
+ "preview": "https://stashui.vercel.app/c/comp-464",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with page number input field.",
+ "description": "Pagination with input field allowing users to directly type and jump to a specific page number.",
+ "use_when": "Large pagination sets where direct page number entry is faster than clicking.",
+ "avoid_when": "Small pagination ranges or when you want to guide users through sequential pages.",
+ "a11y": "Semantic pagination with accessible input field for page number entry.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "name": "container-text-flip",
+ "title": "Container Text Flip",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ContainerTextFlip"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "pure",
+  "11 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ContainerTextFlip } from \"@/components/ui/container-text-flip\";\n\nexport default function ContainerTextFlipDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-4 p-8\">\n      <p className=\"text-2xl font-semibold text-foreground\">\n        Build things that are{\" \"}\n      </p>\n      <ContainerTextFlip\n        words={[\"better\", \"faster\", \"beautiful\", \"modern\", \"awesome\"]}\n        interval={2500}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/container-text-flip.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/container-text-flip.json",
+ "preview": "https://stashui.vercel.app/c/container-text-flip",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Words flip through a cycle with the container growing and shrinking to fit each…",
+ "description": "Cycles through a list of words with the container animating its width to fit each word. Letters fade in and blur-clear individually as words change. Uses layout animations.",
+ "use_when": "An inline word swap that needs smooth container resize animations alongside letter reveals.",
+ "avoid_when": "When word list is very long or words have drastically different widths.",
+ "a11y": "Current word is rendered and readable; letters are staggered but all DOM elements are present.",
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": "[\"better\", \"modern\", \"beautiful\", \"awesome\"]",
+   "required": false
+  },
+  {
+   "name": "interval",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "700",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "textClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

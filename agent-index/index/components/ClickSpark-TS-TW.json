@@ -1,0 +1,98 @@
+{
+ "name": "ClickSpark-TS-TW",
+ "title": "Click Spark",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ClickSpark"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "canvas",
+  "pure",
+  "1 colors"
+ ],
+ "usage": "import ClickSpark from \"@/components/ui/ClickSpark\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[480px] w-full overflow-hidden rounded-xl border border-border bg-background\">\n      <ClickSpark\n        sparkColor=\"#a78bfa\"\n        sparkSize={10}\n        sparkRadius={20}\n        sparkCount={10}\n        duration={500}\n        easing=\"ease-out\"\n        extraScale={1.2}\n      >\n        <div className=\"flex h-full w-full flex-col items-center justify-center gap-4 select-none\">\n          <p className=\"text-3xl font-bold text-foreground\">Click anywhere</p>\n          <p className=\"text-muted-foreground text-sm\">Sparks fly from every click</p>\n        </div>\n      </ClickSpark>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ClickSpark.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ClickSpark-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ClickSpark-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Sparks burst outward from each click on the canvas.",
+ "description": "Renders sparks/particles that emanate from click positions. Sparks fade out and scale over time. Rendered to canvas for performance. Configurable count, color, size, and easing.",
+ "use_when": "Interactive feedback for clicks, gamified UI, or celebratory effects.",
+ "avoid_when": "Rapid-fire clicking without debounce can degrade performance.",
+ "a11y": "Canvas-only animation; no aria labels. Primarily decorative feedback.",
+ "props": [
+  {
+   "name": "sparkColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "sparkSize",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "sparkRadius",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "sparkCount",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "\"linear\" | \"ease-in\" | \"ease-out\" | \"ease-in-out\"",
+   "default": "'ease-out'",
+   "required": false
+  },
+  {
+   "name": "extraScale",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "form-submit"
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "name": "hero-parallax",
+ "title": "Hero Parallax",
+ "category": "heroes",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "HeroParallax",
+  "Header",
+  "ProductCard"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "3d",
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { HeroParallax } from \"@/components/ui/hero-parallax\";\n\nexport default function Demo() {\n  const products = [\n    {\n      title: \"Moonbeam\",\n      link: \"https://gomoonbeam.com\",\n      thumbnail: \"https://picsum.photos/seed/moonbeam/600/600\",\n    },\n    {\n      title: \"Cursor\",\n      link: \"https://cursor.so\",\n      thumbnail: \"https://picsum.photos/seed/cursor/600/600\",\n    },\n    {\n      title: \"Rogue\",\n      link: \"https://userogue.com\",\n      thumbnail: \"https://picsum.photos/seed/rogue/600/600\",\n    },\n    {\n      title: \"Editorially\",\n      link: \"https://editorially.org\",\n      thumbnail: \"https://picsum.photos/seed/editorially/600/600\",\n    },\n    {\n      title: \"Editrix AI\",\n      link: \"https://editrix.ai\",\n      thumbnail: \"https://picsum.photos/seed/editrix/600/600\",\n    },\n    {\n      title: \"Pixel Perfect\",\n      link: \"https://app.pixelperfect.quest\",\n      thumbnail: \"https://picsum.photos/seed/pixel/600/600\",\n    },\n    {\n      title: \"Algochurn\",\n      link: \"https://algochurn.com\",\n      thumbnail: \"https://picsum.photos/seed/algochurn/600/600\",\n    },\n    {\n      title: \"Aceternity UI\",\n      link: \"https://ui.aceternity.com\",\n      thumbnail: \"https://picsum.photos/seed/aceternity/600/600\",\n    },\n    {\n      title: \"Tailwind Master Kit\",\n      link: \"https://tailwindmasterkit.com\",\n      thumbnail: \"https://picsum.photos/seed/tailwind/600/600\",\n    },\n    {\n      title: \"SmartBridge\",\n      link: \"https://smartbridgetech.com\",\n      thumbnail: \"https://picsum.photos/seed/smartbridge/600/600\",\n    },\n    {\n      title: \"Renderwork Studio\",\n      link: \"https://renderwork.studio\",\n      thumbnail: \"https://picsum.photos/seed/renderwork/600/600\",\n    },\n    {\n      title: \"Creme Digital\",\n      link: \"https://cremedigital.com\",\n      thumbnail: \"https://picsum.photos/seed/cremedigital/600/600\",\n    },\n    {\n      title: \"Golden Bells Academy\",\n      link: \"https://goldenbellsacademy.com\",\n      thumbnail: \"https://picsum.photos/seed/goldenbells/600/600\",\n    },\n    {\n      title: \"Invoker Labs\",\n      link: \"https://invoker.lol\",\n      thumbnail: \"https://picsum.photos/seed/invoker/600/600\",\n    },\n    {\n      title: \"E Free Invoice\",\n      link: \"https://efreeinvoice.com\",\n      thumbnail: \"https://picsum.photos/seed/efreeinvoice/600/600\",\n    },\n  ];\n\n  return (\n    <div className=\"w-full\">\n      <HeroParallax products={products} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/hero-parallax.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hero-parallax.json",
+ "preview": "https://stashui.vercel.app/c/hero-parallax",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Scroll-driven 3D parallax gallery with rotating product cards.",
+ "description": "Takes 300vh of viewport scrolling to animate 15 product cards (5 per row, 3 rows) with 3D perspective, opacity, and horizontal translate. Cards tilt and rotate on scroll, reverse direction per row. Spring damping smooths the parallax…",
+ "use_when": "Showcase portfolio, case studies, or product gallery where scroll-depth matters.",
+ "avoid_when": "Long on low-end devices (will tank performance with 15 parallax cards). Requires scroll listener.",
+ "a11y": "Card images have alt text. Links are focusable but parallax breaks for keyboard nav (no prefers-reduced-motion).",
+ "props": [
+  {
+   "name": "products",
+   "type": "Array<{title: string; link: string; thumbnail: string}>",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "media"
+ ]
+}

@@ -1,0 +1,169 @@
+{
+ "name": "GlassSurface-TS-TW",
+ "title": "GlassSurface",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "GlassSurface"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 37,
+ "flags": [
+  "pure",
+  "37 colors"
+ ],
+ "usage": "\"use client\";\nimport GlassSurface from \"@/components/ui/GlassSurface\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full flex items-center justify-center\" style={{ height: \"480px\" }}>\n      {/* Colourful background so the glass refraction is clearly visible */}\n      <div className=\"absolute inset-0 bg-gradient-to-br from-violet-500 via-sky-400 to-emerald-400 rounded-xl\" />\n      <GlassSurface\n        width={440}\n        height={200}\n        borderRadius={24}\n        distortionScale={-160}\n        brightness={60}\n        opacity={0.9}\n        blur={14}\n        saturation={1.4}\n      >\n        <div className=\"flex flex-col items-center gap-2 px-6 py-4 text-center\">\n          <p className=\"text-sm font-semibold text-white/90 tracking-wide\">Glass Surface</p>\n          <p className=\"text-xs text-white/60\">SVG chromatic-aberration refraction</p>\n        </div>\n      </GlassSurface>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/GlassSurface.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/GlassSurface-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/GlassSurface-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A glassy container with chromatic aberration and blur that distorts the…",
+ "description": "A glass-morphism container using SVG displacement mapping and chromatic aberration to create realistic optical refraction effects. Adapts to light/dark mode with automatic fallback for browsers lacking SVG filter support.",
+ "use_when": "You want a premium frosted-glass effect around text or UI elements with optical distortion that refracts the background.",
+ "avoid_when": "Older browsers or environments where SVG filters are unsupported.",
+ "a11y": "Container only; focus and keyboard behavior depend on children. No motion guards.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number | string",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number | string",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "borderWidth",
+   "type": "number",
+   "default": "0.07",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "0.93",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "11",
+   "required": false
+  },
+  {
+   "name": "displace",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "backgroundOpacity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "distortionScale",
+   "type": "number",
+   "default": "-180",
+   "required": false
+  },
+  {
+   "name": "redOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "greenOffset",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "blueOffset",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "xChannel",
+   "type": "\"R\" | \"G\" | \"B\"",
+   "default": "'R'",
+   "required": false
+  },
+  {
+   "name": "yChannel",
+   "type": "\"R\" | \"G\" | \"B\"",
+   "default": "'G'",
+   "required": false
+  },
+  {
+   "name": "mixBlendMode",
+   "type": "string",
+   "default": "'difference'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "feature-card",
+  "body-text"
+ ]
+}

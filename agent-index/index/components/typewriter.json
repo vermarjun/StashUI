@@ -1,0 +1,68 @@
+{
+ "name": "typewriter",
+ "title": "Typewriter",
+ "category": "text",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "Typewriter"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "import { Typewriter } from \"@/components/ui/typewriter\";\n\nconst cyclingPhrases = [\n  \"dashboard with a sidebar\",\n  \"quiz page with answers\",\n  \"ecommerce product listing\",\n  \"blog article detail page\",\n  \"UI like platform.openai.com\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[300px] w-full items-center justify-center px-8 py-12 text-foreground\">\n      <p className=\"text-2xl font-semibold\">\n        <Typewriter\n          delay={0.3}\n          baseText=\"Build a \"\n          texts={cyclingPhrases}\n        />\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/typewriter.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/typewriter.json",
+ "preview": "https://stashui.vercel.app/c/typewriter",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Types out a base string, then cycles through alternating phrases with a…",
+ "description": "Animates character-by-character typing of a baseText, then cycles through a texts array repeatedly, typing and reversing each. Includes a blinking cursor sprite.",
+ "use_when": "Hero sections or call-to-action copy that should feel interactive and personable.",
+ "avoid_when": "Large amounts of text; animation harms readability and performance degrades with character count.",
+ "a11y": "Text is rendered in the DOM; blinking cursor animation does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "delay",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "texts",
+   "type": "string[]",
+   "default": "defaultTexts",
+   "required": true
+  },
+  {
+   "name": "baseText",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

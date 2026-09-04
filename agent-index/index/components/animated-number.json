@@ -1,0 +1,97 @@
+{
+ "name": "animated-number",
+ "title": "Animated Number",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "AnimatedNumber"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { AnimatedNumber } from \"@/components/ui/animated-number\";\n\nexport default function Demo() {\n  const [value, setValue] = useState(1234);\n\n  const targets = [0, 999, 1234, 42000, 1000000];\n\n  return (\n    <div className=\"w-full max-w-sm mx-auto flex flex-col items-center gap-6 p-8\">\n      <div className=\"text-5xl font-bold text-white tabular-nums\">\n        <AnimatedNumber\n          value={value}\n          mass={0.8}\n          stiffness={75}\n          damping={15}\n          precision={0}\n          format={(n) => n.toLocaleString()}\n        />\n      </div>\n      <div className=\"flex flex-wrap gap-2 justify-center\">\n        {targets.map((t) => (\n          <button\n            key={t}\n            onClick={() => setValue(t)}\n            className=\"px-3 py-1.5 text-sm rounded-lg bg-neutral-800 text-white hover:bg-neutral-700 transition-colors\"\n          >\n            {t.toLocaleString()}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/animated-number.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-number.json",
+ "preview": "https://stashui.vercel.app/c/animated-number",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Number that springs to new values with custom formatting.",
+ "description": "Spring-animated number using Framer Motion. Supports precision, custom formatting, and animation lifecycle callbacks. Configurable spring physics.",
+ "use_when": "Displaying metric changes, counters, or scores with smooth animation.",
+ "avoid_when": "When animation is disabled or in performance-critical contexts.",
+ "a11y": "Animated value updates via MotionValue. Screen readers see formatted text content.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "mass",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "stiffness",
+   "type": "number",
+   "default": "75",
+   "required": false
+  },
+  {
+   "name": "damping",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "precision",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "format",
+   "type": "(value: number) => string",
+   "default": "(num) => num.toLocaleString()",
+   "required": false
+  },
+  {
+   "name": "onAnimationStart",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onAnimationComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "chart"
+ ]
+}

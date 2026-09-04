@@ -1,0 +1,173 @@
+{
+ "name": "LaserFlow-TS-TW",
+ "title": "Laser Flow",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "LaserFlow"
+ ],
+ "npm_deps": [
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport LaserFlow from \"@/components/ui/LaserFlow\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden bg-black\">\n      <LaserFlow\n        color=\"#FF79C6\"\n        wispDensity={1}\n        flowSpeed={0.35}\n        fogIntensity={0.45}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/LaserFlow.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/LaserFlow-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/LaserFlow-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Neon laser beams flow upward with animated wisps and volumetric fog.",
+ "description": "WebGL shader rendering a central laser beam with animated micro-streaks (wisps) that travel along the beam, responding to pointer position for tilted fog effects.",
+ "use_when": "Hero sections or dramatic backgrounds where a technical, high-energy neon aesthetic fits; requires a sized container…",
+ "avoid_when": "Touch-only surfaces (pointer tracking is core), low-end devices, or contexts where motion must stop — the shader runs…",
+ "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "wispDensity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "dpr",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mouseSmoothTime",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "mouseTiltStrength",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "horizontalBeamOffset",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "verticalBeamOffset",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "flowSpeed",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "verticalSizing",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "horizontalSizing",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "fogIntensity",
+   "type": "number",
+   "default": "0.45",
+   "required": false
+  },
+  {
+   "name": "fogScale",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "wispSpeed",
+   "type": "number",
+   "default": "15.0",
+   "required": false
+  },
+  {
+   "name": "wispIntensity",
+   "type": "number",
+   "default": "5.0",
+   "required": false
+  },
+  {
+   "name": "flowStrength",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "decay",
+   "type": "number",
+   "default": "1.1",
+   "required": false
+  },
+  {
+   "name": "falloffStart",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "fogFallSpeed",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#FF79C6'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration"
+ ]
+}

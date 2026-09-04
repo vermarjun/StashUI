@@ -1,0 +1,47 @@
+{
+ "name": "comp-299",
+ "title": "Sonner Toast Trigger",
+ "category": "notifications",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [
+  "sonner"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { Toaster } from \"@/components/ui/sonner\";\nimport Cmp from \"@/components/ui/comp-299\";\n\nexport default function Demo() {\n  return (\n    <>\n      <Cmp />\n      <Toaster />\n    </>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-299.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-299.json",
+ "preview": "https://stashui.vercel.app/c/comp-299",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Trigger button for Sonner toast with message and undo action.",
+ "description": "Button that programmatically triggers a Sonner toast notification with a completion message, description, and undo action handler.",
+ "use_when": "You need to display system notifications using the Sonner toast library with action callbacks.",
+ "avoid_when": "For static, persistent notifications; use a standard card component instead.",
+ "a11y": "Button is keyboard accessible. Toast respects prefers-reduced-motion if Sonner is configured.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "toast"
+ ]
+}

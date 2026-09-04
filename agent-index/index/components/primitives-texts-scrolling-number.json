@@ -1,0 +1,61 @@
+{
+ "name": "primitives-texts-scrolling-number",
+ "title": "Scrolling Number",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "ScrollingNumberContainer",
+  "ScrollingNumber",
+  "ScrollingNumberHighlight",
+  "ScrollingNumberItems"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view",
+  "@animate-ui/lib-get-strict-context"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport {\n  ScrollingNumberContainer,\n  ScrollingNumber,\n  ScrollingNumberHighlight,\n  ScrollingNumberItems,\n} from '@/components/ui/primitives-texts-scrolling-number';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-10 w-full p-10\">\n      <div className=\"text-center\">\n        <p className=\"text-sm text-muted-foreground mb-3\">Downloads</p>\n        <ScrollingNumberContainer\n          number={500}\n          step={100}\n          itemsSize={48}\n          sideItemsCount={2}\n          direction=\"btt\"\n          inView\n          className=\"text-4xl font-bold tabular-nums\"\n        >\n          <ScrollingNumberHighlight className=\"bg-primary/10 rounded\" />\n          <ScrollingNumber />\n          <ScrollingNumberItems\n            className=\"flex items-center justify-center font-bold text-foreground\"\n          />\n        </ScrollingNumberContainer>\n      </div>\n\n      <div className=\"flex gap-8\">\n        <div className=\"text-center\">\n          <p className=\"text-xs text-muted-foreground mb-2\">Stars</p>\n          <ScrollingNumberContainer\n            number={1000}\n            step={200}\n            itemsSize={36}\n            sideItemsCount={2}\n            direction=\"btt\"\n            inView\n            delay={300}\n            className=\"text-2xl font-semibold tabular-nums\"\n          >\n            <ScrollingNumberHighlight className=\"bg-muted rounded\" />\n            <ScrollingNumber />\n            <ScrollingNumberItems className=\"flex items-center justify-center text-foreground\" />\n          </ScrollingNumberContainer>\n        </div>\n\n        <div className=\"text-center\">\n          <p className=\"text-xs text-muted-foreground mb-2\">Components</p>\n          <ScrollingNumberContainer\n            number={80}\n            step={20}\n            itemsSize={36}\n            sideItemsCount={2}\n            direction=\"ttb\"\n            inView\n            delay={600}\n            className=\"text-2xl font-semibold tabular-nums\"\n          >\n            <ScrollingNumberHighlight className=\"bg-muted rounded\" />\n            <ScrollingNumber />\n            <ScrollingNumberItems className=\"flex items-center justify-center text-foreground\" />\n          </ScrollingNumberContainer>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-scrolling-number.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-scrolling-number.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-scrolling-number",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Numbers scroll vertically like a carousel of digits.",
+ "description": "Renders a set of digit containers that scroll through available numbers, useful for displaying stats or odometers.",
+ "use_when": "Metrics dashboards or live-updating counters.",
+ "avoid_when": "High-frequency updates — rapid scrolling becomes a blur.",
+ "a11y": "Only the visible digit is readable at any moment.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "stat",
+  "data-table"
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "name": "phone-input",
+ "title": "Phone Input",
+ "category": "inputs",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "PhoneInput"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "react-phone-number-input",
+  "zod"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "heavy",
+  "3 colors"
+ ],
+ "usage": "'use client';\nimport { useState } from \"react\";\nimport { PhoneInput } from \"@/components/ui/phone-input\";\n\nexport default function Demo() {\n  const [value, setValue] = useState(\"\");\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-80 border-2 rounded-lg overflow-hidden dark:bg-neutral-950 bg-neutral-50\">\n        <PhoneInput\n          placeholder=\"Enter phone number\"\n          value={value}\n          onChange={(val) => setValue(val ?? \"\")}\n          defaultCountry=\"US\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/phone-input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/phone-input.json",
+ "preview": "https://stashui.vercel.app/c/phone-input",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Phone input with a searchable country selector and flag icons.",
+ "description": "A phone number input using react-phone-number-input with a popover country selector featuring flag icons, search capability, and calling codes.",
+ "use_when": "Building international forms where users need to select their country and enter validated phone numbers.",
+ "avoid_when": "When single-country phone inputs suffice or when space for a country selector is unavailable.",
+ "a11y": "Country selector is keyboard accessible with arrow keys and search, flag icons have country name titles.",
+ "props": [
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(value: string) => void",
+   "default": "{(value) => onChange?.(value || '')}",
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('flex', className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

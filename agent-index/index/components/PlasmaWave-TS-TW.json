@@ -1,0 +1,98 @@
+{
+ "name": "PlasmaWave-TS-TW",
+ "title": "Plasma Wave",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PlasmaWave"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "webgl",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport PlasmaWave from \"@/components/ui/PlasmaWave\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[600px] rounded-xl overflow-hidden\">\n      <PlasmaWave\n        colors={[\"#A855F7\", \"#06B6D4\"]}\n        speed1={0.05}\n        speed2={0.05}\n        bend1={1}\n        bend2={0.5}\n        focalLength={0.8}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/PlasmaWave.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/PlasmaWave-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/PlasmaWave-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Plasma pulses wave rhythmically across the surface.",
+ "description": "Wave-modulated plasma shader with configurable speed and intensity.",
+ "use_when": "Rhythmic, hypnotic backgrounds.",
+ "avoid_when": "Power-constrained devices.",
+ "a11y": "Decorative background. No keyboard or focus handling required.",
+ "props": [
+  {
+   "name": "xOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "yOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "rotationDeg",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "focalLength",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "speed1",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "speed2",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "dir2",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "bend1",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

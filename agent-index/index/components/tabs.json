@@ -1,0 +1,71 @@
+{
+ "name": "tabs",
+ "title": "Animated Tabs",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Tabs",
+  "FadeInDiv"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-tabs"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "3d",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Tabs } from \"@/components/ui/tabs\";\n\nexport default function Demo() {\n  const tabs = [\n    {\n      title: \"Design\",\n      value: \"design\",\n      content: (\n        <div className=\"w-full h-40 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 p-6 text-white\">\n          <h3 className=\"text-xl font-bold mb-2\">Design Tab</h3>\n          <p className=\"text-purple-100 text-sm\">\n            Beautiful UI components crafted for modern web apps.\n          </p>\n        </div>\n      ),\n    },\n    {\n      title: \"Development\",\n      value: \"development\",\n      content: (\n        <div className=\"w-full h-40 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 p-6 text-white\">\n          <h3 className=\"text-xl font-bold mb-2\">Development Tab</h3>\n          <p className=\"text-blue-100 text-sm\">\n            Ship features faster with reusable, composable code.\n          </p>\n        </div>\n      ),\n    },\n    {\n      title: \"Analytics\",\n      value: \"analytics\",\n      content: (\n        <div className=\"w-full h-40 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 p-6 text-white\">\n          <h3 className=\"text-xl font-bold mb-2\">Analytics Tab</h3>\n          <p className=\"text-green-100 text-sm\">\n            Track performance and gain insights from your data.\n          </p>\n        </div>\n      ),\n    },\n    {\n      title: \"Settings\",\n      value: \"settings\",\n      content: (\n        <div className=\"w-full h-40 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 p-6 text-white\">\n          <h3 className=\"text-xl font-bold mb-2\">Settings Tab</h3>\n          <p className=\"text-orange-100 text-sm\">\n            Configure your workspace to fit your needs.\n          </p>\n        </div>\n      ),\n    },\n  ];\n\n  return (\n    <div className=\"w-full max-w-2xl mx-auto px-4 py-8\" style={{ height: \"300px\" }}>\n      <Tabs tabs={tabs} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/tabs.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tabs.json",
+ "preview": "https://stashui.vercel.app/c/tabs",
+ "dupe_group": "animatedtabs",
+ "alternatives": [
+  {
+   "name": "inspira-animated-tabs",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  },
+  {
+   "name": "animated-tabs",
+   "origin": "Ui-Layouts",
+   "npm_deps": 1,
+   "hardcoded_colors": 3
+  }
+ ],
+ "blurb": "Animated tabs with smooth content crossfade and sliding underline.",
+ "description": "Controlled tab component that animates the active tab indicator with Framer Motion spring physics. Renders tab buttons and animated content pane with fade-in effects. Includes FadeInDiv helper for content transitions.",
+ "use_when": "Tab interfaces where smooth content transitions and spring-based animations enhance perceived polish. Good for feature…",
+ "avoid_when": "Accessibility-critical interfaces; keyboard navigation not fully supported. Heavy animations may impact performance on…",
+ "a11y": "No built-in keyboard support or ARIA attributes. Focus management must be implemented by parent.",
+ "props": [
+  {
+   "name": "tabs",
+   "type": "Array<{value: string; label: string; content: React.ReactNode}>",
+   "default": "{tabs}",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "children"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "feature-card"
+ ]
+}

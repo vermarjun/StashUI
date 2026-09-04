@@ -1,0 +1,124 @@
+{
+ "name": "hero-dithering",
+ "title": "Hero Dithering",
+ "category": "heroes",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "HeroDitheringRoot",
+  "HeroDitheringContainer",
+  "HeroDitheringContent",
+  "HeroDitheringHeading",
+  "HeroDitheringDescription",
+  "HeroDitheringActions",
+  "HeroDitheringCTA",
+  "HeroDitheringBadges",
+  "HeroDitheringVisual",
+  "HeroDitheringMobileVisual",
+  "HeroDithering",
+  "AISDKIcon",
+  "NextjsIcon"
+ ],
+ "npm_deps": [
+  "@paper-design/shaders-react"
+ ],
+ "registry_deps": [
+  "badge",
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { HeroDithering } from \"@/components/ui/hero-dithering\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[640px] w-full overflow-hidden\">\n      <HeroDithering />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/hero-dithering.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hero-dithering.json",
+ "preview": "https://stashui.vercel.app/c/hero-dithering",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Hero with dithering pattern shader backdrop and AI SDK tech badges.",
+ "description": "Responsive hero with heading, description, CTA, and tech badges. Animated Dithering shader on desktop (swirl pattern, cyan on black, 1280×720) and mobile. Context-based with overridable parts.",
+ "use_when": "AI/SDK landing page with retro or pixel-art aesthetic via dithering effect.",
+ "avoid_when": "Shader-intensive. Requires sized parent. No prefers-reduced-motion guard.",
+ "a11y": "Screen-reader title (srTitle). Buttons and links focusable. Shader is decorative.",
+ "props": [
+  {
+   "name": "srTitle",
+   "type": "string",
+   "default": "\"AI SDK Agents\"",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "React.ReactNode",
+   "default": "<span className=\"font-pixel-square\">AI SDK Agents</span>",
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "React.ReactNode",
+   "default": "\"Copy and Paste\"",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "React.ReactNode",
+   "default": "defaultDescription",
+   "required": false
+  },
+  {
+   "name": "showCta",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "ctaProps",
+   "type": "Partial<HeroDitheringCTAProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showBadges",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "techStack",
+   "type": "HeroDitheringTechItem[]",
+   "default": "defaultTechStack",
+   "required": false
+  },
+  {
+   "name": "desktopShaderProps",
+   "type": "Partial<DitheringProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mobileShaderProps",
+   "type": "Partial<DitheringProps>",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "name": "inspira-timeline",
+ "title": "Animated Scroll Timeline",
+ "category": "data-display",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Timeline"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 18,
+ "flags": [
+  "pure",
+  "18 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { Timeline } from \"@/components/ui/timeline\";\n\nconst timelineItems = [\n  {\n    id: \"2024\",\n    label: \"2024\",\n    content: (\n      <div>\n        <h3 className=\"mb-2 text-lg font-semibold text-neutral-700 dark:text-neutral-300\">\n          Product Launch\n        </h3>\n        <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n          We launched our flagship product to overwhelming customer response.\n          The team worked tirelessly to deliver a polished experience.\n        </p>\n      </div>\n    ),\n  },\n  {\n    id: \"2023\",\n    label: \"2023\",\n    content: (\n      <div>\n        <h3 className=\"mb-2 text-lg font-semibold text-neutral-700 dark:text-neutral-300\">\n          Series A Funding\n        </h3>\n        <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n          Secured $10M in Series A funding to accelerate growth and expand\n          the engineering team.\n        </p>\n      </div>\n    ),\n  },\n  {\n    id: \"2022\",\n    label: \"2022\",\n    content: (\n      <div>\n        <h3 className=\"mb-2 text-lg font-semibold text-neutral-700 dark:text-neutral-300\">\n          Company Founded\n        </h3>\n        <p className=\"text-sm text-neutral-600 dark:text-neutral-400\">\n          Started in a garage with three passionate founders who believed\n          in building something meaningful.\n        </p>\n      </div>\n    ),\n  },\n];\n\nexport default function TimelineDemo() {\n  return (\n    <Timeline\n      title=\"Our Journey\"\n      description=\"Follow the story of how we built a product from idea to reality.\"\n      items={timelineItems}\n    />\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/timeline.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-timeline.json",
+ "preview": "https://stashui.vercel.app/c/inspira-timeline",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Vertical timeline with scroll-triggered progress line filling from top to…",
+ "description": "Timeline component displaying a list of events vertically. Each event has a label (e.g., year) and content area. A vertical line on the left animates upward as the user scrolls, driven by Framer Motion's useScroll. Sticky labels align on…",
+ "use_when": "Company history, product roadmaps, or event chronologies where scroll reveals progression.",
+ "avoid_when": "Many timeline items (50+) — rendering performance and scroll tracking can suffer.",
+ "a11y": "Semantic h2/h3 headings. Timeline line is decorative. No keyboard interaction — content must be scrollable.",
+ "props": [
+  {
+   "name": "items",
+   "type": "TimelineItem[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"flex justify-start pt-10 md:gap-10 md:pt-40\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ]
+}

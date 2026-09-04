@@ -1,0 +1,73 @@
+{
+ "name": "color-picker",
+ "title": "Color Picker",
+ "category": "inputs",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "ColorPicker"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "button",
+  "input",
+  "label",
+  "popover"
+ ],
+ "css": false,
+ "hardcoded_colors": 33,
+ "flags": [
+  "motion",
+  "33 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport { ColorPicker } from \"@/components/ui/color-picker\"\n\nexport default function Demo() {\n  const [color, setColor] = useState(\"#007AFF\")\n\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8\">\n      <div\n        className=\"w-24 h-24 rounded-2xl shadow-md transition-all duration-300\"\n        style={{ backgroundColor: color }}\n      />\n      <ColorPicker color={color} onChange={setColor} />\n      <p className=\"text-sm text-muted-foreground\">Selected: {color}</p>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/color-picker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/color-picker.json",
+ "preview": "https://stashui.vercel.app/c/color-picker",
+ "dupe_group": "colorpicker",
+ "alternatives": [
+  {
+   "name": "default-color-picker",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Popover color picker with HSL/Hex input, saturation-lightness canvas, hue…",
+ "description": "Controlled input component with hex/HSL conversion, 2D saturation-lightness picker (gradient canvas with crosshair), hue range slider (rainbow gradient), text input, and 12 color presets. Framer Motion animations on open/close and hover.",
+ "use_when": "Design tools, theme customizers, or any form needing color input without relying on native pickers.",
+ "avoid_when": "Mobile (native pickers are better). No keyboard-only color selection.",
+ "a11y": "Color input label is screen-reader only. Canvas picker requires mouse. Presets are buttons but no aria-label.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(color: string) => void",
+   "default": "{(e) => handleHueChange(Number(e.target.value))}",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

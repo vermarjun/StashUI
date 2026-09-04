@@ -1,0 +1,103 @@
+{
+ "name": "dot-pattern",
+ "title": "Dot Pattern",
+ "category": "backgrounds",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "DotPattern"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "import { DotPattern } from \"@/components/ui/dot-pattern\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <DotPattern\n        width={20}\n        height={20}\n        cx={1}\n        cy={1}\n        cr={1}\n        className=\"[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/dot-pattern.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dot-pattern.json",
+ "preview": "https://stashui.vercel.app/c/dot-pattern",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "SVG grid of dots that optionally glows with random pulsing.",
+ "description": "Responsive dot pattern rendered as SVG circles that fill the container. Optional glow mode adds opacity and scale animations to each dot with randomized delay and duration.",
+ "use_when": "A subtle, adaptable dot grid background that can be static or gently animated with configurable spacing.",
+ "avoid_when": "Very dense grids on low-end devices — calculating and rendering many dots may cause performance issues.",
+ "a11y": "Marked aria-hidden with pointer-events-none; purely decorative overlay. Glow animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "x",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "y",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "cx",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "cy",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "cr",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "decoration"
+ ]
+}

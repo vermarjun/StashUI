@@ -1,0 +1,73 @@
+{
+ "name": "navigation-menu",
+ "title": "Navigation Menu",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "NavigationMenu",
+  "NavigationMenuList",
+  "NavigationMenuItem",
+  "NavigationMenuContent",
+  "NavigationMenuTrigger",
+  "NavigationMenuLink",
+  "NavigationMenuIndicator",
+  "NavigationMenuViewport"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n} from \"@/components/ui/navigation-menu\";\n\nexport default function Demo() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Products</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-48 gap-1 p-1\">\n              <li>\n                <NavigationMenuLink href=\"#\">\n                  <span className=\"font-medium\">Overview</span>\n                  <span className=\"text-muted-foreground\">All products at a glance</span>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\">\n                  <span className=\"font-medium\">Analytics</span>\n                  <span className=\"text-muted-foreground\">Insights and reports</span>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\">\n                  <span className=\"font-medium\">Integrations</span>\n                  <span className=\"text-muted-foreground\">Connect your tools</span>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Docs</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-48 gap-1 p-1\">\n              <li>\n                <NavigationMenuLink href=\"#\">\n                  <span className=\"font-medium\">Getting Started</span>\n                  <span className=\"text-muted-foreground\">Quick setup guide</span>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\">\n                  <span className=\"font-medium\">API Reference</span>\n                  <span className=\"text-muted-foreground\">Full API docs</span>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\">Pricing</NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/navigation-menu.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/navigation-menu.json",
+ "preview": "https://stashui.vercel.app/c/navigation-menu",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Radix-based navigation menu with keyboard support and animated content viewport.",
+ "description": "Composable wrapper around Radix UI's NavigationMenu primitive. Exports NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, NavigationMenuIndicator, and…",
+ "use_when": "Building accessible navigation menus that must support keyboard interaction and screen readers, especially for complex…",
+ "avoid_when": "Simple flat menus where a basic select or tabs would suffice. Overkill for minimal navigation.",
+ "a11y": "Full keyboard navigation (arrow keys, Enter, Escape). Proper ARIA attributes and focus management via Radix primitive. Works with screen readers.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "viewport",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

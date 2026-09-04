@@ -1,0 +1,141 @@
+{
+ "name": "Prism-TS-TW",
+ "title": "Prism",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Prism"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl"
+ ],
+ "usage": "\"use client\";\n\nimport Prism from \"@/components/ui/Prism\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[400px] relative overflow-hidden rounded-xl bg-black\">\n      <Prism\n        animationType=\"rotate\"\n        glow={1}\n        noise={0.5}\n        transparent={true}\n        scale={3.6}\n        timeScale={0.5}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Prism.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Prism-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Prism-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A glowing 3D prism that rotates on its own or responds to cursor position.",
+ "description": "WebGL shader rendering a volumetric raymarched pyramid/prism with three animation modes: continuous rotation, cursor-tracking hover, or combined 3D orbit. Supports glow, bloom, hue shifting, and noise.",
+ "use_when": "Hero sections, product showcases, or high-impact backgrounds where a technical, luminous 3D effect elevates the visual…",
+ "avoid_when": "WebGL-unsupported devices, touch-only surfaces (hover mode needs pointer), performance-critical mobile — raymarching…",
+ "a11y": "Passive visual background; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "height",
+   "type": "number",
+   "default": "3.5",
+   "required": false
+  },
+  {
+   "name": "baseWidth",
+   "type": "number",
+   "default": "5.5",
+   "required": false
+  },
+  {
+   "name": "animationType",
+   "type": "'rotate' | 'hover' | '3drotate'",
+   "default": "'rotate'",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "offset",
+   "type": "{ x?: number; y?: number }",
+   "default": "{ x: 0, y: 0 }",
+   "required": false
+  },
+  {
+   "name": "noise",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "transparent",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "3.6",
+   "required": false
+  },
+  {
+   "name": "hueShift",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "colorFrequency",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "hoverStrength",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "inertia",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "bloom",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "suspendWhenOffscreen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "timeScale",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ]
+}

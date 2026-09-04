@@ -1,0 +1,199 @@
+{
+ "name": "pixelated-canvas",
+ "title": "Pixelated Canvas",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "PixelatedCanvas"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "canvas",
+  "pure",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\nimport { PixelatedCanvas } from \"@/components/ui/pixelated-canvas\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background p-8\">\n      <div className=\"flex flex-col items-center gap-4\">\n        <PixelatedCanvas\n          src=\"https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=800&auto=format&fit=crop\"\n          width={480}\n          height={320}\n          cellSize={4}\n          dotScale={0.85}\n          shape=\"circle\"\n          distortionMode=\"swirl\"\n          distortionStrength={6}\n          distortionRadius={100}\n          interactive={true}\n          fadeOnLeave={true}\n          backgroundColor=\"#0a0a0a\"\n          className=\"rounded-xl overflow-hidden\"\n        />\n        <p className=\"text-sm text-muted-foreground\">\n          Move cursor over the canvas to distort\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/pixelated-canvas.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pixelated-canvas.json",
+ "preview": "https://stashui.vercel.app/c/pixelated-canvas",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image rendered as pixelated dots that distort and swirl around cursor movement.",
+ "description": "Renders an image as a canvas of dots/pixels with real-time distortion based on cursor position. Supports multiple distortion modes (repel, attract, swirl) and visual effects.",
+ "use_when": "Interactive galleries or premium displays where pixel art aesthetic combined with cursor interaction creates engagement.",
+ "avoid_when": "Performance-sensitive devices — real-time canvas rendering with distortion is computationally demanding.",
+ "a11y": "Canvas-based visual effect with no semantic content. Interactive distortion is purely visual.",
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "cellSize",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "dotScale",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "shape",
+   "type": "\"circle\" | \"square\"",
+   "default": "\"square\"",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "\"#000000\"",
+   "required": false
+  },
+  {
+   "name": "grayscale",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "responsive",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "dropoutStrength",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "distortionStrength",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "distortionRadius",
+   "type": "number",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "distortionMode",
+   "type": "\"repel\" | \"attract\" | \"swirl\"",
+   "default": "\"swirl\"",
+   "required": false
+  },
+  {
+   "name": "followSpeed",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "sampleAverage",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "tintColor",
+   "type": "string",
+   "default": "\"#FFFFFF\"",
+   "required": false
+  },
+  {
+   "name": "tintStrength",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "maxFps",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "objectFit",
+   "type": "\"cover\" | \"contain\" | \"fill\" | \"none\"",
+   "default": "\"cover\"",
+   "required": false
+  },
+  {
+   "name": "jitterStrength",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "jitterSpeed",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "fadeOnLeave",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fadeSpeed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "hero"
+ ]
+}

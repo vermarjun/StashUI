@@ -1,0 +1,56 @@
+{
+ "name": "code-tabs-mdx",
+ "title": "Code Tabs MDX",
+ "category": "data-display",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [],
+ "npm_deps": [
+  "shiki"
+ ],
+ "registry_deps": [
+  "tabs"
+ ],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\nimport { Check, Copy } from \"lucide-react\";\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\n\n// The real CodeTabsMdx is an async server component (it highlights MDX children\n// with shiki at build time), so it can't render in the client-side live\n// preview. This is a faithful, client-safe stand-in showing the same tabbed\n// install-command UX; the detail page still lists the real component source.\nconst TABS = [\n  { value: \"ui-layouts\", label: \"ui-layouts\", code: \"npx ui-layouts add code-tabs-mdx\" },\n  { value: \"shadcn\", label: \"shadcn\", code: \"npx shadcn@latest add code-tabs-mdx\" },\n];\n\nexport default function Demo() {\n  const [copied, setCopied] = React.useState<string | null>(null);\n\n  const copy = (code: string) => {\n    navigator.clipboard?.writeText(code).catch(() => {});\n    setCopied(code);\n    setTimeout(() => setCopied((c) => (c === code ? null : c)), 1200);\n  };\n\n  return (\n    <div className=\"w-full max-w-xl\">\n      <Tabs\n        defaultValue=\"ui-layouts\"\n        className=\"rounded-xl border border-border bg-card p-1.5\"\n      >\n        <TabsList className=\"bg-transparent\">\n          {TABS.map((t) => (\n            <TabsTrigger key={t.value} value={t.value} className=\"text-xs\">\n              {t.label}\n            </TabsTrigger>\n          ))}\n        </TabsList>\n        {TABS.map((t) => (\n          <TabsContent key={t.value} value={t.value} className=\"relative mt-1\">\n            <button\n              type=\"button\"\n              onClick={() => copy(t.code)}\n              aria-label=\"Copy code\"\n              className=\"absolute right-2 top-2 inline-flex size-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground\"\n            >\n              {copied === t.code ? (\n                <Check className=\"size-3.5\" />\n              ) : (\n                <Copy className=\"size-3.5\" />\n              )}\n            </button>\n            <pre className=\"overflow-x-auto rounded-lg bg-muted/40 p-4 pr-10 text-sm leading-relaxed\">\n              <code className=\"font-mono text-foreground\">\n                <span className=\"text-muted-foreground\">$ </span>\n                {t.code}\n              </code>\n            </pre>\n          </TabsContent>\n        ))}\n      </Tabs>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/code-tabs-mdx.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/code-tabs-mdx.json",
+ "preview": "https://stashui.vercel.app/c/code-tabs-mdx",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Syntax-highlighted code in tabbed panels, parsed from MDX children.",
+ "description": "Async server component extracting code blocks from MDX pre/code children, highlighting with Shiki, and rendering in tabs. One block displays solo; two blocks show tabbed as ui-layouts and shadcn variants.",
+ "use_when": "Showing code examples with language variants (component + install, TypeScript + JavaScript).",
+ "avoid_when": "Client-side rendering needed — it's an async server component only.",
+ "a11y": "Tab navigation uses shadcn Tabs (keyboard accessible, focus managed). Code content is read-only.",
+ "props": [
+  {
+   "name": "children",
+   "type": "any",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ]
+}

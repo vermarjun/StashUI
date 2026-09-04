@@ -1,0 +1,86 @@
+{
+ "name": "inspira-interactive-grid-pattern",
+ "title": "Interactive Grid Pattern",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "InteractiveGridPattern"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { InteractiveGridPattern } from \"@/components/ui/interactive-grid-pattern\";\n\nexport default function InteractiveGridPatternDemo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <InteractiveGridPattern\n        width={40}\n        height={40}\n        squares={[20, 10]}\n        className=\"opacity-60\"\n        squaresClassName=\"hover:fill-blue-500/20\"\n      />\n      <p className=\"relative z-10 text-2xl font-bold text-foreground\">\n        Hover the grid\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/interactive-grid-pattern.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-interactive-grid-pattern.json",
+ "preview": "https://stashui.vercel.app/c/inspira-interactive-grid-pattern",
+ "dupe_group": "interactivegridpattern",
+ "alternatives": [
+  {
+   "name": "interactive-grid-pattern",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  }
+ ],
+ "blurb": "Grid of interactive squares that fill on hover with smooth transitions.",
+ "description": "SVG-based grid pattern with individual rect elements that respond to pointer movement. Each square smoothly fills with colour on hover.",
+ "use_when": "An interactive background overlay that responds to mouse movement and engages the user.",
+ "avoid_when": "Touch-only devices or keyboard-only navigation — hover is the only interaction method.",
+ "a11y": "SVG rect elements with pointer events enabled but no keyboard support for individual squares.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "squaresClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "squares",
+   "type": "[number, number]",
+   "default": "[24, 24]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

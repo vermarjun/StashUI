@@ -1,0 +1,62 @@
+{
+ "name": "tracing-beam",
+ "title": "Tracing Beam",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "TracingBeam"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "motion",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\nimport { TracingBeam } from \"@/components/ui/tracing-beam\";\n\nconst content = [\n  {\n    title: \"Design Systems\",\n    body: \"Build a consistent visual language across every product surface. Tokens, components, and documentation that scales with your team — from the first prototype to production.\",\n  },\n  {\n    title: \"Motion & Interaction\",\n    body: \"Smooth, purposeful animation turns static interfaces into living products. Spring physics, scroll-linked effects, and gesture-driven transitions that feel native on every device.\",\n  },\n  {\n    title: \"Accessible by Default\",\n    body: \"Keyboard navigation, screen-reader semantics, and colour contrast are not afterthoughts. Every component ships meeting WCAG 2.2 AA out of the box, no configuration needed.\",\n  },\n  {\n    title: \"Open Source\",\n    body: \"MIT-licensed and built in the open. Inspect the source, file an issue, or submit a pull request. The component library grows with its community.\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto py-10 px-4\">\n      <TracingBeam>\n        <div className=\"space-y-16\">\n          {content.map((item) => (\n            <div key={item.title} className=\"space-y-3\">\n              <h2 className=\"text-xl font-semibold text-foreground\">\n                {item.title}\n              </h2>\n              <p className=\"text-muted-foreground leading-relaxed\">{item.body}</p>\n              <div className=\"h-40 rounded-lg bg-muted flex items-center justify-center\">\n                <span className=\"text-muted-foreground text-sm\">{item.title}</span>\n              </div>\n            </div>\n          ))}\n        </div>\n      </TracingBeam>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/tracing-beam.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tracing-beam.json",
+ "preview": "https://stashui.vercel.app/c/tracing-beam",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated vertical beam that traces down the page following scroll progress.",
+ "description": "A scroll-linked vertical beam with animated gradient that traces from top to bottom. Includes an animated dot and SVG path responding to scroll velocity with spring physics.",
+ "use_when": "A timeline or step-by-step guide section where visual progress tracking enhances the narrative.",
+ "avoid_when": "When you need horizontal layouts or when motion might be distracting.",
+ "a11y": "SVG is decorative (aria-hidden). Children are fully accessible. Animation respects prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative mx-auto h-full w-full max-w-4xl\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ]
+}

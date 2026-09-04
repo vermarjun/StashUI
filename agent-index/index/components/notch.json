@@ -1,0 +1,86 @@
+{
+ "name": "notch",
+ "title": "Notch",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Notch"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 15,
+ "flags": [
+  "motion",
+  "15 colors"
+ ],
+ "usage": "\"use client\";\nimport { Notch } from \"@/components/ui/notch\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full max-w-2xl h-64 bg-neutral-900 rounded-xl overflow-hidden\">\n      <div className=\"flex items-center justify-center h-full text-neutral-400 text-sm\">\n        Settings bar appears at the bottom\n      </div>\n      <Notch\n        position=\"bottom\"\n        align=\"center\"\n        items={[\n          {\n            id: \"theme\",\n            label: \"Theme\",\n            options: [\n              { id: \"light\", label: \"Light\" },\n              { id: \"dark\", label: \"Dark\" },\n              { id: \"system\", label: \"System\" },\n            ],\n            defaultValue: \"dark\",\n          },\n          {\n            id: \"language\",\n            label: \"Language\",\n            options: [\n              { id: \"en\", label: \"English\" },\n              { id: \"es\", label: \"Spanish\" },\n              { id: \"fr\", label: \"French\" },\n            ],\n            defaultValue: \"en\",\n          },\n        ]}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/notch.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/notch.json",
+ "preview": "https://stashui.vercel.app/c/notch",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Floating control panel pinned to viewport with grouped option toggles.",
+ "description": "Renders a floating notch UI (like dynamic island) with collapsible option groups that can be controlled or uncontrolled. Positioned fixed to top or bottom of viewport, with support for icons, selected value display, and smooth…",
+ "use_when": "Creating dynamic UI controls that persist across page scroll, like settings panels, filter groups, or contextual…",
+ "avoid_when": "When space is constrained or fixed UI overlays are problematic. Not suitable for keyboard-focused workflows.",
+ "a11y": "Basic keyboard support via callback mechanism. No built-in ARIA attributes; parent should manage focus and role.",
+ "props": [
+  {
+   "name": "items",
+   "type": "NotchItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "position",
+   "type": "'top' | 'bottom'",
+   "default": "\"bottom\"",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "'start' | 'center' | 'end'",
+   "default": "\"center\"",
+   "required": false
+  },
+  {
+   "name": "onItemChange",
+   "type": "(itemId: string, optionId: string, option: NotchOption) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "closeOnSelect",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showSelectedValue",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "modal"
+ ]
+}

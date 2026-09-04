@@ -1,0 +1,54 @@
+{
+ "name": "distorted-glass",
+ "title": "Distorted Glass",
+ "category": "effects",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "DistortedGlass"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { DistortedGlass } from \"@/components/ui/distorted-glass\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-violet-600 via-purple-500 to-indigo-600 p-8\">\n      {/* Background content */}\n      <div className=\"flex flex-col gap-4\">\n        <p className=\"text-lg font-semibold text-white/90\">Distorted Glass Effect</p>\n        <p className=\"text-sm text-white/70 max-w-xs\">\n          A frosted glass overlay with fractal noise distortion applied via SVG filter.\n          Hover to interact.\n        </p>\n        <div className=\"flex gap-3 mt-2\">\n          {[\"Design\", \"UI\", \"Effects\"].map((tag) => (\n            <span\n              key={tag}\n              className=\"rounded-full border border-white/30 px-3 py-1 text-xs text-white/80\"\n            >\n              {tag}\n            </span>\n          ))}\n        </div>\n      </div>\n\n      {/* DistortedGlass sits at the bottom, full width */}\n      <div className=\"mt-6 -mx-8 -mb-8\">\n        <DistortedGlass className=\"xl:block hidden\" />\n        {/* Fallback visible on smaller screens */}\n        <div className=\"xl:hidden w-full h-12 rounded-b-2xl\" style={{\n          background: \"rgba(0,0,0,0.2)\",\n          backdropFilter: \"blur(8px)\",\n          WebkitBackdropFilter: \"blur(8px)\",\n        }} />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/distorted-glass.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/distorted-glass.json",
+ "preview": "https://stashui.vercel.app/c/distorted-glass",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Frosted glass overlay with fractal noise distortion via SVG filter.",
+ "description": "Decorative glass effect combining SVG feTurbulence and feDisplacementMap with a repeating radial gradient and backdrop blur. Static and hidden below xl breakpoint.",
+ "use_when": "Decorative glass overlay at the base of a hero or banner section to add polish.",
+ "avoid_when": "When the component must be responsive below xl — it is display-hidden on smaller screens.",
+ "a11y": "Purely decorative overlay with pointer-events-none. No interactive elements or semantic content.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

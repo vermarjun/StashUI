@@ -1,0 +1,59 @@
+{
+ "name": "alert-dialog",
+ "title": "Alert Dialog",
+ "category": "modals",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "AlertDialog",
+  "AlertDialogAction",
+  "AlertDialogCancel",
+  "AlertDialogContent",
+  "AlertDialogDescription",
+  "AlertDialogFooter",
+  "AlertDialogHeader",
+  "AlertDialogOverlay",
+  "AlertDialogPortal",
+  "AlertDialogTitle",
+  "AlertDialogTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/components/ui/alert-dialog\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center p-8\">\n      <AlertDialog>\n        <AlertDialogTrigger asChild>\n          <button className=\"rounded-md bg-destructive px-5 py-2.5 text-sm font-medium text-destructive-foreground hover:opacity-90 transition-opacity\">\n            Delete account\n          </button>\n        </AlertDialogTrigger>\n        <AlertDialogContent>\n          <AlertDialogHeader>\n            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n            <AlertDialogDescription>\n              This action cannot be undone. Your account and all associated data\n              will be permanently removed from our servers.\n            </AlertDialogDescription>\n          </AlertDialogHeader>\n          <AlertDialogFooter>\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\n            <AlertDialogAction>Yes, delete account</AlertDialogAction>\n          </AlertDialogFooter>\n        </AlertDialogContent>\n      </AlertDialog>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/alert-dialog.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/alert-dialog.json",
+ "preview": "https://stashui.vercel.app/c/alert-dialog",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Modal alert for destructive actions or important confirmations.",
+ "description": "A compound component wrapping Radix AlertDialog with styled overlay, animations, and footer buttons for confirm/cancel flows.",
+ "use_when": "Asking for confirmation before destructive actions like delete, logout, or data removal.",
+ "avoid_when": "For informational messages — use a toast or snackbar instead.",
+ "a11y": "Radix AlertDialog with focus management, keyboard dismissal (Esc), and semantic title/description.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

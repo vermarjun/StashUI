@@ -1,0 +1,63 @@
+{
+ "name": "text-flipping-board",
+ "title": "Split Flap Board",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "TextFlippingBoard"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 64,
+ "flags": [
+  "3d",
+  "motion",
+  "64 colors"
+ ],
+ "usage": "import { TextFlippingBoard } from \"@/components/ui/text-flipping-board\";\n\nexport default function Demo() {\n  return <TextFlippingBoard />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/text-flipping-board.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-flipping-board.json",
+ "preview": "https://stashui.vercel.app/c/text-flipping-board",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Split-flap board that flips characters to display text.",
+ "description": "Emulates a mechanical split-flap display (like airport boards), where each character flips to reveal the next.",
+ "use_when": "Timetables, countdowns, or retro-styled displays.",
+ "avoid_when": "Dense content — flipping each character is slow.",
+ "a11y": "During flips, characters are unreadable. No pause control.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "BASE_TOTAL_S",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "decoration"
+ ]
+}

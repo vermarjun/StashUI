@@ -1,0 +1,82 @@
+{
+ "name": "inspira-file-upload",
+ "title": "File Upload",
+ "category": "file-upload",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "FileUploadGrid",
+  "FileUpload"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 25,
+ "flags": [
+  "pure",
+  "25 colors"
+ ],
+ "usage": "import { FileUpload, FileUploadGrid } from \"@/components/ui/file-upload\";\n\nexport default function FileUploadDemo() {\n  return (\n    <div className=\"w-full max-w-xl p-8\">\n      <FileUpload\n        onChange={(files) => console.log(\"Files:\", files)}\n      >\n        <FileUploadGrid />\n      </FileUpload>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/file-upload.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-file-upload.json",
+ "preview": "https://stashui.vercel.app/c/inspira-file-upload",
+ "dupe_group": "fileupload",
+ "alternatives": [
+  {
+   "name": "ui-layouts-file-upload",
+   "origin": "Ui-Layouts",
+   "npm_deps": 3,
+   "hardcoded_colors": 8
+  },
+  {
+   "name": "file-upload",
+   "origin": "Aceternity UI",
+   "npm_deps": 3,
+   "hardcoded_colors": 29
+  }
+ ],
+ "blurb": "File upload with animated file list and optional grid pattern background.",
+ "description": "Drag-and-drop file uploader with animated file entries. Accepts children for background pattern (FileUploadGrid). Responds to drag, drop, click, and hover.",
+ "use_when": "Design-forward file uploads with customizable background patterns.",
+ "avoid_when": "Performance-critical contexts; animations may impact older devices.",
+ "a11y": "Input hidden but clickable. Drop zone responds to drag/drop events.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(files: File[]) => void",
+   "default": "{onInputChange}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "modal"
+ ]
+}

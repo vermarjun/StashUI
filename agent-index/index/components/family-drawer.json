@@ -1,0 +1,108 @@
+{
+ "name": "family-drawer",
+ "title": "Family Drawer",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "FamilyDrawerRoot",
+  "FamilyDrawerTrigger",
+  "FamilyDrawerPortal",
+  "FamilyDrawerOverlay",
+  "FamilyDrawerContent",
+  "FamilyDrawerAnimatedWrapper",
+  "FamilyDrawerAnimatedContent",
+  "FamilyDrawerClose",
+  "FamilyDrawerHeader",
+  "FamilyDrawerButton",
+  "FamilyDrawerSecondaryButton",
+  "FamilyDrawerViewContent"
+ ],
+ "npm_deps": [
+  "motion",
+  "react-use-measure",
+  "vaul",
+  "@radix-ui/react-slot"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "heavy",
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  FamilyDrawerRoot,\n  FamilyDrawerTrigger,\n  FamilyDrawerPortal,\n  FamilyDrawerOverlay,\n  FamilyDrawerContent,\n  FamilyDrawerAnimatedWrapper,\n  FamilyDrawerAnimatedContent,\n  FamilyDrawerClose,\n  FamilyDrawerHeader,\n  FamilyDrawerButton,\n  FamilyDrawerSecondaryButton,\n  FamilyDrawerViewContent,\n  useFamilyDrawer,\n  type ViewsRegistry,\n} from \"@/components/ui/family-drawer\"\n\nfunction ShareIcon() {\n  return (\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\">\n      <circle cx=\"18\" cy=\"5\" r=\"3\" /><circle cx=\"6\" cy=\"12\" r=\"3\" /><circle cx=\"18\" cy=\"19\" r=\"3\" />\n      <line x1=\"8.59\" y1=\"13.51\" x2=\"15.42\" y2=\"17.49\" /><line x1=\"15.41\" y1=\"6.51\" x2=\"8.59\" y2=\"10.49\" />\n    </svg>\n  )\n}\n\nfunction CopyIcon() {\n  return (\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\">\n      <rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\" /><path d=\"M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1\" />\n    </svg>\n  )\n}\n\nfunction MailIcon() {\n  return (\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\">\n      <path d=\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\" />\n      <polyline points=\"22,6 12,13 2,6\" />\n    </svg>\n  )\n}\n\nfunction DefaultView() {\n  const { setView } = useFamilyDrawer()\n  return (\n    <FamilyDrawerAnimatedWrapper>\n      <FamilyDrawerHeader\n        icon={<ShareIcon />}\n        title=\"Share this item\"\n        description=\"Choose how you'd like to share with others.\"\n      />\n      <div className=\"mt-4 flex flex-col gap-2\">\n        <FamilyDrawerButton onClick={() => setView(\"copy-link\")}>\n          <CopyIcon />\n          Copy link\n        </FamilyDrawerButton>\n        <FamilyDrawerButton onClick={() => setView(\"send-email\")}>\n          <MailIcon />\n          Send via email\n        </FamilyDrawerButton>\n      </div>\n      <FamilyDrawerSecondaryButton\n        className=\"mt-3 text-muted-foreground\"\n        onClick={() => {}}\n      >\n        Cancel\n      </FamilyDrawerSecondaryButton>\n    </FamilyDrawerAnimatedWrapper>\n  )\n}\n\nfunction CopyLinkView() {\n  const { setView } = useFamilyDrawer()\n  return (\n    <FamilyDrawerAnimatedWrapper>\n      <FamilyDrawerHeader\n        icon={<CopyIcon />}\n        title=\"Link copied!\"\n        description=\"The shareable link has been copied to your clipboard.\"\n      />\n      <div className=\"mt-4 p-3 rounded-xl bg-muted text-sm font-mono text-muted-foreground truncate\">\n        https://myapp.com/share/abc123\n      </div>\n      <FamilyDrawerSecondaryButton\n        className=\"mt-4 text-muted-foreground\"\n        onClick={() => setView(\"default\")}\n      >\n        Back\n      </FamilyDrawerSecondaryButton>\n    </FamilyDrawerAnimatedWrapper>\n  )\n}\n\nfunction SendEmailView() {\n  const { setView } = useFamilyDrawer()\n  return (\n    <FamilyDrawerAnimatedWrapper>\n      <FamilyDrawerHeader\n        icon={<MailIcon />}\n        title=\"Send via email\"\n        description=\"Enter recipient email to share this item directly.\"\n      />\n      <input\n        type=\"email\"\n        placeholder=\"friend@example.com\"\n        className=\"mt-4 w-full rounded-xl border border-border bg-muted px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring\"\n      />\n      <FamilyDrawerButton className=\"mt-3\" onClick={() => setView(\"default\")}>\n        Send\n      </FamilyDrawerButton>\n      <FamilyDrawerSecondaryButton\n        className=\"mt-2 text-muted-foreground\"\n        onClick={() => setView(\"default\")}\n      >\n        Back\n      </FamilyDrawerSecondaryButton>\n    </FamilyDrawerAnimatedWrapper>\n  )\n}\n\nconst views: ViewsRegistry = {\n  default: DefaultView,\n  \"copy-link\": CopyLinkView,\n  \"send-email\": SendEmailView,\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[480px]\">\n      <FamilyDrawerRoot views={views}>\n        <FamilyDrawerTrigger>Share</FamilyDrawerTrigger>\n        <FamilyDrawerPortal>\n          <FamilyDrawerOverlay />\n          <FamilyDrawerContent>\n            <FamilyDrawerClose />\n            <FamilyDrawerAnimatedContent>\n              <FamilyDrawerViewContent />\n            </FamilyDrawerAnimatedContent>\n          </FamilyDrawerContent>\n        </FamilyDrawerPortal>\n      </FamilyDrawerRoot>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/family-drawer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/family-drawer.json",
+ "preview": "https://stashui.vercel.app/c/family-drawer",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Multi-view drawer with smooth height transitions between views.",
+ "description": "A FamilyDrawer using vaul and Framer Motion; supports multiple nested views with animated height transitions; view switching is smooth.",
+ "use_when": "Creating multi-step flows, wizards, or nested drawers (e.g., Share → Copy Link or Send Email).",
+ "avoid_when": "For single-view drawers — use directional-drawer instead to reduce complexity.",
+ "a11y": "View switching is animated; Escape key closes drawer; focus management handled by vaul; keyboard navigation supported.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultView",
+   "type": "string",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "onViewChange",
+   "type": "(view: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "views",
+   "type": "ViewsRegistry",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal",
+  "sidebar"
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "name": "PixelCard-TS-TW",
+ "title": "Pixel Reveal Card",
+ "category": "cards",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PixelCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "canvas",
+  "pure",
+  "16 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/PixelCard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap gap-6 items-center justify-center p-8\">\n      <Cmp variant=\"default\">\n        <div className=\"absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none select-none\">\n          <span className=\"text-foreground text-sm font-semibold\">Default</span>\n          <span className=\"text-muted-foreground text-xs\">Hover me</span>\n        </div>\n      </Cmp>\n      <Cmp variant=\"blue\">\n        <div className=\"absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none select-none\">\n          <span className=\"text-foreground text-sm font-semibold\">Blue</span>\n          <span className=\"text-muted-foreground text-xs\">Hover me</span>\n        </div>\n      </Cmp>\n      <Cmp variant=\"pink\">\n        <div className=\"absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none select-none\">\n          <span className=\"text-foreground text-sm font-semibold\">Pink</span>\n          <span className=\"text-muted-foreground text-xs\">Hover me</span>\n        </div>\n      </Cmp>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/PixelCard.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/PixelCard-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/PixelCard-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pixels reveal on hover with a radial wave animation emanating from center.",
+ "description": "A canvas-based card where pixels gradually appear on hover and disappear on blur. Individual pixels animate in a wave pattern based on distance from center. Supports four color variants (default, blue, yellow, pink). Respects…",
+ "use_when": "Interactive showcase cards where the reveal animation creates visual interest.",
+ "avoid_when": "Accessibility-first contexts — no keyboard equivalent for the reveal effect without focus styles.",
+ "a11y": "Card is tabbable (tabIndex=0 by default). Focus triggers the same reveal as hover. Respects prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "variant",
+   "type": "'default' | 'blue' | 'yellow' | 'pink'",
+   "default": "'default'",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "noFocus",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "feature-card",
+  "hero"
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "name": "comp-461",
+ "title": "Grouped Pagination",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button",
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-461\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-lg\">\n      <Cmp currentPage={page} totalPages={total} paginationItemsToDisplay={5} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-461.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-461.json",
+ "preview": "https://stashui.vercel.app/c/comp-461",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination grouped by category.",
+ "description": "Pagination with navigation controls grouped or arranged by category/section.",
+ "use_when": "Pagination requiring categorical organization of navigation controls.",
+ "avoid_when": "Simple linear pagination without categorical grouping.",
+ "a11y": "Semantic pagination with grouped navigation controls.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

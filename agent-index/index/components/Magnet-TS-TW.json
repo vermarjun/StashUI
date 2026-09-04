@@ -1,0 +1,95 @@
+{
+ "name": "Magnet-TS-TW",
+ "title": "Magnet Effect",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Magnet"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import Magnet from \"@/components/ui/Magnet\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-10 py-16 w-full\">\n      <Magnet magnetStrength={2} padding={80}>\n        <button className=\"rounded-full bg-foreground text-background px-8 py-3 text-sm font-semibold hover:opacity-90 transition-opacity\">\n          Hover me\n        </button>\n      </Magnet>\n\n      <Magnet magnetStrength={3} padding={100}>\n        <div className=\"flex h-24 w-24 items-center justify-center rounded-2xl border border-border bg-background shadow-md\">\n          <span className=\"text-3xl select-none\">✦</span>\n        </div>\n      </Magnet>\n\n      <Magnet magnetStrength={2.5} padding={80}>\n        <div className=\"rounded-xl border border-border bg-background px-6 py-4 text-center shadow-sm\">\n          <p className=\"text-sm font-medium text-foreground\">Magnetic card</p>\n          <p className=\"text-xs text-muted-foreground mt-1\">Move your cursor near me</p>\n        </div>\n      </Magnet>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Magnet.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Magnet-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Magnet-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Wraps children that lean toward the cursor within a radius, easing back to rest.",
+ "description": "DOM-based interactive wrapper that translates its child toward the pointer within a configurable padding radius, with separate easing curves for active and inactive states.",
+ "use_when": "A single hero CTA or card that should feel tactile without shifting its neighbors' layout.",
+ "avoid_when": "Dense toolbars or touch-only surfaces — there is no pointer to track and hover detection is unreliable.",
+ "a11y": "Wrapper only; focus and keyboard behaviour come from the child. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "padding",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "magnetStrength",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "activeTransition",
+   "type": "string",
+   "default": "'transform 0.3s ease-out'",
+   "required": false
+  },
+  {
+   "name": "inactiveTransition",
+   "type": "string",
+   "default": "'transform 0.5s ease-in-out'",
+   "required": false
+  },
+  {
+   "name": "wrapperClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "innerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

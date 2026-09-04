@@ -1,0 +1,73 @@
+{
+ "name": "tweet-grid",
+ "title": "Tweet Grid",
+ "category": "cards",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "TweetGrid"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 14,
+ "flags": [
+  "pure",
+  "14 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { TweetGrid } from \"@/components/ui/tweet-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto p-4\">\n      <TweetGrid\n        tweets={[\n          \"1620543756048035840\",\n          \"1629307668956545024\",\n          \"1634178537849057280\",\n          \"1638567890123456789\",\n          \"1645678901234567890\",\n          \"1652345678901234567\",\n        ]}\n        columns={3}\n        spacing=\"md\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/tweet-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tweet-grid.json",
+ "preview": "https://stashui.vercel.app/c/tweet-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Responsive masonry grid of tweet cards with tunable columns and spacing.",
+ "description": "CSS-based masonry layout using CSS Columns to arrange tweets responsively. Supports 1-5 columns with configurable spacing between items. Uses break-inside-avoid to prevent tweet cards from splitting.",
+ "use_when": "Displaying multiple tweets in a gallery or wall format with automatic column wrapping.",
+ "avoid_when": "Older browsers without CSS Columns support; the component relies on break-inside-avoid.",
+ "a11y": "Semantic structure with proper spacing; no interactive elements beyond standard card behavior.",
+ "props": [
+  {
+   "name": "tweets",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "columns",
+   "type": "1 | 2 | 3 | 4 | 5",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "spacing",
+   "type": "\"sm\" | \"md\" | \"lg\"",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(tweetItemVariants({ spacing }))}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "testimonial",
+  "logo-wall",
+  "data-table"
+ ]
+}

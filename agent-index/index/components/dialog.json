@@ -1,0 +1,70 @@
+{
+ "name": "dialog",
+ "title": "Animated Dialog",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "FramerModal",
+  "ModalContent"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { FramerModal, ModalContent } from \"@/components/ui/dialog\";\nimport { useState } from \"react\";\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <div className=\"flex h-full items-center justify-center\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"px-6 py-3 rounded-lg border bg-background hover:bg-muted transition-colors font-medium text-sm\"\n      >\n        Open Dialog\n      </button>\n\n      <FramerModal open={open} setOpen={setOpen}>\n        <ModalContent>\n          <h2 className=\"text-lg font-semibold text-foreground mb-1\">\n            Confirm Action\n          </h2>\n          <p className=\"text-sm text-muted-foreground mb-6\">\n            Are you sure you want to proceed? This action cannot be undone and\n            will permanently delete your data.\n          </p>\n          <div className=\"flex gap-3\">\n            <button\n              onClick={() => setOpen(false)}\n              className=\"flex-1 py-2 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity\"\n            >\n              Confirm\n            </button>\n            <button\n              onClick={() => setOpen(false)}\n              className=\"flex-1 py-2 rounded-md border text-sm font-medium hover:bg-muted transition-colors\"\n            >\n              Cancel\n            </button>\n          </div>\n        </ModalContent>\n      </FramerModal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/dialog.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dialog.json",
+ "preview": "https://stashui.vercel.app/c/dialog",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated modal with fade-in overlay and slide-in content transitions.",
+ "description": "A FramerModal component using Framer Motion; fades and slides in on open; closes on Escape or backdrop click; supports controlled/uncontrolled state.",
+ "use_when": "Creating polished dialogs with smooth entrance/exit animations and responsive backdrop interactions.",
+ "avoid_when": "For simple lightweight dialogs without animation — use shadcn Dialog instead to reduce bundle size.",
+ "a11y": "Escape key closes the dialog; backdrop click closes it; body overflow prevented; focus is managed by AnimatePresence.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "setOpen",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

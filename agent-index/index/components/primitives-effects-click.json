@@ -1,0 +1,91 @@
+{
+ "name": "primitives-effects-click",
+ "title": "Click",
+ "category": "effects",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "Click"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { Click } from \"@/components/ui/primitives-effects-click\";\n\nconst variants = [\"ring\", \"ripple\", \"crosshair\", \"burst\", \"particles\"] as const;\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-4 p-8\">\n      <div className=\"flex flex-wrap gap-3 justify-center\">\n        {variants.map((variant) => (\n          <Click key={variant} variant={variant} color=\"currentColor\" size={80}>\n            <button\n              type=\"button\"\n              className=\"rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors capitalize\"\n            >\n              {variant}\n            </button>\n          </Click>\n        ))}\n      </div>\n      <p className=\"text-xs text-muted-foreground\">Click any button to see the effect</p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-effects-click.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-effects-click.json",
+ "preview": "https://stashui.vercel.app/c/primitives-effects-click",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Click effects animate on interaction with ripple, ring, burst, or particle…",
+ "description": "Renders animated effects on click within child elements. Supports multiple effect variants (ripple, ring, crosshair, burst, particles) with customizable color, size, and duration.",
+ "use_when": "Buttons or interactive elements where visual feedback on click enhances perceived interactivity and response.",
+ "avoid_when": "Contexts where animation might distract from critical interactions.",
+ "a11y": "Click effects are visual feedback only; focus and keyboard interaction work normally on child content.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "\"ripple\" | \"ring\" | \"crosshair\" | \"burst\" | \"particles\"",
+   "default": "'ring'",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "scope",
+   "type": "React.RefObject<HTMLElement>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-submit",
+  "primary-cta"
+ ]
+}

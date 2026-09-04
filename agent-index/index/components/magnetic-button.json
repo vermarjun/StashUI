@@ -1,0 +1,67 @@
+{
+ "name": "magnetic-button",
+ "title": "Magnetic Button",
+ "category": "buttons",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "MagneticButton"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { MagneticButton } from \"@/components/ui/magnetic-button\";\n\nexport default function MagneticButtonDemo() {\n  return (\n    <MagneticButton strength={0.8} maxDistance={100}>\n      <button className=\"px-8 py-3 rounded-lg border border-border bg-background text-foreground text-sm font-medium shadow-sm hover:bg-muted transition-colors\">\n        Magnetic\n      </button>\n    </MagneticButton>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/magnetic-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magnetic-button.json",
+ "preview": "https://stashui.vercel.app/c/magnetic-button",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Leans toward the cursor, springs back on release.",
+ "description": "Wraps a child and translates it toward the pointer within a radius, easing back to rest when the pointer leaves. Spring-based, no layout shift.",
+ "use_when": "One hero CTA that should feel physical without moving its neighbours.",
+ "avoid_when": "Dense toolbars, or touch-only surfaces — there is no pointer to track.",
+ "a11y": "Wrapper only; focus and keyboard behaviour come from the child. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "maxDistance",
+   "type": "number",
+   "default": "100",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

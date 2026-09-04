@@ -1,0 +1,62 @@
+{
+ "name": "scroll-progress",
+ "title": "Scroll Progress",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "ScrollProgress"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ScrollProgress } from \"@/components/ui/scroll-progress\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full\">\n      {/* ScrollProgress tracks window scroll — show it with a label */}\n      <ScrollProgress className=\"h-1\" />\n      <div className=\"flex flex-col items-center gap-4 p-8 pt-6\">\n        <div className=\"w-full max-w-md rounded-xl border border-border bg-muted/30 p-6 text-center\">\n          <p className=\"text-sm font-semibold text-foreground\">Scroll Progress Bar</p>\n          <p className=\"mt-2 text-xs text-muted-foreground\">\n            The coloured line pinned at the top of the page grows as you scroll down.\n            Scroll the page to see it animate.\n          </p>\n        </div>\n        <div className=\"w-full max-w-md flex items-center gap-3 rounded-lg border border-border bg-background p-4\">\n          <div className=\"h-3 flex-1 rounded-full bg-gradient-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92]\" />\n          <span className=\"text-xs text-muted-foreground whitespace-nowrap\">tracks window scroll</span>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/scroll-progress.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-progress.json",
+ "preview": "https://stashui.vercel.app/c/scroll-progress",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Progress bar at the top of the page showing scroll position.",
+ "description": "A fixed position bar that scales horizontally based on page scroll progress. Uses Framer Motion's useScroll hook with a hardcoded gradient background.",
+ "use_when": "A page indicator showing reading progress or engagement depth in long-form content.",
+ "avoid_when": "When page content doesn't have enough vertical space to scroll meaningfully.",
+ "a11y": "Decorative visual indicator only. Conveys scroll progress visually but has no semantic role, label, or keyboard interaction.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "ref",
+   "type": "React.Ref<HTMLDivElement>",
+   "default": "{ref}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "page-background"
+ ]
+}

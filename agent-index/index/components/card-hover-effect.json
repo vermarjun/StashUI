@@ -1,0 +1,65 @@
+{
+ "name": "card-hover-effect",
+ "title": "Card Hover Effect",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "HoverEffect",
+  "Card",
+  "CardTitle",
+  "CardDescription"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\nimport { HoverEffect } from \"@/components/ui/card-hover-effect\";\n\nconst projects = [\n  {\n    title: \"Stripe\",\n    description:\n      \"A technology company that builds economic infrastructure for the internet.\",\n    link: \"https://stripe.com\",\n  },\n  {\n    title: \"Netflix\",\n    description:\n      \"A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more.\",\n    link: \"https://netflix.com\",\n  },\n  {\n    title: \"Google\",\n    description:\n      \"A multinational technology company that specializes in Internet-related services and products.\",\n    link: \"https://google.com\",\n  },\n  {\n    title: \"Meta\",\n    description:\n      \"A technology company that connects billions of people around the world through social platforms.\",\n    link: \"https://meta.com\",\n  },\n  {\n    title: \"Amazon\",\n    description:\n      \"A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and AI.\",\n    link: \"https://amazon.com\",\n  },\n  {\n    title: \"Microsoft\",\n    description:\n      \"A multinational technology corporation producing computer software, consumer electronics, and personal computers.\",\n    link: \"https://microsoft.com\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-5xl mx-auto px-4\">\n      <HoverEffect items={projects} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/card-hover-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/card-hover-effect.json",
+ "preview": "https://stashui.vercel.app/c/card-hover-effect",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Grid of cards with a smooth border glow on hover.",
+ "description": "Grid component that renders cards from an items array. Each card has title, description, and link. Hover effect adds a glowing border. Uses a smooth easing for the glow animation.",
+ "use_when": "Project showcases, service grids, or link collections where hover feedback adds polish.",
+ "avoid_when": "Touch-only interfaces — hover effects don't apply.",
+ "a11y": "Links are semantic. Cards are readable. Focus state should match hover for keyboard users.",
+ "props": [
+  {
+   "name": "items",
+   "type": "Array<{title, description, link}>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "section-background"
+ ]
+}

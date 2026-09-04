@@ -1,0 +1,67 @@
+{
+ "name": "animated-shiny-text",
+ "title": "Animated Shiny Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "AnimatedShinyText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "import { AnimatedShinyText } from \"@/components/ui/animated-shiny-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <AnimatedShinyText className=\"text-2xl font-semibold\">\n        ✦ Introducing Magic UI — beautifully crafted components.\n      </AnimatedShinyText>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/animated-shiny-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-shiny-text.json",
+ "preview": "https://stashui.vercel.app/c/animated-shiny-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A bright shimmer sweeps across text from left to right, looping continuously.",
+ "description": "Renders text with a moving highlight shine effect using CSS background-position animation. The shimmer width is configurable. Light effect works on both light and dark themes.",
+ "use_when": "Inline or block text wants a subtle, elegant shine effect that doesn't require JavaScript.",
+ "avoid_when": "When text must remain completely static or when shimmer width needs dynamic adjustment per character.",
+ "a11y": "Text is readable; shimmer is purely visual via CSS background-clip.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "shimmerWidth",
+   "type": "number",
+   "default": "100",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text",
+  "badge"
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "name": "comp-465",
+ "title": "Pagination With Counter",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "input",
+  "label",
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-465\";\n\nexport default function Demo() {\n  const [currentPage, setCurrentPage] = useState(3);\n  const totalPages = 10;\n\n  return (\n    <div className=\"w-full max-w-2xl px-4\">\n      <Cmp\n        currentPage={currentPage}\n        totalPages={totalPages}\n        paginationItemsToDisplay={5}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-465.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-465.json",
+ "preview": "https://stashui.vercel.app/c/comp-465",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Numbered pagination with jump-to-page input field.",
+ "description": "Pagination control with clickable page numbers, ellipsis for skipped ranges, and a text input to jump directly to a page.",
+ "use_when": "You need to navigate large lists and let users jump to specific pages.",
+ "avoid_when": "Infinite scroll or cursor-based pagination is more practical for real-time data.",
+ "a11y": "Previous/next buttons are disabled at bounds with aria-disabled. Page links are keyboard-navigable.",
+ "props": [
+  {
+   "name": "currentPage",
+   "type": "number",
+   "default": "== 1 ? undefined : `#/page/${currentPage - 1}`",
+   "required": true
+  },
+  {
+   "name": "totalPages",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "paginationItemsToDisplay",
+   "type": "number",
+   "default": "5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "data-table"
+ ]
+}

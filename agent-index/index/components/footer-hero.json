@@ -1,0 +1,92 @@
+{
+ "name": "footer-hero",
+ "title": "Footer Hero",
+ "category": "effects",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TimelineAnimation"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\nimport { useRef } from 'react';\nimport { TimelineAnimation } from '@/components/ui/timeline-animation';\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div ref={containerRef} className=\"w-full max-w-lg mx-auto p-8 space-y-6\">\n      <TimelineAnimation animationNum={0} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 1: Discovery\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={1} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We begin by understanding your goals, audience, and competitive landscape to shape a winning strategy.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={2} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 2: Design\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={3} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        Our designers craft beautiful, user-centered interfaces that reflect your brand identity.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={4} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 3: Launch\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={5} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We deploy, monitor, and iterate to ensure your product exceeds expectations from day one.\n      </TimelineAnimation>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/timeline-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/footer-hero.json",
+ "preview": "https://stashui.vercel.app/c/footer-hero",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Staggered entrance animation triggered by scroll, blur and fade each element in…",
+ "description": "A viewport-triggered animation component powered by Framer Motion. Animates elements with blur, opacity, and vertical shifts as they enter view, with configurable delay sequences. Accepts custom motion variants and respects viewport…",
+ "use_when": "Building hero sections or step-by-step processes with staggered animations on scroll.",
+ "avoid_when": "Users with prefers-reduced-motion enabled; the component lacks a motion preference guard.",
+ "a11y": "Uses semantic HTML with custom element support (as prop). No `prefers-reduced-motion` guard detected — motion plays regardless of user preferences.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animationNum",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "timelineRef",
+   "type": "React.RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "keyof HTMLElementTagNameMap",
+   "default": "'div'",
+   "required": false
+  },
+  {
+   "name": "customVariants",
+   "type": "Variants",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "section-background"
+ ]
+}

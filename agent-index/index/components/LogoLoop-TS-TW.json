@@ -1,0 +1,139 @@
+{
+ "name": "LogoLoop-TS-TW",
+ "title": "Logo Marquee Loop",
+ "category": "media",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "LogoLoop"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "pure",
+  "6 colors"
+ ],
+ "usage": "import LogoLoop from \"@/components/ui/LogoLoop\"\n\nconst logos = [\n  {\n    src: \"https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg\",\n    alt: \"Amazon\",\n    width: 80,\n    height: 28,\n  },\n  {\n    src: \"https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg\",\n    alt: \"Google\",\n    width: 80,\n    height: 28,\n  },\n  {\n    src: \"https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg\",\n    alt: \"Microsoft\",\n    width: 80,\n    height: 28,\n  },\n  {\n    src: \"https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg\",\n    alt: \"Meta\",\n    width: 28,\n    height: 28,\n  },\n  {\n    src: \"https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg\",\n    alt: \"Apple\",\n    width: 24,\n    height: 28,\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl py-8\">\n      <LogoLoop logos={logos} speed={80} pauseOnHover logoHeight={32} gap={48} fadeOut />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/LogoLoop.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/LogoLoop-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/LogoLoop-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Continuous marquee carousel for logos or images with optional pause on hover.",
+ "description": "Renders a horizontal or vertical scrolling loop of logos with configurable speed. Logos repeat seamlessly; supports pause-on-hover, scale animations, and optional fade edges.",
+ "use_when": "Displaying partner, sponsor, or client logos in a continuous scrolling strip.",
+ "avoid_when": "When images must be interactive or clickable beyond optional link wrapping, or when motion must respect…",
+ "a11y": "Images accept alt text and optional titles. Links have aria-labels. Motion respects prefers-reduced-motion for transform changes but carousel still loops. Primary interaction is hover.",
+ "props": [
+  {
+   "name": "logos",
+   "type": "LogoItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "120",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'left' | 'right' | 'up' | 'down'",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number | string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "logoHeight",
+   "type": "number",
+   "default": "28",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "32",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hoverSpeed",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fadeOut",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "fadeOutColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "scaleOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "renderItem",
+   "type": "(item: LogoItem, key: React.Key) => React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "ariaLabel",
+   "type": "string",
+   "default": "'Partner logos'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "nav"
+ ]
+}

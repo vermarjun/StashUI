@@ -1,0 +1,70 @@
+{
+ "name": "floating-dock",
+ "title": "Floating Dock",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "FloatingDock"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "motion",
+  "16 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { FloatingDock } from \"@/components/ui/floating-dock\";\nimport {\n  HomeIcon,\n  SearchIcon,\n  SettingsIcon,\n  UserIcon,\n  BellIcon,\n} from \"lucide-react\";\n\nconst items = [\n  { title: \"Home\", icon: <HomeIcon className=\"h-full w-full text-neutral-500 dark:text-neutral-400\" />, href: \"#\" },\n  { title: \"Search\", icon: <SearchIcon className=\"h-full w-full text-neutral-500 dark:text-neutral-400\" />, href: \"#\" },\n  { title: \"Notifications\", icon: <BellIcon className=\"h-full w-full text-neutral-500 dark:text-neutral-400\" />, href: \"#\" },\n  { title: \"Profile\", icon: <UserIcon className=\"h-full w-full text-neutral-500 dark:text-neutral-400\" />, href: \"#\" },\n  { title: \"Settings\", icon: <SettingsIcon className=\"h-full w-full text-neutral-500 dark:text-neutral-400\" />, href: \"#\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\n      <FloatingDock items={items} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/floating-dock.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/floating-dock.json",
+ "preview": "https://stashui.vercel.app/c/floating-dock",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Floating dock with desktop magnification and mobile expanding menu.",
+ "description": "Responsive dock showing different layouts on desktop (magnifying hover) vs. mobile (expanding menu). Items have title, icon, and href.",
+ "use_when": "Multi-device apps with floating action menus that adapt to screen size.",
+ "avoid_when": "Touch-only interfaces using desktop layout; magnification doesn't work on touch.",
+ "a11y": "Dock items are keyboard-navigable links. Icons have aria-label or sr-only text. Mobile menu managed with aria-expanded.",
+ "props": [
+  {
+   "name": "items",
+   "type": "{ title: string; icon: React.ReactNode; href: string }[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "desktopClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mobileClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ]
+}

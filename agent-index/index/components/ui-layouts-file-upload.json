@@ -1,0 +1,99 @@
+{
+ "name": "ui-layouts-file-upload",
+ "title": "File Upload",
+ "category": "file-upload",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "FileUploader",
+  "FileUploaderContent",
+  "FileUploaderItem",
+  "FileInput"
+ ],
+ "npm_deps": [
+  "react-dropzone",
+  "sonner",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "heavy",
+  "8 colors"
+ ],
+ "usage": "'use client';\nimport { useState } from 'react';\nimport {\n  FileUploader,\n  FileUploaderContent,\n  FileUploaderItem,\n  FileInput,\n} from '@/components/ui/file-upload';\n\nexport default function Demo() {\n  const [files, setFiles] = useState<File[] | null>(null);\n\n  return (\n    <div className=\"w-full max-w-md mx-auto p-6\">\n      <FileUploader\n        value={files}\n        onValueChange={setFiles}\n        dropzoneOptions={{\n          accept: { 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.webp'] },\n          maxFiles: 4,\n          maxSize: 4 * 1024 * 1024,\n          multiple: true,\n        }}\n        className=\"relative bg-background rounded-lg p-2\"\n      >\n        <FileInput className=\"border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-gray-400 transition-colors\">\n          <div className=\"flex flex-col items-center gap-2 text-gray-500\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" className=\"h-10 w-10\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={1.5} d=\"M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5\" />\n            </svg>\n            <p className=\"font-medium text-sm\">Click or drag files here</p>\n            <p className=\"text-xs\">PNG, JPG, GIF, WEBP up to 4MB</p>\n          </div>\n        </FileInput>\n        {files && files.length > 0 && (\n          <FileUploaderContent>\n            {files.map((file, index) => (\n              <FileUploaderItem key={index} index={index}>\n                <span className=\"text-xs truncate\">{file.name}</span>\n              </FileUploaderItem>\n            ))}\n          </FileUploaderContent>\n        )}\n      </FileUploader>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/file-upload.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-file-upload.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-file-upload",
+ "dupe_group": "fileupload",
+ "alternatives": [
+  {
+   "name": "inspira-file-upload",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 25
+  },
+  {
+   "name": "file-upload",
+   "origin": "Aceternity UI",
+   "npm_deps": 3,
+   "hardcoded_colors": 29
+  }
+ ],
+ "blurb": "Drag-and-drop file uploader with keyboard navigation and validation.",
+ "description": "Composable file upload component using react-dropzone. Supports drag-and-drop or click-to-select, with file size and count validation, keyboard navigation (arrow keys, Enter, Space, Delete), and a context-based architecture for flexible…",
+ "use_when": "You need a customizable file upload with full keyboard support and drag-and-drop functionality.",
+ "avoid_when": "The component requires react-dropzone and sonner toast notifications as dependencies.",
+ "a11y": "Keyboard accessible: arrow keys navigate files, Enter/Space opens picker, Delete removes files, Escape clears focus. Focus tracking via activeIndex. Uses aria-description for content holder.",
+ "props": [
+  {
+   "name": "value",
+   "type": "File[] | null",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: File[] | null) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "dropzoneOptions",
+   "type": "DropzoneOptions",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "reSelect",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "orientation",
+   "type": "'horizontal' | 'vertical'",
+   "default": "'vertical'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

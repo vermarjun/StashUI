@@ -1,0 +1,62 @@
+{
+ "name": "ImageTrail-TS-TW",
+ "title": "Image Cursor Trail",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ImageTrail"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d"
+ ],
+ "usage": "\"use client\";\n\nimport ImageTrail from \"@/components/ui/ImageTrail\";\n\nconst ITEMS = [\n  \"https://picsum.photos/seed/trail1/400/440\",\n  \"https://picsum.photos/seed/trail2/400/440\",\n  \"https://picsum.photos/seed/trail3/400/440\",\n  \"https://picsum.photos/seed/trail4/400/440\",\n  \"https://picsum.photos/seed/trail5/400/440\",\n  \"https://picsum.photos/seed/trail6/400/440\",\n  \"https://picsum.photos/seed/trail7/400/440\",\n  \"https://picsum.photos/seed/trail8/400/440\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full min-h-[480px]\">\n      <ImageTrail items={ITEMS} variant={1} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ImageTrail.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ImageTrail-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ImageTrail-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Images follow your cursor in a smooth, staggered trail.",
+ "description": "A cursor-following component that displays images from an array in a staggered trail effect. Uses GSAP animations with easing to create smooth motion along the pointer path.",
+ "use_when": "You want an interactive visual element that rewards cursor movement with animated imagery or a playful gallery.",
+ "avoid_when": "Touch-only devices or when consistent 60fps performance isn't guaranteed.",
+ "a11y": "Purely visual cursor tracking; no keyboard alternative or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "hero",
+  "page-background"
+ ]
+}

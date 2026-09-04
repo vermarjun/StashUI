@@ -1,0 +1,52 @@
+{
+ "name": "magnified-doc",
+ "title": "Magnified Doc Tooltip",
+ "category": "tooltips",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Tooltip",
+  "TooltipContent",
+  "TooltipProvider",
+  "TooltipTrigger"
+ ],
+ "npm_deps": [
+  "motion",
+  "@radix-ui/react-tooltip"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/magnified-doc\";\nimport {\n  AnimatePresence,\n  motion,\n  useMotionValue,\n  useSpring,\n  useTransform,\n} from \"motion/react\";\nimport { useRef } from \"react\";\n\nconst dockItems = [\n  { label: \"Home\", icon: \"⌂\" },\n  { label: \"Search\", icon: \"⌕\" },\n  { label: \"Files\", icon: \"⊟\" },\n  { label: \"Messages\", icon: \"✉\" },\n  { label: \"Settings\", icon: \"⚙\" },\n];\n\nfunction DockIcon({\n  mouseX,\n  label,\n  icon,\n}: {\n  mouseX: ReturnType<typeof useMotionValue<number>>;\n  label: string;\n  icon: string;\n}) {\n  const ref = useRef<HTMLButtonElement>(null);\n\n  const distance = useTransform(mouseX, (val) => {\n    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };\n    return val - bounds.x - bounds.width / 2;\n  });\n\n  const size = useSpring(useTransform(distance, [-80, 0, 80], [40, 60, 40]), {\n    mass: 0.1,\n    stiffness: 150,\n    damping: 12,\n  });\n\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <motion.button\n          ref={ref}\n          style={{ width: size, height: size }}\n          className=\"flex items-center justify-center rounded-xl border border-border bg-background text-xl shadow-sm transition-colors hover:bg-muted focus:outline-none\"\n          aria-label={label}\n        >\n          {icon}\n        </motion.button>\n      </TooltipTrigger>\n      <TooltipContent side=\"top\" sideOffset={8}>\n        <p className=\"text-xs font-medium\">{label}</p>\n      </TooltipContent>\n    </Tooltip>\n  );\n}\n\nexport default function Demo() {\n  const mouseX = useMotionValue(Infinity);\n\n  return (\n    <div className=\"flex min-h-[280px] flex-col items-center justify-end pb-10\">\n      <TooltipProvider delayDuration={0}>\n        <motion.div\n          onMouseMove={(e) => mouseX.set(e.pageX)}\n          onMouseLeave={() => mouseX.set(Infinity)}\n          className=\"flex h-16 items-end gap-2 rounded-2xl border border-border bg-background/80 px-4 pb-2 shadow-lg backdrop-blur-sm\"\n        >\n          {dockItems.map((item) => (\n            <DockIcon\n              key={item.label}\n              mouseX={mouseX}\n              label={item.label}\n              icon={item.icon}\n            />\n          ))}\n        </motion.div>\n      </TooltipProvider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/magnified-doc.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magnified-doc.json",
+ "preview": "https://stashui.vercel.app/c/magnified-doc",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Tooltip component with backdrop blur styling, often paired with magnifying dock…",
+ "description": "Radix-based tooltip with custom backdrop blur and dark/light theme styling. Exports TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent as a compound component system.",
+ "use_when": "Styled tooltips that need glassmorphism effects or enhanced visual polish.",
+ "avoid_when": "Performance-critical contexts where backdrop blur would harm frame rate.",
+ "a11y": "Trigger is keyboard-focusable; tooltip appears on hover only.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "tooltip"
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "name": "primitives-headless-disclosure",
+ "title": "Headless Disclosure",
+ "category": "accordions",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "Disclosure",
+  "DisclosureButton",
+  "DisclosurePanel"
+ ],
+ "npm_deps": [
+  "motion",
+  "@headlessui/react"
+ ],
+ "registry_deps": [
+  "@animate-ui/lib-get-strict-context"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { ChevronDown } from \"lucide-react\";\nimport {\n  Disclosure,\n  DisclosureButton,\n  DisclosurePanel,\n} from \"@/components/ui/primitives-headless-disclosure\";\n\nconst faqs = [\n  {\n    question: \"What is a headless UI component?\",\n    answer:\n      \"A headless component provides all the logic, state management, and accessibility features without prescribing any styles. You own the look entirely.\",\n  },\n  {\n    question: \"How does the animation work?\",\n    answer:\n      \"The panel uses Framer Motion to animate height from 0 to auto, combined with a mask-image fade so the content reveals smoothly from the top down.\",\n  },\n  {\n    question: \"Is it accessible?\",\n    answer:\n      \"Yes. The Headless UI Disclosure primitive manages ARIA attributes (aria-expanded, aria-controls) and keyboard interactions automatically.\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-xl mx-auto py-12 px-4 space-y-3\">\n      {faqs.map((faq) => (\n        <Disclosure key={faq.question}>\n          <div className=\"rounded-xl border border-border overflow-hidden\">\n            <DisclosureButton className=\"flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-sm hover:bg-muted/50 transition-colors cursor-pointer focus:outline-none\">\n              <span>{faq.question}</span>\n              <ChevronDown className=\"w-4 h-4 text-muted-foreground transition-transform ui-open:rotate-180\" />\n            </DisclosureButton>\n            <DisclosurePanel>\n              <p className=\"px-5 py-4 text-sm text-muted-foreground leading-relaxed\">\n                {faq.answer}\n              </p>\n            </DisclosurePanel>\n          </div>\n        </Disclosure>\n      ))}\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-headless-disclosure.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-headless-disclosure.json",
+ "preview": "https://stashui.vercel.app/c/primitives-headless-disclosure",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Headless disclosure component for custom styling.",
+ "description": "Animate UI's disclosure primitive: unstyled button + panel wrapper for complete custom control.",
+ "use_when": "Building fully custom disclosure interactions without predefined styling.",
+ "avoid_when": "When you want pre-styled components.",
+ "a11y": "Headless primitives require manual aria handling.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

@@ -1,0 +1,82 @@
+{
+ "name": "cult-ui-code-block",
+ "title": "Code Block",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "CodeBlock"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 32,
+ "flags": [
+  "motion",
+  "32 colors"
+ ],
+ "usage": "\"use client\";\nimport { CodeBlock } from \"@/components/ui/code-block\";\n\nconst installCode = `npm install motion lucide-react`;\n\nconst usageCode = `import { CodeBlock } from \"@/components/code-block\";\n\nexport default function Page() {\n  return (\n    <CodeBlock\n      tabs={[\n        { label: \"install\", code: \"npm install motion\", language: \"bash\" },\n        { label: \"usage\", code: \"import { CodeBlock } from './code-block'\", language: \"ts\" },\n      ]}\n    />\n  );\n}`;\n\nconst hookCode = `import { useState, useCallback } from \"react\";\n\nexport function useClipboard(timeout = 2000) {\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(async (text: string) => {\n    await navigator.clipboard.writeText(text);\n    setCopied(true);\n    setTimeout(() => setCopied(false), timeout);\n  }, [timeout]);\n\n  return { copied, copy };\n}`;\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto px-4 py-8 space-y-6\">\n      <CodeBlock code={installCode} language=\"bash\" />\n      <CodeBlock\n        tabs={[\n          { label: \"usage.tsx\", code: usageCode, language: \"tsx\" },\n          { label: \"hook.ts\", code: hookCode, language: \"ts\" },\n        ]}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/code-block.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/cult-ui-code-block.json",
+ "preview": "https://stashui.vercel.app/c/cult-ui-code-block",
+ "dupe_group": "codeblock",
+ "alternatives": [
+  {
+   "name": "code-block",
+   "origin": "Aceternity UI",
+   "npm_deps": 2,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Tabbed code viewer with spring-animated tab indicator and copy button.",
+ "description": "Client component rendering code in tabs (or solo) with a bottom-border indicator that springs to the active tab. Supports copy-to-clipboard with animated icon transition. Tab switching slides code in/out with blur effect. Horizontal…",
+ "use_when": "Showing code examples with language variants (TypeScript vs JavaScript, install vs usage).",
+ "avoid_when": "Very long code that scrolls heavily on smaller screens; animations impact performance on slower devices.",
+ "a11y": "Tab bar uses role=tablist and buttons have aria-selected. Copy button is labeled and focus-visible. No prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "tabs",
+   "type": "CodeTab[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "code",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "language",
+   "type": "string",
+   "default": "\"bash\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ]
+}

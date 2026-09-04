@@ -1,0 +1,82 @@
+{
+ "name": "container-scroll",
+ "title": "Container Scroll",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ContainerScrollTitle",
+  "ContainerScrollCard",
+  "ContainerScroll"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "3d",
+  "pure",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ContainerScroll } from \"@/components/ui/container-scroll\";\n\nexport default function ContainerScrollDemo() {\n  return (\n    <ContainerScroll\n      titleContent={\n        <div>\n          <h2 className=\"text-4xl font-bold text-foreground md:text-7xl\">\n            Scroll to reveal\n          </h2>\n          <p className=\"mt-4 text-muted-foreground text-lg\">\n            A beautiful scroll-driven perspective card effect\n          </p>\n        </div>\n      }\n    >\n      <div className=\"flex h-full items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950\">\n        <p className=\"text-2xl font-semibold text-foreground\">Your content here</p>\n      </div>\n    </ContainerScroll>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/container-scroll.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/container-scroll.json",
+ "preview": "https://stashui.vercel.app/c/container-scroll",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card rotates and scales as you scroll, with parallax title.",
+ "description": "Scroll-driven 3D effect: content card rotates and scales on scroll, title parallax translates. Exports title, card, and container subcomponents.",
+ "use_when": "Product showcase sections, scroll-reveal demos, or 3D presentation flows.",
+ "avoid_when": "Motion-sensitive users (scroll-triggered, no prefers-reduced-motion); low-end devices.",
+ "a11y": "Scroll-driven animation only. No interactive elements beyond content.",
+ "props": [
+  {
+   "name": "translate",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"mx-auto max-w-5xl text-center\", className)}",
+   "required": false
+  },
+  {
+   "name": "rotate",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

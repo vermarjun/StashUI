@@ -1,0 +1,100 @@
+{
+ "name": "components-community-pin-list",
+ "title": "Pin List",
+ "category": "data-display",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "PinList"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 21,
+ "flags": [
+  "motion",
+  "21 colors"
+ ],
+ "usage": "'use client';\n\nimport { Home, Star, Bell, Settings, Bookmark, Music } from 'lucide-react';\nimport { PinList } from '@/components/ui/components-community-pin-list';\n\nexport default function Demo() {\n  const items = [\n    { id: 1, name: 'Home', info: 'Go to homepage', icon: Home, pinned: true },\n    { id: 2, name: 'Starred', info: 'Your starred items', icon: Star, pinned: true },\n    { id: 3, name: 'Notifications', info: '3 new alerts', icon: Bell, pinned: false },\n    { id: 4, name: 'Settings', info: 'App preferences', icon: Settings, pinned: false },\n    { id: 5, name: 'Bookmarks', info: 'Saved for later', icon: Bookmark, pinned: false },\n    { id: 6, name: 'Music', info: 'Your playlists', icon: Music, pinned: false },\n  ];\n\n  return (\n    <div className=\"w-full max-w-sm mx-auto p-6\">\n      <PinList items={items} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-community-pin-list.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-community-pin-list.json",
+ "preview": "https://stashui.vercel.app/c/components-community-pin-list",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "List items snap to top when clicked to pin, spring-animated into place.",
+ "description": "Interactive list where items toggle between pinned (top section) and unpinned (bottom section). Uses Framer Motion's layout animation to smoothly reorder items and shift sections. Pinned items show solid pins; unpinned items reveal the pin…",
+ "use_when": "Organizing frequently-used items (nav, bookmarks, favorites) where users control visibility priority.",
+ "avoid_when": "Very large lists (layout animations scale poorly) or touch-only interfaces (pin toggle targets are small).",
+ "a11y": "Items are clickable divs, not buttons; focus and keyboard navigation not implemented. Layout animations do not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "items",
+   "type": "PinListItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "labels",
+   "type": "{pinned?: string; unpinned?: string}",
+   "default": "{ pinned: 'Pinned Items', unpinned: 'All Items' }",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ stiffness: 320, damping: 20, mass: 0.8, type: 'spring' }",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "labelClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "pinnedSectionClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "unpinnedSectionClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "zIndexResetDelay",
+   "type": "number",
+   "default": "500",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "list-item",
+  "data-table"
+ ]
+}

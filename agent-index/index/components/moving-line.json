@@ -1,0 +1,50 @@
+{
+ "name": "moving-line",
+ "title": "Scroll Progress Line",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Content",
+  "MovingLine"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "motion",
+  "8 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Cmp from \"@/components/ui/moving-line\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-y-auto max-h-[560px] rounded-xl bg-neutral-950 p-4\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/moving-line.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/moving-line.json",
+ "preview": "https://stashui.vercel.app/c/moving-line",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Vertical line shrinks from top based on scroll progress.",
+ "description": "Renders an SVG vertical line that retracts from the top as the user scrolls. Uses a gradient stroke with spring-based animation tracking scroll progress.",
+ "use_when": "Long-form content or pages where a visual scroll progress indicator helps users understand document length.",
+ "avoid_when": "Short pages or non-scroll contexts where the line indicator is not meaningful.",
+ "a11y": "Purely visual scroll progress indicator with no semantic content or keyboard interaction.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "decoration"
+ ]
+}

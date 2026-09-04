@@ -1,0 +1,77 @@
+{
+ "name": "Noise-TS-TW",
+ "title": "Film Grain Noise",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Noise"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\"\n\nimport Noise from \"@/components/ui/Noise\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden bg-background flex items-center justify-center\">\n      <div className=\"absolute inset-0 bg-gradient-to-br from-violet-900 via-slate-900 to-indigo-900\" />\n      <div className=\"relative z-10 flex flex-col items-center gap-3 text-center px-4\">\n        <p className=\"text-3xl font-bold text-white\">Film grain overlay</p>\n        <p className=\"text-sm text-white/60\">Animated noise texture rendered on a transparent canvas</p>\n      </div>\n      <Noise patternAlpha={25} patternRefreshInterval={3} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Noise.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Noise-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Noise-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated film grain overlay that refreshes every few frames at a configurable…",
+ "description": "Canvas 2D-rendered random noise texture that updates periodically, creating a flickering film grain effect across the entire viewport.",
+ "use_when": "Cinematic or nostalgic aesthetic, adding texture to video backdrops or adding visual depth to solid-color backgrounds.",
+ "avoid_when": "Accessibility-sensitive contexts or low-bandwidth scenarios — continuous canvas updates consume battery and bandwidth.",
+ "a11y": "Passive visual overlay; pointer-events: none so it does not intercept interactions. No keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "patternSize",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "patternScaleX",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "patternScaleY",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "patternRefreshInterval",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "patternAlpha",
+   "type": "number",
+   "default": "15",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ]
+}

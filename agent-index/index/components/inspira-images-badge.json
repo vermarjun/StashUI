@@ -1,0 +1,61 @@
+{
+ "name": "inspira-images-badge",
+ "title": "Images Badge",
+ "category": "badges",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ImagesBadge"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 22,
+ "flags": [
+  "pure",
+  "22 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ImagesBadge } from \"@/components/ui/images-badge\";\n\nconst SAMPLE_IMAGES = [\n  \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=80&fit=crop\",\n  \"https://images.unsplash.com/photo-1551434678-e076c223a692?w=100&h=80&fit=crop\",\n  \"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=100&h=80&fit=crop\",\n];\n\nexport default function ImagesBadgeDemo() {\n  return (\n    <div className=\"flex min-h-[200px] flex-col items-center justify-center gap-8 p-8\">\n      <ImagesBadge\n        text=\"3 photos\"\n        images={SAMPLE_IMAGES}\n      />\n      <ImagesBadge\n        text=\"View gallery\"\n        images={SAMPLE_IMAGES.slice(0, 2)}\n        href=\"#\"\n        target=\"_blank\"\n      />\n      <ImagesBadge\n        text=\"Large thumbnails\"\n        images={SAMPLE_IMAGES}\n        hoverImageSize={{ width: 64, height: 48 }}\n        hoverTranslateY={-50}\n        hoverSpread={28}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/images-badge.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-images-badge.json",
+ "preview": "https://stashui.vercel.app/c/inspira-images-badge",
+ "dupe_group": "imagesbadge",
+ "alternatives": [
+  {
+   "name": "images-badge",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 22
+  }
+ ],
+ "blurb": "Avatar group with overlapped images from Inspira React.",
+ "description": "Badge displaying stacked profile images via Inspira component library.",
+ "use_when": "Team or user group indicators in modern React designs.",
+ "avoid_when": "Large image counts where overlap clarity is critical.",
+ "a11y": "Decorative image stack. No semantic meaning without parent context.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "avatar",
+  "badge"
+ ]
+}

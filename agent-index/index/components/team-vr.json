@@ -1,0 +1,53 @@
+{
+ "name": "team-vr",
+ "title": "Team VR Section",
+ "category": "cards",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "VR_TEAM",
+  "TeamVR"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { TeamVR } from \"@/components/ui/team-vr\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full\">\n      <TeamVR />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/team-vr.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/team-vr.json",
+ "preview": "https://stashui.vercel.app/c/team-vr",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Team cards animate in and reveal quotes on hover with color overlay and zoom.",
+ "description": "Full-height section displaying team members with cascading blur-in animations on viewport entry. Each card removes grayscale and scales on hover, revealing a quote overlay. Uses TimelineAnimation for staggered reveals.",
+ "use_when": "Showcasing team members with dramatic entrance and interactive hover states on a dark hero section.",
+ "avoid_when": "Light-themed pages; the component hardcodes a dark neutral-950 background.",
+ "a11y": "Cards have hover states for quote reveal; no keyboard navigation for quotes. Focus handling depends on parent structure.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "fill",
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

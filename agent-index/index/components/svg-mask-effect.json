@@ -1,0 +1,89 @@
+{
+ "name": "svg-mask-effect",
+ "title": "SVG Mask Reveal",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "MaskContainer"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "import { MaskContainer } from \"@/components/ui/svg-mask-effect\";\n\nexport default function Demo() {\n  return (\n    <MaskContainer\n      revealText={\n        <p className=\"mx-auto max-w-4xl text-center text-4xl font-bold text-foreground\">\n          Move your cursor to reveal the hidden text beneath.\n        </p>\n      }\n      className=\"h-[28rem] rounded-xl\"\n    >\n      <span className=\"text-white dark:text-black\">\n        The spotlight follows your cursor.{\" \"}\n        <span className=\"text-violet-400\">Hover here</span> to expand the mask\n        and reveal what lies beneath the surface.\n      </span>\n    </MaskContainer>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/svg-mask-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/svg-mask-effect.json",
+ "preview": "https://stashui.vercel.app/c/svg-mask-effect",
+ "dupe_group": "svgmaskreveal",
+ "alternatives": [
+  {
+   "name": "svg-mask",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 7
+  }
+ ],
+ "blurb": "SVG mask spotlight that expands on hover to reveal content.",
+ "description": "A two-layer reveal component using SVG masking with smooth motion animations. Spotlight mask follows cursor and expands on hover with background color transition.",
+ "use_when": "An interactive hero section or content reveal with animated spotlight effect.",
+ "avoid_when": "On mobile or touch devices — no cursor to track. Requires /mask.svg asset in public folder.",
+ "a11y": "Both layers are in DOM but mask obscures one. No keyboard control; animation is decorative.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "revealText",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "revealSize",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-screen\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "section-background"
+ ]
+}

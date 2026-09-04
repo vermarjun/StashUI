@@ -1,0 +1,112 @@
+{
+ "name": "dock",
+ "title": "Dock",
+ "category": "navigation",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Dock",
+  "DockIcon"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport { Dock, DockIcon } from \"@/components/ui/dock\";\nimport {\n  HomeIcon,\n  SearchIcon,\n  BellIcon,\n  UserIcon,\n  SettingsIcon,\n  MailIcon,\n  BookmarkIcon,\n} from \"lucide-react\";\n\nconst iconClass = \"h-full w-full text-neutral-600 dark:text-neutral-300\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[200px] py-12\">\n      <Dock>\n        <DockIcon><HomeIcon className={iconClass} /></DockIcon>\n        <DockIcon><SearchIcon className={iconClass} /></DockIcon>\n        <DockIcon><MailIcon className={iconClass} /></DockIcon>\n        <DockIcon><BellIcon className={iconClass} /></DockIcon>\n        <DockIcon><BookmarkIcon className={iconClass} /></DockIcon>\n        <DockIcon><UserIcon className={iconClass} /></DockIcon>\n        <DockIcon><SettingsIcon className={iconClass} /></DockIcon>\n      </Dock>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/dock.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dock.json",
+ "preview": "https://stashui.vercel.app/c/dock",
+ "dupe_group": "dock",
+ "alternatives": [
+  {
+   "name": "inspira-dock",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  },
+  {
+   "name": "Dock-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 6
+  },
+  {
+   "name": "cult-ui-dock",
+   "origin": "Cult UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 19
+  }
+ ],
+ "blurb": "macOS-style dock with icon magnification on hover.",
+ "description": "Dock component (magic-ui) with icon magnification. Icons scale up smoothly as mouse approaches. Customizable icon size, magnification, and direction (top/middle/bottom).",
+ "use_when": "Desktop-like UX or app launchers where macOS-style magnification feels familiar.",
+ "avoid_when": "Touch interfaces or cramped horizontal space; magnification needs room.",
+ "a11y": "Dock items are keyboard-focusable. Icons have aria-label or sr-only text. Magnification is visual only, not critical for use.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "iconSize",
+   "type": "number",
+   "default": "DEFAULT_SIZE",
+   "required": false
+  },
+  {
+   "name": "iconMagnification",
+   "type": "number",
+   "default": "DEFAULT_MAGNIFICATION",
+   "required": false
+  },
+  {
+   "name": "disableMagnification",
+   "type": "boolean",
+   "default": "DEFAULT_DISABLEMAGNIFICATION",
+   "required": false
+  },
+  {
+   "name": "iconDistance",
+   "type": "number",
+   "default": "DEFAULT_DISTANCE",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'top' | 'middle' | 'bottom'",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ]
+}

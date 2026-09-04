@@ -1,0 +1,126 @@
+{
+ "name": "video-text",
+ "title": "Video Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "VideoText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\nimport { VideoText } from \"@/components/ui/video-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full h-64 bg-background\">\n      <VideoText\n        src=\"https://cdn.pixabay.com/video/2020/07/21/45373-443525716_large.mp4\"\n        fontSize={18}\n        fontWeight=\"bold\"\n        className=\"w-full h-full\"\n      >\n        CINEMATIC\n      </VideoText>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/video-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/video-text.json",
+ "preview": "https://stashui.vercel.app/c/video-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Video plays inside text shapes, clipped to show only where letters are.",
+ "description": "Uses SVG text as a mask over a video element. Generates a responsive SVG from text content and children props, then plays video clipped to the text outline.",
+ "use_when": "Hero sections or standout headlines with video backgrounds that need a cinematic, high-impact look.",
+ "avoid_when": "Performance-sensitive contexts; SVG mask + video on resize creates frequent re-renders.",
+ "a11y": "Text content is rendered in a sr-only span for screen readers and SEO; does not convey video content semantically.",
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "autoPlay",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "muted",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "preload",
+   "type": "\"auto\" | \"metadata\" | \"none\"",
+   "default": "\"auto\"",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "string | number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "fontWeight",
+   "type": "string | number",
+   "default": "\"bold\"",
+   "required": false
+  },
+  {
+   "name": "textAnchor",
+   "type": "string",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "dominantBaseline",
+   "type": "string",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "fontFamily",
+   "type": "string",
+   "default": "\"sans-serif\"",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": "\"div\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "headline",
+  "decoration"
+ ]
+}

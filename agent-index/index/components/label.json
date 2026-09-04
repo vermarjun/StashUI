@@ -1,0 +1,61 @@
+{
+ "name": "label",
+ "title": "Form Label",
+ "category": "misc",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Label"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-label"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "import { Label } from \"@/components/ui/label\";\n\nexport default function Demo() {\n  return (\n    <form className=\"w-full max-w-sm space-y-2\">\n      <Label htmlFor=\"email\">Email address</Label>\n      <input\n        id=\"email\"\n        type=\"email\"\n        placeholder=\"you@example.com\"\n        className=\"flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring\"\n      />\n      <p className=\"text-xs text-muted-foreground\">\n        We&apos;ll never share your email with anyone else.\n      </p>\n    </form>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/label.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/label.json",
+ "preview": "https://stashui.vercel.app/c/label",
+ "dupe_group": "formlabel",
+ "alternatives": [
+  {
+   "name": "origin-ui-label",
+   "origin": "Origin UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Styled form label with dark mode support and disabled state handling.",
+ "description": "A wrapper around Radix UI's label primitive with semantic font sizing, dark mode, and built-in peer-disabled opacity styling.",
+ "use_when": "Labeling any form input, especially when dark mode support is needed.",
+ "avoid_when": "For non-form text — use plain `<span>` or typography components instead.",
+ "a11y": "Native HTML label with htmlFor support via Radix primitive. Respects peer-disabled state for accessibility.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

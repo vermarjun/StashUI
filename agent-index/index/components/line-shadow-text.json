@@ -1,0 +1,68 @@
+{
+ "name": "line-shadow-text",
+ "title": "Line Shadow Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "LineShadowText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { LineShadowText } from \"@/components/ui/line-shadow-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <h1 className=\"text-5xl font-bold text-foreground\">\n        <LineShadowText shadowColor=\"currentColor\">\n          Ship faster.\n        </LineShadowText>\n      </h1>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/line-shadow-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/line-shadow-text.json",
+ "preview": "https://stashui.vercel.app/c/line-shadow-text",
+ "dupe_group": "lineshadowtext",
+ "alternatives": [
+  {
+   "name": "inspira-line-shadow-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Underline glows and animates beneath text.",
+ "description": "A colored line shadow beneath text that pulses or traces with a glow effect, non-interactive and continuous.",
+ "use_when": "Accent headings or feature text that needs underline emphasis.",
+ "avoid_when": "Small or body text — shadow adds visual clutter.",
+ "a11y": "Purely decorative. No keyboard or focus interaction.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "shadowColor",
+   "type": "string",
+   "default": "\"black\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "shadow"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

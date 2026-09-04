@@ -1,0 +1,60 @@
+{
+ "name": "inspira-interactive-hover-button",
+ "title": "Interactive Hover Button",
+ "category": "buttons",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "InteractiveHoverButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { InteractiveHoverButton } from \"@/components/ui/interactive-hover-button\";\n\nexport default function InteractiveHoverButtonDemo() {\n  return (\n    <div className=\"flex min-h-[200px] items-center justify-center gap-4\">\n      <InteractiveHoverButton text=\"Get Started\" />\n      <InteractiveHoverButton text=\"Learn More\" className=\"border-primary\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/interactive-hover-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-interactive-hover-button.json",
+ "preview": "https://stashui.vercel.app/c/inspira-interactive-hover-button",
+ "dupe_group": "interactivehoverbutton",
+ "alternatives": [
+  {
+   "name": "interactive-hover-button",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Button text slides up on hover.",
+ "description": "A button where the text slides up and fades in on hover, revealing an underline. Uses CSS transitions for smooth animation.",
+ "use_when": "You need a polished interactive button with smooth text-motion feedback.",
+ "avoid_when": "On touch-only devices where hover is unreliable.",
+ "a11y": "Standard button semantics. Text animation is visual feedback. No aria attributes needed.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

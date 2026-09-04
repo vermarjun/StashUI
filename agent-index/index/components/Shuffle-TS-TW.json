@@ -1,0 +1,186 @@
+{
+ "name": "Shuffle-TS-TW",
+ "title": "Shuffle",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Shuffle"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0",
+  "@gsap/react@^2.1.2"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\nimport Shuffle from \"@/components/ui/Shuffle\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[340px] bg-background p-8\">\n      <Shuffle\n        text=\"SHUFFLE\"\n        tag=\"h2\"\n        className=\"text-foreground text-5xl tracking-widest\"\n        shuffleDirection=\"up\"\n        duration={0.35}\n        stagger={0.03}\n        shuffleTimes={2}\n        triggerOnHover\n        loop={false}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Shuffle.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Shuffle-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Shuffle-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Characters shuffle in from a direction (up/down/left/right) when scrolled into…",
+ "description": "Uses GSAP SplitText to split into characters and animate each shuffling in from a specified direction. Triggered on scroll visibility or on hover. Supports looping, color transitions, and respects prefers-reduced-motion.",
+ "use_when": "A heading wants a dynamic shuffle reveal that's tied to scroll progress or hover interaction.",
+ "avoid_when": "When instant readability is required; the shuffle animation takes time to complete.",
+ "a11y": "Text is split into character elements and animated. Readability is maintained after animation completes. Respects prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "shuffleDirection",
+   "type": "'left' | 'right' | 'up' | 'down'",
+   "default": "'right'",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "maxDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string | ((t: number) => number)",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "rootMargin",
+   "type": "string",
+   "default": "'-100px'",
+   "required": false
+  },
+  {
+   "name": "tag",
+   "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
+   "default": "'p'",
+   "required": false
+  },
+  {
+   "name": "textAlign",
+   "type": "React.CSSProperties['textAlign']",
+   "default": "'center'",
+   "required": false
+  },
+  {
+   "name": "onShuffleComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "shuffleTimes",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "animationMode",
+   "type": "'random' | 'evenodd'",
+   "default": "'evenodd'",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "loopDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "scrambleCharset",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "colorFrom",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colorTo",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "triggerOnce",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "respectReducedMotion",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "triggerOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

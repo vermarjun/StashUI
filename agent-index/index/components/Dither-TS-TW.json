@@ -1,0 +1,108 @@
+{
+ "name": "Dither-TS-TW",
+ "title": "Dither",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Dither"
+ ],
+ "npm_deps": [
+  "@react-three/fiber@^9.3.0",
+  "@react-three/postprocessing@^3.0.4",
+  "postprocessing@^6.36.0",
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "heavy"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/Dither\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"600px\" }}>\n      <Cmp\n        waveSpeed={0.05}\n        waveFrequency={3}\n        waveAmplitude={0.3}\n        waveColor={[0.5, 0.5, 0.5]}\n        colorNum={4}\n        pixelSize={2}\n        enableMouseInteraction={true}\n        mouseRadius={1}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Dither.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Dither-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Dither-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Dithered wave pattern with retro pixelated color quantization.",
+ "description": "React Three Fiber scene with FBM wave animation combined with Bayer dithering post-processing. Supports wave color, speed, frequency, pixel size, and optional mouse interaction. Uses Effect Composer for post-processing.",
+ "use_when": "Retro or lo-fi aesthetic backgrounds where dithering and color reduction create intentional visual degradation.",
+ "avoid_when": "High-fidelity designs or when smooth animations are required; dithering creates visible banding.",
+ "a11y": "Canvas-based, no semantic content. Mouse interaction is optional. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "waveSpeed",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "waveFrequency",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "waveAmplitude",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "waveColor",
+   "type": "[number, number, number]",
+   "default": "[0.5, 0.5, 0.5]",
+   "required": false
+  },
+  {
+   "name": "colorNum",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "pixelSize",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "disableAnimation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enableMouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseRadius",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

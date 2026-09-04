@@ -1,0 +1,96 @@
+{
+ "name": "noise-background",
+ "title": "Noise Background",
+ "category": "backgrounds",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "NoiseBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "pure",
+  "5 colors"
+ ],
+ "usage": "import { NoiseBackground } from \"@/components/ui/noise-background\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden flex items-center justify-center bg-neutral-100 dark:bg-neutral-900\">\n      <NoiseBackground className=\"h-full w-full flex items-center justify-center\" containerClassName=\"w-full h-full\">\n        <p className=\"text-lg font-medium text-foreground/70\">\n          Noise Background\n        </p>\n      </NoiseBackground>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/noise-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/noise-background.json",
+ "preview": "https://stashui.vercel.app/c/noise-background",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated gradient layers moving with spring physics over noise texture.",
+ "description": "Motion-based background with multiple coloured gradient layers that move organically within the container. Layered with noise texture and optional backdrop blur.",
+ "use_when": "A sophisticated, animated container background with moving gradients and fine noise texture.",
+ "avoid_when": "Accessibility-sensitive contexts — continuous animation with no prefers-reduced-motion guard.",
+ "a11y": "Wrapper component with content slot (z-10). Animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute inset-0\"",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "gradientColors",
+   "type": "string[]",
+   "default": "[\"rgb(255, 100, 150)\", \"rgb(100, 150, 255)\", \"rgb(255, 200, 100)\"]",
+   "required": false
+  },
+  {
+   "name": "noiseIntensity",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "backdropBlur",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animating",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card"
+ ]
+}

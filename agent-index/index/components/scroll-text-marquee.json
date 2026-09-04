@@ -1,0 +1,56 @@
+{
+ "name": "scroll-text-marquee",
+ "title": "Scroll Text Marquee",
+ "category": "text",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "ScrollBaseAnimation"
+ ],
+ "npm_deps": [
+  "motion",
+  "@motionone/utils"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "import ScrollBaseAnimation from \"@/components/ui/scroll-text-marque\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full overflow-hidden py-12\">\n      <ScrollBaseAnimation\n        baseVelocity={-4}\n        clasname=\"font-bold tracking-[-0.06em] leading-none text-foreground\"\n      >\n        Velocity-driven marquee\n      </ScrollBaseAnimation>\n      <ScrollBaseAnimation\n        baseVelocity={4}\n        clasname=\"font-bold tracking-[-0.06em] leading-none text-muted-foreground\"\n      >\n        Scroll to change speed\n      </ScrollBaseAnimation>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/scroll-text-marque.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-text-marquee.json",
+ "preview": "https://stashui.vercel.app/c/scroll-text-marquee",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text scrolls horizontally as a marquee.",
+ "description": "Horizontally scrolling text loop, typically used for news tickers or flowing announcements.",
+ "use_when": "News feeds, announcements, or atmospheric section backgrounds.",
+ "avoid_when": "Critical content — marquee speed makes text skimmable but not stoppable.",
+ "a11y": "Text scrolls continuously with no pause control. Screen readers may see the loop.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "section-background",
+  "decoration"
+ ]
+}

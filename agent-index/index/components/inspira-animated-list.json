@@ -1,0 +1,80 @@
+{
+ "name": "inspira-animated-list",
+ "title": "Animated List",
+ "category": "notifications",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimatedList",
+  "Notification"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { AnimatedList, Notification } from \"@/components/ui/animated-list\"\n\nconst notifications = [\n  { name: \"Payment received\", description: \"$250 from Alice\", time: \"just now\", icon: \"💸\", color: \"#00C9A7\" },\n  { name: \"New follower\", description: \"Bob started following you\", time: \"5m ago\", icon: \"👤\", color: \"#FFB800\" },\n  { name: \"New message\", description: \"Carol: Hey, how are you?\", time: \"10m ago\", icon: \"💬\", color: \"#FF3D71\" },\n  { name: \"Order shipped\", description: \"Your order is on its way\", time: \"1h ago\", icon: \"📦\", color: \"#1E86FF\" },\n  { name: \"Meeting reminder\", description: \"Team sync in 30 minutes\", time: \"25m ago\", icon: \"📅\", color: \"#A855F7\" },\n]\n\nexport default function AnimatedListDemo() {\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center overflow-hidden bg-white p-8 dark:bg-gray-950\">\n      <AnimatedList delay={1500} className=\"w-full max-w-[400px]\">\n        {notifications.map((n, i) => (\n          <Notification key={i} {...n} />\n        ))}\n      </AnimatedList>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/animated-list.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-animated-list.json",
+ "preview": "https://stashui.vercel.app/c/inspira-animated-list",
+ "dupe_group": "animatedlist",
+ "alternatives": [
+  {
+   "name": "animated-list",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "AnimatedList-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 9
+  }
+ ],
+ "blurb": "Auto-cycling notification list with staggered enter/exit animations and delay…",
+ "description": "AnimatedList component that receives children array and cycles through items at configurable delay via useEffect timer loop. Each item animates in with scale/opacity spring, older items exit. Also exports Notification component for…",
+ "use_when": "You need an auto-playing notification feed showing activity timeline with animation.",
+ "avoid_when": "For interactive notification centers; use a popover-based system instead.",
+ "a11y": "Auto-cycling may be distracting; component respects prefers-reduced-motion via motion library.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"mx-auto w-full\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "sidebar",
+  "decoration"
+ ]
+}

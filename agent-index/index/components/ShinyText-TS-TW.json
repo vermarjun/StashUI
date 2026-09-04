@@ -1,0 +1,116 @@
+{
+ "name": "ShinyText-TS-TW",
+ "title": "ShinyText",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ShinyText"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport ShinyText from \"@/components/ui/ShinyText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full min-h-[300px] gap-6 bg-background p-8\">\n      <ShinyText\n        text=\"Shine bright like a component.\"\n        speed={2.5}\n        className=\"text-3xl font-semibold tracking-tight\"\n        color=\"hsl(var(--muted-foreground))\"\n        shineColor=\"hsl(var(--foreground))\"\n        spread={100}\n      />\n      <ShinyText\n        text=\"Light moves. Text stays.\"\n        speed={3}\n        className=\"text-xl font-medium\"\n        color=\"hsl(var(--muted-foreground) / 0.7)\"\n        shineColor=\"hsl(var(--foreground))\"\n        spread={80}\n        delay={1}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ShinyText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ShinyText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ShinyText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A bright highlight sweeps across text from left to right, looping continuously.",
+ "description": "Renders text with a moving linear gradient shine effect that sweeps horizontally. Supports directional control, yoyo (bidirectional) looping, configurable speed and spread angle, and optional pause on hover.",
+ "use_when": "A headline or CTA wants a subtle, elegant lighting effect that draws attention without distraction.",
+ "avoid_when": "Accessibility-critical text where the animation might interfere with readability.",
+ "a11y": "Text is readable; shine is a visual overlay using background-clip. Motion can be paused on hover.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#b5b5b5'",
+   "required": false
+  },
+  {
+   "name": "shineColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "spread",
+   "type": "number",
+   "default": "120",
+   "required": false
+  },
+  {
+   "name": "yoyo",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'left' | 'right'",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "primary-cta"
+ ]
+}

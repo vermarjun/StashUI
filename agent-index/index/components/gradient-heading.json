@@ -1,0 +1,84 @@
+{
+ "name": "gradient-heading",
+ "title": "Gradient Heading",
+ "category": "text",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "GradientHeading"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-slot"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "12 colors"
+ ],
+ "usage": "import { GradientHeading } from \"@/components/ui/gradient-heading\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[300px] w-full flex-col items-center justify-center gap-6 px-8 py-12\">\n      <GradientHeading size=\"xl\" weight=\"bold\">\n        Ship faster with beautiful UI\n      </GradientHeading>\n      <GradientHeading size=\"md\" variant=\"secondary\" weight=\"semi\">\n        Composable components for every project\n      </GradientHeading>\n      <GradientHeading size=\"sm\" variant=\"pink\" weight=\"base\">\n        Designed with Tailwind v4 & Radix\n      </GradientHeading>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/gradient-heading.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/gradient-heading.json",
+ "preview": "https://stashui.vercel.app/c/gradient-heading",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text with a static gradient fill and responsive sizing variants.",
+ "description": "A flexible heading component with configurable gradient fills, sizes, and font weights. Uses Tailwind utilities and CVA for variant management.",
+ "use_when": "Headings want a polished gradient appearance without animation.",
+ "avoid_when": "When animated gradients or other motion effects are needed.",
+ "a11y": "Text is fully readable via background-clip; uses semantic heading elements.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "'default' | 'pink' | 'light' | 'secondary'",
+   "default": "default",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "'default' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl'",
+   "default": "default",
+   "required": false
+  },
+  {
+   "name": "weight",
+   "type": "'default' | 'thin' | 'base' | 'semi' | 'bold' | 'black'",
+   "default": "default",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

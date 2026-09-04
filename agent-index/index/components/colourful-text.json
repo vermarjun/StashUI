@@ -1,0 +1,61 @@
+{
+ "name": "colourful-text",
+ "title": "Colourful Text",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ColourfulText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "pure",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\nimport ColourfulText from \"@/components/ui/colourful-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full max-w-xl p-8\">\n      <h1 className=\"text-4xl font-bold\">\n        <ColourfulText text=\"Hello World\" />\n      </h1>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/colourful-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/colourful-text.json",
+ "preview": "https://stashui.vercel.app/c/colourful-text",
+ "dupe_group": "colourfultext",
+ "alternatives": [
+  {
+   "name": "inspira-colourful-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 11
+  }
+ ],
+ "blurb": "Each character cycles through a rainbow palette and bounces with staggered…",
+ "description": "Renders each character with motion animations including color cycling from a 10-color palette, subtle vertical bounce, scale pulse, and blur effect. Colors reshuffle every 5 seconds.",
+ "use_when": "A playful heading wants maximum vibrancy and visual interest with per-character color animation.",
+ "avoid_when": "Professional or corporate contexts where muted colors are required.",
+ "a11y": "Characters are rendered as individual spans but content is readable and in DOM order.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

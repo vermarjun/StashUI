@@ -1,0 +1,109 @@
+{
+ "name": "magic-ui-meteors",
+ "title": "Meteors",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Meteors"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "import { Meteors } from \"@/components/ui/meteors\";\n\nexport default function Demo() {\n  return <Meteors />;\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/meteors.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magic-ui-meteors.json",
+ "preview": "https://stashui.vercel.app/c/magic-ui-meteors",
+ "dupe_group": "meteors",
+ "alternatives": [
+  {
+   "name": "meteors",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  },
+  {
+   "name": "aceternity-ui-meteors",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  },
+  {
+   "name": "inspira-meteors",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  }
+ ],
+ "blurb": "Meteors rain diagonally across the screen with randomized timing.",
+ "description": "Renders animated particles that fall diagonally across the viewport. Each meteor has random delays and durations for a natural, staggered falling effect.",
+ "use_when": "Background effects for hero sections or immersive pages where falling particles add atmospheric drama.",
+ "avoid_when": "Performance-sensitive contexts or high-density layouts — many animated elements can impact rendering.",
+ "a11y": "Purely decorative animation with no semantic content or interactive elements.",
+ "props": [
+  {
+   "name": "number",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "minDelay",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "maxDelay",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "minDuration",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "maxDuration",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "angle",
+   "type": "number",
+   "default": "215",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

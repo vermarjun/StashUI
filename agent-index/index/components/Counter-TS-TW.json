@@ -1,0 +1,97 @@
+{
+ "name": "Counter-TS-TW",
+ "title": "Animated Number Counter",
+ "category": "data-display",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Counter"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport Counter from \"@/components/ui/Counter\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 w-full min-h-40 p-8\">\n      <Counter\n        value={12345}\n        fontSize={64}\n        textColor=\"#ffffff\"\n        gradientFrom=\"#000000\"\n        gradientTo=\"transparent\"\n      />\n      <Counter\n        value={9.99}\n        fontSize={48}\n        textColor=\"#22c55e\"\n        gradientFrom=\"#000000\"\n        gradientTo=\"transparent\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Counter.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Counter-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Counter-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Digit-by-digit animated number counter with sliding digits and gradient…",
+ "description": "Sophisticated number counter using Framer Motion where each digit scrolls independently. Supports custom formatting, automatic place detection, and decorative gradient masks. Highly configurable styling and animation.",
+ "use_when": "Displaying counts or metrics where per-digit animation creates a premium feel.",
+ "avoid_when": "Simple number displays or performance-critical contexts where per-digit animation is overhead.",
+ "a11y": "Animated digits are visually-only; consider adding static number text for screen readers.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "padding",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "places",
+   "type": "PlaceValue[]",
+   "default": "auto-detected",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'inherit'",
+   "required": false
+  },
+  {
+   "name": "containerStyle",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "digitStyle",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "stat",
+  "chart"
+ ]
+}

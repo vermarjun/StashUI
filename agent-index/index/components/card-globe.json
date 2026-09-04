@@ -1,0 +1,107 @@
+{
+ "name": "card-globe",
+ "title": "Card Globe",
+ "category": "cards",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Earth"
+ ],
+ "npm_deps": [
+  "cobe"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import Cmp from \"@/components/ui/globe\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/globe.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/card-globe.json",
+ "preview": "https://stashui.vercel.app/c/card-globe",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D globe visualization with customizable colors and lighting.",
+ "description": "Canvas-based 3D Earth globe with dynamic lighting, markers, and glow. Highly configurable: base color, marker color, glow color, lighting diffuse, map samples, rotation angle. Supports dark mode.",
+ "use_when": "Global reach showcases, world maps, or location-based feature cards.",
+ "avoid_when": "Devices without WebGL support or for users sensitive to 3D graphics.",
+ "a11y": "Canvas element — decorative only. No text content. Consider adding aria-label or descriptive text nearby.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "theta",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "dark",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1.1",
+   "required": false
+  },
+  {
+   "name": "diffuse",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "mapSamples",
+   "type": "number",
+   "default": "40000",
+   "required": false
+  },
+  {
+   "name": "mapBrightness",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "[number, number, number]",
+   "default": "[0.4, 0.6509, 1]",
+   "required": false
+  },
+  {
+   "name": "markerColor",
+   "type": "[number, number, number]",
+   "default": "[1, 0, 0]",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "[number, number, number]",
+   "default": "[0.2745, 0.5765, 0.898]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card"
+ ]
+}

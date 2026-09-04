@@ -1,0 +1,58 @@
+{
+ "name": "primitives-texts-splitting",
+ "title": "Splitting Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "SplittingText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { SplittingText } from '@/components/ui/primitives-texts-splitting';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 w-full p-10\">\n      <SplittingText\n        text=\"Animate every character\"\n        type=\"chars\"\n        inView\n        className=\"text-3xl font-bold\"\n      />\n      <SplittingText\n        text=\"Reveal words one by one\"\n        type=\"words\"\n        inView\n        delay={200}\n        className=\"text-2xl text-neutral-600 dark:text-neutral-300\"\n      />\n      <SplittingText\n        text={['Line one appears first', 'Then line two follows', 'Finally line three']}\n        type=\"lines\"\n        inView\n        delay={400}\n        className=\"text-lg text-neutral-500 text-center\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-splitting.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-splitting.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-splitting",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text splits and spreads apart with animation.",
+ "description": "Characters or words separate and move apart, then recombine, often on scroll or hover.",
+ "use_when": "Dramatic entrance or hover effects on headlines.",
+ "avoid_when": "Body copy — splitting destroys readability.",
+ "a11y": "Text may be unreachable or unreadable during animation.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

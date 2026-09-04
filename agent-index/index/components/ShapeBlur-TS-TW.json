@@ -1,0 +1,98 @@
+{
+ "name": "ShapeBlur-TS-TW",
+ "title": "Shape Blur Effect",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ShapeBlur"
+ ],
+ "npm_deps": [
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl"
+ ],
+ "usage": "\"use client\"\n\nimport ShapeBlur from \"@/components/ui/ShapeBlur\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden bg-black\">\n      <ShapeBlur\n        variation={0}\n        shapeSize={1.2}\n        roundness={0.4}\n        borderSize={0.05}\n        circleSize={0.3}\n        circleEdge={0.5}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ShapeBlur.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ShapeBlur-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ShapeBlur-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Shape with a blur halo that follows the cursor.",
+ "description": "Renders a geometric shape (rectangle, circle, or polygon) with a glowing blur halo that tracks pointer movement using shader sampling distance fields.",
+ "use_when": "Immersive backgrounds or interactive focal points that react to pointer presence.",
+ "avoid_when": "Touch-only devices (no pointer); requires a sized parent container.",
+ "a11y": "Canvas wrapper only; no keyboard interaction or prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "variation",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "pixelRatioProp",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "shapeSize",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "roundness",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "borderSize",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "circleSize",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "circleEdge",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

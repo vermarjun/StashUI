@@ -1,0 +1,150 @@
+{
+ "name": "particle-image",
+ "title": "Particle Image",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ParticleImage"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { ParticleImage } from \"@/components/ui/particle-image\";\n\nexport default function ParticleImageDemo() {\n  return (\n    <div className=\"flex min-h-64 flex-col items-center justify-center gap-4 p-8\">\n      <p className=\"text-sm text-muted-foreground mb-2\">\n        Hover over the canvas to interact with particles\n      </p>\n      <ParticleImage\n        imageSrc=\"/placeholder-logo.png\"\n        canvasWidth=\"300\"\n        canvasHeight=\"200\"\n        particleGap=\"3\"\n        particleSize=\"2\"\n        gravity=\"0.08\"\n        mouseForce=\"30\"\n        initPosition=\"random\"\n        initDirection=\"random\"\n        renderer=\"default\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/particle-image.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/particle-image.json",
+ "preview": "https://stashui.vercel.app/c/particle-image",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image breaks into particles that react to cursor movement with physics…",
+ "description": "Renders an image as animated particles responding to cursor proximity. Physics-based simulation with configurable gravity, particle size, and motion behavior.",
+ "use_when": "Interactive hero sections or playful displays where particle effects create visual engagement and dynamism.",
+ "avoid_when": "Performance-sensitive devices — particle physics simulation can be GPU-intensive.",
+ "a11y": "Particle animation is visual only; no semantic content or keyboard interaction.",
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"hidden h-32 w-32\", className)}",
+   "required": false
+  },
+  {
+   "name": "canvasWidth",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "canvasHeight",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "gravity",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "particleSize",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "particleGap",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mouseForce",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "renderer",
+   "type": "\"default\" | \"webgl\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colorArr",
+   "type": "number[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initPosition",
+   "type": "\"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"misplaced\" | \"none\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initDirection",
+   "type": "\"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"none\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fadePosition",
+   "type": "\"explode\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"random\" | \"none\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fadeDirection",
+   "type": "\"random\" | \"top\" | \"left\" | \"bottom\" | \"right\" | \"none\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "noise",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "responsiveWidth",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "decoration"
+ ]
+}

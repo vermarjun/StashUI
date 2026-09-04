@@ -1,0 +1,115 @@
+{
+ "name": "link-preview",
+ "title": "Link Preview",
+ "category": "tooltips",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "LinkPreview"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-hover-card",
+  "qss",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "motion",
+  "heavy",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\nimport { LinkPreview } from \"@/components/ui/link-preview\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[320px] flex-col items-center justify-center gap-6 p-12 text-center\">\n      <p className=\"text-sm text-muted-foreground\">Hover over the links to see a preview</p>\n      <p className=\"text-lg font-medium text-foreground\">\n        Built with{\" \"}\n        <LinkPreview\n          url=\"https://nextjs.org\"\n          isStatic\n          imageSrc=\"https://assets.vercel.com/image/upload/v1662130559/nextjs/og.png\"\n          width={200}\n          height={125}\n          className=\"font-bold text-foreground underline underline-offset-4\"\n        >\n          Next.js\n        </LinkPreview>{\" \"}\n        and deployed on{\" \"}\n        <LinkPreview\n          url=\"https://vercel.com\"\n          isStatic\n          imageSrc=\"https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png\"\n          width={200}\n          height={125}\n          className=\"font-bold text-foreground underline underline-offset-4\"\n        >\n          Vercel\n        </LinkPreview>\n        .\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/link-preview.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/link-preview.json",
+ "preview": "https://stashui.vercel.app/c/link-preview",
+ "dupe_group": "linkpreview",
+ "alternatives": [
+  {
+   "name": "inspira-link-preview",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Link that shows a website or image preview on hover, with spring-based motion…",
+ "description": "Radix HoverCard-based link preview that displays a screenshot (live or static) with spring-animated entrance. Preview translates based on cursor position within the link.",
+ "use_when": "Rich link previews in documentation, blogs, or social feeds that need smooth spring physics.",
+ "avoid_when": "Touch-only interfaces; requires hover. External API dependency (microlink.io) may introduce delays.",
+ "a11y": "Link is keyboard-focusable and semantic; preview appears on hover only.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "url",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"text-black dark:text-white\", className)}",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "125",
+   "required": false
+  },
+  {
+   "name": "quality",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "layout",
+   "type": "string",
+   "default": "\"fixed\"",
+   "required": false
+  },
+  {
+   "name": "isStatic",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "decoration"
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "name": "Masonry-TS-TW",
+ "title": "Masonry Gallery",
+ "category": "media",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Masonry"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport Masonry from \"@/components/ui/Masonry\";\n\nconst items = [\n  {\n    id: \"1\",\n    img: \"https://picsum.photos/seed/masonry1/400/600\",\n    url: \"https://picsum.photos\",\n    height: 600,\n  },\n  {\n    id: \"2\",\n    img: \"https://picsum.photos/seed/masonry2/400/400\",\n    url: \"https://picsum.photos\",\n    height: 400,\n  },\n  {\n    id: \"3\",\n    img: \"https://picsum.photos/seed/masonry3/400/500\",\n    url: \"https://picsum.photos\",\n    height: 500,\n  },\n  {\n    id: \"4\",\n    img: \"https://picsum.photos/seed/masonry4/400/350\",\n    url: \"https://picsum.photos\",\n    height: 350,\n  },\n  {\n    id: \"5\",\n    img: \"https://picsum.photos/seed/masonry5/400/480\",\n    url: \"https://picsum.photos\",\n    height: 480,\n  },\n  {\n    id: \"6\",\n    img: \"https://picsum.photos/seed/masonry6/400/420\",\n    url: \"https://picsum.photos\",\n    height: 420,\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full\" style={{ height: \"500px\" }}>\n      <Masonry items={items} animateFrom=\"bottom\" scaleOnHover />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Masonry.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Masonry-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Masonry-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Responsive masonry grid with entry animations and scale-on-hover effects.",
+ "description": "Arranges images in columns that reflow on resize. Entry animations stagger items from a direction with optional blur fade. Hover scales items and can blend a gradient overlay.",
+ "use_when": "Showcasing a portfolio or product gallery with varied aspect ratios and pronounced visual entry.",
+ "avoid_when": "Static galleries or when images must be non-interactive. Requires a sized container and GSAP animations.",
+ "a11y": "Images render as background images, not img tags. Items are clickable but offer no keyboard interaction. No focus styles or prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "items",
+   "type": "Item[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "animateFrom",
+   "type": "'bottom' | 'top' | 'left' | 'right' | 'center' | 'random'",
+   "default": "'bottom'",
+   "required": false
+  },
+  {
+   "name": "scaleOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hoverScale",
+   "type": "number",
+   "default": "0.95",
+   "required": false
+  },
+  {
+   "name": "blurToFocus",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "colorShiftOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

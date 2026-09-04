@@ -1,0 +1,103 @@
+{
+ "name": "CardNav-TS-TW",
+ "title": "CardNav",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "CardNav"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0",
+  "react-icons@^5.5.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport CardNav from \"@/components/ui/CardNav\";\n\nconst items = [\n  {\n    label: \"Products\",\n    bgColor: \"#120F17\",\n    textColor: \"#ffffff\",\n    links: [\n      { label: \"Components\",  href: \"#\", ariaLabel: \"Components\" },\n      { label: \"Templates\",   href: \"#\", ariaLabel: \"Templates\" },\n      { label: \"Icons\",       href: \"#\", ariaLabel: \"Icons\" },\n    ],\n  },\n  {\n    label: \"Resources\",\n    bgColor: \"#1e1b4b\",\n    textColor: \"#c7d2fe\",\n    links: [\n      { label: \"Documentation\", href: \"#\", ariaLabel: \"Documentation\" },\n      { label: \"Blog\",          href: \"#\", ariaLabel: \"Blog\" },\n      { label: \"Changelog\",     href: \"#\", ariaLabel: \"Changelog\" },\n    ],\n  },\n  {\n    label: \"Company\",\n    bgColor: \"#0f172a\",\n    textColor: \"#94a3b8\",\n    links: [\n      { label: \"About\",   href: \"#\", ariaLabel: \"About\" },\n      { label: \"Careers\", href: \"#\", ariaLabel: \"Careers\" },\n      { label: \"Contact\", href: \"#\", ariaLabel: \"Contact\" },\n    ],\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[340px] bg-gray-100 overflow-visible rounded-xl flex items-start justify-center pt-6\">\n      <CardNav\n        logo=\"https://picsum.photos/seed/cardnav/120/32\"\n        logoAlt=\"Brand\"\n        items={items}\n        baseColor=\"#ffffff\"\n        menuColor=\"#120F17\"\n        buttonBgColor=\"#120F17\"\n        buttonTextColor=\"#ffffff\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/CardNav.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/CardNav-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/CardNav-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Navigation bar expands to reveal card-based submenu with staggered entrance.",
+ "description": "A GSAP-driven mega menu that animates from a 60px bar to full height on click. Cards slide up and fade in with stagger. Responsive: calculates dynamic height on mobile, maintains fixed height on desktop. Includes logo and icon-based links.",
+ "use_when": "You need a sophisticated navigation menu with grouped card-based categories.",
+ "avoid_when": "Simple linear navigation — this is optimized for multi-level hierarchies.",
+ "a11y": "Hamburger icon toggles menu. Links have ariaLabel. Resize events update height. No keyboard navigation beyond clicks.",
+ "props": [
+  {
+   "name": "logo",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "logoAlt",
+   "type": "string",
+   "default": "'Logo'",
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "CardNavItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "menuColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "buttonBgColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "buttonTextColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

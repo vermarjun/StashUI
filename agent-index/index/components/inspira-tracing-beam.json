@@ -1,0 +1,60 @@
+{
+ "name": "inspira-tracing-beam",
+ "title": "Tracing Beam Effect",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TracingBeam"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "pure",
+  "11 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { TracingBeam } from \"@/components/ui/tracing-beam\";\n\nconst content = [\n  {\n    title: \"Getting Started\",\n    description:\n      \"Begin your journey with our comprehensive documentation. Learn the fundamentals and set up your development environment in minutes.\",\n  },\n  {\n    title: \"Core Concepts\",\n    description:\n      \"Understand the architecture and design principles that power the system. Dive deep into the core abstractions and how they work together.\",\n  },\n  {\n    title: \"Advanced Usage\",\n    description:\n      \"Explore advanced patterns and configurations. Learn how to customize and extend the system to fit your specific needs.\",\n  },\n  {\n    title: \"Deployment\",\n    description:\n      \"Ship your application with confidence. Follow our battle-tested deployment guide to get your project live in production.\",\n  },\n];\n\nexport default function TracingBeamDemo() {\n  return (\n    <div className=\"bg-white dark:bg-neutral-950 py-10\">\n      <TracingBeam>\n        <div className=\"mx-auto max-w-2xl space-y-12 px-4 py-8\">\n          {content.map((item, idx) => (\n            <div key={idx} className=\"space-y-3\">\n              <h2 className=\"text-2xl font-bold text-neutral-800 dark:text-neutral-200\">\n                {item.title}\n              </h2>\n              <p className=\"text-neutral-600 dark:text-neutral-400 leading-relaxed\">\n                {item.description}\n              </p>\n              <div className=\"h-px bg-neutral-200 dark:bg-neutral-800\" />\n            </div>\n          ))}\n        </div>\n      </TracingBeam>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/tracing-beam.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-tracing-beam.json",
+ "preview": "https://stashui.vercel.app/c/inspira-tracing-beam",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Glowing line traces down content on scroll, marking progress through a page.",
+ "description": "Wraps content and renders a winding SVG line with a spring-animated gradient beam that follows scroll position down the page.",
+ "use_when": "Long-form documentation, timelines, or story-driven pages where visual progress tracking enhances navigation and…",
+ "avoid_when": "Short single-viewport pages — the effect requires scrollable height to be meaningful.",
+ "a11y": "SVG is marked `aria-hidden`; focus and keyboard navigation work on child content. Visual progress tracking only.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative mx-auto h-full w-full max-w-4xl\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "decoration"
+ ]
+}

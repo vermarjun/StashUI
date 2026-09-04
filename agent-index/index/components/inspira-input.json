@@ -1,0 +1,54 @@
+{
+ "name": "inspira-input",
+ "title": "Spotlight Input",
+ "category": "inputs",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "IInput"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "pure",
+  "11 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { IInput } from \"@/components/ui/input\";\n\nexport default function InputDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-6 p-8 dark:bg-zinc-900\">\n      <div className=\"w-full max-w-sm space-y-2\">\n        <label className=\"text-sm font-medium text-neutral-700 dark:text-neutral-200\">\n          Email\n        </label>\n        <IInput\n          type=\"email\"\n          placeholder=\"you@example.com\"\n        />\n      </div>\n      <div className=\"w-full max-w-sm space-y-2\">\n        <label className=\"text-sm font-medium text-neutral-700 dark:text-neutral-200\">\n          Password\n        </label>\n        <IInput\n          type=\"password\"\n          placeholder=\"••••••••\"\n        />\n      </div>\n      <div className=\"w-full max-w-sm space-y-2\">\n        <label className=\"text-sm font-medium text-neutral-700 dark:text-neutral-200\">\n          Disabled\n        </label>\n        <IInput\n          type=\"text\"\n          placeholder=\"Cannot edit\"\n          disabled\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-input.json",
+ "preview": "https://stashui.vercel.app/c/inspira-input",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Input field with a spotlight radial glow that follows mouse movement.",
+ "description": "An input field with a container div that renders a radial gradient spotlight centered at the cursor, tracking mouse movement with useState and applying a smooth background transition.",
+ "use_when": "Creating interactive forms where cursor-tracking effects enhance visual engagement and interactivity feedback.",
+ "avoid_when": "On touch interfaces or when motion should be absent.",
+ "a11y": "Standard input accessibility applies; the spotlight effect is purely visual and non-interfering.",
+ "props": [
+  {
+   "name": "containerClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

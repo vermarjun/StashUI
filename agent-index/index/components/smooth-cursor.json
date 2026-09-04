@@ -1,0 +1,67 @@
+{
+ "name": "smooth-cursor",
+ "title": "Smooth Cursor",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "SmoothCursor"
+ ],
+ "npm_deps": [
+  "framer-motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "import { SmoothCursor } from \"@/components/ui/smooth-cursor\";\n\nexport default function Demo() {\n  return <SmoothCursor />;\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/smooth-cursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/smooth-cursor.json",
+ "preview": "https://stashui.vercel.app/c/smooth-cursor",
+ "dupe_group": "smoothcursor",
+ "alternatives": [
+  {
+   "name": "inspira-smooth-cursor",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Custom cursor that smoothly follows the mouse and rotates with velocity.",
+ "description": "Replaces the browser cursor with a smooth-following custom cursor using spring physics. Rotates based on velocity direction and scales slightly on movement.",
+ "use_when": "A desktop-only interactive experience that needs a branded or unique cursor behavior.",
+ "avoid_when": "On mobile or touch-only devices — the component auto-disables on non-desktop.",
+ "a11y": "Desktop-only feature using pointer events. Does not affect keyboard navigation.",
+ "props": [
+  {
+   "name": "cursor",
+   "type": "React.ReactNode",
+   "default": "<DefaultCursorSVG />",
+   "required": false
+  },
+  {
+   "name": "springConfig",
+   "type": "{damping: number; stiffness: number; mass: number; restDelta: number}",
+   "default": "{\"damping\": 45, \"stiffness\": 400, \"mass\": 1, \"restDelta\": 0.001}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

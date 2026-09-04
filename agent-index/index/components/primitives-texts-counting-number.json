@@ -1,0 +1,51 @@
+{
+ "name": "primitives-texts-counting-number",
+ "title": "Counting Number",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "CountingNumber"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { CountingNumber } from '@/components/ui/primitives-texts-counting-number';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center gap-12 w-full p-10\">\n      <div className=\"text-center\">\n        <CountingNumber\n          number={1234}\n          inView\n          className=\"text-4xl font-bold tabular-nums\"\n        />\n        <p className=\"text-sm text-neutral-500 mt-1\">Users</p>\n      </div>\n      <div className=\"text-center\">\n        <CountingNumber\n          number={98.6}\n          decimalPlaces={1}\n          inView\n          className=\"text-4xl font-bold tabular-nums\"\n        />\n        <p className=\"text-sm text-neutral-500 mt-1\">Score</p>\n      </div>\n      <div className=\"text-center\">\n        <CountingNumber\n          number={5000}\n          fromNumber={0}\n          inView\n          className=\"text-4xl font-bold tabular-nums\"\n        />\n        <p className=\"text-sm text-neutral-500 mt-1\">Downloads</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-counting-number.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-counting-number.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-counting-number",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Number increments smoothly from zero to a target.",
+ "description": "Animates a numeric display by incrementing the value over a duration, often triggered by scroll into view.",
+ "use_when": "Statistics, metrics, or KPIs in hero sections or feature cards.",
+ "avoid_when": "Precise or real-time values — animation introduces rounding and lag.",
+ "a11y": "End value is readable but animation runs automatically with no pause control.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "hero"
+ ]
+}

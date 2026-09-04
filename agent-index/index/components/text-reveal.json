@@ -1,0 +1,69 @@
+{
+ "name": "text-reveal",
+ "title": "Text Reveal",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "TextReveal"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport { TextReveal } from \"@/components/ui/text-reveal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl\">\n      <TextReveal>\n        Magic UI is a collection of re-usable components that you can copy and paste into your web apps.\n      </TextReveal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/text-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-reveal.json",
+ "preview": "https://stashui.vercel.app/c/text-reveal",
+ "dupe_group": "textreveal",
+ "alternatives": [
+  {
+   "name": "inspira-text-reveal",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Words fade in one by one as the page scrolls past this double-height section.",
+ "description": "Takes a string and splits it into words, each revealing via scroll-linked opacity animation. Component spans 200vh height with sticky positioning.",
+ "use_when": "Long-form narrative sections where text should unfold gradually as the reader scrolls through.",
+ "avoid_when": "Mobile with scrolling by tap; does not work well with scroll-jacking. Requires a string input, not rich content.",
+ "a11y": "Text is fully rendered in the DOM and readable; opacity animation responds to prefers-reduced-motion implicitly via scroll interaction.",
+ "props": [
+  {
+   "name": "children",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "section-background"
+ ]
+}

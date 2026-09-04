@@ -1,0 +1,122 @@
+{
+ "name": "lightboard",
+ "title": "Lightboard",
+ "category": "effects",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "LightBoard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "canvas",
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { LightBoard } from \"@/components/ui/lightboard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full flex items-center justify-center p-8 bg-gray-950 rounded-xl\">\n      <LightBoard\n        text=\"HELLO WORLD\"\n        rows={5}\n        lightSize={8}\n        gap={2}\n        font=\"default\"\n        updateInterval={50}\n        disableDrawing={true}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/lightboard.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/lightboard.json",
+ "preview": "https://stashui.vercel.app/c/lightboard",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text scrolls across a grid of circular lights; stops when hovered and can be…",
+ "description": "Renders text as animated dots on a canvas-based LED-style light board. Text scrolls continuously until hover pauses it. Supports optional freehand drawing on the lights when enabled.",
+ "use_when": "Retro or playful interactive displays, event installations, or decorative text that benefits from a LED board aesthetic.",
+ "avoid_when": "Screen-reader-dependent users — text rendered to canvas is not semantically accessible.",
+ "a11y": "Text is canvas-rendered and not announced. No keyboard interaction or focus management.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "rows",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "lightSize",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "updateInterval",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "font",
+   "type": "\"default\" | \"7segment\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "Partial<LightBoardColors>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "disableDrawing",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "controlledDrawState",
+   "type": "PatternCell",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onDrawStateChange",
+   "type": "(newState: PatternCell) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "controlledHoverState",
+   "type": "boolean",
+   "default": "== undefined && updateHoverState(true)",
+   "required": false
+  },
+  {
+   "name": "onHoverStateChange",
+   "type": "(isHovered: boolean) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

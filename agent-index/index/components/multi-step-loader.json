@@ -1,0 +1,81 @@
+{
+ "name": "multi-step-loader",
+ "title": "Multi Step Loader",
+ "category": "loaders",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "MultiStepLoader"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { MultiStepLoader } from \"@/components/ui/multi-step-loader\";\n\nexport default function Demo() {\n  const [loading, setLoading] = useState(false);\n\n  const loadingStates = [\n    { text: \"Connecting to server\" },\n    { text: \"Authenticating user\" },\n    { text: \"Loading workspace\" },\n    { text: \"Fetching your data\" },\n    { text: \"Preparing dashboard\" },\n    { text: \"Almost there...\" },\n    { text: \"Welcome back!\" },\n  ];\n\n  return (\n    <div className=\"w-full max-w-md mx-auto flex flex-col items-center justify-center py-16 gap-6\">\n      <MultiStepLoader\n        loadingStates={loadingStates}\n        loading={loading}\n        duration={1500}\n        loop={false}\n      />\n      <button\n        onClick={() => setLoading(!loading)}\n        className=\"px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-80 transition-opacity\"\n      >\n        {loading ? \"Stop Loading\" : \"Start Loading\"}\n      </button>\n      {loading && (\n        <button\n          className=\"fixed top-4 right-4 text-black dark:text-white z-[200] text-sm underline\"\n          onClick={() => setLoading(false)}\n        >\n          Dismiss\n        </button>\n      )}\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/multi-step-loader.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/multi-step-loader.json",
+ "preview": "https://stashui.vercel.app/c/multi-step-loader",
+ "dupe_group": "multisteploader",
+ "alternatives": [
+  {
+   "name": "inspira-multi-step-loader",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Full-screen multi-step loader with animated check icons and step progression.",
+ "description": "A full-screen overlay loader that animates through loading states with check icons, supporting looping or single-pass progression through the sequence.",
+ "use_when": "Showing sequential progress through multiple steps with visual feedback.",
+ "avoid_when": "For simple spinners or when a modal isn't appropriate.",
+ "a11y": "Displays step text and icons, no additional labels.",
+ "props": [
+  {
+   "name": "loadingStates",
+   "type": "LoadingState[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "loading",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "loading"
+ ]
+}

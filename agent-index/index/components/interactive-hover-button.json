@@ -1,0 +1,60 @@
+{
+ "name": "interactive-hover-button",
+ "title": "Interactive Hover Button",
+ "category": "buttons",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "InteractiveHoverButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { InteractiveHoverButton } from \"@/components/ui/interactive-hover-button\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <InteractiveHoverButton>Explore</InteractiveHoverButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/interactive-hover-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/interactive-hover-button.json",
+ "preview": "https://stashui.vercel.app/c/interactive-hover-button",
+ "dupe_group": "interactivehoverbutton",
+ "alternatives": [
+  {
+   "name": "inspira-interactive-hover-button",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text slides left and new text slides in on hover.",
+ "description": "A button that animates outgoing text left while new text slides in from the right on hover.",
+ "use_when": "You need a playful hover interaction that reveals different text.",
+ "avoid_when": "On touch-only devices where hover is unreliable.",
+ "a11y": "Standard button semantics. Text swap is visual. No aria-label describing the swap state.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

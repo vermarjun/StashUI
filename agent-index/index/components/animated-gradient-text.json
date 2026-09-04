@@ -1,0 +1,78 @@
+{
+ "name": "animated-gradient-text",
+ "title": "Animated Gradient Text",
+ "category": "text",
+ "origin": "StashUI",
+ "origin_short": "own",
+ "exports": [
+  "AnimatedGradientText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": true,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "import { AnimatedGradientText } from \"@/components/ui/animated-gradient-text\";\n\nexport default function AnimatedGradientTextDemo() {\n  return (\n    <h2 className=\"text-center text-3xl font-bold tracking-tight sm:text-4xl\">\n      Build{\" \"}\n      <AnimatedGradientText gradient=\"from-indigo-500 via-purple-500 to-pink-500\">beautiful</AnimatedGradientText>{\" \"}\n      interfaces\n    </h2>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/text/animated-gradient-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-gradient-text.json",
+ "preview": "https://stashui.vercel.app/c/animated-gradient-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text fills with a gradient that drifts smoothly from left to right on loop.",
+ "description": "Inline text element with a background gradient that animates horizontally. Gradient position cycles continuously. Supports custom Tailwind gradient stops and animation speed.",
+ "use_when": "Inline text within a sentence needs a subtle animated gradient fill without full-width treatment.",
+ "avoid_when": "When text must have a stable, predictable appearance for readability.",
+ "a11y": "Text content is readable; gradient is a visual overlay using background-clip.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "gradient",
+   "type": "string",
+   "default": "\"from-[var(--chart-2)] via-[var(--foreground)] to-[var(--cha",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

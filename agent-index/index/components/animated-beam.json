@@ -1,0 +1,177 @@
+{
+ "name": "animated-beam",
+ "title": "Animated Beam",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "AnimatedBeam"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { AnimatedBeam } from \"@/components/ui/animated-beam\"\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null)\n  const fromRef = useRef<HTMLDivElement>(null)\n  const toRef = useRef<HTMLDivElement>(null)\n  const fromRef2 = useRef<HTMLDivElement>(null)\n  const toRef2 = useRef<HTMLDivElement>(null)\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"relative flex items-center justify-between w-full max-w-lg h-48 px-12 bg-white rounded-xl border\"\n    >\n      <div\n        ref={fromRef}\n        className=\"flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white font-bold shadow-lg\"\n      >\n        A\n      </div>\n\n      <div className=\"flex flex-col items-center gap-4\">\n        <div\n          ref={toRef}\n          className=\"flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 text-white font-bold shadow-lg\"\n        >\n          B\n        </div>\n        <div\n          ref={fromRef2}\n          className=\"flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white font-bold shadow-lg\"\n        >\n          C\n        </div>\n      </div>\n\n      <div\n        ref={toRef2}\n        className=\"flex items-center justify-center w-12 h-12 rounded-full bg-orange-500 text-white font-bold shadow-lg\"\n      >\n        D\n      </div>\n\n      <AnimatedBeam\n        containerRef={containerRef}\n        fromRef={fromRef}\n        toRef={toRef}\n        gradientStartColor=\"#3b82f6\"\n        gradientStopColor=\"#8b5cf6\"\n        duration={3}\n      />\n      <AnimatedBeam\n        containerRef={containerRef}\n        fromRef={fromRef2}\n        toRef={toRef2}\n        gradientStartColor=\"#22c55e\"\n        gradientStopColor=\"#f97316\"\n        duration={4}\n        delay={1}\n        curvature={-40}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/animated-beam.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-beam.json",
+ "preview": "https://stashui.vercel.app/c/animated-beam",
+ "dupe_group": "animatedbeam",
+ "alternatives": [
+  {
+   "name": "inspira-animated-beam",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  },
+  {
+   "name": "ui-layouts-animated-beam",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 54
+  }
+ ],
+ "blurb": "Animated gradient line flowing between two elements.",
+ "description": "Renders an SVG path that animates a gradient beam flowing from one DOM element to another. Supports customizable curve, direction, speed, and repeat.",
+ "use_when": "System diagrams, data flow visualizations, or connection indicators between UI elements.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); complex layouts (ref tracking overhead).",
+ "a11y": "SVG overlay; no interactive elements. Motion-based only, no semantic content.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerRef",
+   "type": "RefObject<HTMLElement>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fromRef",
+   "type": "RefObject<HTMLElement>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "toRef",
+   "type": "RefObject<HTMLElement>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "curvature",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false, // Include the reverse prop",
+   "required": false
+  },
+  {
+   "name": "pathColor",
+   "type": "string",
+   "default": "\"gray\"",
+   "required": false
+  },
+  {
+   "name": "pathWidth",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "pathOpacity",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "gradientStartColor",
+   "type": "string",
+   "default": "\"#ffaa40\"",
+   "required": false
+  },
+  {
+   "name": "gradientStopColor",
+   "type": "string",
+   "default": "\"#9c40ff\"",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "number",
+   "default": "Infinity",
+   "required": false
+  },
+  {
+   "name": "repeatDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "startXOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "startYOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "endXOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "endYOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "data-table"
+ ]
+}

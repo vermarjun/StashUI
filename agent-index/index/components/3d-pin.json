@@ -1,0 +1,89 @@
+{
+ "name": "3d-pin",
+ "title": "3D Pin Card",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "PinContainer",
+  "PinPerspective"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "3d",
+  "motion",
+  "16 colors"
+ ],
+ "usage": "import { PinContainer } from \"@/components/ui/3d-pin\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-[28rem] w-full items-center justify-center bg-background\">\n      <PinContainer title=\"aceternity.com\" href=\"https://aceternity.com\">\n        <div className=\"flex h-[18rem] w-[18rem] flex-col items-start justify-start gap-3 rounded-lg p-4\">\n          <div className=\"flex w-full flex-row items-center gap-2\">\n            <div className=\"h-8 w-8 rounded-full bg-gradient-to-br from-violet-500 to-sky-500\" />\n            <span className=\"text-sm font-semibold text-foreground\">Aceternity UI</span>\n          </div>\n          <p className=\"text-sm text-muted-foreground\">\n            Beautiful, modern components built with Tailwind CSS and Framer Motion.\n            Copy-paste into your Next.js projects.\n          </p>\n          <div className=\"mt-auto flex w-full items-center gap-2\">\n            <span className=\"rounded-full border border-border px-3 py-0.5 text-xs text-muted-foreground\">UI</span>\n            <span className=\"rounded-full border border-border px-3 py-0.5 text-xs text-muted-foreground\">React</span>\n            <span className=\"rounded-full border border-border px-3 py-0.5 text-xs text-muted-foreground\">Next.js</span>\n          </div>\n        </div>\n      </PinContainer>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/3d-pin.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/3d-pin.json",
+ "preview": "https://stashui.vercel.app/c/3d-pin",
+ "dupe_group": "3dpincard",
+ "alternatives": [
+  {
+   "name": "aceternity-ui-3d-pin",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 16
+  }
+ ],
+ "blurb": "Rotates 3D card inward on hover with title label and animated rings.",
+ "description": "Wraps children in an anchor; applies 3D perspective transform (rotateX) on hover. Shows title in label and animated background rings. Requires Framer Motion.",
+ "use_when": "Feature cards, project portfolios, or link cards requiring elevated 3D hover effect.",
+ "avoid_when": "Touch-only devices; hover effect is mouse-only. Browsers with poor 3D transform support.",
+ "a11y": "Wraps children in anchor element. Title is visual only; no aria-label for animations or rings.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "href",
+   "type": "string",
+   "default": "{href || \"/\"}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "children"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card"
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "name": "ui-layouts-globe",
+ "title": "Interactive 3D Globe",
+ "category": "media",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Earth"
+ ],
+ "npm_deps": [
+  "cobe"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import Cmp from \"@/components/ui/globe\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/globe.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-globe.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-globe",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D rotating globe with customizable colors, scale, and lighting.",
+ "description": "A WebGL-rendered 3D globe using the cobe library with responsive canvas sizing. Highly customizable via color (base, markers, glow), lighting (dark, diffuse), scale, and map sampling parameters.",
+ "use_when": "Landing pages, analytics dashboards, or global company pages with customizable 3D globe visualization.",
+ "avoid_when": "Low-end devices without WebGL support. Static globe only; no pointer interaction or manual rotation.",
+ "a11y": "Canvas-based globe with no built-in accessibility; serves as visual decoration only.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "theta",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "dark",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1.1",
+   "required": false
+  },
+  {
+   "name": "diffuse",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "mapSamples",
+   "type": "number",
+   "default": "40000",
+   "required": false
+  },
+  {
+   "name": "mapBrightness",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "[number, number, number]",
+   "default": "[0.4, 0.6509, 1]",
+   "required": false
+  },
+  {
+   "name": "markerColor",
+   "type": "[number, number, number]",
+   "default": "[1, 0, 0]",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "[number, number, number]",
+   "default": "[0.2745, 0.5765, 0.898]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ]
+}

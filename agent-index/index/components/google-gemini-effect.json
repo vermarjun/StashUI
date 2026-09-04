@@ -1,0 +1,74 @@
+{
+ "name": "google-gemini-effect",
+ "title": "Google Gemini Effect",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "GoogleGeminiEffect"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 15,
+ "flags": [
+  "motion",
+  "15 colors"
+ ],
+ "usage": "\"use client\";\nimport { useMotionValue } from \"motion/react\";\nimport { GoogleGeminiEffect } from \"@/components/ui/google-gemini-effect\";\n\nexport default function Demo() {\n  const pathLength1 = useMotionValue(0.5);\n  const pathLength2 = useMotionValue(0.5);\n  const pathLength3 = useMotionValue(0.5);\n  const pathLength4 = useMotionValue(0.5);\n  const pathLength5 = useMotionValue(0.5);\n\n  return (\n    <div className=\"relative w-full h-[600px] bg-black overflow-hidden flex items-start justify-center\">\n      <GoogleGeminiEffect\n        pathLengths={[pathLength1, pathLength2, pathLength3, pathLength4, pathLength5]}\n        title=\"Build with Aceternity UI\"\n        description=\"Beautiful components built with Tailwind CSS and Framer Motion.\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/google-gemini-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/google-gemini-effect.json",
+ "preview": "https://stashui.vercel.app/c/google-gemini-effect",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "SVG paths that animate based on scroll-driven motion values.",
+ "description": "Sticky section with animated SVG lines that draw based on motion values, typically driven by scroll events. Displays title, description, and button overlay.",
+ "use_when": "Hero sections or scroll-triggered animations in luxury/tech landing pages.",
+ "avoid_when": "When animation must respect prefers-reduced-motion, or on low-motion design systems.",
+ "a11y": "SVG paths are decorative; text content is semantic and accessible.",
+ "props": [
+  {
+   "name": "pathLengths",
+   "type": "MotionValue[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Build with Aceternity UI\"",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": "\"Scroll this component and see the bottom SVG come to life wow this works!\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\" absolute -top-60  md:-top-40 w-full\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "decoration"
+ ]
+}

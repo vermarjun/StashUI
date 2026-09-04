@@ -1,0 +1,115 @@
+{
+ "name": "terminal-animation",
+ "title": "Terminal Animation",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "TerminalAnimationRoot",
+  "TerminalAnimationBackgroundGradient",
+  "TerminalAnimationContainer",
+  "TerminalAnimationWindow",
+  "TerminalAnimationContent",
+  "TerminalAnimationBlinkingCursor",
+  "TerminalAnimationCommandBar",
+  "TerminalAnimationOutputLine",
+  "TerminalAnimationOutput",
+  "TerminalAnimationTrailingPrompt",
+  "TerminalAnimationTabList",
+  "TerminalAnimationTabTrigger"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-slot",
+  "@radix-ui/react-use-controllable-state"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 55,
+ "flags": [
+  "55 colors"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  TerminalAnimationRoot,\n  TerminalAnimationWindow,\n  TerminalAnimationContent,\n  TerminalAnimationTabList,\n  TerminalAnimationTabTrigger,\n  TerminalAnimationCommandBar,\n  TerminalAnimationOutput,\n  TerminalAnimationBlinkingCursor,\n  defaultTerminalTabs,\n} from \"@/components/ui/terminal-animation\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl p-4\">\n      <TerminalAnimationRoot tabs={defaultTerminalTabs} alwaysDark>\n        <TerminalAnimationWindow className=\"bg-zinc-950 text-zinc-100 font-mono text-sm\">\n          <TerminalAnimationTabList className=\"flex gap-1 px-4 pt-3 pb-0 border-b border-zinc-800\">\n            {defaultTerminalTabs.map((tab, i) => (\n              <TerminalAnimationTabTrigger\n                key={tab.label}\n                index={i}\n                className=\"px-3 py-1.5 text-xs rounded-t-md data-[state=active]:bg-zinc-800 data-[state=active]:text-zinc-100 text-zinc-500 hover:text-zinc-300 transition-colors\"\n              >\n                {tab.label}\n              </TerminalAnimationTabTrigger>\n            ))}\n          </TerminalAnimationTabList>\n          <TerminalAnimationContent>\n            <div className=\"flex items-center text-zinc-400 mb-2\">\n              <span className=\"text-emerald-400 mr-2\">$</span>\n              <TerminalAnimationCommandBar />\n              <TerminalAnimationBlinkingCursor />\n            </div>\n            <TerminalAnimationOutput\n              renderLine={(line, _index, visible) => {\n                if (!visible) return null\n                return (\n                  <div className={line.color ?? \"text-zinc-300\"}>\n                    {line.text || \" \"}\n                  </div>\n                )\n              }}\n            />\n          </TerminalAnimationContent>\n        </TerminalAnimationWindow>\n      </TerminalAnimationRoot>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/terminal-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/terminal-animation.json",
+ "preview": "https://stashui.vercel.app/c/terminal-animation",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Terminal with tabs shows commands typing and output revealing line-by-line.",
+ "description": "Tabs trigger animation: command types character-by-character, output lines appear in sequence with delays. Optionally slides up on scroll into view. Uses React Context to coordinate child components.",
+ "use_when": "Hero sections or docs demonstrating CLI workflows with interactive tab switching.",
+ "avoid_when": "When animation must pause/resume or loop indefinitely; animation runs once per tab on mount.",
+ "a11y": "Output has aria-live='polite' for screen readers. No prefers-reduced-motion handling. Tab list has role='tablist'.",
+ "props": [
+  {
+   "name": "tabs",
+   "type": "TabContent[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultActiveTab",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "activeTab",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onActiveTabChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "backgroundImage",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "alwaysDark",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "hideCursorOnComplete",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(alwaysDark && \"dark\", className)}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "name": "inspira-text-hover-effect",
+ "title": "Text Hover Effect",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextHoverEffect"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "pure",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { TextHoverEffect } from \"@/components/ui/text-hover-effect\";\n\nexport default function TextHoverEffectDemo() {\n  return (\n    <div className=\"flex min-h-[300px] items-center justify-center bg-background p-8\">\n      <div className=\"w-full max-w-2xl\">\n        <TextHoverEffect text=\"HOVER\" strokeWidth={0.75} duration={200} opacity={0.75} />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-hover-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-text-hover-effect.json",
+ "preview": "https://stashui.vercel.app/c/inspira-text-hover-effect",
+ "dupe_group": "texthovereffect",
+ "alternatives": [
+  {
+   "name": "text-hover-effect",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 9
+  }
+ ],
+ "blurb": "Text transforms under the cursor as you move over it.",
+ "description": "Tracks pointer position and animates text distortion, rotation, or color shifts based on mouse coordinates.",
+ "use_when": "Interactive headlines or accent text that should feel responsive to user input.",
+ "avoid_when": "Touch-only surfaces or keyboard-nav sites — hover effects are pointless without a pointer.",
+ "a11y": "Hover-driven; keyboard users cannot trigger the effect. No keyboard alternative.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

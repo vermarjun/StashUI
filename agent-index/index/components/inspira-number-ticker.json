@@ -1,0 +1,68 @@
+{
+ "name": "inspira-number-ticker",
+ "title": "Number Ticker",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "NumberTicker"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { NumberTicker } from \"@/components/ui/number-ticker\";\n\nexport default function NumberTickerDemo() {\n  return (\n    <div className=\"flex min-h-32 flex-col items-center justify-center gap-8 p-8\">\n      <div className=\"flex items-center gap-12\">\n        <div className=\"flex flex-col items-center gap-1\">\n          <NumberTicker value={1234567} decimalPlaces={0} duration={2000} />\n          <span className=\"text-xs text-muted-foreground\">Count Up</span>\n        </div>\n\n        <div className=\"flex flex-col items-center gap-1\">\n          <NumberTicker\n            value={99.99}\n            decimalPlaces={2}\n            direction=\"down\"\n            duration={2000}\n          />\n          <span className=\"text-xs text-muted-foreground\">Count Down</span>\n        </div>\n\n        <div className=\"flex flex-col items-center gap-1\">\n          <NumberTicker\n            value={3.14159}\n            decimalPlaces={5}\n            duration={1500}\n            className=\"text-2xl font-bold text-primary\"\n          />\n          <span className=\"text-xs text-muted-foreground\">Pi (5 decimals)</span>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/number-ticker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-number-ticker.json",
+ "preview": "https://stashui.vercel.app/c/inspira-number-ticker",
+ "dupe_group": "numberticker",
+ "alternatives": [
+  {
+   "name": "number-ticker",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Number counts up smoothly from zero to a target value.",
+ "description": "Animates a numeric value incrementally, often triggered by scroll into view. Non-blocking, runs once or on demand.",
+ "use_when": "Stats boxes, metrics, or KPIs that need emphasis without being interactive.",
+ "avoid_when": "Highly precise values — animation introduces approximation and may not reach exact target.",
+ "a11y": "Endpoint number is readable but the animation runs automatically with no pause.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": "0",
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "hero"
+ ]
+}

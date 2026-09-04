@@ -1,0 +1,56 @@
+{
+ "name": "tetris",
+ "title": "Tetris Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Tetris"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Tetris } from \"@/components/ui/tetris\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-xl border border-border bg-background\">\n      <Tetris squareColor=\"#6366f1\" base={12} className=\"h-full\" />\n      <div className=\"absolute inset-0 flex items-center justify-center pointer-events-none\">\n        <p className=\"text-lg font-semibold text-white/70 drop-shadow\">\n          Tetris Background\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/tetris.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tetris.json",
+ "preview": "https://stashui.vercel.app/c/tetris",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Tetris blocks fall and rotate in real-time gameplay.",
+ "description": "Full Tetris game logic rendered via React; state-driven block positioning and collision.",
+ "use_when": "Playful hero sections, engaging loading screens, or interactive game-themed layouts.",
+ "avoid_when": "Accessibility-critical sections; game is mouse/keyboard dependent.",
+ "a11y": "Interactive game component. Keyboard-controlled but no ARIA labels.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative w-full\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "loading"
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "name": "letter-pullup",
+ "title": "Letter Pullup",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LetterPullup"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { LetterPullup } from \"@/components/ui/letter-pullup\";\n\nexport default function LetterPullupDemo() {\n  return (\n    <div className=\"flex min-h-[200px] flex-col items-center justify-center gap-8 p-8\">\n      <LetterPullup words=\"Hello World\" delay={0.05} />\n      <LetterPullup\n        words=\"Pull Up Letters\"\n        delay={0.04}\n        className=\"text-blue-600 dark:text-blue-400\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/letter-pullup.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/letter-pullup.json",
+ "preview": "https://stashui.vercel.app/c/letter-pullup",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Letters pull up from the bottom into view sequentially.",
+ "description": "Each character starts below the text baseline and animates up into place with staggered timing.",
+ "use_when": "Dramatic entrance animations for section titles or hero text.",
+ "avoid_when": "Quick-loading pages — the animation delay makes content feel slow to arrive.",
+ "a11y": "Text is hidden below the viewport until animation completes; screen readers may announce before visible.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

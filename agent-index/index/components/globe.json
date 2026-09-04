@@ -1,0 +1,91 @@
+{
+ "name": "globe",
+ "title": "Globe",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Globe"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { Globe } from \"@/components/ui/globe\";\n\nexport default function GlobeDemo() {\n  return (\n    <div className=\"relative flex items-center justify-center w-full h-[400px] bg-neutral-950 overflow-hidden\">\n      <Globe\n        config={{\n          dark: 1,\n          diffuse: 1.2,\n          mapSamples: 16000,\n          mapBrightness: 6,\n          baseColor: [0.3, 0.3, 0.3],\n          markerColor: [0.1, 0.8, 1],\n          glowColor: [0.1, 0.1, 0.1],\n        }}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/globe.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/globe.json",
+ "preview": "https://stashui.vercel.app/c/globe",
+ "dupe_group": "globe",
+ "alternatives": [
+  {
+   "name": "magic-ui-globe",
+   "origin": "Magic UI",
+   "npm_deps": 2,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Draggable 3D globe with auto-rotation and spring physics for smooth interaction.",
+ "description": "Renders a COBE-powered interactive globe with location markers. Rotates automatically; drag to rotate manually with spring damping. Customizable colors, diffuse, and map samples.",
+ "use_when": "Hero sections or dashboards showcasing global reach or data distribution.",
+ "avoid_when": "Mobile-first designs or performance-sensitive pages. Requires canvas support.",
+ "a11y": "Purely visual 3D rendering. Drag is mouse/touch only, no keyboard alternative.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"size-full opacity-0 transition-opacity duration-1000 ease-i",
+   "required": false
+  },
+  {
+   "name": "config",
+   "type": "Partial<COBEOptions>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mass",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "tension",
+   "type": "number",
+   "default": "280",
+   "required": false
+  },
+  {
+   "name": "friction",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "precision",
+   "type": "number",
+   "default": "0.001",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "stat"
+ ]
+}

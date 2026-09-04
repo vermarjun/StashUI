@@ -1,0 +1,73 @@
+{
+ "name": "shimmer-button",
+ "title": "Shimmer Button",
+ "category": "buttons",
+ "origin": "StashUI",
+ "origin_short": "own",
+ "exports": [
+  "ShimmerButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": true,
+ "hardcoded_colors": 7,
+ "flags": [
+  "pure",
+  "7 colors"
+ ],
+ "usage": "import { ShimmerButton } from \"@/components/ui/shimmer-button\";\n\nexport default function ShimmerButtonDemo() {\n  return (\n    <ShimmerButton className=\"shadow-2xl\">\n      <span className=\"text-sm font-medium text-white\">Shimmer Button</span>\n    </ShimmerButton>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/buttons/shimmer-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/shimmer-button.json",
+ "preview": "https://stashui.vercel.app/c/shimmer-button",
+ "dupe_group": "shimmerbutton",
+ "alternatives": [
+  {
+   "name": "magic-ui-shimmer-button",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 7
+  },
+  {
+   "name": "inspira-shimmer-button",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Light sweep slides across button.",
+ "description": "A button with a shimmer effect using a linear-gradient overlay that slides horizontally continuously.",
+ "use_when": "You want a polished interactive button with animated shimmer.",
+ "avoid_when": "On minimalist interfaces where motion should be reserved for interaction.",
+ "a11y": "Standard button semantics. Shimmer is visual only. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "name": "Lightfall-TS-TW",
+ "title": "Lightfall",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Lightfall"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "webgl",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Lightfall from \"@/components/ui/Lightfall\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[600px] bg-black rounded-lg overflow-hidden\">\n      <Lightfall\n        colors={[\"#A6C8FF\", \"#5227FF\", \"#FF9FFC\"]}\n        backgroundColor=\"#0A29FF\"\n        speed={0.5}\n        streakCount={4}\n        streakWidth={1}\n        streakLength={1}\n        glow={1}\n        density={0.6}\n        twinkle={1}\n        zoom={3}\n        backgroundGlow={0.5}\n        opacity={1}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Lightfall.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Lightfall-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Lightfall-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Streaks of light fall from above with optional mouse interaction.",
+ "description": "WebGL-rendered falling light streaks with configurable colors, density, and mouse influence. Supports glow, twinkle, and blend modes.",
+ "use_when": "Atmospheric backgrounds with rain-like light particles.",
+ "avoid_when": "Low-end devices without WebGL support; continuous rendering.",
+ "a11y": "Decorative background. No keyboard or focus handling required.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`w-full h-full overflow-hidden relative ${className ?? ''}`",
+   "required": false
+  },
+  {
+   "name": "dpr",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#A6C8FF', '#5227FF', '#FF9FFC']",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#0A29FF'",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "streakCount",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "streakWidth",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

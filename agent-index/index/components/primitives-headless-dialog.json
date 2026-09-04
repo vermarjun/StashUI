@@ -1,0 +1,75 @@
+{
+ "name": "primitives-headless-dialog",
+ "title": "Headless Dialog",
+ "category": "modals",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "Dialog",
+  "DialogBackdrop",
+  "DialogPanel",
+  "DialogClose",
+  "DialogTitle",
+  "DialogDescription",
+  "DialogHeader",
+  "DialogFooter"
+ ],
+ "npm_deps": [
+  "motion",
+  "@headlessui/react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d",
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Dialog,\n  DialogBackdrop,\n  DialogClose,\n  DialogDescription,\n  DialogHeader,\n  DialogPanel,\n  DialogTitle,\n} from \"@/components/ui/primitives-headless-dialog\";\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center p-8\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition-opacity\"\n      >\n        Open Dialog\n      </button>\n\n      <Dialog open={open} onClose={() => setOpen(false)}>\n        <DialogBackdrop className=\"fixed inset-0 bg-black/60\" />\n        <div className=\"fixed inset-0 z-50 flex items-center justify-center p-4\">\n          <DialogPanel\n            from=\"top\"\n            className=\"w-full max-w-md rounded-xl border border-border bg-background p-6 shadow-xl\"\n          >\n            <DialogHeader className=\"mb-2\">\n              <DialogTitle className=\"text-lg font-semibold text-foreground\">\n                Confirm action\n              </DialogTitle>\n            </DialogHeader>\n            <DialogDescription className=\"text-sm text-muted-foreground leading-relaxed\">\n              This dialog uses Headless UI under the hood with a spring-driven\n              3D flip entrance animation via Framer Motion. Press Escape or\n              click Cancel to close.\n            </DialogDescription>\n            <div className=\"mt-6 flex justify-end gap-3\">\n              <DialogClose\n                onClick={() => setOpen(false)}\n                className=\"rounded-md border border-border px-4 py-2 text-sm hover:bg-muted transition-colors\"\n              >\n                Cancel\n              </DialogClose>\n              <button\n                onClick={() => setOpen(false)}\n                className=\"rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90 transition-opacity\"\n              >\n                Confirm\n              </button>\n            </div>\n          </DialogPanel>\n        </div>\n      </Dialog>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-headless-dialog.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-headless-dialog.json",
+ "preview": "https://stashui.vercel.app/c/primitives-headless-dialog",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Dialog flips in from a direction with 3D perspective and blur.",
+ "description": "Headless UI dialog wrapped with Framer Motion that animates panel entrance with 3D perspective rotation. Direction configurable (top/bottom/left/right). Backdrop fades with blur. Composed header, title, description, and footer.",
+ "use_when": "You want a polished modal with directional entrance animations that feel dimensional.",
+ "avoid_when": "Older browsers or performance-sensitive contexts — 3D perspective has render costs.",
+ "a11y": "Built on Headless UI primitives with full keyboard support (Escape closes). Render prop pattern on DialogPanel for advanced composition.",
+ "props": [
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "from",
+   "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+   "default": "'top'",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ duration: 0.2, ease: 'easeInOut' }",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "name": "primitives-texts-morphing",
+ "title": "Morphing Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "MorphingText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { MorphingText } from '@/components/ui/primitives-texts-morphing';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 w-full p-10\">\n      <MorphingText\n        text={['Animate', 'Delight', 'Inspire', 'Create']}\n        inView\n        loop\n        holdDelay={2000}\n        className=\"text-5xl font-bold tracking-tight text-foreground\"\n      />\n      <MorphingText\n        text={['beautiful interfaces', 'smooth transitions', 'great products']}\n        inView\n        loop\n        holdDelay={2200}\n        delay={400}\n        className=\"text-2xl text-muted-foreground font-medium\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-morphing.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-morphing.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-morphing",
+ "dupe_group": "morphingtext",
+ "alternatives": [
+  {
+   "name": "morphing-text",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "inspira-morphing-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text smoothly animates between words in a cycling list.",
+ "description": "Morphs between a series of words with a canvas or SVG-based animation that blends letter shapes.",
+ "use_when": "Dynamic taglines or feature descriptions cycling through related terms.",
+ "avoid_when": "Large word lists — morphing becomes choppy and hard to read.",
+ "a11y": "Only the current morph frame is readable. No pause or pause control.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "section-background"
+ ]
+}

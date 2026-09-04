@@ -1,0 +1,75 @@
+{
+ "name": "CircularText-TS-TW",
+ "title": "Circular Text",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "CircularText"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "import CircularText from \"@/components/ui/CircularText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center gap-16 p-12 min-h-[300px]\">\n      <CircularText\n        text=\"HOVER TO SPEED UP • CIRCULAR TEXT • \"\n        spinDuration={20}\n        onHover=\"speedUp\"\n        className=\"text-blue-600\"\n      />\n      <CircularText\n        text=\"PAUSE ON HOVER • SLOW AND STEADY • \"\n        spinDuration={30}\n        onHover=\"pause\"\n        className=\"text-purple-600\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/CircularText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/CircularText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/CircularText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text letters orbit in a circle, speeding up or pausing on hover.",
+ "description": "Arranges text letters around a circle and rotates them continuously. On hover, responds with adjustable behaviors: speed up, slow down, pause, or spin wildly.",
+ "use_when": "A playful, interactive logo or decoration that draws attention through constant motion.",
+ "avoid_when": "Touch-only interfaces or pages where vestibular motion may cause discomfort — no reduced-motion guard.",
+ "a11y": "Text is laid out as individual letters in rotated spans; not linearized for screen readers. No keyboard interaction.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "spinDuration",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "onHover",
+   "type": "'slowDown' | 'speedUp' | 'pause' | 'goBonkers'",
+   "default": "'speedUp'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "decoration"
+ ]
+}

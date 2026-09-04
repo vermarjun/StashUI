@@ -1,0 +1,69 @@
+{
+ "name": "text-generate-effect",
+ "title": "Text Generate Effect",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "TextGenerateEffect"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport { TextGenerateEffect } from \"@/components/ui/text-generate-effect\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto px-4 py-10\">\n      <TextGenerateEffect\n        words=\"Build beautiful animated interfaces with ease using Aceternity UI components.\"\n        className=\"text-center\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/text-generate-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-generate-effect.json",
+ "preview": "https://stashui.vercel.app/c/text-generate-effect",
+ "dupe_group": "textgenerateeffect",
+ "alternatives": [
+  {
+   "name": "inspira-text-generate-effect",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text reveals word-by-word in a typewriter style.",
+ "description": "Displays text by animating words in sequence, creating a progressive reveal effect.",
+ "use_when": "Narratives, product descriptions, or storytelling sections.",
+ "avoid_when": "Immediate-access content — animation delays availability.",
+ "a11y": "Text is hidden until animation completes. Screen readers may announce early.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "hero"
+ ]
+}

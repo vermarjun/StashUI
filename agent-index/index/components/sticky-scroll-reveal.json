@@ -1,0 +1,63 @@
+{
+ "name": "sticky-scroll-reveal",
+ "title": "Sticky Scroll Reveal",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "StickyScroll"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\nimport { StickyScroll } from \"@/components/ui/sticky-scroll-reveal\";\n\nconst content = [\n  {\n    title: \"Collaborative Editing\",\n    description:\n      \"Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center text-white text-lg font-semibold\">\n        Collaborative Editing\n      </div>\n    ),\n  },\n  {\n    title: \"Real time changes\",\n    description:\n      \"See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center text-white text-lg font-semibold\">\n        Real Time Changes\n      </div>\n    ),\n  },\n  {\n    title: \"Version control\",\n    description:\n      \"Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates.\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center text-white text-lg font-semibold\">\n        Version Control\n      </div>\n    ),\n  },\n  {\n    title: \"Running out of content\",\n    description:\n      \"Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates.\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center text-white text-lg font-semibold\">\n        Running out of content\n      </div>\n    ),\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-5xl\">\n      <StickyScroll content={content} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/sticky-scroll-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sticky-scroll-reveal.json",
+ "preview": "https://stashui.vercel.app/c/sticky-scroll-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Two-column layout that reveals sticky content as you scroll through text.",
+ "description": "A scroll-triggered reveal with text descriptions on the left and sticky content on the right. Background color animates based on the active item as the user scrolls.",
+ "use_when": "A features or walkthrough section that pairs descriptions with visual content.",
+ "avoid_when": "On mobile (content hidden on screens smaller than lg) or when descriptions don't fill the viewport.",
+ "a11y": "Titles and descriptions are in the DOM and screen-readable. Sticky visual content is hidden on mobile without alternative access.",
+ "props": [
+  {
+   "name": "content",
+   "type": "{title: string; description: string; content?: React.ReactNode}[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "contentClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "body-text"
+ ]
+}

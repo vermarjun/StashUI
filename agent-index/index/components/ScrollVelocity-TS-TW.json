@@ -1,0 +1,121 @@
+{
+ "name": "ScrollVelocity-TS-TW",
+ "title": "Scroll Velocity",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ScrollVelocity"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport { ScrollVelocity } from \"@/components/ui/ScrollVelocity\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full py-16 bg-background overflow-hidden\">\n      <ScrollVelocity\n        texts={[\n          \"Components • Animations • Design •\",\n          \"Open Source • Accessible • Minimal •\",\n        ]}\n        velocity={80}\n        className=\"text-foreground\"\n        damping={50}\n        stiffness={400}\n        numCopies={6}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ScrollVelocity.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ScrollVelocity-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ScrollVelocity-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text scrolls horizontally, accelerating and reversing direction based on page…",
+ "description": "Renders multiple looping text rows that move horizontally. Scroll velocity controls speed and direction; alternating rows move in opposite directions. Uses motion/react with spring damping.",
+ "use_when": "A full-width marquee section wants dynamic responsiveness to user scroll behavior.",
+ "avoid_when": "When horizontal text flow might conflict with reading direction or cause motion sickness.",
+ "a11y": "Text is duplicated for continuous loop effect; each copy is readable but not linearized for screen readers.",
+ "props": [
+  {
+   "name": "scrollContainerRef",
+   "type": "React.RefObject<HTMLElement>",
+   "default": "{scrollContainerRef}",
+   "required": false
+  },
+  {
+   "name": "texts",
+   "type": "React.ReactNode[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "velocity",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "damping",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "stiffness",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "numCopies",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "velocityMapping",
+   "type": "VelocityMapping",
+   "default": "{ input: [0, 1000], output: [0, 5] }",
+   "required": false
+  },
+  {
+   "name": "parallaxClassName",
+   "type": "string",
+   "default": "{parallaxClassName}",
+   "required": false
+  },
+  {
+   "name": "scrollerClassName",
+   "type": "string",
+   "default": "{scrollerClassName}",
+   "required": false
+  },
+  {
+   "name": "parallaxStyle",
+   "type": "React.CSSProperties",
+   "default": "{parallaxStyle}",
+   "required": false
+  },
+  {
+   "name": "scrollerStyle",
+   "type": "React.CSSProperties",
+   "default": "{scrollerStyle}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

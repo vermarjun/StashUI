@@ -1,0 +1,81 @@
+{
+ "name": "ui-layouts-spotlight",
+ "title": "Spotlight Effect",
+ "category": "effects",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Spotlight",
+  "SpotLightItem",
+  "SpotlightCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "pure",
+  "7 colors"
+ ],
+ "usage": "import { Spotlight, SpotLightItem } from \"@/components/ui/spotlight\";\n\nconst features = [\n  { title: \"Proximity Spotlight\", body: \"A radial gradient follows your global cursor position, illuminating nearby cards from a distance.\" },\n  { title: \"Hover Focus\", body: \"Locks a tight spotlight on the card you're hovering — perfect for grids and feature sections.\" },\n  { title: \"Cursor Flow Gradient\", body: \"A soft highlight tracks the cursor within each card, revealing depth as you move.\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto py-10 px-4\">\n      <Spotlight className=\"grid gap-4 sm:grid-cols-1\">\n        {features.map((f) => (\n          <SpotLightItem key={f.title}>\n            <div className=\"rounded-lg bg-background p-6 h-full\">\n              <p className=\"text-sm font-semibold text-foreground mb-2\">{f.title}</p>\n              <p className=\"text-sm text-muted-foreground leading-relaxed\">{f.body}</p>\n            </div>\n          </SpotLightItem>\n        ))}\n      </Spotlight>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/spotlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-spotlight.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-spotlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Radial gradient highlights follow the cursor, illuminating child elements.",
+ "description": "Provider wrapper that enables cursor-tracking spotlight effects on child items. Three effects: proximity spotlights, hover focus, and local cursor gradients.",
+ "use_when": "Highlighting cards or features in a grid as the user moves—creates visual interest with proximity-based lighting.",
+ "avoid_when": "Touch-only devices without a pointer; small viewports where cursor is always centered.",
+ "a11y": "Listener on window mousemove; passive overlay with no focus impact. Content remains accessible.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(className, ' relative  rounded-lg p-[2px] bg-[#ffffff15]",
+   "required": false
+  },
+  {
+   "name": "ProximitySpotlight",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "HoverFocusSpotlight",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "CursorFlowGradient",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "section-background"
+ ]
+}

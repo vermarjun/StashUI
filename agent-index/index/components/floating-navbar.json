@@ -1,0 +1,62 @@
+{
+ "name": "floating-navbar",
+ "title": "Floating Navbar",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "FloatingNav"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 21,
+ "flags": [
+  "motion",
+  "21 colors"
+ ],
+ "usage": "\"use client\";\nimport { FloatingNav } from \"@/components/ui/floating-navbar\";\n\nconst navItems = [\n  { name: \"Home\", link: \"#\" },\n  { name: \"About\", link: \"#about\" },\n  { name: \"Services\", link: \"#services\" },\n  { name: \"Contact\", link: \"#contact\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[400px] bg-gray-50 dark:bg-gray-950 overflow-hidden\">\n      <FloatingNav navItems={navItems} />\n      <div className=\"flex items-center justify-center h-full text-gray-500 text-sm\">\n        Scroll down to reveal the floating navbar\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/floating-navbar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/floating-navbar.json",
+ "preview": "https://stashui.vercel.app/c/floating-navbar",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Floating navbar that hides/shows on scroll direction.",
+ "description": "Navbar that animates in/out based on scroll direction. Shows when scrolling up, hides when scrolling down. Nav items can include icons.",
+ "use_when": "Single-page apps or long-scroll interfaces where hiding navbar on scroll reclaims space.",
+ "avoid_when": "Short pages where scroll behavior feels glitchy.",
+ "a11y": "Nav items are keyboard-navigable links. Icons optional (can have sr-only text). Scroll-driven animations don't affect keyboard navigation.",
+ "props": [
+  {
+   "name": "navItems",
+   "type": "{ name: string; link: string; icon?: JSX.Element }[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "page-background"
+ ]
+}

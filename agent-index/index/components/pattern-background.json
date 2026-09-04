@@ -1,0 +1,98 @@
+{
+ "name": "pattern-background",
+ "title": "Pattern Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "PATTERN_BACKGROUND_DIRECTION",
+  "PATTERN_BACKGROUND_VARIANT",
+  "PATTERN_BACKGROUND_SPEED",
+  "PatternBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  PatternBackground,\n  PATTERN_BACKGROUND_VARIANT,\n  PATTERN_BACKGROUND_DIRECTION,\n} from \"@/components/ui/pattern-background\";\n\nexport default function PatternBackgroundDemo() {\n  return (\n    <div className=\"h-[600px] w-full overflow-auto\">\n    <div className=\"flex flex-col gap-6 p-8\">\n      {/* Static grid */}\n      <PatternBackground\n        variant={PATTERN_BACKGROUND_VARIANT.Grid}\n        size=\"md\"\n        mask=\"ellipse\"\n        className=\"flex h-48 w-full items-center justify-center rounded-xl border\"\n      >\n        <p className=\"text-lg font-semibold\">Grid – static</p>\n      </PatternBackground>\n\n      {/* Animated dots */}\n      <PatternBackground\n        variant={PATTERN_BACKGROUND_VARIANT.Dot}\n        size=\"lg\"\n        animate\n        direction={PATTERN_BACKGROUND_DIRECTION.Bottom}\n        speed={8000}\n        className=\"flex h-48 w-full items-center justify-center rounded-xl border\"\n      >\n        <p className=\"text-lg font-semibold\">Dots – animated downward</p>\n      </PatternBackground>\n\n      {/* Big dots with top-right animation */}\n      <PatternBackground\n        variant={PATTERN_BACKGROUND_VARIANT.BigDot}\n        size=\"xl\"\n        animate\n        direction={PATTERN_BACKGROUND_DIRECTION.TopRight}\n        speed={6000}\n        mask=\"ellipse-top\"\n        className=\"flex h-48 w-full items-center justify-center rounded-xl border\"\n      >\n        <p className=\"text-lg font-semibold\">Big Dots – diagonal</p>\n      </PatternBackground>\n    </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/pattern-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pattern-background.json",
+ "preview": "https://stashui.vercel.app/c/pattern-background",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated or static pattern backgrounds with grid, dot, or big-dot variants.",
+ "description": "CSS-based pattern background with three pattern types (grid, dot, big-dot) and five size options. Optionally animates via background-position in eight directions.",
+ "use_when": "A flexible, performance-conscious pattern background with optional directional animation.",
+ "avoid_when": "No significant limitations. CSS-based, fully customizable.",
+ "a11y": "Container with content slot; focus and keyboard behaviour come from children. Animation has no prefers-reduced-motion guard when enabled.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(patternBackgroundVariants({ variant, size }), className)",
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "PatternBackgroundDirection",
+   "default": "PATTERN_BACKGROUND_DIRECTION.Top",
+   "required": false
+  },
+  {
+   "name": "mask",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "PATTERN_BACKGROUND_SPEED.Default",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "'grid' | 'dot' | 'big-dot'",
+   "default": "'grid'",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'md'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "page-background"
+ ]
+}

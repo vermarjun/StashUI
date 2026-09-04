@@ -1,0 +1,134 @@
+{
+ "name": "primitives-effects-shine",
+ "title": "Shine",
+ "category": "effects",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "Shine"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { Shine } from \"@/components/ui/primitives-effects-shine\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-8\">\n      {/* Always-on shine */}\n      <Shine color=\"#ffffff\" opacity={0.4} duration={1400} loop loopDelay={800}>\n        <div className=\"rounded-xl border border-border bg-gradient-to-br from-violet-600 to-indigo-700 px-6 py-4 text-sm font-semibold text-white shadow-lg\">\n          Always Shining\n        </div>\n      </Shine>\n\n      {/* Shine on hover */}\n      <Shine color=\"#ffffff\" opacity={0.5} duration={700} enableOnHover enable>\n        <div className=\"rounded-xl border border-border bg-muted px-6 py-4 text-sm font-semibold text-foreground shadow-sm\">\n          Shine on Hover\n        </div>\n      </Shine>\n\n      {/* Shine on tap */}\n      <Shine color=\"#a78bfa\" opacity={0.6} duration={600} enableOnTap enable={false}>\n        <div className=\"rounded-xl border border-border bg-background px-6 py-4 text-sm font-semibold text-foreground shadow-sm cursor-pointer\">\n          Shine on Click\n        </div>\n      </Shine>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-effects-shine.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-effects-shine.json",
+ "preview": "https://stashui.vercel.app/c/primitives-effects-shine",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated shine effect sweeps across content, continuously or on hover/click.",
+ "description": "Renders an animated shine/gloss effect that sweeps across child content. Runs continuously, on hover, or on click with customizable color, opacity, and direction.",
+ "use_when": "Buttons, cards, or premium UI elements where a shine effect adds perceived polish and draws visual attention.",
+ "avoid_when": "Content already using shine effects where layering might create visual noise.",
+ "a11y": "Shine effect is purely visual; no impact on semantic content or keyboard interaction.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1200",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "loopDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "deg",
+   "type": "number",
+   "default": "-15",
+   "required": false
+  },
+  {
+   "name": "enable",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enableOnTap",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "feature-card",
+  "decoration"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "name": "comp-460",
+ "title": "Pagination First Last",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-460\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-lg\">\n      <Cmp currentPage={page} totalPages={total} paginationItemsToDisplay={5} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-460.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-460.json",
+ "preview": "https://stashui.vercel.app/c/comp-460",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with first, last, prev, and next buttons.",
+ "description": "Pagination with navigation buttons for First, Previous, Next, and Last page.",
+ "use_when": "Long pagination sequences where jump-to-end is useful.",
+ "avoid_when": "Simple sequential navigation or short page lists.",
+ "a11y": "Semantic pagination with four navigation button options.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

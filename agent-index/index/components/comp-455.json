@@ -1,0 +1,48 @@
+{
+ "name": "comp-455",
+ "title": "Ghost Arrow Pagination",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button",
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-455\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Cmp currentPage={page} totalPages={total} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-455.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-455.json",
+ "preview": "https://stashui.vercel.app/c/comp-455",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with ghost-style arrow buttons.",
+ "description": "Previous/Next pagination using ghost button variant with transparent background styling.",
+ "use_when": "Minimal pagination with ghost button styling fitting light backgrounds.",
+ "avoid_when": "When you need prominent button styling or many page options.",
+ "a11y": "Semantic pagination with ghost buttons and proper disabled states.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

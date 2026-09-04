@@ -1,0 +1,48 @@
+{
+ "name": "tooltip",
+ "title": "Tooltip",
+ "category": "tooltips",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Tooltip",
+  "TooltipContent",
+  "TooltipProvider",
+  "TooltipTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nexport default function Demo() {\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <button className=\"rounded-md border border-border bg-background px-4 py-2 text-sm text-foreground hover:bg-muted\">\n            Hover me\n          </button>\n        </TooltipTrigger>\n        <TooltipContent>\n          <p>This is a tooltip</p>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/tooltip.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tooltip.json",
+ "preview": "https://stashui.vercel.app/c/tooltip",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Compound tooltip component with provider, trigger, content, and optional arrow.",
+ "description": "Radix-based tooltip system with automatic provider wrapping. Exports TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent as a compound component.",
+ "use_when": "Standard tooltips with simple text content or structured layouts.",
+ "avoid_when": "Very complex custom content; consider custom components instead.",
+ "a11y": "Trigger must be focusable; tooltip appears on hover only.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "tooltip"
+ ]
+}

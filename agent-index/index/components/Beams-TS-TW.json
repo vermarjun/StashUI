@@ -1,0 +1,101 @@
+{
+ "name": "Beams-TS-TW",
+ "title": "Beams",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Beams"
+ ],
+ "npm_deps": [
+  "three@^0.167.1",
+  "@react-three/fiber@^9.3.0",
+  "@react-three/drei@^10.7.4"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "webgl",
+  "3d",
+  "heavy",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/Beams\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"560px\" }}>\n      <Cmp beamNumber={12} beamWidth={2} beamHeight={15} lightColor=\"#ffffff\" speed={2} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Beams.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Beams-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Beams-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated light beams sweep across the canvas in a radiating pattern.",
+ "description": "Renders light beams using Three.js and WebGL. Beams sweep continuously with configurable count, color, speed, and noise distortion. Uses GLSL shaders for the beam effect.",
+ "use_when": "Dramatic hero backgrounds, tech product showcases, energy/light-themed designs.",
+ "avoid_when": "Mobile devices; high performance cost. Older browsers without WebGL support.",
+ "a11y": "Purely decorative animation. Canvas has no aria attributes or keyboard interaction.",
+ "props": [
+  {
+   "name": "beamWidth",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "beamHeight",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "beamNumber",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "lightColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "noiseIntensity",
+   "type": "number",
+   "default": "1.75",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "rotation",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background"
+ ]
+}

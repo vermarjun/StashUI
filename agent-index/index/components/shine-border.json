@@ -1,0 +1,67 @@
+{
+ "name": "shine-border",
+ "title": "Shine Border",
+ "category": "borders",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "ShineBorder"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "pure",
+  "6 colors"
+ ],
+ "usage": "import { ShineBorder } from \"@/components/ui/shine-border\";\n\nexport default function Demo() {\n  return <ShineBorder />;\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/shine-border.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/shine-border.json",
+ "preview": "https://stashui.vercel.app/c/shine-border",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Light sweeps around the border in a continuous loop.",
+ "description": "An absolutely-positioned overlay that renders a radial gradient which moves around the border of its parent container. Uses CSS animation with prefers-reduced-motion support.",
+ "use_when": "A card or section border that needs subtle movement and polish without demanding attention.",
+ "avoid_when": "When you need the border to be interactive or visible on very small elements.",
+ "a11y": "Visual overlay only with pointer-events-none. Respects prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "borderWidth",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "shineColor",
+   "type": "string | string[]",
+   "default": "\"#000000\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "primary-cta",
+  "hero"
+ ]
+}

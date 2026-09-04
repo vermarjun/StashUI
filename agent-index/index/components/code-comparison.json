@@ -1,0 +1,91 @@
+{
+ "name": "code-comparison",
+ "title": "Code Comparison",
+ "category": "data-display",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "CodeComparison"
+ ],
+ "npm_deps": [
+  "shiki",
+  "next-themes"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport { CodeComparison } from \"@/components/ui/code-comparison\";\n\nconst beforeCode = `function fetchUser(id) {\n  return fetch('/api/users/' + id)\n    .then(function(res) {\n      return res.json();\n    })\n    .then(function(data) {\n      return data;\n    })\n    .catch(function(err) {\n      console.error(err); // [!code --]\n    });\n}`;\n\nconst afterCode = `async function fetchUser(id: string) { // [!code ++]\n  try { // [!code ++]\n    const res = await fetch(\\`/api/users/\\${id}\\`); // [!code ++]\n    if (!res.ok) throw new Error(res.statusText);\n    return await res.json() as User; // [!code ++]\n  } catch (err) {\n    console.error('fetchUser failed:', err);\n    return null;\n  }\n}`;\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto px-4 py-8\">\n      <CodeComparison\n        beforeCode={beforeCode}\n        afterCode={afterCode}\n        language=\"typescript\"\n        filename=\"api.ts\"\n        lightTheme=\"github-light\"\n        darkTheme=\"github-dark\"\n        highlightColor=\"#ff3333\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/code-comparison.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/code-comparison.json",
+ "preview": "https://stashui.vercel.app/c/code-comparison",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Side-by-side code comparison with syntax highlighting and diff notation.",
+ "description": "Before/after code comparison using Shiki with notation transformers for highlighting, diffs, and focus lines. Theme-aware and supports custom highlight color. Hover effects for focus.",
+ "use_when": "Showing code refactors, migrations, or before/after examples in documentation.",
+ "avoid_when": "When full code editing is needed or when code is very long.",
+ "a11y": "Focus highlighting helps visual comparison. Both panels are selectable text.",
+ "props": [
+  {
+   "name": "beforeCode",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "afterCode",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "language",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "filename",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "lightTheme",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "darkTheme",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "highlightColor",
+   "type": "string",
+   "default": "\"#ff3333\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text"
+ ]
+}

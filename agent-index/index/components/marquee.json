@@ -1,0 +1,109 @@
+{
+ "name": "marquee",
+ "title": "Marquee",
+ "category": "effects",
+ "origin": "StashUI",
+ "origin_short": "own",
+ "exports": [
+  "Marquee"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": true,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { Marquee } from \"@/components/ui/marquee\";\n\nconst items = [\"Next.js\", \"TypeScript\", \"Tailwind\", \"shadcn/ui\", \"Radix\", \"Motion\"];\n\nexport default function MarqueeDemo() {\n  return (\n    <div className=\"relative w-full max-w-md overflow-hidden\">\n      <Marquee pauseOnHover className=\"[--duration:18s]\">\n        {items.map((item) => (\n          <span key={item} className=\"rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-card-foreground\">\n            {item}\n          </span>\n        ))}\n      </Marquee>\n      <div className=\"pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background\" />\n      <div className=\"pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/effects/marquee.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/marquee.json",
+ "preview": "https://stashui.vercel.app/c/marquee",
+ "dupe_group": "marquee",
+ "alternatives": [
+  {
+   "name": "magic-ui-marquee",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "ui-layouts-marquee",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "inspira-marquee",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Content scrolls seamlessly in a continuous loop with optional hover pause.",
+ "description": "Repeats and scrolls child content in an infinite seamless loop. Supports horizontal and vertical scrolling, pause on hover, and customizable duration and gap via CSS variables.",
+ "use_when": "Scrolling tag lists, skill showcases, or content carousels that need smooth continuous motion.",
+ "avoid_when": "Content requiring keyboard pause control — hover pause is available but not keyboard-driven.",
+ "a11y": "Continuous scrolling can challenge some readers. Pauses on hover but lacks keyboard pause control.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "vertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "logo-wall"
+ ]
+}

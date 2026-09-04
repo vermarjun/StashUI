@@ -1,0 +1,60 @@
+{
+ "name": "scroll-area",
+ "title": "Scroll Area",
+ "category": "misc",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "ScrollArea",
+  "ScrollBar"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import { ScrollArea } from \"@/components/ui/scroll-area\";\n\nconst tags = Array.from({ length: 30 }, (_, i) => `v1.2.0-beta.${30 - i}`);\n\nexport default function Demo() {\n  return (\n    <ScrollArea className=\"h-72 w-64 rounded-md border border-border\">\n      <div className=\"p-4\">\n        <h4 className=\"mb-3 text-sm font-medium leading-none text-foreground\">\n          Releases\n        </h4>\n        {tags.map((tag) => (\n          <div\n            key={tag}\n            className=\"border-b border-border py-2 text-sm text-muted-foreground last:border-0\"\n          >\n            {tag}\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/scroll-area.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-area.json",
+ "preview": "https://stashui.vercel.app/c/scroll-area",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Styled scroll container with custom rounded scrollbars.",
+ "description": "A wrapper around Radix UI's ScrollArea with themed scrollbars and support for both vertical and horizontal scrolling.",
+ "use_when": "Containing overflowing content with a custom scrollbar design that matches your theme.",
+ "avoid_when": "For simple overflow:auto containers — this adds styling overhead.",
+ "a11y": "Uses Radix's ScrollArea for keyboard navigation and screen reader support.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative\", className)}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "body-text",
+  "form-field"
+ ]
+}

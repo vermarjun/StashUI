@@ -1,0 +1,100 @@
+{
+ "name": "FlyingPosters-TS-TW",
+ "title": "FlyingPosters",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FlyingPosters"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "3d"
+ ],
+ "usage": "\"use client\";\nimport FlyingPosters from \"@/components/ui/FlyingPosters\";\n\nconst posterImages = [\n  \"https://picsum.photos/seed/poster1/320/320\",\n  \"https://picsum.photos/seed/poster2/320/320\",\n  \"https://picsum.photos/seed/poster3/320/320\",\n  \"https://picsum.photos/seed/poster4/320/320\",\n  \"https://picsum.photos/seed/poster5/320/320\",\n  \"https://picsum.photos/seed/poster6/320/320\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full rounded-xl overflow-hidden\" style={{ height: \"480px\" }}>\n      <FlyingPosters\n        items={posterImages}\n        planeWidth={280}\n        planeHeight={280}\n        distortion={3}\n        scrollEase={0.01}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FlyingPosters.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FlyingPosters-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FlyingPosters-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Images rotate and distort as you scroll, creating a flowing 3D carousel.",
+ "description": "WebGL component rendering images as rotating 3D planes on a scroll-driven carousel. Uses shader-based distortion and easing to create smooth, responsive transitions responding to wheel, touch, and drag input.",
+ "use_when": "Showcasing a gallery with a premium, interactive 3D aesthetic and smooth scroll responsiveness.",
+ "avoid_when": "Performance-critical contexts — runs continuous WebGL rendering and requires a sized parent.",
+ "a11y": "Purely visual scroll-driven carousel; no keyboard navigation or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "planeWidth",
+   "type": "number",
+   "default": "320",
+   "required": false
+  },
+  {
+   "name": "planeHeight",
+   "type": "number",
+   "default": "320",
+   "required": false
+  },
+  {
+   "name": "distortion",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "scrollEase",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "cameraFov",
+   "type": "number",
+   "default": "45",
+   "required": false
+  },
+  {
+   "name": "cameraZ",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media",
+  "hero",
+  "feature-card"
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "name": "comp-458",
+ "title": "Pagination With Page Info",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button",
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-458\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Cmp currentPage={page} totalPages={total} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-458.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-458.json",
+ "preview": "https://stashui.vercel.app/c/comp-458",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with page information and navigation.",
+ "description": "Pagination displaying both position information (current/total) and previous/next navigation buttons.",
+ "use_when": "Pagination requiring both position awareness and directional navigation.",
+ "avoid_when": "Simple sequential navigation or when page jumping is needed.",
+ "a11y": "Semantic pagination with info display and navigation controls.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "name": "direction-aware-hover",
+ "title": "Direction Aware Hover",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "DirectionAwareHover"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport { DirectionAwareHover } from \"@/components/ui/direction-aware-hover\";\n\nconst cards = [\n  {\n    imageUrl: \"https://picsum.photos/seed/dah1/400/400\",\n    label: \"Mountains\",\n    sub: \"Landscape\",\n  },\n  {\n    imageUrl: \"https://picsum.photos/seed/dah2/400/400\",\n    label: \"Forest\",\n    sub: \"Nature\",\n  },\n  {\n    imageUrl: \"https://picsum.photos/seed/dah3/400/400\",\n    label: \"Ocean\",\n    sub: \"Seascape\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap gap-6 items-center justify-center py-10\">\n      {cards.map((card) => (\n        <DirectionAwareHover key={card.label} imageUrl={card.imageUrl}>\n          <div>\n            <p className=\"font-semibold text-lg leading-tight\">{card.label}</p>\n            <p className=\"text-sm text-white/70\">{card.sub}</p>\n          </div>\n        </DirectionAwareHover>\n      ))}\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/direction-aware-hover.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/direction-aware-hover.json",
+ "preview": "https://stashui.vercel.app/c/direction-aware-hover",
+ "dupe_group": "directionawarehover",
+ "alternatives": [
+  {
+   "name": "inspira-direction-aware-hover",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 5
+  }
+ ],
+ "blurb": "Image and text slide based on which edge you hover from.",
+ "description": "Card with background image that detects which border (top/bottom/left/right) the mouse enters from and animates the image and overlay text in opposite directions.",
+ "use_when": "Image cards where hover direction should add visual feedback and detail to the interaction.",
+ "avoid_when": "Touch-only surfaces — direction detection requires hover events and pointer position.",
+ "a11y": "Detects mouse entry direction with no keyboard fallback. Image renders with empty alt text.",
+ "props": [
+  {
+   "name": "imageUrl",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode | string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "childrenClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "imageClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

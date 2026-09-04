@@ -1,0 +1,212 @@
+{
+ "name": "ModelViewer-TS-TW",
+ "title": "3D Model Viewer",
+ "category": "media",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ModelViewer"
+ ],
+ "npm_deps": [
+  "@react-three/fiber@^9.3.0",
+  "@react-three/drei@^10.7.4",
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "webgl",
+  "3d",
+  "heavy",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport ModelViewer from \"@/components/ui/ModelViewer\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full h-full bg-background\">\n      <ModelViewer\n        url=\"https://modelviewer.dev/shared-assets/models/Astronaut.glb\"\n        width={480}\n        height={480}\n        environmentPreset=\"studio\"\n        autoRotate={true}\n        autoRotateSpeed={0.4}\n        enableManualRotation={true}\n        enableHoverRotation={false}\n        enableMouseParallax={false}\n        enableManualZoom={true}\n        fadeIn={true}\n        showScreenshotButton={false}\n        defaultRotationX={-20}\n        defaultRotationY={10}\n        defaultZoom={1.4}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ModelViewer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ModelViewer-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ModelViewer-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D model viewer with drag rotation, parallax, and configurable lighting using…",
+ "description": "Renders GLB, GLTF, FBX, or OBJ models in an interactive 3D canvas. Supports drag-to-rotate, mouse parallax, auto-rotation, and pinch-zoom on touch. Includes environment presets and shadow support.",
+ "use_when": "Showcasing 3D assets, product models, or interactive visualizations that benefit from real-time rotation and lighting…",
+ "avoid_when": "Touch-only devices without proper gesture support, or when model formats like GLTF need complex post-processing beyond…",
+ "a11y": "Primarily visual. Screenshot button is keyboard-accessible. No focus indicators on the model itself. Parallax motion cannot be disabled.",
+ "props": [
+  {
+   "name": "url",
+   "type": "string",
+   "default": "{url}",
+   "required": true
+  },
+  {
+   "name": "width",
+   "type": "number | string",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number | string",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "modelXOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "modelYOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "defaultRotationX",
+   "type": "number",
+   "default": "-50",
+   "required": false
+  },
+  {
+   "name": "defaultRotationY",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "defaultZoom",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "minZoomDistance",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "maxZoomDistance",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "enableMouseParallax",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableManualRotation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableHoverRotation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableManualZoom",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "ambientIntensity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "keyLightIntensity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "fillLightIntensity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "rimLightIntensity",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "environmentPreset",
+   "type": "'city' | 'sunset' | 'night' | 'dawn' | 'studio' | 'apartment' | 'forest' | 'park' | 'none'",
+   "default": "'forest'",
+   "required": false
+  },
+  {
+   "name": "autoFrame",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "placeholderSrc",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showScreenshotButton",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fadeIn",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoRotate",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoRotateSpeed",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "onModelLoaded",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

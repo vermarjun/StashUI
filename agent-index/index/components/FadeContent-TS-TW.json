@@ -1,0 +1,133 @@
+{
+ "name": "FadeContent-TS-TW",
+ "title": "Scroll Fade Reveal",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "FadeContent"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import FadeContent from \"@/components/ui/FadeContent\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-6 py-10 w-full\">\n      <FadeContent duration={800} delay={0} blur threshold={0.1}>\n        <div className=\"rounded-xl border border-border bg-background px-8 py-6 text-center max-w-sm shadow-sm\">\n          <h2 className=\"text-xl font-semibold text-foreground mb-2\">Fade in on scroll</h2>\n          <p className=\"text-muted-foreground text-sm\">\n            This card fades (and unblurs) into view when it enters the viewport.\n          </p>\n        </div>\n      </FadeContent>\n\n      <FadeContent duration={1000} delay={200} threshold={0.1}>\n        <div className=\"rounded-xl border border-border bg-background px-8 py-6 text-center max-w-sm shadow-sm\">\n          <h2 className=\"text-xl font-semibold text-foreground mb-2\">Opacity only</h2>\n          <p className=\"text-muted-foreground text-sm\">\n            A pure opacity fade with a slight delay for a staggered feel.\n          </p>\n        </div>\n      </FadeContent>\n\n      <FadeContent duration={900} delay={400} blur threshold={0.1}>\n        <div className=\"rounded-xl border border-border bg-background px-8 py-6 text-center max-w-sm shadow-sm\">\n          <h2 className=\"text-xl font-semibold text-foreground mb-2\">Blur + fade</h2>\n          <p className=\"text-muted-foreground text-sm\">\n            Combines blur removal with a fade for a soft reveal effect.\n          </p>\n        </div>\n      </FadeContent>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/FadeContent.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/FadeContent-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/FadeContent-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Fades and unblurs content when it scrolls into view.",
+ "description": "Wrapper using GSAP ScrollTrigger to fade in and unblur children when they enter the viewport. Configurable delay, ease, blur intensity, and optional fade-out after visibility.",
+ "use_when": "Content should reveal progressively as the user scrolls, with a polished easing that feels intentional.",
+ "avoid_when": "The scroll container is non-standard, or animations should respect prefers-reduced-motion.",
+ "a11y": "Decorative animation on scroll; no keyboard interaction or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "container",
+   "type": "Element | string | null",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power2.out'",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "initialOpacity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "disappearAfter",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "disappearDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "disappearEase",
+   "type": "string",
+   "default": "'power2.in'",
+   "required": false
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onDisappearanceComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card",
+  "body-text"
+ ]
+}

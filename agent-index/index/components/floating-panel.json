@@ -1,0 +1,74 @@
+{
+ "name": "floating-panel",
+ "title": "Floating Panel",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "FloatingPanelRoot",
+  "FloatingPanelTrigger",
+  "FloatingPanelContent",
+  "FloatingPanelForm",
+  "FloatingPanelLabel",
+  "FloatingPanelTextarea",
+  "FloatingPanelHeader",
+  "FloatingPanelBody",
+  "FloatingPanelFooter",
+  "FloatingPanelCloseButton",
+  "FloatingPanelSubmitButton",
+  "FloatingPanelButton"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 58,
+ "flags": [
+  "motion",
+  "58 colors"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  FloatingPanelRoot,\n  FloatingPanelTrigger,\n  FloatingPanelContent,\n  FloatingPanelForm,\n  FloatingPanelLabel,\n  FloatingPanelTextarea,\n  FloatingPanelFooter,\n  FloatingPanelCloseButton,\n  FloatingPanelSubmitButton,\n} from \"@/components/ui/floating-panel\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-48 p-8\">\n      <FloatingPanelRoot>\n        <FloatingPanelTrigger title=\"Add Note\">\n          Add Note\n        </FloatingPanelTrigger>\n        <FloatingPanelContent className=\"w-80 h-48\">\n          <FloatingPanelForm onSubmit={(note) => console.log(\"Note:\", note)}>\n            <FloatingPanelLabel htmlFor=\"note\">Write your note</FloatingPanelLabel>\n            <FloatingPanelTextarea id=\"note\" />\n            <FloatingPanelFooter>\n              <FloatingPanelCloseButton />\n              <FloatingPanelSubmitButton />\n            </FloatingPanelFooter>\n          </FloatingPanelForm>\n        </FloatingPanelContent>\n      </FloatingPanelRoot>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/floating-panel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/floating-panel.json",
+ "preview": "https://stashui.vercel.app/c/floating-panel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Floating panel that expands from a trigger button with spring animation.",
+ "description": "A FloatingPanelRoot with trigger button that animates into a floating panel; includes form components and footer buttons.",
+ "use_when": "Creating inline forms or quick-edit panels that expand from a trigger button without interrupting workflow.",
+ "avoid_when": "For complex multi-step forms — this is optimized for quick, lightweight interactions.",
+ "a11y": "Trigger button has aria-haspopup=dialog and aria-expanded; form elements are labeled; Escape closes panel.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal",
+  "form-field"
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "name": "lamp-effect",
+ "title": "Lamp Effect",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LampEffect"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 14,
+ "flags": [
+  "pure",
+  "14 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { LampEffect } from \"@/components/ui/lamp-effect\";\n\nexport default function LampEffectDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <LampEffect delay={0.3} duration={0.8}>\n        <h1 className=\"bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text py-4 text-center text-4xl font-bold tracking-tight text-transparent md:text-7xl\">\n          Build lamps <br /> the right way\n        </h1>\n        <p className=\"mt-4 text-center text-slate-400\">\n          A beautiful lamp effect built with pure CSS animations.\n        </p>\n      </LampEffect>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/lamp-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/lamp-effect.json",
+ "preview": "https://stashui.vercel.app/c/lamp-effect",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "CSS-animated overhead lamp with expanding conic gradients and light rays.",
+ "description": "Full-screen container with CSS-animated conic gradients creating a glowing lamp effect. Delay and duration customizable per animation.",
+ "use_when": "A striking full-screen hero background with animated lamp illumination.",
+ "avoid_when": "Limited viewport height — component requires min-h-screen for proper proportions.",
+ "a11y": "Full-screen wrapper with content slot (z-50); focus and keyboard behaviour come from children.",
+ "props": [
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ]
+}

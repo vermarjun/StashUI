@@ -1,0 +1,90 @@
+{
+ "name": "chat-interface-testimonial",
+ "title": "Chat Interface Testimonial",
+ "category": "testimonials",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TimelineAnimation"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\nimport { useRef } from 'react';\nimport { TimelineAnimation } from '@/components/ui/timeline-animation';\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div ref={containerRef} className=\"w-full max-w-lg mx-auto p-8 space-y-6\">\n      <TimelineAnimation animationNum={0} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 1: Discovery\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={1} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We begin by understanding your goals, audience, and competitive landscape to shape a winning strategy.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={2} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 2: Design\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={3} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        Our designers craft beautiful, user-centered interfaces that reflect your brand identity.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={4} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 3: Launch\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={5} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We deploy, monitor, and iterate to ensure your product exceeds expectations from day one.\n      </TimelineAnimation>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/timeline-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/chat-interface-testimonial.json",
+ "preview": "https://stashui.vercel.app/c/chat-interface-testimonial",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Staggered items that animate in blur-fade sequence on scroll into view.",
+ "description": "Scroll-triggered animation wrapper for timeline or process steps. Elements blur-fade and shift vertically in staggered sequence based on animationNum. Supports custom variants and polymorphic rendering via the `as` prop.",
+ "use_when": "Animating timeline steps, process flows, or chat message sequences where sequential reveal adds visual storytelling.",
+ "avoid_when": "When viewing testimonials on slow connections — blur effect + stagger creates multiple animation frames per item.",
+ "a11y": "Motion-triggered on scroll; no prefers-reduced-motion guard. Content is accessible but animations run regardless of user preference.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animationNum",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "timelineRef",
+   "type": "React.RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "keyof HTMLElementTagNameMap",
+   "default": "'div'",
+   "required": false
+  },
+  {
+   "name": "customVariants",
+   "type": "Variants",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "testimonial"
+ ]
+}

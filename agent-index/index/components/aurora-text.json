@@ -1,0 +1,71 @@
+{
+ "name": "aurora-text",
+ "title": "Aurora Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "AuroraText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "import { AuroraText } from \"@/components/ui/aurora-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <h1 className=\"text-5xl font-bold\">\n        Build{\" \"}\n        <AuroraText>beautiful</AuroraText>\n        {\" \"}apps.\n      </h1>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/aurora-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/aurora-text.json",
+ "preview": "https://stashui.vercel.app/c/aurora-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text fills with a multi-color gradient that shifts and cycles through…",
+ "description": "Renders text with an animated background gradient that sweeps continuously, cycling through multiple color stops. Animation speed is configurable.",
+ "use_when": "A hero heading or inline accent wants a vibrant, multi-color gradient effect that feels organic.",
+ "avoid_when": "When text must have a corporate or professional single-color appearance.",
+ "a11y": "Text content is in sr-only; animated visual is aria-hidden.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "[\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"]",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

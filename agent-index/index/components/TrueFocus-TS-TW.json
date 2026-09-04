@@ -1,0 +1,98 @@
+{
+ "name": "TrueFocus-TS-TW",
+ "title": "TrueFocus",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "TrueFocus"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport TrueFocus from \"@/components/ui/TrueFocus\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[320px] bg-background p-8\">\n      <TrueFocus\n        sentence=\"Design With True Focus\"\n        blurAmount={4}\n        borderColor=\"hsl(var(--foreground))\"\n        glowColor=\"hsl(var(--foreground) / 0.4)\"\n        animationDuration={0.5}\n        pauseBetweenAnimations={1}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/TrueFocus.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/TrueFocus-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/TrueFocus-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Words blur and sharpen in sequence with a glowing corner-bracket highlight…",
+ "description": "Splits text into words and cycles focus: the focused word is sharp, others blur. A glowing corner-bracket element animates to each focused word. Can cycle automatically or respond to hover in manual mode.",
+ "use_when": "A headline wants to emphasize words one at a time with visual hierarchy and a sci-fi aesthetic.",
+ "avoid_when": "When all words need to be readable simultaneously or when constant motion might distract.",
+ "a11y": "All words remain in the DOM; blur is visual only. Readable in any order.",
+ "props": [
+  {
+   "name": "sentence",
+   "type": "string",
+   "default": "'True Focus'",
+   "required": false
+  },
+  {
+   "name": "separator",
+   "type": "string",
+   "default": "' '",
+   "required": false
+  },
+  {
+   "name": "manualMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "blurAmount",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "borderColor",
+   "type": "string",
+   "default": "'green'",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "'rgba(0, 255, 0, 0.6)'",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "pauseBetweenAnimations",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline"
+ ]
+}

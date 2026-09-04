@@ -1,0 +1,82 @@
+{
+ "name": "card-spotlight",
+ "title": "Card Spotlight",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CardSpotlight"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { CardSpotlight } from \"@/components/ui/card-spotlight\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[420px] p-8 bg-background\">\n      <CardSpotlight className=\"max-w-sm w-full min-h-[220px]\">\n        <p className=\"relative z-20 text-base font-bold text-white\">\n          Authentication Steps\n        </p>\n        <p className=\"relative z-20 mt-4 text-sm text-neutral-400\">\n          Move your cursor over the card to watch a radial spotlight illuminate\n          the surface with a canvas particle reveal beneath.\n        </p>\n        <ul className=\"relative z-20 mt-6 space-y-2 text-xs text-neutral-500\">\n          <li className=\"flex items-center gap-2\">\n            <span className=\"h-1.5 w-1.5 rounded-full bg-indigo-400\" />\n            Enter your credentials\n          </li>\n          <li className=\"flex items-center gap-2\">\n            <span className=\"h-1.5 w-1.5 rounded-full bg-indigo-400\" />\n            Verify via two-factor\n          </li>\n          <li className=\"flex items-center gap-2\">\n            <span className=\"h-1.5 w-1.5 rounded-full bg-indigo-400\" />\n            Access granted\n          </li>\n        </ul>\n      </CardSpotlight>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/card-spotlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/card-spotlight.json",
+ "preview": "https://stashui.vercel.app/c/card-spotlight",
+ "dupe_group": "cardspotlight",
+ "alternatives": [
+  {
+   "name": "inspira-card-spotlight",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 6
+  }
+ ],
+ "blurb": "Card with a radial spotlight and particle effect following cursor.",
+ "description": "A card that displays a spotlight effect tracking mouse movement. Uses a canvas layer underneath for particle animations. Radius and color are customizable. High z-index content stays above the effect.",
+ "use_when": "Hero cards, feature highlights, or attention-grabbing CTAs where the spotlight draws the eye.",
+ "avoid_when": "Touch-only or performance-sensitive contexts — canvas animation is CPU-demanding.",
+ "a11y": "Card content is readable text. Spotlight is visual effect only.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "350",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#262626\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "primary-cta"
+ ]
+}

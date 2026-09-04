@@ -1,0 +1,64 @@
+{
+ "name": "primitives-texts-rolling",
+ "title": "Rolling Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "RollingText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d",
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { RollingText } from '@/components/ui/primitives-texts-rolling';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 w-full p-10\">\n      <RollingText\n        text=\"Welcome to Animate UI\"\n        inView\n        className=\"text-3xl font-bold\"\n      />\n      <RollingText\n        text=\"Beautiful animations made easy\"\n        inView\n        delay={300}\n        className=\"text-xl text-neutral-500\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-rolling.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-rolling.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-rolling",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text characters roll vertically like a flip clock.",
+ "description": "Each character animates upward through the alphabet or digit set before settling on the target character.",
+ "use_when": "Score displays, counters, or time-based elements.",
+ "avoid_when": "Reading new text — the roll-up animation masks content during transition.",
+ "a11y": "Text is readable after animation settles but hidden during the roll.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "decoration"
+ ]
+}

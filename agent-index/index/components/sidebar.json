@@ -1,0 +1,80 @@
+{
+ "name": "sidebar",
+ "title": "Sidebar",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "SidebarProvider",
+  "Sidebar",
+  "SidebarBody",
+  "DesktopSidebar",
+  "MobileSidebar",
+  "SidebarLink"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  Sidebar,\n  SidebarBody,\n  SidebarLink,\n} from \"@/components/ui/sidebar\";\nimport {\n  HomeIcon,\n  LayoutDashboardIcon,\n  FileTextIcon,\n  SettingsIcon,\n  UserIcon,\n} from \"lucide-react\";\n\nconst links = [\n  { label: \"Home\", href: \"#\", icon: <HomeIcon className=\"h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-400\" /> },\n  { label: \"Dashboard\", href: \"#\", icon: <LayoutDashboardIcon className=\"h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-400\" /> },\n  { label: \"Documents\", href: \"#\", icon: <FileTextIcon className=\"h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-400\" /> },\n  { label: \"Profile\", href: \"#\", icon: <UserIcon className=\"h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-400\" /> },\n  { label: \"Settings\", href: \"#\", icon: <SettingsIcon className=\"h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-400\" /> },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-64 w-full overflow-hidden rounded-xl border border-border bg-background\">\n      <Sidebar>\n        <SidebarBody className=\"h-full\">\n          <div className=\"flex flex-col gap-1 pt-2\">\n            {links.map((link) => (\n              <SidebarLink key={link.label} link={link} />\n            ))}\n          </div>\n        </SidebarBody>\n      </Sidebar>\n      <div className=\"flex-1 flex items-center justify-center text-muted-foreground text-sm\">\n        Main content area\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/sidebar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sidebar.json",
+ "preview": "https://stashui.vercel.app/c/sidebar",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Collapsible sidebar with context provider and smooth open/close animations.",
+ "description": "Context-based sidebar system with SidebarProvider, Sidebar, SidebarBody, DesktopSidebar, MobileSidebar, and SidebarLink components. Uses Framer Motion for smooth collapse/expand and provides a custom hook for managing open state.",
+ "use_when": "Creating responsive layouts with collapsible navigation that works across desktop and mobile viewports with animation.",
+ "avoid_when": "Simple, non-collapsible layouts. Overkill for single-level navigation structures.",
+ "a11y": "Mobile menu button lacks ARIA attributes. Keyboard navigation not built-in. Focus management should be handled by parent.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "setOpen",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "sidebar"
+ ]
+}

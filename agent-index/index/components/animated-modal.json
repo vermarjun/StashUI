@@ -1,0 +1,74 @@
+{
+ "name": "animated-modal",
+ "title": "Animated Modal",
+ "category": "modals",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ModalProvider",
+  "Modal",
+  "ModalTrigger",
+  "ModalBody",
+  "ModalContent",
+  "ModalFooter"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "3d",
+  "motion",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  Modal,\n  ModalBody,\n  ModalContent,\n  ModalFooter,\n  ModalTrigger,\n} from \"@/components/ui/animated-modal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center p-8\">\n      <Modal>\n        <ModalTrigger className=\"rounded-lg border border-border bg-foreground px-6 py-2.5 text-sm font-medium text-background hover:opacity-90 transition-opacity\">\n          Open Modal\n        </ModalTrigger>\n        <ModalBody>\n          <ModalContent>\n            <h2 className=\"text-xl font-bold text-foreground\">\n              Spring 3D Modal\n            </h2>\n            <p className=\"mt-3 text-sm text-muted-foreground leading-relaxed\">\n              This modal animates in with a spring-driven 3D flip effect built on\n              Framer Motion. Click outside or press Escape to dismiss.\n            </p>\n            <p className=\"mt-2 text-sm text-muted-foreground leading-relaxed\">\n              The overlay blurs the background and prevents scroll while the\n              modal is open.\n            </p>\n          </ModalContent>\n          <ModalFooter>\n            <button className=\"rounded-md border border-border px-4 py-2 text-sm hover:bg-muted transition-colors\">\n              Cancel\n            </button>\n            <button className=\"ml-2 rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90 transition-opacity\">\n              Confirm\n            </button>\n          </ModalFooter>\n        </ModalBody>\n      </Modal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/animated-modal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-modal.json",
+ "preview": "https://stashui.vercel.app/c/animated-modal",
+ "dupe_group": "animatedmodal",
+ "alternatives": [
+  {
+   "name": "inspira-animated-modal",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "3D spring-animated modal with blur backdrop and outside-click dismissal.",
+ "description": "A compound modal component with spring-driven 3D entrance animation, blurred background, automatic scroll locking, and keyboard/click-outside dismissal.",
+ "use_when": "Showing important dialogs with a polished, animated entrance that captures attention.",
+ "avoid_when": "For simple confirmations — standard alert-dialog is lighter weight.",
+ "a11y": "Has close button and keyboard dismissal; relies on children for semantic content. No explicit focus trap.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

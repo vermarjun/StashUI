@@ -1,0 +1,70 @@
+{
+ "name": "dynamic-island",
+ "title": "Dynamic Island",
+ "category": "misc",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "DynamicIsland",
+  "DynamicContainer",
+  "DynamicTitle",
+  "DynamicDescription",
+  "SIZE_PRESETS",
+  "DynamicDiv",
+  "DynamicIslandSizePresets",
+  "BlobContext",
+  "DynamicIslandProvider"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport DynamicIsland, {\n  DynamicContainer,\n  DynamicIslandProvider,\n  DynamicTitle,\n  DynamicDescription,\n  SIZE_PRESETS,\n  useDynamicIslandSize,\n} from \"@/components/ui/dynamic-island\";\n\nfunction IslandContent() {\n  const { setSize, state } = useDynamicIslandSize();\n\n  return (\n    <div className=\"flex flex-col items-center gap-4 mt-4\">\n      <DynamicIsland id=\"demo-island\">\n        <DynamicContainer className=\"flex items-center justify-center w-full h-full px-4\">\n          <DynamicTitle className=\"text-white text-xs font-semibold truncate\">\n            {state.size === \"default\" ? \"Dynamic Island\" : \"Playing music...\"}\n          </DynamicTitle>\n          <DynamicDescription className=\"text-gray-400 text-xs truncate\">\n            {state.size === \"medium\" ? \"Now playing: Chill Vibes\" : \"\"}\n          </DynamicDescription>\n        </DynamicContainer>\n      </DynamicIsland>\n      <div className=\"flex gap-2 flex-wrap justify-center\">\n        {([\"default\", \"compact\", \"medium\", \"large\"] as const).map((preset) => (\n          <button\n            key={preset}\n            onClick={() => setSize(preset)}\n            className=\"px-3 py-1.5 text-xs rounded-full bg-neutral-800 text-white hover:bg-neutral-700 transition-colors\"\n          >\n            {preset}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full flex flex-col items-center p-8 bg-neutral-950 rounded-xl min-h-[300px]\">\n      <DynamicIslandProvider initialSize=\"default\">\n        <IslandContent />\n      </DynamicIslandProvider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/dynamic-island.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dynamic-island.json",
+ "preview": "https://stashui.vercel.app/c/dynamic-island",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animating container morphs between size presets with spring physics.",
+ "description": "A motion-based container inspired by Apple's Dynamic Island that smoothly animates between size presets (compact, default, medium, large, ultra, massive, etc.). Spring physics and context-based state management.",
+ "use_when": "iOS-inspired UIs, status displays, notifications, or floating containers needing morphing effect.",
+ "avoid_when": "When complex nested layouts are needed; works best with simple content inside the island.",
+ "a11y": "Spring animations via motion/react; content accessibility depends on children components and DynamicTitle/Description.",
+ "props": [
+  {
+   "name": "id",
+   "type": "string",
+   "default": "{id}",
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "toast",
+  "decoration"
+ ]
+}

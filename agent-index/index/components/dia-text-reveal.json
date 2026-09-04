@@ -1,0 +1,117 @@
+{
+ "name": "dia-text-reveal",
+ "title": "Dia Text Reveal",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "DiaTextReveal"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "motion",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { DiaTextReveal } from \"@/components/ui/dia-text-reveal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <h2 className=\"text-4xl font-bold text-foreground\">\n        Crafted with{\" \"}\n        <DiaTextReveal\n          text={[\"precision.\", \"purpose.\", \"passion.\"]}\n          repeat\n          duration={1.5}\n          repeatDelay={0.8}\n          className=\"font-bold\"\n        />\n      </h2>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/dia-text-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dia-text-reveal.json",
+ "preview": "https://stashui.vercel.app/c/dia-text-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A color gradient band sweeps left to right across text, cycling through it.",
+ "description": "Renders text with an animated gradient band that sweeps across it. Supports repeating through multiple text strings with configurable timing. Respects prefers-reduced-motion.",
+ "use_when": "Inline text needs a smooth, elegant gradient sweep reveal with optional multi-text cycling.",
+ "avoid_when": "When the gradient sweep effect is unwanted or text must be immediately fully readable.",
+ "a11y": "Current text string is fully readable; gradient is visual effect only.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string | string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "DEFAULT_COLORS",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "\"var(--foreground)\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeatDelay",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "startOnView",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"align-bottom leading-[100%] text-inherit\", className)}",
+   "required": false
+  },
+  {
+   "name": "fixedWidth",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

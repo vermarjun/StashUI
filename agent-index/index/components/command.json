@@ -1,0 +1,56 @@
+{
+ "name": "command",
+ "title": "Command Palette",
+ "category": "modals",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Command",
+  "CommandDialog",
+  "CommandEmpty",
+  "CommandGroup",
+  "CommandInput",
+  "CommandItem",
+  "CommandList",
+  "CommandSeparator",
+  "CommandShortcut"
+ ],
+ "npm_deps": [
+  "cmdk"
+ ],
+ "registry_deps": [
+  "dialog"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Command,\n  CommandDialog,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n  CommandShortcut,\n} from \"@/components/ui/command\";\n\nconst commands = [\n  { group: \"Suggestions\", items: [\n    { label: \"Calendar\", shortcut: \"⌘C\" },\n    { label: \"Search Emoji\", shortcut: \"⌘E\" },\n    { label: \"Calculator\", shortcut: \"⌘K\" },\n  ]},\n  { group: \"Settings\", items: [\n    { label: \"Profile\", shortcut: \"⌘P\" },\n    { label: \"Billing\", shortcut: \"⌘B\" },\n    { label: \"Appearance\", shortcut: \"⌘A\" },\n  ]},\n];\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center p-8\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"flex items-center gap-3 rounded-md border border-border px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted transition-colors\"\n      >\n        <span>Search commands…</span>\n        <kbd className=\"pointer-events-none inline-flex h-5 items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground\">\n          ⌘K\n        </kbd>\n      </button>\n\n      <CommandDialog open={open} onOpenChange={setOpen}>\n        <CommandInput placeholder=\"Type a command or search…\" />\n        <CommandList>\n          <CommandEmpty>No results found.</CommandEmpty>\n          {commands.map((section) => (\n            <CommandGroup key={section.group} heading={section.group}>\n              {section.items.map((item) => (\n                <CommandItem key={item.label} onSelect={() => setOpen(false)}>\n                  {item.label}\n                  <CommandShortcut>{item.shortcut}</CommandShortcut>\n                </CommandItem>\n              ))}\n            </CommandGroup>\n          ))}\n          <CommandSeparator />\n        </CommandList>\n      </CommandDialog>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/command.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/command.json",
+ "preview": "https://stashui.vercel.app/c/command",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Command palette for searching and executing commands with grouped shortcuts.",
+ "description": "A compound component wrapping cmdk library with styled input, grouped results, keyboard shortcuts display, and dialog wrapper for full-screen command palette UI.",
+ "use_when": "Building command palettes (⌘K), quick action menus, or searchable command interfaces.",
+ "avoid_when": "Simple dropdown menus — use a select component instead.",
+ "a11y": "cmdk provides keyboard navigation and search. CommandDialog wraps in an accessible dialog.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "name": "bento-grid",
+ "title": "Bento Grid",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "BentoGrid",
+  "BentoGridItem"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "8 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { BentoGrid, BentoGridItem } from \"@/components/ui/bento-grid\";\n\nconst items = [\n  {\n    title: \"Ship at the speed of thought\",\n    description:\n      \"Stop wrestling with boilerplate and focus on what actually matters.\",\n    header: (\n      <div className=\"flex h-full min-h-[6rem] w-full rounded-lg bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900\" />\n    ),\n    className: \"md:col-span-2\",\n  },\n  {\n    title: \"Type-safe by default\",\n    description: \"Full TypeScript inference from props to styles.\",\n    header: (\n      <div className=\"flex h-full min-h-[6rem] w-full rounded-lg bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900\" />\n    ),\n    className: \"md:col-span-1\",\n  },\n  {\n    title: \"Composable primitives\",\n    description: \"Mix and match cells to build any dashboard layout.\",\n    header: (\n      <div className=\"flex h-full min-h-[6rem] w-full rounded-lg bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900\" />\n    ),\n    className: \"md:col-span-1\",\n  },\n  {\n    title: \"Dark mode included\",\n    description: \"Tokens adapt automatically — no extra selectors needed.\",\n    header: (\n      <div className=\"flex h-full min-h-[6rem] w-full rounded-lg bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900\" />\n    ),\n    className: \"md:col-span-2\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto p-6\">\n      <BentoGrid>\n        {items.map((item, i) => (\n          <BentoGridItem\n            key={i}\n            title={item.title}\n            description={item.description}\n            header={item.header}\n            className={item.className}\n          />\n        ))}\n      </BentoGrid>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/bento-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bento-grid.json",
+ "preview": "https://stashui.vercel.app/c/bento-grid",
+ "dupe_group": "bentogrid",
+ "alternatives": [
+  {
+   "name": "inspira-bento-grid",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 19
+  },
+  {
+   "name": "magic-ui-bento-grid",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 6
+  }
+ ],
+ "blurb": "Responsive grid layout where items can span multiple columns.",
+ "description": "BentoGrid is a CSS grid container. BentoGridItem wraps each cell with title, description, header (top content), and optional icon. Items are sized with responsive Tailwind classes. No built-in animation.",
+ "use_when": "Feature showcases, dashboards, or product pages using a bento box layout.",
+ "avoid_when": "When you need scroll-based animations or complex state management.",
+ "a11y": "Grid items are divs with text content. Semantic structure depends on how you use them.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card"
+ ]
+}

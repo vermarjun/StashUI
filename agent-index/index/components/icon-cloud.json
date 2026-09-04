@@ -1,0 +1,68 @@
+{
+ "name": "icon-cloud",
+ "title": "Icon Cloud",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "IconCloud"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "canvas",
+  "pure",
+  "1 colors"
+ ],
+ "usage": "import { IconCloud } from \"@/components/ui/icon-cloud\"\n\n// Brand icons fetched from simpleicons CDN — PNG at 64×64.\nconst slugs = [\n  \"typescript\", \"javascript\", \"react\", \"nextdotjs\", \"vercel\",\n  \"tailwindcss\", \"nodedotjs\", \"prisma\", \"postgresql\", \"mongodb\",\n  \"graphql\", \"docker\", \"git\", \"github\", \"figma\",\n  \"vitess\", \"vite\", \"vitest\", \"jest\", \"eslint\",\n]\n\nconst images = slugs.map(\n  (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`\n)\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <IconCloud images={images} />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/icon-cloud.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/icon-cloud.json",
+ "preview": "https://stashui.vercel.app/c/icon-cloud",
+ "dupe_group": "iconcloud",
+ "alternatives": [
+  {
+   "name": "inspira-icon-cloud",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "3D rotating cloud of icons or images rendered on canvas.",
+ "description": "Interactive canvas component rendering a rotating globe of icons or image URLs. Responds to mouse drag with momentum animation and smooth rotation.",
+ "use_when": "Tech stacks, skill showcases, or logo clouds for portfolios and landing pages.",
+ "avoid_when": "When icon accessibility is critical, or on devices with limited GPU.",
+ "a11y": "Canvas-rendered; no semantic structure or keyboard interaction. Purely visual.",
+ "props": [
+  {
+   "name": "icons",
+   "type": "React.ReactNode[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

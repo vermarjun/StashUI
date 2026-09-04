@@ -1,0 +1,62 @@
+{
+ "name": "pagination",
+ "title": "Pagination",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Pagination",
+  "PaginationContent",
+  "PaginationEllipsis",
+  "PaginationItem",
+  "PaginationLink",
+  "PaginationNext",
+  "PaginationPrevious"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/components/ui/pagination\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(1);\n  const total = 7;\n\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationPrevious\n            href=\"#\"\n            onClick={(e) => { e.preventDefault(); setPage((p) => Math.max(1, p - 1)); }}\n          />\n        </PaginationItem>\n        {[1, 2, 3].map((n) => (\n          <PaginationItem key={n}>\n            <PaginationLink\n              href=\"#\"\n              isActive={page === n}\n              onClick={(e) => { e.preventDefault(); setPage(n); }}\n            >\n              {n}\n            </PaginationLink>\n          </PaginationItem>\n        ))}\n        <PaginationItem>\n          <PaginationEllipsis />\n        </PaginationItem>\n        {[6, 7].map((n) => (\n          <PaginationItem key={n}>\n            <PaginationLink\n              href=\"#\"\n              isActive={page === n}\n              onClick={(e) => { e.preventDefault(); setPage(n); }}\n            >\n              {n}\n            </PaginationLink>\n          </PaginationItem>\n        ))}\n        <PaginationItem>\n          <PaginationNext\n            href=\"#\"\n            onClick={(e) => { e.preventDefault(); setPage((p) => Math.min(total, p + 1)); }}\n          />\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/pagination.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pagination.json",
+ "preview": "https://stashui.vercel.app/c/pagination",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Accessible pagination control with arrow buttons, numbered links, and ellipsis.",
+ "description": "Composable pagination built on semantic HTML (nav, ul, li) with PaginationLink, PaginationPrevious, PaginationNext, and PaginationEllipsis. Supports active/disabled states and keyboard focus management via inherited button styling.",
+ "use_when": "Navigating large datasets or search results where page-by-page browsing is expected. Integrates cleanly with any…",
+ "avoid_when": "Infinite scroll or virtualized lists where pagination adds unnecessary UI. Not suitable for very large page counts…",
+ "a11y": "Semantic nav landmark and list structure. Links are keyboard focusable. Parent should set aria-current on active link and aria-label on nav.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"mx-auto flex w-full justify-center\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "footer"
+ ]
+}

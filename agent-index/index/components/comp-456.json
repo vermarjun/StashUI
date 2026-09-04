@@ -1,0 +1,48 @@
+{
+ "name": "comp-456",
+ "title": "Pagination Page Counter",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button",
+  "pagination"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-456\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Cmp currentPage={page} totalPages={total} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-456.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-456.json",
+ "preview": "https://stashui.vercel.app/c/comp-456",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination showing current page counter display.",
+ "description": "Pagination displaying current page number and total pages count (e.g., 'Page 3 of 10').",
+ "use_when": "Pagination where users need to see their position in the sequence.",
+ "avoid_when": "When you need clickable page numbers or jumping to specific pages.",
+ "a11y": "Semantic pagination with current page indicator.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

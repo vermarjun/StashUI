@@ -1,0 +1,72 @@
+{
+ "name": "pointer-highlight",
+ "title": "Pointer Highlight",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "PointerHighlight"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport { PointerHighlight } from \"@/components/ui/pointer-highlight\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full flex-col items-center justify-center gap-10 bg-background p-12\">\n      <PointerHighlight>\n        <h2 className=\"text-3xl font-bold tracking-tight text-foreground px-4 py-2\">\n          Ship faster than ever\n        </h2>\n      </PointerHighlight>\n\n      <PointerHighlight\n        rectangleClassName=\"border-blue-500\"\n        pointerClassName=\"text-blue-500\"\n      >\n        <p className=\"text-lg text-muted-foreground px-4 py-2 max-w-sm text-center\">\n          Build beautiful interfaces with zero friction\n        </p>\n      </PointerHighlight>\n\n      <PointerHighlight\n        rectangleClassName=\"border-emerald-500\"\n        pointerClassName=\"text-emerald-500\"\n      >\n        <span className=\"text-xl font-semibold text-foreground px-4 py-2 inline-block\">\n          Open source · MIT license\n        </span>\n      </PointerHighlight>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/pointer-highlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pointer-highlight.json",
+ "preview": "https://stashui.vercel.app/c/pointer-highlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Content highlights with glowing border and pointer indicator following cursor.",
+ "description": "Wraps content in a glowing border rectangle with a pointer/cursor indicator that tracks mouse position, creating a highlighted interactive zone.",
+ "use_when": "Hero text, CTAs, or key content where glowing highlights with cursor tracking draw attention and guide interaction.",
+ "avoid_when": "Touch-only devices or cursor-less contexts.",
+ "a11y": "Visual highlight only; no semantic enhancement. Focus and keyboard access depend on child content.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "rectangleClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "pointerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "primary-cta"
+ ]
+}

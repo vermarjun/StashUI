@@ -1,0 +1,108 @@
+{
+ "name": "glare-hover",
+ "title": "Glare Hover",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "GlareHover"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "import { GlareHover } from \"@/components/ui/glare-hover\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-8\">\n      <GlareHover\n        width=\"260px\"\n        height=\"160px\"\n        background=\"#0a0a0a\"\n        color=\"#a78bfa\"\n        className=\"rounded-xl border border-border\"\n      >\n        <div className=\"flex flex-col gap-1 p-5\">\n          <p className=\"text-xs font-medium text-muted-foreground uppercase tracking-widest\">\n            Total Revenue\n          </p>\n          <p className=\"text-3xl font-bold text-foreground\">$48,295</p>\n          <p className=\"text-xs text-green-500\">+12.4% from last month</p>\n        </div>\n      </GlareHover>\n\n      <GlareHover\n        width=\"260px\"\n        height=\"160px\"\n        background=\"#0a0a0a\"\n        color=\"#f472b6\"\n        className=\"rounded-xl border border-border\"\n      >\n        <div className=\"flex flex-col gap-1 p-5\">\n          <p className=\"text-xs font-medium text-muted-foreground uppercase tracking-widest\">\n            Active Users\n          </p>\n          <p className=\"text-3xl font-bold text-foreground\">3,842</p>\n          <p className=\"text-xs text-green-500\">+8.1% from last month</p>\n        </div>\n      </GlareHover>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/glare-hover.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/glare-hover.json",
+ "preview": "https://stashui.vercel.app/c/glare-hover",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Glare sweep across element on hover using CSS gradient.",
+ "description": "Wrapper applying a configurable gradient glare effect that sweeps across children on hover. Controls angle, speed, size, and highlight color via CSS variables.",
+ "use_when": "Cards, tiles, or buttons that need a premium shimmer hover effect without animation libraries.",
+ "avoid_when": "Touch-only interfaces or when hover is unavailable.",
+ "a11y": "Wrapper only; focus and keyboard behavior come from children. Glare is purely visual.",
+ "props": [
+  {
+   "name": "width",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "background",
+   "type": "string",
+   "default": "\"#000\"",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#ffffff\"",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "angle",
+   "type": "number",
+   "default": "-45",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "650",
+   "required": false
+  },
+  {
+   "name": "playOnce",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "stat"
+ ]
+}

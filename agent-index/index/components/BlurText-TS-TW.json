@@ -1,0 +1,122 @@
+{
+ "name": "BlurText-TS-TW",
+ "title": "Blur Text",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "BlurText"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport BlurText from \"@/components/ui/BlurText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-12 min-h-[300px]\">\n      <BlurText\n        text=\"Design systems built to last\"\n        animateBy=\"words\"\n        direction=\"top\"\n        delay={150}\n        className=\"text-3xl font-bold text-foreground\"\n      />\n      <BlurText\n        text=\"Composable. Accessible. Beautiful.\"\n        animateBy=\"words\"\n        direction=\"bottom\"\n        delay={120}\n        stepDuration={0.4}\n        className=\"text-xl font-medium text-muted-foreground\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/BlurText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/BlurText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/BlurText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text animates in with blur and opacity transition when scrolled into view.",
+ "description": "Wraps text and staggered-animates each word (or letter) to fade in and blur-out with configurable easing. Triggered by scroll visibility via IntersectionObserver.",
+ "use_when": "Body copy or headings need a polished reveal entrance as the page scrolls.",
+ "avoid_when": "When prefers-reduced-motion is set — the animation continues regardless.",
+ "a11y": "Text content is fully readable; uses motion/react for animation. No motion guard; runs for all users.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "animateBy",
+   "type": "'words' | 'letters'",
+   "default": "'words'",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'top' | 'bottom'",
+   "default": "'top'",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "rootMargin",
+   "type": "string",
+   "default": "'0px'",
+   "required": false
+  },
+  {
+   "name": "animationFrom",
+   "type": "Record<string, string | number>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animationTo",
+   "type": "Array<Record<string, string | number>>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "Easing | Easing[]",
+   "default": "(t: number) => t",
+   "required": false
+  },
+  {
+   "name": "onAnimationComplete",
+   "type": "() => void",
+   "default": "{index === elements.length - 1 ? onAnimationComplete : undef",
+   "required": false
+  },
+  {
+   "name": "stepDuration",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

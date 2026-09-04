@@ -1,0 +1,111 @@
+{
+ "name": "inspira-wavy-background",
+ "title": "Wavy Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "WavyBackground"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "canvas",
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { WavyBackground } from \"@/components/ui/wavy-background\";\n\nexport default function WavyBackgroundDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <WavyBackground\n        backgroundFill=\"black\"\n        colors={[\"#38bdf8\", \"#818cf8\", \"#c084fc\", \"#e879f9\", \"#22d3ee\"]}\n        waveWidth={50}\n        blur={10}\n        speed=\"fast\"\n        waveOpacity={0.5}\n        containerClass=\"h-full w-full\"\n      >\n        <h1 className=\"text-center text-4xl font-bold text-white md:text-6xl\">\n          Wavy Background\n        </h1>\n        <p className=\"mt-4 text-center text-lg text-white/70\">\n          Beautiful animated waves powered by simplex noise\n        </p>\n      </WavyBackground>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/wavy-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-wavy-background.json",
+ "preview": "https://stashui.vercel.app/c/inspira-wavy-background",
+ "dupe_group": "wavybackground",
+ "alternatives": [
+  {
+   "name": "wavy-background",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 5
+  }
+ ],
+ "blurb": "Layered undulating waves with Simplex noise, flowing smoothly across the screen.",
+ "description": "Canvas-based animated waves using Simplex noise for organic motion. Multiple coloured layers create depth with customizable speed, opacity, and blur.",
+ "use_when": "A fluid, organic-feeling background for hero sections with a modern, flowing aesthetic.",
+ "avoid_when": "Performance-sensitive contexts — continuous canvas animation with Simplex noise is computationally intensive.",
+ "a11y": "Wrapper component with content slot; focus and keyboard behaviour come from overlaid children. Animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "[\"#38bdf8\", \"#818cf8\", \"#c084fc\", \"#e879f9\", \"#22d3ee\"]",
+   "required": false
+  },
+  {
+   "name": "waveWidth",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "backgroundFill",
+   "type": "string",
+   "default": "\"black\"",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "'slow' | 'fast'",
+   "default": "\"fast\"",
+   "required": false
+  },
+  {
+   "name": "waveOpacity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

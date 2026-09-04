@@ -1,0 +1,74 @@
+{
+ "name": "logo-origami",
+ "title": "Logo Origami",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LogoOrigami",
+  "LogoOrigamiItem"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3d",
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { LogoOrigami, LogoOrigamiItem } from \"@/components/ui/logo-origami\"\n\nexport default function LogoOrigamiDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-12 min-h-64 bg-neutral-900 rounded-xl\">\n      <LogoOrigami duration={1.5} delay={2.5}>\n        {[\n          <LogoOrigamiItem key=\"react\">⚛️</LogoOrigamiItem>,\n          <LogoOrigamiItem key=\"next\" className=\"bg-neutral-800\">\n            ▲\n          </LogoOrigamiItem>,\n          <LogoOrigamiItem key=\"ts\" className=\"bg-blue-700\">\n            TS\n          </LogoOrigamiItem>,\n          <LogoOrigamiItem key=\"tailwind\" className=\"bg-cyan-700\">\n            🌊\n          </LogoOrigamiItem>,\n        ]}\n      </LogoOrigami>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/logo-origami.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/logo-origami.json",
+ "preview": "https://stashui.vercel.app/c/logo-origami",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Logos flip on center axis, cycling through items on a timer.",
+ "description": "Cycles through child content on a timer, with upper and lower halves rotating away and in on a 3D X-axis to reveal the next item.",
+ "use_when": "Logo walls or brand carousels where a flipping transition creates visual rhythm and engagement.",
+ "avoid_when": "Contexts requiring accessibility — no keyboard control to pause or navigate the carousel.",
+ "a11y": "Content cycles automatically; no pause control. Focus handling depends on child content.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "2.5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "hero"
+ ]
+}

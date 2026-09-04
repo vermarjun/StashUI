@@ -1,0 +1,84 @@
+{
+ "name": "cult-ui-dock",
+ "title": "Dock",
+ "category": "navigation",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "Dock",
+  "DockCard",
+  "DockCardInner",
+  "DockDivider"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 19,
+ "flags": [
+  "motion",
+  "19 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { Dock, DockCard, DockCardInner, DockDivider } from \"@/components/ui/dock\"\n\nconst APPS = [\n  {\n    id: \"0\",\n    src: \"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Finder_Icon_macOS_Big_Sur.png/240px-Finder_Icon_macOS_Big_Sur.png\",\n    label: \"Finder\",\n  },\n  {\n    id: \"1\",\n    src: \"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Safari_browser_logo.svg/240px-Safari_browser_logo.svg.png\",\n    label: \"Safari\",\n  },\n  {\n    id: \"2\",\n    src: \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mail_%28iOS%29.svg/240px-Mail_%28iOS%29.svg.png\",\n    label: \"Mail\",\n  },\n  {\n    id: \"3\",\n    src: \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/ITunes_12.2_logo.svg/240px-ITunes_12.2_logo.svg.png\",\n    label: \"Music\",\n  },\n  {\n    id: \"4\",\n    src: \"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/240px-Notion-logo.svg.png\",\n    label: \"Notion\",\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-40 bg-background\">\n      <Dock>\n        {APPS.slice(0, 3).map((app) => (\n          <DockCard key={app.id} id={app.id}>\n            <DockCardInner src={app.src} id={app.id} />\n          </DockCard>\n        ))}\n        <DockDivider />\n        {APPS.slice(3).map((app) => (\n          <DockCard key={app.id} id={app.id}>\n            <DockCardInner src={app.src} id={app.id} />\n          </DockCard>\n        ))}\n      </Dock>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/dock.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/cult-ui-dock.json",
+ "preview": "https://stashui.vercel.app/c/cult-ui-dock",
+ "dupe_group": "dock",
+ "alternatives": [
+  {
+   "name": "inspira-dock",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  },
+  {
+   "name": "dock",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 2
+  },
+  {
+   "name": "Dock-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 6
+  }
+ ],
+ "blurb": "Floating dock with magnifying zoom on hover, spring-based animations.",
+ "description": "Dock component with animated zoom magnification on hover. Children are DockCard items. Mouse proximity triggers scaling via spring physics.",
+ "use_when": "Floating toolbars or action menus where hover magnification adds polish.",
+ "avoid_when": "Touch-only interfaces; magnification requires pointer tracking.",
+ "a11y": "Dock is a landmark (aria-label). Dock items are keyboard-focusable. Animations respect prefers-reduced-motion where possible.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ]
+}

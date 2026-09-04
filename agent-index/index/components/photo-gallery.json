@@ -1,0 +1,59 @@
+{
+ "name": "photo-gallery",
+ "title": "Photo Gallery",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "PhotoGallery"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { PhotoGallery } from \"@/components/ui/photo-gallery\";\n\nconst IMAGES = [\n  { src: \"https://picsum.photos/seed/pg1/400/400\" },\n  { src: \"https://picsum.photos/seed/pg2/400/400\" },\n  { src: \"https://picsum.photos/seed/pg3/400/400\" },\n  { src: \"https://picsum.photos/seed/pg4/400/400\" },\n  { src: \"https://picsum.photos/seed/pg5/400/400\" },\n  { src: \"https://picsum.photos/seed/pg6/400/400\" },\n  { src: \"https://picsum.photos/seed/pg7/400/400\" },\n  { src: \"https://picsum.photos/seed/pg8/400/400\" },\n  { src: \"https://picsum.photos/seed/pg9/400/400\" },\n  { src: \"https://picsum.photos/seed/pg10/400/400\" },\n];\n\nexport default function PhotoGalleryDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-8 p-8\">\n      <PhotoGallery items={IMAGES} size={90} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/photo-gallery.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/photo-gallery.json",
+ "preview": "https://stashui.vercel.app/c/photo-gallery",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Diamond-clipped photos expand to square on hover with brightness dim.",
+ "description": "A masonry gallery with diamond-shaped clip-path items that transform to squares on hover. Non-hovered images dim via CSS :has() selector with focus and keyboard accessibility.",
+ "use_when": "Photo galleries, portfolio showcases, or image collections with interactive hover-reveal effects.",
+ "avoid_when": "When exact image aspect ratios must be preserved; clip-path distorts proportions.",
+ "a11y": "Keyboard and focus accessible with visible focus outline; hover effect accessible via :has() selector.",
+ "props": [
+  {
+   "name": "items",
+   "type": "PhotoGalleryItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "size",
+   "type": "number | undefined",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media"
+ ]
+}

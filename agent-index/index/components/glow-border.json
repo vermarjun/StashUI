@@ -1,0 +1,55 @@
+{
+ "name": "glow-border",
+ "title": "Glow Border",
+ "category": "borders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "GlowBorder"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { GlowBorder } from \"@/components/ui/glow-border\";\n\nexport default function GlowBorderDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-12 bg-neutral-950 min-h-[200px]\">\n      <div className=\"relative w-48 h-24 bg-neutral-900 rounded-[10px] flex items-center justify-center\">\n        <GlowBorder color=\"#06b6d4\" borderRadius={10} />\n        <span className=\"text-white text-sm font-medium\">Cyan Glow</span>\n      </div>\n      <div className=\"relative w-48 h-24 bg-neutral-900 rounded-2xl flex items-center justify-center\">\n        <GlowBorder color={[\"#ff0080\", \"#7928ca\", \"#0070f3\"]} borderRadius={16} duration={5} borderWidth={2} />\n        <span className=\"text-white text-sm font-medium\">Multi Color</span>\n      </div>\n      <div className=\"relative w-48 h-24 bg-neutral-900 rounded-full flex items-center justify-center\">\n        <GlowBorder color=\"#f59e0b\" borderRadius={9999} borderWidth={3} duration={8} />\n        <span className=\"text-white text-sm font-medium\">Amber Pill</span>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/glow-border.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/glow-border.json",
+ "preview": "https://stashui.vercel.app/c/glow-border",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Soft glowing border that pulses or fades.",
+ "description": "Border with animated glow effect; similar to BorderGlow but with different styling.",
+ "use_when": "Featured cards or prominent UI sections requiring subtle emphasis.",
+ "avoid_when": "Busy layouts where glow adds visual clutter.",
+ "a11y": "Decorative border wrapper.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "shadow"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "decoration"
+ ]
+}

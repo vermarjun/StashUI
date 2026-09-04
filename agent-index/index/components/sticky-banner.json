@@ -1,0 +1,65 @@
+{
+ "name": "sticky-banner",
+ "title": "Sticky Banner",
+ "category": "notifications",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "StickyBanner"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { StickyBanner } from \"@/components/ui/sticky-banner\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-y-auto bg-background\">\n      <StickyBanner className=\"bg-gradient-to-r from-violet-600 to-indigo-600\">\n        <div className=\"flex items-center gap-3 text-white\">\n          <span className=\"text-sm font-semibold\">\n            🎉 New components are here!\n          </span>\n          <a\n            href=\"#\"\n            className=\"rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white hover:bg-white/30 transition-colors\"\n            onClick={(e) => e.preventDefault()}\n          >\n            Learn more →\n          </a>\n        </div>\n      </StickyBanner>\n      <div className=\"flex flex-col gap-8 p-8\">\n        <div className=\"h-32 rounded-xl bg-muted\" />\n        <div className=\"h-32 rounded-xl bg-muted\" />\n        <div className=\"h-32 rounded-xl bg-muted\" />\n        <div className=\"h-32 rounded-xl bg-muted\" />\n        <div className=\"h-32 rounded-xl bg-muted\" />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/sticky-banner.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sticky-banner.json",
+ "preview": "https://stashui.vercel.app/c/sticky-banner",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Sticky top banner with scroll-triggered hide and close button.",
+ "description": "Sticky positioned container that animates down from top on mount, hides on scroll (if hideOnScroll enabled) via useScroll and useMotionValueEvent, with toggle close button.",
+ "use_when": "You need a persistent banner that auto-hides when user scrolls, but can be reopened.",
+ "avoid_when": "For permanently visible headers; use a fixed header instead.",
+ "a11y": "Close button is keyboard accessible. Motion respects prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hideOnScroll",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background"
+ ]
+}

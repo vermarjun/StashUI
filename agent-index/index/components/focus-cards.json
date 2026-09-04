@@ -1,0 +1,55 @@
+{
+ "name": "focus-cards",
+ "title": "Focus Cards",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Card",
+  "FocusCards"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { FocusCards } from \"@/components/ui/focus-cards\";\n\nexport default function Demo() {\n  const cards = [\n    {\n      title: \"Forest in the mountains\",\n      src: \"https://picsum.photos/seed/forest/800/600\",\n    },\n    {\n      title: \"City lights at night\",\n      src: \"https://picsum.photos/seed/city/800/600\",\n    },\n    {\n      title: \"Ocean waves at sunset\",\n      src: \"https://picsum.photos/seed/ocean/800/600\",\n    },\n    {\n      title: \"Desert dunes\",\n      src: \"https://picsum.photos/seed/desert/800/600\",\n    },\n    {\n      title: \"Snowy mountain peak\",\n      src: \"https://picsum.photos/seed/mountain/800/600\",\n    },\n    {\n      title: \"Tropical rainforest\",\n      src: \"https://picsum.photos/seed/rainforest/800/600\",\n    },\n  ];\n\n  return (\n    <div className=\"w-full max-w-5xl mx-auto py-10 px-4\">\n      <FocusCards cards={cards} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/focus-cards.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/focus-cards.json",
+ "preview": "https://stashui.vercel.app/c/focus-cards",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image grid that blurs/scales non-hovered cards while enlarging hovered card.",
+ "description": "A responsive image card grid that tracks hover state, blurring and scaling sibling cards while the hovered card stays in focus. Gradient title overlay appears on hover.",
+ "use_when": "Portfolio galleries, product grids, or image-based feature showcases where focus isolation directs attention to one…",
+ "avoid_when": "Touch-only interfaces where persistent focus state or multi-card blur could create accessibility confusion.",
+ "a11y": "Cards are image containers with alt text. Hover focus is visual only; keyboard focus depends on card structure. Blur effects are non-semantic visual feedback.",
+ "props": [
+  {
+   "name": "cards",
+   "type": "Array<{title: string, src: string}>",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

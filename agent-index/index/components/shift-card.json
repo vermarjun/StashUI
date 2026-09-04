@@ -1,0 +1,80 @@
+{
+ "name": "shift-card",
+ "title": "Shift Card",
+ "category": "cards",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "ShiftCard",
+  "ShiftCardHeader",
+  "ShiftCardContent"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { ShiftCard } from \"@/components/ui/shift-card\";\n\nconst avatar =\n  \"https://api.dicebear.com/9.x/avataaars/svg?seed=shiftcard&size=48\";\n\nexport default function ShiftCardDemo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <ShiftCard\n        topContent={\n          <div className=\"flex items-center gap-2\">\n            <img\n              src={avatar}\n              alt=\"User\"\n              className=\"size-8 rounded-full border border-border\"\n            />\n            <div className=\"leading-tight\">\n              <p className=\"text-sm font-semibold text-foreground\">\n                Jordan Lee\n              </p>\n              <p className=\"text-xs text-muted-foreground\">@jordanlee</p>\n            </div>\n          </div>\n        }\n        topAnimateContent={\n          <p className=\"mt-1 text-xs text-muted-foreground\">\n            Full-stack dev · Open to work\n          </p>\n        }\n        middleContent={\n          <div className=\"flex flex-col items-center gap-3 py-4\">\n            <img\n              src={avatar}\n              alt=\"User large\"\n              className=\"size-20 rounded-full border-2 border-border\"\n            />\n            <p className=\"text-sm font-medium text-foreground\">Jordan Lee</p>\n          </div>\n        }\n        bottomContent={\n          <div className=\"flex flex-col gap-2 rounded-xl bg-muted/60 p-4\">\n            <div className=\"flex justify-between text-xs\">\n              <span className=\"text-muted-foreground\">Followers</span>\n              <span className=\"font-semibold\">4.2k</span>\n            </div>\n            <div className=\"flex justify-between text-xs\">\n              <span className=\"text-muted-foreground\">Following</span>\n              <span className=\"font-semibold\">318</span>\n            </div>\n            <button className=\"mt-1 w-full rounded-lg bg-foreground py-1.5 text-xs font-medium text-background\">\n              Follow\n            </button>\n          </div>\n        }\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/shift-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/shift-card.json",
+ "preview": "https://stashui.vercel.app/c/shift-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card that expands and shifts content sections on hover or touch.",
+ "description": "A card with separate top/middle/bottom content areas. ShiftCardContent animates height and opacity on hover, revealing hidden content. Supports mouse and touch interactions.",
+ "use_when": "Interactive cards where progressive reveal of content (price, details, CTA) guides user attention through hover.",
+ "avoid_when": "Touch-only layouts where persistent expand state could trap content off-screen or conflict with scrolling.",
+ "a11y": "Content is revealed on hover but remains in document flow. Focus management depends on implementation. Keyboard nav requires manual testing.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{divProps.className}",
+   "required": false
+  },
+  {
+   "name": "topContent",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "middleContent",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "topAnimateContent",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "bottomContent",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "modal"
+ ]
+}

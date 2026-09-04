@@ -1,0 +1,85 @@
+{
+ "name": "scratch-to-reveal",
+ "title": "Scratch To Reveal",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ScratchToReveal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "canvas",
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport { ScratchToReveal } from \"@/components/ui/scratch-to-reveal\";\n\nexport default function ScratchToRevealDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <ScratchToReveal\n        width={300}\n        height={200}\n        gradientColors={[\"#A97CF8\", \"#F38CB8\", \"#FDCC92\"]}\n        onComplete={() => console.log(\"Scratch complete!\")}\n      >\n        <div className=\"flex h-full w-full items-center justify-center rounded-lg bg-green-100\">\n          <p className=\"text-2xl font-bold text-green-600\">You win! 🎉</p>\n        </div>\n      </ScratchToReveal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/scratch-to-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scratch-to-reveal.json",
+ "preview": "https://stashui.vercel.app/c/scratch-to-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Scratch the surface to reveal hidden content below.",
+ "description": "Canvas-based overlay where users scratch away a gradient layer to reveal children. Detects when scratched area exceeds threshold; triggers callback and animates completion.",
+ "use_when": "An interactive reveal for hidden information, promotions, or gamified interactions that reward engagement.",
+ "avoid_when": "When content must be immediately accessible or when you cannot fix width/height dimensions upfront.",
+ "a11y": "Scratch interaction requires pointer (mouse or touch); keyboard users cannot access. No fallback text or alternative method.",
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "{width}",
+   "required": true
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "{height}",
+   "required": true
+  },
+  {
+   "name": "minScratchPercentage",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "gradientColors",
+   "type": "[string, string, string]",
+   "default": "[\"#A97CF8\", \"#F38CB8\", \"#FDCC92\"]",
+   "required": false
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "decoration"
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "name": "edge-blur",
+ "title": "Edge Blur",
+ "category": "effects",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "EdgeBlur",
+  "TopBlur",
+  "BottomBlur"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-64 w-full overflow-hidden rounded-xl bg-gradient-to-b from-background to-muted\">\n      {/* Scrollable content behind the blur */}\n      <div className=\"flex flex-col gap-3 p-6\">\n        {Array.from({ length: 6 }).map((_, i) => (\n          <div\n            key={i}\n            className=\"flex items-center gap-3 rounded-lg border border-border bg-background/60 p-3\"\n          >\n            <div className=\"h-8 w-8 shrink-0 rounded-full bg-muted-foreground/20\" />\n            <div className=\"flex flex-col gap-1\">\n              <div className=\"h-3 w-32 rounded-full bg-foreground/20\" />\n              <div className=\"h-2 w-20 rounded-full bg-muted-foreground/20\" />\n            </div>\n          </div>\n        ))}\n      </div>\n      {/* EdgeBlur overlaid — uses relative positioning within the container */}\n      <div className=\"absolute inset-x-0 bottom-0 h-20 isolate pointer-events-none\">\n        {[1, 2, 3, 6, 12].map((blur) => (\n          <div\n            key={blur}\n            className=\"absolute inset-0\"\n            style={{\n              backdropFilter: `blur(${blur}px)`,\n              WebkitBackdropFilter: `blur(${blur}px)`,\n              maskImage: \"linear-gradient(to top, black, transparent)\",\n              WebkitMaskImage: \"linear-gradient(to top, black, transparent)\",\n            }}\n          />\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/edge-blur.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/edge-blur.json",
+ "preview": "https://stashui.vercel.app/c/edge-blur",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Graduated blur overlay at top or bottom edge using backdrop-filter masks.",
+ "description": "Fixed-position overlay with layered backdrop-filter blur fading via mask-image gradient. Provides TopBlur and BottomBlur convenience exports.",
+ "use_when": "Fading content at edges to prevent text cutoff or create aesthetic transitions between sections.",
+ "avoid_when": "On browsers without backdrop-filter support, or when blur must track scrollable content — uses fixed positioning.",
+ "a11y": "Purely decorative overlay with pointer-events-none and no semantic content.",
+ "props": [
+  {
+   "name": "position",
+   "type": "\"top\" | \"bottom\"",
+   "default": "\"bottom\"",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "75",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

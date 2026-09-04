@@ -1,0 +1,124 @@
+{
+ "name": "inspira-images-slider",
+ "title": "Images Slider",
+ "category": "carousels",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ImagesSlider"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { ImagesSlider } from \"@/components/ui/images-slider\";\nimport { motion } from \"motion/react\";\n\nconst IMAGES = [\n  \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop\",\n  \"https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=500&fit=crop\",\n  \"https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=500&fit=crop\",\n  \"https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800&h=500&fit=crop\",\n];\n\nexport default function ImagesSliderDemo() {\n  return (\n    <ImagesSlider\n      images={IMAGES}\n      className=\"h-[400px] w-full rounded-2xl\"\n      autoplay={4000}\n      direction=\"vertical\"\n      overlayClass=\"bg-black/40\"\n    >\n      {(currentIndex) => (\n        <motion.div\n          initial={{ opacity: 0, y: -80 }}\n          animate={{ opacity: 1, y: 0 }}\n          className=\"flex h-full flex-col items-center justify-center gap-4 text-white\"\n        >\n          <h2 className=\"text-center text-4xl font-bold drop-shadow-lg\">\n            Beautiful Landscapes\n          </h2>\n          <p className=\"text-center text-lg opacity-80\">\n            Slide {currentIndex + 1} of {IMAGES.length}\n          </p>\n        </motion.div>\n      )}\n    </ImagesSlider>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/images-slider.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-images-slider.json",
+ "preview": "https://stashui.vercel.app/c/inspira-images-slider",
+ "dupe_group": "imagesslider",
+ "alternatives": [
+  {
+   "name": "images-slider",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Full-screen image carousel with keyboard, touch, and optional auto-advance.",
+ "description": "Controlled or uncontrolled slider that displays images with configurable direction (vertical/horizontal) and perspective. Supports keyboard/touch navigation, optional autoplay, and a render-function child for overlay content.",
+ "use_when": "Displaying a portfolio, image gallery, or hero carousel with interactive controls and accessibility features.",
+ "avoid_when": "Images load from untrusted sources or require rapid loading—all images must preload before rendering.",
+ "a11y": "Keyboard navigation (arrow keys, focus management). Touch swipe support. Autoplay pauses on interaction. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hideOverlay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "overlayClass",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "imageClass",
+   "type": "string",
+   "default": "\"object-cover w-full h-full\"",
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean | number",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"vertical\" | \"horizontal\"",
+   "default": "\"vertical\"",
+   "required": false
+  },
+  {
+   "name": "perspective",
+   "type": "string",
+   "default": "\"1000px\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode | ((currentIndex: number) => ReactNode)",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "drag",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "feature-card"
+ ]
+}

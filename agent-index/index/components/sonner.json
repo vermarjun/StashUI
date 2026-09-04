@@ -1,0 +1,59 @@
+{
+ "name": "sonner",
+ "title": "Sonner Toaster",
+ "category": "notifications",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Toaster"
+ ],
+ "npm_deps": [
+  "sonner",
+  "next-themes"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Toaster } from \"@/components/ui/sonner\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 min-h-[200px] p-8\">\n      <Toaster />\n      <div className=\"flex flex-wrap gap-3 justify-center\">\n        <button\n          className=\"rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90\"\n          onClick={() =>\n            toast(\"File saved successfully\", {\n              description: \"Your changes have been saved to the cloud.\",\n            })\n          }\n        >\n          Show Toast\n        </button>\n        <button\n          className=\"rounded-md border px-4 py-2 text-sm hover:bg-accent\"\n          onClick={() =>\n            toast.success(\"Payment complete\", {\n              description: \"Your subscription has been activated.\",\n            })\n          }\n        >\n          Success\n        </button>\n        <button\n          className=\"rounded-md bg-destructive px-4 py-2 text-sm text-white hover:bg-destructive/90\"\n          onClick={() =>\n            toast.error(\"Upload failed\", {\n              description: \"There was an error uploading your file.\",\n            })\n          }\n        >\n          Error\n        </button>\n        <button\n          className=\"rounded-md border px-4 py-2 text-sm hover:bg-accent\"\n          onClick={() =>\n            toast.promise(\n              new Promise<void>((resolve) => setTimeout(resolve, 2000)),\n              {\n                loading: \"Saving…\",\n                success: \"Saved!\",\n                error: \"Failed to save.\",\n              },\n            )\n          }\n        >\n          Promise\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/sonner.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sonner.json",
+ "preview": "https://stashui.vercel.app/c/sonner",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Sonner Toaster wrapper with theme support and custom styling.",
+ "description": "Wrapper component around Sonner's Toaster with useTheme integration, CSS custom properties for styling, and toastOptions for description styling.",
+ "use_when": "You need to add the Sonner toast system to your app with theme-aware styling.",
+ "avoid_when": "If using a different toast library; this is Sonner-specific.",
+ "a11y": "Toaster handles accessibility; respects prefers-reduced-motion when Sonner is configured.",
+ "props": [
+  {
+   "name": "theme",
+   "type": "string",
+   "default": "{theme as ToasterProps[\"theme\"]}",
+   "required": false
+  },
+  {
+   "name": "toastOptions",
+   "type": "ToasterProps['toastOptions']",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "toast"
+ ]
+}

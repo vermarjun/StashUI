@@ -1,0 +1,92 @@
+{
+ "name": "team-troops",
+ "title": "Team Troops Section",
+ "category": "cards",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TimelineAnimation"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\nimport { useRef } from 'react';\nimport { TimelineAnimation } from '@/components/ui/timeline-animation';\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div ref={containerRef} className=\"w-full max-w-lg mx-auto p-8 space-y-6\">\n      <TimelineAnimation animationNum={0} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 1: Discovery\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={1} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We begin by understanding your goals, audience, and competitive landscape to shape a winning strategy.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={2} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 2: Design\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={3} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        Our designers craft beautiful, user-centered interfaces that reflect your brand identity.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={4} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 3: Launch\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={5} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We deploy, monitor, and iterate to ensure your product exceeds expectations from day one.\n      </TimelineAnimation>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/timeline-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/team-troops.json",
+ "preview": "https://stashui.vercel.app/c/team-troops",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Elements blur in and cascade down as they enter the viewport.",
+ "description": "Wraps children in a motion container that animates blur, opacity, and Y position with staggered delays when they come into view. Uses Framer Motion's viewport tracking.",
+ "use_when": "Showing process steps or timeline sequence where each stage needs staged reveal emphasis.",
+ "avoid_when": "Rapid scrolling or touch-only surfaces where viewport detection is imprecise.",
+ "a11y": "Wrapper only; focus handling not managed. Motion plays on viewport entry via useInView, respects custom variants.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animationNum",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "timelineRef",
+   "type": "React.RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "T",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "customVariants",
+   "type": "Variants",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "section-background"
+ ]
+}

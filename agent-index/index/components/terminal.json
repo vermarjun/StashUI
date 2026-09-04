@@ -1,0 +1,103 @@
+{
+ "name": "terminal",
+ "title": "Terminal",
+ "category": "data-display",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Terminal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 27,
+ "flags": [
+  "pure",
+  "27 colors"
+ ],
+ "usage": "import { Terminal } from \"@/components/ui/terminal\";\n\nexport default function Demo() {\n  return <Terminal />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/terminal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/terminal.json",
+ "preview": "https://stashui.vercel.app/c/terminal",
+ "dupe_group": "terminal",
+ "alternatives": [
+  {
+   "name": "magic-ui-terminal",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  }
+ ],
+ "blurb": "Terminal animates typing commands with syntax highlighting and keyboard sounds.",
+ "description": "Simulates a bash terminal session, typing commands character-by-character with syntax highlighting and optional audio feedback from Web Audio API.",
+ "use_when": "Hero sections or documentation featuring CLI workflows need an engaging, interactive demo.",
+ "avoid_when": "Touch-only surfaces or contexts where keyboard sounds are unwanted; no prefers-reduced-motion handling.",
+ "a11y": "Terminal output renders to the DOM and is screen-reader accessible. Audio plays via Web Audio API; prefers-reduced-motion is ignored.",
+ "props": [
+  {
+   "name": "commands",
+   "type": "string[]",
+   "default": "[\"npx shadcn@latest init\"]",
+   "required": true
+  },
+  {
+   "name": "outputs",
+   "type": "Record<number, string[]>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "username",
+   "type": "string",
+   "default": "\"Manus-Macbook\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "typingSpeed",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "delayBetweenCommands",
+   "type": "number",
+   "default": "800",
+   "required": false
+  },
+  {
+   "name": "initialDelay",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "enableSound",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ]
+}

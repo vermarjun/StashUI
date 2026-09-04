@@ -1,0 +1,73 @@
+{
+ "name": "testimonial-slider",
+ "title": "Testimonial Slider",
+ "category": "testimonials",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TestimonialSlider"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 13,
+ "flags": [
+  "pure",
+  "13 colors"
+ ],
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { TestimonialSlider, Testimonial } from \"@/components/ui/testimonial-slider\";\n\nconst TESTIMONIALS: Testimonial[] = [\n  {\n    img: \"https://i.pravatar.cc/60?img=1\",\n    quote: \"This component library is incredible. The animations are smooth and the DX is fantastic.\",\n    name: \"Alice Johnson\",\n    role: \"Frontend Engineer at Acme\",\n  },\n  {\n    img: \"https://i.pravatar.cc/60?img=2\",\n    quote: \"Shipping UI has never been faster. Highly recommended for any React project.\",\n    name: \"Bob Martinez\",\n    role: \"Lead Developer at StartupCo\",\n  },\n  {\n    img: \"https://i.pravatar.cc/60?img=3\",\n    quote: \"Beautiful, polished components right out of the box. Our design team loves it.\",\n    name: \"Carol Liu\",\n    role: \"Product Designer at DesignHub\",\n  },\n];\n\nexport default function TestimonialSliderDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8 bg-white dark:bg-zinc-900 rounded-xl\">\n      <TestimonialSlider\n        testimonials={TESTIMONIALS}\n        autoRotate={true}\n        duration={5}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/testimonial-slider.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/testimonial-slider.json",
+ "preview": "https://stashui.vercel.app/c/testimonial-slider",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Testimonial carousel with rotating images and cross-fading quotes.",
+ "description": "Auto-rotating testimonial carousel with image carousel (60deg rotate + fade effect) and quote text that fades and translates. Includes previous/next navigation buttons (with aria-labels), pauses auto-rotation on manual interaction, then…",
+ "use_when": "Social proof sections where testimonials are presented as rotating carousel with both visual (images) and textual…",
+ "avoid_when": "Static testimonial display — auto-rotation runs continuously regardless of user interaction depth.",
+ "a11y": "Navigation buttons have aria-labels. Images have alt text. Supports light/dark mode. Pauses on manual click then restarts, improving accessibility for screen readers.",
+ "props": [
+  {
+   "name": "testimonials",
+   "type": "Array<{img: string; quote: string; name: string; role: string}>",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "autoRotate",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "testimonial"
+ ]
+}

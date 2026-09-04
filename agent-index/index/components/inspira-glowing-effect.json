@@ -1,0 +1,115 @@
+{
+ "name": "inspira-glowing-effect",
+ "title": "Glowing Effect",
+ "category": "borders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "GlowingEffect"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 17,
+ "flags": [
+  "pure",
+  "17 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { GlowingEffect } from \"@/components/ui/glowing-effect\";\n\nexport default function GlowingEffectDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-12 bg-neutral-950 min-h-[300px]\">\n      <div className=\"relative w-48 h-32 rounded-2xl border border-neutral-700 bg-neutral-900 flex items-center justify-center\">\n        <GlowingEffect disabled={false} spread={30} proximity={60} />\n        <span className=\"text-white text-sm font-medium z-10\">Hover around me</span>\n      </div>\n      <div className=\"relative w-48 h-32 rounded-2xl border border-neutral-700 bg-neutral-900 flex items-center justify-center\">\n        <GlowingEffect disabled={false} variant=\"white\" spread={20} proximity={80} />\n        <span className=\"text-white text-sm font-medium z-10\">White variant</span>\n      </div>\n      <div className=\"relative w-48 h-32 rounded-2xl border border-neutral-700 bg-neutral-900 flex items-center justify-center\">\n        <GlowingEffect disabled={false} glow spread={40} borderWidth={2} />\n        <span className=\"text-white text-sm font-medium z-10\">Always glow</span>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/glowing-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-glowing-effect.json",
+ "preview": "https://stashui.vercel.app/c/inspira-glowing-effect",
+ "dupe_group": "glowingeffect",
+ "alternatives": [
+  {
+   "name": "glowing-effect",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 17
+  }
+ ],
+ "blurb": "Gradient border follows cursor around a container.",
+ "description": "An absolute-positioned overlay that renders a glowing gradient border which rotates smoothly to point toward the cursor. Driven by pointer movement, with configurable spread, blur, and colour variants.",
+ "use_when": "A card or container that should reward interaction with visual feedback as the user explores it.",
+ "avoid_when": "Touch-only surfaces or when pointer tracking performance is a concern.",
+ "a11y": "Purely visual overlay; pointer-events-none. No accessibility implications.",
+ "props": [
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "inactiveZone",
+   "type": "number",
+   "default": "0.7",
+   "required": false
+  },
+  {
+   "name": "proximity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "spread",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "\"default\" | \"white\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "movementDuration",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "borderWidth",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "border"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "primary-cta"
+ ]
+}

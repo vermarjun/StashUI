@@ -1,0 +1,88 @@
+{
+ "name": "canvas-reveal-effect",
+ "title": "Canvas Reveal Effect",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "CanvasRevealEffect"
+ ],
+ "npm_deps": [
+  "three",
+  "@react-three/fiber"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport { CanvasRevealEffect } from \"@/components/ui/canvas-reveal-effect\";\nimport { useState } from \"react\";\n\nconst CARDS = [\n  {\n    label: \"Cyan\",\n    colors: [[0, 255, 255]] as number[][],\n    bg: \"bg-black\",\n    animationSpeed: 5,\n  },\n  {\n    label: \"Magenta\",\n    colors: [[255, 0, 128]] as number[][],\n    bg: \"bg-zinc-900\",\n    animationSpeed: 5,\n  },\n  {\n    label: \"Amber\",\n    colors: [[255, 200, 0]] as number[][],\n    bg: \"bg-neutral-900\",\n    animationSpeed: 5,\n  },\n];\n\nexport default function Demo() {\n  const [hovered, setHovered] = useState<number | null>(null);\n\n  return (\n    <div className=\"flex h-full w-full items-center justify-center gap-4 p-8 bg-background\">\n      {CARDS.map((card, i) => (\n        <div\n          key={card.label}\n          className={`relative h-64 w-56 cursor-pointer rounded-xl overflow-hidden border border-border ${card.bg}`}\n          onMouseEnter={() => setHovered(i)}\n          onMouseLeave={() => setHovered(null)}\n        >\n          {hovered === i && (\n            <CanvasRevealEffect\n              animationSpeed={card.animationSpeed}\n              colors={card.colors}\n              containerClassName=\"absolute inset-0\"\n              showGradient={true}\n            />\n          )}\n          <div className=\"absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none\">\n            <span className=\"text-2xl font-bold text-white\">{card.label}</span>\n            <span className=\"mt-2 text-xs text-white/50\">hover me</span>\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/canvas-reveal-effect.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/canvas-reveal-effect.json",
+ "preview": "https://stashui.vercel.app/c/canvas-reveal-effect",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D dot matrix that reveals from center using shader animation.",
+ "description": "Renders a Three.js dot matrix with WebGL shader that animates dots appearing from the center outward. Supports customizable colors, opacity, and animation speed.",
+ "use_when": "Hero sections, sci-fi aesthetics, or high-impact entrance effects.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); low-end devices (WebGL cost).",
+ "a11y": "3D canvas animation only; no interactive elements. Motion-heavy.",
+ "props": [
+  {
+   "name": "animationSpeed",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "opacities",
+   "type": "number[]",
+   "default": "[0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1]",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "number[][]",
+   "default": "[[0, 255, 255]]",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "dotSize",
+   "type": "number",
+   "default": "{dotSize ?? 3}",
+   "required": false
+  },
+  {
+   "name": "showGradient",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "light",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

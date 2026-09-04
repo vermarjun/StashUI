@@ -1,0 +1,65 @@
+{
+ "name": "cropper",
+ "title": "Image Cropper",
+ "category": "media",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Cropper",
+  "CropperDescription",
+  "CropperImage",
+  "CropperCropArea"
+ ],
+ "npm_deps": [
+  "@origin-space/image-cropper"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  Cropper,\n  CropperCropArea,\n  CropperDescription,\n  CropperImage,\n} from \"@/components/ui/cropper\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 p-8 w-full\">\n      <Cropper\n        className=\"h-80 w-full max-w-xl rounded-xl\"\n        image=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format\"\n        maxZoom={10}\n        minZoom={1}\n      >\n        <CropperDescription />\n        <CropperImage />\n        <CropperCropArea />\n      </Cropper>\n      <p className=\"text-xs text-muted-foreground\">\n        Drag to reposition · Scroll to zoom\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/cropper.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/cropper.json",
+ "preview": "https://stashui.vercel.app/c/cropper",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Interactive image cropper with drag repositioning and scroll-to-zoom controls.",
+ "description": "Wraps @origin-space/image-cropper with styled sub-components. Displays an image with a draggable crop area overlay. Supports pinch zoom and scroll zoom within min/max bounds.",
+ "use_when": "User-facing image upload flows that require precise cropping before save.",
+ "avoid_when": "Read-only image galleries or touch-only interfaces without scroll wheel zoom.",
+ "a11y": "Image has a sr-only description. Crop area shows focus ring. Drag and scroll interactions lack keyboard alternatives.",
+ "props": [
+  {
+   "name": "image",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "modal"
+ ]
+}

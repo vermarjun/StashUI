@@ -1,0 +1,73 @@
+{
+ "name": "bg-media",
+ "title": "Media Background",
+ "category": "backgrounds",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "BackgroundMedia"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "pure",
+  "6 colors"
+ ],
+ "usage": "\"use client\"\n\nimport BackgroundMedia from \"@/components/ui/bg-media\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <BackgroundMedia\n        type=\"image\"\n        src=\"https://picsum.photos/seed/bgmedia1/1600/900\"\n        alt=\"Background landscape\"\n        variant=\"light\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/bg-media.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-media.json",
+ "preview": "https://stashui.vercel.app/c/bg-media",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Displays an image or video background with optional overlay.",
+ "description": "Flexible media background component accepting image or video source. Applies configurable overlay (none, light, dark) using ::before pseudo-element for visual dimming.",
+ "use_when": "Hero section with full-bleed video or image requiring overlay for text contrast.",
+ "avoid_when": "When media auto-play would violate user preferences or battery concerns.",
+ "a11y": "Requires alt text for images; video requires controls or prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "variant",
+   "type": "\"none\" | \"light\" | \"dark\"",
+   "default": "\"light\"",
+   "required": false
+  },
+  {
+   "name": "type",
+   "type": "\"image\" | \"video\"",
+   "default": "\"image\"",
+   "required": false
+  },
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{src}",
+   "required": true
+  },
+  {
+   "name": "alt",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

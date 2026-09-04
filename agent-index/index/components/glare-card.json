@@ -1,0 +1,69 @@
+{
+ "name": "glare-card",
+ "title": "Glare Card",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "GlareCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 18,
+ "flags": [
+  "3d",
+  "pure",
+  "18 colors"
+ ],
+ "usage": "\"use client\";\nimport { GlareCard } from \"@/components/ui/glare-card\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[480px]\">\n      <GlareCard className=\"flex flex-col items-start justify-end py-8 px-6\">\n        <p className=\"font-bold text-white text-lg\">The greatest trick</p>\n        <p className=\"font-normal text-base text-neutral-200 mt-4\">\n          The greatest trick the devil ever pulled was convincing the world he\n          didn&apos;t exist.\n        </p>\n      </GlareCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/glare-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/glare-card.json",
+ "preview": "https://stashui.vercel.app/c/glare-card",
+ "dupe_group": "glarecard",
+ "alternatives": [
+  {
+   "name": "inspira-glare-card",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 20
+  }
+ ],
+ "blurb": "Card with pointer-tracked rainbow gradient glare and 3D tilt effect.",
+ "description": "A 3D card that rotates and tilts toward the pointer, with a rainbow gradient and SVG foil pattern that shift position. Glare intensity and background position follow mouse movement.",
+ "use_when": "High-impact hero sections, product showcases, or interactive galleries where tactile 3D feedback and rainbow aesthetics…",
+ "avoid_when": "Touch-only interfaces, low-motion accessibility contexts, or content-dense layouts where 3D effects could distract.",
+ "a11y": "Card is a container for children; 3D effects are visual embellishment. No prefers-reduced-motion guard; rainbow gradients and rotation always apply.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative isolate [aspect-ratio:17/21] w-[320px] transition-",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "decoration"
+ ]
+}

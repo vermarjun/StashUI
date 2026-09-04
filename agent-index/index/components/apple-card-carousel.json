@@ -1,0 +1,66 @@
+{
+ "name": "apple-card-carousel",
+ "title": "Apple Card Carousel",
+ "category": "carousels",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "CarouselContext",
+  "BlurImage",
+  "AppleCard",
+  "AppleCarouselItem",
+  "AppleCardCarousel"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 20,
+ "flags": [
+  "pure",
+  "20 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport {\n  AppleCardCarousel,\n  AppleCard,\n  type CardData,\n} from \"@/components/ui/apple-card-carousel\";\n\nconst cards: CardData[] = [\n  {\n    src: \"https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800\",\n    title: \"Mountain Peaks\",\n    category: \"Nature\",\n    content: (\n      <p className=\"text-neutral-600 dark:text-neutral-400\">\n        Breathtaking mountain peaks covered in snow, offering serene views and\n        peaceful solitude.\n      </p>\n    ),\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800\",\n    title: \"Ocean Waves\",\n    category: \"Seascape\",\n    content: (\n      <p className=\"text-neutral-600 dark:text-neutral-400\">\n        The rhythmic crash of ocean waves against golden shores, a timeless\n        dance of nature.\n      </p>\n    ),\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800\",\n    title: \"Forest Path\",\n    category: \"Forest\",\n    content: (\n      <p className=\"text-neutral-600 dark:text-neutral-400\">\n        A winding path through ancient trees, dappled sunlight filtering through\n        the canopy.\n      </p>\n    ),\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800\",\n    title: \"Desert Dunes\",\n    category: \"Desert\",\n    content: (\n      <p className=\"text-neutral-600 dark:text-neutral-400\">\n        Rolling sand dunes stretching endlessly under a blazing sun, a portrait\n        of solitude.\n      </p>\n    ),\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800\",\n    title: \"City Lights\",\n    category: \"Urban\",\n    content: (\n      <p className=\"text-neutral-600 dark:text-neutral-400\">\n        Glittering city lights at night, a tapestry of human achievement and\n        vibrant life.\n      </p>\n    ),\n  },\n];\n\nexport default function AppleCardCarouselDemo() {\n  const cardElements = cards.map((card, index) => (\n    <AppleCard key={card.title} card={card} index={index} layout />\n  ));\n\n  return (\n    <div className=\"w-full bg-neutral-100 dark:bg-neutral-900 py-8\">\n      <h2 className=\"pl-4 md:pl-8 text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2\">\n        Explore the World\n      </h2>\n      <p className=\"pl-4 md:pl-8 text-sm text-neutral-500 dark:text-neutral-400 mb-4\">\n        Click any card to learn more.\n      </p>\n      <AppleCardCarousel items={cardElements} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/apple-card-carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/apple-card-carousel.json",
+ "preview": "https://stashui.vercel.app/c/apple-card-carousel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Horizontal scrollable card carousel with click-to-expand modal detail view.",
+ "description": "Carousel of large image cards that expands to a full-screen modal with shared layout animations when clicked. Includes blur-on-load for images, scroll buttons, and keyboard/outside-click close handling.",
+ "use_when": "Showcasing high-quality images or products in an Apple-like polished carousel with detail views.",
+ "avoid_when": "Mobile-only interfaces; the component is optimized for mouse scroll and click.",
+ "a11y": "Cards are clickable buttons with keyboard support (Escape to close). Modal has proper focus management and backdrop.",
+ "props": [
+  {
+   "name": "items",
+   "type": "React.ReactNode[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "initialScroll",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

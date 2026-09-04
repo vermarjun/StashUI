@@ -1,0 +1,81 @@
+{
+ "name": "SpotlightCard-TS-TW",
+ "title": "Spotlight Card",
+ "category": "cards",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "SpotlightCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/SpotlightCard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap gap-6 items-center justify-center p-8\">\n      <Cmp className=\"w-64\" spotlightColor=\"rgba(255, 255, 255, 0.25)\">\n        <h3 className=\"text-foreground font-semibold mb-2\">White spotlight</h3>\n        <p className=\"text-muted-foreground text-sm\">\n          Move your cursor over this card to see the radial spotlight follow.\n        </p>\n      </Cmp>\n      <Cmp className=\"w-64\" spotlightColor=\"rgba(120, 80, 255, 0.35)\">\n        <h3 className=\"text-foreground font-semibold mb-2\">Purple spotlight</h3>\n        <p className=\"text-muted-foreground text-sm\">\n          The spotlight color is fully customisable via a prop.\n        </p>\n      </Cmp>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/SpotlightCard.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/SpotlightCard-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/SpotlightCard-TS-TW",
+ "dupe_group": "spotlightcard",
+ "alternatives": [
+  {
+   "name": "spotlight-card",
+   "origin": "StashUI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "spotlight-card2",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "A radial spotlight follows your cursor across a dark card.",
+ "description": "Card with a circular spotlight effect that tracks mouse/focus position. The spot glows with a customizable color (default white rgba). Spotlight appears on hover and focus, fading out on blur/leave.",
+ "use_when": "Cards where you want subtle visual feedback that draws attention to content under the cursor.",
+ "avoid_when": "Touch-only interfaces — spotlight is mouse-dependent.",
+ "a11y": "Focus triggers the spotlight like hover does. Keyboard-navigable.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "spotlightColor",
+   "type": "string (rgba format)",
+   "default": "'rgba(255, 255, 255, 0.25)'",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "section-background"
+ ]
+}

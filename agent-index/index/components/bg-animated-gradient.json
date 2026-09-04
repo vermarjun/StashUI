@@ -1,0 +1,68 @@
+{
+ "name": "bg-animated-gradient",
+ "title": "Animated Gradient",
+ "category": "backgrounds",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "GradientAnimation"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport { GradientAnimation } from \"@/components/ui/bg-animated-gradient\"\n\nconst gradients = [\n  {\n    stops: [\n      { color: \"#6366f1\", position: 0 },\n      { color: \"#8b5cf6\", position: 50 },\n      { color: \"transparent\", position: 100 },\n    ],\n    centerX: 20,\n    centerY: 30,\n  },\n  {\n    stops: [\n      { color: \"#ec4899\", position: 0 },\n      { color: \"#f43f5e\", position: 50 },\n      { color: \"transparent\", position: 100 },\n    ],\n    centerX: 80,\n    centerY: 70,\n  },\n  {\n    stops: [\n      { color: \"#06b6d4\", position: 0 },\n      { color: \"#3b82f6\", position: 50 },\n      { color: \"transparent\", position: 100 },\n    ],\n    centerX: 50,\n    centerY: 50,\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-xl bg-slate-900\">\n      <GradientAnimation gradients={gradients} animationDuration={4} />\n      <div className=\"relative z-10 flex h-full items-center justify-center\">\n        <p className=\"text-white text-2xl font-semibold tracking-tight\">\n          Animated Gradient Background\n        </p>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/bg-animated-gradient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-animated-gradient.json",
+ "preview": "https://stashui.vercel.app/c/bg-animated-gradient",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Radial gradients pulse and shift position in a continuous cycle.",
+ "description": "Animates multiple radial gradients with configurable colors and positions. Uses motion/react to smoothly transition gradient positions with infinite reverse repeat.",
+ "use_when": "Section needing animated gradient background with custom colors and durations.",
+ "avoid_when": "Browsers without animation support, or minimal-motion user preferences.",
+ "a11y": "Purely decorative animation; no interaction or accessibility controls.",
+ "props": [
+  {
+   "name": "gradients",
+   "type": "GradientType[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

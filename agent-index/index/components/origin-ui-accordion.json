@@ -1,0 +1,53 @@
+{
+ "name": "origin-ui-accordion",
+ "title": "Accordion",
+ "category": "accordions",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Accordion",
+  "AccordionContent",
+  "AccordionItem",
+  "AccordionTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\n\nimport { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from \"@/components/ui/accordion\";\n\nconst items = [\n  {\n    id: \"1\",\n    title: \"What makes this library different?\",\n    content:\n      \"Built with TypeScript and following WAI-ARIA standards, it offers excellent type safety, accessibility, and comprehensive documentation.\",\n  },\n  {\n    id: \"2\",\n    title: \"How do I customize components?\",\n    content:\n      \"Use CSS variables for global styling or className props for component-specific changes. Supports Tailwind and dark mode out of the box.\",\n  },\n  {\n    id: \"3\",\n    title: \"Is it optimized for performance?\",\n    content:\n      \"Yes — tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg space-y-2 px-4\">\n      <Accordion type=\"single\" collapsible defaultValue=\"2\">\n        {items.map((item) => (\n          <AccordionItem key={item.id} value={item.id}>\n            <AccordionTrigger>{item.title}</AccordionTrigger>\n            <AccordionContent>{item.content}</AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/accordion.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/origin-ui-accordion.json",
+ "preview": "https://stashui.vercel.app/c/origin-ui-accordion",
+ "dupe_group": "accordion",
+ "alternatives": [
+  {
+   "name": "accordion",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 17
+  }
+ ],
+ "blurb": "Radix UI accordion with minimal styling.",
+ "description": "Base Radix UI Accordion primitive with default styling, no heavy customization.",
+ "use_when": "Starting point for custom accordion implementations.",
+ "avoid_when": "When you want pre-built styled accordions.",
+ "a11y": "Full Radix UI accessibility: aria-expanded, keyboard navigation, focus management.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

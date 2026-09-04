@@ -1,0 +1,121 @@
+{
+ "name": "primitives-animate-code-block",
+ "title": "Animated Code Block",
+ "category": "data-display",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "CodeBlock"
+ ],
+ "npm_deps": [
+  "shiki"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "'use client';\n\nimport { CodeBlock } from '@/components/ui/primitives-animate-code-block';\n\nconst sampleCode = `function greet(name: string) {\n  return \\`Hello, \\${name}!\\`;\n}\n\nconst message = greet('World');\nconsole.log(message);`;\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg mx-auto p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-auto text-sm\">\n      <CodeBlock\n        code={sampleCode}\n        lang=\"typescript\"\n        writing\n        duration={4000}\n        inView\n        className=\"p-4\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-animate-code-block.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-animate-code-block.json",
+ "preview": "https://stashui.vercel.app/c/primitives-animate-code-block",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Code block that types out line-by-line then syntax-highlights with Shiki.",
+ "description": "Animated code display that optionally types out code character-by-character. Supports Shiki syntax highlighting with light/dark theme variants. Emits callbacks during typing (onWrite) and on completion (onDone). Triggers animation when…",
+ "use_when": "Tutorial pages or documentation showing how-to code examples with playful reveal.",
+ "avoid_when": "Very long code files (1000+ lines) — typing animation will run too long.",
+ "a11y": "Code text is fully rendered in DOM, readable by screen readers. No aria-live for typing progress — final highlighted HTML is semantic.",
+ "props": [
+  {
+   "name": "code",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "lang",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "theme",
+   "type": "light | dark",
+   "default": "'light'",
+   "required": false
+  },
+  {
+   "name": "themes",
+   "type": "{light: string; dark: string}",
+   "default": "{light: 'github-light', dark: 'github-dark'}",
+   "required": false
+  },
+  {
+   "name": "writing",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "onDone",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onWrite",
+   "type": "(info: {index: number; length: number; done: boolean}) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "inView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "inViewOnce",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "inViewMargin",
+   "type": "string",
+   "default": "'0px'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "viewport"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text"
+ ]
+}

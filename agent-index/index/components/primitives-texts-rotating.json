@@ -1,0 +1,66 @@
+{
+ "name": "primitives-texts-rotating",
+ "title": "Rotating Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "RotatingTextContainer",
+  "RotatingText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view",
+  "@animate-ui/lib-get-strict-context"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport {\n  RotatingTextContainer,\n  RotatingText,\n} from '@/components/ui/primitives-texts-rotating';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 w-full p-10\">\n      <div className=\"flex items-center gap-3 text-3xl font-bold\">\n        <span className=\"text-foreground\">Design</span>\n        <RotatingTextContainer\n          text={['faster', 'smarter', 'together', 'beautifully']}\n          duration={2000}\n          className=\"text-primary min-w-[10ch]\"\n        >\n          <RotatingText />\n        </RotatingTextContainer>\n      </div>\n\n      <div className=\"flex items-center gap-3 text-xl text-muted-foreground\">\n        <span>Built for</span>\n        <RotatingTextContainer\n          text={['React', 'Next.js', 'Vite', 'Remix']}\n          duration={1800}\n          delay={400}\n          className=\"min-w-[6ch]\"\n        >\n          <RotatingText className=\"font-semibold text-foreground\" />\n        </RotatingTextContainer>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-rotating.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-rotating.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-rotating",
+ "dupe_group": "rotatingtext",
+ "alternatives": [
+  {
+   "name": "RotatingText-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text cycles through a list, rotating on a timer.",
+ "description": "Displays words or phrases from an array, swapping to the next after a delay with optional entrance/exit animations.",
+ "use_when": "Feature lists or rotating testimonials.",
+ "avoid_when": "Static content — rotating just adds distraction.",
+ "a11y": "Only one item visible at a time. Screen readers see the current word but may miss others.",
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "section-background"
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "name": "components-backgrounds-gradient",
+ "title": "Gradient Background",
+ "category": "backgrounds",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "GradientBackground"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "3 colors"
+ ],
+ "usage": "import { GradientBackground } from \"@/components/ui/components-backgrounds-gradient\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <GradientBackground className=\"absolute inset-0 h-full w-full\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-backgrounds-gradient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-backgrounds-gradient.json",
+ "preview": "https://stashui.vercel.app/c/components-backgrounds-gradient",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Gradient shifts smoothly through blue, purple, and pink in a loop.",
+ "description": "Motion/react animated background using background-position animation to shift gradient colors. Blue→purple→pink loop with 15-second cycle.",
+ "use_when": "Simple animated gradient background without configuration needs.",
+ "avoid_when": "Contexts requiring theme customization or static backgrounds.",
+ "a11y": "Decorative animation; no prefers-reduced-motion handling.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "HTMLMotionProps",
+   "default": "{ duration: 15, ease: 'easeInOut', repeat: Infinity }",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

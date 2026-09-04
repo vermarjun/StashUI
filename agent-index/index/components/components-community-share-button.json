@@ -1,0 +1,83 @@
+{
+ "name": "components-community-share-button",
+ "title": "Share Button",
+ "category": "buttons",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "ShareButton"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react",
+  "class-variance-authority"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion",
+  "heavy"
+ ],
+ "usage": "\"use client\"\n\nimport { ShareButton } from \"@/components/ui/components-community-share-button\"\n\nexport default function Demo() {\n  return (\n    <ShareButton\n      size=\"default\"\n      icon=\"prefix\"\n      onIconClick={(platform) => {\n        console.log(\"Share to\", platform)\n      }}\n    >\n      Share\n    </ShareButton>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-community-share-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-community-share-button.json",
+ "preview": "https://stashui.vercel.app/c/components-community-share-button",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Share button reveals Github, X, and Facebook icons on hover.",
+ "description": "A Framer Motion-powered button that swaps between a label and animated social icons on hover, with staggered entrance animations and spring physics.",
+ "use_when": "You need an engaging way to show social share options without taking up initial space.",
+ "avoid_when": "On touch-only devices where hover is not reliable; the icons only appear on mouse enter.",
+ "a11y": "Button triggers content swap but no aria attributes for icon meanings. Social icons clickable but unlabeled beyond the platform name in context.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "'default' | 'sm' | 'md' | 'lg'",
+   "default": "{iconSizeMap[size as keyof typeof iconSizeMap]}",
+   "required": false
+  },
+  {
+   "name": "icon",
+   "type": "'prefix' | 'suffix'",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onIconClick",
+   "type": "(platform: 'github' | 'x' | 'facebook') => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "secondary-cta",
+  "footer"
+ ]
+}

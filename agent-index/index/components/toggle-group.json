@@ -1,0 +1,69 @@
+{
+ "name": "toggle-group",
+ "title": "Toggle Group",
+ "category": "checkboxes",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "ToggleGroup",
+  "ToggleGroupItem"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [
+  "toggle"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\nimport { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 min-h-[200px] p-8\">\n      <ToggleGroup type=\"multiple\" variant=\"outline\" aria-label=\"Text formatting\">\n        <ToggleGroupItem value=\"bold\" aria-label=\"Bold\">\n          <BoldIcon className=\"size-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"italic\" aria-label=\"Italic\">\n          <ItalicIcon className=\"size-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"underline\" aria-label=\"Underline\">\n          <UnderlineIcon className=\"size-4\" />\n        </ToggleGroupItem>\n      </ToggleGroup>\n\n      <ToggleGroup type=\"single\" defaultValue=\"center\" aria-label=\"Text alignment\">\n        <ToggleGroupItem value=\"left\" aria-label=\"Left align\">\n          Left\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"center\" aria-label=\"Center align\">\n          Center\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"right\" aria-label=\"Right align\">\n          Right\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/toggle-group.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/toggle-group.json",
+ "preview": "https://stashui.vercel.app/c/toggle-group",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Group of toggle buttons with shared size and style variants.",
+ "description": "Toggle group built on Radix UI for managing multiple toggles with shared styling. Supports single or multiple selection via type prop. ToggleGroupItem respects parent size and variant.",
+ "use_when": "Building toolbar button groups, text formatting controls with multiple options, or segmented controls.",
+ "avoid_when": "When you need mutually exclusive radio buttons. Use RadioGroup for that.",
+ "a11y": "Built on Radix UI ToggleGroup with proper aria-pressed handling and focus management across items.",
+ "props": [
+  {
+   "name": "size",
+   "type": "'default' | 'lg' | 'sm'",
+   "default": "default",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "'default' | 'outline'",
+   "default": "default",
+   "required": false
+  },
+  {
+   "name": "type",
+   "type": "'single' | 'multiple'",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "nav"
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "name": "encrypted-text",
+ "title": "Encrypted Text",
+ "category": "text",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "EncryptedText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { EncryptedText } from \"@/components/ui/encrypted-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full max-w-2xl mx-auto py-16\">\n      <p className=\"text-3xl font-bold tracking-tight text-foreground\">\n        <EncryptedText\n          text=\"Decrypting the future\"\n          className=\"font-mono\"\n          encryptedClassName=\"text-muted-foreground\"\n          revealedClassName=\"text-foreground\"\n        />\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/encrypted-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/encrypted-text.json",
+ "preview": "https://stashui.vercel.app/c/encrypted-text",
+ "dupe_group": "encryptedtext",
+ "alternatives": [
+  {
+   "name": "inspira-encrypted-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text decrypts itself character by character, with unrevealed characters…",
+ "description": "Renders text where characters progressively reveal from left to right when scrolled into view. Unrevealed characters continuously shuffle through random gibberish. Configurable reveal speed and character set.",
+ "use_when": "An engaging text reveal needs a tech/hacker aesthetic with animated decryption effect.",
+ "avoid_when": "When content must be immediately readable or when the scrambling might distract.",
+ "a11y": "Text has aria-label with the full content; characters are revealed progressively.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(className)}",
+   "required": false
+  },
+  {
+   "name": "revealDelayMs",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "charset",
+   "type": "string",
+   "default": "DEFAULT_CHARSET",
+   "required": false
+  },
+  {
+   "name": "flipDelayMs",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "encryptedClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "revealedClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

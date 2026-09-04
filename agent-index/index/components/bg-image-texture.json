@@ -1,0 +1,73 @@
+{
+ "name": "bg-image-texture",
+ "title": "Image Texture Background",
+ "category": "backgrounds",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "BackgroundImageTexture"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { BackgroundImageTexture } from \"@/components/ui/bg-image-texture\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <BackgroundImageTexture\n        variant=\"fabric-of-squares\"\n        opacity={0.6}\n        className=\"h-full w-full bg-background\"\n      >\n        <div className=\"flex h-[600px] flex-col items-center justify-center gap-4 px-8 text-center\">\n          <h2 className=\"text-3xl font-bold tracking-tight text-foreground\">\n            Fabric of Squares\n          </h2>\n          <p className=\"max-w-md text-muted-foreground\">\n            A repeating texture overlay applied to any section or card background.\n          </p>\n        </div>\n      </BackgroundImageTexture>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/bg-image-texture.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-image-texture.json",
+ "preview": "https://stashui.vercel.app/c/bg-image-texture",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Applies a subtle repeating texture pattern overlay to any background.",
+ "description": "Static texture overlay component supporting five preset textures (fabric-of-squares, grid-noise, inflicted, debut-light, groovepaper) with adjustable opacity. Renders texture as an aria-hidden element.",
+ "use_when": "Adding tactile texture to solid-color sections without animation overhead.",
+ "avoid_when": "Complex animated backgrounds, or when texture PNG assets are unavailable.",
+ "a11y": "Texture overlay marked as aria-hidden=true; children handle their own accessibility.",
+ "props": [
+  {
+   "name": "variant",
+   "type": "\"fabric-of-squares\" | \"grid-noise\" | \"inflicted\" | \"debut-light\" | \"groovepaper\" | \"none\"",
+   "default": "\"fabric-of-squares\"",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute inset-0\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "feature-card"
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "name": "DarkVeil-TS-TW",
+ "title": "Dark Veil",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "DarkVeil"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl"
+ ],
+ "usage": "\"use client\";\nimport DarkVeil from \"@/components/ui/DarkVeil\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full rounded-xl overflow-hidden\" style={{ height: \"400px\" }}>\n      <DarkVeil\n        hueShift={30}\n        noiseIntensity={0.05}\n        scanlineIntensity={0.2}\n        speed={0.5}\n        scanlineFrequency={0.5}\n        warpAmount={0.1}\n        resolutionScale={1}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/DarkVeil.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/DarkVeil-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/DarkVeil-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Organic, flowing dark texture with scanline effect and hue shifts.",
+ "description": "WebGL shader using CPPN (Compositional Pattern Producing Network) to generate organic flowing textures. Includes hue shift, noise, scanline, and warp effects. Renders to canvas with continuous RAF animation.",
+ "use_when": "Dark-themed backgrounds where an organic, almost living texture adds depth without demanding attention.",
+ "avoid_when": "Light themes or when a clean background is required; this creates visual noise intentionally.",
+ "a11y": "WebGL canvas with no semantic content. No keyboard interaction. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "hueShift",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "noiseIntensity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "scanlineIntensity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scanlineFrequency",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "warpAmount",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "resolutionScale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

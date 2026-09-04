@@ -1,0 +1,88 @@
+{
+ "name": "ASCIIText-TS-TW",
+ "title": "ASCII Text",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ASCIIText"
+ ],
+ "npm_deps": [
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "webgl",
+  "3d",
+  "5 colors"
+ ],
+ "usage": "\"use client\"\n\nimport ASCIIText from \"@/components/ui/ASCIIText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[400px] bg-background\">\n      <ASCIIText\n        text=\"myui\"\n        asciiFontSize={8}\n        textFontSize={200}\n        textColor=\"#ffffff\"\n        planeBaseHeight={8}\n        enableWaves={true}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ASCIIText.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ASCIIText-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ASCIIText-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text rendered as ASCII art with 3D waves and mouse-tracking tilt.",
+ "description": "Renders text as ASCII characters in a 3D plane with wave deformations and perspective tilt driven by mouse position. Uses WebGL shaders and canvas manipulation.",
+ "use_when": "A hero heading needs a striking retro-terminal effect with 3D depth and interactivity.",
+ "avoid_when": "On touch-only devices or low-end GPUs — requires WebGL and continuous canvas rendering.",
+ "a11y": "Text is rendered as canvas and ASCII output; screen readers cannot reach it. No keyboard interaction.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "'David!'",
+   "required": false
+  },
+  {
+   "name": "asciiFontSize",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "textFontSize",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#fdf9f3'",
+   "required": false
+  },
+  {
+   "name": "planeBaseHeight",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "enableWaves",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "headline"
+ ]
+}

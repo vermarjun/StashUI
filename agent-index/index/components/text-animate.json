@@ -1,0 +1,68 @@
+{
+ "name": "text-animate",
+ "title": "Text Animate",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "TextAnimate"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { TextAnimate } from \"@/components/ui/text-animate\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full max-w-xl p-8 gap-4\">\n      <TextAnimate animation=\"blurInUp\" by=\"word\" className=\"text-3xl font-bold\">\n        Animate your text beautifully\n      </TextAnimate>\n      <TextAnimate animation=\"fadeIn\" by=\"character\" className=\"text-lg text-neutral-500\">\n        Each character fades in one by one\n      </TextAnimate>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/text-animate.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-animate.json",
+ "preview": "https://stashui.vercel.app/c/text-animate",
+ "dupe_group": "textanimate",
+ "alternatives": [
+  {
+   "name": "cult-ui-text-animate",
+   "origin": "Cult UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Text animates in with a configurable entrance effect.",
+ "description": "Text element enters the viewport with animation, often triggered by scroll or on mount.",
+ "use_when": "Section headers or highlighted passages that need attention.",
+ "avoid_when": "Already-visible static content — animation adds unnecessary delay.",
+ "a11y": "Content may be off-screen during animation. Entrance delay affects readability.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

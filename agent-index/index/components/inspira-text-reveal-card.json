@@ -1,0 +1,93 @@
+{
+ "name": "inspira-text-reveal-card",
+ "title": "Text Reveal Card",
+ "category": "cards",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextRevealCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { TextRevealCard } from \"@/components/ui/text-reveal-card\";\n\nexport default function TextRevealCardDemo() {\n  return (\n    <div className=\"flex min-h-[400px] items-center justify-center bg-[#0d0d0d] p-8\">\n      <TextRevealCard\n        starsCount={130}\n        header={\n          <div className=\"mb-4\">\n            <p className=\"text-sm font-medium text-white/60\">Hover to reveal</p>\n            <h3 className=\"text-xl font-semibold text-white\">\n              What lies beneath?\n            </h3>\n          </div>\n        }\n        text={\n          <p className=\"text-2xl font-bold text-white\">\n            The secret is revealed!\n          </p>\n        }\n        revealText={\n          <p className=\"text-2xl font-bold text-white/20\">\n            Hover to see the magic\n          </p>\n        }\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-reveal-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-text-reveal-card.json",
+ "preview": "https://stashui.vercel.app/c/inspira-text-reveal-card",
+ "dupe_group": "textrevealcard",
+ "alternatives": [
+  {
+   "name": "text-reveal-card",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 11
+  }
+ ],
+ "blurb": "Text card with horizontal reveal on pointer movement.",
+ "description": "A dark card where text is revealed by a clip-path that follows horizontal mouse position. Vertical divider line rotates and shifts with pointer. Supports touch. Animated star background.",
+ "use_when": "Interactive text reveals, product feature highlights, or story cards where horizontal scroll/drag creates narrative…",
+ "avoid_when": "Touch-optimized layouts where persistent pointer/touch tracking could be unstable or create accidental reveals.",
+ "a11y": "Text layers and divider are not keyboard-navigable; interaction is pointer/touch-only. Header and text are readable when fully revealed.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "starsCount",
+   "type": "number",
+   "default": "130",
+   "required": false
+  },
+  {
+   "name": "starsClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "header",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "text",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "revealText",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "hero",
+  "body-text"
+ ]
+}

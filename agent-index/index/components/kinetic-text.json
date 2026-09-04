@@ -1,0 +1,53 @@
+{
+ "name": "kinetic-text",
+ "title": "Kinetic Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "KineticText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { KineticText } from \"@/components/ui/kinetic-text\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12 min-h-[200px]\">\n      <KineticText text=\"Hover over me!\" as=\"h1\" className=\"text-4xl\" />\n      <KineticText text=\"Kinetic Typography\" as=\"h2\" className=\"text-2xl\" />\n      <KineticText text=\"Each letter reacts independently\" as=\"p\" className=\"text-lg\" />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/kinetic-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/kinetic-text.json",
+ "preview": "https://stashui.vercel.app/c/kinetic-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Characters dance and shift positions rhythmically.",
+ "description": "Text characters animate with varied timing to move vertically, horizontally, or scale, creating a jittery kinetic effect.",
+ "use_when": "Playful landing pages or interactive demos that want energy without a clear message.",
+ "avoid_when": "Readability-first contexts — character motion makes text hard to focus on.",
+ "a11y": "Text is present but animated continuously. No motion preferences respected.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

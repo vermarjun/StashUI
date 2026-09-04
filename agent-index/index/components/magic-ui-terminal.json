@@ -1,0 +1,81 @@
+{
+ "name": "magic-ui-terminal",
+ "title": "Terminal",
+ "category": "data-display",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "AnimatedSpan",
+  "TypingAnimation",
+  "Terminal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  Terminal,\n  AnimatedSpan,\n  TypingAnimation,\n} from \"@/components/ui/terminal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center p-6\">\n      <Terminal className=\"w-full max-w-lg\">\n        <TypingAnimation>$ npx shadcn@latest init</TypingAnimation>\n\n        <AnimatedSpan className=\"text-green-500\">\n          ✔ Preflight checks.\n        </AnimatedSpan>\n        <AnimatedSpan className=\"text-green-500\">\n          ✔ Verifying framework. Found Next.js.\n        </AnimatedSpan>\n        <AnimatedSpan className=\"text-green-500\">\n          ✔ Validating Tailwind CSS.\n        </AnimatedSpan>\n        <AnimatedSpan className=\"text-green-500\">\n          ✔ Validating import alias.\n        </AnimatedSpan>\n\n        <AnimatedSpan className=\"text-muted-foreground\">\n          ℹ Writing components.json.\n        </AnimatedSpan>\n        <AnimatedSpan className=\"text-muted-foreground\">\n          ℹ Initializing project.\n        </AnimatedSpan>\n        <AnimatedSpan className=\"text-muted-foreground\">\n          ℹ Installing dependencies.\n        </AnimatedSpan>\n\n        <AnimatedSpan className=\"text-green-500\">\n          ✔ Project initialized. Happy building!\n        </AnimatedSpan>\n\n        <TypingAnimation delay={2800} className=\"text-muted-foreground\">\n          $ npx shadcn@latest add button\n        </TypingAnimation>\n\n        <AnimatedSpan className=\"text-green-500\">\n          ✔ Done.\n        </AnimatedSpan>\n      </Terminal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/terminal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magic-ui-terminal.json",
+ "preview": "https://stashui.vercel.app/c/magic-ui-terminal",
+ "dupe_group": "terminal",
+ "alternatives": [
+  {
+   "name": "terminal",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 27
+  }
+ ],
+ "blurb": "Terminal emulator with text typing animation, animating child content in…",
+ "description": "Terminal wrapper (Terminal, TypingAnimation, AnimatedSpan) simulating a CLI output. TypingAnimation character-by-character types a string at a configurable speed. AnimatedSpan fades in already-rendered lines. All animations can sequence…",
+ "use_when": "Showing code examples, CLI commands, or installation workflows with a playful reveal animation.",
+ "avoid_when": "Very long text (10,000+ characters); typing animation will run for a long time.",
+ "a11y": "Text is rendered character-by-character into the DOM, so it's readable. No aria-live for animations — screen readers will hear the final text. startOnView requires scrollable context.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"grid text-sm font-normal tracking-tight\", className)}",
+   "required": false
+  },
+  {
+   "name": "sequence",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "startOnView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "viewport"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text"
+ ]
+}

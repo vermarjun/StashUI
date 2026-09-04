@@ -1,0 +1,109 @@
+{
+ "name": "CountUp-TS-TW",
+ "title": "CountUp",
+ "category": "data-display",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "CountUp"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "import CountUp from \"@/components/ui/CountUp\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-12 p-12\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-6xl font-bold text-blue-600\">\n          <CountUp to={1000} from={0} duration={2} separator=\",\" />\n        </span>\n        <span className=\"text-sm text-gray-500\">Users</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-6xl font-bold text-green-600\">\n          <CountUp to={99.9} from={0} duration={2.5} />\n        </span>\n        <span className=\"text-sm text-gray-500\">Uptime %</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-6xl font-bold text-purple-600\">\n          <CountUp to={5000000} from={0} duration={3} separator=\",\" />\n        </span>\n        <span className=\"text-sm text-gray-500\">Revenue</span>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/CountUp.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/CountUp-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/CountUp-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animates numbers from one value to another with formatting and lifecycle…",
+ "description": "Number counter that smoothly animates between values using spring physics. Supports decimal formatting, separators, and triggers on InView. Configurable delay, duration, and callbacks.",
+ "use_when": "Displaying stats, metrics, or counters that need visual emphasis through animation.",
+ "avoid_when": "When animation is disabled in accessibility preferences or in performance-critical contexts.",
+ "a11y": "InView-triggered animation respects viewport. Text content updates for screen readers. Consider prefers-reduced-motion in usage.",
+ "props": [
+  {
+   "name": "to",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "from",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'up' | 'down'",
+   "default": "'up'",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "startWhen",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "separator",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "onStart",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onEnd",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "chart"
+ ]
+}

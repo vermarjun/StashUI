@@ -1,0 +1,80 @@
+{
+ "name": "sortable-list",
+ "title": "Sortable List",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "SortableList",
+  "SortableListItem"
+ ],
+ "npm_deps": [
+  "motion",
+  "react-use-measure"
+ ],
+ "registry_deps": [
+  "checkbox"
+ ],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { SortableList, SortableListItem, type Item } from \"@/components/ui/sortable-list\";\n\nconst INITIAL_ITEMS: Item[] = [\n  { id: 1, text: \"Design system tokens\", checked: false, description: \"Define color, spacing, and typography scales\" },\n  { id: 2, text: \"Component architecture\", checked: false, description: \"Plan the component hierarchy and props\" },\n  { id: 3, text: \"Write unit tests\", checked: false, description: \"Cover edge cases and accessibility\" },\n  { id: 4, text: \"Review pull request\", checked: false, description: \"Check code quality and naming\" },\n  { id: 5, text: \"Update documentation\", checked: false, description: \"Keep the README and JSDoc in sync\" },\n];\n\nexport default function Demo() {\n  const [items, setItems] = useState<Item[]>(INITIAL_ITEMS);\n\n  const handleComplete = (id: number) => {\n    setItems((prev) =>\n      prev.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item))\n    );\n  };\n\n  return (\n    <div className=\"w-full max-w-md mx-auto p-6 space-y-2\">\n      <SortableList\n        items={items}\n        setItems={setItems}\n        onCompleteItem={handleComplete}\n        renderItem={(item, order, onComplete, onRemove) => (\n          <SortableListItem\n            key={item.id}\n            item={item}\n            order={order}\n            onCompleteItem={onComplete}\n            onRemoveItem={onRemove}\n            handleDrag={() => {}}\n          />\n        )}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/sortable-list.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sortable-list.json",
+ "preview": "https://stashui.vercel.app/c/sortable-list",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Drag-to-reorder list with checkbox completion and spring-animated delete action.",
+ "description": "List component using Framer Motion's Reorder primitive for drag-to-sort functionality. Items can be marked complete (checked) which animates a delete button. Completed items slide out when deleted. Uses a render-function pattern…",
+ "use_when": "Todo lists, task managers, or any interface where users reorder items by dragging.",
+ "avoid_when": "Very large lists (1000+ items) — drag performance degrades significantly.",
+ "a11y": "Reorder items are draggable but not keyboard-accessible for reordering. Checkboxes and delete buttons are keyboard-navigable.",
+ "props": [
+  {
+   "name": "items",
+   "type": "Item[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "setItems",
+   "type": "Dispatch<SetStateAction<Item[]>>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onCompleteItem",
+   "type": "(id: number) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderItem",
+   "type": "(item: Item, order: number, onCompleteItem: (id: number) => void, onRemoveItem: (id: number) => void) => ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "list-item",
+  "data-table"
+ ]
+}

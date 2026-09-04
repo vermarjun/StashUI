@@ -1,0 +1,68 @@
+{
+ "name": "inspira-animated-tooltip",
+ "title": "Animated Tooltip",
+ "category": "tooltips",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimatedTooltip"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "pure",
+  "6 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { AnimatedTooltip } from \"@/components/ui/animated-tooltip\"\n\nconst people = [\n  {\n    id: 1,\n    name: \"Sarah Chen\",\n    designation: \"Frontend Engineer\",\n    image: \"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop\",\n  },\n  {\n    id: 2,\n    name: \"Marcus Johnson\",\n    designation: \"CTO\",\n    image: \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop\",\n  },\n  {\n    id: 3,\n    name: \"Priya Patel\",\n    designation: \"Product Designer\",\n    image: \"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop\",\n  },\n  {\n    id: 4,\n    name: \"Alex Rivera\",\n    designation: \"Full Stack Dev\",\n    image: \"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop\",\n  },\n  {\n    id: 5,\n    name: \"Emma Wilson\",\n    designation: \"UX Researcher\",\n    image: \"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop\",\n  },\n]\n\nexport default function AnimatedTooltipDemo() {\n  return (\n    <div className=\"flex min-h-[200px] flex-col items-center justify-center gap-4 p-8\">\n      <p className=\"text-sm text-gray-500 dark:text-gray-400\">Hover over the avatars</p>\n      <AnimatedTooltip items={people} />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/animated-tooltip.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-animated-tooltip.json",
+ "preview": "https://stashui.vercel.app/c/inspira-animated-tooltip",
+ "dupe_group": "animatedtooltip",
+ "alternatives": [
+  {
+   "name": "animated-tooltip",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 6
+  },
+  {
+   "name": "aceternity-ui-animated-tooltip",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 6
+  }
+ ],
+ "blurb": "Avatar stack with tooltips that rotate and translate based on cursor position…",
+ "description": "Renders overlapping circular avatars. On hover, a tooltip appears above with name and designation, rotating and translating proportionally to cursor position within the image area.",
+ "use_when": "Team galleries or contributor lists that need playful, responsive interactions on desktop.",
+ "avoid_when": "Touch-only interfaces; relies on precise mouse tracking.",
+ "a11y": "Images have alt text; tooltips appear on hover only, not keyboard-accessible.",
+ "props": [
+  {
+   "name": "items",
+   "type": "{id: number, name: string, designation: string, image: string}[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "avatar",
+  "decoration"
+ ]
+}

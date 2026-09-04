@@ -1,0 +1,106 @@
+{
+ "name": "PixelTransition-TS-TW",
+ "title": "Pixel Dissolve Transition",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PixelTransition"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport PixelTransition from \"@/components/ui/PixelTransition\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full h-full\">\n      <PixelTransition\n        firstContent={\n          <div className=\"flex flex-col items-center justify-center w-full h-full bg-neutral-900 text-white gap-2\">\n            <span className=\"text-4xl\">🌑</span>\n            <span className=\"text-sm font-medium tracking-wide text-muted-foreground\">Hover me</span>\n          </div>\n        }\n        secondContent={\n          <div className=\"flex flex-col items-center justify-center w-full h-full bg-white text-neutral-900 gap-2\">\n            <span className=\"text-4xl\">🌕</span>\n            <span className=\"text-sm font-medium tracking-wide\">Revealed!</span>\n          </div>\n        }\n        gridSize={7}\n        pixelColor=\"#888888\"\n        animationStepDuration={0.4}\n        aspectRatio=\"100%\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/PixelTransition.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/PixelTransition-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/PixelTransition-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Reveals hidden content by dissolving a pixelated overlay on hover, focus, or…",
+ "description": "GSAP-animated pixel grid that staggered-displays and hides in random order, transitioning between two content slots. Touch devices trigger on click; desktop uses hover/focus.",
+ "use_when": "Interactive cards, before/after comparisons, or reveal-on-interact UI patterns where a playful pixel effect enhances…",
+ "avoid_when": "Performance-critical mobile (GSAP animating 49+ DOM elements), or contexts where motion must be disabled.",
+ "a11y": "Two content slots with aria-hidden toggling based on state. Focusable via tabIndex and responds to keyboard (Enter/Space on focus).",
+ "props": [
+  {
+   "name": "firstContent",
+   "type": "React.ReactNode | string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "secondContent",
+   "type": "React.ReactNode | string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "gridSize",
+   "type": "number",
+   "default": "7",
+   "required": false
+  },
+  {
+   "name": "pixelColor",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "animationStepDuration",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "aspectRatio",
+   "type": "string",
+   "default": "'100%'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "decoration",
+  "testimonial"
+ ]
+}

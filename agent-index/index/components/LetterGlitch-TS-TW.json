@@ -1,0 +1,85 @@
+{
+ "name": "LetterGlitch-TS-TW",
+ "title": "Letter Glitch",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "LetterGlitch"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "canvas",
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport LetterGlitch from \"@/components/ui/LetterGlitch\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <LetterGlitch\n        glitchColors={[\"#2b4539\", \"#61dca3\", \"#61b3dc\"]}\n        glitchSpeed={50}\n        outerVignette={true}\n        smooth={true}\n        characters=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/LetterGlitch.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/LetterGlitch-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/LetterGlitch-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Glitchy character grid with color-shifting and vignette effects.",
+ "description": "Canvas-rendered grid of random characters that shift colors and glitch. Supports customizable color palette, glitch speed, smooth transitions, and optional vignette effects. Characters interpolate smoothly between colors.",
+ "use_when": "Tech, digital, or cyberpunk-themed sections where visual glitch effects add character and atmosphere.",
+ "avoid_when": "Accessibility-focused designs; this effect is purely visual and adds noise to content.",
+ "a11y": "Canvas-based; no keyboard navigation or semantic content. No interactive elements. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "glitchColors",
+   "type": "string[]",
+   "default": "['#2b4539', '#61dca3', '#61b3dc']",
+   "required": false
+  },
+  {
+   "name": "glitchSpeed",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "centerVignette",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "outerVignette",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "smooth",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "characters",
+   "type": "string",
+   "default": "'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "name": "balance-slider",
+ "title": "Balance Slider",
+ "category": "sliders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BalanceSlider"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 15,
+ "flags": [
+  "pure",
+  "15 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { BalanceSlider } from \"@/components/ui/balance-slider\";\n\nexport default function BalanceSliderDemo() {\n  return (\n    <div className=\"flex min-h-64 flex-col items-center justify-center gap-8 bg-neutral-900 p-8\">\n      <h2 className=\"text-lg font-semibold text-white\">Balance Slider</h2>\n      <div className=\"rounded-xl bg-neutral-800 p-6\">\n        <BalanceSlider\n          leftContent=\"LEFT\"\n          rightContent=\"RIGHT\"\n          leftColor=\"#e68a00\"\n          rightColor=\"#ffffff\"\n        />\n      </div>\n      <div className=\"rounded-xl bg-neutral-800 p-6\">\n        <BalanceSlider\n          leftContent=\"WARM\"\n          rightContent=\"COOL\"\n          leftColor=\"#ff4444\"\n          rightColor=\"#4444ff\"\n          initialValue={30}\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/balance-slider.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/balance-slider.json",
+ "preview": "https://stashui.vercel.app/c/balance-slider",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Two-sided balance slider that maintains a pivot point.",
+ "description": "A dual-thumb slider styled like a balance scale, with each side reflecting its value relative to the other.",
+ "use_when": "Setting proportions or balances between two values.",
+ "avoid_when": "Independent range selection; the concept couples the two values semantically.",
+ "a11y": "Keyboard support for each thumb. Balance concept may require extra documentation.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

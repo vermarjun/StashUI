@@ -1,0 +1,68 @@
+{
+ "name": "images-badge",
+ "title": "Images Badge",
+ "category": "badges",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ImagesBadge"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 22,
+ "flags": [
+  "3d",
+  "pure",
+  "22 colors"
+ ],
+ "usage": "\"use client\";\nimport { ImagesBadge } from \"@/components/ui/images-badge\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full max-w-md p-12\">\n      <ImagesBadge\n        text=\"View Photos\"\n        images={[\n          \"https://picsum.photos/seed/b1/200/200\",\n          \"https://picsum.photos/seed/b2/200/200\",\n          \"https://picsum.photos/seed/b3/200/200\",\n        ]}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/images-badge.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/images-badge.json",
+ "preview": "https://stashui.vercel.app/c/images-badge",
+ "dupe_group": "imagesbadge",
+ "alternatives": [
+  {
+   "name": "inspira-images-badge",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 22
+  }
+ ],
+ "blurb": "Avatar group displaying overlapped profile images.",
+ "description": "Badge component showing multiple avatar images stacked/overlapped via negative margins.",
+ "use_when": "Collaborative features, team indicators, or user group displays.",
+ "avoid_when": "More than ~4-5 images (overlap becomes unclear).",
+ "a11y": "Decorative image group. Alt-text per image depends on implementation.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "avatar",
+  "badge"
+ ]
+}

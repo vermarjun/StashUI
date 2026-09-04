@@ -1,0 +1,48 @@
+{
+ "name": "comp-462",
+ "title": "Full Ellipsis Pagination",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "pagination",
+  "select"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-462\";\n\nexport default function Demo() {\n  const [page, setPage] = useState(3);\n  const total = 10;\n  return (\n    <div className=\"w-full max-w-2xl\">\n      <Cmp currentPage={page} totalPages={total} paginationItemsToDisplay={5} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-462.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-462.json",
+ "preview": "https://stashui.vercel.app/c/comp-462",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pagination with full range ellipsis display.",
+ "description": "Pagination showing full page number range with ellipsis on both sides of current page.",
+ "use_when": "Large pagination sequences with detailed page visibility around current position.",
+ "avoid_when": "Small result sets or when compact pagination is needed.",
+ "a11y": "Semantic pagination with full page number display and ellipsis indicators.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "name": "stepper",
+ "title": "Stepper",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Stepper",
+  "StepperDescription",
+  "StepperIndicator",
+  "StepperItem",
+  "StepperSeparator",
+  "StepperTitle",
+  "StepperTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport {\n  Stepper,\n  StepperDescription,\n  StepperIndicator,\n  StepperItem,\n  StepperSeparator,\n  StepperTitle,\n  StepperTrigger,\n} from \"@/components/ui/stepper\";\n\nconst steps = [\n  { step: 1, title: \"Account\", description: \"Create your account\" },\n  { step: 2, title: \"Profile\", description: \"Set up your profile\" },\n  { step: 3, title: \"Review\", description: \"Review your details\" },\n  { step: 4, title: \"Done\", description: \"All set!\" },\n];\n\nexport default function Demo() {\n  const [active, setActive] = useState(1);\n\n  return (\n    <div className=\"flex w-full max-w-xl flex-col gap-6\">\n      <Stepper value={active} onValueChange={setActive}>\n        {steps.map(({ step, title, description }, idx) => (\n          <StepperItem key={step} step={step} className=\"flex-1\">\n            <StepperTrigger className=\"flex flex-col items-center gap-1.5 w-full\">\n              <StepperIndicator />\n              <div className=\"text-center\">\n                <StepperTitle>{title}</StepperTitle>\n                <StepperDescription>{description}</StepperDescription>\n              </div>\n            </StepperTrigger>\n            {idx < steps.length - 1 && <StepperSeparator />}\n          </StepperItem>\n        ))}\n      </Stepper>\n      <div className=\"flex justify-center gap-3\">\n        <button\n          className=\"rounded-md border border-border px-4 py-1.5 text-sm disabled:opacity-40\"\n          disabled={active <= 1}\n          onClick={() => setActive((s) => Math.max(1, s - 1))}\n          type=\"button\"\n        >\n          Back\n        </button>\n        <button\n          className=\"rounded-md bg-primary px-4 py-1.5 text-primary-foreground text-sm disabled:opacity-40\"\n          disabled={active >= steps.length}\n          onClick={() => setActive((s) => Math.min(steps.length, s + 1))}\n          type=\"button\"\n        >\n          Next\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/stepper.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/stepper.json",
+ "preview": "https://stashui.vercel.app/c/stepper",
+ "dupe_group": "stepper",
+ "alternatives": [
+  {
+   "name": "Stepper-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 18
+  }
+ ],
+ "blurb": "Progress stepper component showing step states (active, completed, inactive…",
+ "description": "Composable stepper with Stepper, StepperItem, StepperTitle, StepperDescription, StepperIndicator, StepperTrigger, and StepperSeparator. Supports horizontal and vertical orientation, loading states, and click-to-navigate functionality via…",
+ "use_when": "Multi-step forms, wizards, or workflows where showing progress and allowing step navigation improves user experience.",
+ "avoid_when": "Linear single-step flows where a progress bar suffices. Overkill for simple status indicators.",
+ "a11y": "Supports click-to-navigate via keyboard. Proper ARIA roles for step items and context-based state management. Focus management delegated to parent.",
+ "props": [
+  {
+   "name": "activeStep",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "orientation",
+   "type": "'horizontal' | 'vertical'",
+   "default": "\"horizontal\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "form-submit",
+  "modal"
+ ]
+}

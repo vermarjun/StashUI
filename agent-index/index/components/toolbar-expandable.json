@@ -1,0 +1,89 @@
+{
+ "name": "toolbar-expandable",
+ "title": "Toolbar Expandable",
+ "category": "navigation",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "ToolbarExpandable"
+ ],
+ "npm_deps": [
+  "motion",
+  "@radix-ui/react-scroll-area"
+ ],
+ "registry_deps": [
+  "badge"
+ ],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\"\n\nimport React from \"react\"\nimport { LayoutDashboard, Settings, User, Bell } from \"lucide-react\"\nimport ToolbarExpandable from \"@/components/ui/toolbar-expandable\"\n\nconst steps = [\n  {\n    id: \"profile\",\n    title: \"Profile\",\n    description: \"Manage your personal information and account settings.\",\n    icon: User,\n    content: (\n      <div className=\"space-y-2 text-sm text-muted-foreground\">\n        <p>Update your name, email, and profile picture here.</p>\n        <button className=\"px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs\">\n          Edit Profile\n        </button>\n      </div>\n    ),\n  },\n  {\n    id: \"dashboard\",\n    title: \"Dashboard\",\n    description: \"View your analytics and usage statistics.\",\n    icon: LayoutDashboard,\n    content: (\n      <div className=\"space-y-2 text-sm text-muted-foreground\">\n        <p>Total visits: <strong>12,430</strong></p>\n        <p>Active users: <strong>340</strong></p>\n      </div>\n    ),\n  },\n  {\n    id: \"notifications\",\n    title: \"Notifications\",\n    description: \"Configure how and when you receive alerts.\",\n    icon: Bell,\n    content: (\n      <div className=\"space-y-2 text-sm text-muted-foreground\">\n        <p>Email notifications are currently <strong>enabled</strong>.</p>\n        <p>Push notifications are <strong>disabled</strong>.</p>\n      </div>\n    ),\n  },\n  {\n    id: \"settings\",\n    title: \"Settings\",\n    description: \"Adjust app preferences and advanced options.\",\n    icon: Settings,\n    content: (\n      <div className=\"space-y-2 text-sm text-muted-foreground\">\n        <p>Theme: <strong>System default</strong></p>\n        <p>Language: <strong>English</strong></p>\n      </div>\n    ),\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg mx-auto py-8 px-4\">\n      <ToolbarExpandable steps={steps} badgeText=\"Navigation\" />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/toolbar-expandable.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/toolbar-expandable.json",
+ "preview": "https://stashui.vercel.app/c/toolbar-expandable",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Expandable toolbar with step-by-step progression and icon display.",
+ "description": "Multi-step expandable toolbar showing progress through labeled steps with icons and descriptions. Supports scroll area for overflow, badge labels, controlled/uncontrolled modes, and click-to-expand functionality.",
+ "use_when": "Complex workflows with sequential steps where a horizontal toolbar layout saves space. Useful for task tracking or…",
+ "avoid_when": "Mobile-only interfaces; horizontal scrolling can be awkward. Not suitable for very long step sequences (15+).",
+ "a11y": "Basic keyboard support via click handlers. No built-in ARIA attributes for step progression.",
+ "props": [
+  {
+   "name": "steps",
+   "type": "DynamicStep[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "badgeText",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "expanded",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onExpandedChange",
+   "type": "(expanded: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "activeStep",
+   "type": "string | null",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "feature-card"
+ ]
+}

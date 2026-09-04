@@ -1,0 +1,75 @@
+{
+ "name": "inspira-shimmer-button",
+ "title": "Shimmer Button",
+ "category": "buttons",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ShimmerButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "3d",
+  "pure",
+  "8 colors"
+ ],
+ "usage": "\"use client\";\nimport { ShimmerButton } from \"@/components/ui/shimmer-button\";\n\nexport default function ShimmerButtonDemo() {\n  return (\n    <div className=\"flex items-center justify-center gap-4 p-8\">\n      <ShimmerButton shimmerColor=\"#ffffff\" background=\"rgba(0,0,0,1)\">\n        Shimmer Button\n      </ShimmerButton>\n      <ShimmerButton\n        shimmerColor=\"#a78bfa\"\n        background=\"rgba(109, 40, 217, 1)\"\n        borderRadius=\"8px\"\n        shimmerDuration=\"2s\"\n      >\n        Purple Shimmer\n      </ShimmerButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/shimmer-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-shimmer-button.json",
+ "preview": "https://stashui.vercel.app/c/inspira-shimmer-button",
+ "dupe_group": "shimmerbutton",
+ "alternatives": [
+  {
+   "name": "shimmer-button",
+   "origin": "StashUI",
+   "npm_deps": 0,
+   "hardcoded_colors": 7
+  },
+  {
+   "name": "magic-ui-shimmer-button",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 7
+  }
+ ],
+ "blurb": "Light sweep slides across button on loop.",
+ "description": "A button with a continuously animated shimmer effect using a linear gradient that sweeps across from left to right.",
+ "use_when": "You want a loading or attention-grabbing shimmer effect on a button.",
+ "avoid_when": "When you need a clear, static CTA; the motion can distract from the action.",
+ "a11y": "Standard button semantics. Shimmer is visual only. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "loading"
+ ]
+}

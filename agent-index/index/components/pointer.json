@@ -1,0 +1,68 @@
+{
+ "name": "pointer",
+ "title": "Pointer",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Pointer"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Pointer } from \"@/components/ui/pointer\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex items-center justify-center p-8\">\n      <div className=\"relative flex h-64 w-full max-w-md cursor-none items-center justify-center rounded-xl border border-border bg-muted/20\">\n        <Pointer>\n          {/* Custom pointer label */}\n          <div className=\"rounded-full bg-foreground px-3 py-1 text-xs font-medium text-background shadow-lg\">\n            ✦ Hover me\n          </div>\n        </Pointer>\n        <div className=\"text-center pointer-events-none select-none\">\n          <p className=\"text-sm font-semibold text-foreground\">Custom Pointer Zone</p>\n          <p className=\"mt-1 text-xs text-muted-foreground\">\n            Move your cursor inside this area\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/pointer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pointer.json",
+ "preview": "https://stashui.vercel.app/c/pointer",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Custom animated cursor appears on hover, displaying child content at pointer…",
+ "description": "Renders a custom animated cursor that tracks mouse position over the parent container and displays child content at the pointer location.",
+ "use_when": "Interactive zones or hover areas where a custom cursor provides visual feedback and enhanced engagement.",
+ "avoid_when": "Touch-only devices or contexts where cursor replacement is not appropriate.",
+ "a11y": "Custom cursor is visual only; no semantic content or keyboard interaction.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none fixed z-50 transform-[translate(-50%,-5",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

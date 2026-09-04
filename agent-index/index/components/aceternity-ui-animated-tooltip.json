@@ -1,0 +1,70 @@
+{
+ "name": "aceternity-ui-animated-tooltip",
+ "title": "Animated Tooltip",
+ "category": "tooltips",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "AnimatedTooltip"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\nimport { AnimatedTooltip } from \"@/components/ui/animated-tooltip\";\n\nconst people = [\n  {\n    id: 1,\n    name: \"Alice Johnson\",\n    designation: \"Software Engineer\",\n    image: \"https://picsum.photos/seed/alice/100/100\",\n  },\n  {\n    id: 2,\n    name: \"Bob Martinez\",\n    designation: \"Product Manager\",\n    image: \"https://picsum.photos/seed/bob/100/100\",\n  },\n  {\n    id: 3,\n    name: \"Carol Chen\",\n    designation: \"UX Designer\",\n    image: \"https://picsum.photos/seed/carol/100/100\",\n  },\n  {\n    id: 4,\n    name: \"David Kim\",\n    designation: \"DevOps Engineer\",\n    image: \"https://picsum.photos/seed/david/100/100\",\n  },\n  {\n    id: 5,\n    name: \"Emma Wilson\",\n    designation: \"Data Scientist\",\n    image: \"https://picsum.photos/seed/emma/100/100\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-row items-center justify-center w-full py-10\">\n      <AnimatedTooltip items={people} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/animated-tooltip.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/aceternity-ui-animated-tooltip.json",
+ "preview": "https://stashui.vercel.app/c/aceternity-ui-animated-tooltip",
+ "dupe_group": "animatedtooltip",
+ "alternatives": [
+  {
+   "name": "inspira-animated-tooltip",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 6
+  },
+  {
+   "name": "animated-tooltip",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 6
+  }
+ ],
+ "blurb": "Avatar stack with tooltips showing name and designation on hover, tooltips tilt…",
+ "description": "Renders a list of circular avatar images in an overlapping row. On hover, a tooltip appears above with name and designation, rotating and translating based on mouse movement within the image.",
+ "use_when": "Team member galleries, contributor lists, or user avatars that need an interactive personal touch.",
+ "avoid_when": "Touch-only interfaces; relies on hover and mouse movement tracking.",
+ "a11y": "Images have alt text; tooltips appear on hover only, not accessible via keyboard.",
+ "props": [
+  {
+   "name": "items",
+   "type": "{id: number, name: string, designation: string, image: string}[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "avatar",
+  "decoration"
+ ]
+}

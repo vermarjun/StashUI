@@ -1,0 +1,68 @@
+{
+ "name": "bg-particle-whirlpool",
+ "title": "Particle Whirlpool Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BgParticleWhirlpool"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "3d",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { BgParticleWhirlpool } from \"@/components/ui/bg-particle-whirlpool\";\n\nexport default function BgParticleWhirlpoolDemo() {\n  return (\n    <div className=\"h-[600px] w-full overflow-hidden rounded-xl bg-black\">\n      <BgParticleWhirlpool particleCount={1500} blur={0}>\n        <div className=\"flex h-full items-center justify-center\">\n          <p className=\"text-2xl font-semibold text-white drop-shadow\">Particle Whirlpool</p>\n        </div>\n      </BgParticleWhirlpool>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/bg-particle-whirlpool.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-particle-whirlpool.json",
+ "preview": "https://stashui.vercel.app/c/bg-particle-whirlpool",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "1500 particles orbit in a 3D whirlpool with bloom post-processing glow.",
+ "description": "Three.js WebGL background rendering instanced particles in orbiting motion. Uses UnrealBloomPass for glow effect and OrbitControls for camera interaction.",
+ "use_when": "Premium sci-fi or tech-focused hero with high-impact 3D particle dynamics.",
+ "avoid_when": "Low-end mobile devices, no WebGL, or frame-rate sensitive applications.",
+ "a11y": "Purely decorative 3D animation with no keyboard equivalent.",
+ "props": [
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-full w-full\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

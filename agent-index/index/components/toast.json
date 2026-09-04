@@ -1,0 +1,66 @@
+{
+ "name": "toast",
+ "title": "Toast",
+ "category": "notifications",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Toast",
+  "ToastAction",
+  "ToastClose",
+  "ToastDescription",
+  "ToastProvider",
+  "ToastTitle",
+  "ToastViewport"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Toast,\n  ToastAction,\n  ToastClose,\n  ToastDescription,\n  ToastProvider,\n  ToastTitle,\n  ToastViewport,\n} from \"@/components/ui/toast\";\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false);\n  const [destructiveOpen, setDestructiveOpen] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 min-h-[200px] p-8\">\n      <ToastProvider>\n        <div className=\"flex gap-3\">\n          <button\n            className=\"rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90\"\n            onClick={() => setOpen(true)}\n          >\n            Show Toast\n          </button>\n          <button\n            className=\"rounded-md bg-destructive px-4 py-2 text-sm text-white hover:bg-destructive/90\"\n            onClick={() => setDestructiveOpen(true)}\n          >\n            Show Error Toast\n          </button>\n        </div>\n\n        <Toast open={open} onOpenChange={setOpen}>\n          <div className=\"grid gap-1\">\n            <ToastTitle>File saved successfully</ToastTitle>\n            <ToastDescription>\n              Your changes have been saved to the cloud.\n            </ToastDescription>\n          </div>\n          <ToastAction altText=\"Undo save\">Undo</ToastAction>\n          <ToastClose />\n        </Toast>\n\n        <Toast open={destructiveOpen} onOpenChange={setDestructiveOpen} variant=\"destructive\">\n          <div className=\"grid gap-1\">\n            <ToastTitle>Upload failed</ToastTitle>\n            <ToastDescription>\n              There was an error uploading your file. Please try again.\n            </ToastDescription>\n          </div>\n          <ToastAction altText=\"Retry upload\">Retry</ToastAction>\n          <ToastClose />\n        </Toast>\n\n        <ToastViewport />\n      </ToastProvider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/toast.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/toast.json",
+ "preview": "https://stashui.vercel.app/c/toast",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Radix UI toast primitives with viewport, actions, and close button.",
+ "description": "Toast system based on Radix UI Toast primitives. Exports ToastProvider, ToastViewport (fixed bottom-right on desktop, top on mobile), Toast root, ToastAction, and ToastClose. Supports default and destructive variants.",
+ "use_when": "You need a standardized toast notification system with Radix primitives.",
+ "avoid_when": "For simple notifications; this is more complex than needed unless using Radix UI ecosystem.",
+ "a11y": "Full Radix UI accessibility. Close button is keyboard accessible. Supports swipe-to-dismiss on touch.",
+ "props": [
+  {
+   "name": "variant",
+   "type": "'default' | 'destructive'",
+   "default": "'default'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "toast"
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "name": "components-community-radial-nav",
+ "title": "Radial Nav",
+ "category": "navigation",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "RadialNav"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "'use client';\n\nimport { Home, Search, Settings, Bell, User } from 'lucide-react';\nimport { RadialNav } from '@/components/ui/components-community-radial-nav';\n\nexport default function Demo() {\n  const items = [\n    { id: 1, icon: Home, label: 'Home', angle: 0 },\n    { id: 2, icon: Search, label: 'Search', angle: 72 },\n    { id: 3, icon: Bell, label: 'Notifications', angle: 144 },\n    { id: 4, icon: User, label: 'Profile', angle: 216 },\n    { id: 5, icon: Settings, label: 'Settings', angle: 288 },\n  ];\n\n  return (\n    <div className=\"flex items-center justify-center w-full h-64\">\n      <RadialNav size={200} items={items} defaultActiveId={1} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-community-radial-nav.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-community-radial-nav.json",
+ "preview": "https://stashui.vercel.app/c/components-community-radial-nav",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Circular menu with animated pointer, items orbit at configurable distance.",
+ "description": "Radial navigation showing menu items arranged in a circle around a central pointer. Pointer rotates toward active item with spring physics. Click items to activate.",
+ "use_when": "Unique 360° navigation UX or control panels where circular layout fits the domain.",
+ "avoid_when": "Standard linear navigation; radial menus surprise users and reduce scannability.",
+ "a11y": "Menu items are keyboard-navigable and have aria-label. Root menu has aria-label. Pointer is aria-hidden.",
+ "props": [
+  {
+   "name": "size",
+   "type": "number",
+   "default": "180",
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "RadialNavItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "menuButtonConfig",
+   "type": "MenuButtonConfig",
+   "default": "{resolvedMenuButtonConfig}",
+   "required": false
+  },
+  {
+   "name": "defaultActiveId",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onActiveChange",
+   "type": "(id: number) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "nav"
+ ]
+}

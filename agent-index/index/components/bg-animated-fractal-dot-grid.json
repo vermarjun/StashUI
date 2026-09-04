@@ -1,0 +1,118 @@
+{
+ "name": "bg-animated-fractal-dot-grid",
+ "title": "Animated Dot Grid",
+ "category": "backgrounds",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "FractalDotGrid"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "canvas",
+  "motion",
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport FractalDotGrid from \"@/components/ui/bg-animated-fractal-dot-grid\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-gray-100\">\n      <FractalDotGrid\n        dotColor=\"rgba(100, 100, 255, 1)\"\n        glowColor=\"rgba(100, 100, 255, 1)\"\n        dotOpacity={0.35}\n        waveIntensity={30}\n        waveRadius={220}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/bg-animated-fractal-dot-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-animated-fractal-dot-grid.json",
+ "preview": "https://stashui.vercel.app/c/bg-animated-fractal-dot-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Canvas-rendered dot grid ripples outward from cursor with glowing wave effect.",
+ "description": "Fullscreen canvas background with dot grid. On pointer movement, dots create radial wave with glow and optional noise overlay. Includes responsive performance scaling and mouse glow effect.",
+ "use_when": "High-impact hero or section background needing smooth interactive pointer feedback.",
+ "avoid_when": "Low-power devices, frequent window resizing, or minimal motion preferences.",
+ "a11y": "Decorative animation tied to mouse movement; no keyboard or motion-reduced variant.",
+ "props": [
+  {
+   "name": "dotSize",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "dotSpacing",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "dotOpacity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "waveIntensity",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "waveRadius",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "dotColor",
+   "type": "string",
+   "default": "\"rgba(100, 100, 255, 1)\"",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "\"rgba(100, 100, 255, 1)\"",
+   "required": false
+  },
+  {
+   "name": "enableNoise",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "noiseOpacity",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "enableMouseGlow",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "initialPerformance",
+   "type": "\"low\" | \"medium\" | \"high\"",
+   "default": "\"medium\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

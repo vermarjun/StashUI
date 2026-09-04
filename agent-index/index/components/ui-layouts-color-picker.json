@@ -1,0 +1,82 @@
+{
+ "name": "ui-layouts-color-picker",
+ "title": "Hex Color Picker",
+ "category": "inputs",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "ColorPicker"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button",
+  "input",
+  "label",
+  "popover"
+ ],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "'use client';\nimport { useState } from \"react\";\nimport { ColorPicker } from \"@/components/ui/color-picker\";\n\nexport default function Demo() {\n  const [color, setColor] = useState(\"#6366f1\");\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <ColorPicker\n        color={color}\n        onChange={setColor}\n        label=\"Color\"\n        isEyeDroppper={false}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/color-picker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-color-picker.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-color-picker",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Hex color picker in a popover with input field and copy button.",
+ "description": "A controlled color picker component using HexColorPicker that opens in a popover, with direct hex input, copy-to-clipboard, and optional eyedropper tool support.",
+ "use_when": "Building design tools, theme editors, or settings pages where users need to pick and manage custom colors.",
+ "avoid_when": "When the native HTML color input suffices or eyedropper support isn't required.",
+ "a11y": "Buttons have sr-only labels, label connects to the trigger button, focus is managed within the popover.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(color: string) => void",
+   "default": "{(e) => onChange(e.target.value)}",
+   "required": true
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "isEyeDroppper",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "'h-8 w-12 border-2 p-0'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "name": "TargetCursor-TS-TW",
+ "title": "Target Lock Cursor",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "TargetCursor"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "3d",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/TargetCursor\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full flex flex-col items-center justify-center gap-8 cursor-none\">\n      <Cmp targetSelector=\".cursor-target\" hideDefaultCursor spinDuration={2} />\n      <div className=\"flex gap-8\">\n        <button\n          className=\"cursor-target px-6 py-3 rounded-lg border border-border bg-card text-card-foreground text-sm font-medium\"\n        >\n          Hover me\n        </button>\n        <button\n          className=\"cursor-target px-6 py-3 rounded-lg border border-border bg-card text-card-foreground text-sm font-medium\"\n        >\n          Or me\n        </button>\n        <button\n          className=\"cursor-target px-6 py-3 rounded-lg border border-border bg-card text-card-foreground text-sm font-medium\"\n        >\n          Or me\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/TargetCursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/TargetCursor-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/TargetCursor-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Spinning reticle cursor that locks onto hover targets.",
+ "description": "Replaces the default cursor with a rotating target reticle. Tracks pointer movement, spins continuously, and scales/animates when hovering over designated targets.",
+ "use_when": "Gaming interfaces, interactive dashboards, or sci-fi themed designs where a custom cursor enhances immersion.",
+ "avoid_when": "Touch devices (detection included, disables); users relying on standard cursor expectations.",
+ "a11y": "Custom cursor replacing default; no reduced-motion support. Mobile detection disables the feature.",
+ "props": [
+  {
+   "name": "targetSelector",
+   "type": "string",
+   "default": "'.cursor-target'",
+   "required": false
+  },
+  {
+   "name": "spinDuration",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "hideDefaultCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hoverDuration",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "parallaxOn",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "decoration"
+ ]
+}

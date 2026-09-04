@@ -1,0 +1,85 @@
+{
+ "name": "tree",
+ "title": "File Tree",
+ "category": "data-display",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Tree",
+  "TreeItem",
+  "TreeItemLabel",
+  "TreeDragLine"
+ ],
+ "npm_deps": [
+  "@headless-tree/core",
+  "@headless-tree/react",
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "heavy",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { hotkeysCoreFeature, selectionFeature, syncDataLoaderFeature } from \"@headless-tree/core\";\nimport { useTree } from \"@headless-tree/react\";\nimport { FileIcon, FolderIcon, FolderOpenIcon } from \"lucide-react\";\n\nimport { Tree, TreeItem, TreeItemLabel } from \"@/components/ui/tree\";\n\ninterface Item {\n  name: string;\n  children?: string[];\n}\n\nconst items: Record<string, Item> = {\n  root:       { name: \"my-app\",     children: [\"src\", \"public\", \"pkg\"] },\n  src:        { name: \"src\",        children: [\"components\", \"lib\", \"app-ts\"] },\n  components: { name: \"components\", children: [\"button-tsx\", \"card-tsx\", \"modal-tsx\"] },\n  lib:        { name: \"lib\",        children: [\"utils-ts\", \"hooks-ts\"] },\n  \"app-ts\":   { name: \"app.ts\" },\n  \"button-tsx\": { name: \"Button.tsx\" },\n  \"card-tsx\":   { name: \"Card.tsx\" },\n  \"modal-tsx\":  { name: \"Modal.tsx\" },\n  \"utils-ts\":   { name: \"utils.ts\" },\n  \"hooks-ts\":   { name: \"hooks.ts\" },\n  public:     { name: \"public\",     children: [\"favicon-ico\", \"logo-svg\"] },\n  \"favicon-ico\": { name: \"favicon.ico\" },\n  \"logo-svg\":    { name: \"logo.svg\" },\n  pkg:        { name: \"package.json\" },\n};\n\nconst indent = 20;\n\nexport default function Demo() {\n  const tree = useTree<Item>({\n    dataLoader: {\n      getChildren: (id) => items[id].children ?? [],\n      getItem: (id) => items[id],\n    },\n    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature],\n    getItemName: (item) => item.getItemData().name,\n    indent,\n    initialState: {\n      expandedItems: [\"src\", \"components\"],\n      selectedItems: [\"button-tsx\"],\n    },\n    isItemFolder: (item) => (item.getItemData().children?.length ?? 0) > 0,\n    rootItemId: \"root\",\n  });\n\n  return (\n    <div className=\"w-64 rounded-xl border bg-background p-3\">\n      <Tree indent={indent} tree={tree}>\n        {tree.getItems().map((item) => (\n          <TreeItem item={item} key={item.getId()}>\n            <TreeItemLabel>\n              <span className=\"flex items-center gap-2\">\n                {item.isFolder() ? (\n                  item.isExpanded() ? (\n                    <FolderOpenIcon className=\"pointer-events-none size-4 text-muted-foreground\" />\n                  ) : (\n                    <FolderIcon className=\"pointer-events-none size-4 text-muted-foreground\" />\n                  )\n                ) : (\n                  <FileIcon className=\"pointer-events-none size-4 text-muted-foreground\" />\n                )}\n                {item.getItemName()}\n              </span>\n            </TreeItemLabel>\n          </TreeItem>\n        ))}\n      </Tree>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/tree.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tree.json",
+ "preview": "https://stashui.vercel.app/c/tree",
+ "dupe_group": "filetree",
+ "alternatives": [
+  {
+   "name": "file-tree",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  },
+  {
+   "name": "inspira-file-tree",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Hierarchical file-tree UI with folder expansion, selection, and keyboard…",
+ "description": "Renders a tree structure using @headless-tree for state management. Supports expand/collapse, item selection, drag indicators, and keyboard shortcuts. Context-driven sub-components handle items and labels.",
+ "use_when": "File explorers, hierarchical navigation, or project structure views with keyboard interaction.",
+ "avoid_when": "Simple flat lists; this requires @headless-tree and complex state setup.",
+ "a11y": "Items have aria-expanded. Focus management via data-focus attribute. Keyboard navigation depends on tree instance.",
+ "props": [
+  {
+   "name": "indent",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "tree",
+   "type": "any",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"flex flex-col\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "children"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "sidebar"
+ ]
+}

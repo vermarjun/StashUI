@@ -1,0 +1,92 @@
+{
+ "name": "timer",
+ "title": "Timer",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "TimerRoot",
+  "TimerIcon",
+  "TimerDisplay",
+  "Timer"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Timer } from \"@/components/ui/timer\";\n\nexport default function Demo() {\n  const [running, setRunning] = useState(false);\n  const [key, setKey] = useState(0);\n\n  const handleReset = () => {\n    setRunning(false);\n    setKey((k) => k + 1);\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8\">\n      <Timer key={key} loading={running} size=\"lg\" />\n      <div className=\"flex items-center gap-3\">\n        <button\n          onClick={() => setRunning(true)}\n          disabled={running}\n          className=\"rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background transition-opacity disabled:opacity-40\"\n        >\n          Start\n        </button>\n        <button\n          onClick={() => setRunning(false)}\n          disabled={!running}\n          className=\"rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground transition-opacity disabled:opacity-40\"\n        >\n          Pause\n        </button>\n        <button\n          onClick={handleReset}\n          className=\"rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground\"\n        >\n          Reset\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/timer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/timer.json",
+ "preview": "https://stashui.vercel.app/c/timer",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Elapsed time display with spinning icon and start/stop/reset controls.",
+ "description": "Displays elapsed time in multiple formats (SS.MS, MM:SS, HH:MM:SS) using requestAnimationFrame. Icon spins while running. Controlled via loading prop; resets on loading change if resetOnLoadingChange=true.",
+ "use_when": "Stopwatches, activity timers, or performance measurement displays.",
+ "avoid_when": "Counting down to a deadline; this is an elapsed-time counter, not a countdown timer.",
+ "a11y": "Has role='timer' and aria-live='polite' for updates. Display has aria-label. Spin animation may cause issues for vestibular disorders.",
+ "props": [
+  {
+   "name": "loading",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onTick",
+   "type": "(seconds: number, milliseconds: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "resetOnLoadingChange",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "format",
+   "type": "\"SS.MS\" | \"MM:SS\" | \"HH:MM:SS\"",
+   "default": "\"SS.MS\"",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "\"default\" | \"outline\" | \"ghost\" | \"destructive\"",
+   "default": "{variant}",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "\"sm\" | \"md\" | \"lg\"",
+   "default": "{size}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(timerVariants({ variant, size }), className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "form-field"
+ ]
+}

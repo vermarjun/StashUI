@@ -1,0 +1,66 @@
+{
+ "name": "carousel",
+ "title": "Carousel",
+ "category": "carousels",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Carousel"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "3d",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Carousel from \"@/components/ui/carousel\";\n\nexport default function Demo() {\n  const slides = [\n    {\n      title: \"Discover the Mountains\",\n      button: \"Explore Now\",\n      src: \"https://picsum.photos/seed/mountains/800/800\",\n    },\n    {\n      title: \"Ocean Adventures\",\n      button: \"Dive In\",\n      src: \"https://picsum.photos/seed/ocean2/800/800\",\n    },\n    {\n      title: \"Urban Explorations\",\n      button: \"Visit City\",\n      src: \"https://picsum.photos/seed/urban/800/800\",\n    },\n    {\n      title: \"Forest Retreats\",\n      button: \"Find Peace\",\n      src: \"https://picsum.photos/seed/forest2/800/800\",\n    },\n  ];\n\n  return (\n    <div className=\"w-full flex items-center justify-center py-10\">\n      <Carousel slides={slides} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/carousel.json",
+ "preview": "https://stashui.vercel.app/c/carousel",
+ "dupe_group": "carousel",
+ "alternatives": [
+  {
+   "name": "ui-layouts-carousel",
+   "origin": "Ui-Layouts",
+   "npm_deps": 6,
+   "hardcoded_colors": 6
+  }
+ ],
+ "blurb": "Image carousel with 3D tilt parallax on hover and click-to-navigate controls.",
+ "description": "Interactive image carousel where each slide scales and rotates in 3D on hover. Active slide shows content overlay with title and button. Image position parallaxes with mouse movement using RAF animation.",
+ "use_when": "Hero section or portfolio showcasing multiple high-impact images with interactive selection.",
+ "avoid_when": "Touch-only surfaces; the 3D parallax effect requires precise mouse tracking.",
+ "a11y": "Previous/next buttons have ARIA labels and focus states. Slides are keyboard accessible via buttons.",
+ "props": [
+  {
+   "name": "slides",
+   "type": "SlideData[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "fill",
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

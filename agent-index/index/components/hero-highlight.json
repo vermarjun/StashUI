@@ -1,0 +1,70 @@
+{
+ "name": "hero-highlight",
+ "title": "Hero Highlight",
+ "category": "heroes",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "HeroHighlight",
+  "Highlight"
+ ],
+ "npm_deps": [
+  "mini-svg-data-uri",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Highlight, HeroHighlight } from \"@/components/ui/hero-highlight\";\nimport { motion } from \"motion/react\";\n\nexport default function Demo() {\n  return (\n    <HeroHighlight>\n      <motion.h1\n        initial={{ opacity: 0, y: 20 }}\n        animate={{ opacity: 1, y: 0 }}\n        transition={{ duration: 0.5, ease: \"easeOut\" }}\n        className=\"mx-auto max-w-4xl text-center text-2xl font-bold leading-relaxed text-neutral-700 dark:text-white md:text-4xl lg:text-5xl lg:leading-snug\"\n      >\n        Build beautiful products with{\" \"}\n        <Highlight>modern&nbsp;tooling</Highlight>\n        <br />\n        and ship faster than ever.\n      </motion.h1>\n      <motion.p\n        initial={{ opacity: 0, y: 16 }}\n        animate={{ opacity: 1, y: 0 }}\n        transition={{ duration: 0.5, delay: 0.3, ease: \"easeOut\" }}\n        className=\"mx-auto mt-6 max-w-xl text-center text-base text-neutral-500 dark:text-neutral-400\"\n      >\n        A curated component library for engineers who care about craft.\n      </motion.p>\n    </HeroHighlight>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/hero-highlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hero-highlight.json",
+ "preview": "https://stashui.vercel.app/c/hero-highlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Container with dot-pattern background and mouse-tracked radial highlight on…",
+ "description": "Wrapper div tracking mouse position and revealing colored dot pattern in 200px radial gradient. Light and dark variants. Height 40rem, full width. Also exports Highlight span for inline gradient text animation.",
+ "use_when": "Hero section or container where you want subtle mouse-tracking polish without heavy effects.",
+ "avoid_when": "Touch-only devices; no pointer to track. Requires onMouseMove handler.",
+ "a11y": "Passive overlay; children content remains fully accessible. No interaction required.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ]
+}

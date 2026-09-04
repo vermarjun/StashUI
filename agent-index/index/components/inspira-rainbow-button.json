@@ -1,0 +1,62 @@
+{
+ "name": "inspira-rainbow-button",
+ "title": "Rainbow Button",
+ "category": "buttons",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "RainbowButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 13,
+ "flags": [
+  "webgl",
+  "pure",
+  "13 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { RainbowButton } from \"@/components/ui/rainbow-button\";\n\nexport default function RainbowButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-12\">\n      <RainbowButton>Default speed</RainbowButton>\n      <RainbowButton speed={1}>Fast (1 s)</RainbowButton>\n      <RainbowButton speed={4}>Slow (4 s)</RainbowButton>\n      <RainbowButton disabled>Disabled</RainbowButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/rainbow-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-rainbow-button.json",
+ "preview": "https://stashui.vercel.app/c/inspira-rainbow-button",
+ "dupe_group": "rainbowbutton",
+ "alternatives": [
+  {
+   "name": "rainbow-button",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 16
+  }
+ ],
+ "blurb": "Text cycles through rainbow colors on loop.",
+ "description": "A button with text that animates through a rainbow color sequence using CSS keyframes.",
+ "use_when": "You need a playful CTA that continuously draws attention.",
+ "avoid_when": "On professional or minimal interfaces; the constant color change can feel distracting.",
+ "a11y": "Standard button semantics. Color cycling is visual only. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

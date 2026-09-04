@@ -11,10 +11,12 @@
     "import": "node scripts/import-lib.mjs",
     "registry:gen": "node scripts/build-registry.mjs",
     "registry:build": "shadcn build",
-    "registry": "node scripts/build-registry.mjs && shadcn build",
+    "registry": "node scripts/build-registry.mjs && shadcn build && npm run index",
     "previews": "node scripts/build-previews.mjs",
     "capture": "node scripts/capture-preview.mjs",
-    "capture:category": "node scripts/capture-category.mjs"
+    "capture:category": "node scripts/capture-category.mjs",
+    "index": "python3 agent-index/scripts/extract_records.py && python3 agent-index/scripts/merge_records.py && python3 agent-index/scripts/build_index.py",
+    "mcp:build": "npm --prefix mcp run build"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

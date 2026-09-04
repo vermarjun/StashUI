@@ -1,0 +1,109 @@
+{
+ "name": "popover-form",
+ "title": "Popover Form",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "PopoverForm",
+  "PopoverFormButton",
+  "PopoverFormSuccess",
+  "PopoverFormSeparator",
+  "PopoverFormCutOutLeftIcon",
+  "PopoverFormCutOutRightIcon"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport {\n  PopoverForm,\n  PopoverFormButton,\n  PopoverFormSeparator,\n} from \"@/components/ui/popover-form\"\n\nfunction FeedbackForm() {\n  const [loading, setLoading] = useState(false)\n  const [text, setText] = useState(\"\")\n\n  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 900))\n    setLoading(false)\n  }\n\n  return (\n    <form\n      onSubmit={handleSubmit}\n      className=\"flex flex-col h-full p-3 pt-8 gap-2\"\n    >\n      <div className=\"relative flex-1\">\n        <PopoverFormSeparator />\n        <textarea\n          className=\"w-full h-full resize-none bg-transparent px-2 pt-3 text-sm outline-none placeholder:text-muted-foreground\"\n          placeholder=\"Share your thoughts...\"\n          value={text}\n          onChange={(e) => setText(e.target.value)}\n        />\n      </div>\n      <div className=\"flex justify-end\">\n        <PopoverFormButton loading={loading} text=\"Send\" />\n      </div>\n    </form>\n  )\n}\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false)\n  const [showSuccess, setShowSuccess] = useState(false)\n\n  const handleOpen = () => {\n    setOpen(true)\n    setShowSuccess(false)\n  }\n\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[480px]\">\n      <PopoverForm\n        open={open}\n        setOpen={(v) => {\n          setOpen(v)\n          if (!v) setShowSuccess(false)\n        }}\n        showSuccess={showSuccess}\n        title=\"Feedback\"\n        openChild={<FeedbackForm />}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/popover-form.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/popover-form.json",
+ "preview": "https://stashui.vercel.app/c/popover-form",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Button animates to a form panel, shows success state on completion.",
+ "description": "A controlled popover that morphs from a button to a fixed-size form with success state display. Spring-animated with optional close button at top. Includes composed success screen and utility icons for visual polish.",
+ "use_when": "You need a form that feels lightweight and doesn't disrupt the page flow, with a dedicated success state.",
+ "avoid_when": "Complex multi-step forms — this is optimized for single-screen flows.",
+ "a11y": "Click-outside and Escape to close. Title aria-hidden in open state. Submit button with loading state. Success state is visual only, no additional ARIA.",
+ "props": [
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "setOpen",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "openChild",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "successChild",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showSuccess",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "width",
+   "type": "string",
+   "default": "\"364px\"",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "string",
+   "default": "\"192px\"",
+   "required": false
+  },
+  {
+   "name": "showCloseButton",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Feedback\"",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-submit",
+  "tooltip"
+ ]
+}

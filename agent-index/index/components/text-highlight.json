@@ -1,0 +1,85 @@
+{
+ "name": "text-highlight",
+ "title": "Text Highlight",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextHighlight"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { TextHighlight } from \"@/components/ui/text-highlight\";\n\nexport default function TextHighlightDemo() {\n  return (\n    <div className=\"flex min-h-[300px] items-center justify-center bg-background p-8\">\n      <p className=\"max-w-lg text-center text-2xl font-semibold leading-relaxed text-foreground\">\n        Build{\" \"}\n        <TextHighlight\n          delay={300}\n          duration={1500}\n          highlightColor=\"hsl(47, 95%, 70%, 0.5)\"\n          textEndColor=\"#111\"\n        >\n          beautiful interfaces\n        </TextHighlight>{\" \"}\n        that{\" \"}\n        <TextHighlight\n          delay={1200}\n          duration={1500}\n          highlightColor=\"hsl(217, 91%, 60%, 0.35)\"\n        >\n          delight users\n        </TextHighlight>{\" \"}\n        every time.\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-highlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-highlight.json",
+ "preview": "https://stashui.vercel.app/c/text-highlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Highlight sweeps left to right behind inline text on mount, optionally fading…",
+ "description": "Wraps text in a span with an animated linear-gradient background that expands from 0% to 100% width. Can optionally animate text color simultaneously with configurable delay and duration.",
+ "use_when": "Call attention to key phrases in body text during page load, or sequential highlights across a sentence.",
+ "avoid_when": "Repeated animations that loop; the effect runs once on mount and may feel jarring if retriggered.",
+ "a11y": "Text is always readable and rendered in the DOM; animation cannot be paused with prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "textEndColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "highlightColor",
+   "type": "string",
+   "default": "\"hsl(var(--primary) / 0.3)\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "body-text",
+  "headline"
+ ]
+}

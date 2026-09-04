@@ -1,0 +1,177 @@
+{
+ "name": "ui-layouts-animated-beam",
+ "title": "Animated Beam",
+ "category": "effects",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "Icons",
+  "AnimatedBeam",
+  "Circle"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 54,
+ "flags": [
+  "pure",
+  "54 colors"
+ ],
+ "usage": "'use client';\nimport { useRef } from 'react';\nimport { AnimatedBeam, Circle, Icons } from '@/components/ui/animated-beam';\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n  const logoRef = useRef<HTMLDivElement>(null);\n  const userRef = useRef<HTMLDivElement>(null);\n  const claudeRef = useRef<HTMLDivElement>(null);\n  const typescriptRef = useRef<HTMLDivElement>(null);\n  const reactRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"relative w-full max-w-lg mx-auto h-64 flex items-center justify-center overflow-hidden rounded-xl bg-white/5 p-4\"\n    >\n      {/* Center logo */}\n      <Circle ref={logoRef} className=\"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2\">\n        <Icons.logo />\n      </Circle>\n\n      {/* Surrounding nodes */}\n      <Circle ref={userRef} className=\"absolute left-[10%] top-1/2 -translate-y-1/2\">\n        <Icons.user />\n      </Circle>\n      <Circle ref={claudeRef} className=\"absolute right-[10%] top-1/2 -translate-y-1/2\">\n        <Icons.claude />\n      </Circle>\n      <Circle ref={typescriptRef} className=\"absolute left-1/2 top-[10%] -translate-x-1/2\">\n        <Icons.typescript />\n      </Circle>\n      <Circle ref={reactRef} className=\"absolute left-1/2 bottom-[10%] -translate-x-1/2\">\n        <Icons.reactjs />\n      </Circle>\n\n      {/* Beams */}\n      <AnimatedBeam containerRef={containerRef} fromRef={userRef} toRef={logoRef} />\n      <AnimatedBeam containerRef={containerRef} fromRef={claudeRef} toRef={logoRef} reverse />\n      <AnimatedBeam containerRef={containerRef} fromRef={typescriptRef} toRef={logoRef} curvature={-30} />\n      <AnimatedBeam containerRef={containerRef} fromRef={reactRef} toRef={logoRef} curvature={30} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/animated-beam.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ui-layouts-animated-beam.json",
+ "preview": "https://stashui.vercel.app/c/ui-layouts-animated-beam",
+ "dupe_group": "animatedbeam",
+ "alternatives": [
+  {
+   "name": "inspira-animated-beam",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  },
+  {
+   "name": "animated-beam",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Animated lines connect referenced elements with gradient trails.",
+ "description": "Draws SVG paths between positioned elements with continuous motion animation. Paths can be reversed, curved, and rendered as dotted lines.",
+ "use_when": "Illustrating connections or data flow between nodes in a diagram, dashboard, or network visualization.",
+ "avoid_when": "Performance-critical contexts with many instances—each runs a continuous animation loop.",
+ "a11y": "Purely decorative SVG; no interactive elements. Container and endpoint refs must be positioned.",
+ "props": [
+  {
+   "name": "containerRef",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fromRef",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "toRef",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "'w-6 h-6'",
+   "required": false
+  },
+  {
+   "name": "curvature",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false, // Include the reverse prop",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "Math.random() * 3 + 4",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "pathColor",
+   "type": "string",
+   "default": "'gray'",
+   "required": false
+  },
+  {
+   "name": "pathWidth",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "pathOpacity",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "gradientStartColor",
+   "type": "string",
+   "default": "'#4d40ff'",
+   "required": false
+  },
+  {
+   "name": "gradientStopColor",
+   "type": "string",
+   "default": "'#4043ff'",
+   "required": false
+  },
+  {
+   "name": "startXOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "startYOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "endXOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "endYOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "dotted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "dotSpacing",
+   "type": "number",
+   "default": "6",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "decoration",
+  "feature-card"
+ ]
+}

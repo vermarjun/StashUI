@@ -1,0 +1,59 @@
+{
+ "name": "inspira-morphing-text",
+ "title": "Morphing Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "MorphingText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { MorphingText } from \"@/components/ui/morphing-text\";\n\nexport default function MorphingTextDemo() {\n  return (\n    <div className=\"flex min-h-48 items-center justify-center p-8\">\n      <MorphingText\n        texts={[\"Design\", \"Create\", \"Build\", \"Ship\", \"Inspire\"]}\n        morphTime={1.5}\n        coolDownTime={0.5}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/morphing-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-morphing-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-morphing-text",
+ "dupe_group": "morphingtext",
+ "alternatives": [
+  {
+   "name": "morphing-text",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "primitives-texts-morphing",
+   "origin": "Animate UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text smoothly morphs from one word to another in a loop.",
+ "description": "Uses SVG or canvas morphing to transition letters between words in a wordlist, creating a fluid morphing effect. Loops indefinitely.",
+ "use_when": "Tagline or hero heading showcasing multiple related concepts or features.",
+ "avoid_when": "Body text or time-critical information — morphing delays readability.",
+ "a11y": "Only the current morph frame is readable; no pause control or transcript.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "name": "image-hover-accordion",
+ "title": "Image Hover Accordion",
+ "category": "accordions",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "SingleLayout"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/image-hover\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/image-hover.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/image-hover-accordion.json",
+ "preview": "https://stashui.vercel.app/c/image-hover-accordion",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Accordion items with hover image reveal.",
+ "description": "Each accordion header has an associated image that appears/animates on hover before expanding.",
+ "use_when": "Visual accordions with hero images per section.",
+ "avoid_when": "Text-only accordions.",
+ "a11y": "Images have alt text, hover is supplemented by click interaction.",
+ "props": [
+  {
+   "name": "items",
+   "type": "item[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "setIndex",
+   "type": "React.Dispatch<SetStateAction<number>>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "index",
+   "type": "number | undefined",
+   "default": "== i ? 'w-[450px] ' : 'w-[50px]'",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "hero"
+ ]
+}

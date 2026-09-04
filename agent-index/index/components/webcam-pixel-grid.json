@@ -1,0 +1,153 @@
+{
+ "name": "webcam-pixel-grid",
+ "title": "Webcam Pixel Grid",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "WebcamPixelGrid"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 26,
+ "flags": [
+  "canvas",
+  "pure",
+  "26 colors"
+ ],
+ "usage": "\"use client\";\nimport { WebcamPixelGrid } from \"@/components/ui/webcam-pixel-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background\">\n      <div className=\"relative w-full h-full max-w-2xl max-h-[420px] rounded-xl overflow-hidden border border-border\">\n        <WebcamPixelGrid\n          gridCols={64}\n          gridRows={48}\n          colorMode=\"webcam\"\n          backgroundColor=\"#0a0a0a\"\n          maxElevation={18}\n          motionSensitivity={0.35}\n          gapRatio={0.08}\n          mirror={true}\n          className=\"w-full h-full\"\n          onWebcamError={() => {\n            // graceful degradation — component renders camera-denied UI\n          }}\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/webcam-pixel-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/webcam-pixel-grid.json",
+ "preview": "https://stashui.vercel.app/c/webcam-pixel-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Webcam feed pixelated into a grid with motion-based 3D elevation.",
+ "description": "Captures live webcam video, downsamples to a configurable grid, and renders each pixel as a 3D block elevated by detected motion. Supports monochrome and color modes.",
+ "use_when": "Interactive webcam visualizations, portals, or immersive UI where motion detection adds depth.",
+ "avoid_when": "Privacy-sensitive environments; requires persistent getUserMedia permission.",
+ "a11y": "Requires explicit user permission to access camera. No interactive elements—visual effect only.",
+ "props": [
+  {
+   "name": "gridCols",
+   "type": "number",
+   "default": "64",
+   "required": false
+  },
+  {
+   "name": "gridRows",
+   "type": "number",
+   "default": "48",
+   "required": false
+  },
+  {
+   "name": "maxElevation",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "motionSensitivity",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "elevationSmoothing",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "colorMode",
+   "type": "\"webcam\" | \"monochrome\"",
+   "default": "\"webcam\"",
+   "required": false
+  },
+  {
+   "name": "monochromeColor",
+   "type": "string",
+   "default": "\"#00ff88\"",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "\"#0a0a0a\"",
+   "required": false
+  },
+  {
+   "name": "mirror",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "gapRatio",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "invertColors",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "darken",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "borderColor",
+   "type": "string",
+   "default": "\"#ffffff\"",
+   "required": false
+  },
+  {
+   "name": "borderOpacity",
+   "type": "number",
+   "default": "0.08",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute h-0 w-0 opacity-0\"",
+   "required": false
+  },
+  {
+   "name": "onWebcamError",
+   "type": "(error: Error) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onWebcamReady",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration",
+  "modal"
+ ]
+}

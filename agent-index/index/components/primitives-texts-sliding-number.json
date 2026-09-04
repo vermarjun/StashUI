@@ -1,0 +1,59 @@
+{
+ "name": "primitives-texts-sliding-number",
+ "title": "Sliding Number",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "SlidingNumber"
+ ],
+ "npm_deps": [
+  "motion",
+  "react-use-measure"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport * as React from 'react';\nimport { SlidingNumber } from '@/components/ui/primitives-texts-sliding-number';\n\nexport default function Demo() {\n  const [count, setCount] = React.useState(0);\n\n  React.useEffect(() => {\n    const targets = [1234, 5678, 9999, 42, 3141];\n    let i = 0;\n    const tick = () => {\n      i = (i + 1) % targets.length;\n      setCount(targets[i]!);\n    };\n    const id = setInterval(tick, 1800);\n    tick();\n    return () => clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 w-full p-10\">\n      <div className=\"text-center\">\n        <SlidingNumber\n          number={count}\n          fromNumber={0}\n          initiallyStable\n          inView\n          className=\"text-6xl font-bold tabular-nums\"\n        />\n        <p className=\"text-sm text-muted-foreground mt-2\">Sliding digits</p>\n      </div>\n\n      <div className=\"flex gap-8\">\n        <div className=\"text-center\">\n          <SlidingNumber\n            number={count}\n            fromNumber={0}\n            initiallyStable\n            inView\n            thousandSeparator=\",\"\n            className=\"text-3xl font-semibold tabular-nums\"\n          />\n          <p className=\"text-xs text-muted-foreground mt-1\">with separator</p>\n        </div>\n        <div className=\"text-center\">\n          <SlidingNumber\n            number={count / 100}\n            fromNumber={0}\n            initiallyStable\n            inView\n            decimalPlaces={2}\n            className=\"text-3xl font-semibold tabular-nums\"\n          />\n          <p className=\"text-xs text-muted-foreground mt-1\">decimal</p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-sliding-number.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-sliding-number.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-sliding-number",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Number slides up or down to its target value.",
+ "description": "Animates a numeric value by sliding it vertically from current to target position, often triggered by scroll or on mount.",
+ "use_when": "Stat counters or progress displays.",
+ "avoid_when": "Frequently changing values — repeated slides can feel janky.",
+ "a11y": "Target number is readable after slide completes.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": "{parseInt(newIntStr ?? '0', 10)}",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "hero"
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "name": "inspira-animated-tabs",
+ "title": "Animated Tabs",
+ "category": "navigation",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimatedTabs"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "3d",
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { AnimatedTabs, type AnimatedTab } from \"@/components/ui/animated-tabs\"\n\nconst tabs: AnimatedTab[] = [\n  {\n    title: \"Home\",\n    value: \"home\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 p-8 text-white\">\n        <div className=\"text-center\">\n          <div className=\"text-4xl\">🏠</div>\n          <h3 className=\"mt-4 text-2xl font-bold\">Home Tab</h3>\n          <p className=\"mt-2 text-indigo-100\">Welcome to the home panel</p>\n        </div>\n      </div>\n    ),\n  },\n  {\n    title: \"About\",\n    value: \"about\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 p-8 text-white\">\n        <div className=\"text-center\">\n          <div className=\"text-4xl\">👋</div>\n          <h3 className=\"mt-4 text-2xl font-bold\">About Tab</h3>\n          <p className=\"mt-2 text-emerald-100\">Learn more about us here</p>\n        </div>\n      </div>\n    ),\n  },\n  {\n    title: \"Work\",\n    value: \"work\",\n    content: (\n      <div className=\"flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-rose-600 p-8 text-white\">\n        <div className=\"text-center\">\n          <div className=\"text-4xl\">💼</div>\n          <h3 className=\"mt-4 text-2xl font-bold\">Work Tab</h3>\n          <p className=\"mt-2 text-orange-100\">See our portfolio and projects</p>\n        </div>\n      </div>\n    ),\n  },\n]\n\nexport default function AnimatedTabsDemo() {\n  return (\n    <div className=\"min-h-[500px] w-full max-w-2xl p-8\">\n      <AnimatedTabs\n        tabs={tabs}\n        defaultValue=\"home\"\n        containerClassName=\"bg-gray-100 dark:bg-neutral-800 rounded-full p-1\"\n        activeTabClassName=\"bg-white dark:bg-neutral-600 shadow-sm\"\n        tabClassName=\"text-sm font-medium\"\n        contentClassName=\"\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/animated-tabs.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-animated-tabs.json",
+ "preview": "https://stashui.vercel.app/c/inspira-animated-tabs",
+ "dupe_group": "animatedtabs",
+ "alternatives": [
+  {
+   "name": "animated-tabs",
+   "origin": "Ui-Layouts",
+   "npm_deps": 1,
+   "hardcoded_colors": 3
+  },
+  {
+   "name": "tabs",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Animated tabs with smooth spring transitions and stacked layout.",
+ "description": "Tab component with spring-based animations. Tabs can be controlled or uncontrolled. Supports custom className for container/active/tab/content areas.",
+ "use_when": "Interactive experiences where animated tab transitions are a feature, not just utility.",
+ "avoid_when": "Performance-critical dashboards; animation adds rendering.",
+ "a11y": "Tab buttons are keyboard-navigable with proper ARIA roles. Content regions properly labeled.",
+ "props": [
+  {
+   "name": "tabs",
+   "type": "AnimatedTab[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "activeTabClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "tabClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "contentClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ]
+}

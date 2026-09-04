@@ -1,0 +1,105 @@
+{
+ "name": "LightRays-TS-TW",
+ "title": "Light Rays",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "LightRays"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "webgl",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport LightRays from \"@/components/ui/LightRays\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-black\">\n      <LightRays\n        raysOrigin=\"top-center\"\n        raysColor=\"#ffffff\"\n        raysSpeed={1}\n        lightSpread={1}\n        rayLength={2}\n        pulsating={false}\n        followMouse={true}\n        mouseInfluence={0.15}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/LightRays.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/LightRays-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/LightRays-TS-TW",
+ "dupe_group": "lightrays",
+ "alternatives": [
+  {
+   "name": "light-rays",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Light rays emanate from a direction with optional mouse tracking.",
+ "description": "WebGL light rays originating from configurable edge with pointer-following. Supports color, speed, pulsation, and distortion parameters.",
+ "use_when": "Hero backgrounds needing directional light effects with interactivity.",
+ "avoid_when": "Touch-only devices; WebGL rendering is GPU-dependent and may be unavailable.",
+ "a11y": "Decorative background. No keyboard or focus handling required.",
+ "props": [
+  {
+   "name": "raysOrigin",
+   "type": "RaysOrigin",
+   "default": "'top-center'",
+   "required": false
+  },
+  {
+   "name": "raysColor",
+   "type": "string",
+   "default": "DEFAULT_COLOR",
+   "required": false
+  },
+  {
+   "name": "raysSpeed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "lightSpread",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "rayLength",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "pulsating",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "fadeDistance",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

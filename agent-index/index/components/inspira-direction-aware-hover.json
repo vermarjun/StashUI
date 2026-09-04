@@ -1,0 +1,86 @@
+{
+ "name": "inspira-direction-aware-hover",
+ "title": "Direction Aware Hover",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "DirectionAwareHover"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { DirectionAwareHover } from \"@/components/ui/direction-aware-hover\";\n\nexport default function DirectionAwareHoverDemo() {\n  return (\n    <div className=\"flex min-h-[400px] flex-wrap items-center justify-center gap-6 p-8\">\n      <DirectionAwareHover\n        imageUrl=\"https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?w=600\"\n      >\n        <div>\n          <p className=\"font-bold text-lg\">Mountain View</p>\n          <p className=\"text-sm opacity-80\">Hover to reveal direction</p>\n        </div>\n      </DirectionAwareHover>\n\n      <DirectionAwareHover\n        imageUrl=\"https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600\"\n      >\n        <div>\n          <p className=\"font-bold text-lg\">Forest Path</p>\n          <p className=\"text-sm opacity-80\">Interactive reveal</p>\n        </div>\n      </DirectionAwareHover>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/direction-aware-hover.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-direction-aware-hover.json",
+ "preview": "https://stashui.vercel.app/c/inspira-direction-aware-hover",
+ "dupe_group": "directionawarehover",
+ "alternatives": [
+  {
+   "name": "direction-aware-hover",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Card image reveal based on hover direction, with mobile touch support.",
+ "description": "Card wrapper that detects entry edge and reveals image from that direction. Includes mobile touch support with 3-second auto-dismiss.",
+ "use_when": "Interactive cards with directional image reveals that work on both desktop and touch devices.",
+ "avoid_when": "When direction detection isn't supported or desired.",
+ "a11y": "Detects hover and touch entry; image reveal has auto-dismiss on mobile.",
+ "props": [
+  {
+   "name": "imageUrl",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "childrenClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "imageClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

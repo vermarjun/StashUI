@@ -1,0 +1,108 @@
+{
+ "name": "components-backgrounds-stars",
+ "title": "Stars Background",
+ "category": "backgrounds",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "StarLayer",
+  "StarsBackground"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "import { StarsBackground } from \"@/components/ui/components-backgrounds-stars\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <StarsBackground className=\"absolute inset-0 h-full w-full\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-backgrounds-stars.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-backgrounds-stars.json",
+ "preview": "https://stashui.vercel.app/c/components-backgrounds-stars",
+ "dupe_group": "starsbackground",
+ "alternatives": [
+  {
+   "name": "stars-background",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  },
+  {
+   "name": "bg-stars",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Three-layer starfield that parallaxes toward the pointer.",
+ "description": "Creates stars via box-shadow in three layers with different sizes and scroll speeds. The entire field shifts based on pointer position using a spring animation for smooth parallax.",
+ "use_when": "A space-like background that responds subtly to pointer movement, adding depth without overwhelming the page.",
+ "avoid_when": "Touch-only devices — parallax relies on pointer tracking and does nothing on touch. Continuous animation may impact…",
+ "a11y": "Passive background wrapper; focus and keyboard behaviour come from children. Parallax animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('absolute top-0 left-0 w-full h-[2000px]', className)}",
+   "required": false
+  },
+  {
+   "name": "factor",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "SpringOptions",
+   "default": "{ repeat: Infinity, duration: 50, ease: 'linear' }",
+   "required": false
+  },
+  {
+   "name": "starColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "pointerEvents",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "name": "expandable",
+ "title": "Expandable",
+ "category": "accordions",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "Expandable",
+  "ExpandableCard",
+  "ExpandableContent",
+  "ExpandableContext",
+  "ExpandableTrigger",
+  "ExpandableCardHeader",
+  "ExpandableCardContent",
+  "ExpandableCardFooter"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  Expandable,\n  ExpandableCard,\n  ExpandableCardHeader,\n  ExpandableCardContent,\n  ExpandableCardFooter,\n  ExpandableContent,\n  ExpandableTrigger,\n} from \"@/components/ui/expandable\";\nimport { ChevronDown, Zap } from \"lucide-react\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] p-8\">\n      <Expandable>\n        {({ isExpanded }) => (\n          <ExpandableCard\n            collapsedSize={{ width: 320, height: 220 }}\n            expandedSize={{ width: 420, height: undefined }}\n          >\n            <ExpandableCardHeader>\n              <div className=\"flex items-center gap-3\">\n                <div className=\"w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center\">\n                  <Zap className=\"w-5 h-5 text-primary\" />\n                </div>\n                <div>\n                  <h3 className=\"font-semibold text-base\">Quick Actions</h3>\n                  <p className=\"text-sm text-muted-foreground\">Expand to see more</p>\n                </div>\n              </div>\n              <ExpandableTrigger>\n                <ChevronDown\n                  className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${\n                    isExpanded ? \"rotate-180\" : \"\"\n                  }`}\n                />\n              </ExpandableTrigger>\n            </ExpandableCardHeader>\n\n            <ExpandableCardContent>\n              <p className=\"text-sm text-muted-foreground mb-3\">\n                This card expands to reveal additional content and actions.\n              </p>\n              <ExpandableContent preset=\"slide-up\">\n                <div className=\"space-y-2 pt-2\">\n                  <div className=\"flex items-center gap-2 p-2 rounded-md bg-muted/50 text-sm\">\n                    <span className=\"w-2 h-2 rounded-full bg-green-500\" />\n                    Feature enabled and running\n                  </div>\n                  <div className=\"flex items-center gap-2 p-2 rounded-md bg-muted/50 text-sm\">\n                    <span className=\"w-2 h-2 rounded-full bg-blue-500\" />\n                    3 integrations connected\n                  </div>\n                  <div className=\"flex items-center gap-2 p-2 rounded-md bg-muted/50 text-sm\">\n                    <span className=\"w-2 h-2 rounded-full bg-yellow-500\" />\n                    1 pending review\n                  </div>\n                </div>\n              </ExpandableContent>\n            </ExpandableCardContent>\n\n            <ExpandableCardFooter>\n              <ExpandableTrigger className=\"text-xs text-muted-foreground hover:text-foreground transition-colors\">\n                {isExpanded ? \"Show less\" : \"Show more\"}\n              </ExpandableTrigger>\n            </ExpandableCardFooter>\n          </ExpandableCard>\n        )}\n      </Expandable>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/expandable.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/expandable.json",
+ "preview": "https://stashui.vercel.app/c/expandable",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Card that smoothly expands to reveal more content.",
+ "description": "Wrapper component using spring animation to expand/collapse content height. Wrapper for customizable card layouts.",
+ "use_when": "Rich content cards needing elegant progressive disclosure with motion.",
+ "avoid_when": "Static layouts, multiple independent sections (use Accordion).",
+ "a11y": "Trigger has aria-expanded. Motion-safe for users with prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "initial",
+   "type": "TargetAndTransition",
+   "default": "{false}",
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "TargetAndTransition",
+   "default": "{animationProps.animate}",
+   "required": false
+  },
+  {
+   "name": "exit",
+   "type": "TargetAndTransition",
+   "default": "{animationProps.exit}",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "any",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "collapsedSize",
+   "type": "{ width?: number",
+   "default": "{ width: 320, height: 211 }",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "hero"
+ ]
+}

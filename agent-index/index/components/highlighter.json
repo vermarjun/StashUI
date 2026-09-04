@@ -1,0 +1,108 @@
+{
+ "name": "highlighter",
+ "title": "Highlighter",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Highlighter"
+ ],
+ "npm_deps": [
+  "motion",
+  "rough-notation"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport { Highlighter } from \"@/components/ui/highlighter\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12 text-center\">\n      <p className=\"text-2xl font-semibold text-foreground\">\n        The{\" \"}\n        <Highlighter color=\"#fde68a\" animationDuration={800}>\n          highlighted text\n        </Highlighter>{\" \"}\n        draws across on view.\n      </p>\n      <p className=\"text-xl text-muted-foreground\">\n        Switch to{\" \"}\n        <Highlighter action=\"underline\" color=\"#a5f3fc\" animationDuration={600}>\n          underline mode\n        </Highlighter>{\" \"}\n        or{\" \"}\n        <Highlighter action=\"box\" color=\"#d8b4fe\" animationDuration={700}>\n          box style\n        </Highlighter>{\" \"}\n        for variety.\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/highlighter.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/highlighter.json",
+ "preview": "https://stashui.vercel.app/c/highlighter",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text marked with hand-drawn styled annotations (highlight, underline, box…",
+ "description": "Wraps text with animated rough-notation overlays. Supports multiple annotation styles: highlight, underline, box, circle, strike-through, crossed-off, and bracket. Animations draw on scroll visibility or immediately.",
+ "use_when": "Inline text needs a playful, hand-drawn highlight or underline effect.",
+ "avoid_when": "When annotations must be crisp and precise rather than sketchy.",
+ "a11y": "Text is fully readable; annotations are visual overlays.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "action",
+   "type": "AnnotationAction",
+   "default": "\"highlight\"",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#ffd1dc\"",
+   "required": false
+  },
+  {
+   "name": "strokeWidth",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "iterations",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "padding",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "multiline",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "isView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport",
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "border",
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

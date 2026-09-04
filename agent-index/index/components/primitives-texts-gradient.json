@@ -1,0 +1,69 @@
+{
+ "name": "primitives-texts-gradient",
+ "title": "Gradient Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "GradientText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "motion",
+  "5 colors"
+ ],
+ "usage": "'use client';\n\nimport { GradientText } from '@/components/ui/primitives-texts-gradient';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 w-full p-10\">\n      <GradientText\n        text=\"Beautiful animations\"\n        className=\"text-4xl font-bold tracking-tight\"\n      />\n      <GradientText\n        text=\"made effortless\"\n        neon\n        className=\"text-3xl font-semibold tracking-tight\"\n        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-gradient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-gradient.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-gradient",
+ "dupe_group": "gradienttext",
+ "alternatives": [
+  {
+   "name": "GradientText-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Text fills with an animated gradient.",
+ "description": "Applies a multi-stop gradient to text with animation that shifts color positions over time, creating a flowing color effect.",
+ "use_when": "Eye-catching headlines or premium branding elements.",
+ "avoid_when": "Low-contrast environments or accessibility-critical labels — gradients reduce readability.",
+ "a11y": "Text is readable but gradient may reduce contrast. Animation runs uncontrolled.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "gradient",
+   "type": "string[]",
+   "default": "'linear-gradient(90deg, #3b82f6 0%, #a855f7 20%, #ec4899 50%",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

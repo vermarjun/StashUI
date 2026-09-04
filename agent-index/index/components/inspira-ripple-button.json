@@ -1,0 +1,61 @@
+{
+ "name": "inspira-ripple-button",
+ "title": "Ripple Button",
+ "category": "buttons",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "RippleButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { RippleButton } from \"@/components/ui/ripple-button\";\n\nexport default function RippleButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-12\">\n      <RippleButton>Click me</RippleButton>\n\n      <RippleButton rippleColor=\"#6366f1\" className=\"border-indigo-400 text-indigo-700\">\n        Indigo ripple\n      </RippleButton>\n\n      <RippleButton rippleColor=\"#f43f5e\" duration={800} className=\"border-rose-400 text-rose-700\">\n        Rose ripple (slow)\n      </RippleButton>\n\n      <RippleButton rippleColor=\"#10b981\" duration={300} className=\"border-emerald-400 text-emerald-700\">\n        Emerald (fast)\n      </RippleButton>\n\n      <RippleButton disabled className=\"opacity-50\">\n        Disabled\n      </RippleButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/ripple-button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-ripple-button.json",
+ "preview": "https://stashui.vercel.app/c/inspira-ripple-button",
+ "dupe_group": "ripplebutton",
+ "alternatives": [
+  {
+   "name": "ripple-button",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Click spawns expanding ripple circles.",
+ "description": "A button that creates expanding circular ripples from the click point on top of the button, using clientX/clientY and animating opacity and scale.",
+ "use_when": "You want material-design-style ripple feedback on click.",
+ "avoid_when": "On touch devices where ripple position may be inaccurate; also CPU-heavy with many ripples.",
+ "a11y": "Standard button semantics. Ripples are visual feedback. No aria attributes for ripple state.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

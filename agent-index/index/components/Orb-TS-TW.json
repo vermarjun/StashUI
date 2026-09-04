@@ -1,0 +1,83 @@
+{
+ "name": "Orb-TS-TW",
+ "title": "Orb",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Orb"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "webgl",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Orb from \"@/components/ui/Orb\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[500px] bg-black rounded-lg overflow-hidden flex items-center justify-center\">\n      <div className=\"w-[400px] h-[400px]\">\n        <Orb\n          hue={200}\n          hoverIntensity={0.3}\n          rotateOnHover={true}\n          forceHoverState={false}\n          backgroundColor=\"#000000\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Orb.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Orb-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Orb-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Glowing animated orb that distorts and rotates when the cursor hovers near it.",
+ "description": "WebGL shader rendering a colorizable orb with Perlin noise-driven outer halo and inner core, responding to pointer proximity for distortion and optional rotation.",
+ "use_when": "Decorative hero sections, call-to-action zones, or backgrounds where a luminous, reactive focal point enhances…",
+ "avoid_when": "WebGL-unsupported devices, touch-only surfaces, or performance-critical mobile contexts — the shader runs continuously.",
+ "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "hue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "hoverIntensity",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "rotateOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "forceHoverState",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ]
+}

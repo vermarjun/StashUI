@@ -1,0 +1,87 @@
+{
+ "name": "swapy",
+ "title": "Swapy Layout Primitives",
+ "category": "misc",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "SwapyLayout",
+  "DragHandle",
+  "SwapySlot",
+  "SwapyItem"
+ ],
+ "npm_deps": [
+  "swapy"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3 colors"
+ ],
+ "usage": "import { SwapyLayout } from \"@/components/ui/swapy\";\n\nexport default function Demo() {\n  return <SwapyLayout />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/swapy.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/swapy.json",
+ "preview": "https://stashui.vercel.app/c/swapy",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Drag-and-drop layout system with reorderable items in customizable slots.",
+ "description": "A set of components wrapping the Swapy library to create draggable dashboard layouts. Includes SwapyLayout container, DragHandle icon, SwapySlot targets, and SwapyItem draggables with configurable animations.",
+ "use_when": "Building dashboard layouts, widget grids, or any interface where users need to reorder content by dragging.",
+ "avoid_when": "Simple lists or tables — this adds complexity for reordering.",
+ "a11y": "Uses data attributes for DOM coupling; no explicit keyboard navigation for drag-drop. Focus management depends on wrapped children.",
+ "props": [
+  {
+   "name": "id",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "enable",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onSwap",
+   "type": "(event: { newSlotItemMap: { asArray: SlotItemMapArray } }) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "config",
+   "type": "Partial<Config>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "name": "navbar-menu",
+ "title": "Navbar Menu",
+ "category": "navigation",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "MenuItem",
+  "Menu",
+  "ProductItem",
+  "HoveredLink"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "motion",
+  "16 colors"
+ ],
+ "usage": "\"use client\";\nimport { useState } from \"react\";\nimport {\n  Menu,\n  MenuItem,\n  ProductItem,\n  HoveredLink,\n} from \"@/components/ui/navbar-menu\";\n\nexport default function Demo() {\n  const [active, setActive] = useState<string | null>(null);\n\n  return (\n    <div className=\"relative w-full flex items-start justify-center pt-12 pb-64 bg-gray-50 dark:bg-neutral-950 min-h-[420px]\">\n      <Menu setActive={setActive}>\n        <MenuItem setActive={setActive} active={active} item=\"Products\">\n          <div className=\"flex flex-col gap-3 p-2\">\n            <ProductItem\n              title=\"Design System\"\n              description=\"Accessible, composable component primitives.\"\n              href=\"#\"\n              src=\"https://assets.aceternity.com/demos/algochurn.webp\"\n            />\n            <ProductItem\n              title=\"Analytics\"\n              description=\"Real-time insights for your application.\"\n              href=\"#\"\n              src=\"https://assets.aceternity.com/demos/tailwindmasterkit.webp\"\n            />\n          </div>\n        </MenuItem>\n\n        <MenuItem setActive={setActive} active={active} item=\"Resources\">\n          <div className=\"flex flex-col gap-2 p-2 text-sm\">\n            <HoveredLink href=\"#\">Documentation</HoveredLink>\n            <HoveredLink href=\"#\">Changelog</HoveredLink>\n            <HoveredLink href=\"#\">Blog</HoveredLink>\n            <HoveredLink href=\"#\">Community</HoveredLink>\n          </div>\n        </MenuItem>\n\n        <MenuItem setActive={setActive} active={active} item=\"Pricing\">\n          <div className=\"flex flex-col gap-2 p-2 text-sm\">\n            <HoveredLink href=\"#\">Free Tier</HoveredLink>\n            <HoveredLink href=\"#\">Pro Plan</HoveredLink>\n            <HoveredLink href=\"#\">Enterprise</HoveredLink>\n          </div>\n        </MenuItem>\n      </Menu>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/navbar-menu.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/navbar-menu.json",
+ "preview": "https://stashui.vercel.app/c/navbar-menu",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Composable navbar with hover-triggered dropdown menus and smooth animations.",
+ "description": "Exports four composable components: Menu (container), MenuItem (triggers), ProductItem (card grid), and HoveredLink (text link). Uses Framer Motion for dropdown scale and fade animations triggered on mouse enter.",
+ "use_when": "Building a premium navigation header with dropdown product showcases or multi-level menu structures that need…",
+ "avoid_when": "Mobile navigation; hover-based menus are poor for touch. Keyboard navigation not supported.",
+ "a11y": "No ARIA attributes or keyboard handling. Focus and semantic structure not managed by the component.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "hero"
+ ]
+}

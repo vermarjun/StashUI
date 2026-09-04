@@ -1,0 +1,68 @@
+{
+ "name": "components-community-radial-intro",
+ "title": "Radial Intro",
+ "category": "effects",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "RadialIntro"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport * as React from 'react';\nimport { RadialIntro } from '@/components/ui/components-community-radial-intro';\n\nconst orbitItems = [\n  {\n    id: 1,\n    name: 'React',\n    src: 'https://picsum.photos/seed/react/60/60',\n  },\n  {\n    id: 2,\n    name: 'TypeScript',\n    src: 'https://picsum.photos/seed/typescript/60/60',\n  },\n  {\n    id: 3,\n    name: 'Tailwind',\n    src: 'https://picsum.photos/seed/tailwind/60/60',\n  },\n  {\n    id: 4,\n    name: 'Vite',\n    src: 'https://picsum.photos/seed/vite/60/60',\n  },\n  {\n    id: 5,\n    name: 'Node.js',\n    src: 'https://picsum.photos/seed/nodejs/60/60',\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center p-12\">\n      <RadialIntro orbitItems={orbitItems} stageSize={320} imageSize={60} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-community-radial-intro.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-community-radial-intro.json",
+ "preview": "https://stashui.vercel.app/c/components-community-radial-intro",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Images orbit around a center point in a continuous loop.",
+ "description": "Animates items in orbital motion around a central stage. Uses Framer Motion spring physics for smooth rotation and item appearance.",
+ "use_when": "Logo walls, team showcases, or circular feature displays.",
+ "avoid_when": "Motion-sensitive users (continuous, no prefers-reduced-motion); low-bandwidth (animation overhead).",
+ "a11y": "Purely decorative animation loop. No interactive elements.",
+ "props": [
+  {
+   "name": "orbitItems",
+   "type": "OrbitItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "stageSize",
+   "type": "number",
+   "default": "320",
+   "required": false
+  },
+  {
+   "name": "imageSize",
+   "type": "number",
+   "default": "60",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "feature-card",
+  "decoration"
+ ]
+}

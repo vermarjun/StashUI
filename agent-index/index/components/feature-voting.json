@@ -1,0 +1,97 @@
+{
+ "name": "feature-voting",
+ "title": "Feature Voting",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "FeatureVoting",
+  "FeatureVotingRoot",
+  "FeatureVotingGroup",
+  "FeatureVotingItem",
+  "FeatureVotingTrigger",
+  "FeatureVotingCount",
+  "FeatureVotingTitle",
+  "FeatureVotingDescription"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-use-controllable-state"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { FeatureVoting } from \"@/components/ui/feature-voting\"\n\nconst features = [\n  {\n    id: \"dark-mode\",\n    title: \"Dark Mode\",\n    description: \"Full dark mode support across the entire app.\",\n    initialVotes: 42,\n  },\n  {\n    id: \"api-integrations\",\n    title: \"API Integrations\",\n    description: \"Connect with third-party services seamlessly.\",\n    initialVotes: 31,\n  },\n  {\n    id: \"mobile-app\",\n    title: \"Mobile App\",\n    description: \"Native iOS and Android application.\",\n    initialVotes: 58,\n  },\n  {\n    id: \"export-pdf\",\n    title: \"PDF Export\",\n    description: \"Export any content to PDF format with one click.\",\n    initialVotes: 19,\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg p-4\">\n      <h2 className=\"text-xl font-bold mb-4\">Vote for Features</h2>\n      <FeatureVoting.Root\n        defaultValue={{ \"dark-mode\": 42, \"api-integrations\": 31, \"mobile-app\": 58, \"export-pdf\": 19 }}\n        className=\"flex flex-col gap-2\"\n      >\n        {features.map((feature) => (\n          <FeatureVoting.Item\n            key={feature.id}\n            value={feature.id}\n            className=\"flex items-center gap-3 rounded-lg border p-3 hover:bg-accent/50 transition-colors\"\n          >\n            <FeatureVoting.Trigger className=\"flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-background hover:bg-primary hover:text-primary-foreground transition-colors data-[state=voted]:bg-primary data-[state=voted]:text-primary-foreground flex-col gap-0.5\">\n              <span className=\"text-xs\">▲</span>\n              <FeatureVoting.Count className=\"text-xs font-medium\" />\n            </FeatureVoting.Trigger>\n            <div className=\"flex flex-col\">\n              <FeatureVoting.Title className=\"font-medium text-sm\">{feature.title}</FeatureVoting.Title>\n              <FeatureVoting.Description className=\"text-xs text-muted-foreground\">{feature.description}</FeatureVoting.Description>\n            </div>\n          </FeatureVoting.Item>\n        ))}\n      </FeatureVoting.Root>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/feature-voting.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/feature-voting.json",
+ "preview": "https://stashui.vercel.app/c/feature-voting",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Vote-tallying list where users upvote features, each vote increments a live…",
+ "description": "Compound component (Root, Item, Trigger, Count, Title, Description) for feature voting. Tracks total votes per feature and which features the current user has voted for. Items show vote counts; clicking a trigger toggles user's vote and…",
+ "use_when": "Feature request boards or priority voting where users upvote and results accumulate live.",
+ "avoid_when": "Touch-only devices (small vote button targets) or when votes should be anonymous from other viewers.",
+ "a11y": "Items and triggers are keyboard-accessible buttons. Controlled (value prop) and uncontrolled (defaultValue) modes supported. Data attributes reflect voted state.",
+ "props": [
+  {
+   "name": "value",
+   "type": "Record<string, number>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "Record<string, number>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: Record<string, number>) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "votedFeatures",
+   "type": "Set<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultVotedFeatures",
+   "type": "Set<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onVotedFeaturesChange",
+   "type": "(votedFeatures: Set<string>) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "data-table"
+ ]
+}

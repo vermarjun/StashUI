@@ -1,0 +1,58 @@
+{
+ "name": "primitives-texts-shimmering",
+ "title": "Shimmering Text",
+ "category": "text",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "ShimmeringText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [
+  "@animate-ui/hooks-use-is-in-view"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d",
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { ShimmeringText } from '@/components/ui/primitives-texts-shimmering';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 w-full p-10\">\n      <ShimmeringText\n        text=\"Shimmer across every letter\"\n        className=\"text-3xl font-bold\"\n      />\n      <ShimmeringText\n        text=\"Wave through the words\"\n        wave\n        duration={1.5}\n        className=\"text-2xl font-medium\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-texts-shimmering.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-shimmering.json",
+ "preview": "https://stashui.vercel.app/c/primitives-texts-shimmering",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text glimmers with a moving light reflection.",
+ "description": "Applies a shimmer or highlight effect that moves across text like a light source sweeping side-to-side.",
+ "use_when": "Skeleton loaders or premium text elements.",
+ "avoid_when": "Body text — shimmer is distracting to read.",
+ "a11y": "Text is readable but animation runs continuously. No motion preference support.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "loading",
+  "decoration"
+ ]
+}

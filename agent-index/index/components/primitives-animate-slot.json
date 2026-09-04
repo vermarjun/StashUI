@@ -1,0 +1,66 @@
+{
+ "name": "primitives-animate-slot",
+ "title": "Animate Slot",
+ "category": "effects",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "Slot"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { Slot } from '@/components/ui/primitives-animate-slot';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8 gap-6\">\n      <Slot\n        initial={{ opacity: 0, y: 20 }}\n        animate={{ opacity: 1, y: 0 }}\n        transition={{ duration: 0.5 }}\n        className=\"rounded-xl bg-neutral-100 dark:bg-neutral-800 px-6 py-3 font-semibold text-base\"\n      >\n        <div>Animated with Slot</div>\n      </Slot>\n\n      <Slot\n        initial={{ scale: 0.8, opacity: 0 }}\n        animate={{ scale: 1, opacity: 1 }}\n        transition={{ duration: 0.4, delay: 0.2 }}\n        className=\"rounded-full bg-blue-500 text-white px-5 py-2 text-sm font-medium\"\n      >\n        <button type=\"button\">Click me</button>\n      </Slot>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-animate-slot.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-animate-slot.json",
+ "preview": "https://stashui.vercel.app/c/primitives-animate-slot",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Applies motion animations to child elements while preserving their native HTML…",
+ "description": "A slot component that wraps child elements and applies motion animation props without changing the child's element type. Merges className and refs transparently.",
+ "use_when": "Animating child components without adding wrapper divs or replacing the child's HTML element type.",
+ "avoid_when": "When explicit control over the rendered element type is required.",
+ "a11y": "Preserves child element semantics and accessibility; animations are purely visual.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactElement",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

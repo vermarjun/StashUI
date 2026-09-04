@@ -1,0 +1,57 @@
+{
+ "name": "background-beams",
+ "title": "Background Beams",
+ "category": "backgrounds",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "BackgroundBeams"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "import { BackgroundBeams } from \"@/components/ui/background-beams\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-neutral-950\">\n      <BackgroundBeams />\n      <div className=\"relative z-10 flex h-full items-center justify-center\">\n        <p className=\"text-foreground text-2xl font-semibold\">Background Beams</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/background-beams.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/background-beams.json",
+ "preview": "https://stashui.vercel.app/c/background-beams",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated gradient beams sweep continuously across the viewport.",
+ "description": "Renders absolute-positioned SVG with animated gradient paths flowing downward. Beams use motion/react for staggered animations and hardcoded cyan-purple-blue colors.",
+ "use_when": "Hero section needing dramatic animated background without user interaction.",
+ "avoid_when": "Light theme, low contrast requirements, or touch devices with performance constraints.",
+ "a11y": "Passive background only; no interactive elements or focus handling.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

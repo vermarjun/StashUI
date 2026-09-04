@@ -1,0 +1,65 @@
+{
+ "name": "shader-toy",
+ "title": "Shader Toy",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ShaderToy"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\nimport { ShaderToy } from \"@/components/ui/shader-toy\";\n\nconst DEMO_SHADER = `\nvoid mainImage(out vec4 fragColor, in vec2 fragCoord) {\n  vec2 uv = fragCoord / iResolution.xy;\n  vec3 col = 0.5 + 0.5 * cos(iTime + uv.xyx + vec3(0.0, 2.0, 4.0));\n  fragColor = vec4(col, 1.0);\n}\n`;\n\nexport default function ShaderToyDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-lg\">\n      <ShaderToy shaderCode={DEMO_SHADER} speed={0.5} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/shader-toy.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/shader-toy.json",
+ "preview": "https://stashui.vercel.app/c/shader-toy",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "GLSL shader rendered live on canvas, fully customizable by code.",
+ "description": "Wraps a WebGL canvas rendering custom GLSL fragment shaders; passes uniforms (time, resolution, mouse) to animate effects.",
+ "use_when": "Unique generative or algorithmic visuals requiring low-level GPU control.",
+ "avoid_when": "Browsers without WebGL; complex shaders may cause performance issues on lower-end devices.",
+ "a11y": "Decorative visual only. No keyboard or focus handling.",
+ "props": [
+  {
+   "name": "shader",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

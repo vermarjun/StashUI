@@ -1,0 +1,108 @@
+{
+ "name": "dither-image",
+ "title": "Dither Image",
+ "category": "media",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "DitherImage",
+  "DitherImageCaption",
+  "DitherImageContent",
+  "DitherImageFrame",
+  "DitherImageOverlay",
+  "DitherImageReveal"
+ ],
+ "npm_deps": [
+  "dither-plugin"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "1 colors"
+ ],
+ "usage": "import {\n  DitherImage,\n  DitherImageCaption,\n  DitherImageContent,\n  DitherImageFrame,\n  DitherImageReveal,\n  DitherImageOverlay,\n} from \"@/components/ui/dither-image\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-start justify-center gap-10 p-10\">\n      {/* Basic dithered image */}\n      <DitherImage>\n        <DitherImageFrame size=\"md\" aspectRatio=\"square\" className=\"w-56\">\n          <DitherImageContent\n            src=\"https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=400&h=400&fit=crop&auto=format\"\n            alt=\"Mountain landscape dithered\"\n            fill\n            sizes=\"224px\"\n          />\n        </DitherImageFrame>\n        <DitherImageCaption>Mountain landscape, dithered</DitherImageCaption>\n      </DitherImage>\n\n      {/* Partial dither reveal */}\n      <DitherImage>\n        <DitherImageReveal className=\"w-56 overflow-hidden rounded-xl\" style={{ aspectRatio: \"1/1\" }}>\n          <DitherImageFrame size=\"lg\" aspectRatio=\"square\" className=\"w-full\">\n            <DitherImageContent\n              src=\"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=400&fit=crop&auto=format\"\n              alt=\"Forest path\"\n              fill\n              sizes=\"224px\"\n            />\n          </DitherImageFrame>\n          <DitherImageOverlay\n            src=\"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=400&fit=crop&auto=format\"\n            alt=\"\"\n            fill\n            sizes=\"224px\"\n            direction=\"r\"\n            from={0}\n            to={60}\n          />\n        </DitherImageReveal>\n        <DitherImageCaption>Partial reveal, left→right</DitherImageCaption>\n      </DitherImage>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/dither-image.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/dither-image.json",
+ "preview": "https://stashui.vercel.app/c/dither-image",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image with a CSS-only Bayer dither effect that converts photos to stylized dot…",
+ "description": "Compound component wrapping images with a dither-plugin-powered CSS filter. Renders dithered images via DitherImageFrame with tunable grayscale, contrast, brightness, and blur. Includes DitherImageReveal for partial reveals.",
+ "use_when": "Retro-styled galleries or when a halftone/dither aesthetic complements the visual design.",
+ "avoid_when": "Photography where fidelity is paramount, or browsers without CSS filter support.",
+ "a11y": "Images have alt text. Captions are semantic <figcaption>. Visual effect only.",
+ "props": [
+  {
+   "name": "size",
+   "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+   "default": "\"lg\"",
+   "required": false
+  },
+  {
+   "name": "aspectRatio",
+   "type": "DitherAspectRatio",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "grayscale",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "contrast",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number | string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "rounded",
+   "type": "boolean | string",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "invertOnDark",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

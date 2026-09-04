@@ -1,0 +1,124 @@
+{
+ "name": "hero-liquid-metal",
+ "title": "Hero Liquid Metal",
+ "category": "heroes",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "HeroLiquidMetalRoot",
+  "HeroLiquidMetalContainer",
+  "HeroLiquidMetalContent",
+  "HeroLiquidMetalHeading",
+  "HeroLiquidMetalDescription",
+  "HeroLiquidMetalActions",
+  "HeroLiquidMetalCTA",
+  "HeroLiquidMetalBadges",
+  "HeroLiquidMetalVisual",
+  "HeroLiquidMetalMobileVisual",
+  "HeroLiquidMetal",
+  "AISDKIcon",
+  "NextjsIcon"
+ ],
+ "npm_deps": [
+  "@paper-design/shaders-react"
+ ],
+ "registry_deps": [
+  "badge",
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { HeroLiquidMetal } from \"@/components/ui/hero-liquid-metal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[640px] w-full overflow-hidden\">\n      <HeroLiquidMetal />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/hero-liquid-metal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hero-liquid-metal.json",
+ "preview": "https://stashui.vercel.app/c/hero-liquid-metal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Hero with animated liquid-metal shader over icon, tech stack badges.",
+ "description": "Responsive hero with heading, description, CTA, and tech badges. LiquidMetal shader animates over /cult-icon.svg with teal tint (RGB shift distortion). Desktop 1280×720, mobile responsive.",
+ "use_when": "AI/SDK product with premium, fluid aesthetic; liquid effect creates organic, tech-forward impression.",
+ "avoid_when": "Shader-intensive WebGL. Requires sized parent and /cult-icon.svg asset.",
+ "a11y": "Screen-reader title (srTitle). Buttons and links focusable. Shader is decorative.",
+ "props": [
+  {
+   "name": "srTitle",
+   "type": "string",
+   "default": "AI SDK Agents",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "React.ReactNode",
+   "default": "Copy and Paste",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showCta",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "ctaProps",
+   "type": "Partial<HeroLiquidMetalCTAProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showBadges",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "techStack",
+   "type": "HeroLiquidMetalTechItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "desktopShaderProps",
+   "type": "Partial<LiquidMetalProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mobileShaderProps",
+   "type": "Partial<LiquidMetalProps>",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ]
+}

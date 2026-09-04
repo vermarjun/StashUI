@@ -1,0 +1,98 @@
+{
+ "name": "LineWaves-TS-TW",
+ "title": "Line Waves",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "LineWaves"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "webgl",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport LineWaves from \"@/components/ui/LineWaves\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[600px] bg-black rounded-lg overflow-hidden\">\n      <LineWaves\n        speed={0.3}\n        innerLineCount={32}\n        outerLineCount={36}\n        warpIntensity={1.0}\n        rotation={-45}\n        colorCycleSpeed={1.0}\n        brightness={0.3}\n        color1=\"#ffffff\"\n        color2=\"#a78bfa\"\n        color3=\"#38bdf8\"\n        enableMouseInteraction={true}\n        mouseInfluence={2.0}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/LineWaves.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/LineWaves-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/LineWaves-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Undulating lines wave across the background.",
+ "description": "WebGL-rendered wavy line patterns with configurable amplitude, frequency, and color gradients.",
+ "use_when": "Fluid, organic background effects.",
+ "avoid_when": "Very low-end devices; performance-critical applications.",
+ "a11y": "Decorative background. No keyboard or focus handling required.",
+ "props": [
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "innerLineCount",
+   "type": "number",
+   "default": "32.0",
+   "required": false
+  },
+  {
+   "name": "outerLineCount",
+   "type": "number",
+   "default": "36.0",
+   "required": false
+  },
+  {
+   "name": "warpIntensity",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "rotation",
+   "type": "number",
+   "default": "-45",
+   "required": false
+  },
+  {
+   "name": "edgeFadeWidth",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "colorCycleSpeed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

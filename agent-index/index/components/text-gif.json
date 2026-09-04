@@ -1,0 +1,60 @@
+{
+ "name": "text-gif",
+ "title": "Text GIF",
+ "category": "text",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "TextGif"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import TextGif from \"@/components/ui/text-gif\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[300px] w-full flex-col items-center justify-center gap-8 px-8 py-12\">\n      <TextGif\n        gifUrl=\"https://media.giphy.com/media/3zvbrvbRe7wxBofOBI/giphy.gif\"\n        text=\"Visual Motion\"\n        size=\"xl\"\n        weight=\"black\"\n      />\n      <TextGif\n        gifUrl=\"https://media.giphy.com/media/fnglNFjBGiyAFtm6ke/giphy.gif\"\n        text=\"Cinematic Text\"\n        size=\"lg\"\n        weight=\"bold\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/text-gif.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-gif.json",
+ "preview": "https://stashui.vercel.app/c/text-gif",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text with animated GIF or video overlay.",
+ "description": "Text element combined with animated media (GIF, video, or animation frames) creating a compound effect.",
+ "use_when": "Eye-catching headlines paired with motion graphics or looping video.",
+ "avoid_when": "Performance-sensitive contexts — video overlays add memory overhead.",
+ "a11y": "Text is readable but media is unpaused and non-interactive.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{gifUrl || \"/placeholder.svg\"}",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "image"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "headline"
+ ]
+}

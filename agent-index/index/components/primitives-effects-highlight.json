@@ -1,0 +1,93 @@
+{
+ "name": "primitives-effects-highlight",
+ "title": "Highlight",
+ "category": "effects",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "Highlight",
+  "HighlightItem"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { Highlight, HighlightItem } from '@/components/ui/primitives-effects-highlight';\n\nconst items = ['Dashboard', 'Analytics', 'Settings', 'Profile', 'Help'];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <Highlight\n        hover\n        className=\"rounded-md bg-muted\"\n        mode=\"parent\"\n        controlledItems\n        containerClassName=\"flex gap-1 rounded-lg border border-border p-1\"\n      >\n        {items.map((item) => (\n          <HighlightItem key={item} value={item} asChild>\n            <button\n              type=\"button\"\n              className=\"relative z-10 rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors\"\n            >\n              {item}\n            </button>\n          </HighlightItem>\n        ))}\n      </Highlight>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/primitives-effects-highlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-effects-highlight.json",
+ "preview": "https://stashui.vercel.app/c/primitives-effects-highlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Highlights child items with animated background that tracks hover or click…",
+ "description": "Context-based component providing highlight functionality to child items. Items track hover/click state with smooth animated background transitions.",
+ "use_when": "Tab lists, navigation items, or menu-like components where highlighting active/hovered items provides clear visual…",
+ "avoid_when": "Static content that does not require interactivity feedback.",
+ "a11y": "Highlight is visual; semantic meaning depends on child content structure.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "click",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{(props as ParentModeHighlightProps)?.containerClassName}",
+   "required": false
+  },
+  {
+   "name": "mode",
+   "type": "\"children\" | \"parent\"",
+   "default": "'children'",
+   "required": false
+  },
+  {
+   "name": "controlledItems",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "form-field"
+ ]
+}

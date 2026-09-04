@@ -1,0 +1,91 @@
+{
+ "name": "TextCursor-TS-TW",
+ "title": "Text Cursor Trail",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "TextCursor"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/TextCursor\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full\">\n      <div className=\"absolute inset-0 flex items-center justify-center pointer-events-none select-none\">\n        <p className=\"text-muted-foreground text-sm tracking-widest uppercase opacity-40\">\n          move cursor here\n        </p>\n      </div>\n      <Cmp text=\"✦\" spacing={80} maxPoints={8} followMouseDirection randomFloat exitDuration={0.6} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/TextCursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/TextCursor-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/TextCursor-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text characters trail behind the cursor with motion physics.",
+ "description": "Renders a customizable text/emoji trail that follows pointer movement. Characters spawn at intervals, rotate to face direction of motion, fade and exit.",
+ "use_when": "Interactive demos, playful hero sections, or engagement-focused pages where cursor trails are memorable.",
+ "avoid_when": "Dense text pages (distraction); high-traffic sites (per-pointer state overhead).",
+ "a11y": "Trail overlay; no keyboard interaction. No reduced-motion support.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "'⚛️'",
+   "required": false
+  },
+  {
+   "name": "spacing",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "followMouseDirection",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "randomFloat",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "exitDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "removalInterval",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "maxPoints",
+   "type": "number",
+   "default": "5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "hero"
+ ]
+}

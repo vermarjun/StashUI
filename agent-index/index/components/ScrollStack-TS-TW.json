@@ -1,0 +1,129 @@
+{
+ "name": "ScrollStack-TS-TW",
+ "title": "Scroll Stack Cards",
+ "category": "cards",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "ScrollStackItem",
+  "ScrollStack"
+ ],
+ "npm_deps": [
+  "lenis@^1.3.13"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d"
+ ],
+ "usage": "\"use client\";\n\nimport Cmp, { ScrollStackItem } from \"@/components/ui/ScrollStack\";\n\nconst cards = [\n  { label: \"01\", title: \"Design\", bg: \"bg-neutral-900\", text: \"Craft with intention\" },\n  { label: \"02\", title: \"Build\",  bg: \"bg-neutral-800\", text: \"Ship with confidence\" },\n  { label: \"03\", title: \"Launch\", bg: \"bg-neutral-700\", text: \"Reach your audience\" },\n  { label: \"04\", title: \"Grow\",   bg: \"bg-neutral-600\", text: \"Scale without limits\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[560px]\">\n      <Cmp>\n        {cards.map((card) => (\n          <ScrollStackItem\n            key={card.label}\n            itemClassName={`${card.bg} flex flex-col justify-between`}\n          >\n            <span className=\"text-xs font-mono text-white/40\">{card.label}</span>\n            <div>\n              <h3 className=\"text-3xl font-bold text-white mb-1\">{card.title}</h3>\n              <p className=\"text-white/60 text-sm\">{card.text}</p>\n            </div>\n          </ScrollStackItem>\n        ))}\n      </Cmp>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/ScrollStack.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ScrollStack-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/ScrollStack-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Cards stack and scale as you scroll, compressing into a deck.",
+ "description": "A scroll-triggered stacking animation where multiple cards compress and scale down as the user scrolls. Uses Lenis for smooth scrolling. Items accumulate at a stack position while earlier cards fade. Highly configurable: itemScale…",
+ "use_when": "Showcasing process steps, feature highlights, or content flows in an engaging scroll narrative.",
+ "avoid_when": "Users with prefers-reduced-motion — heavy scroll animation may cause discomfort.",
+ "a11y": "Content is readable, but scroll-driven effects are visual-only. Consider skipping animation for motion-sensitive users.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`scroll-stack-card relative w-full h-80 my-8 p-12 rounded-[",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "itemDistance",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "itemScale",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "itemStackDistance",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "stackPosition",
+   "type": "string",
+   "default": "'20%'",
+   "required": false
+  },
+  {
+   "name": "scaleEndPosition",
+   "type": "string",
+   "default": "'10%'",
+   "required": false
+  },
+  {
+   "name": "baseScale",
+   "type": "number",
+   "default": "0.85",
+   "required": false
+  },
+  {
+   "name": "scaleDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "rotationAmount",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "blurAmount",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "useWindowScroll",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onStackComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card"
+ ]
+}

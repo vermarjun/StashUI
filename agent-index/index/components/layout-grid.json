@@ -1,0 +1,56 @@
+{
+ "name": "layout-grid",
+ "title": "Layout Grid",
+ "category": "media",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "LayoutGrid"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { LayoutGrid } from \"@/components/ui/layout-grid\";\n\nexport default function Demo() {\n  const cards = [\n    {\n      id: 1,\n      content: (\n        <div>\n          <p className=\"font-bold text-white text-xl\">Tokyo, Japan</p>\n          <p className=\"text-white text-sm mt-2\">\n            Neon lights, cherry blossoms, and ancient temples.\n          </p>\n        </div>\n      ),\n      className: \"md:col-span-2\",\n      thumbnail: \"https://picsum.photos/seed/tokyo/800/500\",\n    },\n    {\n      id: 2,\n      content: (\n        <div>\n          <p className=\"font-bold text-white text-xl\">Santorini, Greece</p>\n          <p className=\"text-white text-sm mt-2\">\n            Whitewashed villages overlooking the azure Aegean Sea.\n          </p>\n        </div>\n      ),\n      className: \"col-span-1\",\n      thumbnail: \"https://picsum.photos/seed/santorini/500/500\",\n    },\n    {\n      id: 3,\n      content: (\n        <div>\n          <p className=\"font-bold text-white text-xl\">Machu Picchu, Peru</p>\n          <p className=\"text-white text-sm mt-2\">\n            Ancient Incan city perched high in the Andes Mountains.\n          </p>\n        </div>\n      ),\n      className: \"col-span-1\",\n      thumbnail: \"https://picsum.photos/seed/machu/500/500\",\n    },\n    {\n      id: 4,\n      content: (\n        <div>\n          <p className=\"font-bold text-white text-xl\">Patagonia, Argentina</p>\n          <p className=\"text-white text-sm mt-2\">\n            Wild landscapes of glaciers, mountains, and fjords.\n          </p>\n        </div>\n      ),\n      className: \"md:col-span-2\",\n      thumbnail: \"https://picsum.photos/seed/patagonia/800/500\",\n    },\n  ];\n\n  return (\n    <div className=\"w-full h-[600px]\">\n      <LayoutGrid cards={cards} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/layout-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/layout-grid.json",
+ "preview": "https://stashui.vercel.app/c/layout-grid",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Masonry grid cards expand to center when clicked with dark overlay.",
+ "description": "A responsive grid layout with click-to-expand functionality. Selected cards zoom to center with layout animation and dark backdrop, returning to grid when clicking outside.",
+ "use_when": "Photo galleries, project portfolios, and case study showcases with click-to-view detail interaction.",
+ "avoid_when": "Mobile-first designs; expanded cards center on viewport which may be off-screen on small devices.",
+ "a11y": "Click handlers on motion.div; no keyboard navigation, focus management, or escape key handling.",
+ "props": [
+  {
+   "name": "cards",
+   "type": "Card[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

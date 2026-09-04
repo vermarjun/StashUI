@@ -1,0 +1,69 @@
+{
+ "name": "moving-border",
+ "title": "Moving Border Button",
+ "category": "buttons",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Button",
+  "MovingBorder"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport { Button } from \"@/components/ui/moving-border\";\n\nexport default function MovingBorderDemo() {\n  return (\n    <Button\n      duration={3000}\n      containerClassName=\"w-44 h-14\"\n      className=\"text-sm font-medium\"\n    >\n      Moving Border\n    </Button>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/moving-border.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/moving-border.json",
+ "preview": "https://stashui.vercel.app/c/moving-border",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated gradient border loops around button.",
+ "description": "A button with a continuously rotating conic-gradient border using Framer Motion, wrapped with a visible animated ring effect.",
+ "use_when": "You need an attention-grabbing CTA with constant border motion.",
+ "avoid_when": "On minimalist interfaces; the continuous motion can feel excessive.",
+ "a11y": "Standard button semantics. Border animation is visual only. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "hero"
+ ]
+}

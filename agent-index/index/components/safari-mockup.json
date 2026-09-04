@@ -1,0 +1,78 @@
+{
+ "name": "safari-mockup",
+ "title": "Safari Mockup",
+ "category": "misc",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "SafariMockup"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 24,
+ "flags": [
+  "pure",
+  "24 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { SafariMockup } from \"@/components/ui/safari-mockup\";\n\nexport default function SafariMockupDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-10 p-8\">\n      {/* With a screenshot */}\n      <div className=\"w-full max-w-2xl\">\n        <SafariMockup\n          url=\"example.com\"\n          src=\"https://picsum.photos/seed/safari1/1200/700\"\n          className=\"w-full h-auto drop-shadow-xl\"\n        />\n      </div>\n\n      {/* Empty frame */}\n      <div className=\"w-full max-w-2xl\">\n        <SafariMockup\n          url=\"yourapp.vercel.app\"\n          className=\"w-full h-auto drop-shadow-xl\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/safari-mockup.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/safari-mockup.json",
+ "preview": "https://stashui.vercel.app/c/safari-mockup",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "SVG Safari browser mockup frame with address bar and chrome controls.",
+ "description": "An SVG component rendering a Safari browser window chrome, optionally displaying a screenshot image inside the viewport and a URL in the address bar.",
+ "use_when": "Showcasing website or app screenshots in product demos, marketing materials, or design presentations.",
+ "avoid_when": "When you need an interactive browser or actual navigation — this is a static mockup.",
+ "a11y": "SVG element with presentational graphics. Does not provide semantic meaning.",
+ "props": [
+  {
+   "name": "url",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "{width}",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "{height}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "decoration"
+ ]
+}

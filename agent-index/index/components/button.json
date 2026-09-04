@@ -1,0 +1,70 @@
+{
+ "name": "button",
+ "title": "Button",
+ "category": "buttons",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Button"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "1 colors"
+ ],
+ "usage": "import { Button } from \"@/components/ui/button\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3\">\n      <Button variant=\"default\">Button</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/button.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/button.json",
+ "preview": "https://stashui.vercel.app/c/button",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Unstyled button with six semantic variants and flexible sizing.",
+ "description": "A versatile button component using CVA (class-variance-authority) for variant and size control. Supports six variants (default, secondary, outline, ghost, destructive, link) and four sizes (sm, default, lg, icon).",
+ "use_when": "Any button context where you need semantic styling and flexibility.",
+ "avoid_when": "When you need highly customized animations or effects.",
+ "a11y": "Full keyboard navigation and focus-visible ring. Supports disabled state.",
+ "props": [
+  {
+   "name": "variant",
+   "type": "\"default\" | \"secondary\" | \"outline\" | \"ghost\" | \"destructive\" | \"link\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "\"sm\" | \"default\" | \"lg\" | \"icon\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "shadow"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "form-submit",
+  "nav"
+ ]
+}

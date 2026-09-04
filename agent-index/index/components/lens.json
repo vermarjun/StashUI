@@ -1,0 +1,91 @@
+{
+ "name": "lens",
+ "title": "Lens",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Lens"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { Lens } from \"@/components/ui/lens\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background p-8\">\n      <div className=\"w-[480px] max-w-full\">\n        <Lens zoomFactor={1.8} lensSize={160}>\n          <img\n            src=\"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop\"\n            alt=\"Forest landscape\"\n            width={480}\n            height={320}\n            className=\"block rounded-xl w-full object-cover\"\n            style={{ aspectRatio: \"3/2\" }}\n          />\n        </Lens>\n        <p className=\"mt-3 text-sm text-muted-foreground text-center\">\n          Move cursor over the image to magnify\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/lens.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/lens.json",
+ "preview": "https://stashui.vercel.app/c/lens",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Circular magnifying glass follows cursor, revealing zoomed content within the…",
+ "description": "Wraps content and creates a circular zoom lens that appears on hover. The lens position tracks pointer movement (or stays fixed), showing zoomed content within a radial mask.",
+ "use_when": "Product galleries or hero images where hover magnification reveals fine detail without blocking the full view.",
+ "avoid_when": "Touch-only devices or pointer-free interfaces — magnifier requires hover to appear.",
+ "a11y": "Magnification is visual only; focus and keyboard navigation of child content unaffected.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "zoomFactor",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "lensSize",
+   "type": "number",
+   "default": "170",
+   "required": false
+  },
+  {
+   "name": "position",
+   "type": "{x: number; y: number}",
+   "default": "{ x: 200, y: 150 }",
+   "required": false
+  },
+  {
+   "name": "isStatic",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "hovering",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "setHovering",
+   "type": "(hovering: boolean) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

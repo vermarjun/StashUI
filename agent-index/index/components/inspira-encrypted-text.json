@@ -1,0 +1,61 @@
+{
+ "name": "inspira-encrypted-text",
+ "title": "Encrypted Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "EncryptedText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { EncryptedText } from \"@/components/ui/encrypted-text\";\n\nexport default function EncryptedTextDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12\">\n      <h2 className=\"text-4xl font-bold\">\n        <EncryptedText\n          text=\"Hello, World!\"\n          revealDelayMs={60}\n          flipDelayMs={40}\n          encryptedClassName=\"text-emerald-400\"\n          revealedClassName=\"text-foreground\"\n        />\n      </h2>\n      <p className=\"text-xl text-muted-foreground\">\n        <EncryptedText\n          text=\"Scroll down to see the effect\"\n          revealDelayMs={40}\n          flipDelayMs={30}\n        />\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/encrypted-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-encrypted-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-encrypted-text",
+ "dupe_group": "encryptedtext",
+ "alternatives": [
+  {
+   "name": "encrypted-text",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text characters cycle through random symbols until focused or hovered.",
+ "description": "Each character animates between random symbols and the actual letter, synced to a per-character cycle. Reveals on focus, hover, or when no input activity detected.",
+ "use_when": "Sensitive data fields, passwords, or playful content reveals that reward interaction.",
+ "avoid_when": "Primary body copy — decryption animation distracts and conflicts with normal reading flow.",
+ "a11y": "Text is readable on focus but animation runs freely otherwise. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "focus",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

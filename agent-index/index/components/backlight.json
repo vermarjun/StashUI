@@ -1,0 +1,65 @@
+{
+ "name": "backlight",
+ "title": "Backlight",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Backlight"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport { Backlight } from \"@/components/ui/backlight\"\n\nexport default function Demo() {\n  const [hovered, setHovered] = useState(false)\n\n  return (\n    <div className=\"flex items-center justify-center min-h-[300px]\">\n      <Backlight blur={hovered ? 28 : 20} className=\"rounded-2xl\">\n        <div\n          onMouseEnter={() => setHovered(true)}\n          onMouseLeave={() => setHovered(false)}\n          className=\"relative flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-background px-10 py-8 shadow-lg transition-all duration-300 cursor-default\"\n          style={{ minWidth: 260 }}\n        >\n          {/* Colourful gradient blob that the backlight filter blooms */}\n          <div\n            className=\"absolute inset-0 rounded-2xl opacity-60\"\n            style={{\n              background:\n                \"radial-gradient(ellipse at 30% 40%, #6366f1 0%, transparent 55%), radial-gradient(ellipse at 70% 60%, #ec4899 0%, transparent 55%)\",\n              zIndex: 0,\n            }}\n          />\n          <span\n            className=\"relative z-10 text-4xl font-extrabold tracking-tight\"\n            style={{\n              background: \"linear-gradient(135deg, #6366f1, #ec4899)\",\n              WebkitBackgroundClip: \"text\",\n              WebkitTextFillColor: \"transparent\",\n            }}\n          >\n            Backlight\n          </span>\n          <p className=\"relative z-10 text-sm text-muted-foreground text-center max-w-[180px]\">\n            Hover to intensify the bloom filter\n          </p>\n        </div>\n      </Backlight>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/backlight.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/backlight.json",
+ "preview": "https://stashui.vercel.app/c/backlight",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Wraps children with blur and color saturation filter.",
+ "description": "Applies an SVG filter that blurs and increases saturation of child elements, creating a glow/backlight effect.",
+ "use_when": "Visual emphasis on text or elements, glowing badge effects, or artistic styling.",
+ "avoid_when": "Accessibility-critical text (blur harms readability); motion-sensitive users.",
+ "a11y": "Filter wrapper only. Does not affect semantic content or focus.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactElement",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "20",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "badge"
+ ]
+}

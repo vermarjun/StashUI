@@ -1,0 +1,103 @@
+{
+ "name": "magic-ui-marquee",
+ "title": "Marquee",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Marquee"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { Marquee } from \"@/components/ui/marquee\";\n\nconst companies = [\n  \"Acme Corp\",\n  \"Globex\",\n  \"Initech\",\n  \"Umbrella\",\n  \"Stark Industries\",\n  \"Wayne Enterprises\",\n  \"Oscorp\",\n  \"Aperture Science\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full py-8 overflow-hidden\">\n      <Marquee pauseOnHover className=\"[--duration:25s]\">\n        {companies.map((name) => (\n          <div\n            key={name}\n            className=\"mx-4 flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground shadow-sm\"\n          >\n            <div className=\"h-4 w-4 rounded-full bg-muted-foreground/30\" />\n            {name}\n          </div>\n        ))}\n      </Marquee>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/marquee.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magic-ui-marquee.json",
+ "preview": "https://stashui.vercel.app/c/magic-ui-marquee",
+ "dupe_group": "marquee",
+ "alternatives": [
+  {
+   "name": "marquee",
+   "origin": "StashUI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "ui-layouts-marquee",
+   "origin": "Ui-Layouts",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "inspira-marquee",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Content scrolls continuously in a loop, horizontally or vertically.",
+ "description": "Repeats and scrolls child content continuously in a seamless loop. Can scroll horizontally or vertically and pause on hover.",
+ "use_when": "Logo walls, customer lists, or scrolling galleries where continuous looping adds visual flow.",
+ "avoid_when": "Content requiring user control to pause — `pauseOnHover` helps but there is no keyboard pause control.",
+ "a11y": "Continuous scrolling can be difficult for some readers. Pauses on hover but not keyboard-controllable.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "vertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "number",
+   "default": "4",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "decoration"
+ ]
+}

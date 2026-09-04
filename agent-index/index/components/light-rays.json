@@ -1,0 +1,100 @@
+{
+ "name": "light-rays",
+ "title": "Light Rays",
+ "category": "backgrounds",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "LightRays"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "import { LightRays } from \"@/components/ui/light-rays\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background rounded-lg\">\n      <LightRays\n        count={8}\n        color=\"rgba(160, 210, 255, 0.25)\"\n        blur={40}\n        speed={12}\n        length=\"80%\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/light-rays.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/light-rays.json",
+ "preview": "https://stashui.vercel.app/c/light-rays",
+ "dupe_group": "lightrays",
+ "alternatives": [
+  {
+   "name": "LightRays-TS-TW",
+   "origin": "React Bits",
+   "npm_deps": 1,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Animated light rays that swing and fade with opacity pulsing.",
+ "description": "Motion-based light ray effect with multiple rays that swing side-to-side while fading in and out. Includes radial gradient glow for atmospheric ambiance.",
+ "use_when": "An atmospheric animated background overlay that adds luminosity and motion without overwhelming the page.",
+ "avoid_when": "Performance-sensitive contexts — multiple simultaneous motion animations. Motion sickness risk with significant ray…",
+ "a11y": "Overlay with pointer-events-none; focus and keyboard behaviour come from content below. Animation has no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "count",
+   "type": "number",
+   "default": "7",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"rgba(160, 210, 255, 0.2)\"",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "36",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "length",
+   "type": "string",
+   "default": "\"70vh\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute -top-[12%] left-[var(--ray-lef",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

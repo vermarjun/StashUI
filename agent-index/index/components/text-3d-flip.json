@@ -1,0 +1,57 @@
+{
+ "name": "text-3d-flip",
+ "title": "Text 3D Flip",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Text3DFlip"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "3d",
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport Text3DFlip from \"@/components/ui/text-3d-flip\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12\">\n      <Text3DFlip\n        as=\"h1\"\n        className=\"text-5xl font-bold text-foreground cursor-default\"\n        rotateDirection=\"right\"\n      >\n        Hover to Flip\n      </Text3DFlip>\n      <Text3DFlip\n        as=\"h2\"\n        className=\"text-3xl font-semibold text-muted-foreground cursor-default\"\n        rotateDirection=\"bottom\"\n        staggerFrom=\"center\"\n      >\n        3D Typography\n      </Text3DFlip>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/text-3d-flip.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-3d-flip.json",
+ "preview": "https://stashui.vercel.app/c/text-3d-flip",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text flips in 3D space, revealing alternate text.",
+ "description": "Animates text with a 3D flip effect on hover or scroll, showing different content on the back face.",
+ "use_when": "Toggle interactions or revealing alternate information.",
+ "avoid_when": "Hidden content — flip may prevent discovery.",
+ "a11y": "During flip, text is not readable. Keyboard users may not trigger hover.",
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

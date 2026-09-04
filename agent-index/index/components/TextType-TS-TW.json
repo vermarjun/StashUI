@@ -1,0 +1,155 @@
+{
+ "name": "TextType-TS-TW",
+ "title": "TextType",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "TextType"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\nimport TextType from \"@/components/ui/TextType\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[320px] bg-background p-8\">\n      <TextType\n        text={[\"Build faster.\", \"Ship with confidence.\", \"Design with care.\", \"Code that lasts.\"]}\n        as=\"h2\"\n        className=\"text-4xl font-bold text-foreground\"\n        typingSpeed={55}\n        deletingSpeed={32}\n        pauseDuration={1800}\n        loop\n        showCursor\n        cursorCharacter=\"|\"\n        cursorClassName=\"text-muted-foreground\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/TextType.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/TextType-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/TextType-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text types out character by character, pauses, then deletes and repeats with a…",
+ "description": "Animates text typing and deleting in a loop through multiple text options. Supports a blinking cursor, variable colors per text, random typing speed, and reverse typing mode. Can trigger on scroll visibility.",
+ "use_when": "An engaging hero heading wants to cycle through multiple value propositions with typewriter effect.",
+ "avoid_when": "When content must be immediately readable or when the typing animation would distract from comprehension.",
+ "a11y": "Text builds character-by-character dynamically; screen readers see the final result after typing completes.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string | string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": "div",
+   "required": false
+  },
+  {
+   "name": "typingSpeed",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "initialDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "pauseDuration",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "deletingSpeed",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "showCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hideCursorWhileTyping",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "cursorCharacter",
+   "type": "string | React.ReactNode",
+   "default": "'|'",
+   "required": false
+  },
+  {
+   "name": "cursorClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "cursorBlinkDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "textColors",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "variableSpeed",
+   "type": "{min: number; max: number}",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onSentenceComplete",
+   "type": "(sentence: string, index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "startOnVisible",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "reverseMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "headline"
+ ]
+}

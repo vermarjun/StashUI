@@ -1,0 +1,61 @@
+{
+ "name": "parallax-scroll-2",
+ "title": "Rotated Parallax Grid",
+ "category": "media",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "ParallaxScrollSecond"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { ParallaxScrollSecond } from \"@/components/ui/parallax-scroll-2\";\n\nconst images = [\n  \"https://picsum.photos/seed/ps1/400/400\",\n  \"https://picsum.photos/seed/ps2/400/400\",\n  \"https://picsum.photos/seed/ps3/400/400\",\n  \"https://picsum.photos/seed/ps4/400/400\",\n  \"https://picsum.photos/seed/ps5/400/400\",\n  \"https://picsum.photos/seed/ps6/400/400\",\n  \"https://picsum.photos/seed/ps7/400/400\",\n  \"https://picsum.photos/seed/ps8/400/400\",\n  \"https://picsum.photos/seed/ps9/400/400\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-5xl\">\n      <ParallaxScrollSecond images={images} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/parallax-scroll-2.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/parallax-scroll-2.json",
+ "preview": "https://stashui.vercel.app/c/parallax-scroll-2",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Rotating parallax grid with Y/X offset and 3D rotation on scroll.",
+ "description": "A 3-column image grid with advanced parallax combining Y/X translation and rotateZ transforms per column. Effects are driven by scroll progress via motion/react useTransform.",
+ "use_when": "High-impact galleries or portfolio sections where rotated parallax creates dramatic visual depth and engagement.",
+ "avoid_when": "Motion-sensitive or vestibular-affected users; complex rotation + parallax combined can cause significant discomfort.",
+ "a11y": "Complex scroll-driven transform chain; no prefers-reduced-motion support; high risk for vestibular disorders.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string | undefined",
+   "default": "{cn(\"h-[40rem] items-start overflow-y-auto w-full\", classNam",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

@@ -1,0 +1,201 @@
+{
+ "name": "OrbitImages-TS-TW",
+ "title": "OrbitImages",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "OrbitImages"
+ ],
+ "npm_deps": [
+  "motion@^12.23.12"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/OrbitImages\";\n\nconst IMAGES = [\n  \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=80&h=80&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=80&h=80&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=80&h=80&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=80&h=80&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=80&h=80&fit=crop&auto=format\",\n  \"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=80&h=80&fit=crop&auto=format\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full flex items-center justify-center overflow-hidden\">\n      <Cmp\n        images={IMAGES}\n        shape=\"ellipse\"\n        radiusX={280}\n        radiusY={80}\n        rotation={-8}\n        duration={18}\n        itemSize={64}\n        fill\n        width={680}\n        height={240}\n        showPath\n        pathColor=\"rgba(128,128,128,0.2)\"\n        pathWidth={1}\n        centerContent={\n          <span className=\"text-muted-foreground text-xs tracking-widest uppercase opacity-60\">\n            my/ui orbit\n          </span>\n        }\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/OrbitImages.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/OrbitImages-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/OrbitImages-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Images or elements orbit around a customizable path (circle, ellipse, star…",
+ "description": "Framer Motion-powered orbit using CSS offsetPath to move child elements or images around any SVG path. Supports multiple preset shapes and custom SVG paths.",
+ "use_when": "Gallery layouts, testimonial carousels, or logo walls where a circular/orbital motion reinforces a cohesive visual…",
+ "avoid_when": "High-performance contexts on low-end devices — continuous RAF-driven transforms can be costly; or when elements must…",
+ "a11y": "Passive decorative layout tool; children retain their semantics. Marked aria-hidden. No keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "altPrefix",
+   "type": "string",
+   "default": "'Orbiting image'",
+   "required": false
+  },
+  {
+   "name": "shape",
+   "type": "'ellipse' | 'circle' | 'square' | 'rectangle' | 'triangle' | 'star' | 'heart' | 'infinity' | 'wave' | 'custom'",
+   "default": "'ellipse'",
+   "required": false
+  },
+  {
+   "name": "customPath",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "baseWidth",
+   "type": "number",
+   "default": "1400",
+   "required": false
+  },
+  {
+   "name": "radiusX",
+   "type": "number",
+   "default": "700",
+   "required": false
+  },
+  {
+   "name": "radiusY",
+   "type": "number",
+   "default": "170",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "starPoints",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "starInnerRatio",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "rotation",
+   "type": "number",
+   "default": "-8",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "itemSize",
+   "type": "number",
+   "default": "64",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'normal' | 'reverse'",
+   "default": "'normal'",
+   "required": false
+  },
+  {
+   "name": "fill",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number | '100%'",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number | 'auto'",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute will-change-transform select-none\"",
+   "required": false
+  },
+  {
+   "name": "showPath",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pathColor",
+   "type": "string",
+   "default": "'rgba(0,0,0,0.1)'",
+   "required": false
+  },
+  {
+   "name": "pathWidth",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "'linear' | 'easeIn' | 'easeOut' | 'easeInOut'",
+   "default": "'linear'",
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "centerContent",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "responsive",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "children"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "logo-wall",
+  "testimonial",
+  "feature-card"
+ ]
+}

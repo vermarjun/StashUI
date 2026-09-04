@@ -1,0 +1,68 @@
+{
+ "name": "raws-color-picker",
+ "title": "HSV Color Picker",
+ "category": "inputs",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "ColorPicker",
+  "RawsColorPicker"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 26,
+ "flags": [
+  "pure",
+  "26 colors"
+ ],
+ "usage": "import Cmp from \"@/components/ui/raws-color-picker\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/raws-color-picker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/raws-color-picker.json",
+ "preview": "https://stashui.vercel.app/c/raws-color-picker",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "HSV color picker with saturation panel, hue slider, and hex input.",
+ "description": "A full-featured color picker with an HSV color selection panel, continuous hue slider, direct hex input, copy button, and optional eyedropper tool.",
+ "use_when": "Building design tools or color editors where precise HSV selection and eyedropper support are needed.",
+ "avoid_when": "When simple hex or RGB inputs suffice or when touch support is limited.",
+ "a11y": "Color selection uses mouse/touch events, buttons have sr-only labels, hex input has pattern validation.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(color: string) => void",
+   "default": "{handleHexChange}",
+   "required": true
+  },
+  {
+   "name": "showEyedropper",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

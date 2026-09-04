@@ -1,0 +1,86 @@
+{
+ "name": "text-reveal-card",
+ "title": "Text Reveal Card",
+ "category": "cards",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "TextRevealCard",
+  "TextRevealCardTitle",
+  "TextRevealCardDescription",
+  "MemoizedStars"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "motion",
+  "11 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  TextRevealCard,\n  TextRevealCardTitle,\n  TextRevealCardDescription,\n} from \"@/components/ui/text-reveal-card\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] bg-[#0d0d0f]\">\n      <TextRevealCard\n        text=\"You know the business\"\n        revealText=\"I know the chemistry\"\n      >\n        <TextRevealCardTitle>\n          Sometimes, you just need to see it.\n        </TextRevealCardTitle>\n        <TextRevealCardDescription>\n          Hover over the card to reveal the hidden message.\n        </TextRevealCardDescription>\n      </TextRevealCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/text-reveal-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-reveal-card.json",
+ "preview": "https://stashui.vercel.app/c/text-reveal-card",
+ "dupe_group": "textrevealcard",
+ "alternatives": [
+  {
+   "name": "inspira-text-reveal-card",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Reveals hidden text by horizontal clip-path under a cursor-tracked gradient…",
+ "description": "Card that tracks pointer position and animates a clip-path inset to reveal an overlay text. Includes animated star particles in the background. Supports both mouse and touch input.",
+ "use_when": "Revealing a hidden message or alternative text on hover; creating an interactive reveal effect.",
+ "avoid_when": "Static designs or devices without pointer input; the component hardcodes dark theme.",
+ "a11y": "Interaction driven by pointer movement; no keyboard alternative. Focus handling not managed; no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "revealText",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "decoration"
+ ]
+}

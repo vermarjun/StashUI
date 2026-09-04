@@ -1,0 +1,128 @@
+{
+ "name": "cosmic-portal",
+ "title": "Cosmic Portal",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "CosmicPortal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "webgl",
+  "3d",
+  "pure",
+  "12 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { CosmicPortal, type CosmicPortalRef } from \"@/components/ui/cosmic-portal\";\n\nexport default function CosmicPortalDemo() {\n  const portalRef = useRef<CosmicPortalRef>(null);\n\n  return (\n    <div className=\"flex flex-col items-center gap-4 p-4\">\n      <div className=\"h-[500px] w-full max-w-3xl rounded-xl overflow-hidden\">\n        <CosmicPortal\n          ref={portalRef}\n          primaryColor=\"#9b59b6\"\n          secondaryColor=\"#3498db\"\n          accentColor=\"#e74c3c\"\n          vortexColor=\"#2ecc71\"\n          crystalCount={12}\n          bloomStrength={1.2}\n        />\n      </div>\n      <div className=\"flex gap-3\">\n        <button\n          onClick={() => portalRef.current?.activatePortal()}\n          className=\"rounded-lg bg-purple-600 px-4 py-2 text-white text-sm font-medium hover:bg-purple-700 transition-colors\"\n        >\n          Activate Portal\n        </button>\n        <button\n          onClick={() => portalRef.current?.shiftDimensions()}\n          className=\"rounded-lg bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700 transition-colors\"\n        >\n          Shift Dimensions\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/cosmic-portal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/cosmic-portal.json",
+ "preview": "https://stashui.vercel.app/c/cosmic-portal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated 3D cosmic portal with rotating crystals, bloom effects, and shifting…",
+ "description": "Renders a Three.js WebGL scene with a rotating crystal portal, procedurally-generated geometry, and post-processing bloom. Colors and complexity are customizable. Includes ref methods to activate or shift dimensions.",
+ "use_when": "Hero sections or feature showcases needing an immersive, otherworldly visual impact.",
+ "avoid_when": "Performance-critical contexts, mobile devices, or when color schemes must stay static.",
+ "a11y": "Purely visual 3D scene. Buttons for activation are keyboard-accessible. No audio or interaction beyond controls.",
+ "props": [
+  {
+   "name": "portalComplexity",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "crystalCount",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "primaryColor",
+   "type": "string",
+   "default": "\"#9b59b6\"",
+   "required": false
+  },
+  {
+   "name": "secondaryColor",
+   "type": "string",
+   "default": "\"#3498db\"",
+   "required": false
+  },
+  {
+   "name": "accentColor",
+   "type": "string",
+   "default": "\"#e74c3c\"",
+   "required": false
+  },
+  {
+   "name": "vortexColor",
+   "type": "string",
+   "default": "\"#2ecc71\"",
+   "required": false
+  },
+  {
+   "name": "rotationSpeed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "bloomStrength",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "bloomRadius",
+   "type": "number",
+   "default": "0.7",
+   "required": false
+  },
+  {
+   "name": "bloomThreshold",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "dimensionShift",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"absolute inset-0 block h-full w-full\", className)}",
+   "required": false
+  },
+  {
+   "name": "containerClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "section-background"
+ ]
+}

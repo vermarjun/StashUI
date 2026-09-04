@@ -1,0 +1,122 @@
+{
+ "name": "PillNav-TS-TW",
+ "title": "Pill Nav",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PillNav"
+ ],
+ "npm_deps": [
+  "react-router-dom@^6.30.1",
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 20,
+ "flags": [
+  "20 colors"
+ ],
+ "usage": "\"use client\";\nimport PillNav from \"@/components/ui/PillNav\";\n\nconst navItems = [\n  { label: \"Home\", href: \"#home\" },\n  { label: \"About\", href: \"#about\" },\n  { label: \"Work\", href: \"#work\" },\n  { label: \"Blog\", href: \"#blog\" },\n  { label: \"Contact\", href: \"#contact\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full min-h-24 bg-gray-900 rounded-xl overflow-hidden\">\n      <PillNav\n        logo=\"https://picsum.photos/seed/logo/40/40\"\n        logoAlt=\"Brand Logo\"\n        items={navItems}\n        activeHref=\"#home\"\n        baseColor=\"#ffffff\"\n        pillColor=\"#1a1a2e\"\n        hoveredPillTextColor=\"#ffffff\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/PillNav.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/PillNav-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/PillNav-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pill nav buttons with a spring circle and swapping text labels.",
+ "description": "Navigation with pill-shaped buttons that animate on hover. A circle expands beneath the text, which moves to reveal a secondary label in a different color. GSAP-powered.",
+ "use_when": "Modern site nav requiring premium micro-interactions and responsive design.",
+ "avoid_when": "When you need lightweight, static navigation — adds GSAP dependency and animation overhead.",
+ "a11y": "Semantic nav with menubar/menuitem roles and keyboard navigation. No prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "logo",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "logoAlt",
+   "type": "string",
+   "default": "'Logo'",
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "PillNavItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "activeHref",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.easeOut'",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "pillColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "hoveredPillTextColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "pillTextColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onMobileMenuClick",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initialLoadAnimation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "name": "Radar-TS-TW",
+ "title": "Radar",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Radar"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Radar from \"@/components/ui/Radar\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[400px] bg-black rounded-xl overflow-hidden\">\n      <Radar\n        color=\"#9f29ff\"\n        backgroundColor=\"#000000\"\n        speed={1.0}\n        scale={0.5}\n        ringCount={10}\n        spokeCount={10}\n        sweepSpeed={1.0}\n        enableMouseInteraction={true}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Radar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Radar-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Radar-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated radar display with concentric rings, radial spokes, and a sweeping…",
+ "description": "WebGL shader rendering rings and spokes radiating from center, with an animated sweep beam. Optional mouse-tracking distortion shifts the center based on pointer position.",
+ "use_when": "Technical dashboards, sci-fi interfaces, or backgrounds where a sonar/radar aesthetic conveys data or monitoring themes.",
+ "avoid_when": "WebGL-unsupported devices, or motion-sensitive contexts — continuous rendering and infinite scroll of rings.",
+ "a11y": "Passive visual background; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "ringCount",
+   "type": "number",
+   "default": "10.0",
+   "required": false
+  },
+  {
+   "name": "spokeCount",
+   "type": "number",
+   "default": "10.0",
+   "required": false
+  },
+  {
+   "name": "ringThickness",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "spokeThickness",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "sweepSpeed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "sweepWidth",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "sweepLobes",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#9f29ff'",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  },
+  {
+   "name": "falloff",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "enableMouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseInfluence",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration",
+  "hero"
+ ]
+}

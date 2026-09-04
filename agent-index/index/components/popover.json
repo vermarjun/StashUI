@@ -1,0 +1,74 @@
+{
+ "name": "popover",
+ "title": "Popover",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "PopoverRoot",
+  "PopoverTrigger",
+  "PopoverContent",
+  "PopoverForm",
+  "PopoverLabel",
+  "PopoverTextarea",
+  "PopoverFooter",
+  "PopoverCloseButton",
+  "PopoverSubmitButton",
+  "PopoverHeader",
+  "PopoverBody",
+  "PopoverButton"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 24,
+ "flags": [
+  "motion",
+  "24 colors"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  PopoverRoot,\n  PopoverTrigger,\n  PopoverContent,\n  PopoverForm,\n  PopoverLabel,\n  PopoverTextarea,\n  PopoverFooter,\n  PopoverCloseButton,\n  PopoverSubmitButton,\n} from \"@/components/ui/popover\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[480px]\">\n      <PopoverRoot>\n        <PopoverTrigger>Leave a note</PopoverTrigger>\n        <PopoverContent>\n          <PopoverForm onSubmit={(note) => console.log(\"Note:\", note)}>\n            <PopoverLabel>Your note</PopoverLabel>\n            <PopoverTextarea />\n            <PopoverFooter>\n              <PopoverCloseButton />\n              <PopoverSubmitButton />\n            </PopoverFooter>\n          </PopoverForm>\n        </PopoverContent>\n      </PopoverRoot>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/popover.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/popover.json",
+ "preview": "https://stashui.vercel.app/c/popover",
+ "dupe_group": "popover",
+ "alternatives": [
+  {
+   "name": "origin-ui-popover",
+   "origin": "Origin UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Button expands to a form with textarea, label, and action buttons.",
+ "description": "A custom popover built from Framer Motion that morphs from a button to a fixed-size form panel. Includes composed label (auto-hides when typing), textarea, footer with close/submit buttons, and spring animations.",
+ "use_when": "You need quick note-taking or inline forms that don't leave the current context.",
+ "avoid_when": "Mobile or narrow viewports — the 364px width is fixed and may overflow.",
+ "a11y": "Textarea autofocuses. Escape closes. Click-outside closes. ARIA label on close button. Label aria-hidden when field has content.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "tooltip"
+ ]
+}

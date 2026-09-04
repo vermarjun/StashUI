@@ -1,0 +1,145 @@
+{
+ "name": "StaggeredMenu-TS-TW",
+ "title": "Staggered Menu",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "StaggeredMenu"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 24,
+ "flags": [
+  "24 colors"
+ ],
+ "usage": "\"use client\";\nimport { StaggeredMenu } from \"@/components/ui/StaggeredMenu\";\n\nconst navItems = [\n  { label: \"Home\",     ariaLabel: \"Home\",     link: \"#\" },\n  { label: \"Work\",     ariaLabel: \"Work\",     link: \"#\" },\n  { label: \"About\",    ariaLabel: \"About\",    link: \"#\" },\n  { label: \"Contact\",  ariaLabel: \"Contact\",  link: \"#\" },\n];\n\nconst socialItems = [\n  { label: \"GitHub\",   link: \"#\" },\n  { label: \"Twitter\",  link: \"#\" },\n  { label: \"Dribbble\", link: \"#\" },\n];\n\nconst LogoSVG = \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='22' viewBox='0 0 90 22'%3E%3Ccircle cx='11' cy='11' r='9' fill='%23fff'/%3E%3Ctext x='26' y='16' font-family='sans-serif' font-size='14' font-weight='700' fill='%23fff'%3Emyui%3C/text%3E%3C/svg%3E\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[560px] bg-[#120F17] rounded-xl overflow-hidden\">\n      <StaggeredMenu\n        isFixed={false}\n        items={navItems}\n        socialItems={socialItems}\n        displaySocials={true}\n        displayItemNumbering={true}\n        logoUrl={LogoSVG}\n        colors={[\"#B497CF\", \"#5227FF\"]}\n        accentColor=\"#5227FF\"\n        menuButtonColor=\"#e9e9ef\"\n        openMenuButtonColor=\"#111\"\n        position=\"right\"\n        closeOnClickAway={true}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/StaggeredMenu.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/StaggeredMenu-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/StaggeredMenu-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Full-screen menu slides out with staggered animated items.",
+ "description": "Slide-out navigation panel triggered by toggle button. Menu items and social links animate in staggered sequence; animated plus/minus icon and color transitions driven by GSAP.",
+ "use_when": "Premium full-screen navigation requiring elaborate entry animations and responsive state-driven interactions.",
+ "avoid_when": "On small screens where large slideout panels are cramped. Adds GSAP dependency and animation overhead.",
+ "a11y": "Semantic with ARIA labels and roles (menuitem, list). Menu items not keyboard navigable; toggle button accessible. No prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "position",
+   "type": "'left' | 'right'",
+   "default": "'right'",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#B497CF', '#5227FF']",
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "StaggeredMenuItem[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "socialItems",
+   "type": "StaggeredMenuSocialItem[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "displaySocials",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "displayItemNumbering",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`sm-scope z-40 ${isFixed ? 'fixed top-0 left-0 w-screen h-s",
+   "required": false
+  },
+  {
+   "name": "logoUrl",
+   "type": "string",
+   "default": "'/src/assets/logos/reactbits-gh-white.svg'",
+   "required": false
+  },
+  {
+   "name": "menuButtonColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "openMenuButtonColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "changeMenuColorOnOpen",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "accentColor",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "isFixed",
+   "type": "boolean",
+   "default": "false",
+   "required": true
+  },
+  {
+   "name": "closeOnClickAway",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "onMenuOpen",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onMenuClose",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

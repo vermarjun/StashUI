@@ -1,0 +1,84 @@
+{
+ "name": "morphing-tabs",
+ "title": "Morphing Tabs",
+ "category": "navigation",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "MorphingTabs"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { MorphingTabs } from \"@/components/ui/morphing-tabs\";\n\nexport default function MorphingTabsDemo() {\n  const [activeTab, setActiveTab] = useState(\"Home\");\n\n  return (\n    <div className=\"flex min-h-32 flex-col items-center justify-center gap-6 p-8\">\n      <MorphingTabs\n        tabs={[\"Home\", \"About\", \"Work\", \"Contact\"]}\n        activeTab={activeTab}\n        onTabChange={setActiveTab}\n      />\n      <p className=\"text-sm text-muted-foreground\">\n        Active: <span className=\"font-semibold\">{activeTab}</span>\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/morphing-tabs.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/morphing-tabs.json",
+ "preview": "https://stashui.vercel.app/c/morphing-tabs",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Tabs that morph together with a gooey fluid effect.",
+ "description": "Controlled tab component that expands the active tab with margin while an SVG filter creates a blob-like morphing effect between adjacent tabs. Uses CSS filters (feGaussianBlur + feColorMatrix) for the goo effect.",
+ "use_when": "Tab sets where the visual distinction and playful morphing animation enhances the UI, especially in modern dashboards…",
+ "avoid_when": "When accessibility is critical; lacks keyboard navigation. Not suitable for dense tab lists where animation overhead is…",
+ "a11y": "No built-in keyboard support or ARIA attributes. Relies on parent to handle focus management and tab semantics.",
+ "props": [
+  {
+   "name": "tabs",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "activeTab",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onTabChange",
+   "type": "(tab: string) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "margin",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "blurStdDeviation",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "fill"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "feature-card"
+ ]
+}

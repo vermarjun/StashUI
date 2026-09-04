@@ -1,0 +1,124 @@
+{
+ "name": "liquid-glass",
+ "title": "Liquid Glass Card",
+ "category": "cards",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "LiquidGlassCard"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 33,
+ "flags": [
+  "motion",
+  "33 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { LiquidGlassCard } from \"@/components/ui/liquid-glass\";\n\nexport default function Demo() {\n  return (\n    <div\n      className=\"flex items-center justify-center w-full min-h-[400px] rounded-xl p-10\"\n      style={{\n        background:\n          \"linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #ec4899 100%)\",\n      }}\n    >\n      <LiquidGlassCard\n        className=\"p-8 bg-white/10 w-72\"\n        borderRadius=\"24px\"\n        blurIntensity=\"xl\"\n        shadowIntensity=\"md\"\n        glowIntensity=\"sm\"\n        draggable={true}\n      >\n        <div className=\"relative z-30 flex flex-col gap-3 text-white\">\n          <div className=\"text-4xl font-bold\">24°C</div>\n          <div className=\"text-lg font-medium opacity-90\">Partly Cloudy</div>\n          <div className=\"text-sm opacity-70\">San Francisco, CA</div>\n          <div className=\"mt-2 text-xs opacity-60\">\n            Drag me · Hover to glow\n          </div>\n        </div>\n      </LiquidGlassCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/liquid-glass.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/liquid-glass.json",
+ "preview": "https://stashui.vercel.app/c/liquid-glass",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Glassmorphic card with configurable blur, glow, and optional drag/expand.",
+ "description": "A frosted-glass card with extensive styling options (blur intensity, shadow insets, glow effects, border radius). Optional draggable and expandable states via motion.",
+ "use_when": "Modern glassmorphic UI designs, dashboards, or overlay cards where frosted-glass aesthetic and configurability matter.",
+ "avoid_when": "Touch-only layouts where drag interactions may conflict with page scrolling, or where high blur intensity harms…",
+ "a11y": "Card is a semantic container; children are independent. Drag is mouse-only; touch support is secondary. Blur effects may impact text readability.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "draggable",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "expandable",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "expandedWidth",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "expandedHeight",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "blurIntensity",
+   "type": "'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'xl'",
+   "required": false
+  },
+  {
+   "name": "shadowIntensity",
+   "type": "'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "string",
+   "default": "'32px'",
+   "required": false
+  },
+  {
+   "name": "glowIntensity",
+   "type": "'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'sm'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "modal",
+  "section-background"
+ ]
+}

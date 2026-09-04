@@ -1,0 +1,94 @@
+{
+ "name": "number-ticker",
+ "title": "Number Ticker",
+ "category": "data-display",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "NumberTicker"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "import { NumberTicker } from \"@/components/ui/number-ticker\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-10\">\n      <div className=\"flex flex-col items-center gap-1\">\n        <span className=\"text-6xl font-bold tabular-nums text-foreground\">\n          <NumberTicker value={12500} />\n        </span>\n        <span className=\"text-sm text-muted-foreground\">Active Users</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-1\">\n        <span className=\"text-5xl font-semibold tabular-nums text-foreground\">\n          <NumberTicker value={99} decimalPlaces={1} />\n          <span className=\"text-3xl\">%</span>\n        </span>\n        <span className=\"text-sm text-muted-foreground\">Uptime</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-1\">\n        <span className=\"text-4xl font-semibold tabular-nums text-foreground\">\n          $<NumberTicker value={4820000} />\n        </span>\n        <span className=\"text-sm text-muted-foreground\">Revenue</span>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/number-ticker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/number-ticker.json",
+ "preview": "https://stashui.vercel.app/c/number-ticker",
+ "dupe_group": "numberticker",
+ "alternatives": [
+  {
+   "name": "inspira-number-ticker",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Counter animating from a start value to a target number when scrolled into view.",
+ "description": "Inline number counter using Framer Motion spring physics. Animates from startValue to value once the element enters the viewport. Supports configurable decimal places and direction (up/down). Delay can defer animation start by N seconds.",
+ "use_when": "Stat displays, KPI counters, or hero section metrics that reveal as the page scrolls.",
+ "avoid_when": "Very large numbers (100M+) or extreme precision (10+ decimals) — animation slowdown increases.",
+ "a11y": "Final number is rendered as text content, readable by screen readers. Animation triggers on viewport visibility.",
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "startValue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "up | down",
+   "default": "\"up\"",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "decimalPlaces",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "stat",
+  "hero",
+  "feature-card"
+ ]
+}

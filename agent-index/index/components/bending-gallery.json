@@ -1,0 +1,80 @@
+{
+ "name": "bending-gallery",
+ "title": "Bending Gallery",
+ "category": "carousels",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BendingGallery"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\nimport React from \"react\";\nimport { BendingGallery } from \"@/components/ui/bending-gallery\";\n\nconst items = [\n  { image: \"https://picsum.photos/seed/1/800/600?grayscale\", text: \"Bridge\" },\n  { image: \"https://picsum.photos/seed/2/800/600?grayscale\", text: \"Desk Setup\" },\n  { image: \"https://picsum.photos/seed/3/800/600?grayscale\", text: \"Waterfall\" },\n  { image: \"https://picsum.photos/seed/4/800/600?grayscale\", text: \"Strawberries\" },\n  { image: \"https://picsum.photos/seed/5/800/600?grayscale\", text: \"Deep Diving\" },\n  { image: \"https://picsum.photos/seed/16/800/600?grayscale\", text: \"Train Track\" },\n];\n\nexport default function BendingGalleryDemo() {\n  return (\n    <div className=\"h-96 w-full bg-neutral-950\">\n      <BendingGallery\n        items={items}\n        bend={3}\n        textColor=\"#ffffff\"\n        borderRadius={0.05}\n        font=\"bold 28px sans-serif\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/bending-gallery.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bending-gallery.json",
+ "preview": "https://stashui.vercel.app/c/bending-gallery",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "WebGL gallery with images that bend and wave as you scroll.",
+ "description": "WebGL-rendered image gallery with text labels that deform and bend based on scroll position. Uses canvas text rendering and WebGL shaders for the bending effect. Supports customizable bend amount, text color, and border radius.",
+ "use_when": "High-impact portfolio or image gallery requiring smooth, technical scroll-driven deformation.",
+ "avoid_when": "Low-spec devices or browsers without WebGL support; requires a sized parent container.",
+ "a11y": "Visual-only effect; keyboard navigation not implemented. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "items",
+   "type": "GalleryItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "bend",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "\"#ffffff\"",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "font",
+   "type": "string",
+   "default": "\"bold 30px DM Sans\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image",
+   "fill"
+  ],
+  "tone": "technical",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

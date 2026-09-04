@@ -1,0 +1,72 @@
+{
+ "name": "keyboard",
+ "title": "Interactive Keyboard",
+ "category": "misc",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Keyboard",
+  "Keypad"
+ ],
+ "npm_deps": [
+  "@tabler/icons-react",
+  "motion/react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 14,
+ "flags": [
+  "motion",
+  "14 colors"
+ ],
+ "usage": "import { Keyboard } from \"@/components/ui/keyboard\";\n\nexport default function Demo() {\n  return <Keyboard />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/keyboard.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/keyboard.json",
+ "preview": "https://stashui.vercel.app/c/keyboard",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Renders an interactive computer keyboard with responsive clickable keys.",
+ "description": "A visual keyboard UI with styled keys that respond to physical keyboard events and mouse clicks. Includes optional keystroke preview and audio sprite sound effects.",
+ "use_when": "Visualizing keyboard input, creating interactive educational tools, or demonstrating keystroke capture in a UI.",
+ "avoid_when": "Capturing actual form input — use standard HTML inputs instead. Not suitable for touch-only interfaces.",
+ "a11y": "Button elements with mouse and keyboard handlers; no explicit focus management or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute flex items-center justify-center rounded-lg px-4 p",
+   "required": false
+  },
+  {
+   "name": "enableSound",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showPreview",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "tone": "technical",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "media"
+ ]
+}

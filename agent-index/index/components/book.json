@@ -1,0 +1,88 @@
+{
+ "name": "book",
+ "title": "3D Book Display",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BookHeader",
+  "BookTitle",
+  "BookDescription",
+  "Book"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 64,
+ "flags": [
+  "3d",
+  "pure",
+  "64 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Book, BookDescription, BookHeader, BookTitle } from \"@/components/ui/book\";\n\nexport default function BookDemo() {\n  return (\n    <div className=\"flex items-center justify-center gap-8 p-12\">\n      <Book color=\"indigo\" size=\"md\">\n        <BookHeader>\n          <span className=\"rounded bg-white/20 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide\">\n            Fiction\n          </span>\n        </BookHeader>\n        <BookTitle>The Lost City</BookTitle>\n        <BookDescription>\n          An epic adventure through forgotten worlds and ancient mysteries.\n        </BookDescription>\n      </Book>\n\n      <Book color=\"rose\" size=\"lg\" isStatic>\n        <BookHeader>\n          <span className=\"rounded bg-white/20 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide\">\n            Design\n          </span>\n        </BookHeader>\n        <BookTitle>UI Patterns</BookTitle>\n        <BookDescription>\n          A comprehensive guide to modern interface design principles.\n        </BookDescription>\n      </Book>\n\n      <Book color=\"emerald\" size=\"sm\">\n        <BookTitle>Notes</BookTitle>\n        <BookDescription>Short form.</BookDescription>\n      </Book>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/book.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/book.json",
+ "preview": "https://stashui.vercel.app/c/book",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "3D book mockup that rotates on hover, revealing colored spine and back cover.",
+ "description": "Renders a 3D book with front cover, spine, and back face using CSS 3D transforms. Rotates on hover unless static. Includes sub-components BookHeader, BookTitle, and BookDescription for layout.",
+ "use_when": "Showcasing literary works, courses, or content in an engaging 3D presentation.",
+ "avoid_when": "Mobile-first designs or when 3D transforms are not supported. Requires hover for interaction.",
+ "a11y": "Content inside is semantic (h1, p, div). 3D rotation is visual-only. No keyboard activation for the hover state.",
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "BookColor",
+   "default": "\"zinc\"",
+   "required": false
+  },
+  {
+   "name": "isStatic",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "'sm' | 'md' | 'lg' | 'xl'",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "'sm' | 'md' | 'lg' | 'xl'",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "shadowSize",
+   "type": "'sm' | 'md' | 'lg' | 'xl'",
+   "default": "\"lg\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "decoration"
+ ]
+}

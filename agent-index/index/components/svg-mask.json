@@ -1,0 +1,86 @@
+{
+ "name": "svg-mask",
+ "title": "SVG Mask Reveal",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "SVGMask"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "pure",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { SVGMask } from \"@/components/ui/svg-mask\";\n\nexport default function SVGMaskDemo() {\n  return (\n    <div className=\"h-96 w-full overflow-hidden rounded-xl\">\n      <SVGMask\n        size={10}\n        revealSize={500}\n        reveal={\n          <p className=\"text-4xl font-bold text-white\">\n            Move your mouse over the text\n          </p>\n        }\n        base={\n          <p className=\"text-4xl font-bold\">\n            Hover to reveal\n          </p>\n        }\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/svg-mask.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/svg-mask.json",
+ "preview": "https://stashui.vercel.app/c/svg-mask",
+ "dupe_group": "svgmaskreveal",
+ "alternatives": [
+  {
+   "name": "svg-mask-effect",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "SVG mask that reveals content underneath as you hover and move the cursor.",
+ "description": "A two-layer reveal component using SVG masking. Mask grows from small to large on hover and follows cursor position to reveal the content layer.",
+ "use_when": "An interactive hero section or content reveal where hover interaction guides attention.",
+ "avoid_when": "On mobile or touch devices — no pointer to track. Requires external SVG mask asset.",
+ "a11y": "Both layers are in DOM but mask obscures one. No keyboard control over reveal timing.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "revealSize",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "base",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "reveal",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "section-background"
+ ]
+}

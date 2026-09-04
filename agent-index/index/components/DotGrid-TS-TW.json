@@ -1,0 +1,129 @@
+{
+ "name": "DotGrid-TS-TW",
+ "title": "Dot Grid",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "DotGrid"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "canvas",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/DotGrid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"600px\" }}>\n      <Cmp\n        dotSize={16}\n        gap={32}\n        baseColor=\"#5227FF\"\n        activeColor=\"#00c8ff\"\n        proximity={150}\n        speedTrigger={100}\n        shockRadius={250}\n        shockStrength={5}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/DotGrid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/DotGrid-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/DotGrid-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Grid of interactive dots with color gradient proximity and click-triggered…",
+ "description": "Canvas-rendered dot grid using gsap for inertia-based animation. Dots respond to mouse proximity with color interpolation and to clicks with radial shock waves. Supports elastic return animation.",
+ "use_when": "Interactive backgrounds where a playful, physics-based response to user input creates engagement.",
+ "avoid_when": "Touch-only surfaces or when static backgrounds are required; relies on mouse events.",
+ "a11y": "Mouse and click interactive; no keyboard control. No prefers-reduced-motion guard. Canvas is not semantically accessible.",
+ "props": [
+  {
+   "name": "dotSize",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "32",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "activeColor",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "proximity",
+   "type": "number",
+   "default": "150",
+   "required": false
+  },
+  {
+   "name": "speedTrigger",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "shockRadius",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "shockStrength",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "maxSpeed",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "resistance",
+   "type": "number",
+   "default": "750",
+   "required": false
+  },
+  {
+   "name": "returnDuration",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "`rgb(${r},${g},${b})`;",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

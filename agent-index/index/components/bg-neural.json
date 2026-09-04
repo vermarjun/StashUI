@@ -1,0 +1,75 @@
+{
+ "name": "bg-neural",
+ "title": "Neural Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "BgNeural"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { BgNeural } from \"@/components/ui/bg-neural\";\n\nexport default function BgNeuralDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-xl bg-black\">\n      <BgNeural hue={200} saturation={0.8} chroma={0.6} />\n      <div className=\"relative z-10 flex h-full items-center justify-center\">\n        <p className=\"text-2xl font-semibold text-white\">Neural Background</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/bg-neural.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bg-neural.json",
+ "preview": "https://stashui.vercel.app/c/bg-neural",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "WebGL shader renders fractal neural-like patterns animated by scroll and…",
+ "description": "OGL-based WebGL background with shader-based fractal animation. Responds to pointer position and scroll progress. Supports hue, saturation, chroma adjustments.",
+ "use_when": "Tech-forward hero section with interactive shader background.",
+ "avoid_when": "Low-end devices, no WebGL support, or performance-critical applications.",
+ "a11y": "Purely decorative shader animation; no motion-reduced variant.",
+ "props": [
+  {
+   "name": "hue",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "chroma",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"pointer-events-none absolute inset-0 size-full opacity-",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "scroll"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ]
+}

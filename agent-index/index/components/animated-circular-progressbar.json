@@ -1,0 +1,108 @@
+{
+ "name": "animated-circular-progressbar",
+ "title": "Circular Progress Bar",
+ "category": "loaders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimatedCircularProgressBar"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\nimport { AnimatedCircularProgressBar } from \"@/components/ui/animated-circular-progressbar\"\n\nexport default function AnimatedCircularProgressBarDemo() {\n  const [value, setValue] = useState(0)\n\n  useEffect(() => {\n    const timer = setInterval(() => {\n      setValue((prev) => {\n        if (prev >= 100) return 0\n        return prev + 5\n      })\n    }, 300)\n    return () => clearInterval(timer)\n  }, [])\n\n  return (\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-8 p-8\">\n      <AnimatedCircularProgressBar\n        value={value}\n        max={100}\n        gaugePrimaryColor=\"rgb(79 70 229)\"\n        gaugeSecondaryColor=\"rgba(0, 0, 0, 0.1)\"\n        duration={0.3}\n      />\n      <AnimatedCircularProgressBar\n        value={65}\n        max={100}\n        gaugePrimaryColor=\"rgb(16 185 129)\"\n        gaugeSecondaryColor=\"rgba(0, 0, 0, 0.1)\"\n        duration={1}\n      />\n      <AnimatedCircularProgressBar\n        value={30}\n        max={100}\n        gaugePrimaryColor=\"rgb(245 158 11)\"\n        gaugeSecondaryColor=\"rgba(0, 0, 0, 0.1)\"\n        circleStrokeWidth={8}\n        duration={1}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/animated-circular-progressbar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-circular-progressbar.json",
+ "preview": "https://stashui.vercel.app/c/animated-circular-progressbar",
+ "dupe_group": "circularprogressbar",
+ "alternatives": [
+  {
+   "name": "animated-circular-progress-bar",
+   "origin": "Magic UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Animated circular progress bar with customizable colors, stroke width, and…",
+ "description": "An SVG-based circular progress indicator with configurable primary and secondary colors, stroke width, optional percentage display, and animation duration.",
+ "use_when": "Displaying progress in circular format with control over visual appearance and animation speed.",
+ "avoid_when": "When a linear progress bar is more appropriate or when visual customization isn't needed.",
+ "a11y": "Optional percentage text is displayed; the SVG itself lacks aria labels.",
+ "props": [
+  {
+   "name": "max",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "gaugePrimaryColor",
+   "type": "string",
+   "default": "\"rgb(79 70 229)\"",
+   "required": false
+  },
+  {
+   "name": "gaugeSecondaryColor",
+   "type": "string",
+   "default": "\"rgba(0, 0, 0, 0.1)\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative size-40 text-2xl font-semibold\", className)}",
+   "required": false
+  },
+  {
+   "name": "circleStrokeWidth",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "showPercentage",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "loading"
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "name": "neon-border",
+ "title": "Neon Border",
+ "category": "borders",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "NeonBorder"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "pure",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { NeonBorder } from \"@/components/ui/neon-border\";\n\nexport default function NeonBorderDemo() {\n  return (\n    <div className=\"flex min-h-48 flex-col items-center justify-center gap-6 p-8\">\n      <NeonBorder color1=\"#0496ff\" color2=\"#ff0a54\" animationType=\"half\">\n        <div className=\"flex h-full w-full items-center justify-center rounded-lg bg-background px-4 py-2 text-sm font-medium\">\n          Neon Border — Half\n        </div>\n      </NeonBorder>\n\n      <NeonBorder color1=\"#a855f7\" color2=\"#ec4899\" animationType=\"full\" duration={4}>\n        <div className=\"flex h-full w-full items-center justify-center rounded-lg bg-background px-4 py-2 text-sm font-medium\">\n          Neon Border — Full\n        </div>\n      </NeonBorder>\n\n      <NeonBorder color1=\"#22c55e\" color2=\"#f59e0b\" animationType=\"none\">\n        <div className=\"flex h-full w-full items-center justify-center rounded-lg bg-background px-4 py-2 text-sm font-medium\">\n          Neon Border — Static\n        </div>\n      </NeonBorder>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/neon-border.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/neon-border.json",
+ "preview": "https://stashui.vercel.app/c/neon-border",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Glowing neon border, optionally sweeping around the perimeter.",
+ "description": "Wraps children in a neon-glowing border made of two custom colours with drop-shadow blur. The border can stay static, sweep halfway around, or cycle fully around the perimeter. Driven by CSS animation.",
+ "use_when": "A hero card or high-impact CTA that should stand out with that cyberpunk neon aesthetic.",
+ "avoid_when": "Delicate or minimal designs where the bright glow would feel out of place.",
+ "a11y": "Wrapper only; no interactive elements or focus handling.",
+ "props": [
+  {
+   "name": "color1",
+   "type": "string",
+   "default": "\"#0496ff\"",
+   "required": false
+  },
+  {
+   "name": "color2",
+   "type": "string",
+   "default": "\"#ff0a54\"",
+   "required": false
+  },
+  {
+   "name": "animationType",
+   "type": "\"none\" | \"half\" | \"full\"",
+   "default": "\"half\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "border"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "primary-cta",
+  "hero"
+ ]
+}

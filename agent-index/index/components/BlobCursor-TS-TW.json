@@ -1,0 +1,168 @@
+{
+ "name": "BlobCursor-TS-TW",
+ "title": "Blob Cursor",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "BlobCursor"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3 colors"
+ ],
+ "usage": "import BlobCursor from \"@/components/ui/BlobCursor\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[480px] w-full overflow-hidden rounded-xl border border-border bg-background\">\n      <BlobCursor\n        fillColor=\"#7c3aed\"\n        trailCount={3}\n        sizes={[50, 110, 65]}\n        innerSizes={[18, 32, 22]}\n        innerColor=\"rgba(255,255,255,0.85)\"\n        opacities={[0.65, 0.55, 0.6]}\n        filterStdDeviation={28}\n        useFilter\n        blobType=\"circle\"\n      />\n      <div className=\"pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3 select-none\">\n        <p className=\"text-2xl font-bold text-foreground\">Move your cursor</p>\n        <p className=\"text-sm text-muted-foreground\">The blob follows your mouse</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/BlobCursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/BlobCursor-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/BlobCursor-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Custom cursor appears as a smooth blob following pointer movement.",
+ "description": "Renders a blob-shaped cursor with trail effect and customizable colors. Uses SVG filters for visual effects and GSAP for smooth animation. Replaces the default cursor.",
+ "use_when": "Premium interactive sites, creative portfolios, or branding-focused UI.",
+ "avoid_when": "Accessibility-focused designs; custom cursor can conflict with user preferences.",
+ "a11y": "Custom cursor may conflict with prefers-cursor setting. No aria attributes.",
+ "props": [
+  {
+   "name": "blobType",
+   "type": "\"circle\" | \"square\"",
+   "default": "'circle'",
+   "required": false
+  },
+  {
+   "name": "fillColor",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "trailCount",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "sizes",
+   "type": "number[]",
+   "default": "[60, 125, 75]",
+   "required": false
+  },
+  {
+   "name": "innerSizes",
+   "type": "number[]",
+   "default": "[20, 35, 25]",
+   "required": false
+  },
+  {
+   "name": "innerColor",
+   "type": "string",
+   "default": "'rgba(255,255,255,0.8)'",
+   "required": false
+  },
+  {
+   "name": "opacities",
+   "type": "number[]",
+   "default": "[0.6, 0.6, 0.6]",
+   "required": false
+  },
+  {
+   "name": "shadowColor",
+   "type": "string",
+   "default": "'rgba(0,0,0,0.75)'",
+   "required": false
+  },
+  {
+   "name": "shadowBlur",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "shadowOffsetX",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "shadowOffsetY",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "filterId",
+   "type": "string",
+   "default": "'blob'",
+   "required": false
+  },
+  {
+   "name": "filterStdDeviation",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "filterColorMatrixValues",
+   "type": "string",
+   "default": "'1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 35 -10'",
+   "required": false
+  },
+  {
+   "name": "useFilter",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fastDuration",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "slowDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "fastEase",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "slowEase",
+   "type": "string",
+   "default": "'power1.out'",
+   "required": false
+  },
+  {
+   "name": "zIndex",
+   "type": "number",
+   "default": "100",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

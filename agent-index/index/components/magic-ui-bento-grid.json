@@ -1,0 +1,78 @@
+{
+ "name": "magic-ui-bento-grid",
+ "title": "Bento Grid",
+ "category": "cards",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "BentoCard",
+  "BentoGrid"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-icons"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "6 colors"
+ ],
+ "usage": "import { BentoCard, BentoGrid } from \"@/components/ui/bento-grid\";\nimport { BellIcon, Share2Icon, FileTextIcon, GlobeIcon } from \"lucide-react\";\n\nconst features = [\n  {\n    Icon: FileTextIcon,\n    name: \"Save your files\",\n    description: \"We automatically save your files as you type.\",\n    href: \"#\",\n    cta: \"Learn more\",\n    background: (\n      <div className=\"absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900\" />\n    ),\n    className: \"lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3\",\n  },\n  {\n    Icon: Share2Icon,\n    name: \"Integrations\",\n    description: \"Supports 100+ integrations and counting.\",\n    href: \"#\",\n    cta: \"Learn more\",\n    background: (\n      <div className=\"absolute inset-0 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900\" />\n    ),\n    className: \"lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3\",\n  },\n  {\n    Icon: GlobeIcon,\n    name: \"Multilingual\",\n    description: \"Supports 100+ languages and counting.\",\n    href: \"#\",\n    cta: \"Learn more\",\n    background: (\n      <div className=\"absolute inset-0 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900\" />\n    ),\n    className: \"lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4\",\n  },\n  {\n    Icon: BellIcon,\n    name: \"Notifications\",\n    description: \"Get notified when something happens.\",\n    href: \"#\",\n    cta: \"Learn more\",\n    background: (\n      <div className=\"absolute inset-0 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900\" />\n    ),\n    className: \"lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl p-4\">\n      <BentoGrid>\n        {features.map((feature) => (\n          <BentoCard key={feature.name} {...feature} />\n        ))}\n      </BentoGrid>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/bento-grid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/magic-ui-bento-grid.json",
+ "preview": "https://stashui.vercel.app/c/magic-ui-bento-grid",
+ "dupe_group": "bentogrid",
+ "alternatives": [
+  {
+   "name": "inspira-bento-grid",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 19
+  },
+  {
+   "name": "bento-grid",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 8
+  }
+ ],
+ "blurb": "Responsive bento grid with icon cards and animated hover reveals.",
+ "description": "A 3-column auto-row grid (BentoGrid) containing cards (BentoCard) with icons, names, descriptions, backgrounds, and CTA links. Cards animate on hover.",
+ "use_when": "Feature showcases or capability matrices where bento asymmetry and icon-led design organize and prioritize information.",
+ "avoid_when": "Content-light designs where bento complexity is unnecessary or where variable card heights could create usability…",
+ "a11y": "Cards are semantic containers with heading hierarchy. Icons pair with text. CTA links are keyboard accessible.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "section-background",
+  "hero"
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "name": "inspira-glare-card",
+ "title": "Glare Card",
+ "category": "cards",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "GlareCard"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 20,
+ "flags": [
+  "3d",
+  "pure",
+  "20 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { GlareCard } from \"@/components/ui/glare-card\";\n\nexport default function GlareCardDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-12 bg-neutral-950 min-h-[500px]\">\n      <GlareCard>\n        <div className=\"flex flex-col items-center justify-center h-full gap-4 p-8\">\n          <div className=\"w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500\" />\n          <h3 className=\"text-white text-xl font-bold\">Glare Card</h3>\n          <p className=\"text-neutral-400 text-sm text-center\">\n            Move your cursor over the card to see the holographic glare effect.\n          </p>\n        </div>\n      </GlareCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/glare-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-glare-card.json",
+ "preview": "https://stashui.vercel.app/c/inspira-glare-card",
+ "dupe_group": "glarecard",
+ "alternatives": [
+  {
+   "name": "glare-card",
+   "origin": "Aceternity UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 18
+  }
+ ],
+ "blurb": "3D card with pointer-tracked glare and background shift.",
+ "description": "A card with state-driven pointer tracking that updates glare position, background shifts, and 3D rotation. CSS variables drive the visual transformation.",
+ "use_when": "Premium, interactive cards or hero showcases where 3D depth and glare effects create tactile, high-end aesthetics.",
+ "avoid_when": "Touch-only interfaces where pointer tracking won't work or low-motion contexts where 3D rotations should be disabled.",
+ "a11y": "Card is a container; children are independent. 3D effects and pointer tracking are visual embellishment. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative isolate aspect-[17/21] w-[320px] transition-transf",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "decoration"
+ ]
+}

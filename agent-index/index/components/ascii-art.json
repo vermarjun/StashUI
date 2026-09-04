@@ -1,0 +1,64 @@
+{
+ "name": "ascii-art",
+ "title": "ASCII Art Renderer",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "AsciiArt",
+  "AsciiArtStatic"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "canvas",
+  "motion",
+  "11 colors"
+ ],
+ "usage": "\"use client\";\nimport { AsciiArt } from \"@/components/ui/ascii-art\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center gap-8 bg-background p-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <AsciiArt\n          src=\"https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=600&auto=format&fit=crop\"\n          resolution={80}\n          charset=\"standard\"\n          color=\"var(--foreground)\"\n          backgroundColor=\"transparent\"\n          animated={true}\n          animationStyle=\"matrix\"\n          animateOnView={true}\n          objectFit=\"cover\"\n          className=\"w-[340px] h-[220px]\"\n        />\n        <span className=\"text-xs text-muted-foreground\">matrix reveal</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <AsciiArt\n          src=\"https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=600&auto=format&fit=crop\"\n          resolution={60}\n          charset=\"blocks\"\n          colored={true}\n          backgroundColor=\"transparent\"\n          animated={true}\n          animationStyle=\"fade\"\n          animationDuration={1.5}\n          animateOnView={true}\n          objectFit=\"cover\"\n          className=\"w-[340px] h-[220px]\"\n        />\n        <span className=\"text-xs text-muted-foreground\">colored blocks</span>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/ascii-art.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ascii-art.json",
+ "preview": "https://stashui.vercel.app/c/ascii-art",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Renders an image as stylized ASCII or Unicode characters.",
+ "description": "Converts an image to ASCII art using various character sets (blocks, symbols, braille, etc.). Dynamically computes character based on pixel brightness.",
+ "use_when": "Retro aesthetics, terminal-style interfaces, or artistic text overlays.",
+ "avoid_when": "Accessibility-critical content (ASCII may obscure meaning); small images (poor resolution).",
+ "a11y": "ASCII text output; screen readers will read character sequences literally.",
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "text"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "decoration"
+ ]
+}

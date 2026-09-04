@@ -1,0 +1,86 @@
+{
+ "name": "cool-mode",
+ "title": "Cool Mode",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "CoolMode"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { CoolMode } from \"@/components/ui/cool-mode\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 min-h-[260px]\">\n      <p className=\"text-muted-foreground text-sm select-none\">\n        Click &amp; hold — then drag to spray particles\n      </p>\n      <div className=\"flex gap-4\">\n        <CoolMode>\n          <button className=\"rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow transition hover:opacity-90 active:scale-95\">\n            Cool Mode ✨\n          </button>\n        </CoolMode>\n        <CoolMode options={{ particle: \"⭐\", size: 20 }}>\n          <button className=\"rounded-lg border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-muted active:scale-95\">\n            Stars 🌟\n          </button>\n        </CoolMode>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/cool-mode.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/cool-mode.json",
+ "preview": "https://stashui.vercel.app/c/cool-mode",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Particles spawn and drift away when clicking or hovering.",
+ "description": "Attaches particle emitter to DOM elements. Particles spawn on click/hover, drift upward with horizontal sway, and rotate. Uses SVG or custom particles.",
+ "use_when": "Interactive celebrations, playful CTAs, or engagement-focused UI.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion); performance-critical (particle overhead).",
+ "a11y": "Particle overlay; decorative only. Does not affect interaction.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "particle",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "speedHorz",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "speedUp",
+   "type": "number",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "decoration"
+ ]
+}

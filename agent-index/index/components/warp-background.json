@@ -1,0 +1,65 @@
+{
+ "name": "warp-background",
+ "title": "Warp Background",
+ "category": "backgrounds",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "WarpBackground"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "3d",
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { WarpBackground } from \"@/components/ui/warp-background\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden flex items-center justify-center bg-background\">\n      <WarpBackground className=\"flex items-center justify-center\">\n        <div className=\"text-center px-8 py-6\">\n          <p className=\"text-muted-foreground text-sm font-medium tracking-widest uppercase mb-2\">\n            Warp Background\n          </p>\n          <h2 className=\"text-2xl font-bold text-foreground\">\n            Perspective Grid\n          </h2>\n        </div>\n      </WarpBackground>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/warp-background.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/warp-background.json",
+ "preview": "https://stashui.vercel.app/c/warp-background",
+ "dupe_group": "warpbackground",
+ "alternatives": [
+  {
+   "name": "inspira-warp-background",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 3
+  }
+ ],
+ "blurb": "Warping tunnel effect zooms through colored planes.",
+ "description": "WebGL or canvas-based tunnel/warp animation; uses perspective transforms and color shifts.",
+ "use_when": "Immersive hero sections, transition screens, or sci-fi themed backgrounds.",
+ "avoid_when": "Vestibular-sensitive users; motion sickness risk. Browsers without WebGL.",
+ "a11y": "Decorative background. No motion guard.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`absolute top-0 left-(--x) aspect-[1/var(--aspect-ratio)] w",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

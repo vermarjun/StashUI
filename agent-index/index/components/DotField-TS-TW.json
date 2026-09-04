@@ -1,0 +1,122 @@
+{
+ "name": "DotField-TS-TW",
+ "title": "Dot Field",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "DotField"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/DotField\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"600px\" }}>\n      <Cmp\n        dotRadius={1.5}\n        dotSpacing={14}\n        cursorRadius={500}\n        bulgeOnly={true}\n        bulgeStrength={67}\n        glowRadius={160}\n        waveAmplitude={4}\n        gradientFrom=\"rgba(168, 85, 247, 0.35)\"\n        gradientTo=\"rgba(180, 151, 207, 0.25)\"\n        glowColor=\"#120F17\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/DotField.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/DotField-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/DotField-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Grid of dots that bulge and deflect under cursor proximity.",
+ "description": "Canvas-rendered particle field with mouse tracking. Dots respond to cursor movement with configurable bulge or push behavior. Includes gradient background, glow effect, optional wave animation, and sparkle effect.",
+ "use_when": "Interactive background where subtle cursor feedback adds engagement without overwhelming the content.",
+ "avoid_when": "Touch-only surfaces where mouse tracking doesn't apply, or when animation should be static.",
+ "a11y": "Mouse-interactive; no keyboard control or semantic content. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "dotRadius",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "dotSpacing",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "cursorRadius",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "cursorForce",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "bulgeOnly",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "bulgeStrength",
+   "type": "number",
+   "default": "67",
+   "required": false
+  },
+  {
+   "name": "glowRadius",
+   "type": "number",
+   "default": "160",
+   "required": false
+  },
+  {
+   "name": "sparkle",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "waveAmplitude",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "gradientFrom",
+   "type": "string",
+   "default": "'rgba(168, 85, 247, 0.35)'",
+   "required": false
+  },
+  {
+   "name": "gradientTo",
+   "type": "string",
+   "default": "'rgba(180, 151, 207, 0.25)'",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

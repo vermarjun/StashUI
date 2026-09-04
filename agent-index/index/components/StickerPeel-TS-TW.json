@@ -1,0 +1,124 @@
+{
+ "name": "StickerPeel-TS-TW",
+ "title": "Sticker Peel Effect",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "StickerPeel"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "1 colors"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/StickerPeel\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full flex items-center justify-center overflow-hidden\">\n      <Cmp\n        imageSrc=\"https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=300&h=300&fit=crop&auto=format\"\n        width={200}\n        rotate={15}\n        peelBackHoverPct={30}\n        peelBackActivePct={45}\n        initialPosition=\"center\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/StickerPeel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/StickerPeel-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/StickerPeel-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Draggable sticker with a corner peel effect on hover.",
+ "description": "Renders an image with a 3D peel-up corner effect that responds to hover and drag. Uses GSAP for animations and SVG filters for lighting and shadow.",
+ "use_when": "Interactive product showcases, promotional stickers, or playful UI elements that benefit from tactile feel.",
+ "avoid_when": "Dense layouts (stickers are large and draggable); low-contrast scenarios where shadow depth is critical.",
+ "a11y": "Draggable sticker; keyboard interaction depends on GSAP Draggable support. No built-in reduced-motion handling.",
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "rotate",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "peelBackHoverPct",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "peelBackActivePct",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "peelEasing",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "peelHoverEasing",
+   "type": "string",
+   "default": "'power2.out'",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "shadowIntensity",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "lightingIntensity",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "initialPosition",
+   "type": "string | object",
+   "default": "'center'",
+   "required": false
+  },
+  {
+   "name": "peelDirection",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "shadow"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "feature-card",
+  "hero"
+ ]
+}

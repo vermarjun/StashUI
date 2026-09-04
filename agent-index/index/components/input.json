@@ -1,0 +1,49 @@
+{
+ "name": "input",
+ "title": "Radial Glow Input",
+ "category": "inputs",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "Input"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 10,
+ "flags": [
+  "motion",
+  "10 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-6 p-8\">\n      <div className=\"w-full max-w-sm space-y-2\">\n        <label className=\"text-sm font-medium text-neutral-700 dark:text-neutral-200\">\n          Email\n        </label>\n        <Input\n          type=\"email\"\n          placeholder=\"you@example.com\"\n        />\n      </div>\n      <div className=\"w-full max-w-sm space-y-2\">\n        <label className=\"text-sm font-medium text-neutral-700 dark:text-neutral-200\">\n          Full Name\n        </label>\n        <Input\n          type=\"text\"\n          placeholder=\"John Doe\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/input.json",
+ "preview": "https://stashui.vercel.app/c/input",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Input field with a glowing radial gradient that follows the mouse cursor.",
+ "description": "An input component wrapped in a motion.div that renders a radial gradient glow centered at the cursor position on hover, tracking mouse movement with Framer Motion.",
+ "use_when": "Creating premium forms where cursor-following effects enhance visual feedback and interactivity.",
+ "avoid_when": "On touch devices or when motion should be minimal.",
+ "a11y": "Standard input accessibility applies; the glow effect is purely visual and does not interfere with interaction.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

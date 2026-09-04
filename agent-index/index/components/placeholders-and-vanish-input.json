@@ -1,0 +1,71 @@
+{
+ "name": "placeholders-and-vanish-input",
+ "title": "Vanish Placeholder Input",
+ "category": "inputs",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "PlaceholdersAndVanishInput"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 14,
+ "flags": [
+  "canvas",
+  "motion",
+  "14 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { PlaceholdersAndVanishInput } from \"@/components/ui/placeholders-and-vanish-input\";\n\nexport default function Demo() {\n  const placeholders = [\n    \"What's on your mind today?\",\n    \"Search for anything...\",\n    \"Ask me a question\",\n    \"Type something creative\",\n    \"How can I help you?\",\n  ];\n\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    // handle input change\n  };\n\n  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    // handle form submit\n  };\n\n  return (\n    <div className=\"w-full max-w-xl mx-auto flex flex-col items-center justify-center py-16 gap-4\">\n      <h2 className=\"text-xl font-semibold text-neutral-800 dark:text-neutral-200 mb-4\">\n        Ask anything\n      </h2>\n      <PlaceholdersAndVanishInput\n        placeholders={placeholders}\n        onChange={handleChange}\n        onSubmit={onSubmit}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/placeholders-and-vanish-input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/placeholders-and-vanish-input.json",
+ "preview": "https://stashui.vercel.app/c/placeholders-and-vanish-input",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Input with rotating placeholder text and a canvas particle dissolve animation…",
+ "description": "An input field with cycling placeholder suggestions that change every 3 seconds, and a canvas-based particle animation when submitted that dissolves the text into vanishing particles.",
+ "use_when": "Creating interactive prompt or search interfaces where animated text effects and placeholder cycling enhance engagement.",
+ "avoid_when": "On devices where canvas animations impact performance or when prefers-reduced-motion compliance is needed.",
+ "a11y": "Input is semantic, submit button is disabled when empty, but the particle animation does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "placeholders",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(e: React.ChangeEvent<HTMLInputElement>) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onSubmit",
+   "type": "(e: React.FormEvent<HTMLFormElement>) => void",
+   "default": "{handleSubmit}",
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field",
+  "form-submit"
+ ]
+}

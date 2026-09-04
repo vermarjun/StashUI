@@ -1,0 +1,85 @@
+{
+ "name": "inspira-confetti",
+ "title": "Confetti",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Confetti",
+  "ConfettiButton"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { ConfettiButton } from \"@/components/ui/confetti\";\n\nexport default function ConfettiDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-6 p-8\">\n      <p className=\"text-muted-foreground text-sm\">Click the button to fire confetti</p>\n      <ConfettiButton\n        className=\"rounded-lg bg-primary px-6 py-3 text-primary-foreground font-semibold hover:bg-primary/90 transition-colors\"\n        options={{\n          particleCount: 100,\n          spread: 80,\n          colors: [\"#6366f1\", \"#ec4899\", \"#f59e0b\", \"#10b981\"],\n        }}\n      >\n        🎉 Celebrate!\n      </ConfettiButton>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/confetti.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-confetti.json",
+ "preview": "https://stashui.vercel.app/c/inspira-confetti",
+ "dupe_group": "confetti",
+ "alternatives": [
+  {
+   "name": "confetti",
+   "origin": "Magic UI",
+   "npm_deps": 2,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Canvas confetti animation triggered programmatically or on click.",
+ "description": "Wrapper component using canvas-confetti library that renders particles in configurable patterns. Includes ConfettiButton for immediate click-triggered celebrations.",
+ "use_when": "Success screens, form submissions, celebrations, or moments needing celebratory feedback.",
+ "avoid_when": "Animations that must respect prefers-reduced-motion, or high-frequency particle calls.",
+ "a11y": "Canvas-rendered animation; semantic content via children prop. Button variant is keyboard-accessible.",
+ "props": [
+  {
+   "name": "options",
+   "type": "ConfettiOptions",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "globalOptions",
+   "type": "ConfettiGlobalOptions",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "manualstart",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "modal"
+ ]
+}

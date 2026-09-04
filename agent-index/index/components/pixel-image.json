@@ -1,0 +1,88 @@
+{
+ "name": "pixel-image",
+ "title": "Pixel Image",
+ "category": "media",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "PixelImage"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { PixelImage } from \"@/components/ui/pixel-image\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <PixelImage\n        src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop&auto=format\"\n        grid=\"6x4\"\n        grayscaleAnimation={true}\n        pixelFadeInDuration={900}\n        maxAnimationDelay={1100}\n        colorRevealDelay={1200}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/pixel-image.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pixel-image.json",
+ "preview": "https://stashui.vercel.app/c/pixel-image",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image animates as pixelated grid fading in with color reveal.",
+ "description": "Renders an image as a pixelated grid with staggered fade-in animation. Pixels appear in grayscale then reveal color, with configurable preset (6x4, 8x8, etc.) or custom grid sizes.",
+ "use_when": "Hero sections, loading sequences, or artistic galleries showcasing images with unique pixelation reveal effects.",
+ "avoid_when": "When image details must be visible immediately; animation delay obscures content during the reveal phase.",
+ "a11y": "Image element with alt text support; decorative animations are non-essential and don't interfere with content.",
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{src}",
+   "required": true
+  },
+  {
+   "name": "grid",
+   "type": "\"6x4\" | \"8x8\" | \"8x3\" | \"4x6\" | \"3x8\"",
+   "default": "\"6x4\"",
+   "required": false
+  },
+  {
+   "name": "customGrid",
+   "type": "Grid | undefined",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "grayscaleAnimation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "pixelFadeInDuration",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "maxAnimationDelay",
+   "type": "number",
+   "default": "1200",
+   "required": false
+  },
+  {
+   "name": "colorRevealDelay",
+   "type": "number",
+   "default": "1300",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media"
+ ]
+}

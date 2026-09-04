@@ -1,0 +1,59 @@
+{
+ "name": "expandable-gallery",
+ "title": "Expandable Gallery",
+ "category": "media",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ExpandableGallery"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { ExpandableGallery } from \"@/components/ui/expandable-gallery\";\n\nconst IMAGES = [\n  \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80\",\n  \"https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80\",\n  \"https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&q=80\",\n  \"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80\",\n  \"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&q=80\",\n];\n\nexport default function ExpandableGalleryDemo() {\n  return (\n    <div className=\"w-full p-8\">\n      <p className=\"mb-4 text-sm text-muted-foreground\">Hover over a panel to expand it</p>\n      <ExpandableGallery images={IMAGES} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/expandable-gallery.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/expandable-gallery.json",
+ "preview": "https://stashui.vercel.app/c/expandable-gallery",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image gallery where panels expand on hover to fill available space.",
+ "description": "Renders images in equal-width flex columns. Hovering a panel expands it (3x width) while others shrink. Smooth transition-all animation.",
+ "use_when": "Image galleries where hover reveals detail without leaving the page.",
+ "avoid_when": "Mobile or touch-only interfaces. Requires hover to interact.",
+ "a11y": "Images have src alt attributes. No keyboard alternative to hover expansion.",
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative flex h-full flex-1 cursor-pointer overflow-hidden ",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

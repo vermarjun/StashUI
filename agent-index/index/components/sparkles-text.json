@@ -1,0 +1,70 @@
+{
+ "name": "sparkles-text",
+ "title": "Sparkles Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "SparklesText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\nimport { SparklesText } from \"@/components/ui/sparkles-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-12\">\n      <SparklesText className=\"text-foreground\">\n        Magic Sparkles\n      </SparklesText>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/sparkles-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/sparkles-text.json",
+ "preview": "https://stashui.vercel.app/c/sparkles-text",
+ "dupe_group": "sparklestext",
+ "alternatives": [
+  {
+   "name": "inspira-sparkles-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 2
+  }
+ ],
+ "blurb": "Text twinkles with randomly placed sparkling points.",
+ "description": "Overlay of animated spark particles or shine bursts that appear at random positions around text.",
+ "use_when": "Premium or magical-feeling content.",
+ "avoid_when": "High-contrast or accessibility-critical text — sparkles reduce readability.",
+ "a11y": "Purely decorative. Text is readable but animation is uncontrolled.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "count",
+   "type": "number",
+   "default": "5",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "name": "vote-tally",
+ "title": "Vote Tally",
+ "category": "data-display",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "VoteTally",
+  "VoteTallyRoot",
+  "VoteTallyGroup",
+  "VoteTallyItem",
+  "VoteTallyTrigger",
+  "VoteTallyCount",
+  "VoteTallyTitle",
+  "VoteTallyDescription"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-use-controllable-state"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { VoteTally } from \"@/components/ui/vote-tally\"\n\nconst items = [\n  {\n    id: \"typescript\",\n    title: \"TypeScript Support\",\n    description: \"Full TypeScript type safety and autocompletion.\",\n    initialVotes: 87,\n  },\n  {\n    id: \"testing\",\n    title: \"Automated Testing\",\n    description: \"Built-in testing utilities and CI/CD integration.\",\n    initialVotes: 54,\n  },\n  {\n    id: \"docs\",\n    title: \"Better Documentation\",\n    description: \"Comprehensive guides and API reference docs.\",\n    initialVotes: 72,\n  },\n  {\n    id: \"plugins\",\n    title: \"Plugin System\",\n    description: \"Extensible architecture with community plugins.\",\n    initialVotes: 43,\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-lg p-4\">\n      <h2 className=\"text-xl font-bold mb-4\">Community Requests</h2>\n      <VoteTally.Root\n        defaultValue={{\n          typescript: 87,\n          testing: 54,\n          docs: 72,\n          plugins: 43,\n        }}\n        className=\"flex flex-col gap-2\"\n      >\n        {items.map((item) => (\n          <VoteTally.Item\n            key={item.id}\n            value={item.id}\n            className=\"flex items-center gap-3 rounded-lg border p-3 hover:bg-accent/50 transition-colors\"\n          >\n            <VoteTally.Trigger className=\"flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-background hover:bg-primary hover:text-primary-foreground transition-colors data-[state=voted]:bg-primary data-[state=voted]:text-primary-foreground flex-col gap-0.5\">\n              <span className=\"text-xs\">▲</span>\n              <VoteTally.Count className=\"text-xs font-medium\" />\n            </VoteTally.Trigger>\n            <div className=\"flex flex-col\">\n              <VoteTally.Title className=\"font-medium text-sm\">{item.title}</VoteTally.Title>\n              <VoteTally.Description className=\"text-xs text-muted-foreground\">{item.description}</VoteTally.Description>\n            </div>\n          </VoteTally.Item>\n        ))}\n      </VoteTally.Root>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/vote-tally.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/vote-tally.json",
+ "preview": "https://stashui.vercel.app/c/vote-tally",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Voting widget where users upvote items to show preference or demand.",
+ "description": "Tracks vote counts and which items the user has voted for. Supports controlled and uncontrolled modes. Items can be disabled globally or individually. Context-driven sub-components render count, title, and description.",
+ "use_when": "Feature requests, community polls, or priority voting on multi-item lists.",
+ "avoid_when": "Downvoting or rated (5-star) systems; this is upvote-only.",
+ "a11y": "Root is a ul; items are li. Trigger buttons and text elements have no aria labels; depends on container text for context.",
+ "props": [
+  {
+   "name": "value",
+   "type": "Record<string, number>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "Record<string, number>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: Record<string, number>) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "votedItems",
+   "type": "Set<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultVotedItems",
+   "type": "Set<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onVotedItemsChange",
+   "type": "(votedItems: Set<string>) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "children"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "form-field"
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "name": "media-modal",
+ "title": "Media Modal",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "MediaModal"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 13,
+ "flags": [
+  "motion",
+  "13 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { MediaModal } from \"@/components/ui/media-modal\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center p-6\">\n      <div className=\"w-72 h-52 rounded-xl overflow-hidden\">\n        <MediaModal\n          imgSrc=\"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/media-modal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/media-modal.json",
+ "preview": "https://stashui.vercel.app/c/media-modal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Image or video expands to fullscreen with backdrop blur and smooth zoom.",
+ "description": "A clickable image or video container that animates to fill the viewport on activation. Uses layout animation (Framer Motion) to morph the trigger into a centered fullscreen modal. Supports both static images and looping videos with…",
+ "use_when": "You want to let users zoom into photos or watch videos without leaving the page.",
+ "avoid_when": "You need a pre-sized container — this responds to its parent and collapses without one.",
+ "a11y": "Escape key closes. Backdrop click closes. ARIA label on close button for videos. No focus management beyond that.",
+ "props": [
+  {
+   "name": "imgSrc",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "videoSrc",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "'w-full h-full flex relative flex-col overflow-hidden border",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "modal",
+  "media"
+ ]
+}

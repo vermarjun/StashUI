@@ -1,0 +1,90 @@
+{
+ "name": "horizontal-progressive-carousel",
+ "title": "Horizontal Progress Carousel",
+ "category": "carousels",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "ProgressSlider",
+  "SliderContent",
+  "SliderWrapper",
+  "SliderBtnGroup",
+  "SliderBtn"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\nimport {\n  ProgressSlider,\n  SliderBtn,\n  SliderBtnGroup,\n  SliderContent,\n  SliderWrapper,\n} from '@/components/ui/progressive-carousel';\nimport React from 'react';\n\nconst SLIDES = [\n  {\n    value: 'slide-1',\n    img: 'https://picsum.photos/seed/pc1/900/500',\n    label: 'Mountain Vista',\n    sub: 'Snow-capped peaks at golden hour',\n  },\n  {\n    value: 'slide-2',\n    img: 'https://picsum.photos/seed/pc2/900/500',\n    label: 'Ocean Breeze',\n    sub: 'Endless horizon over turquoise water',\n  },\n  {\n    value: 'slide-3',\n    img: 'https://picsum.photos/seed/pc3/900/500',\n    label: 'Forest Path',\n    sub: 'Ancient trees filtered in morning light',\n  },\n  {\n    value: 'slide-4',\n    img: 'https://picsum.photos/seed/pc4/900/500',\n    label: 'Desert Dunes',\n    sub: 'Rolling sand at twilight',\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className='w-full max-w-4xl mx-auto px-4 py-6'>\n      <ProgressSlider activeSlider='slide-1' duration={4000} className='flex flex-col gap-4'>\n        {/* Main image display */}\n        <SliderContent className='relative w-full overflow-hidden rounded-xl aspect-video bg-muted'>\n          {SLIDES.map((s) => (\n            <SliderWrapper key={s.value} value={s.value} className='absolute inset-0'>\n              <img\n                src={s.img}\n                alt={s.label}\n                className='w-full h-full object-cover'\n              />\n              <div className='absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent text-white'>\n                <p className='text-lg font-semibold'>{s.label}</p>\n                <p className='text-sm opacity-80'>{s.sub}</p>\n              </div>\n            </SliderWrapper>\n          ))}\n        </SliderContent>\n\n        {/* Navigation buttons with progress bars */}\n        <SliderBtnGroup className='flex gap-2 w-full'>\n          {SLIDES.map((s) => (\n            <SliderBtn\n              key={s.value}\n              value={s.value}\n              className='flex-1 h-1 rounded-full bg-muted-foreground/20 cursor-pointer'\n              progressBarClass='h-full bg-foreground rounded-full top-0'\n            />\n          ))}\n        </SliderBtnGroup>\n      </ProgressSlider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/progressive-carousel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/horizontal-progressive-carousel.json",
+ "preview": "https://stashui.vercel.app/c/horizontal-progressive-carousel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Auto-advancing carousel with per-slide progress bars for visual time tracking.",
+ "description": "Carousel with progress indicators under each navigation button showing time remaining before auto-advance. Supports fast-forward animation when manually clicking buttons. Configurable duration and supports vertical layout.",
+ "use_when": "Slideshows or galleries where users want to see progress and auto-advance timing.",
+ "avoid_when": "When explicit pause control is needed; auto-advance is always active.",
+ "a11y": "Navigation buttons are clickable; progress bars are visual only.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "fastDuration",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "vertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "activeSlider",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('', className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

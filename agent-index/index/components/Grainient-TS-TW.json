@@ -1,0 +1,188 @@
+{
+ "name": "Grainient-TS-TW",
+ "title": "Grainient",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Grainient"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "webgl",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Grainient from \"@/components/ui/Grainient\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[600px] rounded-lg overflow-hidden\">\n      <Grainient\n        color1=\"#FF9FFC\"\n        color2=\"#5227FF\"\n        color3=\"#B497CF\"\n        timeSpeed={0.25}\n        grainAmount={0.08}\n        warpStrength={1.0}\n        zoom={0.9}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Grainient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Grainient-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Grainient-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated textured gradient with warping, rotation, and film grain.",
+ "description": "WebGL shader combining gradient colors with procedural noise, grain texture, and warp distortion. Supports customizable blend angles, rotation, and gamma correction. Optional animated grain.",
+ "use_when": "Artistic backgrounds where texture and grain add vintage or organic character to gradients.",
+ "avoid_when": "Minimal or clean designs where grain would add unwanted visual noise.",
+ "a11y": "WebGL canvas with no interactive elements. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "timeSpeed",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "colorBalance",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "warpStrength",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "warpFrequency",
+   "type": "number",
+   "default": "5.0",
+   "required": false
+  },
+  {
+   "name": "warpSpeed",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "warpAmplitude",
+   "type": "number",
+   "default": "50.0",
+   "required": false
+  },
+  {
+   "name": "blendAngle",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "blendSoftness",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "rotationAmount",
+   "type": "number",
+   "default": "500.0",
+   "required": false
+  },
+  {
+   "name": "noiseScale",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "grainAmount",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "grainScale",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "grainAnimated",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "contrast",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "gamma",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "centerX",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "centerY",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "zoom",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "color1",
+   "type": "string",
+   "default": "'#FF9FFC'",
+   "required": false
+  },
+  {
+   "name": "color2",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "color3",
+   "type": "string",
+   "default": "'#B497CF'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

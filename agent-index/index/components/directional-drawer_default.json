@@ -1,0 +1,52 @@
+{
+ "name": "directional-drawer_default",
+ "title": "Directional Drawer Default",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "DirectionalDrawer",
+  "DrawerContent",
+  "DrawerTrigger"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\nimport {\n  DirectionalDrawer,\n  DrawerContent,\n  DrawerTrigger,\n} from \"@/components/ui/directional-drawer\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] bg-background\">\n      <DirectionalDrawer direction=\"left\" outsideClose={true}>\n        <DrawerTrigger>\n          <button className=\"px-6 py-3 rounded-md bg-foreground text-background font-medium hover:opacity-90 transition-opacity\">\n            Open Drawer\n          </button>\n        </DrawerTrigger>\n        <DrawerContent className=\"p-8 pt-12 flex flex-col gap-6 h-full\">\n          <div>\n            <h2 className=\"text-xl font-semibold mb-1\">Navigation</h2>\n            <p className=\"text-sm text-muted-foreground\">\n              Slide-in panel from the left side of the screen.\n            </p>\n          </div>\n          <nav className=\"flex flex-col gap-2\">\n            {[\"Dashboard\", \"Projects\", \"Settings\", \"Profile\"].map((item) => (\n              <a\n                key={item}\n                href=\"#\"\n                className=\"px-4 py-2 rounded-md hover:bg-muted text-sm font-medium transition-colors\"\n              >\n                {item}\n              </a>\n            ))}\n          </nav>\n          <div className=\"mt-auto\">\n            <button className=\"w-full px-4 py-2 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity\">\n              Get Started\n            </button>\n          </div>\n        </DrawerContent>\n      </DirectionalDrawer>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/directional-drawer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/directional-drawer_default.json",
+ "preview": "https://stashui.vercel.app/c/directional-drawer_default",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Left-side drawer preset with responsive mobile/desktop behavior.",
+ "description": "A DirectionalDrawer variant pre-configured for left-side navigation with dismissible overlay on mobile; uses the directional-drawer component.",
+ "use_when": "Quick left-side drawer without needing to customize the direction.",
+ "avoid_when": "When you need to change direction — use directional-drawer with the direction prop instead.",
+ "a11y": "Dismissible on mobile; full keyboard and touch support; backdrop click closes drawer.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal",
+  "sidebar"
+ ]
+}

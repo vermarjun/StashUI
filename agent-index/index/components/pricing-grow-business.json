@@ -1,0 +1,85 @@
+{
+ "name": "pricing-grow-business",
+ "title": "Pricing Grow Business",
+ "category": "pricing",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "TimelineAnimation"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\nimport { useRef } from 'react';\nimport { TimelineAnimation } from '@/components/ui/timeline-animation';\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div ref={containerRef} className=\"w-full max-w-lg mx-auto p-8 space-y-6\">\n      <TimelineAnimation animationNum={0} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 1: Discovery\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={1} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We begin by understanding your goals, audience, and competitive landscape to shape a winning strategy.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={2} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 2: Design\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={3} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        Our designers craft beautiful, user-centered interfaces that reflect your brand identity.\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={4} timelineRef={containerRef} className=\"text-2xl font-bold\">\n        Step 3: Launch\n      </TimelineAnimation>\n      <TimelineAnimation animationNum={5} timelineRef={containerRef} className=\"text-lg text-gray-600\">\n        We deploy, monitor, and iterate to ensure your product exceeds expectations from day one.\n      </TimelineAnimation>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/timeline-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pricing-grow-business.json",
+ "preview": "https://stashui.vercel.app/c/pricing-grow-business",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated timeline component that sequences child animations on scroll into view.",
+ "description": "TimelineAnimation component using motion and useInView to animate children in sequence with blur-in effect. Supports custom animation timing, customVariants, and once-per-scroll triggering.",
+ "use_when": "You need to animate a sequence of content blocks as they enter the viewport.",
+ "avoid_when": "For always-visible content; this is for scroll-triggered animations.",
+ "a11y": "Animation respects prefers-reduced-motion via motion library. Content remains accessible without animation.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationNum",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "timelineRef",
+   "type": "React.RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "customVariants",
+   "type": "Variants",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "feature-card"
+ ]
+}

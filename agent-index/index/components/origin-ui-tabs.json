@@ -1,0 +1,58 @@
+{
+ "name": "origin-ui-tabs",
+ "title": "Tabs",
+ "category": "navigation",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Tabs",
+  "TabsContent",
+  "TabsList",
+  "TabsTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\n\nexport default function Demo() {\n  return (\n    <Tabs defaultValue=\"overview\" className=\"w-full max-w-md\">\n      <TabsList>\n        <TabsTrigger value=\"overview\">Overview</TabsTrigger>\n        <TabsTrigger value=\"analytics\">Analytics</TabsTrigger>\n        <TabsTrigger value=\"settings\">Settings</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"overview\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">\n          Overview panel — key metrics at a glance.\n        </p>\n      </TabsContent>\n      <TabsContent value=\"analytics\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">\n          Analytics panel — charts and trends.\n        </p>\n      </TabsContent>\n      <TabsContent value=\"settings\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">\n          Settings panel — configure your preferences.\n        </p>\n      </TabsContent>\n    </Tabs>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/tabs.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/origin-ui-tabs.json",
+ "preview": "https://stashui.vercel.app/c/origin-ui-tabs",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Accessible tab group built on Radix UI primitives with consistent styling.",
+ "description": "Composable wrapper around Radix UI Tabs that exports Tabs, TabsList, TabsTrigger, and TabsContent. Provides keyboard navigation, ARIA attributes, and a neutral styled tab bar with smooth state transitions.",
+ "use_when": "Building accessible tab interfaces that need keyboard navigation (arrow keys, Home/End) and screen reader support…",
+ "avoid_when": "When you need custom animation; the component provides basic styling only. Not suitable for highly styled or animated…",
+ "a11y": "Full keyboard support (arrow keys, Home/End, Enter). ARIA roles and live regions managed by Radix. Proper focus management and screen reader announcements.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"flex flex-col gap-2\", className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "feature-card"
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "name": "blur-fade",
+ "title": "Blur Fade",
+ "category": "effects",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "BlurFade"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "import { BlurFade } from \"@/components/ui/blur-fade\"\n\nconst items = [\n  { delay: 0, text: \"Blur Fade\", sub: false },\n  { delay: 0.1, text: \"Content fades in with a soft blur on mount.\", sub: true },\n  { delay: 0.2, text: \"Each element staggers in independently.\", sub: true },\n  { delay: 0.3, text: \"Powered by Framer Motion.\", sub: true },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3 min-h-[280px] px-6 text-center\">\n      <BlurFade delay={items[0].delay} duration={0.5}>\n        <h2 className=\"text-3xl font-bold tracking-tight text-foreground\">\n          {items[0].text}\n        </h2>\n      </BlurFade>\n\n      {items.slice(1).map((item, i) => (\n        <BlurFade key={i} delay={item.delay} duration={0.45}>\n          <p className=\"text-muted-foreground text-sm max-w-xs\">{item.text}</p>\n        </BlurFade>\n      ))}\n\n      <BlurFade delay={0.45} duration={0.5} direction=\"up\">\n        <div className=\"mt-4 rounded-xl border border-border bg-muted/30 px-8 py-4\">\n          <span className=\"text-xs text-muted-foreground uppercase tracking-widest\">\n            direction: up\n          </span>\n        </div>\n      </BlurFade>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/blur-fade.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/blur-fade.json",
+ "preview": "https://stashui.vercel.app/c/blur-fade",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Elements fade and unblur as they enter the viewport.",
+ "description": "Wraps children in a blur/opacity fade animation triggered on viewport intersection. Customizable direction, duration, blur amount, and trigger.",
+ "use_when": "Scroll-triggered reveals, progressive content loading, or entrance animations.",
+ "avoid_when": "Motion-sensitive users (no prefers-reduced-motion support); fast-scrolling content.",
+ "a11y": "Animation wrapper; motion-based only. Does not affect content accessibility.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "object",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "offset",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "string",
+   "default": "\"down\"",
+   "required": false
+  },
+  {
+   "name": "inView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "inViewMargin",
+   "type": "string",
+   "default": "\"-50px\"",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "string",
+   "default": "\"6px\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "hero",
+  "body-text",
+  "feature-card"
+ ]
+}

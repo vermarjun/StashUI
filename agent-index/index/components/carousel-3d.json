@@ -1,0 +1,80 @@
+{
+ "name": "carousel-3d",
+ "title": "Carousel 3D",
+ "category": "carousels",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "Carousel3D"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "3d",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { Carousel3D } from \"@/components/ui/carousel-3d\";\n\n// A set of placeholder landscape images from picsum.photos\nconst IMAGES = [\n  \"https://picsum.photos/seed/a1/450/600\",\n  \"https://picsum.photos/seed/b2/450/600\",\n  \"https://picsum.photos/seed/c3/450/600\",\n  \"https://picsum.photos/seed/d4/450/600\",\n  \"https://picsum.photos/seed/e5/450/600\",\n  \"https://picsum.photos/seed/f6/450/600\",\n];\n\nexport default function Carousel3DDemo() {\n  return (\n    <div className=\"flex h-screen w-full flex-col items-center justify-center bg-background\">\n      <h2 className=\"mb-4 text-2xl font-bold\">Drag to rotate</h2>\n      <Carousel3D items={IMAGES} width={300} height={400} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/carousel-3d.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/carousel-3d.json",
+ "preview": "https://stashui.vercel.app/c/carousel-3d",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Three.js 3D spherical carousel with drag-to-rotate interaction.",
+ "description": "CSS3DRenderer-powered 3D carousel that arranges items on a sphere with auto-rotation. Supports drag interaction to manually rotate. Loads Three.js dynamically for SSR compatibility.",
+ "use_when": "Immersive product showcases or portfolio galleries requiring true 3D interaction.",
+ "avoid_when": "Low-spec devices or browsers without WebGL; requires a sized parent container.",
+ "a11y": "No keyboard interaction. Drag-only control makes it inaccessible without mouse input.",
+ "props": [
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "450",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-[60vh] w-full\", containerClassName)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "feature-card"
+ ]
+}

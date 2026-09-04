@@ -1,0 +1,87 @@
+{
+ "name": "hover-border-gradient",
+ "title": "Hover Border Gradient",
+ "category": "borders",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "HoverBorderGradient"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "motion",
+  "16 colors"
+ ],
+ "usage": "import { HoverBorderGradient } from \"@/components/ui/hover-border-gradient\";\n\nexport default function Demo() {\n  return <HoverBorderGradient />;\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/hover-border-gradient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hover-border-gradient.json",
+ "preview": "https://stashui.vercel.app/c/hover-border-gradient",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Gradient border rotates around perimeter, flares on hover.",
+ "description": "Wraps children in a border with a continuously rotating gradient that cycles through edges. On hover, the gradient animates to a bright central highlight. Driven by timer and mouse events.",
+ "use_when": "A hero CTA that should stand out with subtle motion that settles on interaction.",
+ "avoid_when": "Dense button groups where animated borders would cause visual chaos.",
+ "a11y": "Wrapper only; focus and keyboard behaviour come from the child. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "React.ElementType",
+   "default": "\"button\"",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "clockwise",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ]
+}

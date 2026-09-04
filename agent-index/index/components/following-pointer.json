@@ -1,0 +1,69 @@
+{
+ "name": "following-pointer",
+ "title": "Custom Cursor Follower",
+ "category": "effects",
+ "origin": "Aceternity UI",
+ "origin_short": "ace",
+ "exports": [
+  "FollowerPointerCard",
+  "FollowPointer"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 11,
+ "flags": [
+  "motion",
+  "11 colors"
+ ],
+ "usage": "import { FollowerPointerCard } from \"@/components/ui/following-pointer\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background p-8\">\n      <FollowerPointerCard\n        title=\"Read more →\"\n        className=\"max-w-sm rounded-2xl border border-border bg-card shadow-md\"\n      >\n        <div className=\"overflow-hidden rounded-t-2xl\">\n          <div className=\"h-44 w-full bg-gradient-to-br from-violet-500 via-sky-400 to-emerald-400\" />\n        </div>\n        <div className=\"p-5\">\n          <span className=\"mb-2 inline-block rounded-full border border-border px-2.5 py-0.5 text-xs text-muted-foreground\">\n            Design Systems\n          </span>\n          <h3 className=\"mb-1 text-lg font-semibold text-foreground\">\n            Building with Motion\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Hover anywhere on this card — a custom pointer trails your cursor\n            with a coloured label in tow.\n          </p>\n          <div className=\"mt-4 flex items-center gap-2\">\n            <div className=\"h-6 w-6 rounded-full bg-gradient-to-br from-orange-400 to-pink-500\" />\n            <span className=\"text-xs text-muted-foreground\">Jane Doe · 3 min read</span>\n          </div>\n        </div>\n      </FollowerPointerCard>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/aceternity-ui/following-pointer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/following-pointer.json",
+ "preview": "https://stashui.vercel.app/c/following-pointer",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Custom pointer with label follows cursor within a bounded area.",
+ "description": "Card wrapper that hides the native cursor and renders a custom pointer icon with optional label that tracks mouse movement. Uses motion/react for enter/exit animations.",
+ "use_when": "Interactive cards where a custom cursor adds polish and guides attention during hover.",
+ "avoid_when": "Touch-only surfaces or devices without pointer events.",
+ "a11y": "Custom cursor hides the native one with no keyboard fallback. Title is optional text content.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative\", className)}",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string | React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "name": "InfiniteMenu-TS-TW",
+ "title": "Infinite Menu",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "InfiniteMenu"
+ ],
+ "npm_deps": [
+  "gl-matrix@^3.4.3"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "webgl",
+  "3d",
+  "3 colors"
+ ],
+ "usage": "import InfiniteMenu from \"@/components/ui/InfiniteMenu\";\n\nconst items = [\n  { image: \"https://picsum.photos/seed/im1/400/400\", link: \"#\", title: \"Explore\",  description: \"Discover more\" },\n  { image: \"https://picsum.photos/seed/im2/400/400\", link: \"#\", title: \"Design\",   description: \"Craft interfaces\" },\n  { image: \"https://picsum.photos/seed/im3/400/400\", link: \"#\", title: \"Build\",    description: \"Ship fast\" },\n  { image: \"https://picsum.photos/seed/im4/400/400\", link: \"#\", title: \"Launch\",   description: \"Go live\" },\n  { image: \"https://picsum.photos/seed/im5/400/400\", link: \"#\", title: \"Iterate\",  description: \"Keep improving\" },\n  { image: \"https://picsum.photos/seed/im6/400/400\", link: \"#\", title: \"Scale\",    description: \"Grow further\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden rounded-xl bg-[#120F17]\">\n      <InfiniteMenu items={items} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/InfiniteMenu.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/InfiniteMenu-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/InfiniteMenu-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Drag to spin a 3D sphere of linked image cards.",
+ "description": "Arranges image cards on a 3D icosphere controlled by pointer drag. Snaps to nearest item and displays linked title and description; rendered in WebGL2.",
+ "use_when": "Showcasing a curated set of linked items (portfolio, product gallery, menu) with premium interactive polish.",
+ "avoid_when": "On touch-only surfaces — requires precise pointer events. Needs WebGL2 support and sized parent container.",
+ "a11y": "Canvas element; pointer-driven only, not keyboard accessible. No prefers-reduced-motion support.",
+ "props": [
+  {
+   "name": "items",
+   "type": "MenuItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "media"
+ ]
+}

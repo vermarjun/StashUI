@@ -1,0 +1,139 @@
+{
+ "name": "fluid-cursor",
+ "title": "Fluid Cursor",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "FluidCursor"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { FluidCursor } from \"@/components/ui/fluid-cursor\";\n\nexport default function FluidCursorDemo() {\n  return (\n    <div className=\"relative w-full h-[400px] bg-black flex items-center justify-center overflow-hidden\">\n      <FluidCursor\n        backColor={{ r: 0.05, g: 0, b: 0.1 }}\n        splatRadius={0.25}\n        densityDissipation={2.5}\n        colorUpdateSpeed={8}\n      />\n      <p className=\"relative z-10 text-white/40 text-sm select-none pointer-events-none\">\n        Move your cursor over this area\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/fluid-cursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/fluid-cursor.json",
+ "preview": "https://stashui.vercel.app/c/fluid-cursor",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Fluid simulation following cursor and touch movements.",
+ "description": "Full-screen WebGL fluid dynamics rendering particles driven by velocity, pressure, and vorticity fields. Responds to mouse and touch input with color cycling.",
+ "use_when": "Interactive backgrounds for premium landing pages, portfolios, or experiences where GPU is available.",
+ "avoid_when": "On low-end devices or when GPU resources are limited — continuous WebGL rendering is CPU/GPU expensive.",
+ "a11y": "Interactive via mouse/touch only, not keyboard accessible. Fixed positioning overlays content and has pointer-events-none by default.",
+ "props": [
+  {
+   "name": "simResolution",
+   "type": "number",
+   "default": "128",
+   "required": false
+  },
+  {
+   "name": "dyeResolution",
+   "type": "number",
+   "default": "1440",
+   "required": false
+  },
+  {
+   "name": "captureResolution",
+   "type": "number",
+   "default": "512",
+   "required": false
+  },
+  {
+   "name": "densityDissipation",
+   "type": "number",
+   "default": "3.5",
+   "required": false
+  },
+  {
+   "name": "velocityDissipation",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "pressure",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "pressureIterations",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "curl",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "splatRadius",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "splatForce",
+   "type": "number",
+   "default": "6000",
+   "required": false
+  },
+  {
+   "name": "shading",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "colorUpdateSpeed",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "backColor",
+   "type": "{ r: number; g: number; b: number }",
+   "default": "{ r: 0.5, g: 0, b: 0 }",
+   "required": false
+  },
+  {
+   "name": "transparent",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ]
+}

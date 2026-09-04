@@ -1,0 +1,74 @@
+{
+ "name": "Iridescence-TS-TW",
+ "title": "Iridescence",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Iridescence"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl"
+ ],
+ "usage": "\"use client\";\n\nimport Iridescence from \"@/components/ui/Iridescence\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[600px] rounded-lg overflow-hidden\">\n      <Iridescence\n        color={[1, 1, 1]}\n        speed={1.0}\n        amplitude={0.1}\n        mouseReact={true}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Iridescence.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Iridescence-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Iridescence-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Shifting color waves with recursive trigonometric patterns.",
+ "description": "WebGL shader creating iridescent wave patterns through recursive trigonometric functions. Supports customizable color, speed, and optional mouse-reactive amplitude distortion.",
+ "use_when": "Subtle, elegant backgrounds where shifting color waves add visual interest without overwhelming content.",
+ "avoid_when": "When static backgrounds are needed, or high contrast is required for readability.",
+ "a11y": "WebGL canvas with optional mouse reactivity. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "color",
+   "type": "[number, number, number]",
+   "default": "[1, 1, 1]",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "amplitude",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "mouseReact",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

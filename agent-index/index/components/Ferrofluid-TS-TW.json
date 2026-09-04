@@ -1,0 +1,166 @@
+{
+ "name": "Ferrofluid-TS-TW",
+ "title": "Ferrofluid",
+ "category": "backgrounds",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Ferrofluid"
+ ],
+ "npm_deps": [
+  "ogl@^1.0.11"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "webgl",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Ferrofluid from \"@/components/ui/Ferrofluid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[500px] bg-black rounded-lg overflow-hidden\">\n      <Ferrofluid\n        colors={[\"#4F46E5\", \"#06B6D4\", \"#E0F2FE\"]}\n        speed={0.5}\n        scale={1.6}\n        turbulence={1}\n        fluidity={0.1}\n        glow={2}\n        flowDirection=\"down\"\n        opacity={1}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Ferrofluid.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Ferrofluid-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Ferrofluid-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Flowing liquid effect with directional turbulence and shimmer.",
+ "description": "WebGL shader using value noise and distortion to simulate ferrofluids flowing in a specified direction. Supports customizable colors, turbulence, fluidity, shimmer, and optional mouse interaction for glow effects.",
+ "use_when": "Liquid, organic backgrounds where flowing motion creates a sense of dynamism and fluidity.",
+ "avoid_when": "Static backgrounds or light themes; this effect is designed for dark, immersive experiences.",
+ "a11y": "WebGL canvas with optional mouse interaction. No semantic content or keyboard navigation. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`w-full h-full overflow-hidden relative ${className ?? ''}`",
+   "required": false
+  },
+  {
+   "name": "dpr",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#ffffff', '#ffffff', '#ffffff']",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1.6",
+   "required": false
+  },
+  {
+   "name": "turbulence",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "fluidity",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "rimWidth",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "sharpness",
+   "type": "number",
+   "default": "2.5",
+   "required": false
+  },
+  {
+   "name": "shimmer",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "flowDirection",
+   "type": "\"up\" | \"down\" | \"left\" | \"right\"",
+   "default": "'down'",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "mouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseStrength",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "mouseRadius",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "mouseDampening",
+   "type": "number",
+   "default": "0.15",
+   "required": false
+  },
+  {
+   "name": "mixBlendMode",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

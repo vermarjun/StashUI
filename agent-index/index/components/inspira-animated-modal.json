@@ -1,0 +1,89 @@
+{
+ "name": "inspira-animated-modal",
+ "title": "Animated Modal",
+ "category": "modals",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "AnimatedModal",
+  "AnimatedModalTrigger",
+  "AnimatedModalBody",
+  "AnimatedModalContent",
+  "AnimatedModalFooter"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 8,
+ "flags": [
+  "pure",
+  "8 colors"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  AnimatedModal,\n  AnimatedModalBody,\n  AnimatedModalContent,\n  AnimatedModalFooter,\n  AnimatedModalTrigger,\n} from \"@/components/ui/animated-modal\"\n\nexport default function AnimatedModalDemo() {\n  return (\n    <div className=\"flex min-h-[300px] items-center justify-center p-8\">\n      <AnimatedModal>\n        <AnimatedModalTrigger className=\"rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-indigo-700\">\n          Open Modal\n        </AnimatedModalTrigger>\n\n        <AnimatedModalBody>\n          <AnimatedModalContent>\n            <h2 className=\"text-2xl font-bold text-gray-900 dark:text-white\">\n              Welcome to Animated Modal\n            </h2>\n            <p className=\"mt-4 text-gray-600 dark:text-neutral-400\">\n              This modal animates in with a spring-based 3D flip effect. It supports\n              click-outside to close, ESC key to close, and scroll locking.\n            </p>\n            <p className=\"mt-2 text-gray-600 dark:text-neutral-400\">\n              The content area is scrollable when content overflows the max height.\n            </p>\n          </AnimatedModalContent>\n\n          <AnimatedModalFooter>\n            <button\n              type=\"button\"\n              className=\"rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700\"\n            >\n              Confirm\n            </button>\n          </AnimatedModalFooter>\n        </AnimatedModalBody>\n      </AnimatedModal>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/animated-modal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-animated-modal.json",
+ "preview": "https://stashui.vercel.app/c/inspira-animated-modal",
+ "dupe_group": "animatedmodal",
+ "alternatives": [
+  {
+   "name": "animated-modal",
+   "origin": "Aceternity UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 10
+  }
+ ],
+ "blurb": "Modal with 3D flip spring animation and scroll locking.",
+ "description": "An AnimatedModal using Framer Motion with spring-based 3D flip effect; includes scroll lock, click-outside close, and Escape key support.",
+ "use_when": "Creating polished modals with eye-catching 3D entrance animations and controlled scroll behavior.",
+ "avoid_when": "For simple modals without animation — use shadcn Dialog instead to reduce bundle size.",
+ "a11y": "Escape key closes (when closeOnEsc=true); click-outside closes (when closeOnOutside=true); scroll locked; focus managed.",
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "closeOnEsc",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "modal"
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "name": "morphing-text",
+ "title": "Morphing Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "MorphingText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\"\n\nimport { MorphingText } from \"@/components/ui/morphing-text\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-[120px] bg-white\">\n      <MorphingText\n        texts={[\"Hello World\", \"Magic UI\", \"Morphing Text\", \"Beautiful\", \"Animated\"]}\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/morphing-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/morphing-text.json",
+ "preview": "https://stashui.vercel.app/c/morphing-text",
+ "dupe_group": "morphingtext",
+ "alternatives": [
+  {
+   "name": "inspira-morphing-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  },
+  {
+   "name": "primitives-texts-morphing",
+   "origin": "Animate UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text smoothly morphs between words in a rotating list.",
+ "description": "Uses SVG path morphing or canvas to blend letters between adjacent words, creating a fluid multi-word transition.",
+ "use_when": "Storytelling or feature showcase sections with a curated set of 3–5 key terms.",
+ "avoid_when": "Long lists — morphing scales poorly and is hard to read with many words.",
+ "a11y": "Only the current morph frame is readable. No pause or transcript.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "section-background"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "name": "side-panel",
+ "title": "Side Panel",
+ "category": "modals",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "SidePanel"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport { SidePanel } from \"@/components/ui/side-panel\"\n\nfunction MenuIcon({ open }: { open: boolean }) {\n  return (\n    <div className=\"flex flex-col gap-1 w-5 h-5 justify-center\">\n      <span\n        className={`block h-0.5 bg-white transition-all duration-300 ${open ? \"rotate-45 translate-y-1.5\" : \"\"}`}\n      />\n      <span\n        className={`block h-0.5 bg-white transition-all duration-300 ${open ? \"opacity-0\" : \"\"}`}\n      />\n      <span\n        className={`block h-0.5 bg-white transition-all duration-300 ${open ? \"-rotate-45 -translate-y-1.5\" : \"\"}`}\n      />\n    </div>\n  )\n}\n\nconst navItems = [\n  { label: \"Dashboard\", description: \"Overview & metrics\" },\n  { label: \"Projects\", description: \"Active work\" },\n  { label: \"Analytics\", description: \"Charts & reports\" },\n  { label: \"Settings\", description: \"Account & preferences\" },\n]\n\nexport default function Demo() {\n  const [open, setOpen] = useState(false)\n\n  return (\n    <div className=\"flex items-start justify-start w-full min-h-[480px] bg-background\">\n      <SidePanel\n        panelOpen={open}\n        handlePanelOpen={() => setOpen((v) => !v)}\n        renderButton={(toggle) => (\n          <button\n            onClick={toggle}\n            className=\"flex items-center gap-2 text-white text-sm font-medium focus:outline-none\"\n            aria-label={open ? \"Close menu\" : \"Open menu\"}\n          >\n            <MenuIcon open={open} />\n            {open && <span className=\"whitespace-nowrap\">Close</span>}\n          </button>\n        )}\n      >\n        <nav className=\"px-4 pb-6 flex flex-col gap-1\">\n          {navItems.map((item) => (\n            <div\n              key={item.label}\n              className=\"rounded-lg px-3 py-2 cursor-pointer hover:bg-neutral-700 transition-colors\"\n            >\n              <p className=\"text-white text-sm font-medium\">{item.label}</p>\n              <p className=\"text-neutral-400 text-xs\">{item.description}</p>\n            </div>\n          ))}\n        </nav>\n      </SidePanel>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/side-panel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/side-panel.json",
+ "preview": "https://stashui.vercel.app/c/side-panel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Narrow panel expands horizontally to reveal navigation with spring easing.",
+ "description": "A responsive side panel that animates from narrow to wide (97% width) using tween easing. Content height animates with spring physics. Measures child height dynamically with react-use-measure. Dark themed with rounded right edge.",
+ "use_when": "You need a collapsible navigation panel that feels natural on desktop and tablets.",
+ "avoid_when": "Mobile-first experiences — the horizontal expansion may be cramped on narrow screens.",
+ "a11y": "Custom button handled via renderButton prop. You must add ARIA labels and keyboard support yourself.",
+ "props": [
+  {
+   "name": "panelOpen",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "handlePanelOpen",
+   "type": "() => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderButton",
+   "type": "(handleToggle: () => void) => ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "sidebar"
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "name": "hyper-text",
+ "title": "Hyper Text",
+ "category": "text",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "HyperText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\nimport { HyperText } from \"@/components/ui/hyper-text\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full max-w-md p-8\">\n      <HyperText>Hover over me</HyperText>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/hyper-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hyper-text.json",
+ "preview": "https://stashui.vercel.app/c/hyper-text",
+ "dupe_group": "hypertext",
+ "alternatives": [
+  {
+   "name": "inspira-hyper-text",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 0
+  }
+ ],
+ "blurb": "Text scrambles and reveals letter-by-letter on hover.",
+ "description": "Splits text into characters that initially show random symbols from a charset, then resolve to the actual letters over the duration. Triggered by hover, viewport entry, or delay.",
+ "use_when": "Hero or feature heading that needs an interactive reveal effect without changing layout.",
+ "avoid_when": "Long-form text blocks — scrambling is distracting and slows reading.",
+ "a11y": "Renders plain text markup but runs continuous RAF animation while animating. No prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"overflow-hidden py-2 text-4xl font-bold\", className)}",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "800",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "MotionElementType",
+   "default": "\"div\"",
+   "required": false
+  },
+  {
+   "name": "startOnView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animateOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "characterSet",
+   "type": "CharacterSet",
+   "default": "DEFAULT_CHARACTER_SET",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "hero"
+ ]
+}

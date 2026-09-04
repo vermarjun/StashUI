@@ -1,0 +1,78 @@
+{
+ "name": "noise-texture",
+ "title": "Noise Texture",
+ "category": "backgrounds",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "NoiseTexture"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { NoiseTexture } from \"@/components/ui/noise-texture\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <NoiseTexture />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/noise-texture.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/noise-texture.json",
+ "preview": "https://stashui.vercel.app/c/noise-texture",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "SVG-generated procedural noise texture with customizable grain.",
+ "description": "Static noise overlay using SVG feTurbulence filter for fractal noise generation. Fully customizable frequency, octaves, and slope for different grain appearances.",
+ "use_when": "A lightweight, static noise texture overlay for subtle visual interest.",
+ "avoid_when": "Accessibility contexts where visual noise may interfere with reading (high contrast requirements).",
+ "a11y": "Decorative overlay marked pointer-events-none; does not interfere with interactive elements.",
+ "props": [
+  {
+   "name": "frequency",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "octaves",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "slope",
+   "type": "number",
+   "default": "0.15",
+   "required": false
+  },
+  {
+   "name": "noiseOpacity",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "decoration"
+ ]
+}

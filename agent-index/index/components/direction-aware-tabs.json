@@ -1,0 +1,81 @@
+{
+ "name": "direction-aware-tabs",
+ "title": "Direction Aware Tabs",
+ "category": "navigation",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "DirectionAwareTabs"
+ ],
+ "npm_deps": [
+  "motion",
+  "react-use-measure"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { DirectionAwareTabs } from \"@/components/ui/direction-aware-tabs\";\n\nconst tabs = [\n  {\n    id: 0,\n    label: \"Design\",\n    content: (\n      <div className=\"p-6 text-center text-white\">\n        <h3 className=\"text-lg font-semibold mb-2\">Design System</h3>\n        <p className=\"text-gray-400 text-sm\">\n          Build beautiful interfaces with our comprehensive design system. Tokens,\n          components, and patterns all in one place.\n        </p>\n      </div>\n    ),\n  },\n  {\n    id: 1,\n    label: \"Develop\",\n    content: (\n      <div className=\"p-6 text-center text-white\">\n        <h3 className=\"text-lg font-semibold mb-2\">Developer Tools</h3>\n        <p className=\"text-gray-400 text-sm\">\n          Powerful APIs and SDKs to build faster. Type-safe, well-documented, and\n          ready for production use.\n        </p>\n      </div>\n    ),\n  },\n  {\n    id: 2,\n    label: \"Deploy\",\n    content: (\n      <div className=\"p-6 text-center text-white\">\n        <h3 className=\"text-lg font-semibold mb-2\">Deployment Pipeline</h3>\n        <p className=\"text-gray-400 text-sm\">\n          Ship with confidence using our zero-config deployment infrastructure.\n          Preview, stage, and produce at any scale.\n        </p>\n      </div>\n    ),\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-md mx-auto p-6 bg-neutral-900 rounded-2xl\">\n      <DirectionAwareTabs tabs={tabs} />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/direction-aware-tabs.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/direction-aware-tabs.json",
+ "preview": "https://stashui.vercel.app/c/direction-aware-tabs",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Tabs with directional slide-in/out animations based on tab order.",
+ "description": "Tab switcher where content slides in/out direction based on whether user clicked a tab before or after the current one. Spring-based transitions.",
+ "use_when": "Tab interfaces where directional motion hints at data order (e.g., timeline or sequence).",
+ "avoid_when": "Simple tab switching; directional animation adds complexity.",
+ "a11y": "Tab buttons are keyboard-navigable. Content regions have proper ARIA labels and roles.",
+ "props": [
+  {
+   "name": "tabs",
+   "type": "Tab[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "rounded",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "roundedInner",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ]
+}

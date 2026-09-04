@@ -1,0 +1,71 @@
+{
+ "name": "android",
+ "title": "Android Mockup",
+ "category": "media",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "Android"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 18,
+ "flags": [
+  "pure",
+  "18 colors"
+ ],
+ "usage": "import { Android } from \"@/components/ui/android\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[500px] items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 p-8 dark:from-slate-900 dark:to-slate-800\">\n      <div style={{ width: 220 }}>\n        <Android\n          width={220}\n          height={448}\n          src=\"https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/android.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/android.json",
+ "preview": "https://stashui.vercel.app/c/android",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Android phone mockup SVG frame for displaying images or videos.",
+ "description": "Renders a realistic Android device bezel and screen in SVG. Accepts an image URL or video element as content to fill the display. Supports dark mode.",
+ "use_when": "Presenting app screenshots or videos in a phone mockup frame.",
+ "avoid_when": "When the content needs interactive controls or must respond to device viewport changes.",
+ "a11y": "Image has no alt text. Video is muted and plays automatically. No keyboard interactions.",
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "433",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "882",
+   "required": false
+  },
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{videoSrc}",
+   "required": false
+  },
+  {
+   "name": "videoSrc",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media"
+ ]
+}

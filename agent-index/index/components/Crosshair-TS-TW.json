@@ -1,0 +1,58 @@
+{
+ "name": "Crosshair-TS-TW",
+ "title": "Crosshair Cursor",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Crosshair"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "import { useRef, RefObject } from \"react\";\nimport Crosshair from \"@/components/ui/Crosshair\";\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"relative h-[480px] w-full overflow-hidden rounded-xl border border-border bg-background cursor-none select-none\"\n    >\n      <Crosshair\n        color=\"hsl(var(--foreground) / 0.7)\"\n        containerRef={containerRef as unknown as RefObject<HTMLElement>}\n      />\n      <div className=\"pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3\">\n        <p className=\"text-2xl font-bold text-foreground\">Move your cursor</p>\n        <p className=\"text-sm text-muted-foreground\">\n          A smooth crosshair tracks your pointer with a turbulence glitch on link hover\n        </p>\n        <div className=\"mt-4 flex gap-4\">\n          <a href=\"#\" className=\"text-sm underline text-foreground pointer-events-auto\">Hover link 1</a>\n          <a href=\"#\" className=\"text-sm underline text-foreground pointer-events-auto\">Hover link 2</a>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Crosshair.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Crosshair-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Crosshair-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Custom crosshair cursor with horizontal and vertical lines tracking the pointer.",
+ "description": "Renders a custom crosshair that tracks the pointer with smooth animation. Lines animate with SVG turbulence filter for glitch effect. Scoped to optional container element.",
+ "use_when": "Premium interactive experiences, gaming interfaces, or targeting/precision tools.",
+ "avoid_when": "Accessibility-focused designs; custom cursors override user preferences.",
+ "a11y": "Custom cursor replaces default pointer. SVG filters have no aria labels. No keyboard support.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "white",
+   "required": false
+  },
+  {
+   "name": "containerRef",
+   "type": "React.RefObject<HTMLElement>",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration"
+ ]
+}

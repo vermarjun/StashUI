@@ -1,0 +1,80 @@
+{
+ "name": "particles-bg",
+ "title": "Particles Background",
+ "category": "backgrounds",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "ParticlesBg"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "canvas",
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { ParticlesBg } from \"@/components/ui/particles-bg\";\n\nexport default function ParticlesBgDemo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background\">\n      <ParticlesBg\n        color=\"#6366f1\"\n        quantity={120}\n        staticity={50}\n        ease={50}\n        className=\"absolute inset-0 h-full w-full\"\n      />\n      <div className=\"relative z-10 text-center\">\n        <h3 className=\"text-2xl font-bold\">Particles Background</h3>\n        <p className=\"mt-1 text-sm text-muted-foreground\">\n          Move your mouse to interact\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/particles-bg.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/particles-bg.json",
+ "preview": "https://stashui.vercel.app/c/particles-bg",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Animated particles that respond to cursor movement with magnetism.",
+ "description": "Canvas-based particle background where particles move with velocity and are attracted toward pointer. Customizable quantity, colour, and physics parameters.",
+ "use_when": "An interactive background that engages users with pointer-responsive particle motion.",
+ "avoid_when": "Touch-only devices — particles only respond to mouse movement. High quantity values on low-end devices may impact…",
+ "a11y": "Canvas overlay with mouse-based interactivity. No touch support or keyboard alternatives.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#FFF\"",
+   "required": false
+  },
+  {
+   "name": "quantity",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "staticity",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "minimal",
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

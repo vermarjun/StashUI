@@ -1,0 +1,88 @@
+{
+ "name": "components-backgrounds-hole",
+ "title": "Hole Background",
+ "category": "backgrounds",
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "HoleBackground"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "canvas",
+  "motion",
+  "4 colors"
+ ],
+ "usage": "import { HoleBackground } from \"@/components/ui/components-backgrounds-hole\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <HoleBackground className=\"absolute inset-0 h-full w-full\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/components-backgrounds-hole.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-backgrounds-hole.json",
+ "preview": "https://stashui.vercel.app/c/components-backgrounds-hole",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Discs and particles stream through an elliptical hole, animated continuously.",
+ "description": "Canvas-based background with concentric discs tweening downward through a central hole and particles falling through. Runs a continuous RAF loop with radial gradient overlays.",
+ "use_when": "A dramatic, animated page background that should command visual attention without user interaction.",
+ "avoid_when": "Performance-sensitive pages or mobile devices — the RAF loop runs constantly and never idles, consuming significant…",
+ "a11y": "Passive background wrapper; focus and keyboard behaviour come from children. Continuous animation may cause motion sickness; no prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "strokeColor",
+   "type": "string",
+   "default": "'#737373'",
+   "required": false
+  },
+  {
+   "name": "numberOfLines",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "numberOfDiscs",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "particleRGBColor",
+   "type": "[number, number, number]",
+   "default": "[255, 255, 255]",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "dramatic",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ]
+}

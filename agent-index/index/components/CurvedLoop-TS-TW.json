@@ -1,0 +1,85 @@
+{
+ "name": "CurvedLoop-TS-TW",
+ "title": "Curved Loop",
+ "category": "text",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "CurvedLoop"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\"\n\nimport CurvedLoop from \"@/components/ui/CurvedLoop\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full bg-background text-foreground overflow-hidden\">\n      <CurvedLoop\n        marqueeText=\"Components • Animations • Design System • Open Source • \"\n        speed={2}\n        curveAmount={300}\n        direction=\"left\"\n        interactive={true}\n        className=\"fill-foreground text-foreground\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/CurvedLoop.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/CurvedLoop-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/CurvedLoop-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Text flows along a curved SVG path in a looping marquee, draggable to control.",
+ "description": "Renders text on a curved path using SVG textPath and continuously scrolls it. Supports drag-to-control and adjustable curve amount and speed.",
+ "use_when": "A decorative full-width marquee that needs curvature and fine-grained control over text flow.",
+ "avoid_when": "When SVG rendering is restricted or if complex text with bidirectional content is needed.",
+ "a11y": "Text is rendered in SVG; screen readers may struggle with textPath content. No keyboard navigation for drag control.",
+ "props": [
+  {
+   "name": "marqueeText",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"min-h-screen flex items-center justify-center w-full\"",
+   "required": false
+  },
+  {
+   "name": "curveAmount",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'left' | 'right'",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ]
+}

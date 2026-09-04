@@ -1,0 +1,102 @@
+{
+ "name": "liquid-logo",
+ "title": "Liquid Logo",
+ "category": "effects",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "LiquidLogo"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "pure"
+ ],
+ "usage": "\"use client\"\n\nimport { LiquidLogo } from \"@/components/ui/liquid-logo\"\n\nexport default function LiquidLogoDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8 bg-neutral-950 rounded-xl w-full h-80\">\n      <div className=\"w-64 h-64\">\n        <LiquidLogo\n          imageUrl=\"https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg\"\n          patternScale={2}\n          refraction={0.015}\n          edge={0.4}\n          patternBlur={0.005}\n          liquid={0.07}\n          speed={0.3}\n          showProcessing={true}\n        />\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/liquid-logo.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/liquid-logo.json",
+ "preview": "https://stashui.vercel.app/c/liquid-logo",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Logo animates with flowing liquid distortion and refraction effects.",
+ "description": "Renders an image with WebGL-based liquid morphing effects including ripple distortion, refraction, and edge blur that evolve continuously.",
+ "use_when": "Brand logos or images that need organic, fluid motion without jarring animation.",
+ "avoid_when": "Low-performance devices or server-side rendering — WebGL is GPU-intensive. May be invisible in headless contexts.",
+ "a11y": "Image is rendered as WebGL texture; no alt text or semantic equivalent available.",
+ "props": [
+  {
+   "name": "imageUrl",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"block size-full object-contain\", className, processing ",
+   "required": false
+  },
+  {
+   "name": "patternScale",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "refraction",
+   "type": "number",
+   "default": "0.015",
+   "required": false
+  },
+  {
+   "name": "edge",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "patternBlur",
+   "type": "number",
+   "default": "0.005",
+   "required": false
+  },
+  {
+   "name": "liquid",
+   "type": "number",
+   "default": "0.07",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "showProcessing",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "logo-wall",
+  "hero"
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "name": "Ballpit-TS-TW",
+ "title": "Ballpit",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Ballpit"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0",
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "3d"
+ ],
+ "usage": "\"use client\";\nimport Cmp from \"@/components/ui/Ballpit\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"560px\" }}>\n      <Cmp followCursor />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/Ballpit.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/Ballpit-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/Ballpit-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Physics-based bouncing balls in WebGL that react to cursor movement.",
+ "description": "Renders physics-simulated spheres using Three.js. Balls bounce off viewport edges and interact with cursor when followCursor=true. Built on raw WebGL with GSAP for event handling.",
+ "use_when": "Interactive backgrounds, eye-catching hero sections, playful motion demos.",
+ "avoid_when": "Mobile devices or older browsers; high CPU/GPU load. No touch support.",
+ "a11y": "Pure decorative animation with no interactive purpose. Canvas has no aria attributes.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "",
+   "required": false
+  },
+  {
+   "name": "followCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "page-background"
+ ]
+}

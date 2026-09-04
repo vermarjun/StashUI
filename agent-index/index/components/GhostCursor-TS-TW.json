@@ -1,0 +1,152 @@
+{
+ "name": "GhostCursor-TS-TW",
+ "title": "Ghost Cursor Trail",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "GhostCursor"
+ ],
+ "npm_deps": [
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "webgl",
+  "1 colors"
+ ],
+ "usage": "import GhostCursor from \"@/components/ui/GhostCursor\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[480px] w-full overflow-hidden rounded-xl border border-border bg-background\">\n      <GhostCursor\n        color=\"#B497CF\"\n        trailLength={50}\n        inertia={0.5}\n        bloomStrength={0.15}\n        bloomRadius={1.0}\n        grainIntensity={0.04}\n        mixBlendMode=\"screen\"\n      />\n      <div className=\"pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3 select-none\">\n        <p className=\"text-2xl font-bold text-foreground\">Move your cursor</p>\n        <p className=\"text-sm text-muted-foreground\">A ghostly trail follows your pointer</p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/GhostCursor.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/GhostCursor-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/GhostCursor-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "A luminous trail that follows your cursor and fades when you stop moving.",
+ "description": "Three.js component rendering a procedurally animated cursor trail with bloom and film grain effects. The trail follows mouse movement with inertia-based momentum and configurable fade delay.",
+ "use_when": "You want to add a subtle, premium interaction layer that rewards mouse movement across the entire page.",
+ "avoid_when": "Touch-only devices or when keyboard navigation is the primary input method.",
+ "a11y": "Purely visual cursor tracking; no keyboard alternative or prefers-reduced-motion guard.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "trailLength",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "inertia",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "grainIntensity",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "bloomStrength",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "bloomRadius",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "bloomThreshold",
+   "type": "number",
+   "default": "0.025",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#B497CF'",
+   "required": false
+  },
+  {
+   "name": "mixBlendMode",
+   "type": "React.CSSProperties[\"mixBlendMode\"]",
+   "default": "'screen'",
+   "required": false
+  },
+  {
+   "name": "edgeIntensity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "maxDevicePixelRatio",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "targetPixels",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fadeDelayMs",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fadeDurationMs",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "zIndex",
+   "type": "number",
+   "default": "10",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "decoration",
+  "page-background"
+ ]
+}

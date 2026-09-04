@@ -1,0 +1,110 @@
+{
+ "name": "file-tree",
+ "title": "File Tree",
+ "category": "data-display",
+ "origin": "Magic UI",
+ "origin_short": "mag",
+ "exports": [
+  "CollapseButton",
+  "File",
+  "Folder",
+  "Tree"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "button",
+  "scroll-area"
+ ],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "pure",
+  "1 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { Tree, type TreeViewElement } from \"@/components/ui/file-tree\"\n\nconst elements: TreeViewElement[] = [\n  {\n    id: \"1\",\n    name: \"src\",\n    type: \"folder\",\n    children: [\n      {\n        id: \"2\",\n        name: \"components\",\n        type: \"folder\",\n        children: [\n          { id: \"3\", name: \"Button.tsx\", type: \"file\" },\n          { id: \"4\", name: \"Input.tsx\", type: \"file\" },\n          { id: \"5\", name: \"Modal.tsx\", type: \"file\" },\n        ],\n      },\n      {\n        id: \"6\",\n        name: \"pages\",\n        type: \"folder\",\n        children: [\n          { id: \"7\", name: \"index.tsx\", type: \"file\" },\n          { id: \"8\", name: \"about.tsx\", type: \"file\" },\n        ],\n      },\n      { id: \"9\", name: \"App.tsx\", type: \"file\" },\n      { id: \"10\", name: \"main.tsx\", type: \"file\" },\n    ],\n  },\n  {\n    id: \"11\",\n    name: \"public\",\n    type: \"folder\",\n    children: [\n      { id: \"12\", name: \"favicon.ico\", type: \"file\" },\n      { id: \"13\", name: \"logo.svg\", type: \"file\" },\n    ],\n  },\n  { id: \"14\", name: \"package.json\", type: \"file\" },\n  { id: \"15\", name: \"tsconfig.json\", type: \"file\" },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-sm border rounded-lg p-4 h-80 bg-white\">\n      <Tree\n        elements={elements}\n        initialExpandedItems={[\"1\", \"2\"]}\n        initialSelectedId=\"3\"\n      />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/magic-ui/file-tree.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/file-tree.json",
+ "preview": "https://stashui.vercel.app/c/file-tree",
+ "dupe_group": "filetree",
+ "alternatives": [
+  {
+   "name": "inspira-file-tree",
+   "origin": "Inspira UI",
+   "npm_deps": 0,
+   "hardcoded_colors": 1
+  },
+  {
+   "name": "tree",
+   "origin": "Origin UI",
+   "npm_deps": 3,
+   "hardcoded_colors": 1
+  }
+ ],
+ "blurb": "Expandable folder/file hierarchy with keyboard navigation and selection.",
+ "description": "Tree view component displaying a recursive file structure. Folders toggle open/closed via accordion; files show only when parent is expanded. Supports click-to-select, keyboard navigation with arrow keys, and custom folder/file icons…",
+ "use_when": "File explorers, documentation navigation trees, or project hierarchies where users browse and select items.",
+ "avoid_when": "Very deep trees (>15 levels) where navigation becomes cumbersome or when keyboard shortcuts conflict with the app.",
+ "a11y": "Folders and files are accordion buttons with full keyboard navigation (arrow keys, enter). Selected item indicated via context. No roving tabindex; focus must be managed by parent.",
+ "props": [
+  {
+   "name": "elements",
+   "type": "TreeViewElement[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initialSelectedId",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initialExpandedItems",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "indicator",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "openIcon",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "closeIcon",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "sort",
+   "type": "TreeSortMode",
+   "default": "\"default\"",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "technical",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "sidebar",
+  "data-table"
+ ]
+}

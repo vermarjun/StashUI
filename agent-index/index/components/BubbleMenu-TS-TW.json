@@ -1,0 +1,120 @@
+{
+ "name": "BubbleMenu-TS-TW",
+ "title": "BubbleMenu",
+ "category": "navigation",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "BubbleMenu"
+ ],
+ "npm_deps": [
+  "gsap@^3.13.0"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 16,
+ "flags": [
+  "16 colors"
+ ],
+ "usage": "\"use client\";\nimport BubbleMenu from \"@/components/ui/BubbleMenu\";\n\nconst Logo = () => (\n  <svg width=\"90\" height=\"22\" viewBox=\"0 0 90 22\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <circle cx=\"11\" cy=\"11\" r=\"9\" fill=\"#120F17\" />\n    <text x=\"26\" y=\"16\" fontFamily=\"sans-serif\" fontSize=\"14\" fontWeight=\"700\" fill=\"#120F17\">myui</text>\n  </svg>\n);\n\nconst items = [\n  { label: \"Home\",     href: \"#\",  rotation: -6,  hoverStyles: { bgColor: \"#3b82f6\", textColor: \"#fff\" } },\n  { label: \"About\",    href: \"#\",  rotation:  6,  hoverStyles: { bgColor: \"#10b981\", textColor: \"#fff\" } },\n  { label: \"Work\",     href: \"#\",  rotation:  8,  hoverStyles: { bgColor: \"#f59e0b\", textColor: \"#fff\" } },\n  { label: \"Blog\",     href: \"#\",  rotation: -6,  hoverStyles: { bgColor: \"#ef4444\", textColor: \"#fff\" } },\n  { label: \"Contact\",  href: \"#\",  rotation:  4,  hoverStyles: { bgColor: \"#8b5cf6\", textColor: \"#fff\" } },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[560px] bg-gray-100 overflow-hidden rounded-xl\">\n      <BubbleMenu logo={<Logo />} items={items} menuBg=\"#ffffff\" menuContentColor=\"#111\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/BubbleMenu.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/BubbleMenu-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/BubbleMenu-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Menu items scale in from center with rotation and staggered timing.",
+ "description": "A GSAP-powered navigation menu that scales items in from the center with per-item rotation and stagger delay. Items have custom hover colors. Responsive: rotations disabled on mobile, full layout reflow on smaller screens.",
+ "use_when": "You want a polished, playful navigation menu with eye-catching entrance animations.",
+ "avoid_when": "Performance-sensitive contexts — GSAP animations have overhead; touch-only devices benefit less from rotations.",
+ "a11y": "Menu has aria-label and items have custom ariaLabel. Rotations disabled on mobile for clarity. Labels fade in/out with items.",
+ "props": [
+  {
+   "name": "logo",
+   "type": "ReactNode | string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onMenuClick",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "menuAriaLabel",
+   "type": "string",
+   "default": "'Toggle menu'",
+   "required": false
+  },
+  {
+   "name": "menuBg",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "menuContentColor",
+   "type": "string",
+   "default": "'#111'",
+   "required": false
+  },
+  {
+   "name": "useFixedPosition",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "MenuItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animationEase",
+   "type": "string",
+   "default": "'back.out(1.5)'",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "staggerDelay",
+   "type": "number",
+   "default": "0.12",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav"
+ ]
+}

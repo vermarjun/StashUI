@@ -1,0 +1,76 @@
+{
+ "name": "svg-bands",
+ "title": "SVG Section Bands",
+ "category": "backgrounds",
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "BandShape",
+  "FlatSingleAngleBandSvg",
+  "CastleWallBandSvg",
+  "SymmetricVBandSvg",
+  "NotchedTopBandSvg",
+  "ZigzagSawtoothBandSvg",
+  "CenterTabBandSvg",
+  "DiagonalSlashBandSvg",
+  "ArrowChevronBandSvg",
+  "StaircaseBandSvg",
+  "SteppedLeftSteepRightBandSvg",
+  "SteppedInsetFrameSvg",
+  "AngledCornerPanelSvg",
+  "DualSideNotchFrameSvg",
+  "TopBandSteepRightSvg",
+  "TopBandSteepBothSvg",
+  "TopBandSteepLeftSvg",
+  "BottomBandSteepRightSvg",
+  "WavyBottomEdgeSvg",
+  "CenterTabTopBandSvg",
+  "TallAngledHeroPanelSvg",
+  "PyramidStepBandSvg",
+  "PyramidStepBandLotsOfStepsSvg"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import {\n  FlatSingleAngleBandSvg,\n  CastleWallBandSvg,\n  ZigzagSawtoothBandSvg,\n  WavyBottomEdgeSvg,\n  PyramidStepBandSvg,\n} from \"@/components/ui/svg-bands\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <div className=\"flex h-full flex-col items-center justify-around py-8\">\n        <div className=\"w-full\">\n          <FlatSingleAngleBandSvg />\n        </div>\n        <div className=\"w-full\">\n          <CastleWallBandSvg />\n        </div>\n        <div className=\"w-full\">\n          <ZigzagSawtoothBandSvg teeth={12} />\n        </div>\n        <div className=\"w-full\">\n          <WavyBottomEdgeSvg />\n        </div>\n        <div className=\"w-full\">\n          <PyramidStepBandSvg />\n        </div>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/svg-bands.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/svg-bands.json",
+ "preview": "https://stashui.vercel.app/c/svg-bands",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "SVG decorative band shapes for section separators or panels.",
+ "description": "Collection of 23 reusable SVG band/divider components in various geometric styles.",
+ "use_when": "Section breaks, hero-to-content transitions, or decorative panel frames.",
+ "avoid_when": "Very narrow or mobile-first contexts where band complexity becomes illegible.",
+ "a11y": "Decorative SVG shapes. No interactivity.",
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(shapeSvgClass, flipClasses[flip], className)}",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "section-background",
+  "divider",
+  "decoration"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "name": "inspira-text-reveal",
+ "title": "Text Reveal",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "TextReveal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { TextReveal } from \"@/components/ui/text-reveal\";\n\nexport default function TextRevealDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-col items-center justify-center gap-6 bg-background p-8\">\n      <TextReveal\n        className=\"text-4xl font-bold text-foreground\"\n        duration={0.7}\n        delay={0.1}\n        stagger={0.08}\n      >\n        Words slide up one by one revealing the text\n      </TextReveal>\n      <TextReveal\n        className=\"text-lg text-muted-foreground\"\n        duration={0.6}\n        delay={0.4}\n        stagger={0.06}\n      >\n        Scroll-triggered line reveal with smooth easing\n      </TextReveal>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/text-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-text-reveal.json",
+ "preview": "https://stashui.vercel.app/c/inspira-text-reveal",
+ "dupe_group": "textreveal",
+ "alternatives": [
+  {
+   "name": "text-reveal",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Text is hidden behind a mask that wipes away on scroll.",
+ "description": "Text element has a clip-path or mask that expands as you scroll into view, progressively revealing the content.",
+ "use_when": "Key messages or headlines in a scrolling narrative that deserve a graceful entrance.",
+ "avoid_when": "Static/non-scroll pages — the reveal may never trigger.",
+ "a11y": "Content may be unreachable if the mask does not fully expand. Tab order depends on unmask state.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "body-text"
+ ]
+}

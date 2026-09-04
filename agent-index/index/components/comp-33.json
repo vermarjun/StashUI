@@ -1,0 +1,45 @@
+{
+ "name": "comp-33",
+ "title": "Inset Label Input",
+ "category": "inputs",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "Component"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport { useId } from \"react\";\n\nexport default function Demo() {\n  const id = useId();\n  return (\n    <div className=\"relative rounded-md border border-input bg-background shadow-xs outline-none transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40\">\n      <label\n        className=\"block px-3 pt-2 font-medium text-foreground text-xs\"\n        htmlFor={id}\n      >\n        Input with inset label\n      </label>\n      <input\n        className=\"flex h-10 w-full bg-transparent px-3 pb-2 text-foreground text-sm placeholder:text-muted-foreground/70 focus-visible:outline-none\"\n        id={id}\n        placeholder=\"Email\"\n        type=\"email\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/comp-33.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-33.json",
+ "preview": "https://stashui.vercel.app/c/comp-33",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Email input with label inset at the top.",
+ "description": "An email input where the label sits inside the container at the top, above the input field. Built with a div wrapper and native input element.",
+ "use_when": "Forms needing a compact label that doesn't overlap or animate, always visible.",
+ "avoid_when": "You need floating labels or animated label behavior.",
+ "a11y": "Label linked to input via htmlFor. Has focus-within border and ring. Supports aria-invalid for error states.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "form-field"
+ ]
+}

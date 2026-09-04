@@ -1,0 +1,90 @@
+{
+ "name": "blur-vignette",
+ "title": "Blur Vignette",
+ "category": "effects",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "BlurVignette",
+  "BlurVignetteArticle"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "import { BlurVignette, BlurVignetteArticle } from \"@/components/ui/blur-vignette\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap gap-6 items-center justify-center p-8\">\n      {/* Text content behind a blur vignette */}\n      <BlurVignette\n        radius=\"20px\"\n        inset=\"18px\"\n        transitionLength=\"50px\"\n        blur=\"8px\"\n        classname=\"w-72 h-72 bg-muted\"\n      >\n        <div className=\"flex flex-col gap-3 p-6 h-full justify-center\">\n          <p className=\"text-sm font-semibold text-foreground uppercase tracking-widest\">\n            Blur Vignette\n          </p>\n          <p className=\"text-muted-foreground text-sm leading-relaxed\">\n            A progressive blur mask fades the edges of any container, keeping\n            the center sharp while the periphery dissolves naturally.\n          </p>\n          <p className=\"text-xs text-muted-foreground/60\">\n            radius · inset · blur · transitionLength\n          </p>\n        </div>\n        <BlurVignetteArticle />\n      </BlurVignette>\n\n      {/* Image behind a blur vignette */}\n      <BlurVignette\n        radius=\"20px\"\n        inset=\"12px\"\n        transitionLength=\"60px\"\n        blur=\"10px\"\n        classname=\"w-72 h-72\"\n      >\n        <img\n          src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop\"\n          alt=\"mountain landscape\"\n          className=\"w-full h-full object-cover\"\n        />\n        <BlurVignetteArticle />\n      </BlurVignette>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/blur-vignette.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/blur-vignette.json",
+ "preview": "https://stashui.vercel.app/c/blur-vignette",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Container that fades edges to blur.",
+ "description": "Wraps children in a container that gradually blurs edges using CSS radial gradient and mask. Provides context for consistent vignette styling.",
+ "use_when": "Image galleries, carousel fade edges, or artistic framing.",
+ "avoid_when": "Accessibility-critical edge content (blur hides information).",
+ "a11y": "Wrapper only; does not affect semantic content. Motion-free.",
+ "props": [
+  {
+   "name": "classname",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "radius",
+   "type": "string",
+   "default": "'24px'",
+   "required": false
+  },
+  {
+   "name": "inset",
+   "type": "string",
+   "default": "'20px'",
+   "required": false
+  },
+  {
+   "name": "transitionLength",
+   "type": "string",
+   "default": "'44px'",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "string",
+   "default": "'6px'",
+   "required": false
+  },
+  {
+   "name": "blurclassname",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ]
+}

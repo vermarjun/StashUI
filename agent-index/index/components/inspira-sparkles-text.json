@@ -1,0 +1,62 @@
+{
+ "name": "inspira-sparkles-text",
+ "title": "Sparkles Text",
+ "category": "text",
+ "origin": "Inspira UI",
+ "origin_short": "insp",
+ "exports": [
+  "SparklesText"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { SparklesText } from \"@/components/ui/sparkles-text\";\n\nexport default function SparklesTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-12\">\n      <SparklesText\n        text=\"Hello World\"\n        sparklesCount={10}\n        colors={{ first: \"#9E7AFF\", second: \"#FE8BBB\" }}\n        className=\"text-5xl\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/inspira-react/sparkles-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-sparkles-text.json",
+ "preview": "https://stashui.vercel.app/c/inspira-sparkles-text",
+ "dupe_group": "sparklestext",
+ "alternatives": [
+  {
+   "name": "sparkles-text",
+   "origin": "Magic UI",
+   "npm_deps": 1,
+   "hardcoded_colors": 4
+  }
+ ],
+ "blurb": "Text glows with sparkling points of light.",
+ "description": "Overlays twinkling particles or shine effects on text, creating a magical shimmer. Non-interactive, runs continuously.",
+ "use_when": "Premium or featured content that deserves visual polish and delight.",
+ "avoid_when": "Accessibility-critical labels or high-contrast requirements — sparkles reduce readability.",
+ "a11y": "Pure decoration; text is readable underneath. Animation runs uncontrolled.",
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "fill"
+  ],
+  "tone": "decorative",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "name": "hover-card",
+ "title": "Hover Card",
+ "category": "tooltips",
+ "origin": "Origin UI",
+ "origin_short": "ori",
+ "exports": [
+  "HoverCard",
+  "HoverCardContent",
+  "HoverCardTrigger"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from \"@/components/ui/hover-card\";\n\nexport default function Demo() {\n  return (\n    <HoverCard openDelay={0} closeDelay={100}>\n      <HoverCardTrigger asChild>\n        <button className=\"rounded-md border border-border bg-background px-4 py-2 text-sm text-foreground hover:bg-muted\">\n          Hover me\n        </button>\n      </HoverCardTrigger>\n      <HoverCardContent>\n        <div className=\"space-y-1\">\n          <p className=\"font-medium text-sm\">Hover Card</p>\n          <p className=\"text-muted-foreground text-xs leading-relaxed\">\n            This hover card appears when you hover the trigger. It supports rich\n            content and smooth animations.\n          </p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/origin-ui/hover-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/hover-card.json",
+ "preview": "https://stashui.vercel.app/c/hover-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Compound HoverCard component with trigger, content, and arrow support.",
+ "description": "Radix-based hover card system with three parts: HoverCard (root), HoverCardTrigger (activator), and HoverCardContent (popover). Supports animations on open/close and optional arrow.",
+ "use_when": "Rich hover previews that need structured content (not just text).",
+ "avoid_when": "Touch-only interfaces; requires hover to activate.",
+ "a11y": "Trigger must be a focusable element; hover card is not keyboard-accessible.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "tooltip"
+ ]
+}

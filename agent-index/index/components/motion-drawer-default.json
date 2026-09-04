@@ -1,0 +1,51 @@
+{
+ "name": "motion-drawer-default",
+ "title": "Motion Drawer Default",
+ "category": "modals",
+ "origin": "Ui-Layouts",
+ "origin_short": "uila",
+ "exports": [
+  "MotionDrawer"
+ ],
+ "npm_deps": [
+  "motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "motion",
+  "3 colors"
+ ],
+ "usage": "\"use client\";\nimport MotionDrawer from \"@/components/ui/motion-drawer\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative min-h-[400px] w-full flex items-center justify-center bg-background overflow-hidden\">\n      <MotionDrawer\n        direction=\"left\"\n        width={280}\n        buttonOpeningVariants=\"merge\"\n        backgroundColor=\"hsl(var(--background))\"\n        overlayColor=\"rgba(0,0,0,0.25)\"\n      >\n        <nav className=\"flex flex-col gap-3\">\n          <h2 className=\"text-lg font-semibold mb-2 text-foreground\">Menu</h2>\n          {[\"Dashboard\", \"Projects\", \"Analytics\", \"Settings\"].map((item) => (\n            <a\n              key={item}\n              href=\"#\"\n              className=\"block px-3 py-2 rounded-md text-sm font-medium text-foreground hover:bg-muted transition-colors\"\n            >\n              {item}\n            </a>\n          ))}\n          <div className=\"mt-6 pt-4 border-t border-border\">\n            <button className=\"w-full px-4 py-2 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity\">\n              Upgrade Plan\n            </button>\n          </div>\n        </nav>\n      </MotionDrawer>\n      <div className=\"text-center pointer-events-none select-none\">\n        <p className=\"text-2xl font-bold text-foreground\">Motion Drawer</p>\n        <p className=\"text-sm text-muted-foreground mt-1\">\n          Click the menu icon to open\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/motion-drawer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/motion-drawer-default.json",
+ "preview": "https://stashui.vercel.app/c/motion-drawer-default",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Pre-configured side drawer with default theme and animations.",
+ "description": "A ready-to-use motion drawer with theme-aware colors and default spring animation. Includes toggle button, overlay, and drag-to-close. No setup required beyond adding content.",
+ "use_when": "You need a navigation drawer immediately without tuning dimensions or animations.",
+ "avoid_when": "Your design requires custom drawer width or specific animation timing.",
+ "a11y": "Click and overlay close are supported. No additional focus management beyond base drawer component.",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": [
+  "nav",
+  "sidebar"
+ ]
+}

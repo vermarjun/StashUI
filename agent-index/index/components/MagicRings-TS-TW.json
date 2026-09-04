@@ -1,0 +1,181 @@
+{
+ "name": "MagicRings-TS-TW",
+ "title": "Magic Rings Effect",
+ "category": "effects",
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "MagicRings"
+ ],
+ "npm_deps": [
+  "three@^0.167.1"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "webgl",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport MagicRings from \"@/components/ui/MagicRings\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden bg-black\">\n      <MagicRings\n        color=\"#fc42ff\"\n        colorTwo=\"#42fcff\"\n        ringCount={6}\n        followMouse\n        clickBurst\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/MagicRings.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/MagicRings-TS-TW.json",
+ "preview": "https://stashui.vercel.app/c/MagicRings-TS-TW",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "Concentric rings with gradient colors that pulse and scale on hover or click.",
+ "description": "WebGL-rendered animated rings that expand and fade in cycles, with optional mouse-tracking parallax and a burst effect on click.",
+ "use_when": "Interactive decorative backgrounds, hero sections, or call-to-action zones that benefit from playful, responsive…",
+ "avoid_when": "WebGL2-unsupported devices, touch-only surfaces (hover/click effects require mouse), or low-bandwidth contexts…",
+ "a11y": "Passive visual effect; no keyboard interaction or focus states. Does not respect prefers-reduced-motion.",
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#fc42ff'",
+   "required": false
+  },
+  {
+   "name": "colorTwo",
+   "type": "string",
+   "default": "'#42fcff'",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "ringCount",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "attenuation",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "lineThickness",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "baseRadius",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "radiusStep",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "scaleRate",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "noiseAmount",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "rotation",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "ringGap",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "fadeIn",
+   "type": "number",
+   "default": "0.7",
+   "required": false
+  },
+  {
+   "name": "fadeOut",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "followMouse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "mouseInfluence",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "hoverScale",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "parallax",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "clickBurst",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "border"
+  ],
+  "tone": "playful",
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "primary-cta",
+  "page-background"
+ ]
+}
