@@ -39,28 +39,87 @@ the model reading prose:
 
 ## Install
 
+From the repository root:
+
 ```bash
-npm install && npm run build
+npm --prefix mcp install
+npm run mcp:build
 ```
 
-Then register it. **Claude Code** (`.mcp.json` in the project, or `~/.claude.json`):
+Use the absolute path to the generated entry file when configuring a client:
+
+```text
+/absolute/path/to/StashUI/mcp/dist/index.js
+```
+
+### Codex
+
+```bash
+codex mcp add stashui -- node /absolute/path/to/StashUI/mcp/dist/index.js
+codex mcp list
+```
+
+The equivalent `~/.codex/config.toml` or project-scoped `.codex/config.toml`
+entry is:
+
+```toml
+[mcp_servers.stashui]
+command = "node"
+args = ["/absolute/path/to/StashUI/mcp/dist/index.js"]
+```
+
+### Claude Code
+
+```bash
+claude mcp add stashui --scope project -- node /absolute/path/to/StashUI/mcp/dist/index.js
+claude mcp list
+```
+
+The CLI writes this shareable `.mcp.json` configuration:
 
 ```json
 {
   "mcpServers": {
     "stashui": {
       "command": "node",
-      "args": ["/absolute/path/to/ComponentLibrary/mcp/dist/index.js"]
+      "args": ["/absolute/path/to/StashUI/mcp/dist/index.js"]
     }
   }
 }
 ```
 
-**Cursor / VS Code** (`.cursor/mcp.json`) and **Claude Desktop**
-(`claude_desktop_config.json`) take the same block.
+Cursor (`.cursor/mcp.json`) and Claude Desktop
+(`claude_desktop_config.json`) use the same `mcpServers` object.
 
-The server locates the index by looking, in order, at `$STASHUI_INDEX`,
-`../index`, then `../../agent-index/index`. Set `STASHUI_INDEX` to override.
+### VS Code
+
+VS Code uses a `servers` object in `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "stashui": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/absolute/path/to/StashUI/mcp/dist/index.js"]
+    }
+  }
+}
+```
+
+Restart the client after adding the server. The server locates the index by
+looking, in order, at `$STASHUI_INDEX`, `../index`, then
+`../../agent-index/index`. Set `STASHUI_INDEX` to the directory containing
+`categories.json` if the compiled server is moved elsewhere.
+
+Test the connection with the MCP Inspector:
+
+```bash
+npm --prefix mcp run inspect
+```
+
+For the full project overview, component installation guide, and agent workflow,
+see the [root README](../README.md).
 
 ## How the index is built
 
