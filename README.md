@@ -4,7 +4,7 @@
 
 **1,518 React components. One visual gallery. One agent-friendly registry.**
 
-Browse, preview, copy, and install shadcn-style components—or let an AI agent
+Browse, preview, copy, and install shadcn-style components, or let an AI agent
 navigate the same library through a purpose-built MCP server.
 
 [![Components](https://img.shields.io/badge/components-1%2C518-111111?style=flat-square)](https://stashui.vercel.app/)
@@ -49,19 +49,19 @@ not a runtime UI package.
 
 ## Why StashUI?
 
-- **A large, organized catalogue** — 1,518 components across 31 practical
+- **A large, organized catalogue:** 1,518 components across 31 practical
   categories, from buttons and forms to backgrounds, effects, navigation, and
   data display.
-- **Real previews** — fast video loops in the gallery and live, responsive,
+- **Real previews:** fast video loops in the gallery and live, responsive,
   interactive previews on every component page.
-- **One-command installation** — install through the shadcn CLI, including npm
+- **One-command installation:** install through the shadcn CLI, including npm
   packages, registry dependencies, CSS variables, and keyframes declared by the
   component.
-- **Framework-conscious source** — the registry records React and Next.js
+- **Framework-conscious source:** the registry records React and Next.js
   compatibility and warns when a component introduces a Next-only import.
-- **Agent-native retrieval** — MCP tools narrow the catalogue before loading
+- **Agent-native retrieval:** MCP tools narrow the catalogue before loading
   detailed prose or source code, keeping discovery focused and auditable.
-- **Inspectable generation** — the gallery, installable JSON, previews, and
+- **Inspectable generation:** the gallery, installable JSON, previews, and
   agent index all trace back to files committed in this repository.
 
 ## Install a component
@@ -479,7 +479,7 @@ The two included skills complement MCP:
 ## Contributing
 
 Issues and pull requests are welcome. For component changes, include a demo that
-shows real content and interactions—not an empty `<Component />` placeholder.
+shows real content and interactions, not an empty `<Component />` placeholder.
 Keep generated files in sync and run the verification commands before opening a
 pull request.
 
