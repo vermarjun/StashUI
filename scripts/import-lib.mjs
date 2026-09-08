@@ -41,7 +41,7 @@ async function fetchJson(url, tries = 3) {
       const t = setTimeout(() => ctrl.abort(), 20000);
       const res = await fetch(url, {
         signal: ctrl.signal,
-        headers: { "user-agent": "myui-importer" },
+        headers: { "user-agent": "stashui-importer" },
         redirect: "follow",
       });
       clearTimeout(t);

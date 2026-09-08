@@ -3,6 +3,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { CopyButton } from "@/components/site/copy-button";
+import { siteConfig } from "@/lib/site";
 
 interface CodeBlockProps {
   html: string;
@@ -39,10 +40,12 @@ export function CodeBlock({
 }
 
 export function InstallCommand({ name }: { name: string }) {
-  const [origin, setOrigin] = React.useState("");
+  // Start from the canonical URL so the command is correct on first paint,
+  // then prefer the actual origin (previews, local dev) once mounted.
+  const [origin, setOrigin] = React.useState<string>(siteConfig.url);
   React.useEffect(() => setOrigin(window.location.origin), []);
 
-  const cmd = `npx shadcn@latest add ${origin || "https://your-domain"}/r/${name}.json`;
+  const cmd = `npx shadcn@latest add ${origin}/r/${name}.json`;
 
   return (
     <div className="flex items-center gap-2 rounded-md border border-border bg-muted/30 px-3 py-2">

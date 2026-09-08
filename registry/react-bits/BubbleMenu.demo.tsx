@@ -2,9 +2,9 @@
 import BubbleMenu from "@/registry/react-bits/BubbleMenu";
 
 const Logo = () => (
-  <svg width="90" height="22" viewBox="0 0 90 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="112" height="22" viewBox="0 0 112 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="11" cy="11" r="9" fill="#120F17" />
-    <text x="26" y="16" fontFamily="sans-serif" fontSize="14" fontWeight="700" fill="#120F17">myui</text>
+    <text x="26" y="16" fontFamily="sans-serif" fontSize="14" fontWeight="700" fill="#120F17">StashUI</text>
   </svg>
 );
 

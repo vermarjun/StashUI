@@ -6,14 +6,27 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/site/site-header";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "my/ui — personal component library",
-    template: "%s — my/ui",
+    default: `${siteConfig.name} — component library`,
+    template: `%s — ${siteConfig.name}`,
   },
-  description:
-    "A personal, curated component library built on shadcn. Browse, preview, copy, and install components from one place.",
+  description: siteConfig.description,
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — component library`,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} — component library`,
+    description: siteConfig.description,
+  },
 };
 
 export default function MainLayout({

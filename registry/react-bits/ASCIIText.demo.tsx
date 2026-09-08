@@ -6,7 +6,7 @@ export default function Demo() {
   return (
     <div className="relative w-full h-[400px] bg-background">
       <ASCIIText
-        text="myui"
+        text="stashui"
         asciiFontSize={8}
         textFontSize={200}
         textColor="#ffffff"

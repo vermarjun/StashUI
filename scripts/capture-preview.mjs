@@ -80,7 +80,7 @@ async function loadChoreography() {
 }
 
 // ── capture ───────────────────────────────────────────────────────────────────
-const tmp = mkdtempSync(join(tmpdir(), "myui-cap-"));
+const tmp = mkdtempSync(join(tmpdir(), "stashui-cap-"));
 const outDir = join(root, "public", "previews");
 mkdirSync(outDir, { recursive: true });
 

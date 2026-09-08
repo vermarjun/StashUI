@@ -7438,7 +7438,7 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "footer-hero",
     "title": "Footer Hero",
     "description": "Ui-Layouts component.",
-    "category": "footers",
+    "category": "effects",
     "frameworks": [
       "react",
       "next"

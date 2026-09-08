@@ -10,7 +10,7 @@ export default function Demo() {
 
         <Onboarding.Step step={1}>
           <Onboarding.Header
-            title="Welcome to myui"
+            title="Welcome to StashUI"
             description="A personal component library built for speed and aesthetics."
           />
           <div className="mt-4 rounded-lg border border-border bg-muted/40 p-4 text-sm text-muted-foreground">

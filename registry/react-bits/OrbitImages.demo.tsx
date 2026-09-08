@@ -29,7 +29,7 @@ export default function Demo() {
         pathWidth={1}
         centerContent={
           <span className="text-muted-foreground text-xs tracking-widest uppercase opacity-60">
-            my/ui orbit
+            StashUI orbit
           </span>
         }
       />
