@@ -68,7 +68,11 @@ export function CommandMenu() {
         </kbd>
       </button>
 
-      <CommandDialog open={open} onOpenChange={setOpen} shouldFilter={false}>
+      <CommandDialog
+        open={open}
+        onOpenChange={setOpen}
+        commandProps={{ shouldFilter: false }}
+      >
         <CommandInput
           placeholder="Search components by name or library…"
           value={query}
