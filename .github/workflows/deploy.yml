@@ -1,0 +1,68 @@
+name: Deploy to EC2
+
+# Every push to main builds the site on GitHub's Linux runners and ships it to
+# the "Home" EC2 box (stashui.vermarjun.xyz). The box keeps the previous build
+# and rolls back automatically if the new one fails its health check.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  APP: stashui
+  PORT: "3002"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Build (standalone)
+        run: |
+          # Standalone output is only needed off Vercel, so add it here
+          # instead of in next.config.ts.
+          perl -0pi -e 's/(const nextConfig[^=]*=\s*\{)/$1\n  output: "standalone",/' next.config.ts
+          grep -q 'output: "standalone"' next.config.ts
+          npx next build
+
+      - name: Assemble bundle
+        run: |
+          mkdir -p bundle
+          cp -R .next/standalone/. bundle/
+          mkdir -p bundle/.next
+          cp -R .next/static bundle/.next/static
+          cp -R public bundle/public
+          test -f bundle/server.js
+          du -sh bundle
+
+      - name: SSH setup
+        env:
+          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.EC2_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: Upload
+        run: |
+          rsync -az --delete --exclude .env \
+            bundle/ "ubuntu@${{ secrets.EC2_HOST }}:/srv/apps/$APP.incoming/"
+
+      - name: Activate
+        run: ssh "ubuntu@${{ secrets.EC2_HOST }}" "/srv/deploy/activate.sh $APP $PORT"
