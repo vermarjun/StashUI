@@ -1,7 +1,6 @@
 'use client';
 import { MoveUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React from 'react';
 
 interface ProjectsTypes {
@@ -63,13 +62,7 @@ export default function ConditionGrid() {
                 className={` relative  ${colSpanClass} `}
               >
                 <div className='w-auto h-full'>
-                  <Image
-                    src={project?.img}
-                    alt={'image'}
-                    height={600}
-                    width={1200}
-                    className='h-full w-full object-cover rounded-xl'
-                  />
+                  <img src={project?.img} alt={'image'} height={600} width={1200} className='h-full w-full object-cover rounded-xl' />
                 </div>
                 <div className='absolute lg:bottom-2 bottom-0 text-black w-full p-4 flex justify-between items-center'>
                   <h3 className='lg:text-xl text-sm bg-black text-white rounded-xl p-2 px-4'>

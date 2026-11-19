@@ -111,13 +111,17 @@ export const PulsatingButton = React.forwardRef<
         }
         {...props}
       >
+        <style>{`@keyframes stashui-pulsating{0%,100%{box-shadow:0 0 0 0 var(--pulse-color,var(--bg))}50%{box-shadow:0 0 0 var(--distance) var(--pulse-color,var(--bg))}}@keyframes stashui-pulsating-ripple{0%{box-shadow:0 0 0 0 var(--pulse-color,var(--bg))}100%{box-shadow:0 0 0 calc(var(--distance) * 2) transparent}}`}</style>
         <span className="relative z-10">{children}</span>
         <span
           aria-hidden="true"
-          className={cn(
-            "pointer-events-none absolute inset-0 rounded-[inherit] bg-inherit",
-            variant === "pulse" ? "animate-pulse" : "animate-pulse-ripple"
-          )}
+          className="pointer-events-none absolute inset-0 rounded-[inherit] bg-inherit"
+          style={{
+            animation:
+              variant === "pulse"
+                ? "stashui-pulsating var(--duration) ease-out infinite"
+                : "stashui-pulsating-ripple var(--duration) ease-out infinite",
+          }}
         />
       </button>
     )

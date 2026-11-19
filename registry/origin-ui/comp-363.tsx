@@ -18,7 +18,7 @@ export default function HoverCardDemo() {
             <img
               alt="Avatar"
               height={40}
-              src="/origin/avatar-40-04.jpg"
+              src="https://i.pravatar.cc/80?img=32"
               width={40}
             />
           </a>
@@ -30,7 +30,7 @@ export default function HoverCardDemo() {
             alt="Avatar"
             className="shrink-0 rounded-full"
             height={40}
-            src="/origin/avatar-40-04.jpg"
+            src="https://i.pravatar.cc/80?img=32"
             width={40}
           />
           <div className="space-y-1">

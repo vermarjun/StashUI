@@ -3,14 +3,19 @@
 import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
 
+import { cn } from "@/lib/utils";
+
 export const MagneticButton = ({
   children,
   strength = 0.8,
   maxDistance = 100,
+  className,
 }: {
   children: React.ReactNode;
   strength?: number;
   maxDistance?: number;
+  /** Classes for the hit area; add padding to widen the magnetic field. */
+  className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -43,7 +48,10 @@ export const MagneticButton = ({
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="cursor-pointer rounded-lg border border-dashed transition-colors duration-150 [--show-color:var(--color-blue-500)]"
+      className={cn(
+        "cursor-pointer rounded-lg border border-dashed transition-colors duration-150 [--show-color:var(--color-blue-500)]",
+        className,
+      )}
       style={{
         borderColor: hasMoved ? "var(--show-color)" : "transparent",
         backgroundColor: hasMoved

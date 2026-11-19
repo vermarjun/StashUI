@@ -2,7 +2,6 @@
 
 import preview from '@/assets/preview/Preview';
 import { TabsBtn, TabsContent, TabsProvider } from '@/registry/ui-layouts/tab';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 function HomeTab() {
@@ -25,35 +24,17 @@ function HomeTab() {
 
         <TabsContent value='accordion' yValue={false}>
           <div className='dark:bg-black bg-white  mx-auto max-w-[450px] lg:h-[300px] md:h-[240px] h-[190px]  dark:text-white text-black p-4 border  shadow-md rounded-md space-y-2'>
-            <Image
-              className='rounded-xl h-full object-contain'
-              src={preview.galleryNew}
-              width={600}
-              height={680}
-              alt={'gallery'}
-            />
+            <img className='rounded-xl h-full object-contain' src={preview.galleryNew} width={600} height={680} alt={'gallery'} />
           </div>
         </TabsContent>
         <TabsContent value='globe' yValue={false}>
           <div className='dark:bg-black bg-white  mx-auto max-w-[450px] lg:h-[300px] md:h-[240px] h-[190px] dark:text-white text-black p-4 border shadow-md rounded-md space-y-2'>
-            <Image
-              className='rounded-xl h-full object-contain'
-              src={preview.globe}
-              width={600}
-              height={680}
-              alt={'globe'}
-            />
+            <img className='rounded-xl h-full object-contain' src={preview.globe} width={600} height={680} alt={'globe'} />
           </div>
         </TabsContent>
         <TabsContent value='mousetrail' yValue={false}>
           <div className='dark:bg-black bg-white  mx-auto max-w-[450px] lg:h-[300px] md:h-[240px] h-[190px] dark:text-white text-black p-4 border shadow-md rounded-md space-y-2'>
-            <Image
-              className='rounded-xl h-full object-contain'
-              src={preview.mousetrail}
-              width={600}
-              height={680}
-              alt={'mousetrail'}
-            />
+            <img className='rounded-xl h-full object-contain' src={preview.mousetrail} width={600} height={680} alt={'mousetrail'} />
           </div>
         </TabsContent>
       </TabsProvider>

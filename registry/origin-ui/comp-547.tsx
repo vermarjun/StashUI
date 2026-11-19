@@ -15,21 +15,21 @@ const initialFiles = [
     name: "image-01.jpg",
     size: 1528737,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
+    url: "https://images.unsplash.com/photo-1478028928718-7bfdb1b32095?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
   {
     id: "image-02-123456789",
     name: "image-02.jpg",
     size: 2345678,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=2",
+    url: "https://images.unsplash.com/photo-1532423622396-10a3f979251a?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
   {
     id: "image-03-123456789",
     name: "image-03.jpg",
     size: 3456789,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=3",
+    url: "https://images.unsplash.com/photo-1555212697-194d092e3b8f?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
 ];
 

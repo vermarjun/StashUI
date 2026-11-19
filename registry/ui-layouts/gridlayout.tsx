@@ -55,13 +55,13 @@ function SingleLayout() {
             </AccordionHeader>
             <AccordionPanel className='2xl:text-base text-sm'>
               UI components can improve UX by providing familiar, consistent interactions that make
-              it easy for users to navigate and interact with an application byy using recognizable
+              it easy for users to navigate and interact with an application by using recognizable
               patterns.
             </AccordionPanel>
           </AccordionItem>
           <AccordionItem value='item-5' className='dark:bg-black bg-white'>
             <AccordionHeader className='2xl:text-base text-sm dark:text-neutral-300 dark:hover:text-black'>
-              component design challenges?
+              Component design challenges?
             </AccordionHeader>
             <AccordionPanel className='2xl:text-base text-sm'>
               Some common challenges include maintaining consistency across different devices and

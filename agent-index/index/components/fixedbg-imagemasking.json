@@ -1,7 +1,12 @@
 {
  "name": "fixedbg-imagemasking",
  "title": "Fixed Background Image Mask",
- "category": "effects",
+ "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "media",
+  "heroes"
+ ],
  "origin": "Ui-Layouts",
  "origin_short": "uila",
  "exports": [
@@ -17,7 +22,7 @@
   "motion",
   "2 colors"
  ],
- "usage": "import Cmp from \"@/components/ui/fixed-bg-image-masking\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "import FixedBgImageMasking from \"@/components/ui/fixed-bg-image-masking\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full bg-black text-white\">\n      <section className=\"flex h-[45vh] flex-col items-center justify-center gap-3 px-6 text-center\">\n        <p className=\"text-xs uppercase tracking-[0.3em] text-neutral-500\">\n          Scroll down\n        </p>\n        <h2 className=\"max-w-2xl text-4xl font-semibold tracking-tight md:text-6xl\">\n          The image stays put. The shape moves.\n        </h2>\n      </section>\n      <FixedBgImageMasking />\n      <section className=\"flex h-[70vh] flex-col items-center justify-center gap-3 px-6 text-center\">\n        <h3 className=\"max-w-xl text-3xl font-semibold tracking-tight\">\n          A fixed background seen through a paint-splash mask\n        </h3>\n        <p className=\"max-w-md text-neutral-400\">\n          As the section scrolls past, the photo stays pinned to the viewport,\n          so different parts of it show through the splash.\n        </p>\n      </section>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/ui-layouts/fixed-bg-image-masking.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/fixedbg-imagemasking.json",

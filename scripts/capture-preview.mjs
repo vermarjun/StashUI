@@ -5,7 +5,7 @@
 // Pipeline: Playwright drives /preview/<name>?view=detail (the real render),
 // runs the component's interaction choreography (scripts/captures/<name>.mjs or
 // _default.mjs), records webm → ffmpeg speeds it up and encodes a compact
-// webm + mp4 + jpg poster into public/previews/.
+// mp4 + jpg poster into public/previews/.
 //
 // Requires the dev server to be running (npm run dev) and ffmpeg on PATH.
 
@@ -142,7 +142,7 @@ await context.close(); // finalizes the .webm
 const rawPath = await video.path();
 await browser.close();
 
-// ── encode: speed up + compress (webm vp9 + mp4 h264 + jpg poster) ────────────
+// ── encode: speed up + compress (mp4 h264 + jpg poster) ───────────────────────
 function ffmpeg(label, fileArgs) {
   const r = spawnSync("ffmpeg", ["-y", "-loglevel", "error", ...fileArgs], {
     stdio: "inherit",
@@ -150,16 +150,10 @@ function ffmpeg(label, fileArgs) {
   if (r.status !== 0) throw new Error(`ffmpeg ${label} failed (${r.status})`);
 }
 
-const webm = join(outDir, `${name}.webm`);
 const mp4 = join(outDir, `${name}.mp4`);
 const jpg = join(outDir, `${name}.jpg`);
 const vf = `setpts=PTS/${SPEED},fps=${FPS},scale=${W}:-2:flags=lanczos`;
 
-ffmpeg("webm", [
-  "-i", rawPath, "-an", "-vf", vf,
-  "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "36", "-row-mt", "1",
-  "-pix_fmt", "yuv420p", webm,
-]);
 ffmpeg("mp4", [
   "-i", rawPath, "-an", "-vf", vf,
   "-c:v", "libx264", "-preset", "medium", "-crf", "27",
@@ -187,5 +181,5 @@ if (!keep) rmSync(tmp, { recursive: true, force: true });
 const { statSync } = await import("node:fs");
 const kb = (p) => Math.round(statSync(p).size / 1024);
 console.log(
-  `✓ ${name}: webm ${kb(webm)}KB · mp4 ${kb(mp4)}KB · poster ${kb(jpg)}KB`,
+  `✓ ${name}: mp4 ${kb(mp4)}KB · poster ${kb(jpg)}KB`,
 );

@@ -4,7 +4,7 @@ import React, { useMemo, useRef } from 'react';
 import { useFrame, ThreeElements, Canvas } from '@react-three/fiber';
 import { extend } from '@react-three/fiber';
 import { MathUtils, Vector3, Color, IcosahedronGeometry, Mesh } from 'three';
-import { Environment, OrbitControls, useEnvironment } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import {
   EffectComposer,
   Bloom,
@@ -196,17 +196,19 @@ const Blob: React.FC<BlobProps> = ({ color = '#2cb978' }) => {
 };
 
 // Updated index page
-const Home: React.FC = () => {
+const Home: React.FC<{ title?: React.ReactNode }> = ({
+  title = 'Fresh ideas, daily',
+}) => {
   return (
-    <div className='relative flex items-center justify-center w-screen h-screen overflow-auto bg-[#22ff7e]'>
+    <div className='relative flex items-center justify-center h-full min-h-[400px] w-full overflow-hidden bg-[#22ff7e]'>
       <article className=' relative z-2'>
-        <h1 className=' text-[9vw] w-full text-center text-white'>
-          It's Lemon's Time
+        <h1 className=' text-[9vw] font-semibold tracking-tight w-full text-center text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.25)]'>
+          {title}
         </h1>
       </article>
       <Canvas
         camera={{ position: [0.0, 0.0, 8.0], fov: 15 }}
-        className=' absolute! top-0 left-0 w-screen h-screen'
+        className=' absolute! top-0 left-0 h-full! w-full!'
       >
         <spotLight
           position={[10, 10, 10]}
@@ -216,7 +218,6 @@ const Home: React.FC = () => {
           intensity={Math.PI}
         />
         <OrbitControls />
-        <Environment preset='city' environmentIntensity={0.5} />
         <directionalLight intensity={2} position={[0, 2, 3]} />
 
         <Blob />

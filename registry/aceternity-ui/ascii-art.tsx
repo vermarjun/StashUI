@@ -316,7 +316,8 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
             : resolvedTextColor;
 
           if (animationStyle === "matrix" && matrixProgress !== undefined) {
-            const charProgress = (x * 0.02 + y * 0.01) / 2;
+            // normalised so the sweep always finishes, whatever the resolution
+            const charProgress = ((x / cols) * 0.7 + (y / rows) * 0.3) * 0.85;
             if (matrixProgress < charProgress) {
               charIndex++;
               continue;
@@ -447,6 +448,7 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
   if (error) {
     return (
       <div
+        ref={containerRef}
         className={cn(
           "flex items-center justify-center text-red-500 text-sm font-mono",
           className
@@ -458,8 +460,11 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
   }
 
   if (!isLoaded) {
+    // The ref must be attached while loading too, otherwise useInView never
+    // observes anything and animate-on-view reveals never start.
     return (
       <div
+        ref={containerRef}
         className={cn(
           "flex items-center justify-center text-neutral-500 text-sm font-mono animate-pulse",
           className

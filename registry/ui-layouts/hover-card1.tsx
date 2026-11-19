@@ -1,5 +1,4 @@
 import { MoveUpRight } from 'lucide-react';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 function HoverCard1() {
@@ -7,15 +6,9 @@ function HoverCard1() {
     <>
       <article className={` relative pb-4  overflow-hidden`}>
         <div className='w-full rounded-md h-full overflow-hidden'>
-          <Image
-            src={
+          <img src={
               'https://images.unsplash.com/photo-1726824766931-4bd8b59af37c?q=80&w=800&auto=format&fit=crop'
-            }
-            alt={'image'}
-            height={600}
-            width={1200}
-            className='h-full w-full object-cover rounded-xl hover:scale-100 scale-105 transition-all duration-300'
-          />
+            } alt={'image'} height={600} width={1200} className='h-full w-full object-cover rounded-xl hover:scale-100 scale-105 transition-all duration-300' />
         </div>
         <div className='absolute bottom-2 text-black w-full p-4 flex justify-between items-center'>
           <h3 className='sm:text-xl text-sm bg-black text-white rounded-xl p-2 px-4'>

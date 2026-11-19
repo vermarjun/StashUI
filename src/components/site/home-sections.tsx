@@ -14,7 +14,7 @@ export interface HomeSection {
   items: ComponentMeta[];
 }
 
-const ROW_SIZE = 8;
+const ROW_SIZE = 3;
 const PAGE = 5;
 
 /**
@@ -45,15 +45,15 @@ export function HomeSections({ sections }: { sections: HomeSection[] }) {
   }, [hasMore, visible.length]);
 
   return (
-    <div className="divide-y divide-border">
+    <div>
       {visible.map((section) => (
-        <section key={section.slug} className="py-8">
+        <section key={section.slug} className="py-10 first:pt-12">
           <div className="mb-4 flex items-center justify-between gap-3">
             <Link
               href={`/category/${section.slug}`}
               className="group flex items-baseline gap-2"
             >
-              <h2 className="text-lg font-semibold tracking-tight group-hover:underline">
+              <h2 className="text-lg font-semibold tracking-tight underline-offset-4 group-hover:underline">
                 {section.label}
               </h2>
               <span className="font-mono text-xs text-muted-foreground">
@@ -69,28 +69,17 @@ export function HomeSections({ sections }: { sections: HomeSection[] }) {
             </Link>
           </div>
 
-          <div className="scrollbar-thin -mx-1 flex snap-x gap-4 overflow-x-auto px-1 pb-2">
-            {section.items.slice(0, ROW_SIZE).map((item) => (
-              <div
+          <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+            {section.items.slice(0, ROW_SIZE).map((item, i) => (
+              <ComponentCard
                 key={item.name}
-                className="w-[300px] shrink-0 snap-start sm:w-[320px]"
-              >
-                <ComponentCard
-                  item={item}
-                  designWidth={categoryConfig(section.slug).designWidth}
-                  className="h-full rounded-xl border border-border p-3 hover:bg-muted/20"
-                />
-              </div>
+                item={item}
+                designWidth={categoryConfig(section.slug).designWidth}
+                // 2 cards on tablet, 3 on desktop: hide the 3rd below xl so
+                // a row never ends with an orphan.
+                className={i === 2 ? "hidden xl:flex" : undefined}
+              />
             ))}
-            {section.count > ROW_SIZE && (
-              <Link
-                href={`/category/${section.slug}`}
-                className="flex w-[160px] shrink-0 snap-start flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-border text-sm text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
-                style={{ height: 180 + 44 }}
-              >
-                <ChevronRight className="size-5" />+{section.count - ROW_SIZE} more
-              </Link>
-            )}
           </div>
         </section>
       ))}

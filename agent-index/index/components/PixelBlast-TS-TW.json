@@ -1,7 +1,11 @@
 {
  "name": "PixelBlast-TS-TW",
  "title": "Pixel Blast",
- "category": "effects",
+ "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -18,7 +22,7 @@
   "webgl",
   "3 colors"
  ],
- "usage": "\"use client\";\n\nimport Cmp from \"@/components/ui/PixelBlast\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[640px] bg-background overflow-hidden\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport PixelBlast from \"@/components/ui/PixelBlast\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[640px] w-full overflow-hidden bg-black\">\n      <PixelBlast\n        variant=\"circle\"\n        pixelSize={6}\n        color=\"#B19EEF\"\n        patternScale={3}\n        patternDensity={1.25}\n        pixelSizeJitter={0.5}\n        enableRipples\n        rippleSpeed={0.4}\n        rippleThickness={0.12}\n        rippleIntensityScale={1.5}\n        liquid\n        liquidStrength={0.12}\n        liquidRadius={1.2}\n        liquidWobbleSpeed={5}\n        speed={0.6}\n        edgeFade={0.25}\n        transparent\n      />\n      <div className=\"pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-4 text-center\">\n        <h2 className=\"text-5xl font-semibold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] md:text-6xl\">\n          Click anywhere.\n        </h2>\n        <p className=\"text-neutral-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]\">\n          Every click sends a ripple through the pixels.\n        </p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/PixelBlast.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/PixelBlast-TS-TW.json",

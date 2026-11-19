@@ -7,27 +7,27 @@ const orbitItems = [
   {
     id: 1,
     name: 'React',
-    src: 'https://picsum.photos/seed/react/60/60',
+    src: 'https://images.unsplash.com/photo-1738510992679-41f599ec9399?w=60&h=60&fit=crop&auto=format&q=80',
   },
   {
     id: 2,
     name: 'TypeScript',
-    src: 'https://picsum.photos/seed/typescript/60/60',
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&auto=format&q=80',
   },
   {
     id: 3,
     name: 'Tailwind',
-    src: 'https://picsum.photos/seed/tailwind/60/60',
+    src: 'https://images.unsplash.com/photo-1759434192768-fe3facebd5f6?w=60&h=60&fit=crop&auto=format&q=80',
   },
   {
     id: 4,
     name: 'Vite',
-    src: 'https://picsum.photos/seed/vite/60/60',
+    src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=60&h=60&fit=crop&auto=format&q=80',
   },
   {
     id: 5,
     name: 'Node.js',
-    src: 'https://picsum.photos/seed/nodejs/60/60',
+    src: 'https://images.unsplash.com/photo-1724888861686-ad3f706ab067?w=60&h=60&fit=crop&auto=format&q=80',
   },
 ];
 

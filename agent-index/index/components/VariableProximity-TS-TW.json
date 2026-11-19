@@ -2,6 +2,9 @@
  "name": "VariableProximity-TS-TW",
  "title": "Variable Proximity",
  "category": "text",
+ "categories": [
+  "text"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +19,7 @@
  "flags": [
   "motion"
  ],
- "usage": "\"use client\"\n\nimport { useRef } from \"react\"\nimport VariableProximity from \"@/components/ui/VariableProximity\"\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null)\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex flex-col items-center justify-center gap-8 p-16 min-h-[300px] select-none\"\n      style={{ fontFamily: '\"Roboto Flex\", sans-serif' }}\n    >\n      <VariableProximity\n        label=\"Move your cursor near the letters\"\n        fromFontVariationSettings=\"'wght' 100, 'wdth' 75\"\n        toFontVariationSettings=\"'wght' 900, 'wdth' 125\"\n        containerRef={containerRef}\n        radius={120}\n        falloff=\"gaussian\"\n        className=\"text-3xl text-center leading-tight\"\n      />\n      <VariableProximity\n        label=\"Variable font proximity effect\"\n        fromFontVariationSettings=\"'wght' 200, 'wdth' 80\"\n        toFontVariationSettings=\"'wght' 800, 'wdth' 110\"\n        containerRef={containerRef}\n        radius={100}\n        falloff=\"exponential\"\n        className=\"text-2xl text-gray-500 text-center\"\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport { useRef } from \"react\"\nimport VariableProximity from \"@/components/ui/VariableProximity\"\n\n// VariableProximity animates font-variation-settings, so it needs a variable\n// font with wght + wdth axes loaded on the page. Roboto Flex is free.\nconst FONT_FACE = `@font-face{font-family:\"Roboto Flex\";font-style:normal;font-display:swap;font-weight:100 1000;font-stretch:25% 151%;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/roboto-flex@5.0.8/files/roboto-flex-latin-full-normal.woff2) format(\"woff2-variations\");}`\n\nexport default function Demo() {\n  const containerRef = useRef<HTMLDivElement>(null)\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex min-h-[420px] w-full flex-col items-center justify-center gap-6 p-12 select-none text-foreground\"\n      style={{ fontFamily: '\"Roboto Flex\", sans-serif' }}\n    >\n      <style>{FONT_FACE}</style>\n      <VariableProximity\n        label=\"Bring your cursor closer\"\n        fromFontVariationSettings=\"'wght' 100, 'wdth' 75\"\n        toFontVariationSettings=\"'wght' 1000, 'wdth' 140\"\n        containerRef={containerRef}\n        radius={140}\n        falloff=\"gaussian\"\n        className=\"text-center text-7xl leading-tight\"\n      />\n      <VariableProximity\n        label=\"and watch every letter respond\"\n        fromFontVariationSettings=\"'wght' 200, 'wdth' 80\"\n        toFontVariationSettings=\"'wght' 900, 'wdth' 125\"\n        containerRef={containerRef}\n        radius={110}\n        falloff=\"linear\"\n        className=\"text-center text-4xl text-muted-foreground\"\n      />\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/VariableProximity.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/VariableProximity-TS-TW.json",

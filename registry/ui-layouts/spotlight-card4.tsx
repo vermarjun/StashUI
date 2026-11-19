@@ -1,6 +1,5 @@
 'use client';
 import { SpotLightItem, Spotlight } from '@/registry/ui-layouts/spotlight';
-import Image from 'next/image';
 import React from 'react';
 
 export default function SpotlightCard4() {
@@ -10,13 +9,7 @@ export default function SpotlightCard4() {
         <SpotLightItem>
           <div className="relative text-center z-10 sm:px-8 px-4 py-6 rounded-lg w-fit  bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/sub-grid_hnhyvi.png')] bg-cover   bg-black h-full mx-auto">
             <>
-              <Image
-                src={'/star_tb9ivg.webp'}
-                alt='grid'
-                width={600}
-                className='w-fit mx-auto '
-                height={600}
-              />
+              <img src={'/star_tb9ivg.webp'} alt='grid' width={600} className='w-fit mx-auto ' height={600} />
               <h1 className='text-2xl pt-5 font-semibold tracking-tight text-white'>
                 Seamless Animation For All
               </h1>

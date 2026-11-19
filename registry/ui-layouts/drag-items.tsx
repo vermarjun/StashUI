@@ -15,27 +15,27 @@ export default function DragItems() {
   const [items, setItems] = useState([
     {
       id: 1,
-      title: 'Follow me on X',
-      subtitle: 'Get more update follow me on X',
-      date: '32.8.2024',
+      title: 'Ship the onboarding checklist',
+      subtitle: 'Five steps, progress saved per workspace',
+      date: 'Due 28 Aug 2024',
       src: 'https://images.unsplash.com/photo-1724908549265-06972c22ca37?q=80&w=2070&auto=format&fit=crop',
-      link: 'https://x.com/naymur_dev',
+      link: '#',
     },
     {
       id: 2,
-      title: 'Star the repo',
-      subtitle: 'If you like star the repo',
-      date: '32.8.2024',
+      title: 'Fix the flaky checkout test',
+      subtitle: 'Fails about 1 in 20 runs on CI',
+      date: 'Due 30 Aug 2024',
       src: 'https://images.unsplash.com/photo-1724908549265-06972c22ca37?q=80&w=2070&auto=format&fit=crop',
-      link: 'https://github.com/ui-layouts/uilayouts',
+      link: '#',
     },
     {
       id: 3,
-      title: 'Share it with your friend',
-      subtitle: 'if you like it, please Share it with your friend ',
-      date: '32.8.2024',
+      title: 'Write the v2.4 release notes',
+      subtitle: 'Cover the new billing page and API limits',
+      date: 'Due 2 Sep 2024',
       src: 'https://images.unsplash.com/photo-1724908549265-06972c22ca37?q=80&w=2070&auto=format&fit=crop',
-      link: 'https://www.ui-layouts.com/',
+      link: '#',
     },
   ]);
 
@@ -48,14 +48,14 @@ export default function DragItems() {
     >
       {items.map((item) => (
         <Item key={item.id} item={item}>
-          <h1 className='text-xl'>{item.title}</h1>
-          <p className='text-sm'>{item.subtitle}</p>
-          <span>{item.date}</span>
+          <h1 className='text-xl font-medium'>{item.title}</h1>
+          <p className='text-sm opacity-70'>{item.subtitle}</p>
+          <span className='mt-1 block text-xs opacity-60'>{item.date}</span>
           <a
-            className='block w-fit p-2 px-3 text-xs rounded-md  bg-primary-foreground text-primary'
+            className='mt-2 block w-fit p-2 px-3 text-xs font-medium rounded-md  bg-primary-foreground text-primary'
             href={item.link}
           >
-            Click
+            Open task
           </a>
         </Item>
       ))}

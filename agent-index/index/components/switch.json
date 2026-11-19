@@ -1,7 +1,11 @@
 {
  "name": "switch",
  "title": "Switch",
- "category": "checkboxes",
+ "category": "switches",
+ "categories": [
+  "switches",
+  "settings"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -14,7 +18,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "import { Switch } from \"@/components/ui/switch\";\n\nexport default function Demo() {\n  return <Switch />;\n}",
+ "usage": "import { Switch } from \"@/components/ui/switch\";\n\nconst ROWS = [\n  { id: \"sw-dark\", title: \"Dark mode\", desc: \"Use a dark theme across the app.\", on: true },\n  { id: \"sw-sounds\", title: \"Sounds\", desc: \"Play a sound for new messages.\", on: false },\n  { id: \"sw-autosave\", title: \"Autosave\", desc: \"Save drafts every few seconds.\", on: true },\n  { id: \"sw-sso\", title: \"Single sign-on\", desc: \"Requires an Enterprise plan.\", on: false, disabled: true },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-md rounded-xl border border-border bg-card p-6 text-card-foreground shadow-sm\">\n        <h3 className=\"font-semibold text-base\">Preferences</h3>\n        <p className=\"mt-1 text-muted-foreground text-sm\">Changes are saved automatically.</p>\n        <div className=\"mt-5 divide-y divide-border\">\n          {ROWS.map((r) => (\n            <div className=\"flex items-center justify-between gap-6 py-4\" key={r.id}>\n              <label className=\"grid gap-0.5\" htmlFor={r.id}>\n                <span className=\"font-medium text-sm\">{r.title}</span>\n                <span className=\"text-muted-foreground text-xs\">{r.desc}</span>\n              </label>\n              <Switch defaultChecked={r.on} disabled={r.disabled} id={r.id} />\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/switch.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/switch.json",

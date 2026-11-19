@@ -1,57 +1,70 @@
 "use client";
 
+import { motion } from "motion/react";
+import { ArrowUpRight, MapPin } from "lucide-react";
+
 import { ShiftCard } from "@/registry/cult-ui/shift-card";
 
 const avatar =
-  "https://api.dicebear.com/9.x/avataaars/svg?seed=shiftcard&size=48";
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=320&h=320&fit=crop&auto=format&q=80";
 
 export default function ShiftCardDemo() {
   return (
-    <div className="flex items-center justify-center w-full p-8">
+    <div className="flex min-h-[460px] w-full items-center justify-center p-8">
       <ShiftCard
+        className="min-h-[340px]"
         topContent={
-          <div className="flex items-center gap-2">
-            <img
-              src={avatar}
-              alt="User"
-              className="size-8 rounded-full border border-border"
-            />
-            <div className="leading-tight">
-              <p className="text-sm font-semibold text-foreground">
-                Jordan Lee
-              </p>
-              <p className="text-xs text-muted-foreground">@jordanlee</p>
+          <div className="flex items-center justify-between rounded-md bg-muted/60 px-2.5 py-1.5 text-foreground">
+            <div className="flex items-center gap-1.5 text-xs font-medium">
+              <span className="size-1.5 rounded-full bg-emerald-500" />
+              Open to work
             </div>
+            <span className="text-xs text-muted-foreground">Design Engineer</span>
           </div>
         }
         topAnimateContent={
-          <p className="mt-1 text-xs text-muted-foreground">
-            Full-stack dev · Open to work
-          </p>
+          <motion.img
+            layoutId="shift-card-avatar"
+            src={avatar}
+            alt="Sofia Marquez"
+            className="absolute top-12 left-1 size-14 rounded-xl object-cover shadow-lg"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          />
         }
         middleContent={
-          <div className="flex flex-col items-center gap-3 py-4">
-            <img
-              src={avatar}
-              alt="User large"
-              className="size-20 rounded-full border-2 border-border"
-            />
-            <p className="text-sm font-medium text-foreground">Jordan Lee</p>
-          </div>
+          <motion.img
+            layoutId="shift-card-avatar"
+            src={avatar}
+            alt="Sofia Marquez"
+            className="mt-3 size-36 rounded-2xl object-cover shadow-[0_20px_40px_-12px_rgba(0,0,0,0.6)]"
+            transition={{ duration: 0.3, ease: "easeIn" }}
+          />
         }
         bottomContent={
-          <div className="flex flex-col gap-2 rounded-xl bg-muted/60 p-4">
-            <div className="flex justify-between text-xs">
-              <span className="text-muted-foreground">Followers</span>
-              <span className="font-semibold">4.2k</span>
+          <div className="rounded-xl border-t border-border bg-card px-4 pb-4">
+            <div className="flex h-[38px] items-center justify-between">
+              <h3 className="text-base font-semibold text-foreground">Sofia Marquez</h3>
+              <ArrowUpRight className="size-4 text-muted-foreground" />
             </div>
-            <div className="flex justify-between text-xs">
-              <span className="text-muted-foreground">Following</span>
-              <span className="font-semibold">318</span>
+            <p className="flex items-center gap-1 text-xs text-muted-foreground">
+              <MapPin className="size-3" /> Lisbon · ex-Figma, ex-Linear
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              Builds design systems and the motion that makes them feel alive.
+            </p>
+            <div className="mt-3 flex items-center justify-between text-xs">
+              <span>
+                <b className="text-foreground">4.2k</b>{" "}
+                <span className="text-muted-foreground">followers</span>
+              </span>
+              <span>
+                <b className="text-foreground">318</b>{" "}
+                <span className="text-muted-foreground">following</span>
+              </span>
+              <button className="rounded-md bg-foreground px-3 py-1 font-medium text-background">
+                Follow
+              </button>
             </div>
-            <button className="mt-1 w-full rounded-lg bg-foreground py-1.5 text-xs font-medium text-background">
-              Follow
-            </button>
           </div>
         }
       />

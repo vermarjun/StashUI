@@ -3,7 +3,6 @@
 "use client"
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
-import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import { ChevronRight } from "lucide-react"
 import {
@@ -213,12 +212,11 @@ export function LoadingCarousel({
                     }
                     className={`relative ${aspectRatioClasses[aspectRatio]} w-full overflow-hidden`}
                   >
-                    <Image
+                    <img
                       src={tip.image}
                       alt={`Visual representation for tip: ${tip.text}`}
-                      fill
-                      className="object-cover"
-                      priority
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading="eager"
                     />
                     {backgroundGradient && (
                       <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />

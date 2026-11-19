@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unknown-property */
 import * as THREE from 'three';
-import { useRef, useState, useEffect, memo, ReactNode } from 'react';
+import { useRef, useState, useEffect, useMemo, memo, ReactNode, Suspense } from 'react';
 import { Canvas, createPortal, useFrame, useThree, ThreeElements } from '@react-three/fiber';
 import {
   useFBO,
-  useGLTF,
   useScroll,
   Image,
   Scroll,
@@ -47,13 +46,20 @@ export default function FluidGlass({ mode = 'lens', lensProps = {}, barProps = {
   return (
     <Canvas camera={{ position: [0, 0, 20], fov: 15 }} gl={{ alpha: true }}>
       <ScrollControls damping={0.2} pages={3} distance={0.4}>
-        {mode === 'bar' && <NavItems items={navItems as NavItem[]} />}
+        {/* Local Suspense boundaries: if text/textures suspend up to <Canvas>, r3f re-throws
+            into the host tree, which can unmount the renderer and lose the WebGL context. */}
+        {mode === 'bar' && (
+          <Suspense fallback={null}>
+            <NavItems items={navItems as NavItem[]} />
+          </Suspense>
+        )}
         <Wrapper modeProps={modeProps}>
           <Scroll>
-            <Typography />
-            <Images />
+            <Suspense fallback={null}>
+              <Typography />
+              <Images />
+            </Suspense>
           </Scroll>
-          <Scroll html />
           <Preload />
         </Wrapper>
       </ScrollControls>
@@ -65,8 +71,7 @@ type MeshProps = ThreeElements['mesh'];
 
 interface ModeWrapperProps extends MeshProps {
   children?: ReactNode;
-  glb: string;
-  geometryKey: string;
+  shape: 'lens' | 'cube' | 'bar';
   lockToBottom?: boolean;
   followPointer?: boolean;
   modeProps?: ModeProps;
@@ -82,25 +87,29 @@ type ZoomGroup = THREE.Group & { children: ZoomMesh[] };
 
 const ModeWrapper = memo(function ModeWrapper({
   children,
-  glb,
-  geometryKey,
+  shape,
   lockToBottom = false,
   followPointer = true,
   modeProps = {},
   ...props
 }: ModeWrapperProps) {
   const ref = useRef<THREE.Mesh>(null!);
-  const { nodes } = useGLTF(glb);
+  // Procedural geometry (no external .glb assets needed).
+  const geometry = useMemo<THREE.BufferGeometry>(() => {
+    if (shape === 'cube') return new THREE.BoxGeometry(2.4, 2.4, 2.4);
+    if (shape === 'bar') return new THREE.BoxGeometry(14, 0.6, 1.6);
+    return new THREE.CylinderGeometry(1.7, 1.7, 0.5, 96);
+  }, [shape]);
   const buffer = useFBO();
   const { viewport: vp } = useThree();
   const [scene] = useState<THREE.Scene>(() => new THREE.Scene());
   const geoWidthRef = useRef<number>(1);
 
   useEffect(() => {
-    const geo = (nodes[geometryKey] as THREE.Mesh)?.geometry;
-    geo.computeBoundingBox();
-    geoWidthRef.current = geo.boundingBox!.max.x - geo.boundingBox!.min.x || 1;
-  }, [nodes, geometryKey]);
+    geometry.computeBoundingBox();
+    geoWidthRef.current = geometry.boundingBox!.max.x - geometry.boundingBox!.min.x || 1;
+    return () => geometry.dispose();
+  }, [geometry]);
 
   useFrame((state, delta) => {
     const { gl, viewport, pointer, camera } = state;
@@ -142,7 +151,7 @@ const ModeWrapper = memo(function ModeWrapper({
         ref={ref}
         scale={scale ?? 0.15}
         rotation-x={Math.PI / 2}
-        geometry={(nodes[geometryKey] as THREE.Mesh)?.geometry}
+        geometry={geometry}
         {...props}
       >
         <MeshTransmissionMaterial
@@ -159,11 +168,11 @@ const ModeWrapper = memo(function ModeWrapper({
 });
 
 function Lens({ modeProps, ...p }: { modeProps?: ModeProps } & MeshProps) {
-  return <ModeWrapper glb="/assets/3d/lens.glb" geometryKey="Cylinder" followPointer modeProps={modeProps} {...p} />;
+  return <ModeWrapper shape="lens" followPointer modeProps={modeProps} {...p} />;
 }
 
 function Cube({ modeProps, ...p }: { modeProps?: ModeProps } & MeshProps) {
-  return <ModeWrapper glb="/assets/3d/cube.glb" geometryKey="Cube" followPointer modeProps={modeProps} {...p} />;
+  return <ModeWrapper shape="cube" followPointer modeProps={modeProps} {...p} />;
 }
 
 function Bar({ modeProps = {}, ...p }: { modeProps?: ModeProps } & MeshProps) {
@@ -179,8 +188,7 @@ function Bar({ modeProps = {}, ...p }: { modeProps?: ModeProps } & MeshProps) {
 
   return (
     <ModeWrapper
-      glb="/assets/3d/bar.glb"
-      geometryKey="Cube"
+      shape="bar"
       lockToBottom
       followPointer={false}
       modeProps={{ ...defaultMat, ...modeProps }}
@@ -271,11 +279,11 @@ function Images() {
 
   return (
     <group ref={group}>
-      <Image position={[-2, 0, 0]} scale={[3, height / 1.1]} url="/assets/demo/cs1.webp" />
-      <Image position={[2, 0, 3]} scale={3} url="/assets/demo/cs2.webp" />
-      <Image position={[-2.05, -height, 6]} scale={[1, 3]} url="/assets/demo/cs3.webp" />
-      <Image position={[-0.6, -height, 9]} scale={[1, 2]} url="/assets/demo/cs1.webp" />
-      <Image position={[0.75, -height, 10.5]} scale={1.5} url="/assets/demo/cs2.webp" />
+      <Image position={[-2, 0, 0]} scale={[3, height / 1.1]} url="https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=1200&h=1600&fit=crop&auto=format&q=80" />
+      <Image position={[2, 0, 3]} scale={3} url="https://images.unsplash.com/photo-1752588975228-21f44630bb3c?w=1200&h=1200&fit=crop&auto=format&q=80" />
+      <Image position={[-2.05, -height, 6]} scale={[1, 3]} url="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&h=1600&fit=crop&auto=format&q=80" />
+      <Image position={[-0.6, -height, 9]} scale={[1, 2]} url="https://images.unsplash.com/photo-1557683316-973673baf926?w=1200&h=1600&fit=crop&auto=format&q=80" />
+      <Image position={[0.75, -height, 10.5]} scale={1.5} url="https://images.unsplash.com/photo-1590872000386-4348c6393115?w=1200&h=1200&fit=crop&auto=format&q=80" />
     </group>
   );
 }

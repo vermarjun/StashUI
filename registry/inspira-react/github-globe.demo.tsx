@@ -12,7 +12,7 @@ const GLOBE_DATA = [
 
 export default function GithubGlobeDemo() {
   return (
-    <div className="flex items-center justify-center bg-neutral-950 p-8 min-h-[450px]">
+    <div className="flex min-h-[540px] items-center justify-center p-8">
       <GithubGlobe
         data={GLOBE_DATA}
         globeConfig={{
@@ -20,7 +20,7 @@ export default function GithubGlobeDemo() {
           showAtmosphere: true,
           atmosphereColor: "#8b5cf6",
           atmosphereAltitude: 0.1,
-          polygonColor: "rgba(255,255,255,0.5)",
+          polygonColor: "rgba(255,255,255,0.7)",
           arcTime: 2000,
           arcLength: 0.9,
           rings: 1,
@@ -28,7 +28,7 @@ export default function GithubGlobeDemo() {
           autoRotate: true,
           autoRotateSpeed: 0.5,
         }}
-        className="h-96 w-96"
+        className="h-[520px] w-[520px]"
       />
     </div>
   );

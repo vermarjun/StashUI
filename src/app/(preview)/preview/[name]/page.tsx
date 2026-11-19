@@ -11,10 +11,12 @@ export default async function PreviewPage({
     view?: string;
     align?: string;
     scroll?: string;
+    mount?: string;
   }>;
 }) {
   const { name } = await params;
-  const { theme, view, align, scroll } = await searchParams;
+  const { theme, view, align, scroll, mount } = await searchParams;
+  const manual = mount === "manual";
   const dark = theme === "dark";
   const decoded = decodeURIComponent(name);
 
@@ -26,16 +28,21 @@ export default async function PreviewPage({
     const scrollable = scroll === "true";
     return (
       <div
+        data-rec-root=""
         className={cn(
           "min-h-screen w-full bg-background text-foreground",
-          scrollable ? "overflow-y-auto" : "overflow-hidden",
+          // Scrollable previews let the document itself scroll: an inner
+          // overflow container would become the scroll root and silently
+          // break every position:sticky in the demo (sticky navbars, scroll
+          // stacks). Fixed-height previews just clip.
+          scrollable ? "overflow-x-clip" : "overflow-hidden",
           topAligned
             ? "flex flex-col"
             : "flex items-center justify-center p-4",
           dark && "dark",
         )}
       >
-        <PreviewClient name={decoded} />
+        <PreviewClient name={decoded} manual={manual} dark={dark} />
       </div>
     );
   }
@@ -43,12 +50,13 @@ export default async function PreviewPage({
   // Default (grid thumbnail / capture) view: centered and clipped.
   return (
     <div
+      data-rec-root=""
       className={cn(
         "relative flex h-screen w-screen items-center justify-center overflow-hidden bg-background text-foreground p-6",
         dark && "dark",
       )}
     >
-      <PreviewClient name={decoded} />
+      <PreviewClient name={decoded} manual={manual} dark={dark} />
     </div>
   );
 }

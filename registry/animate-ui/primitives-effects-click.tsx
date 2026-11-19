@@ -98,7 +98,9 @@ function Click(props: ClickProps): React.ReactElement | null {
     return () => el.removeEventListener('pointerup', onPointerUp);
   }, [scope, variant, color, size, duration, disabled]);
 
-  const portal = typeof window !== 'undefined' ? document.body : null;
+  // resolve the portal target after mount so server and client render the same tree
+  const [portal, setPortal] = React.useState<HTMLElement | null>(null);
+  React.useEffect(() => setPortal(document.body), []);
 
   return (
     <>
@@ -407,8 +409,8 @@ function Particles({ item }: { item: Item }) {
             fill={item.color}
             initial={{ scale: 0, opacity: 0 }}
             animate={{
-              cx: cx + x,
-              cy: cy + y,
+              x,
+              y,
               scale: [0, 1, 0],
               opacity: [0, 1, 0],
             }}

@@ -1,4 +1,17 @@
 'use client'
+
+const PHOTOS = [
+  "photo-1497366811353-6870744d04b2",
+  "photo-1498019559366-a1cbd07b5160",
+  "photo-1500534314209-a25ddb2bd429",
+  "photo-1500648767791-00dcc994a43e",
+  "photo-1500835556837-99ac94a94552",
+  "photo-1501854140801-50d01698950b",
+  "photo-1504198266287-1659872e6590",
+  "photo-1504701954957-2010ec3bcec1",
+];
+const photo = (i: number, w: number, h: number) =>
+  `https://images.unsplash.com/${PHOTOS[Math.abs(i) % PHOTOS.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
 import React, { useRef } from 'react'
 import {
   Layout,
@@ -105,7 +118,7 @@ export const HeroAiValueProposition = () => {
                       timelineRef={timelineRef}
                     >
                       <img
-                        src={`https://picsum.photos/seed/bb-designer-${i}/100`}
+                        src={photo(i, 100, 100)}
                         className="w-10 h-10 rounded-full border-2 border-[#f9f9f9] object-cover shadow-sm"
                         alt=""
                       />
@@ -183,7 +196,7 @@ export const HeroAiValueProposition = () => {
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-4 bg-neutral-50 rounded-full"></div>
                       <img
-                        src="https://picsum.photos/seed/bb-avatar/100"
+                        src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=100&h=100&fit=crop&auto=format&q=80"
                         className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
                         alt="User"
                       />

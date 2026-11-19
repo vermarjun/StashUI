@@ -2,6 +2,10 @@
  "name": "DotField-TS-TW",
  "title": "Dot Field",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -15,7 +19,7 @@
   "pure",
   "3 colors"
  ],
- "usage": "\"use client\";\nimport Cmp from \"@/components/ui/DotField\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"600px\" }}>\n      <Cmp\n        dotRadius={1.5}\n        dotSpacing={14}\n        cursorRadius={500}\n        bulgeOnly={true}\n        bulgeStrength={67}\n        glowRadius={160}\n        waveAmplitude={4}\n        gradientFrom=\"rgba(168, 85, 247, 0.35)\"\n        gradientTo=\"rgba(180, 151, 207, 0.25)\"\n        glowColor=\"#120F17\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport DotField from \"@/components/ui/DotField\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <DotField\n        bulgeOnly\n        bulgeStrength={67}\n        cursorRadius={500}\n        dotRadius={3}\n        dotSpacing={14}\n        glowColor=\"#5b21b6\"\n        glowRadius={180}\n        gradientFrom=\"rgba(168, 85, 247, 1)\"\n        gradientTo=\"rgba(56, 189, 248, 0.8)\"\n        waveAmplitude={4}\n      />\n      <div className=\"pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3 text-center\">\n        <h2 className=\"text-5xl font-semibold tracking-tight text-foreground\">Dot Field</h2>\n        <p className=\"text-muted-foreground\">Move your cursor to bend the grid.</p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/DotField.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/DotField-TS-TW.json",

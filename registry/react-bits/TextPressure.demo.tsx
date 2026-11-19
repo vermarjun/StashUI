@@ -3,16 +3,18 @@ import TextPressure from "@/registry/react-bits/TextPressure";
 
 export default function Demo() {
   return (
-    <div className="flex items-center justify-center w-full h-[340px] bg-background">
-      <TextPressure
-        text="Compressa"
-        weight
-        width
-        italic
-        flex
-        className="text-foreground"
-        minFontSize={36}
-      />
+    <div className="flex w-full items-center justify-center px-10">
+      <div className="relative h-[300px] w-full max-w-4xl">
+        <TextPressure
+          text="Pressure"
+          weight
+          width
+          italic
+          flex
+          textColor="#fafafa"
+          minFontSize={48}
+        />
+      </div>
     </div>
   );
 }

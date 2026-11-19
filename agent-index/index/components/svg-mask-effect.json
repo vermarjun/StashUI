@@ -2,6 +2,10 @@
  "name": "svg-mask-effect",
  "title": "SVG Mask Reveal",
  "category": "effects",
+ "categories": [
+  "effects",
+  "heroes"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -17,20 +21,13 @@
   "motion",
   "4 colors"
  ],
- "usage": "import { MaskContainer } from \"@/components/ui/svg-mask-effect\";\n\nexport default function Demo() {\n  return (\n    <MaskContainer\n      revealText={\n        <p className=\"mx-auto max-w-4xl text-center text-4xl font-bold text-foreground\">\n          Move your cursor to reveal the hidden text beneath.\n        </p>\n      }\n      className=\"h-[28rem] rounded-xl\"\n    >\n      <span className=\"text-white dark:text-black\">\n        The spotlight follows your cursor.{\" \"}\n        <span className=\"text-violet-400\">Hover here</span> to expand the mask\n        and reveal what lies beneath the surface.\n      </span>\n    </MaskContainer>\n  );\n}",
+ "usage": "import { MaskContainer } from \"@/components/ui/svg-mask-effect\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full min-h-[34rem] w-full items-center justify-center overflow-hidden\">\n      <MaskContainer\n        revealText={\n          <p className=\"mx-auto max-w-4xl px-6 text-center text-4xl font-bold text-slate-800\">\n            The first rule of MRR Club is you do not talk about MRR Club. The\n            second rule of MRR Club is you DO NOT talk about MRR Club.\n          </p>\n        }\n        className=\"h-[34rem] w-full rounded-md text-white\"\n      >\n        Discover the power of{\" \"}\n        <span className=\"text-blue-500\">Tailwind CSS v4</span> with native\n        CSS variables and container queries with{\" \"}\n        <span className=\"text-blue-500\">advanced animations</span>.\n      </MaskContainer>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/svg-mask-effect.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/svg-mask-effect.json",
  "preview": "https://stashui.vercel.app/c/svg-mask-effect",
- "dupe_group": "svgmaskreveal",
- "alternatives": [
-  {
-   "name": "svg-mask",
-   "origin": "Inspira UI",
-   "npm_deps": 0,
-   "hardcoded_colors": 7
-  }
- ],
+ "dupe_group": null,
+ "alternatives": [],
  "blurb": "SVG mask spotlight that expands on hover to reveal content.",
  "description": "A two-layer reveal component using SVG masking with smooth motion animations. Spotlight mask follows cursor and expands on hover with background color transition.",
  "use_when": "An interactive hero section or content reveal with animated spotlight effect.",

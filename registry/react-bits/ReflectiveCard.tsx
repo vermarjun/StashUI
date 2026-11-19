@@ -51,7 +51,7 @@ const ReflectiveCard: React.FC<ReflectiveCardProps> = ({
           setStreamActive(true);
         }
       } catch (err) {
-        console.error('Error accessing webcam:', err);
+        console.warn('Webcam unavailable, showing the card without a reflection:', err);
       }
     };
 

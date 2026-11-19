@@ -1,5 +1,5 @@
-import Cmp from "@/registry/ui-layouts/sidebar-menu";
+import SidebarMenu from "@/registry/ui-layouts/sidebar-menu";
 
 export default function Demo() {
-  return <Cmp />;
+  return <SidebarMenu className="rounded-none" />;
 }

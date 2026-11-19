@@ -2,7 +2,6 @@
 import { CardArr } from '@/components/website/constant';
 import { Heart } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 function Card1() {
@@ -20,16 +19,9 @@ function Card1() {
   return (
     <div className='w-[300px] mx-auto'>
       <div className='rounded-md p-2 dark:bg-white bg-neutral-100'>
-        <Image
-          src={selectedImage}
-          alt='shoes'
-          width={1000}
-          height={1000}
-          className='h-52 w-full rounded-md object-cover transition-all duration-300'
-          style={{
+        <img src={selectedImage} alt='shoes' width={1000} height={1000} className='h-52 w-full rounded-md object-cover transition-all duration-300' style={{
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-          }}
-        />
+          }} />
         <div className='text-black pt-2'>
           <div className='flex justify-between'>
             <h1 className='font-semibold text-xl'>Nike Air Max</h1>

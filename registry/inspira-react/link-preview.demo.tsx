@@ -9,7 +9,8 @@ export default function LinkPreviewDemo() {
       <div className="flex gap-8 text-lg font-semibold">
         <LinkPreview
           url="https://vercel.com"
-          isStatic={false}
+          isStatic={true}
+          imageSrc="/link-previews/vercel.jpg"
           width={200}
           height={125}
         >
@@ -20,13 +21,13 @@ export default function LinkPreviewDemo() {
 
         <LinkPreview
           url="https://github.com"
-          imageSrc="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+          imageSrc="/link-previews/github.jpg"
           isStatic={true}
           width={200}
           height={125}
         >
           <span className="underline cursor-pointer hover:text-blue-600 transition-colors">
-            GitHub (static)
+            GitHub
           </span>
         </LinkPreview>
       </div>

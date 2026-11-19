@@ -66,10 +66,10 @@ export function FramerModal({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
               onClick={(e) => e.stopPropagation()}
-              className=' w-full max-w-md rounded-xl bg-white/5 p-6 backdrop-blur-2xl border'
+              className='relative w-full max-w-md rounded-xl bg-white/5 p-6 backdrop-blur-2xl border'
             >
-              <button className='absolute top-2 right-2' onClick={() => setOpen(false)}>
-                <X />
+              <button className='absolute top-3 right-3 text-muted-foreground hover:text-foreground' onClick={() => setOpen(false)}>
+                <X className='size-4' />
               </button>
               {children}
             </motion.div>

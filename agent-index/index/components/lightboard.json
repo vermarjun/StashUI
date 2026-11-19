@@ -1,7 +1,11 @@
 {
  "name": "lightboard",
  "title": "Lightboard",
- "category": "effects",
+ "category": "text",
+ "categories": [
+  "text",
+  "effects"
+ ],
  "origin": "Cult UI",
  "origin_short": "cult",
  "exports": [
@@ -16,7 +20,7 @@
   "pure",
   "4 colors"
  ],
- "usage": "\"use client\";\n\nimport { LightBoard } from \"@/components/ui/lightboard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full flex items-center justify-center p-8 bg-gray-950 rounded-xl\">\n      <LightBoard\n        text=\"HELLO WORLD\"\n        rows={5}\n        lightSize={8}\n        gap={2}\n        font=\"default\"\n        updateInterval={50}\n        disableDrawing={true}\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { LightBoard } from \"@/components/ui/lightboard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-5xl rounded-2xl border border-border bg-neutral-950 p-6 shadow-2xl\">\n        <LightBoard\n          text=\"NOW SHOWING  STASHUI  DOORS 7PM\"\n          rows={12}\n          lightSize={6}\n          gap={2}\n          font=\"default\"\n          updateInterval={70}\n          disableDrawing={true}\n          colors={{\n            background: \"rgba(60, 60, 75, 0.35)\",\n            textBright: \"rgba(255, 196, 92, 1)\",\n            textDim: \"rgba(255, 196, 92, 0.45)\",\n          }}\n        />\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/cult-ui/lightboard.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/lightboard.json",

@@ -18,7 +18,8 @@ export function Android({
     <svg
       width={width}
       height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      // the artwork is drawn in a fixed 380x830 space; width/height only size it
+      viewBox="0 0 380 830"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

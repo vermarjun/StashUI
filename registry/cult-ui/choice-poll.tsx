@@ -147,7 +147,7 @@ const optionVariants = cva(
     "group relative flex w-full cursor-pointer items-center gap-3 rounded-xl border p-4 text-left",
     "transition-all duration-200 ease-out",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-    "disabled:cursor-not-allowed disabled:opacity-50",
+    "disabled:cursor-not-allowed data-disabled:opacity-50",
   ],
   {
     variants: {
@@ -201,7 +201,7 @@ const progressVariants = cva(
     variants: {
       state: {
         idle: "bg-transparent",
-        selected: "bg-primary/15",
+        selected: "bg-primary/25",
         voted: "bg-primary/10",
       },
     },

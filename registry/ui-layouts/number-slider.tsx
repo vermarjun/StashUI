@@ -2,7 +2,6 @@
 import { Carousel, Slider, SliderContainer, SliderSnapDisplay } from '@/registry/ui-layouts/carousel';
 import { imgPreview } from '@/components/website/constant';
 import type { EmblaOptionsType } from 'embla-carousel';
-import Image from 'next/image';
 import React, { ReactNode } from 'react';
 
 function NumberSlider() {

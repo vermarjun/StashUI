@@ -2,6 +2,12 @@
  "name": "card-stack",
  "title": "Card Stack",
  "category": "cards",
+ "categories": [
+  "cards",
+  "scroll",
+  "testimonials",
+  "features"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -17,7 +23,7 @@
   "motion",
   "12 colors"
  ],
- "usage": "\"use client\";\nimport { CardStack } from \"@/components/ui/card-stack\";\n\nconst CARDS = [\n  {\n    id: 0,\n    name: \"Alice Johnson\",\n    designation: \"Senior Engineer at Vercel\",\n    content: (\n      <p>\n        These cards are absolutely gorgeous. The stacking animation is so smooth\n        and the design is clean. I use them in all my projects now.\n      </p>\n    ),\n  },\n  {\n    id: 1,\n    name: \"Bob Martinez\",\n    designation: \"Product Designer at Figma\",\n    content: (\n      <p>\n        The attention to detail is incredible. Every pixel is perfectly placed\n        and the interactions feel natural and delightful.\n      </p>\n    ),\n  },\n  {\n    id: 2,\n    name: \"Carol Chen\",\n    designation: \"CTO at Startup\",\n    content: (\n      <p>\n        We integrated these components into our design system and the team loves\n        them. They save us so much time and always look professional.\n      </p>\n    ),\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full py-20\">\n      <CardStack items={CARDS} />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { CardStack } from \"@/components/ui/card-stack\";\nimport { cn } from \"@/lib/utils\";\n\nconst Highlight = ({\n  children,\n  className,\n}: {\n  children: React.ReactNode;\n  className?: string;\n}) => (\n  <span\n    className={cn(\n      \"rounded-sm bg-emerald-100 px-1 py-0.5 font-bold text-emerald-700 dark:bg-emerald-700/[0.25] dark:text-emerald-400\",\n      className,\n    )}\n  >\n    {children}\n  </span>\n);\n\nconst CARDS = [\n  {\n    id: 0,\n    name: \"Manu Arora\",\n    designation: \"Senior Software Engineer\",\n    content: (\n      <p>\n        These cards are amazing, <Highlight>I want to use them</Highlight> in my\n        project. Framer motion is a godsend ngl tbh fam 🙏\n      </p>\n    ),\n  },\n  {\n    id: 1,\n    name: \"Elon Musk\",\n    designation: \"Senior Shitposter\",\n    content: (\n      <p>\n        I dont like this Twitter thing,{\" \"}\n        <Highlight>deleting it right away</Highlight> because yolo. Instead, I\n        would like to call it <Highlight>X.com</Highlight> so that it can easily\n        be confused with adult sites.\n      </p>\n    ),\n  },\n  {\n    id: 2,\n    name: \"Tyler Durden\",\n    designation: \"Manager Project Mayhem\",\n    content: (\n      <p>\n        The first rule of <Highlight>Fight Club</Highlight> is that you do not\n        talk about fight club. The second rule of{\" \"}\n        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight\n        club.\n      </p>\n    ),\n  },\n  {\n    id: 3,\n    name: \"Priya Raman\",\n    designation: \"Design Lead at Linear\",\n    content: (\n      <p>\n        We shipped the new onboarding with these in an afternoon.{\" \"}\n        <Highlight>Activation went up 18%</Highlight> and nobody on the team\n        had to touch a keyframe.\n      </p>\n    ),\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-[30rem] w-full items-center justify-center pt-10\">\n      <CardStack items={CARDS} offset={18} scaleFactor={0.07} duration={2600} />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/card-stack.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/card-stack.json",

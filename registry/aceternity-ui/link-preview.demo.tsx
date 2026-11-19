@@ -10,7 +10,7 @@ export default function Demo() {
         <LinkPreview
           url="https://nextjs.org"
           isStatic
-          imageSrc="https://assets.vercel.com/image/upload/v1662130559/nextjs/og.png"
+          imageSrc="/link-previews/nextjs.jpg"
           width={200}
           height={125}
           className="font-bold text-foreground underline underline-offset-4"
@@ -21,7 +21,7 @@ export default function Demo() {
         <LinkPreview
           url="https://vercel.com"
           isStatic
-          imageSrc="https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png"
+          imageSrc="/link-previews/vercel.jpg"
           width={200}
           height={125}
           className="font-bold text-foreground underline underline-offset-4"

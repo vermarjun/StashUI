@@ -2,6 +2,11 @@
  "name": "feature-carousel",
  "title": "Feature Carousel",
  "category": "carousels",
+ "categories": [
+  "carousels",
+  "features",
+  "heroes"
+ ],
  "origin": "Cult UI",
  "origin_short": "cult",
  "exports": [
@@ -12,12 +17,12 @@
  ],
  "registry_deps": [],
  "css": false,
- "hardcoded_colors": 28,
+ "hardcoded_colors": 34,
  "flags": [
   "motion",
-  "28 colors"
+  "34 colors"
  ],
- "usage": "\"use client\"\n\nimport { FeatureCarousel } from \"@/components/ui/feature-carousel\"\n\nconst image = {\n  step1light1: \"https://picsum.photos/seed/step1a/1200/630\",\n  step1light2: \"https://picsum.photos/seed/step1b/1200/630\",\n  step2light1: \"https://picsum.photos/seed/step2a/1200/630\",\n  step2light2: \"https://picsum.photos/seed/step2b/1200/630\",\n  step3light: \"https://picsum.photos/seed/step3/1200/630\",\n  step4light: \"https://picsum.photos/seed/step4/1200/630\",\n  alt: \"Feature screenshot\",\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-2xl p-4\">\n      <FeatureCarousel\n        title=\"Powerful Features\"\n        description=\"Everything you need to build amazing products.\"\n        image={image}\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport { FeatureCarousel } from \"@/components/ui/feature-carousel\"\n\nconst u = (id: string) =>\n  `https://images.unsplash.com/photo-${id}?w=1200&h=630&fit=crop&auto=format&q=80`\n\nconst image = {\n  step1light1: u(\"1618401471353-b98afee0b2eb\"),\n  step1light2: u(\"1517694712202-14dd9538aa97\"),\n  step2light1: u(\"1498050108023-c5249f4df085\"),\n  step2light2: u(\"1555066931-4365d14bab8c\"),\n  step3light: u(\"1551288049-bebda4e38f71\"),\n  step4light: u(\"1460925895917-afdab827c52f\"),\n  alt: \"Product screenshot\",\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-3xl p-4\">\n      <FeatureCarousel\n        title=\"From commit to production\"\n        description=\"Everything your team needs to ship.\"\n        image={image}\n      />\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/cult-ui/feature-carousel.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/feature-carousel.json",

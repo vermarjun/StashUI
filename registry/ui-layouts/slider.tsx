@@ -50,7 +50,7 @@ const DualRangeSlider = React.forwardRef<
                   )}
                   <NumberFlow
                     willChange
-                    // @ts-expect-error
+                    // @ts-expect-error value can be undefined when min/max are unset
                     value={value}
                     isolate
                     opacityTiming={{
@@ -99,7 +99,7 @@ const DualRangeSlider = React.forwardRef<
               )}
               <NumberFlow
                 willChange
-                // @ts-expect-error
+                // @ts-expect-error value can be undefined when min/max are unset
                 value={value}
                 isolate
                 opacityTiming={{

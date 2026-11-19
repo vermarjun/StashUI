@@ -3,6 +3,10 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+// A filled circle, inlined so the component has no public/ asset to ship.
+const MASK =
+  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='black'/></svg>\")";
+
 export const MaskContainer = ({
   children,
   revealText,
@@ -35,21 +39,22 @@ export const MaskContainer = ({
       }
     };
   }, []);
-  let maskSize = isHovered ? revealSize : size;
+  const maskSize = isHovered ? revealSize : size;
 
   return (
     <motion.div
       ref={containerRef}
       className={cn("relative h-screen", className)}
       animate={{
-        backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
+        backgroundColor: isHovered ? "#0f172a" : "#ffffff",
       }}
       transition={{
         backgroundColor: { duration: 0.3 },
       }}
     >
       <motion.div
-        className="absolute flex h-full w-full items-center justify-center bg-black text-6xl [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px] dark:bg-white"
+        className="absolute flex h-full w-full items-center justify-center bg-black text-6xl [mask-repeat:no-repeat] [mask-size:40px]"
+        style={{ maskImage: MASK, WebkitMaskImage: MASK }}
         animate={{
           maskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
@@ -61,7 +66,7 @@ export const MaskContainer = ({
           maskPosition: { duration: 0.15, ease: "linear" },
         }}
       >
-        <div className="absolute inset-0 z-0 h-full w-full bg-black opacity-50 dark:bg-white" />
+        <div className="absolute inset-0 z-0 h-full w-full bg-black opacity-50" />
         <div
           onMouseEnter={() => {
             setIsHovered(true);

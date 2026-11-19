@@ -9,7 +9,6 @@ import {
   type HTMLAttributes,
   type MouseEventHandler,
 } from "react"
-import Image from "next/image"
 import { useControllableState } from "@radix-ui/react-use-controllable-state"
 import { motion, useReducedMotion } from "motion/react"
 
@@ -220,18 +219,11 @@ export function CutoutCardImage({
   ...props
 }: CutoutCardImageProps) {
   return (
-    <Image
-      alt={alt}
-      className={cn(
+    <img alt={alt} className={cn(
         "object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover/cutout:scale-105",
         fill && "h-full w-full",
         className
-      )}
-      data-slot="cutout-card-image"
-      {...props}
-      fill={fill}
-      sizes={fill ? sizes : undefined}
-    />
+      )} data-slot="cutout-card-image" {...props} fill={fill} />
   )
 }
 

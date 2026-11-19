@@ -10,7 +10,7 @@ const steps = [
     full_description: "This quick tour will walk you through the key features that help you get the most out of your experience.",
     media: {
       type: "image" as const,
-      src: "https://picsum.photos/seed/intro1/800/450",
+      src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=450&fit=crop&auto=format&q=80",
       alt: "Welcome screen",
     },
   },
@@ -20,7 +20,7 @@ const steps = [
     full_description: "The dashboard gives you an at-a-glance view of your projects, recent activity, and key metrics all in one place.",
     media: {
       type: "image" as const,
-      src: "https://picsum.photos/seed/intro2/800/450",
+      src: "https://images.unsplash.com/photo-1506097425191-7ad538b29cef?w=800&h=450&fit=crop&auto=format&q=80",
       alt: "Dashboard overview",
     },
   },
@@ -34,7 +34,7 @@ const steps = [
     },
     media: {
       type: "image" as const,
-      src: "https://picsum.photos/seed/intro3/800/450",
+      src: "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=800&h=450&fit=crop&auto=format&q=80",
       alt: "Team collaboration",
     },
   },

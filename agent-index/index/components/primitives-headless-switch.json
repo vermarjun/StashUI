@@ -1,7 +1,11 @@
 {
  "name": "primitives-headless-switch",
  "title": "Headless Switch",
- "category": "checkboxes",
+ "category": "switches",
+ "categories": [
+  "switches",
+  "settings"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -21,20 +25,13 @@
  "flags": [
   "motion"
  ],
- "usage": "import { Switch } from \"@/components/ui/primitives-headless-switch\";\n\nexport default function Demo() {\n  return <Switch />;\n}",
+ "usage": "\"use client\";\n\nimport { MoonIcon, SunIcon } from \"lucide-react\";\n\nimport { Switch, SwitchIcon, SwitchThumb } from \"@/components/ui/primitives-headless-switch\";\n\nconst ROWS = [\n  { title: \"Airplane mode\", desc: \"Turn off all wireless radios.\", on: false },\n  { title: \"Wi-Fi\", desc: \"Join known networks automatically.\", on: true },\n  { title: \"Bluetooth\", desc: \"Let nearby devices connect.\", on: true },\n];\n\nconst switchCls =\n  \"relative flex h-6 w-10 shrink-0 items-center justify-start rounded-full bg-input p-[3px] data-checked:justify-end data-checked:bg-primary\";\nconst thumbCls = \"relative z-10 size-[18px] rounded-full bg-background shadow-sm\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-md rounded-xl border border-border bg-card p-6 text-card-foreground shadow-sm\">\n        <h3 className=\"font-semibold text-base\">Connections</h3>\n        <p className=\"mt-1 text-muted-foreground text-sm\">The thumb stretches while you press it.</p>\n        <div className=\"mt-5 divide-y divide-border\">\n          {ROWS.map((r) => (\n            <div className=\"flex items-center justify-between gap-6 py-4\" key={r.title}>\n              <div>\n                <p className=\"font-medium text-sm\">{r.title}</p>\n                <p className=\"text-muted-foreground text-xs\">{r.desc}</p>\n              </div>\n              <Switch className={switchCls} defaultChecked={r.on}>\n                <SwitchThumb className={thumbCls} pressedAnimation={{ width: 22 }} />\n              </Switch>\n            </div>\n          ))}\n          <div className=\"flex items-center justify-between gap-6 py-4\">\n            <div>\n              <p className=\"font-medium text-sm\">Theme</p>\n              <p className=\"text-muted-foreground text-xs\">With icons on each side.</p>\n            </div>\n            <Switch className={`${switchCls} w-12`} defaultChecked>\n              <SwitchThumb className={thumbCls} pressedAnimation={{ width: 22 }} />\n              <SwitchIcon className=\"absolute left-1.5 text-primary-foreground\" position=\"left\">\n                <MoonIcon className=\"size-3\" />\n              </SwitchIcon>\n              <SwitchIcon className=\"absolute right-1.5 text-muted-foreground\" position=\"right\">\n                <SunIcon className=\"size-3\" />\n              </SwitchIcon>\n            </Switch>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-headless-switch.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-headless-switch.json",
  "preview": "https://stashui.vercel.app/c/primitives-headless-switch",
- "dupe_group": "headlessswitch",
- "alternatives": [
-  {
-   "name": "primitives-headless-tabs",
-   "origin": "Animate UI",
-   "npm_deps": 2,
-   "hardcoded_colors": 0
-  }
- ],
+ "dupe_group": null,
+ "alternatives": [],
  "blurb": "Animated toggle switch with composable thumb and icon components.",
  "description": "Switch primitive using Headless UI with Framer Motion. Features composable SwitchThumb and SwitchIcon components with spring animations.",
  "use_when": "Building premium animated switches with custom icon positioning and fine-tuned motion control.",

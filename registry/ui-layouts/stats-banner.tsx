@@ -1,17 +1,50 @@
 'use client'
-import React from 'react'
-import { motion } from 'motion/react'
+import React, { useEffect, useRef } from 'react'
+import { animate, motion, useInView } from 'motion/react'
+
+function CountUp({
+  to,
+  suffix = '',
+  prefix = '',
+  decimals = 0,
+  duration = 1.6,
+  delay = 0,
+}: {
+  to: number
+  suffix?: string
+  prefix?: string
+  decimals?: number
+  duration?: number
+  delay?: number
+}) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true })
+  useEffect(() => {
+    if (!inView) return
+    const controls = animate(0, to, {
+      duration,
+      delay,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => {
+        if (ref.current) ref.current.textContent = prefix + v.toFixed(decimals) + suffix
+      },
+    })
+    return () => controls.stop()
+  }, [inView, to, suffix, prefix, decimals, duration, delay])
+  return <span ref={ref}>{prefix + (0).toFixed(decimals) + suffix}</span>
+}
+
 
 export const StatsBanner = () => {
   return (
-    <section className="py-20 px-6 bg-linear-to-b from-slate-50 to-white overflow-hidden min-h-screen">
+    <section className="py-20 px-6 bg-background overflow-hidden min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl font-semibold text-slate-900 mb-4 text-balance"
+            className="text-5xl font-semibold text-foreground mb-4 text-balance"
           >
             Trusted by Thousands
           </motion.h2>
@@ -20,7 +53,7 @@ export const StatsBanner = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-600 text-lg max-w-2xl mx-auto"
+            className="text-muted-foreground text-lg max-w-2xl mx-auto"
           >
             Join businesses worldwide who've transformed their advertising with
             our platform
@@ -58,7 +91,7 @@ export const StatsBanner = () => {
                 transition={{ delay: 0.3, type: 'spring', stiffness: 100 }}
                 className="text-7xl md:text-8xl font-semibold block mb-3 bg-linear-to-r from-white to-blue-100 bg-clip-text text-transparent"
               >
-                500K+
+                <CountUp to={500} suffix="K+" delay={0.3} />
               </motion.span>
               <p className="text-xl md:text-2xl font-medium text-blue-50">
                 Campaigns Successfully Managed
@@ -68,9 +101,9 @@ export const StatsBanner = () => {
 
           {/* Secondary Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <StatBox number="300K+" label="Ads Optimized Daily" delay={0.3} />
-            <StatBox number="140K+" label="Campaigns Built" delay={0.4} />
-            <StatBox number="100K+" label="Happy Customers" delay={0.5} />
+            <StatBox to={300} label="Ads Optimized Daily" delay={0.3} />
+            <StatBox to={140} label="Campaigns Built" delay={0.4} />
+            <StatBox to={100} label="Happy Customers" delay={0.5} />
           </div>
         </div>
       </div>
@@ -79,11 +112,11 @@ export const StatsBanner = () => {
 }
 
 const StatBox = ({
-  number,
+  to,
   label,
   delay,
 }: {
-  number: string
+  to: number
   label: string
   delay: number
 }) => (
@@ -93,11 +126,11 @@ const StatBox = ({
     viewport={{ once: true }}
     transition={{ delay }}
     whileHover={{ y: -4, transition: { duration: 0.2 } }}
-    className="bg-white rounded-2xl p-8 text-center border border-slate-200 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-300/50 hover:border-blue-200 transition-all duration-300 group"
+    className="bg-card rounded-2xl p-8 text-center border border-border shadow-lg shadow-black/5 hover:shadow-xl hover:border-blue-400/40 transition-all duration-300 group"
   >
-    <span className="text-4xl md:text-5xl font-semibold text-slate-900 block mb-3 transition-colors">
-      {number}
+    <span className="text-4xl md:text-5xl font-semibold text-card-foreground block mb-3 transition-colors">
+      <CountUp to={to} suffix="K+" delay={delay} />
     </span>
-    <p className="text-slate-600 text-base font-medium">{label}</p>
+    <p className="text-muted-foreground text-base font-medium">{label}</p>
   </motion.div>
 )

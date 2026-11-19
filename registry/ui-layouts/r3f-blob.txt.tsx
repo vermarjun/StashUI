@@ -1,5 +1,5 @@
 'use client';
-import React, { useMemo, useRef } from 'react';
+import React, { Suspense, useMemo, useRef } from 'react';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import { extend } from '@react-three/fiber';
 import { MathUtils, Vector3, Color } from 'three';
@@ -189,8 +189,12 @@ const Home: React.FC = () => {
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
         {/* <OrbitControls /> */}
         <planeGeometry args={[0.026, 0.5]} />
-        <Environment preset='studio' environmentIntensity={0.5} />
         <Blob />
+        {/* Remote HDRIs: isolated in their own Suspense so the shader blob renders even if they are slow or blocked */}
+        <Suspense fallback={null}>
+          <Environment preset='studio' environmentIntensity={0.5} />
+        </Suspense>
+        <Suspense fallback={null}>
         <Environment
           files='https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/dancing_hall_1k.hdr'
           resolution={1024}
@@ -227,6 +231,7 @@ const Home: React.FC = () => {
             />
           </group>
         </Environment>
+        </Suspense>
       </Canvas>
     </div>
   );

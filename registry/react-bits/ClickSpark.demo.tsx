@@ -5,10 +5,10 @@ export default function Demo() {
     <div className="relative h-[480px] w-full overflow-hidden rounded-xl border border-border bg-background">
       <ClickSpark
         sparkColor="#a78bfa"
-        sparkSize={10}
-        sparkRadius={20}
-        sparkCount={10}
-        duration={500}
+        sparkSize={16}
+        sparkRadius={48}
+        sparkCount={12}
+        duration={700}
         easing="ease-out"
         extraScale={1.2}
       >

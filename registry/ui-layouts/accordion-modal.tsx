@@ -1,7 +1,6 @@
 // @ts-nocheck
 'use client';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 export const itemsArr = [
@@ -178,13 +177,7 @@ export default function AccordionModal() {
                 layoutId={itemsArr[index].id}
                 className='w-[400px] h-[400px] rounded-2xl relative cursor-default overflow-hidden'
               >
-                <Image
-                  src={itemsArr[index].url}
-                  width={400}
-                  height={400}
-                  alt='single-image'
-                  className='rounded-2xl h-full w-full object-cover'
-                />
+                <img src={itemsArr[index].url} width={400} height={400} alt='single-image' className='rounded-2xl h-full w-full object-cover' />
                 <article className='dark:bg-black/40 bg-white/40 backdrop-blur-md absolute -bottom-1 left-0 w-full rounded-md p-2'>
                   <motion.h1
                     initial={{ scaleY: 0.2 }}

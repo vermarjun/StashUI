@@ -50,19 +50,25 @@ export default function Component() {
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <TabsContent value="tab-1">
-        <p className="p-4 pt-1 text-center text-muted-foreground text-xs">
-          Content for Tab 1
-        </p>
+        <div className="space-y-1 p-4 pt-1">
+          <p className="font-medium text-sm">Northwind Web</p>
+          <p className="text-muted-foreground text-sm">
+            Last deployed 12 minutes ago from <span className="text-foreground">main</span>. All 48 checks passing.
+          </p>
+        </div>
       </TabsContent>
       <TabsContent value="tab-2">
-        <p className="p-4 pt-1 text-center text-muted-foreground text-xs">
-          Content for Tab 2
-        </p>
+        <ul className="space-y-1 p-4 pt-1 text-sm">
+          <li className="flex justify-between"><span>Checkout redesign</span><span className="text-muted-foreground">In review</span></li>
+          <li className="flex justify-between"><span>Mobile onboarding</span><span className="text-muted-foreground">In progress</span></li>
+          <li className="flex justify-between"><span>Billing v2</span><span className="text-muted-foreground">Planned</span></li>
+        </ul>
       </TabsContent>
       <TabsContent value="tab-3">
-        <p className="p-4 pt-1 text-center text-muted-foreground text-xs">
-          Content for Tab 3
-        </p>
+        <ul className="space-y-1 p-4 pt-1 font-mono text-sm">
+          <li className="flex justify-between"><span>@northwind/ui</span><span className="text-muted-foreground">v2.4.1</span></li>
+          <li className="flex justify-between"><span>@northwind/api-client</span><span className="text-muted-foreground">v1.9.0</span></li>
+        </ul>
       </TabsContent>
     </Tabs>
   );

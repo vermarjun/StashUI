@@ -17,6 +17,9 @@ const BlurVignetteContext = createContext<BlurVignetteContextProps>({
   blur: '6px',
 });
 
+// Self-contained styles for the vignette layer (no global CSS needed)
+const BLUR_VIGNETTE_CSS = `.blur-vignette{position:absolute;-webkit-backdrop-filter:blur(var(--blur));backdrop-filter:blur(var(--blur));--r:max(var(--transition-length),calc(var(--radius) - var(--inset)));--corner-size:calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));--corner-gradient:transparent 0px,transparent calc(var(--r) - var(--transition-length)),black var(--r);--fill-gradient:black,black var(--inset),transparent calc(var(--inset) + var(--transition-length)),transparent calc(100% - var(--transition-length) - var(--inset)),black calc(100% - var(--inset));--fill-narrow-size:calc(100% - (var(--inset) + var(--r)) * 2);--fill-farther-position:calc(var(--inset) + var(--r));-webkit-mask-image:linear-gradient(to right,var(--fill-gradient)),linear-gradient(to bottom,var(--fill-gradient)),radial-gradient(at bottom right,var(--corner-gradient)),radial-gradient(at bottom left,var(--corner-gradient)),radial-gradient(at top left,var(--corner-gradient)),radial-gradient(at top right,var(--corner-gradient));mask-image:linear-gradient(to right,var(--fill-gradient)),linear-gradient(to bottom,var(--fill-gradient)),radial-gradient(at bottom right,var(--corner-gradient)),radial-gradient(at bottom left,var(--corner-gradient)),radial-gradient(at top left,var(--corner-gradient)),radial-gradient(at top right,var(--corner-gradient));-webkit-mask-size:100% var(--fill-narrow-size),var(--fill-narrow-size) 100%,var(--corner-size),var(--corner-size),var(--corner-size),var(--corner-size);mask-size:100% var(--fill-narrow-size),var(--fill-narrow-size) 100%,var(--corner-size),var(--corner-size),var(--corner-size),var(--corner-size);-webkit-mask-position:0 var(--fill-farther-position),var(--fill-farther-position) 0,0 0,100% 0,100% 100%,0 100%;mask-position:0 var(--fill-farther-position),var(--fill-farther-position) 0,0 0,100% 0,100% 100%,0 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}`;
+
 export const useBlurVignetteContext = () => useContext(BlurVignetteContext);
 
 interface BlurVignetteProps {
@@ -43,6 +46,7 @@ export const BlurVignette: React.FC<BlurVignetteProps> = ({
         className={cn('relative aspect-square overflow-hidden', classname)}
         style={{ borderRadius: radius }}
       >
+        <style>{BLUR_VIGNETTE_CSS}</style>
         {children}
       </div>
     </BlurVignetteContext.Provider>

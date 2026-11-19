@@ -200,7 +200,7 @@ export const HeroDigitalSuccess = () => {
               className="cursor-pointer relative group overflow-hidden bg-white text-black px-8 py-4 rounded-full font-medium text-lg flex items-center gap-3 shadow-[0_0_20px_rgba(255,60,60,0.4)]"
             >
               <img
-                src="https://picsum.photos/seed/ds/50"
+                src="https://images.unsplash.com/photo-1476842634003-7dcca8f832de?w=50&h=50&fit=crop&auto=format&q=80"
                 className="w-6 h-6 rounded-full"
                 alt=""
               />

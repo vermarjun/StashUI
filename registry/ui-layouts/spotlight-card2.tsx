@@ -1,6 +1,5 @@
 'use client';
 import { SpotLightItem, Spotlight } from '@/registry/ui-layouts/spotlight';
-import Image from 'next/image';
 import React from 'react';
 
 export default function SpotlightCard2() {
@@ -10,13 +9,7 @@ export default function SpotlightCard2() {
         <Spotlight className='sm:w-96 w-full' ProximitySpotlight={false}>
           <SpotLightItem>
             <div className='relative text-center z-10 px-0 py-16 rounded-lg w-full bg-cover bg-black h-full mx-auto'>
-              <Image
-                src={'/chat_se21ao.webp'}
-                alt='grid'
-                width={600}
-                className='mx-auto w-[85%]'
-                height={600}
-              />
+              <img src={'/chat_se21ao.webp'} alt='grid' width={600} className='mx-auto w-[85%]' height={600} />
               <h1 className='text-xl font-semibold tracking-tight text-white'>
                 Create Group Effortlessly
               </h1>

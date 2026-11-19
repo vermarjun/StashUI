@@ -7,9 +7,9 @@ export default function Demo() {
       <ImagesBadge
         text="View Photos"
         images={[
-          "https://picsum.photos/seed/b1/200/200",
-          "https://picsum.photos/seed/b2/200/200",
-          "https://picsum.photos/seed/b3/200/200",
+          "https://images.unsplash.com/photo-1693581176773-a5f2362209e6?w=200&h=200&fit=crop&auto=format&q=80",
+          "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=200&h=200&fit=crop&auto=format&q=80",
+          "https://images.unsplash.com/photo-1512045519129-eb9ceb788555?w=200&h=200&fit=crop&auto=format&q=80",
         ]}
       />
     </div>

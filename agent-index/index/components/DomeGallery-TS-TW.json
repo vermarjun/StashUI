@@ -2,6 +2,10 @@
  "name": "DomeGallery-TS-TW",
  "title": "DomeGallery",
  "category": "media",
+ "categories": [
+  "media",
+  "portfolio"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -17,7 +21,7 @@
   "3d",
   "8 colors"
  ],
- "usage": "\"use client\";\n\nimport DomeGallery from \"@/components/ui/DomeGallery\";\n\nconst IMAGES = Array.from({ length: 12 }, (_, i) => ({\n  src: `https://picsum.photos/seed/dome-${i + 1}/500/500`,\n  alt: `Gallery image ${i + 1}`,\n}));\n\nexport default function Demo() {\n  return (\n    <div className=\"h-[600px] w-full\">\n      <DomeGallery images={IMAGES} />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport DomeGallery from \"@/components/ui/DomeGallery\";\n\nconst PHOTOS = [\n  \"photo-1573496358322-6d530124361d\",\n  \"photo-1573496359142-b8d87734a5a2\",\n  \"photo-1573790387438-4da905039392\",\n  \"photo-1575995864268-5dec34a5bb99\",\n  \"photo-1580411788548-eee17fc98883\",\n  \"photo-1583071299210-c6c113f4ac91\",\n  \"photo-1584043204475-8cc101d6c77a\",\n  \"photo-1590867286251-8e26d9f255c0\",\n  \"photo-1590872000386-4348c6393115\",\n  \"photo-1595407660626-db35dcd16609\",\n  \"photo-1597200381847-30ec200eeb9a\",\n  \"photo-1599054799131-4b09c73a63cf\",\n];\nconst photo = (i: number, w: number, h: number) =>\n  `https://images.unsplash.com/${PHOTOS[Math.abs(i) % PHOTOS.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;\n\nconst IMAGES = Array.from({ length: 12 }, (_, i) => ({\n  src: photo(i, 500, 500),\n  alt: `Gallery image ${i + 1}`,\n}));\n\nexport default function Demo() {\n  return (\n    <div className=\"h-[600px] w-full\">\n      <DomeGallery images={IMAGES} />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/DomeGallery.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/DomeGallery-TS-TW.json",

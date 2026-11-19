@@ -16,7 +16,7 @@ export default function Component() {
 
   return (
     <div className="*:not-first:mt-2" dir="ltr">
-      <Label htmlFor={id}>PhoneIcon number input</Label>
+      <Label htmlFor={id}>Phone number</Label>
       <RPNInput.default
         className="flex rounded-md shadow-xs"
         countrySelectComponent={CountrySelect}

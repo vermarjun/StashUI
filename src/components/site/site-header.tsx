@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex h-14 max-w-[1500px] items-center gap-3 px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-mono text-sm font-semibold tracking-tight">
+          <span className="pl-2 font-mono text-sm font-semibold tracking-tight">
             Stash<span className="text-muted-foreground">UI</span>
           </span>
         </Link>

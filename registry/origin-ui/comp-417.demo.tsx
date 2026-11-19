@@ -1,5 +1,10 @@
 import Cmp from "@/registry/origin-ui/comp-417";
 
 export default function Demo() {
-  return <Cmp />;
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <Cmp />
+      <p className="text-sm text-muted-foreground">Badge as a link</p>
+    </div>
+  );
 }

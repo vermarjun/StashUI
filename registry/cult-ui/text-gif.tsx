@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useMemo, useState, type CSSProperties } from "react"
-import Image from "next/image"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -108,23 +107,13 @@ const TextGif = React.memo(function TextGifComponent({
     <div className="relative inline-block">
       {/* Hidden image for preloading */}
       {gifUrl && (
-        <Image
-          src={gifUrl || "/placeholder.svg"}
-          alt=""
-          width={1}
-          height={1}
-          className="absolute opacity-0 pointer-events-none"
-          onLoad={() => {
+        <img src={gifUrl || "/placeholder.svg"} alt="" width={1} height={1} className="absolute opacity-0 pointer-events-none" onLoad={() => {
             setLoaded(true)
             setError(false)
-          }}
-          onError={() => {
+          }} onError={() => {
             setError(true)
             setLoaded(false)
-          }}
-          priority
-          unoptimized
-        />
+          }} />
       )}
       <span className={textClassName} style={textStyle}>
         {text}
@@ -146,15 +135,7 @@ function PreloadGifs() {
   return (
     <div className="hidden">
       {gifUrls.map((url) => (
-        <Image
-          key={url}
-          src={url}
-          alt=""
-          width={1}
-          height={1}
-          priority
-          unoptimized
-        />
+        <img key={url} src={url} alt="" width={1} height={1} />
       ))}
     </div>
   )

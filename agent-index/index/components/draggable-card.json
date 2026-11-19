@@ -2,6 +2,11 @@
  "name": "draggable-card",
  "title": "Draggable Card",
  "category": "cards",
+ "categories": [
+  "cards",
+  "3d",
+  "heroes"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -17,7 +22,7 @@
   "pure",
   "3 colors"
  ],
- "usage": "\"use client\";\n\nimport {\n  DraggableCardBody,\n  DraggableCardContainer,\n} from \"@/components/ui/draggable-card\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[520px] w-full bg-background overflow-hidden\">\n      <DraggableCardContainer>\n        <DraggableCardBody className=\"bg-card border border-border\">\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"h-32 w-full rounded-lg bg-muted\" />\n            <h3 className=\"text-base font-semibold text-foreground\">\n              Drag me around\n            </h3>\n            <p className=\"text-sm text-muted-foreground\">\n              This card can be freely dragged within the viewport. Tilt follows\n              the cursor; on release it bounces with spring physics.\n            </p>\n            <div className=\"flex gap-2 mt-2\">\n              <span className=\"rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground\">\n                motion/react\n              </span>\n              <span className=\"rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground\">\n                spring\n              </span>\n            </div>\n          </div>\n        </DraggableCardBody>\n      </DraggableCardContainer>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport {\n  DraggableCardBody,\n  DraggableCardContainer,\n} from \"@/components/ui/draggable-card\";\n\nconst img = (id: string) =>\n  `https://images.unsplash.com/photo-${id}?w=640&h=640&fit=crop&auto=format&q=80`;\n\nconst items = [\n  {\n    title: \"Iceland\",\n    image: img(\"1506905925346-21bda4d32df4\"),\n    className: \"absolute top-6 left-[8%] rotate-[-5deg]\",\n  },\n  {\n    title: \"Namibia\",\n    image: img(\"1718954572423-2780fe600028\"),\n    className: \"absolute top-24 left-[28%] rotate-[-7deg]\",\n  },\n  {\n    title: \"Norway\",\n    image: img(\"1759434192768-fe3facebd5f6\"),\n    className: \"absolute top-4 left-[44%] rotate-[8deg]\",\n  },\n  {\n    title: \"Greece\",\n    image: img(\"1573790387438-4da905039392\"),\n    className: \"absolute top-28 left-[58%] rotate-[10deg]\",\n  },\n  {\n    title: \"Switzerland\",\n    image: img(\"1693581176773-a5f2362209e6\"),\n    className: \"absolute top-10 right-[6%] rotate-[2deg]\",\n  },\n  {\n    title: \"Canada\",\n    image: img(\"1759395073808-17782f3d8d66\"),\n    className: \"absolute top-36 left-[18%] rotate-[4deg]\",\n  },\n];\n\nexport default function Demo() {\n  return (\n    <DraggableCardContainer className=\"relative flex min-h-[640px] w-full items-center justify-center overflow-clip\">\n      <p className=\"absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800\">\n        If it&apos;s your first day at Fight Club, you have to fight.\n      </p>\n      {items.map((item) => (\n        <DraggableCardBody key={item.title} className={item.className}>\n          <img\n            src={item.image}\n            alt={item.title}\n            className=\"pointer-events-none relative z-10 h-64 w-64 object-cover\"\n          />\n          <h3 className=\"mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300\">\n            {item.title}\n          </h3>\n        </DraggableCardBody>\n      ))}\n    </DraggableCardContainer>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/draggable-card.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/draggable-card.json",

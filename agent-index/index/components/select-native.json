@@ -2,6 +2,9 @@
  "name": "select-native",
  "title": "Native Select",
  "category": "selects",
+ "categories": [
+  "selects"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -14,7 +17,7 @@
  "flags": [
   "pure"
  ],
- "usage": "import { SelectNative } from \"@/components/ui/select-native\";\n\nexport default function Demo() {\n  return <SelectNative />;\n}",
+ "usage": "import { Label } from \"@/components/ui/label\";\nimport { SelectNative } from \"@/components/ui/select-native\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[480px] w-full items-center justify-center px-6\">\n      <div className=\"w-full max-w-sm space-y-5 rounded-xl border border-border bg-card p-6 shadow-sm\">\n        <p className=\"font-medium text-foreground text-sm\">Shipping details</p>\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"country\">Country</Label>\n          <SelectNative defaultValue=\"de\" id=\"country\">\n            <option value=\"us\">United States</option>\n            <option value=\"de\">Germany</option>\n            <option value=\"in\">India</option>\n            <option value=\"jp\">Japan</option>\n          </SelectNative>\n        </div>\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"speed\">Delivery speed</Label>\n          <SelectNative defaultValue=\"\" id=\"speed\">\n            <option disabled value=\"\">\n              Choose a delivery speed\n            </option>\n            <option value=\"standard\">Standard (5-7 days)</option>\n            <option value=\"express\">Express (2-3 days)</option>\n          </SelectNative>\n        </div>\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"extras\">Extras</Label>\n          <SelectNative defaultValue={[\"gift\"]} id=\"extras\" multiple>\n            <option value=\"gift\">Gift wrapping</option>\n            <option value=\"insurance\">Shipping insurance</option>\n            <option value=\"signature\">Signature on delivery</option>\n            <option value=\"carbon\">Carbon-neutral shipping</option>\n          </SelectNative>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/select-native.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/select-native.json",

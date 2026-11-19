@@ -2,6 +2,9 @@
  "name": "comp-283",
  "title": "Warning Alert Banner",
  "category": "notifications",
+ "categories": [
+  "notifications"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -17,7 +20,7 @@
   "pure",
   "1 colors"
  ],
- "usage": "import Cmp from \"@/components/ui/comp-283\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport Cmp from \"@/components/ui/comp-283\";\n\nexport default function Demo() {\n  // Bring the notification back a moment after it is dismissed, so the demo can be replayed.\n  const [key, setKey] = useState(0);\n  return (\n    <div className=\"flex min-h-[64px] items-center justify-center\">\n      <Cmp key={key} onClose={() => setTimeout(() => setKey((k) => k + 1), 1800)} />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/comp-283.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-283.json",

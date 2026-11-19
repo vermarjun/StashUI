@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface TextHoverEffectProps {
   strokeWidth?: number;
@@ -18,6 +18,13 @@ export function TextHoverEffect({
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
+  const [drawn, setDrawn] = useState(false);
+
+  // Draw the outline once after mount so the text is visible before hover.
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setDrawn(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   const transitionDuration = duration;
 
@@ -43,7 +50,7 @@ export function TextHoverEffect({
   }, []);
 
   const strokeStyle: React.CSSProperties = {
-    strokeDashoffset: hovered ? "0" : "1000",
+    strokeDashoffset: hovered || drawn ? "0" : "1000",
     strokeDasharray: "1000",
     transition: "stroke-dashoffset 4s ease-in-out, stroke-dasharray 4s ease-in-out",
   };

@@ -28,13 +28,13 @@ export default function Demo() {
   return (
     <div className="w-full max-w-2xl mx-auto flex items-center justify-center p-8">
       <div
-        className="relative w-[400px] h-[120px] overflow-hidden rounded-[60px] cursor-pointer"
+        className="relative w-[520px] h-[150px] overflow-hidden rounded-[75px] cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <Liquid isHovered={isHovered} colors={sampleColors} />
-        <span className="absolute inset-0 flex items-center justify-center text-white font-semibold text-lg z-10 select-none">
-          Hover me
+        <span className="absolute inset-0 flex items-center justify-center text-white font-semibold text-2xl tracking-tight z-10 select-none">
+          Get early access
         </span>
       </div>
     </div>

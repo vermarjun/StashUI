@@ -7,12 +7,12 @@ export default function Demo() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex h-full items-center justify-center">
+    <div className="flex min-h-[400px] w-full items-center justify-center">
       <button
         onClick={() => setOpen(true)}
-        className="px-6 py-3 rounded-lg border bg-background hover:bg-muted transition-colors font-medium text-sm"
+        className="px-6 py-3 rounded-lg border bg-background text-foreground hover:bg-muted transition-colors font-medium text-sm"
       >
-        Open Dialog
+        Delete project
       </button>
 
       <FramerModal open={open} setOpen={setOpen}>

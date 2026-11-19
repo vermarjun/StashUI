@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils';
 import * as Select from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, Heart, ShoppingCart } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React, { ReactNode, useState } from 'react';
 
 function Card2() {
@@ -36,24 +35,16 @@ function Card2() {
             <Heart />
           </button> */}
           {CardArr.map((data, index) => (
-            <Image
-              src={data?.img}
-              alt='shoes'
-              key={data.img}
-              width={1000}
-              height={1000}
-              className={`absolute h-52 w-full rounded-t-md  object-cover  ${
+            <img src={data?.img} alt='shoes' key={data.img} width={1000} height={1000} className={`absolute h-52 w-full rounded-t-md  object-cover  ${
                 selectedColor === data.color
                   ? 'z-10 transition-all duration-500'
                   : 'transition-all delay-500'
-              }`}
-              style={{
+              }`} style={{
                 clipPath:
                   selectedColor === data.color
                     ? 'polygon(0 0, 100% 0, 100% 100%, 0% 100%) '
                     : 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%) ',
-              }}
-            />
+              }} />
           ))}
         </div>
         <article className='text-black pt-2 p-2'>

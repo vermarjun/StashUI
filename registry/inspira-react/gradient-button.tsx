@@ -69,17 +69,9 @@ export function GradientButton({
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
-        .gradient-btn-before::before {
-          content: "";
-          position: absolute;
-          inset: -200%;
-          background: conic-gradient(${allColors});
-          animation: rotate-rainbow ${duration}ms linear infinite;
-          filter: blur(${blur}px);
-        }
       `}</style>
       <button
-        className={cn("gradient-btn-before relative overflow-hidden", className)}
+        className={cn("relative overflow-hidden", className)}
         style={buttonStyle}
         onClick={onClick}
       >

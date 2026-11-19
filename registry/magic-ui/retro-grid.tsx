@@ -860,7 +860,7 @@ export function RetroGrid({
           isWebGlReady ? "opacity-100" : "opacity-0"
         )}
       />
-      <div className="absolute inset-0 bg-linear-to-t from-white to-transparent to-90% dark:from-black" />
+      <div className="absolute inset-0 bg-linear-to-t from-background to-transparent to-90%" />
     </div>
   )
 }

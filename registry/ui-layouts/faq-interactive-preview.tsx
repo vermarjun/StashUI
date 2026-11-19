@@ -87,14 +87,14 @@ export const FaqInteractivePreview = () => {
 
   return (
     <section
-      className="min-h-screen w-full flex flex-col justify-center items-center relative bg-white"
+      className="min-h-screen w-full flex flex-col justify-center items-center relative bg-background text-foreground"
       ref={timelineRef}
     >
       <TimelineAnimation
         timelineRef={timelineRef}
         animationNum={0}
         as="h1"
-        className="text-2xl sm:text-3xl font-medium text-neutral-900 mb-10 text-center"
+        className="text-2xl sm:text-3xl font-medium text-foreground mb-10 text-center"
       >
         Frequently Asked Questions
       </TimelineAnimation>
@@ -108,8 +108,8 @@ export const FaqInteractivePreview = () => {
               className={cn(
                 'w-full text-left px-4 py-6 rounded-2xl cursor-pointer transition-shadow duration-300 flex items-center justify-between group',
                 activeItem?.id === item.id
-                  ? 'bg-white text-black shadow-2xl scale-[1.02]'
-                  : 'bg-white  text-slate-600 hover:bg-slate-50'
+                  ? 'bg-card text-card-foreground shadow-2xl ring-1 ring-border scale-[1.02]'
+                  : 'bg-transparent text-muted-foreground hover:bg-muted'
               )}
             >
               <span className="text-lg font-semibold font-spaceGrotesk">
@@ -134,16 +134,16 @@ export const FaqInteractivePreview = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="bg-neutral-100 rounded-xl p-6 relative h-full min-h-[500px] flex flex-col justify-center shadow-[0px_0px_0px_1px_rgba(0,0,0,0.04),0px_1px_1px_0px_rgba(0,0,0,0.05),0px_2px_2px_0px_rgba(0,0,0,0.05),0px_2px_4px_0px_rgba(0,0,0,0.05)]"
+            className="bg-muted rounded-xl p-6 relative h-full min-h-[500px] flex flex-col justify-center border border-border shadow-sm"
           >
             <div className="relative z-10 space-y-4">
-              <span className=" text-xs font-semibold uppercase tracking-widest rounded-full  inline-block">
+              <span className="text-xs font-semibold uppercase tracking-widest rounded-full inline-block text-muted-foreground">
                 Magic Preview
               </span>
-              <h3 className="text-3xl font-semibold font-spaceGrotesk text-slate-900 leading-tight">
+              <h3 className="text-3xl font-semibold font-spaceGrotesk text-foreground leading-tight">
                 {activeItem?.question}
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {activeItem?.answer}
               </p>
               <img

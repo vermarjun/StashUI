@@ -141,7 +141,8 @@ export function EncryptedText({
             ? char || ""
             : char === " "
             ? " "
-            : scrambleChars[index] || randomChar(charset);
+            : scrambleChars[index] ||
+              charset.charAt((char.charCodeAt(0) + index * 7) % charset.length);
 
         return (
           <span

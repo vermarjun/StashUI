@@ -57,14 +57,15 @@ export function CosmicButton<E extends "a" | "button" = "a">({
 
   const content = (
     <>
+      <style>{`@keyframes cosmic-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes cosmic-spin-slow{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}`}</style>
       {/* Animated cosmic border - enlarges on hover */}
       <span className="absolute inset-0 overflow-hidden rounded-[15px] transition-all duration-300 ease-out group-hover/cosmic:inset-[-3px] group-hover/cosmic:rounded-[15px]">
-        <span className="absolute inset-[-200%] animate-cosmic-spin bg-[conic-gradient(from_0deg,#adfa1b,#c9ff63,#efffb7,#8cd413,#6f9f19,#92d61b,#adfa1b)] opacity-95" />
+        <span style={{ animation: "cosmic-spin 3s linear infinite" }} className="absolute inset-[-200%] bg-[conic-gradient(from_0deg,#adfa1b,#c9ff63,#efffb7,#8cd413,#6f9f19,#92d61b,#adfa1b)] opacity-95" />
       </span>
 
       {/* Noise/texture overlay on the border - enlarges on hover */}
       <span className="absolute inset-0 overflow-hidden rounded-[15px] opacity-45 mix-blend-soft-light transition-all duration-300 ease-out group-hover/cosmic:inset-[-3px] group-hover/cosmic:rounded-[15px] dark:opacity-60 dark:mix-blend-overlay">
-        <span className="absolute inset-[-200%] animate-cosmic-spin-slow bg-[conic-gradient(from_180deg,#efffb7_0%,transparent_30%,#adfa1b_50%,transparent_70%,#7fbf17_100%)]" />
+        <span style={{ animation: "cosmic-spin-slow 5s linear infinite" }} className="absolute inset-[-200%] bg-[conic-gradient(from_180deg,#efffb7_0%,transparent_30%,#adfa1b_50%,transparent_70%,#7fbf17_100%)]" />
       </span>
 
       {/* Theme-aware inner background */}

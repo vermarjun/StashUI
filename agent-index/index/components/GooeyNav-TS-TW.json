@@ -2,6 +2,9 @@
  "name": "GooeyNav-TS-TW",
  "title": "GooeyNav",
  "category": "navigation",
+ "categories": [
+  "navigation"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -15,7 +18,7 @@
   "pure",
   "2 colors"
  ],
- "usage": "\"use client\";\nimport GooeyNav from \"@/components/ui/GooeyNav\";\n\nconst items = [\n  { label: \"Home\", href: \"#home\" },\n  { label: \"About\", href: \"#about\" },\n  { label: \"Work\", href: \"#work\" },\n  { label: \"Contact\", href: \"#contact\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full min-h-24 bg-gray-900 rounded-xl p-8\">\n      <GooeyNav items={items} />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport type React from \"react\";\nimport GooeyNav from \"@/components/ui/GooeyNav\";\n\nconst items = [\n  { label: \"Home\", href: \"#home\" },\n  { label: \"About\", href: \"#about\" },\n  { label: \"Work\", href: \"#work\" },\n  { label: \"Contact\", href: \"#contact\" },\n];\n\nexport default function Demo() {\n  return (\n    <div\n      className=\"flex h-[360px] w-full items-center justify-center bg-[#060010] text-lg\"\n      // particles read --color-1..4; keep them white so they merge into the pill\n      style={\n        {\n          \"--color-1\": \"#ffffff\",\n          \"--color-2\": \"#ffffff\",\n          \"--color-3\": \"#ffffff\",\n          \"--color-4\": \"#ffffff\",\n        } as React.CSSProperties\n      }\n    >\n      <GooeyNav\n        items={items}\n        particleCount={15}\n        particleDistances={[90, 10]}\n        particleR={100}\n        initialActiveIndex={0}\n        animationTime={600}\n        timeVariance={300}\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/GooeyNav.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/GooeyNav-TS-TW.json",

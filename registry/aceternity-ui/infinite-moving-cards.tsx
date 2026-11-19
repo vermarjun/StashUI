@@ -77,11 +77,13 @@ export const InfiniteMovingCards = ({
         className,
       )}
     >
+      <style>{`@keyframes imc-scroll{to{transform:translate(calc(-50% - 0.5rem))}}`}</style>
       <ul
         ref={scrollerRef}
         className={cn(
           "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
-          start && "animate-scroll",
+          start &&
+            "animate-[imc-scroll_var(--animation-duration,40s)_linear_infinite_var(--animation-direction,forwards)]",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >

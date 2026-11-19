@@ -1,50 +1,49 @@
 import { BlurVignette, BlurVignetteArticle } from '@/registry/ui-layouts/blur-vignette';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import React from 'react';
+
+const cards = [
+  {
+    src: 'https://img.freepik.com/free-photo/cartoon-superhero-illustration_23-2151732547.jpg',
+    title: 'Night Watch',
+    body: 'A comic-panel hero over a city skyline. The caption sits on a frosted strip that melts into the art instead of covering it.',
+  },
+  {
+    src: 'https://img.freepik.com/free-photo/halloween-scene-illustration-anime-style_23-2151794328.jpg',
+    title: 'Pumpkin Rooftop',
+    body: 'Moonlight, a rooftop and one very patient pumpkin. Hover to slide the blurred caption up over the scene.',
+  },
+];
 
 function Blurvignettecard() {
   return (
-    <>
-      <div className='w-fit mx-auto sm:flex gap-2 justify-center md:p-8 sm:p-4'>
-        <BlurVignette radius='15px' inset='100px' transitionLength='200px' blur='15px'>
-          <Image
-            src='https://img.freepik.com/free-photo/cartoon-superhero-illustration_23-2151732547.jpg'
-            alt='grid'
+    <div className='mx-auto w-fit gap-4 sm:flex justify-center md:p-8 sm:p-4'>
+      {cards.map((c) => (
+        <BlurVignette
+          key={c.title}
+          classname='group w-80 shrink-0'
+          radius='15px'
+          inset='100px'
+          transitionLength='200px'
+          blur='15px'
+        >
+          <img
+            src={c.src}
+            alt={c.title}
             width={600}
-            className='mx-auto w-full relative h-full object-cover'
             height={600}
+            className='relative mx-auto h-full w-full object-cover transition-transform duration-700 group-hover:scale-105'
           />
-          <BlurVignetteArticle classname='h-[35%] w-[96%] ml-2 mt-auto mb-1 border border-neutral-900/20 rounded-xl text-white '>
-            <article className=' py-5 px-3'>
-              <h1 className='2xl:text-3xl text-2xl'>UiLayout</h1>
-              <p className='2xl:text-sm text-xs'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, quaerat ab? Rerum
-                facilis dignissimos voluptatum!
+          <BlurVignetteArticle classname='bottom-1 left-2 h-[38%] w-[96%] translate-y-[55%] rounded-xl border border-neutral-900/20 text-white transition-transform duration-500 ease-out group-hover:translate-y-0'>
+            <article className='px-3 py-5'>
+              <h1 className='text-2xl font-semibold'>{c.title}</h1>
+              <p className='mt-1 text-xs text-white/85 opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100'>
+                {c.body}
               </p>
             </article>
           </BlurVignetteArticle>
         </BlurVignette>
-        <BlurVignette radius='15px' inset='100px' transitionLength='200px' blur='15px'>
-          <Image
-            src='https://img.freepik.com/free-photo/halloween-scene-illustration-anime-style_23-2151794328.jpg'
-            alt='grid'
-            width={600}
-            className='mx-auto w-full relative h-full object-cover'
-            height={600}
-          />
-          <BlurVignetteArticle classname='h-[35%] w-[96%] ml-2 mt-auto mb-1 border border-neutral-900/20 text-white '>
-            <article className=' py-5 px-3'>
-              <h1 className='2xl:text-3xl text-2xl'>UiLayout</h1>
-              <p className='2xl:text-sm text-xs'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, quaerat ab? Rerum
-                facilis dignissimos voluptatum!
-              </p>
-            </article>
-          </BlurVignetteArticle>
-        </BlurVignette>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
 

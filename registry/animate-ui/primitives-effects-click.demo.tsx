@@ -1,25 +1,36 @@
 "use client";
 
+import * as React from "react";
 import { Click } from "@/registry/animate-ui/primitives-effects-click";
 
 const variants = ["ring", "ripple", "crosshair", "burst", "particles"] as const;
 
+function EffectButton({ variant }: { variant: (typeof variants)[number] }) {
+  // scope each effect to its own button; without a scope every Click listens
+  // on the whole document and all five effects fire on any click
+  const ref = React.useRef<HTMLButtonElement>(null);
+  return (
+    <Click variant={variant} scope={ref} color="currentColor" size={150} duration={750}>
+      <button
+        ref={ref}
+        type="button"
+        className="h-14 w-36 rounded-xl border border-border bg-card text-base font-medium capitalize text-foreground transition-colors hover:bg-muted"
+      >
+        {variant}
+      </button>
+    </Click>
+  );
+}
+
 export default function Demo() {
   return (
-    <div className="flex flex-col items-center gap-4 p-8">
-      <div className="flex flex-wrap gap-3 justify-center">
+    <div className="flex flex-col items-center gap-6 p-10">
+      <div className="flex max-w-3xl flex-wrap justify-center gap-6">
         {variants.map((variant) => (
-          <Click key={variant} variant={variant} color="currentColor" size={80}>
-            <button
-              type="button"
-              className="rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors capitalize"
-            >
-              {variant}
-            </button>
-          </Click>
+          <EffectButton key={variant} variant={variant} />
         ))}
       </div>
-      <p className="text-xs text-muted-foreground">Click any button to see the effect</p>
+      <p className="text-sm text-muted-foreground">Click a button to see its effect</p>
     </div>
   );
 }

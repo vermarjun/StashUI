@@ -2,6 +2,17 @@ import Cmp from "@/registry/aceternity-ui/world-map";
 
 export default function Demo() {
   return (
+    <div className="w-full bg-black py-16">
+      <div className="mx-auto max-w-5xl px-6 text-center">
+        <p className="font-bold text-3xl text-white md:text-5xl">
+          Remote <span className="text-neutral-400">Connectivity</span>
+        </p>
+        <p className="mx-auto mt-4 max-w-2xl text-base text-neutral-400 md:text-lg">
+          Break free from traditional boundaries. Work from anywhere, at the comfort of your own
+          studio apartment. Perfect for nomads and travellers.
+        </p>
+      </div>
+      <div className="mx-auto mt-8 max-w-6xl px-4">
     <Cmp
       dots={[
         {
@@ -26,5 +37,7 @@ export default function Demo() {
         },
       ]}
     />
+      </div>
+    </div>
   );
 }

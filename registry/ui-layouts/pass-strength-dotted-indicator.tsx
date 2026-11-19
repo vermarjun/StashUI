@@ -25,10 +25,11 @@ const STRENGTH_CONFIG = {
   texts: {
     0: 'Enter a password',
     1: 'Weak password',
-    2: 'Medium password!',
-    3: 'Strong password!!',
-    4: 'Very Strong password!!!',
-  } satisfies Record<Exclude<StrengthScore, 5>, string>,
+    2: 'Weak password',
+    3: 'Medium password!',
+    4: 'Strong password!!',
+    5: 'Very strong password!!!',
+  } satisfies Record<StrengthScore, string>,
 } as const;
 
 // Types
@@ -90,27 +91,27 @@ const PasswordInput = () => {
       <div className='flex gap-2 w-full justify-between mt-2'>
         <span
           className={`${
-            calculateStrength.score >= 1 ? 'bg-green-200' : 'dark:bg-neutral-950 bg-neutral-50'
+            calculateStrength.score >= 1 ? 'bg-green-200' : 'dark:bg-neutral-800 bg-neutral-200'
           }  p-1 rounded-full w-full`}
         ></span>
         <span
           className={`${
-            calculateStrength.score >= 2 ? 'bg-green-300' : 'dark:bg-neutral-950 bg-neutral-50'
+            calculateStrength.score >= 2 ? 'bg-green-300' : 'dark:bg-neutral-800 bg-neutral-200'
           }  p-1 rounded-full w-full`}
         ></span>
         <span
           className={`${
-            calculateStrength.score >= 3 ? 'bg-green-400' : 'dark:bg-neutral-950 bg-neutral-50'
+            calculateStrength.score >= 3 ? 'bg-green-400' : 'dark:bg-neutral-800 bg-neutral-200'
           }  p-1 rounded-full w-full`}
         ></span>
         <span
           className={`${
-            calculateStrength.score >= 4 ? 'bg-green-500' : 'dark:bg-neutral-950 bg-neutral-50'
+            calculateStrength.score >= 4 ? 'bg-green-500' : 'dark:bg-neutral-800 bg-neutral-200'
           }  p-1 rounded-full w-full`}
         ></span>
         <span
           className={`${
-            calculateStrength.score >= 5 ? 'bg-green-600' : 'dark:bg-neutral-950 bg-neutral-50'
+            calculateStrength.score >= 5 ? 'bg-green-600' : 'dark:bg-neutral-800 bg-neutral-200'
           }  p-1 rounded-full w-full`}
         ></span>
       </div>
@@ -120,7 +121,7 @@ const PasswordInput = () => {
         <span>
           {
             STRENGTH_CONFIG.texts[
-              Math.min(calculateStrength.score, 4) as keyof typeof STRENGTH_CONFIG.texts
+              calculateStrength.score
             ]
           }
         </span>

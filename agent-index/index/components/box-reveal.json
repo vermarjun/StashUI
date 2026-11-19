@@ -2,6 +2,9 @@
  "name": "box-reveal",
  "title": "Box Reveal",
  "category": "effects",
+ "categories": [
+  "effects"
+ ],
  "origin": "Inspira UI",
  "origin_short": "insp",
  "exports": [
@@ -15,7 +18,7 @@
   "pure",
   "1 colors"
  ],
- "usage": "\"use client\";\n\nimport { BoxReveal } from \"@/components/ui/box-reveal\";\n\nexport default function BoxRevealDemo() {\n  return (\n    <div className=\"flex flex-col items-start justify-center gap-3 p-16\">\n      <BoxReveal color=\"#5046e6\" duration={0.5}>\n        <h1 className=\"text-4xl font-bold\">Hello World</h1>\n      </BoxReveal>\n\n      <BoxReveal color=\"#ec4899\" duration={0.5} delay={0.4}>\n        <p className=\"text-lg text-muted-foreground\">\n          This text is revealed with a sliding box animation.\n        </p>\n      </BoxReveal>\n\n      <BoxReveal color=\"#22c55e\" duration={0.5} delay={0.6}>\n        <span className=\"inline-block rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground\">\n          Get started\n        </span>\n      </BoxReveal>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { BoxReveal } from \"@/components/ui/box-reveal\";\n\nexport default function BoxRevealDemo() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center gap-10 p-12\">\n      <div key={run} className=\"flex w-full max-w-xl flex-col items-start gap-4\">\n        <BoxReveal color=\"#fafafa\" duration={0.5}>\n          <h1 className=\"text-6xl font-semibold tracking-tight text-foreground\">Northwind.</h1>\n        </BoxReveal>\n\n        <BoxReveal color=\"#a3a3a3\" duration={0.5}>\n          <h2 className=\"text-xl text-foreground\">\n            Analytics for teams who <span className=\"font-semibold\">ship weekly</span>\n          </h2>\n        </BoxReveal>\n\n        <BoxReveal color=\"#525252\" duration={0.5}>\n          <p className=\"text-muted-foreground\">\n            Funnels, retention and revenue in one dashboard.\n            <br />\n            Set up in five minutes, no SQL required.\n          </p>\n        </BoxReveal>\n\n        <BoxReveal color=\"#fafafa\" duration={0.5}>\n          <span className=\"mt-2 inline-block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground\">\n            Start free trial\n          </span>\n        </BoxReveal>\n      </div>\n\n      <button\n        type=\"button\"\n        onClick={() => setRun((n) => n + 1)}\n        className=\"rounded-full border border-border px-4 py-1.5 text-xs text-muted-foreground transition hover:bg-muted hover:text-foreground\"\n      >\n        Replay\n      </button>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/inspira-react/box-reveal.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/box-reveal.json",

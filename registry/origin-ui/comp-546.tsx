@@ -12,28 +12,28 @@ const initialFiles = [
     name: "image-01.jpg",
     size: 1528737,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
+    url: "https://images.unsplash.com/photo-1476180814856-a36609db0493?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
   {
     id: "image-02-123456789",
     name: "image-02.jpg",
     size: 1528737,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=2",
+    url: "https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
   {
     id: "image-03-123456789",
     name: "image-03.jpg",
     size: 1528737,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=3",
+    url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
   {
     id: "image-04-123456789",
     name: "image-04.jpg",
     size: 1528737,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=4",
+    url: "https://images.unsplash.com/photo-1573790387438-4da905039392?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
 ];
 

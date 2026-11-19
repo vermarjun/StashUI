@@ -1,21 +1,44 @@
 "use client";
-import { useMotionValue } from "motion/react";
+import { useRef } from "react";
+import { useScroll, useTransform } from "motion/react";
 import { GoogleGeminiEffect } from "@/registry/aceternity-ui/google-gemini-effect";
 
 export default function Demo() {
-  const pathLength1 = useMotionValue(0.5);
-  const pathLength2 = useMotionValue(0.5);
-  const pathLength3 = useMotionValue(0.5);
-  const pathLength4 = useMotionValue(0.5);
-  const pathLength5 = useMotionValue(0.5);
+  const ref = useRef<HTMLDivElement>(null);
+  // the demo owns its scroller: the preview wrapper is overflow:auto, which
+  // would otherwise stop the sticky title + SVG from pinning
+  const scroller = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    container: scroller,
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
 
   return (
-    <div className="relative w-full h-[600px] bg-black overflow-hidden flex items-start justify-center">
+    <div ref={scroller} className="h-screen w-full overflow-y-auto bg-black [scrollbar-width:none]">
+    <div
+      ref={ref}
+      className="relative h-[300vh] w-full overflow-clip bg-black pt-24"
+    >
       <GoogleGeminiEffect
-        pathLengths={[pathLength1, pathLength2, pathLength3, pathLength4, pathLength5]}
+        className="top-24"
+        pathLengths={[
+          pathLengthFirst,
+          pathLengthSecond,
+          pathLengthThird,
+          pathLengthFourth,
+          pathLengthFifth,
+        ]}
         title="Build with Aceternity UI"
-        description="Beautiful components built with Tailwind CSS and Framer Motion."
+        description="Scroll down and watch the five paths draw themselves in and meet in the middle."
       />
+    </div>
     </div>
   );
 }

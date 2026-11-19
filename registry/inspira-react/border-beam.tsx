@@ -61,20 +61,26 @@ export const BorderBeam = React.forwardRef<HTMLDivElement, BorderBeamProps>(
               "--color-from": colorFrom,
               "--color-to": colorTo,
               "--delay": `-${delaySec}`,
+              // reveal only the border strip: full box minus the padding box
+              maskImage:
+                "linear-gradient(#000 0 0), linear-gradient(#000 0 0)",
+              maskClip: "padding-box, border-box",
+              maskComposite: "exclude",
+              WebkitMaskImage:
+                "linear-gradient(#000 0 0), linear-gradient(#000 0 0)",
+              WebkitMaskClip: "padding-box, border-box",
+              WebkitMaskComposite: "xor",
               ...style,
             } as React.CSSProperties
           }
           className={cn(
-            // Base: transparent border + mask to reveal only the border strip
+            // Base: transparent border; the inline mask reveals only the border strip
             "pointer-events-none absolute inset-0 rounded-[inherit]",
             "[border:calc(var(--border-width)*1px)_solid_transparent]",
-            "[mask-clip:padding-box,border-box]",
-            "[mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]",
             // Beam element via ::after
             "after:absolute after:aspect-square",
             "after:w-[calc(var(--size)*1px)]",
-            "after:[animation-delay:var(--delay)]",
-            "after:[animation:border-beam-anim_var(--duration)_infinite_linear]",
+            "after:[animation:border-beam-anim_var(--duration)_linear_var(--delay)_infinite]",
             "after:[background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)]",
             "after:[offset-anchor:calc(var(--anchor)*1%)_50%]",
             "after:[offset-path:rect(0_auto_auto_0_round_calc(var(--size)*1px))]",

@@ -3,7 +3,6 @@ import { Carousel, Slider, SliderContainer, SliderDotButton } from '@/registry/u
 import { imgPreview } from '@/components/website/constant';
 import type { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import Image from 'next/image';
 import React, { ReactNode } from 'react';
 
 function AutostartSlider() {

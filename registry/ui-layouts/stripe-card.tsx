@@ -1,5 +1,4 @@
 import { ArrowBigDown, ArrowRight, ChevronRight, Heart } from 'lucide-react';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 function StripeCard() {
@@ -13,13 +12,7 @@ function StripeCard() {
             }}
             className='absolute top-0 left-0 w-full h-full  group-hover:opacity-100 opacity-0  transition-all duration-300'
           ></div>
-          <Image
-            src={'/og.jpg'}
-            alt='shoes'
-            width={600}
-            height={600}
-            className='absolute -bottom-1 group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300'
-          />
+          <img src={'/og.jpg'} alt='shoes' width={600} height={600} className='absolute -bottom-1 group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300' />
         </figure>
         <article className='  p-4 space-y-2'>
           <div className='h-8 w-20 bg-[#4393fc] rounded-md'></div>

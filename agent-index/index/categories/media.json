@@ -1,27 +1,8 @@
 {
  "slug": "media",
- "count": 50,
+ "count": 84,
  "summary": "3D galleries, marquee carousels, image grids, globe viewers, and masonry layouts with effects.",
  "components": [
-  {
-   "name": "3d-globe",
-   "title": "3D Globe",
-   "origin": "ace",
-   "blurb": "Interactive 3D Earth globe with customizable markers and rotation.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "dramatic",
-   "slots": [
-    "media"
-   ],
-   "flags": [
-    "webgl",
-    "heavy",
-    "sized-parent",
-    "12c"
-   ]
-  },
   {
    "name": "3d-marquee",
    "title": "3D Image Marquee",
@@ -39,6 +20,22 @@
     "sized-parent",
     "7c"
    ]
+  },
+  {
+   "name": "DecayCard-TS-TW",
+   "title": "DecayCard",
+   "origin": "rb",
+   "blurb": "Image distorts and displaces as you move the cursor, stronger when you move…",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "playful",
+   "slots": [
+    "media",
+    "hero",
+    "feature-card"
+   ],
+   "flags": []
   },
   {
    "name": "DomeGallery-TS-TW",
@@ -61,22 +58,62 @@
    ]
   },
   {
-   "name": "LogoLoop-TS-TW",
-   "title": "Logo Marquee Loop",
+   "name": "GridDistortion-TS-TW",
+   "title": "Grid Distortion",
    "origin": "rb",
-   "blurb": "Continuous marquee carousel for logos or images with optional pause on hover.",
+   "blurb": "An image warps and ripples dynamically under your cursor.",
    "trigger": [
-    "always",
-    "hover"
+    "pointer-move"
    ],
-   "tone": "decorative",
+   "tone": "playful",
    "slots": [
-    "logo-wall",
-    "nav"
+    "media",
+    "hero",
+    "feature-card"
    ],
    "flags": [
-    "pure",
-    "6c"
+    "webgl",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "ImageTrail-TS-TW",
+   "title": "Image Cursor Trail",
+   "origin": "rb",
+   "blurb": "Images follow your cursor in a smooth, staggered trail.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "playful",
+   "slots": [
+    "decoration",
+    "hero",
+    "page-background"
+   ],
+   "flags": [
+    "3d",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "InfiniteMenu-TS-TW",
+   "title": "Infinite Menu",
+   "origin": "rb",
+   "blurb": "Drag to spin a 3D sphere of linked image cards.",
+   "trigger": [
+    "pointer-move",
+    "drag"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "media"
+   ],
+   "flags": [
+    "webgl",
+    "3d",
+    "sized-parent",
+    "3c"
    ]
   },
   {
@@ -96,6 +133,26 @@
    "flags": [
     "sized-parent",
     "2c"
+   ]
+  },
+  {
+   "name": "MetallicPaint-TS-TW",
+   "title": "Metallic Paint Shader",
+   "origin": "rb",
+   "blurb": "Applies a flowing metallic liquid effect to an image with chromatic aberration…",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "media",
+    "decoration",
+    "feature-card"
+   ],
+   "flags": [
+    "pure",
+    "webgl",
+    "3c"
    ]
   },
   {
@@ -122,6 +179,43 @@
    ]
   },
   {
+   "name": "ReflectiveCard-TS-TW",
+   "title": "Webcam Reflective Card",
+   "origin": "rb",
+   "blurb": "Webcam feed rendered as a reflective, metallic ID card with distortion and…",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "media",
+    "decoration",
+    "feature-card"
+   ],
+   "flags": [
+    "16c"
+   ]
+  },
+  {
+   "name": "TiltedCard-TS-TW",
+   "title": "Tilted Card",
+   "origin": "rb",
+   "blurb": "Card with image that tilts in 3D space following cursor position.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "3d",
+    "2c"
+   ]
+  },
+  {
    "name": "android",
    "title": "Android Mockup",
    "origin": "mag",
@@ -139,40 +233,225 @@
    ]
   },
   {
-   "name": "blur-vignette-video",
-   "title": "Blur Vignette Video",
+   "name": "animal-imagemasking",
+   "title": "Animal Shape Image Mask",
    "origin": "uila",
-   "blurb": "Video with a blur vignette edge fade that softens the frame border.",
+   "blurb": "Images masked into animal silhouettes.",
    "trigger": [
-    "always",
-    "hover"
+    "always"
    ],
-   "tone": "decorative",
+   "tone": "playful",
    "slots": [
-    "section-background",
-    "hero"
+    "media",
+    "feature-card"
+   ],
+   "flags": [
+    "motion",
+    "2c"
+   ]
+  },
+  {
+   "name": "ascii-art",
+   "title": "ASCII Art Renderer",
+   "origin": "ace",
+   "blurb": "Renders an image as stylized ASCII or Unicode characters.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "media",
+    "decoration"
+   ],
+   "flags": [
+    "motion",
+    "canvas",
+    "11c"
+   ]
+  },
+  {
+   "name": "bending-gallery",
+   "title": "Bending Gallery",
+   "origin": "insp",
+   "blurb": "WebGL gallery with images that bend and wave as you scroll.",
+   "trigger": [
+    "scroll"
+   ],
+   "tone": "technical",
+   "slots": [
+    "hero",
+    "feature-card"
+   ],
+   "flags": [
+    "pure",
+    "webgl",
+    "sized-parent",
+    "2c"
+   ]
+  },
+  {
+   "name": "bg-media",
+   "title": "Media Background",
+   "origin": "cult",
+   "blurb": "Displays an image or video background with optional overlay.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "page-background",
+    "hero",
+    "section-background"
+   ],
+   "flags": [
+    "pure",
+    "6c"
+   ]
+  },
+  {
+   "name": "blur-vignette",
+   "title": "Blur Vignette",
+   "origin": "uila",
+   "blurb": "Container that fades edges to blur.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "media",
+    "feature-card"
    ],
    "flags": [
     "pure"
    ]
   },
   {
-   "name": "book",
-   "title": "3D Book Display",
-   "origin": "insp",
-   "blurb": "3D book mockup that rotates on hover, revealing colored spine and back cover.",
+   "name": "blur-vignette-card",
+   "title": "Blur Vignette Card",
+   "origin": "uila",
+   "blurb": "Image card with a blurred vignette edge and text overlay.",
    "trigger": [
-    "hover"
+    "always"
    ],
    "tone": "decorative",
    "slots": [
     "feature-card",
-    "decoration"
+    "media"
    ],
    "flags": [
     "pure",
+    "3c"
+   ]
+  },
+  {
+   "name": "cards-demo-2",
+   "title": "Author Blog Card",
+   "origin": "ace",
+   "blurb": "Blog-style author card with image, title, and author info.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "pure",
+    "5c"
+   ]
+  },
+  {
+   "name": "carousel",
+   "title": "Carousel",
+   "origin": "ace",
+   "blurb": "Image carousel with 3D tilt parallax on hover and click-to-navigate controls.",
+   "trigger": [
+    "click",
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "feature-card"
+   ],
+   "flags": [
     "3d",
-    "64c"
+    "10c",
+    "2 ports"
+   ]
+  },
+  {
+   "name": "comp-359",
+   "title": "Image Tooltip",
+   "origin": "ori",
+   "blurb": "A tooltip containing a preview image above title and body text.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "tooltip",
+    "media"
+   ],
+   "flags": [
+    "pure"
+   ]
+  },
+  {
+   "name": "comp-544",
+   "title": "Image Cover Dropzone",
+   "origin": "ori",
+   "blurb": "Large dropzone with image preview filling the background.",
+   "trigger": [
+    "click",
+    "drag"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "media",
+    "feature-card"
+   ],
+   "flags": [
+    "pure",
+    "3c"
+   ]
+  },
+  {
+   "name": "comp-546",
+   "title": "Multi Image Upload Grid",
+   "origin": "ori",
+   "blurb": "Grid layout for uploading and previewing multiple images.",
+   "trigger": [
+    "click",
+    "drag"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "media",
+    "form-field"
+   ],
+   "flags": [
+    "pure"
+   ]
+  },
+  {
+   "name": "comp-553",
+   "title": "Mixed File Upload Manager",
+   "origin": "ori",
+   "blurb": "Mixed file and image uploads in a unified grid interface.",
+   "trigger": [
+    "click",
+    "drag"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "form-field",
+    "media"
+   ],
+   "flags": [
+    "pure",
+    "1c"
    ]
   },
   {
@@ -215,41 +494,21 @@
    ]
   },
   {
-   "name": "cosmic-portal",
-   "title": "Cosmic Portal",
-   "origin": "insp",
-   "blurb": "Animated 3D cosmic portal with rotating crystals, bloom effects, and shifting…",
-   "trigger": [
-    "always"
-   ],
-   "tone": "dramatic",
-   "slots": [
-    "hero",
-    "section-background"
-   ],
-   "flags": [
-    "pure",
-    "webgl",
-    "3d",
-    "sized-parent",
-    "12c"
-   ]
-  },
-  {
-   "name": "creative-videomasking",
-   "title": "Creative Video Masking",
+   "name": "creative-clippath",
+   "title": "Creative Squiggle Clip Path",
    "origin": "uila",
-   "blurb": "Looping video with a custom SVG mask that creates a shaped cutout effect.",
+   "blurb": "Image/video grid with organic squiggly clip path shapes.",
    "trigger": [
-    "always"
+    "hover"
    ],
    "tone": "decorative",
    "slots": [
-    "section-background",
-    "hero"
+    "media",
+    "feature-card"
    ],
    "flags": [
-    "motion"
+    "motion",
+    "2c"
    ]
   },
   {
@@ -305,7 +564,26 @@
    "flags": [
     "motion",
     "3d",
-    "6c"
+    "8c"
+   ]
+  },
+  {
+   "name": "default-slider",
+   "title": "Default Image Slider",
+   "origin": "uila",
+   "blurb": "Basic image carousel with previous/next buttons and dot navigation.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "feature-card",
+    "hero"
+   ],
+   "flags": [
+    "motion",
+    "heavy",
+    "10c"
    ]
   },
   {
@@ -322,7 +600,8 @@
     "feature-card"
    ],
    "flags": [
-    "1c"
+    "pure",
+    "2c"
    ]
   },
   {
@@ -360,61 +639,93 @@
    ]
   },
   {
-   "name": "framerhorizontalscroll",
-   "title": "Framer Horizontal Scroll",
+   "name": "fixedbg-imagemasking",
+   "title": "Fixed Background Image Mask",
    "origin": "uila",
-   "blurb": "Horizontal carousel triggered by vertical scroll, using Framer Motion to pan…",
-   "trigger": [
-    "scroll"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "page-background",
-    "hero"
-   ],
-   "flags": [
-    "pure",
-    "6c"
-   ]
-  },
-  {
-   "name": "github-globe",
-   "title": "GitHub Globe",
-   "origin": "insp",
-   "blurb": "3D spinning globe with animated arcs connecting geographic points.",
+   "blurb": "Fixed background image masked to an SVG shape.",
    "trigger": [
     "always"
    ],
-   "tone": "technical",
+   "tone": "decorative",
    "slots": [
     "hero",
-    "stat"
+    "page-background"
    ],
    "flags": [
-    "pure",
-    "webgl",
-    "3d",
-    "sized-parent",
-    "9c"
+    "motion",
+    "2c"
    ]
   },
   {
-   "name": "globe",
-   "title": "Globe",
-   "origin": "insp",
-   "blurb": "Draggable 3D globe with auto-rotation and spring physics for smooth interaction.",
+   "name": "focus-cards",
+   "title": "Focus Cards",
+   "origin": "ace",
+   "blurb": "Image grid that blurs/scales non-hovered cards while enlarging hovered card.",
    "trigger": [
-    "always",
-    "drag"
+    "hover"
    ],
-   "tone": "technical",
+   "tone": "minimal",
    "slots": [
-    "hero",
-    "stat"
+    "feature-card",
+    "media"
    ],
    "flags": [
     "pure",
-    "2 ports"
+    "5c"
+   ]
+  },
+  {
+   "name": "framer-draggable-carousel",
+   "title": "Framer Draggable Carousel",
+   "origin": "uila",
+   "blurb": "Draggable image carousel with momentum-less snap animation.",
+   "trigger": [
+    "drag"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "hero",
+    "feature-card"
+   ],
+   "flags": [
+    "motion",
+    "4c"
+   ]
+  },
+  {
+   "name": "framer-thumnbails",
+   "title": "Framer Thumbnail Carousel",
+   "origin": "uila",
+   "blurb": "Carousel with collapsible thumbnail strip; selected thumbnail expands, others…",
+   "trigger": [
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "2c"
+   ]
+  },
+  {
+   "name": "gallery-modal-accordion",
+   "title": "Gallery Modal Accordion",
+   "origin": "uila",
+   "blurb": "Accordion gallery with modal expansion for full-screen image viewing.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "modal",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "4c"
    ]
   },
   {
@@ -436,42 +747,6 @@
    ]
   },
   {
-   "name": "hexagon-videomasking",
-   "title": "Hexagon Video Mask Alt",
-   "origin": "uila",
-   "blurb": "Looping video clipped into a hexagon shape using CSS mask.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "section-background",
-    "hero"
-   ],
-   "flags": [
-    "motion",
-    "2c"
-   ]
-  },
-  {
-   "name": "hexagon2-videomasking",
-   "title": "Hexagon Video Mask",
-   "origin": "uila",
-   "blurb": "Looping video clipped into an alternate hexagon shape using CSS mask.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "section-background",
-    "hero"
-   ],
-   "flags": [
-    "motion",
-    "2c"
-   ]
-  },
-  {
    "name": "hover-video-player",
    "title": "Hover Video Player",
    "origin": "cult",
@@ -487,6 +762,177 @@
     "motion",
     "sized-parent",
     "7c"
+   ]
+  },
+  {
+   "name": "hovercard1",
+   "title": "Image Hover Card",
+   "origin": "uila",
+   "blurb": "Image card with expandable button overlay on hover.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "5c"
+   ]
+  },
+  {
+   "name": "hovercard3",
+   "title": "Profile Hover Card",
+   "origin": "uila",
+   "blurb": "Image card with full-overlay description panel that appears on hover.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "feature-card",
+    "media",
+    "section-background"
+   ],
+   "flags": [
+    "motion",
+    "8c"
+   ]
+  },
+  {
+   "name": "hovercard4",
+   "title": "Blog Post Card",
+   "origin": "uila",
+   "blurb": "Blog post card with image zoom and animated CTA arrow.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "feature-card",
+    "body-text",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "6c"
+   ]
+  },
+  {
+   "name": "icon-cloud",
+   "title": "Icon Cloud",
+   "origin": "mag",
+   "blurb": "3D rotating cloud of icons or images rendered on canvas.",
+   "trigger": [
+    "drag"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "pure",
+    "canvas",
+    "sized-parent",
+    "1c"
+   ]
+  },
+  {
+   "name": "image-hover-accordion",
+   "title": "Image Hover Accordion",
+   "origin": "uila",
+   "blurb": "Accordion items with hover image reveal.",
+   "trigger": [
+    "hover",
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "feature-card",
+    "hero"
+   ],
+   "flags": [
+    "pure",
+    "2c"
+   ]
+  },
+  {
+   "name": "image-reveal",
+   "title": "Image Reveal Hover",
+   "origin": "uila",
+   "blurb": "Image appears and follows cursor on list item hover.",
+   "trigger": [
+    "hover",
+    "pointer-move"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "media",
+    "feature-card"
+   ],
+   "flags": [
+    "pure",
+    "2c"
+   ]
+  },
+  {
+   "name": "images-slider",
+   "title": "Images Slider",
+   "origin": "ace",
+   "blurb": "Slides through images with auto-play and arrow-key navigation.",
+   "trigger": [
+    "timer",
+    "keyboard"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "page-background",
+    "hero"
+   ],
+   "flags": [
+    "motion",
+    "3d",
+    "sized-parent",
+    "1c"
+   ]
+  },
+  {
+   "name": "img-tabs-standalone",
+   "title": "Image Tabs Standalone",
+   "origin": "uila",
+   "blurb": "Self-contained image tabs with no external context needed.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "pure",
+    "18c"
+   ]
+  },
+  {
+   "name": "imgpreview-dropzone",
+   "title": "Image Preview Dropzone",
+   "origin": "uila",
+   "blurb": "Multi-image dropzone with thumbnail previews in a row.",
+   "trigger": [
+    "click",
+    "drag"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "form-field",
+    "media"
+   ],
+   "flags": [
+    "2c"
    ]
   },
   {
@@ -508,41 +954,41 @@
    ]
   },
   {
-   "name": "inspira-icon-cloud",
-   "title": "Icon Cloud",
+   "name": "inspira-dither-shader",
+   "title": "Dither Shader",
    "origin": "insp",
-   "blurb": "3D rotating icon sphere responds to drag rotation and click-to-focus.",
+   "blurb": "Canvas-rendered images with dithering patterns and color quantization.",
    "trigger": [
-    "drag",
-    "click"
+    "always"
    ],
-   "tone": "playful",
+   "tone": "technical",
    "slots": [
-    "decoration"
+    "media",
+    "feature-card"
    ],
    "flags": [
     "pure",
     "canvas",
-    "2 ports"
+    "sized-parent",
+    "5c"
    ]
   },
   {
-   "name": "inspira-world-map",
-   "title": "World Map",
+   "name": "inspira-lens",
+   "title": "Lens Magnifier",
    "origin": "insp",
-   "blurb": "Animated paths and pulsing dots connect global locations on a dotted map.",
+   "blurb": "Magnifying lens overlay that zooms in on hover.",
    "trigger": [
-    "always"
+    "hover",
+    "pointer-move"
    ],
    "tone": "minimal",
    "slots": [
-    "section-background",
-    "decoration"
+    "media",
+    "feature-card"
    ],
    "flags": [
-    "pure",
-    "4c",
-    "2 ports"
+    "pure"
    ]
   },
   {
@@ -566,24 +1012,6 @@
    ]
   },
   {
-   "name": "iphone-mockup",
-   "title": "iPhone 15 Pro Mockup",
-   "origin": "insp",
-   "blurb": "SVG iPhone 15 mockup frame displays images with hardware notch.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "media",
-    "feature-card"
-   ],
-   "flags": [
-    "pure",
-    "24c"
-   ]
-  },
-  {
    "name": "layout-grid",
    "title": "Layout Grid",
    "origin": "ace",
@@ -603,55 +1031,80 @@
    ]
   },
   {
-   "name": "logo-cloud",
-   "title": "Logo Cloud",
-   "origin": "insp",
-   "blurb": "Logos scroll in horizontal marquee with gradient fade edges.",
+   "name": "link-preview",
+   "title": "Link Preview",
+   "origin": "ace",
+   "blurb": "Link that shows a website or image preview on hover, with spring-based motion…",
    "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "logo-wall"
-   ],
-   "flags": [
-    "pure"
-   ]
-  },
-  {
-   "name": "logos-marquee",
-   "title": "Logos Marquee",
-   "origin": "uila",
-   "blurb": "Logos scroll horizontally with gradient fade on left and right sides.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "logo-wall"
-   ],
-   "flags": [
-    "pure",
-    "6c"
-   ]
-  },
-  {
-   "name": "magic-ui-globe",
-   "title": "Globe",
-   "origin": "mag",
-   "blurb": "3D rotating globe responds to pointer movement with geographic markers.",
-   "trigger": [
+    "hover",
     "pointer-move"
    ],
-   "tone": "dramatic",
+   "tone": "minimal",
    "slots": [
-    "page-background",
+    "body-text",
     "decoration"
    ],
    "flags": [
     "motion",
-    "sized-parent",
-    "2 ports"
+    "heavy",
+    "5c"
+   ]
+  },
+  {
+   "name": "liquid-logo",
+   "title": "Liquid Logo",
+   "origin": "insp",
+   "blurb": "Logo animates with flowing liquid distortion and refraction effects.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "logo-wall",
+    "hero"
+   ],
+   "flags": [
+    "pure",
+    "webgl",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "loading-carousel",
+   "title": "Loading Carousel",
+   "origin": "cult",
+   "blurb": "Auto-rotating carousel of image tiles with progress indicators and optional…",
+   "trigger": [
+    "timer",
+    "click"
+   ],
+   "tone": "technical",
+   "slots": [
+    "feature-card",
+    "section-background",
+    "hero"
+   ],
+   "flags": [
+    "motion",
+    "heavy",
+    "5c"
+   ]
+  },
+  {
+   "name": "media-modal-default",
+   "title": "Media Modal Default",
+   "origin": "uila",
+   "blurb": "Grid gallery of zoomable images and videos ready to use.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "modal",
+    "media"
+   ],
+   "flags": [
+    "motion"
    ]
   },
   {
@@ -673,21 +1126,22 @@
    ]
   },
   {
-   "name": "normalGrid",
-   "title": "Masonry Image Grid",
-   "origin": "uila",
-   "blurb": "Masonry grid of project cards with staggered fade-in on scroll.",
+   "name": "parallax-hero-images",
+   "title": "Parallax Hero Images",
+   "origin": "ace",
+   "blurb": "Images shift in depth based on cursor position, creating a layered parallax…",
    "trigger": [
-    "scroll"
+    "pointer-move"
    ],
    "tone": "decorative",
    "slots": [
-    "feature-card",
-    "media"
+    "page-background",
+    "hero"
    ],
    "flags": [
     "motion",
-    "5c"
+    "sized-parent",
+    "2c"
    ]
   },
   {
@@ -727,6 +1181,24 @@
    ]
   },
   {
+   "name": "particle-image",
+   "title": "Particle Image",
+   "origin": "insp",
+   "blurb": "Image breaks into particles that react to cursor movement with physics…",
+   "trigger": [
+    "pointer-move",
+    "always"
+   ],
+   "tone": "playful",
+   "slots": [
+    "hero",
+    "decoration"
+   ],
+   "flags": [
+    "pure"
+   ]
+  },
+  {
    "name": "photo-gallery",
    "title": "Photo Gallery",
    "origin": "insp",
@@ -760,6 +1232,43 @@
    ]
   },
   {
+   "name": "pixelated-canvas",
+   "title": "Pixelated Canvas",
+   "origin": "ace",
+   "blurb": "Image rendered as pixelated dots that distort and swirl around cursor movement.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "technical",
+   "slots": [
+    "media",
+    "hero"
+   ],
+   "flags": [
+    "pure",
+    "canvas",
+    "6c"
+   ]
+  },
+  {
+   "name": "primitives-effects-image-zoom",
+   "title": "Image Zoom",
+   "origin": "anim",
+   "blurb": "Image zooms in on hover or click, scaling smoothly from the pointer position.",
+   "trigger": [
+    "hover",
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "media",
+    "feature-card"
+   ],
+   "flags": [
+    "motion"
+   ]
+  },
+  {
    "name": "safari",
    "title": "Safari Browser Mockup",
    "origin": "mag",
@@ -780,39 +1289,38 @@
    ]
   },
   {
-   "name": "splashwater-videomasking",
-   "title": "Splash Water Video Mask",
+   "name": "scroll-animation-default",
+   "title": "Scroll Reveal Images",
    "origin": "uila",
-   "blurb": "Video masked with splash-center SVG creating water splash reveal effect.",
+   "blurb": "Gallery layout with images revealing on scroll in a columned layout.",
    "trigger": [
-    "always"
+    "scroll"
    ],
-   "tone": "decorative",
+   "tone": "minimal",
    "slots": [
+    "section-background",
     "media"
    ],
    "flags": [
-    "motion",
-    "sized-parent",
-    "2c"
+    "motion"
    ]
   },
   {
-   "name": "spline",
-   "title": "Spline",
-   "origin": "insp",
-   "blurb": "Spline 3D scene viewer with lazy loading and render-on-demand option.",
+   "name": "stacking-card",
+   "title": "Stacking Card",
+   "origin": "uila",
+   "blurb": "Scroll-driven stacking cards with image and photographer profile.",
    "trigger": [
-    "always"
+    "scroll"
    ],
-   "tone": "dramatic",
+   "tone": "decorative",
    "slots": [
-    "decoration",
-    "page-background"
+    "media",
+    "hero"
    ],
    "flags": [
     "pure",
-    "sized-parent"
+    "14c"
    ]
   },
   {
@@ -831,6 +1339,41 @@
    "flags": [
     "pure",
     "9c"
+   ]
+  },
+  {
+   "name": "symbolic-clippath",
+   "title": "Symbolic Clip Path",
+   "origin": "uila",
+   "blurb": "Image gallery with symbolic SVG clip path shapes on hover.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "section-background",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "20c"
+   ]
+  },
+  {
+   "name": "testimonial-basic",
+   "title": "Testimonial Basic",
+   "origin": "uila",
+   "blurb": "Alternating grid of testimonials with video thumbnails and author details.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "testimonial"
+   ],
+   "flags": [
+    "motion",
+    "23c"
    ]
   },
   {
@@ -853,20 +1396,44 @@
    ]
   },
   {
-   "name": "ui-layouts-globe",
-   "title": "Interactive 3D Globe",
+   "name": "thumbnail-slider",
+   "title": "Thumbnail Slider",
    "origin": "uila",
-   "blurb": "3D rotating globe with customizable colors, scale, and lighting.",
+   "blurb": "Carousel with thumbnail row below main image display.",
    "trigger": [
-    "always"
+    "click"
    ],
-   "tone": "dramatic",
+   "tone": "technical",
    "slots": [
-    "page-background",
-    "decoration"
+    "feature-card",
+    "media",
+    "section-background"
    ],
    "flags": [
+    "motion",
+    "heavy",
     "sized-parent"
+   ]
+  },
+  {
+   "name": "vertical-thumbnail-slider",
+   "title": "Vertical Thumbnail Slider",
+   "origin": "uila",
+   "blurb": "Vertical carousel with main slide and thumbnail column for navigation.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "technical",
+   "slots": [
+    "feature-card",
+    "media",
+    "section-background"
+   ],
+   "flags": [
+    "motion",
+    "heavy",
+    "sized-parent",
+    "1c"
    ]
   },
   {
@@ -887,6 +1454,85 @@
    ]
   },
   {
+   "name": "video-text",
+   "title": "Video Text",
+   "origin": "mag",
+   "blurb": "Video plays inside text shapes, clipped to show only where letters are.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "headline",
+    "decoration"
+   ],
+   "flags": [
+    "pure",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "watersplash-clippath",
+   "title": "Water Splash Clip Path",
+   "origin": "uila",
+   "blurb": "Water splash shapes clip images with organic, wavy edges.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "media",
+    "feature-card",
+    "decoration"
+   ],
+   "flags": [
+    "motion",
+    "17c"
+   ]
+  },
+  {
+   "name": "watersplash-imagemasking",
+   "title": "Water Splash Image Mask",
+   "origin": "uila",
+   "blurb": "Images masked by a water splash shape using CSS mask-image.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "media",
+    "feature-card",
+    "hero"
+   ],
+   "flags": [
+    "motion",
+    "sized-parent",
+    "2c"
+   ]
+  },
+  {
+   "name": "webcam-pixel-grid",
+   "title": "Webcam Pixel Grid",
+   "origin": "ace",
+   "blurb": "Webcam feed pixelated into a grid with motion-based 3D elevation.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "page-background",
+    "decoration",
+    "modal"
+   ],
+   "flags": [
+    "pure",
+    "canvas",
+    "sized-parent",
+    "26c"
+   ]
+  },
+  {
    "name": "world-map",
    "title": "World Map",
    "origin": "ace",
@@ -901,8 +1547,7 @@
    ],
    "flags": [
     "motion",
-    "5c",
-    "2 ports"
+    "5c"
    ]
   },
   {
@@ -920,7 +1565,8 @@
    ],
    "flags": [
     "motion",
-    "sized-parent"
+    "sized-parent",
+    "1c"
    ]
   }
  ]

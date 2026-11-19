@@ -4,9 +4,10 @@ import { MorphingText } from "@/registry/magic-ui/morphing-text"
 
 export default function Demo() {
   return (
-    <div className="flex items-center justify-center w-full min-h-[120px] bg-white">
+    <div className="flex min-h-[420px] w-full items-center justify-center px-6 text-foreground">
       <MorphingText
-        texts={["Hello World", "Magic UI", "Morphing Text", "Beautiful", "Animated"]}
+        className="h-28 text-[88px] md:h-32 lg:text-[112px]"
+        texts={["Design", "Prototype", "Iterate", "Ship it", "Repeat"]}
       />
     </div>
   )

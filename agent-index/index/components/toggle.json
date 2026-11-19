@@ -1,7 +1,12 @@
 {
  "name": "toggle",
  "title": "Toggle",
- "category": "checkboxes",
+ "category": "switches",
+ "categories": [
+  "switches",
+  "buttons",
+  "settings"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -14,7 +19,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "import { Toggle } from \"@/components/ui/toggle\";\n\nexport default function Demo() {\n  return <Toggle />;\n}",
+ "usage": "import { AlignCenter, AlignLeft, AlignRight, Bold, Italic, Strikethrough, Underline } from \"lucide-react\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-lg rounded-xl border border-border bg-card text-card-foreground shadow-sm\">\n        <div className=\"flex flex-wrap items-center gap-1 border-border border-b p-2\">\n          <Toggle aria-label=\"Bold\" defaultPressed size=\"sm\">\n            <Bold />\n          </Toggle>\n          <Toggle aria-label=\"Italic\" size=\"sm\">\n            <Italic />\n          </Toggle>\n          <Toggle aria-label=\"Underline\" defaultPressed size=\"sm\">\n            <Underline />\n          </Toggle>\n          <Toggle aria-label=\"Strikethrough\" size=\"sm\">\n            <Strikethrough />\n          </Toggle>\n          <span className=\"mx-1 h-5 w-px bg-border\" />\n          <Toggle aria-label=\"Align left\" defaultPressed size=\"sm\" variant=\"outline\">\n            <AlignLeft />\n          </Toggle>\n          <Toggle aria-label=\"Align center\" size=\"sm\" variant=\"outline\">\n            <AlignCenter />\n          </Toggle>\n          <Toggle aria-label=\"Align right\" size=\"sm\" variant=\"outline\">\n            <AlignRight />\n          </Toggle>\n        </div>\n        <div className=\"space-y-3 p-6 text-sm leading-relaxed\">\n          <p className=\"font-bold underline\">Release notes, v2.4</p>\n          <p className=\"text-muted-foreground\">\n            Toggles hold a pressed state. Use them for formatting controls, view options and anything that is\n            simply on or off.\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/toggle.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/toggle.json",

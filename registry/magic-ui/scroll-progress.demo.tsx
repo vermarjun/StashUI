@@ -2,24 +2,44 @@
 
 import { ScrollProgress } from "@/registry/magic-ui/scroll-progress";
 
+const img = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?w=1200&h=640&fit=crop&auto=format&q=80`;
+
+const images: Record<number, string> = {
+  0: img("1461749280684-dccba630e2f6"),
+  2: img("1551288049-bebda4e38f71"),
+  4: img("1522071820081-009f0129c71c"),
+};
+
+const sections = [
+  ["Why a component library", "Most screens are built from the same thirty pieces. Collecting them once, with previews and a one-line install, turns a week of UI work into an afternoon."],
+  ["Previews that move", "A static screenshot hides what a component does. Every card in the gallery plays a short loop of the real component being used: hovered, clicked, typed into."],
+  ["One source of truth", "Each component lives next to its demo. A generator reads both and writes the gallery, the install files and the agent index, so nothing drifts."],
+  ["Built for agents too", "An MCP index lets coding agents pick the right component by reasoning through categories instead of guessing from a search box."],
+  ["Install anywhere", "Components avoid framework-specific imports, so the same file drops into a Vite app or a Next.js project without edits."],
+  ["What comes next", "More categories, better tagging and a theming pass so every component picks up your design tokens on install."],
+];
+
 export default function Demo() {
   return (
     <div className="relative w-full">
-      {/* ScrollProgress tracks window scroll — show it with a label */}
-      <ScrollProgress className="h-1" />
-      <div className="flex flex-col items-center gap-4 p-8 pt-6">
-        <div className="w-full max-w-md rounded-xl border border-border bg-muted/30 p-6 text-center">
-          <p className="text-sm font-semibold text-foreground">Scroll Progress Bar</p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            The coloured line pinned at the top of the page grows as you scroll down.
-            Scroll the page to see it animate.
-          </p>
-        </div>
-        <div className="w-full max-w-md flex items-center gap-3 rounded-lg border border-border bg-background p-4">
-          <div className="h-3 flex-1 rounded-full bg-gradient-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92]" />
-          <span className="text-xs text-muted-foreground whitespace-nowrap">tracks window scroll</span>
-        </div>
-      </div>
+      <ScrollProgress className="h-1.5" />
+      <article className="mx-auto flex max-w-2xl flex-col gap-12 px-6 py-14">
+        <header className="space-y-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Engineering notes · 6 min read</p>
+          <h1 className="text-5xl font-semibold tracking-tight text-foreground">Building StashUI</h1>
+          <p className="text-lg text-muted-foreground">How one folder of components became a gallery, an installer and an index agents can read.</p>
+        </header>
+        {sections.map(([title, body], i) => (
+          <section key={title} className="space-y-4">
+            <h2 className="text-2xl font-semibold text-foreground">{title}</h2>
+            <p className="text-lg leading-relaxed text-foreground/80">{body}</p>
+            {images[i] && (
+              <img src={images[i]} alt="" className="h-64 w-full rounded-xl border border-border object-cover" />
+            )}
+          </section>
+        ))}
+      </article>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 // @ts-nocheck
 'use client';
-import React, { useMemo, useRef } from 'react';
+import React, { Suspense, useMemo, useRef } from 'react';
 import { useFrame, ThreeElements, Canvas } from '@react-three/fiber';
 import { extend } from '@react-three/fiber';
 import { MathUtils, Vector3, Color, IcosahedronGeometry, Mesh } from 'three';
@@ -235,7 +235,10 @@ const Home: React.FC = () => {
         className='absolute! top-0 left-0 w-screen h-screen'
       >
         {/* <OrbitControls /> */}
-        <Environment preset='studio' environmentIntensity={0.5} />
+        {/* the HDR loads from a CDN: keep it from suspending the whole scene */}
+        <Suspense fallback={null}>
+          <Environment preset='studio' environmentIntensity={0.5} />
+        </Suspense>
         <Blob />
         <EffectComposer>
           <Noise premultiply blendFunction={BlendFunction.ADD} />

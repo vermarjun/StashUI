@@ -28,17 +28,17 @@ export default function Demo() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <DialogPanel
             from="top"
-            className="w-full max-w-md rounded-xl border border-border bg-background p-6 shadow-xl"
+            className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-xl"
           >
             <DialogHeader className="mb-2">
               <DialogTitle className="text-lg font-semibold text-foreground">
-                Confirm action
+                Archive this project?
               </DialogTitle>
             </DialogHeader>
             <DialogDescription className="text-sm text-muted-foreground leading-relaxed">
-              This dialog uses Headless UI under the hood with a spring-driven
-              3D flip entrance animation via Framer Motion. Press Escape or
-              click Cancel to close.
+              &ldquo;Website redesign&rdquo; and its 48 tasks will move to the
+              archive. Your team keeps read access, and you can restore it at
+              any time from Settings.
             </DialogDescription>
             <div className="mt-6 flex justify-end gap-3">
               <DialogClose
@@ -51,7 +51,7 @@ export default function Demo() {
                 onClick={() => setOpen(false)}
                 className="rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90 transition-opacity"
               >
-                Confirm
+                Archive
               </button>
             </div>
           </DialogPanel>

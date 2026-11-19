@@ -1,7 +1,13 @@
 {
  "name": "DecayCard-TS-TW",
  "title": "DecayCard",
- "category": "effects",
+ "category": "media",
+ "categories": [
+  "media",
+  "effects",
+  "heroes",
+  "features"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -14,7 +20,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "import Cmp from \"@/components/ui/DecayCard\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "\"use client\";\n\nimport DecayCard from \"@/components/ui/DecayCard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[560px] w-full flex-col items-center justify-center gap-6 p-8\">\n      <DecayCard height={400} image=\"https://images.unsplash.com/photo-1544168190-79c17527004f?w=600&h=750&fit=crop&auto=format&q=80&sat=-100\" width={300}>\n        <span className=\"text-white mix-blend-difference\">\n          Decay\n          <br />\n          Card\n        </span>\n      </DecayCard>\n      <p className=\"text-muted-foreground text-sm\">Move the cursor quickly to distort the image.</p>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/DecayCard.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/DecayCard-TS-TW.json",
@@ -42,7 +48,7 @@
   {
    "name": "image",
    "type": "string",
-   "default": "'https://picsum.photos/300/400?grayscale'",
+   "default": "'https://images.unsplash.com/photo-1504198266287-1659872e659",
    "required": false
   },
   {

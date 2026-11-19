@@ -10,7 +10,7 @@ const DialogDefault: React.FC = () => {
     <div className=' h-full flex justify-center items-center'>
       <button
         onClick={() => setModalOpen(true)}
-        className='i h-12  rounded-md border-2 dark:border-[#656fe2] border-[#c0c6fc] dark:bg-[linear-gradient(110deg,#1e2a78,45%,#3749be,55%,#1e2a78)] bg-[linear-gradient(110deg,#3d5af1,45%,#5471ff,55%,#3d5af1)] bg-size-[200%_100%] dark:hover:border-white px-6 font-medium text-white dark:text-white transition-colors focus:outline-hidden focus:ring-2 dark:focus:ring-neutral-400 focus:ring-offset-2 focus:ring-offset-neutral-50'
+        className='h-11 rounded-lg bg-primary px-6 font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background'
       >
         Open Dialog
       </button>
@@ -44,7 +44,7 @@ const DialogDefault: React.FC = () => {
           <div className='mt-4'>
             <button
               onClick={() => setModalOpen(false)}
-              className='w-full p-3 bg-black dark:bg-white text-white dark:text-black rounded-md'
+              className='w-full rounded-md bg-primary p-3 text-primary-foreground'
               type='button'
             >
               Got it, thanks!

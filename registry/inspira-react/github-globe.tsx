@@ -10,7 +10,11 @@ import {
   Scene,
   WebGLRenderer,
 } from "three";
-import ThreeGlobe from "three-globe";
+// three-globe touches `window` at import time, so it is loaded inside the effect.
+type ThreeGlobeCtor = typeof import("three-globe").default;
+
+const COUNTRIES_URL =
+  "https://cdn.jsdelivr.net/gh/vasturiano/three-globe@master/example/country-polygons/ne_110m_admin_0_countries.geojson";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { cn } from "@/lib/utils";
 
@@ -125,9 +129,20 @@ export function GithubGlobe({
   };
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    let disposed = false;
+    let cleanup = () => {};
+    import("three-globe").then(({ default: ThreeGlobe }) => {
+      if (disposed || !canvasRef.current) return;
+      cleanup = init(canvasRef.current, ThreeGlobe);
+    });
+    return () => {
+      disposed = true;
+      cleanup();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    const canvas = canvasRef.current;
+  function init(canvas: HTMLCanvasElement, ThreeGlobe: ThreeGlobeCtor) {
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
 
@@ -215,6 +230,14 @@ export function GithubGlobe({
 
     scene.add(globe);
 
+    // Country outlines as hex polygons, fetched lazily so the JSON is not bundled.
+    fetch(COUNTRIES_URL)
+      .then((r) => r.json())
+      .then((geo: { features: object[] }) => {
+        globe.hexPolygonsData(geo.features);
+      })
+      .catch(() => {});
+
     // Arcs + rings
     const numberOfRings = genRandomNumbers(0, data.length, Math.floor((data.length * 4) / 5));
 
@@ -231,8 +254,8 @@ export function GithubGlobe({
       .arcDashInitialGap((e: unknown) => (e as Position).order)
       .arcDashGap(15)
       .arcDashAnimateTime(defaultConfig.arcTime)
-      .pointsData(data)
-      .pointColor((e: unknown) => (e as Position).color)
+      .pointsData(filteredPoints)
+      .pointColor((e: unknown) => (e as GlobeData).color(0))
       .pointsMerge(true)
       .pointAltitude(0.0)
       .pointRadius(2)
@@ -267,8 +290,7 @@ export function GithubGlobe({
       window.removeEventListener("resize", onWindowResize);
       renderer.dispose();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }
 
   return (
     <canvas

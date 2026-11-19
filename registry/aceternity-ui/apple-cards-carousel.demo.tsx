@@ -8,7 +8,7 @@ const cards = [
   {
     category: "Nature",
     title: "Mountains at Dawn",
-    src: "https://picsum.photos/seed/applecard1/1200/800",
+    src: "https://images.unsplash.com/photo-1718524767487-7f98d4e5eeeb?w=1200&h=800&fit=crop&auto=format&q=80",
     content: (
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         Towering peaks bathed in golden morning light — a scene of quiet
@@ -19,7 +19,7 @@ const cards = [
   {
     category: "Architecture",
     title: "City of Glass",
-    src: "https://picsum.photos/seed/applecard2/1200/800",
+    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&h=800&fit=crop&auto=format&q=80",
     content: (
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         Steel and glass reaching for the sky, reflecting clouds and ambition in
@@ -30,7 +30,7 @@ const cards = [
   {
     category: "Ocean",
     title: "Deep Blue Horizon",
-    src: "https://picsum.photos/seed/applecard3/1200/800",
+    src: "https://images.unsplash.com/photo-1695239510467-f1e93d649c2b?w=1200&h=800&fit=crop&auto=format&q=80",
     content: (
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         Where the sea meets the sky, endless possibility stretches before you.
@@ -40,7 +40,7 @@ const cards = [
   {
     category: "Forest",
     title: "Into the Woods",
-    src: "https://picsum.photos/seed/applecard4/1200/800",
+    src: "https://images.unsplash.com/photo-1745965976680-d00be7dc0377?w=1200&h=800&fit=crop&auto=format&q=80",
     content: (
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         Ancient trees form a cathedral of green, hushing the noise of the
@@ -51,7 +51,7 @@ const cards = [
   {
     category: "Desert",
     title: "Golden Dunes",
-    src: "https://picsum.photos/seed/applecard5/1200/800",
+    src: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200&h=800&fit=crop&auto=format&q=80",
     content: (
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         Waves of sand sculpted by wind into perfect curves of amber and ochre.

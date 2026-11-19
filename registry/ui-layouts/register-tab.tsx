@@ -1,15 +1,14 @@
 // thanks to maximeheckel
 
 import { TabsBtn, TabsContent, TabsProvider } from '@/registry/ui-layouts/tab';
-import { Lock, Phone } from 'lucide-react';
-import Image from 'next/image';
+import { Boxes, Lock, Phone } from 'lucide-react';
 import React, { useState } from 'react';
 
 function RegisterTab() {
   return (
     <>
       <TabsProvider defaultValue={'login'} wobbly={false}>
-        <div className='flex justify-center mt-2'>
+        <div className='flex justify-center mb-4'>
           <div className='flex items-center w-fit dark:bg-[#1a1c20] bg-neutral-200 p-1 dark:text-white text-black rounded-md border'>
             <TabsBtn value='login'>
               <span className='relative z-2 uppercase'>Login</span>
@@ -21,23 +20,19 @@ function RegisterTab() {
         </div>
 
         <TabsContent value='login'>
-          <div className='dark:bg-black bg-white  mx-auto max-w-[400px]  dark:text-white text-black p-4 py-8 shadow-md rounded-md space-y-2'>
+          <div className='dark:bg-neutral-950 bg-white mx-auto max-w-[400px] dark:text-white text-black p-5 py-8 shadow-md rounded-xl border space-y-3'>
             <div className='flex justify-center'>
-              <Image
-                src='/apple-touch-icon.png'
-                alt='img'
-                width={80}
-                height={80}
-                className='w-12'
-              />
+              <div className='flex size-12 items-center justify-center rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-black'>
+                <Boxes className='size-6' />
+              </div>
             </div>
             <div className='text-center py-2'>
               <h1 className='font-semibold text-2xl'>Welcome Back</h1>
-              <p>Please Enter Your Details to Sign In</p>
+              <p className='text-sm text-neutral-500 dark:text-neutral-400'>Enter your details to sign in</p>
             </div>
 
             <div className='flex gap-2 justify-between'>
-              <button className='bg-white border dark:bg-neutral-900 w-full p-2 rounded-md text-2xl flex justify-center '>
+              <button className='bg-white border dark:bg-neutral-900 w-full p-2.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-2xl flex justify-center '>
                 <svg
                   width='84'
                   height='84'
@@ -64,7 +59,7 @@ function RegisterTab() {
                   />
                 </svg>
               </button>
-              <button className='bg-white border dark:bg-neutral-900 w-full p-2 rounded-md text-2xl flex justify-center '>
+              <button className='bg-white border dark:bg-neutral-900 w-full p-2.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-2xl flex justify-center '>
                 <svg
                   width='123'
                   height='143'
@@ -81,7 +76,7 @@ function RegisterTab() {
                   />
                 </svg>
               </button>
-              <button className='bg-white border dark:bg-neutral-900 w-full p-2 rounded-md text-2xl text-blue-500 flex justify-center '>
+              <button className='bg-white border dark:bg-neutral-900 w-full p-2.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-2xl text-blue-500 flex justify-center '>
                 <svg
                   width='80'
                   height='80'
@@ -109,7 +104,7 @@ function RegisterTab() {
             <form className='space-y-2 py-1'>
               <input
                 type='email'
-                placeholder='Enter your Eamil..'
+                placeholder='Enter your email..'
                 className='w-full p-2 border focus:outline-hidden rounded-md dark:bg-neutral-800'
               />
               <input
@@ -119,7 +114,7 @@ function RegisterTab() {
               />
               <button
                 type='submit'
-                className='dark:bg-neutral-50 mt-2 bg-primary-base flex gap-1 items-center justify-center p-3 text-center w-full dark:text-black text-white rounded-md font-medium'
+                className='dark:bg-neutral-50 mt-2 bg-neutral-900 flex gap-1 items-center justify-center p-3 text-center w-full dark:text-black text-white rounded-md font-medium'
               >
                 Sign in
                 <Lock className='w-4 h-4' />
@@ -134,19 +129,15 @@ function RegisterTab() {
           </div>
         </TabsContent>
         <TabsContent value='register'>
-          <div className='dark:bg-black bg-white  mx-auto max-w-[400px]  dark:text-white text-black p-4 py-8 shadow-md rounded-md space-y-2'>
+          <div className='dark:bg-neutral-950 bg-white mx-auto max-w-[400px] dark:text-white text-black p-5 py-8 shadow-md rounded-xl border space-y-3'>
             <div className='flex justify-center'>
-              <Image
-                src='/apple-touch-icon.png'
-                alt='img'
-                width={80}
-                height={80}
-                className='w-12'
-              />
+              <div className='flex size-12 items-center justify-center rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-black'>
+                <Boxes className='size-6' />
+              </div>
             </div>
             <div className='text-center py-2'>
               <h1 className='font-semibold text-2xl'>Register Account</h1>
-              <p>Please Enter Your Details to Sign up</p>
+              <p className='text-sm text-neutral-500 dark:text-neutral-400'>Enter your details to create an account</p>
             </div>
 
             <form className='space-y-2 py-1'>
@@ -167,7 +158,7 @@ function RegisterTab() {
               </div>
               <input
                 type='email'
-                placeholder='Enter your Eamil'
+                placeholder='Enter your email'
                 className='w-full p-2 border focus:outline-hidden rounded-md dark:bg-neutral-800'
               />
               <input
@@ -177,7 +168,7 @@ function RegisterTab() {
               />
               <button
                 type='submit'
-                className='dark:bg-neutral-50 bg-primary-base flex gap-1 items-center justify-center p-3 text-center w-full dark:text-black text-white rounded-md font-medium'
+                className='dark:bg-neutral-50 bg-neutral-900 flex gap-1 items-center justify-center p-3 text-center w-full dark:text-black text-white rounded-md font-medium'
               >
                 Sign up
               </button>
@@ -194,7 +185,7 @@ function RegisterTab() {
               <span className='inline-block w-full border '></span>
             </div>
             <div className='flex gap-2 justify-between w-[90%] mx-auto'>
-              <button className='bg-white border dark:bg-neutral-900 w-full p-2 rounded-md text-2xl flex justify-center '>
+              <button className='bg-white border dark:bg-neutral-900 w-full p-2.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-2xl flex justify-center '>
                 <svg
                   width='84'
                   height='84'
@@ -221,7 +212,7 @@ function RegisterTab() {
                   />
                 </svg>
               </button>
-              <button className='bg-white border dark:bg-neutral-900 w-full p-2 rounded-md text-2xl flex justify-center '>
+              <button className='bg-white border dark:bg-neutral-900 w-full p-2.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-2xl flex justify-center '>
                 <svg
                   width='123'
                   height='143'
@@ -238,7 +229,7 @@ function RegisterTab() {
                   />
                 </svg>
               </button>
-              <button className='bg-white border dark:bg-neutral-900 w-full p-2 rounded-md text-2xl text-blue-500 flex justify-center '>
+              <button className='bg-white border dark:bg-neutral-900 w-full p-2.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-2xl text-blue-500 flex justify-center '>
                 <svg
                   width='80'
                   height='80'

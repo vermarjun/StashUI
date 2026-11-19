@@ -3,7 +3,6 @@
 import { ReactLenis } from 'lenis/react';
 import { useTransform, motion, useScroll, MotionValue } from 'motion/react';
 import { useRef } from 'react';
-import Image from 'next/image';
 const projects = [
   {
     title: 'Matthias Leidinger',
@@ -173,7 +172,7 @@ export const Card: React.FC<CardProps> = ({
               className={`w-full h-full`}
               style={{ scale: imageScale }}
             >
-              <Image fill src={url} alt='image' className='object-cover' />
+              <img src={url} alt='image' className='object-cover' />
             </motion.div>
           </div>
         </div>

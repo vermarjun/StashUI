@@ -32,7 +32,6 @@ import React, {
   useRef,
   useState,
 } from "react"
-import Image from "next/image"
 import { Maximize, Minimize, Pause, Play, Volume2, VolumeX } from "lucide-react"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 
@@ -864,14 +863,7 @@ const HoverVideoPlayerThumbnail: React.FC<{ src: string }> = ({ src }) => {
       initial={false}
       transition={shouldReduceMotion ? { duration: 0 } : hoverTransition}
     >
-      <Image
-        src={src}
-        alt="Video thumbnail"
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-cover"
-        priority
-      />
+      <img src={src} alt="Video thumbnail" className="absolute inset-0 h-full w-full object-cover" />
     </motion.div>
   )
 }

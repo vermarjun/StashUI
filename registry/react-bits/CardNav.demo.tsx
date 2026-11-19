@@ -1,51 +1,64 @@
 "use client";
 import CardNav from "@/registry/react-bits/CardNav";
 
+const logo =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="132" height="28" viewBox="0 0 132 28"><rect x="1" y="4" width="20" height="20" rx="6" fill="#fff"/><rect x="7" y="10" width="8" height="8" rx="2" fill="#0b0b10"/><text x="30" y="20.5" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.5" fill="#fff">Northwind</text></svg>`,
+  );
+
 const items = [
   {
-    label: "Products",
-    bgColor: "#120F17",
+    label: "About",
+    bgColor: "#0D0716",
     textColor: "#ffffff",
     links: [
-      { label: "Components",  href: "#", ariaLabel: "Components" },
-      { label: "Templates",   href: "#", ariaLabel: "Templates" },
-      { label: "Icons",       href: "#", ariaLabel: "Icons" },
+      { label: "Company", href: "#", ariaLabel: "About Company" },
+      { label: "Careers", href: "#", ariaLabel: "About Careers" },
     ],
   },
   {
-    label: "Resources",
-    bgColor: "#1e1b4b",
-    textColor: "#c7d2fe",
+    label: "Projects",
+    bgColor: "#170D27",
+    textColor: "#ffffff",
     links: [
-      { label: "Documentation", href: "#", ariaLabel: "Documentation" },
-      { label: "Blog",          href: "#", ariaLabel: "Blog" },
-      { label: "Changelog",     href: "#", ariaLabel: "Changelog" },
+      { label: "Featured", href: "#", ariaLabel: "Featured Projects" },
+      { label: "Case Studies", href: "#", ariaLabel: "Project Case Studies" },
     ],
   },
   {
-    label: "Company",
-    bgColor: "#0f172a",
-    textColor: "#94a3b8",
+    label: "Contact",
+    bgColor: "#271E37",
+    textColor: "#ffffff",
     links: [
-      { label: "About",   href: "#", ariaLabel: "About" },
-      { label: "Careers", href: "#", ariaLabel: "Careers" },
-      { label: "Contact", href: "#", ariaLabel: "Contact" },
+      { label: "Email", href: "#", ariaLabel: "Email us" },
+      { label: "Twitter", href: "#", ariaLabel: "Twitter" },
+      { label: "LinkedIn", href: "#", ariaLabel: "LinkedIn" },
     ],
   },
 ];
 
 export default function Demo() {
   return (
-    <div className="relative w-full h-[340px] bg-gray-100 overflow-visible rounded-xl flex items-start justify-center pt-6">
+    <div className="relative flex h-[520px] w-full flex-col items-center overflow-hidden bg-neutral-950">
       <CardNav
-        logo="https://picsum.photos/seed/cardnav/120/32"
-        logoAlt="Brand"
+        logo={logo}
+        logoAlt="Northwind"
         items={items}
-        baseColor="#ffffff"
-        menuColor="#120F17"
-        buttonBgColor="#120F17"
-        buttonTextColor="#ffffff"
+        baseColor="#18181b"
+        menuColor="#ffffff"
+        buttonBgColor="#ffffff"
+        buttonTextColor="#0b0b10"
+        ease="power3.out"
       />
+      <div className="pointer-events-none mt-auto mb-24 flex flex-col items-center gap-3 px-6 text-center">
+        <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          Design studio for ambitious products
+        </h2>
+        <p className="max-w-md text-neutral-400">
+          Open the menu to see the navigation expand into cards.
+        </p>
+      </div>
     </div>
   );
 }

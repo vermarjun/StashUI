@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useSpring } from 'motion/react'
-import React, { useState, MouseEvent, useRef } from 'react'
+import React, { useState, MouseEvent, useRef, useEffect } from 'react'
 
 interface ImageItem {
   img: string
@@ -11,28 +11,28 @@ interface ImageItem {
 }
 const list: ImageItem[] = [
   {
-    img: 'https://images.unsplash.com/photo-1682806816936-c3ac11f65112?q=80&w=1274&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1682806816936-c3ac11f65112?w=600&h=440&fit=crop&auto=format&q=80',
     label: 'Urban Landscapes',
     title: 'City Photography',
     description:
       'A visual exploration of modern architectural wonders, iconic city skylines, and the rhythm of urban life captured through bold compositions.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1681063762354-d542c03bbfc5?q=80&w=1274&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1681063762354-d542c03bbfc5?w=600&h=440&fit=crop&auto=format&q=80',
     label: 'Nature Portraits',
     title: 'Outdoor Photography',
     description:
       'Intimate moments of wildlife in their natural habitat, showcasing raw beauty, movement, and the quiet balance of the outdoors.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1679640034489-a6db1f096b70?q=80&w=1274&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1679640034489-a6db1f096b70?w=600&h=440&fit=crop&auto=format&q=80',
     label: 'Abstract Art',
     title: 'Creative Photography',
     description:
       'Contemporary artistic expressions that blend color, texture, and form to create visually striking and thought-provoking compositions.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1679482451632-b2e126da7142?q=80&w=1274&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1679482451632-b2e126da7142?w=600&h=440&fit=crop&auto=format&q=80',
     label: 'Fashion Editorial',
     title: 'Style Photography',
     description:
@@ -40,14 +40,14 @@ const list: ImageItem[] = [
   },
 
   {
-    img: 'https://images.unsplash.com/photo-1682686580024-580519d4b2d2?q=80&w=1274&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1682686580024-580519d4b2d2?w=600&h=440&fit=crop&auto=format&q=80',
     label: 'Minimal Spaces',
     title: 'Interior Photography',
     description:
       'Calm and intentional interior scenes that focus on light, texture, and spatial balance, capturing the beauty of simplicity.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1683009427042-e094996f9780?q=80&w=1274&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1683009427042-e094996f9780?w=600&h=440&fit=crop&auto=format&q=80',
     label: 'Portrait Studies',
     title: 'Human Expression',
     description:
@@ -77,6 +77,14 @@ export function CustomerExperience() {
       opacity: 0,
     }
   )
+
+  // warm the cache so the hover preview appears instantly
+  useEffect(() => {
+    list.forEach((item) => {
+      const im = new Image()
+      im.src = item.img
+    })
+  }, [])
 
   const imageRef = useRef<HTMLImageElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -124,7 +132,7 @@ export function CustomerExperience() {
             onMouseEnter={() => handleImageInteraction(item, 1)}
             onMouseMove={() => handleImageInteraction(item, 1)}
             onMouseLeave={() => handleImageInteraction(item, 0)}
-            className="w-full py-5 px-5 cursor-pointer relative text-center md:flex justify-between items-center text-primary border-b border-orange-500 last:border-none"
+            className="w-full py-5 px-5 cursor-pointer relative text-center md:flex justify-between items-center text-neutral-900 border-b border-orange-500 last:border-none"
           >
             <div className="flex gap-2 items-center">
               <svg
@@ -133,7 +141,7 @@ export function CustomerExperience() {
                 className="w-14 h-14 text-orange-500"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
               >
                 <path d="M9 17.3497C9 17.3497 15.9383 17.8924 16.9154 16.9154C17.8924 15.9383 17.3496 9 17.3496 9M16.5 16.5L6.5 6.5" />
               </svg>
@@ -142,7 +150,7 @@ export function CustomerExperience() {
                 <span>{item?.title}</span>
               </div>
             </div>
-            <p className="xl:max-w-xl md:max-w-96 ml-auto text-right md:pt-0 pt-5">
+            <p className="xl:max-w-xl md:max-w-96 ml-auto text-right md:pt-0 pt-5 text-neutral-700">
               {item.description}{' '}
             </p>
           </div>
@@ -150,7 +158,7 @@ export function CustomerExperience() {
 
         <motion.img
           ref={imageRef}
-          src={img.src}
+          src={img.src || undefined}
           alt={img.alt}
           className="w-[300px] h-[220px] rounded-lg object-cover absolute top-0 left-0 transition-opacity duration-200 ease-in-out pointer-events-none"
           style={{

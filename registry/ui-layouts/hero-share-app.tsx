@@ -138,15 +138,15 @@ export const HeroShareApp = () => {
           <div className="flex -space-x-3">
             <img
               className="w-7 h-7 rounded-full border-2 border-white"
-              src="https://picsum.photos/seed/u1/100"
+              src="https://images.unsplash.com/photo-1683009427042-e094996f9780?w=100&h=100&fit=crop&auto=format&q=80"
             />
             <img
               className="w-7 h-7 rounded-full border-2 border-white"
-              src="https://picsum.photos/seed/u2/100"
+              src="https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?w=100&h=100&fit=crop&auto=format&q=80"
             />
             <img
               className="w-7 h-7 rounded-full border-2 border-white"
-              src="https://picsum.photos/seed/u3/100"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&auto=format&q=80"
             />
           </div>
           <span className="text-sm font-bold text-neutral-600">

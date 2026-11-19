@@ -3,29 +3,28 @@ import ScrollFloat from "@/registry/react-bits/ScrollFloat";
 
 export default function Demo() {
   return (
-    <div className="flex flex-col items-center justify-start w-full min-h-[700px] py-24 gap-8 bg-background">
+    <div className="flex w-full flex-col items-center bg-background">
+      <div className="flex h-[640px] flex-col items-center justify-center gap-3 text-muted-foreground">
+        <span className="text-sm uppercase tracking-[0.3em]">Scroll down</span>
+        <span className="text-2xl">↓</span>
+      </div>
       <ScrollFloat
         containerClassName="text-center"
-        textClassName="text-foreground font-bold"
+        textClassName="!text-[clamp(3rem,11vw,9rem)] font-black tracking-tight text-foreground"
+        animationDuration={1}
+        ease="back.inOut(2)"
+        stagger={0.03}
       >
-        Scroll to reveal
+        StashUI
       </ScrollFloat>
       <ScrollFloat
         containerClassName="text-center"
         textClassName="text-muted-foreground"
-        stagger={0.04}
-        animationDuration={1.2}
+        stagger={0.02}
       >
-        each character floats up
+        every character floats into place
       </ScrollFloat>
-      <ScrollFloat
-        containerClassName="text-center"
-        textClassName="text-foreground"
-        stagger={0.025}
-        ease="back.out(1.7)"
-      >
-        as you scroll the page
-      </ScrollFloat>
+      <div className="h-[700px]" />
     </div>
   );
 }

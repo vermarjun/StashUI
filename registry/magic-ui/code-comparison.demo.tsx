@@ -2,10 +2,10 @@
 import { CodeComparison } from "@/registry/magic-ui/code-comparison";
 
 const beforeCode = `function fetchUser(id) {
-  return fetch('/api/users/' + id)
-    .then(function(res) {
-      return res.json();
-    })
+  return fetch('/api/users/' + id) // [!code focus]
+    .then(function(res) { // [!code focus]
+      return res.json(); // [!code focus]
+    }) // [!code focus]
     .then(function(data) {
       return data;
     })
@@ -27,7 +27,7 @@ const afterCode = `async function fetchUser(id: string) { // [!code ++]
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-8">
+    <div className="w-full max-w-5xl mx-auto px-6 py-10">
       <CodeComparison
         beforeCode={beforeCode}
         afterCode={afterCode}

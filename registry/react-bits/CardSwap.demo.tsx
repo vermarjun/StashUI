@@ -1,35 +1,47 @@
 "use client";
-import Cmp, { Card } from "@/registry/react-bits/CardSwap";
+
+import { Code2, Layers, Sparkles } from "lucide-react";
+
+import CardSwap, { Card } from "@/registry/react-bits/CardSwap";
 
 const CARDS = [
-  { label: "Design Systems", color: "#4F46E5", emoji: "🎨" },
-  { label: "Motion & Animation", color: "#10B981", emoji: "✨" },
-  { label: "Component Libraries", color: "#F59E0B", emoji: "📦" },
+  { Icon: Layers, title: "Design systems", body: "Tokens, primitives and patterns that keep every screen consistent." },
+  { Icon: Sparkles, title: "Motion", body: "Springs, staggers and transitions that make interfaces feel alive." },
+  { Icon: Code2, title: "Components", body: "Copy-paste building blocks that install in one command." },
 ];
 
 export default function Demo() {
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      <Cmp
-        width={320}
-        height={220}
-        cardDistance={50}
-        verticalDistance={60}
-        delay={3500}
-        pauseOnHover
-        easing="elastic"
-      >
-        {CARDS.map((c, i) => (
-          <Card
-            key={i}
-            customClass="flex flex-col items-center justify-center gap-3 select-none"
-            style={{ background: `linear-gradient(135deg, ${c.color}22, ${c.color}44)` }}
-          >
-            <span className="text-4xl">{c.emoji}</span>
-            <span className="text-sm font-medium text-foreground">{c.label}</span>
+    <div className="flex h-[600px] w-full items-center justify-center gap-10 overflow-hidden px-8">
+      <div className="max-w-xs shrink-0 space-y-3">
+        <h3 className="font-semibold text-3xl text-foreground tracking-tight">Card swap</h3>
+        <p className="text-muted-foreground text-sm">
+          Cards cycle from the front of the stack to the back on a timer. Hover to pause.
+        </p>
+      </div>
+      {/* sized box: the stack anchors to its bottom-right, back cards fan up/right into the padding */}
+      <div className="shrink-0 pt-[150px] pr-[150px] pb-[80px]">
+        <div className="relative h-[300px] w-[440px]">
+      <CardSwap cardDistance={60} delay={2600} height={300} pauseOnHover verticalDistance={70} width={440}>
+        {CARDS.map(({ Icon, title, body }) => (
+          <Card customClass="border-border! bg-card! overflow-hidden p-0 text-card-foreground" key={title}>
+            <div className="flex items-center gap-2 border-border border-b px-4 py-3 text-sm">
+              <Icon className="size-4 text-muted-foreground" />
+              <span className="font-medium">{title}</span>
+            </div>
+            <div className="space-y-4 p-6">
+              <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
+              <div className="space-y-2">
+                <div className="h-2 w-3/4 rounded-full bg-muted" />
+                <div className="h-2 w-1/2 rounded-full bg-muted" />
+                <div className="h-2 w-2/3 rounded-full bg-muted" />
+              </div>
+            </div>
           </Card>
         ))}
-      </Cmp>
+      </CardSwap>
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,9 @@
  "name": "primitives-radix-progress",
  "title": "Radix Progress",
  "category": "loaders",
+ "categories": [
+  "loaders"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -20,7 +23,7 @@
  "flags": [
   "motion"
  ],
- "usage": "import { Progress } from \"@/components/ui/primitives-radix-progress\";\n\nexport default function Demo() {\n  return <Progress />;\n}",
+ "usage": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport {\n  Progress,\n  ProgressIndicator,\n} from \"@/components/ui/primitives-radix-progress\";\n\nconst files = [\n  { name: \"design-system.fig\", size: \"24.8 MB\", target: 100 },\n  { name: \"brand-assets.zip\", size: \"112 MB\", target: 68 },\n  { name: \"launch-video.mp4\", size: \"486 MB\", target: 34 },\n];\n\nexport default function Demo() {\n  const [values, setValues] = useState(files.map(() => 0));\n\n  useEffect(() => {\n    const id = setInterval(() => {\n      setValues((prev) =>\n        prev.map((v, i) => {\n          const t = files[i].target;\n          return v >= t ? (t === 100 ? 100 : 0) : Math.min(t, v + 6 + i * 2);\n        }),\n      );\n    }, 500);\n    return () => clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"w-full max-w-xl space-y-6 rounded-2xl border border-border bg-card p-8 shadow-xl\">\n      <div>\n        <p className=\"text-lg font-semibold text-card-foreground\">Uploading</p>\n        <p className=\"text-sm text-muted-foreground\">3 files to Shared Drive</p>\n      </div>\n      {files.map((f, i) => (\n        <div key={f.name} className=\"space-y-2\">\n          <div className=\"flex justify-between text-sm\">\n            <span className=\"font-medium text-foreground\">{f.name}</span>\n            <span className=\"text-muted-foreground tabular-nums\">\n              {values[i]}% &middot; {f.size}\n            </span>\n          </div>\n          <Progress\n            value={values[i]}\n            className=\"relative h-2.5 w-full overflow-hidden rounded-full bg-muted\"\n          >\n            <ProgressIndicator className=\"h-full w-full rounded-full bg-foreground\" />\n          </Progress>\n        </div>\n      ))}\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-radix-progress.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-radix-progress.json",

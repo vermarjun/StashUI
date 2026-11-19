@@ -1,7 +1,10 @@
 {
  "name": "scroll-island",
  "title": "Scroll Island",
- "category": "navigation",
+ "category": "scroll",
+ "categories": [
+  "scroll"
+ ],
  "origin": "Inspira UI",
  "origin_short": "insp",
  "exports": [
@@ -10,12 +13,12 @@
  "npm_deps": [],
  "registry_deps": [],
  "css": false,
- "hardcoded_colors": 3,
+ "hardcoded_colors": 6,
  "flags": [
   "pure",
-  "3 colors"
+  "6 colors"
  ],
- "usage": "\"use client\";\nimport { ScrollIsland } from \"@/components/ui/scroll-island\";\n\nexport default function ScrollIslandDemo() {\n  return (\n    <div className=\"relative h-[300vh] w-full bg-background\">\n      <ScrollIsland title=\"Page Progress\">\n        <p className=\"py-1 text-xs text-muted-foreground\">Introduction</p>\n        <p className=\"py-1 text-xs text-muted-foreground\">Section 1</p>\n        <p className=\"py-1 text-xs text-muted-foreground\">Section 2</p>\n        <p className=\"py-1 text-xs text-muted-foreground\">Conclusion</p>\n      </ScrollIsland>\n      <div className=\"flex flex-col items-center gap-8 py-32 px-8\">\n        <p className=\"text-lg font-semibold\">Scroll down to see the island update</p>\n        <p className=\"text-sm text-muted-foreground\">The floating island tracks your scroll progress.</p>\n      </div>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { ScrollIsland } from \"@/components/ui/scroll-island\";\n\nconst sections = [\n  {\n    title: \"Why we rewrote the sync engine\",\n    body: \"For three years our sync engine was a queue of JSON patches. It worked until teams started editing the same document from four time zones at once, and then it very much did not.\",\n  },\n  {\n    title: \"Picking a data model\",\n    body: \"We looked at operational transforms, CRDTs and a plain last-write-wins store. CRDTs won on paper, but the deciding factor was how easy each one was to debug at two in the morning.\",\n  },\n  {\n    title: \"Shipping it without downtime\",\n    body: \"Every workspace ran both engines side by side for six weeks. We compared their outputs on each save and only switched a workspace over once the two had agreed a million times in a row.\",\n  },\n  {\n    title: \"What we would do differently\",\n    body: \"Start with the tooling. The visualiser we built in week nine to replay edits would have saved us a month if we had written it on day one.\",\n  },\n];\n\nexport default function ScrollIslandDemo() {\n  return (\n    <div className=\"w-full bg-background\">\n      <ScrollIsland title=\"Rewriting sync\">\n        {sections.map((s) => (\n          <p key={s.title} className=\"py-1.5 text-sm text-white/70\">\n            {s.title}\n          </p>\n        ))}\n      </ScrollIsland>\n      <article className=\"mx-auto max-w-2xl px-8 pb-[60vh] pt-40\">\n        <p className=\"text-sm text-muted-foreground\">Engineering blog, 8 min read</p>\n        <h1 className=\"mt-2 text-5xl font-semibold tracking-tight text-foreground\">\n          How we rebuilt sync for real-time teams\n        </h1>\n        {sections.map((s) => (\n          <section key={s.title} className=\"mt-16\">\n            <h2 className=\"text-2xl font-semibold text-foreground\">{s.title}</h2>\n            <p className=\"mt-4 text-lg leading-relaxed text-muted-foreground\">{s.body}</p>\n            <p className=\"mt-4 text-lg leading-relaxed text-muted-foreground\">{s.body}</p>\n          </section>\n        ))}\n      </article>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/inspira-react/scroll-island.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/scroll-island.json",

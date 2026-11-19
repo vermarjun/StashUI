@@ -2,6 +2,10 @@
  "name": "PixelTransition-TS-TW",
  "title": "Pixel Dissolve Transition",
  "category": "effects",
+ "categories": [
+  "effects",
+  "features"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +20,7 @@
  "flags": [
   "3 colors"
  ],
- "usage": "\"use client\"\n\nimport PixelTransition from \"@/components/ui/PixelTransition\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full h-full\">\n      <PixelTransition\n        firstContent={\n          <div className=\"flex flex-col items-center justify-center w-full h-full bg-neutral-900 text-white gap-2\">\n            <span className=\"text-4xl\">🌑</span>\n            <span className=\"text-sm font-medium tracking-wide text-muted-foreground\">Hover me</span>\n          </div>\n        }\n        secondContent={\n          <div className=\"flex flex-col items-center justify-center w-full h-full bg-white text-neutral-900 gap-2\">\n            <span className=\"text-4xl\">🌕</span>\n            <span className=\"text-sm font-medium tracking-wide\">Revealed!</span>\n          </div>\n        }\n        gridSize={7}\n        pixelColor=\"#888888\"\n        animationStepDuration={0.4}\n        aspectRatio=\"100%\"\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\";\n\nimport PixelTransition from \"@/components/ui/PixelTransition\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <PixelTransition\n        firstContent={\n          <img\n            src=\"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=600&fit=crop&auto=format&q=80\"\n            alt=\"Mountain range at dawn\"\n            className=\"h-full w-full object-cover\"\n          />\n        }\n        secondContent={\n          <div className=\"flex h-full w-full flex-col justify-between bg-neutral-950 p-7 text-left\">\n            <span className=\"w-fit rounded-full border border-white/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white/70\">\n              Trek · 6 days\n            </span>\n            <div>\n              <p className=\"text-4xl font-bold leading-tight text-white\">Dolomites High Route</p>\n              <p className=\"mt-3 text-sm text-white/60\">\n                72 km · 4,100 m climb · huts included\n              </p>\n              <p className=\"mt-6 text-2xl font-semibold text-white\">\n                from $1,240\n              </p>\n            </div>\n          </div>\n        }\n        gridSize={12}\n        pixelColor=\"#ffffff\"\n        animationStepDuration={0.4}\n        aspectRatio=\"100%\"\n        className=\"w-[340px]\"\n      />\n      <p className=\"text-sm text-muted-foreground\">Hover the card to reveal the trip</p>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/PixelTransition.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/PixelTransition-TS-TW.json",

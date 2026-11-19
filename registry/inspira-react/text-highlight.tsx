@@ -23,7 +23,7 @@ export function TextHighlight({
   const delayMs = `${delay}ms`;
   const durationMs = `${duration}ms`;
 
-  const styleId = `th-${Math.random().toString(36).slice(2, 8)}`;
+  const styleId = `th-${React.useId().replace(/[^a-zA-Z0-9]/g, "")}`;
 
   return (
     <>

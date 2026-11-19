@@ -2,6 +2,11 @@
  "name": "inspira-gradient-button",
  "title": "Gradient Button",
  "category": "buttons",
+ "categories": [
+  "buttons",
+  "gradients",
+  "ctas"
+ ],
  "origin": "Inspira UI",
  "origin_short": "insp",
  "exports": [
@@ -15,20 +20,13 @@
   "pure",
   "9 colors"
  ],
- "usage": "\"use client\";\n\nimport { GradientButton } from \"@/components/ui/gradient-button\";\n\nexport default function GradientButtonDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-12 bg-black min-h-[200px]\">\n      <GradientButton>\n        <span className=\"text-white font-semibold\">Click me</span>\n      </GradientButton>\n      <GradientButton\n        colors={[\"#06b6d4\", \"#3b82f6\", \"#8b5cf6\", \"#ec4899\", \"#06b6d4\"]}\n        duration={1500}\n        borderRadius={24}\n        bgColor=\"#0f172a\"\n      >\n        <span className=\"text-white font-semibold\">Custom Colors</span>\n      </GradientButton>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { GradientButton } from \"@/components/ui/gradient-button\";\n\nexport default function GradientButtonDemo() {\n  return (\n    <div className=\"flex min-h-[360px] w-full flex-wrap items-center justify-center gap-x-24 gap-y-12 p-12\">\n      <GradientButton borderWidth={3} blur={6} className=\"scale-125\">\n        <span className=\"px-4 py-1 text-lg font-semibold text-white\">Get early access</span>\n      </GradientButton>\n      <GradientButton\n        colors={[\"#06b6d4\", \"#3b82f6\", \"#8b5cf6\", \"#ec4899\", \"#06b6d4\"]}\n        duration={1800}\n        borderWidth={3}\n        borderRadius={999}\n        blur={6}\n        bgColor=\"#0b1020\"\n        className=\"scale-125\"\n      >\n        <span className=\"px-4 py-1 text-lg font-semibold text-white\">Explore templates</span>\n      </GradientButton>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/inspira-react/gradient-button.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-gradient-button.json",
  "preview": "https://stashui.vercel.app/c/inspira-gradient-button",
- "dupe_group": "gradientbutton",
- "alternatives": [
-  {
-   "name": "gradient-button",
-   "origin": "StashUI",
-   "npm_deps": 0,
-   "hardcoded_colors": 0
-  }
- ],
+ "dupe_group": null,
+ "alternatives": [],
  "blurb": "Button with rotating rainbow conic-gradient border.",
  "description": "A button with a continuously rotating conic-gradient border using CSS keyframe animation. Accepts customizable colors, duration, blur, and border radius.",
  "use_when": "You need an eye-catching CTA with colorful continuous motion.",
@@ -74,7 +72,7 @@
   {
    "name": "className",
    "type": "string",
-   "default": "{cn(\"gradient-btn-before relative overflow-hidden\", classNam",
+   "default": "{cn(\"relative overflow-hidden\", className)}",
    "required": false
   },
   {

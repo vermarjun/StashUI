@@ -4,7 +4,6 @@ import { CardArr } from '@/components/website/constant';
 import type { EmblaOptionsType } from 'embla-carousel';
 import { CheckIcon, Heart } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React, { ReactNode, useState } from 'react';
 
 function ProductCard3() {
@@ -31,13 +30,7 @@ function ProductCard3() {
             <SliderContainer className='gap-2 h-full'>
               {CardArr.map((data, index) => (
                 <Slider key={data.color} className='w-full h-full'>
-                  <Image
-                    src={data?.img}
-                    alt='shoes'
-                    width={400}
-                    height={400}
-                    className={`w-full h-full rounded-md  object-cover  `}
-                  />
+                  <img src={data?.img} alt='shoes' width={400} height={400} className={`w-full h-full rounded-md  object-cover  `} />
                 </Slider>
               ))}
             </SliderContainer>

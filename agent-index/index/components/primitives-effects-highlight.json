@@ -2,6 +2,11 @@
  "name": "primitives-effects-highlight",
  "title": "Highlight",
  "category": "effects",
+ "categories": [
+  "effects",
+  "tabs",
+  "navigation"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -17,7 +22,7 @@
  "flags": [
   "motion"
  ],
- "usage": "'use client';\n\nimport { Highlight, HighlightItem } from '@/components/ui/primitives-effects-highlight';\n\nconst items = ['Dashboard', 'Analytics', 'Settings', 'Profile', 'Help'];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center w-full p-8\">\n      <Highlight\n        hover\n        className=\"rounded-md bg-muted\"\n        mode=\"parent\"\n        controlledItems\n        containerClassName=\"flex gap-1 rounded-lg border border-border p-1\"\n      >\n        {items.map((item) => (\n          <HighlightItem key={item} value={item} asChild>\n            <button\n              type=\"button\"\n              className=\"relative z-10 rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors\"\n            >\n              {item}\n            </button>\n          </HighlightItem>\n        ))}\n      </Highlight>\n    </div>\n  );\n}",
+ "usage": "'use client';\n\nimport { Highlight, HighlightItem } from '@/components/ui/primitives-effects-highlight';\n\nconst items = ['Overview', 'Analytics', 'Customers', 'Billing', 'Settings'];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <header className=\"flex w-full max-w-4xl items-center justify-between rounded-2xl border border-border bg-card px-5 py-3\">\n        <div className=\"flex items-center gap-2\">\n          <div className=\"size-7 rounded-lg bg-foreground\" />\n          <span className=\"text-base font-semibold text-foreground\">Northwind</span>\n        </div>\n        <Highlight\n          hover\n          className=\"rounded-lg bg-muted\"\n          mode=\"parent\"\n          controlledItems\n          containerClassName=\"flex gap-1\"\n        >\n          {items.map((item) => (\n            <HighlightItem key={item} value={item} asChild>\n              <button\n                type=\"button\"\n                className=\"relative z-10 rounded-lg px-4 py-2.5 text-base font-medium text-muted-foreground transition-colors hover:text-foreground\"\n              >\n                {item}\n              </button>\n            </HighlightItem>\n          ))}\n        </Highlight>\n        <img\n          src=\"https://i.pravatar.cc/80?img=47\"\n          alt=\"Account\"\n          className=\"size-9 rounded-full border border-border\"\n        />\n      </header>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-effects-highlight.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-effects-highlight.json",

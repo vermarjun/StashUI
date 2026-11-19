@@ -2,7 +2,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card";
+} from "@/registry/origin-ui/hover-card";
 
 export default function HoverCardDemo() {
   return (
@@ -14,7 +14,7 @@ export default function HoverCardDemo() {
               alt="Content"
               className="size-full object-cover"
               height={216}
-              src="/origin/dialog-content.png"
+              src="https://images.unsplash.com/photo-1506097425191-7ad538b29cef?w=382&h=216&fit=crop&auto=format&q=80"
               width={382}
             />
           </a>

@@ -3,7 +3,6 @@
 import { items } from '@/components/website/constant';
 import { Download, X } from 'lucide-react';
 import { AnimatePresence, motion, useInView } from 'motion/react';
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
 function UnsplashGrid() {
@@ -132,13 +131,7 @@ function Modal({ selected, setSelected }: ModalProps) {
               <X />
             </button>
             <motion.div className=' p-2 h-[70vh]  rounded-md'>
-              <Image
-                width={400}
-                height={400}
-                alt='img'
-                src={selected.url}
-                className='w-full h-full object-contain rounded-md dark:bg-black bg-white'
-              />
+              <img width={400} height={400} alt='img' src={selected.url} className='w-full h-full object-contain rounded-md dark:bg-black bg-white' />
             </motion.div>
             <motion.div
               variants={itemVariants}

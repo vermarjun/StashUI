@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useMemo } from "react";
+import React, { useId } from "react";
 
 interface TextGlitchProps {
   text?: string;
@@ -23,10 +23,7 @@ export function TextGlitch({
   const afterShadow = enableShadows ? "-5px 0 red" : "none";
   const beforeShadow = enableShadows ? "5px 0 cyan" : "none";
 
-  const styleId = useMemo(
-    () => `text-glitch-${Math.random().toString(36).slice(2, 8)}`,
-    []
-  );
+  const styleId = `text-glitch-${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
 
   const hoverClass = enableOnHover ? "glitch-hover" : "glitch-always";
 

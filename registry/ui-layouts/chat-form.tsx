@@ -7,7 +7,6 @@ import {
   FileUploaderItem,
 } from '@/registry/ui-layouts/file-upload';
 import { Paperclip, Upload } from 'lucide-react';
-import Image from 'next/image';
 import { useState } from 'react';
 import type { DropzoneOptions } from 'react-dropzone';
 
@@ -68,13 +67,7 @@ const FileUploadDropzone = () => {
                       className='size-12 w-fit p-0 rounded-md overflow-hidden border'
                       aria-roledescription={`file ${i + 1} containing ${file.name}`}
                     >
-                      <Image
-                        src={URL.createObjectURL(file)}
-                        alt={file.name}
-                        height={80}
-                        width={80}
-                        className='size-12 rounded-md object-cover bg-primary'
-                      />
+                      <img src={URL.createObjectURL(file)} alt={file.name} height={80} width={80} className='size-12 rounded-md object-cover bg-primary' />
                     </FileUploaderItem>
                   ))}
                 </FileUploaderContent>

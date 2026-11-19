@@ -14,29 +14,29 @@ const TESTIMONIALS = [
   {
     name: 'Beverley',
     role: 'Co-Founder NYZ',
-    image: 'https://picsum.photos/seed/beverley/100/100',
+    image: 'https://images.unsplash.com/photo-1718183120769-ece47f31045b?w=100&h=100&fit=crop&auto=format&q=80',
     quote:
       "Joining the program dramatically improved my writing skills and thought leadership, resulting in a notable increase in inbound leads. It's a life-changing experience with promising future prospects.",
     rating: 5,
-    videoThumbnail: 'https://picsum.photos/seed/testimonial-video/1200/675',
+    videoThumbnail: 'https://images.unsplash.com/photo-1718969604981-de826f44ce15?w=1200&h=675&fit=crop&auto=format&q=80',
   },
   {
     name: 'Marcus Aurelius',
     role: 'Founder Stoic Mind',
-    image: 'https://picsum.photos/seed/marcus/100/100',
+    image: 'https://images.unsplash.com/photo-1523612192437-66de9804ac3c?w=100&h=100&fit=crop&auto=format&q=80',
     quote:
       "Lara's frameworks for personal branding are unparalleled. In six months, we've seen engagement rates triple across our primary social channels.",
     rating: 5,
-    videoThumbnail: 'https://picsum.photos/seed/testimonial2/1200/675',
+    videoThumbnail: 'https://images.unsplash.com/photo-1600619030925-569b3b964418?w=1200&h=675&fit=crop&auto=format&q=80',
   },
   {
     name: 'Sarah Jenkins',
     role: 'CEO GrowthLab',
-    image: 'https://picsum.photos/seed/sarah/100/100',
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=100&h=100&fit=crop&auto=format&q=80',
     quote:
       "The clarity and depth of the mentorship provided exceeded all expectations. It's not just about numbers; it's about building a sustainable legacy.",
     rating: 5,
-    videoThumbnail: 'https://picsum.photos/seed/testimonial3/1200/675',
+    videoThumbnail: 'https://images.unsplash.com/photo-1580411788548-eee17fc98883?w=1200&h=675&fit=crop&auto=format&q=80',
   },
 ]
 

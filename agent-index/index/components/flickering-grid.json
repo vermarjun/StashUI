@@ -2,6 +2,9 @@
  "name": "flickering-grid",
  "title": "Flickering Grid",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds"
+ ],
  "origin": "Magic UI",
  "origin_short": "mag",
  "exports": [
@@ -16,20 +19,13 @@
   "pure",
   "4 colors"
  ],
- "usage": "import { FlickeringGrid } from \"@/components/ui/flickering-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <FlickeringGrid\n        className=\"absolute inset-0 h-full w-full\"\n        squareSize={4}\n        gridGap={6}\n        flickerChance={0.3}\n        color=\"rgb(100, 100, 100)\"\n        maxOpacity={0.3}\n      />\n    </div>\n  );\n}",
+ "usage": "import { FlickeringGrid } from \"@/components/ui/flickering-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden bg-neutral-950\">\n      <FlickeringGrid\n        className=\"absolute inset-0 z-0 h-full w-full [mask-image:radial-gradient(700px_circle_at_center,white,transparent)]\"\n        squareSize={4}\n        gridGap={6}\n        flickerChance={0.4}\n        color=\"rgb(212, 212, 220)\"\n        maxOpacity={0.8}\n      />\n      <div className=\"relative z-10 rounded-xl border border-neutral-800 bg-neutral-950/80 px-8 py-6 text-center backdrop-blur-sm\">\n        <h2 className=\"text-4xl font-semibold tracking-tight text-white\">\n          Flickering Grid\n        </h2>\n        <p className=\"mt-2 text-sm text-neutral-400\">\n          Canvas squares that fade in and out at random.\n        </p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/magic-ui/flickering-grid.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/flickering-grid.json",
  "preview": "https://stashui.vercel.app/c/flickering-grid",
- "dupe_group": "flickeringgrid",
- "alternatives": [
-  {
-   "name": "inspira-flickering-grid",
-   "origin": "Inspira UI",
-   "npm_deps": 0,
-   "hardcoded_colors": 4
-  }
- ],
+ "dupe_group": null,
+ "alternatives": [],
  "blurb": "Canvas grid of squares that flicker independently at random intervals.",
  "description": "Canvas-based grid where each square randomly flickers between transparent and opaque. Runs only when visible via IntersectionObserver; ResizeObserver keeps it responsive.",
  "use_when": "A subtle, performance-conscious background that adds visual interest without demanding resources when off-screen.",

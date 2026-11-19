@@ -46,7 +46,7 @@ const elements: TreeViewElement[] = [
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-sm border rounded-lg p-4 h-80 bg-white">
+    <div className="h-96 w-full max-w-sm overflow-hidden rounded-lg border border-border bg-card p-4 text-card-foreground">
       <Tree
         elements={elements}
         initialExpandedItems={["1", "2"]}

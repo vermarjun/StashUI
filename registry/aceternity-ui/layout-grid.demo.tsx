@@ -15,7 +15,7 @@ export default function Demo() {
         </div>
       ),
       className: "md:col-span-2",
-      thumbnail: "https://picsum.photos/seed/tokyo/800/500",
+      thumbnail: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=500&fit=crop&auto=format&q=80",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ export default function Demo() {
         </div>
       ),
       className: "col-span-1",
-      thumbnail: "https://picsum.photos/seed/santorini/500/500",
+      thumbnail: "https://images.unsplash.com/photo-1754405300142-246a9bf917d9?w=500&h=500&fit=crop&auto=format&q=80",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export default function Demo() {
         </div>
       ),
       className: "col-span-1",
-      thumbnail: "https://picsum.photos/seed/machu/500/500",
+      thumbnail: "https://images.unsplash.com/photo-1719554873571-0fd6bf322bb1?w=500&h=500&fit=crop&auto=format&q=80",
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ export default function Demo() {
         </div>
       ),
       className: "md:col-span-2",
-      thumbnail: "https://picsum.photos/seed/patagonia/800/500",
+      thumbnail: "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&h=500&fit=crop&auto=format&q=80",
     },
   ];
 

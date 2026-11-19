@@ -4,8 +4,8 @@ import { Pointer } from "@/registry/magic-ui/pointer";
 
 export default function Demo() {
   return (
-    <div className="relative flex items-center justify-center p-8">
-      <div className="relative flex h-64 w-full max-w-md cursor-none items-center justify-center rounded-xl border border-border bg-muted/20">
+    <div className="relative flex w-full items-center justify-center p-8">
+      <div className="relative flex h-[420px] w-full max-w-3xl cursor-none items-center justify-center rounded-xl border border-border bg-muted/20">
         <Pointer>
           {/* Custom pointer label */}
           <div className="rounded-full bg-foreground px-3 py-1 text-xs font-medium text-background shadow-lg">

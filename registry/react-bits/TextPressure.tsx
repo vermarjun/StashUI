@@ -43,8 +43,10 @@ const debounce = (func: (...args: any[]) => void, delay: number) => {
 
 const TextPressure: React.FC<TextPressureProps> = ({
   text = 'Compressa',
-  fontFamily = 'Compressa VF',
-  fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+  // The original Compressa VF URL (res.cloudinary.com/.../CompressaPRO-GX.woff2) now 404s.
+  // Roboto Flex is a free variable font with the same wght + wdth axes.
+  fontFamily = 'Roboto Flex Pressure',
+  fontUrl = 'https://cdn.jsdelivr.net/npm/@fontsource-variable/roboto-flex@5.0.8/files/roboto-flex-latin-full-normal.woff2',
   width = true,
   weight = true,
   italic = true,

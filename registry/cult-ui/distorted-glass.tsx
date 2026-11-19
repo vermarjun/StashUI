@@ -36,7 +36,7 @@ export const DistortedGlass = ({ className }: { className?: string }) => {
         </svg>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .glass-effect {
           background: rgba(0, 0, 0, 0.2);
           background: repeating-radial-gradient(

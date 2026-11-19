@@ -42,7 +42,7 @@ export function ContainerTextFlip({
 
   return (
     <LayoutGroup>
-      <motion.p
+      <motion.div
         layoutId={`words-here-${id}`}
         animate={{ width }}
         transition={{ duration: animationDuration / 2000 }}
@@ -73,7 +73,7 @@ export function ContainerTextFlip({
             </AnimatePresence>
           </motion.div>
         </motion.div>
-      </motion.p>
+      </motion.div>
     </LayoutGroup>
   );
 }

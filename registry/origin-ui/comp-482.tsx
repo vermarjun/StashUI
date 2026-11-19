@@ -203,7 +203,10 @@ export default function Component() {
                 </TableRow>
                 {row.getIsExpanded() && (
                   <TableRow>
-                    <TableCell colSpan={row.getVisibleCells().length}>
+                    <TableCell
+                      className="whitespace-normal"
+                      colSpan={row.getVisibleCells().length}
+                    >
                       <div className="flex items-start py-2 text-primary/80">
                         <span
                           aria-hidden="true"

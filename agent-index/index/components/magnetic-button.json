@@ -2,6 +2,10 @@
  "name": "magnetic-button",
  "title": "Magnetic Button",
  "category": "buttons",
+ "categories": [
+  "buttons",
+  "cursors"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -10,13 +14,15 @@
  "npm_deps": [
   "motion"
  ],
- "registry_deps": [],
+ "registry_deps": [
+  "utils"
+ ],
  "css": false,
  "hardcoded_colors": 0,
  "flags": [
   "motion"
  ],
- "usage": "\"use client\";\nimport { MagneticButton } from \"@/components/ui/magnetic-button\";\n\nexport default function MagneticButtonDemo() {\n  return (\n    <MagneticButton strength={0.8} maxDistance={100}>\n      <button className=\"px-8 py-3 rounded-lg border border-border bg-background text-foreground text-sm font-medium shadow-sm hover:bg-muted transition-colors\">\n        Magnetic\n      </button>\n    </MagneticButton>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { MagneticButton } from \"@/components/ui/magnetic-button\";\n\nexport default function MagneticButtonDemo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"flex w-full max-w-lg flex-col items-center gap-8 rounded-2xl border border-border bg-card px-8 py-12 text-center text-card-foreground shadow-sm\">\n        <div className=\"space-y-2\">\n          <h3 className=\"font-semibold text-2xl tracking-tight\">Magnetic button</h3>\n          <p className=\"text-muted-foreground text-sm\">Move your cursor inside the dashed field and the button follows.</p>\n        </div>\n        <div className=\"flex items-center gap-2\">\n          <MagneticButton maxDistance={60} strength={0.45} className=\"p-8\">\n            <button\n              className=\"rounded-lg bg-primary px-8 py-3 font-medium text-primary-foreground text-sm shadow-sm\"\n              type=\"button\"\n            >\n              Get started\n            </button>\n          </MagneticButton>\n          <MagneticButton maxDistance={50} strength={0.4} className=\"p-8\">\n            <button\n              className=\"rounded-lg border border-border bg-background px-8 py-3 font-medium text-foreground text-sm shadow-sm transition-colors hover:bg-muted\"\n              type=\"button\"\n            >\n              Documentation\n            </button>\n          </MagneticButton>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/magnetic-button.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/magnetic-button.json",

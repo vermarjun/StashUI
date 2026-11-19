@@ -1,7 +1,12 @@
 {
  "name": "webcam-pixel-grid",
  "title": "Webcam Pixel Grid",
- "category": "effects",
+ "category": "media",
+ "categories": [
+  "media",
+  "3d",
+  "heroes"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -16,7 +21,7 @@
   "pure",
   "26 colors"
  ],
- "usage": "\"use client\";\nimport { WebcamPixelGrid } from \"@/components/ui/webcam-pixel-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background\">\n      <div className=\"relative w-full h-full max-w-2xl max-h-[420px] rounded-xl overflow-hidden border border-border\">\n        <WebcamPixelGrid\n          gridCols={64}\n          gridRows={48}\n          colorMode=\"webcam\"\n          backgroundColor=\"#0a0a0a\"\n          maxElevation={18}\n          motionSensitivity={0.35}\n          gapRatio={0.08}\n          mirror={true}\n          className=\"w-full h-full\"\n          onWebcamError={() => {\n            // graceful degradation — component renders camera-denied UI\n          }}\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { WebcamPixelGrid } from \"@/components/ui/webcam-pixel-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[600px] w-full items-center justify-center bg-background p-6\">\n      <div className=\"relative h-[540px] w-full max-w-4xl overflow-hidden rounded-2xl border border-border\">\n        <WebcamPixelGrid\n          gridCols={80}\n          gridRows={50}\n          colorMode=\"monochrome\"\n          monochromeColor=\"#ffffff\"\n          backgroundColor=\"#0a0a0a\"\n          maxElevation={22}\n          motionSensitivity={0.3}\n          gapRatio={0.12}\n          mirror={true}\n          className=\"h-full w-full\"\n          onWebcamError={() => {\n            // graceful degradation: component renders its camera-denied UI\n          }}\n        />\n        <div className=\"pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6\">\n          <p className=\"font-semibold text-white text-xl\">You, in pixels</p>\n          <p className=\"text-neutral-400 text-sm\">Every cell lifts when it detects motion. Wave at the camera.</p>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/webcam-pixel-grid.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/webcam-pixel-grid.json",

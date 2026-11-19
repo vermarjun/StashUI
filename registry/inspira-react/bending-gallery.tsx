@@ -124,7 +124,9 @@ function buildPlaneGeometry(wSeg: number, hSeg: number): PlaneGeometry {
       const u = ix / wSeg;
       const v = iy / hSeg;
       verts.push(u - 0.5, 0.5 - v, 0);
-      uvArr.push(u, 1 - v);
+      // Canvas/image textures upload top row first (no UNPACK_FLIP_Y), so v maps
+      // straight through; flipping it rendered photos and captions upside-down.
+      uvArr.push(u, v);
     }
   }
   for (let iy = 0; iy < hSeg; iy++) {
@@ -201,12 +203,12 @@ class BendingGalleryApp {
 
   static defaultItems(): GalleryItem[] {
     return [
-      { image: "https://picsum.photos/seed/1/800/600?grayscale", text: "Bridge" },
-      { image: "https://picsum.photos/seed/2/800/600?grayscale", text: "Desk Setup" },
-      { image: "https://picsum.photos/seed/3/800/600?grayscale", text: "Waterfall" },
-      { image: "https://picsum.photos/seed/4/800/600?grayscale", text: "Strawberries" },
-      { image: "https://picsum.photos/seed/5/800/600?grayscale", text: "Deep Diving" },
-      { image: "https://picsum.photos/seed/16/800/600?grayscale", text: "Train Track" },
+      { image: "https://images.unsplash.com/photo-1726551195795-612ca47c0b7d?w=800&h=600&fit=crop&auto=format&q=80&sat=-100", text: "Bridge" },
+      { image: "https://images.unsplash.com/photo-1583071299210-c6c113f4ac91?w=800&h=600&fit=crop&auto=format&q=80&sat=-100", text: "Desk Setup" },
+      { image: "https://images.unsplash.com/photo-1518599904199-0ca897819ddb?w=800&h=600&fit=crop&auto=format&q=80&sat=-100", text: "Waterfall" },
+      { image: "https://images.unsplash.com/photo-1745965976680-d00be7dc0377?w=800&h=600&fit=crop&auto=format&q=80&sat=-100", text: "Strawberries" },
+      { image: "https://images.unsplash.com/photo-1693162640799-9f192c4e0da3?w=800&h=600&fit=crop&auto=format&q=80&sat=-100", text: "Deep Diving" },
+      { image: "https://images.unsplash.com/photo-1665470909901-162912ec16f7?w=800&h=600&fit=crop&auto=format&q=80&sat=-100", text: "Train Track" },
     ];
   }
 

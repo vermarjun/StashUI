@@ -2,6 +2,10 @@
  "name": "primitives-headless-checkbox",
  "title": "Headless Checkbox",
  "category": "checkboxes",
+ "categories": [
+  "checkboxes",
+  "settings"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -18,7 +22,7 @@
  "flags": [
   "motion"
  ],
- "usage": "import { Checkbox } from \"@/components/ui/primitives-headless-checkbox\";\n\nexport default function Demo() {\n  return <Checkbox />;\n}",
+ "usage": "\"use client\";\n\nimport { Checkbox, CheckboxIndicator } from \"@/components/ui/primitives-headless-checkbox\";\n\nconst TASKS = [\n  { label: \"Write the release notes\", done: true },\n  { label: \"Record the product demo\", done: true },\n  { label: \"Review open pull requests\", done: false },\n  { label: \"Ship v2.4 to production\", done: false },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-sm rounded-xl border border-border bg-card p-6 text-card-foreground shadow-sm\">\n        <h3 className=\"font-semibold text-base\">Launch checklist</h3>\n        <p className=\"mt-1 text-muted-foreground text-sm\">The tick draws itself in when checked.</p>\n        <div className=\"mt-5 space-y-4\">\n          {TASKS.map((t) => (\n            <label className=\"flex cursor-pointer items-center gap-3 text-sm\" key={t.label}>\n              <Checkbox\n                className=\"flex size-5 shrink-0 items-center justify-center rounded-[5px] border border-input bg-background transition-colors data-checked:border-primary data-checked:bg-primary\"\n                defaultChecked={t.done}\n              >\n                <CheckboxIndicator className=\"size-3.5 text-primary-foreground\" />\n              </Checkbox>\n              <span>{t.label}</span>\n            </label>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-headless-checkbox.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-headless-checkbox.json",

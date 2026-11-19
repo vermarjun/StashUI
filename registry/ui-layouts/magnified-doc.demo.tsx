@@ -1,36 +1,48 @@
 "use client";
 
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/ui-layouts/magnified-doc";
+  CalendarIcon,
+  FolderIcon,
+  HomeIcon,
+  MailIcon,
+  MusicIcon,
+  SearchIcon,
+  SettingsIcon,
+} from "lucide-react";
 import {
-  AnimatePresence,
+  type MotionValue,
   motion,
   useMotionValue,
   useSpring,
   useTransform,
 } from "motion/react";
-import { useRef } from "react";
+import { type ComponentType, useRef } from "react";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/registry/ui-layouts/magnified-doc";
 
 const dockItems = [
-  { label: "Home", icon: "⌂" },
-  { label: "Search", icon: "⌕" },
-  { label: "Files", icon: "⊟" },
-  { label: "Messages", icon: "✉" },
-  { label: "Settings", icon: "⚙" },
+  { label: "Home", icon: HomeIcon },
+  { label: "Search", icon: SearchIcon },
+  { label: "Files", icon: FolderIcon },
+  { label: "Mail", icon: MailIcon },
+  { label: "Calendar", icon: CalendarIcon },
+  { label: "Music", icon: MusicIcon },
+  { label: "Settings", icon: SettingsIcon },
 ];
 
 function DockIcon({
   mouseX,
   label,
-  icon,
+  icon: Icon,
 }: {
-  mouseX: ReturnType<typeof useMotionValue<number>>;
+  mouseX: MotionValue<number>;
   label: string;
-  icon: string;
+  icon: ComponentType<{ className?: string }>;
 }) {
   const ref = useRef<HTMLButtonElement>(null);
 
@@ -39,7 +51,7 @@ function DockIcon({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const size = useSpring(useTransform(distance, [-80, 0, 80], [40, 60, 40]), {
+  const size = useSpring(useTransform(distance, [-120, 0, 120], [48, 76, 48]), {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
@@ -49,16 +61,16 @@ function DockIcon({
     <Tooltip>
       <TooltipTrigger asChild>
         <motion.button
+          aria-label={label}
+          className="flex items-center justify-center rounded-2xl border border-border bg-muted text-foreground shadow-sm transition-colors hover:bg-accent focus:outline-none"
           ref={ref}
           style={{ width: size, height: size }}
-          className="flex items-center justify-center rounded-xl border border-border bg-background text-xl shadow-sm transition-colors hover:bg-muted focus:outline-none"
-          aria-label={label}
         >
-          {icon}
+          <Icon className="size-1/2" />
         </motion.button>
       </TooltipTrigger>
-      <TooltipContent side="top" sideOffset={8}>
-        <p className="text-xs font-medium">{label}</p>
+      <TooltipContent side="top" sideOffset={10}>
+        <p className="font-medium text-xs">{label}</p>
       </TooltipContent>
     </Tooltip>
   );
@@ -68,19 +80,20 @@ export default function Demo() {
   const mouseX = useMotionValue(Infinity);
 
   return (
-    <div className="flex min-h-[280px] flex-col items-center justify-end pb-10">
+    <div className="flex min-h-[420px] w-full flex-col items-center justify-end gap-6 pb-16">
+      <p className="text-muted-foreground text-sm">Hover the dock</p>
       <TooltipProvider delayDuration={0}>
         <motion.div
-          onMouseMove={(e) => mouseX.set(e.pageX)}
+          className="flex h-20 items-end gap-3 rounded-3xl border border-border bg-card/80 px-4 pb-3 shadow-lg backdrop-blur-sm"
           onMouseLeave={() => mouseX.set(Infinity)}
-          className="flex h-16 items-end gap-2 rounded-2xl border border-border bg-background/80 px-4 pb-2 shadow-lg backdrop-blur-sm"
+          onMouseMove={(e) => mouseX.set(e.clientX)}
         >
           {dockItems.map((item) => (
             <DockIcon
-              key={item.label}
-              mouseX={mouseX}
-              label={item.label}
               icon={item.icon}
+              key={item.label}
+              label={item.label}
+              mouseX={mouseX}
             />
           ))}
         </motion.div>

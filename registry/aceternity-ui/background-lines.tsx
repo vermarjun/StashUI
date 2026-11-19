@@ -17,7 +17,7 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-[20rem] md:h-screen w-full bg-white dark:bg-black",
+        "relative overflow-hidden h-[20rem] md:h-screen w-full bg-white dark:bg-black",
         className
       )}
     >
@@ -28,10 +28,10 @@ export const BackgroundLines = ({
 };
 
 const pathVariants = {
-  initial: { strokeDashoffset: 800, strokeDasharray: "50 800" },
+  initial: { strokeDashoffset: 800, strokeDasharray: "140 800" },
   animate: {
     strokeDashoffset: 0,
-    strokeDasharray: "20 800",
+    strokeDasharray: "70 800",
     opacity: [0, 1, 1, 0],
   },
 };
@@ -69,26 +69,26 @@ const SVG = ({
 
   const colors = [
     "#46A5CA",
-    "#8C2F2F",
+    "#E0565B",
     "#4FAE4D",
     "#D6590C",
-    "#811010",
+    "#F43F5E",
     "#247AFB",
     "#A534A0",
     "#A8A438",
     "#D6590C",
     "#46A29C",
-    "#670F6D",
+    "#C026D3",
     "#D7C200",
     "#59BBEB",
-    "#504F1C",
+    "#EAB308",
     "#55BC54",
-    "#4D3568",
+    "#8B5CF6",
     "#9F39A5",
-    "#363636",
-    "#860909",
-    "#6A286F",
-    "#604483",
+    "#A3A3A3",
+    "#EF4444",
+    "#D946EF",
+    "#818CF8",
   ];
   return (
     <motion.svg
@@ -114,8 +114,8 @@ const SVG = ({
             ease: "linear",
             repeat: Infinity,
             repeatType: "loop",
-            delay: Math.floor(Math.random() * 10),
-            repeatDelay: Math.floor(Math.random() * 10 + 2),
+            delay: Math.random() * 4,
+            repeatDelay: Math.random() * 4 + 1,
           }}
           key={`path-first-${idx}`}
         />
@@ -136,8 +136,8 @@ const SVG = ({
             ease: "linear",
             repeat: Infinity,
             repeatType: "loop",
-            delay: Math.floor(Math.random() * 10),
-            repeatDelay: Math.floor(Math.random() * 10 + 2),
+            delay: Math.random() * 4,
+            repeatDelay: Math.random() * 4 + 1,
           }}
           key={`path-second-${idx}`}
         />

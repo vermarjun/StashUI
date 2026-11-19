@@ -2,6 +2,11 @@
  "name": "MetallicPaint-TS-TW",
  "title": "Metallic Paint Shader",
  "category": "effects",
+ "categories": [
+  "effects",
+  "media",
+  "portfolio"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +21,7 @@
   "pure",
   "3 colors"
  ],
- "usage": "\"use client\"\n\nimport MetallicPaint from \"@/components/ui/MetallicPaint\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-64 h-64 mx-auto\">\n      <MetallicPaint\n        imageSrc=\"https://picsum.photos/seed/metallic/600/600\"\n        speed={0.3}\n        scale={4}\n        brightness={2}\n        liquid={0.75}\n        mouseAnimation={false}\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport MetallicPaint from \"@/components/ui/MetallicPaint\"\n\n// A solid sparkle silhouette: MetallicPaint reads the shape's alpha, so it needs\n// a logo-style mark on a transparent background, not a photo.\nconst sparkle = `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"800\" viewBox=\"0 0 800 800\"><path fill=\"#000\" d=\"M400 30 C440 290 510 360 770 400 C510 440 440 510 400 770 C360 510 290 440 30 400 C290 360 360 290 400 30 Z\"/></svg>`\nconst logo = `data:image/svg+xml;utf8,${encodeURIComponent(sparkle)}`\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-[600px] w-full items-center justify-center bg-background\">\n      <div className=\"relative h-[440px] w-[440px]\">\n        <MetallicPaint\n          imageSrc={logo}\n          speed={0.3}\n          scale={4}\n          brightness={2}\n          liquid={0.75}\n          tintColor=\"#ffffff\"\n        />\n      </div>\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/MetallicPaint.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/MetallicPaint-TS-TW.json",

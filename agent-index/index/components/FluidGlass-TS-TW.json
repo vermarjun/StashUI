@@ -1,7 +1,12 @@
 {
  "name": "FluidGlass-TS-TW",
  "title": "FluidGlass",
- "category": "effects",
+ "category": "3d",
+ "categories": [
+  "3d",
+  "effects",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -21,7 +26,7 @@
   "heavy",
   "4 colors"
  ],
- "usage": "\"use client\";\nimport Cmp from \"@/components/ui/FluidGlass\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"560px\" }}>\n      <Cmp mode=\"lens\" />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport FluidGlass from \"@/components/ui/FluidGlass\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <FluidGlass\n        lensProps={{ anisotropy: 0.01, chromaticAberration: 0.1, ior: 1.15, scale: 0.25, thickness: 5, transmission: 1 }}\n        mode=\"lens\"\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/FluidGlass.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/FluidGlass-TS-TW.json",

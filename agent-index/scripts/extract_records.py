@@ -125,6 +125,8 @@ def main() -> None:
     cats = json.loads((ROOT / "registry/categories.json").read_text())
     srcs = json.loads((ROOT / "registry/sources.json").read_text())
     titles = json.loads((ROOT / "registry/titles.json").read_text())
+    archived_path = ROOT / "registry/archived.json"
+    archived = json.loads(archived_path.read_text()) if archived_path.exists() else {}
 
     SPEC.mkdir(parents=True, exist_ok=True)
     out = (SPEC / "records.base.jsonl").open("w", encoding="utf-8")
@@ -132,6 +134,8 @@ def main() -> None:
 
     for item in reg["items"]:
         name = item["name"]
+        if name in archived:
+            continue
         files = item.get("files") or []
         rel = files[0]["path"] if files else ""
         srcpath = ROOT / rel
@@ -151,7 +155,10 @@ def main() -> None:
         rec = {
             "name": name,
             "title": titles.get(name) or item.get("title") or name,
-            "category": cats.get(name, "misc"),
+            # categories.json maps name -> [primary type, ...extra types, ...use cases]
+            # (a bare string is still accepted).
+            "category": (lambda v: (v if isinstance(v, list) else [v])[0])(cats.get(name, "misc")),
+            "categories": (lambda v: v if isinstance(v, list) else [v])(cats.get(name, "misc")),
             "origin": origin,
             "origin_short": short(origin),
             "exports": find_exports(src),

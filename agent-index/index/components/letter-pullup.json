@@ -2,6 +2,9 @@
  "name": "letter-pullup",
  "title": "Letter Pullup",
  "category": "text",
+ "categories": [
+  "text"
+ ],
  "origin": "Inspira UI",
  "origin_short": "insp",
  "exports": [
@@ -10,12 +13,11 @@
  "npm_deps": [],
  "registry_deps": [],
  "css": false,
- "hardcoded_colors": 1,
+ "hardcoded_colors": 0,
  "flags": [
-  "pure",
-  "1 colors"
+  "pure"
  ],
- "usage": "\"use client\";\n\nimport { LetterPullup } from \"@/components/ui/letter-pullup\";\n\nexport default function LetterPullupDemo() {\n  return (\n    <div className=\"flex min-h-[200px] flex-col items-center justify-center gap-8 p-8\">\n      <LetterPullup words=\"Hello World\" delay={0.05} />\n      <LetterPullup\n        words=\"Pull Up Letters\"\n        delay={0.04}\n        className=\"text-blue-600 dark:text-blue-400\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { RotateCcw } from \"lucide-react\";\nimport { LetterPullup } from \"@/components/ui/letter-pullup\";\n\nexport default function LetterPullupDemo() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"relative flex min-h-[380px] w-full flex-col items-center justify-center gap-2 p-8\">\n      <div key={run} className=\"flex flex-col items-center gap-2\">\n        <LetterPullup words=\"Launch day\" delay={0.05} className=\"text-6xl md:text-7xl md:leading-[6rem]\" />\n        <LetterPullup\n          words=\"is finally here\"\n          delay={0.04}\n          className=\"text-6xl text-blue-500 md:text-7xl md:leading-[6rem] dark:text-blue-400\"\n        />\n      </div>\n      <button\n        type=\"button\"\n        onClick={() => setRun((n) => n + 1)}\n        className=\"absolute right-4 bottom-4 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground\"\n      >\n        <RotateCcw className=\"size-3.5\" />\n        Replay\n      </button>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/inspira-react/letter-pullup.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/letter-pullup.json",

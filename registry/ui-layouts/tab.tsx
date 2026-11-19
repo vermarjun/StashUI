@@ -102,6 +102,7 @@ export const TabsBtn: React.FC<TabsBtnProps> = React.memo(({ children, className
   return (
     <motion.div
       className={cn(`cursor-pointer 2xl:p-2 p-2 2xl:px-4 px-2 rounded-md relative`, className)}
+      data-state={activeTab === value ? 'active' : 'inactive'}
       onFocus={() => hover && handleClick()}
       onMouseEnter={() => hover && handleClick()}
       onClick={handleClick}
@@ -120,7 +121,7 @@ export const TabsBtn: React.FC<TabsBtnProps> = React.memo(({ children, className
                 },
               }}
               layoutId={defaultValue}
-              className='absolute w-full h-full left-0 top-0 dark:bg-primary-base bg-white rounded-md z-1'
+              className='absolute w-full h-full left-0 top-0 bg-background shadow-sm ring-1 ring-border rounded-md z-1'
             />
 
             {wobbly && (
@@ -134,7 +135,7 @@ export const TabsBtn: React.FC<TabsBtnProps> = React.memo(({ children, className
                     },
                   }}
                   layoutId={defaultValue}
-                  className='absolute w-full h-full left-0 top-0 dark:bg-primary-base bg-white rounded-md z-1 tab-shadow'
+                  className='absolute w-full h-full left-0 top-0 bg-background shadow-sm ring-1 ring-border rounded-md z-1 tab-shadow'
                 />
                 <motion.div
                   transition={{
@@ -145,7 +146,7 @@ export const TabsBtn: React.FC<TabsBtnProps> = React.memo(({ children, className
                     },
                   }}
                   layoutId={`${defaultValue}b`}
-                  className='absolute w-full h-full left-0 top-0 dark:bg-primary-base bg-white rounded-md z-1 tab-shadow'
+                  className='absolute w-full h-full left-0 top-0 bg-background shadow-sm ring-1 ring-border rounded-md z-1 tab-shadow'
                 />
               </>
             )}

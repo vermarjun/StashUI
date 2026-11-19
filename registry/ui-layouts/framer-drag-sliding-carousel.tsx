@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 // import { items } from '@/components/website/constant';
 
@@ -99,13 +98,7 @@ function Carousel() {
         {items.slice(0, 8)?.map((itemData, index) => {
           return (
             <motion.div key={itemData?.id ?? itemData?.url} className='min-w-[20rem] min-h-100 p-2'>
-              <Image
-                src={itemData?.url}
-                width={400}
-                height={400}
-                alt='img'
-                className='w-full h-full object-cover pointer-events-none  rounded-md'
-              />
+              <img src={itemData?.url} width={400} height={400} alt='img' className='w-full h-full object-cover pointer-events-none  rounded-md' />
             </motion.div>
           );
         })}

@@ -1,8 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowRightIcon, TriangleAlert, XIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-export default function Component() {
+export default function Component({ onClose }: { onClose?: () => void } = {}) {
+  const [open, setOpen] = useState(true);
+
+  if (!open) return null;
+
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-50 max-w-[400px] rounded-md border bg-background px-4 py-3 shadow-lg">
@@ -13,10 +20,10 @@ export default function Component() {
             className="mt-0.5 shrink-0 text-amber-500"
             size={16}
           />
-          <div className="flex grow justify-between gap-12">
-            <p className="text-sm">Some information is missing!</p>
+          <div className="flex grow justify-between gap-6">
+            <p className="text-sm">Your billing address is missing.</p>
             <a className="group whitespace-nowrap font-medium text-sm" href="#">
-              Link
+              Fix it
               <ArrowRightIcon
                 aria-hidden="true"
                 className="-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
@@ -29,6 +36,10 @@ export default function Component() {
           aria-label="Close banner"
           className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           variant="ghost"
+          onClick={() => {
+            setOpen(false);
+            onClose?.();
+          }}
         >
           <XIcon
             aria-hidden="true"

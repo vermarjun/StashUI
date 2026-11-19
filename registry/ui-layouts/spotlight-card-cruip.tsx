@@ -4,8 +4,6 @@ export const metadata = {
   description: 'Page description',
 };
 
-import Image from 'next/image';
-
 import Spotlight, { SpotlightCard } from '@/components/ui/spam-spotlight';
 
 export default function SpotlightPage() {
@@ -31,15 +29,9 @@ export default function SpotlightPage() {
                       className='w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600'
                       aria-hidden='true'
                     ></div>
-                    <Image
-                      className='inline-flex'
-                      src={
+                    <img className='inline-flex' src={
                         'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
-                      }
-                      width={200}
-                      height={200}
-                      alt='Card 01'
-                    />
+                      } width={200} height={200} alt='Card 01' />
                   </div>
                   {/* Text */}
                   <div className='grow mb-5'>
@@ -82,15 +74,9 @@ export default function SpotlightPage() {
                       className='w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600'
                       aria-hidden='true'
                     ></div>
-                    <Image
-                      className='inline-flex'
-                      src={
+                    <img className='inline-flex' src={
                         'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
-                      }
-                      width={200}
-                      height={200}
-                      alt='Card 02'
-                    />
+                      } width={200} height={200} alt='Card 02' />
                   </div>
                   {/* Text */}
                   <div className='grow mb-5'>
@@ -133,15 +119,9 @@ export default function SpotlightPage() {
                       className='w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600'
                       aria-hidden='true'
                     ></div>
-                    <Image
-                      className='inline-flex'
-                      src={
+                    <img className='inline-flex' src={
                         'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
-                      }
-                      width={200}
-                      height={200}
-                      alt='Card 03'
-                    />
+                      } width={200} height={200} alt='Card 03' />
                   </div>
                   {/* Text */}
                   <div className='grow mb-5'>
@@ -184,15 +164,9 @@ export default function SpotlightPage() {
                       className='w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600'
                       aria-hidden='true'
                     ></div>
-                    <Image
-                      className='inline-flex'
-                      src={
+                    <img className='inline-flex' src={
                         'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
-                      }
-                      width={200}
-                      height={200}
-                      alt='Card 01'
-                    />
+                      } width={200} height={200} alt='Card 01' />
                   </div>
                   {/* Text */}
                   <div className='grow mb-5'>
@@ -235,15 +209,9 @@ export default function SpotlightPage() {
                       className='w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600'
                       aria-hidden='true'
                     ></div>
-                    <Image
-                      className='inline-flex'
-                      src={
+                    <img className='inline-flex' src={
                         'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
-                      }
-                      width={200}
-                      height={200}
-                      alt='Card 02'
-                    />
+                      } width={200} height={200} alt='Card 02' />
                   </div>
                   {/* Text */}
                   <div className='grow mb-5'>
@@ -286,15 +254,9 @@ export default function SpotlightPage() {
                       className='w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600'
                       aria-hidden='true'
                     ></div>
-                    <Image
-                      className='inline-flex'
-                      src={
+                    <img className='inline-flex' src={
                         'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
-                      }
-                      width={200}
-                      height={200}
-                      alt='Card 03'
-                    />
+                      } width={200} height={200} alt='Card 03' />
                   </div>
                   {/* Text */}
                   <div className='grow mb-5'>

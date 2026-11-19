@@ -2,6 +2,10 @@
  "name": "ShapeGrid-TS-TW",
  "title": "Shape Grid",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +20,7 @@
   "pure",
   "4 colors"
  ],
- "usage": "import Cmp from \"@/components/ui/ShapeGrid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport ShapeGrid from \"@/components/ui/ShapeGrid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-[#060010]\">\n      <ShapeGrid\n        speed={0.5}\n        squareSize={44}\n        direction=\"diagonal\"\n        borderColor=\"#4c3a70\"\n        hoverFillColor=\"#7c3aed\"\n        shape=\"square\"\n        hoverTrailAmount={6}\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/ShapeGrid.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/ShapeGrid-TS-TW.json",

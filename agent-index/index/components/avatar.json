@@ -2,6 +2,10 @@
  "name": "avatar",
  "title": "Avatar",
  "category": "avatars",
+ "categories": [
+  "avatars",
+  "social"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -16,7 +20,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "import { Avatar } from \"@/components/ui/avatar\";\n\nexport default function Demo() {\n  return <Avatar />;\n}",
+ "usage": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\n\nconst people = [\n  { name: \"Kelly King\", img: 47 },\n  { name: \"Martin Diaz\", img: 12 },\n  { name: \"Sofia Chen\", img: 32 },\n  { name: \"Alex Moore\", img: 68 },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-10\">\n      <div className=\"flex items-center gap-4\">\n        {people.map((p) => (\n          <Avatar key={p.name} className=\"size-20\">\n            <AvatarImage alt={p.name} src={`https://i.pravatar.cc/160?img=${p.img}`} />\n            <AvatarFallback>{p.name.split(\" \").map((s) => s[0]).join(\"\")}</AvatarFallback>\n          </Avatar>\n        ))}\n        <Avatar className=\"size-20\">\n          <AvatarFallback className=\"text-lg\">JL</AvatarFallback>\n        </Avatar>\n        <Avatar className=\"size-20 rounded-lg\">\n          <AvatarImage alt=\"Nina Park\" src=\"https://i.pravatar.cc/160?img=5\" />\n          <AvatarFallback>NP</AvatarFallback>\n        </Avatar>\n      </div>\n      <div className=\"-space-x-3 flex\">\n        {[47, 12, 32, 68, 5].map((i) => (\n          <Avatar key={i} className=\"size-14 ring-2 ring-background\">\n            <AvatarImage alt=\"\" src={`https://i.pravatar.cc/120?img=${i}`} />\n            <AvatarFallback>U</AvatarFallback>\n          </Avatar>\n        ))}\n        <Avatar className=\"size-14 ring-2 ring-background\">\n          <AvatarFallback className=\"text-sm\">+8</AvatarFallback>\n        </Avatar>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/avatar.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/avatar.json",

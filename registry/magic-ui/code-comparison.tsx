@@ -6,9 +6,22 @@ import {
   transformerNotationFocus,
 } from "@shikijs/transformers"
 import { FileIcon } from "lucide-react"
-import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
+
+// Universal dark-mode detection (no next-themes): follows the `dark` class on <html>.
+function useIsDark() {
+  const [dark, setDark] = useState(false)
+  useEffect(() => {
+    const el = document.documentElement
+    const read = () => setDark(el.classList.contains("dark"))
+    read()
+    const mo = new MutationObserver(read)
+    mo.observe(el, { attributes: true, attributeFilter: ["class"] })
+    return () => mo.disconnect()
+  }, [])
+  return dark
+}
 
 interface CodeComparisonProps {
   beforeCode: string
@@ -29,16 +42,16 @@ export function CodeComparison({
   darkTheme,
   highlightColor = "#ff3333",
 }: CodeComparisonProps) {
-  const { theme, systemTheme } = useTheme()
+  const isDark = useIsDark()
   const [highlightedBefore, setHighlightedBefore] = useState("")
   const [highlightedAfter, setHighlightedAfter] = useState("")
   const [hasLeftFocus, setHasLeftFocus] = useState(false)
   const [hasRightFocus, setHasRightFocus] = useState(false)
 
-  const selectedTheme = useMemo(() => {
-    const currentTheme = theme === "system" ? systemTheme : theme
-    return currentTheme === "dark" ? darkTheme : lightTheme
-  }, [theme, systemTheme, darkTheme, lightTheme])
+  const selectedTheme = useMemo(
+    () => (isDark ? darkTheme : lightTheme),
+    [isDark, darkTheme, lightTheme]
+  )
 
   useEffect(() => {
     if (highlightedBefore || highlightedAfter) {
@@ -89,14 +102,14 @@ export function CodeComparison({
         <div
           style={{ "--highlight-color": highlightColor } as React.CSSProperties}
           className={cn(
-            "bg-background h-full w-full overflow-auto font-mono text-xs",
+            "bg-background h-full w-full overflow-auto font-mono text-[13px] leading-relaxed",
             "[&>pre]:h-full [&>pre]:w-screen! [&>pre]:py-2",
             "[&>pre>code]:inline-block! [&>pre>code]:w-full!",
             "[&>pre>code>span]:inline-block! [&>pre>code>span]:w-full [&>pre>code>span]:px-4 [&>pre>code>span]:py-0.5",
             "[&>pre>code>.highlighted]:inline-block [&>pre>code>.highlighted]:w-full [&>pre>code>.highlighted]:bg-(--highlight-color)!",
             "group-hover/left:[&>pre>code>:not(.focused)]:opacity-100! group-hover/left:[&>pre>code>:not(.focused)]:blur-none!",
             "group-hover/right:[&>pre>code>:not(.focused)]:opacity-100! group-hover/right:[&>pre>code>:not(.focused)]:blur-none!",
-            "[&>pre>code>.add]:bg-[rgba(16,185,129,.16)] [&>pre>code>.remove]:bg-[rgba(244,63,94,.16)]",
+            "magicui-code-pane",
             "group-hover/left:[&>pre>code>:not(.focused)]:transition-all group-hover/left:[&>pre>code>:not(.focused)]:duration-300",
             "group-hover/right:[&>pre>code>:not(.focused)]:transition-all group-hover/right:[&>pre>code>:not(.focused)]:duration-300"
           )}
@@ -114,6 +127,8 @@ export function CodeComparison({
 
   return (
     <div className="mx-auto w-full max-w-5xl">
+      {/* diff line tints as plain CSS so they never depend on Tailwind class extraction */}
+      <style>{`.magicui-code-pane .line.diff.add{background:rgba(16,185,129,.18) !important}.magicui-code-pane .line.diff.remove{background:rgba(244,63,94,.18) !important}`}</style>
       <div className="group border-border relative w-full overflow-hidden rounded-md border">
         <div className="relative grid md:grid-cols-2">
           <div

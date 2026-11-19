@@ -1,40 +1,51 @@
 "use client";
 import { TracingBeam } from "@/registry/aceternity-ui/tracing-beam";
 
-const content = [
+const posts = [
   {
-    title: "Design Systems",
-    body: "Build a consistent visual language across every product surface. Tokens, components, and documentation that scales with your team — from the first prototype to production.",
+    badge: "Field notes",
+    title: "Waking up above the clouds",
+    body: "We set the alarm for 4:30 and climbed in the dark. By the time the sun cleared the ridge, the whole valley had disappeared under a slow white sea, and only the peaks were left standing.",
+    image: "1506905925346-21bda4d32df4",
   },
   {
-    title: "Motion & Interaction",
-    body: "Smooth, purposeful animation turns static interfaces into living products. Spring physics, scroll-linked effects, and gesture-driven transitions that feel native on every device.",
+    badge: "Route",
+    title: "Three days on the high path",
+    body: "The trail stays above 2,000 metres for most of its length. Huts are spaced a day apart, water is easy to find until August, and the last stretch is a gentle descent through pine forest.",
+    image: "1693581176773-a5f2362209e6",
   },
   {
-    title: "Accessible by Default",
-    body: "Keyboard navigation, screen-reader semantics, and colour contrast are not afterthoughts. Every component ships meeting WCAG 2.2 AA out of the box, no configuration needed.",
+    badge: "Gear",
+    title: "What we would pack again",
+    body: "A light shell, two pairs of wool socks, a paper map and a battery pack. Everything else stayed in the bag. The single best item was a cheap thermos for coffee at the first viewpoint.",
+    image: "1584043204475-8cc101d6c77a",
   },
   {
-    title: "Open Source",
-    body: "MIT-licensed and built in the open. Inspect the source, file an issue, or submit a pull request. The component library grows with its community.",
+    badge: "Afterwards",
+    title: "Coming back down",
+    body: "Walking into the first village felt strange after three quiet days. We sat by the lake, ate far too much bread and started planning the next trip before the train even left.",
+    image: "1759395073808-17782f3d8d66",
   },
 ];
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-2xl mx-auto py-10 px-4">
-      <TracingBeam>
-        <div className="space-y-16">
-          {content.map((item) => (
-            <div key={item.title} className="space-y-3">
-              <h2 className="text-xl font-semibold text-foreground">
-                {item.title}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">{item.body}</p>
-              <div className="h-40 rounded-lg bg-muted flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">{item.title}</span>
-              </div>
-            </div>
+    <div className="w-full bg-background px-6 py-16">
+      <TracingBeam className="px-6">
+        <div className="relative mx-auto max-w-2xl pt-4 antialiased">
+          {posts.map((p) => (
+            <article key={p.title} className="mb-16">
+              <span className="mb-4 inline-block rounded-full bg-foreground px-3 py-1 text-xs font-medium text-background">
+                {p.badge}
+              </span>
+              <h2 className="mb-4 text-2xl font-semibold tracking-tight text-foreground">{p.title}</h2>
+              <img
+                src={`https://images.unsplash.com/photo-${p.image}?w=1200&h=700&fit=crop&auto=format&q=80`}
+                alt=""
+                className="mb-6 h-80 w-full rounded-xl object-cover"
+              />
+              <p className="leading-relaxed text-muted-foreground">{p.body}</p>
+            </article>
           ))}
         </div>
       </TracingBeam>

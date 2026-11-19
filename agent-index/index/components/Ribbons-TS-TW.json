@@ -1,7 +1,12 @@
 {
  "name": "Ribbons-TS-TW",
  "title": "Physics Ribbon Trail",
- "category": "effects",
+ "category": "cursors",
+ "categories": [
+  "cursors",
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -17,7 +22,7 @@
   "webgl",
   "4 colors"
  ],
- "usage": "\"use client\"\n\nimport Ribbons from \"@/components/ui/Ribbons\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full max-w-2xl h-[400px] bg-black rounded-xl overflow-hidden\">\n      <Ribbons\n        colors={[\"#ff9346\", \"#7cff67\", \"#ffee51\", \"#5227FF\"]}\n        baseSpring={0.03}\n        baseFriction={0.9}\n        baseThickness={30}\n        enableFade={false}\n        enableShaderEffect={false}\n        pointCount={50}\n        speedMultiplier={0.6}\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport Ribbons from \"@/components/ui/Ribbons\"\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[580px] w-full overflow-hidden bg-black\">\n      <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\n        <p className=\"text-sm tracking-[0.3em] text-white/30 uppercase\">\n          Move your cursor\n        </p>\n      </div>\n      <Ribbons\n        colors={[\"#ff9346\", \"#7cff67\", \"#ffee51\", \"#5227FF\"]}\n        baseSpring={0.03}\n        baseFriction={0.9}\n        baseThickness={64}\n        offsetFactor={0.06}\n        enableFade={false}\n        enableShaderEffect={false}\n        pointCount={50}\n        speedMultiplier={0.6}\n      />\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/Ribbons.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/Ribbons-TS-TW.json",

@@ -1,8 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-
-let interval: any;
 
 type Card = {
   id: number;
@@ -15,28 +13,36 @@ export const CardStack = ({
   items,
   offset,
   scaleFactor,
+  duration = 5000,
 }: {
   items: Card[];
   offset?: number;
   scaleFactor?: number;
+  /** ms between flips */
+  duration?: number;
 }) => {
   const CARD_OFFSET = offset || 10;
   const SCALE_FACTOR = scaleFactor || 0.06;
   const [cards, setCards] = useState<Card[]>(items);
+  const interval = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     startFlipping();
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      if (interval.current) clearInterval(interval.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [duration]);
   const startFlipping = () => {
-    interval = setInterval(() => {
+    if (interval.current) clearInterval(interval.current);
+    interval.current = setInterval(() => {
       setCards((prevCards: Card[]) => {
         const newArray = [...prevCards]; // create a copy of the array
         newArray.unshift(newArray.pop()!); // move the last element to the front
         return newArray;
       });
-    }, 5000);
+    }, duration);
   };
 
   return (

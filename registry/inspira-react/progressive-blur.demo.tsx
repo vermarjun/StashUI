@@ -8,7 +8,7 @@ export default function ProgressiveBlurDemo() {
       {/* Blur from bottom */}
       <div className="relative h-64 w-80 overflow-hidden rounded-2xl">
         <img
-          src="https://picsum.photos/seed/blur1/640/512"
+          src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=640&h=512&fit=crop&auto=format&q=80"
           alt="demo"
           className="h-full w-full object-cover"
         />
@@ -26,7 +26,7 @@ export default function ProgressiveBlurDemo() {
       {/* Blur from top */}
       <div className="relative h-64 w-80 overflow-hidden rounded-2xl">
         <img
-          src="https://picsum.photos/seed/blur2/640/512"
+          src="https://images.unsplash.com/photo-1460999158988-6f0380f81f4d?w=640&h=512&fit=crop&auto=format&q=80"
           alt="demo"
           className="h-full w-full object-cover"
         />
@@ -44,7 +44,7 @@ export default function ProgressiveBlurDemo() {
       {/* Blur from right */}
       <div className="relative h-64 w-80 overflow-hidden rounded-2xl">
         <img
-          src="https://picsum.photos/seed/blur3/640/512"
+          src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=640&h=512&fit=crop&auto=format&q=80"
           alt="demo"
           className="h-full w-full object-cover"
         />

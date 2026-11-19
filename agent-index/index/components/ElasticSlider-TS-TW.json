@@ -2,6 +2,9 @@
  "name": "ElasticSlider-TS-TW",
  "title": "ElasticSlider",
  "category": "sliders",
+ "categories": [
+  "sliders"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -17,7 +20,7 @@
   "motion",
   "3 colors"
  ],
- "usage": "import Cmp from \"@/components/ui/ElasticSlider\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "import { Volume2Icon, VolumeXIcon } from \"lucide-react\";\n\nimport ElasticSlider from \"@/components/ui/ElasticSlider\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center px-6\">\n      <div className=\"flex w-full max-w-sm flex-col items-center gap-2 rounded-xl border border-border bg-card px-6 pt-6 pb-10 shadow-sm\">\n        <p className=\"font-medium text-foreground text-sm\">Volume</p>\n        <p className=\"mb-4 text-muted-foreground text-xs\">\n          Pull past either end to feel the stretch.\n        </p>\n        <ElasticSlider\n          className=\"w-72\"\n          defaultValue={60}\n          leftIcon={<VolumeXIcon className=\"size-5 text-muted-foreground\" />}\n          maxValue={100}\n          rightIcon={<Volume2Icon className=\"size-5 text-muted-foreground\" />}\n          startingValue={0}\n        />\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/ElasticSlider.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/ElasticSlider-TS-TW.json",

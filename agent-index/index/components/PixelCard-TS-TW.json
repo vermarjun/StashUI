@@ -2,6 +2,12 @@
  "name": "PixelCard-TS-TW",
  "title": "Pixel Reveal Card",
  "category": "cards",
+ "categories": [
+  "cards",
+  "effects",
+  "features",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +22,7 @@
   "pure",
   "16 colors"
  ],
- "usage": "import Cmp from \"@/components/ui/PixelCard\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap gap-6 items-center justify-center p-8\">\n      <Cmp variant=\"default\">\n        <div className=\"absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none select-none\">\n          <span className=\"text-foreground text-sm font-semibold\">Default</span>\n          <span className=\"text-muted-foreground text-xs\">Hover me</span>\n        </div>\n      </Cmp>\n      <Cmp variant=\"blue\">\n        <div className=\"absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none select-none\">\n          <span className=\"text-foreground text-sm font-semibold\">Blue</span>\n          <span className=\"text-muted-foreground text-xs\">Hover me</span>\n        </div>\n      </Cmp>\n      <Cmp variant=\"pink\">\n        <div className=\"absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none select-none\">\n          <span className=\"text-foreground text-sm font-semibold\">Pink</span>\n          <span className=\"text-muted-foreground text-xs\">Hover me</span>\n        </div>\n      </Cmp>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport PixelCard from \"@/components/ui/PixelCard\";\n\nconst CARDS = [\n  { variant: \"default\" as const, title: \"Default\", sub: \"Neutral pixels\" },\n  { variant: \"blue\" as const, title: \"Blue\", sub: \"Cool tones\" },\n  { variant: \"pink\" as const, title: \"Pink\", sub: \"Warm glow\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[520px] w-full flex-wrap items-center justify-center gap-6 p-8\">\n      {CARDS.map((c) => (\n        <PixelCard className=\"h-[360px] w-[260px] bg-card\" key={c.variant} variant={c.variant}>\n          <div className=\"pointer-events-none absolute inset-0 flex select-none flex-col items-center justify-center gap-1\">\n            <span className=\"font-semibold text-foreground text-xl tracking-tight\">{c.title}</span>\n            <span className=\"text-muted-foreground text-sm\">{c.sub}</span>\n            <span className=\"mt-4 rounded-full border border-border px-3 py-1 text-muted-foreground text-xs\">\n              Hover me\n            </span>\n          </div>\n        </PixelCard>\n      ))}\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/PixelCard.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/PixelCard-TS-TW.json",

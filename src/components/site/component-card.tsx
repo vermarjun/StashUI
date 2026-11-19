@@ -3,16 +3,18 @@
 import Link from "next/link";
 import { ComponentPreview } from "@/components/site/component-preview";
 import { GridVideo } from "@/components/site/grid-video";
-import { FrameworkBadges } from "@/components/site/framework-badges";
 import { getPreview } from "@/__registry__/previews.gen";
 import { cn } from "@/lib/utils";
 import type { ComponentMeta } from "@/__registry__/meta.gen";
 
 /**
- * A component cell: the preview, a thin divider, then the name + brand logos.
- * It carries no box of its own — the grid container draws the shared thin lines
- * and provides the inner padding (the "gap" within the grid). Clicking anywhere
- * opens the detail page via an overlay link.
+ * A component tile: a full-bleed preview "stage" (looped clip, or the live
+ * iframe when no clip exists) with the title and source library underneath.
+ * The whole tile is one link to the detail page.
+ *
+ * The stage is always dark: every clip is recorded on a dark canvas, so a dark
+ * frame keeps the grid calm in both site themes instead of punching black
+ * rectangles into a white page.
  */
 export function ComponentCard({
   item,
@@ -23,29 +25,33 @@ export function ComponentCard({
   designWidth?: number;
   className?: string;
 }) {
+  const nextOnly = !item.frameworks.includes("react");
   return (
-    <div
+    <Link
+      href={`/c/${item.name}`}
+      aria-label={item.title}
       className={cn(
-        "group relative flex flex-col transition-colors",
+        "group/card flex flex-col gap-2.5 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
     >
-      <Link
-        href={`/c/${item.name}`}
-        aria-label={item.title}
-        className="absolute inset-0 z-20 rounded-[inherit] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-      />
-      <div className="pointer-events-none select-none">
-        {getPreview(item.name).hasVideo ? (
-          <GridVideo name={item.name} title={item.title} />
-        ) : (
-          <ComponentPreview name={item.name} designWidth={designWidth} />
-        )}
+      <div className="preview-stage relative overflow-hidden rounded-xl border border-white/[0.07] bg-[#0a0a0a] shadow-[0_1px_0_0_rgba(255,255,255,0.03)_inset] transition-[border-color,box-shadow] duration-300 group-hover/card:border-white/20 group-hover/card:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]">
+        <div className="pointer-events-none select-none">
+          {getPreview(item.name).hasVideo ? (
+            <GridVideo name={item.name} title={item.title} />
+          ) : (
+            <ComponentPreview name={item.name} designWidth={designWidth} />
+          )}
+        </div>
       </div>
-      <div className="relative z-30 mt-3 flex items-center justify-between gap-2 border-t border-border pt-2.5">
-        <span className="truncate text-sm font-medium">{item.title}</span>
-        <FrameworkBadges frameworks={item.frameworks} />
+      <div className="flex min-w-0 items-baseline justify-between gap-3 px-0.5">
+        <span className="truncate text-sm font-medium text-foreground/90 transition-colors group-hover/card:text-foreground">
+          {item.title}
+        </span>
+        <span className="shrink-0 truncate text-xs text-muted-foreground">
+          {nextOnly ? "Next.js only" : item.library ?? ""}
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }

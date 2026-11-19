@@ -1,7 +1,11 @@
 {
  "name": "comp-181",
  "title": "Switch With Icon Label",
- "category": "checkboxes",
+ "category": "switches",
+ "categories": [
+  "switches",
+  "settings"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -17,7 +21,7 @@
  "flags": [
   "pure"
  ],
- "usage": "import Cmp from \"@/components/ui/comp-181\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "import Cmp from \"@/components/ui/comp-181\";\n\nconst ROWS = [\n  { title: \"Interface\", desc: \"Light or dark application chrome.\" },\n  { title: \"Code blocks\", desc: \"Syntax theme for snippets.\" },\n  { title: \"Emails\", desc: \"Theme used in HTML emails.\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-md rounded-xl border border-border bg-card p-6 text-card-foreground shadow-sm\">\n        <h3 className=\"font-semibold text-base\">Appearance</h3>\n        <p className=\"mt-1 text-muted-foreground text-sm\">Icon labels that follow the state.</p>\n        <div className=\"mt-5 divide-y divide-border\">\n          {ROWS.map((r) => (\n            <div className=\"flex items-center justify-between gap-6 py-4\" key={r.title}>\n              <div>\n                <p className=\"font-medium text-sm\">{r.title}</p>\n                <p className=\"text-muted-foreground text-xs\">{r.desc}</p>\n              </div>\n              <Cmp />\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/comp-181.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/comp-181.json",

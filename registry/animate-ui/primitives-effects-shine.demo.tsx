@@ -2,29 +2,38 @@
 
 import { Shine } from "@/registry/animate-ui/primitives-effects-shine";
 
+const base =
+  "rounded-xl border border-border bg-card px-8 py-4 text-base font-semibold text-foreground shadow-sm";
+
 export default function Demo() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6 p-8">
-      {/* Always-on shine */}
-      <Shine color="#ffffff" opacity={0.4} duration={1400} loop loopDelay={800}>
-        <div className="rounded-xl border border-border bg-gradient-to-br from-violet-600 to-indigo-700 px-6 py-4 text-sm font-semibold text-white shadow-lg">
-          Always Shining
+    <div className="flex flex-col items-center gap-8 p-10">
+      {/* Always-on shine, looping */}
+      <Shine asChild color="#ffffff" opacity={0.5} duration={1300} loop loopDelay={900} deg={-15}>
+        <div className="flex w-[420px] items-center justify-between rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground">Pro plan</p>
+            <p className="mt-1 text-3xl font-semibold text-foreground">$24<span className="text-base text-muted-foreground">/mo</span></p>
+          </div>
+          <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">Most popular</span>
         </div>
       </Shine>
 
-      {/* Shine on hover */}
-      <Shine color="#ffffff" opacity={0.5} duration={700} enableOnHover enable>
-        <div className="rounded-xl border border-border bg-muted px-6 py-4 text-sm font-semibold text-foreground shadow-sm">
-          Shine on Hover
-        </div>
-      </Shine>
+      <div className="flex gap-5">
+        {/* Shine on hover, looping while hovered */}
+        <Shine asChild color="#ffffff" opacity={0.6} duration={800} loop loopDelay={300} enableOnHover>
+          <button type="button" className={base}>
+            Hover me
+          </button>
+        </Shine>
 
-      {/* Shine on tap */}
-      <Shine color="#a78bfa" opacity={0.6} duration={600} enableOnTap enable={false}>
-        <div className="rounded-xl border border-border bg-background px-6 py-4 text-sm font-semibold text-foreground shadow-sm cursor-pointer">
-          Shine on Click
-        </div>
-      </Shine>
+        {/* Shine on tap */}
+        <Shine asChild color="#ffffff" opacity={0.6} duration={700} enableOnTap>
+          <button type="button" className={base}>
+            Click me
+          </button>
+        </Shine>
+      </div>
     </div>
   );
 }

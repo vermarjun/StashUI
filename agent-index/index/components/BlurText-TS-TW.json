@@ -2,6 +2,10 @@
  "name": "BlurText-TS-TW",
  "title": "Blur Text",
  "category": "text",
+ "categories": [
+  "text",
+  "scroll"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +20,7 @@
  "flags": [
   "motion"
  ],
- "usage": "\"use client\"\n\nimport BlurText from \"@/components/ui/BlurText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-12 min-h-[300px]\">\n      <BlurText\n        text=\"Design systems built to last\"\n        animateBy=\"words\"\n        direction=\"top\"\n        delay={150}\n        className=\"text-3xl font-bold text-foreground\"\n      />\n      <BlurText\n        text=\"Composable. Accessible. Beautiful.\"\n        animateBy=\"words\"\n        direction=\"bottom\"\n        delay={120}\n        stepDuration={0.4}\n        className=\"text-xl font-medium text-muted-foreground\"\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport { RotateCcw } from \"lucide-react\"\nimport BlurText from \"@/components/ui/BlurText\"\n\nexport default function Demo() {\n  const [run, setRun] = useState(0)\n\n  return (\n    <div className=\"relative flex min-h-[380px] w-full flex-col items-center justify-center gap-6 p-12\">\n      <div key={run} className=\"flex flex-col items-center gap-6\">\n        <BlurText\n          text=\"Design systems built to last\"\n          animateBy=\"words\"\n          direction=\"top\"\n          delay={150}\n          className=\"justify-center text-5xl font-bold tracking-tight text-foreground\"\n        />\n        <BlurText\n          text=\"Composable. Accessible. Beautiful.\"\n          animateBy=\"words\"\n          direction=\"bottom\"\n          delay={120}\n          stepDuration={0.4}\n          className=\"justify-center text-2xl font-medium text-muted-foreground\"\n        />\n      </div>\n      <button\n        type=\"button\"\n        onClick={() => setRun((n) => n + 1)}\n        className=\"absolute right-4 bottom-4 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground\"\n      >\n        <RotateCcw className=\"size-3.5\" />\n        Replay\n      </button>\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/BlurText.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/BlurText-TS-TW.json",

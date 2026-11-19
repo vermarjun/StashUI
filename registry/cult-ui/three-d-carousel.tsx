@@ -1,5 +1,26 @@
 "use client"
 
+const PHOTOS = [
+  "photo-1683009427042-e094996f9780",
+  "photo-1683223585116-23e136669e80",
+  "photo-1685904042960-66242a0ac352",
+  "photo-1688909906484-738d78601884",
+  "photo-1689229799782-b96891a0aa0d",
+  "photo-1691669151338-a983e71abc05",
+  "photo-1693162640799-9f192c4e0da3",
+  "photo-1693581176773-a5f2362209e6",
+  "photo-1694022861804-840f61d1c452",
+  "photo-1695239510467-f1e93d649c2b",
+  "photo-1695763594594-31505b18b58a",
+  "photo-1703600091728-8d0a2bf13396",
+  "photo-1704677982215-a2248af6009b",
+  "photo-1706049379414-437ec3a54e93",
+  "photo-1709949908058-a08659bfa922",
+  "photo-1709949908219-fd9046282019",
+];
+const photo = (i: number, w: number, h: number) =>
+  `https://images.unsplash.com/${PHOTOS[Math.abs(i) % PHOTOS.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
+
 import { memo, useEffect, useLayoutEffect, useMemo, useState } from "react"
 import {
   AnimatePresence,
@@ -179,7 +200,7 @@ function ThreeDPhotoCarousel() {
   const [isCarouselActive, setIsCarouselActive] = useState(true)
   const controls = useAnimation()
   const cards = useMemo(
-    () => keywords.map((keyword) => `https://picsum.photos/200/300?${keyword}`),
+    () => keywords.map((_, i) => photo(i, 400, 600)),
     []
   )
 

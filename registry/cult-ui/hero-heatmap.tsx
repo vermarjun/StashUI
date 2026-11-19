@@ -139,10 +139,17 @@ interface HeroHeatmapContextValue {
   mergedMobileShaderProps: Partial<HeatmapProps>
 }
 
+// Inline bolt mark so the shader has a shape without a public asset.
+const DEFAULT_HEATMAP_IMAGE =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 100 100'><path d='M58 4 16 58h28l-6 38 46-58H56z' fill='black'/></svg>"
+  )
+
 const defaultDesktopShaderProps: Partial<HeatmapProps> = {
   width: 1280,
   height: 720,
-  image: "/cult-icon.svg",
+  image: DEFAULT_HEATMAP_IMAGE,
   colors: [
     "#112069",
     "#1f3ca3",
@@ -163,7 +170,7 @@ const defaultDesktopShaderProps: Partial<HeatmapProps> = {
 }
 
 const defaultMobileShaderProps: Partial<HeatmapProps> = {
-  image: "/cult-icon.svg",
+  image: DEFAULT_HEATMAP_IMAGE,
   colors: [
     "#112069",
     "#1f3ca3",

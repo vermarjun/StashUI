@@ -1,3 +1,4 @@
+import { MessageCircle, Sparkles } from 'lucide-react';
 import { LiquidGlassCard } from '@/registry/ui-layouts/liquid-glass';
 
 const NotificationLiquid = () => {
@@ -19,13 +20,9 @@ const NotificationLiquid = () => {
         <div className='relative z-30 flex items-center p-4 text-white h-full'>
           {/* App Icon */}
           <div className='shrink-0 mr-4'>
-            <img
-              src='/apple-touch-icon.png'
-              alt='icon'
-              width={56}
-              height={56}
-              className='rounded-xl'
-            />
+            <div className='flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-indigo-600 shadow-inner'>
+              <Sparkles className='size-7 text-white' aria-hidden='true' />
+            </div>
           </div>
 
           <div className='grow pr-4'>
@@ -36,8 +33,8 @@ const NotificationLiquid = () => {
           <div className='shrink-0 ml-4 text-sm text-neutral-200 self-start pt-1'>12:34</div>
         </div>
         <img
-          src='/og.jpg'
-          alt='og'
+          src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&auto=format&q=80'
+          alt=''
           width={400}
           height={400}
           className='rounded-xl w-[92%] mx-auto h-full z-20 object-cover'
@@ -55,13 +52,9 @@ const NotificationLiquid = () => {
         <div className='relative z-30 flex items-center p-4 text-white'>
           {/* App Icon */}
           <div className='shrink-0 mr-4'>
-            <img
-              src='/apple-touch-icon.png'
-              alt='icon'
-              width={56}
-              height={56}
-              className='rounded-xl'
-            />
+            <div className='flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-green-600 shadow-inner'>
+              <MessageCircle className='size-7 fill-white text-white' aria-hidden='true' />
+            </div>
           </div>
 
           <div className='grow pr-4'>

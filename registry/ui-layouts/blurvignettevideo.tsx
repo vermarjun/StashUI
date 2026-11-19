@@ -1,6 +1,5 @@
 import { BlurVignette, BlurVignetteArticle } from '@/registry/ui-layouts/blur-vignette';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import React from 'react';
 
 function Blurvignettevideo() {

@@ -66,13 +66,13 @@ export default function Component() {
         </svg>
         <div className="grid gap-2">
           <Label htmlFor={id}>
-            Label{" "}
+            Supabase{" "}
             <span className="font-normal text-muted-foreground text-xs leading-[inherit]">
-              (Sublabel)
+              (Database)
             </span>
           </Label>
           <p className="text-muted-foreground text-xs" id={`${id}-description`}>
-            A short description goes here.
+            Sync auth, storage and Postgres from your Supabase project.
           </p>
         </div>
       </div>

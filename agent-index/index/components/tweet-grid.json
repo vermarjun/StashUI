@@ -2,6 +2,11 @@
  "name": "tweet-grid",
  "title": "Tweet Grid",
  "category": "cards",
+ "categories": [
+  "cards",
+  "testimonials",
+  "social"
+ ],
  "origin": "Cult UI",
  "origin_short": "cult",
  "exports": [
@@ -10,12 +15,12 @@
  "npm_deps": [],
  "registry_deps": [],
  "css": false,
- "hardcoded_colors": 14,
+ "hardcoded_colors": 1,
  "flags": [
   "pure",
-  "14 colors"
+  "1 colors"
  ],
- "usage": "\"use client\";\n\nimport { TweetGrid } from \"@/components/ui/tweet-grid\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto p-4\">\n      <TweetGrid\n        tweets={[\n          \"1620543756048035840\",\n          \"1629307668956545024\",\n          \"1634178537849057280\",\n          \"1638567890123456789\",\n          \"1645678901234567890\",\n          \"1652345678901234567\",\n        ]}\n        columns={3}\n        spacing=\"md\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { TweetGrid, type TweetData } from \"@/components/ui/tweet-grid\";\n\nconst tweets: TweetData[] = [\n  {\n    id: \"1\",\n    name: \"Maya Chen\",\n    handle: \"mayabuilds\",\n    avatar: \"https://i.pravatar.cc/96?img=47\",\n    verified: true,\n    text: \"Rebuilt our marketing site in a weekend with copy-paste components. The masonry testimonial grid alone saved me a day of fiddling with CSS columns.\",\n    date: \"9:41 AM · Oct 12, 2026\",\n    replies: 24,\n    reposts: 61,\n    likes: \"1.2K\",\n  },\n  {\n    id: \"2\",\n    name: \"Diego Alvarez\",\n    handle: \"diegoalv\",\n    avatar: \"https://i.pravatar.cc/96?img=12\",\n    text: \"Hot take: the best UI libraries are the ones you own. Copy the source, change the tokens, ship.\",\n    date: \"4:18 PM · Oct 9, 2026\",\n    replies: 88,\n    reposts: 140,\n    likes: \"2.9K\",\n  },\n  {\n    id: \"3\",\n    name: \"Priya Raman\",\n    handle: \"priyadesigns\",\n    avatar: \"https://i.pravatar.cc/96?img=32\",\n    verified: true,\n    text: \"Our activation went up 18% after we redid onboarding.\\n\\nNot because of a new feature. Because the empty states finally looked like someone cared.\",\n    date: \"11:02 AM · Oct 7, 2026\",\n    replies: 41,\n    reposts: 203,\n    likes: \"4.7K\",\n  },\n  {\n    id: \"4\",\n    name: \"Tom Becker\",\n    handle: \"tbecker\",\n    avatar: \"https://i.pravatar.cc/96?img=59\",\n    text: \"Dark mode that just works, keyboard focus that just works, motion that respects reduced-motion. That's the whole wishlist.\",\n    date: \"7:55 PM · Oct 5, 2026\",\n    replies: 9,\n    reposts: 17,\n    likes: 342,\n  },\n  {\n    id: \"5\",\n    name: \"Aisha Bello\",\n    handle: \"aishacodes\",\n    avatar: \"https://i.pravatar.cc/96?img=45\",\n    verified: true,\n    text: \"Shipped v2 of our dashboard today 🚀 Charts, tables, command palette, all themed from one tokens file.\",\n    date: \"2:30 PM · Oct 3, 2026\",\n    replies: 57,\n    reposts: 92,\n    likes: \"1.8K\",\n  },\n  {\n    id: \"6\",\n    name: \"Lucas Moreau\",\n    handle: \"lucasmoreau\",\n    avatar: \"https://i.pravatar.cc/96?img=15\",\n    text: \"Whoever made the hover states on these cards: thank you. Small details, huge difference.\",\n    date: \"10:12 AM · Sep 30, 2026\",\n    replies: 6,\n    reposts: 11,\n    likes: 268,\n  },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"mx-auto w-full max-w-5xl p-4\">\n      <TweetGrid tweets={tweets} columns={3} spacing=\"md\" />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/cult-ui/tweet-grid.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/tweet-grid.json",
@@ -49,7 +54,7 @@
   {
    "name": "className",
    "type": "string",
-   "default": "{cn(tweetItemVariants({ spacing }))}",
+   "default": "\"size-10 shrink-0 rounded-full object-cover\"",
    "required": false
   }
  ],

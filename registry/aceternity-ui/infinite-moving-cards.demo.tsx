@@ -31,8 +31,8 @@ const testimonials = [
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-5xl flex flex-col items-center justify-center py-10">
-      <InfiniteMovingCards items={testimonials} direction="left" speed="slow" />
+    <div className="w-full flex flex-col items-center justify-center py-10">
+      <InfiniteMovingCards items={testimonials} direction="left" speed="normal" />
     </div>
   );
 }

@@ -11,25 +11,25 @@ import React from 'react';
 const SLIDES = [
   {
     value: 'slide-1',
-    img: 'https://picsum.photos/seed/pc1/900/500',
+    img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=900&h=500&fit=crop&auto=format&q=80',
     label: 'Mountain Vista',
     sub: 'Snow-capped peaks at golden hour',
   },
   {
     value: 'slide-2',
-    img: 'https://picsum.photos/seed/pc2/900/500',
+    img: 'https://images.unsplash.com/photo-1756806983832-1f056cf24182?w=900&h=500&fit=crop&auto=format&q=80',
     label: 'Ocean Breeze',
     sub: 'Endless horizon over turquoise water',
   },
   {
     value: 'slide-3',
-    img: 'https://picsum.photos/seed/pc3/900/500',
+    img: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=900&h=500&fit=crop&auto=format&q=80',
     label: 'Forest Path',
     sub: 'Ancient trees filtered in morning light',
   },
   {
     value: 'slide-4',
-    img: 'https://picsum.photos/seed/pc4/900/500',
+    img: 'https://images.unsplash.com/photo-1755497595318-7e5e3523854f?w=900&h=500&fit=crop&auto=format&q=80',
     label: 'Desert Dunes',
     sub: 'Rolling sand at twilight',
   },

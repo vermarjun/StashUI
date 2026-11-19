@@ -23,6 +23,9 @@ export function GridVideo({
 }) {
   const ref = React.useRef<HTMLVideoElement>(null);
   const [inView, setInView] = React.useState(false);
+  // The poster image stays underneath; the video fades in only once it is
+  // actually painting frames, so a card never flashes black while it loads.
+  const [playing, setPlaying] = React.useState(false);
 
   React.useEffect(() => {
     const el = ref.current;
@@ -49,21 +52,32 @@ export function GridVideo({
   return (
     <div
       className={cn(
-        "relative aspect-[8/5] w-full overflow-hidden bg-background",
+        "relative aspect-[8/5] w-full overflow-hidden bg-[#0a0a0a]",
         className,
       )}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`/previews/${name}.jpg`}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <video
         ref={ref}
-        poster={`/previews/${name}.jpg`}
         muted
         loop
         playsInline
         preload="none"
         aria-label={title ? `${title} preview` : undefined}
-        className="absolute inset-0 h-full w-full object-cover"
+        onPlaying={() => setPlaying(true)}
+        className={cn(
+          "absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ease-out",
+          playing ? "opacity-100" : "opacity-0",
+        )}
       >
-        <source src={`/previews/${name}.webm`} type="video/webm" />
         <source src={`/previews/${name}.mp4`} type="video/mp4" />
       </video>
     </div>

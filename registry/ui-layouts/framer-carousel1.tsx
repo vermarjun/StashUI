@@ -1,7 +1,6 @@
 'use client';
 
 import { AnimatePresence, LayoutGroup, motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 // import { items } from '@/components/website/constant';
 
@@ -111,13 +110,7 @@ function FramerCarousel() {
                         },
                       }}
                     >
-                      <Image
-                        src={activeItem.url}
-                        width={1000}
-                        height={1000}
-                        alt='preview_img'
-                        className=' object-contain h-96  mx-auto rounded-md'
-                      />
+                      <img src={activeItem.url} width={1000} height={1000} alt='preview_img' className=' object-contain h-96  mx-auto rounded-md' />
                     </motion.div>
                   </motion.figure>
                 )}
@@ -142,13 +135,7 @@ function FramerCarousel() {
                   className={`relative p-2 shrink-0`}
                   onClick={() => setActiveItem(itemData)}
                 >
-                  <Image
-                    src={itemData?.url}
-                    width={400}
-                    height={400}
-                    alt='img'
-                    className='w-28 h-16 object-cover cursor-pointer relative z-2 rounded-md pointer-events-none'
-                  />
+                  <img src={itemData?.url} width={400} height={400} alt='img' className='w-28 h-16 object-cover cursor-pointer relative z-2 rounded-md pointer-events-none' />
                   {itemData?.id === activeItem?.id && (
                     <motion.div
                       layoutId='slider'

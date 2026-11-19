@@ -2,6 +2,11 @@
  "name": "primitives-effects-click",
  "title": "Click",
  "category": "effects",
+ "categories": [
+  "effects",
+  "buttons",
+  "ctas"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -16,7 +21,7 @@
  "flags": [
   "motion"
  ],
- "usage": "\"use client\";\n\nimport { Click } from \"@/components/ui/primitives-effects-click\";\n\nconst variants = [\"ring\", \"ripple\", \"crosshair\", \"burst\", \"particles\"] as const;\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-4 p-8\">\n      <div className=\"flex flex-wrap gap-3 justify-center\">\n        {variants.map((variant) => (\n          <Click key={variant} variant={variant} color=\"currentColor\" size={80}>\n            <button\n              type=\"button\"\n              className=\"rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors capitalize\"\n            >\n              {variant}\n            </button>\n          </Click>\n        ))}\n      </div>\n      <p className=\"text-xs text-muted-foreground\">Click any button to see the effect</p>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\nimport { Click } from \"@/components/ui/primitives-effects-click\";\n\nconst variants = [\"ring\", \"ripple\", \"crosshair\", \"burst\", \"particles\"] as const;\n\nfunction EffectButton({ variant }: { variant: (typeof variants)[number] }) {\n  // scope each effect to its own button; without a scope every Click listens\n  // on the whole document and all five effects fire on any click\n  const ref = React.useRef<HTMLButtonElement>(null);\n  return (\n    <Click variant={variant} scope={ref} color=\"currentColor\" size={150} duration={750}>\n      <button\n        ref={ref}\n        type=\"button\"\n        className=\"h-14 w-36 rounded-xl border border-border bg-card text-base font-medium capitalize text-foreground transition-colors hover:bg-muted\"\n      >\n        {variant}\n      </button>\n    </Click>\n  );\n}\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-10\">\n      <div className=\"flex max-w-3xl flex-wrap justify-center gap-6\">\n        {variants.map((variant) => (\n          <EffectButton key={variant} variant={variant} />\n        ))}\n      </div>\n      <p className=\"text-sm text-muted-foreground\">Click a button to see its effect</p>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-effects-click.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-effects-click.json",

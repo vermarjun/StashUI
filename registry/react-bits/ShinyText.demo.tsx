@@ -3,23 +3,23 @@ import ShinyText from "@/registry/react-bits/ShinyText";
 
 export default function Demo() {
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-[300px] gap-6 bg-background p-8">
+    <div className="flex min-h-[420px] w-full flex-col items-center justify-center gap-6 p-8">
       <ShinyText
-        text="Shine bright like a component."
+        className="font-semibold text-5xl tracking-tight"
+        color="color-mix(in oklab, var(--foreground) 45%, transparent)"
+        shineColor="var(--foreground)"
         speed={2.5}
-        className="text-3xl font-semibold tracking-tight"
-        color="hsl(var(--muted-foreground))"
-        shineColor="hsl(var(--foreground))"
         spread={100}
+        text="Shine bright like a component."
       />
       <ShinyText
-        text="Light moves. Text stays."
-        speed={3}
-        className="text-xl font-medium"
-        color="hsl(var(--muted-foreground) / 0.7)"
-        shineColor="hsl(var(--foreground))"
-        spread={80}
+        className="font-medium text-xl"
+        color="color-mix(in oklab, var(--foreground) 35%, transparent)"
         delay={1}
+        shineColor="var(--foreground)"
+        speed={3}
+        spread={80}
+        text="Light moves. Text stays."
       />
     </div>
   );

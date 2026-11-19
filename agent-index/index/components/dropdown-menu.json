@@ -2,6 +2,10 @@
  "name": "dropdown-menu",
  "title": "Dropdown Menu",
  "category": "selects",
+ "categories": [
+  "selects",
+  "menus"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -28,7 +32,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "import { DropdownMenu } from \"@/components/ui/dropdown-menu\";\n\nexport default function Demo() {\n  return <DropdownMenu />;\n}",
+ "usage": "\"use client\";\n\nimport {\n  CreditCardIcon,\n  KeyboardIcon,\n  LogOutIcon,\n  SettingsIcon,\n  UserIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\n\nexport default function Demo() {\n  const [showStatusBar, setShowStatusBar] = useState(true);\n\n  return (\n    <div className=\"flex min-h-[480px] w-full items-center justify-center\">\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button variant=\"outline\">Open menu</Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent className=\"w-56\">\n          <DropdownMenuLabel>My account</DropdownMenuLabel>\n          <DropdownMenuSeparator />\n          <DropdownMenuGroup>\n            <DropdownMenuItem>\n              <UserIcon aria-hidden=\"true\" className=\"opacity-60\" size={16} />\n              Profile\n              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>\n            </DropdownMenuItem>\n            <DropdownMenuItem>\n              <CreditCardIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              Billing\n              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>\n            </DropdownMenuItem>\n            <DropdownMenuItem>\n              <SettingsIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              Settings\n              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>\n            </DropdownMenuItem>\n            <DropdownMenuItem>\n              <KeyboardIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              Keyboard shortcuts\n            </DropdownMenuItem>\n          </DropdownMenuGroup>\n          <DropdownMenuSeparator />\n          <DropdownMenuCheckboxItem\n            checked={showStatusBar}\n            onCheckedChange={setShowStatusBar}\n          >\n            Show status bar\n          </DropdownMenuCheckboxItem>\n          <DropdownMenuItem>\n            <UsersIcon aria-hidden=\"true\" className=\"opacity-60\" size={16} />\n            Team\n          </DropdownMenuItem>\n          <DropdownMenuSeparator />\n          <DropdownMenuItem>\n            <LogOutIcon aria-hidden=\"true\" className=\"opacity-60\" size={16} />\n            Log out\n            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>\n          </DropdownMenuItem>\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/dropdown-menu.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/dropdown-menu.json",

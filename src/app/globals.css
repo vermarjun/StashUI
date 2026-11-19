@@ -39,6 +39,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --animate-aurora: aurora 60s linear infinite;
   --animate-shimmer-slide: shimmer-slide var(--speed, 3s) ease-in-out infinite alternate;
   --animate-spin-around: spin-around calc(var(--speed, 3s) * 2) infinite linear;
   --animate-marquee: marquee var(--duration, 40s) linear infinite;
@@ -138,6 +139,15 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
   }
 }
 

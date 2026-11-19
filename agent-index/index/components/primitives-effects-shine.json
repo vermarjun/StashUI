@@ -2,6 +2,11 @@
  "name": "primitives-effects-shine",
  "title": "Shine",
  "category": "effects",
+ "categories": [
+  "effects",
+  "buttons",
+  "features"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -16,7 +21,7 @@
  "flags": [
   "motion"
  ],
- "usage": "\"use client\";\n\nimport { Shine } from \"@/components/ui/primitives-effects-shine\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-8\">\n      {/* Always-on shine */}\n      <Shine color=\"#ffffff\" opacity={0.4} duration={1400} loop loopDelay={800}>\n        <div className=\"rounded-xl border border-border bg-gradient-to-br from-violet-600 to-indigo-700 px-6 py-4 text-sm font-semibold text-white shadow-lg\">\n          Always Shining\n        </div>\n      </Shine>\n\n      {/* Shine on hover */}\n      <Shine color=\"#ffffff\" opacity={0.5} duration={700} enableOnHover enable>\n        <div className=\"rounded-xl border border-border bg-muted px-6 py-4 text-sm font-semibold text-foreground shadow-sm\">\n          Shine on Hover\n        </div>\n      </Shine>\n\n      {/* Shine on tap */}\n      <Shine color=\"#a78bfa\" opacity={0.6} duration={600} enableOnTap enable={false}>\n        <div className=\"rounded-xl border border-border bg-background px-6 py-4 text-sm font-semibold text-foreground shadow-sm cursor-pointer\">\n          Shine on Click\n        </div>\n      </Shine>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { Shine } from \"@/components/ui/primitives-effects-shine\";\n\nconst base =\n  \"rounded-xl border border-border bg-card px-8 py-4 text-base font-semibold text-foreground shadow-sm\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center gap-8 p-10\">\n      {/* Always-on shine, looping */}\n      <Shine asChild color=\"#ffffff\" opacity={0.5} duration={1300} loop loopDelay={900} deg={-15}>\n        <div className=\"flex w-[420px] items-center justify-between rounded-2xl border border-border bg-card p-6 shadow-sm\">\n          <div>\n            <p className=\"text-xs uppercase tracking-widest text-muted-foreground\">Pro plan</p>\n            <p className=\"mt-1 text-3xl font-semibold text-foreground\">$24<span className=\"text-base text-muted-foreground\">/mo</span></p>\n          </div>\n          <span className=\"rounded-full border border-border px-3 py-1 text-xs text-muted-foreground\">Most popular</span>\n        </div>\n      </Shine>\n\n      <div className=\"flex gap-5\">\n        {/* Shine on hover, looping while hovered */}\n        <Shine asChild color=\"#ffffff\" opacity={0.6} duration={800} loop loopDelay={300} enableOnHover>\n          <button type=\"button\" className={base}>\n            Hover me\n          </button>\n        </Shine>\n\n        {/* Shine on tap */}\n        <Shine asChild color=\"#ffffff\" opacity={0.6} duration={700} enableOnTap>\n          <button type=\"button\" className={base}>\n            Click me\n          </button>\n        </Shine>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-effects-shine.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-effects-shine.json",

@@ -1,5 +1,4 @@
 import { SpotLightItem, Spotlight } from '@/registry/ui-layouts/spotlight';
-import Image from 'next/image';
 import React from 'react';
 
 export default function SpotlightCard1() {
@@ -52,13 +51,7 @@ export default function SpotlightCard1() {
                       className={`absolute rounded-lg top-0 left-0 h-full w-full -z-10 bg-center bg-cover`}
                     />
 
-                    <Image
-                      src={box?.chart}
-                      alt='grid'
-                      width={600}
-                      className='w-fit mx-auto '
-                      height={600}
-                    />
+                    <img src={box?.chart} alt='grid' width={600} className='w-fit mx-auto ' height={600} />
                     <h1 className='text-center xl:text-2xl lg:text-xl text-2xl font-semibold'>
                       {box?.title}
                     </h1>

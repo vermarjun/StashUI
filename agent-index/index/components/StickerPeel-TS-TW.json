@@ -2,6 +2,10 @@
  "name": "StickerPeel-TS-TW",
  "title": "Sticker Peel Effect",
  "category": "effects",
+ "categories": [
+  "effects",
+  "ecommerce"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +20,7 @@
  "flags": [
   "1 colors"
  ],
- "usage": "\"use client\";\nimport Cmp from \"@/components/ui/StickerPeel\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full flex items-center justify-center overflow-hidden\">\n      <Cmp\n        imageSrc=\"https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=300&h=300&fit=crop&auto=format\"\n        width={200}\n        rotate={15}\n        peelBackHoverPct={30}\n        peelBackActivePct={45}\n        initialPosition=\"center\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport StickerPeel from \"@/components/ui/StickerPeel\";\n\n// A die-cut sticker: white border, transparent outside, so the peel reads as\n// paper lifting off rather than a photo being cropped.\nconst art = `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"600\" height=\"600\" viewBox=\"0 0 600 600\">\n<circle cx=\"300\" cy=\"300\" r=\"290\" fill=\"#ffffff\"/>\n<circle cx=\"300\" cy=\"300\" r=\"262\" fill=\"#111111\"/>\n<circle cx=\"300\" cy=\"300\" r=\"236\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-dasharray=\"2 14\" stroke-linecap=\"round\"/>\n<path fill=\"#ffffff\" d=\"M300 112 C314 196 336 218 420 232 C336 246 314 268 300 352 C286 268 264 246 180 232 C264 218 286 196 300 112 Z\"/>\n<text x=\"300\" y=\"440\" text-anchor=\"middle\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"68\" font-weight=\"800\" letter-spacing=\"4\" fill=\"#ffffff\">SHIP IT</text>\n<text x=\"300\" y=\"486\" text-anchor=\"middle\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"22\" font-weight=\"600\" letter-spacing=\"8\" fill=\"#9a9a9a\">FRIDAY CLUB</text>\n</svg>`;\nconst sticker = `data:image/svg+xml;utf8,${encodeURIComponent(art)}`;\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[580px] w-full items-center justify-center overflow-hidden\">\n      <p className=\"pointer-events-none absolute bottom-8 select-none text-sm text-muted-foreground\">\n        Hover to peel it back, drag to move it\n      </p>\n      <StickerPeel\n        imageSrc={sticker}\n        width={300}\n        rotate={0}\n        peelBackHoverPct={28}\n        peelBackActivePct={48}\n        shadowIntensity={0.6}\n        lightingIntensity={0.1}\n        initialPosition=\"center\"\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/StickerPeel.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/StickerPeel-TS-TW.json",

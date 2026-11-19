@@ -60,7 +60,7 @@ export function ComponentGrid({
 
   return (
     <div>
-      <div className="relative mb-6 max-w-sm">
+      <div className="relative mb-8 max-w-sm">
         <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           value={query}
@@ -83,7 +83,7 @@ export function ComponentGrid({
             className={cn(
               "grid",
               CARD_LAYOUT === "gap"
-                ? "gap-4"
+                ? "gap-x-5 gap-y-8"
                 : "border-l border-t border-border",
               GRID_COLS[cols] ?? GRID_COLS[3],
             )}
@@ -95,7 +95,7 @@ export function ComponentGrid({
                 designWidth={designWidth}
                 className={
                   CARD_LAYOUT === "gap"
-                    ? "rounded-xl bg-card/40 p-3 hover:bg-card/70"
+                    ? undefined
                     : "border-r border-b border-border p-3 hover:bg-muted/20"
                 }
               />

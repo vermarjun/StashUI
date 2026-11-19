@@ -1,12 +1,12 @@
 # @vermarjun/stashui-mcp
 
-MCP server over the StashUI registry: 1518 React components, **navigated rather
+MCP server over the StashUI registry: 790 curated React components, **navigated rather
 than searched**.
 
 ## Why not just list the components
 
 Razorpay's Blade MCP puts all 89 component names into the tool's parameter
-description and lets the model pick. That is the right call at 89. At 1518 the
+description and lets the model pick. That is the right call at 89. At 790 the
 catalogue neither fits in a tool schema nor is useful once it does, so this
 server is layered instead, and each layer costs only what its question needs.
 

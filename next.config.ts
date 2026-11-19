@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
   // the workspace root to avoid Next inferring the wrong one.
   outputFileTracingRoot: projectRoot,
 
+  // Lets a dev server and a production server run side by side from one
+  // checkout (the recording Mac does: dev for verification, prod for takes).
+  distDir: process.env.NEXT_DIST_DIR || ".next",
+
   // This gallery aggregates hundreds of third-party components whose source and
   // auto-generated demos are not guaranteed strict-clean. Runtime issues are
   // contained by a per-preview error boundary, so we don't let imperfect vendor
@@ -23,7 +27,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "picsum.photos" },
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
       { protocol: "https", hostname: "pbs.twimg.com" },
       { protocol: "https", hostname: "abs.twimg.com" },

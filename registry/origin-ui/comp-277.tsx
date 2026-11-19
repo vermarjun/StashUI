@@ -15,7 +15,7 @@ export default function Component() {
           </p>
           <ul className="list-inside list-disc text-muted-foreground text-sm">
             <li>Minimum 8 characters</li>
-            <li>Inlcude a special character</li>
+            <li>Include a special character</li>
           </ul>
         </div>
       </div>

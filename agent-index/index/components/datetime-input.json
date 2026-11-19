@@ -1,7 +1,11 @@
 {
  "name": "datetime-input",
  "title": "Datetime Input",
- "category": "calendar",
+ "category": "inputs",
+ "categories": [
+  "inputs",
+  "calendar"
+ ],
  "origin": "Ui-Layouts",
  "origin_short": "uila",
  "exports": [
@@ -17,7 +21,7 @@
  "flags": [
   "8 colors"
  ],
- "usage": "import { SmartDatetimeInput } from \"@/components/ui/datetime-input\";\n\nexport default function Demo() {\n  return <SmartDatetimeInput />;\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { SmartDatetimeInput } from \"@/components/ui/datetime-input\";\n\nexport default function Demo() {\n  const [date, setDate] = useState<Date | undefined>();\n\n  return (\n    <div className=\"flex min-h-[320px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-3\">\n        <label className=\"text-sm font-medium text-foreground\">Schedule post</label>\n        <SmartDatetimeInput\n          value={date}\n          onValueChange={setDate}\n          placeholder='Try \"tomorrow at 5pm\" or \"next friday 9am\"'\n        />\n        <p className=\"h-5 text-sm text-muted-foreground\">\n          {date\n            ? `Publishes ${date.toLocaleString(\"en-US\", {\n                weekday: \"long\",\n                month: \"short\",\n                day: \"numeric\",\n                hour: \"numeric\",\n                minute: \"2-digit\",\n              })}`\n            : \"Type a date in plain English and press Enter.\"}\n        </p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/ui-layouts/datetime-input.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/datetime-input.json",

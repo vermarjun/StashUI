@@ -1,34 +1,34 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { Star } from 'lucide-react'
+import { Play, Star } from 'lucide-react'
 
 const TESTIMONIALS = [
   {
     name: 'Beverley',
     role: 'Co-Founder NYZ',
-    image: 'https://picsum.photos/seed/beverley/100/100',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&fit=crop&auto=format&q=80',
     quote:
       "Joining the program dramatically improved my writing skills and thought leadership, resulting in a notable increase in inbound leads. It's a life-changing experience.",
     rating: 5,
-    videoThumbnail: 'https://picsum.photos/seed/testimonial-video/1200/675',
+    videoThumbnail: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=1200&h=675&fit=crop&crop=faces&auto=format&q=80',
   },
   {
     name: 'Marcus Aurelius',
     role: 'Founder Stoic Mind',
-    image: 'https://picsum.photos/seed/marcus/100/100',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&auto=format&q=80',
     quote:
       "Lara's frameworks for personal branding are unparalleled. In six months, we've seen engagement rates triple across our primary social channels.",
     rating: 5,
-    videoThumbnail: 'https://picsum.photos/seed/testimonial2/1200/675',
+    videoThumbnail: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&h=675&fit=crop&crop=faces&auto=format&q=80',
   },
   {
     name: 'Sarah Jenkins',
     role: 'CEO GrowthLab',
-    image: 'https://picsum.photos/seed/sarah/100/100',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&h=160&fit=crop&auto=format&q=80',
     quote:
       "The clarity and depth of the mentorship provided exceeded all expectations. It's not just about numbers; it's about building a sustainable legacy.",
     rating: 5,
-    videoThumbnail: 'https://picsum.photos/seed/testimonial3/1200/675',
+    videoThumbnail: 'https://images.unsplash.com/photo-1765438869321-d60141efd813?w=1200&h=675&fit=crop&crop=faces&auto=format&q=80',
   },
 ]
 
@@ -37,10 +37,10 @@ export const TestimonialBasic = () => {
     <section className="bg-white text-black font-dmSans py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto border-x border-neutral-200">
         <div className="text-center mb-24">
-          <div className="inline-flex items-center gap-2 text-sm text-nuetral-400 font-semibold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 text-sm text-neutral-400 font-semibold uppercase tracking-widest">
             « Testimonials »
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-nuetral-900 tracking-tighter uppercase">
+          <h2 className="text-5xl md:text-7xl font-black text-neutral-900 tracking-tighter uppercase">
             Social Proof.
           </h2>
         </div>
@@ -57,10 +57,15 @@ export const TestimonialBasic = () => {
 
               <img
                 src={t.videoThumbnail}
-                className="w-full h-full relative z-10 object-cover transition-transform duration-300 rounded-2xl"
+                className="w-full h-full relative z-10 object-cover transition-transform duration-500 rounded-2xl group-hover:scale-[1.02]"
                 alt={`Testimonial Video ${i}`}
               />
-              <div className="absolute bottom-8 left-8 z-10 bg-black/50 backdrop-blur px-6 py-3 rounded-2xl border border-white/20">
+              <div className="absolute inset-0 z-20 flex items-center justify-center">
+                <span className="flex size-20 items-center justify-center rounded-full bg-white/90 shadow-xl transition-transform duration-300 group-hover:scale-110">
+                  <Play className="ml-1 size-8 fill-black stroke-black" />
+                </span>
+              </div>
+              <div className="absolute bottom-8 left-8 z-20 bg-black/50 backdrop-blur px-6 py-3 rounded-2xl border border-white/20">
                 <span className="text-white font-mono text-sm tracking-tighter">
                   04:32 // HD_PLAYBACK
                 </span>
@@ -78,16 +83,16 @@ export const TestimonialBasic = () => {
                   />
                 </div>
                 <div className="relative z-10">
-                  <h4 className="text-2xl font-black uppercase tracking-tight text-nuetral-900">
+                  <h4 className="text-2xl font-black uppercase tracking-tight text-neutral-900">
                     {t.name}
                   </h4>
-                  <p className="text-sm font-mono text-nuetral-500 uppercase tracking-widest">
+                  <p className="text-sm font-mono text-neutral-500 uppercase tracking-widest">
                     {t.role}
                   </p>
                 </div>
               </div>
               <div className="p-4">
-                <p className="text-3xl font-medium text-nuetral-800 font-manrope">
+                <p className="text-3xl font-medium text-neutral-800 font-manrope">
                   "{t.quote}"
                 </p>
 

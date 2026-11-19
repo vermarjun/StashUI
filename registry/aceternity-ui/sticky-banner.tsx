@@ -16,7 +16,6 @@ export const StickyBanner = ({
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log(latest);
     if (hideOnScroll && latest > 40) {
       setOpen(false);
     } else {
@@ -52,6 +51,7 @@ export const StickyBanner = ({
         animate={{
           scale: 1,
         }}
+        aria-label="Close banner"
         className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
         onClick={() => setOpen(!open)}
       >

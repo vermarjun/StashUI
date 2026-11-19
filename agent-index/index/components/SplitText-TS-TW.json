@@ -2,6 +2,10 @@
  "name": "SplitText-TS-TW",
  "title": "SplitText",
  "category": "text",
+ "categories": [
+  "text",
+  "scroll"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -15,7 +19,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "\"use client\";\nimport SplitText from \"@/components/ui/SplitText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full min-h-[360px] gap-6 p-12 bg-background\">\n      <SplitText\n        text=\"Every letter has a story.\"\n        tag=\"h2\"\n        className=\"text-4xl font-bold text-foreground\"\n        splitType=\"chars\"\n        duration={1.1}\n        delay={40}\n        from={{ opacity: 0, y: 50 }}\n        to={{ opacity: 1, y: 0 }}\n      />\n      <SplitText\n        text=\"Watch them arrive one by one.\"\n        tag=\"p\"\n        className=\"text-xl text-muted-foreground\"\n        splitType=\"words\"\n        duration={0.9}\n        delay={80}\n        from={{ opacity: 0, y: 24 }}\n        to={{ opacity: 1, y: 0 }}\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { useState } from \"react\";\nimport { RotateCcw } from \"lucide-react\";\nimport SplitText from \"@/components/ui/SplitText\";\n\nexport default function Demo() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"relative flex min-h-[380px] w-full flex-col items-center justify-center gap-6 p-12\">\n      <div key={run} className=\"flex flex-col items-center gap-5\">\n        <SplitText\n          text=\"Every letter has a story.\"\n          tag=\"h2\"\n          className=\"text-6xl font-bold tracking-tight text-foreground\"\n          splitType=\"chars\"\n          duration={1.1}\n          delay={40}\n          rootMargin=\"0px\"\n          from={{ opacity: 0, y: 50 }}\n          to={{ opacity: 1, y: 0 }}\n        />\n        <SplitText\n          text=\"Watch them arrive one by one.\"\n          tag=\"p\"\n          className=\"text-2xl text-muted-foreground\"\n          splitType=\"words\"\n          duration={0.9}\n          delay={80}\n          rootMargin=\"0px\"\n          from={{ opacity: 0, y: 24 }}\n          to={{ opacity: 1, y: 0 }}\n        />\n      </div>\n      <button\n        type=\"button\"\n        onClick={() => setRun((n) => n + 1)}\n        className=\"absolute right-4 bottom-4 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground\"\n      >\n        <RotateCcw className=\"size-3.5\" />\n        Replay\n      </button>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/SplitText.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/SplitText-TS-TW.json",

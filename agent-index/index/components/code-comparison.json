@@ -1,15 +1,18 @@
 {
  "name": "code-comparison",
  "title": "Code Comparison",
- "category": "data-display",
+ "category": "code",
+ "categories": [
+  "code",
+  "data-display"
+ ],
  "origin": "Magic UI",
  "origin_short": "mag",
  "exports": [
   "CodeComparison"
  ],
  "npm_deps": [
-  "shiki",
-  "next-themes"
+  "shiki"
  ],
  "registry_deps": [],
  "css": false,
@@ -17,7 +20,7 @@
  "flags": [
   "3 colors"
  ],
- "usage": "\"use client\";\nimport { CodeComparison } from \"@/components/ui/code-comparison\";\n\nconst beforeCode = `function fetchUser(id) {\n  return fetch('/api/users/' + id)\n    .then(function(res) {\n      return res.json();\n    })\n    .then(function(data) {\n      return data;\n    })\n    .catch(function(err) {\n      console.error(err); // [!code --]\n    });\n}`;\n\nconst afterCode = `async function fetchUser(id: string) { // [!code ++]\n  try { // [!code ++]\n    const res = await fetch(\\`/api/users/\\${id}\\`); // [!code ++]\n    if (!res.ok) throw new Error(res.statusText);\n    return await res.json() as User; // [!code ++]\n  } catch (err) {\n    console.error('fetchUser failed:', err);\n    return null;\n  }\n}`;\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto px-4 py-8\">\n      <CodeComparison\n        beforeCode={beforeCode}\n        afterCode={afterCode}\n        language=\"typescript\"\n        filename=\"api.ts\"\n        lightTheme=\"github-light\"\n        darkTheme=\"github-dark\"\n        highlightColor=\"#ff3333\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { CodeComparison } from \"@/components/ui/code-comparison\";\n\nconst beforeCode = `function fetchUser(id) {\n  return fetch('/api/users/' + id) // [!code focus]\n    .then(function(res) { // [!code focus]\n      return res.json(); // [!code focus]\n    }) // [!code focus]\n    .then(function(data) {\n      return data;\n    })\n    .catch(function(err) {\n      console.error(err); // [!code --]\n    });\n}`;\n\nconst afterCode = `async function fetchUser(id: string) { // [!code ++]\n  try { // [!code ++]\n    const res = await fetch(\\`/api/users/\\${id}\\`); // [!code ++]\n    if (!res.ok) throw new Error(res.statusText);\n    return await res.json() as User; // [!code ++]\n  } catch (err) {\n    console.error('fetchUser failed:', err);\n    return null;\n  }\n}`;\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-5xl mx-auto px-6 py-10\">\n      <CodeComparison\n        beforeCode={beforeCode}\n        afterCode={afterCode}\n        language=\"typescript\"\n        filename=\"api.ts\"\n        lightTheme=\"github-light\"\n        darkTheme=\"github-dark\"\n        highlightColor=\"#ff3333\"\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/magic-ui/code-comparison.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/code-comparison.json",

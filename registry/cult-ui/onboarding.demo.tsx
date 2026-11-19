@@ -5,7 +5,7 @@ import { Onboarding } from "@/registry/cult-ui/onboarding"
 export default function Demo() {
   return (
     <div className="flex items-center justify-center w-full min-h-[420px] p-6 bg-background">
-      <Onboarding.Root totalSteps={3} defaultValue={1} className="w-full max-w-sm">
+      <Onboarding totalSteps={3} defaultValue={1} className="w-full max-w-sm">
         <Onboarding.StepIndicator className="mb-6 justify-center" />
 
         <Onboarding.Step step={1}>
@@ -22,7 +22,7 @@ export default function Demo() {
         <Onboarding.Step step={2}>
           <Onboarding.Header
             title="Pick your style"
-            description="Components are minimal and monochrome by default — ready for your theme."
+            description="Components are minimal and monochrome by default, ready for your theme."
           />
           <div className="mt-4 flex flex-col gap-2">
             {["Minimal", "Vibrant", "System default"].map((option) => (
@@ -50,7 +50,7 @@ export default function Demo() {
         </Onboarding.Step>
 
         <Onboarding.Navigation className="mt-6" />
-      </Onboarding.Root>
+      </Onboarding>
     </div>
   )
 }

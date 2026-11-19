@@ -1,6 +1,6 @@
 {
  "slug": "text",
- "count": 91,
+ "count": 66,
  "summary": "Animated text effects: ASCII art waves, blur reveals, orbiting letters, curved paths, and decryption.",
  "components": [
   {
@@ -43,22 +43,21 @@
    ]
   },
   {
-   "name": "CircularText-TS-TW",
-   "title": "Circular Text",
+   "name": "Counter-TS-TW",
+   "title": "Animated Number Counter",
    "origin": "rb",
-   "blurb": "Text letters orbit in a circle, speeding up or pausing on hover.",
+   "blurb": "Digit-by-digit animated number counter with sliding digits and gradient…",
    "trigger": [
-    "always",
-    "hover"
+    "always"
    ],
-   "tone": "playful",
+   "tone": "technical",
    "slots": [
-    "logo-wall",
-    "decoration"
+    "stat",
+    "chart"
    ],
    "flags": [
     "motion",
-    "1c"
+    "sized-parent"
    ]
   },
   {
@@ -139,43 +138,6 @@
    ]
   },
   {
-   "name": "GlitchText-TS-TW",
-   "title": "Glitch Text",
-   "origin": "rb",
-   "blurb": "Text glitches with clipped overlays in cyan and red, like a VHS artifact.",
-   "trigger": [
-    "always",
-    "hover"
-   ],
-   "tone": "dramatic",
-   "slots": [
-    "headline"
-   ],
-   "flags": [
-    "pure",
-    "9c"
-   ]
-  },
-  {
-   "name": "GradientText-TS-TW",
-   "title": "GradientText",
-   "origin": "rb",
-   "blurb": "Text fills with an animated gradient that sweeps horizontally, vertically, or…",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "headline",
-    "primary-cta"
-   ],
-   "flags": [
-    "motion",
-    "4c",
-    "2 ports"
-   ]
-  },
-  {
    "name": "RotatingText-TS-TW",
    "title": "Rotating Text",
    "origin": "rb",
@@ -190,8 +152,7 @@
     "body-text"
    ],
    "flags": [
-    "motion",
-    "2 ports"
+    "motion"
    ]
   },
   {
@@ -242,23 +203,6 @@
    "flags": []
   },
   {
-   "name": "ScrollVelocity-TS-TW",
-   "title": "Scroll Velocity",
-   "origin": "rb",
-   "blurb": "Text scrolls horizontally, accelerating and reversing direction based on page…",
-   "trigger": [
-    "scroll"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "page-background",
-    "section-background"
-   ],
-   "flags": [
-    "motion"
-   ]
-  },
-  {
    "name": "ShinyText-TS-TW",
    "title": "ShinyText",
    "origin": "rb",
@@ -307,6 +251,23 @@
    "flags": []
   },
   {
+   "name": "TextCursor-TS-TW",
+   "title": "Text Cursor Trail",
+   "origin": "rb",
+   "blurb": "Text characters trail behind the cursor with motion physics.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "playful",
+   "slots": [
+    "decoration",
+    "hero"
+   ],
+   "flags": [
+    "motion"
+   ]
+  },
+  {
    "name": "TextPressure-TS-TW",
    "title": "Text Pressure",
    "origin": "rb",
@@ -324,21 +285,6 @@
     "sized-parent",
     "2c"
    ]
-  },
-  {
-   "name": "TextType-TS-TW",
-   "title": "TextType",
-   "origin": "rb",
-   "blurb": "Text types out character by character, pauses, then deletes and repeats with a…",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "hero",
-    "headline"
-   ],
-   "flags": []
   },
   {
    "name": "TrueFocus-TS-TW",
@@ -375,40 +321,96 @@
    ]
   },
   {
-   "name": "animated-gradient-text",
-   "title": "Animated Gradient Text",
-   "origin": "own",
-   "blurb": "Text fills with a gradient that drifts smoothly from left to right on loop.",
+   "name": "about-architecture",
+   "title": "About Architecture Studio",
+   "origin": "uila",
+   "blurb": "About section for architecture studio with scroll animations.",
    "trigger": [
-    "always"
+    "scroll"
    ],
    "tone": "minimal",
    "slots": [
-    "headline",
-    "body-text"
+    "page-background",
+    "section-background",
+    "hero"
    ],
    "flags": [
-    "pure",
-    "3c"
+    "motion",
+    "10c"
    ]
   },
   {
-   "name": "animated-shiny-text",
-   "title": "Animated Shiny Text",
-   "origin": "mag",
-   "blurb": "A bright shimmer sweeps across text from left to right, looping continuously.",
+   "name": "about-ecommerse",
+   "title": "About E-Commerce Brand",
+   "origin": "uila",
+   "blurb": "E-commerce brand about section with heritage story and craftsmanship focus.",
    "trigger": [
-    "always"
+    "scroll"
    ],
    "tone": "minimal",
    "slots": [
-    "headline",
-    "body-text",
-    "badge"
+    "page-background",
+    "section-background",
+    "hero"
    ],
    "flags": [
-    "pure",
-    "4c"
+    "motion",
+    "10c"
+   ]
+  },
+  {
+   "name": "about-sass",
+   "title": "About SaaS Company",
+   "origin": "uila",
+   "blurb": "SaaS product about section with features and integrations showcase.",
+   "trigger": [
+    "scroll"
+   ],
+   "tone": "technical",
+   "slots": [
+    "page-background",
+    "section-background",
+    "hero"
+   ],
+   "flags": [
+    "motion",
+    "26c"
+   ]
+  },
+  {
+   "name": "about-whyus",
+   "title": "About Why Us",
+   "origin": "uila",
+   "blurb": "Why-us section highlighting company values and differentiators.",
+   "trigger": [
+    "scroll"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "page-background",
+    "section-background",
+    "hero"
+   ],
+   "flags": [
+    "motion",
+    "21c"
+   ]
+  },
+  {
+   "name": "animated-number",
+   "title": "Animated Number",
+   "origin": "cult",
+   "blurb": "Number that springs to new values with custom formatting.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "stat",
+    "chart"
+   ],
+   "flags": [
+    "motion"
    ]
   },
   {
@@ -461,8 +463,7 @@
    ],
    "flags": [
     "pure",
-    "10c",
-    "2 ports"
+    "10c"
    ]
   },
   {
@@ -502,25 +503,6 @@
    ]
   },
   {
-   "name": "cult-ui-text-animate",
-   "title": "Text Animate",
-   "origin": "cult",
-   "blurb": "Text animates in with configurable entrance styles when scrolled into view.",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "headline"
-   ],
-   "flags": [
-    "motion",
-    "4c",
-    "2 ports"
-   ]
-  },
-  {
    "name": "dia-text-reveal",
    "title": "Dia Text Reveal",
    "origin": "mag",
@@ -554,8 +536,7 @@
     "body-text"
    ],
    "flags": [
-    "motion",
-    "2 ports"
+    "motion"
    ]
   },
   {
@@ -573,41 +554,7 @@
    ],
    "flags": [
     "motion",
-    "2c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "focus",
-   "title": "Word Focus Effect",
-   "origin": "insp",
-   "blurb": "Words blur and sharpen in sequence with an animated corner-bracket highlight.",
-   "trigger": [
-    "always",
-    "hover"
-   ],
-   "tone": "dramatic",
-   "slots": [
-    "headline"
-   ],
-   "flags": [
-    "pure"
-   ]
-  },
-  {
-   "name": "gradient-heading",
-   "title": "Gradient Heading",
-   "origin": "cult",
-   "blurb": "Text with a static gradient fill and responsive sizing variants.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "headline"
-   ],
-   "flags": [
-    "12c"
+    "2c"
    ]
   },
   {
@@ -645,235 +592,7 @@
     "hero"
    ],
    "flags": [
-    "motion",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-colourful-text",
-   "title": "Colourful Text",
-   "origin": "insp",
-   "blurb": "Characters pulse and shift through a color palette continuously.",
-   "trigger": [
-    "timer"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "section-background"
-   ],
-   "flags": [
-    "pure",
-    "11c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-encrypted-text",
-   "title": "Encrypted Text",
-   "origin": "insp",
-   "blurb": "Text characters cycle through random symbols until focused or hovered.",
-   "trigger": [
-    "focus",
-    "hover"
-   ],
-   "tone": "playful",
-   "slots": [
-    "headline",
-    "decoration"
-   ],
-   "flags": [
-    "pure",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-flip-words",
-   "title": "Flip Words",
-   "origin": "insp",
-   "blurb": "Words flip vertically and rotate through a cycling list.",
-   "trigger": [
-    "timer"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "section-background"
-   ],
-   "flags": [
-    "pure",
-    "2c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-hyper-text",
-   "title": "Hyper Text",
-   "origin": "insp",
-   "blurb": "Text unscrambles letter-by-letter from random symbols.",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "section-background"
-   ],
-   "flags": [
-    "pure",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-line-shadow-text",
-   "title": "Line Shadow Text",
-   "origin": "insp",
-   "blurb": "Glowing underline traces beneath text on a loop.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "decoration"
-   ],
-   "flags": [
-    "pure",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-morphing-text",
-   "title": "Morphing Text",
-   "origin": "insp",
-   "blurb": "Text smoothly morphs from one word to another in a loop.",
-   "trigger": [
-    "timer"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "hero"
-   ],
-   "flags": [
-    "pure",
-    "3 ports"
-   ]
-  },
-  {
-   "name": "inspira-number-ticker",
-   "title": "Number Ticker",
-   "origin": "insp",
-   "blurb": "Number counts up smoothly from zero to a target value.",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "technical",
-   "slots": [
-    "stat",
-    "hero"
-   ],
-   "flags": [
-    "pure",
-    "2c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-sparkles-text",
-   "title": "Sparkles Text",
-   "origin": "insp",
-   "blurb": "Text glows with sparkling points of light.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "decoration"
-   ],
-   "flags": [
-    "pure",
-    "2c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-spinning-text",
-   "title": "Spinning Text",
-   "origin": "insp",
-   "blurb": "Text rotates continuously around its center axis.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "playful",
-   "slots": [
-    "decoration",
-    "loading"
-   ],
-   "flags": [
-    "pure",
-    "sized-parent",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-text-generate-effect",
-   "title": "Text Generate Effect",
-   "origin": "insp",
-   "blurb": "Text appears word-by-word as if being typed out.",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "body-text",
-    "section-background"
-   ],
-   "flags": [
-    "pure",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-text-hover-effect",
-   "title": "Text Hover Effect",
-   "origin": "insp",
-   "blurb": "Text transforms under the cursor as you move over it.",
-   "trigger": [
-    "pointer-move"
-   ],
-   "tone": "playful",
-   "slots": [
-    "headline",
-    "decoration"
-   ],
-   "flags": [
-    "pure",
-    "9c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "inspira-text-reveal",
-   "title": "Text Reveal",
-   "origin": "insp",
-   "blurb": "Text is hidden behind a mask that wipes away on scroll.",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "headline",
-    "body-text"
-   ],
-   "flags": [
-    "pure",
-    "2 ports"
+    "motion"
    ]
   },
   {
@@ -925,8 +644,26 @@
     "hero"
    ],
    "flags": [
+    "pure"
+   ]
+  },
+  {
+   "name": "lightboard",
+   "title": "Lightboard",
+   "origin": "cult",
+   "blurb": "Text scrolls across a grid of circular lights; stops when hovered and can be…",
+   "trigger": [
+    "always",
+    "hover"
+   ],
+   "tone": "playful",
+   "slots": [
+    "decoration"
+   ],
+   "flags": [
     "pure",
-    "1c"
+    "canvas",
+    "4c"
    ]
   },
   {
@@ -943,8 +680,7 @@
     "decoration"
    ],
    "flags": [
-    "motion",
-    "2 ports"
+    "motion"
    ]
   },
   {
@@ -962,25 +698,45 @@
    ],
    "flags": [
     "pure",
-    "3 ports"
+    "2 ports"
    ]
   },
   {
-   "name": "primitives-texts-counting-number",
-   "title": "Counting Number",
-   "origin": "anim",
-   "blurb": "Number increments smoothly from zero to a target.",
+   "name": "number-flow-trading",
+   "title": "Live Price Ticker",
+   "origin": "uila",
+   "blurb": "Live price ticker with animated number flow and directional arrow indicator.",
    "trigger": [
-    "scroll",
+    "click",
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "stat",
+    "data-table"
+   ],
+   "flags": [
+    "pure",
+    "6c"
+   ]
+  },
+  {
+   "name": "number-ticker",
+   "title": "Number Ticker",
+   "origin": "mag",
+   "blurb": "Counter animating from a start value to a target number when scrolled into view.",
+   "trigger": [
     "viewport"
    ],
    "tone": "technical",
    "slots": [
     "stat",
-    "hero"
+    "hero",
+    "feature-card"
    ],
    "flags": [
-    "motion"
+    "motion",
+    "2c"
    ]
   },
   {
@@ -998,8 +754,7 @@
    ],
    "flags": [
     "motion",
-    "5c",
-    "2 ports"
+    "5c"
    ]
   },
   {
@@ -1034,7 +789,7 @@
    ],
    "flags": [
     "motion",
-    "3 ports"
+    "2 ports"
    ]
   },
   {
@@ -1056,24 +811,6 @@
    ]
   },
   {
-   "name": "primitives-texts-rotating",
-   "title": "Rotating Text",
-   "origin": "anim",
-   "blurb": "Text cycles through a list, rotating on a timer.",
-   "trigger": [
-    "timer"
-   ],
-   "tone": "technical",
-   "slots": [
-    "headline",
-    "section-background"
-   ],
-   "flags": [
-    "motion",
-    "2 ports"
-   ]
-  },
-  {
    "name": "primitives-texts-scrolling-number",
    "title": "Scrolling Number",
    "origin": "anim",
@@ -1089,24 +826,6 @@
    "flags": [
     "motion",
     "sized-parent"
-   ]
-  },
-  {
-   "name": "primitives-texts-shimmering",
-   "title": "Shimmering Text",
-   "origin": "anim",
-   "blurb": "Text glimmers with a moving light reflection.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "loading",
-    "decoration"
-   ],
-   "flags": [
-    "motion",
-    "3d"
    ]
   },
   {
@@ -1128,70 +847,17 @@
    ]
   },
   {
-   "name": "primitives-texts-splitting",
-   "title": "Splitting Text",
-   "origin": "anim",
-   "blurb": "Text splits and spreads apart with animation.",
+   "name": "scroll-animation-text",
+   "title": "Scroll Reveal Text",
+   "origin": "uila",
+   "blurb": "Text sections revealing from different directions as you scroll.",
    "trigger": [
-    "hover",
     "scroll"
    ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "decoration"
-   ],
-   "flags": [
-    "motion"
-   ]
-  },
-  {
-   "name": "primitives-texts-typing",
-   "title": "Typing Text",
-   "origin": "anim",
-   "blurb": "Text appears character-by-character as if being typed.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
+   "tone": "minimal",
    "slots": [
     "body-text",
-    "hero"
-   ],
-   "flags": [
-    "motion"
-   ]
-  },
-  {
-   "name": "radiant-text",
-   "title": "Radiant Text",
-   "origin": "insp",
-   "blurb": "Text radiates with an expanding glow effect.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "headline",
-    "decoration"
-   ],
-   "flags": [
-    "pure",
-    "4c"
-   ]
-  },
-  {
-   "name": "randomized-text-effect",
-   "title": "Randomized Text Effect",
-   "origin": "uila",
-   "blurb": "Text characters randomly shift positions or styles.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "playful",
-   "slots": [
-    "decoration",
-    "headline"
+    "section-background"
    ],
    "flags": [
     "motion"
@@ -1216,65 +882,10 @@
    ]
   },
   {
-   "name": "scroll-text",
-   "title": "Scroll Text Animation",
-   "origin": "uila",
-   "blurb": "Text transforms as you scroll past it.",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "body-text",
-    "section-background"
-   ],
-   "flags": [
-    "motion",
-    "2c"
-   ]
-  },
-  {
    "name": "scroll-text-marquee",
    "title": "Scroll Text Marquee",
    "origin": "uila",
    "blurb": "Text scrolls horizontally as a marquee.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "section-background",
-    "decoration"
-   ],
-   "flags": [
-    "motion",
-    "sized-parent"
-   ]
-  },
-  {
-   "name": "scroll-text-marquee-bidirectional",
-   "title": "Bidirectional Marquee",
-   "origin": "uila",
-   "blurb": "Multiple text rows scroll in opposite directions.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "decorative",
-   "slots": [
-    "section-background",
-    "decoration"
-   ],
-   "flags": [
-    "motion",
-    "sized-parent"
-   ]
-  },
-  {
-   "name": "scroll-text-marquee-unidirectional",
-   "title": "Unidirectional Marquee",
-   "origin": "uila",
-   "blurb": "Text scrolls horizontally in one direction continuously.",
    "trigger": [
     "always"
    ],
@@ -1303,8 +914,7 @@
    ],
    "flags": [
     "motion",
-    "4c",
-    "2 ports"
+    "4c"
    ]
   },
   {
@@ -1322,8 +932,7 @@
    ],
    "flags": [
     "motion",
-    "sized-parent",
-    "2 ports"
+    "sized-parent"
    ]
   },
   {
@@ -1393,8 +1002,7 @@
     "body-text"
    ],
    "flags": [
-    "motion",
-    "2 ports"
+    "motion"
    ]
   },
   {
@@ -1431,25 +1039,7 @@
    ],
    "flags": [
     "motion",
-    "4c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "text-gif",
-   "title": "Text GIF",
-   "origin": "cult",
-   "blurb": "Text with animated GIF or video overlay.",
-   "trigger": [
-    "always"
-   ],
-   "tone": "dramatic",
-   "slots": [
-    "hero",
-    "headline"
-   ],
-   "flags": [
-    "pure"
+    "4c"
    ]
   },
   {
@@ -1471,24 +1061,6 @@
    ]
   },
   {
-   "name": "text-highlight",
-   "title": "Text Highlight",
-   "origin": "insp",
-   "blurb": "Highlight sweeps left to right behind inline text on mount, optionally fading…",
-   "trigger": [
-    "always"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "body-text",
-    "headline"
-   ],
-   "flags": [
-    "pure",
-    "1c"
-   ]
-  },
-  {
    "name": "text-hover-effect",
    "title": "Text Hover Effect",
    "origin": "ace",
@@ -1505,8 +1077,7 @@
    "flags": [
     "motion",
     "sized-parent",
-    "9c",
-    "2 ports"
+    "9c"
    ]
   },
   {
@@ -1524,62 +1095,45 @@
    ],
    "flags": [
     "motion",
-    "4c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "text-scroll-animation",
-   "title": "Text Scroll Animation",
-   "origin": "uila",
-   "blurb": "Full-page scroll sequence with text animations staggered by word, letter, or…",
-   "trigger": [
-    "scroll",
-    "viewport"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "body-text",
-    "section-background"
-   ],
-   "flags": [
-    "motion"
-   ]
-  },
-  {
-   "name": "text-scroll-reveal",
-   "title": "Text Scroll Reveal",
-   "origin": "insp",
-   "blurb": "Words fade in one by one as the page scrolls past this double-height section.",
-   "trigger": [
-    "scroll"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "body-text",
-    "section-background"
-   ],
-   "flags": [
-    "pure",
     "4c"
    ]
   },
   {
-   "name": "typewriter",
-   "title": "Typewriter",
-   "origin": "cult",
-   "blurb": "Types out a base string, then cycles through alternating phrases with a…",
+   "name": "text-reveal-card",
+   "title": "Text Reveal Card",
+   "origin": "ace",
+   "blurb": "Reveals hidden text by horizontal clip-path under a cursor-tracked gradient…",
    "trigger": [
-    "always"
+    "pointer-move"
    ],
-   "tone": "playful",
+   "tone": "dramatic",
    "slots": [
-    "headline",
-    "hero"
+    "hero",
+    "feature-card",
+    "decoration"
    ],
    "flags": [
     "motion",
-    "1c"
+    "11c"
+   ]
+  },
+  {
+   "name": "textoverlay-videomasking",
+   "title": "Text Overlay Video Mask",
+   "origin": "uila",
+   "blurb": "Video plays through text mask creating text-shaped reveal effect.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "media",
+    "headline"
+   ],
+   "flags": [
+    "motion",
+    "sized-parent",
+    "4c"
    ]
   },
   {
@@ -1636,23 +1190,6 @@
    "flags": [
     "pure",
     "sized-parent"
-   ]
-  },
-  {
-   "name": "word-rotate",
-   "title": "Word Rotate",
-   "origin": "mag",
-   "blurb": "Words cycle in sequence, each fading in from top and out to bottom on a timer.",
-   "trigger": [
-    "timer"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "headline",
-    "hero"
-   ],
-   "flags": [
-    "motion"
    ]
   }
  ]

@@ -4,7 +4,10 @@ export interface ComponentMeta {
   name: string;
   title: string;
   description: string;
+  /** Primary type (first of `categories`). */
   category: string;
+  /** Every category slug: primary type, extra types, use cases. */
+  categories: string[];
   frameworks: string[];
   library: string | null;
   librarySlug: string | null;
@@ -17,1125 +20,76 @@ export interface LibraryInfo {
   url: string;
 }
 
-export const categories = ["buttons","cards","effects","text","backgrounds","tooltips","carousels","media","navigation","inputs","heroes","gradients","misc","loaders","borders","modals","file-upload","data-display","testimonials","notifications","badges","avatars","sliders","accordions","forms","calendar","selects","pricing","footers","checkboxes","tables","dashboards"] as const;
+export const categories = ["cards","effects","heroes","features","carousels","media","portfolio","testimonials","3d","backgrounds","dashboards","avatars","text","cursors","scroll","buttons","borders","ctas","navigation","menus","inputs","search","tabs","gradients","devices","loaders","steppers","chat","tooltips","modals","file-upload","data-display","switches","badges","social","charts","feedback","code","sliders","checkboxes","settings","accordions","ecommerce","calendar","notifications","auth","onboarding","tables","selects","forms","payments","contact","footers","pricing"] as const;
 export type Category = (typeof categories)[number];
 
 /** Categories we authored or ported (treated as our own). */
-export const ownCategories = ["dashboards"] as const;
+export const ownCategories = [] as const;
 
 /** External libraries we imported components from (as-is, credited). */
 export const libraries: LibraryInfo[] = [
   {
     "name": "Origin UI",
     "slug": "origin-ui",
-    "count": 550,
+    "count": 203,
     "url": "https://coss.com"
   },
   {
     "name": "Ui-Layouts",
     "slug": "ui-layouts",
-    "count": 232,
+    "count": 140,
     "url": "https://www.ui-layouts.com"
-  },
-  {
-    "name": "WebGradients",
-    "slug": "webgradients",
-    "count": 174,
-    "url": "https://webgradients.com"
   },
   {
     "name": "React Bits",
     "slug": "react-bits",
-    "count": 130,
+    "count": 118,
     "url": "https://reactbits.dev"
   },
   {
     "name": "Aceternity UI",
     "slug": "aceternity-ui",
-    "count": 116,
+    "count": 101,
     "url": "https://ui.aceternity.com"
   },
   {
     "name": "Magic UI",
     "slug": "magic-ui",
-    "count": 72,
+    "count": 61,
     "url": "https://magicui.design"
   },
   {
     "name": "Cult UI",
     "slug": "cult-ui",
-    "count": 72,
+    "count": 55,
     "url": "https://cult-ui.com"
   },
   {
     "name": "Animate UI",
     "slug": "animate-ui",
-    "count": 38,
+    "count": 29,
     "url": "https://animate-ui.com"
+  },
+  {
+    "name": "WebGradients",
+    "slug": "webgradients",
+    "count": 12,
+    "url": "https://webgradients.com"
   }
 ];
 
 export const componentsMeta: ComponentMeta[] = [
   {
-    "name": "shimmer-button",
-    "title": "Shimmer Button",
-    "description": "A button with an animated shimmer that sweeps around its border. Pure CSS.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "gradient-button",
-    "title": "Gradient Button",
-    "description": "A pill button with an animated gradient border and soft inner glow.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "spotlight-card",
-    "title": "Spotlight Card",
-    "description": "A card with a cursor-following radial spotlight over its surface.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "marquee",
-    "title": "Marquee",
-    "description": "An infinite, seamless marquee with hover-pause and vertical support.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "animated-gradient-text",
-    "title": "Animated Gradient Text",
-    "description": "Inline text with a smoothly drifting gradient fill.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "grid",
-    "title": "Grid Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "spotlight",
-    "title": "Spotlight Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "meteors",
-    "title": "Meteors",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "animated-tooltip",
-    "title": "Animated Tooltip",
-    "description": "Aceternity UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "3d-pin",
-    "title": "3D Pin Card",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aceternity-ui-grid",
-    "title": "Grid Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "moving-line",
-    "title": "Scroll Progress Line",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aceternity-ui-spotlight",
-    "title": "Spotlight Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "glowing-stars",
-    "title": "Glowing Stars",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "text-reveal-card",
-    "title": "Text Reveal Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aceternity-ui-animated-tooltip",
-    "title": "Animated Tooltip",
-    "description": "Aceternity UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "following-pointer",
-    "title": "Custom Cursor Follower",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-beams",
-    "title": "Background Beams",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "svg-mask-effect",
-    "title": "SVG Mask Reveal",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "infinite-moving-cards",
-    "title": "Infinite Moving Cards",
-    "description": "Aceternity UI component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aceternity-ui-3d-pin",
-    "title": "3D Pin Card",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
     "name": "evervault-card",
     "title": "Evervault Card",
-    "description": "Aceternity UI component.",
+    "description": "A circular badge with centered text and a pointer-tracked radial gradient that reveals an animated, randomized character grid on hover. Renders with a dark/light mode blur backdrop.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "effects",
+      "heroes",
+      "features"
     ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "parallax-scroll",
-    "title": "Parallax Scroll Grid",
-    "description": "Aceternity UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "parallax-scroll-2",
-    "title": "Rotated Parallax Grid",
-    "description": "Aceternity UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "parallax-hero-images",
-    "title": "Parallax Hero Images",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "tracing-beam",
-    "title": "Tracing Beam",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "container-scroll-animation",
-    "title": "Container Scroll Animation",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "text-generate-effect",
-    "title": "Text Generate Effect",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aceternity-ui-meteors",
-    "title": "Meteors",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "card-stack",
-    "title": "Card Stack",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "moving-border",
-    "title": "Moving Border Button",
-    "description": "Aceternity UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "lamp",
-    "title": "Lamp",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "sticky-scroll-reveal",
-    "title": "Sticky Scroll Reveal",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "floating-navbar",
-    "title": "Floating Navbar",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "navbar-menu",
-    "title": "Navbar Menu",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "tailwindcss-buttons",
-    "title": "Tailwind CSS Buttons",
-    "description": "Aceternity UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "bento-grid",
-    "title": "Bento Grid",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "card-hover-effect",
-    "title": "Card Hover Effect",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "google-gemini-effect",
-    "title": "Google Gemini Effect",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "gooey-input",
-    "title": "Gooey Input",
-    "description": "Aceternity UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "typewriter-effect",
-    "title": "Typewriter Effect",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-boxes",
-    "title": "Background Boxes",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "3d-card",
-    "title": "3D Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "images-slider",
-    "title": "Images Slider",
-    "description": "Aceternity UI component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "direction-aware-hover",
-    "title": "Direction Aware Hover",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "tabs",
-    "title": "Animated Tabs",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "hero-parallax",
-    "title": "Hero Parallax",
-    "description": "Aceternity UI component.",
-    "category": "heroes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "wavy-background",
-    "title": "Wavy Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-gradient",
-    "title": "Background Gradient",
-    "description": "Aceternity UI component.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "layout-grid",
-    "title": "Layout Grid",
-    "description": "Aceternity UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-gradient-animation",
-    "title": "Background Gradient Animation",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "macbook-scroll",
-    "title": "Macbook Scroll",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "input",
-    "title": "Radial Glow Input",
-    "description": "Aceternity UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "label",
-    "title": "Form Label",
-    "description": "Aceternity UI component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "multi-step-loader",
-    "title": "Multi Step Loader",
-    "description": "Aceternity UI component.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aurora-background",
-    "title": "Aurora Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "canvas-reveal-effect",
-    "title": "Canvas Reveal Effect",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "hover-border-gradient",
-    "title": "Hover Border Gradient",
-    "description": "Aceternity UI component.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "hero-highlight",
-    "title": "Hero Highlight",
-    "description": "Aceternity UI component.",
-    "category": "heroes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "vortex",
-    "title": "Vortex",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "wobble-card",
-    "title": "Wobble Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "placeholders-and-vanish-input",
-    "title": "Vanish Placeholder Input",
-    "description": "Aceternity UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "flip-words",
-    "title": "Flip Words",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "link-preview",
-    "title": "Link Preview",
-    "description": "Aceternity UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "glare-card",
-    "title": "Glare Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "animated-modal",
-    "title": "Animated Modal",
-    "description": "Aceternity UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "sidebar",
-    "title": "Sidebar",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "apple-cards-carousel",
-    "title": "Apple Cards Carousel",
-    "description": "Aceternity UI component.",
-    "category": "carousels",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "shooting-stars",
-    "title": "Shooting Stars",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "stars-background",
-    "title": "Stars Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "card-spotlight",
-    "title": "Card Spotlight",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "file-upload",
-    "title": "File Upload",
-    "description": "Aceternity UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "floating-dock",
-    "title": "Floating Dock",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "focus-cards",
-    "title": "Focus Cards",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-beams-with-collision",
-    "title": "Background Beams With Collision",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "timeline",
-    "title": "Timeline",
-    "description": "Aceternity UI component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "text-hover-effect",
-    "title": "Text Hover Effect",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "lens",
-    "title": "Lens",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-lines",
-    "title": "Background Lines",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "animated-testimonials",
-    "title": "Animated Testimonials",
-    "description": "Aceternity UI component.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "world-map",
-    "title": "World Map",
-    "description": "Aceternity UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "code-block",
-    "title": "Code Block",
-    "description": "Aceternity UI component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "carousel",
-    "title": "Carousel",
-    "description": "Aceternity UI component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "colourful-text",
-    "title": "Colourful Text",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "squiggly-text",
-    "title": "Squiggly Text",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "magnetic-button",
-    "title": "Magnetic Button",
-    "description": "Aceternity UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "notch",
-    "title": "Notch",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "spotlight-new",
-    "title": "Spotlight",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "glowing-effect",
-    "title": "Glowing Effect",
-    "description": "Aceternity UI component.",
-    "category": "borders",
     "frameworks": [
       "react",
       "next"
@@ -1146,1976 +100,32 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "3d-marquee",
     "title": "3D Image Marquee",
-    "description": "Aceternity UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "resizable-navbar",
-    "title": "Resizable Navbar",
-    "description": "Aceternity UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "draggable-card",
-    "title": "Draggable Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "sticky-banner",
-    "title": "Sticky Banner",
-    "description": "Aceternity UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "pointer-highlight",
-    "title": "Pointer Highlight",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "stateful-button",
-    "title": "Stateful Button",
-    "description": "Aceternity UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "loader",
-    "title": "Loader",
-    "description": "Aceternity UI component.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "comet-card",
-    "title": "Comet Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "background-ripple-effect",
-    "title": "Background Ripple Effect",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "pixelated-canvas",
-    "title": "Pixelated Canvas",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "canvas-text",
-    "title": "Canvas Text",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "layout-text-flip",
-    "title": "Layout Text Flip",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "dotted-glow-background",
-    "title": "Dotted Glow Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "tooltip-card",
-    "title": "Tooltip Card",
-    "description": "Aceternity UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "encrypted-text",
-    "title": "Encrypted Text",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "noise-background",
-    "title": "Noise Background",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "dither-shader",
-    "title": "Dither Shader",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "webcam-pixel-grid",
-    "title": "Webcam Pixel Grid",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "images-badge",
-    "title": "Images Badge",
-    "description": "Aceternity UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "keyboard",
-    "title": "Interactive Keyboard",
-    "description": "Aceternity UI component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "terminal",
-    "title": "Terminal",
-    "description": "Aceternity UI component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "3d-globe",
-    "title": "3D Globe",
-    "description": "Aceternity UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "ascii-art",
-    "title": "ASCII Art Renderer",
-    "description": "Aceternity UI component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "scales",
-    "title": "Scales Pattern",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "text-flipping-board",
-    "title": "Split Flap Board",
-    "description": "Aceternity UI component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "cards-demo-1",
-    "title": "Hover Overlay Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "cards-demo-2",
-    "title": "Author Blog Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "cards-demo-3",
-    "title": "AI Tools Card",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "features-section-demo-1",
-    "title": "Feature Grid Section",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "features-section-demo-2",
-    "title": "Icon Feature Grid",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "features-section-demo-3",
-    "title": "Bento Feature Section",
-    "description": "Aceternity UI component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "aceternity-ui-background-lines",
-    "title": "Background Lines",
-    "description": "Aceternity UI component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Aceternity UI",
-    "librarySlug": "aceternity-ui"
-  },
-  {
-    "name": "magic-card",
-    "title": "Magic Card",
-    "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "progressive-blur",
-    "title": "Progressive Blur",
-    "description": "The Progressive Blur component adds a smooth blur gradient effect to scrollable content, indicating more content below or above.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "neon-gradient-card",
-    "title": "Neon Gradient Card",
-    "description": "A beautiful neon card effect",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "android",
-    "title": "Android Mockup",
-    "description": "A mockup of an Android device.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-lens",
-    "title": "Lens Zoom",
-    "description": "A interactive component that enables zooming into images, videos and other elements.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "line-shadow-text",
-    "title": "Line Shadow Text",
-    "description": "A text component with a moving line shadow.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "noise-texture",
-    "title": "Noise Texture",
-    "description": "An SVG fractal noise layer using feTurbulence, desaturation, and contrast controls for subtle texture overlays.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "grid-pattern",
-    "title": "Grid Pattern",
-    "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "interactive-grid-pattern",
-    "title": "Interactive Grid Pattern",
-    "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "dot-pattern",
-    "title": "Dot Pattern",
-    "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "hero-video-dialog",
-    "title": "Hero Video Dialog",
-    "description": "A hero video dialog component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "flickering-grid",
-    "title": "Flickering Grid",
-    "description": "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-marquee",
-    "title": "Marquee",
-    "description": "An infinite scrolling component that can be used to display text, images, or videos.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-globe",
-    "title": "Globe",
-    "description": "An autorotating, interactive, and highly performant globe made using WebGL.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "glare-hover",
-    "title": "Glare Hover",
-    "description": "A diagonal glare on hover using a ::before gradient and CSS variables (angle, size, duration, color).",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-shimmer-button",
-    "title": "Shimmer Button",
-    "description": "A button with a shimmering light which travels around the perimeter.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "tweet-card",
-    "title": "Tweet Card",
-    "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-bento-grid",
-    "title": "Bento Grid",
-    "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "particles",
-    "title": "Particles",
-    "description": "Particles are a fun way to add some visual flair to your website. They can be used to create a sense of depth, movement, and interactivity.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "hexagon-pattern",
-    "title": "Hexagon Pattern",
-    "description": "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "warp-background",
-    "title": "Warp Background",
-    "description": "A card with a time warping background effect.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "number-ticker",
-    "title": "Number Ticker",
-    "description": "Animate numbers to count up or down to a target number",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "ripple",
-    "title": "Ripple",
-    "description": "An animated ripple effect typically used behind elements to emphasize them.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "animated-list",
-    "title": "Animated List",
-    "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "retro-grid",
-    "title": "Retro Grid",
-    "description": "An animated scrolling retro grid effect",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "striped-pattern",
-    "title": "Striped Pattern",
-    "description": "A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "animated-shiny-text",
-    "title": "Animated Shiny Text",
-    "description": "A light glare effect which pans across text making it appear as if it is shimmering.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "animated-grid-pattern",
-    "title": "Animated Grid Pattern",
-    "description": "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-meteors",
-    "title": "Meteors",
-    "description": "A meteor shower effect.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "scroll-progress",
-    "title": "Scroll Progress",
-    "description": "Animated Scroll Progress for your pages",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "pointer",
-    "title": "Pointer",
-    "description": "A component that displays a pointer when hovering over an element",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "morphing-text",
-    "title": "Morphing Text",
-    "description": "A dynamic text morphing component for Magic UI.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "animated-beam",
-    "title": "Animated Beam",
-    "description": "An animated beam of light which travels along a path. Useful for showcasing the integration features of a website.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "smooth-cursor",
-    "title": "Smooth Cursor",
-    "description": "A customizable, physics-based smooth cursor animation component with spring animations and rotation effects",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "text-reveal",
-    "title": "Text Reveal",
-    "description": "Fade in text as you scroll down the page.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "aurora-text",
-    "title": "Aurora Text",
-    "description": "A beautiful aurora text effect",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "dia-text-reveal",
-    "title": "Dia Text Reveal",
-    "description": "A horizontal color band sweeps across text, revealing a gradient shine before settling on the base color.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "orbiting-circles",
-    "title": "Orbiting Circles",
-    "description": "A collection of circles which move in orbit along a circular path",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "hyper-text",
-    "title": "Hyper Text",
-    "description": "A text animation that scrambles letters before revealing the final text.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "dock",
-    "title": "Dock",
-    "description": "An implementation of the MacOS dock using react + tailwindcss + motion",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "word-rotate",
-    "title": "Word Rotate",
-    "description": "A vertical rotation of words",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "avatar-circles",
-    "title": "Avatar Circles",
-    "description": "Overlapping circles of avatars.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "typing-animation",
-    "title": "Typing Animation",
-    "description": "Characters appearing in typed animation",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "spinning-text",
-    "title": "Spinning Text",
-    "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "sparkles-text",
-    "title": "Sparkles Text",
-    "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "icon-cloud",
-    "title": "Icon Cloud",
-    "description": "An interactive 3D tag cloud component",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "code-comparison",
-    "title": "Code Comparison",
-    "description": "A component which compares two code snippets.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "text-animate",
-    "title": "Text Animate",
-    "description": "A text animation component that animates text using a variety of different animations.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "scroll-based-velocity",
-    "title": "Scroll Based Velocity",
-    "description": "Scrolling text whose speed changes based on scroll speed",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "comic-text",
-    "title": "Comic Text",
-    "description": "Comic text animation",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "shiny-button",
-    "title": "Shiny Button",
-    "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "shine-border",
-    "title": "Shine Border",
-    "description": "Shine border is an animated background border effect.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "confetti",
-    "title": "Confetti",
-    "description": "Confetti animations are best used to delight your users when something special happens",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "animated-circular-progress-bar",
-    "title": "Circular Progress Bar",
-    "description": "Animated Circular Progress Bar is a component that displays a circular gauge with a percentage value.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "cool-mode",
-    "title": "Cool Mode",
-    "description": "Cool mode effect for buttons, links, and other DOMs",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "pulsating-button",
-    "title": "Pulsating Button",
-    "description": "An animated pulsating button useful for capturing attention of users.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "ripple-button",
-    "title": "Ripple Button",
-    "description": "An animated button with ripple useful for user engagement.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "file-tree",
-    "title": "File Tree",
-    "description": "A component used to showcase the folder and file structure of a directory.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "blur-fade",
-    "title": "Blur Fade",
-    "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "safari",
-    "title": "Safari Browser Mockup",
-    "description": "A safari browser mockup to showcase your website.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "iphone",
-    "title": "iPhone Mockup",
-    "description": "A mockup of the iPhone",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "interactive-hover-button",
-    "title": "Interactive Hover Button",
-    "description": "Magic UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "highlighter",
-    "title": "Highlighter",
-    "description": "A text highlighter that mimics the effect of a human-drawn marker stroke.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "video-text",
-    "title": "Video Text",
-    "description": "A component that displays text with a video playing in the background.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "rainbow-button",
-    "title": "Rainbow Button",
-    "description": "An animated button with a rainbow effect.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "pixel-image",
-    "title": "Pixel Image",
-    "description": "A component that displays an image with a pixelated effect, creating a retro aesthetic.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "magic-ui-terminal",
-    "title": "Terminal",
-    "description": "A terminal component",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "light-rays",
-    "title": "Light Rays",
-    "description": "A component with animated light rays which shine down from above.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "dotted-map",
-    "title": "Dotted Map",
-    "description": "A component with a dotted map.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "kinetic-text",
-    "title": "Kinetic Text",
-    "description": "A text component that animates font weight of characters on hover.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "text-3d-flip",
-    "title": "Text 3D Flip",
-    "description": "A text effect that flips each letter in 3D with a staggered animation on hover.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "backlight",
-    "title": "Backlight",
-    "description": "A backlight glow effect for videos, images, and SVGs.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Magic UI",
-    "librarySlug": "magic-ui"
-  },
-  {
-    "name": "AnimatedContent-TS-TW",
-    "title": "Animated Content",
-    "description": "Wrapper that animates any children on scroll or mount with configurable direction, distance, duration, easing and disappear options.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Magnet-TS-TW",
-    "title": "Magnet Effect",
-    "description": "Elements magnetically ease toward the cursor then settle back with spring physics.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ClickSpark-TS-TW",
-    "title": "Click Spark",
-    "description": "Creates particle spark bursts at click position.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ElectricBorder-TS-TW",
-    "title": "Electric Border",
-    "description": "Jittery electric energy border with animated arcs, glow and adjustable intensity.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "BlobCursor-TS-TW",
-    "title": "Blob Cursor",
-    "description": "Organic blob cursor that smoothly follows the pointer with inertia and elastic morphing.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Cubes-TS-TW",
-    "title": "3D Cube Grid",
-    "description": "3D rotating cube cluster. Supports auto-rotation or hover interaction.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GhostCursor-TS-TW",
-    "title": "Ghost Cursor Trail",
-    "description": "Semi-transparent ghost cursor that smoothly follows the real cursor with a trailing effect.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GlareHover-TS-TW",
-    "title": "Glare Hover Effect",
-    "description": "Adds a realistic moving glare highlight on hover over any element.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FadeContent-TS-TW",
-    "title": "Scroll Fade Reveal",
-    "description": "Simple directional fade / slide entrance / exit wrapper with threshold-based activation.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GradualBlur-TS-TW",
-    "title": "Gradual Blur Overlay",
-    "description": "Progressively un-blurs content based on scroll or trigger creating a cinematic reveal.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ImageTrail-TS-TW",
-    "title": "Image Cursor Trail",
-    "description": "Cursor-based image trail with several built-in variants.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "MagnetLines-TS-TW",
-    "title": "Magnet Field Lines",
-    "description": "Animated field lines bend toward the cursor.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Crosshair-TS-TW",
-    "title": "Crosshair Cursor",
-    "description": "Custom crosshair cursor with tracking, and link hover effects.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LogoLoop-TS-TW",
-    "title": "Logo Marquee Loop",
-    "description": "Continuously looping marquee of brand or tech logos with seamless repeat and hover pause.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "MetaBalls-TS-TW",
-    "title": "Liquid Metaballs",
-    "description": "Liquid metaball blobs that merge and separate with smooth implicit surface animation.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Noise-TS-TW",
-    "title": "Film Grain Noise",
-    "description": "Animated film grain / noise overlay adding subtle texture and motion.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PixelTrail-TS-TW",
-    "title": "Pixel Cursor Trail",
-    "description": "Pixelated cursor trail emitting fading squares with retro digital feel.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "MetallicPaint-TS-TW",
-    "title": "Metallic Paint Shader",
-    "description": "Liquid metallic paint shader which can be applied to SVG elements.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PixelTransition-TS-TW",
-    "title": "Pixel Dissolve Transition",
-    "description": "Pixel dissolve transition for content reveal on hover.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Ribbons-TS-TW",
-    "title": "Physics Ribbon Trail",
-    "description": "Flowing responsive ribbons/cursor trail driven by physics and pointer motion.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ShapeBlur-TS-TW",
-    "title": "Shape Blur Effect",
-    "description": "Morphing blurred geometric shape. The effect occurs on hover.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "SplashCursor-TS-TW",
-    "title": "Fluid Splash Cursor",
-    "description": "Liquid splash burst at cursor with curling ripples and waves.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "StarBorder-TS-TW",
-    "title": "Star Border",
-    "description": "Animated star / sparkle border orbiting content with twinkle pulses.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "StickerPeel-TS-TW",
-    "title": "Sticker Peel Effect",
-    "description": "Sticker corner lift + peel interaction using 3D transform and shadow depth.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "TargetCursor-TS-TW",
-    "title": "Target Lock Cursor",
-    "description": "A cursor follow animation with 4 corners that lock onto targets.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Antigravity-TS-TW",
-    "title": "Antigravity Particle Field",
-    "description": "3D antigravity particle field that repels from the cursor with smooth motion.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "MagicRings-TS-TW",
-    "title": "Magic Rings Effect",
-    "description": "Interactive magic rings effect with customizable parameters.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LaserFlow-TS-TW",
-    "title": "Laser Flow",
-    "description": "Dynamic laser light that flows onto a surface, customizable effect.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ASCIIText-TS-TW",
-    "title": "ASCII Text",
-    "description": "Renders text with an animated ASCII background for a retro feel.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "BlurText-TS-TW",
-    "title": "Blur Text",
-    "description": "Text starts blurred then crisply resolves for a soft-focus reveal effect.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "CountUp-TS-TW",
-    "title": "CountUp",
-    "description": "Animated number counter supporting formatting and decimals.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "CircularText-TS-TW",
-    "title": "Circular Text",
-    "description": "Layouts characters around a circle with optional rotation animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "CurvedLoop-TS-TW",
-    "title": "Curved Loop",
-    "description": "Flowing looping text path along a customizable curve with drag interaction.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "DecryptedText-TS-TW",
-    "title": "Decrypted Text",
-    "description": "Hacker-style decryption cycling random glyphs until resolving to real text.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FallingText-TS-TW",
-    "title": "Falling Text",
-    "description": "Characters fall with gravity + bounce creating a playful entrance.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GlitchText-TS-TW",
-    "title": "Glitch Text",
-    "description": "RGB split and distortion glitch effect with jitter effects.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FuzzyText-TS-TW",
-    "title": "Fuzzy Text",
-    "description": "Vibrating fuzzy text with controllable hover intensity.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GradientText-TS-TW",
-    "title": "GradientText",
-    "description": "Animated gradient sweep across live text with speed and color control.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ScrollVelocity-TS-TW",
-    "title": "Scroll Velocity",
-    "description": "Text marquee animatio - speed and distortion scale with user's scroll velocity.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ScrollReveal-TS-TW",
-    "title": "Scroll Reveal",
-    "description": "Text gently unblurs and reveals on scroll.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ScrollFloat-TS-TW",
-    "title": "Scroll Float",
-    "description": "Text gently floats / parallax shifts on scroll.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "SplitText-TS-TW",
-    "title": "SplitText",
-    "description": "Splits text into characters / words for staggered entrance animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ScrambledText-TS-TW",
-    "title": "Scrambled Text",
-    "description": "Detects cursor position and applies a distortion effect to text.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "RotatingText-TS-TW",
-    "title": "Rotating Text",
-    "description": "Cycles through multiple phrases with 3D rotate / flip transitions.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "TextCursor-TS-TW",
-    "title": "Text Cursor Trail",
-    "description": "Make any text element follow your cursor, leaving a trail of copies behind it.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "TextPressure-TS-TW",
-    "title": "Text Pressure",
-    "description": "Characters scale / warp interactively based on pointer pressure zone.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "TrueFocus-TS-TW",
-    "title": "TrueFocus",
-    "description": "Applies dynamic blur / clarity based over a series of words in order.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "VariableProximity-TS-TW",
-    "title": "Variable Proximity",
-    "description": "Letter styling changes continuously with pointer distance mapping.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Shuffle-TS-TW",
-    "title": "Shuffle",
-    "description": "Animated text reveal where characters shuffle before settling.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "TextType-TS-TW",
-    "title": "TextType",
-    "description": "Typewriter effect with blinking cursor and adjustable typing cadence.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "BounceCards-TS-TW",
-    "title": "BounceCards",
-    "description": "Cards bounce that bounce in on mount.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "AnimatedList-TS-TW",
-    "title": "AnimatedList",
-    "description": "List items enter with staggered motion variants for polished reveals.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "BubbleMenu-TS-TW",
-    "title": "BubbleMenu",
-    "description": "Floating circular expanding menu with staggered item reveal.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "CardNav-TS-TW",
-    "title": "CardNav",
-    "description": "Expandable navigation bar with card panels revealing nested links.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "CardSwap-TS-TW",
-    "title": "CardSwap",
-    "description": "Cards animate position swapping with smooth layout transitions.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "OrbitImages-TS-TW",
-    "title": "OrbitImages",
-    "description": "SVG Path customizable orbiting images effect",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Carousel-TS-TW",
-    "title": "Animated Card Carousel",
-    "description": "Responsive carousel with touch gestures, looping and transitions.",
+    "description": "An image gallery with CSS 3D perspective transforms that divides images into 4 columns, each scrolling vertically at different speeds with hover elevation effects.",
     "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "portfolio"
+    ],
     "frameworks": [
       "react",
       "next"
     ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
   },
   {
     "name": "ChromaGrid-TS-TW",
     "title": "ChromaGrid",
     "description": "A responsive grid of grayscale tiles. Hovering the grid reaveals their colors.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features",
+      "testimonials",
+      "portfolio"
     ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Counter-TS-TW",
-    "title": "Animated Number Counter",
-    "description": "Flexible animated counter supporting increments + easing.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Dock-TS-TW",
-    "title": "Dock",
-    "description": "macOS style magnifying dock with proximity scaling of icons.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ElasticSlider-TS-TW",
-    "title": "ElasticSlider",
-    "description": "Slider handle stretches elastically then snaps with spring physics.",
-    "category": "sliders",
     "frameworks": [
       "react",
       "next"
@@ -3128,114 +138,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "DomeGallery",
     "description": "Immersive 3D dome gallery projecting images on a hemispheric surface.",
     "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "media",
+      "portfolio"
     ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "DecayCard-TS-TW",
-    "title": "DecayCard",
-    "description": "Hover parallax effect that disintegrates the content of a card.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FlowingMenu-TS-TW",
-    "title": "FlowingMenu",
-    "description": "Liquid flowing active indicator glides between menu items.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FlyingPosters-TS-TW",
-    "title": "FlyingPosters",
-    "description": "3D posters rotate on scroll infinitely.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ShinyText-TS-TW",
-    "title": "ShinyText",
-    "description": "Metallic sheen sweeps across text producing a reflective highlight.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GlassIcons-TS-TW",
-    "title": "GlassIcons",
-    "description": "Icon set styled with frosted glass blur.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Folder-TS-TW",
-    "title": "Interactive File Folder",
-    "description": "Interactive folder opens to reveal nested content smooth motion.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FluidGlass-TS-TW",
-    "title": "FluidGlass",
-    "description": "Glassmorphism container with animated liquid distortion refraction.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GooeyNav-TS-TW",
-    "title": "GooeyNav",
-    "description": "Navigation indicator morphs with gooey blob transitions between items.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GlassSurface-TS-TW",
-    "title": "GlassSurface",
-    "description": "Advanced Apple-style glass surface with real-time distortion + lighting.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -3247,331 +153,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "InfiniteMenu-TS-TW",
     "title": "Infinite Menu",
     "description": "Horizontally looping menu effect that scrolls endlessly with seamless wrap.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "3d",
+    "categories": [
+      "3d",
+      "media",
+      "portfolio"
     ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ModelViewer-TS-TW",
-    "title": "3D Model Viewer",
-    "description": "Three.js model viewer with orbit controls and lighting presets.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "MagicBento-TS-TW",
-    "title": "Magic Bento Grid",
-    "description": "Interactive bento grid tiles expand + animate with various options.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Masonry-TS-TW",
-    "title": "Masonry Gallery",
-    "description": "Responsive masonry layout with animated reflow + gaps optimization.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PixelCard-TS-TW",
-    "title": "Pixel Reveal Card",
-    "description": "Card content revealed through pixel expansion transition.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ScrollStack-TS-TW",
-    "title": "Scroll Stack Cards",
-    "description": "Overlapping card stack reveals on scroll with depth layering.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ProfileCard-TS-TW",
-    "title": "Profile Card",
-    "description": "Animated profile card glare with 3D hover effect.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Stack-TS-TW",
-    "title": "Swipeable Card Stack",
-    "description": "Layered stack with swipe animations, autoplay and smooth transitions.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "BorderGlow-TS-TW",
-    "title": "Border Glow",
-    "description": "Glowing mesh-gradient border that follows cursor direction and intensifies near edges.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PillNav-TS-TW",
-    "title": "Pill Nav",
-    "description": "Minimal pill nav with sliding active highlight + smooth easing.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Stepper-TS-TW",
-    "title": "Stepper",
-    "description": "Animated multi-step progress indicator with active state transitions.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "SpotlightCard-TS-TW",
-    "title": "Spotlight Card",
-    "description": "Dynamic spotlight follows cursor casting gradient illumination.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "TiltedCard-TS-TW",
-    "title": "Tilted Card",
-    "description": "3D perspective tilt card reacting to pointer.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "StaggeredMenu-TS-TW",
-    "title": "Staggered Menu",
-    "description": "Menu with staggered item animations and smooth transitions on open/close.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ReflectiveCard-TS-TW",
-    "title": "Webcam Reflective Card",
-    "description": "Card with dynamic webcam reflection and glare effects that respond to cursor movement.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Aurora-TS-TW",
-    "title": "Aurora",
-    "description": "Flowing aurora gradient background.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Balatro-TS-TW",
-    "title": "Balatro Shader",
-    "description": "The balatro shader, fully customizalbe and interactive.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Ballpit-TS-TW",
-    "title": "Ballpit",
-    "description": "Physics ball pit simulation with bouncing colorful spheres.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "DarkVeil-TS-TW",
-    "title": "Dark Veil",
-    "description": "Subtle dark background with a smooth animation and postprocessing.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ColorBends-TS-TW",
-    "title": "Color Bends",
-    "description": "Vibrant color bends with smooth flowing animation.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Beams-TS-TW",
-    "title": "Beams",
-    "description": "Crossing animated ribbons with customizable properties.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "DotField-TS-TW",
-    "title": "Dot Field",
-    "description": "Interactive dot grid with cursor bulge, glow, sparkle, and wave effects.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Dither-TS-TW",
-    "title": "Dither",
-    "description": "Retro dithered noise shader background.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "FaultyTerminal-TS-TW",
-    "title": "Faulty Terminal",
-    "description": "Terminal CRT scanline squares effect with flicker + noise.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Galaxy-TS-TW",
-    "title": "Galaxy",
-    "description": "Parallax realistic starfield with pointer interactions.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GradientBlinds-TS-TW",
-    "title": "Gradient Blinds",
-    "description": "Layered gradient blinds with spotlight and noise distortion.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "DotGrid-TS-TW",
-    "title": "Dot Grid",
-    "description": "Animated dot grid with cursor interactions.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Ferrofluid-TS-TW",
-    "title": "Ferrofluid",
-    "description": "A churning magnetic fluid traced by glowing contour lines, with a cursor magnet.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -3584,54 +171,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Lightfall",
     "description": "Colorful light streaks raining down a glowing tunnel with a cursor light.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Grainient-TS-TW",
-    "title": "Grainient",
-    "description": "Grainy gradient swirls with soft wave distortion.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GridDistortion-TS-TW",
-    "title": "Grid Distortion",
-    "description": "Warped grid mesh distorts smoothly reacting to cursor.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GridMotion-TS-TW",
-    "title": "Grid Motion",
-    "description": "Perspective moving grid lines based on cusror position.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "GridScan-TS-TW",
-    "title": "Grid Scan",
-    "description": "Animated grid room 3D scan effect and cool interactions.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -3644,258 +187,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Iridescence",
     "description": "Slick iridescent shader with shifting waves.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LetterGlitch-TS-TW",
-    "title": "Letter Glitch",
-    "description": "Matrix style letter animation.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Hyperspeed-TS-TW",
-    "title": "Hyperspeed",
-    "description": "Animated lines continuously moving to simulate hyperspace travel on click hold.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LightRays-TS-TW",
-    "title": "Light Rays",
-    "description": "Volumetric light rays/beams with customizable direction.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Lightning-TS-TW",
-    "title": "Lightning",
-    "description": "Procedural lightning bolts with branching and glow flicker.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LineWaves-TS-TW",
-    "title": "Line Waves",
-    "description": "Animated line wave pattern with colorful warped distortion.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "EvilEye-TS-TW",
-    "title": "Evil Eye",
-    "description": "Procedural evil eye shader with animated iris, slit pupil, and fiery outer glow.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "SoftAurora-TS-TW",
-    "title": "Soft Aurora",
-    "description": "Soft aurora borealis shader with 3D Perlin noise and cosine gradient palettes.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LiquidChrome-TS-TW",
-    "title": "Liquid Chrome",
-    "description": "Liquid metallic chrome shader with flowing reflective surface.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Orb-TS-TW",
-    "title": "Orb",
-    "description": "Floating energy orb with customizable hover effect.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Radar-TS-TW",
-    "title": "Radar",
-    "description": "Radar sweep effect with concentric rings, radial spokes, and a rotating beam.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Plasma-TS-TW",
-    "title": "Plasma",
-    "description": "Organic plasma gradients swirl + morph with smooth turbulence.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PixelBlast-TS-TW",
-    "title": "Pixel Blast",
-    "description": "Exploding pixel particle bursts with optional liquid postprocessing.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PlasmaWave-TS-TW",
-    "title": "Plasma Wave",
-    "description": "Raymarched plasma waves with dual-wave interference and OGL.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Particles-TS-TW",
-    "title": "Particles",
-    "description": "Configurable particle system.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Prism-TS-TW",
-    "title": "Prism",
-    "description": "Rotating prism with configurable intensity, size, and colors.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "PrismaticBurst-TS-TW",
-    "title": "Prismatic Burst",
-    "description": "Burst of light rays with controllable color, distortion, amount.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Silk-TS-TW",
-    "title": "Silk",
-    "description": "Smooth waves background with soft lighting.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "ShapeGrid-TS-TW",
-    "title": "Shape Grid",
-    "description": "Animated grid with shape variants (square, hexagon, circle, triangle) + direction customization.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "RippleGrid-TS-TW",
-    "title": "Ripple Grid",
-    "description": "A grid that continuously animates with a ripple effect.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Threads-TS-TW",
-    "title": "Threads",
-    "description": "Animated pattern of lines forming a fabric-like motion.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "Waves-TS-TW",
-    "title": "Waves",
-    "description": "Layered lines that form smooth wave patterns with animation.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -3908,6 +203,1975 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Floating Lines",
     "description": "3D floating lines that react to cursor movement.",
     "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LightPillar-TS-TW",
+    "title": "Light Pillar",
+    "description": "Vertical pillar of light with glow effects.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "liquid-glass-weather",
+    "title": "Liquid Glass Weather",
+    "description": "A weather-themed layout using LiquidGlassCard components with weather icons, time, and temperature data in a grid. Shows hourly and daily forecasts.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "team-clippath",
+    "title": "Team Clip Path",
+    "description": "A team grid where each card's image is clipped and expands on hover, revealing full photo. Cards display name, role, and descriptive tags.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "avatars",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "infinite-grid",
+    "title": "Infinite Grid",
+    "description": "OGL/WebGL-based infinite scrolling grid of card tiles with post-processing effects (barrel distortion, vignette). The 7 framework-agnostic TypeScript helper files (InfiniteGridClass, GridManager, EventHandler, DisposalManager, PostProcessShader, createTexture, shaders) are copied verbatim into infinite-grid-helpers/. The React component is a thin useEffect wrapper that instantiates the class on mount and disposes it on unmount.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "3d-pin",
+    "title": "3D Pin Card",
+    "description": "Wraps children in an anchor; applies 3D perspective transform (rotateX) on hover. Shows title in label and animated background rings. Requires Framer Motion.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "cards",
+      "effects",
+      "features",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "glowing-stars",
+    "title": "Glowing Stars",
+    "description": "Card component wrapping an animated star grid that glows randomly on a loop. Brightness increases on hover. Includes helper components for title and description.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "text-reveal-card",
+    "title": "Text Reveal Card",
+    "description": "Card that tracks pointer position and animates a clip-path inset to reveal an overlay text. Includes animated star particles in the background. Supports both mouse and touch input.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "text",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "following-pointer",
+    "title": "Custom Cursor Follower",
+    "description": "Card wrapper that hides the native cursor and renders a custom pointer icon with optional label that tracks mouse movement. Uses motion/react for enter/exit animations.",
+    "category": "cursors",
+    "categories": [
+      "cursors"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "parallax-scroll",
+    "title": "Parallax Scroll Grid",
+    "description": "A 3-column grid where each column scrolls at different speeds via motion/react useTransform. Images are distributed evenly across columns and animate vertically based on scroll position.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "text-generate-effect",
+    "title": "Text Generate Effect",
+    "description": "Displays text by animating words in sequence, creating a progressive reveal effect.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "moving-border",
+    "title": "Moving Border Button",
+    "description": "A button with a continuously rotating conic-gradient border using Framer Motion, wrapped with a visible animated ring effect.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "borders",
+      "ctas",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "lamp",
+    "title": "Lamp",
+    "description": "Full-screen container with animated conic gradient layers creating a glowing lamp effect. Multiple masked gradients and blurs create depth and luminosity.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "sticky-scroll-reveal",
+    "title": "Sticky Scroll Reveal",
+    "description": "A scroll-triggered reveal with text descriptions on the left and sticky content on the right. Background color animates based on the active item as the user scrolls.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "navbar-menu",
+    "title": "Navbar Menu",
+    "description": "Exports four composable components: Menu (container), MenuItem (triggers), ProductItem (card grid), and HoveredLink (text link). Uses Framer Motion for dropdown scale and fade animations triggered on mouse enter.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "card-hover-effect",
+    "title": "Card Hover Effect",
+    "description": "Grid component that renders cards from an items array. Each card has title, description, and link. Hover effect adds a glowing border. Uses a smooth easing for the glow animation.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "gooey-input",
+    "title": "Gooey Input",
+    "description": "An animated search input using Framer Motion that collapses to a circular button and smoothly expands into a full field, with an SVG gooey filter creating a liquid morphing visual effect.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "search",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "typewriter-effect",
+    "title": "Typewriter Effect",
+    "description": "Takes an array of word objects and renders them as characters that fade in with staggered timing when the component enters the viewport. Includes a blinking blue cursor bar.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "3d-card",
+    "title": "3D Card",
+    "description": "Composite 3D card system: CardContainer tracks mouse position and applies rotateY/X transforms; CardBody is the card wrapper; CardItem elements translate and rotate in 3D on hover. Uses CSS perspective and preserve-3d.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "3d",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "images-slider",
+    "title": "Images Slider",
+    "description": "Displays a sequence of images with fade-in animations and direction-based exit transitions. Auto-advances every 5 seconds or responds to arrow keys.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "direction-aware-hover",
+    "title": "Direction Aware Hover",
+    "description": "Card with background image that detects which border (top/bottom/left/right) the mouse enters from and animates the image and overlay text in opposite directions.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "cards",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "tabs",
+    "title": "Animated Tabs",
+    "description": "Controlled tab component that animates the active tab indicator with Framer Motion spring physics. Renders tab buttons and animated content pane with fade-in effects. Includes FadeInDiv helper for content transitions.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "hero-parallax",
+    "title": "Hero Parallax",
+    "description": "Takes 300vh of viewport scrolling to animate 15 product cards (5 per row, 3 rows) with 3D perspective, opacity, and horizontal translate. Cards tilt and rotate on scroll, reverse direction per row. Spring damping smooths the parallax…",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "3d",
+      "heroes",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "wavy-background",
+    "title": "Wavy Background",
+    "description": "SVG waves animated via CSS keyframes or requestAnimationFrame; layered waves with phase shifts.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-gradient",
+    "title": "Background Gradient",
+    "description": "A container that wraps children with a continuously animated multi-color radial gradient background. Uses Framer Motion to shift backgroundPosition, with opacity and blur effects. Gradient opacity increases from 60% to 100% on hover.",
+    "category": "gradients",
+    "categories": [
+      "gradients",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "layout-grid",
+    "title": "Layout Grid",
+    "description": "A responsive grid layout with click-to-expand functionality. Selected cards zoom to center with layout animation and dark backdrop, returning to grid when clicking outside.",
+    "category": "media",
+    "categories": [
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-gradient-animation",
+    "title": "Background Gradient Animation",
+    "description": "Fullscreen background composing five continuously rotating radial gradients with customizable colors. When interactive=true, adds sixth gradient that tracks pointer position. Uses CSS variables and blend modes, applies blur filter.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "macbook-scroll",
+    "title": "Macbook Scroll",
+    "description": "Renders a 3D MacBook with animated opening on scroll. The device scales, rotates, and opens via scroll progress, revealing a keyboard and trackpad below.",
+    "category": "devices",
+    "categories": [
+      "devices",
+      "3d",
+      "scroll",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "multi-step-loader",
+    "title": "Multi Step Loader",
+    "description": "A full-screen overlay loader that animates through loading states with check icons, supporting looping or single-pass progression through the sequence.",
+    "category": "loaders",
+    "categories": [
+      "loaders",
+      "steppers"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "canvas-reveal-effect",
+    "title": "Canvas Reveal Effect",
+    "description": "Renders a Three.js dot matrix with WebGL shader that animates dots appearing from the center outward. Supports customizable colors, opacity, and animation speed.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "hero-highlight",
+    "title": "Hero Highlight",
+    "description": "Wrapper div tracking mouse position and revealing colored dot pattern in 200px radial gradient. Light and dark variants. Height 40rem, full width. Also exports Highlight span for inline gradient text animation.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "vortex",
+    "title": "Vortex",
+    "description": "Animated gradient vortex using CSS transforms and keyframe rotation; responsive to viewport.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "wobble-card",
+    "title": "Wobble Card",
+    "description": "Motion wrapper that tracks pointer position and applies translate/scale transforms to create a 3D tilt effect. Outer card moves toward cursor while inner content scales and counter-translates for parallax depth. Includes noise texture…",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "heroes",
+      "features",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "placeholders-and-vanish-input",
+    "title": "Vanish Placeholder Input",
+    "description": "An input field with cycling placeholder suggestions that change every 3 seconds, and a canvas-based particle animation when submitted that dissolves the text into vanishing particles.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "search",
+      "chat"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "flip-words",
+    "title": "Flip Words",
+    "description": "Cycles through a list of words with letters and sub-words animating in staggered fashion. Each word's letters blur and fade in, then the entire word blurs out and scales up before the next word appears.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "link-preview",
+    "title": "Link Preview",
+    "description": "Radix HoverCard-based link preview that displays a screenshot (live or static) with spring-animated entrance. Preview translates based on cursor position within the link.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "media"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "glare-card",
+    "title": "Glare Card",
+    "description": "A 3D card that rotates and tilts toward the pointer, with a rainbow gradient and SVG foil pattern that shift position. Glare intensity and background position follow mouse movement.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "3d",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "animated-modal",
+    "title": "Animated Modal",
+    "description": "A compound modal component with spring-driven 3D entrance animation, blurred background, automatic scroll locking, and keyboard/click-outside dismissal.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "card-spotlight",
+    "title": "Card Spotlight",
+    "description": "A card that displays a spotlight effect tracking mouse movement. Uses a canvas layer underneath for particle animations. Radius and color are customizable. High z-index content stays above the effect.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "file-upload",
+    "title": "File Upload",
+    "description": "Drag-and-drop file uploader with animated file list display. Background has radial gradient grid pattern. Uses Framer Motion for layout animations.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "floating-dock",
+    "title": "Floating Dock",
+    "description": "Responsive dock showing different layouts on desktop (magnifying hover) vs. mobile (expanding menu). Items have title, icon, and href.",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "navigation",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "focus-cards",
+    "title": "Focus Cards",
+    "description": "A responsive image card grid that tracks hover state, blurring and scaling sibling cards while the hovered card stays in focus. Gradient title overlay appears on hover.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "timeline",
+    "title": "Timeline",
+    "description": "Displays timeline entries with titles and content. An animated gradient line traces from top to bottom as the container scrolls into view. Built with Framer Motion and scroll-triggered animation.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "scroll",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "colourful-text",
+    "title": "Colourful Text",
+    "description": "Renders each character with motion animations including color cycling from a 10-color palette, subtle vertical bounce, scale pulse, and blur effect. Colors reshuffle every 5 seconds.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "glowing-effect",
+    "title": "Glowing Effect",
+    "description": "Wrapper component applying neon glow shadow filters; typically combined with dark backgrounds.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "borders",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "resizable-navbar",
+    "title": "Resizable Navbar",
+    "description": "Multi-component navbar system (Navbar, NavBody, NavItems, MobileNav) with scroll detection via Framer Motion. Adds glass-morphism blur effect at scroll threshold and toggles mobile menu visibility using ResizeObserver.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "stateful-button",
+    "title": "Stateful Button",
+    "description": "A button that toggles between active/inactive states, animating icon transitions. Uses Framer Motion for entrance/exit animations.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "switches"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "images-badge",
+    "title": "Images Badge",
+    "description": "Badge component showing multiple avatar images stacked/overlapped via negative margins.",
+    "category": "badges",
+    "categories": [
+      "badges",
+      "avatars",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "keyboard",
+    "title": "Interactive Keyboard",
+    "description": "A visual keyboard UI with styled keys that respond to physical keyboard events and mouse clicks. Includes optional keystroke preview and audio sprite sound effects.",
+    "category": "devices",
+    "categories": [
+      "devices"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "cards-demo-1",
+    "title": "Hover Overlay Card",
+    "description": "A demo card component showcasing hover effects: overlay appears on hover with smooth fade and backdrop blur. Uses CardDemo component (likely a wrapper). Styled with gradients and transitions.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "features-section-demo-3",
+    "title": "Bento Feature Section",
+    "description": "Four feature cards in a bento layout (varied column spans) with titles, descriptions, and placeholder skeleton components. Responsive 1-column mobile to 6-column desktop.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "hero-video-dialog",
+    "title": "Hero Video Dialog",
+    "description": "Displays a thumbnail image with an animated play button overlay. Click to open a modal with the embedded video (iframe). Modal animates in from configurable directions and dismisses on close button or Escape key.",
+    "category": "media",
+    "categories": [
+      "media",
+      "modals",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "number-ticker",
+    "title": "Number Ticker",
+    "description": "Animate numbers to count up or down to a target number",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "text",
+      "dashboards",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "animated-list",
+    "title": "Animated List",
+    "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "effects",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "dia-text-reveal",
+    "title": "Dia Text Reveal",
+    "description": "A horizontal color band sweeps across text, revealing a gradient shine before settling on the base color.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "hyper-text",
+    "title": "Hyper Text",
+    "description": "A text animation that scrambles letters before revealing the final text.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "typing-animation",
+    "title": "Typing Animation",
+    "description": "Characters appearing in typed animation",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "spinning-text",
+    "title": "Spinning Text",
+    "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "sparkles-text",
+    "title": "Sparkles Text",
+    "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "icon-cloud",
+    "title": "Icon Cloud",
+    "description": "Interactive canvas component rendering a rotating globe of icons or image URLs. Responds to mouse drag with momentum animation and smooth rotation.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "shine-border",
+    "title": "Shine Border",
+    "description": "Shine border is an animated background border effect.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "confetti",
+    "title": "Confetti",
+    "description": "Confetti animations are best used to delight your users when something special happens",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "animated-circular-progress-bar",
+    "title": "Circular Progress Bar",
+    "description": "Animated Circular Progress Bar is a component that displays a circular gauge with a percentage value.",
+    "category": "loaders",
+    "categories": [
+      "loaders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "interactive-hover-button",
+    "title": "Interactive Hover Button",
+    "description": "A button that animates outgoing text left while new text slides in from the right on hover.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "video-text",
+    "title": "Video Text",
+    "description": "A component that displays text with a video playing in the background.",
+    "category": "text",
+    "categories": [
+      "text",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "pixel-image",
+    "title": "Pixel Image",
+    "description": "A component that displays an image with a pixelated effect, creating a retro aesthetic.",
+    "category": "media",
+    "categories": [
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "magic-ui-terminal",
+    "title": "Terminal",
+    "description": "Terminal wrapper (Terminal, TypingAnimation, AnimatedSpan) simulating a CLI output. TypingAnimation character-by-character types a string at a configurable speed. AnimatedSpan fades in already-rendered lines. All animations can sequence…",
+    "category": "code",
+    "categories": [
+      "code",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "backlight",
+    "title": "Backlight",
+    "description": "A backlight glow effect for videos, images, and SVGs.",
+    "category": "effects",
+    "categories": [
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "ElectricBorder-TS-TW",
+    "title": "Electric Border",
+    "description": "Jittery electric energy border with animated arcs, glow and adjustable intensity.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "ctas",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GhostCursor-TS-TW",
+    "title": "Ghost Cursor Trail",
+    "description": "Semi-transparent ghost cursor that smoothly follows the real cursor with a trailing effect.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ImageTrail-TS-TW",
+    "title": "Image Cursor Trail",
+    "description": "Cursor-based image trail with several built-in variants.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "media",
+      "effects",
+      "heroes",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LogoLoop-TS-TW",
+    "title": "Logo Marquee Loop",
+    "description": "Continuously looping marquee of brand or tech logos with seamless repeat and hover pause.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "MetaBalls-TS-TW",
+    "title": "Liquid Metaballs",
+    "description": "Liquid metaball blobs that merge and separate with smooth implicit surface animation.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PixelTransition-TS-TW",
+    "title": "Pixel Dissolve Transition",
+    "description": "Pixel dissolve transition for content reveal on hover.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "SplashCursor-TS-TW",
+    "title": "Fluid Splash Cursor",
+    "description": "Liquid splash burst at cursor with curling ripples and waves.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "TargetCursor-TS-TW",
+    "title": "Target Lock Cursor",
+    "description": "A cursor follow animation with 4 corners that lock onto targets.",
+    "category": "cursors",
+    "categories": [
+      "cursors"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "MagicRings-TS-TW",
+    "title": "Magic Rings Effect",
+    "description": "Interactive magic rings effect with customizable parameters.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LaserFlow-TS-TW",
+    "title": "Laser Flow",
+    "description": "Dynamic laser light that flows onto a surface, customizable effect.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ASCIIText-TS-TW",
+    "title": "ASCII Text",
+    "description": "Renders text with an animated ASCII background for a retro feel.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "CurvedLoop-TS-TW",
+    "title": "Curved Loop",
+    "description": "Flowing looping text path along a customizable curve with drag interaction.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "DecryptedText-TS-TW",
+    "title": "Decrypted Text",
+    "description": "Hacker-style decryption cycling random glyphs until resolving to real text.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "FuzzyText-TS-TW",
+    "title": "Fuzzy Text",
+    "description": "Vibrating fuzzy text with controllable hover intensity.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "TrueFocus-TS-TW",
+    "title": "TrueFocus",
+    "description": "Applies dynamic blur / clarity based over a series of words in order.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "BounceCards-TS-TW",
+    "title": "BounceCards",
+    "description": "Cards bounce that bounce in on mount.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "portfolio",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "BubbleMenu-TS-TW",
+    "title": "BubbleMenu",
+    "description": "Floating circular expanding menu with staggered item reveal.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "CardNav-TS-TW",
+    "title": "CardNav",
+    "description": "Expandable navigation bar with card panels revealing nested links.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "CardSwap-TS-TW",
+    "title": "CardSwap",
+    "description": "Cards animate position swapping with smooth layout transitions.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "carousels",
+      "3d",
+      "testimonials",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "OrbitImages-TS-TW",
+    "title": "OrbitImages",
+    "description": "SVG Path customizable orbiting images effect",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "effects",
+      "testimonials",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ElasticSlider-TS-TW",
+    "title": "ElasticSlider",
+    "description": "Slider handle stretches elastically then snaps with spring physics.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "FlowingMenu-TS-TW",
+    "title": "FlowingMenu",
+    "description": "Liquid flowing active indicator glides between menu items.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GlassIcons-TS-TW",
+    "title": "GlassIcons",
+    "description": "Icon set styled with frosted glass blur.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "FluidGlass-TS-TW",
+    "title": "FluidGlass",
+    "description": "Glassmorphism container with animated liquid distortion refraction.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "MagicBento-TS-TW",
+    "title": "Magic Bento Grid",
+    "description": "Interactive bento grid tiles expand + animate with various options.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Masonry-TS-TW",
+    "title": "Masonry Gallery",
+    "description": "Responsive masonry layout with animated reflow + gaps optimization.",
+    "category": "media",
+    "categories": [
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ScrollStack-TS-TW",
+    "title": "Scroll Stack Cards",
+    "description": "Overlapping card stack reveals on scroll with depth layering.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "scroll",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ProfileCard-TS-TW",
+    "title": "Profile Card",
+    "description": "Animated profile card glare with 3D hover effect.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "3d",
+      "portfolio",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Stack-TS-TW",
+    "title": "Swipeable Card Stack",
+    "description": "Layered stack with swipe animations, autoplay and smooth transitions.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "TiltedCard-TS-TW",
+    "title": "Tilted Card",
+    "description": "3D perspective tilt card reacting to pointer.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "3d",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "StaggeredMenu-TS-TW",
+    "title": "Staggered Menu",
+    "description": "Menu with staggered item animations and smooth transitions on open/close.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Aurora-TS-TW",
+    "title": "Aurora",
+    "description": "Flowing aurora gradient background.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Balatro-TS-TW",
+    "title": "Balatro Shader",
+    "description": "The balatro shader, fully customizalbe and interactive.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Ballpit-TS-TW",
+    "title": "Ballpit",
+    "description": "Physics ball pit simulation with bouncing colorful spheres.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Dither-TS-TW",
+    "title": "Dither",
+    "description": "Retro dithered noise shader background.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "FaultyTerminal-TS-TW",
+    "title": "Faulty Terminal",
+    "description": "Terminal CRT scanline squares effect with flicker + noise.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "code",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Galaxy-TS-TW",
+    "title": "Galaxy",
+    "description": "Parallax realistic starfield with pointer interactions.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GradientBlinds-TS-TW",
+    "title": "Gradient Blinds",
+    "description": "Layered gradient blinds with spotlight and noise distortion.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Grainient-TS-TW",
+    "title": "Grainient",
+    "description": "Grainy gradient swirls with soft wave distortion.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GridMotion-TS-TW",
+    "title": "Grid Motion",
+    "description": "Perspective moving grid lines based on cusror position.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LightRays-TS-TW",
+    "title": "Light Rays",
+    "description": "Volumetric light rays/beams with customizable direction.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Lightning-TS-TW",
+    "title": "Lightning",
+    "description": "Procedural lightning bolts with branching and glow flicker.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LineWaves-TS-TW",
+    "title": "Line Waves",
+    "description": "Animated line wave pattern with colorful warped distortion.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "EvilEye-TS-TW",
+    "title": "Evil Eye",
+    "description": "Procedural evil eye shader with animated iris, slit pupil, and fiery outer glow.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "SoftAurora-TS-TW",
+    "title": "Soft Aurora",
+    "description": "Soft aurora borealis shader with 3D Perlin noise and cosine gradient palettes.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LiquidChrome-TS-TW",
+    "title": "Liquid Chrome",
+    "description": "Liquid metallic chrome shader with flowing reflective surface.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Orb-TS-TW",
+    "title": "Orb",
+    "description": "Floating energy orb with customizable hover effect.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PlasmaWave-TS-TW",
+    "title": "Plasma Wave",
+    "description": "Raymarched plasma waves with dual-wave interference and OGL.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Prism-TS-TW",
+    "title": "Prism",
+    "description": "Rotating prism with configurable intensity, size, and colors.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PrismaticBurst-TS-TW",
+    "title": "Prismatic Burst",
+    "description": "Burst of light rays with controllable color, distortion, amount.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Silk-TS-TW",
+    "title": "Silk",
+    "description": "Smooth waves background with soft lighting.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Waves-TS-TW",
+    "title": "Waves",
+    "description": "Layered lines that form smooth wave patterns with animation.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -3920,208 +2184,25 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Liquid Ether",
     "description": "Interactive liquid shader with flowing distortion and customizable colors.",
     "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
     "frameworks": [
       "react",
       "next"
     ],
     "library": "React Bits",
     "librarySlug": "react-bits"
-  },
-  {
-    "name": "PixelSnow-TS-TW",
-    "title": "Pixel Snow",
-    "description": "Falling pixelated snow effect with customizable density and speed.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "LightPillar-TS-TW",
-    "title": "Light Pillar",
-    "description": "Vertical pillar of light with glow effects.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "React Bits",
-    "librarySlug": "react-bits"
-  },
-  {
-    "name": "cult-ui-text-animate",
-    "title": "Text Animate",
-    "description": "Animated text component with customizable reveal effects and timing",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "cosmic-button",
-    "title": "Cosmic Button",
-    "description": "Animated button/link with cosmic gradient border effect, renders as anchor or button",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "minimal-card",
-    "title": "Minimal Card",
-    "description": "Clean and minimal card component with subtle styling and hover effects",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "timer",
-    "title": "Timer",
-    "description": "Countdown timer component with customizable duration and visual styles",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
   },
   {
     "name": "direction-aware-tabs",
     "title": "Direction Aware Tabs",
     "description": "Tab component with direction-aware animations and smooth transitions",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features"
     ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "border-beam-button",
-    "title": "Border Beam Button",
-    "description": "Shadcn Button wrapped in Border Beam: animated border glow with compact icon and text variants",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "dynamic-island",
-    "title": "Dynamic Island",
-    "description": "iOS-style dynamic island component with expandable content and smooth animations",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "bg-animate-button",
-    "title": "Animated Gradient Button",
-    "description": "Button component with animated background effects and gradient transitions",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "side-panel",
-    "title": "Side Panel",
-    "description": "Sliding side panel component with customizable positioning and animations",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "family-button",
-    "title": "Family Button",
-    "description": "Button component with family-style design and interactive hover effects",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "texture-card",
-    "title": "Texture Card",
-    "description": "Card component with texture background and customizable styling options",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "cutout-card",
-    "title": "Cutout Card",
-    "description": "Image card with cutout corners, hover motion, inset labels, pins, and reveal actions",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "shift-card",
-    "title": "Shift Card",
-    "description": "Card component with shift animation effects and hover interactions",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "tweet-grid",
-    "title": "Tweet Grid",
-    "description": "Grid layout component for displaying tweet-like content cards",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "bg-media",
-    "title": "Media Background",
-    "description": "Background media component with video/image support and overlay effects",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -4134,18 +2215,13 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "3D Carousel",
     "description": "3D carousel component with perspective effects and smooth item transitions",
     "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "carousels",
+      "3d",
+      "modals",
+      "portfolio",
+      "heroes"
     ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "typewriter",
-    "title": "Typewriter",
-    "description": "Typewriter effect component with customizable typing speed and cursor animation",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -4157,7 +2233,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "animated-number",
     "title": "Animated Number",
     "description": "Number component with smooth counting animations and customizable formatting",
-    "category": "data-display",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "text",
+      "dashboards"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -4170,138 +2251,11 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Sortable List",
     "description": "Drag-and-drop sortable list component with smooth animations and reordering",
     "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "data-display",
+      "checkboxes",
+      "dashboards"
     ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "lightboard",
-    "title": "Lightboard",
-    "description": "Interactive lightboard component with customizable grid and lighting effects",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "canvas-fractal-grid",
-    "title": "Fractal Dot Grid",
-    "description": "Interactive canvas-based fractal dot grid with mouse tracking and wave effects",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "gradient-heading",
-    "title": "Gradient Heading",
-    "description": "Heading component with gradient text effects and customizable styling",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "cult-ui-dock",
-    "title": "Dock",
-    "description": "macOS-style dock component with hover effects and smooth animations",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "bg-animated-fractal-dot-grid",
-    "title": "Animated Dot Grid",
-    "description": "Background animated fractal dot grid with performance optimization and responsive design",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "bg-animated-gradient",
-    "title": "Animated Gradient",
-    "description": "Animated gradient background component with customizable color transitions",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "bg-image-texture",
-    "title": "Image Texture Background",
-    "description": "Background texture component with multiple texture variants and customizable opacity",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "floating-panel",
-    "title": "Floating Panel",
-    "description": "Floating panel component with backdrop blur and position-aware animations",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "popover",
-    "title": "Popover",
-    "description": "Animated popover component with form support and smooth transitions",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "shader-lens-blur",
-    "title": "Shader Lens Blur",
-    "description": "WebGL shader component with lens blur effects and mouse interaction",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "edge-blur",
-    "title": "Edge Blur",
-    "description": "Stacked backdrop-blur layers with a gradient mask for soft top or bottom screen edges",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -4314,6 +2268,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Color Picker",
     "description": "Interactive color picker component with HSL support and preset colors",
     "category": "inputs",
+    "categories": [
+      "inputs",
+      "settings"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -4326,348 +2284,11 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Expandable",
     "description": "Expandable component system with smooth animations and customizable presets",
     "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "accordions",
+      "cards",
+      "features"
     ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "popover-form",
-    "title": "Popover Form",
-    "description": "Form popover component with success states and animated transitions",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "dither-image",
-    "title": "Dither Image",
-    "description": "Compound Next.js image figure with CSS Bayer dither via dither-plugin, partial reveal overlays, and typed tuning props",
-    "category": "media",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "loading-carousel",
-    "title": "Loading Carousel",
-    "description": "Loading carousel component with smooth transitions and customizable content",
-    "category": "carousels",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "logo-carousel",
-    "title": "Logo Carousel",
-    "description": "Animated logo carousel with staggered animations and customizable columns",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "hover-video-player",
-    "title": "Hover Video Player",
-    "description": "Video player component that plays on hover with smooth animations",
-    "category": "media",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "feature-voting",
-    "title": "Feature Voting",
-    "description": "List of features with up-vote support, optional sorting by vote count, and controlled or uncontrolled state",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "neumorph-eyebrow",
-    "title": "Neumorph Eyebrow",
-    "description": "Neumorphic eyebrow component with soft shadow effects and modern styling",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "choice-poll",
-    "title": "Choice Poll",
-    "description": "Poll component with single or multiple selection, optional results, and keyboard navigation",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "neumorph-button",
-    "title": "Neumorph Button",
-    "description": "Neumorphic button component with soft shadows and tactile interaction effects",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "feature-poll",
-    "title": "Feature Poll",
-    "description": "Feature poll component with single or multiple selection, optional results, and keyboard navigation",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "feature-carousel",
-    "title": "Feature Carousel",
-    "description": "Feature carousel component with smooth transitions and customizable layouts",
-    "category": "carousels",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "vote-tally",
-    "title": "Vote Tally",
-    "description": "List of items with up-vote support, optional sorting by vote count, and controlled or uncontrolled state",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "ai-instructions",
-    "title": "AI Instructions Manager",
-    "description": "Manage and toggle AI instructions with a popover, search, and create-dialog",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "text-gif",
-    "title": "Text GIF",
-    "description": "Text component with GIF-like animation effects and customizable styling",
-    "category": "text",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "poll-widget",
-    "title": "Poll Widget",
-    "description": "Poll widget with inline, popover, and dialog modes, optional results, and animations",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "intro-disclosure",
-    "title": "Intro Disclosure",
-    "description": "Intro disclosure component with expandable content and smooth animations",
-    "category": "modals",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "stripe-bg-guides",
-    "title": "Stripe Background Guides",
-    "description": "Stripe-style background guides component with animated patterns and effects",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "svg-bands",
-    "title": "SVG Section Bands",
-    "description": "Wide SVG section bands, battlement and zigzag trims, steep hero edges, and ornamental frames",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "youtube-video-player",
-    "title": "YouTube Video Player",
-    "description": "YouTube video player component with custom controls and smooth animations",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "svg-shapes",
-    "title": "SVG Shape Panels",
-    "description": "Wide-aspect SVG shape and panel components for backgrounds and hero decorations",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "grid-beam",
-    "title": "Grid Beam",
-    "description": "Canvas grid beam animation with palette presets, SVG dividers, and composable headless pieces via useGridBeam",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "toolbar-expandable",
-    "title": "Toolbar Expandable",
-    "description": "Expandable toolbar component with step-based navigation, smooth animations, and enhanced scrolling",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "svg-shapes-animated",
-    "title": "Animated SVG Shapes",
-    "description": "Scroll-triggered stroke-draw animations for wide SVG shapes and panels using Motion",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "texture-overlay",
-    "title": "Texture Overlay",
-    "description": "Texture overlay component with various CSS gradient patterns for adding visual texture to backgrounds",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "squiggle-arrow",
-    "title": "Squiggle Arrow",
-    "description": "A playful, hand-drawn squiggly arrow component with customizable variants, directions, and sizes",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "mock-browser-window",
-    "title": "Mock Browser Window",
-    "description": "A customizable browser window mockup component with support for Chrome, Safari, and generic styles, customizable sidebars, and themes",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "metal-button",
-    "title": "Metal Button",
-    "description": "Shadcn Button wrapped in MetalFx: animated liquid metal ring with text and icon variants",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "cult-ui-code-block",
-    "title": "Code Block",
-    "description": "A beautiful code block component with tabs, copy functionality, and smooth animations",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "distorted-glass",
-    "title": "Distorted Glass",
-    "description": "A glass morphism effect component using SVG filters with fractal noise to create visual transitions between sections",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -4680,6 +2301,9 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Family Drawer",
     "description": "A multi-view drawer component with smooth animations, view navigation, and customizable content views",
     "category": "modals",
+    "categories": [
+      "modals"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -4691,7 +2315,11 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "morph-surface",
     "title": "Morph Surface",
     "description": "A morphing surface component with smooth animations, customizable dimensions, and configurable content",
-    "category": "modals",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "feedback"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -4704,42 +2332,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Expandable Screen",
     "description": "A full-screen expandable component with morphing animations using shared layout IDs for smooth transitions",
     "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "modals",
+      "portfolio"
     ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "onboarding",
-    "title": "Onboarding",
-    "description": "Composable multi-step onboarding primitives: Onboarding root with step navigation, FeatureCarousel, ChoiceGroup radio selector, TipsList, and StepIndicator with dots and pills variants",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "gradient-button-group",
-    "title": "Gradient Button Group",
-    "description": "Premium layered button group with animated active state, gradient ring accents, and theme toggle underlay",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "terminal-animation",
-    "title": "Terminal Animation",
-    "description": "Composable terminal animation primitives with typed command playback, tabbed scenarios, and customizable output rendering",
-    "category": "data-display",
     "frameworks": [
       "react",
       "next"
@@ -4751,31 +2347,11 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "hero-dithering",
     "title": "Hero Dithering",
     "description": "Split-layout hero section with responsive dithering shader visuals, CTA, and tech stack badges",
-    "category": "heroes",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "hero-color-panel",
-    "title": "Hero Color Panel",
-    "description": "Split-layout hero section with responsive ColorPanels shader visuals, CTA, and tech stack badges",
-    "category": "heroes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Cult UI",
-    "librarySlug": "cult-ui"
-  },
-  {
-    "name": "hero-static-radial-gradient",
-    "title": "Hero Static Radial Gradient",
-    "description": "Split-layout hero section with responsive StaticRadialGradient shader visuals, CTA, and tech stack badges",
-    "category": "heroes",
     "frameworks": [
       "react",
       "next"
@@ -4787,7 +2363,11 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "hero-liquid-metal",
     "title": "Hero Liquid Metal",
     "description": "Split-layout hero section with responsive LiquidMetal shader visuals, CTA, and tech stack badges",
-    "category": "heroes",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -4799,7 +2379,11 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "hero-heatmap",
     "title": "Hero Heatmap",
     "description": "Split-layout hero section with responsive Heatmap shader visuals, CTA, and tech stack badges",
-    "category": "heroes",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -4808,250 +2392,15 @@ export const componentsMeta: ComponentMeta[] = [
     "librarySlug": "cult-ui"
   },
   {
-    "name": "btn-bg-shine",
-    "title": "Background Shine Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-top-slowflip",
-    "title": "Slow Flip Hover Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-creative-right",
-    "title": "Arrow Reveal Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-text-change",
-    "title": "Skew Text Flip Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-click-down",
-    "title": "Press Shadow Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-multiple",
-    "title": "Multi Shadow Hover Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "button-hover-right",
-    "title": "Expanding Icon Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-left-flip",
-    "title": "Left Slide Flip Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "button-active",
-    "title": "Active Shadow Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-underline",
-    "title": "Underline Hover Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-down",
-    "title": "Push Shadow Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-animated-gradient",
-    "title": "Animated Gradient Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-creative-top",
-    "title": "Top Slide Reveal Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-top-flip",
-    "title": "Top Flip Hover Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-cross-arrow",
-    "title": "Cross Arrow Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-black-shadow",
-    "title": "Inset Shadow Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover-outline",
-    "title": "Outline Toggle Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-arrow-right",
-    "title": "Expanding Arrow Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-color-picker",
-    "title": "Hex Color Picker",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "raws-color-picker",
-    "title": "HSV Color Picker",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
     "name": "motion-number-upvotes",
     "title": "Animated Upvote Counter",
-    "description": "Ui-Layouts component.",
+    "description": "A counter button that animates the numeric value up/down using Framer Motion's AnimatePresence and slide transitions.",
     "category": "buttons",
+    "categories": [
+      "buttons",
+      "charts",
+      "social"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -5062,56 +2411,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "motion-number-input",
     "title": "Animated Number Input",
-    "description": "Ui-Layouts component.",
+    "description": "A controlled number input using the NumberFlow library for smooth animated digit transitions, with +/- buttons to adjust value, input validation, and min/max bounds.",
     "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "inputs",
+      "ecommerce"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "number-flow-trading",
-    "title": "Live Price Ticker",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "default-color-picker",
-    "title": "Color Picker",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "noise-effect",
-    "title": "Noise Effect Background",
-    "description": "Ui-Layouts component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scroll-text",
-    "title": "Scroll Text Animation",
-    "description": "Ui-Layouts component.",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -5122,116 +2427,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "scroll-text-marquee",
     "title": "Scroll Text Marquee",
-    "description": "Ui-Layouts component.",
+    "description": "Horizontally scrolling text loop, typically used for news tickers or flowing announcements.",
     "category": "text",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "text"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-rotating-gradient",
-    "title": "Rotating Gradient Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scroll-text-marquee-unidirectional",
-    "title": "Unidirectional Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "text-scroll-animation",
-    "title": "Text Scroll Animation",
-    "description": "Ui-Layouts component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scroll-text-marquee-bidirectional",
-    "title": "Bidirectional Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "randomized-text-effect",
-    "title": "Randomized Text Effect",
-    "description": "Ui-Layouts component.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-globe",
-    "title": "Interactive 3D Globe",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "card-globe",
-    "title": "Card Globe",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "r3f-blob",
-    "title": "3D Shader Blob",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "card-globe-white",
-    "title": "Card Globe White",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
     "frameworks": [
       "react",
       "next"
@@ -5242,100 +2442,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "mesh-shadergradient",
     "title": "Mesh Shader Gradient",
-    "description": "Ui-Layouts component.",
+    "description": "WebGL gradient animation powered by ShaderGradient library. Renders a full-screen canvas with customizable animated gradient patterns.",
     "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
     "frameworks": [
       "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "mesh-gradient-background",
-    "title": "Mesh Gradient Background",
-    "description": "Ui-Layouts component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "mesh-gradient-background2",
-    "title": "Mesh Gradient Background",
-    "description": "Ui-Layouts component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "normalGrid",
-    "title": "Masonry Image Grid",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "conditionGrid",
-    "title": "Responsive Image Grid",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stripecard",
-    "title": "Stripe Style Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "creative-hover-card",
-    "title": "Creative Hover Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stripecard2",
-    "title": "Image Reveal Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "hovercard3",
-    "title": "Profile Hover Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
       "next"
     ],
     "library": "Ui-Layouts",
@@ -5344,99 +2458,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "hovercard1",
     "title": "Image Hover Card",
-    "description": "Ui-Layouts component.",
+    "description": "A rounded image card with title badge and an icon button at bottom-right. Button expands horizontally to show 'Visit' text on hover.",
     "category": "cards",
-    "frameworks": [
-      "next"
+    "categories": [
+      "cards",
+      "media",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "mesh-gradient-background3",
-    "title": "Mesh Gradient Background",
-    "description": "Ui-Layouts component.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "hovercard2",
-    "title": "Profile Hover Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "buyme-acoffee",
-    "title": "Buy Me Coffee Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "productcard4",
-    "title": "Product Card with Wishlist",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "hovercard4",
-    "title": "Blog Post Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "productcard5",
-    "title": "Shoe Size Selector Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "creative-mask-clippath",
-    "title": "Creative Mask Clip Path",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "creative-clippath",
-    "title": "Creative Squiggle Clip Path",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -5447,176 +2475,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "symbolic-clippath",
     "title": "Symbolic Clip Path",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "corporate-clippath",
-    "title": "Corporate Clip Path Grid",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "creative-imagemasking",
-    "title": "Creative Image Masking",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "animal-imagemasking",
-    "title": "Animal Shape Image Mask",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "center-imagemasking",
-    "title": "Center Splash Image Mask",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "watersplash-imagemasking",
-    "title": "Water Splash Image Mask",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "watersplash-clippath",
-    "title": "Water Splash Clip Path",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "splashwater-videomasking",
-    "title": "Splash Water Video Mask",
-    "description": "Ui-Layouts component.",
+    "description": "A six-item gallery where images are clipped with various SVG paths (star, diamond, organic shapes). Images zoom and transition padding on hover.",
     "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "hexagon2-videomasking",
-    "title": "Hexagon Video Mask",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "hexagon-videomasking",
-    "title": "Hexagon Video Mask Alt",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "creative-videomasking",
-    "title": "Creative Video Masking",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "fixedbg-imagemasking",
-    "title": "Fixed Background Image Mask",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "progressive-carousel",
-    "title": "Progressive Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "textoverlay-videomasking",
-    "title": "Text Overlay Video Mask",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "horizontal-progressive-carousel",
-    "title": "Horizontal Progress Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
     "frameworks": [
       "react",
       "next"
@@ -5627,32 +2492,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "image-hover-accordion",
     "title": "Image Hover Accordion",
-    "description": "Ui-Layouts component.",
+    "description": "Each accordion header has an associated image that appears/animates on hover before expanding.",
     "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "accordions",
+      "media",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "vertical-progressive-carousel",
-    "title": "Vertical Progress Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "image-tab1",
-    "title": "Image Tab Panel",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
     "frameworks": [
       "react",
       "next"
@@ -5663,81 +2509,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "magnified-doc",
     "title": "Magnified Doc Tooltip",
-    "description": "Ui-Layouts component.",
+    "description": "Radix-based tooltip with custom backdrop blur and dark/light theme styling. Exports TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent as a compound component system.",
     "category": "tooltips",
+    "categories": [
+      "tooltips"
+    ],
     "frameworks": [
       "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-tabs",
-    "title": "Animated Wobbly Tabs",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "animated-tabs",
-    "title": "Animated Tabs",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "img-tabs-standalone",
-    "title": "Image Tabs Standalone",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "image-tab2",
-    "title": "Image Tab Panel 2",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "creative-tab",
-    "title": "Creative Tab Switcher",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "register-tab",
-    "title": "Login Register Tab",
-    "description": "Ui-Layouts component.",
-    "category": "forms",
-    "frameworks": [
       "next"
     ],
     "library": "Ui-Layouts",
@@ -5746,8 +2524,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "swapy",
     "title": "Swapy Layout Primitives",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
+    "description": "A set of components wrapping the Swapy library to create draggable dashboard layouts. Includes SwapyLayout container, DragHandle icon, SwapySlot targets, and SwapyItem draggables with configurable animations.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "dashboards"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -5758,56 +2540,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "default-swapy",
     "title": "Draggable Stats Bento",
-    "description": "Ui-Layouts component.",
+    "description": "A 12-column grid layout with drag-to-rearrange cards. Cards snap into grid positions; swap detection logs reordered items.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "dashboards"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "tailwind-image-accordion",
-    "title": "Tailwind Image Accordion",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "swapy-without-components",
-    "title": "Swapy Raw Grid",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "drag-items",
-    "title": "Draggable Reorder List",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "swapy-handle",
-    "title": "Swapy Handle Bento Grid",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
     "frameworks": [
       "react",
       "next"
@@ -5818,128 +2556,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "scroll-animation-default",
     "title": "Scroll Reveal Images",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "A section component rendering a three-column image gallery with scroll-triggered reveal animations. Images fade in and slide as the user scrolls; uses ScrollAnimation internally.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "media",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scroll-animation-repeat",
-    "title": "Scroll Animation Repeat",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scroll-animation-text",
-    "title": "Scroll Reveal Text",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scroll-animation",
-    "title": "Scroll Animation Utility",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "timeline-animation",
-    "title": "Timeline Animation",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "mousetrail",
-    "title": "Image Mouse Trail",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "image-mousetrail-default",
-    "title": "Mouse Trail Default",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "opacity-swapy",
-    "title": "Opacity Swapy Layout",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "image-mousetrail-small",
-    "title": "Mouse Trail Small",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "image-mousetrail-disappear",
-    "title": "Mouse Trail Disappear",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "framerhorizontalscroll",
-    "title": "Framer Horizontal Scroll",
-    "description": "Ui-Layouts component.",
-    "category": "media",
     "frameworks": [
       "react",
       "next"
@@ -5950,42 +2573,15 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "stacking-card",
     "title": "Stacking Card",
-    "description": "Ui-Layouts component.",
+    "description": "A photographer portfolio using ReactLenis scroll physics. Cards stack and scale down as user scrolls, with images and bio text revealed sequentially.",
     "category": "cards",
-    "frameworks": [
-      "next"
+    "categories": [
+      "cards",
+      "scroll",
+      "media",
+      "portfolio",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "css-image-stacking",
-    "title": "CSS Image Stacking",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "horizontal-scroll",
-    "title": "Horizontal Scroll",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "smooth-scroll",
-    "title": "Smooth Scroll",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -5996,92 +2592,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "sticky-gallery",
     "title": "Sticky Gallery",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "A full-page layout using CSS sticky positioning with ReactLenis smooth scrolling. Hero section remains visible while scrolling past a 3-column image gallery grid below.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "media",
+      "heroes",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "sticky-hero-section",
-    "title": "Sticky Hero Section",
-    "description": "Ui-Layouts component.",
-    "category": "heroes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "css-card-stacking",
-    "title": "CSS Card Stacking",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "default-marquee",
-    "title": "Default Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "verticle-marquee",
-    "title": "Vertical Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-marquee",
-    "title": "Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "logos-marquee",
-    "title": "Logos Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-3d-marquee",
-    "title": "3D Marquee",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -6092,20 +2610,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "liquid-glass",
     "title": "Liquid Glass Card",
-    "description": "Ui-Layouts component.",
+    "description": "A frosted-glass card with extensive styling options (blur intensity, shadow insets, glow effects, border radius). Optional draggable and expandable states via motion.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "effects",
+      "features",
+      "dashboards"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "infintyband",
-    "title": "Infinity Band Scroll",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -6116,256 +2628,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "liquid-glass-mobile-icons",
     "title": "Liquid Glass Mobile Icons",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "liquid-glass-weather",
-    "title": "Liquid Glass Weather",
-    "description": "Ui-Layouts component.",
+    "description": "A premade layout of liquid glass cards containing icons arranged in a grid pattern, mimicking iOS or Android control center aesthetics.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "settings"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "liquid-glass-sidebar-menu",
-    "title": "Liquid Glass Sidebar",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "liquid-glass-notification",
-    "title": "Liquid Glass Notification",
-    "description": "Ui-Layouts component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "blur-vignette",
-    "title": "Blur Vignette",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "video-blur-vignette",
-    "title": "Video Blur Vignette",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "blur-vignette-video",
-    "title": "Blur Vignette Video",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "blur-vignette-card",
-    "title": "Blur Vignette Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "liquid-gradient",
-    "title": "Liquid Gradient",
-    "description": "Ui-Layouts component.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "blur-vignette-img",
-    "title": "Blur Vignette Image",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "grid-layout-accordion",
-    "title": "Grid Layout Accordion",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "multi-layout-accordion",
-    "title": "Multi Open Accordion",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "faq-accordion",
-    "title": "FAQ Accordion",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "single-layout-accordion",
-    "title": "Single Layout Accordion",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "accordion",
-    "title": "Accordion",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "showhide-pass",
-    "title": "Password Show Hide",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "slider",
-    "title": "Dual Range Slider",
-    "description": "Ui-Layouts component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "pass-strengthindicator",
-    "title": "Password Strength Indicator",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "pass-strength-dotted-indicator",
-    "title": "Password Strength Dotted",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "pass-strength-inline-indicator",
-    "title": "Password Strength Inline",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "pass-strength-hover-indicator",
-    "title": "Password Strength Hover",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "confirm-pass-check",
-    "title": "Confirm Password Check",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
     "frameworks": [
       "react",
       "next"
@@ -6376,68 +2644,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "tags-input",
     "title": "Tags Input",
-    "description": "Ui-Layouts component.",
+    "description": "A controlled tags input that displays tags as clickable pills, supports inline editing, and allows adding tags by pressing Enter or comma.",
     "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "inputs"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "tags-input-no-edit",
-    "title": "Tags Input",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "phone-input",
-    "title": "Phone Input",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "datetime-input",
-    "title": "Datetime Input",
-    "description": "Ui-Layouts component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "phone-input-default",
-    "title": "Phone Input Default",
-    "description": "Ui-Layouts component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "time-picker",
-    "title": "Time Picker",
-    "description": "Ui-Layouts component.",
-    "category": "calendar",
     "frameworks": [
       "react",
       "next"
@@ -6448,80 +2659,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "date-picker",
     "title": "Date Picker",
-    "description": "Ui-Layouts component.",
+    "description": "An input field that parses natural language dates (like 'tomorrow', 'next Friday') via chrono-node. Shows a calendar popover for visual selection. Triggers on focus with no time picker.",
     "category": "calendar",
+    "categories": [
+      "calendar",
+      "inputs"
+    ],
     "frameworks": [
       "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "multi-selector",
-    "title": "Multi Selector",
-    "description": "Ui-Layouts component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-file-upload",
-    "title": "File Upload",
-    "description": "Ui-Layouts component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "multi-selector-default",
-    "title": "Multi Selector Default",
-    "description": "Ui-Layouts component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "imgpreview-dropzone",
-    "title": "Image Preview Dropzone",
-    "description": "Ui-Layouts component.",
-    "category": "file-upload",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "linear-modal",
-    "title": "Linear Modal",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "chat-form-dropzone",
-    "title": "Chat File Dropzone",
-    "description": "Ui-Layouts component.",
-    "category": "file-upload",
-    "frameworks": [
       "next"
     ],
     "library": "Ui-Layouts",
@@ -6530,20 +2675,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "linear-modal-center-content",
     "title": "Linear Modal Centered",
-    "description": "Ui-Layouts component.",
+    "description": "A layered modal that morphs from a trigger element to a centered, expanded view. Animated with spring physics (Framer Motion). Content scales and fades in while a backdrop blurs and darkens, with support for images and scrollable…",
     "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "modals"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "linear-modal-standalone",
-    "title": "Linear Modal Standalone",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -6554,43 +2690,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "gallery-modal-accordion",
     "title": "Gallery Modal Accordion",
-    "description": "Ui-Layouts component.",
+    "description": "An AccordionModal using Framer Motion; displays horizontal image accordion that expands to full-screen on click with title and description.",
     "category": "modals",
-    "frameworks": [
-      "next"
+    "categories": [
+      "modals",
+      "accordions",
+      "media",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "dialog",
-    "title": "Animated Dialog",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "media-modal",
-    "title": "Media Modal",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "dialog-default",
-    "title": "Dialog Default",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -6601,162 +2708,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "media-modal-default",
     "title": "Media Modal Default",
-    "description": "Ui-Layouts component.",
+    "description": "A pre-configured 2-column grid of media modals displaying images and videos side-by-side. Each item expands to fullscreen when clicked. Ready to drop in with default styling and layout.",
     "category": "modals",
+    "categories": [
+      "modals",
+      "media"
+    ],
     "frameworks": [
       "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "directional-drawer",
-    "title": "Directional Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "directional-drawer_default",
-    "title": "Directional Drawer Default",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "left-directional-drawer",
-    "title": "Left Directional Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "top-directional-drawer",
-    "title": "Top Directional Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "motion-drawer",
-    "title": "Motion Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "right-motion-drawer",
-    "title": "Right Motion Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "bottom-directional-drawer",
-    "title": "Bottom Directional Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "motion-drawer-default",
-    "title": "Motion Drawer Default",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-spotlight",
-    "title": "Spotlight Effect",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "spotlight-card2",
-    "title": "Spotlight Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "spotlight-card1",
-    "title": "Spotlight Bento Grid",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "spotlight-card4",
-    "title": "Proximity Spotlight Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "spotlight-card3",
-    "title": "Hover Focus Spotlight Card",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
-    "frameworks": [
       "next"
     ],
     "library": "Ui-Layouts",
@@ -6765,176 +2724,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "image-reveal",
     "title": "Image Reveal Hover",
-    "description": "Ui-Layouts component.",
+    "description": "List of text items that reveal associated images on hover. Image tracks cursor position with spring physics animation and fades in/out.",
     "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "effects",
+      "media",
+      "portfolio",
+      "ecommerce"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-animated-beam",
-    "title": "Animated Beam",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "ui-layouts-carousel",
-    "title": "Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "default-slider",
-    "title": "Default Image Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "classname-slider",
-    "title": "Classname Opacity Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "scale-slider",
-    "title": "Scale Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "thumbnail-slider",
-    "title": "Thumbnail Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "autoscroll-slider",
-    "title": "Autoscroll Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "vertical-slider",
-    "title": "Vertical Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "vertical-thumbnail-autostart-slider",
-    "title": "Vertical Autoplay Thumbnail Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "vertical-thumbnail-slider",
-    "title": "Vertical Thumbnail Slider",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "framer-normal-carousel",
-    "title": "Framer Image Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "framer-draggable-carousel",
-    "title": "Framer Draggable Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "framer-autoplay-carousel",
-    "title": "Framer Autoplay Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "framer-thumnbails",
-    "title": "Framer Thumbnail Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
     "frameworks": [
       "react",
       "next"
@@ -6945,32 +2742,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "framer-multi-carousel",
     "title": "Framer Multi Carousel",
-    "description": "Ui-Layouts component.",
+    "description": "Multi-slide carousel with responsive breakpoints. Shows 1 slide on mobile, 2 on tablet, 3 on desktop. Supports custom breakpoint configuration. Navigate with prev/next buttons, snap animation via spring physics.",
     "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "carousels",
+      "features",
+      "testimonials"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "framer-moveable-thumbnails",
-    "title": "Framer Moveable Thumbnails",
-    "description": "Ui-Layouts component.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "code-tabs-mdx",
-    "title": "Code Tabs MDX",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
     "frameworks": [
       "react",
       "next"
@@ -6981,8 +2759,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "hero-digital-success",
     "title": "Hero Digital Success",
-    "description": "Ui-Layouts component.",
-    "category": "heroes",
+    "description": "Full-screen hero (dark) with ShaderGradient WebGL backdrop (cyan to deep blue), responsive nav, large headline with gradient text accent, dual CTAs, and service card grid footer. Uses TimelineAnimation for scroll-triggered stagger.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -6993,8 +2775,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "hero-ai-value-proposition",
     "title": "Hero AI Value Proposition",
-    "description": "Ui-Layouts component.",
-    "category": "heroes",
+    "description": "Full-screen hero (light background) with headline, description, CTA, and embedded design-app mockup. Uses TimelineAnimation for scroll-based stagger of text, buttons, avatars, and card selections.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7005,8 +2791,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "hero-share-app",
     "title": "Hero Share App",
-    "description": "Ui-Layouts component.",
-    "category": "heroes",
+    "description": "App-store focused hero with warm red gradient (radial overlay), responsive nav, headline, dual download buttons (App Store/Play Store), and three floating image cards on scroll reveal. Uses TimelineAnimation for scroll-triggered stagger.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7017,20 +2807,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "hero-ai-infrastructure",
     "title": "Hero AI Infrastructure",
-    "description": "Ui-Layouts component.",
-    "category": "heroes",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "Dark hero section with ShaderGradient 3D background (WebGL), responsive nav, headline, dual CTAs, and logo wall. Uses TimelineAnimation to stagger text and button reveals on scroll.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "feature-flow",
-    "title": "Feature Flow Carousel",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
     "frameworks": [
       "react",
       "next"
@@ -7041,8 +2823,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "feature-hero",
     "title": "Feature AI Cards",
-    "description": "Ui-Layouts component.",
+    "description": "A centered hero heading with animated entrance, featuring a 5-card grid below (3 cards, then 2 staggered). Diagonal striped background with radial gradient overlay.",
     "category": "cards",
+    "categories": [
+      "cards",
+      "features",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7053,20 +2840,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "feature-velocity",
     "title": "Feature Velocity Grid",
-    "description": "Ui-Layouts component.",
+    "description": "Three feature cards (Neural Link, Data Core, Fluid UI) with icons on a striped dark background. Cards reveal gradient overlays on hover.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "feature-highlights",
-    "title": "Feature Highlight Cards",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
     "frameworks": [
       "react",
       "next"
@@ -7077,8 +2856,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "feature-bento",
     "title": "Feature Bento Grid",
-    "description": "Ui-Layouts component.",
+    "description": "A responsive bento layout showcasing an enlarged hero card, statistics, feature highlights, and CTA cards with gradient backgrounds and hover scale effects.",
     "category": "cards",
+    "categories": [
+      "cards",
+      "features",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7089,8 +2873,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "about-ecommerse",
     "title": "About E-Commerce Brand",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
+    "description": "A centered about section for e-commerce brands with warm orange accent colors, heritage messaging, and image grid showcasing product values like ethical sourcing and craftsmanship.",
+    "category": "text",
+    "categories": [
+      "text",
+      "ecommerce",
+      "features"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7101,8 +2890,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "about-sass",
     "title": "About SaaS Company",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
+    "description": "A SaaS-focused about section featuring feature cards with icons (Global Network, Scaling, Security), integrations list, and benefit-driven messaging with scroll animations.",
+    "category": "text",
+    "categories": [
+      "text",
+      "features"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7113,20 +2906,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "about-architecture",
     "title": "About Architecture Studio",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "A full-width about/hero section for architecture studios with scroll-triggered fade animations, large typography, and images with grayscale-to-color hover transitions.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "about-whyus",
-    "title": "About Why Us",
-    "description": "Ui-Layouts component.",
-    "category": "misc",
     "frameworks": [
       "react",
       "next"
@@ -7137,8 +2923,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "team-expert",
     "title": "Team Expert Grid",
-    "description": "Ui-Layouts component.",
+    "description": "A team showcase with white card backgrounds, expert photos, names, and specialist roles. Activity cards below highlight key specialties.",
     "category": "cards",
+    "categories": [
+      "cards",
+      "avatars",
+      "features"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7149,20 +2940,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "team-classic",
     "title": "Team Classic Grid",
-    "description": "Ui-Layouts component.",
+    "description": "A team showcase layout with pink background, animated heading and description. Team member cards with photos, names, roles, and social media links.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "avatars",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "team-clippath",
-    "title": "Team Clip Path",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
     "frameworks": [
       "react",
       "next"
@@ -7173,20 +2957,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "team-synth",
     "title": "Team Synth Grid",
-    "description": "Ui-Layouts component.",
+    "description": "A dark section with animated heading (cyan-to-blue gradient text), team member cards with photos and roles, and gradient background overlays.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "avatars",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "team-troops",
-    "title": "Team Troops Section",
-    "description": "Ui-Layouts component.",
-    "category": "cards",
     "frameworks": [
       "react",
       "next"
@@ -7197,56 +2974,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "team-vr",
     "title": "Team VR Section",
-    "description": "Ui-Layouts component.",
+    "description": "Full-height section displaying team members with cascading blur-in animations on viewport entry. Each card removes grayscale and scales on hover, revealing a quote overlay. Uses TimelineAnimation for staggered reveals.",
     "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "cards",
+      "effects",
+      "heroes",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "advanced-stats",
-    "title": "Advanced Stats Section",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stats-banner",
-    "title": "Stats Banner",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stats-bento",
-    "title": "Stats Bento Grid",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stats-details",
-    "title": "Detailed Stats Cards",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
     "frameworks": [
       "react",
       "next"
@@ -7257,32 +2992,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "stats-section",
     "title": "Stats Section",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "Full-section component with dark background (neutral-950) and purple radial gradient. Left column shows heading, stat grid (Founded, Remote, Capital, Partners), and right column contains narrative paragraphs. Stats animate in on scroll…",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stats-bold",
-    "title": "Bold Stats Display",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "stats-minimal",
-    "title": "Minimal Stats Row",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
     "frameworks": [
       "react",
       "next"
@@ -7293,44 +3008,15 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "messenger-testimonial",
     "title": "Messenger Testimonial",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "Full-screen messenger-style testimonial display with messages appearing sequentially with typing indicator between them. Messages are clickable to show emoji reactions. Includes sender avatars, names, timestamps, customer stats, and live…",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "cards",
+      "testimonials",
+      "chat",
+      "heroes"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "spotlight-testimonial",
-    "title": "Spotlight Testimonial",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "chat-interface-testimonial",
-    "title": "Chat Interface Testimonial",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "testimonial-basic",
-    "title": "Testimonial Basic",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
     "frameworks": [
       "react",
       "next"
@@ -7341,20 +3027,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "impact-experience",
     "title": "Impact Experience Timeline",
-    "description": "Ui-Layouts component.",
+    "description": "Full-section component displaying a hardcoded experience timeline. Each item shows company, position, location, industry, tagline, and multi-line description in a grid layout. Background images (Unsplash URLs) fade in on hover of each…",
     "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "data-display",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "marque-testimonial",
-    "title": "Marquee Testimonials",
-    "description": "Ui-Layouts component.",
-    "category": "testimonials",
     "frameworks": [
       "react",
       "next"
@@ -7365,56 +3043,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "portfolio-experience",
     "title": "Portfolio Experience",
-    "description": "Ui-Layouts component.",
+    "description": "Full-section component displaying SaaS career highlights. Each role shows company, position, location, metrics (ARR, uptime, users), tech stack, and narrative description. Items fade in as they scroll into view. Hard-coded content.",
     "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "data-display",
+      "portfolio"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "work-experience",
-    "title": "Work Experience List",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "customer-experience",
-    "title": "Customer Photo Gallery",
-    "description": "Ui-Layouts component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "pricing-grow-business",
-    "title": "Pricing Grow Business",
-    "description": "Ui-Layouts component.",
-    "category": "pricing",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "faq-founder",
-    "title": "Founder FAQ",
-    "description": "Ui-Layouts component.",
-    "category": "accordions",
     "frameworks": [
       "react",
       "next"
@@ -7425,103 +3059,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "faq-interactive-preview",
     "title": "Interactive FAQ Preview",
-    "description": "Ui-Layouts component.",
+    "description": "FAQ layout with a preview or comparison panel alongside accordion content.",
     "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "accordions",
+      "features"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "footer-hero",
-    "title": "Footer Hero",
-    "description": "Ui-Layouts component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "footer-bold",
-    "title": "Footer Bold",
-    "description": "Ui-Layouts component.",
-    "category": "footers",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "footer-privilege",
-    "title": "Footer Privilege",
-    "description": "Ui-Layouts component.",
-    "category": "footers",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "btn-hover14",
-    "title": "Arrow Hover Button",
-    "description": "Ui-Layouts component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "gradient-border",
-    "title": "Gradient Border",
-    "description": "Ui-Layouts component.",
-    "category": "borders",
-    "frameworks": [
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "footer-simple",
-    "title": "Footer Simple",
-    "description": "Ui-Layouts component.",
-    "category": "footers",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "flipcountdown",
-    "title": "Flip Countdown Timer",
-    "description": "Ui-Layouts component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "nested-vaul-drawer",
-    "title": "Nested Vaul Drawer",
-    "description": "Ui-Layouts component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -7532,20 +3075,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "special-offer",
     "title": "Special Offer Banner",
-    "description": "Ui-Layouts component.",
+    "description": "Full-page-width cyber sale banner with gradient background, animated countdown timer (days/hours/minutes/seconds via useEffect RAF), promotional text, promo code box, and responsive layout.",
     "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "notifications",
+      "ctas",
+      "ecommerce"
     ],
-    "library": "Ui-Layouts",
-    "librarySlug": "ui-layouts"
-  },
-  {
-    "name": "sticky-hero-scroll",
-    "title": "Sticky Hero Scroll",
-    "description": "Ui-Layouts component.",
-    "category": "heroes",
     "frameworks": [
       "react",
       "next"
@@ -7556,8 +3092,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "mac-genie",
     "title": "Mac Genie Dock",
-    "description": "Ui-Layouts component.",
-    "category": "navigation",
+    "description": "Renders a macOS-style dock with spring-based icon magnification on hover. Clicking an icon opens a window with a canvas-based genie animation that morphs between dock and open position, mirroring macOS behavior.",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "navigation",
+      "heroes"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -7566,82 +3107,15 @@ export const componentsMeta: ComponentMeta[] = [
     "librarySlug": "ui-layouts"
   },
   {
-    "name": "origin-ui-accordion",
-    "title": "Accordion",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "alert-dialog",
-    "title": "Alert Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "collapsible",
-    "title": "Collapsible",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
     "name": "command",
     "title": "Command Palette",
-    "description": "Origin UI component.",
+    "description": "A compound component wrapping cmdk library with styled input, grouped results, keyboard shortcuts display, and dialog wrapper for full-screen command palette UI.",
     "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "modals",
+      "menus",
+      "search"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "calendar",
-    "title": "Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "breadcrumb",
-    "title": "Breadcrumb",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "checkbox",
-    "title": "Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
     "frameworks": [
       "react",
       "next"
@@ -7652,356 +3126,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "checkbox-tree",
     "title": "Checkbox Tree",
-    "description": "Origin UI component.",
+    "description": "Render-prop-based tree checkbox component. Manages nested checkbox state with parent-child synchronization: checking a parent checks all children; partially-checked parents show indeterminate state. Supports default-checked nodes.",
     "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "checkboxes",
+      "data-display",
+      "settings",
+      "search"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "badge",
-    "title": "Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "button",
-    "title": "Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "avatar",
-    "title": "Avatar",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "calendar-rac",
-    "title": "Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "cropper",
-    "title": "Image Cropper",
-    "description": "Origin UI component.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-input",
-    "title": "Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "dropdown-menu",
-    "title": "Dropdown Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-popover",
-    "title": "Popover",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "navigation-menu",
-    "title": "Navigation Menu",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "pagination",
-    "title": "Pagination",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-label",
-    "title": "Form Label",
-    "description": "Origin UI component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "multiselect",
-    "title": "Multiselect",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "radio-group",
-    "title": "Radio Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-dialog",
-    "title": "Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "hover-card",
-    "title": "Hover Card",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "datefield-rac",
-    "title": "Date Field",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-slider",
-    "title": "Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "select-native",
-    "title": "Native Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "select",
-    "title": "Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "scroll-area",
-    "title": "Scroll Area",
-    "description": "Origin UI component.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "stepper",
-    "title": "Stepper",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "switch",
-    "title": "Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "progress",
-    "title": "Progress Bar",
-    "description": "Origin UI component.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "table",
-    "title": "Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-tabs",
-    "title": "Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "textarea",
-    "title": "Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "origin-ui-timeline",
-    "title": "Timeline",
-    "description": "Origin UI component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "toggle",
-    "title": "Toggle",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "toggle-group",
-    "title": "Toggle Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
     "frameworks": [
       "react",
       "next"
@@ -8012,512 +3144,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "sonner",
     "title": "Sonner Toaster",
-    "description": "Origin UI component.",
+    "description": "Wrapper component around Sonner's Toaster with useTheme integration, CSS custom properties for styling, and toastOptions for description styling.",
     "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "notifications"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "toast",
-    "title": "Toast",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "tree",
-    "title": "File Tree",
-    "description": "Origin UI component.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "tooltip",
-    "title": "Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-01",
-    "title": "Simple Email Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-04",
-    "title": "Input With Hint",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-05",
-    "title": "Input Colored Border",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-06",
-    "title": "Input With Error",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-10",
-    "title": "Input End Icon",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-08",
-    "title": "Disabled Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-07",
-    "title": "Input Gray Background",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-09",
-    "title": "Input Start Icon",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-13",
-    "title": "Currency Input Add-on",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-03",
-    "title": "Input Helper Text",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-11",
-    "title": "Input URL Prefix",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-14",
-    "title": "URL Prefix Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-15",
-    "title": "Domain Suffix Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-16",
-    "title": "Currency Amount Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-02",
-    "title": "Required Email Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-19",
-    "title": "Email Send Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-21",
-    "title": "Input With End Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-22",
-    "title": "Input With Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-20",
-    "title": "Input Icon Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-23",
-    "title": "Password Visibility Toggle",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-24",
-    "title": "Clearable Text Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-25",
-    "title": "Search Keyboard Shortcut Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-26",
-    "title": "Search With Submit Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-27",
-    "title": "Search Input With Loader",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-32",
-    "title": "Floating Label Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-30",
-    "title": "File Input",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-29",
-    "title": "Number Input Chevrons",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-31",
-    "title": "Overlapping Label Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-12",
-    "title": "Inline End Addon Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-28",
-    "title": "Number Stepper Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-34",
-    "title": "Character Limit Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-35",
-    "title": "Characters Remaining Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-45",
-    "title": "OTP Double Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-33",
-    "title": "Inset Label Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-44",
-    "title": "OTP Input Grouped",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-47",
-    "title": "Card Number Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-48",
-    "title": "Card Expiry Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-46",
-    "title": "Phone Number Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-49",
-    "title": "CVC Code Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
     "frameworks": [
       "react",
       "next"
@@ -8528,2204 +3159,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-51",
     "title": "Password Strength Input",
-    "description": "Origin UI component.",
+    "description": "A password field with an eye toggle, an animated progress bar showing strength (0-4 requirements met), and a checklist of requirements. Color-codes from red (weak) to green (strong).",
     "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "inputs",
+      "auth"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-55",
-    "title": "Timestamp Masked Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-53",
-    "title": "Copy to Clipboard Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-52",
-    "title": "Read Only Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-56",
-    "title": "Tag List Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-54",
-    "title": "Masked Format Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-57",
-    "title": "Inline Tags Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-59",
-    "title": "Simple Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-58",
-    "title": "OTP Input Spaced",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-60",
-    "title": "Required Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-61",
-    "title": "Textarea With Helper",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-50",
-    "title": "Card Details Form",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-62",
-    "title": "Textarea With Hint",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-63",
-    "title": "Colored Border Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-64",
-    "title": "Textarea With Error",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-65",
-    "title": "Muted Background Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-66",
-    "title": "Compact Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-67",
-    "title": "Disabled Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-69",
-    "title": "Textarea Right Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-70",
-    "title": "Textarea Full Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-71",
-    "title": "Textarea Overlapping Label",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-73",
-    "title": "Textarea Inset Label",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-72",
-    "title": "Textarea Animated Label",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-74",
-    "title": "Textarea Character Counter",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-75",
-    "title": "Textarea No Resize",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-76",
-    "title": "Read-Only Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-77",
-    "title": "Autogrowing Textarea",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-68",
-    "title": "Textarea Left Button",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-78",
-    "title": "Default Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-80",
-    "title": "Pill Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-81",
-    "title": "Button Leading Icon",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-82",
-    "title": "Destructive Icon Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-83",
-    "title": "Secondary Icon Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-85",
-    "title": "Ghost Arrow Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-84",
-    "title": "Sparkles Outline Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-87",
-    "title": "Email Dual Icon Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-88",
-    "title": "Button Chevron Dropdown",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-89",
-    "title": "Cancel Save Pair",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-86",
-    "title": "Arrow Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-79",
-    "title": "Disabled Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-90",
-    "title": "Loading Spinner Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-92",
-    "title": "Button With Badge",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-94",
-    "title": "Avatar Username Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-91",
-    "title": "Async Loading Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-93",
-    "title": "Keyboard Shortcut Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-95",
-    "title": "User Menu Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-96",
-    "title": "Responsive Icon Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-97",
-    "title": "Round Icon Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-98",
-    "title": "Animated Plus Toggle",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-100",
-    "title": "Hamburger Menu Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-99",
-    "title": "Icon Button Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-101",
-    "title": "Bookmark Toggle Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-102",
-    "title": "Vote Button Group",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-103",
-    "title": "Pill Vote Buttons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-104",
-    "title": "Volume Control Buttons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-106",
-    "title": "Flip Button Group",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-105",
-    "title": "Copy To Clipboard Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-107",
-    "title": "Text Align Toggle",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-108",
-    "title": "Button Group With Menu",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-109",
-    "title": "Toggle Group Buttons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-110",
-    "title": "Text Align Toggle Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-111",
-    "title": "QR Sign In Split Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-113",
-    "title": "Pinned Options Split Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-112",
-    "title": "Preview Link Split Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-114",
-    "title": "Fork Count Split Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-116",
-    "title": "Next Step Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-115",
-    "title": "Previous Step Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-117",
-    "title": "Like Count Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-118",
-    "title": "Star Count Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-119",
-    "title": "Social Login Icon Buttons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-121",
-    "title": "Social Login Labeled Buttons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-122",
-    "title": "Social Login Branded Buttons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-120",
-    "title": "Social Login Colored Icons",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-123",
-    "title": "Show More Toggle Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-124",
-    "title": "Go Back Link Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-125",
-    "title": "Image Upload Button",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-127",
-    "title": "Directional Pan Controls",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-130",
-    "title": "Dark Mode Toggle",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-128",
-    "title": "Navigation Card Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-131",
-    "title": "Merge Strategy Split Button",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-129",
-    "title": "Notification Bell Badge",
-    "description": "Origin UI component.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-126",
-    "title": "Avatar Upload Button",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-132",
-    "title": "Simple Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-133",
-    "title": "Indeterminate Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-134",
-    "title": "Colored Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-137",
-    "title": "Todo Strikethrough Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-136",
-    "title": "Todo Item Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-142",
-    "title": "Checkbox With Expansion",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-138",
-    "title": "Terms Agree Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-139",
-    "title": "Horizontal Checkbox Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-140",
-    "title": "Right Aligned Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-141",
-    "title": "Checkbox With Description",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-135",
-    "title": "Disabled Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-144",
-    "title": "Card Checkbox Border",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-143",
-    "title": "Right Aligned Card Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-145",
-    "title": "Payment Card Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-146",
-    "title": "Logo Card Checkbox",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-147",
-    "title": "Icon Grid Checkboxes",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-149",
-    "title": "Weekday Picker Checkboxes",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-151",
-    "title": "Vertical Checkbox Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-152",
-    "title": "Simple Radio Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-154",
-    "title": "Disabled Radio Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-153",
-    "title": "Colored Radio Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-150",
-    "title": "Dark Mode Toggle",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-155",
-    "title": "Radio Group With Descriptions",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-158",
-    "title": "Color Swatch Radio Picker",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-159",
-    "title": "Radio Card Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-157",
-    "title": "Star Rating Filter Radio",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-156",
-    "title": "Radio With Expandable Input",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-160",
-    "title": "Payment Brand Radio Cards",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-161",
-    "title": "Logo Radio Card Group",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-163",
-    "title": "Payment Method Selector",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-162",
-    "title": "Icon Radio Card Grid",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-164",
-    "title": "CPU Core Selector",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-166",
-    "title": "Pricing Plan Radio Picker",
-    "description": "Origin UI component.",
-    "category": "pricing",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-165",
-    "title": "Server Location Selector",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-167",
-    "title": "Emoji Sentiment Picker",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-171",
-    "title": "Interactive Star Rating",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-169",
-    "title": "Theme Selector Radio",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-168",
-    "title": "NPS Score Radio Scale",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-170",
-    "title": "Billing Period Toggle",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-174",
-    "title": "Colored Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-173",
-    "title": "Small Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-175",
-    "title": "Disabled Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-176",
-    "title": "Square Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-177",
-    "title": "M2 Style Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-178",
-    "title": "M3 Style Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-179",
-    "title": "Switch With Status Label",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-172",
-    "title": "Simple Toggle Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-180",
-    "title": "Switch Off On Labels",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-182",
-    "title": "Dark Light Mode Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-181",
-    "title": "Switch With Icon Label",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-185",
-    "title": "Pill Switch With Text",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-184",
-    "title": "Pill Switch With Icons",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-186",
-    "title": "Switch With Description",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-188",
-    "title": "Switch With Brand Logo",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-187",
-    "title": "Switch Payment Toggle",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-183",
-    "title": "Theme Toggle Switch",
-    "description": "Origin UI component.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-203",
-    "title": "Select With Default Value",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-204",
-    "title": "Select With Placeholder",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-209",
-    "title": "Select Gray Background",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-208",
-    "title": "Select With Error State",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-205",
-    "title": "Select With Icon",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-207",
-    "title": "Select Colored Border",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-211",
-    "title": "Required Select Field",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-210",
-    "title": "Disabled Select Field",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-206",
-    "title": "Select With Helper Text",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-212",
-    "title": "Auto Width Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-213",
-    "title": "Grouped Options Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-215",
-    "title": "Disabled Options Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-214",
-    "title": "Select With Separator",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-216",
-    "title": "Overlapping Label Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-217",
-    "title": "Inset Label Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-220",
-    "title": "Status Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-222",
-    "title": "Icon Options Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-221",
-    "title": "Inline Prefix Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-219",
-    "title": "Right Indicator Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-218",
-    "title": "Timezone Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-223",
-    "title": "Icon Right Indicator Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-224",
-    "title": "Plan Description Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-225",
-    "title": "Country Flag Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-226",
-    "title": "User Avatar Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-227",
-    "title": "Initial Avatar Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-231",
-    "title": "Searchable Timezone Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-229",
-    "title": "Searchable Combobox Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-228",
-    "title": "Portrait Avatar Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-230",
-    "title": "Combobox With Action",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-233",
-    "title": "Icon Count Combobox",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-232",
-    "title": "Flag Country Combobox",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-237",
-    "title": "Single Select Listbox",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-238",
-    "title": "Multi-Select Listbox",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-239",
-    "title": "Grouped Listbox Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-240",
-    "title": "Simple Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-241",
-    "title": "Disabled Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-242",
-    "title": "Square Thumb Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-244",
-    "title": "Tiny Thumb Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-243",
-    "title": "Solid Thumb Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-245",
-    "title": "Slider Reference Labels",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-246",
-    "title": "Slider With Ticks",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-248",
-    "title": "Labeled Range Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-247",
-    "title": "Slider With Output",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-249",
-    "title": "Slider Label Tooltip",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-251",
-    "title": "Dual Range With Output",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-250",
-    "title": "Dual Range Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
     "frameworks": [
       "react",
       "next"
@@ -10736,44 +3175,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-252",
     "title": "Volume Slider",
-    "description": "Origin UI component.",
+    "description": "A vertical slider track with a volume-icon indicator, typical for audio/video applications.",
     "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "sliders"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-254",
-    "title": "Temperature Slider Input",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-253",
-    "title": "Multi-Thumb Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-255",
-    "title": "Slider With Input",
-    "description": "Origin UI component.",
-    "category": "sliders",
     "frameworks": [
       "react",
       "next"
@@ -10784,68 +3190,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-256",
     "title": "Emoji Rating Slider",
-    "description": "Origin UI component.",
+    "description": "A slider where the thumb or track markers display emoji (😞 to 😄) representing rating or satisfaction.",
     "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "sliders",
+      "feedback"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-257",
-    "title": "Emoji Tooltip Rating",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-258",
-    "title": "Dual Range Input Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-259",
-    "title": "Slider With Buttons",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-260",
-    "title": "Price Range Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-261",
-    "title": "Vertical Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
     "frameworks": [
       "react",
       "next"
@@ -10856,8 +3206,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-265",
     "title": "Histogram Range Slider",
-    "description": "Origin UI component.",
+    "description": "A range slider with a histogram background showing data distribution, common for image or signal filtering.",
     "category": "sliders",
+    "categories": [
+      "sliders",
+      "dashboards"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -10868,548 +3222,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-266",
     "title": "Audio Equalizer Slider",
-    "description": "Origin UI component.",
+    "description": "Multiple vertical sliders arranged in a row, each controlling a frequency band or level, styled like an audio EQ.",
     "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "sliders"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-263",
-    "title": "Vertical Dual Range Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-262",
-    "title": "Vertical Slider With Input",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-267",
-    "title": "Warning Inline Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-270",
-    "title": "Error Bordered Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-269",
-    "title": "Error Inline Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-271",
-    "title": "Success Inline Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-264",
-    "title": "Object Position Slider",
-    "description": "Origin UI component.",
-    "category": "sliders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-272",
-    "title": "Success Bordered Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-273",
-    "title": "Info Inline Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-268",
-    "title": "Warning Bordered Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-274",
-    "title": "Info Bordered Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-277",
-    "title": "Error List Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-275",
-    "title": "Warning Alert With Link",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-276",
-    "title": "Warning Bordered Alert Link",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-280",
-    "title": "Dismissible Error Toast",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-279",
-    "title": "Dismissible Warning Toast",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-281",
-    "title": "Dismissible Success Toast",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-278",
-    "title": "Error Bordered List Alert",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-283",
-    "title": "Warning Alert Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-282",
-    "title": "Info Alert Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-284",
-    "title": "Error Alert Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-285",
-    "title": "Success Alert Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-286",
-    "title": "Info Alert With Link",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-290",
-    "title": "Error Notification Card",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-293",
-    "title": "Cookie Consent Prompt",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-296",
-    "title": "Live Event Notification",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-294",
-    "title": "App Update Notification",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-288",
-    "title": "Success With Undo Actions",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-287",
-    "title": "Changes Saved Notification",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-292",
-    "title": "Info Notification Card",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-289",
-    "title": "Warning Notification Card",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-291",
-    "title": "Success Notification Card",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-295",
-    "title": "Social Mention Notification",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-301",
-    "title": "Cookie Consent Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-302",
-    "title": "Dark Announcement Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-300",
-    "title": "Custom Sonner Toast",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-305",
-    "title": "Dismissible Feature Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-299",
-    "title": "Sonner Toast Trigger",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-303",
-    "title": "Upgrade Prompt Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-307",
-    "title": "Feature Launch Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-304",
-    "title": "Announcement Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-308",
-    "title": "Dismissible Feature Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-306",
-    "title": "Banner With Actions",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-309",
-    "title": "Feature Launch Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-314",
-    "title": "Alert Dialog With Icon",
-    "description": "Origin UI component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -11420,104 +3237,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-310",
     "title": "Sale Countdown Banner",
-    "description": "Origin UI component.",
+    "description": "Dark sale banner with ticket icon, sale headline, live countdown timer showing days/hours/minutes/seconds via useEffect RAF loop, Buy now button, and dismissible close.",
     "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "notifications",
+      "ctas",
+      "ecommerce"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-312",
-    "title": "Version Update Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-313",
-    "title": "Confirm Alert Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-311",
-    "title": "Newsletter Subscribe Banner",
-    "description": "Origin UI component.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-315",
-    "title": "Scrollable FAQ Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-316",
-    "title": "Custom Scrollbar Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-317",
-    "title": "Sticky Header Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-318",
-    "title": "Sticky Footer Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-319",
-    "title": "Terms Acceptance Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -11528,8 +3254,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-320",
     "title": "Delete Confirm Dialog",
-    "description": "Origin UI component.",
+    "description": "A shadcn Dialog with a warning icon and text input that enables the delete button only after the user types the exact project name to confirm.",
     "category": "modals",
+    "categories": [
+      "modals"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -11540,20 +3269,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-325",
     "title": "Sign Up Dialog",
-    "description": "Origin UI component.",
+    "description": "A shadcn Dialog collecting full name, email, and password; includes a Google authentication option and terms link.",
     "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "modals",
+      "auth",
+      "onboarding"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-322",
-    "title": "Feedback Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -11564,80 +3286,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-324",
     "title": "OTP Verify Dialog",
-    "description": "Origin UI component.",
+    "description": "A shadcn Dialog with a 4-slot OTP input using the input-otp library; displays success on valid code or error on invalid, with a resend link.",
     "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "modals",
+      "inputs",
+      "auth"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-323",
-    "title": "Rating Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-327",
-    "title": "Invite Members Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-326",
-    "title": "Sign In Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-328",
-    "title": "Card Details Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-330",
-    "title": "Change Plan Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-329",
-    "title": "Checkout Payment Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
     "frameworks": [
       "react",
       "next"
@@ -11648,8 +3303,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-331",
     "title": "Edit Profile Dialog",
-    "description": "Origin UI component.",
+    "description": "A scrollable shadcn Dialog with background and avatar image uploads, name fields, website, bio with character counter.",
     "category": "modals",
+    "categories": [
+      "modals",
+      "settings"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -11660,596 +3319,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-332",
     "title": "Onboarding Stepper Dialog",
-    "description": "Origin UI component.",
+    "description": "A shadcn Dialog with 4 steps, each displaying an image, title, and description; progress dots show current position; next/okay buttons advance.",
     "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "modals",
+      "steppers",
+      "onboarding"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-333",
-    "title": "Command Palette Search",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-335",
-    "title": "Accordion Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-334",
-    "title": "Accordion With Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-340",
-    "title": "Accordion Subheader Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-341",
-    "title": "Accordion Subheader Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-339",
-    "title": "Accordion Icon Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-336",
-    "title": "Accordion Left Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-338",
-    "title": "Accordion Icon Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-342",
-    "title": "Accordion Icon Subheader Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-343",
-    "title": "Accordion Icon Subheader Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-337",
-    "title": "Accordion Left Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-344",
-    "title": "Card Accordion Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-345",
-    "title": "Card Accordion Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-351",
-    "title": "Table Accordion Left Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-350",
-    "title": "Table Accordion Left Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-346",
-    "title": "Card Accordion Left Chevron",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-347",
-    "title": "Card Accordion Left Plus Minus",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-321",
-    "title": "Newsletter Subscribe Dialog",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-348",
-    "title": "Chevron FAQ Accordion",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-353",
-    "title": "Icon Multi-Level Accordion",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-352",
-    "title": "Multi-Level Nested Accordion",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-354",
-    "title": "Simple Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-349",
-    "title": "Plus Minus Accordion",
-    "description": "Origin UI component.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-356",
-    "title": "Arrow Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-357",
-    "title": "Titled Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-355",
-    "title": "Dark Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-360",
-    "title": "Directional Pan Tooltips",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-362",
-    "title": "Chart Data Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-358",
-    "title": "Icon Rich Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-359",
-    "title": "Image Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-361",
-    "title": "Stats Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-363",
-    "title": "Avatar Profile Hovercard",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-364",
-    "title": "User Profile Hovercard",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-365",
-    "title": "Article Preview Hovercard",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-366",
-    "title": "Ellipsis Dropdown Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-367",
-    "title": "Full Width Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-368",
-    "title": "Icon Dropdown Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-369",
-    "title": "Grouped Dropdown Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-370",
-    "title": "Labeled Grouped Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-371",
-    "title": "Checkbox Dropdown Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-372",
-    "title": "Radio Dropdown Select",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-374",
-    "title": "Rich Icon Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-373",
-    "title": "Nested Dropdown Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-375",
-    "title": "Account Menu Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-376",
-    "title": "User Avatar Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-378",
-    "title": "Help Links Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-377",
-    "title": "Avatar Account Menu",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-380",
-    "title": "Theme Switcher Dropdown",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-382",
-    "title": "Notification Bell Popover",
-    "description": "Origin UI component.",
-    "category": "notifications",
     "frameworks": [
       "react",
       "next"
@@ -12260,1244 +3336,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-383",
     "title": "Avatar Notification Feed",
-    "description": "Origin UI component.",
+    "description": "Bell icon button with unread badge, opens Popover showing notification list with user avatars, actions, timestamps, Mark all as read button, and unread indicators.",
     "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "notifications",
+      "avatars",
+      "social"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-379",
-    "title": "Content Block Picker",
-    "description": "Origin UI component.",
-    "category": "selects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-384",
-    "title": "Interactive Tooltip Popover",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-385",
-    "title": "Stepped Onboarding Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-386",
-    "title": "Paginated Tour Tooltip",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-387",
-    "title": "Share Link Popover",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-388",
-    "title": "Feedback Popover Form",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-389",
-    "title": "Anchored Product Tour",
-    "description": "Origin UI component.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-390",
-    "title": "Avatar With Image",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-381",
-    "title": "Filter Checkbox Popover",
-    "description": "Origin UI component.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-391",
-    "title": "Avatar Initials Fallback",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-392",
-    "title": "Avatar Icon Fallback",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-394",
-    "title": "Avatar Online Status",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-395",
-    "title": "Avatar Offline Status",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-393",
-    "title": "Square Avatar",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-397",
-    "title": "Verified Avatar Badge",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-396",
-    "title": "Square Avatar Online",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-398",
-    "title": "Avatar Notification Count",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-399",
-    "title": "Square Avatar Badge Count",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-402",
-    "title": "Avatar Group 28px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-400",
-    "title": "Avatar Group 20px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-401",
-    "title": "Avatar Group 24px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-406",
-    "title": "Avatar Group 48px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-407",
-    "title": "Avatar Group 64px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-405",
-    "title": "Avatar Group 40px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-404",
-    "title": "Avatar Group 36px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-408",
-    "title": "Avatar Group 80px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-409",
-    "title": "Avatar Group Overflow",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-403",
-    "title": "Avatar Group 32px",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-410",
-    "title": "Avatar Group Muted Pill",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-411",
-    "title": "Avatar Group Bordered Pill",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-412",
-    "title": "Social Proof Avatars",
-    "description": "Origin UI component.",
-    "category": "avatars",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-413",
-    "title": "Default Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-414",
-    "title": "Rounded Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-418",
-    "title": "Badge With Count",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-416",
-    "title": "Numeric Count Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-415",
-    "title": "Icon Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-417",
-    "title": "Link Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-419",
-    "title": "Outline Check Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-420",
-    "title": "Success Status Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-421",
-    "title": "Warning Status Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-422",
-    "title": "Error Status Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-423",
-    "title": "Selectable Checkbox Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-424",
-    "title": "Removable Badge",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-426",
-    "title": "Default Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-425",
-    "title": "Removable Tag",
-    "description": "Origin UI component.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-427",
-    "title": "Muted Background Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-429",
-    "title": "Underline Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-428",
-    "title": "Pill Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-430",
-    "title": "Underline Hover Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-432",
-    "title": "Browser Style Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-431",
-    "title": "Bordered Segment Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-433",
-    "title": "Tabs With Icon Badges",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-434",
-    "title": "Pill Tabs With Icons",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-435",
-    "title": "Bordered Icon Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-436",
-    "title": "Browser Icon Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-437",
-    "title": "Underline Icon Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-439",
-    "title": "Badged Count Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-441",
-    "title": "Vertical Icon Tooltip Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-440",
-    "title": "Icon Tooltip Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-438",
-    "title": "Underline Icon Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-442",
-    "title": "Vertical Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-443",
-    "title": "Vertical Border Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-444",
-    "title": "Vertical Icon Sidebar Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-445",
-    "title": "Vertical Highlight Tabs",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-446",
-    "title": "Breadcrumb Ellipsis Dropdown",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-449",
-    "title": "Breadcrumb With Icons",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-451",
-    "title": "Breadcrumb Dot Separator",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-453",
-    "title": "Breadcrumb Select Dropdown",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-452",
-    "title": "Breadcrumb Bordered",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-454",
-    "title": "Prev Next Pagination",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-450",
-    "title": "Breadcrumb Slash Separator",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-447",
-    "title": "Breadcrumb Folder Dropdown",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-455",
-    "title": "Ghost Arrow Pagination",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-456",
-    "title": "Pagination Page Counter",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-448",
-    "title": "Breadcrumb Home Icon",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-457",
-    "title": "Compact Page Pagination",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-458",
-    "title": "Pagination With Page Info",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-462",
-    "title": "Full Ellipsis Pagination",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-459",
-    "title": "Pagination With Ellipsis",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-460",
-    "title": "Pagination First Last",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-461",
-    "title": "Grouped Pagination",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-463",
-    "title": "Pagination Rows Per Page",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-464",
-    "title": "Pagination Page Select",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-465",
-    "title": "Pagination With Counter",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-466",
-    "title": "Basic Data Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-467",
-    "title": "Table With Avatars",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-468",
-    "title": "Rounded Rows Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-469",
-    "title": "Striped Rows Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-470",
-    "title": "Vertical Lines Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-473",
-    "title": "Table With Checkboxes",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-471",
-    "title": "Compact Header Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-472",
-    "title": "Selectable Rows Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-475",
-    "title": "Paginated Data Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-474",
-    "title": "Vertical Key Value Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-477",
-    "title": "Interactive Selectable Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-479",
-    "title": "Sortable Columns Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-478",
-    "title": "Filterable Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-480",
-    "title": "Pinnable Columns Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-476",
-    "title": "Feature Compatibility Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-481",
-    "title": "Draggable Columns Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-482",
-    "title": "Expandable Rows Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-483",
-    "title": "Paginated Sortable Table",
-    "description": "Origin UI component.",
-    "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-484",
-    "title": "Table With Ellipsis Pagination",
-    "description": "Origin UI component.",
-    "category": "tables",
     "frameworks": [
       "react",
       "next"
@@ -13508,200 +3353,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-485",
     "title": "Filterable Data Table",
-    "description": "Origin UI component.",
+    "description": "Full-featured data table with multi-column search (name/email), status filter popover with counts, column visibility toggle, sortable columns, pagination controls, row selection, bulk delete with confirmation, row action menu, and add user…",
     "category": "tables",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "tables",
+      "dashboards",
+      "search"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-486",
-    "title": "Numeric Range Input",
-    "description": "Origin UI component.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-490",
-    "title": "Single Date Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-492",
-    "title": "Disabled Dates Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-493",
-    "title": "Multiple Day Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-494",
-    "title": "Rounded Day Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-491",
-    "title": "Date Range Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-496",
-    "title": "Right Navigation Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-495",
-    "title": "Custom Range Style Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-498",
-    "title": "Year Select Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-497",
-    "title": "Month Year Dropdown Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-500",
-    "title": "Calendar With Month Button",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-499",
-    "title": "Week Numbers Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-501",
-    "title": "Calendar With Today Button",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-502",
-    "title": "Calendar With Date Input",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-504",
-    "title": "Advanced Year Month Picker",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-503",
-    "title": "Calendar With Time Input",
-    "description": "Origin UI component.",
-    "category": "calendar",
     "frameworks": [
       "react",
       "next"
@@ -13712,20 +3370,11 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-505",
     "title": "Calendar Time Slot Picker",
-    "description": "Origin UI component.",
+    "description": "A date picker paired with a scrollable time slot list. Selecting a date updates the time slots shown. Disabled slots are unclickable.",
     "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "calendar"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-506",
-    "title": "Calendar With Presets",
-    "description": "Origin UI component.",
-    "category": "calendar",
     "frameworks": [
       "react",
       "next"
@@ -13736,32 +3385,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-507",
     "title": "Date Range Preset Picker",
-    "description": "Origin UI component.",
+    "description": "Selects a start and end date using a calendar in range mode. Preset buttons set common ranges (Today, Last 7 days, Month to date, etc). Only past dates are available.",
     "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "calendar",
+      "dashboards"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-508",
-    "title": "Two Month Range Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-509",
-    "title": "Three Month Range Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
     "frameworks": [
       "react",
       "next"
@@ -13772,44 +3401,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-512",
     "title": "Date Range Popover Picker",
-    "description": "Origin UI component.",
+    "description": "A labeled form control showing the selected date range or placeholder. Button displays 'Start - End' format. Popover contains a calendar in range mode for selecting both dates.",
     "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "calendar",
+      "modals"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-510",
-    "title": "Pricing Calendar",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-511",
-    "title": "Single Date Popover Picker",
-    "description": "Origin UI component.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-544",
-    "title": "Image Cover Dropzone",
-    "description": "Origin UI component.",
-    "category": "file-upload",
     "frameworks": [
       "react",
       "next"
@@ -13820,116 +3417,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-546",
     "title": "Multi Image Upload Grid",
-    "description": "Origin UI component.",
+    "description": "Multi-image uploader with drag-and-drop support, displaying thumbnails in a grid layout. Each image can be individually removed.",
     "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "file-upload",
+      "media"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-545",
-    "title": "Image Preview Dropzone",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-549",
-    "title": "Multi File Upload List",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-548",
-    "title": "Single File Dropzone",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-547",
-    "title": "Image Upload List",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-551",
-    "title": "File Upload Table View",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-550",
-    "title": "File Type Upload List",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-553",
-    "title": "Mixed File Upload Manager",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-552",
-    "title": "File Upload Icon Grid",
-    "description": "Origin UI component.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-543",
-    "title": "Avatar Image Uploader",
-    "description": "Origin UI component.",
-    "category": "file-upload",
     "frameworks": [
       "react",
       "next"
@@ -13940,140 +3433,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-578",
     "title": "Mega Menu Navbar",
-    "description": "Origin UI component.",
+    "description": "Responsive header with desktop mega menu (descriptions/icons/simple items) and mobile popover. Collapses cleanly at breakpoint.",
     "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "navigation",
+      "menus"
     ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-579",
-    "title": "Simple Responsive Navbar",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-582",
-    "title": "Icon Nav With Language Select",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-580",
-    "title": "Ecommerce Search Navbar",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-581",
-    "title": "Minimal Auth Navbar",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-583",
-    "title": "Breadcrumb Project Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-584",
-    "title": "Simple Nav Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-585",
-    "title": "Icon Nav Team Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-587",
-    "title": "App Icon Nav Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-586",
-    "title": "Search Bar Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-588",
-    "title": "Icon Nav Avatar Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-589",
-    "title": "Breadcrumb Version Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
     "frameworks": [
       "react",
       "next"
@@ -14084,2240 +3449,31 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "comp-591",
     "title": "AI Model Selector Header",
-    "description": "Origin UI component.",
+    "description": "Header with AI model dropdown (showing descriptions), chat layout toggle, and user menu. Minimal, focused on model selection.",
     "category": "navigation",
+    "categories": [
+      "navigation",
+      "selects",
+      "chat"
+    ],
     "frameworks": [
       "react",
       "next"
     ],
     "library": "Origin UI",
     "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-590",
-    "title": "Team Nav Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-592",
-    "title": "Search Toggle Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-593",
-    "title": "Breadcrumb Filter Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-595",
-    "title": "Collab Nav Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-594",
-    "title": "Team App Toggle Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "comp-596",
-    "title": "Nav Switch Header",
-    "description": "Origin UI component.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Origin UI",
-    "librarySlug": "origin-ui"
-  },
-  {
-    "name": "gradient-warm-flame",
-    "title": "Warm Flame",
-    "description": "A \"Warm Flame\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-night-fade",
-    "title": "Night Fade",
-    "description": "A \"Night Fade\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-spring-warmth",
-    "title": "Spring Warmth",
-    "description": "A \"Spring Warmth\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-juicy-peach",
-    "title": "Juicy Peach",
-    "description": "A \"Juicy Peach\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-young-passion",
-    "title": "Young Passion",
-    "description": "A \"Young Passion\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-lady-lips",
-    "title": "Lady Lips",
-    "description": "A \"Lady Lips\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sunny-morning",
-    "title": "Sunny Morning",
-    "description": "A \"Sunny Morning\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-rainy-ashville",
-    "title": "Rainy Ashville",
-    "description": "A \"Rainy Ashville\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-frozen-dreams",
-    "title": "Frozen Dreams",
-    "description": "A \"Frozen Dreams\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-winter-neva",
-    "title": "Winter Neva",
-    "description": "A \"Winter Neva\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-dusty-grass",
-    "title": "Dusty Grass",
-    "description": "A \"Dusty Grass\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-tempting-azure",
-    "title": "Tempting Azure",
-    "description": "A \"Tempting Azure\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-heavy-rain",
-    "title": "Heavy Rain",
-    "description": "A \"Heavy Rain\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-amy-crisp",
-    "title": "Amy Crisp",
-    "description": "A \"Amy Crisp\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-mean-fruit",
-    "title": "Mean Fruit",
-    "description": "A \"Mean Fruit\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-deep-blue",
-    "title": "Deep Blue",
-    "description": "A \"Deep Blue\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-ripe-malinka",
-    "title": "Ripe Malinka",
-    "description": "A \"Ripe Malinka\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-cloudy-knoxville",
-    "title": "Cloudy Knoxville",
-    "description": "A \"Cloudy Knoxville\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-malibu-beach",
-    "title": "Malibu Beach",
-    "description": "A \"Malibu Beach\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-new-life",
-    "title": "New Life",
-    "description": "A \"New Life\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-true-sunset",
-    "title": "True Sunset",
-    "description": "A \"True Sunset\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-morpheus-den",
-    "title": "Morpheus Den",
-    "description": "A \"Morpheus Den\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-rare-wind",
-    "title": "Rare Wind",
-    "description": "A \"Rare Wind\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-near-moon",
-    "title": "Near Moon",
-    "description": "A \"Near Moon\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-wild-apple",
-    "title": "Wild Apple",
-    "description": "A \"Wild Apple\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-saint-petersburg",
-    "title": "Saint Petersburg",
-    "description": "A \"Saint Petersburg\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-arielles-smile",
-    "title": "Arielle's Smile",
-    "description": "A \"Arielles Smile\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-plum-plate",
-    "title": "Plum Plate",
-    "description": "A \"Plum Plate\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-everlasting-sky",
-    "title": "Everlasting Sky",
-    "description": "A \"Everlasting Sky\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-happy-fisher",
-    "title": "Happy Fisher",
-    "description": "A \"Happy Fisher\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-blessing",
-    "title": "Blessing",
-    "description": "A \"Blessing\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sharpeye-eagle",
-    "title": "Sharpeye Eagle",
-    "description": "A \"Sharpeye Eagle\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-ladoga-bottom",
-    "title": "Ladoga Bottom",
-    "description": "A \"Ladoga Bottom\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-lemon-gate",
-    "title": "Lemon Gate",
-    "description": "A \"Lemon Gate\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-itmeo-branding",
-    "title": "Itmeo Branding",
-    "description": "A \"Itmeo Branding\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-zeus-miracle",
-    "title": "Zeus Miracle",
-    "description": "A \"Zeus Miracle\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-old-hat",
-    "title": "Old Hat",
-    "description": "A \"Old Hat\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-star-wine",
-    "title": "Star Wine",
-    "description": "A \"Star Wine\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-blue-velvet",
-    "title": "Blue Velvet",
-    "description": "A \"Blue Velvet\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-happy-acid",
-    "title": "Happy Acid",
-    "description": "A \"Happy Acid\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-awesome-pine",
-    "title": "Awesome Pine",
-    "description": "A \"Awesome Pine\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-new-york",
-    "title": "New York",
-    "description": "A \"New York\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-shy-rainbow",
-    "title": "Shy Rainbow",
-    "description": "A \"Shy Rainbow\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-mixed-hopes",
-    "title": "Mixed Hopes",
-    "description": "A \"Mixed Hopes\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-fly-high",
-    "title": "Fly High",
-    "description": "A \"Fly High\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-strong-bliss",
-    "title": "Strong Bliss",
-    "description": "A \"Strong Bliss\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-fresh-milk",
-    "title": "Fresh Milk",
-    "description": "A \"Fresh Milk\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-snow-again",
-    "title": "Snow Again",
-    "description": "A \"Snow Again\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-february-ink",
-    "title": "February Ink",
-    "description": "A \"February Ink\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-kind-steel",
-    "title": "Kind Steel",
-    "description": "A \"Kind Steel\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-soft-grass",
-    "title": "Soft Grass",
-    "description": "A \"Soft Grass\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-grown-early",
-    "title": "Grown Early",
-    "description": "A \"Grown Early\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sharp-blues",
-    "title": "Sharp Blues",
-    "description": "A \"Sharp Blues\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-shady-water",
-    "title": "Shady Water",
-    "description": "A \"Shady Water\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-dirty-beauty",
-    "title": "Dirty Beauty",
-    "description": "A \"Dirty Beauty\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-great-whale",
-    "title": "Great Whale",
-    "description": "A \"Great Whale\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-teen-notebook",
-    "title": "Teen Notebook",
-    "description": "A \"Teen Notebook\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-polite-rumors",
-    "title": "Polite Rumors",
-    "description": "A \"Polite Rumors\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sweet-period",
-    "title": "Sweet Period",
-    "description": "A \"Sweet Period\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-wide-matrix",
-    "title": "Wide Matrix",
-    "description": "A \"Wide Matrix\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-soft-cherish",
-    "title": "Soft Cherish",
-    "description": "A \"Soft Cherish\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-red-salvation",
-    "title": "Red Salvation",
-    "description": "A \"Red Salvation\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-burning-spring",
-    "title": "Burning Spring",
-    "description": "A \"Burning Spring\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-night-party",
-    "title": "Night Party",
-    "description": "A \"Night Party\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sky-glider",
-    "title": "Sky Glider",
-    "description": "A \"Sky Glider\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-heaven-peach",
-    "title": "Heaven Peach",
-    "description": "A \"Heaven Peach\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-purple-division",
-    "title": "Purple Division",
-    "description": "A \"Purple Division\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-aqua-splash",
-    "title": "Aqua Splash",
-    "description": "A \"Aqua Splash\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-above-clouds",
-    "title": "Above Clouds",
-    "description": "A \"Above Clouds\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-spiky-naga",
-    "title": "Spiky Naga",
-    "description": "A \"Spiky Naga\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-love-kiss",
-    "title": "Love Kiss",
-    "description": "A \"Love Kiss\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-clean-mirror",
-    "title": "Clean Mirror",
-    "description": "A \"Clean Mirror\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-premium-dark",
-    "title": "Premium Dark",
-    "description": "A \"Premium Dark\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-cold-evening",
-    "title": "Cold Evening",
-    "description": "A \"Cold Evening\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-cochiti-lake",
-    "title": "Cochiti Lake",
-    "description": "A \"Cochiti Lake\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-summer-games",
-    "title": "Summer Games",
-    "description": "A \"Summer Games\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-passionate-bed",
-    "title": "Passionate Bed",
-    "description": "A \"Passionate Bed\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-mountain-rock",
-    "title": "Mountain Rock",
-    "description": "A \"Mountain Rock\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-desert-hump",
-    "title": "Desert Hump",
-    "description": "A \"Desert Hump\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-jungle-day",
-    "title": "Jungle Day",
-    "description": "A \"Jungle Day\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-phoenix-start",
-    "title": "Phoenix Start",
-    "description": "A \"Phoenix Start\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-october-silenceiver",
-    "title": "October Silenceiver",
-    "description": "A \"October Silenceiver\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-faraway-river",
-    "title": "Faraway River",
-    "description": "A \"Faraway River\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-alchemist-lab",
-    "title": "Alchemist Lab",
-    "description": "A \"Alchemist Lab\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-over-sun",
-    "title": "Over Sun",
-    "description": "A \"Over Sun\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-premium-white",
-    "title": "Premium White",
-    "description": "A \"Premium White\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-mars-party",
-    "title": "Mars Party",
-    "description": "A \"Mars Party\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-eternal-constance",
-    "title": "Eternal Constance",
-    "description": "A \"Eternal Constance\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-japan-blush",
-    "title": "Japan Blush",
-    "description": "A \"Japan Blush\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-smiling-rain",
-    "title": "Smiling Rain",
-    "description": "A \"Smiling Rain\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-cloudy-apple",
-    "title": "Cloudy Apple",
-    "description": "A \"Cloudy Apple\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-big-mango",
-    "title": "Big Mango",
-    "description": "A \"Big Mango\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-healthy-water",
-    "title": "Healthy Water",
-    "description": "A \"Healthy Water\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-amour-amour",
-    "title": "Amour Amour",
-    "description": "A \"Amour Amour\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-risky-concrete",
-    "title": "Risky Concrete",
-    "description": "A \"Risky Concrete\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-strong-stick",
-    "title": "Strong Stick",
-    "description": "A \"Strong Stick\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-vicious-stance",
-    "title": "Vicious Stance",
-    "description": "A \"Vicious Stance\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-palo-alto",
-    "title": "Palo Alto",
-    "description": "A \"Palo Alto\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-happy-memories",
-    "title": "Happy Memories",
-    "description": "A \"Happy Memories\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-midnight-bloom",
-    "title": "Midnight Bloom",
-    "description": "A \"Midnight Bloom\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-crystalline",
-    "title": "Crystalline",
-    "description": "A \"Crystalline\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-raccoon-back",
-    "title": "Raccoon Back",
-    "description": "A \"Raccoon Back\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-party-bliss",
-    "title": "Party Bliss",
-    "description": "A \"Party Bliss\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-confident-cloud",
-    "title": "Confident Cloud",
-    "description": "A \"Confident Cloud\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-le-cocktail",
-    "title": "Le Cocktail",
-    "description": "A \"Le Cocktail\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-river-city",
-    "title": "River City",
-    "description": "A \"River City\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-frozen-berry",
-    "title": "Frozen Berry",
-    "description": "A \"Frozen Berry\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-elegance",
-    "title": "Elegance",
-    "description": "A \"Elegance\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-child-care",
-    "title": "Child Care",
-    "description": "A \"Child Care\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-flying-lemon",
-    "title": "Flying Lemon",
-    "description": "A \"Flying Lemon\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-new-retrowave",
-    "title": "New Retrowave",
-    "description": "A \"New Retrowave\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-hidden-jaguar",
-    "title": "Hidden Jaguar",
-    "description": "A \"Hidden Jaguar\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-above-the-sky",
-    "title": "Above The Sky",
-    "description": "A \"Above The Sky\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-nega",
-    "title": "Nega",
-    "description": "A \"Nega\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-dense-water",
-    "title": "Dense Water",
-    "description": "A \"Dense Water\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-seashore",
-    "title": "Seashore",
-    "description": "A \"Seashore\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-marble-wall",
-    "title": "Marble Wall",
-    "description": "A \"Marble Wall\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-cheerful-caramel",
-    "title": "Cheerful Caramel",
-    "description": "A \"Cheerful Caramel\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-night-sky",
-    "title": "Night Sky",
-    "description": "A \"Night Sky\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-magic-lake",
-    "title": "Magic Lake",
-    "description": "A \"Magic Lake\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-young-grass",
-    "title": "Young Grass",
-    "description": "A \"Young Grass\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-colorful-peach",
-    "title": "Colorful Peach",
-    "description": "A \"Colorful Peach\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-gentle-care",
-    "title": "Gentle Care",
-    "description": "A \"Gentle Care\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-plum-bath",
-    "title": "Plum Bath",
-    "description": "A \"Plum Bath\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-happy-unicorn",
-    "title": "Happy Unicorn",
-    "description": "A \"Happy Unicorn\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-full-metal",
-    "title": "Full Metal",
-    "description": "A \"Full Metal\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-african-field",
-    "title": "African Field",
-    "description": "A \"African Field\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-solid-stone",
-    "title": "Solid Stone",
-    "description": "A \"Solid Stone\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-orange-juice",
-    "title": "Orange Juice",
-    "description": "A \"Orange Juice\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-glass-water",
-    "title": "Glass Water",
-    "description": "A \"Glass Water\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-north-miracle",
-    "title": "North Miracle",
-    "description": "A \"North Miracle\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-fruit-blend",
-    "title": "Fruit Blend",
-    "description": "A \"Fruit Blend\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-millennium-pine",
-    "title": "Millennium Pine",
-    "description": "A \"Millennium Pine\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-high-flight",
-    "title": "High Flight",
-    "description": "A \"High Flight\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-mole-hall",
-    "title": "Mole Hall",
-    "description": "A \"Mole Hall\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-space-shift",
-    "title": "Space Shift",
-    "description": "A \"Space Shift\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-forest-inei",
-    "title": "Forest Inei",
-    "description": "A \"Forest Inei\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-royal-garden",
-    "title": "Royal Garden",
-    "description": "A \"Royal Garden\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-rich-metal",
-    "title": "Rich Metal",
-    "description": "A \"Rich Metal\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-juicy-cake",
-    "title": "Juicy Cake",
-    "description": "A \"Juicy Cake\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-smart-indigo",
-    "title": "Smart Indigo",
-    "description": "A \"Smart Indigo\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sand-strike",
-    "title": "Sand Strike",
-    "description": "A \"Sand Strike\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-norse-beauty",
-    "title": "Norse Beauty",
-    "description": "A \"Norse Beauty\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-aqua-guidance",
-    "title": "Aqua Guidance",
-    "description": "A \"Aqua Guidance\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sun-veggie",
-    "title": "Sun Veggie",
-    "description": "A \"Sun Veggie\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sea-lord",
-    "title": "Sea Lord",
-    "description": "A \"Sea Lord\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-black-sea",
-    "title": "Black Sea",
-    "description": "A \"Black Sea\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-grass-shampoo",
-    "title": "Grass Shampoo",
-    "description": "A \"Grass Shampoo\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-landing-aircraft",
-    "title": "Landing Aircraft",
-    "description": "A \"Landing Aircraft\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-witch-dance",
-    "title": "Witch Dance",
-    "description": "A \"Witch Dance\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sleepless-night",
-    "title": "Sleepless Night",
-    "description": "A \"Sleepless Night\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-angel-care",
-    "title": "Angel Care",
-    "description": "A \"Angel Care\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-crystal-river",
-    "title": "Crystal River",
-    "description": "A \"Crystal River\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-soft-lipstick",
-    "title": "Soft Lipstick",
-    "description": "A \"Soft Lipstick\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-salt-mountain",
-    "title": "Salt Mountain",
-    "description": "A \"Salt Mountain\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-perfect-white",
-    "title": "Perfect White",
-    "description": "A \"Perfect White\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-fresh-oasis",
-    "title": "Fresh Oasis",
-    "description": "A \"Fresh Oasis\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-strict-november",
-    "title": "Strict November",
-    "description": "A \"Strict November\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-morning-salad",
-    "title": "Morning Salad",
-    "description": "A \"Morning Salad\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-deep-relief",
-    "title": "Deep Relief",
-    "description": "A \"Deep Relief\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sea-strike",
-    "title": "Sea Strike",
-    "description": "A \"Sea Strike\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-night-call",
-    "title": "Night Call",
-    "description": "A \"Night Call\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-supreme-sky",
-    "title": "Supreme Sky",
-    "description": "A \"Supreme Sky\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-light-blue",
-    "title": "Light Blue",
-    "description": "A \"Light Blue\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-mind-crawl",
-    "title": "Mind Crawl",
-    "description": "A \"Mind Crawl\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-lily-meadow",
-    "title": "Lily Meadow",
-    "description": "A \"Lily Meadow\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sugar-lollipop",
-    "title": "Sugar Lollipop",
-    "description": "A \"Sugar Lollipop\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-sweet-dessert",
-    "title": "Sweet Dessert",
-    "description": "A \"Sweet Dessert\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-magic-ray",
-    "title": "Magic Ray",
-    "description": "A \"Magic Ray\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-teen-party",
-    "title": "Teen Party",
-    "description": "A \"Teen Party\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-frozen-heat",
-    "title": "Frozen Heat",
-    "description": "A \"Frozen Heat\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-gagarin-view",
-    "title": "Gagarin View",
-    "description": "A \"Gagarin View\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-fabled-sunset",
-    "title": "Fabled Sunset",
-    "description": "A \"Fabled Sunset\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
-  },
-  {
-    "name": "gradient-perfect-blue",
-    "title": "Perfect Blue",
-    "description": "A \"Perfect Blue\" CSS gradient.",
-    "category": "gradients",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "WebGradients",
-    "librarySlug": "webgradients"
   },
   {
     "name": "animate-grid",
     "title": "3D Hover Grid",
     "description": "A 3D perspective grid of cards that raises neighbors on hover with glow animations. Mouse-enter/leave events drive CSS transform and keyframe glow on each card and its 4 adjacent neighbors.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "portfolio",
+      "features"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-animated-beam",
-    "title": "Animated Beam",
-    "description": "An SVG beam that draws a quadratic bezier path between two DOM refs inside a container, with a traveling gradient light using motion/react linearGradient animation. Tracks resizes via ResizeObserver.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "animated-circular-progressbar",
-    "title": "Circular Progress Bar",
-    "description": "An SVG circular gauge with a primary arc (filled) and a secondary arc (gap indicator), both driven by CSS stroke-dasharray transitions. Accepts min/max/value and custom stroke colors.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-animated-list",
-    "title": "Animated List",
-    "description": "A rolling list that cycles through an array of React children at a configurable delay. Items animate in/out with spring scale+opacity via AnimatePresence, stacking newest at the bottom.",
-    "category": "notifications",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-animated-modal",
-    "title": "Animated Modal",
-    "description": "A compound-component modal (AnimatedModal, AnimatedModalTrigger, AnimatedModalBody, AnimatedModalContent, AnimatedModalFooter) with a spring 3D flip entrance animation. Supports controlled/uncontrolled open state, ESC key, click-outside, and scroll lock.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-animated-tabs",
-    "title": "Animated Tabs",
-    "description": "Tab bar with a shared layout-id pill indicator that springs between tabs. The content area shows a stacked card effect where background tabs peek out on hover, scaling down by 10% per index.",
-    "category": "navigation",
     "frameworks": [
       "react",
       "next"
@@ -16329,7 +3485,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "inspira-animated-testimonials",
     "title": "Animated Testimonials",
     "description": "A testimonials carousel with a stacked image deck and word-by-word blur-in quote animation. Supports autoplay, prev/next navigation, and AnimatePresence-based transitions on both images and text.",
-    "category": "testimonials",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "testimonials"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -16342,6 +3503,11 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Animated Tooltip",
     "description": "An avatar row that shows a spring-animated tooltip on hover. The tooltip rotates and translates based on the horizontal mouse position within each avatar, mimicking a parallax tilt effect.",
     "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "avatars",
+      "social"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -16352,32 +3518,15 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "apple-card-carousel",
     "title": "Apple Card Carousel",
-    "description": "Horizontally scrolling card carousel with expandable card detail overlay. Ported from multi-file Vue SFC (AppleCardCarousel, AppleCard, AppleCarouselItem, AppleBlurImage, CarouselContext). Vue provide/inject -> React createContext, motion-v -> motion/react, onClickOutside -> useEffect with mousedown listener.",
+    "description": "Horizontally scrolling card carousel with expandable card detail overlay.",
     "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "carousels",
+      "cards",
+      "modals",
+      "heroes",
+      "ecommerce"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-aurora-background",
-    "title": "Aurora Background",
-    "description": "Animated aurora borealis background using CSS custom properties and Tailwind keyframe animation. Vue computed styles -> React inline style object with CSS variables. Faithfully matches the Aceternity version already in the project.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "balance-slider",
-    "title": "Balance Slider",
-    "description": "Two-sided range slider that shows left/right balance percentages with animated fill bars. Vue reactive state + computed -> useState/useMemo; CSS scoped counters re-implemented with inline JSX values; v-bind(borderRadiusInPx) converted to inline style.",
-    "category": "sliders",
     "frameworks": [
       "react",
       "next"
@@ -16388,32 +3537,14 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "bending-gallery",
     "title": "Bending Gallery",
-    "description": "WebGL-powered infinite scrolling gallery where images curve along an arc based on horizontal position. Ported from ogl (Vue) to raw WebGL to avoid the heavy dep. OGL Renderer/Camera/Transform/Mesh/Program/Plane replicated with a custom BendingGalleryApp class. Text labels rendered via Canvas2D and uploaded as WebGL textures.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "WebGL-powered infinite scrolling gallery where images curve along an arc based on horizontal position. OGL Renderer/Camera/Transform/Mesh/Program/Plane replicated with a custom BendingGalleryApp class. Text labels rendered via Canvas2D and uploaded as WebGL textures.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-bento-grid",
-    "title": "Bento Grid",
-    "description": "CSS grid layout component with BentoGrid container, BentoGridItem (slot-based tile), and BentoGridCard (hover-reveal CTA card). Vue named slots (header/icon/title/description/background) -> React ReactNode props.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "bg-black-hole",
-    "title": "Black Hole Background",
-    "description": "Canvas-animated black hole effect with spiraling disc rings, radial lines clipped inside the accretion disc, and floating particles. Vue refs/nextTick -> React useRef/useEffect; motion-v -> motion/react for the color-cycling gradient beam overlay.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -16424,20 +3555,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "bg-bubbles",
     "title": "Bubbles Background",
-    "description": "Three.js scene with 250 floating gradient spheres inside a gradient sphere background. Uses dual warm/cool temperature-based ShaderMaterial with animated float. Vue onMounted/onBeforeUnmount -> useEffect cleanup; renderer.domElement appended to a container ref.",
+    "description": "Three.js scene with 250 floating gradient spheres inside a gradient sphere background. Uses dual warm/cool temperature-based ShaderMaterial with animated float.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "bg-falling-stars",
-    "title": "Falling Stars Background",
-    "description": "Canvas 2D falling stars / warp-speed star field with DPR-aware sizing, layered stroke blur simulation, and 3D perspective projection. Vue watch for color -> useEffect on color prop with rgbRef cache. Pure canvas with no external deps.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -16450,30 +3573,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Neural Background",
     "description": "WebGL canvas background using OGL with a custom GLSL neuro-shape shader. Reacts to pointer and scroll. Props: hue, saturation, chroma. Written to /registry/inspira-react/bg-neural.tsx + bg-neural.demo.tsx. Uses OGL directly (no ShaderToy wrapper) because it has its own uniforms and render loop.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "bg-particle-whirlpool",
-    "title": "Particle Whirlpool Background",
-    "description": "Three.js InstancedMesh particle field with OrbitControls, UnrealBloom post-processing, and mouse-following whirlpool attractor. Props: particleCount, blur, children. Written to /registry/inspira-react/bg-particle-whirlpool.tsx + .demo.tsx.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "bg-silk",
-    "title": "Silk Background",
-    "description": "GLSL silk fabric shader (ShaderToy X3yXRd) rendered via the InspiraShaderToy/ShaderToy helper. Props: hue, saturation, brightness, speed. Written to /registry/inspira-react/bg-silk.tsx + .demo.tsx. Depends on helper files shader-toy.tsx and inspira-shader-toy.ts.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -16486,18 +3589,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Singularity Background",
     "description": "GLSL blackhole/singularity swirl shader (ShaderToy 3csSWB by @XorDev) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-singularity.tsx + .demo.tsx.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "bg-stars",
-    "title": "Stars Background",
-    "description": "Three-layer parallax box-shadow starfield using motion/react springs and infinite-scroll animation. Mouse-reactive via useMotionValue + useSpring. Props: factor, speed, transition, starColor, children. Written to /registry/inspira-react/bg-stars.tsx + .demo.tsx.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -16510,30 +3605,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Stractium Background",
     "description": "Full ray-marched 3D structure shader (ShaderToy Mlf3R4) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-stractium.tsx + .demo.tsx.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "bg-thunderstorm",
-    "title": "Thunderstorm Background",
-    "description": "GLSL noise-field thunderstorm light shader (ShaderToy W3d3z7) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-thunderstorm.tsx + .demo.tsx.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "blur-reveal",
-    "title": "Blur Reveal",
-    "description": "Wraps each direct React child in a motion.div that animates from blurred + y-offset to sharp + in-place when the element enters the viewport (whileInView). Props: duration, delay (stagger), blur, yOffset, className, children. Written to /registry/inspira-react/blur-reveal.tsx + .demo.tsx.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -16545,79 +3620,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "book",
     "title": "3D Book Display",
     "description": "3D CSS book component with hover tilt animation, configurable cover colour/size/radius, and sub-components BookHeader, BookTitle, BookDescription.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "3d",
+    "categories": [
+      "3d",
+      "cards",
+      "features"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "border-beam",
-    "title": "Border Beam",
-    "description": "Animated glowing beam that travels along the border of its parent container, driven by CSS custom properties and a @keyframes animation.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "box-reveal",
-    "title": "Box Reveal",
-    "description": "Reveals children with a sliding colour box animation using motion/react whileInView — box sweeps away left to expose the content underneath.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "card-3d",
-    "title": "Card 3D",
-    "description": "Mouse-tracked 3D perspective tilt card with CardContainer, CardBody, and CardItem sub-components. Each CardItem can be placed at an independent Z/X/Y depth.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-card-spotlight",
-    "title": "Card Spotlight",
-    "description": "Card with a cursor-following radial spotlight overlay. Spotlight position, colour, size, and opacity are all configurable.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "carousel-3d",
-    "title": "Carousel 3D",
-    "description": "Drag-to-rotate 3D image carousel powered by Three.js CSS3DRenderer (dynamically imported for SSR safety) with continuous auto-rotation via motion/react animate.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-colourful-text",
-    "title": "Colourful Text",
-    "description": "Animates each character of a string through a shuffled colour palette every 5 seconds using motion/react per-character keyframe animations with blur and scale.",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -16630,30 +3638,11 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Image Compare Slider",
     "description": "Image/content comparison slider with hover and drag modes, autoplay, star field decorative effect on the slider line, and full slot system via firstContent/secondContent/handle render props.",
     "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "media",
+      "sliders",
+      "ecommerce"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-confetti",
-    "title": "Confetti",
-    "description": "Canvas-based confetti system with a Confetti container (exposes fire() ref), ConfettiContext, and a ConfettiButton helper that fires from the click origin. Uses canvas-confetti.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "container-scroll",
-    "title": "Container Scroll",
-    "description": "Scroll-driven 3D perspective card reveal. ContainerScroll wraps ContainerScrollTitle (translateY parallax) and ContainerScrollCard (rotateX + scale driven by scroll position). Mobile-responsive scale dimensions.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -16666,42 +3655,9 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Container Text Flip",
     "description": "Animated word-cycling component using motion/react LayoutGroup + AnimatePresence. Each letter fades/blurs in with staggered delay. Container width animates to match the current word.",
     "category": "text",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "text"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "cosmic-portal",
-    "title": "Cosmic Portal",
-    "description": "Full Three.js WebGL portal scene: cosmic star background, shader core sphere, vortex rings, floating octahedron crystals, portal frame torus, energy particles, bloom post-processing, OrbitControls. Exposes activatePortal() and shiftDimensions() via forwardRef.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "design-testimonials",
-    "title": "Design Testimonials",
-    "description": "Editorial-style testimonial rotator with oversized parallax index number, animated word-by-word quote reveal, vertical progress bar, company badge, author row, and a scrolling ticker. Uses motion/react springs and AnimatePresence.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-direction-aware-hover",
-    "title": "Direction Aware Hover",
-    "description": "Image card that detects which edge the cursor enters from (top/bottom/left/right) and slides the overlay out from that direction. Full touch/mobile support with auto-hide timer.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -16713,31 +3669,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "inspira-dither-shader",
     "title": "Dither Shader",
     "description": "CPU canvas dithering renderer supporting bayer, halftone, noise, and crosshatch patterns; grayscale, duotone, original, and custom color modes; brightness/contrast/invert/threshold controls; optional animation loop; ResizeObserver-driven responsive canvas.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-dock",
-    "title": "Dock",
-    "description": "macOS-style magnifying dock with mouse proximity animation. Uses React Context to share mouseX/mouseY and magnification params to child DockIcon components. Exports Dock, DockIcon, DockSeparator.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-encrypted-text",
-    "title": "Encrypted Text",
-    "description": "Text reveal animation that scrambles characters with random charset then progressively reveals the real text. Triggered by IntersectionObserver (plays when scrolled into view). Supports encryptedClassName and revealedClassName for per-state styling.",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -16750,330 +3687,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Expandable Gallery",
     "description": "Horizontal image gallery where each panel expands (flex-[3]) on hover via CSS transition. Minimal pure-CSS implementation using Tailwind flex classes.",
     "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "media",
+      "portfolio"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-file-tree",
-    "title": "File Tree",
-    "description": "Collapsible file/folder tree with selection state and tree-indicator lines. Uses React Context instead of Vue provide/inject. Lucide-react icons replace Nuxt Icon. Exports Tree, Folder, File.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-file-upload",
-    "title": "File Upload",
-    "description": "Drag-and-drop file upload zone with animated file list entries (framer-motion spring). Includes FileUploadGrid helper for the dotted background pattern. Exports FileUpload, FileUploadGrid.",
-    "category": "file-upload",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-flickering-grid",
-    "title": "Flickering Grid",
-    "description": "Canvas-based grid of squares that randomly flicker in opacity. Uses ResizeObserver for responsive sizing and IntersectionObserver to pause animation when off-screen. Supports custom color (hex or rgb), squareSize, gridGap, maxOpacity, flickerChance.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "flip-card",
-    "title": "Flip Card",
-    "description": "CSS 3D flip card with configurable rotation axis (x or y). Front content via children prop, back content via back prop. Uses Tailwind perspective and backface-visibility utilities.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-flip-words",
-    "title": "Flip Words",
-    "description": "Cycles through an array of words with per-letter staggered fade-in animation and blur-out transition between words. CSS keyframes injected inline via a style tag. Supports duration, className, onAnimationStart/Complete callbacks.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "fluid-cursor",
-    "title": "Fluid Cursor",
-    "description": "Full WebGL fluid simulation with Navier-Stokes advection, vorticity, pressure solve, and cursor-driven splats. All shader programs, FBO pipeline and pointer/touch events ported from Vue onMounted into a React useEffect with proper cleanup.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "focus",
-    "title": "Word Focus Effect",
-    "description": "Word-by-word focus animation with animated corner brackets using motion/react. Supports auto-cycling and manual hover mode. useIntervalFn replaced with setInterval in useEffect; Vue Motion component replaced with framer-motion motion.div.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "github-globe",
-    "title": "GitHub Globe",
-    "description": "Three.js globe with animated arcs, ring propagation and point markers via three-globe. Scene/camera/OrbitControls/renderer setup in useEffect with RAF loop and resize listener cleanup.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-glare-card",
-    "title": "Glare Card",
-    "description": "Holographic foil glare card with CSS custom properties for rotation, glare position and background offset. Vue v-bind() CSS variables replaced with React.CSSProperties inline objects; useTimeoutFn replaced with setTimeout/useRef.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "globe",
-    "title": "Globe",
-    "description": "COBE-based interactive globe with spring-damped pointer rotation. vue-use-spring replaced with a simple Euler-integration spring inside the onRender callback.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "glow-border",
-    "title": "Glow Border",
-    "description": "Animated radial-gradient rotating border overlay using injected @keyframes and useMemo-computed inline styles. Vue v-bind() CSS replaced with CSS custom properties on the element style.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-glowing-effect",
-    "title": "Glowing Effect",
-    "description": "Proximity and scroll-aware conic gradient border glow using motion/react animate() for smooth angle transitions and requestAnimationFrame for debounced pointer tracking.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-gradient-button",
-    "title": "Gradient Button",
-    "description": "Rotating conic-gradient rainbow border button. Vue v-bind() in scoped CSS replaced with injected style tag keyframes and computed inline styles for border width, radius, blur and animation duration.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "halo-search",
-    "title": "Halo Search",
-    "description": "A search input with animated aurora/halo glow effects using CSS conic-gradients that respond to hover and focus states. Ported all scoped CSS into an inline style block; replaced Lucide Icon component with an inline SVG.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-hyper-text",
-    "title": "Hyper Text",
-    "description": "Text animation that scrambles each character through random uppercase letters before settling on the final string. Converted @vueuse/core useIntervalFn to setInterval/useRef; motion-v Motion component to motion/react motion.span; mouseenter triggers re-animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-icon-cloud",
-    "title": "Icon Cloud",
-    "description": "Interactive 3D canvas-based image cloud using Fibonacci sphere distribution. Drag to rotate, click icons to center them with an eased animation. Converted Vue reactive/watchEffect/onMounted to useState/useEffect/useRef; all canvas logic is unchanged.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "image-trail-cursor",
-    "title": "Image Trail Cursor",
-    "description": "GSAP-powered cursor trail that cycles through images using 7 animation variants (fade, zoom, float, directional, rotating, speed-reactive, stacking). The trail-variants.ts helper is a direct port of the Vue source's trail-variants.ts — refactored into a shared base class. The React wrapper initialises the class on mount and cleans up on unmount.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-images-badge",
-    "title": "Images Badge",
-    "description": "An interactive folder badge that fans out up to 3 image thumbnails on hover with spring animations. Converted motion-v motion.div to motion/react motion.div; Vue computed/ref to useMemo/useState; component/is pattern to a conditional a/div wrapper.",
-    "category": "badges",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-images-slider",
-    "title": "Images Slider",
-    "description": "A full-size image slider with directional slide transitions, autoplay, keyboard navigation, and touch/swipe support. Children can be a ReactNode or a render function receiving the current index. Converted @vueuse/core useIntervalFn/useSwipe/onKeyStroke to setInterval/touch handlers/keydown listeners.",
-    "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "infinite-grid",
-    "title": "Infinite Grid",
-    "description": "OGL/WebGL-based infinite scrolling grid of card tiles with post-processing effects (barrel distortion, vignette). The 7 framework-agnostic TypeScript helper files (InfiniteGridClass, GridManager, EventHandler, DisposalManager, PostProcessShader, createTexture, shaders) are copied verbatim into infinite-grid-helpers/. The React component is a thin useEffect wrapper that instantiates the class on mount and disposes it on unmount.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-input",
-    "title": "Spotlight Input",
-    "description": "An enhanced input with a radial gradient spotlight that follows the cursor on hover, styled with Tailwind and dark mode support. Converted Vue useVModel/v-bind to forwardRef/spread props; computed containerBg to inline style string derived from useState.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-interactive-grid-pattern",
-    "title": "Interactive Grid Pattern",
-    "description": "SVG grid where each square highlights on hover with transition animations. State-driven with useState for hovered square tracking.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-interactive-hover-button",
-    "title": "Interactive Hover Button",
-    "description": "Button with a sliding animation on hover — foreground text slides out while a secondary label with arrow icon slides in from the right.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "iphone-mockup",
-    "title": "iPhone 15 Pro Mockup",
-    "description": "Pixel-perfect SVG iPhone 15 Pro frame that optionally accepts an image src to display inside the screen via an SVG clipPath.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "lamp-effect",
-    "title": "Lamp Effect",
-    "description": "Dark-background lamp scene with conic gradient beams, a glowing spotlight, and a bright horizontal line, all animated with CSS @keyframes injected via a style tag. delay and duration props control timing.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-lens",
-    "title": "Lens Magnifier",
-    "description": "Magnifying-lens overlay that follows the cursor over any child content. Uses motion/react AnimatePresence for enter/exit, radial-gradient CSS mask to punch out the lens circle, and a scaled duplicate of children for the zoomed view.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "letter-pullup",
-    "title": "Letter Pullup",
-    "description": "Each character of the input string animates up from y=100 with staggered delays using motion/react variants.",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -17085,79 +3702,11 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "light-speed",
     "title": "Light Speed",
     "description": "Three.js highway night-drive effect with instanced car lights, road markings, and postprocessing bloom. Logic split into light-speed.tsx (React wrapper), light-speed-app.ts (Three.js engine class), and light-speed-shaders.ts (GLSL shader strings). Requires three and postprocessing npm packages.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-line-shadow-text",
-    "title": "Line Shadow Text",
-    "description": "Animates a diagonal line-pattern shadow behind text using a CSS ::after pseudo-element with background-position keyframe animation. shadowColor is passed as a CSS custom property.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-link-preview",
-    "title": "Link Preview",
-    "description": "Hover-triggered URL preview card with microlink.io screenshot fetching or static image fallback. Converted NuxtLink to a plain anchor, Vue reactive position tracking to useState/useCallback, and scoped CSS @keyframes pop animation injected via a style tag.",
-    "category": "tooltips",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "liquid-background",
-    "title": "Liquid Background",
-    "description": "Full-canvas WebGL liquid shader background using the ogl library (dynamically imported to avoid SSR). Converted Vue lifecycle hooks (onMounted/onUnmounted) to a single useEffect with cleanup. Vertex and fragment shaders are inlined strings.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-liquid-glass",
-    "title": "Liquid Glass",
-    "description": "SVG displacement-map glassmorphism effect. ResizeObserver tracks dimensions to regenerate the displacement SVG data-URI used as a backdrop-filter. Vue reactive dims -> useState, onMounted/onUnmounted -> useEffect. CSS kept in a scoped style tag.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "liquid-logo",
-    "title": "Liquid Logo",
-    "description": "WebGL2 canvas that renders a logo with a liquid distortion shader. Helper files split into liquid-logo-parse.ts (image processing / PDE solver) and liquid-logo-shader.ts (GLSL sources). Vue watchers for prop changes converted to a useEffect calling updateUniforms.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "logo-cloud",
-    "title": "Logo Cloud",
-    "description": "Three variants: AnimatedLogoCloud (CSS marquee scroll of logo images), IconLogoCloud (icon grid), and StaticLogoCloud (static grid). All exported from a single file. CSS @keyframes logo-cloud injected via style tag.",
-    "category": "media",
     "frameworks": [
       "react",
       "next"
@@ -17168,140 +3717,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "logo-origami",
     "title": "Logo Origami",
-    "description": "Flip-card origami animation cycling through children at a configurable interval. Vue slots mapped to a ReactNode[] prop. motion-v Motion component replaced with motion/react motion.div. Includes LogoOrigamiItem helper component.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-marquee",
-    "title": "Marquee",
-    "description": "Horizontally or vertically scrolling marquee that repeats children N times. Supports reverse direction and pause-on-hover. Includes ReviewCard sub-component. CSS @keyframes marquee / marquee-vertical injected via style tag.",
+    "description": "Flip-card origami animation cycling through children at a configurable interval. Includes LogoOrigamiItem helper component.",
     "category": "carousels",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "carousels",
+      "effects",
+      "testimonials"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-meteors",
-    "title": "Meteors",
-    "description": "CSS-animated meteor shower effect rendering N randomly positioned spans with rotation + fade keyframe animation. Random values computed once via useMemo to avoid recalculating on every render. Keyframes injected via a style tag.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "morphing-tabs",
-    "title": "Morphing Tabs",
-    "description": "Tab bar with a gooey SVG filter effect — adjacent tabs appear to morph together when the active tab is marked with expanded margins. Ported Vue `<script setup>` props/emits to typed React props with onTabChange callback. SVG filter inline in JSX.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-morphing-text",
-    "title": "Morphing Text",
-    "description": "Cycles through an array of text strings using a blur-based cross-fade morph effect driven by requestAnimationFrame. All Vue refs and onMounted/onUnmounted lifecycle hooks converted to useRef + useEffect with cleanup. SVG threshold filter embedded inline.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-multi-step-loader",
-    "title": "Multi Step Loader",
-    "description": "Full-screen overlay loader that walks through sequential steps with timing, optional async steps, completion callbacks, and animated step icons. Vue watch/emit/timer logic converted to useEffect + useRef for timer management. Framer-motion AnimatePresence replaces Vue Transition.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "neon-border",
-    "title": "Neon Border",
-    "description": "Container with a two-color neon glowing border using CSS filter drop-shadow and absolute positioned gradient layers. Vue v-bind CSS variables for dynamic color/duration replaced with inline React styles. Supports none/half/full animation width and configurable duration.",
-    "category": "borders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-number-ticker",
-    "title": "Number Ticker",
-    "description": "Animated number counter that triggers when scrolled into view (IntersectionObserver). Replaces @vueuse/core useTransition + useElementVisibility with a hand-rolled requestAnimationFrame loop and inline easing functions matching the VueUse TransitionPresets. Supports up/down direction, delay, decimal places, and locale formatting.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "orbit",
-    "title": "Orbit",
-    "description": "Wraps children in a continuously orbiting animation using CSS keyframes injected via a style tag. Vue scoped CSS v-bind for radius/duration/delay/direction converted to dynamic keyframe name per radius and inline animation style. Optionally renders an SVG circle path at the orbit radius.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "particle-image",
-    "title": "Particle Image",
-    "description": "Renders an image as an interactive particle field using a canvas-based particle engine (2D or WebGL). The Vue data-attribute bridge pattern preserved — the img element passes all config as data-* attributes which the InspiraImageParticle JS class reads. Helper JS copied verbatim to inspira-image-particles.js and dynamically imported in useEffect.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "particles-bg",
-    "title": "Particles Background",
-    "description": "Canvas-based floating particle background with mouse magnetism. Replaces @vueuse/core useMouse + useDevicePixelRatio with native mousemove event listener and window.devicePixelRatio. All Vue reactive state and watchers converted to useRef (for mutable loop state) and useEffect for lifecycle.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "pattern-background",
-    "title": "Pattern Background",
-    "description": "Animated grid, dot, or big-dot tiling background with directional scroll animation and optional ellipse mask overlay. CVA variant system ported from the Vue index.ts; CSS keyframes injected inline.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -17312,92 +3734,12 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "photo-gallery",
     "title": "Photo Gallery",
-    "description": "CSS diamond clip-path gallery grid that expands hovered images to a rectangle and dims the rest using :has() selector. Scoped styles converted to an injected <style> block.",
+    "description": "CSS diamond clip-path gallery grid that expands hovered images to a rectangle and dims the rest using :has() selector.",
     "category": "media",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "media",
+      "portfolio"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-progressive-blur",
-    "title": "Progressive Blur",
-    "description": "Layered backdrop-filter blur that fades in progressively along a chosen edge (top/bottom/left/right). motion/react Motion divs are used to allow animation prop pass-through matching the Vue motion-v usage.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "radiant-text",
-    "title": "Radiant Text",
-    "description": "Animated shining-highlight paragraph that sweeps a bright radiant band across text using background-clip:text and a CSS keyframe animation. Duration and band width are configurable.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-rainbow-button",
-    "title": "Rainbow Button",
-    "description": "Button with an animated rainbow gradient border and matching glow beneath via ::before. v-bind CSS variable trick for speed replaced with inline CSS custom property. Supports polymorphic `as` prop.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-ripple",
-    "title": "Ripple",
-    "description": "Concentric pulsing circles rendered absolutely inside a container, ported from two Vue SFCs (Ripple + RippleCircle). RippleContainer convenience wrapper also included.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-ripple-button",
-    "title": "Ripple Button",
-    "description": "Click-triggered ripple effect button. Mouse position is used to spawn animated circle overlays that fade out. Vue watchEffect + ref array converted to useState with setTimeout cleanup.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "safari-mockup",
-    "title": "Safari Mockup",
-    "description": "SVG Safari browser chrome mockup with full toolbar decorations. Accepts `src` for a screenshot image and `url` for the address bar text. Vue {{ url }} template interpolation converted to JSX expression.",
-    "category": "misc",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-scales",
-    "title": "Scales",
-    "description": "Repeating linear-gradient pattern background with configurable orientation (horizontal/vertical/diagonal), size, and color. Written at registry/inspira-react/scales.tsx.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -17410,150 +3752,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Scratch To Reveal",
     "description": "Canvas-based scratch card that reveals hidden content underneath a gradient overlay. Triggers an animation and onComplete callback when the scratch percentage threshold is met. Written at registry/inspira-react/scratch-to-reveal.tsx.",
     "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "effects",
+      "ecommerce"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "scroll-island",
-    "title": "Scroll Island",
-    "description": "Fixed dynamic island that tracks page scroll percentage with an animated circular progress bar and expandable content panel. Uses motion/react spring transitions. Written at registry/inspira-react/scroll-island.tsx.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "shader-toy",
-    "title": "Shader Toy",
-    "description": "WebGL2 shader renderer that runs Shadertoy-compatible GLSL fragment shaders with iTime, iMouse, iResolution, iHSV, and iSpeed uniforms. Pre-existing files reused (shader-toy.tsx + inspira-shader-toy.ts); added shader-toy.demo.tsx. Written at registry/inspira-react/shader-toy.tsx.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-shimmer-button",
-    "title": "Shimmer Button",
-    "description": "Button with a conic-gradient shimmer animation that slides and spins within a masked overlay. Configurable shimmer color, speed, border radius, and background. Written at registry/inspira-react/shimmer-button.tsx.",
-    "category": "buttons",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "sleek-line-cursor",
-    "title": "Sleek Line Cursor",
-    "description": "Canvas cursor trail effect that renders multiple spring-physics lines following the mouse with hue-cycling stroke color. Uses Wave and Node simulation classes ported directly from Vue. Written at registry/inspira-react/sleek-line-cursor.tsx.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-smooth-cursor",
-    "title": "Smooth Cursor",
-    "description": "Motion-spring cursor that replaces the native cursor with a custom SVG icon, rotating in the direction of travel and scaling on movement. Uses useSpring from motion/react. Written at registry/inspira-react/smooth-cursor.tsx.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "snowfall-bg",
-    "title": "Snowfall Background",
-    "description": "Canvas background that animates drifting snowflake particles with configurable color, quantity, speed, and radius. Written at registry/inspira-react/snowfall-bg.tsx.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-sparkles",
-    "title": "Sparkles",
-    "description": "Canvas-based animated particle field. Particles float and pulsate with configurable color, density, size, and speed. Uses RAF loop + ResizeObserver instead of @vueuse/core.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-sparkles-text",
-    "title": "Sparkles Text",
-    "description": "Text with animated star sparkles that fade/scale/rotate continuously around it. Framer-motion replaces motion-v animations. Stars regenerate on lifespan expiry.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-spinning-text",
-    "title": "Spinning Text",
-    "description": "Circular spinning text where each character is positioned radially around a center point. Supports forward/reverse rotation, configurable radius and duration via framer-motion.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "spline",
-    "title": "Spline",
-    "description": "Wraps @splinetool/runtime (dynamically imported) in a responsive container with IntersectionObserver and ResizeObserver. Shows children slot as loading state. Requires @splinetool/runtime to be installed separately.",
-    "category": "media",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "spring-calendar",
-    "title": "Spring Calendar",
-    "description": "Animated day-picker calendar with spring physics via framer-motion MotionConfig. Displays upcoming events per day. Includes a TextMorph helper (spring-calendar-text-morph.tsx) that morphs day labels with blur transitions.",
-    "category": "calendar",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "svg-mask",
-    "title": "SVG Mask Reveal",
-    "description": "Mouse-follow SVG mask reveal effect. On hover the mask expands to revealSize px revealing a hidden layer beneath. Uses CSS mask-image with the Inspira CDN mask SVG.",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -17564,224 +3766,13 @@ export const componentsMeta: ComponentMeta[] = [
   {
     "name": "tailed-cursor",
     "title": "Tailed Cursor",
-    "description": "OGL WebGL multi-ribbon cursor trail. Each ribbon follows the mouse with configurable spring/friction physics, fade, and optional shader wave effect. OGL is dynamically imported.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
+    "description": "OGL WebGL multi-ribbon cursor trail. Each ribbon follows the mouse with configurable spring/friction physics, fade, and optional shader wave effect.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "backgrounds",
+      "heroes"
     ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "testimonial-slider",
-    "title": "Testimonial Slider",
-    "description": "Auto-rotating testimonial carousel with image, quote, name and role. CSS transitions replace Vue transition-group for enter/leave animations. Supports manual prev/next navigation.",
-    "category": "testimonials",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "tetris",
-    "title": "Tetris Background",
-    "description": "Animated falling-block Tetris grid background. Cells spawn at the top and fall down; filled rows clear. Click a cell to remove it. Ported from Vue using useRef/useState/ResizeObserver instead of @vueuse/core and native color shading instead of theme-colors.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "text-3d",
-    "title": "Text 3D",
-    "description": "3D-styled text with configurable stroke, shadow layers and a wiggle animation. CSS-variable-based v-bind styles converted to inline React CSSProperties with an injected @keyframes <style> block.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-text-generate-effect",
-    "title": "Text Generate Effect",
-    "description": "Words appear one-by-one from blurred/invisible to sharp/opaque with a staggered timeout. Direct DOM manipulation via querySelectorAll on a scopeRef, matching the original onMounted approach.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "text-glitch",
-    "title": "Text Glitch",
-    "description": "CSS glitch effect using ::before/::after pseudo-elements driven by clip-path keyframe animations. Supports always-on or hover-only modes. Scoped CSS emulated with a random per-instance class name and an injected <style> tag.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "text-highlight",
-    "title": "Text Highlight",
-    "description": "Animated background-size expansion that paints a highlight colour across text from left to right, with optional text colour transition at animation end. CSS animations injected inline with per-instance class names.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-text-hover-effect",
-    "title": "Text Hover Effect",
-    "description": "SVG text with three overlaid layers: a faint outline, an animated stroke-dashoffset draw-on effect, and a radial-gradient reveal that follows the cursor through a mask. Faithful SVG port with React mouse/touch handlers.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-text-reveal",
-    "title": "Text Reveal",
-    "description": "Words slide up from behind an overflow:hidden clip when the element scrolls into view. Replaces GSAP SplitText (paid plugin) with motion/react word-level motion.span elements driven by useInView.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-text-reveal-card",
-    "title": "Text Reveal Card",
-    "description": "Dark card with a cursor-driven clip-path reveal: drag left/right to uncover a second text layer. A rotating divider line follows the cursor. Animated star field helper extracted to text-reveal-card-stars.tsx and imported via @/registry/inspira-react/text-reveal-card-stars.",
-    "category": "cards",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "text-scroll-reveal",
-    "title": "Text Scroll Reveal",
-    "description": "Reveals text word-by-word as the user scrolls. Uses a scroll listener and per-word opacity interpolation. No motion/react needed — pure React state.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-timeline",
-    "title": "Animated Scroll Timeline",
-    "description": "Vertical timeline with a scroll-driven animated progress bar using motion/react useScroll + useTransform. Items accept arbitrary ReactNode content via the items[].content prop.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-tracing-beam",
-    "title": "Tracing Beam Effect",
-    "description": "SVG beam that traces alongside scroll content. Spring physics replaced vue-use-spring with a custom useSpringValue hook using requestAnimationFrame. Gradient endpoints animate with spring values.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "vanishing-input",
-    "title": "Vanishing Input",
-    "description": "Input that pixelates and dissolves on submit using Canvas API particle animation. Cycling placeholder text uses AnimatePresence from motion/react. Supports both controlled and uncontrolled usage.",
-    "category": "inputs",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-video-text",
-    "title": "Video Text Mask",
-    "description": "Masks a video element to only show through large text, using SVG data-URI as a CSS mask-image. Text content is extracted from children prop. Font size supports responsive vw units.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-vortex",
-    "title": "Vortex Background",
-    "description": "Full-canvas particle vortex animation using simplex-noise for flow field direction. All animation state is kept in refs to avoid React re-render overhead. Wraps children in a relative z-10 div.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-warp-background",
-    "title": "Warp Background",
-    "description": "3D perspective grid with animated light beams on all four faces (top/bottom/left/right). Each Beam is a motion.div animating from y:100cqmax to y:-100% in a loop. Beam configs are memoized.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-wavy-background",
-    "title": "Wavy Background",
-    "description": "Canvas-based animated wave background using simplex-noise 3D for smooth wave shapes. Handles Safari blur fallback. Resizes canvas to parent dimensions on mount and window resize.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": null,
-    "librarySlug": null
-  },
-  {
-    "name": "inspira-world-map",
-    "title": "World Map",
-    "description": "Interactive dotted world map with animated curved connection lines between lat/lng coordinate pairs. Uses dotted-map for SVG generation and motion/react for path-draw animations. Converted from Vue (NuxtImg replaced with plain img, motion-v replaced with motion/react, computed replaced with useMemo).",
-    "category": "media",
     "frameworks": [
       "react",
       "next"
@@ -17794,18 +3785,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Hole Background",
     "description": "A background component featuring an animated hole grid.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-backgrounds-gradient",
-    "title": "Gradient Background",
-    "description": "A background component featuring a subtle yet engaging animated gradient effect, smoothly transitioning colors to enhance visual depth.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -17818,54 +3801,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Bubble Background",
     "description": "An interactive background featuring smoothly animated gradient bubbles, creating a playful, dynamic, and visually engaging backdrop.",
     "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "backgrounds",
+      "heroes"
     ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-backgrounds-hexagon",
-    "title": "Hexagon Background",
-    "description": "A background component featuring an interactive hexagon grid.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-backgrounds-gravity-stars",
-    "title": "Gravity Stars Background",
-    "description": "A background component featuring a subtle yet engaging animated gravity stars effect.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-backgrounds-fireworks",
-    "title": "Fireworks Background",
-    "description": "A background component that displays a fireworks animation.",
-    "category": "backgrounds",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-backgrounds-stars",
-    "title": "Stars Background",
-    "description": "An interactive background featuring animated dots of varying sizes and speeds, simulating a dynamic and immersive starry space effect.",
-    "category": "backgrounds",
     "frameworks": [
       "react",
       "next"
@@ -17878,6 +3817,10 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Flip Card",
     "description": "A 3D animated card component that flips to reveal content on the back.",
     "category": "cards",
+    "categories": [
+      "cards",
+      "portfolio"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -17890,6 +3833,11 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Notification List",
     "description": "A fun notification list with animated stacking and cards that expand as you interact.",
     "category": "notifications",
+    "categories": [
+      "notifications",
+      "data-display",
+      "effects"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -17902,30 +3850,11 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Pin List",
     "description": "A playful list for pinning and unpinning items, with smooth animated transitions as items move between groups.",
     "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
+    "categories": [
+      "data-display",
+      "effects",
+      "dashboards"
     ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-community-radial-intro",
-    "title": "Radial Intro",
-    "description": "A circular intro animation component that arranges elements in a radial layout, smoothly transitioning them into orbit with looping motion.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "components-community-share-button",
-    "title": "Share Button",
-    "description": "This is a button for sharing.",
-    "category": "buttons",
     "frameworks": [
       "react",
       "next"
@@ -17937,79 +3866,11 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "components-community-radial-nav",
     "title": "Radial Nav",
     "description": "A circular navigation menu with animated pointer and expanding buttons for smooth interactive transitions.",
-    "category": "navigation",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "menus",
+    "categories": [
+      "menus",
+      "navigation"
     ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-animate-code-block",
-    "title": "Animated Code Block",
-    "description": "A code block component that animates the code as it is written.",
-    "category": "data-display",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-animate-slot",
-    "title": "Animate Slot",
-    "description": "A slot component that allows you to use motion components with any element.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-effects-click",
-    "title": "Click",
-    "description": "An effect that creates animated effects at the click position, adding interactive feedback to user actions.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-effects-image-zoom",
-    "title": "Image Zoom",
-    "description": "An effect that allows you to zoom in on an image on hover.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-effects-highlight",
-    "title": "Highlight",
-    "description": "A highlight effect that allows you to highlight elements on hover, click or with a controlled value.",
-    "category": "effects",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-effects-shine",
-    "title": "Shine",
-    "description": "An animated light sweep effect with configurable timing, colors, and triggers (hover, tap, or continuous).",
-    "category": "effects",
     "frameworks": [
       "react",
       "next"
@@ -18021,175 +3882,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "primitives-effects-theme-toggler",
     "title": "Theme Toggler",
     "description": "An effect that allows you to toggle the theme gradually.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "switches",
+    "categories": [
+      "switches",
+      "effects",
+      "settings"
     ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-headless-checkbox",
-    "title": "Headless Checkbox",
-    "description": "Checkboxes provide the same functionality as native HTML checkboxes, without any of the styling, giving you a clean slate to design them however you'd like.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-headless-dialog",
-    "title": "Headless Dialog",
-    "description": "A fully-managed, renderless dialog component jam-packed with accessibility and keyboard features, perfect for building completely custom dialogs and alerts.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-headless-disclosure",
-    "title": "Headless Disclosure",
-    "description": "A simple, accessible foundation for building custom UIs that show and hide content, like togglable accordion panels.",
-    "category": "accordions",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-headless-popover",
-    "title": "Headless Popover",
-    "description": "Popovers are perfect for floating panels with arbitrary content like navigation menus, mobile menus and flyout menus.",
-    "category": "modals",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-headless-tabs",
-    "title": "Headless Switch",
-    "description": "Easily create accessible, fully customizable tab interfaces, with robust focus management and keyboard navigation support.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-headless-switch",
-    "title": "Headless Switch",
-    "description": "Switches are a pleasant interface for toggling a value between two states, and offer the same semantics and keyboard navigation as native checkbox elements.",
-    "category": "checkboxes",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-radix-progress",
-    "title": "Radix Progress",
-    "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-    "category": "loaders",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-gradient",
-    "title": "Gradient Text",
-    "description": "A gradient text animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-highlight",
-    "title": "Highlight Text",
-    "description": "A highlight text animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-rolling",
-    "title": "Rolling Text",
-    "description": "A rolling text animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-counting-number",
-    "title": "Counting Number",
-    "description": "A counting number animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-shimmering",
-    "title": "Shimmering Text",
-    "description": "A shimmering text animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-rotating",
-    "title": "Rotating Text",
-    "description": "A rotating text animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-splitting",
-    "title": "Splitting Text",
-    "description": "A splitting text animation.",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -18201,31 +3899,12 @@ export const componentsMeta: ComponentMeta[] = [
     "name": "primitives-texts-sliding-number",
     "title": "Sliding Number",
     "description": "A sliding number animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
+    "category": "charts",
+    "categories": [
+      "charts",
+      "text",
+      "dashboards"
     ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-scrolling-number",
-    "title": "Scrolling Number",
-    "description": "A scrolling number animation.",
-    "category": "text",
-    "frameworks": [
-      "react",
-      "next"
-    ],
-    "library": "Animate UI",
-    "librarySlug": "animate-ui"
-  },
-  {
-    "name": "primitives-texts-typing",
-    "title": "Typing Text",
-    "description": "A typing text animation.",
-    "category": "text",
     "frameworks": [
       "react",
       "next"
@@ -18238,6 +3917,9 @@ export const componentsMeta: ComponentMeta[] = [
     "title": "Morphing Text",
     "description": "A text component that smoothly morphs characters to transition between strings.",
     "category": "text",
+    "categories": [
+      "text"
+    ],
     "frameworks": [
       "react",
       "next"
@@ -18246,15 +3928,8672 @@ export const componentsMeta: ComponentMeta[] = [
     "librarySlug": "animate-ui"
   },
   {
-    "name": "proxy-admin",
-    "title": "Proxy Admin",
-    "description": "A drop-in admin dashboard for a proxykit LLM gateway: connect providers via OAuth or token paste, watch connection status and available models, and run live model tests. Talks to the proxykit REST API over a configurable base path.",
-    "category": "dashboards",
+    "name": "meteors",
+    "title": "Meteors",
+    "description": "Renders animated meteors that fall vertically within a container. Each meteor has randomized delay and duration with a CSS-gradient glow trail.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "infinite-moving-cards",
+    "title": "Infinite Moving Cards",
+    "description": "Clones items to create an infinite scrolling marquee of cards with quote, name, and title fields. Configurable direction and speed; mask gradients fade edges.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "parallax-scroll-2",
+    "title": "Rotated Parallax Grid",
+    "description": "A 3-column image grid with advanced parallax combining Y/X translation and rotateZ transforms per column. Effects are driven by scroll progress via motion/react useTransform.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "tracing-beam",
+    "title": "Tracing Beam",
+    "description": "A scroll-linked vertical beam with animated gradient that traces from top to bottom. Includes an animated dot and SVG path responding to scroll velocity with spring physics.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "container-scroll-animation",
+    "title": "Container Scroll Animation",
+    "description": "Scroll-triggered 3D perspective animation using Framer Motion. Card rotates from 20deg down to 0 and scales in, with responsive mobile scaling. Title parallax translates upward.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "cards",
+      "features",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "card-stack",
+    "title": "Card Stack",
+    "description": "Renders an array of cards in a stacked layout where they progressively fan out and scale. Configurable offset (gap between cards) and scaleFactor (how much smaller each card gets). Responsive animations as user scrolls or interacts.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "scroll",
+      "testimonials",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "floating-navbar",
+    "title": "Floating Navbar",
+    "description": "Navbar that animates in/out based on scroll direction. Shows when scrolling up, hides when scrolling down. Nav items can include icons.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "tailwindcss-buttons",
+    "title": "Tailwind CSS Buttons",
+    "description": "A showcase component rendering multiple button variations (default, outline, secondary, ghost) with hover state transitions.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "bento-grid",
+    "title": "Bento Grid",
+    "description": "BentoGrid is a CSS grid container. BentoGridItem wraps each cell with title, description, header (top content), and optional icon. Items are sized with responsive Tailwind classes. No built-in animation.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-boxes",
+    "title": "Background Boxes",
+    "description": "Renders 15,000-element grid with 3D skew/perspective transform. Boxes respond to hover with random color fill from a hardcoded palette. Positioned absolutely with complex transforms.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "input",
+    "title": "Radial Glow Input",
+    "description": "An input component wrapped in a motion.div that renders a radial gradient glow centered at the cursor position on hover, tracking mouse movement with Framer Motion.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "aurora-background",
+    "title": "Aurora Background",
+    "description": "Multi-color aurora shader with Perlin noise and layered animation.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "hover-border-gradient",
+    "title": "Hover Border Gradient",
+    "description": "Wraps children in a border with a continuously rotating gradient that cycles through edges. On hover, the gradient animates to a bright central highlight. Driven by timer and mouse events.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "ctas",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "sidebar",
+    "title": "Sidebar",
+    "description": "Context-based sidebar system with SidebarProvider, Sidebar, SidebarBody, DesktopSidebar, MobileSidebar, and SidebarLink components. Uses Framer Motion for smooth collapse/expand and provides a custom hook for managing open state.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-beams-with-collision",
+    "title": "Background Beams With Collision",
+    "description": "Container with gradient background that animates falling beams. Detects collision with a bottom surface and triggers explosion particles on impact using motion/react. Supports light and dark themes.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "text-hover-effect",
+    "title": "Text Hover Effect",
+    "description": "SVG text component with a radial mask gradient that follows the cursor, revealing a rainbow fill underneath. Initial stroke-dasharray animation draws the outline before hover.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "world-map",
+    "title": "World Map",
+    "description": "Renders a dotted world map with theme-aware coloring via next-themes (dark/light backgrounds). Displays animated curved SVG paths connecting geographic coordinates with customizable line color.",
+    "category": "media",
+    "categories": [
+      "media",
+      "dashboards",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "code-block",
+    "title": "Code Block",
+    "description": "Code block using Prism syntax highlighter with filename display and copy-to-clipboard functionality. Supports multi-file tabs with per-tab language and highlighting.",
+    "category": "code",
+    "categories": [
+      "code"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "carousel",
+    "title": "Carousel",
+    "description": "Interactive image carousel where each slide scales and rotates in 3D on hover. Active slide shows content overlay with title and button. Image position parallaxes with mouse movement using RAF animation.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "heroes",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "squiggly-text",
+    "title": "Squiggly Text",
+    "description": "An underline beneath text that waves or squiggles with a smooth animation, creating a hand-drawn feel.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "magnetic-button",
+    "title": "Magnetic Button",
+    "description": "Wraps a child and translates it toward the pointer within a radius, easing back to rest when the pointer leaves. Spring-based, no layout shift.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "cursors"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "spotlight-new",
+    "title": "Spotlight",
+    "description": "Upgraded spotlight using CSS blur and position tracking; smoother animations and better performance.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "draggable-card",
+    "title": "Draggable Card",
+    "description": "A card that tilts and rotates toward the pointer via motion values, scales on hover, and can be dragged across the viewport with physics-based momentum. 3D perspective effects apply during interaction.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "sticky-banner",
+    "title": "Sticky Banner",
+    "description": "Sticky positioned container that animates down from top on mount, hides on scroll (if hideOnScroll enabled) via useScroll and useMotionValueEvent, with toggle close button.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "pointer-highlight",
+    "title": "Pointer Highlight",
+    "description": "Wraps content in a glowing border rectangle with a pointer/cursor indicator that tracks mouse position, creating a highlighted interactive zone.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "borders",
+      "heroes",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "loader",
+    "title": "Loader",
+    "description": "A collection of 5 animated loader components - bobbing dots, sliding dots, lightning animation, glitchy text, and wave text - each with unique continuous animations.",
+    "category": "loaders",
+    "categories": [
+      "loaders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "comet-card",
+    "title": "Comet Card",
+    "description": "Card that rotates and translates in 3D based on mouse position. A bright glare spot (comet) trails the cursor across the card surface. Highly customizable rotation and translation depth.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "3d",
+      "features",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "pixelated-canvas",
+    "title": "Pixelated Canvas",
+    "description": "Renders an image as a canvas of dots/pixels with real-time distortion based on cursor position. Supports multiple distortion modes (repel, attract, swirl) and visual effects.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "layout-text-flip",
+    "title": "Layout Text Flip",
+    "description": "Uses Framer Motion to create a 3D card-flip effect when content swaps, revealing new text on the flip side.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "tooltip-card",
+    "title": "Tooltip Card",
+    "description": "Custom tooltip that tracks mouse position and displays content with automatic edge detection and repositioning. Supports both mouse and touch events with spring-animated height transitions.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "encrypted-text",
+    "title": "Encrypted Text",
+    "description": "Renders text where characters progressively reveal from left to right when scrolled into view. Unrevealed characters continuously shuffle through random gibberish. Configurable reveal speed and character set.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "noise-background",
+    "title": "Noise Background",
+    "description": "Motion-based background with multiple coloured gradient layers that move organically within the container. Layered with noise texture and optional backdrop blur.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "webcam-pixel-grid",
+    "title": "Webcam Pixel Grid",
+    "description": "Captures live webcam video, downsamples to a configurable grid, and renders each pixel as a 3D block elevated by detected motion. Supports monochrome and color modes.",
+    "category": "media",
+    "categories": [
+      "media",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "3d-globe",
+    "title": "3D Globe",
+    "description": "An interactive Three.js-based 3D globe with optional Earth texture, atmosphere effects, orbital controls, and customizable markers placed at geographic coordinates.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "heroes",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "ascii-art",
+    "title": "ASCII Art Renderer",
+    "description": "Converts an image to ASCII art using various character sets (blocks, symbols, braille, etc.). Dynamically computes character based on pixel brightness.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "cards-demo-2",
+    "title": "Author Blog Card",
+    "description": "Demo card designed as a blog post or article card. Displays author image/avatar, title, and author byline. CardDemo component wrapper with semantic article styling.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "features-section-demo-1",
+    "title": "Feature Grid Section",
+    "description": "Eight feature cards with gradient backgrounds and decorative SVG grid patterns. Responsive layout adapts from 1-column mobile to 4-column desktop.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "features-section-demo-2",
+    "title": "Icon Feature Grid",
+    "description": "Eight feature cards with leading icons (from tabler-icons), bold titles, and descriptive text. Responsive 1-to-4 column layout.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "magic-card",
+    "title": "Magic Card",
+    "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "neon-gradient-card",
+    "title": "Neon Gradient Card",
+    "description": "A beautiful neon card effect",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "borders",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "android",
+    "title": "Android Mockup",
+    "description": "A mockup of an Android device.",
+    "category": "devices",
+    "categories": [
+      "devices",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "interactive-grid-pattern",
+    "title": "Interactive Grid Pattern",
+    "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "magic-ui-marquee",
+    "title": "Marquee",
+    "description": "An infinite scrolling component that can be used to display text, images, or videos.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "magic-ui-globe",
+    "title": "Globe",
+    "description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "heroes",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "glare-hover",
+    "title": "Glare Hover",
+    "description": "A diagonal glare on hover using a ::before gradient and CSS variables (angle, size, duration, color).",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "magic-ui-shimmer-button",
+    "title": "Shimmer Button",
+    "description": "A button with a shimmering light which travels around the perimeter.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "tweet-card",
+    "title": "Tweet Card",
+    "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "testimonials",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "hexagon-pattern",
+    "title": "Hexagon Pattern",
+    "description": "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "warp-background",
+    "title": "Warp Background",
+    "description": "A card with a time warping background effect.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "ripple",
+    "title": "Ripple",
+    "description": "An animated ripple effect typically used behind elements to emphasize them.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "retro-grid",
+    "title": "Retro Grid",
+    "description": "An animated scrolling retro grid effect",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "animated-grid-pattern",
+    "title": "Animated Grid Pattern",
+    "description": "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "scroll-progress",
+    "title": "Scroll Progress",
+    "description": "Animated Scroll Progress for your pages",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "smooth-cursor",
+    "title": "Smooth Cursor",
+    "description": "A customizable, physics-based smooth cursor animation component with spring animations and rotation effects",
+    "category": "cursors",
+    "categories": [
+      "cursors"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "text-reveal",
+    "title": "Text Reveal",
+    "description": "Fade in text as you scroll down the page.",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "aurora-text",
+    "title": "Aurora Text",
+    "description": "A beautiful aurora text effect",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "orbiting-circles",
+    "title": "Orbiting Circles",
+    "description": "A collection of circles which move in orbit along a circular path",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "avatar-circles",
+    "title": "Avatar Circles",
+    "description": "Overlapping circles of avatars.",
+    "category": "avatars",
+    "categories": [
+      "avatars",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "text-animate",
+    "title": "Text Animate",
+    "description": "A text animation component that animates text using a variety of different animations.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "scroll-based-velocity",
+    "title": "Scroll Based Velocity",
+    "description": "Scrolling text whose speed changes based on scroll speed",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "shiny-button",
+    "title": "Shiny Button",
+    "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "cool-mode",
+    "title": "Cool Mode",
+    "description": "Cool mode effect for buttons, links, and other DOMs",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "ripple-button",
+    "title": "Ripple Button",
+    "description": "An animated button with ripple useful for user engagement.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "file-tree",
+    "title": "File Tree",
+    "description": "A component used to showcase the folder and file structure of a directory.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "blur-fade",
+    "title": "Blur Fade",
+    "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "safari",
+    "title": "Safari Browser Mockup",
+    "description": "A safari browser mockup to showcase your website.",
+    "category": "devices",
+    "categories": [
+      "devices",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "iphone",
+    "title": "iPhone Mockup",
+    "description": "A mockup of the iPhone",
+    "category": "devices",
+    "categories": [
+      "devices",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "highlighter",
+    "title": "Highlighter",
+    "description": "A text highlighter that mimics the effect of a human-drawn marker stroke.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "rainbow-button",
+    "title": "Rainbow Button",
+    "description": "An animated button with a rainbow effect.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "borders",
+      "gradients",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "dotted-map",
+    "title": "Dotted Map",
+    "description": "A component with a dotted map.",
+    "category": "media",
+    "categories": [
+      "media",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "kinetic-text",
+    "title": "Kinetic Text",
+    "description": "A text component that animates font weight of characters on hover.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "text-3d-flip",
+    "title": "Text 3D Flip",
+    "description": "A text effect that flips each letter in 3D with a staggered animation on hover.",
+    "category": "text",
+    "categories": [
+      "text",
+      "3d"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "AnimatedContent-TS-TW",
+    "title": "Animated Content",
+    "description": "Wrapper that animates any children on scroll or mount with configurable direction, distance, duration, easing and disappear options.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "scroll",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Magnet-TS-TW",
+    "title": "Magnet Effect",
+    "description": "Elements magnetically ease toward the cursor then settle back with spring physics.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "effects",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ClickSpark-TS-TW",
+    "title": "Click Spark",
+    "description": "Creates particle spark bursts at click position.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "BlobCursor-TS-TW",
+    "title": "Blob Cursor",
+    "description": "Organic blob cursor that smoothly follows the pointer with inertia and elastic morphing.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "effects",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Cubes-TS-TW",
+    "title": "3D Cube Grid",
+    "description": "3D rotating cube cluster. Supports auto-rotation or hover interaction.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "MagnetLines-TS-TW",
+    "title": "Magnet Field Lines",
+    "description": "Animated field lines bend toward the cursor.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PixelTrail-TS-TW",
+    "title": "Pixel Cursor Trail",
+    "description": "Pixelated cursor trail emitting fading squares with retro digital feel.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ShapeBlur-TS-TW",
+    "title": "Shape Blur Effect",
+    "description": "Morphing blurred geometric shape. The effect occurs on hover.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "StarBorder-TS-TW",
+    "title": "Star Border",
+    "description": "Animated star / sparkle border orbiting content with twinkle pulses.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "ctas",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Antigravity-TS-TW",
+    "title": "Antigravity Particle Field",
+    "description": "3D antigravity particle field that repels from the cursor with smooth motion.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "BlurText-TS-TW",
+    "title": "Blur Text",
+    "description": "Text starts blurred then crisply resolves for a soft-focus reveal effect.",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ScrollReveal-TS-TW",
+    "title": "Scroll Reveal",
+    "description": "Text gently unblurs and reveals on scroll.",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ScrollFloat-TS-TW",
+    "title": "Scroll Float",
+    "description": "Text gently floats / parallax shifts on scroll.",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "SplitText-TS-TW",
+    "title": "SplitText",
+    "description": "Splits text into characters / words for staggered entrance animation.",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ScrambledText-TS-TW",
+    "title": "Scrambled Text",
+    "description": "Detects cursor position and applies a distortion effect to text.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "RotatingText-TS-TW",
+    "title": "Rotating Text",
+    "description": "Cycles through multiple phrases with 3D rotate / flip transitions.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "TextCursor-TS-TW",
+    "title": "Text Cursor Trail",
+    "description": "Make any text element follow your cursor, leaving a trail of copies behind it.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "TextPressure-TS-TW",
+    "title": "Text Pressure",
+    "description": "Characters scale / warp interactively based on pointer pressure zone.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "VariableProximity-TS-TW",
+    "title": "Variable Proximity",
+    "description": "Letter styling changes continuously with pointer distance mapping.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Shuffle-TS-TW",
+    "title": "Shuffle",
+    "description": "Animated text reveal where characters shuffle before settling.",
+    "category": "text",
+    "categories": [
+      "text",
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "AnimatedList-TS-TW",
+    "title": "AnimatedList",
+    "description": "List items enter with staggered motion variants for polished reveals.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "effects",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Carousel-TS-TW",
+    "title": "Animated Card Carousel",
+    "description": "Responsive carousel with touch gestures, looping and transitions.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "DecayCard-TS-TW",
+    "title": "DecayCard",
+    "description": "Hover parallax effect that disintegrates the content of a card.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ShinyText-TS-TW",
+    "title": "ShinyText",
+    "description": "Metallic sheen sweeps across text producing a reflective highlight.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Folder-TS-TW",
+    "title": "Interactive File Folder",
+    "description": "Interactive folder opens to reveal nested content smooth motion.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GooeyNav-TS-TW",
+    "title": "GooeyNav",
+    "description": "Navigation indicator morphs with gooey blob transitions between items.",
+    "category": "navigation",
+    "categories": [
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GlassSurface-TS-TW",
+    "title": "GlassSurface",
+    "description": "Advanced Apple-style glass surface with real-time distortion + lighting.",
+    "category": "effects",
+    "categories": [
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ModelViewer-TS-TW",
+    "title": "3D Model Viewer",
+    "description": "Three.js model viewer with orbit controls and lighting presets.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "media",
+      "heroes",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PixelCard-TS-TW",
+    "title": "Pixel Reveal Card",
+    "description": "Card content revealed through pixel expansion transition.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "BorderGlow-TS-TW",
+    "title": "Border Glow",
+    "description": "Glowing mesh-gradient border that follows cursor direction and intensifies near edges.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "ctas",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PillNav-TS-TW",
+    "title": "Pill Nav",
+    "description": "Minimal pill nav with sliding active highlight + smooth easing.",
+    "category": "navigation",
+    "categories": [
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Stepper-TS-TW",
+    "title": "Stepper",
+    "description": "Animated multi-step progress indicator with active state transitions.",
+    "category": "steppers",
+    "categories": [
+      "steppers",
+      "forms",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "SpotlightCard-TS-TW",
+    "title": "Spotlight Card",
+    "description": "Dynamic spotlight follows cursor casting gradient illumination.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ReflectiveCard-TS-TW",
+    "title": "Webcam Reflective Card",
+    "description": "Card with dynamic webcam reflection and glare effects that respond to cursor movement.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "DarkVeil-TS-TW",
+    "title": "Dark Veil",
+    "description": "Subtle dark background with a smooth animation and postprocessing.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ColorBends-TS-TW",
+    "title": "Color Bends",
+    "description": "Vibrant color bends with smooth flowing animation.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Beams-TS-TW",
+    "title": "Beams",
+    "description": "Crossing animated ribbons with customizable properties.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "DotField-TS-TW",
+    "title": "Dot Field",
+    "description": "Interactive dot grid with cursor bulge, glow, sparkle, and wave effects.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "DotGrid-TS-TW",
+    "title": "Dot Grid",
+    "description": "Animated dot grid with cursor interactions.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Ferrofluid-TS-TW",
+    "title": "Ferrofluid",
+    "description": "A churning magnetic fluid traced by glowing contour lines, with a cursor magnet.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GridDistortion-TS-TW",
+    "title": "Grid Distortion",
+    "description": "Warped grid mesh distorts smoothly reacting to cursor.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "GridScan-TS-TW",
+    "title": "Grid Scan",
+    "description": "Animated grid room 3D scan effect and cool interactions.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "LetterGlitch-TS-TW",
+    "title": "Letter Glitch",
+    "description": "Matrix style letter animation.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Radar-TS-TW",
+    "title": "Radar",
+    "description": "Radar sweep effect with concentric rings, radial spokes, and a rotating beam.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "charts",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Plasma-TS-TW",
+    "title": "Plasma",
+    "description": "Organic plasma gradients swirl + morph with smooth turbulence.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PixelBlast-TS-TW",
+    "title": "Pixel Blast",
+    "description": "Exploding pixel particle bursts with optional liquid postprocessing.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "RippleGrid-TS-TW",
+    "title": "Ripple Grid",
+    "description": "A grid that continuously animates with a ripple effect.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Threads-TS-TW",
+    "title": "Threads",
+    "description": "Animated pattern of lines forming a fabric-like motion.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "PixelSnow-TS-TW",
+    "title": "Pixel Snow",
+    "description": "Falling pixelated snow effect with customizable density and speed.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "minimal-card",
+    "title": "Minimal Card",
+    "description": "Clean and minimal card component with subtle styling and hover effects",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "timer",
+    "title": "Timer",
+    "description": "Countdown timer component with customizable duration and visual styles",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "buttons",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "border-beam-button",
+    "title": "Border Beam Button",
+    "description": "Shadcn Button wrapped in Border Beam: animated border glow with compact icon and text variants",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "borders",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "dynamic-island",
+    "title": "Dynamic Island",
+    "description": "iOS-style dynamic island component with expandable content and smooth animations",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "bg-animate-button",
+    "title": "Animated Gradient Button",
+    "description": "Button component with animated background effects and gradient transitions",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "gradients",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "family-button",
+    "title": "Family Button",
+    "description": "Button component with family-style design and interactive hover effects",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "texture-card",
+    "title": "Texture Card",
+    "description": "Card component with texture background and customizable styling options",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "borders",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "cutout-card",
+    "title": "Cutout Card",
+    "description": "Image card with cutout corners, hover motion, inset labels, pins, and reveal actions",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "shift-card",
+    "title": "Shift Card",
+    "description": "Card component with shift animation effects and hover interactions",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "bg-media",
+    "title": "Media Background",
+    "description": "Background media component with video/image support and overlay effects",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "canvas-fractal-grid",
+    "title": "Fractal Dot Grid",
+    "description": "Interactive canvas-based fractal dot grid with mouse tracking and wave effects",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "bg-animated-gradient",
+    "title": "Animated Gradient",
+    "description": "Animated gradient background component with customizable color transitions",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "floating-panel",
+    "title": "Floating Panel",
+    "description": "Floating panel component with backdrop blur and position-aware animations",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "popover",
+    "title": "Popover",
+    "description": "Animated popover component with form support and smooth transitions",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "forms"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "shader-lens-blur",
+    "title": "Shader Lens Blur",
+    "description": "WebGL shader component with lens blur effects and mouse interaction",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "logo-carousel",
+    "title": "Logo Carousel",
+    "description": "Animated logo carousel with staggered animations and customizable columns",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "hover-video-player",
+    "title": "Hover Video Player",
+    "description": "Video player component that plays on hover with smooth animations",
+    "category": "media",
+    "categories": [
+      "media",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "feature-voting",
+    "title": "Feature Voting",
+    "description": "List of features with up-vote support, optional sorting by vote count, and controlled or uncontrolled state",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "buttons",
+      "feedback",
+      "features",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "neumorph-eyebrow",
+    "title": "Neumorph Eyebrow",
+    "description": "Neumorphic eyebrow component with soft shadow effects and modern styling",
+    "category": "badges",
+    "categories": [
+      "badges",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "choice-poll",
+    "title": "Choice Poll",
+    "description": "Poll component with single or multiple selection, optional results, and keyboard navigation",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "charts",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "ai-instructions",
+    "title": "AI Instructions Manager",
+    "description": "Manage and toggle AI instructions with a popover, search, and create-dialog",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "chat"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "poll-widget",
+    "title": "Poll Widget",
+    "description": "Poll widget with inline, popover, and dialog modes, optional results, and animations",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "charts",
+      "modals",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "intro-disclosure",
+    "title": "Intro Disclosure",
+    "description": "Intro disclosure component with expandable content and smooth animations",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "steppers",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "youtube-video-player",
+    "title": "YouTube Video Player",
+    "description": "YouTube video player component with custom controls and smooth animations",
+    "category": "media",
+    "categories": [
+      "media",
+      "testimonials",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "toolbar-expandable",
+    "title": "Toolbar Expandable",
+    "description": "Expandable toolbar component with step-based navigation, smooth animations, and enhanced scrolling",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "steppers",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "squiggle-arrow",
+    "title": "Squiggle Arrow",
+    "description": "A playful, hand-drawn squiggly arrow component with customizable variants, directions, and sizes",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "mock-browser-window",
+    "title": "Mock Browser Window",
+    "description": "A customizable browser window mockup component with support for Chrome, Safari, and generic styles, customizable sidebars, and themes",
+    "category": "devices",
+    "categories": [
+      "devices",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "metal-button",
+    "title": "Metal Button",
+    "description": "Shadcn Button wrapped in MetalFx: animated liquid metal ring with text and icon variants",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "distorted-glass",
+    "title": "Distorted Glass",
+    "description": "A glass morphism effect component using SVG filters with fractal noise to create visual transitions between sections",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "onboarding",
+    "title": "Onboarding",
+    "description": "Composable multi-step onboarding primitives: Onboarding root with step navigation, FeatureCarousel, ChoiceGroup radio selector, TipsList, and StepIndicator with dots and pills variants",
+    "category": "steppers",
+    "categories": [
+      "steppers",
+      "carousels",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "gradient-button-group",
+    "title": "Gradient Button Group",
+    "description": "Premium layered button group with animated active state, gradient ring accents, and theme toggle underlay",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "navigation",
+      "switches"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "hero-color-panel",
+    "title": "Hero Color Panel",
+    "description": "Split-layout hero section with responsive ColorPanels shader visuals, CTA, and tech stack badges",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "btn-bg-shine",
+    "title": "Background Shine Button",
+    "description": "A button with a linear gradient background that animates continuously across its width, creating a light-sweep effect. Driven by CSS animation.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-creative-right",
+    "title": "Arrow Reveal Button",
+    "description": "A circular button where the text fades and slides to the right on hover, while an arrow and duplicate text fade in and slide from the left. A black dot in the background expands into a full-width bar.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-hover-multiple",
+    "title": "Multi Shadow Hover Button",
+    "description": "A button with multiple shadow layers stacked beneath it. On hover, the button and all shadows translate up and to the left, creating a cascading multi-shadow effect.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "button-hover-right",
+    "title": "Expanding Icon Button",
+    "description": "A circular icon button that expands horizontally on hover to reveal text alongside the arrow icon. Text fades in as the button width increases.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-hover-underline",
+    "title": "Underline Hover Button",
+    "description": "A simple button with a scale-animated underline that grows from left to right on hover, using a custom cubic-bezier easing for a smooth reveal.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-hover-down",
+    "title": "Push Shadow Button",
+    "description": "A button with a visible drop shadow. On hover, the shadow disappears while the button translates down and right as if being pulled toward it.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-creative-top",
+    "title": "Top Slide Reveal Button",
+    "description": "A circular button where the text slides up and fades out on hover, while a colourful background bar slides up from the bottom to fill the button. Button becomes rectangular on hover.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-cross-arrow",
+    "title": "Cross Arrow Button",
+    "description": "A button with a circular arrow icon on the right. On hover, the arrow animates with a cross motion—one arrow translates up and right while another slides in from bottom-left, creating a dynamic sweeping effect.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "btn-hover-outline",
+    "title": "Outline Toggle Button",
+    "description": "A link-styled button with a dark background and light text. On hover, the background becomes light and text becomes dark, creating an invert effect.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "ui-layouts-color-picker",
+    "title": "Hex Color Picker",
+    "description": "A controlled color picker component using HexColorPicker that opens in a popover, with direct hex input, copy-to-clipboard, and optional eyedropper tool support.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "number-flow-trading",
+    "title": "Live Price Ticker",
+    "description": "Trading-style price display showing a USD-formatted price with an up/down diff percentage. Numbers animate smoothly via NumberFlow library. Arrow icon rotates 180° when diff is negative. Includes a shuffle button cycling through hardcoded…",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "text",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "r3f-blob",
+    "title": "3D Shader Blob",
+    "description": "3D icosahedron rendered with Three.js shaders and Perlin noise displacement. Increases distortion on hover and follows mouse cursor position in real time.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "mesh-gradient-background",
+    "title": "Mesh Gradient Background",
+    "description": "React Three Fiber scene with animated icosahedron geometry using vertex displacement shader and Perlin noise. Includes post-processing (Bloom, N8AO) and OrbitControls.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "conditionGrid",
+    "title": "Responsive Image Grid",
+    "description": "Renders a 12-column grid with images that reflow responsively. Column spans vary by item index. Motion triggers on viewport entry with a slide-up fade animation.",
+    "category": "media",
+    "categories": [
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "stripecard",
+    "title": "Stripe Style Card",
+    "description": "A product-like card with blue gradient overlay that reveals on hover. Image slides and scales; a CTA link slides in from below.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "ecommerce",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "creative-hover-card",
+    "title": "Creative Hover Card",
+    "description": "Grid of three demo cards with creative hover effects: badge color changes, text swaps between states, images fade in/out, and subtle Y-axis translation. Each card has unique styling and behavior.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "stripecard2",
+    "title": "Image Reveal Card",
+    "description": "An image card with green linear gradient overlay. Title and link slide up from bottom on hover, revealing detail text and CTA.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "hovercard3",
+    "title": "Profile Hover Card",
+    "description": "A card with background image that zooms on hover. A colored overlay panel slides up to reveal full description, button, and heading. Default overlay shows small header.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "buyme-acoffee",
+    "title": "Buy Me Coffee Button",
+    "description": "A clickable card linking to a Buy Me Coffee profile with SVG graphics that transform via CSS animations on hover. The card is fully responsive and supports dark mode via theme tokens.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "payments"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "hovercard4",
+    "title": "Blog Post Card",
+    "description": "A card with featured image and blog metadata (date, title, CTA link). Image zooms on hover; CTA arrow animates from single to double chevron.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "productcard5",
+    "title": "Shoe Size Selector Card",
+    "description": "A product card with image, title, description, size selector (with hover scale), price, and CTA button with shopping cart icon. Wishlist heart toggle included.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "selects",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "creative-clippath",
+    "title": "Creative Squiggle Clip Path",
+    "description": "Renders a 3-column grid of images/videos clipped to creative organic shapes via SVG clip paths. Includes hover scale animation.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "animal-imagemasking",
+    "title": "Animal Shape Image Mask",
+    "description": "Renders a grid of images clipped to animal shapes (cat, panda) using CSS mask-image. Requires pre-existing SVG masks in public/.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "watersplash-imagemasking",
+    "title": "Water Splash Image Mask",
+    "description": "Applies CSS mask-image property to show images through an SVG splash silhouette. Scales and centers to cover the container.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "watersplash-clippath",
+    "title": "Water Splash Clip Path",
+    "description": "Applies SVG clipPath definitions to create organic water splash silhouettes around images. Effects scale on hover.",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "fixedbg-imagemasking",
+    "title": "Fixed Background Image Mask",
+    "description": "Hero section with a fixed background image clipped by SVG mask at /splash-center.svg. Background stays pinned while page scrolls.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "progressive-carousel",
+    "title": "Progressive Carousel",
+    "description": "A compound component carousel with ProgressSlider managing timing and active slide state. Includes SliderContent, SliderWrapper for slide content, and SliderBtn with progress bars for navigation. Auto-advances on configurable duration or…",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "textoverlay-videomasking",
+    "title": "Text Overlay Video Mask",
+    "description": "An autoplay video with text overlaid via SVG mask element. Text acts as a mask cutout allowing video to display through text shape, with background fill in non-text areas.",
+    "category": "media",
+    "categories": [
+      "media",
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "ui-layouts-tabs",
+    "title": "Animated Wobbly Tabs",
+    "description": "Context-based animated tab system with TabsProvider, TabsBtn, and TabsContent. Active indicator animates with spring physics, creating a wobbly follow effect. Supports hover previews and directional slide animations.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "img-tabs-standalone",
+    "title": "Image Tabs Standalone",
+    "description": "Standalone tab component managing its own state. Click tabs to switch content, image, and description. No props required; fully self-contained.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "register-tab",
+    "title": "Login Register Tab",
+    "description": "A two-panel form using TabsProvider. Login tab has email, password, and OAuth buttons (Google, Apple, Facebook). Register tab includes username, phone with icon, email, password, and OAuth buttons. Dark/light theme aware.",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "tabs",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "tailwind-image-accordion",
+    "title": "Tailwind Image Accordion",
+    "description": "No component library dependencies, Tailwind-only accordion using utility classes.",
+    "category": "accordions",
+    "categories": [
+      "accordions"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "drag-items",
+    "title": "Draggable Reorder List",
+    "description": "A draggable list component using motion/react Reorder for smooth item reordering. Items can be dragged vertically to change order with automatic state management.",
+    "category": "data-display",
+    "categories": [
+      "data-display"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "swapy-handle",
+    "title": "Swapy Handle Bento Grid",
+    "description": "A 12-column draggable grid using Swapy with DragHandle components visible on cards. Cards have emojis and titles; drag-to-rearrange with visual feedback.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "scroll-animation-text",
+    "title": "Scroll Reveal Text",
+    "description": "A section component displaying three text blocks animating in from different directions on scroll—left, right, and down. Uses ScrollAnimation for directional reveals.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "opacity-swapy",
+    "title": "Opacity Swapy Layout",
+    "description": "Wraps items in a drag-and-drop layout using Swapy library. Items reorder on hover-mode swap and dragged items show reduced opacity for visual feedback.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "effects",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "framerhorizontalscroll",
+    "title": "Framer Horizontal Scroll",
+    "description": "Full-page layout with a sticky carousel that scrolls horizontally as the user scrolls down the page. Images animate in sequence with whileInView states.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "scroll",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "css-image-stacking",
+    "title": "CSS Image Stacking",
+    "description": "Multiple sections with sticky positioning create a stacking card effect as viewport scrolls. Images grow wider and layer on top of each other. Uses ReactLenis for smooth scrolling.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "media",
+      "heroes",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "horizontal-scroll",
+    "title": "Horizontal Scroll",
+    "description": "Full-page layout using Motion library and ReactLenis to create a horizontal scroll effect animated by vertical scrolling. Each slide has animated text overlays and images.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "scroll",
+      "portfolio",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "sticky-hero-section",
+    "title": "Sticky Hero Section",
+    "description": "200vh container with two sticky viewport-height sections. Section 1 (light) and Section 2 (dark) scale and rotate on scroll. Grid pattern overlays with image gallery. No props, default export.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "css-card-stacking",
+    "title": "CSS Card Stacking",
+    "description": "A scroll-based card stacking effect using CSS sticky positioning. Multiple cards layer on top of each other as the user scrolls. Uses ReactLenis for smooth scrolling. Cards contain titles, descriptions, and links.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "scroll",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "default-marquee",
+    "title": "Default Marquee",
+    "description": "Testimonial display with two marquee rows scrolling horizontally in opposite directions. Review cards show avatar, name, username, and body. Includes pause-on-hover, noise texture overlay, and gradient fade edges for seamless loop effect.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "logos-marquee",
+    "title": "Logos Marquee",
+    "description": "A horizontal scrolling marquee of logos with gradient fade overlays on left and right edges. Uses the Marquee component with hardcoded logo data; serves as a template implementation.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "liquid-glass-sidebar-menu",
+    "title": "Liquid Glass Sidebar",
+    "description": "Sidebar with liquid glass styling (blur, shadow, glow). Icon + text buttons. Draggable component. Supports customization via LiquidGlassCard props.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "liquid-glass-notification",
+    "title": "Liquid Glass Notification",
+    "description": "Two LiquidGlassCard components with icon, title, description, timestamp, and optional expanded image preview. Uses blur and glow effects with backdrop styling.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "cards",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "blur-vignette",
+    "title": "Blur Vignette",
+    "description": "Wraps children in a container that gradually blurs edges using CSS radial gradient and mask. Provides context for consistent vignette styling.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "video-blur-vignette",
+    "title": "Video Blur Vignette",
+    "description": "An autoplay video wrapped in a BlurVignette component that applies blurred, soft edges with vignetting effect. Creates elegant framed appearance around video content.",
+    "category": "media",
+    "categories": [
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "blur-vignette-card",
+    "title": "Blur Vignette Card",
+    "description": "Demo component that shows BlurVignette and BlurVignetteArticle in action. Image has a radial blur gradient from edges. Text article is overlaid at bottom with custom styling. Configurable via radius, inset, blur, and transition props.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "liquid-gradient",
+    "title": "Liquid Gradient",
+    "description": "Layered SVG gradients with Framer Motion animation. Cycles through transform sequences; animation slows on hover (50s cycle) and speeds up on blur (10s cycle).",
+    "category": "gradients",
+    "categories": [
+      "gradients",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "grid-layout-accordion",
+    "title": "Grid Layout Accordion",
+    "description": "Accordion items arranged in a responsive grid instead of a single column stack.",
+    "category": "accordions",
+    "categories": [
+      "accordions",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "multi-layout-accordion",
+    "title": "Multi Open Accordion",
+    "description": "Accordion with `multiple` prop set to true, enabling several sections to expand at once.",
+    "category": "accordions",
+    "categories": [
+      "accordions",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "accordion",
+    "title": "Accordion",
+    "description": "Stack of collapsible sections with click-to-expand headers and animated content reveal. Supports single or multiple open sections via the `multiple` prop.",
+    "category": "accordions",
+    "categories": [
+      "accordions",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "slider",
+    "title": "Dual Range Slider",
+    "description": "A DualRangeSlider component providing min/max selection with a filled track between thumbs.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "pass-strength-dotted-indicator",
+    "title": "Password Strength Dotted",
+    "description": "A password form with a visual 5-dot strength indicator that fills and changes color progressively, combined with a requirements checklist using check/cross icons.",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "pass-strength-hover-indicator",
+    "title": "Password Strength Hover",
+    "description": "A password form with 5 dots showing strength and an info icon that triggers a hover card displaying the requirements checklist with check/cross icons.",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "confirm-pass-check",
+    "title": "Confirm Password Check",
+    "description": "A complete password input form with real-time strength scoring based on character requirements (length, digits, case, special chars), show/hide toggle, and confirmation field matching with visual feedback.",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "phone-input",
+    "title": "Phone Input",
+    "description": "A phone number input using react-phone-number-input with a popover country selector featuring flag icons, search capability, and calling codes.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "contact"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "datetime-input",
+    "title": "Datetime Input",
+    "description": "SmartDatetimeInput component that accepts natural language input (via chrono-node) on one side and a calendar/time picker popover on the other. Configurable to show calendar, time picker, or both via showCalendar and showTimePicker props.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "multi-selector",
+    "title": "Multi Selector",
+    "description": "A fully-featured multi-select component with search, optional badges showing selections, select-all option, and support for displaying extra count when exceeding maxCount.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "imgpreview-dropzone",
+    "title": "Image Preview Dropzone",
+    "description": "Drag-and-drop image uploader supporting up to 4 files (1MB max each). Shows thumbnails inline; supports SVG, PNG, JPG, GIF.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "media"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "chat-form-dropzone",
+    "title": "Chat File Dropzone",
+    "description": "Combines file uploader with a text input field. Displays dropped/selected images as thumbnails; supports max 4 files up to 1MB each.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "inputs",
+      "chat"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "dialog",
+    "title": "Animated Dialog",
+    "description": "A FramerModal component using Framer Motion; fades and slides in on open; closes on Escape or backdrop click; supports controlled/uncontrolled state.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "dialog-default",
+    "title": "Dialog Default",
+    "description": "A complete DialogDefault component using FramerModal with name and username input fields, animated trigger button with gradient background.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "directional-drawer",
+    "title": "Directional Drawer",
+    "description": "A DirectionalDrawer using vaul library with configurable direction (left/right/top/bottom); responsive 450px desktop or 90% mobile; dismissible on mobile with backdrop overlay.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "left-directional-drawer",
+    "title": "Left Directional Drawer",
+    "description": "A complete LeftDirectionalDrawer using DirectionalDrawer configured for left-side; includes profile image upload form with preview.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "motion-drawer",
+    "title": "Motion Drawer",
+    "description": "A full-height off-canvas drawer that slides from left or right with spring physics. Toggle button can merge into the drawer or stay/push. Draggable to close with threshold detection. Overlay fade on open.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "ui-layouts-spotlight",
+    "title": "Spotlight Effect",
+    "description": "Provider wrapper that enables cursor-tracking spotlight effects on child items. Three effects: proximity spotlights, hover focus, and local cursor gradients.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "spotlight-card1",
+    "title": "Spotlight Bento Grid",
+    "description": "A multi-card bento layout using Spotlight and SpotLightItem components. Cards show charts/stats with varying grid spans. Dark background with gradient overlays.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "dashboards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "spotlight-card4",
+    "title": "Proximity Spotlight Card",
+    "description": "A card using ProximitySpotlight mode. Spotlight appears based on pointer proximity to the card (not just on hover). Includes image, title, and tech stack description.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "features",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "ui-layouts-carousel",
+    "title": "Carousel",
+    "description": "Compound carousel system built on embla-carousel. Includes Carousel context provider, SliderContainer, Slider items, navigation buttons (prev/next), dot indicators, and snap counter. Supports vertical or horizontal orientation, looping…",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "default-slider",
+    "title": "Default Image Slider",
+    "description": "Embla-based image slider with no looping. Includes left/right navigation buttons, dot indicators, and backdrop-blur styling. Responsive height with full-width image slides.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "thumbnail-slider",
+    "title": "Thumbnail Slider",
+    "description": "Embla-carousel with large main slide and clickable thumbnail strip for navigation. Each slide has an associated thumbnail image for quick preview.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "ecommerce",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "vertical-thumbnail-slider",
+    "title": "Vertical Thumbnail Slider",
+    "description": "Vertical carousel with main slide display and vertical thumbnail navigation. Uses embla-carousel with axis='y' and right-to-left direction. Thumbnails are clickable to jump to slides.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "ecommerce",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "framer-draggable-carousel",
+    "title": "Framer Draggable Carousel",
+    "description": "Full-width carousel with drag-to-navigate interaction. Images snap to grid on release with spring physics. Elastic drag resistance prevents over-dragging.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "framer-thumnbails",
+    "title": "Framer Thumbnail Carousel",
+    "description": "Image carousel with compact horizontal thumbnail navigation. Selected thumbnail displays at full width; unselected ones collapse to narrow strips. Click thumbnails to navigate and expand.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "feature-flow",
+    "title": "Feature Flow Carousel",
+    "description": "A horizontally scrollable carousel displaying feature items with icons, titles, and descriptive text. Navigation buttons and progress indicators included.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "feature-highlights",
+    "title": "Feature Highlight Cards",
+    "description": "Three feature cards with icons, titles, descriptions, and call-to-action links on a dark background. Cards have hover background and border effects.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "about-whyus",
+    "title": "About Why Us",
+    "description": "An about/why-us section template showcasing company values, benefits, and differentiators through visual content and messaging. Designed for emphasizing competitive advantages.",
+    "category": "text",
+    "categories": [
+      "text",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "stats-banner",
+    "title": "Stats Banner",
+    "description": "Section component displaying stats in a staged scroll-reveal layout. Hero stat (e.g., 500K+ Campaigns) animates with scale and fade. Secondary stats grid (3 columns) reveals with staggered delays. Includes background image overlay and…",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "stats-bento",
+    "title": "Stats Bento Grid",
+    "description": "Section component arranging stats in a Bento grid (6 cols × 2 rows). Primary stat (64%) spans 3×2 with diagonal pattern overlay. Secondary row shows growth (+240% with inline bar chart), award count (12), and G2 rating (4.9/5) as smaller…",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "cards",
+      "heroes",
+      "features",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "stats-details",
+    "title": "Detailed Stats Cards",
+    "description": "Section component displaying stats in a 3-column grid. Each card has an icon, label, value, and detailed description. On hover, the icon button fills with orange and a background image fades in. Hardcoded stat data with Unsplash images.",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "cards",
+      "dashboards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "stats-bold",
+    "title": "Bold Stats Display",
+    "description": "Section component showcasing stats with bold, large typography (8xl-9xl). Primary stat (10B+ API Calls) paired with Unsplash image. Secondary stats row below (3 columns) showing P99 latency, regions, and support availability. Hardcoded…",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "heroes",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "spotlight-testimonial",
+    "title": "Spotlight Testimonial",
+    "description": "Centered testimonial showcase with auto-rotating quotes (3s interval), highlighted phrase in italics, author avatar/name/role, quote icon, and dot navigation. All elements use TimelineAnimation for scroll-based reveal with staggered timing.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "testimonial-basic",
+    "title": "Testimonial Basic",
+    "description": "Two-column grid layout showing testimonials with video thumbnails and quote content. Rows alternate between video-left/text-right and text-left/video-right. Each includes author avatar, name, role, 5-star rating, and quote. Diagonal stripe…",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "media",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "marque-testimonial",
+    "title": "Marquee Testimonials",
+    "description": "Continuous testimonial scroll display with two rows of cards moving in opposite directions (25s and 30s). Each card shows 5-star rating, quote icon, testimonial text, and author details (avatar, name, role, company). Includes gradient…",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "work-experience",
+    "title": "Work Experience List",
+    "description": "Displays chronological work experience with staggered entrance animations. Shows company logo, role, period, location, description, and skill tags. Includes footer statistics. Uses Framer Motion for timing.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "customer-experience",
+    "title": "Customer Photo Gallery",
+    "description": "Renders a vertical list of photo items with labels and descriptions. Hovering an item reveals a large preview image that follows cursor movement via spring physics.",
+    "category": "media",
+    "categories": [
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "faq-founder",
+    "title": "Founder FAQ",
+    "description": "Full-page FAQ layout featuring a founder profile section with styled accordion items.",
+    "category": "accordions",
+    "categories": [
+      "accordions",
+      "features",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "footer-bold",
+    "title": "Footer Bold",
+    "description": "A landing-page footer with a large background text watermark, contact CTA with email link, location and social media sections, and a minimalist bottom bar. Spans full viewport height.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "footers"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "footer-privilege",
+    "title": "Footer Privilege",
+    "description": "A sophisticated footer featuring asymmetrical layout with large heading, SVG-based logo lockup, descriptive tagline, contact CTA button, and copyright bar. Fully theme-aware with smooth color transitions.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "footers"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "flipcountdown",
+    "title": "Flip Countdown Timer",
+    "description": "Client component counting down to a hardcoded target date (Dec 31, 2026). Updates every second and stops at zero. Each time unit (days, hours, minutes, seconds) renders in a colored box with a horizontal divider line. Uses CSS animations…",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "effects",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "alert-dialog",
+    "title": "Alert Dialog",
+    "description": "A compound component wrapping Radix AlertDialog with styled overlay, animations, and footer buttons for confirm/cancel flows.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "calendar",
+    "title": "Calendar",
+    "description": "A date picker calendar using React hooks and date utilities. Displays a grid of dates for the selected month with navigation arrows.",
+    "category": "calendar",
+    "categories": [
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "checkbox",
+    "title": "Checkbox",
+    "description": "Radix UI Checkbox wrapper with built-in states for checked, indeterminate, and disabled. Shows check mark or dash indicator. Includes focus ring and error states via aria-invalid.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "badge",
+    "title": "Badge",
+    "description": "Simple badge component accepting children; styled via className.",
+    "category": "badges",
+    "categories": [
+      "badges"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "button",
+    "title": "Button",
+    "description": "A versatile button component using CVA (class-variance-authority) for variant and size control. Supports six variants (default, secondary, outline, ghost, destructive, link) and four sizes (sm, default, lg, icon).",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "avatar",
+    "title": "Avatar",
+    "description": "Shows an image; if load fails or src is missing, displays initials/text fallback. Radix UI Avatar primitive.",
+    "category": "avatars",
+    "categories": [
+      "avatars",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "cropper",
+    "title": "Image Cropper",
+    "description": "Wraps @origin-space/image-cropper with styled sub-components. Displays an image with a draggable crop area overlay. Supports pinch zoom and scroll zoom within min/max bounds.",
+    "category": "media",
+    "categories": [
+      "media",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "dropdown-menu",
+    "title": "Dropdown Menu",
+    "description": "A set of Radix UI dropdown menu primitives including root, trigger, content, items, groups, separators, checkboxes, radio groups, and submenus with keyboard and mouse support.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "navigation-menu",
+    "title": "Navigation Menu",
+    "description": "Composable wrapper around Radix UI's NavigationMenu primitive. Exports NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, NavigationMenuIndicator, and…",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "radio-group",
+    "title": "Radio Group",
+    "description": "Radio group built on Radix UI with consistent border, shadow, and focus styles. Includes RadioGroup and RadioGroupItem components.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "hover-card",
+    "title": "Hover Card",
+    "description": "Radix-based hover card system with three parts: HoverCard (root), HoverCardTrigger (activator), and HoverCardContent (popover). Supports animations on open/close and optional arrow.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "datefield-rac",
+    "title": "Date Field",
+    "description": "A set of composable components (DateField, DateInput, TimeField, DateSegment) built on react-aria-components. Users tab through editable segments for date/time values. Includes focus and invalid states.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "select-native",
+    "title": "Native Select",
+    "description": "A thin wrapper over <select> that applies custom styling. Works as a standard form control.",
+    "category": "selects",
+    "categories": [
+      "selects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "select",
+    "title": "Select",
+    "description": "Radix Select primitive wrapper with support for item groups, labels, separators, and scroll controls on open.",
+    "category": "selects",
+    "categories": [
+      "selects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "stepper",
+    "title": "Stepper",
+    "description": "Composable stepper with Stepper, StepperItem, StepperTitle, StepperDescription, StepperIndicator, StepperTrigger, and StepperSeparator. Supports horizontal and vertical orientation, loading states, and click-to-navigate functionality via…",
+    "category": "steppers",
+    "categories": [
+      "steppers",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "switch",
+    "title": "Switch",
+    "description": "Switch component built on Radix UI with sliding thumb animation and consistent styling. Supports disabled state and focus-visible.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "table",
+    "title": "Table",
+    "description": "Set of wrapper components for HTML table elements (Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption). Applies theme-aware styling with hover states and selection states.",
+    "category": "tables",
+    "categories": [
+      "tables"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "origin-ui-timeline",
+    "title": "Timeline",
+    "description": "Compound component system (Timeline, TimelineItem, TimelineIndicator, TimelineDate, TimelineTitle, TimelineContent) for status/workflow tracking. Tracks active step via controlled (value prop) or uncontrolled (defaultValue) state. Steps…",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "steppers",
+      "onboarding",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "toggle",
+    "title": "Toggle",
+    "description": "Toggle button built on Radix UI with CVA variants for size (sm, default, lg) and style (default, outline). Shows active state with accent color.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "buttons",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "tree",
+    "title": "File Tree",
+    "description": "Renders a tree structure using @headless-tree for state management. Supports expand/collapse, item selection, drag indicators, and keyboard shortcuts. Context-driven sub-components handle items and labels.",
+    "category": "data-display",
+    "categories": [
+      "data-display",
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "tooltip",
+    "title": "Tooltip",
+    "description": "Radix-based tooltip system with automatic provider wrapping. Exports TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent as a compound component.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-13",
+    "title": "Currency Input Add-on",
+    "description": "Input with € prefix and EUR suffix text overlays for currency formatting.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "payments"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-22",
+    "title": "Input With Button",
+    "description": "An email input with an outline Button component separated by a gap. Uses standard Button component styling with outline variant.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "contact"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-23",
+    "title": "Password Visibility Toggle",
+    "description": "A password field with an eye icon button that toggles between password and text input types. Tracks visibility state with useState.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-25",
+    "title": "Search Keyboard Shortcut Input",
+    "description": "A search input with a read-only kbd element showing ⌘K in the end. The shortcut display is purely visual and non-interactive.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-27",
+    "title": "Search Input With Loader",
+    "description": "A search field with a magnifying glass that becomes a spinning LoaderCircleIcon on input. A mic button on the right for voice search. Loading state is simulated with useEffect.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-32",
+    "title": "Floating Label Input",
+    "description": "An email field where the label starts centered and smoothly animates upward when focused or when text is entered. Uses CSS :has() selector and focus-within to trigger animation.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-28",
+    "title": "Number Stepper Input",
+    "description": "A number field with minus and plus buttons flanking a centered numeric input. Built with React Aria NumberField, supporting arrow keys and button clicks. Defaults to 2048 with minValue of 0.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-34",
+    "title": "Character Limit Input",
+    "description": "A text input with maxLength 50 displaying character count as 'X/50' in the bottom right. Uses a custom useCharacterLimit hook to track input state.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-44",
+    "title": "OTP Input Grouped",
+    "description": "An OTP field with 4 connected digit slots. Built with input-otp library. Slots are adjacent boxes with the active slot showing a ring.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-47",
+    "title": "Card Number Input",
+    "description": "A card number input with a credit card icon on the left. Built with react-payment-inputs library which handles validation and formatting.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "payments"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-46",
+    "title": "Phone Number Input",
+    "description": "A phone input with an integrated country select dropdown showing country flags. Built with react-phone-number-input library supporting international numbers.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-53",
+    "title": "Copy to Clipboard Input",
+    "description": "A read-only text field with a copy button that writes to clipboard and shows a check icon for 1.5 seconds. Includes a tooltip and button disable on copy.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-57",
+    "title": "Inline Tags Input",
+    "description": "A tag input built with emblor where tags appear inline in the same container as the input field. Starts with Red tag. Close buttons for each tag.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-50",
+    "title": "Card Details Form",
+    "description": "A stacked card entry form with card number (showing dynamic logo), expiry date, and CVC fields. Built with react-payment-inputs, logo updates based on detected card type.",
+    "category": "forms",
+    "categories": [
+      "forms",
+      "payments"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-73",
+    "title": "Textarea Inset Label",
+    "description": "A textarea where the label is positioned inside the top of the bordered container as a permanent visual element, creating a unified field appearance.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-100",
+    "title": "Hamburger Menu Button",
+    "description": "A stateful button component that toggles a hamburger menu icon to an X. Uses SVG paths with transform animations and aria labels for accessibility.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-105",
+    "title": "Copy To Clipboard Button",
+    "description": "A stateful button that toggles from copy icon to checkmark with scale transitions. Disables itself for 1.5 seconds after click to provide feedback, and includes a tooltip.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-107",
+    "title": "Text Align Toggle",
+    "description": "A ToggleGroup with four mutually exclusive text alignment options: left, center, right, and justify. Initializes to center and uses primary background colors.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-122",
+    "title": "Social Login Branded Buttons",
+    "description": "Four full-width buttons with brand-specific background colors and white text. Each has a hover state with darkened background.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-125",
+    "title": "Image Upload Button",
+    "description": "Single-image uploader with a small preview icon and button. Shows file name and offers removal. Built on useFileUpload hook.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "buttons",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-128",
+    "title": "Navigation Card Button",
+    "description": "An outline button formatted as a card with heading, subtitle text, and animated chevron icon. Icon translates right on hover.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "cards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-142",
+    "title": "Checkbox With Expansion",
+    "description": "Checkbox with description that reveals a text input when checked. Input auto-focuses on expansion and disables when unchecked. Uses CSS grid for smooth height animation.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "inputs",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-147",
+    "title": "Icon Grid Checkboxes",
+    "description": "2-column grid of checkbox cards with lucide-react icons. Each card includes a checkbox, icon, and label. One card pre-checked by default.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "cards",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-150",
+    "title": "Dark Mode Toggle",
+    "description": "Dark/light mode toggle using plain HTML checkbox with Sun and Moon icons. Icons animate via peer selector. Includes aria-label for screen readers.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-158",
+    "title": "Color Swatch Radio Picker",
+    "description": "Fieldset with 7 colored radio buttons (blue, indigo, pink, red, orange, amber, emerald). Each swatch is 6x6 sized with full-color fill. Blue is pre-selected.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "settings",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-157",
+    "title": "Star Rating Filter Radio",
+    "description": "Radio group with 6 options: all reviews, and 5-1 star ratings. Each option displays filled/empty stars and review count. Stars use Remix icons with opacity for empty ratings.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "ecommerce",
+      "feedback",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-163",
+    "title": "Payment Method Selector",
+    "description": "Compact payment method selector with radio buttons, icons, and labels. Built on shadcn's RadioGroup with hidden radio inputs.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "cards",
+      "payments",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-164",
+    "title": "CPU Core Selector",
+    "description": "CPU core selector as a 3-column grid of radio cards with disabled states. Built on shadcn's RadioGroup.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "cards",
+      "pricing",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-166",
+    "title": "Pricing Plan Radio Picker",
+    "description": "RadioGroup with four pricing tiers (Hobby, Plus, Team, Enterprise). Each tier shows label, price, and Plus tier has a Popular badge. Uses aria-describedby for price descriptions.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "pricing"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-167",
+    "title": "Emoji Sentiment Picker",
+    "description": "Emoji-based sentiment selector with five expressions in a flex row. Built on shadcn's RadioGroup.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-171",
+    "title": "Interactive Star Rating",
+    "description": "Interactive star rating selector with hover preview and scale animation. Built on shadcn's RadioGroup with state.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "feedback",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-169",
+    "title": "Theme Selector Radio",
+    "description": "Theme selector using radio buttons with preview images and conditional icons. Built on shadcn's RadioGroup.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-170",
+    "title": "Billing Period Toggle",
+    "description": "Billing period selector with animated sliding background indicator. Built on shadcn's RadioGroup with state management.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "pricing",
+      "payments"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-220",
+    "title": "Status Select",
+    "description": "A select where each option shows a colored circular SVG dot followed by a status label. Dots use semantic colors (green, blue, amber, gray, red).",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-224",
+    "title": "Plan Description Select",
+    "description": "A select for plans where each option shows a plan title and a small gray description underneath. Descriptions are hidden in the trigger via CSS.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "pricing"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-231",
+    "title": "Searchable Timezone Select",
+    "description": "Uses Intl API and custom search filter.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "search",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-229",
+    "title": "Searchable Combobox Select",
+    "description": "A combobox built with Popover and Command, allowing users to search/filter options from a list and select via keyboard or click.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-228",
+    "title": "Portrait Avatar Select",
+    "description": "A select to pick users with larger avatars, names, and usernames. The trigger expands in height to fit portrait items.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "avatars",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-230",
+    "title": "Combobox With Action",
+    "description": "A combobox with search built on Popover and Command, plus an action button at the bottom (e.g., 'New organization').",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-233",
+    "title": "Icon Count Combobox",
+    "description": "A combobox showing service categories with icons and numeric counts. Each option displays icon, label, and count.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-232",
+    "title": "Flag Country Combobox",
+    "description": "A combobox for countries grouped by continent, with flag emojis and search filtering.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "search",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-238",
+    "title": "Multi-Select Listbox",
+    "description": "A listbox for selecting multiple items built on React Aria. Supports keyboard navigation and shows all selected items at once.",
+    "category": "selects",
+    "categories": [
+      "selects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-245",
+    "title": "Slider Reference Labels",
+    "description": "A slider with tick marks or labels aligned to specific values along the track, aiding value reference.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-246",
+    "title": "Slider With Ticks",
+    "description": "A slider showing evenly-spaced tick marks along the track, providing visual reference points.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-251",
+    "title": "Dual Range With Output",
+    "description": "A range slider paired with two input fields, allowing both drag and direct number entry for min and max.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-254",
+    "title": "Temperature Slider Input",
+    "description": "A slider pair styled for temperature selection, showing a numeric value and often a unit indicator.",
+    "category": "sliders",
+    "categories": [
+      "sliders",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-255",
+    "title": "Slider With Input",
+    "description": "A slider and text input in sync, allowing drag or direct typing to set a value.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-260",
+    "title": "Price Range Slider",
+    "description": "A range slider with currency symbol or price labels, designed for e-commerce price selection.",
+    "category": "sliders",
+    "categories": [
+      "sliders",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-261",
+    "title": "Vertical Slider",
+    "description": "A vertically-oriented slider for selecting a single value, useful for height/depth controls.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-269",
+    "title": "Error Inline Alert",
+    "description": "Minimal inline alert for error messages using a red error icon from lucide-react. No dismiss action; purely informational for error display.",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-264",
+    "title": "Object Position Slider",
+    "description": "A 2D slider allowing independent X and Y value selection via dragging, useful for object positioning.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-277",
+    "title": "Error List Alert",
+    "description": "Error alert that displays multiple error messages as a bulleted list. Useful for form validation showing all failures at once.",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-283",
+    "title": "Warning Alert Banner",
+    "description": "Static warning alert banner with TriangleAlert icon, message text, optional action link, and dismissible close button. No interaction hooks.",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-290",
+    "title": "Error Notification Card",
+    "description": "Static error notification card with red alert icon, bold title, descriptive text, action button, and dismissible close. Larger vertical card layout.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "cards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-293",
+    "title": "Cookie Consent Prompt",
+    "description": "Static cookie consent notification card with title, explanation, Accept and Decline buttons, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-296",
+    "title": "Live Event Notification",
+    "description": "Static live event notification with radio icon, event title, date/time, notify button, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-294",
+    "title": "App Update Notification",
+    "description": "Static app update notification with refresh icon, version heading, description, Install and Later buttons, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-288",
+    "title": "Success With Undo Actions",
+    "description": "Static success notification with green checkmark, single message line, two action buttons separated by a divider, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-295",
+    "title": "Social Mention Notification",
+    "description": "Static social mention notification with user avatar, linked names for person and project, timestamp, accept/decline buttons, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "avatars",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-301",
+    "title": "Cookie Consent Banner",
+    "description": "Full-width cookie consent banner with message text and two action buttons, responsive layout (stacked on mobile, inline on desktop).",
+    "category": "notifications",
+    "categories": [
+      "notifications"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-302",
+    "title": "Dark Announcement Banner",
+    "description": "Full-width dark-themed announcement banner with emoji, announcement headline, and linked arrow icon with hover animation.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-300",
+    "title": "Custom Sonner Toast",
+    "description": "Button that programmatically triggers a custom-rendered Sonner toast with success icon, message, and dual action buttons (View, Undo).",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-305",
+    "title": "Dismissible Feature Banner",
+    "description": "Full-width dark-themed feature banner with eclipse icon, message, Learn more link, and dismissible close button. Uses useState for visibility.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-307",
+    "title": "Feature Launch Banner",
+    "description": "Full-width dark-themed feature launch banner with eclipse icon, message, Download primary button, Learn more link-style button, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-309",
+    "title": "Feature Launch Banner",
+    "description": "Full-width dark-themed feature launch with rocket icon in colored circle background, title, description text, Try now button, and dismissible close.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-314",
+    "title": "Alert Dialog With Icon",
+    "description": "A premade alert dialog template showing how to add an icon alongside the header, with responsive flex layout.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-312",
+    "title": "Version Update Banner",
+    "description": "Muted background banner showing version number, feature description, and Update now button. Button shows loading spinner via useState during simulated download.",
+    "category": "notifications",
+    "categories": [
+      "notifications",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-318",
+    "title": "Sticky Footer Dialog",
+    "description": "A premade dialog template showing how to keep action buttons fixed at the bottom while content scrolls independently.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-319",
+    "title": "Terms Acceptance Dialog",
+    "description": "A premade dialog template for terms acceptance that tracks scroll position and enables the action button only when the user has read to the bottom.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-322",
+    "title": "Feedback Dialog",
+    "description": "A shadcn Dialog with a textarea for feedback, links to tutorials and documentation, and a send button.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-323",
+    "title": "Rating Dialog",
+    "description": "A shadcn Dialog with a 9-option radio button scale (0-8) and textarea for explaining the rating, separated by a header border.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-327",
+    "title": "Invite Members Dialog",
+    "description": "A shadcn Dialog with dynamically addable email input fields and a read-only magic link with copy-to-clipboard button.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-326",
+    "title": "Sign In Dialog",
+    "description": "A shadcn Dialog with email and password fields, a remember-me checkbox, forgot-password link, and Google login option.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-328",
+    "title": "Card Details Dialog",
+    "description": "A shadcn Dialog using react-payment-inputs for card number, expiry, and CVC fields; includes name, card type detection, and default payment method checkbox.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "payments",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-330",
+    "title": "Change Plan Dialog",
+    "description": "A shadcn Dialog with radio-button plan selector (Essential, Standard, Enterprise) and a checklist of included features.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "pricing",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-342",
+    "title": "Accordion Icon Subheader Chevron",
+    "description": "Leading icon (left side) with header and subheader text, chevron on right.",
+    "category": "accordions",
+    "categories": [
+      "accordions",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-321",
+    "title": "Newsletter Subscribe Dialog",
+    "description": "A shadcn Dialog containing an email input with a mail icon, subscribe button, and privacy policy notice.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "contact",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-352",
+    "title": "Multi-Level Nested Accordion",
+    "description": "Accordion items can contain nested accordion items, enabling category/subcategory structures.",
+    "category": "accordions",
+    "categories": [
+      "accordions",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-360",
+    "title": "Directional Pan Tooltips",
+    "description": "3x3 grid of arrow buttons arranged in a directional pad layout. Each button has a tooltip displaying the action and a keyboard shortcut in a kbd element.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-362",
+    "title": "Chart Data Tooltip",
+    "description": "Tooltip displaying a date header and multi-row chart data, each row with a colored circle indicator and label/value pair.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "charts",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-359",
+    "title": "Image Tooltip",
+    "description": "Tooltip displaying a static image preview at the top, with title and description text below.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "media"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-361",
+    "title": "Stats Tooltip",
+    "description": "Tooltip displaying a list of metric names on the left and their values on the right in a compact grid format.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-364",
+    "title": "User Profile Hovercard",
+    "description": "Text link that triggers a hover card displaying avatar, full name, handle, bio, and a stack of mutual friend avatars with count.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "avatars",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-365",
+    "title": "Article Preview Hovercard",
+    "description": "Image link that triggers a hover card displaying article title, summary text, read time, and last update date. Includes an arrow pointer.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "cards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-371",
+    "title": "Checkbox Dropdown Menu",
+    "description": "A stateful dropdown where each item is a checkbox that toggles a boolean value. Supports disabled state.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "menus",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-374",
+    "title": "Rich Icon Dropdown",
+    "description": "A comprehensive dropdown combining icons, keyboard shortcuts, nested submenus with radio buttons and checkboxes for controlling settings.",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "selects",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-380",
+    "title": "Theme Switcher Dropdown",
+    "description": "A dropdown menu to switch between light, dark, and system theme preferences. The trigger button shows the current theme icon.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "menus",
+      "switches",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-379",
+    "title": "Content Block Picker",
+    "description": "A dropdown menu for adding content blocks (text, quote, heading). Each item shows an icon, title, and description.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "menus",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-384",
+    "title": "Interactive Tooltip Popover",
+    "description": "Popover (not a pure tooltip) containing title, description text, and an interactive button. Used for richer content that requires interaction.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-386",
+    "title": "Paginated Tour Tooltip",
+    "description": "Multi-step tour popover with previous/next buttons and step counter. Buttons disable at the first and last steps.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "modals",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-387",
+    "title": "Share Link Popover",
+    "description": "A shadcn Popover with social sharing buttons (Twitter, Facebook, Email, Embed) and a copy-to-clipboard link field.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-389",
+    "title": "Anchored Product Tour",
+    "description": "Interactive tour that shows a grid of numbered cards. Clicking 'Start tour' opens a popover anchored to the active card, cycling through tour steps.",
+    "category": "tooltips",
+    "categories": [
+      "tooltips",
+      "modals",
+      "onboarding"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-409",
+    "title": "Avatar Group Overflow",
+    "description": "Renders four circular avatars at 40px size with negative margins, plus a secondary-colored button showing \"+3\" to indicate more avatars are hidden. Uses a Button component with hover effects.",
+    "category": "avatars",
+    "categories": [
+      "avatars",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-412",
+    "title": "Social Proof Avatars",
+    "description": "Renders four circular avatars at 20px size inside a bordered pill with text saying 'Trusted by 60K+ developers.' The avatars have ring-1 borders and are tightly packed with negative margins.",
+    "category": "avatars",
+    "categories": [
+      "avatars",
+      "badges",
+      "testimonials",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-433",
+    "title": "Tabs With Icon Badges",
+    "description": "Tab buttons with icon badges displaying notification counts or status indicators. Icons accompany tab labels.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-436",
+    "title": "Browser Icon Tabs",
+    "description": "Browser tab variant displaying icon-only buttons with rounded tops and overlapping z-index layout.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-439",
+    "title": "Badged Count Tabs",
+    "description": "Tab buttons with numeric badge indicators showing item counts or notification numbers.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-446",
+    "title": "Breadcrumb Ellipsis Dropdown",
+    "description": "Breadcrumb navigation with ellipsis dropdown that expands to show hidden breadcrumb items.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-449",
+    "title": "Breadcrumb With Icons",
+    "description": "Breadcrumb where each navigation item includes an accompanying icon.",
+    "category": "navigation",
+    "categories": [
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-453",
+    "title": "Breadcrumb Select Dropdown",
+    "description": "Breadcrumb allowing navigation to any level via dropdown select from the breadcrumb trail.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-455",
+    "title": "Ghost Arrow Pagination",
+    "description": "Previous/Next pagination using ghost button variant with transparent background styling.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-457",
+    "title": "Compact Page Pagination",
+    "description": "Pagination combining page counter display with previous/next buttons in compact layout.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-459",
+    "title": "Pagination With Ellipsis",
+    "description": "Pagination displaying page numbers with ellipsis (...) indicating skipped page ranges.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-460",
+    "title": "Pagination First Last",
+    "description": "Pagination with navigation buttons for First, Previous, Next, and Last page.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-461",
+    "title": "Grouped Pagination",
+    "description": "Pagination with navigation controls grouped or arranged by category/section.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-463",
+    "title": "Pagination Rows Per Page",
+    "description": "Pagination with dropdown to change results per page (items shown per result set).",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "selects",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-464",
+    "title": "Pagination Page Select",
+    "description": "Pagination with input field allowing users to directly type and jump to a specific page number.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "inputs",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-465",
+    "title": "Pagination With Counter",
+    "description": "Pagination control with clickable page numbers, ellipsis for skipped ranges, and a text input to jump directly to a page.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "inputs",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-467",
+    "title": "Table With Avatars",
+    "description": "A table variant where one column displays circular avatar images, common for user/contributor lists.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-477",
+    "title": "Interactive Selectable Table",
+    "description": "Data table with checkbox column for selecting individual rows and all rows, displaying user data with status badges and currency-formatted balance. Includes footer row showing total balance.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-479",
+    "title": "Sortable Columns Table",
+    "description": "Data table where columns are sortable with chevron indicators and resizable by dragging handles between headers. Supports keyboard navigation (Enter/Space for sorting) with aria-sort attributes.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-480",
+    "title": "Pinnable Columns Table",
+    "description": "Data table where columns can be pinned to the left or right side via dropdown menu controls. Pinned columns remain visible during horizontal scroll with sticky positioning and subtle backdrop blur separation.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-476",
+    "title": "Feature Compatibility Table",
+    "description": "Displays CSS feature support across desktop and mobile browsers with version numbers. Each cell shows a checkmark or X with browser version in a compact, scannable grid with sideways-oriented headers.",
+    "category": "tables",
+    "categories": [
+      "tables"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-481",
+    "title": "Draggable Columns Table",
+    "description": "Data table where column headers have drag handles to reorder columns horizontally. Each column can also be sorted via chevron button. Uses dnd-kit with horizontal-axis restriction and supports mouse, touch, and keyboard input.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-483",
+    "title": "Paginated Sortable Table",
+    "description": "Data table with pagination controls (first/previous/next/last buttons), adjustable rows per page (5/10/25/50), page info display, and sortable columns with chevrow indicators. Uses aria-live for page info updates.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-491",
+    "title": "Date Range Calendar",
+    "description": "A calendar for selecting a date range by clicking a start date then an end date.",
+    "category": "calendar",
+    "categories": [
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-504",
+    "title": "Advanced Year Month Picker",
+    "description": "An advanced calendar interface allowing simultaneous year and month selection with a grid-based picker.",
+    "category": "calendar",
+    "categories": [
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-503",
+    "title": "Calendar With Time Input",
+    "description": "A calendar with integrated time input (hours and minutes) for selecting a specific date and time.",
+    "category": "calendar",
+    "categories": [
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-508",
+    "title": "Two Month Range Calendar",
+    "description": "Displays two consecutive months side-by-side in range mode. Uses paged navigation (forward/back arrows) to move through months. Separator line divides the two calendars.",
+    "category": "calendar",
+    "categories": [
+      "calendar"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-510",
+    "title": "Pricing Calendar",
+    "description": "Two-month calendar overlaying prices on each day. Good prices (under $100) are highlighted in emerald green. Custom DayButton component renders date + price. Dates without pricing data are disabled.",
+    "category": "calendar",
+    "categories": [
+      "calendar",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-511",
+    "title": "Single Date Popover Picker",
+    "description": "A labeled form control with a button trigger showing the selected date or placeholder. Clicking opens a popover with a calendar. Uses Radix Popover and React DayPicker.",
+    "category": "calendar",
+    "categories": [
+      "calendar",
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-544",
+    "title": "Image Cover Dropzone",
+    "description": "Drag-and-drop upload area that displays selected image as full background when loaded. Shows upload instructions when empty; 5MB size limit.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "media"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-549",
+    "title": "Multi File Upload List",
+    "description": "Multi-file uploader in list format showing file names, sizes, and upload progress. Each file has individual remove control.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-551",
+    "title": "File Upload Table View",
+    "description": "Multi-file upload manager using table layout. Shows file name, size, upload date, status with sortable columns and bulk actions.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-553",
+    "title": "Mixed File Upload Manager",
+    "description": "Multi-file uploader displaying both images as thumbnails and other files as type icons in a single grid. All removable.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "media"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-543",
+    "title": "Avatar Image Uploader",
+    "description": "Circular avatar upload button that accepts click or drag-drop. Shows hover/dragging state and displays preview when image is loaded.",
+    "category": "file-upload",
+    "categories": [
+      "file-upload",
+      "avatars",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-582",
+    "title": "Icon Nav With Language Select",
+    "description": "Header with icon nav links, language select dropdown, and theme toggle. Icons shown with tooltips on desktop; text labels on mobile.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "selects",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-580",
+    "title": "Ecommerce Search Navbar",
+    "description": "Header with logo, search input (desktop + mobile), category nav, cart/sign-in buttons. Mobile menu hides nav, includes cart counter.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "search",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-581",
+    "title": "Minimal Auth Navbar",
+    "description": "Clean header with logo, simple nav links, and icon-based menus (info, notifications, user). Responsive mobile menu.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "auth"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-583",
+    "title": "Breadcrumb Project Header",
+    "description": "Header showing breadcrumb navigation with account/project hierarchy. Project selector is a dropdown menu. Notification and user menus included.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-584",
+    "title": "Simple Nav Header",
+    "description": "Header with logo, search input, notifications, and user menu. Below-header strip with text nav links. Responsive: mobile hides nav strip.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-587",
+    "title": "App Icon Nav Header",
+    "description": "Header with icon navigation menu, app switcher menu (multiple apps), notifications, user dropdown, and highlighted upgrade button.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-589",
+    "title": "Breadcrumb Version Header",
+    "description": "Header with breadcrumb showing account and project dropdowns. Secondary nav menu below (desktop only). Notifications and user menus included.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-590",
+    "title": "Team Nav Header",
+    "description": "Header with team switcher, icon nav menu, post button, notifications, and user menu. Compact icon layout for content creation apps.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-593",
+    "title": "Breadcrumb Filter Header",
+    "description": "Header with breadcrumb (home icon + page title), date picker, filters panel, and save/bookmark button.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "calendar",
+      "dashboards",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-595",
+    "title": "Collab Nav Header",
+    "description": "Header with back button, page title, history/comments/add-user buttons, and avatar stack showing online collaborators.",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "avatars",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "inspira-animated-beam",
+    "title": "Animated Beam",
+    "description": "An SVG beam that draws a quadratic bezier path between two DOM refs inside a container, with a traveling gradient light using motion/react linearGradient animation. Tracks resizes via ResizeObserver.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "dashboards"
+    ],
     "frameworks": [
       "react",
       "next"
     ],
     "library": null,
     "librarySlug": null
+  },
+  {
+    "name": "inspira-animated-tabs",
+    "title": "Animated Tabs",
+    "description": "Tab bar with a shared layout-id pill indicator that springs between tabs. The content area shows a stacked card effect where background tabs peek out on hover, scaling down by 10% per index.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "balance-slider",
+    "title": "Balance Slider",
+    "description": "Two-sided range slider that shows left/right balance percentages with animated fill bars.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "bg-falling-stars",
+    "title": "Falling Stars Background",
+    "description": "Canvas 2D falling stars / warp-speed star field with DPR-aware sizing, layered stroke blur simulation, and 3D perspective projection. Pure canvas with no external deps.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "bg-particle-whirlpool",
+    "title": "Particle Whirlpool Background",
+    "description": "Three.js InstancedMesh particle field with OrbitControls, UnrealBloom post-processing, and mouse-following whirlpool attractor. Props: particleCount, blur, children. Written to /registry/inspira-react/bg-particle-whirlpool.tsx + .demo.tsx.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "bg-thunderstorm",
+    "title": "Thunderstorm Background",
+    "description": "GLSL noise-field thunderstorm light shader (ShaderToy W3d3z7) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-thunderstorm.tsx + .demo.tsx.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "box-reveal",
+    "title": "Box Reveal",
+    "description": "Reveals children with a sliding colour box animation using motion/react whileInView — box sweeps away left to expose the content underneath.",
+    "category": "effects",
+    "categories": [
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "carousel-3d",
+    "title": "Carousel 3D",
+    "description": "Drag-to-rotate 3D image carousel powered by Three.js CSS3DRenderer (dynamically imported for SSR safety) with continuous auto-rotation via motion/react animate..",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "3d",
+      "heroes",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "cosmic-portal",
+    "title": "Cosmic Portal",
+    "description": "Full Three.js WebGL portal scene: cosmic star background, shader core sphere, vortex rings, floating octahedron crystals, portal frame torus, energy particles, bloom post-processing, OrbitControls. Exposes activatePortal() and shiftDimensions() via forwardRef.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "design-testimonials",
+    "title": "Design Testimonials",
+    "description": "Editorial-style testimonial rotator with oversized parallax index number, animated word-by-word quote reveal, vertical progress bar, company badge, author row, and a scrolling ticker. Uses motion/react springs and AnimatePresence.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "cards",
+      "testimonials",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "inspira-gradient-button",
+    "title": "Gradient Button",
+    "description": "Rotating conic-gradient rainbow border button.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "gradients",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "halo-search",
+    "title": "Halo Search",
+    "description": "A search input with animated aurora/halo glow effects using CSS conic-gradients that respond to hover and focus states.",
+    "category": "inputs",
+    "categories": [
+      "inputs",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "inspira-lens",
+    "title": "Lens Magnifier",
+    "description": "Magnifying-lens overlay that follows the cursor over any child content. Uses motion/react AnimatePresence for enter/exit, radial-gradient CSS mask to punch out the lens circle, and a scaled duplicate of children for the zoomed view.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "media",
+      "ecommerce",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "liquid-logo",
+    "title": "Liquid Logo",
+    "description": "WebGL2 canvas that renders a logo with a liquid distortion shader.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "morphing-tabs",
+    "title": "Morphing Tabs",
+    "description": "Tab bar with a gooey SVG filter effect — adjacent tabs appear to morph together when the active tab is marked with expanded margins. SVG filter inline in JSX.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "effects",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "neon-border",
+    "title": "Neon Border",
+    "description": "Container with a two-color neon glowing border using CSS filter drop-shadow and absolute positioned gradient layers. Supports none/half/full animation width and configurable duration.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "heroes",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "sleek-line-cursor",
+    "title": "Sleek Line Cursor",
+    "description": "Canvas cursor trail effect that renders multiple spring-physics lines following the mouse with hue-cycling stroke color. Written at registry/inspira-react/sleek-line-cursor.tsx.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "spring-calendar",
+    "title": "Spring Calendar",
+    "description": "Animated day-picker calendar with spring physics via framer-motion MotionConfig. Displays upcoming events per day. Includes a TextMorph helper (spring-calendar-text-morph.tsx) that morphs day labels with blur transitions.",
+    "category": "calendar",
+    "categories": [
+      "calendar",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "testimonial-slider",
+    "title": "Testimonial Slider",
+    "description": "Auto-rotating testimonial carousel with image, quote, name and role. Supports manual prev/next navigation.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "tetris",
+    "title": "Tetris Background",
+    "description": "Animated falling-block Tetris grid background. Cells spawn at the top and fall down; filled rows clear. Click a cell to remove it.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "text-3d",
+    "title": "Text 3D",
+    "description": "3D-styled text with configurable stroke, shadow layers and a wiggle animation.",
+    "category": "text",
+    "categories": [
+      "text",
+      "3d",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "text-glitch",
+    "title": "Text Glitch",
+    "description": "CSS glitch effect using ::before/::after pseudo-elements driven by clip-path keyframe animations. Supports always-on or hover-only modes. Scoped CSS emulated with a random per-instance class name and an injected <style> tag.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "components-backgrounds-hexagon",
+    "title": "Hexagon Background",
+    "description": "A background component featuring an interactive hexagon grid.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "components-backgrounds-fireworks",
+    "title": "Fireworks Background",
+    "description": "A background component that displays a fireworks animation.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "components-community-radial-intro",
+    "title": "Radial Intro",
+    "description": "A circular intro animation component that arranges elements in a radial layout, smoothly transitioning them into orbit with looping motion.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "effects",
+      "portfolio",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "components-community-share-button",
+    "title": "Share Button",
+    "description": "This is a button for sharing.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-animate-code-block",
+    "title": "Animated Code Block",
+    "description": "A code block component that animates the code as it is written.",
+    "category": "code",
+    "categories": [
+      "code",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-effects-click",
+    "title": "Click",
+    "description": "An effect that creates animated effects at the click position, adding interactive feedback to user actions.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-headless-checkbox",
+    "title": "Headless Checkbox",
+    "description": "Checkboxes provide the same functionality as native HTML checkboxes, without any of the styling, giving you a clean slate to design them however you'd like.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-headless-dialog",
+    "title": "Headless Dialog",
+    "description": "A fully-managed, renderless dialog component jam-packed with accessibility and keyboard features, perfect for building completely custom dialogs and alerts.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-headless-disclosure",
+    "title": "Headless Disclosure",
+    "description": "A simple, accessible foundation for building custom UIs that show and hide content, like togglable accordion panels.",
+    "category": "accordions",
+    "categories": [
+      "accordions"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-headless-popover",
+    "title": "Headless Popover",
+    "description": "Popovers are perfect for floating panels with arbitrary content like navigation menus, mobile menus and flyout menus.",
+    "category": "modals",
+    "categories": [
+      "modals"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-headless-switch",
+    "title": "Headless Switch",
+    "description": "Switches are a pleasant interface for toggling a value between two states, and offer the same semantics and keyboard navigation as native checkbox elements.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-radix-progress",
+    "title": "Radix Progress",
+    "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    "category": "loaders",
+    "categories": [
+      "loaders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-texts-gradient",
+    "title": "Gradient Text",
+    "description": "A gradient text animation.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-texts-rolling",
+    "title": "Rolling Text",
+    "description": "A rolling text animation.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "spotlight",
+    "title": "Spotlight Background",
+    "description": "Mouse-tracked radial gradients rendered via SVG filter; CSS Filters for smooth positioning.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "moving-line",
+    "title": "Scroll Progress Line",
+    "description": "Renders an SVG vertical line that retracts from the top as the user scrolls. Uses a gradient stroke with spring-based animation tracking scroll progress.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-beams",
+    "title": "Background Beams",
+    "description": "Renders absolute-positioned SVG with animated gradient paths flowing downward. Beams use motion/react for staggered animations and hardcoded cyan-purple-blue colors.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "svg-mask-effect",
+    "title": "SVG Mask Reveal",
+    "description": "A two-layer reveal component using SVG masking with smooth motion animations. Spotlight mask follows cursor and expands on hover with background color transition.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "parallax-hero-images",
+    "title": "Parallax Hero Images",
+    "description": "Renders images positioned at different depths that move based on cursor position. Spring-based motion creates smooth parallax layers with configurable depth variants.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "media",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "google-gemini-effect",
+    "title": "Google Gemini Effect",
+    "description": "Sticky section with animated SVG lines that draw based on motion values, typically driven by scroll events. Displays title, description, and button overlay.",
+    "category": "scroll",
+    "categories": [
+      "scroll",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "label",
+    "title": "Form Label",
+    "description": "A wrapper around Radix UI's label primitive with semantic font sizing, dark mode, and built-in peer-disabled opacity styling.",
+    "category": "forms",
+    "categories": [
+      "forms"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "shooting-stars",
+    "title": "Shooting Stars",
+    "description": "Animated SVG overlay with randomized shooting-star animations; CSS-based with no JS after mount.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-lines",
+    "title": "Background Lines",
+    "description": "Container with light/dark theme support rendering 42 animated SVG paths. Uses strokeDasharray/strokeDashoffset for draw animation with staggered repeat delays. Accepts children for content overlay.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "notch",
+    "title": "Notch",
+    "description": "Renders a floating notch UI (like dynamic island) with collapsible option groups that can be controlled or uncontrolled. Positioned fixed to top or bottom of viewport, with support for icons, selected value display, and smooth…",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "background-ripple-effect",
+    "title": "Background Ripple Effect",
+    "description": "Absolute-positioned grid background with clickable cells. On click, triggers staggered ripple animation based on distance from click point using CSS custom properties for colors.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "text-flipping-board",
+    "title": "Split Flap Board",
+    "description": "Emulates a mechanical split-flap display (like airport boards), where each character flips to reveal the next.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "progressive-blur",
+    "title": "Progressive Blur",
+    "description": "The Progressive Blur component adds a smooth blur gradient effect to scrollable content, indicating more content below or above.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "line-shadow-text",
+    "title": "Line Shadow Text",
+    "description": "A text component with a moving line shadow.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "dot-pattern",
+    "title": "Dot Pattern",
+    "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "flickering-grid",
+    "title": "Flickering Grid",
+    "description": "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "magic-ui-bento-grid",
+    "title": "Bento Grid",
+    "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "particles",
+    "title": "Particles",
+    "description": "Particles are a fun way to add some visual flair to your website. They can be used to create a sense of depth, movement, and interactivity.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "morphing-text",
+    "title": "Morphing Text",
+    "description": "A dynamic text morphing component for Magic UI.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "code-comparison",
+    "title": "Code Comparison",
+    "description": "A component which compares two code snippets.",
+    "category": "code",
+    "categories": [
+      "code",
+      "data-display"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "comic-text",
+    "title": "Comic Text",
+    "description": "Comic text animation",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "pulsating-button",
+    "title": "Pulsating Button",
+    "description": "An animated pulsating button useful for capturing attention of users.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "ctas"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Magic UI",
+    "librarySlug": "magic-ui"
+  },
+  {
+    "name": "MetallicPaint-TS-TW",
+    "title": "Metallic Paint Shader",
+    "description": "Liquid metallic paint shader which can be applied to SVG elements.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Ribbons-TS-TW",
+    "title": "Physics Ribbon Trail",
+    "description": "Flowing responsive ribbons/cursor trail driven by physics and pointer motion.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "StickerPeel-TS-TW",
+    "title": "Sticker Peel Effect",
+    "description": "Sticker corner lift + peel interaction using 3D transform and shadow depth.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "ecommerce"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "FallingText-TS-TW",
+    "title": "Falling Text",
+    "description": "Characters fall with gravity + bounce creating a playful entrance.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Counter-TS-TW",
+    "title": "Animated Number Counter",
+    "description": "Flexible animated counter supporting increments + easing.",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "text",
+      "dashboards",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Dock-TS-TW",
+    "title": "Dock",
+    "description": "macOS style magnifying dock with proximity scaling of icons.",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "Particles-TS-TW",
+    "title": "Particles",
+    "description": "Configurable particle system.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "ShapeGrid-TS-TW",
+    "title": "Shape Grid",
+    "description": "Animated grid with shape variants (square, hexagon, circle, triangle) + direction customization.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "cosmic-button",
+    "title": "Cosmic Button",
+    "description": "Animated button/link with cosmic gradient border effect, renders as anchor or button",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "borders",
+      "ctas",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "side-panel",
+    "title": "Side Panel",
+    "description": "Sliding side panel component with customizable positioning and animations",
+    "category": "navigation",
+    "categories": [
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "tweet-grid",
+    "title": "Tweet Grid",
+    "description": "Grid layout component for displaying tweet-like content cards",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "testimonials",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "lightboard",
+    "title": "Lightboard",
+    "description": "Interactive lightboard component with customizable grid and lighting effects",
+    "category": "text",
+    "categories": [
+      "text",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "cult-ui-dock",
+    "title": "Dock",
+    "description": "macOS-style dock component with hover effects and smooth animations",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "navigation",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "dither-image",
+    "title": "Dither Image",
+    "description": "Compound Next.js image figure with CSS Bayer dither via dither-plugin, partial reveal overlays, and typed tuning props",
+    "category": "media",
+    "categories": [
+      "media",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "loading-carousel",
+    "title": "Loading Carousel",
+    "description": "Loading carousel component with smooth transitions and customizable content",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "media",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "feature-carousel",
+    "title": "Feature Carousel",
+    "description": "Feature carousel component with smooth transitions and customizable layouts",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "features",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "stripe-bg-guides",
+    "title": "Stripe Background Guides",
+    "description": "Stripe-style background guides component with animated patterns and effects",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "grid-beam",
+    "title": "Grid Beam",
+    "description": "Canvas grid beam animation with palette presets, SVG dividers, and composable headless pieces via useGridBeam",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "terminal-animation",
+    "title": "Terminal Animation",
+    "description": "Composable terminal animation primitives with typed command playback, tabbed scenarios, and customizable output rendering",
+    "category": "code",
+    "categories": [
+      "code",
+      "tabs",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
+  },
+  {
+    "name": "btn-rotating-gradient",
+    "title": "Rotating Gradient Button",
+    "description": "A button with a rotating conic-gradient border that continuously spins around its perimeter. The gradient cycles through the button's colour scheme.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "borders",
+      "ctas",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "code-tabs-mdx",
+    "title": "Code Tabs MDX",
+    "description": "Async server component extracting code blocks from MDX pre/code children, highlighting with Shiki, and rendering in tabs. One block displays solo; two blocks show tabbed as ui-layouts and shadcn variants.",
+    "category": "code",
+    "categories": [
+      "code",
+      "tabs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "gradient-border",
+    "title": "Gradient Border",
+    "description": "Border using gradient background-clip and optionally animated colors.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "nested-vaul-drawer",
+    "title": "Nested Vaul Drawer",
+    "description": "Gesture-driven drawer system from Vaul that supports unlimited nesting. Each drawer slides up from the bottom with physics-based animation, and nested drawers layer on top. Handles swipe-to-close naturally.",
+    "category": "modals",
+    "categories": [
+      "modals",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Ui-Layouts",
+    "librarySlug": "ui-layouts"
+  },
+  {
+    "name": "multiselect",
+    "title": "Multiselect",
+    "description": "Renders a styled multi-select dropdown with search, checkboxes, and keyboard navigation via a command palette.",
+    "category": "selects",
+    "categories": [
+      "selects",
+      "checkboxes",
+      "search"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "scroll-area",
+    "title": "Scroll Area",
+    "description": "A wrapper around Radix UI's ScrollArea with themed scrollbars and support for both vertical and horizontal scrolling.",
+    "category": "scroll",
+    "categories": [
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "toggle-group",
+    "title": "Toggle Group",
+    "description": "Toggle group built on Radix UI for managing multiple toggles with shared styling. Supports single or multiple selection via type prop. ToggleGroupItem respects parent size and variant.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "buttons",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-24",
+    "title": "Clearable Text Input",
+    "description": "A text input with a conditionally rendered CircleXIcon button that clears the field and refocuses the input. State is managed with useState and useRef.",
+    "category": "inputs",
+    "categories": [
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-98",
+    "title": "Animated Plus Toggle",
+    "description": "A state-driven Button that rotates the Plus icon 135 degrees with a cubic-bezier ease when clicked, using aria-expanded to track state.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "switches"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-103",
+    "title": "Pill Vote Buttons",
+    "description": "A fully-rounded grouped control with chevron buttons and a centered count badge with primary theme. Negative margins tightly group the elements.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "social",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-118",
+    "title": "Star Count Button",
+    "description": "A primary button with a star icon, 'Star' label, and count badge displayed inline with a gap.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-127",
+    "title": "Directional Pan Controls",
+    "description": "A 3x3 grid of directional buttons with chevron icons for up, left, right, and down. Center shows a circle indicator. Used for navigation in 3D or map interfaces.",
+    "category": "buttons",
+    "categories": [
+      "buttons"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-131",
+    "title": "Merge Strategy Split Button",
+    "description": "A stateful split button with selected merge strategy display and dropdown menu. Dropdown offers three options: Merge, Squash and merge, Rebase and merge with descriptions.",
+    "category": "buttons",
+    "categories": [
+      "buttons",
+      "menus"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-146",
+    "title": "Logo Card Checkbox",
+    "description": "Bordered card checkbox with logo SVG icon (Supabase-style). Full card is clickable. Includes label, sublabel, and description paragraph.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "cards",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-149",
+    "title": "Weekday Picker Checkboxes",
+    "description": "Fieldset with 7 circular checkbox buttons representing weekdays. M-F pre-checked, Sunday disabled. Uses sr-only labels with visible first-letter abbreviations.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "calendar",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-168",
+    "title": "NPS Score Radio Scale",
+    "description": "Net Promoter Score radio selector showing 0-5 scale with emoji indicators at the ends. Built on shadcn's RadioGroup.",
+    "category": "checkboxes",
+    "categories": [
+      "checkboxes",
+      "feedback"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-179",
+    "title": "Switch With Status Label",
+    "description": "Toggle switch with dynamic status label showing current state. Built on shadcn's Switch with state management.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-181",
+    "title": "Switch With Icon Label",
+    "description": "Toggle switch with state-dependent icon labels using Sun and Moon icons from lucide-react.",
+    "category": "switches",
+    "categories": [
+      "switches",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-259",
+    "title": "Slider With Buttons",
+    "description": "A slider with +/- buttons on each side for step-based value adjustment, plus a draggable track.",
+    "category": "sliders",
+    "categories": [
+      "sliders"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-377",
+    "title": "Avatar Account Menu",
+    "description": "A dropdown menu triggered by an Avatar component with optional fallback, showing user name/email and account actions.",
+    "category": "menus",
+    "categories": [
+      "menus",
+      "avatars",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-394",
+    "title": "Avatar Online Status",
+    "description": "Avatar with a small colored dot (e.g., emerald) in the corner showing 'Online'.",
+    "category": "avatars",
+    "categories": [
+      "avatars",
+      "chat",
+      "social"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-398",
+    "title": "Avatar Notification Count",
+    "description": "Avatar with a small number badge (e.g., '3') showing notifications or message count.",
+    "category": "avatars",
+    "categories": [
+      "avatars",
+      "badges",
+      "chat"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-424",
+    "title": "Removable Badge",
+    "description": "Badge component with integrated close button; typically stateful in parent.",
+    "category": "badges",
+    "categories": [
+      "badges",
+      "inputs"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-440",
+    "title": "Icon Tooltip Tabs",
+    "description": "Icon-only tabs with tooltip labels displayed on hover for accessibility and clarity.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "tooltips",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-444",
+    "title": "Vertical Icon Sidebar Tabs",
+    "description": "Vertical sidebar navigation with icon-only buttons and hover tooltips. Compact vertical layout.",
+    "category": "tabs",
+    "categories": [
+      "tabs",
+      "navigation",
+      "tooltips",
+      "settings"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-452",
+    "title": "Breadcrumb Bordered",
+    "description": "Breadcrumb with borders around individual items, creating distinct segments.",
+    "category": "navigation",
+    "categories": [
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-482",
+    "title": "Expandable Rows Table",
+    "description": "Data table with expandable rows showing additional note content. First column has chevron toggle button. Only rows with notes are expandable. Includes row selection checkboxes.",
+    "category": "tables",
+    "categories": [
+      "tables",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "comp-596",
+    "title": "Nav Switch Header",
+    "description": "Header with nav tabs, online/uptime/latency badges, and animated power on/off toggle (motion-based state switch).",
+    "category": "navigation",
+    "categories": [
+      "navigation",
+      "switches",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Origin UI",
+    "librarySlug": "origin-ui"
+  },
+  {
+    "name": "gradient-young-passion",
+    "title": "Young Passion",
+    "description": "A \"Young Passion\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-morpheus-den",
+    "title": "Morpheus Den",
+    "description": "A \"Morpheus Den\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-wide-matrix",
+    "title": "Wide Matrix",
+    "description": "A \"Wide Matrix\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-phoenix-start",
+    "title": "Phoenix Start",
+    "description": "A \"Phoenix Start\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-october-silenceiver",
+    "title": "October Silenceiver",
+    "description": "A \"October Silenceiver\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-eternal-constance",
+    "title": "Eternal Constance",
+    "description": "A \"Eternal Constance\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-new-retrowave",
+    "title": "New Retrowave",
+    "description": "A \"New Retrowave\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-north-miracle",
+    "title": "North Miracle",
+    "description": "A \"North Miracle\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-space-shift",
+    "title": "Space Shift",
+    "description": "A \"Space Shift\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-magic-ray",
+    "title": "Magic Ray",
+    "description": "A \"Magic Ray\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-frozen-heat",
+    "title": "Frozen Heat",
+    "description": "A \"Frozen Heat\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "gradient-fabled-sunset",
+    "title": "Fabled Sunset",
+    "description": "A \"Fabled Sunset\" CSS gradient.",
+    "category": "gradients",
+    "categories": [
+      "gradients"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "WebGradients",
+    "librarySlug": "webgradients"
+  },
+  {
+    "name": "border-beam",
+    "title": "Border Beam",
+    "description": "Animated glowing beam that travels along the border of its parent container, driven by CSS custom properties and a @keyframes animation.",
+    "category": "borders",
+    "categories": [
+      "borders",
+      "ctas",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "letter-pullup",
+    "title": "Letter Pullup",
+    "description": "Each character of the input string animates up from y=100 with staggered delays using motion/react variants.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "logo-cloud",
+    "title": "Logo Cloud",
+    "description": "Three variants: AnimatedLogoCloud (CSS marquee scroll of logo images), IconLogoCloud (icon grid), and StaticLogoCloud (static grid). CSS @keyframes logo-cloud injected via style tag.",
+    "category": "carousels",
+    "categories": [
+      "carousels",
+      "testimonials"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "particle-image",
+    "title": "Particle Image",
+    "description": "Renders an image as an interactive particle field using a canvas-based particle engine (2D or WebGL).",
+    "category": "media",
+    "categories": [
+      "media",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "scroll-island",
+    "title": "Scroll Island",
+    "description": "Fixed dynamic island that tracks page scroll percentage with an animated circular progress bar and expandable content panel. Uses motion/react spring transitions. Written at registry/inspira-react/scroll-island.tsx.",
+    "category": "scroll",
+    "categories": [
+      "scroll"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "inspira-sparkles",
+    "title": "Sparkles",
+    "description": "Canvas-based animated particle field. Particles float and pulsate with configurable color, density, size, and speed. Uses RAF loop + ResizeObserver instead of @vueuse/core.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "spline",
+    "title": "Spline",
+    "description": "Shows children slot as loading state. Requires @splinetool/runtime to be installed separately.",
+    "category": "3d",
+    "categories": [
+      "3d",
+      "heroes",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": null,
+    "librarySlug": null
+  },
+  {
+    "name": "components-backgrounds-gravity-stars",
+    "title": "Gravity Stars Background",
+    "description": "A background component featuring a subtle yet engaging animated gravity stars effect.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-effects-highlight",
+    "title": "Highlight",
+    "description": "A highlight effect that allows you to highlight elements on hover, click or with a controlled value.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "tabs",
+      "navigation"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-effects-shine",
+    "title": "Shine",
+    "description": "An animated light sweep effect with configurable timing, colors, and triggers (hover, tap, or continuous).",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "buttons",
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-texts-highlight",
+    "title": "Highlight Text",
+    "description": "A highlight text animation.",
+    "category": "text",
+    "categories": [
+      "text"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "grid",
+    "title": "Grid Background",
+    "description": "CSS-only grid background using a custom grid utility class with a radial gradient mask that fades edges. Includes sample heading text.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "canvas-text",
+    "title": "Canvas Text",
+    "description": "Renders text on canvas with horizontal wavy lines drawn inside the text boundaries. Lines animate with sine-wave motion and cycle through multiple colors. Responsive to theme changes.",
+    "category": "text",
+    "categories": [
+      "text",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "dotted-glow-background",
+    "title": "Dotted Glow Background",
+    "description": "Canvas-based dotted background with per-dot phase and speed for organic shimmering. Each dot pulses between dim and bright, with a glow halo when bright. Pauses rendering when off-screen via IntersectionObserver.",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "Crosshair-TS-TW",
+    "title": "Crosshair Cursor",
+    "description": "Custom crosshair cursor with tracking, and link hover effects.",
+    "category": "cursors",
+    "categories": [
+      "cursors",
+      "effects"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "React Bits",
+    "librarySlug": "react-bits"
+  },
+  {
+    "name": "primitives-effects-image-zoom",
+    "title": "Image Zoom",
+    "description": "An effect that allows you to zoom in on an image on hover.",
+    "category": "effects",
+    "categories": [
+      "effects",
+      "media",
+      "ecommerce",
+      "portfolio"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
+  },
+  {
+    "name": "primitives-texts-scrolling-number",
+    "title": "Scrolling Number",
+    "description": "A scrolling number animation.",
+    "category": "charts",
+    "categories": [
+      "charts",
+      "text",
+      "dashboards"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Animate UI",
+    "librarySlug": "animate-ui"
   }
 ];

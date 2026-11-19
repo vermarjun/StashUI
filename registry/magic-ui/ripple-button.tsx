@@ -74,10 +74,11 @@ export const RippleButton = React.forwardRef<
         {...props}
       >
         <div className="relative z-10">{children}</div>
+        <style>{`@keyframes stashui-rippling{0%{transform:scale(0);opacity:1}100%{transform:scale(2);opacity:0}}`}</style>
         <span className="pointer-events-none absolute inset-0">
           {buttonRipples.map((ripple) => (
             <span
-              className="animate-rippling bg-background absolute rounded-full opacity-30"
+              className="bg-background absolute rounded-full opacity-30"
               key={ripple.key}
               style={
                 {
@@ -87,7 +88,7 @@ export const RippleButton = React.forwardRef<
                   left: `${ripple.x}px`,
                   backgroundColor: rippleColor,
                   transform: `scale(0)`,
-                  "--duration": duration,
+                  animation: `stashui-rippling ${duration} ease-out`,
                 } as React.CSSProperties
               }
             />

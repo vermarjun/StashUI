@@ -5,7 +5,6 @@ import { items } from '@/components/website/constant';
 import { X } from 'lucide-react';
 import { AnimatePresence, LayoutGroup, motion, useMotionValue } from 'motion/react';
 import type { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
 type ImageModalProps = {
@@ -75,13 +74,7 @@ export const SliderModal = ({ item, uniqueId, itemArr }: ImageModalProps) => {
         className='overflow-hidden mb-3'
       >
         <motion.div layoutId={uniqueId}>
-          <Image
-            width={400}
-            height={400}
-            src={item?.url}
-            className='bg-white text-black rounded-md w-full cursor-zoom-in'
-            alt='img'
-          />
+          <img width={400} height={400} src={item?.url} className='bg-white text-black rounded-md w-full cursor-zoom-in' alt='img' />
         </motion.div>
       </motion.div>
 
@@ -138,13 +131,7 @@ export const SliderModal = ({ item, uniqueId, itemArr }: ImageModalProps) => {
                                 }}
                                 transition={{ duration: 0.2, delay: 0.2 }}
                               >
-                                <Image
-                                  src={newItem.url}
-                                  width={1000}
-                                  height={1000}
-                                  alt='preview_img'
-                                  className=' object-contain h-[70vh]  mx-auto rounded-md'
-                                />
+                                <img src={newItem.url} width={1000} height={1000} alt='preview_img' className=' object-contain h-[70vh]  mx-auto rounded-md' />
                               </motion.div>
                             </motion.figure>
                           )}
@@ -178,13 +165,7 @@ export const SliderModal = ({ item, uniqueId, itemArr }: ImageModalProps) => {
                           className={`relative p-2   cursor-grab active:cursor-grabbing`}
                           onClick={() => setNewItem(itemData)}
                         >
-                          <Image
-                            src={itemData?.url}
-                            width={400}
-                            height={400}
-                            alt='img'
-                            className='sm:w-28 w-52 h-16 object-cover cursor-pointer relative z-2 rounded-md pointer-events-none'
-                          />
+                          <img src={itemData?.url} width={400} height={400} alt='img' className='sm:w-28 w-52 h-16 object-cover cursor-pointer relative z-2 rounded-md pointer-events-none' />
                           {itemData?.id === newItem?.id && (
                             <motion.div
                               layoutId='slider'

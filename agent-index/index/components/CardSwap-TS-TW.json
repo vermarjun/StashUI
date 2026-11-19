@@ -1,7 +1,14 @@
 {
  "name": "CardSwap-TS-TW",
  "title": "CardSwap",
- "category": "effects",
+ "category": "cards",
+ "categories": [
+  "cards",
+  "carousels",
+  "3d",
+  "testimonials",
+  "features"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -18,7 +25,7 @@
   "3d",
   "2 colors"
  ],
- "usage": "\"use client\";\nimport Cmp, { Card } from \"@/components/ui/CardSwap\";\n\nconst CARDS = [\n  { label: \"Design Systems\", color: \"#4F46E5\", emoji: \"🎨\" },\n  { label: \"Motion & Animation\", color: \"#10B981\", emoji: \"✨\" },\n  { label: \"Component Libraries\", color: \"#F59E0B\", emoji: \"📦\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-full overflow-hidden\">\n      <Cmp\n        width={320}\n        height={220}\n        cardDistance={50}\n        verticalDistance={60}\n        delay={3500}\n        pauseOnHover\n        easing=\"elastic\"\n      >\n        {CARDS.map((c, i) => (\n          <Card\n            key={i}\n            customClass=\"flex flex-col items-center justify-center gap-3 select-none\"\n            style={{ background: `linear-gradient(135deg, ${c.color}22, ${c.color}44)` }}\n          >\n            <span className=\"text-4xl\">{c.emoji}</span>\n            <span className=\"text-sm font-medium text-foreground\">{c.label}</span>\n          </Card>\n        ))}\n      </Cmp>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { Code2, Layers, Sparkles } from \"lucide-react\";\n\nimport CardSwap, { Card } from \"@/components/ui/CardSwap\";\n\nconst CARDS = [\n  { Icon: Layers, title: \"Design systems\", body: \"Tokens, primitives and patterns that keep every screen consistent.\" },\n  { Icon: Sparkles, title: \"Motion\", body: \"Springs, staggers and transitions that make interfaces feel alive.\" },\n  { Icon: Code2, title: \"Components\", body: \"Copy-paste building blocks that install in one command.\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-[600px] w-full items-center justify-center gap-10 overflow-hidden px-8\">\n      <div className=\"max-w-xs shrink-0 space-y-3\">\n        <h3 className=\"font-semibold text-3xl text-foreground tracking-tight\">Card swap</h3>\n        <p className=\"text-muted-foreground text-sm\">\n          Cards cycle from the front of the stack to the back on a timer. Hover to pause.\n        </p>\n      </div>\n      {/* sized box: the stack anchors to its bottom-right, back cards fan up/right into the padding */}\n      <div className=\"shrink-0 pt-[150px] pr-[150px] pb-[80px]\">\n        <div className=\"relative h-[300px] w-[440px]\">\n      <CardSwap cardDistance={60} delay={2600} height={300} pauseOnHover verticalDistance={70} width={440}>\n        {CARDS.map(({ Icon, title, body }) => (\n          <Card customClass=\"border-border! bg-card! overflow-hidden p-0 text-card-foreground\" key={title}>\n            <div className=\"flex items-center gap-2 border-border border-b px-4 py-3 text-sm\">\n              <Icon className=\"size-4 text-muted-foreground\" />\n              <span className=\"font-medium\">{title}</span>\n            </div>\n            <div className=\"space-y-4 p-6\">\n              <p className=\"text-muted-foreground text-sm leading-relaxed\">{body}</p>\n              <div className=\"space-y-2\">\n                <div className=\"h-2 w-3/4 rounded-full bg-muted\" />\n                <div className=\"h-2 w-1/2 rounded-full bg-muted\" />\n                <div className=\"h-2 w-2/3 rounded-full bg-muted\" />\n              </div>\n            </div>\n          </Card>\n        ))}\n      </CardSwap>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/CardSwap.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/CardSwap-TS-TW.json",

@@ -33,7 +33,7 @@ export default function Component() {
             alt="Avatar"
             className="shrink-0 rounded-full"
             height={32}
-            src="/origin/avatar.jpg"
+            src="https://i.pravatar.cc/80?img=12"
             width={32}
           />
           <div className="flex min-w-0 flex-col">

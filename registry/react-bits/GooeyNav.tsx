@@ -87,11 +87,17 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     if (!containerRef.current || !filterRef.current || !textRef.current) return;
     const containerRect = containerRef.current.getBoundingClientRect();
     const pos = element.getBoundingClientRect();
+    // getBoundingClientRect is in zoomed/transformed px, but left/top below are
+    // layout px: divide by the rendered scale so the pill stays on its item
+    // under CSS zoom or a scaled ancestor.
+    const scale = containerRef.current.offsetWidth
+      ? containerRect.width / containerRef.current.offsetWidth
+      : 1;
     const styles = {
-      left: `${pos.x - containerRect.x}px`,
-      top: `${pos.y - containerRect.y}px`,
-      width: `${pos.width}px`,
-      height: `${pos.height}px`
+      left: `${(pos.x - containerRect.x) / scale}px`,
+      top: `${(pos.y - containerRect.y) / scale}px`,
+      width: `${pos.width / scale}px`,
+      height: `${pos.height / scale}px`
     };
     Object.assign(filterRef.current.style, styles);
     Object.assign(textRef.current.style, styles);

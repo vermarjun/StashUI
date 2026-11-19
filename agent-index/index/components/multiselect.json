@@ -2,6 +2,11 @@
  "name": "multiselect",
  "title": "Multiselect",
  "category": "selects",
+ "categories": [
+  "selects",
+  "checkboxes",
+  "search"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -16,7 +21,7 @@
  "flags": [
   "pure"
  ],
- "usage": "import Cmp from \"@/components/ui/multiselect\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport MultipleSelector, { type Option } from \"@/components/ui/multiselect\";\n\nconst frameworks: Option[] = [\n  { label: \"Next.js\", value: \"nextjs\" },\n  { label: \"React\", value: \"react\" },\n  { label: \"Remix\", value: \"remix\" },\n  { label: \"Astro\", value: \"astro\" },\n  { label: \"SvelteKit\", value: \"sveltekit\" },\n  { label: \"Nuxt.js\", value: \"nuxt\" },\n  { label: \"Vite\", value: \"vite\" },\n  { label: \"Angular\", value: \"angular\", disable: true },\n  { label: \"Gatsby\", value: \"gatsby\" },\n];\n\nexport default function Demo() {\n  const [value, setValue] = useState<Option[]>([frameworks[0], frameworks[3]]);\n\n  return (\n    <div className=\"flex min-h-[460px] w-full items-start justify-center px-6 pt-16\">\n      <div className=\"w-full max-w-md space-y-2\">\n        <label className=\"font-medium text-foreground text-sm\" htmlFor=\"frameworks\">\n          Frameworks you ship with\n        </label>\n        <MultipleSelector\n          commandProps={{ label: \"Select frameworks\" }}\n          value={value}\n          onChange={setValue}\n          defaultOptions={frameworks}\n          placeholder=\"Select frameworks\"\n          hideClearAllButton={false}\n          hidePlaceholderWhenSelected\n          emptyIndicator={<p className=\"text-center text-sm\">No results found</p>}\n        />\n        <p className=\"text-muted-foreground text-xs\">Pick as many as you like. Type to filter.</p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/multiselect.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/multiselect.json",

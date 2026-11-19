@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 interface ComponentPreviewProps {
@@ -33,7 +32,6 @@ export function ComponentPreview({
   eager = false,
   interactive = false,
 }: ComponentPreviewProps) {
-  const { resolvedTheme } = useTheme();
   const ref = React.useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = React.useState(false);
   const [active, setActive] = React.useState(eager);
@@ -80,13 +78,15 @@ export function ComponentPreview({
     };
   }, [eager]);
 
-  const theme = resolvedTheme === "dark" ? "dark" : "light";
+  // Grid stages are always dark (see ComponentCard), so the live fallback
+  // renders dark too, matching the recorded clips around it.
+  const theme = "dark";
 
   return (
     <div
       ref={ref}
       className={cn(
-        "relative aspect-[8/5] w-full overflow-hidden bg-background",
+        "relative aspect-[8/5] w-full overflow-hidden bg-[#0a0a0a]",
         className,
       )}
     >
@@ -103,13 +103,13 @@ export function ComponentPreview({
             transformOrigin: "top left",
           }}
           className={cn(
-            "absolute left-0 top-0 border-0 bg-background",
+            "absolute left-0 top-0 border-0 bg-[#0a0a0a]",
             !interactive && "pointer-events-none",
           )}
         />
       ) : (
         // blends with the cell while loading/off-screen — no boxed outline
-        <div className="absolute inset-0 animate-pulse bg-muted/10" />
+        <div className="absolute inset-0 animate-pulse bg-white/[0.02]" />
       )}
     </div>
   );

@@ -27,7 +27,6 @@ import {
   useState,
   type MouseEvent,
 } from "react"
-import Image, { type StaticImageData } from "next/image"
 import clsx from "clsx"
 import {
   AnimatePresence,
@@ -43,6 +42,7 @@ import Balancer from "react-wrap-balancer"
 import { cn } from "@/lib/utils"
 
 // Types
+type StaticImageData = { src: string; width?: number; height?: number }
 type WrapperStyle = MotionStyle & {
   "--x": MotionValue<string>
   "--y": MotionValue<string>
@@ -101,27 +101,31 @@ const TOTAL_STEPS = 4
 const steps = [
   {
     id: "1",
-    name: "Step 1",
-    title: "Feature 1",
-    description: "Feature 1 description  ",
+    name: "Connect",
+    title: "Connect your repository",
+    description:
+      "Import a project from GitHub in one click. Every push gets its own preview URL.",
   },
   {
     id: "2",
-    name: "Step 2",
-    title: "Feature 2",
-    description: "Feature 2 description",
+    name: "Configure",
+    title: "Configure environments",
+    description:
+      "Set secrets per branch and promote them to production when you are ready.",
   },
   {
     id: "3",
-    name: "Step 3",
-    title: "Feature 3",
-    description: "Feature 3 description",
+    name: "Monitor",
+    title: "Watch it in real time",
+    description:
+      "Live logs, traces and web vitals for every deployment, right where you ship.",
   },
   {
     id: "4",
-    name: "Step 4",
-    title: "Feature 4",
-    description: "Feature 4 description",
+    name: "Ship",
+    title: "Ship with confidence",
+    description:
+      "Instant rollbacks and gradual rollouts keep every release boring, in a good way.",
   },
 ] as const
 
@@ -188,14 +192,12 @@ function useNumberCycler(
 
   // Setup timer function
   const setupTimer = useCallback(() => {
-    console.log("Setting up timer")
     // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current)
     }
 
     timerRef.current = setTimeout(() => {
-      console.log("Timer triggered, advancing to next step")
       setCurrentNumber((prev) => (prev + 1) % totalSteps)
       setIsManualInteraction(false)
       // Recursively setup next timer
@@ -205,7 +207,6 @@ function useNumberCycler(
 
   // Handle manual increment
   const increment = useCallback(() => {
-    console.log("Manual increment triggered")
     setIsManualInteraction(true)
     setCurrentNumber((prev) => (prev + 1) % totalSteps)
 
@@ -215,25 +216,15 @@ function useNumberCycler(
 
   // Initial timer setup and cleanup
   useEffect(() => {
-    console.log("Initial timer setup")
     setupTimer()
 
     return () => {
-      console.log("Cleaning up timer")
       if (timerRef.current) {
         clearTimeout(timerRef.current)
       }
     }
   }, [setupTimer])
 
-  // Debug logging
-  useEffect(() => {
-    console.log("Current state:", {
-      currentNumber,
-      isManualInteraction,
-      hasTimer: !!timerRef.current,
-    })
-  }, [currentNumber, isManualInteraction])
 
   return {
     currentNumber,
@@ -298,11 +289,11 @@ const StepImage = forwardRef<
     ref
   ) => {
     return (
-      <Image
+      <img
         ref={ref}
         alt={alt}
         className={className}
-        src={src}
+        src={typeof src === "string" ? src : src.src}
         width={width}
         height={height}
         style={{
@@ -390,7 +381,7 @@ function FeatureCard({
           bgClass
         )}
       >
-        <div className="m-10 min-h-[450px] w-full">
+        <div className="mx-10 mb-10 mt-20 min-h-[450px] w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
@@ -543,17 +534,17 @@ function Steps({
 
 const defaultClasses = {
   step1img1:
-    "pointer-events-none w-[50%] border border-border-100/10 transition-all duration-500 dark:border-border-700/50 rounded-2xl",
+    "pointer-events-none w-[50%] rounded-2xl border border-white/10 shadow-2xl transition-all duration-500 left-[35px] top-[34%] md:group-hover:translate-y-2",
   step1img2:
-    "pointer-events-none w-[60%] border border-border-100/10 dark:border-border-700/50 transition-all duration-500 overflow-hidden rounded-2xl",
+    "pointer-events-none w-[60%] overflow-hidden rounded-2xl border border-white/10 shadow-2xl transition-all duration-500 left-[calc(50%+35px+1rem)] top-[26%] md:group-hover:-translate-y-6",
   step2img1:
-    "pointer-events-none w-[50%] border border-border-100/10 transition-all duration-500 dark:border-border-700 rounded-2xl overflow-hidden",
+    "pointer-events-none w-[50%] overflow-hidden rounded-2xl border border-white/10 shadow-2xl transition-all duration-500 left-[35px] top-[34%] md:group-hover:translate-y-2",
   step2img2:
-    "pointer-events-none w-[40%] border border-border-100/10 dark:border-border-700 transition-all duration-500 rounded-2xl overflow-hidden",
+    "pointer-events-none w-[40%] overflow-hidden rounded-2xl border border-white/10 shadow-2xl transition-all duration-500 left-[calc(50%+27px+1rem)] top-[28%] md:group-hover:-translate-y-6",
   step3img:
-    "pointer-events-none w-[90%] border border-border-100/10 dark:border-border-700 rounded-2xl transition-all duration-500 overflow-hidden",
+    "pointer-events-none w-[90%] overflow-hidden rounded-2xl border border-white/10 shadow-2xl transition-all duration-500 left-[5%] top-[34%]",
   step4img:
-    "pointer-events-none w-[90%] border border-border-100/10 dark:border-border-700 rounded-2xl transition-all duration-500 overflow-hidden",
+    "pointer-events-none w-[90%] overflow-hidden rounded-2xl border border-white/10 shadow-2xl transition-all duration-500",
 } as const
 
 /**
@@ -686,7 +677,7 @@ export function FeatureCarousel({
               <AnimatedStepImage
                 alt={image.alt}
                 className="pointer-events-none top-[50%] w-[90%] overflow-hidden rounded-2xl border border-neutral-100/10 md:left-[35px] md:top-[30%] md:w-full dark:border-zinc-700"
-                src="/cults.png"
+                src={image.step4light}
                 preset="fadeInScale"
                 delay={0.1}
               />

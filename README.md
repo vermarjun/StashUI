@@ -2,7 +2,7 @@
 
 # StashUI
 
-**1,518 React components. One visual gallery. One agent-friendly registry.**
+**790 curated React components. One visual gallery. One agent-friendly registry.**
 
 Browse, preview, copy, and install shadcn-style components, or let an AI agent
 navigate the same library through a purpose-built MCP server.
@@ -49,7 +49,7 @@ not a runtime UI package.
 
 ## Why StashUI?
 
-- **A large, organized catalogue:** 1,518 components across 31 practical
+- **A large, organized catalogue:** 790 curated components across 31 practical
   categories, from buttons and forms to backgrounds, effects, navigation, and
   data display.
 - **Real previews:** fast video loops in the gallery and live, responsive,
@@ -141,7 +141,7 @@ are required for the gallery or MCP server.
 ## Use StashUI with an AI agent
 
 The gallery is optimized for people. The local MCP server is optimized for
-agents that need to choose among 1,518 components without loading the entire
+agents that need to choose among 790 components without loading the entire
 catalogue into context.
 
 ### Build the MCP server

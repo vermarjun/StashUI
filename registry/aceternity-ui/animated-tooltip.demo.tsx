@@ -6,31 +6,31 @@ const people = [
     id: 1,
     name: "Alice Johnson",
     designation: "Software Engineer",
-    image: "https://picsum.photos/seed/alice/100/100",
+    image: "https://images.unsplash.com/photo-1761882835101-02ab45ac0726?w=100&h=100&fit=crop&auto=format&q=80",
   },
   {
     id: 2,
     name: "Bob Martinez",
     designation: "Product Manager",
-    image: "https://picsum.photos/seed/bob/100/100",
+    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=100&h=100&fit=crop&auto=format&q=80",
   },
   {
     id: 3,
     name: "Carol Chen",
     designation: "UX Designer",
-    image: "https://picsum.photos/seed/carol/100/100",
+    image: "https://images.unsplash.com/photo-1611582450053-0f056a82a68e?w=100&h=100&fit=crop&auto=format&q=80",
   },
   {
     id: 4,
     name: "David Kim",
     designation: "DevOps Engineer",
-    image: "https://picsum.photos/seed/david/100/100",
+    image: "https://images.unsplash.com/photo-1573790387438-4da905039392?w=100&h=100&fit=crop&auto=format&q=80",
   },
   {
     id: 5,
     name: "Emma Wilson",
     designation: "Data Scientist",
-    image: "https://picsum.photos/seed/emma/100/100",
+    image: "https://images.unsplash.com/photo-1595407660626-db35dcd16609?w=100&h=100&fit=crop&auto=format&q=80",
   },
 ];
 

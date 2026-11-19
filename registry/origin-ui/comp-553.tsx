@@ -36,7 +36,7 @@ const initialFiles = [
     name: "image-01.jpg",
     size: 1528737,
     type: "image/jpeg",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
+    url: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
   {
     id: "audio-123456789",

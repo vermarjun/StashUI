@@ -184,7 +184,7 @@ export function YouTubePlayer({
                     <motion.h3
                       layoutId={`youtube-player-title-${videoId}`}
                       className={cn(
-                        "mt-4 max-w-xs text-center text-sm font-medium text-secondary/90 md:max-w-md md:text-base",
+                        "mt-4 max-w-xs text-center text-sm font-medium text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)] md:max-w-md md:text-base",
                         titleClassName
                       )}
                     >

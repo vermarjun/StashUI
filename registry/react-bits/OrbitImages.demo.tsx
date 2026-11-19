@@ -1,38 +1,52 @@
 "use client";
-import Cmp from "@/registry/react-bits/OrbitImages";
 
-const IMAGES = [
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=80&h=80&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=80&h=80&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=80&h=80&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=80&h=80&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=80&h=80&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=80&h=80&fit=crop&auto=format",
+import OrbitImages from "@/registry/react-bits/OrbitImages";
+
+const PHOTOS = [
+  "photo-1506792006437-256b665541e2",
+  "photo-1506794778202-cad84cf45f1d",
+  "photo-1506905925346-21bda4d32df4",
+  "photo-1507003211169-0a1dd7228f2d",
+  "photo-1507525428034-b723cf961d3e",
+  "photo-1508193638397-1c4234db14d8",
+  "photo-1508739773434-c26b3d09e071",
+  "photo-1508873881324-c92a3fc536ba",
 ];
+const photo = (i: number, w: number, h: number) =>
+  `https://images.unsplash.com/${PHOTOS[Math.abs(i) % PHOTOS.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
+
+const IMAGES = Array.from(
+  { length: 8 },
+  (_, i) => photo(i, 200, 200),
+);
 
 export default function Demo() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <Cmp
-        images={IMAGES}
-        shape="ellipse"
-        radiusX={280}
-        radiusY={80}
-        rotation={-8}
-        duration={18}
-        itemSize={64}
-        fill
-        width={680}
-        height={240}
-        showPath
-        pathColor="rgba(128,128,128,0.2)"
-        pathWidth={1}
-        centerContent={
-          <span className="text-muted-foreground text-xs tracking-widest uppercase opacity-60">
-            StashUI orbit
-          </span>
-        }
-      />
-    </div>
+    <OrbitImages
+      images={IMAGES}
+      shape="ellipse"
+      baseWidth={640}
+      width={640}
+      height={640}
+      radiusX={290}
+      radiusY={110}
+      rotation={-8}
+      duration={30}
+      itemSize={84}
+      fill
+      showPath
+      pathColor="rgba(150,150,150,0.35)"
+      pathWidth={1.5}
+      centerContent={
+        <div className="text-center">
+          <p className="text-3xl font-semibold tracking-tight text-foreground">
+            Orbit Images
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Any shape, any path, endlessly looping
+          </p>
+        </div>
+      }
+    />
   );
 }

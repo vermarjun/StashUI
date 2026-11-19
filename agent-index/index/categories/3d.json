@@ -1,0 +1,652 @@
+{
+ "slug": "3d",
+ "count": 33,
+ "summary": "3D scenes, 3D cards/objects, globes, WebGL objects (not flat shader backgrounds → backgrounds).",
+ "components": [
+  {
+   "name": "3d-card",
+   "title": "3D Card",
+   "origin": "ace",
+   "blurb": "Card elements rotate and tilt in 3D space following cursor movement.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "feature-card",
+    "hero"
+   ],
+   "flags": [
+    "pure",
+    "3d"
+   ]
+  },
+  {
+   "name": "3d-globe",
+   "title": "3D Globe",
+   "origin": "ace",
+   "blurb": "Interactive 3D Earth globe with customizable markers and rotation.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "media"
+   ],
+   "flags": [
+    "webgl",
+    "heavy",
+    "sized-parent",
+    "12c"
+   ]
+  },
+  {
+   "name": "3d-pin",
+   "title": "3D Pin Card",
+   "origin": "ace",
+   "blurb": "Rotates 3D card inward on hover with title label and animated rings.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "feature-card"
+   ],
+   "flags": [
+    "motion",
+    "3d",
+    "16c"
+   ]
+  },
+  {
+   "name": "Ballpit-TS-TW",
+   "title": "Ballpit",
+   "origin": "rb",
+   "blurb": "Physics-based bouncing balls in WebGL that react to cursor movement.",
+   "trigger": [
+    "pointer-move",
+    "always"
+   ],
+   "tone": "playful",
+   "slots": [
+    "page-background"
+   ],
+   "flags": [
+    "webgl",
+    "3d",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "CardSwap-TS-TW",
+   "title": "CardSwap",
+   "origin": "rb",
+   "blurb": "Cards cycle through a 3D stack with perspective transform and skew.",
+   "trigger": [
+    "timer"
+   ],
+   "tone": "playful",
+   "slots": [
+    "feature-card",
+    "testimonial"
+   ],
+   "flags": [
+    "3d",
+    "2c"
+   ]
+  },
+  {
+   "name": "Cubes-TS-TW",
+   "title": "3D Cube Grid",
+   "origin": "rb",
+   "blurb": "3D cube grid that rotates toward the cursor with ripple effects on click.",
+   "trigger": [
+    "pointer-move",
+    "click"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "page-background"
+   ],
+   "flags": [
+    "3d",
+    "sized-parent",
+    "4c"
+   ]
+  },
+  {
+   "name": "EvilEye-TS-TW",
+   "title": "Evil Eye",
+   "origin": "rb",
+   "blurb": "An eye with animated irises that tracks your cursor and flickers.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "decoration",
+    "loading"
+   ],
+   "flags": [
+    "webgl",
+    "sized-parent",
+    "2c"
+   ]
+  },
+  {
+   "name": "FluidGlass-TS-TW",
+   "title": "FluidGlass",
+   "origin": "rb",
+   "blurb": "A 3D glass shape that distorts and refracts content as you scroll and move the…",
+   "trigger": [
+    "pointer-move",
+    "scroll"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "hero",
+    "page-background",
+    "decoration"
+   ],
+   "flags": [
+    "webgl",
+    "heavy",
+    "sized-parent",
+    "4c"
+   ]
+  },
+  {
+   "name": "GridScan-TS-TW",
+   "title": "Grid Scan",
+   "origin": "rb",
+   "blurb": "A 3D grid with animated scanning lines that responds to your face or cursor…",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "page-background",
+    "hero",
+    "decoration"
+   ],
+   "flags": [
+    "webgl",
+    "heavy",
+    "sized-parent",
+    "6c"
+   ]
+  },
+  {
+   "name": "InfiniteMenu-TS-TW",
+   "title": "Infinite Menu",
+   "origin": "rb",
+   "blurb": "Drag to spin a 3D sphere of linked image cards.",
+   "trigger": [
+    "pointer-move",
+    "drag"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "media"
+   ],
+   "flags": [
+    "webgl",
+    "3d",
+    "sized-parent",
+    "3c"
+   ]
+  },
+  {
+   "name": "LightPillar-TS-TW",
+   "title": "Light Pillar",
+   "origin": "rb",
+   "blurb": "Rotating volumetric pillar with gradient colors and dynamic wave deformation.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "decoration",
+    "page-background",
+    "hero"
+   ],
+   "flags": [
+    "webgl",
+    "sized-parent",
+    "4c"
+   ]
+  },
+  {
+   "name": "ModelViewer-TS-TW",
+   "title": "3D Model Viewer",
+   "origin": "rb",
+   "blurb": "3D model viewer with drag rotation, parallax, and configurable lighting using…",
+   "trigger": [
+    "drag",
+    "pointer-move",
+    "hover"
+   ],
+   "tone": "technical",
+   "slots": [
+    "media",
+    "feature-card"
+   ],
+   "flags": [
+    "webgl",
+    "3d",
+    "heavy",
+    "sized-parent",
+    "4c"
+   ]
+  },
+  {
+   "name": "Prism-TS-TW",
+   "title": "Prism",
+   "origin": "rb",
+   "blurb": "A glowing 3D prism that rotates on its own or responds to cursor position.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "page-background",
+    "decoration"
+   ],
+   "flags": [
+    "webgl"
+   ]
+  },
+  {
+   "name": "ProfileCard-TS-TW",
+   "title": "Profile Card",
+   "origin": "rb",
+   "blurb": "Holographic profile card with tilt effect and animated glow.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "feature-card",
+    "hero"
+   ],
+   "flags": [
+    "pure",
+    "3d",
+    "35c"
+   ]
+  },
+  {
+   "name": "TiltedCard-TS-TW",
+   "title": "Tilted Card",
+   "origin": "rb",
+   "blurb": "Card with image that tilts in 3D space following cursor position.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "3d",
+    "2c"
+   ]
+  },
+  {
+   "name": "book",
+   "title": "3D Book Display",
+   "origin": "insp",
+   "blurb": "3D book mockup that rotates on hover, revealing colored spine and back cover.",
+   "trigger": [
+    "hover"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "feature-card",
+    "decoration"
+   ],
+   "flags": [
+    "pure",
+    "3d",
+    "64c"
+   ]
+  },
+  {
+   "name": "carousel-3d",
+   "title": "Carousel 3D",
+   "origin": "insp",
+   "blurb": "Three.js 3D spherical carousel with drag-to-rotate interaction.",
+   "trigger": [
+    "drag",
+    "timer"
+   ],
+   "tone": "technical",
+   "slots": [
+    "hero",
+    "feature-card"
+   ],
+   "flags": [
+    "pure",
+    "webgl",
+    "3d",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "comet-card",
+   "title": "Comet Card",
+   "origin": "ace",
+   "blurb": "Card with 3D tilt and a glare comet effect following the cursor.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "feature-card",
+    "primary-cta"
+   ],
+   "flags": [
+    "pure",
+    "3d",
+    "7c"
+   ]
+  },
+  {
+   "name": "cosmic-portal",
+   "title": "Cosmic Portal",
+   "origin": "insp",
+   "blurb": "Animated 3D cosmic portal with rotating crystals, bloom effects, and shifting…",
+   "trigger": [
+    "always"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "section-background"
+   ],
+   "flags": [
+    "pure",
+    "webgl",
+    "3d",
+    "sized-parent",
+    "12c"
+   ]
+  },
+  {
+   "name": "draggable-card",
+   "title": "Draggable Card",
+   "origin": "ace",
+   "blurb": "3D card that responds to pointer movement and drag gestures.",
+   "trigger": [
+    "pointer-move",
+    "drag"
+   ],
+   "tone": "playful",
+   "slots": [
+    "hero",
+    "modal"
+   ],
+   "flags": [
+    "pure",
+    "3d",
+    "3c"
+   ]
+  },
+  {
+   "name": "glare-card",
+   "title": "Glare Card",
+   "origin": "ace",
+   "blurb": "Card with pointer-tracked rainbow gradient glare and 3D tilt effect.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "playful",
+   "slots": [
+    "hero",
+    "feature-card",
+    "decoration"
+   ],
+   "flags": [
+    "pure",
+    "3d",
+    "18c"
+   ]
+  },
+  {
+   "name": "hero-parallax",
+   "title": "Hero Parallax",
+   "origin": "ace",
+   "blurb": "Scroll-driven 3D parallax gallery with rotating product cards.",
+   "trigger": [
+    "scroll"
+   ],
+   "tone": "playful",
+   "slots": [
+    "hero",
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "motion",
+    "3d",
+    "4c"
+   ]
+  },
+  {
+   "name": "icon-cloud",
+   "title": "Icon Cloud",
+   "origin": "mag",
+   "blurb": "3D rotating cloud of icons or images rendered on canvas.",
+   "trigger": [
+    "drag"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "feature-card",
+    "media"
+   ],
+   "flags": [
+    "pure",
+    "canvas",
+    "sized-parent",
+    "1c"
+   ]
+  },
+  {
+   "name": "infinite-grid",
+   "title": "Infinite Grid",
+   "origin": "insp",
+   "blurb": "3D grid of cards with click interaction, infinite panning, and shader effects.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "media"
+   ],
+   "flags": [
+    "pure",
+    "sized-parent",
+    "1c"
+   ]
+  },
+  {
+   "name": "macbook-scroll",
+   "title": "Macbook Scroll",
+   "origin": "ace",
+   "blurb": "3D MacBook rotates into view on scroll, lid opening to reveal a display panel.",
+   "trigger": [
+    "scroll"
+   ],
+   "tone": "technical",
+   "slots": [
+    "hero",
+    "feature-card"
+   ],
+   "flags": [
+    "motion",
+    "3d",
+    "32c"
+   ]
+  },
+  {
+   "name": "magic-ui-globe",
+   "title": "Globe",
+   "origin": "mag",
+   "blurb": "3D rotating globe responds to pointer movement with geographic markers.",
+   "trigger": [
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "page-background",
+    "decoration"
+   ],
+   "flags": [
+    "motion",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "mesh-gradient-background",
+   "title": "Mesh Gradient Background",
+   "origin": "uila",
+   "blurb": "Three.js mesh with Perlin noise displacement and interactive camera.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "page-background",
+    "hero",
+    "section-background"
+   ],
+   "flags": [
+    "webgl",
+    "heavy",
+    "sized-parent",
+    "3c"
+   ]
+  },
+  {
+   "name": "r3f-blob",
+   "title": "3D Shader Blob",
+   "origin": "uila",
+   "blurb": "Morphs fluidly with Perlin noise, responds to hover and cursor position.",
+   "trigger": [
+    "hover",
+    "pointer-move"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "page-background",
+    "hero"
+   ],
+   "flags": [
+    "webgl",
+    "heavy"
+   ]
+  },
+  {
+   "name": "spline",
+   "title": "Spline",
+   "origin": "insp",
+   "blurb": "Spline 3D scene viewer with lazy loading and render-on-demand option.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "decoration",
+    "page-background"
+   ],
+   "flags": [
+    "pure",
+    "sized-parent"
+   ]
+  },
+  {
+   "name": "text-3d",
+   "title": "Text 3D",
+   "origin": "insp",
+   "blurb": "Text appears in 3D perspective with depth.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "hero",
+    "headline"
+   ],
+   "flags": [
+    "pure"
+   ]
+  },
+  {
+   "name": "text-3d-flip",
+   "title": "Text 3D Flip",
+   "origin": "mag",
+   "blurb": "Text flips in 3D space, revealing alternate text.",
+   "trigger": [
+    "hover",
+    "click"
+   ],
+   "tone": "decorative",
+   "slots": [
+    "headline",
+    "decoration"
+   ],
+   "flags": [
+    "motion",
+    "3d"
+   ]
+  },
+  {
+   "name": "three-d-carousel",
+   "title": "3D Carousel",
+   "origin": "cult",
+   "blurb": "3D cylindrical carousel with perspective transforms and modal image expansion.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "dramatic",
+   "slots": [
+    "section-background",
+    "feature-card",
+    "hero"
+   ],
+   "flags": [
+    "pure",
+    "3d",
+    "sized-parent",
+    "9c"
+   ]
+  },
+  {
+   "name": "webcam-pixel-grid",
+   "title": "Webcam Pixel Grid",
+   "origin": "ace",
+   "blurb": "Webcam feed pixelated into a grid with motion-based 3D elevation.",
+   "trigger": [
+    "always"
+   ],
+   "tone": "technical",
+   "slots": [
+    "page-background",
+    "decoration",
+    "modal"
+   ],
+   "flags": [
+    "pure",
+    "canvas",
+    "sized-parent",
+    "26c"
+   ]
+  }
+ ]
+}

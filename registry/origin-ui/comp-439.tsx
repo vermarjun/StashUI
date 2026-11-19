@@ -8,10 +8,10 @@ import {
 
 export default function Component() {
   return (
-    <Tabs defaultValue="tab-1">
-      <TabsList className="mx-auto flex w-full max-w-xs bg-transparent">
+    <Tabs className="w-80" defaultValue="tab-1">
+      <TabsList className="mx-auto flex w-full max-w-xs bg-transparent group-data-horizontal/tabs:h-auto">
         <TabsTrigger
-          className="group flex-1 flex-col p-3 text-xs data-[state=active]:bg-muted data-[state=active]:shadow-none"
+          className="group h-auto flex-1 flex-col p-3 text-xs data-[state=active]:bg-muted data-[state=active]:shadow-none"
           value="tab-1"
         >
           <Badge className="mb-1.5 min-w-5 px-1 transition-opacity group-data-[state=inactive]:opacity-50">
@@ -20,7 +20,7 @@ export default function Component() {
           Overview
         </TabsTrigger>
         <TabsTrigger
-          className="group flex-1 flex-col p-3 text-xs data-[state=active]:bg-muted data-[state=active]:shadow-none"
+          className="group h-auto flex-1 flex-col p-3 text-xs data-[state=active]:bg-muted data-[state=active]:shadow-none"
           value="tab-2"
         >
           <Badge className="mb-1.5 min-w-5 px-1 transition-opacity group-data-[state=inactive]:opacity-50">
@@ -29,7 +29,7 @@ export default function Component() {
           Projects
         </TabsTrigger>
         <TabsTrigger
-          className="group flex-1 flex-col p-3 text-xs data-[state=active]:bg-muted data-[state=active]:shadow-none"
+          className="group h-auto flex-1 flex-col p-3 text-xs data-[state=active]:bg-muted data-[state=active]:shadow-none"
           value="tab-3"
         >
           <Badge className="mb-1.5 min-w-5 px-1 transition-opacity group-data-[state=inactive]:opacity-50">
@@ -40,17 +40,17 @@ export default function Component() {
       </TabsList>
       <TabsContent value="tab-1">
         <p className="p-4 text-center text-muted-foreground text-xs">
-          Content for Tab 1
+          3 updates since your last visit.
         </p>
       </TabsContent>
       <TabsContent value="tab-2">
         <p className="p-4 text-center text-muted-foreground text-xs">
-          Content for Tab 2
+          No projects yet. Create one to get started.
         </p>
       </TabsContent>
       <TabsContent value="tab-3">
         <p className="p-4 text-center text-muted-foreground text-xs">
-          Content for Tab 3
+          7 packages published this month.
         </p>
       </TabsContent>
     </Tabs>

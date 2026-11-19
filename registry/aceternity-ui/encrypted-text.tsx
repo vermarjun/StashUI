@@ -61,8 +61,18 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
   const animationFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
   const lastFlipTimeRef = useRef<number>(0);
+  // Deterministic first frame so SSR and hydration render the same text;
+  // the effect below re-randomizes once mounted.
   const scrambleCharsRef = useRef<string[]>(
-    text ? generateGibberishPreservingSpaces(text, charset).split("") : [],
+    text
+      ? text
+          .split("")
+          .map((ch, i) =>
+            ch === " "
+              ? " "
+              : charset.charAt((ch.charCodeAt(0) + i * 7) % charset.length),
+          )
+      : [],
   );
 
   useEffect(() => {

@@ -1,6 +1,5 @@
 'use client';
 import { SpotLightItem, Spotlight } from '@/registry/ui-layouts/spotlight';
-import Image from 'next/image';
 import React from 'react';
 
 export default function SpotlightCard3() {
@@ -13,13 +12,7 @@ export default function SpotlightCard3() {
       >
         <SpotLightItem>
           <div className="relative text-center z-10 sm:px-8 px-4 py-6 rounded-lg w-full  bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/sub-grid_hnhyvi.png')] bg-cover   bg-black h-full mx-auto">
-            <Image
-              src={'/statistic_ac1ivs.webp'}
-              alt='grid'
-              width={600}
-              className='w-fit mx-auto '
-              height={600}
-            />
+            <img src={'/statistic_ac1ivs.webp'} alt='grid' width={600} className='w-fit mx-auto ' height={600} />
             <h1 className='text-3xl pt-6 font-medium tracking-tight text-white'>
               Subscriber Growth
             </h1>

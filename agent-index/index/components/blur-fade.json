@@ -1,7 +1,11 @@
 {
  "name": "blur-fade",
  "title": "Blur Fade",
- "category": "effects",
+ "category": "scroll",
+ "categories": [
+  "scroll",
+  "effects"
+ ],
  "origin": "Magic UI",
  "origin_short": "mag",
  "exports": [
@@ -16,7 +20,7 @@
  "flags": [
   "motion"
  ],
- "usage": "import { BlurFade } from \"@/components/ui/blur-fade\"\n\nconst items = [\n  { delay: 0, text: \"Blur Fade\", sub: false },\n  { delay: 0.1, text: \"Content fades in with a soft blur on mount.\", sub: true },\n  { delay: 0.2, text: \"Each element staggers in independently.\", sub: true },\n  { delay: 0.3, text: \"Powered by Framer Motion.\", sub: true },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3 min-h-[280px] px-6 text-center\">\n      <BlurFade delay={items[0].delay} duration={0.5}>\n        <h2 className=\"text-3xl font-bold tracking-tight text-foreground\">\n          {items[0].text}\n        </h2>\n      </BlurFade>\n\n      {items.slice(1).map((item, i) => (\n        <BlurFade key={i} delay={item.delay} duration={0.45}>\n          <p className=\"text-muted-foreground text-sm max-w-xs\">{item.text}</p>\n        </BlurFade>\n      ))}\n\n      <BlurFade delay={0.45} duration={0.5} direction=\"up\">\n        <div className=\"mt-4 rounded-xl border border-border bg-muted/30 px-8 py-4\">\n          <span className=\"text-xs text-muted-foreground uppercase tracking-widest\">\n            direction: up\n          </span>\n        </div>\n      </BlurFade>\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\nimport { BlurFade } from \"@/components/ui/blur-fade\"\n\nconst photos = [\n  \"1506905925346-21bda4d32df4\",\n  \"1693581176773-a5f2362209e6\",\n  \"1469474968028-56623f02e42e\",\n  \"1759395073808-17782f3d8d66\",\n  \"1573790387438-4da905039392\",\n  \"1584043204475-8cc101d6c77a\",\n  \"1718954572423-2780fe600028\",\n  \"1475727946784-2890c8fdb9c8\",\n]\n\nexport default function Demo() {\n  const [run, setRun] = useState(0)\n\n  return (\n    <div className=\"flex w-full flex-col items-center gap-6 px-6 py-10\">\n      <div key={run} className=\"w-full max-w-3xl\">\n        <BlurFade delay={0.1} duration={0.5}>\n          <h2 className=\"text-3xl font-semibold tracking-tight text-foreground\">Summer in the mountains</h2>\n        </BlurFade>\n        <BlurFade delay={0.2} duration={0.5}>\n          <p className=\"mt-1 text-muted-foreground\">Eight frames from three weeks on the road.</p>\n        </BlurFade>\n        <div className=\"mt-6 grid grid-cols-4 gap-3\">\n          {photos.map((id, i) => (\n            <BlurFade key={id} delay={0.3 + i * 0.08} duration={0.5} inView>\n              <img\n                src={`https://images.unsplash.com/photo-${id}?w=400&h=400&fit=crop&auto=format&q=80`}\n                alt=\"\"\n                className=\"aspect-square w-full rounded-xl object-cover\"\n              />\n            </BlurFade>\n          ))}\n        </div>\n      </div>\n      <button\n        type=\"button\"\n        onClick={() => setRun((n) => n + 1)}\n        className=\"rounded-full border border-border px-4 py-1.5 text-xs text-muted-foreground transition hover:bg-muted hover:text-foreground\"\n      >\n        Replay\n      </button>\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/magic-ui/blur-fade.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/blur-fade.json",

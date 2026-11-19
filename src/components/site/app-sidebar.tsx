@@ -8,11 +8,15 @@ import { componentsMeta } from "@/__registry__/meta.gen";
 import { CATEGORY_CONFIG } from "@/lib/categories";
 
 const counts = componentsMeta.reduce<Record<string, number>>((acc, m) => {
-  acc[m.category] = (acc[m.category] || 0) + 1;
+  for (const c of m.categories) acc[c] = (acc[c] || 0) + 1;
   return acc;
 }, {});
 
-const cats = CATEGORY_CONFIG.filter((c) => (counts[c.slug] ?? 0) > 0);
+const live = CATEGORY_CONFIG.filter((c) => (counts[c.slug] ?? 0) > 0);
+const GROUPS = [
+  { title: "Use cases", items: live.filter((c) => c.group === "use") },
+  { title: "Types", items: live.filter((c) => c.group === "type") },
+].filter((g) => g.items.length > 0);
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -33,32 +37,36 @@ export function AppSidebar() {
           All components
         </Link>
 
-        <p className="px-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">
-          Types
-        </p>
-        <ul className="space-y-0.5">
-          {cats.map((c) => {
-            const active = pathname === `/category/${c.slug}`;
-            return (
-              <li key={c.slug}>
-                <Link
-                  href={`/category/${c.slug}`}
-                  className={cn(
-                    "flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm transition-colors",
-                    active
-                      ? "bg-muted font-medium text-foreground"
-                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
-                  )}
-                >
-                  <span className="truncate">{c.label}</span>
-                  <span className="shrink-0 font-mono text-[10px] text-muted-foreground/70">
-                    {counts[c.slug]}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {GROUPS.map((g) => (
+          <div key={g.title} className="pb-3">
+            <p className="px-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">
+              {g.title}
+            </p>
+            <ul className="space-y-0.5">
+              {g.items.map((c) => {
+                const active = pathname === `/category/${c.slug}`;
+                return (
+                  <li key={c.slug}>
+                    <Link
+                      href={`/category/${c.slug}`}
+                      className={cn(
+                        "flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm transition-colors",
+                        active
+                          ? "bg-muted font-medium text-foreground"
+                          : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
+                      )}
+                    >
+                      <span className="truncate">{c.label}</span>
+                      <span className="shrink-0 font-mono text-[10px] text-muted-foreground/70">
+                        {counts[c.slug]}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
       </nav>
     </aside>
   );

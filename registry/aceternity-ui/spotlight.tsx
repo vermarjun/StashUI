@@ -8,11 +8,14 @@ type SpotlightProps = {
 
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
+    <>
+    <style>{`@keyframes aceternity-spotlight{0%{opacity:0;transform:translate(-72%,-62%) scale(0.5)}100%{opacity:1;transform:translate(-50%,-40%) scale(1)}}`}</style>
     <svg
       className={cn(
-        "animate-spotlight pointer-events-none absolute z-[1]  h-[169%] w-[138%] lg:w-[84%] opacity-0",
+        "pointer-events-none absolute z-[1]  h-[169%] w-[138%] lg:w-[84%] opacity-0",
         className
       )}
+      style={{ animation: "aceternity-spotlight 2s ease 0.75s 1 forwards" }}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 3787 2842"
       fill="none"
@@ -52,5 +55,6 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
         </filter>
       </defs>
     </svg>
+    </>
   );
 };

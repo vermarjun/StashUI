@@ -2,7 +2,7 @@ import { EncryptedText } from "@/registry/inspira-react/encrypted-text";
 
 export default function EncryptedTextDemo() {
   return (
-    <div className="flex flex-col items-center justify-center gap-6 p-12">
+    <div className="flex min-h-[420px] w-full flex-col items-center justify-center gap-6 p-12">
       <h2 className="text-4xl font-bold">
         <EncryptedText
           text="Hello, World!"
@@ -14,7 +14,7 @@ export default function EncryptedTextDemo() {
       </h2>
       <p className="text-xl text-muted-foreground">
         <EncryptedText
-          text="Scroll down to see the effect"
+          text="Every character, decrypted in turn"
           revealDelayMs={40}
           flipDelayMs={30}
         />

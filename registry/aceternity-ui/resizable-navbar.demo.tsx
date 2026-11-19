@@ -23,8 +23,9 @@ export default function Demo() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="relative w-full min-h-[500px] bg-gray-50 dark:bg-neutral-950 overflow-y-auto">
-      <Navbar>
+    <div className="relative w-full bg-gray-50 dark:bg-neutral-950">
+      {/* fixed (not sticky) so it pins to the viewport even inside a scrolling wrapper */}
+      <Navbar className="fixed top-5">
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
@@ -48,10 +49,39 @@ export default function Demo() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      <div className="flex items-center justify-center" style={{ height: "400px" }}>
-        <p className="text-muted-foreground text-sm">Scroll down to see the navbar resize</p>
+      <div className="mx-auto max-w-5xl px-6 pb-24 pt-24">
+        <h1 className="text-center text-5xl font-bold tracking-tight text-neutral-900 md:text-6xl dark:text-white">
+          Plan, build and ship in one place
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-center text-neutral-500 dark:text-neutral-400">
+          Scroll the page: the full-width navbar shrinks into a floating
+          blurred pill and expands again at the top.
+        </p>
+        <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {[
+            "Roadmaps",
+            "Sprints",
+            "Docs",
+            "Analytics",
+            "Automations",
+            "Integrations",
+            "Releases",
+            "Feedback",
+            "Goals",
+          ].map((t) => (
+            <div
+              key={t}
+              className="h-56 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <p className="font-medium text-neutral-900 dark:text-white">{t}</p>
+              <div className="mt-4 space-y-2">
+                <div className="h-2 w-3/4 rounded bg-neutral-200 dark:bg-neutral-800" />
+                <div className="h-2 w-1/2 rounded bg-neutral-200 dark:bg-neutral-800" />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div style={{ height: "600px" }} />
     </div>
   );
 }

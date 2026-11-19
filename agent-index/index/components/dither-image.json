@@ -2,6 +2,10 @@
  "name": "dither-image",
  "title": "Dither Image",
  "category": "media",
+ "categories": [
+  "media",
+  "portfolio"
+ ],
  "origin": "Cult UI",
  "origin_short": "cult",
  "exports": [
@@ -12,16 +16,15 @@
   "DitherImageOverlay",
   "DitherImageReveal"
  ],
- "npm_deps": [
-  "dither-plugin"
- ],
+ "npm_deps": [],
  "registry_deps": [],
  "css": false,
- "hardcoded_colors": 1,
+ "hardcoded_colors": 2,
  "flags": [
-  "1 colors"
+  "pure",
+  "2 colors"
  ],
- "usage": "import {\n  DitherImage,\n  DitherImageCaption,\n  DitherImageContent,\n  DitherImageFrame,\n  DitherImageReveal,\n  DitherImageOverlay,\n} from \"@/components/ui/dither-image\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-start justify-center gap-10 p-10\">\n      {/* Basic dithered image */}\n      <DitherImage>\n        <DitherImageFrame size=\"md\" aspectRatio=\"square\" className=\"w-56\">\n          <DitherImageContent\n            src=\"https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=400&h=400&fit=crop&auto=format\"\n            alt=\"Mountain landscape dithered\"\n            fill\n            sizes=\"224px\"\n          />\n        </DitherImageFrame>\n        <DitherImageCaption>Mountain landscape, dithered</DitherImageCaption>\n      </DitherImage>\n\n      {/* Partial dither reveal */}\n      <DitherImage>\n        <DitherImageReveal className=\"w-56 overflow-hidden rounded-xl\" style={{ aspectRatio: \"1/1\" }}>\n          <DitherImageFrame size=\"lg\" aspectRatio=\"square\" className=\"w-full\">\n            <DitherImageContent\n              src=\"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=400&fit=crop&auto=format\"\n              alt=\"Forest path\"\n              fill\n              sizes=\"224px\"\n            />\n          </DitherImageFrame>\n          <DitherImageOverlay\n            src=\"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=400&fit=crop&auto=format\"\n            alt=\"\"\n            fill\n            sizes=\"224px\"\n            direction=\"r\"\n            from={0}\n            to={60}\n          />\n        </DitherImageReveal>\n        <DitherImageCaption>Partial reveal, left→right</DitherImageCaption>\n      </DitherImage>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport {\n  DitherImage,\n  DitherImageCaption,\n  DitherImageContent,\n  DitherImageFrame,\n  DitherImageOverlay,\n  DitherImageReveal,\n} from \"@/components/ui/dither-image\";\n\nconst MOUNTAINS =\n  \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop&auto=format&q=80\";\nconst PUG =\n  \"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&h=800&fit=crop&auto=format&q=80\";\n\nexport default function Demo() {\n  // the clean photo follows the cursor: everything left of it is clean, right is dithered\n  const [split, setSplit] = useState(45);\n\n  return (\n    <div className=\"flex min-h-[520px] w-full flex-wrap items-start justify-center gap-12 p-10\">\n      <DitherImage className=\"w-80\">\n        <DitherImageFrame size=\"md\" aspectRatio=\"square\">\n          <DitherImageContent src={PUG} alt=\"Pug on a yellow wall, dithered\" fill sizes=\"320px\" />\n        </DitherImageFrame>\n        <DitherImageCaption>Fully dithered, 16px Bayer cell</DitherImageCaption>\n      </DitherImage>\n\n      <DitherImage className=\"w-80\">\n        <DitherImageReveal\n          className=\"w-80 cursor-ew-resize rounded-xl\"\n          style={{ aspectRatio: \"1 / 1\" }}\n          data-reveal\n          onPointerMove={(e) => {\n            const r = e.currentTarget.getBoundingClientRect();\n            setSplit(Math.round(((e.clientX - r.left) / r.width) * 100));\n          }}\n          onPointerLeave={() => setSplit(45)}\n        >\n          <DitherImageFrame size=\"sm\" aspectRatio=\"square\" brightness={0.7} className=\"w-full\">\n            <DitherImageContent src={MOUNTAINS} alt=\"Mountains above the clouds\" fill sizes=\"320px\" />\n          </DitherImageFrame>\n          <DitherImageOverlay\n            src={MOUNTAINS}\n            alt=\"\"\n            fill\n            sizes=\"320px\"\n            direction=\"r\"\n            from={Math.max(0, split - 8)}\n            to={Math.min(100, split + 8)}\n          />\n        </DitherImageReveal>\n        <DitherImageCaption>Partial reveal: move across to wipe the clean photo</DitherImageCaption>\n      </DitherImage>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/cult-ui/dither-image.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/dither-image.json",

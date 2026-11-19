@@ -30,7 +30,7 @@ export default function Demo() {
         <div className="flex gap-1 p-1 rounded-lg bg-muted w-fit">
           {TABS.map((tab) => (
             <TabsBtn key={tab.value} value={tab.value}>
-              <span className="relative z-10 text-sm font-medium px-1 select-none">
+              <span className="relative z-10 px-1 text-sm font-medium text-muted-foreground select-none transition-colors in-data-[state=active]:text-foreground">
                 {tab.label}
               </span>
             </TabsBtn>

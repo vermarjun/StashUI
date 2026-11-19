@@ -50,7 +50,7 @@ export default function Component() {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="max-w-64 md:max-w-xs"
+          className="w-72 max-w-xs"
           side="bottom"
           sideOffset={4}
         >

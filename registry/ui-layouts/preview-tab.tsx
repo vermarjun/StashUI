@@ -1,7 +1,6 @@
 'use client';
 import { TabsBtn, TabsContent, TabsProvider } from '@/registry/ui-layouts/tab';
 import { AnimatePresence, motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 const effectArr = [
@@ -73,54 +72,30 @@ function PreviewTab() {
           </div>
           <TabsContent value='design'>
             <div className='w-full'>
-              <Image
-                src={
+              <img src={
                   'https://images.unsplash.com/photo-1506097425191-7ad538b29cef?q=80&w=1000&auto=format&fit=crop'
-                }
-                width={1000}
-                height={1000}
-                alt='preview_img'
-                className='w-[850px] object-cover h-full mx-auto rounded-md'
-              />
+                } width={1000} height={1000} alt='preview_img' className='w-[850px] object-cover h-full mx-auto rounded-md' />
             </div>
           </TabsContent>
           <TabsContent value='collaborate'>
             <div className='w-full'>
-              <Image
-                src={
+              <img src={
                   'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop'
-                }
-                width={1000}
-                height={1000}
-                alt='preview_img'
-                className='w-[850px] object-cover h-full mx-auto rounded-md'
-              />
+                } width={1000} height={1000} alt='preview_img' className='w-[850px] object-cover h-full mx-auto rounded-md' />
             </div>
           </TabsContent>
           <TabsContent value='share'>
             <div className='w-full'>
-              <Image
-                src={
+              <img src={
                   'https://images.unsplash.com/photo-1665470909901-162912ec16f7?q=80&w=1000&auto=format&fit=crop'
-                }
-                width={1000}
-                height={1000}
-                alt='preview_img'
-                className='w-[850px] object-cover h-full mx-auto rounded-md'
-              />
+                } width={1000} height={1000} alt='preview_img' className='w-[850px] object-cover h-full mx-auto rounded-md' />
             </div>
           </TabsContent>
           <TabsContent value='publish'>
             <div className='w-full'>
-              <Image
-                src={
+              <img src={
                   'https://images.unsplash.com/photo-1694022861804-840f61d1c452?q=80&w=1000&auto=format&fit=crop'
-                }
-                width={1000}
-                height={1000}
-                alt='preview_img'
-                className='w-[850px] object-cover h-full mx-auto rounded-md'
-              />
+                } width={1000} height={1000} alt='preview_img' className='w-[850px] object-cover h-full mx-auto rounded-md' />
             </div>
           </TabsContent>
         </TabsProvider>

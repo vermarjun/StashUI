@@ -1,7 +1,12 @@
 {
  "name": "choice-poll",
  "title": "Choice Poll",
- "category": "data-display",
+ "category": "forms",
+ "categories": [
+  "forms",
+  "charts",
+  "feedback"
+ ],
  "origin": "Cult UI",
  "origin_short": "cult",
  "exports": [
@@ -26,7 +31,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "\"use client\"\n\nimport { ChoicePoll } from \"@/components/ui/choice-poll\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-md p-6\">\n      <ChoicePoll.Root\n        votes={{ react: 245, vue: 178, angular: 92, svelte: 134 }}\n        hasVoted={false}\n        showResults={false}\n      >\n        <ChoicePoll.Header>\n          <ChoicePoll.Title>What is your favorite frontend framework?</ChoicePoll.Title>\n          <ChoicePoll.Description>Vote for the framework you enjoy working with the most.</ChoicePoll.Description>\n        </ChoicePoll.Header>\n        <ChoicePoll.Options>\n          <ChoicePoll.Option value=\"react\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>React</ChoicePoll.Label>\n          </ChoicePoll.Option>\n          <ChoicePoll.Option value=\"vue\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>Vue</ChoicePoll.Label>\n          </ChoicePoll.Option>\n          <ChoicePoll.Option value=\"angular\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>Angular</ChoicePoll.Label>\n          </ChoicePoll.Option>\n          <ChoicePoll.Option value=\"svelte\">\n            <ChoicePoll.Indicator />\n            <ChoicePoll.Label>Svelte</ChoicePoll.Label>\n          </ChoicePoll.Option>\n        </ChoicePoll.Options>\n      </ChoicePoll.Root>\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ChoicePoll } from \"@/components/ui/choice-poll\"\n\nconst options = [\n  { value: \"react\", label: \"React\" },\n  { value: \"vue\", label: \"Vue\" },\n  { value: \"angular\", label: \"Angular\" },\n  { value: \"svelte\", label: \"Svelte\" },\n]\n\nconst initialVotes = { react: 245, vue: 178, angular: 92, svelte: 134 }\n\nexport default function Demo() {\n  const [votes, setVotes] = useState<Record<string, number>>(initialVotes)\n  const [hasVoted, setHasVoted] = useState(false)\n\n  return (\n    <div className=\"w-full max-w-md p-6\">\n      <ChoicePoll.Root\n        votes={votes}\n        hasVoted={hasVoted}\n        showResults\n        onValueChange={(value) => {\n          if (hasVoted) return\n          const choice = Array.isArray(value) ? value[0] : value\n          if (!choice) return\n          setVotes((v) => ({ ...v, [choice]: (v[choice] ?? 0) + 1 }))\n          setHasVoted(true)\n        }}\n      >\n        <ChoicePoll.Header>\n          <ChoicePoll.Title>What is your favorite frontend framework?</ChoicePoll.Title>\n          <ChoicePoll.Description>\n            Vote for the framework you enjoy working with the most.\n          </ChoicePoll.Description>\n        </ChoicePoll.Header>\n        <ChoicePoll.Options>\n          {options.map((o) => (\n            <ChoicePoll.Option key={o.value} value={o.value}>\n              <ChoicePoll.Indicator />\n              <ChoicePoll.Label>{o.label}</ChoicePoll.Label>\n              <ChoicePoll.Percentage />\n            </ChoicePoll.Option>\n          ))}\n        </ChoicePoll.Options>\n        <ChoicePoll.Footer />\n      </ChoicePoll.Root>\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/cult-ui/choice-poll.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/choice-poll.json",

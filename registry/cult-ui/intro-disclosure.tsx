@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Image from "next/image"
 import { CheckIcon, ExternalLinkIcon } from "lucide-react"
 import {
   AnimatePresence,
@@ -60,7 +59,8 @@ function useFeatureVisibility(
     setIsVisible(false)
   }
 
-  return { isVisible: isVisible === null ? false : isVisible, hideFeature }
+  // null until localStorage has been read on the client
+  return { isVisible, hideFeature }
 }
 
 function useSwipe(onSwipe: (direction: "left" | "right") => void) {
@@ -122,11 +122,10 @@ function StepPreview({ step, direction }: { step: Step; direction: 1 | -1 }) {
             className="h-full w-full max-h-[700px]"
           >
             {step.media.type === "image" ? (
-              <Image
+              <img
                 src={step.media.src || "/placeholder.svg"}
                 alt={step.media.alt || ""}
-                fill
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             ) : (
               <video
@@ -320,11 +319,10 @@ function StepContent({
               className="lg:overflow-hidden rounded-lg bg-muted "
             >
               {steps[currentStep]?.media?.type === "image" ? (
-                <Image
+                <img
                   src={steps[currentStep]?.media?.src || "/placeholder.svg"}
                   alt={steps[currentStep]?.media?.alt || ""}
-                  fill
-                  className="object-cover "
+                  className="absolute inset-0 h-full w-full object-cover "
                 />
               ) : (
                 <video
@@ -420,7 +418,8 @@ export function IntroDisclosure({
 
   // Close the dialog if feature is hidden
   React.useEffect(() => {
-    if (!isVisible) {
+    // only close once storage says hidden; null means "not read yet"
+    if (isVisible === false) {
       setOpen(false)
     }
   }, [isVisible, setOpen])

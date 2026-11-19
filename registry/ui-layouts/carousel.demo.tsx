@@ -13,10 +13,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
 
 const SLIDES = [
-  { id: 1, src: 'https://picsum.photos/seed/uilc1/900/500', alt: 'Gallery image 1' },
-  { id: 2, src: 'https://picsum.photos/seed/uilc2/900/500', alt: 'Gallery image 2' },
-  { id: 3, src: 'https://picsum.photos/seed/uilc3/900/500', alt: 'Gallery image 3' },
-  { id: 4, src: 'https://picsum.photos/seed/uilc4/900/500', alt: 'Gallery image 4' },
+  { id: 1, src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=500&fit=crop&auto=format&q=80', alt: 'Gallery image 1' },
+  { id: 2, src: 'https://images.unsplash.com/photo-1452626212852-811d58933cae?w=900&h=500&fit=crop&auto=format&q=80', alt: 'Gallery image 2' },
+  { id: 3, src: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=900&h=500&fit=crop&auto=format&q=80', alt: 'Gallery image 3' },
+  { id: 4, src: 'https://images.unsplash.com/photo-1580411788548-eee17fc98883?w=900&h=500&fit=crop&auto=format&q=80', alt: 'Gallery image 4' },
 ];
 
 export default function Demo() {

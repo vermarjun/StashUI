@@ -1,7 +1,12 @@
 {
  "name": "pixelated-canvas",
  "title": "Pixelated Canvas",
- "category": "effects",
+ "category": "media",
+ "categories": [
+  "media",
+  "effects",
+  "portfolio"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -16,7 +21,7 @@
   "pure",
   "6 colors"
  ],
- "usage": "\"use client\";\nimport { PixelatedCanvas } from \"@/components/ui/pixelated-canvas\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background p-8\">\n      <div className=\"flex flex-col items-center gap-4\">\n        <PixelatedCanvas\n          src=\"https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=800&auto=format&fit=crop\"\n          width={480}\n          height={320}\n          cellSize={4}\n          dotScale={0.85}\n          shape=\"circle\"\n          distortionMode=\"swirl\"\n          distortionStrength={6}\n          distortionRadius={100}\n          interactive={true}\n          fadeOnLeave={true}\n          backgroundColor=\"#0a0a0a\"\n          className=\"rounded-xl overflow-hidden\"\n        />\n        <p className=\"text-sm text-muted-foreground\">\n          Move cursor over the canvas to distort\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { PixelatedCanvas } from \"@/components/ui/pixelated-canvas\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-background p-6\">\n      <div className=\"flex flex-col items-center gap-4\">\n        <PixelatedCanvas\n          src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&h=660&fit=crop&auto=format&q=80\"\n          width={760}\n          height={500}\n          cellSize={5}\n          dotScale={0.85}\n          shape=\"circle\"\n          distortionMode=\"swirl\"\n          dropoutStrength={0.15}\n          distortionStrength={14}\n          distortionRadius={160}\n          interactive={true}\n          fadeOnLeave={true}\n          backgroundColor=\"#0a0a0a\"\n          className=\"rounded-xl overflow-hidden\"\n        />\n        <p className=\"text-sm text-muted-foreground\">\n          Move cursor over the canvas to distort\n        </p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/pixelated-canvas.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/pixelated-canvas.json",

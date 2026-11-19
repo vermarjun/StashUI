@@ -6,10 +6,11 @@ import { useEffect, useState } from 'react';
 const targetDate = new Date('2026-12-31T23:59:59').getTime();
 
 const SpecialOffer = () => {
-  const [timeRemaining, setTimeRemaining] = useState(targetDate - new Date().getTime());
+  const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
 
   // useEffect for the time interval
   useEffect(() => {
+    setTimeRemaining(targetDate - new Date().getTime());
     const intervalId = setInterval(() => {
       const difference = targetDate - new Date().getTime();
       setTimeRemaining(difference);
@@ -34,10 +35,10 @@ const SpecialOffer = () => {
     return { days, hours, minutes, seconds, isNegative };
   };
 
-  const time = formatTime(timeRemaining);
+  const time = formatTime(timeRemaining ?? 0);
 
   // Stop if complete
-  if (timeRemaining <= 0) {
+  if (timeRemaining !== null && timeRemaining <= 0) {
     return (
       <div className='w-full bg-linear-to-r from-gray-900 to-black p-8 text-center'>
         <h1 className='text-4xl font-extrabold text-pink-500'>🥳 Sale Ended!</h1>

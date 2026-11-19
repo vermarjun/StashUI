@@ -52,17 +52,17 @@ export default function Component() {
       </ScrollArea>
       <TabsContent value="tab-1">
         <p className="p-4 pt-1 text-center text-muted-foreground text-xs">
-          Content for Tab 1
+          12 active members and 3 projects shipping this week.
         </p>
       </TabsContent>
       <TabsContent value="tab-2">
         <p className="p-4 pt-1 text-center text-muted-foreground text-xs">
-          Content for Tab 2
+          In progress: Billing revamp, Mobile onboarding, Search v2.
         </p>
       </TabsContent>
       <TabsContent value="tab-3">
         <p className="p-4 pt-1 text-center text-muted-foreground text-xs">
-          Content for Tab 3
+          @acme/ui 2.4 is ready to publish, with dark mode.
         </p>
       </TabsContent>
     </Tabs>

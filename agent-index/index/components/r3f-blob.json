@@ -1,7 +1,12 @@
 {
  "name": "r3f-blob",
  "title": "3D Shader Blob",
- "category": "effects",
+ "category": "3d",
+ "categories": [
+  "3d",
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "Ui-Layouts",
  "origin_short": "uila",
  "exports": [
@@ -20,7 +25,7 @@
   "webgl",
   "heavy"
  ],
- "usage": "import Cmp from \"@/components/ui/r3f-blob.txt\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport Blob from \"@/components/ui/r3f-blob.txt\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[560px] w-full overflow-hidden [&>div]:!h-full [&>div]:!w-full\">\n      <Blob />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/ui-layouts/r3f-blob.txt.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/r3f-blob.json",

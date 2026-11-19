@@ -3,9 +3,9 @@ import { TextReveal } from "@/registry/magic-ui/text-reveal";
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-4xl">
+    <div className="mx-auto w-full max-w-5xl">
       <TextReveal>
-        Magic UI is a collection of re-usable components that you can copy and paste into your web apps.
+        StashUI is a library of components you can browse, preview and install into any React app in seconds.
       </TextReveal>
     </div>
   );

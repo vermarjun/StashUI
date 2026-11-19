@@ -2,11 +2,11 @@ import { componentsMeta } from "@/__registry__/meta.gen";
 import { CATEGORY_CONFIG } from "@/lib/categories";
 import { HomeSections } from "@/components/site/home-sections";
 
-const ROW_SIZE = 8;
+const ROW_SIZE = 3;
 
 const byCategory = componentsMeta.reduce<Record<string, typeof componentsMeta>>(
   (acc, m) => {
-    (acc[m.category] ??= []).push(m);
+    for (const c of m.categories) (acc[c] ??= []).push(m);
     return acc;
   },
   {},
@@ -33,13 +33,14 @@ export default function Home() {
           Personal Component Library
         </p>
         <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          Every component I love,
-          <br />
+          Every component I love,{" "}
+          <br className="hidden sm:block" />
           in one clean place.
         </h1>
         <p className="mt-4 max-w-xl text-balance text-muted-foreground">
-          {total.toLocaleString()} components, organized by what they are — every
-          button together, every background together. Browse the rows below, pick
+          {total.toLocaleString()} components, organized by what they are and
+          where you&apos;d use them — every button together, and every sign-in
+          piece together. Browse the rows below, pick
           a type from the sidebar, or press{" "}
           <kbd className="rounded border border-border bg-muted px-1 font-mono text-xs">
             ⌘K
@@ -52,7 +53,7 @@ export default function Home() {
             components
           </span>
           <span>
-            <span className="text-foreground">{sections.length}</span> types
+            <span className="text-foreground">{sections.length}</span> categories
           </span>
         </div>
       </section>

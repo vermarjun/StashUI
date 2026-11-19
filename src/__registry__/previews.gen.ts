@@ -6,7 +6,7 @@
 //   align      — center a self-contained widget, or top-align a page/hero
 //   scroll     — allow vertical scroll inside the box (multi-screen heroes/pages)
 //   background — backdrop behind the component in the box
-//   hasVideo   — a looped grid clip exists at /previews/<name>.{webm,mp4}
+//   hasVideo   — a looped grid clip exists at /previews/<name>.mp4
 
 export type PreviewDevice = "mobile" | "tablet" | "desktop";
 export type PreviewAlign = "center" | "top";
@@ -38,14 +38,6 @@ export const DEFAULT_PREVIEW: PreviewConfig = {
 };
 
 export const previews: Record<string, PreviewConfig> = {
-  "-TS-TW": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "3d-card": {
     "device": "desktop",
     "height": 520,
@@ -88,9 +80,9 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "AnimatedContent-TS-TW": {
     "device": "desktop",
-    "height": 560,
-    "align": "center",
-    "scroll": false,
+    "height": 660,
+    "align": "top",
+    "scroll": true,
     "background": "none",
     "hasVideo": true
   },
@@ -153,6 +145,14 @@ export const previews: Record<string, PreviewConfig> = {
   "BlurText-TS-TW": {
     "device": "desktop",
     "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "BorderGlow-TS-TW": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -248,7 +248,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "Crosshair-TS-TW": {
     "device": "desktop",
-    "height": 580,
+    "height": 560,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -334,6 +334,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "ElasticSlider-TS-TW": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "ElectricBorder-TS-TW": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "EvilEye-TS-TW": {
     "device": "desktop",
     "height": 600,
@@ -352,7 +368,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "FallingText-TS-TW": {
     "device": "desktop",
-    "height": 480,
+    "height": 520,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -400,15 +416,15 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "FlyingPosters-TS-TW": {
     "device": "desktop",
-    "height": 600,
+    "height": 700,
     "align": "center",
     "scroll": false,
     "background": "none",
     "hasVideo": true
   },
   "Folder-TS-TW": {
-    "device": "mobile",
-    "height": 420,
+    "device": "desktop",
+    "height": 560,
     "align": "center",
     "scroll": false,
     "background": "dots",
@@ -459,7 +475,7 @@ export const previews: Record<string, PreviewConfig> = {
     "height": 560,
     "align": "center",
     "scroll": false,
-    "background": "grid",
+    "background": "none",
     "hasVideo": true
   },
   "GlitchText-TS-TW": {
@@ -708,7 +724,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "Noise-TS-TW": {
     "device": "desktop",
@@ -824,7 +840,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "ProfileCard-TS-TW": {
     "device": "desktop",
-    "height": 560,
+    "height": 640,
     "align": "center",
     "scroll": false,
     "background": "dots",
@@ -993,6 +1009,14 @@ export const previews: Record<string, PreviewConfig> = {
   "StaggeredMenu-TS-TW": {
     "device": "desktop",
     "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "StarBorder-TS-TW": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1174,25 +1198,9 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
-  "adeContent-TS-TW": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "advanced-stats": {
     "device": "desktop",
     "height": 520,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "agnetLines-TS-TW": {
-    "device": "desktop",
-    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1216,7 +1224,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "android": {
     "device": "mobile",
-    "height": 600,
+    "height": 640,
     "align": "center",
     "scroll": false,
     "background": "dots",
@@ -1249,6 +1257,22 @@ export const previews: Record<string, PreviewConfig> = {
   "animated-beam": {
     "device": "desktop",
     "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "animated-circular-progress-bar": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "animated-circular-progressbar": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1305,6 +1329,14 @@ export const previews: Record<string, PreviewConfig> = {
   "animated-tabs": {
     "device": "desktop",
     "height": 688,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "animated-testimonials": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1382,6 +1414,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "avatar": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "avatar-circles": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "background-beams": {
     "device": "desktop",
     "height": 600,
@@ -1399,6 +1447,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true
   },
   "background-boxes": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "background-gradient": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -1438,9 +1494,25 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "badge": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "balance-slider": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "bending-gallery": {
     "device": "desktop",
-    "height": 480,
+    "height": 560,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1636,6 +1708,14 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "border-beam": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "border-beam-button": {
@@ -1846,6 +1926,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "calendar": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "calendar-rac": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "canvas-fractal-grid": {
     "device": "desktop",
     "height": 600,
@@ -1856,7 +1952,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "canvas-reveal-effect": {
     "device": "desktop",
-    "height": 600,
+    "height": 640,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1864,7 +1960,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "canvas-text": {
     "device": "desktop",
-    "height": 360,
+    "height": 560,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -1967,6 +2063,38 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": false
   },
   "center-imagemasking": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "chat-form-dropzone": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "chat-interface-testimonial": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "checkbox": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "checkbox-tree": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -2080,7 +2208,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "comet-card": {
     "device": "desktop",
-    "height": 480,
+    "height": 640,
     "align": "center",
     "scroll": false,
     "background": "dots",
@@ -2270,6 +2398,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-110": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-111": {
     "device": "desktop",
     "height": 400,
@@ -2390,6 +2526,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-125": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-126": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-127": {
     "device": "desktop",
     "height": 350,
@@ -2422,12 +2574,84 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-130": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-131": {
     "device": "desktop",
     "height": 350,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-132": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-133": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-134": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-135": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-136": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-137": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-138": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-139": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-14": {
@@ -2438,6 +2662,78 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-140": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-141": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-142": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-143": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-144": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-145": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-146": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-147": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-149": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-15": {
     "device": "desktop",
     "height": 360,
@@ -2446,12 +2742,324 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-150": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-151": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-152": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-153": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-154": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-155": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-156": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-157": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-158": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-159": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-16": {
     "device": "desktop",
     "height": 360,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-160": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-161": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-162": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-163": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-164": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-165": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-166": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-167": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-168": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-169": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-170": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-171": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-172": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-173": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-174": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-175": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-176": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-177": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-178": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-179": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-180": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-181": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-182": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-183": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-184": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-185": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-186": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-187": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-188": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-19": {
@@ -2470,12 +3078,148 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-203": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-204": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-205": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-206": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-207": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-208": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-209": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-21": {
     "device": "desktop",
     "height": 360,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-210": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-211": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-212": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-213": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-214": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-215": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-216": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-217": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-218": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-219": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-22": {
@@ -2486,12 +3230,148 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-220": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-221": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-222": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-223": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-224": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-225": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-226": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-227": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-228": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-229": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-23": {
     "device": "desktop",
     "height": 360,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-230": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-231": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-232": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-233": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-237": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-238": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-239": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-24": {
@@ -2502,12 +3382,172 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-240": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-241": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-242": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-243": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-244": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-245": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-246": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-247": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-248": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-249": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-25": {
     "device": "desktop",
     "height": 360,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-250": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-251": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-252": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-253": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-254": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-255": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-256": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-257": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-258": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-259": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-26": {
@@ -2518,13 +3558,69 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-260": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-261": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-262": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-263": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-264": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-265": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-266": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-267": {
     "device": "desktop",
     "height": 480,
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-268": {
     "device": "desktop",
@@ -2532,7 +3628,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-269": {
     "device": "desktop",
@@ -2540,7 +3636,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-27": {
     "device": "desktop",
@@ -2556,7 +3652,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-271": {
     "device": "desktop",
@@ -2564,7 +3660,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-272": {
     "device": "desktop",
@@ -2572,7 +3668,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-273": {
     "device": "desktop",
@@ -2580,7 +3676,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-274": {
     "device": "desktop",
@@ -2588,7 +3684,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-275": {
     "device": "desktop",
@@ -2596,7 +3692,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-276": {
     "device": "desktop",
@@ -2604,7 +3700,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-277": {
     "device": "desktop",
@@ -2612,7 +3708,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-278": {
     "device": "desktop",
@@ -2620,7 +3716,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-279": {
     "device": "desktop",
@@ -2628,7 +3724,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-28": {
     "device": "desktop",
@@ -2644,7 +3740,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-281": {
     "device": "desktop",
@@ -2652,7 +3748,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-282": {
     "device": "desktop",
@@ -2660,7 +3756,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-283": {
     "device": "desktop",
@@ -2668,7 +3764,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-284": {
     "device": "desktop",
@@ -2676,7 +3772,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-285": {
     "device": "desktop",
@@ -2684,7 +3780,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-286": {
     "device": "desktop",
@@ -2692,7 +3788,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-287": {
     "device": "desktop",
@@ -2700,7 +3796,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-288": {
     "device": "desktop",
@@ -2708,7 +3804,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-289": {
     "device": "desktop",
@@ -2716,7 +3812,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-29": {
     "device": "desktop",
@@ -2732,7 +3828,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-291": {
     "device": "desktop",
@@ -2740,7 +3836,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-292": {
     "device": "desktop",
@@ -2748,7 +3844,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-293": {
     "device": "desktop",
@@ -2756,7 +3852,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-294": {
     "device": "desktop",
@@ -2764,7 +3860,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-295": {
     "device": "desktop",
@@ -2772,7 +3868,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-296": {
     "device": "desktop",
@@ -2780,11 +3876,19 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-299": {
     "device": "desktop",
     "height": 540,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-30": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -2804,7 +3908,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-302": {
     "device": "desktop",
@@ -2812,7 +3916,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-303": {
     "device": "desktop",
@@ -2820,7 +3924,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-304": {
     "device": "desktop",
@@ -2828,7 +3932,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-305": {
     "device": "desktop",
@@ -2836,7 +3940,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-306": {
     "device": "desktop",
@@ -2844,7 +3948,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-307": {
     "device": "desktop",
@@ -2852,7 +3956,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-308": {
     "device": "desktop",
@@ -2860,7 +3964,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-309": {
     "device": "desktop",
@@ -2868,7 +3972,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-31": {
     "device": "desktop",
@@ -2884,7 +3988,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-311": {
     "device": "desktop",
@@ -2892,7 +3996,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-312": {
     "device": "desktop",
@@ -2900,7 +4004,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "comp-313": {
     "device": "desktop",
@@ -3358,6 +4462,126 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-366": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-367": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-368": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-369": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-370": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-371": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-372": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-373": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-374": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-375": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-376": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-377": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-378": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-379": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-380": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-381": {
     "device": "desktop",
     "height": 600,
@@ -3428,6 +4652,294 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-390": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-391": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-392": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-393": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-394": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-395": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-396": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-397": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-398": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-399": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-400": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-401": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-402": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-403": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-404": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-405": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-406": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-407": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-408": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-409": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-410": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-411": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-412": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-413": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-414": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-415": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-416": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-417": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-418": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-419": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-420": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-421": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-422": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-423": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-424": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-425": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-426": {
@@ -3774,6 +5286,38 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-466": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-467": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-468": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-469": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-47": {
     "device": "desktop",
     "height": 360,
@@ -3782,12 +5326,140 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-470": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-471": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-472": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-473": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-474": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-475": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-476": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-477": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-478": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-479": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-48": {
     "device": "desktop",
     "height": 340,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-480": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-481": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-482": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-483": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-484": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-485": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-486": {
@@ -3806,6 +5478,86 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-490": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-491": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-492": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-493": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-494": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-495": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-496": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-497": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-498": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-499": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-50": {
     "device": "desktop",
     "height": 420,
@@ -3814,12 +5566,116 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-500": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-501": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-502": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-503": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-504": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-505": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-506": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-507": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-508": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-509": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-51": {
     "device": "desktop",
     "height": 460,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-510": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-511": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-512": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-52": {
@@ -3846,12 +5702,100 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "comp-543": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-544": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-545": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-546": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-547": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-548": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-549": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "comp-55": {
     "device": "desktop",
     "height": 340,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "comp-550": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-551": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-552": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "comp-553": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "comp-56": {
@@ -4606,14 +6550,6 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
-  "croll-progress": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "cropper": {
     "device": "desktop",
     "height": 560,
@@ -4664,9 +6600,9 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "customer-experience": {
     "device": "desktop",
-    "height": 580,
-    "align": "center",
-    "scroll": false,
+    "height": 800,
+    "align": "top",
+    "scroll": true,
     "background": "none",
     "hasVideo": true
   },
@@ -4678,12 +6614,44 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "date-picker": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "datefield-rac": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "datetime-input": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "default-color-picker": {
     "device": "desktop",
     "height": 480,
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "default-marquee": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "default-slider": {
@@ -4700,6 +6668,14 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "design-testimonials": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "dia-text-reveal": {
@@ -4760,10 +6736,10 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "distorted-glass": {
     "device": "desktop",
-    "height": 480,
+    "height": 620,
     "align": "center",
     "scroll": false,
-    "background": "grid",
+    "background": "none",
     "hasVideo": true
   },
   "dither-image": {
@@ -4824,10 +6800,18 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "draggable-card": {
     "device": "desktop",
-    "height": 520,
+    "height": 640,
     "align": "center",
     "scroll": false,
-    "background": "grid",
+    "background": "none",
+    "hasVideo": true
+  },
+  "dropdown-menu": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "dynamic-island": {
@@ -4849,14 +6833,6 @@ export const previews: Record<string, PreviewConfig> = {
   "encrypted-text": {
     "device": "desktop",
     "height": 360,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "etallicPaint-TS-TW": {
-    "device": "desktop",
-    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -4887,14 +6863,6 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true
   },
   "expandable-screen": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "f-blob": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -5038,6 +7006,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "file-upload": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "fixed-bg-image-masking": {
     "device": "desktop",
     "height": 750,
@@ -5096,10 +7072,10 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "floating-navbar": {
     "device": "desktop",
-    "height": 560,
+    "height": 750,
     "align": "top",
-    "scroll": false,
-    "background": "dots",
+    "scroll": true,
+    "background": "none",
     "hasVideo": true
   },
   "floating-panel": {
@@ -5140,6 +7116,38 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "footer-bold": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "footer-hero": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "footer-privilege": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "footer-simple": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "framer-autoplay-carousel": {
@@ -5206,22 +7214,6 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
-  "gic-ui-marquee": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "gicRings-TS-TW": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "github-globe": {
     "device": "desktop",
     "height": 580,
@@ -5254,6 +7246,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "glow-border": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "glowing-effect": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "glowing-stars": {
     "device": "desktop",
     "height": 560,
@@ -5278,6 +7286,142 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "gradient-above-clouds": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-above-the-sky": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-african-field": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-alchemist-lab": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-amour-amour": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-amy-crisp": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-angel-care": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-aqua-guidance": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-aqua-splash": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-arielles-smile": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-awesome-pine": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-big-mango": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-black-sea": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-blessing": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-blue-velvet": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-border": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-burning-spring": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "gradient-button": {
     "device": "desktop",
     "height": 350,
@@ -5294,9 +7438,1273 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "gradient-cheerful-caramel": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-child-care": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-clean-mirror": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-cloudy-apple": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-cloudy-knoxville": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-cochiti-lake": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-cold-evening": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-colorful-peach": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-confident-cloud": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-crystal-river": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-crystalline": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-deep-blue": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-deep-relief": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-dense-water": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-desert-hump": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-dirty-beauty": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-dusty-grass": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-elegance": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-eternal-constance": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-everlasting-sky": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-fabled-sunset": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-faraway-river": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-february-ink": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-fly-high": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-flying-lemon": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-forest-inei": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-fresh-milk": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-fresh-oasis": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-frozen-berry": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-frozen-dreams": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-frozen-heat": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-fruit-blend": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-full-metal": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-gagarin-view": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-gentle-care": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-glass-water": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-grass-shampoo": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-great-whale": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-grown-early": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-happy-acid": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-happy-fisher": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-happy-memories": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-happy-unicorn": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "gradient-heading": {
     "device": "desktop",
     "height": 340,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-healthy-water": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-heaven-peach": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-heavy-rain": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-hidden-jaguar": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-high-flight": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-itmeo-branding": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-japan-blush": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-juicy-cake": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-juicy-peach": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-jungle-day": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-kind-steel": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-ladoga-bottom": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-lady-lips": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-landing-aircraft": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-le-cocktail": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-lemon-gate": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-light-blue": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-lily-meadow": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-love-kiss": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-magic-lake": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-magic-ray": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-malibu-beach": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-marble-wall": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-mars-party": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-mean-fruit": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-midnight-bloom": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-millennium-pine": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-mind-crawl": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-mixed-hopes": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-mole-hall": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-morning-salad": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-morpheus-den": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-mountain-rock": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-near-moon": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-nega": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-new-life": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-new-retrowave": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-new-york": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-night-call": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-night-fade": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-night-party": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-night-sky": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-norse-beauty": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-north-miracle": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-october-silenceiver": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-old-hat": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-orange-juice": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-over-sun": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-palo-alto": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-party-bliss": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-passionate-bed": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-perfect-blue": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-perfect-white": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-phoenix-start": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-plum-bath": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-plum-plate": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-polite-rumors": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-premium-dark": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-premium-white": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-purple-division": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-raccoon-back": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-rainy-ashville": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-rare-wind": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-red-salvation": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-rich-metal": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-ripe-malinka": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-risky-concrete": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-river-city": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-royal-garden": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-saint-petersburg": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-salt-mountain": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sand-strike": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sea-lord": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sea-strike": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-seashore": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-shady-water": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sharp-blues": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sharpeye-eagle": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-shy-rainbow": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sky-glider": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sleepless-night": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-smart-indigo": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-smiling-rain": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-snow-again": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-soft-cherish": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-soft-grass": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-soft-lipstick": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-solid-stone": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-space-shift": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-spiky-naga": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-spring-warmth": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-star-wine": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-strict-november": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-strong-bliss": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-strong-stick": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sugar-lollipop": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-summer-games": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sun-veggie": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sunny-morning": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-supreme-sky": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sweet-dessert": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-sweet-period": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-teen-notebook": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-teen-party": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-tempting-azure": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-true-sunset": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-vicious-stance": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-warm-flame": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-wide-matrix": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-wild-apple": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-winter-neva": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-witch-dance": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-young-grass": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-young-passion": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "gradient-zeus-miracle": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -5452,7 +8860,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "hexagon2-videomasking": {
     "device": "desktop",
@@ -5460,7 +8868,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "highlighter": {
     "device": "desktop",
@@ -5493,6 +8901,14 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": false
+  },
+  "hover-border-gradient": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
   },
   "hover-card": {
     "device": "desktop",
@@ -5550,25 +8966,9 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
-  "i-layouts-marquee": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "icon-cloud": {
     "device": "desktop",
     "height": 580,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "idScan-TS-TW": {
-    "device": "desktop",
-    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -5638,6 +9038,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "images-badge": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "images-slider": {
     "device": "desktop",
     "height": 700,
@@ -5652,6 +9060,14 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "imgpreview-dropzone": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "impact-experience": {
@@ -5727,6 +9143,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true
   },
   "inspira-animated-tabs": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "inspira-animated-testimonials": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -5822,6 +9246,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "inspira-file-upload": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "inspira-flickering-grid": {
     "device": "desktop",
     "height": 600,
@@ -5846,6 +9278,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "inspira-glowing-effect": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "inspira-gradient-button": {
     "device": "desktop",
     "height": 360,
@@ -5865,6 +9305,14 @@ export const previews: Record<string, PreviewConfig> = {
   "inspira-icon-cloud": {
     "device": "desktop",
     "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "inspira-images-badge": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -5951,6 +9399,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true
   },
   "inspira-morphing-text": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "inspira-multi-step-loader": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -6214,14 +9670,6 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
-  "lashCursor-TS-TW": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "layout-grid": {
     "device": "desktop",
     "height": 620,
@@ -6256,7 +9704,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "letter-pullup": {
     "device": "desktop",
-    "height": 360,
+    "height": 380,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -6288,7 +9736,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "line-shadow-text": {
     "device": "desktop",
-    "height": 360,
+    "height": 480,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -6352,7 +9800,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "liquid-glass-notification": {
     "device": "desktop",
-    "height": 580,
+    "height": 720,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -6374,7 +9822,23 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "liquid-gradient": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "liquid-logo": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "loader": {
     "device": "desktop",
     "height": 560,
     "align": "center",
@@ -6448,7 +9912,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "magic-ui-bento-grid": {
     "device": "desktop",
-    "height": 640,
+    "height": 800,
     "align": "top",
     "scroll": false,
     "background": "none",
@@ -6456,7 +9920,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "magic-ui-globe": {
     "device": "desktop",
-    "height": 600,
+    "height": 640,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -6518,6 +9982,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "marque-testimonial": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "marquee": {
     "device": "desktop",
     "height": 320,
@@ -6574,6 +10046,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "messenger-testimonial": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "metal-button": {
     "device": "desktop",
     "height": 350,
@@ -6624,7 +10104,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "morphing-text": {
     "device": "desktop",
-    "height": 380,
+    "height": 420,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -6694,6 +10174,38 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "multi-selector": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "multi-selector-default": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "multi-step-loader": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "multiselect": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "navbar-menu": {
     "device": "desktop",
     "height": 640,
@@ -6710,10 +10222,26 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "neon-border": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "neon-gradient-card": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "nested-vaul-drawer": {
     "device": "mobile",
     "height": 700,
-    "align": "top",
+    "align": "center",
     "scroll": false,
     "background": "none",
     "hasVideo": true
@@ -6726,7 +10254,7 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
-  "nimatedContent-TS-TW": {
+  "neumorph-eyebrow": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -6788,14 +10316,6 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": true
-  },
-  "oise-TS-TW": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
     "hasVideo": true
   },
   "onboarding": {
@@ -6870,6 +10390,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "origin-ui-slider": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "origin-ui-tabs": {
     "device": "desktop",
     "height": 600,
@@ -6886,14 +10414,6 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
-  "owing-stars": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
   "pagination": {
     "device": "desktop",
     "height": 512,
@@ -6904,7 +10424,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "parallax-hero-images": {
     "device": "desktop",
-    "height": 600,
+    "height": 800,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -7086,9 +10606,17 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "pricing-grow-business": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "primitives-animate-code-block": {
     "device": "desktop",
-    "height": 380,
+    "height": 520,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -7134,6 +10662,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "primitives-effects-theme-toggler": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "primitives-headless-checkbox": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "primitives-headless-dialog": {
     "device": "desktop",
     "height": 640,
@@ -7153,6 +10697,30 @@ export const previews: Record<string, PreviewConfig> = {
   "primitives-headless-popover": {
     "device": "desktop",
     "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "primitives-headless-switch": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "primitives-headless-tabs": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "primitives-radix-progress": {
+    "device": "desktop",
+    "height": 560,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -7262,9 +10830,17 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "progress": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "progressive-blur": {
     "device": "desktop",
-    "height": 580,
+    "height": 640,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -7318,6 +10894,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "radio-group": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "rainbow-button": {
     "device": "desktop",
     "height": 350,
@@ -7342,6 +10926,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "register-tab": {
+    "device": "desktop",
+    "height": 800,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "repeat-scroll": {
     "device": "desktop",
     "height": 750,
@@ -7352,10 +10944,10 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "resizable-navbar": {
     "device": "desktop",
-    "height": 620,
+    "height": 750,
     "align": "top",
-    "scroll": false,
-    "background": "dots",
+    "scroll": true,
+    "background": "none",
     "hasVideo": true
   },
   "retro-grid": {
@@ -7370,14 +10962,6 @@ export const previews: Record<string, PreviewConfig> = {
     "device": "desktop",
     "height": 640,
     "align": "top",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "rimitives-effects-click": {
-    "device": "desktop",
-    "height": 600,
-    "align": "center",
     "scroll": false,
     "background": "none",
     "hasVideo": true
@@ -7497,7 +11081,7 @@ export const previews: Record<string, PreviewConfig> = {
   "scroll-island": {
     "device": "desktop",
     "height": 688,
-    "align": "center",
+    "align": "top",
     "scroll": true,
     "background": "none",
     "hasVideo": true
@@ -7558,6 +11142,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "select": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "select-native": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "shader-lens-blur": {
     "device": "desktop",
     "height": 560,
@@ -7588,6 +11188,14 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
+    "hasVideo": true
+  },
+  "shine-border": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
     "hasVideo": true
   },
   "shiny-button": {
@@ -7641,6 +11249,14 @@ export const previews: Record<string, PreviewConfig> = {
   "sleek-line-cursor": {
     "device": "desktop",
     "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "slider": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -7724,11 +11340,11 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "spline": {
     "device": "desktop",
-    "height": 560,
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -7790,6 +11406,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "spotlight-testimonial": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "spring-calendar": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "squiggle-arrow": {
     "device": "mobile",
     "height": 420,
@@ -7801,14 +11433,6 @@ export const previews: Record<string, PreviewConfig> = {
   "squiggly-text": {
     "device": "desktop",
     "height": 360,
-    "align": "center",
-    "scroll": false,
-    "background": "none",
-    "hasVideo": true
-  },
-  "stCursor-TS-TW": {
-    "device": "desktop",
-    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -8038,7 +11662,23 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "switch": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "symbolic-clippath": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "table": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -8152,7 +11792,23 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "terminal-animation": {
     "device": "desktop",
-    "height": 500,
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "testimonial-basic": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "testimonial-slider": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -8192,7 +11848,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "text-flipping-board": {
     "device": "desktop",
-    "height": 460,
+    "height": 520,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -8232,7 +11888,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "text-hover-effect": {
     "device": "desktop",
-    "height": 320,
+    "height": 560,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -8334,6 +11990,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true
   },
+  "time-picker": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "timeline": {
     "device": "desktop",
     "height": 620,
@@ -8361,6 +12025,22 @@ export const previews: Record<string, PreviewConfig> = {
   "toast": {
     "device": "desktop",
     "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "toggle": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
+  "toggle-group": {
+    "device": "desktop",
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
@@ -8486,6 +12166,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
+  "ui-layouts-file-upload": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true
+  },
   "ui-layouts-globe": {
     "device": "desktop",
     "height": 520,
@@ -8558,7 +12246,7 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true
   },
-  "vg-shapes-animated": {
+  "verticle-marquee": {
     "device": "desktop",
     "height": 600,
     "align": "center",
@@ -8644,7 +12332,7 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true
   },
   "wobble-card": {
     "device": "desktop",
@@ -8672,7 +12360,7 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "world-map": {
     "device": "desktop",
-    "height": 520,
+    "height": 780,
     "align": "center",
     "scroll": false,
     "background": "none",

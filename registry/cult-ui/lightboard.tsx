@@ -60,7 +60,8 @@ const textToPattern = (
         .flatMap((row) => Array(scale).fill(row))
         .map((row) =>
           row.flatMap((cell: PatternCell) =>
-            Array(scale).fill(cell === "1" ? "1" : "3")
+            // lit letter cells are bright ("3"), everything else is an unlit light ("0")
+            Array(scale).fill(cell === "1" ? "3" : "0")
           )
         ),
     ])
@@ -79,7 +80,12 @@ const textToPattern = (
     .map(() => [])
 
   letterPatterns.forEach((letterPattern) => {
-    fullPattern = fullPattern.map((row, i) => [...row, ...letterPattern[i]])
+    // one unlit column (scaled) between letters so glyphs don't run together
+    fullPattern = fullPattern.map((row, i) => [
+      ...row,
+      ...letterPattern[i],
+      ...Array(scale).fill("0"),
+    ])
   })
 
   // We add empty space above and below the pattern to center it
@@ -225,11 +231,9 @@ function LightBoard({
   useEffect(() => {
     let animationFrameId: number
 
+    // Scrolling is paced by `updateInterval` in the loop below; this one only
+    // repaints (advancing here too made the text race by every frame).
     const animate = () => {
-      if (!isHovered) {
-        // If the mouse isn't over the board, we move the text
-        setOffset((prevOffset) => (prevOffset + 1) % basePattern[0].length)
-      }
       drawToCanvas()
       animationFrameId = requestAnimationFrame(animate)
     }

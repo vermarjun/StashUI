@@ -2,6 +2,10 @@
  "name": "inspira-sparkles",
  "title": "Sparkles",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "Inspira UI",
  "origin_short": "insp",
  "exports": [
@@ -16,7 +20,7 @@
   "pure",
   "2 colors"
  ],
- "usage": "\"use client\";\n\nimport React from \"react\";\nimport { Sparkles } from \"@/components/ui/sparkles\";\n\nexport default function SparklesDemo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden rounded-xl\">\n      <Sparkles\n        background=\"#0d47a1\"\n        particleColor=\"#ffffff\"\n        particleDensity={100}\n        speed={3}\n        minSize={1}\n        maxSize={3}\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport React from \"react\";\nimport { Sparkles } from \"@/components/ui/sparkles\";\n\nexport default function SparklesDemo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-black\">\n      <h1 className=\"relative z-20 text-center text-5xl font-bold text-white md:text-7xl lg:text-8xl\">\n        Inspira UI\n      </h1>\n      <div className=\"relative h-48 w-[44rem] max-w-full\">\n        {/* Gradient lines */}\n        <div className=\"absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm\" />\n        <div className=\"absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent\" />\n        <div className=\"absolute inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm\" />\n        <div className=\"absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent\" />\n\n        <Sparkles\n          background=\"transparent\"\n          particleColor=\"#ffffff\"\n          particleDensity={900}\n          speed={2}\n          minSize={0.8}\n          maxSize={2.2}\n          className=\"[mask-image:radial-gradient(350px_200px_at_top,white_20%,transparent)]\"\n        />\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/inspira-react/sparkles.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/inspira-sparkles.json",

@@ -71,22 +71,51 @@ import {
   type CSSProperties,
   type HTMLAttributes,
 } from "react"
-import Image, { type ImageProps } from "next/image"
+
 
 import { cn } from "@/lib/utils"
+
+/**
+ * Plain-<img> props (universal React, no next/image). `fill` makes the image
+ * cover its positioned parent, mirroring next/image's `fill`.
+ */
+export type ImageProps = Omit<ComponentProps<"img">, "src" | "alt"> & {
+  src: string
+  alt: string
+  fill?: boolean
+  priority?: boolean
+  quality?: number
+}
+
+function toImgProps({ fill, priority, quality: _quality, className, ...rest }: ImageProps) {
+  return {
+    ...rest,
+    loading: priority ? ("eager" as const) : rest.loading,
+    className: cn(fill && "absolute inset-0 h-full w-full", className),
+  }
+}
+
+/*
+ * The dither surface CSS from `dither-plugin` (MIT, flornkm), inlined so the
+ * component is self-contained and needs no Tailwind plugin registration.
+ */
+const DITHER_IMAGE_URL =
+  "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVQ4T6WSMQqFMBBEE2wDXiVgG8gtglilCuIpcoogVqlEPIVgK3gVIa2Qzw9YbIpttlqGgbcMM5wxlr33LMbI/nccx3I/PQwD0LXPj+OgAaSUBWCtLZ+2bSv308uyAF37/HkeGkAIASL0fQ8yT9MEdO3z67poAKUUiDDPM8i87zvQtc/f96UBmqZBazTG4Ds4z5MG6LoOrTGEgO8gpUQDtG2L1uicw3dw3zcNoLVGa1zXFd9BzpkE+AFp94/4eKx9+AAAAABJRU5ErkJggg==)"
+
+const DITHER_CSS = `.stashui-dither{--dither-gray:1;--dither-contrast:120;--dither-bright:1;--dither-blur:0px;--dither-opacity:1;--dither-image:${DITHER_IMAGE_URL};position:relative;isolation:isolate;overflow:hidden;z-index:0;background:#000;filter:grayscale(var(--dither-gray)) brightness(var(--dither-bright)) blur(var(--dither-blur)) contrast(var(--dither-contrast))}.stashui-dither::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background-image:var(--dither-image);background-repeat:repeat;background-size:var(--dither-cell) var(--dither-cell);background-position:0 0;image-rendering:pixelated;opacity:var(--dither-opacity);mix-blend-mode:screen}`
 
 /** Cell size of the underlying dither matrix — maps to plugin `--dither-cell-*` theme tokens. */
 export type DitherSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
 
 const NUMERIC_SIZE_RE = /^\d+$/
 
-const DITHER_SIZE_CLASS: Record<DitherSize, string> = {
-  xs: "dither-xs",
-  sm: "dither-sm",
-  md: "dither-md",
-  lg: "dither-lg",
-  xl: "dither-xl",
-  "2xl": "dither-2xl",
+const DITHER_CELL: Record<DitherSize, string> = {
+  xs: "8px",
+  sm: "12px",
+  md: "16px",
+  lg: "20px",
+  xl: "28px",
+  "2xl": "40px",
 }
 
 /** Shorthand aspect-ratio values; pass any valid `aspect-ratio` string for custom. */
@@ -208,7 +237,10 @@ const DitherImageFrame = forwardRef<HTMLDivElement, DitherImageFrameProps>(
     },
     ref
   ) {
-    const vars: CSSProperties & DitherVars = { ...style }
+    const vars: CSSProperties & DitherVars = {
+      "--dither-cell": DITHER_CELL[size],
+      ...style,
+    }
 
     if (grayscale !== undefined) {
       vars["--dither-gray"] = grayscale
@@ -239,7 +271,7 @@ const DitherImageFrame = forwardRef<HTMLDivElement, DitherImageFrameProps>(
     const frame = (
       <div
         className={cn(
-          DITHER_SIZE_CLASS[size],
+          "stashui-dither",
           "relative block w-full",
           roundedClass,
           className
@@ -254,6 +286,7 @@ const DitherImageFrame = forwardRef<HTMLDivElement, DitherImageFrameProps>(
 
     return (
       <DitherImageFrameContext.Provider value={{ invertOnDark }}>
+        <style>{DITHER_CSS}</style>
         {invertOnDark ? <div className="dark:invert">{frame}</div> : frame}
       </DitherImageFrameContext.Provider>
     )
@@ -402,17 +435,18 @@ const DitherImageOverlay = forwardRef<
     maskClassName === undefined ? revealMaskStyle(direction, from, to) : {}
 
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      {...toImgProps(props)}
+      alt={props.alt}
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full object-cover",
-        maskClassName === undefined && "mask",
         maskClassName,
         className
       )}
       data-slot="dither-image-overlay"
       ref={ref}
       style={{ ...typedMaskStyle, ...style }}
-      {...props}
     />
   )
 })
@@ -423,7 +457,7 @@ DitherImageOverlay.displayName = "DitherImageOverlay"
 export type DitherImageContentProps = ImageProps
 
 /**
- * `next/image` tuned for a `DitherImageFrame`. Fills the frame by default; pass
+ * Plain `<img>` tuned for a `DitherImageFrame`. Fills the frame by default; pass
  * `width`/`height` explicitly for intrinsic sizing (and drop `fill`).
  */
 const DitherImageContent = forwardRef<
@@ -434,16 +468,18 @@ const DitherImageContent = forwardRef<
   const counterInvert = ctx?.invertOnDark === true ? "dark:invert" : undefined
 
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      {...toImgProps({ alt, ...props })}
       alt={alt}
       className={cn(
         "block h-full w-full object-cover",
+        props.fill && "absolute inset-0",
         counterInvert,
         className
       )}
       data-slot="dither-image-content"
       ref={ref}
-      {...props}
     />
   )
 })

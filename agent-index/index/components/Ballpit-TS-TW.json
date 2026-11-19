@@ -1,7 +1,12 @@
 {
  "name": "Ballpit-TS-TW",
  "title": "Ballpit",
- "category": "effects",
+ "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "3d",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -18,7 +23,7 @@
   "webgl",
   "3d"
  ],
- "usage": "\"use client\";\nimport Cmp from \"@/components/ui/Ballpit\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full overflow-hidden\" style={{ height: \"560px\" }}>\n      <Cmp followCursor />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport Ballpit from \"@/components/ui/Ballpit\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <Ballpit\n        colors={[0xffffff, 0x9ca3af, 0x3f3f46]}\n        count={140}\n        followCursor\n        friction={0.9975}\n        gravity={0.5}\n        wallBounce={0.95}\n      />\n      <div className=\"pointer-events-none absolute inset-x-0 top-16 flex flex-col items-center gap-2 text-center\">\n        <h3 className=\"font-semibold text-4xl text-foreground tracking-tight\">Ballpit</h3>\n        <p className=\"text-muted-foreground text-sm\">Move your cursor to push the spheres around.</p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/Ballpit.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/Ballpit-TS-TW.json",

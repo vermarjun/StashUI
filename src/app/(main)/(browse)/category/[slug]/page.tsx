@@ -24,7 +24,12 @@ export default async function CategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const items = componentsMeta.filter((m) => m.category === slug);
+  // Components whose primary type is this slug come first, then the ones that
+  // are also tagged with it (e.g. social-login buttons under "Sign in").
+  const items = [
+    ...componentsMeta.filter((m) => m.category === slug),
+    ...componentsMeta.filter((m) => m.category !== slug && m.categories.includes(slug)),
+  ];
   if (!items.length) notFound();
   const cfg = categoryConfig(slug);
 
@@ -33,7 +38,8 @@ export default async function CategoryPage({
       <div className="mb-8 border-b border-border pb-6">
         <h1 className="text-3xl font-semibold tracking-tight">{cfg.label}</h1>
         <p className="mt-1.5 font-mono text-sm text-muted-foreground">
-          {items.length} components · every library, one type
+          {items.length} components ·{" "}
+          {cfg.group === "use" ? "everything you'd use for this" : "every library, one type"}
         </p>
       </div>
       <ComponentGrid items={items} cols={cfg.cols} designWidth={cfg.designWidth} />

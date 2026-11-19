@@ -1,6 +1,6 @@
 {
  "slug": "modals",
- "count": 58,
+ "count": 45,
  "summary": "Alerts, drawers, command palettes, search modals, and springy dialogs with backdrop blur.",
  "components": [
   {
@@ -49,26 +49,26 @@
    "flags": [
     "motion",
     "3d",
-    "10c",
-    "2 ports"
+    "8c"
    ]
   },
   {
-   "name": "bottom-directional-drawer",
-   "title": "Bottom Directional Drawer",
-   "origin": "uila",
-   "blurb": "Example drawer UI for profile image update, sliding up from bottom.",
+   "name": "apple-card-carousel",
+   "title": "Apple Card Carousel",
+   "origin": "insp",
+   "blurb": "Horizontal scrollable card carousel with click-to-expand modal detail view.",
    "trigger": [
-    "click"
+    "click",
+    "scroll"
    ],
-   "tone": "minimal",
+   "tone": "dramatic",
    "slots": [
-    "modal"
+    "hero",
+    "feature-card"
    ],
    "flags": [
-    "motion",
-    "sized-parent",
-    "10c"
+    "pure",
+    "20c"
    ]
   },
   {
@@ -87,22 +87,6 @@
    "flags": []
   },
   {
-   "name": "comp-313",
-   "title": "Confirm Alert Dialog",
-   "origin": "ori",
-   "blurb": "Example confirmation alert with title, description, and action buttons.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal"
-   ],
-   "flags": [
-    "pure"
-   ]
-  },
-  {
    "name": "comp-314",
    "title": "Alert Dialog With Icon",
    "origin": "ori",
@@ -116,59 +100,6 @@
    ],
    "flags": [
     "pure"
-   ]
-  },
-  {
-   "name": "comp-315",
-   "title": "Scrollable FAQ Dialog",
-   "origin": "ori",
-   "blurb": "Example FAQ dialog with scrollable content and action buttons.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal"
-   ],
-   "flags": [
-    "pure",
-    "webgl"
-   ]
-  },
-  {
-   "name": "comp-316",
-   "title": "Custom Scrollbar Dialog",
-   "origin": "ori",
-   "blurb": "Example FAQ dialog with styled custom scrollbar for scrollable content.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal"
-   ],
-   "flags": [
-    "pure",
-    "webgl",
-    "sized-parent"
-   ]
-  },
-  {
-   "name": "comp-317",
-   "title": "Sticky Header Dialog",
-   "origin": "ori",
-   "blurb": "Example FAQ dialog with sticky header while content scrolls below.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal"
-   ],
-   "flags": [
-    "pure",
-    "webgl",
-    "sized-parent"
    ]
   },
   {
@@ -354,20 +285,6 @@
    "flags": []
   },
   {
-   "name": "comp-329",
-   "title": "Checkout Payment Dialog",
-   "origin": "ori",
-   "blurb": "Checkout dialog for subscription billing with plan selection and card payment.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "technical",
-   "slots": [
-    "modal"
-   ],
-   "flags": []
-  },
-  {
    "name": "comp-330",
    "title": "Change Plan Dialog",
    "origin": "ori",
@@ -418,15 +335,16 @@
    ]
   },
   {
-   "name": "comp-333",
-   "title": "Command Palette Search",
+   "name": "comp-384",
+   "title": "Interactive Tooltip Popover",
    "origin": "ori",
-   "blurb": "Keyboard-accessible command palette with search and grouped actions.",
+   "blurb": "A popover styled like a tooltip, with interactive content and a call-to-action…",
    "trigger": [
-    "keyboard"
+    "click"
    ],
-   "tone": "technical",
+   "tone": "minimal",
    "slots": [
+    "tooltip",
     "modal"
    ],
    "flags": [
@@ -434,15 +352,16 @@
    ]
   },
   {
-   "name": "comp-381",
-   "title": "Filter Checkbox Popover",
+   "name": "comp-386",
+   "title": "Paginated Tour Tooltip",
    "origin": "ori",
-   "blurb": "Popover with checkbox filters and apply/clear actions.",
+   "blurb": "Paginated tour popover with left/right arrow buttons for navigation between…",
    "trigger": [
     "click"
    ],
    "tone": "minimal",
    "slots": [
+    "tooltip",
     "modal"
    ],
    "flags": [
@@ -467,16 +386,49 @@
    ]
   },
   {
-   "name": "comp-388",
-   "title": "Feedback Popover Form",
+   "name": "comp-389",
+   "title": "Anchored Product Tour",
    "origin": "ori",
-   "blurb": "Compact popover form for collecting user feedback.",
+   "blurb": "Product tour that anchors a popover to different grid items, cycling through…",
    "trigger": [
     "click"
    ],
    "tone": "minimal",
    "slots": [
+    "tooltip",
     "modal"
+   ],
+   "flags": [
+    "pure"
+   ]
+  },
+  {
+   "name": "comp-511",
+   "title": "Single Date Popover Picker",
+   "origin": "ori",
+   "blurb": "Button that opens a calendar in a popover to select a single date.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "form-field"
+   ],
+   "flags": [
+    "pure"
+   ]
+  },
+  {
+   "name": "comp-512",
+   "title": "Date Range Popover Picker",
+   "origin": "ori",
+   "blurb": "Button that opens a calendar popover for selecting a date range.",
+   "trigger": [
+    "click"
+   ],
+   "tone": "minimal",
+   "slots": [
+    "form-field"
    ],
    "flags": [
     "pure"
@@ -512,8 +464,7 @@
     "modal"
    ],
    "flags": [
-    "motion",
-    "16c"
+    "motion"
    ]
   },
   {
@@ -521,24 +472,6 @@
    "title": "Directional Drawer",
    "origin": "uila",
    "blurb": "Slide-out drawer from any direction with responsive mobile/desktop behavior.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal",
-    "sidebar"
-   ],
-   "flags": [
-    "motion",
-    "7c"
-   ]
-  },
-  {
-   "name": "directional-drawer_default",
-   "title": "Directional Drawer Default",
-   "origin": "uila",
-   "blurb": "Left-side drawer preset with responsive mobile/desktop behavior.",
    "trigger": [
     "click"
    ],
@@ -624,21 +557,21 @@
    ]
   },
   {
-   "name": "inspira-animated-modal",
-   "title": "Animated Modal",
-   "origin": "insp",
-   "blurb": "Modal with 3D flip spring animation and scroll locking.",
+   "name": "hero-video-dialog",
+   "title": "Hero Video Dialog",
+   "origin": "mag",
+   "blurb": "Video thumbnail with a play button that opens a fullscreen modal with the video…",
    "trigger": [
     "click"
    ],
-   "tone": "decorative",
+   "tone": "minimal",
    "slots": [
-    "modal"
+    "hero",
+    "feature-card"
    ],
    "flags": [
-    "pure",
-    "8c",
-    "2 ports"
+    "motion",
+    "10c"
    ]
   },
   {
@@ -677,23 +610,6 @@
    ]
   },
   {
-   "name": "linear-modal",
-   "title": "Linear Modal",
-   "origin": "uila",
-   "blurb": "Modal that expands from a card with spring animation and layout morphing.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal"
-   ],
-   "flags": [
-    "motion",
-    "1c"
-   ]
-  },
-  {
    "name": "linear-modal-center-content",
    "title": "Linear Modal Centered",
    "origin": "uila",
@@ -710,44 +626,6 @@
     "motion",
     "3d",
     "10c"
-   ]
-  },
-  {
-   "name": "linear-modal-standalone",
-   "title": "Linear Modal Standalone",
-   "origin": "uila",
-   "blurb": "Draggable card carousel that expands to a centered modal on click.",
-   "trigger": [
-    "click",
-    "drag"
-   ],
-   "tone": "dramatic",
-   "slots": [
-    "modal",
-    "feature-card"
-   ],
-   "flags": [
-    "motion",
-    "24c"
-   ]
-  },
-  {
-   "name": "media-modal",
-   "title": "Media Modal",
-   "origin": "uila",
-   "blurb": "Image or video expands to fullscreen with backdrop blur and smooth zoom.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal",
-    "media"
-   ],
-   "flags": [
-    "motion",
-    "sized-parent",
-    "13c"
    ]
   },
   {
@@ -768,46 +646,10 @@
    ]
   },
   {
-   "name": "morph-surface",
-   "title": "Morph Surface",
-   "origin": "cult",
-   "blurb": "Button morphs into a textarea form, shows checkmark on success.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "playful",
-   "slots": [
-    "form-submit",
-    "modal"
-   ],
-   "flags": [
-    "motion"
-   ]
-  },
-  {
    "name": "motion-drawer",
    "title": "Motion Drawer",
    "origin": "uila",
    "blurb": "Side drawer slides in with spring animation, drags to close.",
-   "trigger": [
-    "click",
-    "drag"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "nav",
-    "sidebar"
-   ],
-   "flags": [
-    "motion",
-    "3c"
-   ]
-  },
-  {
-   "name": "motion-drawer-default",
-   "title": "Motion Drawer Default",
-   "origin": "uila",
-   "blurb": "Pre-configured side drawer with default theme and animations.",
    "trigger": [
     "click",
     "drag"
@@ -838,40 +680,26 @@
    ],
    "flags": [
     "pure",
-    "51c"
+    "5c"
    ]
   },
   {
-   "name": "origin-ui-dialog",
-   "title": "Dialog",
-   "origin": "ori",
-   "blurb": "Centered modal dialog with fade-in zoom and built-in close button.",
+   "name": "poll-widget",
+   "title": "Poll Widget",
+   "origin": "cult",
+   "blurb": "Full-featured poll with multiple rendering modes (inline, popover, dialog) and…",
    "trigger": [
     "click"
    ],
    "tone": "minimal",
    "slots": [
+    "form-field",
     "modal"
    ],
    "flags": [
-    "1c"
-   ]
-  },
-  {
-   "name": "origin-ui-popover",
-   "title": "Popover",
-   "origin": "ori",
-   "blurb": "Anchored float content with directional slide-in and optional arrow.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "tooltip",
-    "form-field"
-   ],
-   "flags": [
-    "2 ports"
+    "motion",
+    "webgl",
+    "heavy"
    ]
   },
   {
@@ -889,26 +717,7 @@
    ],
    "flags": [
     "motion",
-    "24c",
-    "2 ports"
-   ]
-  },
-  {
-   "name": "popover-form",
-   "title": "Popover Form",
-   "origin": "cult",
-   "blurb": "Button animates to a form panel, shows success state on completion.",
-   "trigger": [
-    "click"
-   ],
-   "tone": "playful",
-   "slots": [
-    "form-submit",
-    "tooltip"
-   ],
-   "flags": [
-    "motion",
-    "7c"
+    "24c"
    ]
   },
   {
@@ -946,59 +755,24 @@
    ]
   },
   {
-   "name": "right-motion-drawer",
-   "title": "Right Motion Drawer",
-   "origin": "uila",
-   "blurb": "Navigation drawer slides in from the right edge.",
-   "trigger": [
-    "click",
-    "drag"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "nav",
-    "sidebar"
-   ],
-   "flags": [
-    "motion",
-    "4c"
-   ]
-  },
-  {
-   "name": "side-panel",
-   "title": "Side Panel",
+   "name": "three-d-carousel",
+   "title": "3D Carousel",
    "origin": "cult",
-   "blurb": "Narrow panel expands horizontally to reveal navigation with spring easing.",
+   "blurb": "3D cylindrical carousel with perspective transforms and modal image expansion.",
    "trigger": [
     "click"
    ],
-   "tone": "minimal",
+   "tone": "dramatic",
    "slots": [
-    "nav",
-    "sidebar"
+    "section-background",
+    "feature-card",
+    "hero"
    ],
    "flags": [
     "pure",
-    "1c"
-   ]
-  },
-  {
-   "name": "top-directional-drawer",
-   "title": "Top Directional Drawer",
-   "origin": "uila",
-   "blurb": "Full-width drawer slides down from top with drag-to-close handle.",
-   "trigger": [
-    "click",
-    "drag"
-   ],
-   "tone": "minimal",
-   "slots": [
-    "modal",
-    "form-submit"
-   ],
-   "flags": [
-    "motion",
-    "10c"
+    "3d",
+    "sized-parent",
+    "9c"
    ]
   }
  ]

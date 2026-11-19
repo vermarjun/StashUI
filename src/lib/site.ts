@@ -13,7 +13,7 @@ export const siteConfig = {
   repo: "https://github.com/vermarjun/StashUI",
   description:
     "A curated component library built on shadcn. Browse, preview, copy, and " +
-    "install 1500+ components from one place — or let an agent navigate them over MCP.",
+    "install nearly 800 hand-picked components from one place — or let an agent navigate them over MCP.",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

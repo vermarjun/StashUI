@@ -2,6 +2,10 @@
  "name": "background-ripple-effect",
  "title": "Background Ripple Effect",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -17,7 +21,7 @@
   "motion",
   "2 colors"
  ],
- "usage": "import { BackgroundRippleEffect } from \"@/components/ui/background-ripple-effect\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <BackgroundRippleEffect />\n      <div className=\"absolute inset-0 flex items-center justify-center pointer-events-none\">\n        <p className=\"text-lg font-medium text-foreground/50\">\n          Click the grid to ripple\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage": "import { BackgroundRippleEffect } from \"@/components/ui/background-ripple-effect\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full flex-col items-start justify-start overflow-hidden bg-neutral-950\">\n      <BackgroundRippleEffect rows={11} />\n      <div className=\"pointer-events-none mt-60 w-full\">\n        <h2 className=\"relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-neutral-100 md:text-5xl lg:text-6xl\">\n          Interactive Background Boxes Ripple Effect\n        </h2>\n        <p className=\"relative z-10 mx-auto mt-4 max-w-xl text-center text-neutral-400\">\n          Click anywhere on the grid to send a ripple outward from that cell.\n          Hover a cell to light it up.\n        </p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/background-ripple-effect.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/background-ripple-effect.json",

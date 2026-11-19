@@ -1,7 +1,6 @@
 'use client';
 import { Heart } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 function Card2() {
@@ -31,15 +30,9 @@ function Card2() {
               </>
             )}
           </motion.button>
-          <Image
-            src={
+          <img src={
               'https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?q=80&w=2090&auto=format&fit=crop'
-            }
-            alt='shoes'
-            width={1000}
-            height={1000}
-            className={`h-56 w-full rounded-2xl object-cover `}
-          />
+            } alt='shoes' width={1000} height={1000} className={`h-56 w-full rounded-2xl object-cover `} />
         </div>
         <article className='text-black space-y-2 p-2 pb-3'>
           <div className='flex justify-between'>

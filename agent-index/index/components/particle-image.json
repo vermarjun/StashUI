@@ -1,7 +1,12 @@
 {
  "name": "particle-image",
  "title": "Particle Image",
- "category": "effects",
+ "category": "media",
+ "categories": [
+  "media",
+  "effects",
+  "heroes"
+ ],
  "origin": "Inspira UI",
  "origin_short": "insp",
  "exports": [
@@ -14,7 +19,7 @@
  "flags": [
   "pure"
  ],
- "usage": "\"use client\";\n\nimport { ParticleImage } from \"@/components/ui/particle-image\";\n\nexport default function ParticleImageDemo() {\n  return (\n    <div className=\"flex min-h-64 flex-col items-center justify-center gap-4 p-8\">\n      <p className=\"text-sm text-muted-foreground mb-2\">\n        Hover over the canvas to interact with particles\n      </p>\n      <ParticleImage\n        imageSrc=\"/placeholder-logo.png\"\n        canvasWidth=\"300\"\n        canvasHeight=\"200\"\n        particleGap=\"3\"\n        particleSize=\"2\"\n        gravity=\"0.08\"\n        mouseForce=\"30\"\n        initPosition=\"random\"\n        initDirection=\"random\"\n        renderer=\"default\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { ParticleImage } from \"@/components/ui/particle-image\";\n\n// A transparent logo: particles are spawned from every non-transparent pixel\n// and keep the pixel's colour, so a crisp gradient mark reads best.\nconst LOGO = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"300\" viewBox=\"0 0 640 300\">\n  <defs>\n    <linearGradient id=\"g\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#22d3ee\"/>\n      <stop offset=\"0.5\" stop-color=\"#a78bfa\"/>\n      <stop offset=\"1\" stop-color=\"#f472b6\"/>\n    </linearGradient>\n  </defs>\n  <path fill=\"url(#g)\" d=\"M150 40 L70 165 H140 L118 260 L220 120 H150 L180 40 Z\"/>\n  <text x=\"255\" y=\"190\" fill=\"url(#g)\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"128\" font-weight=\"800\" letter-spacing=\"-4\">Spark</text>\n</svg>`)}`;\n\nexport default function ParticleImageDemo() {\n  return (\n    <div className=\"flex min-h-[460px] w-full flex-col items-center justify-center gap-6 p-8\">\n      <ParticleImage\n        imageSrc={LOGO}\n        canvasWidth=\"760\"\n        canvasHeight=\"360\"\n        particleGap=\"3\"\n        particleSize=\"3\"\n        gravity=\"0.08\"\n        mouseForce=\"40\"\n        initPosition=\"random\"\n        initDirection=\"random\"\n        renderer=\"default\"\n      />\n      <p className=\"text-muted-foreground text-sm\">Sweep the cursor through the logo to scatter it</p>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/inspira-react/particle-image.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/particle-image.json",

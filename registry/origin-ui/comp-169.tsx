@@ -3,10 +3,28 @@ import { useId } from "react";
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
+// Tiny UI mockups (sidebar + header + content lines), inlined so the
+// component needs no image assets.
+function mockUi(bg: string, panel: string, line: string, accent: string) {
+  return `<rect width="88" height="70" fill="${bg}"/><rect x="0" y="0" width="22" height="70" fill="${panel}"/><rect x="5" y="8" width="12" height="3" rx="1.5" fill="${accent}"/><rect x="5" y="16" width="12" height="2" rx="1" fill="${line}"/><rect x="5" y="22" width="9" height="2" rx="1" fill="${line}"/><rect x="5" y="28" width="11" height="2" rx="1" fill="${line}"/><rect x="28" y="8" width="34" height="4" rx="2" fill="${line}"/><rect x="28" y="18" width="54" height="18" rx="3" fill="${panel}"/><rect x="28" y="41" width="25" height="22" rx="3" fill="${panel}"/><rect x="57" y="41" width="25" height="22" rx="3" fill="${panel}"/>`;
+}
+const light = mockUi("#ffffff", "#f1f1f3", "#d4d4d8", "#18181b");
+const dark = mockUi("#09090b", "#1c1c20", "#3f3f46", "#fafafa");
+const svg = (body: string) =>
+  `data:image/svg+xml;utf8,${encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 70">${body}</svg>`,
+  )}`;
+
 const items = [
-  { image: "/origin/ui-light.png", label: "Light", value: "1" },
-  { image: "/origin/ui-dark.png", label: "Dark", value: "2" },
-  { image: "/origin/ui-system.png", label: "System", value: "3" },
+  { image: svg(light), label: "Light", value: "1" },
+  { image: svg(dark), label: "Dark", value: "2" },
+  {
+    image: svg(
+      `<defs><clipPath id="h"><polygon points="0,0 88,0 0,70"/></clipPath><clipPath id="d"><polygon points="88,0 88,70 0,70"/></clipPath></defs><g clip-path="url(#h)">${light}</g><g clip-path="url(#d)">${dark}</g>`,
+    ),
+    label: "System",
+    value: "3",
+  },
 ];
 
 export default function Component() {

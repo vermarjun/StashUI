@@ -18,10 +18,9 @@ import {
   useSpring,
   useTransform,
 } from 'motion/react';
-import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 
-const Component = React.forwardRef((props, ref) => <Image {...props} ref={ref} alt='App' />);
+const Component = React.forwardRef((props, ref) => <img {...props} ref={ref} alt='App' />);
 
 const MotionComponent = motion(Component);
 
@@ -67,13 +66,7 @@ function MagnifiedDocOneFile() {
                       className='w-full h-full cursor-pointer'
                       onClick={app?.onClick}
                     >
-                      <Image
-                        src={app?.imgSrc}
-                        alt='images'
-                        width={1000}
-                        height={1000}
-                        className='w-full sm:h-[500px] h-[400px] object-cover  rounded-lg'
-                      />
+                      <img src={app?.imgSrc} alt='images' width={1000} height={1000} className='w-full sm:h-[500px] h-[400px] object-cover  rounded-lg' />
                     </motion.div>
                   )}
                 </AnimatePresence>

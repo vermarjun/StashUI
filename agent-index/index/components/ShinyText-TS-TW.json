@@ -2,6 +2,9 @@
  "name": "ShinyText-TS-TW",
  "title": "ShinyText",
  "category": "text",
+ "categories": [
+  "text"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -17,7 +20,7 @@
   "motion",
   "2 colors"
  ],
- "usage": "\"use client\";\nimport ShinyText from \"@/components/ui/ShinyText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full min-h-[300px] gap-6 bg-background p-8\">\n      <ShinyText\n        text=\"Shine bright like a component.\"\n        speed={2.5}\n        className=\"text-3xl font-semibold tracking-tight\"\n        color=\"hsl(var(--muted-foreground))\"\n        shineColor=\"hsl(var(--foreground))\"\n        spread={100}\n      />\n      <ShinyText\n        text=\"Light moves. Text stays.\"\n        speed={3}\n        className=\"text-xl font-medium\"\n        color=\"hsl(var(--muted-foreground) / 0.7)\"\n        shineColor=\"hsl(var(--foreground))\"\n        spread={80}\n        delay={1}\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport ShinyText from \"@/components/ui/ShinyText\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full flex-col items-center justify-center gap-6 p-8\">\n      <ShinyText\n        className=\"font-semibold text-5xl tracking-tight\"\n        color=\"color-mix(in oklab, var(--foreground) 45%, transparent)\"\n        shineColor=\"var(--foreground)\"\n        speed={2.5}\n        spread={100}\n        text=\"Shine bright like a component.\"\n      />\n      <ShinyText\n        className=\"font-medium text-xl\"\n        color=\"color-mix(in oklab, var(--foreground) 35%, transparent)\"\n        delay={1}\n        shineColor=\"var(--foreground)\"\n        speed={3}\n        spread={80}\n        text=\"Light moves. Text stays.\"\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/ShinyText.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/ShinyText-TS-TW.json",

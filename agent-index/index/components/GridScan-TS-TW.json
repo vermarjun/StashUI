@@ -1,7 +1,12 @@
 {
  "name": "GridScan-TS-TW",
  "title": "Grid Scan",
- "category": "effects",
+ "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "3d",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -20,7 +25,7 @@
   "heavy",
   "6 colors"
  ],
- "usage": "\"use client\";\n\nimport { GridScan } from \"@/components/ui/GridScan\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-full h-[560px] overflow-hidden\">\n      <GridScan />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { GridScan } from \"@/components/ui/GridScan\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-black\">\n      <GridScan\n        sensitivity={0.55}\n        lineThickness={1}\n        linesColor=\"#4a3d63\"\n        gridScale={0.1}\n        scanColor=\"#FF9FFC\"\n        scanOpacity={0.5}\n        scanGlow={0.8}\n        scanDuration={2}\n        scanDelay={0.4}\n        enablePost\n        bloomIntensity={0.4}\n        chromaticAberration={0.002}\n        noiseIntensity={0.01}\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/GridScan.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/GridScan-TS-TW.json",

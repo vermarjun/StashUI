@@ -2,6 +2,10 @@
  "name": "GridMotion-TS-TW",
  "title": "Grid Motion",
  "category": "effects",
+ "categories": [
+  "effects",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +20,7 @@
  "flags": [
   "2 colors"
  ],
- "usage": "\"use client\";\n\nimport Cmp from \"@/components/ui/GridMotion\";\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[640px] overflow-hidden bg-background\">\n      <Cmp />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport GridMotion from \"@/components/ui/GridMotion\";\n\nconst PHOTOS = [\n  \"photo-1512045519129-eb9ceb788555\",\n  \"photo-1516705486637-7b01bf9b9d13\",\n  \"photo-1517322048670-4fba75cbbb62\",\n  \"photo-1517849845537-4d257902454a\",\n  \"photo-1518020382113-a7e8fc38eac9\",\n  \"photo-1518599904199-0ca897819ddb\",\n  \"photo-1518972734183-c5b490a7c637\",\n  \"photo-1519389950473-47ba0277781c\",\n  \"photo-1519681393784-d120267933ba\",\n  \"photo-1520256862855-398228c41684\",\n  \"photo-1521737711867-e3b97375f902\",\n  \"photo-1522071820081-009f0129c71c\",\n  \"photo-1523275335684-37898b6baf30\",\n  \"photo-1523612192437-66de9804ac3c\",\n  \"photo-1525310072745-f49212b5ac6d\",\n  \"photo-1529626455594-4ff0802cfb7e\",\n  \"photo-1531482615713-2afd69097998\",\n  \"photo-1532423622396-10a3f979251a\",\n  \"photo-1534259070436-a95806b8621a\",\n  \"photo-1534528741775-53994a69daeb\",\n  \"photo-1535713875002-d1d0cf377fde\",\n  \"photo-1535968881874-0c39f1503640\",\n  \"photo-1540553016722-983e48a2cd10\",\n  \"photo-1543508282-6319a3e2621f\",\n  \"photo-1544077960-604201fe74bc\",\n  \"photo-1544168190-79c17527004f\",\n  \"photo-1546484475-7f7bd55792da\",\n  \"photo-1546942113-a6c43b63104a\",\n];\nconst photo = (i: number, w: number, h: number) =>\n  `https://images.unsplash.com/${PHOTOS[Math.abs(i) % PHOTOS.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;\n\nconst img = (seed: string) =>\n  photo([...seed].reduce((h, c) => h * 31 + c.charCodeAt(0), 7), 600, 400);\n\nconst labels = [\"Motion\", \"Grid\", \"Depth\", \"Flow\", \"Drift\", \"Parallax\", \"Tilt\"];\n\n// Mix of images and text tiles, like the React Bits demo.\nconst items = Array.from({ length: 28 }, (_, i) =>\n  i % 4 === 1 ? (\n    <span key={i} className=\"text-lg font-semibold tracking-tight\">\n      {labels[i % labels.length]}\n    </span>\n  ) : (\n    img(`grid-${i}`)\n  ),\n);\n\nexport default function Demo() {\n  return (\n    <div className=\"h-[640px] w-full overflow-hidden bg-background\">\n      <GridMotion items={items} gradientColor=\"rgba(120,120,140,0.35)\" />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/GridMotion.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/GridMotion-TS-TW.json",

@@ -3,17 +3,17 @@ import { DirectionAwareHover } from "@/registry/aceternity-ui/direction-aware-ho
 
 const cards = [
   {
-    imageUrl: "https://picsum.photos/seed/dah1/400/400",
+    imageUrl: "https://images.unsplash.com/photo-1759269834694-3daf291dce44?w=400&h=400&fit=crop&auto=format&q=80",
     label: "Mountains",
     sub: "Landscape",
   },
   {
-    imageUrl: "https://picsum.photos/seed/dah2/400/400",
+    imageUrl: "https://images.unsplash.com/photo-1572025442646-866d16c84a54?w=400&h=400&fit=crop&auto=format&q=80",
     label: "Forest",
     sub: "Nature",
   },
   {
-    imageUrl: "https://picsum.photos/seed/dah3/400/400",
+    imageUrl: "https://images.unsplash.com/photo-1590867286251-8e26d9f255c0?w=400&h=400&fit=crop&auto=format&q=80",
     label: "Ocean",
     sub: "Seascape",
   },

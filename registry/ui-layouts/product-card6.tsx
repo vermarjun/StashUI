@@ -2,7 +2,6 @@
 import { CardArr } from '@/components/website/constant';
 import { Bookmark, ShoppingCart } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 function Card() {
@@ -42,24 +41,16 @@ function Card() {
             )}
           </motion.button>
           {CardArr.map((data, index) => (
-            <Image
-              key={`${data.color}-${index}`}
-              src={data?.img}
-              alt='shoes'
-              width={1000}
-              height={1000}
-              className={`absolute h-60 w-full rounded-t-md  object-cover  ${
+            <img key={`${data.color}-${index}`} src={data?.img} alt='shoes' width={1000} height={1000} className={`absolute h-60 w-full rounded-t-md  object-cover  ${
                 selectedColor === data.color
                   ? 'z-10 transition-all duration-500'
                   : 'transition-all delay-500'
-              }`}
-              style={{
+              }`} style={{
                 clipPath:
                   selectedColor === data.color
                     ? 'polygon(0 0, 100% 0, 100% 100%, 0% 100%) '
                     : 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%) ',
-              }}
-            />
+              }} />
           ))}
         </div>
         <article className='text-black pt-2 p-4'>

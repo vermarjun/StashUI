@@ -1,7 +1,12 @@
 {
  "name": "google-gemini-effect",
  "title": "Google Gemini Effect",
- "category": "effects",
+ "category": "scroll",
+ "categories": [
+  "scroll",
+  "effects",
+  "heroes"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -17,7 +22,7 @@
   "motion",
   "15 colors"
  ],
- "usage": "\"use client\";\nimport { useMotionValue } from \"motion/react\";\nimport { GoogleGeminiEffect } from \"@/components/ui/google-gemini-effect\";\n\nexport default function Demo() {\n  const pathLength1 = useMotionValue(0.5);\n  const pathLength2 = useMotionValue(0.5);\n  const pathLength3 = useMotionValue(0.5);\n  const pathLength4 = useMotionValue(0.5);\n  const pathLength5 = useMotionValue(0.5);\n\n  return (\n    <div className=\"relative w-full h-[600px] bg-black overflow-hidden flex items-start justify-center\">\n      <GoogleGeminiEffect\n        pathLengths={[pathLength1, pathLength2, pathLength3, pathLength4, pathLength5]}\n        title=\"Build with Aceternity UI\"\n        description=\"Beautiful components built with Tailwind CSS and Framer Motion.\"\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { useRef } from \"react\";\nimport { useScroll, useTransform } from \"motion/react\";\nimport { GoogleGeminiEffect } from \"@/components/ui/google-gemini-effect\";\n\nexport default function Demo() {\n  const ref = useRef<HTMLDivElement>(null);\n  // the demo owns its scroller: the preview wrapper is overflow:auto, which\n  // would otherwise stop the sticky title + SVG from pinning\n  const scroller = useRef<HTMLDivElement>(null);\n  const { scrollYProgress } = useScroll({\n    container: scroller,\n    target: ref,\n    offset: [\"start start\", \"end start\"],\n  });\n\n  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);\n  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);\n  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);\n  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);\n  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);\n\n  return (\n    <div ref={scroller} className=\"h-screen w-full overflow-y-auto bg-black [scrollbar-width:none]\">\n    <div\n      ref={ref}\n      className=\"relative h-[300vh] w-full overflow-clip bg-black pt-24\"\n    >\n      <GoogleGeminiEffect\n        className=\"top-24\"\n        pathLengths={[\n          pathLengthFirst,\n          pathLengthSecond,\n          pathLengthThird,\n          pathLengthFourth,\n          pathLengthFifth,\n        ]}\n        title=\"Build with Aceternity UI\"\n        description=\"Scroll down and watch the five paths draw themselves in and meet in the middle.\"\n      />\n    </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/google-gemini-effect.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/google-gemini-effect.json",

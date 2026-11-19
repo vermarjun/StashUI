@@ -2,6 +2,10 @@
  "name": "particles",
  "title": "Particles",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "Magic UI",
  "origin_short": "mag",
  "exports": [
@@ -16,7 +20,7 @@
   "pure",
   "2 colors"
  ],
- "usage": "\"use client\";\n\nimport { Particles } from \"@/components/ui/particles\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <Particles\n        className=\"absolute inset-0 h-full w-full [pointer-events:auto]\"\n        quantity={120}\n        color=\"#888888\"\n        size={0.5}\n        staticity={40}\n        ease={50}\n      />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { Particles } from \"@/components/ui/particles\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-neutral-950\">\n      <span className=\"pointer-events-none z-10 bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-center text-8xl font-semibold leading-none whitespace-pre-wrap text-transparent\">\n        Particles\n      </span>\n      <Particles\n        className=\"absolute inset-0 z-0 h-full w-full\"\n        quantity={260}\n        color=\"#ffffff\"\n        size={1.4}\n        staticity={30}\n        ease={60}\n        refresh\n      />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/magic-ui/particles.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/particles.json",

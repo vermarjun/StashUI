@@ -20,7 +20,7 @@ const initialFiles = [
     name: "document.pdf",
     size: 1528737,
     type: "application/pdf",
-    url: "https://picsum.photos/1000/800?grayscale&random=1",
+    url: "https://images.unsplash.com/photo-1682806816936-c3ac11f65112?w=1000&h=800&fit=crop&auto=format&q=80&sat=-100",
   },
 ];
 

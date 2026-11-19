@@ -1,5 +1,4 @@
 // https://cruip-tutorials.vercel.app/cards-hover-effect/
-import Image from 'next/image';
 import React from 'react';
 
 function CreativeHoverCard() {
@@ -10,7 +9,7 @@ function CreativeHoverCard() {
           <div className='relative'>
             <div className='px-6 py-5'>
               <div className='group-hover:bg-blue-400 bg-white transition-all duration-500 ease-in-out w-fit px-3 rounded-full text-sm py-1 text-black group-hover:text-white mb-1'>
-                stastic
+                Statistic
               </div>
               <span className='text-lg group-hover:hidden inline-block font-semibold pt-2 text-slate-200 mb-1 transition-all duration-500 ease-in-out'>
                 Subscriber Reports
@@ -24,21 +23,8 @@ function CreativeHoverCard() {
               </p>
             </div>
             <div className='relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out '>
-              <Image
-                className='group-hover:opacity-0 transition-opacity duration-500  object-cover h-full m-0 p-0'
-                src='/simplechartt.webp'
-                width={350}
-                height={240}
-                alt='Card image 01'
-              />
-              <Image
-                className='absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity  object-cover duration-300  h-full  m-0 p-0'
-                src='/chartt.webp'
-                width={350}
-                height={240}
-                alt='Card image 01 displaying on hover'
-                aria-hidden='true'
-              />
+              <img className='group-hover:opacity-0 transition-opacity duration-500  object-cover h-full m-0 p-0' src='/simplechartt.webp' width={350} height={240} alt='Card image 01' />
+              <img className='absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity  object-cover duration-300  h-full  m-0 p-0' src='/chartt.webp' width={350} height={240} alt='Card image 01 displaying on hover' aria-hidden='true' />
             </div>
           </div>
         </div>
@@ -60,21 +46,8 @@ function CreativeHoverCard() {
               </p>
             </div>
             <div className='relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out'>
-              <Image
-                className='group-hover:opacity-0 transition-opacity duration-500'
-                src='/fullverificationtwo_fpi9eo.webp'
-                width={350}
-                height={240}
-                alt='Card image 01'
-              />
-              <Image
-                className='absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
-                src='/verification_iwnfmj.webp'
-                width={350}
-                height={240}
-                alt='Card image 01 displaying on hover'
-                aria-hidden='true'
-              />
+              <img className='group-hover:opacity-0 transition-opacity duration-500' src='/fullverificationtwo_fpi9eo.webp' width={350} height={240} alt='Card image 01' />
+              <img className='absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300' src='/verification_iwnfmj.webp' width={350} height={240} alt='Card image 01 displaying on hover' aria-hidden='true' />
             </div>
           </div>
         </div>
@@ -85,7 +58,7 @@ function CreativeHoverCard() {
                 Alert
               </div>
               <span className='text-lg group-hover:hidden inline-block font-semibold pt-2 text-slate-200 mb-1 transition-all duration-500 ease-in-out'>
-                Chatting Seemlessly
+                Chatting Seamlessly
               </span>
               <span className='text-lg group-hover:inline-block hidden font-semibold pt-2 text-slate-200 mb-1 transition-all duration-500 ease-in-out'>
                 Don't Hide Chat
@@ -96,21 +69,8 @@ function CreativeHoverCard() {
               </p>
             </div>
             <div className='relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out'>
-              <Image
-                className='group-hover:opacity-0 transition-opacity duration-500'
-                src='/chat_zinhdw.webp'
-                width={350}
-                height={240}
-                alt='Card image 01'
-              />
-              <Image
-                className='absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
-                src='/hide_chat_egk7h4.webp'
-                width={350}
-                height={240}
-                alt='Card image 01 displaying on hover'
-                aria-hidden='true'
-              />
+              <img className='group-hover:opacity-0 transition-opacity duration-500' src='/chat_zinhdw.webp' width={350} height={240} alt='Card image 01' />
+              <img className='absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300' src='/hide_chat_egk7h4.webp' width={350} height={240} alt='Card image 01 displaying on hover' aria-hidden='true' />
             </div>
           </div>
         </div>

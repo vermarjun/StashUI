@@ -2,6 +2,12 @@
  "name": "Stack-TS-TW",
  "title": "Swipeable Card Stack",
  "category": "carousels",
+ "categories": [
+  "carousels",
+  "cards",
+  "heroes",
+  "features"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -17,7 +23,7 @@
   "3d",
   "motion"
  ],
- "usage": "import Cmp from \"@/components/ui/Stack\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "\"use client\";\n\nimport Stack from \"@/components/ui/Stack\";\n\nconst PHOTOS = [\n  \"photo-1611162617213-7d7a39e9b1d7\",\n  \"photo-1611582450053-0f056a82a68e\",\n  \"photo-1615451210353-cbcf249f392a\",\n  \"photo-1618005182384-a83a8bd57fbe\",\n  \"photo-1618220649687-ba860f3176e7\",\n  \"photo-1623366302587-b38b1ddaefd9\",\n  \"photo-1628965882741-570e75becd5d\",\n  \"photo-1642849206045-d34279481967\",\n  \"photo-1643037508102-46fb319979c5\",\n  \"photo-1661980494567-40a5e01b699b\",\n  \"photo-1665470909901-162912ec16f7\",\n  \"photo-1667776384514-a06f0b7675a1\",\n];\nconst photo = (i: number, w: number, h: number) =>\n  `https://images.unsplash.com/${PHOTOS[Math.abs(i) % PHOTOS.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;\n\nconst IMAGES = [\"coast\", \"forest\", \"dunes\", \"alps\"].map((seed) => (\n  <img\n    alt={seed}\n    className=\"pointer-events-none h-full w-full object-cover\"\n    draggable={false}\n    key={seed}\n    src={photo([...String(seed)].reduce((h, c) => h * 31 + c.charCodeAt(0), 7), 500, 500)}\n  />\n));\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[520px] w-full flex-col items-center justify-center gap-10 p-8\">\n      <div className=\"h-64 w-64\">\n        <Stack cards={IMAGES} sendToBackOnClick sensitivity={180} />\n      </div>\n      <p className=\"text-muted-foreground text-sm\">Drag the top card away or click it to send it to the back.</p>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/Stack.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/Stack-TS-TW.json",

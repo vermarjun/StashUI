@@ -67,6 +67,9 @@ function Card({ number, isActive }: CardProps) {
 
 export default function Component() {
   const [currentTip, setCurrentTip] = useState(0);
+  // Remount the cards on open so the active PopoverAnchor registers after the
+  // trigger; otherwise the first step opens with no anchor (top-left corner).
+  const [anchorKey, setAnchorKey] = useState(0);
 
   const handleNavigation = () => {
     if (currentTip === tourSteps.length - 1) {
@@ -80,14 +83,17 @@ export default function Component() {
     <div className="flex flex-col gap-4">
       <Popover
         onOpenChange={(open) => {
-          if (open) setCurrentTip(0);
+          if (open) {
+            setCurrentTip(0);
+            setAnchorKey((k) => k + 1);
+          }
         }}
       >
         <div className="grid grid-cols-2 place-items-center gap-4">
           {tourSteps.map((step, index) => (
             <Card
               isActive={currentTip === index}
-              key={step.title}
+              key={`${step.title}-${anchorKey}`}
               number={index}
             />
           ))}

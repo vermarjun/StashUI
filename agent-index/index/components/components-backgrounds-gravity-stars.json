@@ -2,6 +2,10 @@
  "name": "components-backgrounds-gravity-stars",
  "title": "Gravity Stars Background",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -18,7 +22,7 @@
   "motion",
   "2 colors"
  ],
- "usage": "import { GravityStarsBackground } from \"@/components/ui/components-backgrounds-gravity-stars\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden\">\n      <GravityStarsBackground className=\"absolute inset-0 h-full w-full\" />\n    </div>\n  );\n}",
+ "usage": "import { GravityStarsBackground } from \"@/components/ui/components-backgrounds-gravity-stars\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden bg-neutral-950\">\n      <GravityStarsBackground\n        className=\"absolute inset-0 h-full w-full text-white\"\n        starsCount={240}\n        starsSize={3}\n        starsOpacity={1}\n        glowIntensity={20}\n        movementSpeed={0.35}\n        mouseInfluence={240}\n        gravityStrength={160}\n        starsInteraction\n      />\n      <div className=\"pointer-events-none relative z-10 text-center\">\n        <h2 className=\"text-5xl font-semibold tracking-tight text-white\">\n          Gravity Stars\n        </h2>\n        <p className=\"mt-3 text-neutral-400\">\n          Move your cursor and the stars fall toward it.\n        </p>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/components-backgrounds-gravity-stars.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/components-backgrounds-gravity-stars.json",

@@ -8,7 +8,7 @@ interface HaloSearchProps {
 
 export function HaloSearch({ className }: HaloSearchProps) {
   return (
-    <div id="halo-search" className={cn("flex items-center justify-center", className)}>
+    <div id="halo-search" className={cn("relative isolate flex items-center justify-center", className)}>
       <style>{`
         #halo-search {
           display: flex;

@@ -1,37 +1,71 @@
 "use client";
 import { CardStack } from "@/registry/aceternity-ui/card-stack";
+import { cn } from "@/lib/utils";
+
+const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  <span
+    className={cn(
+      "rounded-sm bg-emerald-100 px-1 py-0.5 font-bold text-emerald-700 dark:bg-emerald-700/[0.25] dark:text-emerald-400",
+      className,
+    )}
+  >
+    {children}
+  </span>
+);
 
 const CARDS = [
   {
     id: 0,
-    name: "Alice Johnson",
-    designation: "Senior Engineer at Vercel",
+    name: "Manu Arora",
+    designation: "Senior Software Engineer",
     content: (
       <p>
-        These cards are absolutely gorgeous. The stacking animation is so smooth
-        and the design is clean. I use them in all my projects now.
+        These cards are amazing, <Highlight>I want to use them</Highlight> in my
+        project. Framer motion is a godsend ngl tbh fam 🙏
       </p>
     ),
   },
   {
     id: 1,
-    name: "Bob Martinez",
-    designation: "Product Designer at Figma",
+    name: "Elon Musk",
+    designation: "Senior Shitposter",
     content: (
       <p>
-        The attention to detail is incredible. Every pixel is perfectly placed
-        and the interactions feel natural and delightful.
+        I dont like this Twitter thing,{" "}
+        <Highlight>deleting it right away</Highlight> because yolo. Instead, I
+        would like to call it <Highlight>X.com</Highlight> so that it can easily
+        be confused with adult sites.
       </p>
     ),
   },
   {
     id: 2,
-    name: "Carol Chen",
-    designation: "CTO at Startup",
+    name: "Tyler Durden",
+    designation: "Manager Project Mayhem",
     content: (
       <p>
-        We integrated these components into our design system and the team loves
-        them. They save us so much time and always look professional.
+        The first rule of <Highlight>Fight Club</Highlight> is that you do not
+        talk about fight club. The second rule of{" "}
+        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
+        club.
+      </p>
+    ),
+  },
+  {
+    id: 3,
+    name: "Priya Raman",
+    designation: "Design Lead at Linear",
+    content: (
+      <p>
+        We shipped the new onboarding with these in an afternoon.{" "}
+        <Highlight>Activation went up 18%</Highlight> and nobody on the team
+        had to touch a keyframe.
       </p>
     ),
   },
@@ -39,8 +73,8 @@ const CARDS = [
 
 export default function Demo() {
   return (
-    <div className="flex items-center justify-center w-full py-20">
-      <CardStack items={CARDS} />
+    <div className="flex h-[30rem] w-full items-center justify-center pt-10">
+      <CardStack items={CARDS} offset={18} scaleFactor={0.07} duration={2600} />
     </div>
   );
 }

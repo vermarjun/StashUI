@@ -78,7 +78,7 @@ export function VideoText({
   textAnchor = "middle",
   dominantBaseline = "middle",
   fontFamily = "sans-serif",
-  as: Component = "div",
+  as: Tag = "div",
 }: VideoTextProps) {
   const [svgMask, setSvgMask] = useState("")
   const content = React.Children.toArray(children).join("")
@@ -96,6 +96,10 @@ export function VideoText({
     return () => window.removeEventListener("resize", updateSvgMask)
   }, [content, fontSize, fontWeight, textAnchor, dominantBaseline, fontFamily])
 
+  const Component = Tag as ElementType<{
+    className?: string
+    children?: ReactNode
+  }>
   const dataUrlMask = `url("data:image/svg+xml,${encodeURIComponent(svgMask)}")`
 
   return (

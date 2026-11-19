@@ -2,6 +2,11 @@
  "name": "focus-cards",
  "title": "Focus Cards",
  "category": "cards",
+ "categories": [
+  "cards",
+  "media",
+  "portfolio"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -16,7 +21,7 @@
   "pure",
   "5 colors"
  ],
- "usage": "\"use client\";\n\nimport { FocusCards } from \"@/components/ui/focus-cards\";\n\nexport default function Demo() {\n  const cards = [\n    {\n      title: \"Forest in the mountains\",\n      src: \"https://picsum.photos/seed/forest/800/600\",\n    },\n    {\n      title: \"City lights at night\",\n      src: \"https://picsum.photos/seed/city/800/600\",\n    },\n    {\n      title: \"Ocean waves at sunset\",\n      src: \"https://picsum.photos/seed/ocean/800/600\",\n    },\n    {\n      title: \"Desert dunes\",\n      src: \"https://picsum.photos/seed/desert/800/600\",\n    },\n    {\n      title: \"Snowy mountain peak\",\n      src: \"https://picsum.photos/seed/mountain/800/600\",\n    },\n    {\n      title: \"Tropical rainforest\",\n      src: \"https://picsum.photos/seed/rainforest/800/600\",\n    },\n  ];\n\n  return (\n    <div className=\"w-full max-w-5xl mx-auto py-10 px-4\">\n      <FocusCards cards={cards} />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\n\nimport { FocusCards } from \"@/components/ui/focus-cards\";\n\nconst img = (id: string) =>\n  `https://images.unsplash.com/photo-${id}?w=800&h=1000&fit=crop&auto=format&q=80`;\n\nexport default function Demo() {\n  const cards = [\n    { title: \"Above the clouds\", src: img(\"1506905925346-21bda4d32df4\") },\n    { title: \"Alpine valley\", src: img(\"1693581176773-a5f2362209e6\") },\n    { title: \"Misty lake at dawn\", src: img(\"1759434192768-fe3facebd5f6\") },\n    { title: \"Quiver tree, Namibia\", src: img(\"1718954572423-2780fe600028\") },\n    { title: \"Limestone coast\", src: img(\"1573790387438-4da905039392\") },\n    { title: \"Forest lake\", src: img(\"1759395073808-17782f3d8d66\") },\n  ];\n\n  return (\n    <div className=\"mx-auto w-full max-w-5xl px-4 py-10\">\n      <FocusCards cards={cards} />\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/focus-cards.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/focus-cards.json",

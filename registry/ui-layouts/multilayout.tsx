@@ -11,7 +11,7 @@ import React from 'react';
 function SingleLayout() {
   return (
     <>
-      <Accordion defaultValue={'item-2'} multiple>
+      <Accordion defaultValue={['item-2']} multiple>
         <AccordionItem value='item-1' className='w-full dark:bg-black bg-white'>
           <AccordionHeader className='dark:text-neutral-300 dark:hover:text-black'>
             What is a UI component?

@@ -13,7 +13,7 @@ export default function Demo() {
   return (
     <div className="relative w-full min-h-24 bg-gray-900 rounded-xl overflow-hidden">
       <PillNav
-        logo="https://picsum.photos/seed/logo/40/40"
+        logo="https://images.unsplash.com/photo-1759269834694-3daf291dce44?w=40&h=40&fit=crop&auto=format&q=80"
         logoAlt="Brand Logo"
         items={navItems}
         activeHref="#home"

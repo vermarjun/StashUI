@@ -4,10 +4,11 @@ import { YouTubePlayer } from "@/registry/cult-ui/youtube-video-player"
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-xl p-4">
+    <div className="w-full max-w-2xl p-4">
       <YouTubePlayer
-        videoId="dQw4w9WgXcQ"
-        title="Rick Astley - Never Gonna Give You Up"
+        videoId="aqz-KE-bpKQ"
+        title="Big Buck Bunny · Blender Open Movie"
+        customThumbnail="https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg"
       />
     </div>
   )

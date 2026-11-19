@@ -2,10 +2,10 @@ import {
   BoltIcon,
   BookOpenIcon,
   ChevronDownIcon,
+  CreditCardIcon,
   Layers2Icon,
   LogOutIcon,
-  PinIcon,
-  UserPenIcon,
+  UserIcon,
 } from "lucide-react";
 
 import {
@@ -28,9 +28,9 @@ export default function Component() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="h-auto p-0 hover:bg-transparent" variant="ghost">
+        <Button aria-label="Account menu" className="h-auto p-0 hover:bg-transparent" variant="ghost">
           <Avatar>
-            <AvatarImage alt="Profile image" src="/origin/avatar.jpg" />
+            <AvatarImage alt="Profile image" src="https://i.pravatar.cc/80?img=12" />
             <AvatarFallback>KK</AvatarFallback>
           </Avatar>
           <ChevronDownIcon
@@ -40,7 +40,7 @@ export default function Component() {
           />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="max-w-64">
+      <DropdownMenuContent align="end" className="w-60">
         <DropdownMenuLabel className="flex min-w-0 flex-col">
           <span className="truncate font-medium text-foreground text-sm">
             Keith Kennedy
@@ -52,27 +52,27 @@ export default function Component() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
+            <UserIcon aria-hidden="true" className="opacity-60" size={16} />
+            <span>Profile</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <CreditCardIcon aria-hidden="true" className="opacity-60" size={16} />
+            <span>Billing</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
             <BoltIcon aria-hidden="true" className="opacity-60" size={16} />
-            <span>Option 1</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Layers2Icon aria-hidden="true" className="opacity-60" size={16} />
-            <span>Option 2</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <BookOpenIcon aria-hidden="true" className="opacity-60" size={16} />
-            <span>Option 3</span>
+            <span>Settings</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <PinIcon aria-hidden="true" className="opacity-60" size={16} />
-            <span>Option 4</span>
+            <Layers2Icon aria-hidden="true" className="opacity-60" size={16} />
+            <span>Team</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <UserPenIcon aria-hidden="true" className="opacity-60" size={16} />
-            <span>Option 5</span>
+            <BookOpenIcon aria-hidden="true" className="opacity-60" size={16} />
+            <span>Documentation</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />

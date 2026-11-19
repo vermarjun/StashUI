@@ -110,7 +110,7 @@ function SliderWithInput({
       />
       <Input
         aria-label="Enter value"
-        className="h-8 w-12 px-2 py-1"
+        className="h-8 w-14 px-2 py-1 text-center tabular-nums"
         inputMode="decimal"
         onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
         onChange={(e) => handleInputChange(e, 0)}

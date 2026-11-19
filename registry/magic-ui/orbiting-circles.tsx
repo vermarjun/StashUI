@@ -28,6 +28,12 @@ export function OrbitingCircles({
   const calculatedDuration = duration / speed
   return (
     <>
+      {/* Self-contained keyframes so the orbit works without a global theme entry */}
+      <style>{`@keyframes orbit {
+  0% { transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg)); }
+  100% { transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg)); }
+}
+.animate-orbit { animation: orbit calc(var(--duration) * 1s) linear infinite; }`}</style>
       {path && (
         <svg
           xmlns="http://www.w3.org/2000/svg"

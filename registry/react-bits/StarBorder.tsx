@@ -9,6 +9,9 @@ type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithoutR
   thickness?: number;
 };
 
+// self-contained keyframes (no tailwind config / global CSS needed)
+const STAR_BORDER_KEYFRAMES = `@keyframes star-movement-bottom{0%{transform:translate(0%,0%);opacity:1}100%{transform:translate(-100%,0%);opacity:0}}@keyframes star-movement-top{0%{transform:translate(0%,0%);opacity:1}100%{transform:translate(100%,0%);opacity:0}}`;
+
 const StarBorder = <T extends React.ElementType = 'button'>({
   as,
   className = '',
@@ -18,28 +21,29 @@ const StarBorder = <T extends React.ElementType = 'button'>({
   children,
   ...rest
 }: StarBorderProps<T>) => {
-  const Component = as || 'button';
+  const Component = (as || 'button') as React.ElementType<React.HTMLAttributes<HTMLElement>>;
 
   return (
     <Component
       className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
-      {...(rest as any)}
+      {...(rest as Record<string, unknown>)}
       style={{
         padding: `${thickness}px 0`,
-        ...(rest as any).style
+        ...(rest as { style?: React.CSSProperties }).style
       }}
     >
+      <style>{STAR_BORDER_KEYFRAMES}</style>
       <div
-        className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
+        className="absolute w-[300%] h-[50%] opacity-100 bottom-[-11px] right-[-250%] rounded-full animate-[star-movement-bottom_linear_infinite_alternate] z-0"
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
+          background: `radial-gradient(circle, ${color}, transparent 15%)`,
           animationDuration: speed
         }}
       ></div>
       <div
-        className="absolute w-[300%] h-[50%] opacity-70 top-[-10px] left-[-250%] rounded-full animate-star-movement-top z-0"
+        className="absolute w-[300%] h-[50%] opacity-100 top-[-10px] left-[-250%] rounded-full animate-[star-movement-top_linear_infinite_alternate] z-0"
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
+          background: `radial-gradient(circle, ${color}, transparent 15%)`,
           animationDuration: speed
         }}
       ></div>

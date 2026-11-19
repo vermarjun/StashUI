@@ -2,6 +2,10 @@
  "name": "progressive-blur",
  "title": "Progressive Blur",
  "category": "effects",
+ "categories": [
+  "effects",
+  "backgrounds"
+ ],
  "origin": "Magic UI",
  "origin_short": "mag",
  "exports": [
@@ -15,20 +19,13 @@
   "pure",
   "52 colors"
  ],
- "usage": "import { ProgressiveBlur } from \"@/components/ui/progressive-blur\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-64 w-full max-w-md overflow-hidden rounded-xl\">\n      {/* Content to blur over */}\n      <div className=\"flex h-full flex-col justify-start gap-3 p-6\">\n        {Array.from({ length: 8 }).map((_, i) => (\n          <div\n            key={i}\n            className=\"h-4 w-full rounded-full bg-muted-foreground/20\"\n            style={{ width: `${75 + Math.sin(i) * 20}%` }}\n          />\n        ))}\n      </div>\n      {/* Progressive blur overlay anchored to bottom */}\n      <ProgressiveBlur position=\"bottom\" height=\"55%\" />\n    </div>\n  );\n}",
+ "usage": "\"use client\";\nimport { ProgressiveBlur } from \"@/components/ui/progressive-blur\";\n\nconst ids = [\n  \"1506905925346-21bda4d32df4\",\n  \"1469474968028-56623f02e42e\",\n  \"1504198266287-1659872e6590\",\n  \"1543508282-6319a3e2621f\",\n  \"1498019559366-a1cbd07b5160\",\n  \"1709949908058-a08659bfa922\",\n  \"1618005182384-a83a8bd57fbe\",\n  \"1553729459-efe14ef6055d\",\n  \"1476180814856-a36609db0493\",\n  \"1475727946784-2890c8fdb9c8\",\n  \"1540553016722-983e48a2cd10\",\n  \"1517849845537-4d257902454a\",\n  \"1508873881324-c92a3fc536ba\",\n  \"1618220649687-ba860f3176e7\",\n  \"1525310072745-f49212b5ac6d\",\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-6\">\n      <div className=\"w-full max-w-2xl overflow-hidden rounded-2xl border border-border bg-card\">\n        <div className=\"flex items-center justify-between border-b border-border px-5 py-3\">\n          <div>\n            <p className=\"text-sm font-medium text-foreground\">Camera roll</p>\n            <p className=\"text-xs text-muted-foreground\">1,284 photos, synced 2 min ago</p>\n          </div>\n          <span className=\"text-xs text-muted-foreground\">Select</span>\n        </div>\n        <div className=\"relative h-[480px]\">\n          <div data-scroll className=\"h-full overflow-y-auto p-3 [scrollbar-width:none]\">\n            <div className=\"grid grid-cols-3 gap-2 pb-24\">\n              {ids.map((id) => (\n                <img\n                  key={id}\n                  src={`https://images.unsplash.com/photo-${id}?w=360&h=360&fit=crop&auto=format&q=80`}\n                  alt=\"\"\n                  className=\"aspect-square w-full rounded-lg object-cover\"\n                />\n              ))}\n            </div>\n          </div>\n          <ProgressiveBlur position=\"bottom\" height=\"40%\" />\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/magic-ui/progressive-blur.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/progressive-blur.json",
  "preview": "https://stashui.vercel.app/c/progressive-blur",
- "dupe_group": "progressiveblur",
- "alternatives": [
-  {
-   "name": "inspira-progressive-blur",
-   "origin": "Inspira UI",
-   "npm_deps": 0,
-   "hardcoded_colors": 1
-  }
- ],
+ "dupe_group": null,
+ "alternatives": [],
  "blurb": "Progressive blur overlay fades content from edges with layered blur effects.",
  "description": "Renders a layered backdrop blur overlay that progressively obscures content from top, bottom, or both edges using CSS backdrop filters and mask gradients.",
  "use_when": "Content overflow indicators, fade-to-obscurity effects, or elegantly blurring content at container edges.",

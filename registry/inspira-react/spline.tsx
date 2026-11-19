@@ -41,7 +41,7 @@ export function Spline({
     setIsLoading(true);
     try {
       // Dynamically import to keep bundle split-friendly
-      const { Application } = await import("@splinetool/runtime" as string as never) as {
+      const { Application } = (await import("@splinetool/runtime")) as unknown as {
         Application: new (
           canvas: HTMLCanvasElement,
           options?: { renderOnDemand?: boolean },

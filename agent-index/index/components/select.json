@@ -2,6 +2,9 @@
  "name": "select",
  "title": "Select",
  "category": "selects",
+ "categories": [
+  "selects"
+ ],
  "origin": "Origin UI",
  "origin_short": "ori",
  "exports": [
@@ -23,7 +26,7 @@
  "css": false,
  "hardcoded_colors": 0,
  "flags": [],
- "usage": "import { Select } from \"@/components/ui/select\";\n\nexport default function Demo() {\n  return <Select />;\n}",
+ "usage": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[480px] w-full items-center justify-center px-6\">\n      <div className=\"flex w-full max-w-2xl gap-8\">\n        <div className=\"w-full max-w-xs space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm\">\n          <p className=\"font-medium text-foreground text-sm\">New project</p>\n          <div className=\"space-y-2\">\n            <Label htmlFor=\"framework\">Framework</Label>\n            <Select defaultValue=\"next\">\n              <SelectTrigger className=\"w-full\" id=\"framework\">\n                <SelectValue placeholder=\"Select a framework\" />\n              </SelectTrigger>\n              <SelectContent>\n                <SelectItem value=\"next\">Next.js</SelectItem>\n                <SelectItem value=\"remix\">Remix</SelectItem>\n                <SelectItem value=\"astro\">Astro</SelectItem>\n                <SelectItem value=\"vite\">Vite</SelectItem>\n              </SelectContent>\n            </Select>\n          </div>\n          <div className=\"space-y-2\">\n            <Label htmlFor=\"region\">Region</Label>\n            <Select defaultValue=\"fra\">\n              <SelectTrigger className=\"w-full\" id=\"region\">\n                <SelectValue placeholder=\"Select a region\" />\n              </SelectTrigger>\n              <SelectContent>\n                <SelectItem value=\"iad\">Washington, D.C.</SelectItem>\n                <SelectItem value=\"fra\">Frankfurt</SelectItem>\n                <SelectItem value=\"sin\">Singapore</SelectItem>\n              </SelectContent>\n            </Select>\n          </div>\n        </div>\n        <div className=\"w-full max-w-xs space-y-2 pt-6\">\n          <Label htmlFor=\"timezone\">Timezone</Label>\n          <Select defaultValue=\"cet\">\n            <SelectTrigger className=\"w-full\" id=\"timezone\">\n              <SelectValue placeholder=\"Select a timezone\" />\n            </SelectTrigger>\n            <SelectContent>\n              <SelectGroup>\n                <SelectLabel>Europe</SelectLabel>\n                <SelectItem value=\"gmt\">Greenwich Mean Time</SelectItem>\n                <SelectItem value=\"cet\">Central European Time</SelectItem>\n                <SelectItem value=\"eet\">Eastern European Time</SelectItem>\n              </SelectGroup>\n              <SelectSeparator />\n              <SelectGroup>\n                <SelectLabel>Asia</SelectLabel>\n                <SelectItem value=\"ist\">India Standard Time</SelectItem>\n                <SelectItem value=\"jst\">Japan Standard Time</SelectItem>\n              </SelectGroup>\n            </SelectContent>\n          </Select>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/origin-ui/select.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/select.json",

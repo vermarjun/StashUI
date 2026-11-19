@@ -2,17 +2,21 @@
 import React, { useEffect, useState } from 'react';
 
 // --- Configuration ---
-// Target Date: December 31, 2026
-const targetDate = new Date('2026-12-31T23:59:59').getTime();
+// Target: the end of the current year (Dec 31, 23:59:59 local time).
+const getTargetDate = () => new Date(new Date().getFullYear(), 11, 31, 23, 59, 59).getTime();
 
 // --- Main Component ---
 const FlipCountdownTailwind = () => {
-  const [timeRemaining, setTimeRemaining] = useState(targetDate - new Date().getTime());
+  // Start as null so server and client render the same markup; the real
+  // value is computed after mount (Date.now() during render breaks hydration).
+  const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
 
   // useEffect for the time interval
   useEffect(() => {
+    const targetDate = getTargetDate();
+    setTimeRemaining(targetDate - Date.now());
     const intervalId = setInterval(() => {
-      const difference = targetDate - new Date().getTime();
+      const difference = targetDate - Date.now();
       setTimeRemaining(difference);
       // Clear interval when countdown finishes
       if (difference < 1000) clearInterval(intervalId);
@@ -35,10 +39,10 @@ const FlipCountdownTailwind = () => {
     return { days, hours, minutes, seconds, isNegative };
   };
 
-  const time = formatTime(timeRemaining);
+  const time = formatTime(timeRemaining ?? 0);
 
   // Stop if complete
-  if (timeRemaining <= 0) {
+  if (timeRemaining !== null && timeRemaining <= 0) {
     return (
       <div className='bg-black p-10 text-center font-sans text-white'>
         <h1 className='text-5xl font-extrabold text-red-600'>🥳 Time's Up!</h1>

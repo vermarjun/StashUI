@@ -1,7 +1,6 @@
 'use client';
 import { MoveUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import React from 'react';
 
 interface ProjectsTypes {
@@ -52,13 +51,7 @@ export default function NormalGrid() {
                 className={` relative pb-4 `}
               >
                 <div className='w-auto h-full'>
-                  <Image
-                    src={project?.img}
-                    alt={'image'}
-                    height={600}
-                    width={1200}
-                    className='h-full w-full object-cover rounded-xl'
-                  />
+                  <img src={project?.img} alt={'image'} height={600} width={1200} className='h-full w-full object-cover rounded-xl' />
                 </div>
                 <div className='absolute bottom-2 text-black w-full p-4 flex justify-between items-center'>
                   <h3 className='sm:text-xl text-sm bg-black text-white rounded-xl p-2 px-4'>

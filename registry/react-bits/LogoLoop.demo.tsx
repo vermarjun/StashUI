@@ -1,42 +1,43 @@
 import LogoLoop from "@/registry/react-bits/LogoLoop"
+import {
+  SiAirbnb,
+  SiApple,
+  SiGoogle,
+  SiMeta,
+  SiNetflix,
+  SiSpotify,
+  SiStripe,
+  SiVercel,
+} from "react-icons/si"
 
 const logos = [
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    alt: "Amazon",
-    width: 80,
-    height: 28,
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-    alt: "Google",
-    width: 80,
-    height: 28,
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-    alt: "Microsoft",
-    width: 80,
-    height: 28,
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
-    alt: "Meta",
-    width: 28,
-    height: 28,
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-    alt: "Apple",
-    width: 24,
-    height: 28,
-  },
+  { node: <SiApple />, title: "Apple" },
+  { node: <SiGoogle />, title: "Google" },
+  { node: <SiMeta />, title: "Meta" },
+  { node: <SiNetflix />, title: "Netflix" },
+  { node: <SiSpotify />, title: "Spotify" },
+  { node: <SiStripe />, title: "Stripe" },
+  { node: <SiVercel />, title: "Vercel" },
+  { node: <SiAirbnb />, title: "Airbnb" },
 ]
 
 export default function Demo() {
   return (
-    <div className="w-full max-w-2xl py-8">
-      <LogoLoop logos={logos} speed={80} pauseOnHover logoHeight={32} gap={48} fadeOut />
+    <div className="w-full max-w-3xl py-8 text-foreground">
+      <p className="mb-8 text-center text-sm text-muted-foreground">
+        Trusted by teams at
+      </p>
+      <LogoLoop
+        logos={logos}
+        speed={80}
+        pauseOnHover
+        scaleOnHover
+        logoHeight={40}
+        gap={64}
+        fadeOut
+        fadeOutColor="var(--background)"
+        ariaLabel="Customer logos"
+      />
     </div>
   )
 }

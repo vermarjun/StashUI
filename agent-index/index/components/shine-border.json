@@ -2,6 +2,10 @@
  "name": "shine-border",
  "title": "Shine Border",
  "category": "borders",
+ "categories": [
+  "borders",
+  "features"
+ ],
  "origin": "Magic UI",
  "origin_short": "mag",
  "exports": [
@@ -15,7 +19,7 @@
   "pure",
   "6 colors"
  ],
- "usage": "import { ShineBorder } from \"@/components/ui/shine-border\";\n\nexport default function Demo() {\n  return <ShineBorder />;\n}",
+ "usage": "\"use client\";\nimport { ShineBorder } from \"@/components/ui/shine-border\";\n\nconst keyframes = `\n@keyframes shine { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } to { background-position: 0% 0%; } }\n@media (prefers-reduced-motion: no-preference) { .motion-safe\\\\:animate-shine { animation: shine var(--duration) infinite linear; } }\n`;\n\nexport default function Demo() {\n  return (\n    <div className=\"relative w-[360px] overflow-hidden rounded-xl border border-border bg-card p-6 text-card-foreground\">\n      <style>{keyframes}</style>\n      <ShineBorder borderWidth={2} duration={8} shineColor={[\"#A07CFE\", \"#FE8FB5\", \"#FFBE7B\"]} />\n      <h3 className=\"text-xl font-semibold\">Login</h3>\n      <p className=\"mt-1 text-sm text-muted-foreground\">\n        Enter your credentials to access your account\n      </p>\n      <div className=\"mt-6 grid gap-4\">\n        <label className=\"grid gap-1.5 text-sm\">\n          Email\n          <input\n            className=\"h-9 rounded-md border border-input bg-transparent px-3 text-sm outline-none\"\n            placeholder=\"name@example.com\"\n            type=\"email\"\n          />\n        </label>\n        <label className=\"grid gap-1.5 text-sm\">\n          Password\n          <input\n            className=\"h-9 rounded-md border border-input bg-transparent px-3 text-sm outline-none\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          className=\"mt-2 h-9 rounded-md bg-primary text-sm font-medium text-primary-foreground\"\n          type=\"button\"\n        >\n          Sign in\n        </button>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/magic-ui/shine-border.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/shine-border.json",

@@ -9,7 +9,7 @@ export default function SafariMockupDemo() {
       <div className="w-full max-w-2xl">
         <SafariMockup
           url="example.com"
-          src="https://picsum.photos/seed/safari1/1200/700"
+          src="https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=1200&h=700&fit=crop&auto=format&q=80"
           className="w-full h-auto drop-shadow-xl"
         />
       </div>

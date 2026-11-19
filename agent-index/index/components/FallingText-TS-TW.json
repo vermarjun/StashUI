@@ -2,6 +2,10 @@
  "name": "FallingText-TS-TW",
  "title": "Falling Text",
  "category": "text",
+ "categories": [
+  "text",
+  "heroes"
+ ],
  "origin": "React Bits",
  "origin_short": "rb",
  "exports": [
@@ -16,7 +20,7 @@
  "flags": [
   "1 colors"
  ],
- "usage": "\"use client\"\n\nimport FallingText from \"@/components/ui/FallingText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full h-[420px] bg-background\">\n      <FallingText\n        text=\"Hover to drop each word with physics-based gravity\"\n        highlightWords={[\"physics-based\"]}\n        trigger=\"hover\"\n        gravity={1}\n        fontSize=\"1.35rem\"\n        backgroundColor=\"transparent\"\n        wireframes={false}\n        mouseConstraintStiffness={0.2}\n      />\n    </div>\n  )\n}",
+ "usage": "\"use client\"\n\nimport FallingText from \"@/components/ui/FallingText\"\n\nexport default function Demo() {\n  return (\n    <div className=\"mx-auto h-[520px] w-full max-w-4xl px-6 pt-16 text-foreground\">\n      <FallingText\n        text=\"Click anywhere and every word drops with real physics-based gravity. Then grab one and fling it around.\"\n        highlightWords={[\"physics-based\", \"gravity.\", \"fling\"]}\n        trigger=\"click\"\n        gravity={0.7}\n        fontSize=\"2.6rem\"\n        backgroundColor=\"transparent\"\n        wireframes={false}\n        mouseConstraintStiffness={0.9}\n      />\n    </div>\n  )\n}",
  "usage_source": "demo",
  "file": "registry/react-bits/FallingText.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/FallingText-TS-TW.json",

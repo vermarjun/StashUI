@@ -29,7 +29,7 @@ export function LetterPullup({ className, words, delay = 0.05 }: LetterPullupPro
             delay: index * delay,
           }}
           className={cn(
-            "font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-4xl md:leading-[5rem]",
+            "font-display text-center text-4xl font-bold tracking-[-0.02em] text-foreground drop-shadow-sm md:text-4xl md:leading-[5rem]",
             className
           )}
         >

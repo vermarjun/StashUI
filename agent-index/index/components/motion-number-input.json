@@ -2,6 +2,10 @@
  "name": "motion-number-input",
  "title": "Animated Number Input",
  "category": "inputs",
+ "categories": [
+  "inputs",
+  "ecommerce"
+ ],
  "origin": "Ui-Layouts",
  "origin_short": "uila",
  "exports": [
@@ -16,7 +20,7 @@
   "pure",
   "2 colors"
  ],
- "usage": "import Cmp from \"@/components/ui/motion-number-input\";\n\nexport default function Demo() {\n  return <Cmp />;\n}",
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Input } from \"@/components/ui/motion-number-input\";\n\nconst rows = [\n  { key: \"adults\", label: \"Adults\", hint: \"Ages 13 or above\", initial: 2 },\n  { key: \"children\", label: \"Children\", hint: \"Ages 2 to 12\", initial: 1 },\n  { key: \"rooms\", label: \"Rooms\", hint: \"Up to 9 per booking\", initial: 1 },\n];\n\nexport default function Demo() {\n  const [values, setValues] = useState<Record<string, number>>(\n    Object.fromEntries(rows.map((r) => [r.key, r.initial])),\n  );\n\n  return (\n    <div className=\"w-full max-w-md divide-y divide-border rounded-xl border border-border bg-card\">\n      {rows.map((r) => (\n        <div key={r.key} className=\"flex items-center justify-between gap-6 px-5 py-4\">\n          <div>\n            <p className=\"text-sm font-medium text-card-foreground\">{r.label}</p>\n            <p className=\"text-xs text-muted-foreground\">{r.hint}</p>\n          </div>\n          <div className=\"mx-0 [&>div]:mx-0 [&>div]:text-2xl\">\n            <Input\n              value={values[r.key]}\n              min={0}\n              max={9}\n              onChange={(v) => setValues((prev) => ({ ...prev, [r.key]: v }))}\n            />\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/ui-layouts/motion-number-input.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/motion-number-input.json",

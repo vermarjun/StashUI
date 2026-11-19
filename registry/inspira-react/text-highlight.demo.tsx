@@ -11,7 +11,6 @@ export default function TextHighlightDemo() {
           delay={300}
           duration={1500}
           highlightColor="hsl(47, 95%, 70%, 0.5)"
-          textEndColor="#111"
         >
           beautiful interfaces
         </TextHighlight>{" "}

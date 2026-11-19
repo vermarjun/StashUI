@@ -76,7 +76,8 @@ def main() -> None:
 
     by_cat = defaultdict(list)
     for r in recs:
-        by_cat[r["category"]].append(r)
+        for slug in r.get("categories") or [r["category"]]:
+            by_cat[slug].append(r)
 
     cats = []
     for slug, items in sorted(by_cat.items(), key=lambda kv: -len(kv[1])):

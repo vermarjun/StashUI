@@ -6,7 +6,7 @@ const SidebarMenu = ({ className }: { className?: string }) => {
   return (
     <>
       <div
-        className={cn('p-8 flex w-full py-20 rounded-xl items-center justify-center', className)}
+        className={cn('p-8 flex w-full min-h-[600px] py-20 rounded-xl items-center justify-center', className)}
         style={{
           background:
             'url("https://images.unsplash.com/photo-1752440093057-1c188e7137e9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center / cover no-repeat',
@@ -20,6 +20,8 @@ const SidebarMenu = ({ className }: { className?: string }) => {
           draggable
           className='p-4 w-[280px]'
         >
+          {/* Tint over the refracted backdrop so white labels stay legible on bright photos */}
+          <div className='pointer-events-none absolute inset-0 z-[25] rounded-[12px] bg-neutral-950/45' />
           <nav className='space-y-2 w-full relative z-30 '>
             <button
               className='w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white text-neutral-800 font-medium transition-colors hover:bg-neutral-100'

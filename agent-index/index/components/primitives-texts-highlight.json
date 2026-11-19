@@ -2,6 +2,9 @@
  "name": "primitives-texts-highlight",
  "title": "Highlight Text",
  "category": "text",
+ "categories": [
+  "text"
+ ],
  "origin": "Animate UI",
  "origin_short": "anim",
  "exports": [
@@ -18,7 +21,7 @@
  "flags": [
   "motion"
  ],
- "usage": "'use client';\n\nimport { HighlightText } from '@/components/ui/primitives-texts-highlight';\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 w-full p-10\">\n      <p className=\"text-2xl font-semibold leading-relaxed text-center max-w-xl\">\n        Build{' '}\n        <HighlightText\n          text=\"stunning interfaces\"\n          inView\n          style={{\n            backgroundImage: 'linear-gradient(120deg, hsl(var(--primary)/0.25) 0%, hsl(var(--primary)/0.25) 100%)',\n          }}\n        />{' '}\n        with smooth, composable{' '}\n        <HighlightText\n          text=\"animation primitives\"\n          inView\n          delay={600}\n          style={{\n            backgroundImage: 'linear-gradient(120deg, hsl(var(--primary)/0.2) 0%, hsl(var(--primary)/0.2) 100%)',\n          }}\n        />{' '}\n        that work anywhere.\n      </p>\n    </div>\n  );\n}",
+ "usage": "'use client';\n\nimport { useState } from 'react';\nimport { RotateCcw } from 'lucide-react';\nimport { HighlightText } from '@/components/ui/primitives-texts-highlight';\n\nexport default function Demo() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"relative flex min-h-[380px] w-full flex-col items-center justify-center p-10\">\n      <p\n        key={run}\n        className=\"max-w-3xl text-center text-5xl font-semibold leading-tight tracking-tight text-foreground\"\n      >\n        Build{' '}\n        <HighlightText\n          text=\"stunning interfaces\"\n          inView\n          className=\"rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-2 text-white\"\n        />{' '}\n        with smooth, composable{' '}\n        <HighlightText\n          text=\"motion primitives\"\n          inView\n          delay={900}\n          className=\"rounded-lg bg-gradient-to-r from-sky-500 to-cyan-400 px-2 text-white\"\n        />\n      </p>\n      <button\n        type=\"button\"\n        onClick={() => setRun((n) => n + 1)}\n        className=\"absolute right-4 bottom-4 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground\"\n      >\n        <RotateCcw className=\"size-3.5\" />\n        Replay\n      </button>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/animate-ui/primitives-texts-highlight.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/primitives-texts-highlight.json",

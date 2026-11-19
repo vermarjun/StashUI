@@ -2,13 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "aceternity-ui-grid",
   "title": "Grid",
-  "description": "Aceternity UI component.",
+  "description": "CSS/SVG grid background with optional pointer-tracking distortion.",
   "dependencies": [],
   "registryDependencies": [],
   "files": [
     {
       "path": "registry/aceternity-ui/grid.tsx",
-      "content": "import React from \"react\";\n\nconst GridBackgroundPreview = () => {\n  return (\n    <div className=\"h-[50rem] w-full bg-black bg-grid-white/[0.1] relative flex items-center justify-center\">\n      {/* Radial gradient for the container to give a faded look */}\n      <div className=\"absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]\"></div>\n      <p className=\"text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8\">\n        Backgrounds\n      </p>\n    </div>\n  );\n};\n\nexport default GridBackgroundPreview;",
+      "content": "import React from \"react\";\n\nconst GridBackgroundPreview = () => {\n  return (\n    <div\n      className=\"relative flex h-full min-h-[40rem] w-full items-center justify-center bg-black\"\n      style={{\n        backgroundImage:\n          \"linear-gradient(to right, rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.18) 1px, transparent 1px)\",\n        backgroundSize: \"40px 40px\",\n      }}\n    >\n      {/* Radial gradient for the container to give a faded look */}\n      <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]\"></div>\n      <p className=\"relative z-20 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl\">\n        Backgrounds\n      </p>\n    </div>\n  );\n};\n\nexport default GridBackgroundPreview;\n",
       "type": "registry:component",
       "target": "components/ui/aceternity-ui-grid.tsx"
     }

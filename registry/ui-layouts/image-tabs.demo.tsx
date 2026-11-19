@@ -15,21 +15,21 @@ const TABS = [
     title: "Design Systems",
     description:
       "A design system is a collection of reusable components guided by clear standards that teams use to build consistent digital products faster.",
-    imageUrl: "https://picsum.photos/seed/design42/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1762503203754-62c5a0c969d9?w=1200&h=800&fit=crop&auto=format&q=80",
   },
   {
     value: "motion",
     title: "Motion & Animation",
     description:
       "Purposeful motion guides attention, communicates state, and adds delight — making interfaces feel alive without sacrificing performance.",
-    imageUrl: "https://picsum.photos/seed/motion17/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1718524767487-7f98d4e5eeeb?w=1200&h=800&fit=crop&auto=format&q=80",
   },
   {
     value: "typography",
     title: "Typography",
     description:
       "Type is the voice of your interface. Hierarchy, scale, and rhythm turn raw text into a reading experience that carries users through content effortlessly.",
-    imageUrl: "https://picsum.photos/seed/typo88/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=800&fit=crop&auto=format&q=80",
   },
 ];
 

@@ -2,6 +2,10 @@
  "name": "dotted-glow-background",
  "title": "Dotted Glow Background",
  "category": "backgrounds",
+ "categories": [
+  "backgrounds",
+  "heroes"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -16,7 +20,7 @@
   "pure",
   "4 colors"
  ],
- "usage": "import { DottedGlowBackground } from \"@/components/ui/dotted-glow-background\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative h-[600px] w-full overflow-hidden bg-background\">\n      <DottedGlowBackground />\n      <div className=\"absolute inset-0 flex items-center justify-center pointer-events-none\">\n        <p className=\"text-lg font-medium text-foreground/50\">\n          Dotted Glow Background\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage": "import { DottedGlowBackground } from \"@/components/ui/dotted-glow-background\";\n\nexport default function Demo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden bg-neutral-950\">\n      <DottedGlowBackground\n        className=\"pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_90%)]\"\n        opacity={1}\n        gap={12}\n        radius={1.8}\n        color=\"rgba(163,163,163,0.9)\"\n        darkColor=\"rgba(163,163,163,0.9)\"\n        glowColor=\"rgba(56,189,248,1)\"\n        darkGlowColor=\"rgba(56,189,248,1)\"\n        backgroundOpacity={0}\n        speedMin={0.3}\n        speedMax={1.6}\n        speedScale={1}\n      />\n      <div className=\"relative z-10 flex max-w-xl flex-col items-center gap-4 rounded-2xl border border-neutral-800 bg-neutral-950/80 px-10 py-10 text-center shadow-2xl backdrop-blur-sm\">\n        <h2 className=\"text-3xl font-semibold tracking-tight text-neutral-100 md:text-4xl\">\n          Ready to buy Pro?\n        </h2>\n        <p className=\"text-sm text-neutral-400 md:text-base\">\n          Unlock every component, template and block. One license, lifetime\n          updates, no subscriptions.\n        </p>\n        <div className=\"mt-2 flex gap-3\">\n          <button className=\"rounded-md bg-neutral-100 px-5 py-2 text-sm font-medium text-neutral-900\">\n            Get Pro\n          </button>\n          <button className=\"rounded-md border border-neutral-700 px-5 py-2 text-sm font-medium text-neutral-200\">\n            Browse components\n          </button>\n        </div>\n      </div>\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/dotted-glow-background.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/dotted-glow-background.json",

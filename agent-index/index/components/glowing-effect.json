@@ -1,7 +1,12 @@
 {
  "name": "glowing-effect",
  "title": "Glowing Effect",
- "category": "borders",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "borders",
+  "features"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -16,20 +21,13 @@
  "flags": [
   "17 colors"
  ],
- "usage": "import { GlowingEffect } from \"@/components/ui/glowing-effect\";\n\nexport default function Demo() {\n  return <GlowingEffect />;\n}",
+ "usage": "\"use client\";\nimport { Box, Lock, Search, Settings, Sparkles } from \"lucide-react\";\nimport type { ReactNode } from \"react\";\n\nimport { GlowingEffect } from \"@/components/ui/glowing-effect\";\n\nconst items = [\n  {\n    area: \"md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]\",\n    icon: <Box className=\"h-4 w-4\" />,\n    title: \"Do things the right way\",\n    description: \"Running out of copy so I'll write anything.\",\n  },\n  {\n    area: \"md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]\",\n    icon: <Settings className=\"h-4 w-4\" />,\n    title: \"The best AI code editor ever.\",\n    description: \"Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me.\",\n  },\n  {\n    area: \"md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]\",\n    icon: <Lock className=\"h-4 w-4\" />,\n    title: \"You should buy Aceternity UI Pro\",\n    description: \"It's the best money you'll ever spend\",\n  },\n  {\n    area: \"md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]\",\n    icon: <Sparkles className=\"h-4 w-4\" />,\n    title: \"This card is also built by Cursor\",\n    description: \"I'm not even kidding. Ask my mom if you don't believe me.\",\n  },\n  {\n    area: \"md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]\",\n    icon: <Search className=\"h-4 w-4\" />,\n    title: \"Coming soon on Aceternity UI\",\n    description: \"Shipping soon. Follow along for updates.\",\n  },\n];\n\nfunction GridItem({ area, icon, title, description }: { area: string; icon: ReactNode; title: string; description: string }) {\n  return (\n    <li className={`min-h-[12rem] list-none ${area}`}>\n      <div className=\"relative h-full rounded-2xl border border-border p-2 md:rounded-3xl md:p-3\">\n        <GlowingEffect borderWidth={3} disabled={false} glow inactiveZone={0.01} proximity={64} spread={40} />\n        <div className=\"relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-border bg-background p-6 shadow-sm\">\n          <div className=\"w-fit rounded-lg border border-border p-2 text-foreground\">{icon}</div>\n          <div className=\"space-y-2\">\n            <h3 className=\"text-lg font-semibold text-balance text-foreground\">{title}</h3>\n            <p className=\"text-sm text-muted-foreground\">{description}</p>\n          </div>\n        </div>\n      </div>\n    </li>\n  );\n}\n\nexport default function Demo() {\n  return (\n    <ul className=\"grid w-full max-w-5xl grid-cols-1 grid-rows-none gap-4 p-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2\">\n      {items.map((item) => (\n        <GridItem key={item.title} {...item} />\n      ))}\n    </ul>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/glowing-effect.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/glowing-effect.json",
  "preview": "https://stashui.vercel.app/c/glowing-effect",
- "dupe_group": "glowingeffect",
- "alternatives": [
-  {
-   "name": "inspira-glowing-effect",
-   "origin": "Inspira UI",
-   "npm_deps": 0,
-   "hardcoded_colors": 17
-  }
- ],
+ "dupe_group": null,
+ "alternatives": [],
  "blurb": "Neon-like glow emanates from the element.",
  "description": "Wrapper component applying neon glow shadow filters; typically combined with dark backgrounds.",
  "use_when": "Neon aesthetics, tech demos, or dark-mode premium sections.",

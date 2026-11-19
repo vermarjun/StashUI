@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "motion/react";
 
-const MovingLine = () => {
+const MovingLine = ({ children }: { children?: React.ReactNode }) => {
   const transition = {
     duration: 14,
     ease: "easeInOut" as const,
@@ -36,7 +36,7 @@ const MovingLine = () => {
         viewBox="0 0 1 1567"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="shrink-0"
+        className="shrink-0 text-foreground"
       >
         <path d={PATH} stroke="url(#paint0_linear_207_38)" />
         <defs>
@@ -48,8 +48,8 @@ const MovingLine = () => {
             y2="1566.02"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#3879E7" stopOpacity="0" />
-            <stop offset="1" stopColor="#3879E7" />
+            <stop stopColor="currentColor" stopOpacity="0" />
+            <stop offset="1" stopColor="currentColor" stopOpacity="0.25" />
           </linearGradient>
         </defs>
         <motion.path
@@ -62,16 +62,20 @@ const MovingLine = () => {
           }}
           transition={transition}
           d={PATH}
-          stroke="var(--blue-500)"
+          stroke="currentColor"
           strokeOpacity="1"
           strokeLinecap={"round"}
           strokeWidth="3"
         />
       </svg>
       <div className="flex flex-col w-full">
-        <Content />
-        <Content />
-        <Content />
+        {children ?? (
+          <>
+            <Content />
+            <Content />
+            <Content />
+          </>
+        )}
       </div>
     </div>
   );
@@ -84,15 +88,15 @@ const MovingLine = () => {
 export const Content = () => {
   return (
     <div className="content w-full mb-10 ">
-      <p className="text-2xl font-bold text-white  ">
+      <p className="text-2xl font-bold text-foreground">
         The path follows the scroll
       </p>
-      <p className="text-base font-normal text-neutral-300  ">
+      <p className="text-base font-normal text-muted-foreground">
         If you look closely, you can see the path is being animated.
       </p>
       <div className="flex space-x-4 w-full ">
-        <div className="w-full h-40 md:h-96 rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 mt-4" />
-        <div className="w-full h-40 md:h-96 rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 mt-4" />
+        <div className="w-full h-40 md:h-96 rounded-md bg-muted mt-4" />
+        <div className="w-full h-40 md:h-96 rounded-md bg-muted mt-4" />
       </div>
     </div>
   );

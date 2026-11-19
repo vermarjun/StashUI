@@ -573,51 +573,51 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1768361435257-819e2c22f0b4?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Bridge'
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1717618389115-88db6d7d8f77?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Desk Setup'
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Waterfall'
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Strawberries'
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1763010156322-2fb80d48ea8b?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Deep Diving'
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1683223585116-23e136669e80?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Train Track'
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Santorini'
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1555212697-194d092e3b8f?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Blurry Lights'
       },
       {
-        image: `https://picsum.photos/seed/9/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'New York'
       },
       {
-        image: `https://picsum.photos/seed/10/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Good Boy'
       },
       {
-        image: `https://picsum.photos/seed/21/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1718603630685-d2605d5190e8?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Coastline'
       },
       {
-        image: `https://picsum.photos/seed/12/800/600?grayscale`,
+        image: `https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=800&h=600&fit=crop&auto=format&q=80&sat=-100`,
         text: 'Palm Trees'
       }
     ];

@@ -2,6 +2,9 @@
  "name": "loader",
  "title": "Loader",
  "category": "loaders",
+ "categories": [
+  "loaders"
+ ],
  "origin": "Aceternity UI",
  "origin_short": "ace",
  "exports": [
@@ -20,7 +23,7 @@
   "pure",
   "23 colors"
  ],
- "usage": "import { LoaderOne } from \"@/components/ui/loader\";\n\nexport default function Demo() {\n  return <LoaderOne />;\n}",
+ "usage": "import {\n  LoaderFive,\n  LoaderFour,\n  LoaderOne,\n  LoaderThree,\n  LoaderTwo,\n} from \"@/components/ui/loader\";\n\nconst loaders = [\n  { label: \"Bounce\", node: <LoaderOne /> },\n  { label: \"Slide\", node: <LoaderTwo /> },\n  { label: \"Bolt\", node: <LoaderThree /> },\n  { label: \"Glitch\", node: <LoaderFour text=\"Loading...\" /> },\n  { label: \"Shimmer\", node: <LoaderFive text=\"Generating chat...\" /> },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"grid w-full max-w-4xl grid-cols-2 gap-5 p-6 sm:grid-cols-3\">\n      {loaders.map((l) => (\n        <div\n          key={l.label}\n          className=\"flex h-48 flex-col items-center justify-center gap-6 rounded-xl border border-border bg-card\"\n        >\n          <div className=\"flex h-16 scale-[1.6] items-center justify-center\">{l.node}</div>\n          <span className=\"text-sm text-muted-foreground\">{l.label}</span>\n        </div>\n      ))}\n    </div>\n  );\n}",
  "usage_source": "demo",
  "file": "registry/aceternity-ui/loader.tsx",
  "install": "npx shadcn@latest add https://stashui.vercel.app/r/loader.json",
