@@ -126,7 +126,7 @@ export default async function ComponentPage({
         />
       </div>
 
-      <div className="mt-12 grid gap-12">
+      <div className="mt-12 grid grid-cols-1 gap-12">
         <section>
           <h2 className="mb-1 text-lg font-semibold tracking-tight">Installation</h2>
           <p className="mb-4 text-sm text-muted-foreground">

@@ -8,7 +8,9 @@ export default function Demo() {
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
-      <EvervaultCard text="hover" />
+      <div className="w-full min-h-0 flex-1">
+        <EvervaultCard text="hover" />
+      </div>
       <h2 className="dark:text-white text-black mt-4 text-sm font-light">
         Hover over this card to reveal an awesome effect. Running on pure CSS
         magic.
