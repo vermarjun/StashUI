@@ -25,12 +25,16 @@ export function PreviewClient({
   name,
   manual = false,
   dark = false,
+  fillViewport = false,
 }: {
   name: string;
   manual?: boolean;
   /** Put the theme on <html> so portalled UI (popovers, drawers, toasts) that
    *  renders outside the preview wrapper gets it too. */
   dark?: boolean;
+  /** Detail view: stretch a full-bleed demo (full width + clipped, i.e. a
+   *  background / effect / hero frame) to fill the whole iframe viewport. */
+  fillViewport?: boolean;
 }) {
   const Demo = demos[name];
   const [mounted, setMounted] = React.useState(!manual);
@@ -76,6 +80,39 @@ export function PreviewClient({
     };
   }, [manual, name]);
 
+  const markerRef = React.useRef<HTMLSpanElement>(null);
+  React.useLayoutEffect(() => {
+    if (!fillViewport || !mounted) return;
+    const marker = markerRef.current;
+    const parent = marker?.parentElement;
+    if (!marker || !parent) return;
+    let filled: HTMLElement | null = null;
+    const apply = () => {
+      const root = marker.nextElementSibling as HTMLElement | null;
+      if (!root) return;
+      if (filled && filled !== root) filled = null;
+      root.style.removeProperty("height");
+      const cs = getComputedStyle(root);
+      const clipped = cs.overflowX !== "visible" || cs.overflowY !== "visible";
+      const fullWidth = root.offsetWidth >= window.innerWidth - 2;
+      if (clipped && fullWidth) {
+        root.style.height = "100vh";
+        root.style.maxHeight = "none";
+        root.style.borderRadius = "0";
+        filled = root;
+      }
+    };
+    apply();
+    // The demo may mount after a lazy chunk resolves (Suspense).
+    const mo = new MutationObserver(apply);
+    mo.observe(parent, { childList: true });
+    window.addEventListener("resize", apply);
+    return () => {
+      mo.disconnect();
+      window.removeEventListener("resize", apply);
+    };
+  }, [fillViewport, mounted, name]);
+
   if (!Demo) {
     return (
       <span className="text-sm text-muted-foreground">No preview available</span>
@@ -84,6 +121,7 @@ export function PreviewClient({
   if (!mounted) return null;
   return (
     <PreviewErrorBoundary name={name}>
+      {fillViewport && <span ref={markerRef} hidden />}
       <React.Suspense fallback={null}>
         <Demo />
       </React.Suspense>

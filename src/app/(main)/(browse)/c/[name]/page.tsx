@@ -57,7 +57,7 @@ export default async function ComponentPage({
     .slice(Math.max(0, idx - 1), Math.max(0, idx - 1) + 3);
 
   return (
-    <div className="w-full pb-20 pt-6">
+    <div className="w-full snap-start scroll-mt-14 pb-20 pt-6">
       <nav className="flex items-center gap-1.5 text-sm text-muted-foreground">
         <Link href="/" className="transition-colors hover:text-foreground">
           Components

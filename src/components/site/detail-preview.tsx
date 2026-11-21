@@ -32,8 +32,14 @@ const BACKDROP: Record<string, string> = {
   checker: "bg-muted/30",
 };
 
-/** Smallest stage we ever show, and how much of the window it may take. */
+/** Smallest and largest stage we ever show. */
 const MIN_STAGE = 520;
+const MAX_STAGE = 1100;
+/**
+ * Room above and below the stage once the page snaps to it: sticky header
+ * (3.5rem) + gap + the Preview/Code toolbar + a little air at the bottom.
+ */
+const SNAP_CHROME = "8rem";
 
 /**
  * The detail-page stage: the real, fully interactive component plus its usage
@@ -71,6 +77,18 @@ export function DetailPreview({
 
   React.useEffect(() => setMounted(true), []);
 
+  // Snap the page so the toolbar + stage land exactly under the sticky
+  // header and the stage fills the rest of the window. Proximity (not
+  // mandatory) so long pages below still scroll freely.
+  React.useEffect(() => {
+    const html = document.documentElement;
+    const prev = html.style.scrollSnapType;
+    html.style.scrollSnapType = "y proximity";
+    return () => {
+      html.style.scrollSnapType = prev;
+    };
+  }, []);
+
   React.useLayoutEffect(() => {
     const el = boxRef.current;
     if (!el) return;
@@ -102,10 +120,10 @@ export function DetailPreview({
 
   const stageHeight = fullscreen
     ? "100vh"
-    : `clamp(${MIN_STAGE}px, calc(100vh - 220px), ${Math.max(cfg.height, 640)}px)`;
+    : `clamp(${MIN_STAGE}px, calc(100dvh - ${SNAP_CHROME}), ${MAX_STAGE}px)`;
 
   return (
-    <div>
+    <div className="snap-start scroll-mt-[4.25rem]">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="inline-flex items-center rounded-lg border border-border bg-muted/30 p-0.5 text-sm">
           {(["preview", "code"] as const).map((t) => (

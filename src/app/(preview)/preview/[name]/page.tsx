@@ -38,11 +38,16 @@ export default async function PreviewPage({
           scrollable ? "overflow-x-clip" : "overflow-hidden",
           topAligned
             ? "flex flex-col"
-            : "flex items-center justify-center p-4",
+            : "flex h-screen items-center justify-center",
           dark && "dark",
         )}
       >
-        <PreviewClient name={decoded} manual={manual} dark={dark} />
+        <PreviewClient
+          name={decoded}
+          manual={manual}
+          dark={dark}
+          fillViewport={!topAligned}
+        />
       </div>
     );
   }
