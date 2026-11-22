@@ -20,7 +20,7 @@ Invoke-WebRequest https://stashui.vermarjun.xyz/agent/stashui.mjs -OutFile "$HOM
 node "$HOME\.stashui\stashui.mjs" init
 ```
 
-They write only `~/.stashui/stashui.mjs` and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes and nothing is added to your PATH. The script's SHA-256 is `11a43e84df33dfc41c539040e658e297ef85b312d99664fa671b356f3ce409e7`; `init` checks every skill file against its published hash before writing it.
+They write only `~/.stashui/stashui.mjs` and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes and nothing is added to your PATH. The script's SHA-256 is `5e659db60f36232c248755f9461c131450fb5d1b8ea69b292cbe60cc8dcd8e52`; `init` checks every skill file against its published hash before writing it.
 
 Then:
 
@@ -29,6 +29,8 @@ Then:
 3. Tell the user StashUI is ready, in one line.
 
 Options: `init --project` puts the skills in this repository instead, so teammates get them through git. `init --mcp` also registers the MCP server.
+
+Later, `node ~/.stashui/stashui.mjs update` fetches whatever is published now. The `context` command says when an update exists.
 
 ## If your agent has no shell
 

@@ -30,6 +30,8 @@ Then:
 
 Options: `init --project` puts the skills in this repository instead, so teammates get them through git. `init --mcp` also registers the MCP server.
 
+Later, `node ~/.stashui/stashui.mjs update` fetches whatever is published now. The `context` command says when an update exists.
+
 ## If your agent has no shell
 
 Claude Desktop, claude.ai, ChatGPT and similar: add `{{SITE}}/api/mcp` as a remote MCP server (HTTP, no login). It offers the same six operations and returns the images inline.

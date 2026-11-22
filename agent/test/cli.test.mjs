@@ -18,12 +18,13 @@ after(() => { server.closeAllConnections(); server.close(); });
 
 const scratch = () => mkdtempSync(join(tmpdir(), "stashui-"));
 // async on purpose: the server lives in this process, so a blocking spawn would starve it
-const run = (cwd, args, env = {}) => new Promise((done) => {
-  const child = spawn("node", [CLI, ...args], { cwd, env: { ...process.env, STASHUI_URL: URL_, ...env } });
+const spawnCli = (file, cwd, args, env = {}) => new Promise((done) => {
+  const child = spawn("node", [file, ...args], { cwd, env: { ...process.env, STASHUI_URL: URL_, ...env } });
   let stdout = "", stderr = "";
   child.stdout.on("data", (d) => (stdout += d)); child.stderr.on("data", (d) => (stderr += d));
   child.on("close", (status) => done({ status, stdout, stderr }));
 });
+const run = (cwd, args, env) => spawnCli(CLI, cwd, args, env);
 
 test("search prints a legend and saves the image it names", async () => {
   const dir = scratch();
@@ -94,4 +95,19 @@ test("a wrong name or command says what to do next", async () => {
   assert.match((await run(dir, ["view", "comp-578x"])).stdout, /Closest: /);
   assert.match((await run(dir, ["frobnicate"])).stderr, /Unknown command/);
   assert.match((await run(dir, ["search", "x"], { STASHUI_URL: "http://127.0.0.1:9" })).stderr, /Cannot reach/);
+});
+
+test("an installed copy learns that a newer one is published, and update replaces it", async () => {
+  const home = scratch(), proj = scratch();
+  mkdirSync(join(home, ".stashui"));
+  const old = join(home, ".stashui", "stashui.mjs");
+  writeFileSync(old, readFileSync(CLI, "utf8") + "\n// an older build\n");
+  const stale = spawnCli(old, proj, ["context"], { HOME: home, USERPROFILE: home });
+  assert.match((await stale).stdout, /A newer StashUI CLI and skills are published/);
+  const up = await spawnCli(old, proj, ["update"], { HOME: home, USERPROFILE: home });
+  assert.equal(up.status, 0, up.stderr);
+  assert.equal(readFileSync(old, "utf8"), readFileSync(CLI, "utf8"), "the installed file is now the published one");
+  assert.ok(existsSync(join(home, ".claude/skills/stashui/SKILL.md")), "and the skills were reinstalled");
+  assert.ok(!/A newer StashUI/.test((await spawnCli(old, proj, ["context"], { HOME: home, USERPROFILE: home })).stdout));
+  assert.match((await spawnCli(old, proj, ["update"], { HOME: home, USERPROFILE: home })).stdout, /up to date/);
 });

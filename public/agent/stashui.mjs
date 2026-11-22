@@ -30,6 +30,7 @@ const HELP = `stashui: find, see and install UI components
   stashui propose <plan.json>       the page a human approves: picks, runners-up, reasons   --no-open
   stashui review [path…]            deterministic UI checks with counts   --json
   stashui init [--project] [--mcp]  install the skills (and optionally the MCP server) for your agent
+  stashui update                    fetch the CLI and skills the site publishes now
 
 Images are saved under .stashui/sheets/ and their path is printed. Open that file to see the components.`;
 
@@ -166,6 +167,22 @@ const commands = {
         ? `Already installed (${p.installed.length}), reuse before adding a twin: ${p.installed.join(", ")}`
         : "No components installed yet.",
     ].filter(Boolean).join("\n"));
+    // context opens every build, so it is where a stale install finds out. Never fatal, never slow.
+    const cli = await published();
+    if (cli && cli.sha256 !== ownSha()) console.log("\nA newer StashUI CLI and skills are published. Run `node ~/.stashui/stashui.mjs update`, then re-read the stashui skill.");
+  },
+
+  async update() {
+    const cli = await published();
+    if (!cli) die(`Cannot reach ${SITE}/agent/manifest.json.`);
+    if (cli.sha256 === ownSha() && !flags.force) return console.log("StashUI is up to date. (`update --force` reinstalls the skills anyway.)");
+    const body = Buffer.from(await (await fetch(`${SITE}${cli.path}`)).arrayBuffer());
+    if (createHash("sha256").update(body).digest("hex") !== cli.sha256) die("Checksum mismatch for the CLI. Nothing was changed. Stop and tell the user.");
+    const home = join(HOME, "stashui.mjs");
+    mkdirSync(HOME, { recursive: true });
+    writeFileSync(home, body);
+    console.log(`Updated ${home}. Reinstalling the skills:`);
+    process.exit(spawnSync(process.execPath, [home, "init", ...(flags.project ? ["--project"] : [])], { stdio: "inherit" }).status ?? 1);
   },
 
   async propose() {
@@ -183,6 +200,15 @@ const commands = {
 
   async init() { await init(); },
 };
+
+/** The CLI the site currently publishes, or null when the site cannot be reached quickly. */
+async function published() {
+  try {
+    const res = await fetch(`${SITE}/agent/manifest.json`, { signal: AbortSignal.timeout(3000) });
+    return (await res.json()).files.find((f) => f.role === "cli") || null;
+  } catch { return null; }
+}
+const ownSha = () => createHash("sha256").update(readFileSync(SELF)).digest("hex");
 
 /** Rank against the project's own look unless told otherwise. */
 function ctx() {
