@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://stashui.vermarjun.xyz"><img src="docs/readme/banner-real.svg" alt="StashUI: describe the screen, your agent picks the parts by looking" width="100%"></a>
+  <a href="https://stashui.vermarjun.xyz"><img src="docs/readme/stashui-banner.svg" alt="StashUI: describe the screen, your agent picks the parts by looking" width="100%"></a>
 </p>
 
 <p align="center">
@@ -60,13 +60,13 @@ Then it looks closer, and checks the set:
 
 ## How a screen gets built
 
-<p align="center"><img src="docs/readme/flow.svg" alt="The six steps: context, search, view, board, add, review, with an optional mockup and a review loop" width="100%"></p>
+<p align="center"><img src="docs/readme/stashui-flow.svg" alt="The six steps: context, search, view, board, add, review, with an optional mockup and a review loop" width="100%"></p>
 
 The skills tell the agent to follow these steps. Each step is one CLI command, and the same operation is available over MCP and HTTP.
 
 ## Why it is different
 
-<p align="center"><img src="docs/readme/compare.svg" alt="A text-only component server returns names; StashUI returns a picture plus facts" width="100%"></p>
+<p align="center"><img src="docs/readme/stashui-compare.svg" alt="A text-only component server returns names; StashUI returns a picture plus facts" width="100%"></p>
 
 - **It searches by meaning.** You can search for "a pricing table with a monthly/yearly toggle" and get pricing tables with toggles back. A vision model watched every component once and wrote down what it is and how it moves. Search runs over those descriptions.
 - **It is curated.** Every component was reviewed and scored by a person, so weaker components and near-duplicates are archived and don't come up.
@@ -84,7 +84,7 @@ npx shadcn@latest add https://stashui.vermarjun.xyz/r/shimmer-button.json
 
 ## Under the hood
 
-<p align="center"><img src="docs/readme/architecture.svg" alt="Hand-written registry files feed the registry build, clip capture and describe pass, which feed the gallery, the install registry and the agent API" width="100%"></p>
+<p align="center"><img src="docs/readme/stashui-architecture.svg" alt="Hand-written registry files feed the registry build, clip capture and describe pass, which feed the gallery, the install registry and the agent API" width="100%"></p>
 
 ```bash
 git clone https://github.com/vermarjun/StashUI.git && cd StashUI
