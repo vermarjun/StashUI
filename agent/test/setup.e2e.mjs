@@ -67,7 +67,7 @@ const results = [];
 const check = (shell, what, ok, detail = "") => { results.push({ shell, what, ok }); console.log(`${ok ? "ok  " : "FAIL"}  ${shell.padEnd(10)} ${what}${ok ? "" : `\n        ${String(detail).trim().split("\n").slice(-4).join("\n        ")}`}`); };
 
 // ── 1. the setup page's own commands, run as written, in every shell here ────
-const setup = await (await fetch(`${site}/setup.md`)).text();
+const setup = (await (await fetch(`${site}/setup.md`)).text()).replace(/\r\n/g, "\n"); // a Windows checkout has CRLF
 const block = (lang) => setup.match(new RegExp("```" + lang + "\\n([\\s\\S]*?)```"))?.[1].trim();
 const setupShell = shells[0];
 const oneLine = block("sh");                                  // the one command that is meant to work everywhere
