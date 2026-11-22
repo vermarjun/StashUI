@@ -14,12 +14,17 @@ const nextConfig: NextConfig = {
   // standalone build carries them and the model files.
   serverExternalPackages: ["@huggingface/transformers", "onnxruntime-node"],
   outputFileTracingIncludes: {
+    // The runtime is loaded through a dynamic require the tracer cannot follow, so
+    // it is listed by hand: Linux binaries only (the package carries five platforms).
     "/api/**": [
       "./agent/model/**",
-      "./node_modules/@huggingface/transformers/**",
+      "./node_modules/@huggingface/transformers/package.json",
+      "./node_modules/@huggingface/transformers/dist/transformers.node.*",
       "./node_modules/@huggingface/tokenizers/**",
       "./node_modules/@huggingface/jinja/**",
-      "./node_modules/onnxruntime-node/**",
+      "./node_modules/onnxruntime-node/package.json",
+      "./node_modules/onnxruntime-node/dist/**",
+      "./node_modules/onnxruntime-node/bin/napi-v6/linux/**",
       "./node_modules/onnxruntime-common/**",
     ],
   },

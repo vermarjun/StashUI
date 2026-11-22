@@ -29,6 +29,10 @@ jobs:
           cache: npm
 
       - name: Install
+        # The embedding runtime's install script would fetch GPU libraries on Linux;
+        # the CPU binary it needs is already inside the package.
+        env:
+          ONNXRUNTIME_NODE_INSTALL: skip
         run: npm ci --no-audit --no-fund
 
       # Meaning search runs a 23 MB embedding model on the server. Fetching it here

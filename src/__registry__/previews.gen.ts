@@ -51,7 +51,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "_nF0hbzJ",
+    "v": "sIfyz_ep",
     "tiers": true
   },
   "3d-globe": {
@@ -61,7 +61,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DCQB_uYr",
+    "v": "QiV08TxT",
     "tiers": true
   },
   "3d-marquee": {
@@ -71,7 +71,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "d3rhv0e1",
+    "v": "1nv-mj4r",
     "tiers": true
   },
   "3d-perspective-text": {
@@ -89,7 +89,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "IP8WVsX9",
+    "v": "DbP36Acu",
     "tiers": true
   },
   "ASCIIText-TS-TW": {
@@ -99,7 +99,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DPEyMV37",
+    "v": "5CY7B2f6",
     "tiers": true
   },
   "AnimatedContent-TS-TW": {
@@ -109,7 +109,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "hOYFRww1",
+    "v": "-VmavoU2",
     "tiers": true
   },
   "AnimatedList-TS-TW": {
@@ -119,7 +119,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "GKApHDDF",
+    "v": "W73RBmJz",
     "tiers": true
   },
   "Antigravity-TS-TW": {
@@ -129,7 +129,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "aUk72cSX",
+    "v": "iCTyUSS6",
     "tiers": true
   },
   "Aurora-TS-TW": {
@@ -139,7 +139,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "cM-dkwEe",
+    "v": "eYHHWtmM",
     "tiers": true
   },
   "Balatro-TS-TW": {
@@ -149,7 +149,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1_n1mpWv",
+    "v": "Vl-qBT29",
     "tiers": true
   },
   "Ballpit-TS-TW": {
@@ -159,7 +159,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "aWWtTdJr",
+    "v": "1TbaFPP2",
     "tiers": true
   },
   "Beams-TS-TW": {
@@ -169,7 +169,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NsCpNyrS",
+    "v": "AGjJ-kwe",
     "tiers": true
   },
   "BlobCursor-TS-TW": {
@@ -179,7 +179,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yq2tUS1r",
+    "v": "-_AtL6F-",
     "tiers": true
   },
   "BlurText-TS-TW": {
@@ -189,7 +189,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Oynyjmku",
+    "v": "-hOT-uwp",
     "tiers": true
   },
   "BorderGlow-TS-TW": {
@@ -199,7 +199,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8zHHfZ5L",
+    "v": "rYyNlR-y",
     "tiers": true
   },
   "BounceCards-TS-TW": {
@@ -209,7 +209,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "htv8rSzN",
+    "v": "aenGEQ4V",
     "tiers": true
   },
   "BubbleMenu-TS-TW": {
@@ -219,7 +219,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "V-6p3FKw",
+    "v": "2sIwu2YT",
     "tiers": true
   },
   "CardNav-TS-TW": {
@@ -229,7 +229,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "A90of0D4",
+    "v": "spt3A7kH",
     "tiers": true
   },
   "CardSwap-TS-TW": {
@@ -239,7 +239,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "U0MRY-rm",
+    "v": "3hjE_xdi",
     "tiers": true
   },
   "Carousel-TS-TW": {
@@ -249,7 +249,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zKrBpxp9",
+    "v": "huJlGOLV",
     "tiers": true
   },
   "ChromaGrid-TS-TW": {
@@ -259,7 +259,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wPVE2zfA",
+    "v": "uGe0gj_1",
     "tiers": true
   },
   "CircularText-TS-TW": {
@@ -278,7 +278,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gWcLr9lC",
+    "v": "3i4Korij",
     "tiers": true
   },
   "ColorBends-TS-TW": {
@@ -288,7 +288,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pJaKbTV4",
+    "v": "RRYrm3Uy",
     "tiers": true
   },
   "CountUp-TS-TW": {
@@ -307,7 +307,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "HarlUWtr",
+    "v": "wiQd7pw-",
     "tiers": true
   },
   "Crosshair-TS-TW": {
@@ -317,7 +317,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "kNBkQRdA",
+    "v": "UsfiOMAI",
     "tiers": true
   },
   "Cubes-TS-TW": {
@@ -327,7 +327,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "klPBfGhc",
+    "v": "eBCp1F-U",
     "tiers": true
   },
   "CurvedLoop-TS-TW": {
@@ -337,7 +337,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "cC3-cAQz",
+    "v": "GPNKM_dF",
     "tiers": true
   },
   "DarkVeil-TS-TW": {
@@ -347,7 +347,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "in_e_ZJG",
+    "v": "q1t7iqi8",
     "tiers": true
   },
   "DecayCard-TS-TW": {
@@ -357,7 +357,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "e0uLThMG",
+    "v": "0_BwsLoY",
     "tiers": true
   },
   "DecryptedText-TS-TW": {
@@ -367,7 +367,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "cOdZjcPM",
+    "v": "P3UfGApP",
     "tiers": true
   },
   "Dither-TS-TW": {
@@ -377,7 +377,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8x9mjLIw",
+    "v": "TjJPpDdr",
     "tiers": true
   },
   "Dock-TS-TW": {
@@ -387,7 +387,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Rn7LzHcZ",
+    "v": "r1saacR-",
     "tiers": true
   },
   "DomeGallery-TS-TW": {
@@ -397,7 +397,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zKUlel6w",
+    "v": "kQv-uudv",
     "tiers": true
   },
   "DotField-TS-TW": {
@@ -407,7 +407,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yIkVm8FL",
+    "v": "yt3d5WQV",
     "tiers": true
   },
   "DotGrid-TS-TW": {
@@ -417,7 +417,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0-jhFcFF",
+    "v": "uWdUAIKU",
     "tiers": true
   },
   "ElasticSlider-TS-TW": {
@@ -427,7 +427,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7QKsmyzJ",
+    "v": "LNlUghVm",
     "tiers": true
   },
   "ElectricBorder-TS-TW": {
@@ -437,7 +437,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "slvwsv5O",
+    "v": "TIHS-gfn",
     "tiers": true
   },
   "EvilEye-TS-TW": {
@@ -447,7 +447,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "e7a6FKHP",
+    "v": "HiEufInP",
     "tiers": true
   },
   "FadeContent-TS-TW": {
@@ -466,7 +466,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZGyd_sOF",
+    "v": "Bsi3BlHT",
     "tiers": true
   },
   "FaultyTerminal-TS-TW": {
@@ -476,7 +476,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZyIRfUxK",
+    "v": "Lrn4T24X",
     "tiers": true
   },
   "Ferrofluid-TS-TW": {
@@ -486,7 +486,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gsRTHyvZ",
+    "v": "fQKCTNcA",
     "tiers": true
   },
   "FloatingLines-TS-TW": {
@@ -496,7 +496,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hrI7AbUg",
+    "v": "mN7iVeoe",
     "tiers": true
   },
   "FlowingMenu-TS-TW": {
@@ -506,7 +506,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "kHc4hBlw",
+    "v": "K80FTiCU",
     "tiers": true
   },
   "FluidGlass-TS-TW": {
@@ -516,7 +516,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rsjb17Gr",
+    "v": "7eURC6FZ",
     "tiers": true
   },
   "FlyingPosters-TS-TW": {
@@ -535,7 +535,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "S9uTuPy0",
+    "v": "_L4hzliA",
     "tiers": true
   },
   "FuzzyText-TS-TW": {
@@ -545,7 +545,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "D8kPNkYb",
+    "v": "8KN5pbfe",
     "tiers": true
   },
   "Galaxy-TS-TW": {
@@ -555,7 +555,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "GgMXf-ny",
+    "v": "kQxY095T",
     "tiers": true
   },
   "GhostCursor-TS-TW": {
@@ -565,7 +565,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-5IDGMvV",
+    "v": "nOXWqBbk",
     "tiers": true
   },
   "GlareHover-TS-TW": {
@@ -584,7 +584,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "QIC3a70C",
+    "v": "aSSfnqzT",
     "tiers": true
   },
   "GlassSurface-TS-TW": {
@@ -594,7 +594,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "eiu1o6tj",
+    "v": "PqpXlxaY",
     "tiers": true
   },
   "GlitchText-TS-TW": {
@@ -613,7 +613,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YRft86Pe",
+    "v": "NaegQ4NF",
     "tiers": true
   },
   "GradientBlinds-TS-TW": {
@@ -623,7 +623,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "tQPMspZa",
+    "v": "pAg1tffz",
     "tiers": true
   },
   "GradientText-TS-TW": {
@@ -651,7 +651,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wIiiy5xN",
+    "v": "MkyWVkF2",
     "tiers": true
   },
   "GridDistortion-TS-TW": {
@@ -661,7 +661,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "v3XnjoPf",
+    "v": "IR5KmK_0",
     "tiers": true
   },
   "GridMotion-TS-TW": {
@@ -671,7 +671,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7LMSPOXG",
+    "v": "uk1xW9PY",
     "tiers": true
   },
   "GridScan-TS-TW": {
@@ -681,7 +681,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8T7JkpSv",
+    "v": "w-gNucyw",
     "tiers": true
   },
   "Hyperspeed-TS-TW": {
@@ -700,7 +700,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Bvx61ec8",
+    "v": "IasdMTGV",
     "tiers": true
   },
   "InfiniteMenu-TS-TW": {
@@ -710,7 +710,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1NeVQMoa",
+    "v": "qhReNp06",
     "tiers": true
   },
   "Iridescence-TS-TW": {
@@ -720,7 +720,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "I11FSCLN",
+    "v": "ARxbglGe",
     "tiers": true
   },
   "LaserFlow-TS-TW": {
@@ -730,7 +730,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "l1YVLOoG",
+    "v": "VoIbIzpt",
     "tiers": true
   },
   "LetterGlitch-TS-TW": {
@@ -740,7 +740,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xnY0PX9X",
+    "v": "iGx4hpa9",
     "tiers": true
   },
   "LightPillar-TS-TW": {
@@ -750,7 +750,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NlZUv1-m",
+    "v": "x5qxHa-5",
     "tiers": true
   },
   "LightRays-TS-TW": {
@@ -760,7 +760,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Iw8PHVsR",
+    "v": "vY3o1nP-",
     "tiers": true
   },
   "Lightfall-TS-TW": {
@@ -770,7 +770,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7zhJxABD",
+    "v": "aZbxkr9g",
     "tiers": true
   },
   "Lightning-TS-TW": {
@@ -780,7 +780,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PJxj24kK",
+    "v": "2Q8qlwQU",
     "tiers": true
   },
   "LineWaves-TS-TW": {
@@ -790,7 +790,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "l9YDPdNU",
+    "v": "cJyPr24o",
     "tiers": true
   },
   "LiquidChrome-TS-TW": {
@@ -800,7 +800,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "EkAA-N1S",
+    "v": "266yxJLc",
     "tiers": true
   },
   "LiquidEther-TS-TW": {
@@ -810,7 +810,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "h-J_JlHx",
+    "v": "psMT8L2m",
     "tiers": true
   },
   "LogoLoop-TS-TW": {
@@ -820,7 +820,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xB-WkUNS",
+    "v": "kAhb1JaW",
     "tiers": true
   },
   "MagicBento-TS-TW": {
@@ -830,7 +830,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "iwnVPYT4",
+    "v": "rOBjZNLa",
     "tiers": true
   },
   "MagicRings-TS-TW": {
@@ -840,7 +840,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jr6_ky_c",
+    "v": "rC_03x4E",
     "tiers": true
   },
   "Magnet-TS-TW": {
@@ -850,7 +850,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Q6Mj7B9r",
+    "v": "OM48YddC",
     "tiers": true
   },
   "MagnetLines-TS-TW": {
@@ -860,7 +860,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "B-CjQp3m",
+    "v": "HVjUvyiw",
     "tiers": true
   },
   "Masonry-TS-TW": {
@@ -870,7 +870,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "f92jaEQ7",
+    "v": "NaWe0o86",
     "tiers": true
   },
   "MetaBalls-TS-TW": {
@@ -880,7 +880,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WjIxheU0",
+    "v": "AG0UQRS-",
     "tiers": true
   },
   "MetallicPaint-TS-TW": {
@@ -890,7 +890,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "w-ULZPBd",
+    "v": "ezYisheJ",
     "tiers": true
   },
   "ModelViewer-TS-TW": {
@@ -900,7 +900,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4XPpqTOC",
+    "v": "MQ9ZGPmq",
     "tiers": true
   },
   "Noise-TS-TW": {
@@ -919,7 +919,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YVWtdR1u",
+    "v": "1H1RBEG2",
     "tiers": true
   },
   "OrbitImages-TS-TW": {
@@ -929,7 +929,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jTvQrO52",
+    "v": "AtlGVdgf",
     "tiers": true
   },
   "Particles-TS-TW": {
@@ -939,7 +939,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1iBPYo-s",
+    "v": "eFB_q_Y_",
     "tiers": true
   },
   "PillNav-TS-TW": {
@@ -949,7 +949,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vwQXGsbm",
+    "v": "tOa5TQX0",
     "tiers": true
   },
   "PixelBlast-TS-TW": {
@@ -969,7 +969,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wJJRm4sY",
+    "v": "H8nWrKZY",
     "tiers": true
   },
   "PixelSnow-TS-TW": {
@@ -979,7 +979,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4OW2EGVv",
+    "v": "99Ltwavw",
     "tiers": true
   },
   "PixelTrail-TS-TW": {
@@ -989,7 +989,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ymIj56xB",
+    "v": "O-sfvHX4",
     "tiers": true
   },
   "PixelTransition-TS-TW": {
@@ -999,7 +999,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "J-4Y-7NR",
+    "v": "iMQTfVCZ",
     "tiers": true
   },
   "Plasma-TS-TW": {
@@ -1009,7 +1009,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bkgjajYY",
+    "v": "-tvSz5bb",
     "tiers": true
   },
   "PlasmaWave-TS-TW": {
@@ -1019,7 +1019,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6oJNX1kn",
+    "v": "42jvkjby",
     "tiers": true
   },
   "Prism-TS-TW": {
@@ -1029,7 +1029,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "uuoOdIXP",
+    "v": "PbK51CvS",
     "tiers": true
   },
   "PrismaticBurst-TS-TW": {
@@ -1039,7 +1039,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PqOXKtwz",
+    "v": "Du5zErFn",
     "tiers": true
   },
   "ProfileCard-TS-TW": {
@@ -1049,7 +1049,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "PCAe0Nri",
+    "v": "37lLiCBS",
     "tiers": true
   },
   "Radar-TS-TW": {
@@ -1059,7 +1059,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Jni3fmpL",
+    "v": "7s7Rk3pi",
     "tiers": true
   },
   "ReflectiveCard-TS-TW": {
@@ -1069,7 +1069,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WsqVW25V",
+    "v": "pMcl23h5",
     "tiers": true
   },
   "Ribbons-TS-TW": {
@@ -1079,7 +1079,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WzRwz3NS",
+    "v": "4i1BhrOJ",
     "tiers": true
   },
   "RippleGrid-TS-TW": {
@@ -1089,7 +1089,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yMpVz5fL",
+    "v": "eCnoXjXQ",
     "tiers": true
   },
   "RotatingText-TS-TW": {
@@ -1099,7 +1099,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NnLB31NP",
+    "v": "ZBPalJZd",
     "tiers": true
   },
   "ScrambledText-TS-TW": {
@@ -1109,7 +1109,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "kWXsr1Fi",
+    "v": "xQD-1Cd8",
     "tiers": true
   },
   "ScrollFloat-TS-TW": {
@@ -1119,7 +1119,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Q-ZzAiXX",
+    "v": "TUSGFJgZ",
     "tiers": true
   },
   "ScrollReveal-TS-TW": {
@@ -1129,7 +1129,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "M5mptiaT",
+    "v": "n4OY36QQ",
     "tiers": true
   },
   "ScrollStack-TS-TW": {
@@ -1139,7 +1139,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "oi9fJ4B3",
+    "v": "xa2khdIP",
     "tiers": true
   },
   "ScrollVelocity-TS-TW": {
@@ -1158,7 +1158,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "fS-d9goj",
+    "v": "U1_o3ev0",
     "tiers": true
   },
   "ShapeGrid-TS-TW": {
@@ -1168,7 +1168,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "J4-dPP6Z",
+    "v": "lGRffcFw",
     "tiers": true
   },
   "ShinyText-TS-TW": {
@@ -1178,7 +1178,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gAJpedfl",
+    "v": "DLb8zyJB",
     "tiers": true
   },
   "Shuffle-TS-TW": {
@@ -1188,7 +1188,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_vSKuSX7",
+    "v": "P3aO-OvY",
     "tiers": true
   },
   "Silk-TS-TW": {
@@ -1198,7 +1198,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bDzqZ1e9",
+    "v": "tREDq7R6",
     "tiers": true
   },
   "SoftAurora-TS-TW": {
@@ -1208,7 +1208,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SNtj0LvB",
+    "v": "osJL_7Hi",
     "tiers": true
   },
   "SplashCursor-TS-TW": {
@@ -1218,7 +1218,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "aKLIVrYT",
+    "v": "fzXZ0V7B",
     "tiers": true
   },
   "SplitText-TS-TW": {
@@ -1228,7 +1228,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "YEFATDjB",
+    "v": "IYrcslY4",
     "tiers": true
   },
   "SpotlightCard-TS-TW": {
@@ -1238,7 +1238,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HePl24K5",
+    "v": "SBWUBU87",
     "tiers": true
   },
   "Stack-TS-TW": {
@@ -1248,7 +1248,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "J6JuK7In",
+    "v": "U9oyzD-g",
     "tiers": true
   },
   "StaggeredMenu-TS-TW": {
@@ -1258,7 +1258,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "M05KeCtI",
+    "v": "ODnVpmvs",
     "tiers": true
   },
   "StarBorder-TS-TW": {
@@ -1268,7 +1268,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Bh3Q8juV",
+    "v": "5DRqe5CK",
     "tiers": true
   },
   "Stepper-TS-TW": {
@@ -1278,7 +1278,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IaElZ4kf",
+    "v": "Chx1FfWH",
     "tiers": true
   },
   "StickerPeel-TS-TW": {
@@ -1288,7 +1288,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "SgT-kKbk",
+    "v": "Yc6SDE2L",
     "tiers": true
   },
   "TargetCursor-TS-TW": {
@@ -1298,7 +1298,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "XgMy_umh",
+    "v": "FhosodQR",
     "tiers": true
   },
   "TextCursor-TS-TW": {
@@ -1308,7 +1308,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "W5IlhdQY",
+    "v": "yU1_sp42",
     "tiers": true
   },
   "TextPressure-TS-TW": {
@@ -1318,7 +1318,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "kEFr-dIX",
+    "v": "G6wqGrW7",
     "tiers": true
   },
   "TextType-TS-TW": {
@@ -1337,7 +1337,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NH65qubd",
+    "v": "QQiV0vS-",
     "tiers": true
   },
   "TiltedCard-TS-TW": {
@@ -1347,7 +1347,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "PfmLZFVR",
+    "v": "Qfcn14-c",
     "tiers": true
   },
   "TrueFocus-TS-TW": {
@@ -1357,7 +1357,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UUv-ilEs",
+    "v": "vMtArBZS",
     "tiers": true
   },
   "VariableProximity-TS-TW": {
@@ -1367,7 +1367,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vkzfBHnZ",
+    "v": "cu_QFtAj",
     "tiers": true
   },
   "Waves-TS-TW": {
@@ -1377,7 +1377,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "iNiJuwVV",
+    "v": "KTBVulvR",
     "tiers": true
   },
   "about-architecture": {
@@ -1387,7 +1387,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "_mhjRN1L",
+    "v": "jo72Jh32",
     "tiers": true
   },
   "about-bento": {
@@ -1405,7 +1405,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Ef8sxZQq",
+    "v": "68XNjWKD",
     "tiers": true
   },
   "about-sass": {
@@ -1415,7 +1415,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "oA1h_038",
+    "v": "1Kgoy5bZ",
     "tiers": true
   },
   "about-whyus": {
@@ -1425,7 +1425,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "r-eDoRhu",
+    "v": "bEge1gcr",
     "tiers": true
   },
   "accordion": {
@@ -1435,7 +1435,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YUb0d_ZF",
+    "v": "09zoz2Yl",
     "tiers": true
   },
   "aceternity-ui-3d-pin": {
@@ -1625,7 +1625,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "BbSIFXgj",
+    "v": "5mN8hb2U",
     "tiers": true
   },
   "ai-message-queue": {
@@ -1712,7 +1712,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "QjbA8i6D",
+    "v": "utOFqCxY",
     "tiers": true
   },
   "amount-pad": {
@@ -1731,7 +1731,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "PxDi8jeZ",
+    "v": "Tlaj_rzu",
     "tiers": true
   },
   "animal-image-masking": {
@@ -1749,7 +1749,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Fa4Dhi_k",
+    "v": "Hl1gejVu",
     "tiers": true
   },
   "animate-grid": {
@@ -1759,7 +1759,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "exhlgM4O",
+    "v": "S1n0PBW1",
     "tiers": true
   },
   "animated-beam": {
@@ -1786,7 +1786,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jYrHPVHB",
+    "v": "Sk9KMNhu",
     "tiers": true
   },
   "animated-circular-progressbar": {
@@ -1822,7 +1822,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YDR78Jdg",
+    "v": "bUCesY4S",
     "tiers": true
   },
   "animated-list": {
@@ -1832,7 +1832,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "EDMMY7Ov",
+    "v": "80GEkDh_",
     "tiers": true
   },
   "animated-lucide-icons": {
@@ -1850,7 +1850,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "63YJxZqm",
+    "v": "jXJXXub7",
     "tiers": true
   },
   "animated-number": {
@@ -1860,7 +1860,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "AecS7VW9",
+    "v": "oMrFB5kJ",
     "tiers": true
   },
   "animated-shiny-text": {
@@ -1938,7 +1938,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jlT-GfAB",
+    "v": "guf_GOYG",
     "tiers": true
   },
   "apple-cards-carousel": {
@@ -1981,7 +1981,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_9h30WrV",
+    "v": "Ak9gNjEe",
     "tiers": true
   },
   "attachment": {
@@ -2016,7 +2016,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9eYj1Dlo",
+    "v": "SjKlsEM4",
     "tiers": true
   },
   "aurora-text": {
@@ -2026,7 +2026,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "I2V9WKL4",
+    "v": "2XpB-fLk",
     "tiers": true
   },
   "auto-height": {
@@ -2053,7 +2053,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "b5grzvnF",
+    "v": "O0IrdGtJ",
     "tiers": true
   },
   "avatar-circles": {
@@ -2063,7 +2063,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DlZyPXu3",
+    "v": "fHthdJUJ",
     "tiers": true
   },
   "background-beams": {
@@ -2073,7 +2073,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "43OcJYtb",
+    "v": "VsLi27i2",
     "tiers": true
   },
   "background-beams-with-collision": {
@@ -2083,7 +2083,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "V-yJGnSg",
+    "v": "KQaTqT0c",
     "tiers": true
   },
   "background-boxes": {
@@ -2093,7 +2093,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5TU-JWah",
+    "v": "y8kgeFeL",
     "tiers": true
   },
   "background-cubes-grid": {
@@ -2111,7 +2111,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "B1XIsUYD",
+    "v": "1kFdAsCs",
     "tiers": true
   },
   "background-gradient-animation": {
@@ -2121,7 +2121,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "QcxVwTVW",
+    "v": "gQCZGNOf",
     "tiers": true
   },
   "background-lights": {
@@ -2139,7 +2139,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-g-JZO6z",
+    "v": "dfMlbcDE",
     "tiers": true
   },
   "background-paths": {
@@ -2158,7 +2158,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "AH3jfkdH",
+    "v": "ghKKDrck",
     "tiers": true
   },
   "backlight": {
@@ -2168,7 +2168,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IF2f3qq-",
+    "v": "ujwmc9Pg",
     "tiers": true
   },
   "badge": {
@@ -2178,7 +2178,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "mAO9K9DO",
+    "v": "1XMrBzdx",
     "tiers": true
   },
   "balance-slider": {
@@ -2188,7 +2188,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xAu_7wkr",
+    "v": "AJrEobQd",
     "tiers": true
   },
   "bar-list": {
@@ -2214,7 +2214,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WbGWGpQY",
+    "v": "zZNzPdqr",
     "tiers": true
   },
   "bento-grid": {
@@ -2224,7 +2224,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "YkNWzwI8",
+    "v": "s38FwWvC",
     "tiers": true
   },
   "bento-grid-draggable": {
@@ -2243,7 +2243,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "uhx8UMkK",
+    "v": "TmjwitpI",
     "tiers": true
   },
   "bg-animated-fractal-dot-grid": {
@@ -2262,7 +2262,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ijEiqcnW",
+    "v": "B0rrDujA",
     "tiers": true
   },
   "bg-black-hole": {
@@ -2281,7 +2281,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rDC3gq3o",
+    "v": "n95Lo7DF",
     "tiers": true
   },
   "bg-falling-stars": {
@@ -2291,7 +2291,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DHHyNcYp",
+    "v": "NkUF3wOe",
     "tiers": true
   },
   "bg-image-texture": {
@@ -2310,7 +2310,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zNigEoCr",
+    "v": "dZDvGpRQ",
     "tiers": true
   },
   "bg-neural": {
@@ -2320,7 +2320,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zoZJvWCL",
+    "v": "sCt_GrDW",
     "tiers": true
   },
   "bg-particle-whirlpool": {
@@ -2330,7 +2330,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4CDtha8F",
+    "v": "Q4OTVAMu",
     "tiers": true
   },
   "bg-silk": {
@@ -2349,7 +2349,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_AInGyig",
+    "v": "VuiX6eRT",
     "tiers": true
   },
   "bg-stars": {
@@ -2368,7 +2368,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "35t7FYa9",
+    "v": "DyREmbui",
     "tiers": true
   },
   "bg-thunderstorm": {
@@ -2378,7 +2378,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0WT7Pl4v",
+    "v": "WHXXB3Sr",
     "tiers": true
   },
   "blob-card": {
@@ -2404,7 +2404,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "M9fKRqIZ",
+    "v": "T9WIOOnm",
     "tiers": true
   },
   "blur-reveal": {
@@ -2423,7 +2423,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SF9R8VFW",
+    "v": "DhVwhchn",
     "tiers": true
   },
   "blur-vignette-card": {
@@ -2433,7 +2433,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "dwyZ5e-S",
+    "v": "ArhjGBdh",
     "tiers": true
   },
   "blur-vignette-img": {
@@ -2469,7 +2469,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "r-KTtFbl",
+    "v": "_9QmJvf1",
     "tiers": true
   },
   "border-beam": {
@@ -2479,7 +2479,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "XEjZpbhr",
+    "v": "_qFp_4Jj",
     "tiers": true
   },
   "border-beam-button": {
@@ -2489,7 +2489,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "O1tH8zHl",
+    "v": "VKOqKvYr",
     "tiers": true
   },
   "bottom-directional-drawer": {
@@ -2524,7 +2524,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "nskzU5dF",
+    "v": "eaI8pMwj",
     "tiers": true
   },
   "branched-menu": {
@@ -2570,7 +2570,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "kofhxUOR",
+    "v": "9-0WKs_-",
     "tiers": true
   },
   "btn-black-shadow": {
@@ -2598,7 +2598,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "NRUuf2iC",
+    "v": "j0m8one9",
     "tiers": true
   },
   "btn-creative-top": {
@@ -2608,7 +2608,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "437R9wAL",
+    "v": "yl5u3wIw",
     "tiers": true
   },
   "btn-cross-arrow": {
@@ -2618,7 +2618,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "NeWExweF",
+    "v": "ccOggHlz",
     "tiers": true
   },
   "btn-hover-down": {
@@ -2628,7 +2628,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "xZt2tVP_",
+    "v": "o--bqk4M",
     "tiers": true
   },
   "btn-hover-left-flip": {
@@ -2647,7 +2647,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "pF_ZLRSE",
+    "v": "-k1LiVaL",
     "tiers": true
   },
   "btn-hover-outline": {
@@ -2657,7 +2657,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ovCLpeNO",
+    "v": "0UqbCev7",
     "tiers": true
   },
   "btn-hover-top-flip": {
@@ -2685,7 +2685,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "lhLi5BNg",
+    "v": "61QnWE5j",
     "tiers": true
   },
   "btn-hover14": {
@@ -2704,7 +2704,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "g_hg6pJa",
+    "v": "oEyl1L-X",
     "tiers": true
   },
   "btn-text-change": {
@@ -2739,7 +2739,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "F9MohYlx",
+    "v": "dWAOwxDr",
     "tiers": true
   },
   "button-active": {
@@ -2766,7 +2766,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "oSouX4X6",
+    "v": "H_KMCdX9",
     "tiers": true
   },
   "buyme-acoffee": {
@@ -2776,7 +2776,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "igE591Zt",
+    "v": "fFyziQhJ",
     "tiers": true
   },
   "calendar": {
@@ -2786,7 +2786,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hX5yfVdh",
+    "v": "Vs-4BO0q",
     "tiers": true
   },
   "calendar-rac": {
@@ -2831,7 +2831,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PN0EiS3A",
+    "v": "sa5V_ajp",
     "tiers": true
   },
   "canvas-reveal-effect": {
@@ -2841,7 +2841,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hYHDrxGu",
+    "v": "U7YfLTlD",
     "tiers": true
   },
   "canvas-text": {
@@ -2851,7 +2851,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3iRCY4Is",
+    "v": "qen4VLnY",
     "tiers": true
   },
   "card-3d": {
@@ -2904,7 +2904,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Mv-j3_FL",
+    "v": "wYuI4CdH",
     "tiers": true
   },
   "card-spotlight": {
@@ -2914,7 +2914,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "2A-35IYh",
+    "v": "V6xNtk35",
     "tiers": true
   },
   "card-stack": {
@@ -2924,7 +2924,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "ASb_k-3H",
+    "v": "PwvYg-X5",
     "tiers": true
   },
   "card-swipe-deck": {
@@ -2942,7 +2942,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "FmAg3uPB",
+    "v": "7fu52Bbt",
     "tiers": true
   },
   "cards-demo-2": {
@@ -2952,7 +2952,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "j-F_ald1",
+    "v": "SrdRPW31",
     "tiers": true
   },
   "cards-demo-3": {
@@ -2971,7 +2971,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "aQsPjkBc",
+    "v": "IRYyz92w",
     "tiers": true
   },
   "carousel-3d": {
@@ -2981,7 +2981,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DDC0I7fY",
+    "v": "kUHl5XyR",
     "tiers": true
   },
   "carousel-cards": {
@@ -3129,7 +3129,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xOm2l0VS",
+    "v": "dO33AHY4",
     "tiers": true
   },
   "chat-interface-testimonial": {
@@ -3148,7 +3148,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "tnU8Kizk",
+    "v": "bZY5mwcZ",
     "tiers": true
   },
   "checkbox-tree": {
@@ -3158,7 +3158,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Ei6_UbGA",
+    "v": "QM1uSmUs",
     "tiers": true
   },
   "choice-poll": {
@@ -3168,7 +3168,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4cotCIBY",
+    "v": "h8_J3wpy",
     "tiers": true
   },
   "chromatic-image": {
@@ -3284,7 +3284,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gj6ShFAv",
+    "v": "Q6uCPZgf",
     "tiers": true
   },
   "code-comparison": {
@@ -3294,7 +3294,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "tTby-7tH",
+    "v": "yWUWjANZ",
     "tiers": true
   },
   "code-slots": {
@@ -3321,7 +3321,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "VNsbD0ax",
+    "v": "-Q0vodTd",
     "tiers": true
   },
   "collapsible": {
@@ -3340,7 +3340,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Kjf3Eqce",
+    "v": "QjW1U9lU",
     "tiers": true
   },
   "colourful-text": {
@@ -3350,7 +3350,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ogKzv-Wm",
+    "v": "X02rA9S4",
     "tiers": true
   },
   "comet-card": {
@@ -3360,7 +3360,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "I4gMWx3j",
+    "v": "0BI73u8-",
     "tiers": true
   },
   "comet-dial": {
@@ -3379,7 +3379,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "QT3Wqt2w",
+    "v": "nsXCIQE3",
     "tiers": true
   },
   "command": {
@@ -3389,7 +3389,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "tJNlPwJV",
+    "v": "3IjVO-vi",
     "tiers": true
   },
   "command-button": {
@@ -3506,7 +3506,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "-BhtUkEG",
+    "v": "9ltGzxoF",
     "tiers": true
   },
   "comp-101": {
@@ -3534,7 +3534,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "xHZq1Ypk",
+    "v": "J3NUlxdU",
     "tiers": true
   },
   "comp-104": {
@@ -3553,7 +3553,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "RmI04UZ7",
+    "v": "iyiTy2Ef",
     "tiers": true
   },
   "comp-106": {
@@ -3572,7 +3572,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "LmGvwZKN",
+    "v": "rNJrOnMC",
     "tiers": true
   },
   "comp-108": {
@@ -3681,7 +3681,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "VR0k-7pY",
+    "v": "chyaZOZc",
     "tiers": true
   },
   "comp-119": {
@@ -3727,7 +3727,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "q6ig82jT",
+    "v": "1Bo2LY5a",
     "tiers": true
   },
   "comp-123": {
@@ -3755,7 +3755,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HAiSpdKS",
+    "v": "CLmN1xqe",
     "tiers": true
   },
   "comp-126": {
@@ -3774,7 +3774,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "KbVEf5Tn",
+    "v": "7dDuxUsD",
     "tiers": true
   },
   "comp-128": {
@@ -3784,7 +3784,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "YIFGLh_P",
+    "v": "gszh8z7T",
     "tiers": true
   },
   "comp-129": {
@@ -3803,7 +3803,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "iY-J-4nF",
+    "v": "evTZb72r",
     "tiers": true
   },
   "comp-130": {
@@ -3822,7 +3822,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "31TafWp5",
+    "v": "WDg-ss7S",
     "tiers": true
   },
   "comp-132": {
@@ -3931,7 +3931,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "T_EGEFLt",
+    "v": "iIZlKVhP",
     "tiers": true
   },
   "comp-143": {
@@ -3968,7 +3968,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "QzSPgJf_",
+    "v": "eUDuqw0r",
     "tiers": true
   },
   "comp-147": {
@@ -3978,7 +3978,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "2xfHiv1X",
+    "v": "3GLKutgC",
     "tiers": true
   },
   "comp-149": {
@@ -3988,7 +3988,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yyS0JlH9",
+    "v": "jID3aVCu",
     "tiers": true
   },
   "comp-15": {
@@ -4007,7 +4007,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pof0hodZ",
+    "v": "XCdsy0bo",
     "tiers": true
   },
   "comp-151": {
@@ -4071,7 +4071,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YX5_I3yB",
+    "v": "Tk_cCiFi",
     "tiers": true
   },
   "comp-158": {
@@ -4081,7 +4081,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "oZ0-lVIh",
+    "v": "octwb93t",
     "tiers": true
   },
   "comp-159": {
@@ -4136,7 +4136,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yjUen-Da",
+    "v": "7NhS0uWA",
     "tiers": true
   },
   "comp-164": {
@@ -4146,7 +4146,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7R02Z7m2",
+    "v": "dFB1G3SO",
     "tiers": true
   },
   "comp-165": {
@@ -4165,7 +4165,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "K3k3zRw-",
+    "v": "WTnSY3OM",
     "tiers": true
   },
   "comp-167": {
@@ -4175,7 +4175,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "au-vlIpx",
+    "v": "HU_JTrVc",
     "tiers": true
   },
   "comp-168": {
@@ -4185,7 +4185,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7HpPeXKj",
+    "v": "HM672JKp",
     "tiers": true
   },
   "comp-169": {
@@ -4195,7 +4195,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8CDyliBk",
+    "v": "y3Z4Cb5f",
     "tiers": true
   },
   "comp-170": {
@@ -4205,7 +4205,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HnHr8YUF",
+    "v": "6PHwsWn0",
     "tiers": true
   },
   "comp-171": {
@@ -4215,7 +4215,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4CKcCf99",
+    "v": "nppaJnBh",
     "tiers": true
   },
   "comp-172": {
@@ -4288,7 +4288,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "TCV1Mjeo",
+    "v": "_hbVbwwR",
     "tiers": true
   },
   "comp-180": {
@@ -4307,7 +4307,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "smplWZ-1",
+    "v": "bfjEj8Xs",
     "tiers": true
   },
   "comp-182": {
@@ -4560,7 +4560,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "3DSRDGGJ",
+    "v": "xkymZTAK",
     "tiers": true
   },
   "comp-220": {
@@ -4570,7 +4570,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4fqzvTsr",
+    "v": "j9oegXGv",
     "tiers": true
   },
   "comp-221": {
@@ -4607,7 +4607,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pxM59NNp",
+    "v": "3XD29ie5",
     "tiers": true
   },
   "comp-225": {
@@ -4644,7 +4644,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0cBGfQ4F",
+    "v": "l83uLdix",
     "tiers": true
   },
   "comp-229": {
@@ -4654,7 +4654,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8mpzB3nf",
+    "v": "OcWIkwmy",
     "tiers": true
   },
   "comp-23": {
@@ -4664,7 +4664,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "Ckve3G6Q",
+    "v": "U5zGOTds",
     "tiers": true
   },
   "comp-230": {
@@ -4674,7 +4674,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "aPazvzaK",
+    "v": "Tw8tybuA",
     "tiers": true
   },
   "comp-231": {
@@ -4684,7 +4684,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "j4G88vgx",
+    "v": "3WOVqb2G",
     "tiers": true
   },
   "comp-232": {
@@ -4694,7 +4694,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "JKEKRux_",
+    "v": "Xhv3jJh4",
     "tiers": true
   },
   "comp-233": {
@@ -4704,7 +4704,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ULLdjGWf",
+    "v": "5oCELJKN",
     "tiers": true
   },
   "comp-237": {
@@ -4723,7 +4723,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "nQW8fzfR",
+    "v": "VCpdI-29",
     "tiers": true
   },
   "comp-239": {
@@ -4742,7 +4742,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "MNVHFN77",
+    "v": "AEsb_6su",
     "tiers": true
   },
   "comp-240": {
@@ -4797,7 +4797,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "sZk9lLBr",
+    "v": "o9C6Gj47",
     "tiers": true
   },
   "comp-246": {
@@ -4807,7 +4807,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Sbx03iJU",
+    "v": "j74bnYtf",
     "tiers": true
   },
   "comp-247": {
@@ -4844,7 +4844,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "sjWPFG2Y",
+    "v": "36pyWdzr",
     "tiers": true
   },
   "comp-250": {
@@ -4863,7 +4863,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "d_Ghjv8t",
+    "v": "56nPJ2OK",
     "tiers": true
   },
   "comp-252": {
@@ -4873,7 +4873,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wx27IrFM",
+    "v": "LzHg9jLD",
     "tiers": true
   },
   "comp-253": {
@@ -4892,7 +4892,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1BSh9TZy",
+    "v": "1HsqI4Vm",
     "tiers": true
   },
   "comp-255": {
@@ -4902,7 +4902,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8ZhLeAgO",
+    "v": "__Ei1d_k",
     "tiers": true
   },
   "comp-256": {
@@ -4912,7 +4912,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PeFmfpEp",
+    "v": "baSwRpq8",
     "tiers": true
   },
   "comp-257": {
@@ -4940,7 +4940,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "GyJGnUDK",
+    "v": "qVDat2uS",
     "tiers": true
   },
   "comp-26": {
@@ -4959,7 +4959,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "FNHm-vhb",
+    "v": "KwRM0oLG",
     "tiers": true
   },
   "comp-261": {
@@ -4969,7 +4969,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DsAk-vZ4",
+    "v": "2Vzew2F5",
     "tiers": true
   },
   "comp-262": {
@@ -4997,7 +4997,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "E_YT9lgx",
+    "v": "E114-VEG",
     "tiers": true
   },
   "comp-265": {
@@ -5007,7 +5007,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6pQzrdMH",
+    "v": "9lcFrJi5",
     "tiers": true
   },
   "comp-266": {
@@ -5017,7 +5017,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0dc9mLvp",
+    "v": "ncBVjlB0",
     "tiers": true
   },
   "comp-267": {
@@ -5045,7 +5045,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WBdrRo9A",
+    "v": "RzavCp1a",
     "tiers": true
   },
   "comp-27": {
@@ -5055,7 +5055,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "BOSDZEpK",
+    "v": "2oo0WXRs",
     "tiers": true
   },
   "comp-270": {
@@ -5128,7 +5128,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hRhXqUQi",
+    "v": "VPzJqhql",
     "tiers": true
   },
   "comp-278": {
@@ -5156,7 +5156,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ivSWHSvm",
+    "v": "dqgzPRRd",
     "tiers": true
   },
   "comp-280": {
@@ -5193,7 +5193,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "FUjFHUiG",
+    "v": "_ZNmrxIM",
     "tiers": true
   },
   "comp-284": {
@@ -5239,7 +5239,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "X6LG3EOu",
+    "v": "w3Ws60iD",
     "tiers": true
   },
   "comp-289": {
@@ -5267,7 +5267,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Rcez_MNJ",
+    "v": "mPbJe5Nl",
     "tiers": true
   },
   "comp-291": {
@@ -5295,7 +5295,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vxhs4Z7e",
+    "v": "Ue-iA9IR",
     "tiers": true
   },
   "comp-294": {
@@ -5305,7 +5305,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "o-uSbC42",
+    "v": "DIyvAEXF",
     "tiers": true
   },
   "comp-295": {
@@ -5315,7 +5315,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ImRKcs9u",
+    "v": "CXDMeNhm",
     "tiers": true
   },
   "comp-296": {
@@ -5325,7 +5325,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-vsnJmHZ",
+    "v": "mY5ddr52",
     "tiers": true
   },
   "comp-299": {
@@ -5353,7 +5353,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Sqi0BML5",
+    "v": "pK3TtaOt",
     "tiers": true
   },
   "comp-301": {
@@ -5363,7 +5363,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5f7ILImM",
+    "v": "2HnXtLML",
     "tiers": true
   },
   "comp-302": {
@@ -5373,7 +5373,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "dkHGhdBy",
+    "v": "js7chynF",
     "tiers": true
   },
   "comp-303": {
@@ -5401,7 +5401,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NUkqS0DX",
+    "v": "uRDPKZ5m",
     "tiers": true
   },
   "comp-306": {
@@ -5420,7 +5420,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "raENeYSI",
+    "v": "HsAUK3Lz",
     "tiers": true
   },
   "comp-308": {
@@ -5439,7 +5439,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_jLK31lL",
+    "v": "r1ds3TeY",
     "tiers": true
   },
   "comp-31": {
@@ -5458,7 +5458,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xc8wK4FH",
+    "v": "OO2xlh5h",
     "tiers": true
   },
   "comp-311": {
@@ -5477,7 +5477,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yTC-PzRq",
+    "v": "lxY2wuHa",
     "tiers": true
   },
   "comp-313": {
@@ -5496,7 +5496,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jwG0nfWT",
+    "v": "4iQd9iwY",
     "tiers": true
   },
   "comp-315": {
@@ -5533,7 +5533,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Uk_4Btoa",
+    "v": "DIEmNL_9",
     "tiers": true
   },
   "comp-319": {
@@ -5543,7 +5543,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-JT93jTm",
+    "v": "1DxmlYbQ",
     "tiers": true
   },
   "comp-32": {
@@ -5553,7 +5553,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "lMnWtXJh",
+    "v": "twxNct2c",
     "tiers": true
   },
   "comp-320": {
@@ -5563,7 +5563,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IA4KRXsh",
+    "v": "muw5s_Ox",
     "tiers": true
   },
   "comp-321": {
@@ -5573,7 +5573,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UFHi7Ygv",
+    "v": "AVKUleGP",
     "tiers": true
   },
   "comp-322": {
@@ -5583,7 +5583,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Ls35mU50",
+    "v": "sHTXx1kV",
     "tiers": true
   },
   "comp-323": {
@@ -5593,7 +5593,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "iBvSM4Yc",
+    "v": "7ospwsOK",
     "tiers": true
   },
   "comp-324": {
@@ -5603,7 +5603,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZjW31KPO",
+    "v": "LHNfzJes",
     "tiers": true
   },
   "comp-325": {
@@ -5613,7 +5613,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ipxMLbde",
+    "v": "2brVNNv4",
     "tiers": true
   },
   "comp-326": {
@@ -5623,7 +5623,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "co5PtAno",
+    "v": "xMAbLr7F",
     "tiers": true
   },
   "comp-327": {
@@ -5633,7 +5633,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "tX1IWO6c",
+    "v": "YhPYmtnM",
     "tiers": true
   },
   "comp-328": {
@@ -5643,7 +5643,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5a6BB508",
+    "v": "cucbu1HF",
     "tiers": true
   },
   "comp-329": {
@@ -5671,7 +5671,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vwfxk1b2",
+    "v": "WF6SnQrC",
     "tiers": true
   },
   "comp-331": {
@@ -5681,7 +5681,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6NDvPaqe",
+    "v": "DBlrazAk",
     "tiers": true
   },
   "comp-332": {
@@ -5691,7 +5691,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "iWLXT9Vw",
+    "v": "bJFSyW3o",
     "tiers": true
   },
   "comp-333": {
@@ -5764,7 +5764,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "MflsujsF",
+    "v": "eyP0WhG_",
     "tiers": true
   },
   "comp-340": {
@@ -5792,7 +5792,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hRbCou12",
+    "v": "9O4uXGjn",
     "tiers": true
   },
   "comp-343": {
@@ -5892,7 +5892,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "uwdKqsqp",
+    "v": "TkEbnWH1",
     "tiers": true
   },
   "comp-353": {
@@ -5956,7 +5956,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "Y2Tk3qoj",
+    "v": "F3UPZdp4",
     "tiers": true
   },
   "comp-360": {
@@ -5966,7 +5966,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "Awp4q7SX",
+    "v": "qcHK-VA1",
     "tiers": true
   },
   "comp-361": {
@@ -5976,7 +5976,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ZwZPH5_-",
+    "v": "TG1X1f7U",
     "tiers": true
   },
   "comp-362": {
@@ -5986,7 +5986,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "xD8ITbue",
+    "v": "UaL3EuKw",
     "tiers": true
   },
   "comp-363": {
@@ -6005,7 +6005,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "UUqbNXcm",
+    "v": "Byta_CDw",
     "tiers": true
   },
   "comp-365": {
@@ -6015,7 +6015,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "sZtDZgO2",
+    "v": "_zbJJ-rN",
     "tiers": true
   },
   "comp-366": {
@@ -6070,7 +6070,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zpU87KK2",
+    "v": "1WFu3uyg",
     "tiers": true
   },
   "comp-372": {
@@ -6098,7 +6098,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UcY6nlkn",
+    "v": "1H34o8FF",
     "tiers": true
   },
   "comp-375": {
@@ -6126,7 +6126,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "00UU_l-e",
+    "v": "HkoPrf9Q",
     "tiers": true
   },
   "comp-378": {
@@ -6145,7 +6145,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rht_AcCp",
+    "v": "HTBRhp5D",
     "tiers": true
   },
   "comp-380": {
@@ -6155,7 +6155,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "XRGLLflB",
+    "v": "SBwu2BLR",
     "tiers": true
   },
   "comp-381": {
@@ -6183,7 +6183,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SyPmlA3h",
+    "v": "5R7minhs",
     "tiers": true
   },
   "comp-384": {
@@ -6193,7 +6193,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "HHtNrjv1",
+    "v": "Z2bLB-KT",
     "tiers": true
   },
   "comp-385": {
@@ -6212,7 +6212,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ESqmMSA4",
+    "v": "fkJ_oVaq",
     "tiers": true
   },
   "comp-387": {
@@ -6222,7 +6222,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "nFXkI1SR",
+    "v": "4vE4sR_a",
     "tiers": true
   },
   "comp-388": {
@@ -6241,7 +6241,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "3O0D1ryk",
+    "v": "iRujh4z-",
     "tiers": true
   },
   "comp-390": {
@@ -6287,7 +6287,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "oPfj5Np1",
+    "v": "FFQE913R",
     "tiers": true
   },
   "comp-395": {
@@ -6324,7 +6324,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "sH-HOHzO",
+    "v": "m2DanZB8",
     "tiers": true
   },
   "comp-399": {
@@ -6424,7 +6424,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "V1c2L5Ko",
+    "v": "gwhZZ65P",
     "tiers": true
   },
   "comp-410": {
@@ -6452,7 +6452,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "JRiWJqZ3",
+    "v": "6KvbDvIF",
     "tiers": true
   },
   "comp-413": {
@@ -6561,7 +6561,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "duxjCEbB",
+    "v": "67DBGvhl",
     "tiers": true
   },
   "comp-425": {
@@ -6643,7 +6643,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "kzkDDK-G",
+    "v": "o2n-ISCM",
     "tiers": true
   },
   "comp-434": {
@@ -6671,7 +6671,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "QaKHicSk",
+    "v": "dpF3TnOz",
     "tiers": true
   },
   "comp-437": {
@@ -6699,7 +6699,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "E3naqkmj",
+    "v": "azy7hlhX",
     "tiers": true
   },
   "comp-44": {
@@ -6709,7 +6709,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "_Ptu9-SI",
+    "v": "87FOz7Sf",
     "tiers": true
   },
   "comp-440": {
@@ -6719,7 +6719,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ZbQbCbv5",
+    "v": "wh99_1ne",
     "tiers": true
   },
   "comp-441": {
@@ -6756,7 +6756,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ivFU6gDa",
+    "v": "qbO3oizM",
     "tiers": true
   },
   "comp-445": {
@@ -6775,7 +6775,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "zF-jtVHl",
+    "v": "Hb3i4fUG",
     "tiers": true
   },
   "comp-447": {
@@ -6803,7 +6803,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ldHXv9DR",
+    "v": "0_SLnUJj",
     "tiers": true
   },
   "comp-45": {
@@ -6840,7 +6840,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "f-IqEgLS",
+    "v": "dUZvqSWY",
     "tiers": true
   },
   "comp-453": {
@@ -6850,7 +6850,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "5DgKszM8",
+    "v": "dzUDVoVY",
     "tiers": true
   },
   "comp-454": {
@@ -6869,7 +6869,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "tUQhqRFq",
+    "v": "nFH_Sd-q",
     "tiers": true
   },
   "comp-456": {
@@ -6888,7 +6888,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "eSB53ECc",
+    "v": "0R6Fq6bE",
     "tiers": true
   },
   "comp-458": {
@@ -6907,7 +6907,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "Y8vgZ8Ss",
+    "v": "fxFhoARZ",
     "tiers": true
   },
   "comp-46": {
@@ -6917,7 +6917,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "uLRKEBls",
+    "v": "9I5U2anF",
     "tiers": true
   },
   "comp-460": {
@@ -6927,7 +6927,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "miRN2Lgc",
+    "v": "I8p-zbcO",
     "tiers": true
   },
   "comp-461": {
@@ -6937,7 +6937,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "DsmwVbJ8",
+    "v": "FTSam4v-",
     "tiers": true
   },
   "comp-462": {
@@ -6956,7 +6956,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "41rst7O1",
+    "v": "iOiMr_4l",
     "tiers": true
   },
   "comp-464": {
@@ -6966,7 +6966,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "qKnTpuIz",
+    "v": "Wfh2D3fz",
     "tiers": true
   },
   "comp-465": {
@@ -6976,7 +6976,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "peSyRiex",
+    "v": "c78A6ouo",
     "tiers": true
   },
   "comp-466": {
@@ -6995,7 +6995,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bqm7mWjM",
+    "v": "Rv4Hy1Iu",
     "tiers": true
   },
   "comp-468": {
@@ -7023,7 +7023,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "A32NGJAO",
+    "v": "WDNffJVp",
     "tiers": true
   },
   "comp-470": {
@@ -7087,7 +7087,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7x8fQfwZ",
+    "v": "2GqFDgOV",
     "tiers": true
   },
   "comp-477": {
@@ -7097,7 +7097,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "CLOClnot",
+    "v": "OSRNC8PX",
     "tiers": true
   },
   "comp-478": {
@@ -7116,7 +7116,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PtcI7Qqz",
+    "v": "46LF5LWu",
     "tiers": true
   },
   "comp-48": {
@@ -7135,7 +7135,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "TLHnvR5T",
+    "v": "_bZo-meJ",
     "tiers": true
   },
   "comp-481": {
@@ -7145,7 +7145,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "kbuq3K_C",
+    "v": "6WGg0f4i",
     "tiers": true
   },
   "comp-482": {
@@ -7155,7 +7155,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HoNiMvcW",
+    "v": "3-kTOh4J",
     "tiers": true
   },
   "comp-483": {
@@ -7165,7 +7165,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_Jck9BLM",
+    "v": "Hy9JdE7a",
     "tiers": true
   },
   "comp-484": {
@@ -7184,7 +7184,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "aA76IhU9",
+    "v": "siJvUonh",
     "tiers": true
   },
   "comp-486": {
@@ -7221,7 +7221,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "c-jSR6Yg",
+    "v": "jrdb8abk",
     "tiers": true
   },
   "comp-492": {
@@ -7303,7 +7303,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "OTuwsp5k",
+    "v": "tziy4Wo_",
     "tiers": true
   },
   "comp-500": {
@@ -7340,7 +7340,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9fP4D6CE",
+    "v": "FgsN4JAR",
     "tiers": true
   },
   "comp-504": {
@@ -7350,7 +7350,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xxWjgrp9",
+    "v": "_N2hffSn",
     "tiers": true
   },
   "comp-505": {
@@ -7360,7 +7360,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "TQA6fcpt",
+    "v": "VGZK_kAR",
     "tiers": true
   },
   "comp-506": {
@@ -7379,7 +7379,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PlWg4TFr",
+    "v": "mXXq00Z-",
     "tiers": true
   },
   "comp-508": {
@@ -7389,7 +7389,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_Suu3ZZm",
+    "v": "gkyDqdF0",
     "tiers": true
   },
   "comp-509": {
@@ -7408,7 +7408,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "kW2HnxzO",
+    "v": "5nbe_DW0",
     "tiers": true
   },
   "comp-510": {
@@ -7418,7 +7418,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UTYE1_QJ",
+    "v": "Y8pfXNKa",
     "tiers": true
   },
   "comp-511": {
@@ -7428,7 +7428,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ciqOKuqZ",
+    "v": "F7QrO213",
     "tiers": true
   },
   "comp-512": {
@@ -7438,7 +7438,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gJvmMrhK",
+    "v": "sU3e2J7F",
     "tiers": true
   },
   "comp-52": {
@@ -7457,7 +7457,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "tRRhELkI",
+    "v": "XXlZOr3j",
     "tiers": true
   },
   "comp-54": {
@@ -7476,7 +7476,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jJhCIil9",
+    "v": "PoiSiINM",
     "tiers": true
   },
   "comp-544": {
@@ -7486,7 +7486,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rMlbmiR8",
+    "v": "DPYg63w7",
     "tiers": true
   },
   "comp-545": {
@@ -7505,7 +7505,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WZAUkUnD",
+    "v": "o3W488EP",
     "tiers": true
   },
   "comp-547": {
@@ -7533,7 +7533,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SMXCN7ZW",
+    "v": "c8RrZzqp",
     "tiers": true
   },
   "comp-55": {
@@ -7561,7 +7561,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "sSWoy5f_",
+    "v": "FIvyBqdf",
     "tiers": true
   },
   "comp-552": {
@@ -7580,7 +7580,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "n_sjSDd2",
+    "v": "Fe9WUeSC",
     "tiers": true
   },
   "comp-56": {
@@ -7599,7 +7599,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "uVZNQ4tw",
+    "v": "WTtq108a",
     "tiers": true
   },
   "comp-578": {
@@ -7609,7 +7609,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "91nLQ-Jd",
+    "v": "EE-_mjSG",
     "tiers": true
   },
   "comp-579": {
@@ -7637,7 +7637,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hGnlG6Wr",
+    "v": "O5hS7uVC",
     "tiers": true
   },
   "comp-581": {
@@ -7647,7 +7647,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "AnLI-pJb",
+    "v": "kKesRAi6",
     "tiers": true
   },
   "comp-582": {
@@ -7657,7 +7657,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "koU5cCMs",
+    "v": "vMe7Aba3",
     "tiers": true
   },
   "comp-583": {
@@ -7667,7 +7667,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wCJd4JEe",
+    "v": "wLTadF4a",
     "tiers": true
   },
   "comp-584": {
@@ -7677,7 +7677,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "n7Za48iV",
+    "v": "4pYY2iOd",
     "tiers": true
   },
   "comp-585": {
@@ -7705,7 +7705,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PG2qaiDV",
+    "v": "bN3vsU29",
     "tiers": true
   },
   "comp-588": {
@@ -7724,7 +7724,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9ntJbML1",
+    "v": "pRdufhdo",
     "tiers": true
   },
   "comp-59": {
@@ -7743,7 +7743,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "lIzaLAbV",
+    "v": "6euTbKNf",
     "tiers": true
   },
   "comp-591": {
@@ -7753,7 +7753,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Zfy9p7Jt",
+    "v": "GZqfurq1",
     "tiers": true
   },
   "comp-592": {
@@ -7772,7 +7772,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zz15v3w6",
+    "v": "9ycsNZNw",
     "tiers": true
   },
   "comp-594": {
@@ -7791,7 +7791,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "AnCczw-Q",
+    "v": "XwkpAiho",
     "tiers": true
   },
   "comp-596": {
@@ -7801,7 +7801,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "lPmPl56q",
+    "v": "lcFPCqfx",
     "tiers": true
   },
   "comp-60": {
@@ -7928,7 +7928,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "TZ8GTYo9",
+    "v": "ypQ3jF2E",
     "tiers": true
   },
   "comp-74": {
@@ -8154,7 +8154,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "57kVmfnp",
+    "v": "sld1DFKf",
     "tiers": true
   },
   "comp-99": {
@@ -8173,7 +8173,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_2Cvr5nO",
+    "v": "5d6cFTlu",
     "tiers": true
   },
   "components-backgrounds-bubble": {
@@ -8183,7 +8183,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "itgs_fGV",
+    "v": "cfBxXyWa",
     "tiers": true
   },
   "components-backgrounds-fireworks": {
@@ -8193,7 +8193,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "17tHg_0Z",
+    "v": "MulAPYf-",
     "tiers": true
   },
   "components-backgrounds-gradient": {
@@ -8212,7 +8212,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Ev7DB6Ut",
+    "v": "v9KZXjmh",
     "tiers": true
   },
   "components-backgrounds-hexagon": {
@@ -8222,7 +8222,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "U_hyFgaq",
+    "v": "hrGqUnyG",
     "tiers": true
   },
   "components-backgrounds-hole": {
@@ -8232,7 +8232,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "lqgZE5Ce",
+    "v": "CIkDc31c",
     "tiers": true
   },
   "components-backgrounds-stars": {
@@ -8251,7 +8251,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ihKepaVn",
+    "v": "aSyqZFQX",
     "tiers": true
   },
   "components-community-notification-list": {
@@ -8261,7 +8261,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Ibb0TOx6",
+    "v": "i4J_xB48",
     "tiers": true
   },
   "components-community-pin-list": {
@@ -8271,7 +8271,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "p62AR_UU",
+    "v": "JBbx3xBr",
     "tiers": true
   },
   "components-community-radial-intro": {
@@ -8281,7 +8281,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4r3Vvhdw",
+    "v": "jgmuLnDO",
     "tiers": true
   },
   "components-community-radial-nav": {
@@ -8291,7 +8291,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "RxA-XZ4w",
+    "v": "AF-I0ymj",
     "tiers": true
   },
   "components-community-share-button": {
@@ -8301,7 +8301,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "trp-2-ts",
+    "v": "-22vi8ud",
     "tiers": true
   },
   "conditionGrid": {
@@ -8311,7 +8311,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "MHZp-FaN",
+    "v": "IAsuZxL-",
     "tiers": true
   },
   "confetti": {
@@ -8321,7 +8321,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "nTN9STnh",
+    "v": "vroVoueC",
     "tiers": true
   },
   "confirm-pass-check": {
@@ -8331,7 +8331,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "GXlyP6zX",
+    "v": "qQo6A8Yh",
     "tiers": true
   },
   "contact-section": {
@@ -8366,7 +8366,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "BG65rz2_",
+    "v": "H1-0MPkZ",
     "tiers": true
   },
   "container-text-flip": {
@@ -8376,7 +8376,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UMI-xZWM",
+    "v": "sqk-3Z_w",
     "tiers": true
   },
   "context-menu-animated": {
@@ -8410,7 +8410,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yNcvrtcL",
+    "v": "-hYhnN3_",
     "tiers": true
   },
   "corporate-clippath": {
@@ -8429,7 +8429,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "bNCM13Xt",
+    "v": "dwR7f7ga",
     "tiers": true
   },
   "cosmic-portal": {
@@ -8439,7 +8439,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "GwqOuvb9",
+    "v": "HenLz6IB",
     "tiers": true
   },
   "cover": {
@@ -8466,7 +8466,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zzNEE9Nr",
+    "v": "yNvYBedn",
     "tiers": true
   },
   "creative-hover-card": {
@@ -8476,7 +8476,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "swefPzce",
+    "v": "lYoKnRYr",
     "tiers": true
   },
   "creative-image-masking": {
@@ -8538,7 +8538,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "konJWGIs",
+    "v": "b2xPilXa",
     "tiers": true
   },
   "crt-warp": {
@@ -8566,7 +8566,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "A4QhKR7f",
+    "v": "58jeq5bc",
     "tiers": true
   },
   "css-image-stacking": {
@@ -8576,7 +8576,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "dY0Zydh7",
+    "v": "FrYOIdgR",
     "tiers": true
   },
   "cult-ui-code-block": {
@@ -8595,7 +8595,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "U7TVS8Pl",
+    "v": "7HUpUKc8",
     "tiers": true
   },
   "cult-ui-text-animate": {
@@ -8638,7 +8638,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "2VCFC8Yn",
+    "v": "SXcGYXnW",
     "tiers": true
   },
   "cutout-card": {
@@ -8648,7 +8648,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "O6yAPJII",
+    "v": "26jVdrDS",
     "tiers": true
   },
   "dashboard-01": {
@@ -8666,7 +8666,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "iw2rs8zr",
+    "v": "Iu3E2pSq",
     "tiers": true
   },
   "datefield-rac": {
@@ -8676,7 +8676,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "RuZUeaTa",
+    "v": "jeQckAeN",
     "tiers": true
   },
   "datetime-input": {
@@ -8686,7 +8686,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "V2w4gyw1",
+    "v": "0BGmRvm8",
     "tiers": true
   },
   "day-night-theme-switch": {
@@ -8713,7 +8713,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Jm-_OhLT",
+    "v": "PUOC-OSb",
     "tiers": true
   },
   "default-slider": {
@@ -8723,7 +8723,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "2Xav1OYT",
+    "v": "0h1h7-Tz",
     "tiers": true
   },
   "default-swapy": {
@@ -8733,7 +8733,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "_UKhdcA-",
+    "v": "rARik5fh",
     "tiers": true
   },
   "depth-carousel": {
@@ -8761,7 +8761,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "t8VKSB-C",
+    "v": "YXAhvrAr",
     "tiers": true
   },
   "detent-dial": {
@@ -8779,7 +8779,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "I3U2QNeR",
+    "v": "jqelaHUa",
     "tiers": true
   },
   "dialog": {
@@ -8789,7 +8789,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PSf-4wei",
+    "v": "Pdj6-vqQ",
     "tiers": true
   },
   "dialog-default": {
@@ -8799,7 +8799,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "2DsIzXez",
+    "v": "fOR2qieE",
     "tiers": true
   },
   "dialog-stack": {
@@ -8817,7 +8817,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "i8Fhs7Lu",
+    "v": "h6wt042N",
     "tiers": true
   },
   "direction-aware-tabs": {
@@ -8827,7 +8827,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "lgbPC6Hr",
+    "v": "BhQc7G9n",
     "tiers": true
   },
   "directional-drawer": {
@@ -8837,7 +8837,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Mtx1TJUh",
+    "v": "-TA_MNXQ",
     "tiers": true
   },
   "directional-drawer_default": {
@@ -8856,7 +8856,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "oVIRqHpC",
+    "v": "Kb56RsqO",
     "tiers": true
   },
   "dither-chart": {
@@ -8882,7 +8882,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5fiDKAn1",
+    "v": "pCJX9mN4",
     "tiers": true
   },
   "dither-shader": {
@@ -8910,7 +8910,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "fDGz9ngL",
+    "v": "XCWvXlJq",
     "tiers": true
   },
   "dotmatrix-loaders": {
@@ -8928,7 +8928,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DGnvizen",
+    "v": "0XB6syuW",
     "tiers": true
   },
   "dotted-map": {
@@ -8938,7 +8938,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9K2cLaaU",
+    "v": "tSt9--_p",
     "tiers": true
   },
   "drag-items": {
@@ -8948,7 +8948,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "AQTesNKk",
+    "v": "1ZgPDuZO",
     "tiers": true
   },
   "draggable-card": {
@@ -8958,7 +8958,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hDi2YVOz",
+    "v": "RF5BArlT",
     "tiers": true
   },
   "drape-background": {
@@ -8985,7 +8985,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "RUuS-AEA",
+    "v": "CA847-bL",
     "tiers": true
   },
   "dynamic-island": {
@@ -8995,7 +8995,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YEuz2WOp",
+    "v": "5U89qMQo",
     "tiers": true
   },
   "echo-text": {
@@ -9098,7 +9098,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0EEdu7Gv",
+    "v": "GlD--C_Z",
     "tiers": true
   },
   "event-calendar-reui": {
@@ -9116,7 +9116,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "PohlB9uK",
+    "v": "f1e9si_J",
     "tiers": true
   },
   "expandable": {
@@ -9126,7 +9126,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "GL-q_NQz",
+    "v": "GkEJ1FPf",
     "tiers": true
   },
   "expandable-card": {
@@ -9144,7 +9144,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "OxYgRqEz",
+    "v": "0Omznswt",
     "tiers": true
   },
   "expandable-screen": {
@@ -9154,7 +9154,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "411S-pb8",
+    "v": "WO1LTsMu",
     "tiers": true
   },
   "exposure-slider": {
@@ -9180,7 +9180,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "N6NDWUMW",
+    "v": "rGy5qvC0",
     "tiers": true
   },
   "family-drawer": {
@@ -9190,7 +9190,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ZWO0boaf",
+    "v": "o__kqmza",
     "tiers": true
   },
   "faq-accordion": {
@@ -9209,7 +9209,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "K9IwosVG",
+    "v": "Edetw0Mq",
     "tiers": true
   },
   "faq-interactive-preview": {
@@ -9219,7 +9219,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rAv0JSA6",
+    "v": "fJOKqnpN",
     "tiers": true
   },
   "faq-search": {
@@ -9237,7 +9237,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "DTBbK77o",
+    "v": "qeAUuURt",
     "tiers": true
   },
   "feature-carousel": {
@@ -9247,7 +9247,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "JA9bDPzI",
+    "v": "1VZVmcRw",
     "tiers": true
   },
   "feature-flow": {
@@ -9257,7 +9257,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "XQrgkefC",
+    "v": "-lMT2DC2",
     "tiers": true
   },
   "feature-hero": {
@@ -9267,7 +9267,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "eI6IuwV9",
+    "v": "3aXFm_5r",
     "tiers": true
   },
   "feature-highlights": {
@@ -9277,7 +9277,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "JS0B13Rc",
+    "v": "-UVn8aI8",
     "tiers": true
   },
   "feature-poll": {
@@ -9296,7 +9296,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "0cVcF3jF",
+    "v": "heoBaYn_",
     "tiers": true
   },
   "feature-voting": {
@@ -9306,7 +9306,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IhnZy6GH",
+    "v": "2UflEUbK",
     "tiers": true
   },
   "features-section-demo-1": {
@@ -9316,7 +9316,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "5JFmOsRa",
+    "v": "hJudJ_HM",
     "tiers": true
   },
   "features-section-demo-2": {
@@ -9326,7 +9326,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "JbTuY0vx",
+    "v": "KdZBBk3j",
     "tiers": true
   },
   "features-section-demo-3": {
@@ -9336,7 +9336,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "_UgkH8Ti",
+    "v": "5OlrGdjq",
     "tiers": true
   },
   "feedback-popover": {
@@ -9386,7 +9386,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "T85Xjzxx",
+    "v": "xZO-rfqV",
     "tiers": true
   },
   "file-type": {
@@ -9404,7 +9404,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "72mC5ClC",
+    "v": "n5Gv_FZB",
     "tiers": true
   },
   "filters-reui": {
@@ -9430,7 +9430,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "41s5r3O2",
+    "v": "p3gBaL97",
     "tiers": true
   },
   "flex-carousel": {
@@ -9449,7 +9449,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "eTYL_8tM",
+    "v": "jeyovM6_",
     "tiers": true
   },
   "flip-card": {
@@ -9468,7 +9468,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "mLs3x-b9",
+    "v": "bCty8H91",
     "tiers": true
   },
   "flipcountdown": {
@@ -9478,7 +9478,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "d-lScnox",
+    "v": "LGPW-cJ7",
     "tiers": true
   },
   "floating-dock": {
@@ -9488,7 +9488,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "H2tq0j7_",
+    "v": "MOhcGam8",
     "tiers": true
   },
   "floating-navbar": {
@@ -9498,7 +9498,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "zX0BZq11",
+    "v": "iP5Ma66c",
     "tiers": true
   },
   "floating-panel": {
@@ -9508,7 +9508,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "eYZ-Oram",
+    "v": "hLc1ZfS9",
     "tiers": true
   },
   "flow-field": {
@@ -9570,7 +9570,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "te7B-wty",
+    "v": "7VDntGBH",
     "tiers": true
   },
   "fold-text": {
@@ -9606,7 +9606,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ek393_qG",
+    "v": "0N5veyeI",
     "tiers": true
   },
   "footer-bento": {
@@ -9632,7 +9632,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Yzxsys-4",
+    "v": "_FnKa14A",
     "tiers": true
   },
   "footer-hero": {
@@ -9651,7 +9651,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ye0lyGlT",
+    "v": "PKTTLdlo",
     "tiers": true
   },
   "footer-simple": {
@@ -9679,7 +9679,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "p16YHQEE",
+    "v": "_EDazZ83",
     "tiers": true
   },
   "framer-moveable-thumbnails": {
@@ -9698,7 +9698,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "2E-M5AIR",
+    "v": "KRvtSJmW",
     "tiers": true
   },
   "framer-normal-carousel": {
@@ -9717,7 +9717,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vlDjJz1K",
+    "v": "kVqaIACw",
     "tiers": true
   },
   "framerhorizontalscroll": {
@@ -9727,7 +9727,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "1ussBUUr",
+    "v": "N_kree74",
     "tiers": true
   },
   "fuse-button": {
@@ -9746,7 +9746,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hG65pTTA",
+    "v": "j1-srGAl",
     "tiers": true
   },
   "gantt": {
@@ -9806,7 +9806,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "htiK5-Sl",
+    "v": "AyB7iFRe",
     "tiers": true
   },
   "glare-hover": {
@@ -9816,7 +9816,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YSbI3X3b",
+    "v": "zFsLY9IL",
     "tiers": true
   },
   "glide-select": {
@@ -9861,7 +9861,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gGbFaPTc",
+    "v": "DVNFkiPn",
     "tiers": true
   },
   "glowing-stars": {
@@ -9871,7 +9871,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "MSRSdFMw",
+    "v": "BjhiiS0s",
     "tiers": true
   },
   "glyph-background": {
@@ -9913,7 +9913,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "z-11ms1Q",
+    "v": "8SepdRQm",
     "tiers": true
   },
   "gooey-svg-filter": {
@@ -9931,7 +9931,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "0aHP5735",
+    "v": "cFGGO5ex",
     "tiers": true
   },
   "gradient-above-clouds": {
@@ -10085,7 +10085,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4Gd9Gb5r",
+    "v": "uqZB1OHR",
     "tiers": true
   },
   "gradient-burning-spring": {
@@ -10113,7 +10113,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "fxoSPYQO",
+    "v": "sykSMBTZ",
     "tiers": true
   },
   "gradient-cheerful-caramel": {
@@ -10285,7 +10285,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "AhyGnJ-2",
+    "v": "NXJCxaKd",
     "tiers": true
   },
   "gradient-everlasting-sky": {
@@ -10304,7 +10304,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "h6kxnJrt",
+    "v": "UKnvTU8p",
     "tiers": true
   },
   "gradient-faraway-river": {
@@ -10395,7 +10395,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "F1Kf-f9n",
+    "v": "obG7r565",
     "tiers": true
   },
   "gradient-fruit-blend": {
@@ -10702,7 +10702,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Xv3ow0i2",
+    "v": "qCfnkd0q",
     "tiers": true
   },
   "gradient-malibu-beach": {
@@ -10802,7 +10802,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pticMyxj",
+    "v": "bf8ezG3Y",
     "tiers": true
   },
   "gradient-mountain-rock": {
@@ -10848,7 +10848,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gkQ3AECS",
+    "v": "NCLYsz6r",
     "tiers": true
   },
   "gradient-new-york": {
@@ -10912,7 +10912,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6rZQAz-C",
+    "v": "4_2rSKVz",
     "tiers": true
   },
   "gradient-october-silenceiver": {
@@ -10922,7 +10922,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8XEdFjQw",
+    "v": "q5Ug2Blq",
     "tiers": true
   },
   "gradient-old-hat": {
@@ -11004,7 +11004,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "K2tJ1RzH",
+    "v": "-JsYUjqR",
     "tiers": true
   },
   "gradient-plum-bath": {
@@ -11320,7 +11320,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "mQoI99KZ",
+    "v": "5NE3qxrn",
     "tiers": true
   },
   "gradient-spiky-naga": {
@@ -11510,7 +11510,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YogAcTAy",
+    "v": "7NnuHfrB",
     "tiers": true
   },
   "gradient-wild-apple": {
@@ -11556,7 +11556,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZN5TuJcQ",
+    "v": "jhi3fE3x",
     "tiers": true
   },
   "gradient-zeus-miracle": {
@@ -11583,7 +11583,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZQf7U1FZ",
+    "v": "jiwaGM74",
     "tiers": true
   },
   "grid-beam": {
@@ -11593,7 +11593,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "84-J7v8X",
+    "v": "xsTnhoPw",
     "tiers": true
   },
   "grid-layout-accordion": {
@@ -11603,7 +11603,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "u6QkMu4u",
+    "v": "90ZC_U9L",
     "tiers": true
   },
   "grid-pattern": {
@@ -11655,7 +11655,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4UzlLbNX",
+    "v": "6JGBntBG",
     "tiers": true
   },
   "hero-ai-infrastructure": {
@@ -11665,7 +11665,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3rHzWI9_",
+    "v": "vgcraeTv",
     "tiers": true
   },
   "hero-ai-value-proposition": {
@@ -11675,7 +11675,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "co3eoEHb",
+    "v": "Gp1_BJz-",
     "tiers": true
   },
   "hero-color-panel": {
@@ -11685,7 +11685,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZV1Ikkyq",
+    "v": "KOEgqWPG",
     "tiers": true
   },
   "hero-digital-success": {
@@ -11695,7 +11695,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZMOI4-Un",
+    "v": "9gdHu4tp",
     "tiers": true
   },
   "hero-dithering": {
@@ -11705,7 +11705,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "C36qWXhv",
+    "v": "3114DEqV",
     "tiers": true
   },
   "hero-heatmap": {
@@ -11715,7 +11715,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7vtVEy4b",
+    "v": "iE2SugvY",
     "tiers": true
   },
   "hero-highlight": {
@@ -11725,7 +11725,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "twi9H3dU",
+    "v": "yY28UaUW",
     "tiers": true
   },
   "hero-liquid-metal": {
@@ -11735,7 +11735,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "s1s9lbVc",
+    "v": "bfstOVK9",
     "tiers": true
   },
   "hero-parallax": {
@@ -11745,7 +11745,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "OeWyID2H",
+    "v": "T0eYnUYr",
     "tiers": true
   },
   "hero-share-app": {
@@ -11755,7 +11755,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "twHEs8dF",
+    "v": "OI-HhowO",
     "tiers": true
   },
   "hero-static-radial-gradient": {
@@ -11774,7 +11774,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "sAidBTfu",
+    "v": "tLQqsb-3",
     "tiers": true
   },
   "hexagon-pattern": {
@@ -11784,7 +11784,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bjyg5WXc",
+    "v": "MHWJCgGA",
     "tiers": true
   },
   "hexagon-videomasking": {
@@ -11812,7 +11812,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "MXZnsst9",
+    "v": "4rvDPERX",
     "tiers": true
   },
   "hold-button": {
@@ -11848,7 +11848,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yLej9ZiG",
+    "v": "tajZeAkv",
     "tiers": true
   },
   "horizontal-scroll.txt": {
@@ -11866,7 +11866,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NXxOjBu4",
+    "v": "TJlPJ05Q",
     "tiers": true
   },
   "hover-card": {
@@ -11876,7 +11876,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "6j-Ealv8",
+    "v": "FRkUxLBB",
     "tiers": true
   },
   "hover-video-player": {
@@ -11886,7 +11886,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "41iEbc58",
+    "v": "ueHmSAr1",
     "tiers": true
   },
   "hovercard1": {
@@ -11896,7 +11896,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5Pf4NeoS",
+    "v": "4GO87Au1",
     "tiers": true
   },
   "hovercard2": {
@@ -11915,7 +11915,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "qPGNngeB",
+    "v": "46zkfItj",
     "tiers": true
   },
   "hovercard4": {
@@ -11925,7 +11925,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HSRw3UoS",
+    "v": "H2ea3hdC",
     "tiers": true
   },
   "hyper-text": {
@@ -11935,7 +11935,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "eFt6PtZy",
+    "v": "iAbN_ws0",
     "tiers": true
   },
   "icon-cloud": {
@@ -11945,7 +11945,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "q5trCfye",
+    "v": "FphAfRCS",
     "tiers": true
   },
   "illustration-fluid-rendering": {
@@ -11979,7 +11979,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_Z03r6H3",
+    "v": "m6I5etOP",
     "tiers": true
   },
   "image-mousetrail-default": {
@@ -12016,7 +12016,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gHkYe2zu",
+    "v": "y6Beuma-",
     "tiers": true
   },
   "image-tab1": {
@@ -12053,7 +12053,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8ibrIiUS",
+    "v": "NGuKkWcr",
     "tiers": true
   },
   "images-slider": {
@@ -12063,7 +12063,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "y71UaWtm",
+    "v": "VIQnreiZ",
     "tiers": true
   },
   "img-tabs-standalone": {
@@ -12073,7 +12073,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "1jO-0plH",
+    "v": "GchyZZfP",
     "tiers": true
   },
   "imgpreview-dropzone": {
@@ -12083,7 +12083,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "2SMITdLB",
+    "v": "L-xj1iIT",
     "tiers": true
   },
   "impact-experience": {
@@ -12093,7 +12093,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "fnRKfG-Z",
+    "v": "p1gEM-aw",
     "tiers": true
   },
   "infinite-grid": {
@@ -12103,7 +12103,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1KwBHwJ4",
+    "v": "hCKjVmdR",
     "tiers": true
   },
   "infinite-moving-cards": {
@@ -12113,7 +12113,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "5DiLLIpo",
+    "v": "N1of6h67",
     "tiers": true
   },
   "infinite-spiral": {
@@ -12173,7 +12173,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ciQqr96r",
+    "v": "Zx9TFa_N",
     "tiers": true
   },
   "inspira-animated-beam": {
@@ -12183,7 +12183,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "kDAU4dhQ",
+    "v": "PUjmGrx3",
     "tiers": true
   },
   "inspira-animated-list": {
@@ -12211,7 +12211,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "mFyqidMn",
+    "v": "i5qbH9gF",
     "tiers": true
   },
   "inspira-animated-testimonials": {
@@ -12221,7 +12221,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "OQWNn8V8",
+    "v": "ohsFF1Cr",
     "tiers": true
   },
   "inspira-animated-tooltip": {
@@ -12231,7 +12231,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rfoWYZDU",
+    "v": "PXPEN63v",
     "tiers": true
   },
   "inspira-aurora-background": {
@@ -12295,7 +12295,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "jCZTUxXc",
+    "v": "IF9DpdM2",
     "tiers": true
   },
   "inspira-dock": {
@@ -12377,7 +12377,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "4-SyT5Ic",
+    "v": "Fa9EXTDm",
     "tiers": true
   },
   "inspira-hyper-text": {
@@ -12450,7 +12450,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "46V5X-h-",
+    "v": "FkZLrfdb",
     "tiers": true
   },
   "inspira-line-shadow-text": {
@@ -12595,7 +12595,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "CYfzf8bK",
+    "v": "WcRWFU1D",
     "tiers": true
   },
   "inspira-sparkles-text": {
@@ -12730,7 +12730,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zWFw611z",
+    "v": "vWywtA5M",
     "tiers": true
   },
   "interactive-hover-button": {
@@ -12740,7 +12740,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "lzo-dE4w",
+    "v": "pY5RTz4D",
     "tiers": true
   },
   "interface-craft-cards": {
@@ -12758,7 +12758,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WQMm_X3y",
+    "v": "tr3wGKLI",
     "tiers": true
   },
   "ipad": {
@@ -12776,7 +12776,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "4vHfMn26",
+    "v": "iOnVrpTO",
     "tiers": true
   },
   "iphone-mockup": {
@@ -12827,7 +12827,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "_-Zqf9AP",
+    "v": "EfMzGCiS",
     "tiers": true
   },
   "kinetic-text": {
@@ -12837,7 +12837,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ALVoRigB",
+    "v": "Vby0pb3Q",
     "tiers": true
   },
   "knob-slider": {
@@ -12855,7 +12855,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "cSEjsXrk",
+    "v": "bRqCnxA8",
     "tiers": true
   },
   "lamp": {
@@ -12865,7 +12865,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "N0yUygyk",
+    "v": "NljgqX5I",
     "tiers": true
   },
   "lamp-effect": {
@@ -12910,7 +12910,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "P0ygP1xG",
+    "v": "8nORUFUd",
     "tiers": true
   },
   "layout-text-flip": {
@@ -12920,7 +12920,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "EYFm9aIv",
+    "v": "thwCgY8W",
     "tiers": true
   },
   "left-directional-drawer": {
@@ -12930,7 +12930,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZBQpZEda",
+    "v": "5q8dFQBx",
     "tiers": true
   },
   "lens": {
@@ -12949,7 +12949,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "R_ixrOak",
+    "v": "RAtdh29p",
     "tiers": true
   },
   "light-rays": {
@@ -12968,7 +12968,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5cDXOj-i",
+    "v": "okDeya1_",
     "tiers": true
   },
   "light-tunnel": {
@@ -12987,7 +12987,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "AOYCIqBf",
+    "v": "T6w-BI9A",
     "tiers": true
   },
   "lightbox-grid": {
@@ -13006,7 +13006,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-riJo6bk",
+    "v": "eMNOx72a",
     "tiers": true
   },
   "line-sidebar": {
@@ -13034,7 +13034,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "R2YrPJEv",
+    "v": "88leTeao",
     "tiers": true
   },
   "linear-modal-standalone": {
@@ -13053,7 +13053,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "DFWgoXQL",
+    "v": "iFUBbGz_",
     "tiers": true
   },
   "liquid-background": {
@@ -13081,7 +13081,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "-KLHYSDV",
+    "v": "jBcawQGs",
     "tiers": true
   },
   "liquid-glass-mobile-icons": {
@@ -13091,7 +13091,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hvOBCxXP",
+    "v": "sTGeBDDR",
     "tiers": true
   },
   "liquid-glass-music-card": {
@@ -13110,7 +13110,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "nB9RxLTB",
+    "v": "U4-mHJ1u",
     "tiers": true
   },
   "liquid-glass-sidebar-menu": {
@@ -13120,7 +13120,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Ng3Q03kN",
+    "v": "IgDC6G3w",
     "tiers": true
   },
   "liquid-glass-weather": {
@@ -13130,7 +13130,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UM_3b-EC",
+    "v": "JIKuujua",
     "tiers": true
   },
   "liquid-gradient": {
@@ -13140,7 +13140,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0I7NiMZg",
+    "v": "9RO3aTxc",
     "tiers": true
   },
   "liquid-logo": {
@@ -13150,7 +13150,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "eug2_JXI",
+    "v": "EqUIJhzQ",
     "tiers": true
   },
   "liquid-slider": {
@@ -13168,7 +13168,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "E7apkS6d",
+    "v": "HShx5VSB",
     "tiers": true
   },
   "loading-carousel": {
@@ -13178,7 +13178,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "mIe2OwnR",
+    "v": "YYwn02xr",
     "tiers": true
   },
   "location-picker": {
@@ -13197,7 +13197,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "UL09xhon",
+    "v": "E2w0Ragp",
     "tiers": true
   },
   "logo-cloud": {
@@ -13207,7 +13207,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1Tl3jXvt",
+    "v": "nXh2qYIl",
     "tiers": true
   },
   "logo-origami": {
@@ -13217,7 +13217,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Vjw480gu",
+    "v": "k8VVtls7",
     "tiers": true
   },
   "logo-timeline": {
@@ -13235,7 +13235,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1aWbNRw3",
+    "v": "X3jwxvKQ",
     "tiers": true
   },
   "mac-genie": {
@@ -13245,7 +13245,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_LbrAcMS",
+    "v": "5xlvoUwA",
     "tiers": true
   },
   "macbook-pro": {
@@ -13263,7 +13263,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "y0gwzBh3",
+    "v": "D8GTsAbr",
     "tiers": true
   },
   "magic-card": {
@@ -13273,7 +13273,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "2SopWCXQ",
+    "v": "QWBOK0IY",
     "tiers": true
   },
   "magic-ui-bento-grid": {
@@ -13283,7 +13283,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "EQl7ivhp",
+    "v": "yZE9kdLb",
     "tiers": true
   },
   "magic-ui-globe": {
@@ -13293,7 +13293,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "fMzbwhDG",
+    "v": "9R2brPor",
     "tiers": true
   },
   "magic-ui-lens": {
@@ -13312,7 +13312,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8zDBmidQ",
+    "v": "QkPsbohR",
     "tiers": true
   },
   "magic-ui-meteors": {
@@ -13331,7 +13331,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "EHQoBlBo",
+    "v": "98nnVY_7",
     "tiers": true
   },
   "magic-ui-terminal": {
@@ -13341,7 +13341,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zKnsswD2",
+    "v": "FknL-1E8",
     "tiers": true
   },
   "magnetic-button": {
@@ -13351,7 +13351,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "f2XMVP3C",
+    "v": "ij-fwJq2",
     "tiers": true
   },
   "magnetic-field": {
@@ -13369,7 +13369,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "iLCAqrAy",
+    "v": "nUM94PWW",
     "tiers": true
   },
   "management-bar": {
@@ -13403,7 +13403,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "o0Em9AwS",
+    "v": "MO979pGs",
     "tiers": true
   },
   "marquee": {
@@ -13456,7 +13456,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "42_VHQrV",
+    "v": "zbVneCEs",
     "tiers": true
   },
   "media-player": {
@@ -13498,7 +13498,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "venD3aPY",
+    "v": "46Hulc4M",
     "tiers": true
   },
   "mesh-gradient-background2": {
@@ -13526,7 +13526,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1eaa7gE9",
+    "v": "8qgEPgoO",
     "tiers": true
   },
   "message-scroller": {
@@ -13544,7 +13544,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5RBde5Xn",
+    "v": "k4GX2KED",
     "tiers": true
   },
   "metal-button": {
@@ -13554,7 +13554,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "e1Rc7kkd",
+    "v": "jjuxCNr3",
     "tiers": true
   },
   "meteors": {
@@ -13564,7 +13564,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-V1nDjqu",
+    "v": "xiS5bZgm",
     "tiers": true
   },
   "metric-card": {
@@ -13599,7 +13599,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ABvA_yBL",
+    "v": "KQb_tIkF",
     "tiers": true
   },
   "mock-browser-window": {
@@ -13609,7 +13609,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "wvY9r5oQ",
+    "v": "HPLwwv0R",
     "tiers": true
   },
   "molten-metal": {
@@ -13637,7 +13637,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "EXMiP6kU",
+    "v": "p7UclG2b",
     "tiers": true
   },
   "morphic-navbar": {
@@ -13664,7 +13664,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "RmrF_gAS",
+    "v": "FuDYdRUp",
     "tiers": true
   },
   "morphing-text": {
@@ -13674,7 +13674,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pX9gMrFg",
+    "v": "ojcqx7MD",
     "tiers": true
   },
   "motion-drawer": {
@@ -13684,7 +13684,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "A-pYhUYw",
+    "v": "hpXr_yoF",
     "tiers": true
   },
   "motion-drawer-default": {
@@ -13703,7 +13703,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "0dAjsLCc",
+    "v": "4brBP1Pe",
     "tiers": true
   },
   "motion-number-upvotes": {
@@ -13713,7 +13713,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "CWnYKCmL",
+    "v": "EO5VWuVp",
     "tiers": true
   },
   "mouse-wave-text": {
@@ -13740,7 +13740,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "utHBOvaa",
+    "v": "HnVtIvgO",
     "tiers": true
   },
   "moving-line": {
@@ -13750,7 +13750,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "KyFwEuwa",
+    "v": "G2mhWca1",
     "tiers": true
   },
   "multi-layout-accordion": {
@@ -13760,7 +13760,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wfB28HYN",
+    "v": "Mw8XCUs5",
     "tiers": true
   },
   "multi-selector": {
@@ -13770,7 +13770,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zvWRKxAd",
+    "v": "st70NLJK",
     "tiers": true
   },
   "multi-selector-default": {
@@ -13789,7 +13789,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PEkdtvkx",
+    "v": "FwadCBAL",
     "tiers": true
   },
   "multiselect": {
@@ -13799,7 +13799,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9RELyE-9",
+    "v": "2BLi7smn",
     "tiers": true
   },
   "music-toggle": {
@@ -13825,7 +13825,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "971aDE-z",
+    "v": "e1qhhhTq",
     "tiers": true
   },
   "navigation-menu": {
@@ -13835,7 +13835,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "L6mWuiI9",
+    "v": "1ClRv4OO",
     "tiers": true
   },
   "neon-border": {
@@ -13845,7 +13845,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ecLtMEoa",
+    "v": "xrkcrbq4",
     "tiers": true
   },
   "neon-gradient-card": {
@@ -13855,7 +13855,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "RP3AsuxU",
+    "v": "x32VEL5A",
     "tiers": true
   },
   "nested-vaul-drawer": {
@@ -13865,7 +13865,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0cl8En4u",
+    "v": "88t10ugZ",
     "tiers": true
   },
   "network": {
@@ -13892,7 +13892,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "faC1OTmY",
+    "v": "gDkQzcHd",
     "tiers": true
   },
   "noise-background": {
@@ -13902,7 +13902,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "VlCnA09b",
+    "v": "8ABPybTT",
     "tiers": true
   },
   "noise-effect": {
@@ -13947,7 +13947,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Uw9L91KS",
+    "v": "50AAxx45",
     "tiers": true
   },
   "notification-stack": {
@@ -13981,7 +13981,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DrwvaMp2",
+    "v": "A5V10WbG",
     "tiers": true
   },
   "number-ticker": {
@@ -13991,7 +13991,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "hRHAljZF",
+    "v": "5tUAPjkl",
     "tiers": true
   },
   "onboarding": {
@@ -14001,7 +14001,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "C1kcsHHu",
+    "v": "QnvB7Olz",
     "tiers": true
   },
   "opacity-swapy": {
@@ -14011,7 +14011,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "rpkxrrVd",
+    "v": "4r4Ex-DM",
     "tiers": true
   },
   "open-in-chat": {
@@ -14055,7 +14055,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-RLh4SPP",
+    "v": "kHbg9dly",
     "tiers": true
   },
   "origin-ui-accordion": {
@@ -14128,7 +14128,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8QMkyTWx",
+    "v": "tm_63edW",
     "tiers": true
   },
   "page-flip": {
@@ -14181,7 +14181,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Vn423vSM",
+    "v": "BHlD2-d9",
     "tiers": true
   },
   "parallax-scroll": {
@@ -14191,7 +14191,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "AtH5NSwX",
+    "v": "hIXCWECe",
     "tiers": true
   },
   "parallax-scroll-2": {
@@ -14201,7 +14201,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "6WiCikhg",
+    "v": "kx_mr0cA",
     "tiers": true
   },
   "particle-button": {
@@ -14220,7 +14220,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "M4FwWLEr",
+    "v": "WRXlL6G_",
     "tiers": true
   },
   "particles": {
@@ -14230,7 +14230,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "OG5ueXNc",
+    "v": "2O6G3F3u",
     "tiers": true
   },
   "particles-bg": {
@@ -14249,7 +14249,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "zzy-dMKv",
+    "v": "JIlKtALD",
     "tiers": true
   },
   "pass-strength-hover-indicator": {
@@ -14259,7 +14259,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "7Al79gwL",
+    "v": "n8ew5LXI",
     "tiers": true
   },
   "pass-strength-inline-indicator": {
@@ -14314,7 +14314,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "U81JZA0f",
+    "v": "LzVMLv8_",
     "tiers": true
   },
   "phone-input-default": {
@@ -14333,7 +14333,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1P6ylhcY",
+    "v": "hI7WB38R",
     "tiers": true
   },
   "photon-beam": {
@@ -14367,7 +14367,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "x9vvJfpY",
+    "v": "fHnynmI0",
     "tiers": true
   },
   "pixel-liquid-bg": {
@@ -14385,7 +14385,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gRwL9DH5",
+    "v": "3msJgp8R",
     "tiers": true
   },
   "placeholders-and-vanish-input": {
@@ -14395,7 +14395,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "G5tGyKb7",
+    "v": "WkcqK2Qc",
     "tiers": true
   },
   "playful-todolist": {
@@ -14430,7 +14430,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "S3voMwzR",
+    "v": "FeXQ3NHa",
     "tiers": true
   },
   "poll-widget": {
@@ -14440,7 +14440,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yRInCxBM",
+    "v": "7YG11D3P",
     "tiers": true
   },
   "popover": {
@@ -14450,7 +14450,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ukG1JKNR",
+    "v": "1nh4xIfi",
     "tiers": true
   },
   "popover-form": {
@@ -14469,7 +14469,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "HYMazHRY",
+    "v": "aCVEUQTI",
     "tiers": true
   },
   "power-off-slide": {
@@ -14528,7 +14528,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Vg3BHjw-",
+    "v": "qAIDFSfl",
     "tiers": true
   },
   "primitives-animate-slot": {
@@ -14547,7 +14547,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "8fLDLhpI",
+    "v": "KC0wv9OI",
     "tiers": true
   },
   "primitives-effects-highlight": {
@@ -14557,7 +14557,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3j9mbzJn",
+    "v": "3st2V5Dr",
     "tiers": true
   },
   "primitives-effects-image-zoom": {
@@ -14567,7 +14567,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0NPyM_qB",
+    "v": "8GGQiBMu",
     "tiers": true
   },
   "primitives-effects-shine": {
@@ -14577,7 +14577,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "V9iUnggr",
+    "v": "ww2o6X6V",
     "tiers": true
   },
   "primitives-effects-theme-toggler": {
@@ -14587,7 +14587,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "u4RaCXDm",
+    "v": "v4gt6453",
     "tiers": true
   },
   "primitives-headless-checkbox": {
@@ -14597,7 +14597,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5g14F80M",
+    "v": "urEXNaYa",
     "tiers": true
   },
   "primitives-headless-dialog": {
@@ -14607,7 +14607,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "eXf8WUhC",
+    "v": "4Qz579f5",
     "tiers": true
   },
   "primitives-headless-disclosure": {
@@ -14617,7 +14617,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yjgm8_S2",
+    "v": "q5wj2Xi-",
     "tiers": true
   },
   "primitives-headless-popover": {
@@ -14627,7 +14627,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YsGZWF0l",
+    "v": "SDx5DogJ",
     "tiers": true
   },
   "primitives-headless-switch": {
@@ -14637,7 +14637,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "BO3ECsXH",
+    "v": "wjQyvGeD",
     "tiers": true
   },
   "primitives-headless-tabs": {
@@ -14656,7 +14656,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "cAqe35fq",
+    "v": "3FiEboOt",
     "tiers": true
   },
   "primitives-texts-counting-number": {
@@ -14675,7 +14675,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "lcJXeHl4",
+    "v": "HnyoXUGL",
     "tiers": true
   },
   "primitives-texts-highlight": {
@@ -14685,7 +14685,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IyIFccTq",
+    "v": "d5WapCD3",
     "tiers": true
   },
   "primitives-texts-morphing": {
@@ -14695,7 +14695,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "8U3ORXf8",
+    "v": "_1nxrVqv",
     "tiers": true
   },
   "primitives-texts-rolling": {
@@ -14705,7 +14705,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "TgvuTAOA",
+    "v": "QDuTlz7U",
     "tiers": true
   },
   "primitives-texts-rotating": {
@@ -14724,7 +14724,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PZr9gs6a",
+    "v": "Xr1rnSBx",
     "tiers": true
   },
   "primitives-texts-shimmering": {
@@ -14743,7 +14743,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YOvM-8X4",
+    "v": "9kaEaVUf",
     "tiers": true
   },
   "primitives-texts-splitting": {
@@ -14780,7 +14780,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SWtXWDzZ",
+    "v": "PL4J1K9Y",
     "tiers": true
   },
   "profile-dropdown": {
@@ -14808,7 +14808,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "EQvWjhfp",
+    "v": "KgDRkQ1y",
     "tiers": true
   },
   "progressive-carousel": {
@@ -14818,7 +14818,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "XPRVgW85",
+    "v": "lS5zLpYc",
     "tiers": true
   },
   "prompt-bar": {
@@ -14855,7 +14855,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "Q4VB2Dd_",
+    "v": "ge5HUjwC",
     "tiers": true
   },
   "pulse-heart": {
@@ -14898,7 +14898,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "s8rMccfK",
+    "v": "1JufUAV4",
     "tiers": true
   },
   "r3f-blob.txt": {
@@ -14925,7 +14925,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6yCSdy6I",
+    "v": "TOBJttgW",
     "tiers": true
   },
   "rain-glass-background": {
@@ -14943,7 +14943,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Y_ARKILL",
+    "v": "E_AsOoy7",
     "tiers": true
   },
   "randomized-text-effect": {
@@ -15004,7 +15004,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "qnyPk2eC",
+    "v": "2dnZD_CQ",
     "tiers": true
   },
   "relative-time-card": {
@@ -15038,7 +15038,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "zvST6P_B",
+    "v": "CCm7V569",
     "tiers": true
   },
   "resize-handle": {
@@ -15064,7 +15064,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "_RIdw9G3",
+    "v": "kA4zLIeG",
     "tiers": true
   },
   "right-motion-drawer": {
@@ -15083,7 +15083,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ae-7IoFk",
+    "v": "yLUwfA6J",
     "tiers": true
   },
   "ripple-button": {
@@ -15093,7 +15093,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "GB1s9vRS",
+    "v": "GvfMRd_b",
     "tiers": true
   },
   "ripple-distortion": {
@@ -15121,7 +15121,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "grid",
     "hasVideo": true,
-    "v": "Jum2PKWK",
+    "v": "7MZvuQUJ",
     "tiers": true
   },
   "safari-mockup": {
@@ -15175,7 +15175,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "sGKAXuA4",
+    "v": "oB6Zx_Oy",
     "tiers": true
   },
   "screensaver": {
@@ -15210,7 +15210,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "7wGLvf_9",
+    "v": "UAvsF7Jd",
     "tiers": true
   },
   "scroll-animation-repeat": {
@@ -15229,7 +15229,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "m00sUdow",
+    "v": "ianZiQso",
     "tiers": true
   },
   "scroll-area": {
@@ -15239,7 +15239,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "X3KH6v8V",
+    "v": "KXl53tTY",
     "tiers": true
   },
   "scroll-based-velocity": {
@@ -15249,7 +15249,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "0EZ-CygI",
+    "v": "terOH9UR",
     "tiers": true
   },
   "scroll-element": {
@@ -15291,7 +15291,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "xXVZRrex",
+    "v": "ie3d9JnB",
     "tiers": true
   },
   "scroll-progress": {
@@ -15301,7 +15301,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "UVoZx7vt",
+    "v": "C1eShe5J",
     "tiers": true
   },
   "scroll-text": {
@@ -15336,7 +15336,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IuRpSOP4",
+    "v": "QFpqAsRy",
     "tiers": true
   },
   "scroll-text-marquee-bidirectional": {
@@ -15397,7 +15397,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "w1_Y5-Qh",
+    "v": "ZQstPYGt",
     "tiers": true
   },
   "select-native": {
@@ -15407,7 +15407,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "yVjDJpus",
+    "v": "WW1ovIPE",
     "tiers": true
   },
   "selection-toolbar": {
@@ -15433,7 +15433,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vEg-A_fd",
+    "v": "yuJf8q2D",
     "tiers": true
   },
   "shader-reveal-transition": {
@@ -15494,7 +15494,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9I1y0GP3",
+    "v": "8fLNM8aY",
     "tiers": true
   },
   "shifting-dropdown": {
@@ -15529,7 +15529,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pX2vZNAH",
+    "v": "Rgqs2tPY",
     "tiers": true
   },
   "shiny-button": {
@@ -15539,7 +15539,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "2R7VwsnF",
+    "v": "z8ZLZ1Vl",
     "tiers": true
   },
   "shooting-stars": {
@@ -15549,7 +15549,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6582ZdWR",
+    "v": "iJl9iJ2V",
     "tiers": true
   },
   "showhide-pass": {
@@ -15585,7 +15585,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "uDnIxX11",
+    "v": "Uqhqm9ln",
     "tiers": true
   },
   "sidebar": {
@@ -15595,7 +15595,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YCI4d6T1",
+    "v": "_kjwQw5Q",
     "tiers": true
   },
   "sidebar-animated": {
@@ -15639,7 +15639,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "OPZ2HMKQ",
+    "v": "cxPRxgwE",
     "tiers": true
   },
   "sliced-waves": {
@@ -15667,7 +15667,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ovQcgndN",
+    "v": "XlszQIfg",
     "tiers": true
   },
   "slot-picker": {
@@ -15695,7 +15695,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "q-9FjWCT",
+    "v": "Ii8vTWjM",
     "tiers": true
   },
   "smooth-scroll": {
@@ -15731,7 +15731,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "BzHgd1cR",
+    "v": "Dyhi8RfJ",
     "tiers": true
   },
   "sortable-list": {
@@ -15741,7 +15741,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Sp9AiGlw",
+    "v": "uZ-tnocG",
     "tiers": true
   },
   "spark-chart": {
@@ -15767,7 +15767,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "QjGgt5iu",
+    "v": "a3RQEtOa",
     "tiers": true
   },
   "sparkles-title": {
@@ -15785,7 +15785,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Tv08Li7M",
+    "v": "515W7Rkz",
     "tiers": true
   },
   "specular-button": {
@@ -15829,7 +15829,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "j6cGlngW",
+    "v": "L1tIj6qj",
     "tiers": true
   },
   "splashwater-videomasking": {
@@ -15848,7 +15848,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "xKUYVLRG",
+    "v": "Uiy0kSVW",
     "tiers": true
   },
   "split-flap-text": {
@@ -15876,7 +15876,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ltzd-HnE",
+    "v": "EWtql1Iu",
     "tiers": true
   },
   "spotlight-card": {
@@ -15895,7 +15895,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "B40jLjGS",
+    "v": "6bRXmfua",
     "tiers": true
   },
   "spotlight-card2": {
@@ -15923,7 +15923,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "l3n4vI3e",
+    "v": "VwdUnT1a",
     "tiers": true
   },
   "spotlight-new": {
@@ -15933,7 +15933,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "x8rFNKOP",
+    "v": "zyIFm6XM",
     "tiers": true
   },
   "spotlight-testimonial": {
@@ -15943,7 +15943,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "n7thd5og",
+    "v": "8kJhEuD1",
     "tiers": true
   },
   "spring-calendar": {
@@ -15953,7 +15953,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9foH13yf",
+    "v": "A9ddd4A4",
     "tiers": true
   },
   "spring-element": {
@@ -15971,7 +15971,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "_UmIS6as",
+    "v": "mWZTyKNo",
     "tiers": true
   },
   "squiggly-text": {
@@ -15981,7 +15981,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0OGTXlp-",
+    "v": "Dy_OL13i",
     "tiers": true
   },
   "squish-switch": {
@@ -16017,7 +16017,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "0P9joA8F",
+    "v": "sCblg8id",
     "tiers": true
   },
   "stars-background": {
@@ -16036,7 +16036,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "vuakH9Ff",
+    "v": "W6gpmTyR",
     "tiers": true
   },
   "stats-banner": {
@@ -16046,7 +16046,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Ga5kp0H1",
+    "v": "tRFP2qSn",
     "tiers": true
   },
   "stats-bento": {
@@ -16056,7 +16056,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "C_Ooodgn",
+    "v": "jcuKnaM-",
     "tiers": true
   },
   "stats-bold": {
@@ -16066,7 +16066,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3Yw_8PAV",
+    "v": "oUlsPvI5",
     "tiers": true
   },
   "stats-details": {
@@ -16076,7 +16076,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5gLK8D-S",
+    "v": "XA9mWPTG",
     "tiers": true
   },
   "stats-minimal": {
@@ -16095,7 +16095,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "GCDFrb6c",
+    "v": "tkNkMD1c",
     "tiers": true
   },
   "status-island": {
@@ -16131,7 +16131,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "3ZNSD_jI",
+    "v": "ZH_-XQjn",
     "tiers": true
   },
   "sticky-banner": {
@@ -16141,7 +16141,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "5o3TaqY5",
+    "v": "Je_YOt41",
     "tiers": true
   },
   "sticky-gallery": {
@@ -16151,7 +16151,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "cnex3UnB",
+    "v": "lIQAtxRX",
     "tiers": true
   },
   "sticky-hero-scroll": {
@@ -16170,7 +16170,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Sgiu2IoW",
+    "v": "BqU7cchX",
     "tiers": true
   },
   "sticky-scroll-reveal": {
@@ -16180,7 +16180,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "PSPRw3LK",
+    "v": "BCNbklsL",
     "tiers": true
   },
   "stories": {
@@ -16215,7 +16215,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "qVtTk5Rn",
+    "v": "T-xMtEFf",
     "tiers": true
   },
   "stripecard": {
@@ -16225,7 +16225,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "NyRxFx-2",
+    "v": "BFeMqp-H",
     "tiers": true
   },
   "stripecard2": {
@@ -16235,7 +16235,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "9CEz3Mbn",
+    "v": "vzpNVYTk",
     "tiers": true
   },
   "striped-pattern": {
@@ -16289,7 +16289,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "REpVqLcN",
+    "v": "6PU0JHJJ",
     "tiers": true
   },
   "svg-path-morphing": {
@@ -16325,7 +16325,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "1_N5eGB7",
+    "v": "mfcYMj8X",
     "tiers": true
   },
   "swapy-handle": {
@@ -16335,7 +16335,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "i6V6nkb6",
+    "v": "1JBuj5W5",
     "tiers": true
   },
   "swapy-opacity": {
@@ -16389,7 +16389,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HC0sbHeU",
+    "v": "Sm_xAR3X",
     "tiers": true
   },
   "symbolic-clippath": {
@@ -16399,7 +16399,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "QibyNOpi",
+    "v": "Hib_y9Hp",
     "tiers": true
   },
   "synced-transcript": {
@@ -16417,7 +16417,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SVtBw8nQ",
+    "v": "qehQeQGq",
     "tiers": true
   },
   "tabs": {
@@ -16427,7 +16427,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "uFqgtyPI",
+    "v": "h-9aftz4",
     "tiers": true
   },
   "tags-input": {
@@ -16437,7 +16437,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "nuugKk5B",
+    "v": "hUi_horr",
     "tiers": true
   },
   "tags-input-no-edit": {
@@ -16456,7 +16456,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gJb1Fo6e",
+    "v": "PdCcwBrx",
     "tiers": true
   },
   "tailwind-image-accordion": {
@@ -16466,7 +16466,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bf7YlFXb",
+    "v": "mWGkRXpY",
     "tiers": true
   },
   "tailwindcss-buttons": {
@@ -16476,7 +16476,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "LzJlqWbe",
+    "v": "dCTqyNW-",
     "tiers": true
   },
   "team-classic": {
@@ -16486,7 +16486,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "NSPRoHTl",
+    "v": "XUbT6nXF",
     "tiers": true
   },
   "team-clippath": {
@@ -16496,7 +16496,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "IB5cr9UM",
+    "v": "PW0KNR4V",
     "tiers": true
   },
   "team-expert": {
@@ -16506,7 +16506,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "HdhyiC3B",
+    "v": "IOiASUDP",
     "tiers": true
   },
   "team-synth": {
@@ -16516,7 +16516,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Qzjtyr-k",
+    "v": "gSh4DX9J",
     "tiers": true
   },
   "team-troops": {
@@ -16535,7 +16535,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "VqUEmHgB",
+    "v": "bS6Jntt7",
     "tiers": true
   },
   "tear-ticket": {
@@ -16572,7 +16572,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Yf7UwOpn",
+    "v": "RKJUxgVn",
     "tiers": true
   },
   "terminal-ui": {
@@ -16598,7 +16598,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UqywtEPB",
+    "v": "N_SJ-Q2d",
     "tiers": true
   },
   "testimonial-slider": {
@@ -16608,7 +16608,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "inVPh0ux",
+    "v": "XrPcXvRP",
     "tiers": true
   },
   "tetris": {
@@ -16618,7 +16618,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "r673J84M",
+    "v": "YoKcR6Aa",
     "tiers": true
   },
   "text-3d": {
@@ -16628,7 +16628,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DhuapxkC",
+    "v": "vGyZRY7i",
     "tiers": true
   },
   "text-3d-flip": {
@@ -16638,7 +16638,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "JQyZf1tR",
+    "v": "IT__Wq31",
     "tiers": true
   },
   "text-along-path": {
@@ -16656,7 +16656,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "OwwP491k",
+    "v": "_adiRHEG",
     "tiers": true
   },
   "text-cursor-proximity": {
@@ -16674,7 +16674,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZE8vm_CU",
+    "v": "5EuJNLeU",
     "tiers": true
   },
   "text-generate-effect": {
@@ -16684,7 +16684,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4xu_yXho",
+    "v": "IUieL5qh",
     "tiers": true
   },
   "text-gif": {
@@ -16703,7 +16703,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ujxVvduM",
+    "v": "uALZFa1S",
     "tiers": true
   },
   "text-highlight": {
@@ -16722,7 +16722,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "x19ua_Qi",
+    "v": "mjobfwAp",
     "tiers": true
   },
   "text-loop": {
@@ -16749,7 +16749,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "KtUK-wNf",
+    "v": "PrW3GqZa",
     "tiers": true
   },
   "text-reveal-card": {
@@ -16759,7 +16759,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "aqPL_A65",
+    "v": "mEGYEAi7",
     "tiers": true
   },
   "text-roll-navigation": {
@@ -16813,7 +16813,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "D0A7F96c",
+    "v": "Nwc4WhjL",
     "tiers": true
   },
   "texture-card": {
@@ -16823,7 +16823,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "CUBL3GpW",
+    "v": "u3umLOWd",
     "tiers": true
   },
   "texture-overlay": {
@@ -16851,7 +16851,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WAU42XBl",
+    "v": "cIcPwmFy",
     "tiers": true
   },
   "thumbnail-slider": {
@@ -16861,7 +16861,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zMLUcgJY",
+    "v": "2M_-re6j",
     "tiers": true
   },
   "time-machine-stack": {
@@ -16888,7 +16888,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "aJNT87i3",
+    "v": "Lbev52oY",
     "tiers": true
   },
   "timeline-animation": {
@@ -16907,7 +16907,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "fLEjCzyu",
+    "v": "Rj62ZZA5",
     "tiers": true
   },
   "timezone-planner": {
@@ -16934,7 +16934,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-3Xl3FfI",
+    "v": "s5zW5cNg",
     "tiers": true
   },
   "toggle-group": {
@@ -16944,7 +16944,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "KZQoWaai",
+    "v": "9hLPqMK8",
     "tiers": true
   },
   "toolbar-expandable": {
@@ -16954,7 +16954,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "XKIwZjOS",
+    "v": "K6Y0p-T0",
     "tiers": true
   },
   "tooltip": {
@@ -16964,7 +16964,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "kodjnapk",
+    "v": "lDw0pLF3",
     "tiers": true
   },
   "tooltip-card": {
@@ -16974,7 +16974,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "j4E9LKOi",
+    "v": "nnsp0O8C",
     "tiers": true
   },
   "top-directional-drawer": {
@@ -17019,7 +17019,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Svj2-o7m",
+    "v": "49zenTE1",
     "tiers": true
   },
   "transaction-list": {
@@ -17053,7 +17053,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "FJb4aZKc",
+    "v": "jlR02s1R",
     "tiers": true
   },
   "tree-code-viewer": {
@@ -17079,7 +17079,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gPwsxEN0",
+    "v": "LB5EYPMW",
     "tiers": true
   },
   "tweet-grid": {
@@ -17089,7 +17089,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "Vkv4MKmc",
+    "v": "W6172-Th",
     "tiers": true
   },
   "typewriter": {
@@ -17108,7 +17108,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "0Rpt0xZN",
+    "v": "rbxkK0b-",
     "tiers": true
   },
   "typewriter-loader": {
@@ -17126,7 +17126,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "e1xWLni2",
+    "v": "qT__bcHM",
     "tiers": true
   },
   "ui-layouts-3d-marquee": {
@@ -17154,7 +17154,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "QsG8HPDQ",
+    "v": "2HX87GIQ",
     "tiers": true
   },
   "ui-layouts-color-picker": {
@@ -17164,7 +17164,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "QDz2jmbr",
+    "v": "cJUeAIQk",
     "tiers": true
   },
   "ui-layouts-file-upload": {
@@ -17201,7 +17201,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "DVw47fM9",
+    "v": "y03PUnVy",
     "tiers": true
   },
   "ui-layouts-tabs": {
@@ -17211,7 +17211,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "POhSV9m7",
+    "v": "RkRvhE2w",
     "tiers": true
   },
   "underline-animation": {
@@ -17307,7 +17307,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "ZSbOJyoj",
+    "v": "5dUFNbEP",
     "tiers": true
   },
   "verticle-marquee": {
@@ -17334,7 +17334,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gyM09dTE",
+    "v": "MKcZNkm-",
     "tiers": true
   },
   "video-gallery": {
@@ -17352,7 +17352,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "mZp54Pd_",
+    "v": "ZPerzCxZ",
     "tiers": true
   },
   "vortex": {
@@ -17362,7 +17362,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "CuZ3rX9f",
+    "v": "59kTCteH",
     "tiers": true
   },
   "vote-tally": {
@@ -17405,7 +17405,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "p374-yjI",
+    "v": "J7zwgU1m",
     "tiers": true
   },
   "warp-text": {
@@ -17431,7 +17431,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Q79SDa45",
+    "v": "1Kg4DHML",
     "tiers": true
   },
   "watersplash-imagemasking": {
@@ -17441,7 +17441,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3bZm92nw",
+    "v": "mG69H66G",
     "tiers": true
   },
   "waveform-scrub": {
@@ -17459,7 +17459,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WMhMSkfr",
+    "v": "XsEkG-Ap",
     "tiers": true
   },
   "web-analytics-dashboard": {
@@ -17485,7 +17485,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "qn9gJ8DF",
+    "v": "V1DjjUDQ",
     "tiers": true
   },
   "weight-widget": {
@@ -17527,7 +17527,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "hCz4xd_1",
+    "v": "tYWHVnTh",
     "tiers": true
   },
   "word-rotate": {
@@ -17546,7 +17546,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "sEynQ_xd",
+    "v": "DhnWhavn",
     "tiers": true
   },
   "world-map": {
@@ -17556,7 +17556,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "YcJkaf8y",
+    "v": "q2rcRo0r",
     "tiers": true
   },
   "youtube-video-player": {
@@ -17566,7 +17566,7 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Wno1LDYf",
+    "v": "UE57HsYU",
     "tiers": true
   }
 };
