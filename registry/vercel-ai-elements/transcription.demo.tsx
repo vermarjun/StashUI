@@ -17,7 +17,7 @@ const segments = (() => {
     const start = t;
     const length = 0.24 + word.length * 0.035 + (/[.,]$/.test(word) ? 0.3 : 0);
     t += length;
-    return { endSecond: t, startSecond: start, text: `${word} ` };
+    return { endSecond: t, startSecond: start, text: word };
   });
 })();
 
@@ -40,21 +40,21 @@ export default function TranscriptionDemo() {
 
   return (
     <div className="flex w-full items-center justify-center p-6">
-      <div className="w-full max-w-xl rounded-xl border border-border bg-background p-5">
+      <div className="w-full max-w-3xl rounded-2xl border border-border bg-background p-7">
         <div className="mb-4 flex items-center gap-3">
           <button
             aria-label={playing ? "Pause" : "Play"}
-            className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
+            className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground"
             onClick={() => setPlaying((p) => !p)}
             type="button"
           >
             {playing ? <PauseIcon className="size-4" /> : <PlayIcon className="size-4" />}
           </button>
           <div className="flex-1">
-            <p className="font-medium text-sm">Product Notes, Ep. 42</p>
-            <p className="text-muted-foreground text-xs">Priya Raman on onboarding that converts</p>
+            <p className="font-medium text-base">Product Notes, Ep. 42</p>
+            <p className="text-muted-foreground text-sm">Priya Raman on onboarding that converts</p>
           </div>
-          <span className="font-mono text-muted-foreground text-xs tabular-nums">
+          <span className="font-mono text-muted-foreground text-sm tabular-nums">
             {fmt(Math.min(time, total))} / {fmt(total)}
           </span>
         </div>
@@ -65,7 +65,7 @@ export default function TranscriptionDemo() {
           />
         </div>
         <Transcription
-          className="gap-0 text-base"
+          className="gap-x-[0.3em] gap-y-1 text-xl leading-relaxed"
           currentTime={time}
           onSeek={setTime}
           segments={segments}

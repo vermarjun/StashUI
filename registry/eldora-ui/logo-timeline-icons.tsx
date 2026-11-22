@@ -17,6 +17,24 @@ import {
   SiX,
   SiZapier,
 } from "react-icons/si"
+import {
+  LuBell,
+  LuCalendarDays,
+  LuChartBar,
+  LuCloud,
+  LuCreditCard,
+  LuDatabase,
+  LuFileText,
+  LuGlobe,
+  LuInbox,
+  LuLock,
+  LuMessageSquare,
+  LuSearch,
+  LuShieldCheck,
+  LuSparkles,
+  LuUsers,
+  LuWorkflow,
+} from "react-icons/lu"
 
 // Stand-in for the upstream `@/components/icons` map, built on react-icons.
 export const Icons = {
@@ -36,4 +54,21 @@ export const Icons = {
   linear: SiLinear,
   paypal: SiPaypal,
   applePay: SiApplepay,
+  // Generic, brand-free icons for feature/integration timelines.
+  analytics: LuChartBar,
+  notifications: LuBell,
+  calendar: LuCalendarDays,
+  cloud: LuCloud,
+  payments: LuCreditCard,
+  database: LuDatabase,
+  docs: LuFileText,
+  globe: LuGlobe,
+  inbox: LuInbox,
+  lock: LuLock,
+  chat: LuMessageSquare,
+  search: LuSearch,
+  security: LuShieldCheck,
+  ai: LuSparkles,
+  team: LuUsers,
+  automation: LuWorkflow,
 } satisfies Record<string, IconType>

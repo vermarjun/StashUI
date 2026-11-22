@@ -24,38 +24,46 @@ export default function TourDemo() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div className="flex min-h-[400px] flex-col items-center justify-center gap-8 p-8">
-      <div className="flex flex-col items-center gap-4">
-        <div className="flex flex-col items-center gap-1">
-          <h1 id="welcome-title" className="text-2xl font-bold">
-            Welcome to Your Dashboard
-          </h1>
-          <p className="text-center text-muted-foreground">
-            Take a quick tour to explore key features
-          </p>
+    <div className="flex min-h-[620px] w-full items-center justify-center p-8">
+      <div className="flex w-full max-w-5xl flex-col gap-6">
+        <div className="flex items-end justify-between gap-6">
+          <div className="flex flex-col gap-1">
+            <h1 id="welcome-title" className="text-4xl font-bold tracking-tight">
+              Welcome to your dashboard
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Take a quick tour to explore the key features.
+            </p>
+          </div>
+          <Button id="start-tour-btn" size="lg" onClick={() => setOpen(true)}>
+            Start Tour
+          </Button>
         </div>
-        <Button id="start-tour-btn" onClick={() => setOpen(true)}>
-          Start Tour
-        </Button>
-      </div>
-      <div className="grid grid-cols-3 gap-4">
-        <div id="feature-1" className="rounded-lg border p-4 text-center">
-          <h3 className="font-semibold">Analytics</h3>
-          <p className="text-sm text-muted-foreground">
-            Track your performance metrics
-          </p>
+        <div className="grid grid-cols-3 gap-5">
+          {[
+            { id: "feature-1", title: "Analytics", value: "48.2k", note: "Visitors this week, up 12%" },
+            { id: "feature-2", title: "Projects", value: "14", note: "Active projects, 3 due Friday" },
+            { id: "feature-3", title: "Team", value: "9", note: "Teammates online right now" },
+          ].map((card) => (
+            <div
+              key={card.id}
+              id={card.id}
+              className="flex flex-col gap-2 rounded-xl border bg-card p-6"
+            >
+              <h3 className="text-base font-medium text-muted-foreground">{card.title}</h3>
+              <p className="text-5xl font-semibold tracking-tight">{card.value}</p>
+              <p className="text-sm text-muted-foreground">{card.note}</p>
+            </div>
+          ))}
         </div>
-        <div id="feature-2" className="rounded-lg border p-4 text-center">
-          <h3 className="font-semibold">Projects</h3>
-          <p className="text-sm text-muted-foreground">
-            Manage your active projects
-          </p>
-        </div>
-        <div id="feature-3" className="rounded-lg border p-4 text-center">
-          <h3 className="font-semibold">Team</h3>
-          <p className="text-sm text-muted-foreground">
-            Collaborate with teammates
-          </p>
+        <div className="flex h-40 items-end gap-2 rounded-xl border bg-card p-6">
+          {[38, 52, 44, 61, 57, 72, 66, 81, 74, 88, 79, 93].map((h, i) => (
+            <div
+              key={i}
+              className="flex-1 rounded-sm bg-foreground/20"
+              style={{ height: `${h}%` }}
+            />
+          ))}
         </div>
       </div>
       <Tour

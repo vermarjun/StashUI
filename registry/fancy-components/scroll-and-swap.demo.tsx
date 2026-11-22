@@ -147,19 +147,16 @@ export default function ScrollAndSwapDemo() {
 
   return (
     <div
-      className="relative h-[600px] w-full items-center justify-start overflow-auto overscroll-contain rounded-lg bg-blue-500 p-4 text-white"
+      className="relative h-[600px] w-full overflow-auto overscroll-contain bg-background text-foreground [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] [scrollbar-width:none]"
       ref={containerRef}
     >
-      <div className="relative flex min-h-[1400px] items-start justify-center pt-72 uppercase">
-        <p className="absolute top-4 left-4 font-bold text-xl">
-          SCROLL SLOWLY
-        </p>
-        <div className="flex text-5xl justify-center items-center flex-col leading-none -space-y-0">
-          {names.map((name, index) => (
+      <div className="relative flex min-h-[1500px] items-start justify-center pt-56 pb-64 uppercase">
+        <div className="flex flex-col items-center justify-center text-6xl leading-none">
+          {names.slice(0, 28).map((name, index) => (
             <ScrollAndSwapText
               key={index}
-              offset={[`0 0.2`, `0 0.8`]}
-              className="font-bold leading-tighter"
+              offset={[`0 0.42`, `0 0.62`]}
+              className="font-bold tracking-tight"
               containerRef={containerRef}
             >
               {name}

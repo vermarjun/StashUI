@@ -132,9 +132,11 @@ export default function WizardExpandableDemo() {
   )
 
   return (
-    <div className="flex w-full justify-center px-4 py-10">
+    // Top-aligned with headroom: the wizard opens downward, so the padding keeps
+    // the expanded card centred in the stage instead of hugging the top edge.
+    <div className="flex min-h-[620px] w-full justify-center px-4 pt-[120px] pb-10">
       <div className="w-full max-w-2xl">
-        <WizardExpandable badgeText="SIGN UP" onComplete={() => setDone(true)} steps={steps} />
+        <WizardExpandable badgeText="SIGN UP" className="max-w-2xl sm:max-w-2xl" onComplete={() => setDone(true)} steps={steps} />
       </div>
     </div>
   )

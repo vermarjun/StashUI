@@ -18,6 +18,8 @@ import {
   ReelVideo,
 } from "./reel";
 
+// All stills (no remote video): a slow CDN video played as a black slide in
+// recordings. Every image is preloaded below so a slide never opens blank.
 const items: ReelItem[] = [
   {
     id: "dolomites",
@@ -29,29 +31,30 @@ const items: ReelItem[] = [
     description: "4:52 am, Rifugio Lagazuoi. Worth every step.",
   },
   {
-    id: "coast",
-    type: "video",
-    src: "https://cdn.pixabay.com/video/2023/10/19/185726-876210695_large.mp4",
-    duration: 6,
-    title: "Afternoon on the coast",
-    description: "Drone pass along the cliffs near Lagos.",
-  },
-  {
-    id: "lake",
+    id: "valley",
     type: "image",
-    src: "https://images.unsplash.com/photo-1548192746-dd526f154ed9?w=900&q=80",
+    src: "https://images.unsplash.com/photo-1693581176773-a5f2362209e6?w=900&q=80",
     duration: 4,
-    alt: "Alpine lake",
-    title: "Lago di Braies",
-    description: "Glass-still water before the crowds arrived.",
+    alt: "Green valley between snowy peaks",
+    title: "Down into the valley",
+    description: "Eleven kilometres of switchbacks, one long lunch.",
   },
   {
-    id: "city",
+    id: "horses",
     type: "image",
     src: "https://images.unsplash.com/photo-1460999158988-6f0380f81f4d?w=900&q=80",
     duration: 4,
-    alt: "City street at night",
-    title: "Back in the city",
+    alt: "Horses grazing in a meadow",
+    title: "Locals on the trail",
+    description: "They followed us for a good half mile.",
+  },
+  {
+    id: "lotus",
+    type: "image",
+    src: "https://images.unsplash.com/photo-1518599904199-0ca897819ddb?w=900&q=80",
+    duration: 4,
+    alt: "Blue lotus at dusk",
+    title: "Last light at the lake",
     description: "Last night of the trip.",
   },
 ];
@@ -61,6 +64,11 @@ export default function ReelDemo() {
   const current = items[index];
   return (
     <div className="flex h-[640px] w-full items-center justify-center p-6">
+      <div aria-hidden className="hidden">
+        {items.map((it) => (
+          <img alt="" key={it.id} src={it.src} />
+        ))}
+      </div>
       <Reel
         className="h-full rounded-2xl"
         data={items}

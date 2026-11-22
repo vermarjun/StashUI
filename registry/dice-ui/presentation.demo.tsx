@@ -3,7 +3,9 @@
 import { useCreatePresentationStore } from "@diceui/pptx";
 import * as React from "react";
 
-import { Input } from "@/components/ui/input";
+import { FileUp } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import {
   Presentation,
   PresentationContent,
@@ -22,6 +24,7 @@ const DEMO_DECK_PATH = "https://diceui.com/assets/demo.pptx";
 export default function PresentationDemo() {
   const id = React.useId();
   const store = useCreatePresentationStore();
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     fetch(DEMO_DECK_PATH)
@@ -50,17 +53,29 @@ export default function PresentationDemo() {
 
   return (
     <div className="flex h-[560px] w-full flex-col overflow-hidden rounded-xl border bg-background">
-      <div className="flex items-center gap-2 border-b p-1.5">
-        <label htmlFor={`${id}-file`} className="sr-only">
-          Open .pptx
-        </label>
-        <Input
+      <div className="flex items-center justify-between gap-2 border-b px-3 py-1.5">
+        <span className="truncate text-xs font-medium text-muted-foreground">
+          listening-rooms.pptx
+        </span>
+        {/* Native file input stays hidden; a themed button opens it. */}
+        <input
+          ref={inputRef}
           id={`${id}-file`}
           type="file"
           accept=".pptx"
-          className="h-8 max-w-56 py-px text-xs"
+          className="sr-only"
+          tabIndex={-1}
           onChange={onFileChange}
         />
+        <Button
+          size="sm"
+          variant="outline"
+          className="h-7 gap-1.5 text-xs"
+          onClick={() => inputRef.current?.click()}
+        >
+          <FileUp className="size-3.5" />
+          Open .pptx
+        </Button>
       </div>
       <PresentationProvider store={store}>
         <Presentation className="min-h-0 flex-1">

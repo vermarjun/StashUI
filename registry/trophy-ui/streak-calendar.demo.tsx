@@ -49,8 +49,8 @@ export default function StreakCalendarDemo() {
   React.useEffect(() => setStreak(buildStreak()), []);
 
   return (
-    <div className="flex w-full flex-col items-center gap-4 p-6">
-      <div className="w-full max-w-[1120px] rounded-2xl border border-border bg-card p-6 text-card-foreground">
+    <div className="flex min-h-[600px] w-full flex-col items-center justify-center gap-4 p-6">
+      <div className="w-full max-w-[1060px] rounded-2xl border border-border bg-card p-6 text-card-foreground">
         <div className="mb-2 flex items-center gap-2">
           <Flame className="h-5 w-5 text-orange-400" aria-hidden="true" />
           <span className="text-sm font-medium text-muted-foreground">Current streak</span>
@@ -58,14 +58,11 @@ export default function StreakCalendarDemo() {
         </div>
         <StreakCalendar streak={streak} view="year" startOfWeek={1} className="max-w-none" />
       </div>
-      <div className="grid w-full max-w-[1120px] grid-cols-1 gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
-        <div className="rounded-2xl border border-border bg-card p-6 text-card-foreground">
-          <StreakCalendar streak={streak} view="month" startOfWeek={1} className="mx-auto" />
-        </div>
-        <div className="flex flex-col justify-center rounded-2xl border border-border bg-card p-6 text-card-foreground">
-          <p className="mb-4 text-sm font-medium text-muted-foreground">This week</p>
-          <StreakCalendar streak={streak} view="week" startOfWeek={1} className="max-w-none" />
-        </div>
+      {/* Year + week only: with the month card too the stack ran past an 8:5
+          frame. The month view is the same component with view="month". */}
+      <div className="flex w-full max-w-[1060px] items-center gap-8 rounded-2xl border border-border bg-card px-6 py-5 text-card-foreground">
+        <p className="shrink-0 text-sm font-medium text-muted-foreground">This week</p>
+        <StreakCalendar streak={streak} view="week" startOfWeek={1} className="max-w-none flex-1" />
       </div>
     </div>
   );

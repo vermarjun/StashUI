@@ -1121,6 +1121,9 @@ export const demoLoaders: Record<string, Loader> = {
   "weight-widget": () => import("@/registry/watermelon-ui/weight-widget.demo"),
   "wispr-flow-text-animation": () => import("@/registry/aceternity-ui/wispr-flow-text-animation.demo"),
   "wizard-expandable": () => import("@/registry/cult-ui/wizard-expandable.demo"),
+  "fey-cards": () => import("@/registry/aceternity-ui/fey-cards.demo"),
+  "illustration-fluid-rendering": () => import("@/registry/cult-ui/illustration-fluid-rendering.demo"),
+  "ribbon-background": () => import("@/registry/inspira-react/ribbon-background.demo"),
 };
 
 // lazy() so each demo is its own chunk: importing the map costs nothing

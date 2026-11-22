@@ -1,3 +1,4 @@
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { WebAnalyticsDashboard } from "./web-analytics-dashboard";
 
 export default function WebAnalyticsDashboardDemo() {
@@ -15,7 +16,10 @@ export default function WebAnalyticsDashboardDemo() {
 						Jan 1 – Dec 31, 2026
 					</span>
 				</div>
-				<WebAnalyticsDashboard />
+				{/* The cards use Radix tooltips, which throw without a provider. */}
+				<TooltipProvider>
+					<WebAnalyticsDashboard />
+				</TooltipProvider>
 			</div>
 		</div>
 	);

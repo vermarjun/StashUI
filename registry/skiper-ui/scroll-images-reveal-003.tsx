@@ -4,6 +4,7 @@ import {
   motion,
   useInView,
   useMotionValue,
+  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -49,13 +50,16 @@ const StickyCard_003 = ({ imgUrl }: { imgUrl: string }) => {
   const { scrollY } = useScroll({
     target: container,
   });
-  const scale = useTransform(scrollY, [maxScrollY, maxScrollY + 10000], [1, 0]);
+  // A plain motion value driven by the scroll handler below. It used to be a
+  // useTransform over [maxScrollY, maxScrollY + 10000], which with the initial
+  // maxScrollY = Infinity resolved to scale 0, so every card stayed invisible.
+  const scale = useMotionValue(1);
   const isInView = useInView(container, {
     margin: `0px 0px -${100 - vertMargin}% 0px`,
     once: true,
   });
 
-  scrollY.on("change", (scrollY) => {
+  useMotionValueEvent(scrollY, "change", (scrollY) => {
     let animationValue = 1;
     if (scrollY > maxScrollY) {
       animationValue = Math.max(0, 1 - (scrollY - maxScrollY) / 10000);

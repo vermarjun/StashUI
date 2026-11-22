@@ -80,7 +80,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "SrpNXHDT",
+    "tiers": true
   },
   "3d-pin": {
     "device": "desktop",
@@ -1396,7 +1398,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "mgfzpq00",
+    "tiers": true
   },
   "about-ecommerse": {
     "device": "desktop",
@@ -1498,7 +1502,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "okWcyfAF",
+    "tiers": true
   },
   "action-bar": {
     "device": "desktop",
@@ -1506,7 +1512,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wBDijiOT",
+    "tiers": true
   },
   "activity-terrain": {
     "device": "desktop",
@@ -1514,7 +1522,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "bNTyoVNQ",
+    "tiers": true
   },
   "advanced-stats": {
     "device": "desktop",
@@ -1531,7 +1541,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Hh_NJdjL",
+    "tiers": true
   },
   "agent-suggest-card-stack": {
     "device": "desktop",
@@ -1539,7 +1551,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ahM74tyD",
+    "tiers": true
   },
   "ai-agent-lanes": {
     "device": "desktop",
@@ -1548,7 +1562,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "PMi6NxqW"
+    "v": "STxPMVmU",
+    "tiers": true
   },
   "ai-approval": {
     "device": "desktop",
@@ -1556,7 +1571,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "tO98TgQ4",
+    "tiers": true
   },
   "ai-autocomplete": {
     "device": "desktop",
@@ -1565,7 +1582,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "oKb4ZRkC"
+    "v": "eT5BjtF3",
+    "tiers": true
   },
   "ai-blob-warp": {
     "device": "desktop",
@@ -1573,7 +1591,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "00cXyMkC",
+    "tiers": true
   },
   "ai-branches": {
     "device": "desktop",
@@ -1582,7 +1602,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "msdj9u-m"
+    "v": "u9bvrWUS",
+    "tiers": true
   },
   "ai-citations": {
     "device": "desktop",
@@ -1591,7 +1612,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "QtWEmeSS"
+    "v": "6kT-7vaI",
+    "tiers": true
   },
   "ai-context-meter": {
     "device": "desktop",
@@ -1599,7 +1621,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "hkm9ROTu",
+    "tiers": true
   },
   "ai-diff-review": {
     "device": "desktop",
@@ -1608,7 +1632,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "win7NNPJ"
+    "v": "OGNxhr8V",
+    "tiers": true
   },
   "ai-inline-edit": {
     "device": "desktop",
@@ -1616,7 +1641,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "yftqS0JK",
+    "tiers": true
   },
   "ai-instructions": {
     "device": "desktop",
@@ -1635,7 +1662,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "QuCdTf-l"
+    "v": "Yi69DXrp",
+    "tiers": true
   },
   "ai-model-selector": {
     "device": "desktop",
@@ -1644,7 +1672,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bIT_t2Is"
+    "v": "NhQv1sqN",
+    "tiers": true
   },
   "ai-orb-face": {
     "device": "desktop",
@@ -1652,7 +1681,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "W7E1fm-V",
+    "tiers": true
   },
   "ai-sources": {
     "device": "desktop",
@@ -1660,7 +1691,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "FC-F_TPe",
+    "tiers": true
   },
   "ai-task-list": {
     "device": "desktop",
@@ -1668,7 +1701,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Nz2IF_eB",
+    "tiers": true
   },
   "ai-text-loading": {
     "device": "desktop",
@@ -1677,7 +1712,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ig2XaWk9"
+    "v": "idNzdjQa",
+    "tiers": true
   },
   "ai-token-alternatives": {
     "device": "desktop",
@@ -1685,7 +1721,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ofVFz8En",
+    "tiers": true
   },
   "ai-tool-approval": {
     "device": "desktop",
@@ -1694,7 +1732,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "B2yA3i6F"
+    "v": "0gJb8g2h",
+    "tiers": true
   },
   "ai-voice": {
     "device": "desktop",
@@ -1703,7 +1742,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "WYsGDRGZ"
+    "v": "9EFvw5jW",
+    "tiers": true
   },
   "alert-dialog": {
     "device": "desktop",
@@ -1722,7 +1762,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vNKzdbmn"
+    "v": "WUfzEmzm",
+    "tiers": true
   },
   "android": {
     "device": "mobile",
@@ -1777,7 +1818,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "4xaGtgcf",
+    "tiers": true
   },
   "animated-circular-progress-bar": {
     "device": "desktop",
@@ -1804,7 +1847,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "jAzsLzJn",
+    "tiers": true
   },
   "animated-gradient-text": {
     "device": "desktop",
@@ -1841,7 +1886,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "uQE7zzKW",
+    "tiers": true
   },
   "animated-modal": {
     "device": "desktop",
@@ -1921,7 +1968,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "c9evdrKr",
+    "tiers": true
   },
   "apple-activity-card": {
     "device": "desktop",
@@ -1929,7 +1978,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "k1l5c_u0",
+    "tiers": true
   },
   "apple-card-carousel": {
     "device": "desktop",
@@ -1956,7 +2007,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "BmORdC9L",
+    "tiers": true
   },
   "apple-pro-display-xdr": {
     "device": "desktop",
@@ -1964,7 +2017,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Ffuqn55S",
+    "tiers": true
   },
   "arcade-pixel": {
     "device": "desktop",
@@ -1972,7 +2027,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wbAqw13u",
+    "tiers": true
   },
   "ascii-art": {
     "device": "desktop",
@@ -1990,7 +2047,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "TtLIa6ft",
+    "tiers": true
   },
   "attract-button": {
     "device": "desktop",
@@ -1999,7 +2058,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vU_et5Fj"
+    "v": "5QZ5gUF0",
+    "tiers": true
   },
   "audio-meters": {
     "device": "desktop",
@@ -2007,7 +2067,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "nQ7OYuZX",
+    "tiers": true
   },
   "aurora-background": {
     "device": "desktop",
@@ -2035,7 +2097,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "qSJSEQFr",
+    "tiers": true
   },
   "autoscroll-slider": {
     "device": "desktop",
@@ -2102,7 +2166,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "yEbGsYvt",
+    "tiers": true
   },
   "background-gradient": {
     "device": "desktop",
@@ -2130,7 +2196,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "TUx8m10N",
+    "tiers": true
   },
   "background-lines": {
     "device": "desktop",
@@ -2149,7 +2217,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "VAOqw9x0"
+    "v": "kHs7L6mY",
+    "tiers": true
   },
   "background-ripple-effect": {
     "device": "desktop",
@@ -2197,7 +2266,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "hVArD3Ja",
+    "tiers": true
   },
   "bell-button": {
     "device": "desktop",
@@ -2205,7 +2276,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "lULqyntr",
+    "tiers": true
   },
   "bending-gallery": {
     "device": "desktop",
@@ -2230,11 +2303,12 @@ export const previews: Record<string, PreviewConfig> = {
   "bento-grid-draggable": {
     "device": "desktop",
     "height": 680,
-    "align": "top",
+    "align": "center",
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "LiOvJE8Q"
+    "v": "HaUMCENX",
+    "tiers": true
   },
   "bg-animate-button": {
     "device": "desktop",
@@ -2387,7 +2461,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "GudRxLol",
+    "tiers": true
   },
   "blog-grid": {
     "device": "desktop",
@@ -2395,7 +2471,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Y-iLEAvr",
+    "tiers": true
   },
   "blur-fade": {
     "device": "desktop",
@@ -2507,7 +2585,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "rN06xRGC",
+    "tiers": true
   },
   "box-carousel": {
     "device": "desktop",
@@ -2515,7 +2595,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eiGA54D0",
+    "tiers": true
   },
   "box-reveal": {
     "device": "desktop",
@@ -2534,7 +2616,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "BTDyHK7X"
+    "v": "FpbSm8bN",
+    "tiers": true
   },
   "breadcrumb": {
     "device": "desktop",
@@ -2722,7 +2805,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "pXdSOX7A",
+    "tiers": true
   },
   "bubble-board": {
     "device": "desktop",
@@ -2730,7 +2815,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "mzNOHSnK",
+    "tiers": true
   },
   "button": {
     "device": "desktop",
@@ -2757,7 +2844,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "hJpeGlIf",
+    "tiers": true
   },
   "button-hover-right": {
     "device": "desktop",
@@ -2800,12 +2889,13 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "call-chip": {
     "device": "desktop",
-    "height": 380,
+    "height": 460,
     "align": "center",
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "F1HONUDT"
+    "v": "Lydd_qOR",
+    "tiers": true
   },
   "canvas": {
     "device": "desktop",
@@ -2813,7 +2903,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Z0MgodCl",
+    "tiers": true
   },
   "canvas-crowd": {
     "device": "desktop",
@@ -2822,7 +2914,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Quh0kMal"
+    "v": "--6IH2L0",
+    "tiers": true
   },
   "canvas-fractal-grid": {
     "device": "desktop",
@@ -2869,7 +2962,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "m2R5dMYN",
+    "tiers": true
   },
   "card-flip-physics": {
     "device": "desktop",
@@ -2877,7 +2972,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "8a-7nFp0",
+    "tiers": true
   },
   "card-globe": {
     "device": "desktop",
@@ -2933,7 +3030,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Zy3tkouI",
+    "tiers": true
   },
   "cards-demo-1": {
     "device": "desktop",
@@ -2991,7 +3090,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "G-gcd6cy"
+    "v": "W09Wp-Fd",
+    "tiers": true
   },
   "cart-button": {
     "device": "desktop",
@@ -2999,7 +3099,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eBob486K",
+    "tiers": true
   },
   "cascader": {
     "device": "desktop",
@@ -3007,7 +3109,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "oMiKA-wy",
+    "tiers": true
   },
   "category-bar": {
     "device": "desktop",
@@ -3015,7 +3119,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "M2I_jNbz",
+    "tiers": true
   },
   "caustics-background": {
     "device": "desktop",
@@ -3023,7 +3129,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ww9mycic",
+    "tiers": true
   },
   "center-image-masking": {
     "device": "desktop",
@@ -3048,7 +3156,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "3R0dS1-y",
+    "tiers": true
   },
   "chart": {
     "device": "desktop",
@@ -3056,7 +3166,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "1HlSqqQm",
+    "tiers": true
   },
   "chart-area": {
     "device": "desktop",
@@ -3064,7 +3176,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "RD2NQbD4",
+    "tiers": true
   },
   "chart-bar": {
     "device": "desktop",
@@ -3072,7 +3186,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "2J9RgRTY",
+    "tiers": true
   },
   "chart-kit": {
     "device": "desktop",
@@ -3080,7 +3196,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "1h_NIzFj",
+    "tiers": true
   },
   "chart-line": {
     "device": "desktop",
@@ -3088,7 +3206,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "TegXjn6_",
+    "tiers": true
   },
   "chart-pie": {
     "device": "desktop",
@@ -3096,7 +3216,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "oPLRVTK0",
+    "tiers": true
   },
   "chart-radar": {
     "device": "desktop",
@@ -3104,7 +3226,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "-qFm_Fqr",
+    "tiers": true
   },
   "chart-radial": {
     "device": "desktop",
@@ -3112,7 +3236,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "VHYMFlqH",
+    "tiers": true
   },
   "chat-coss": {
     "device": "desktop",
@@ -3120,7 +3246,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "dg_GHYCq",
+    "tiers": true
   },
   "chat-form-dropzone": {
     "device": "desktop",
@@ -3177,7 +3305,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "iM2n0xCM",
+    "tiers": true
   },
   "circling-elements": {
     "device": "desktop",
@@ -3185,7 +3315,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eCoYH0Ux",
+    "tiers": true
   },
   "circuit-board": {
     "device": "desktop",
@@ -3193,7 +3325,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "guLFWcg6",
+    "tiers": true
   },
   "classname-slider": {
     "device": "desktop",
@@ -3210,7 +3344,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "cKLobdH9",
+    "tiers": true
   },
   "clip-path-carousel": {
     "device": "desktop",
@@ -3219,7 +3355,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "c0xmJmNL"
+    "v": "1TLwfZrD",
+    "tiers": true
   },
   "clip-path-corporate": {
     "device": "desktop",
@@ -3267,7 +3404,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "JScNNatd",
+    "tiers": true
   },
   "cloud-shader": {
     "device": "desktop",
@@ -3275,7 +3414,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "mgHdbEJ0",
+    "tiers": true
   },
   "code-block": {
     "device": "desktop",
@@ -3304,7 +3445,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "FgYwwBTk"
+    "v": "Mc5MU_v1",
+    "tiers": true
   },
   "code-tabs-animate": {
     "device": "desktop",
@@ -3312,7 +3454,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "lvdFcdHo",
+    "tiers": true
   },
   "code-tabs-mdx": {
     "device": "desktop",
@@ -3370,7 +3514,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ZPbM_eO-"
+    "v": "DbQF75ON",
+    "tiers": true
   },
   "comic-text": {
     "device": "desktop",
@@ -3399,7 +3544,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "t9PQzDE0"
+    "v": "n4ZnSOX9",
+    "tiers": true
   },
   "commit": {
     "device": "desktop",
@@ -3407,7 +3553,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Am-bYA0O",
+    "tiers": true
   },
   "comp-01": {
     "device": "desktop",
@@ -8336,11 +8484,13 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "contact-section": {
     "device": "desktop",
-    "height": 760,
-    "align": "top",
-    "scroll": true,
+    "height": 720,
+    "align": "center",
+    "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "GrlD5jcx",
+    "tiers": true
   },
   "contact-us": {
     "device": "desktop",
@@ -8348,7 +8498,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "bcMm2UUF",
+    "tiers": true
   },
   "container-scroll": {
     "device": "desktop",
@@ -8385,7 +8537,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "BYQTD7zB",
+    "tiers": true
   },
   "contextual-ai-bar": {
     "device": "desktop",
@@ -8393,7 +8547,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "dQLzhQKz",
+    "tiers": true
   },
   "continuous-pagination": {
     "device": "desktop",
@@ -8401,7 +8557,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "8Xx9a3n6",
+    "tiers": true
   },
   "cool-mode": {
     "device": "desktop",
@@ -8448,7 +8606,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "tJRRSVQP",
+    "tiers": true
   },
   "cradle-text": {
     "device": "desktop",
@@ -8457,7 +8617,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HsWXmy8o"
+    "v": "OhRemXMV",
+    "tiers": true
   },
   "creative-clippath": {
     "device": "desktop",
@@ -8529,7 +8690,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "2lpkcKLQ",
+    "tiers": true
   },
   "cropper": {
     "device": "desktop",
@@ -8548,7 +8711,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "wkOCpzF9"
+    "v": "hvUTGaCP",
+    "tiers": true
   },
   "crystalized-ball": {
     "device": "desktop",
@@ -8557,7 +8721,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "b0N7foyc"
+    "v": "8ygiqrkj",
+    "tiers": true
   },
   "css-card-stacking": {
     "device": "desktop",
@@ -8613,7 +8778,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "3lOGhCCg",
+    "tiers": true
   },
   "cursor-attractor-and-gravity": {
     "device": "desktop",
@@ -8621,7 +8788,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "K92MjLkW",
+    "tiers": true
   },
   "custom-kanban": {
     "device": "desktop",
@@ -8629,7 +8798,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "22eHWeoY",
+    "tiers": true
   },
   "customer-experience": {
     "device": "desktop",
@@ -8657,7 +8828,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "KTcO9qFz",
+    "tiers": true
   },
   "date-picker": {
     "device": "desktop",
@@ -8695,7 +8868,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "P1pABzpm",
+    "tiers": true
   },
   "default-color-picker": {
     "device": "desktop",
@@ -8743,7 +8918,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "vhU34-vu"
+    "v": "1XYnYE6j",
+    "tiers": true
   },
   "depth-text": {
     "device": "desktop",
@@ -8752,7 +8928,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "1SlgrFnb"
+    "v": "li_-sVQZ",
+    "tiers": true
   },
   "design-testimonials": {
     "device": "desktop",
@@ -8770,7 +8947,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "69gxcphM",
+    "tiers": true
   },
   "dia-text-reveal": {
     "device": "desktop",
@@ -8808,7 +8987,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wgxTIk4B",
+    "tiers": true
   },
   "direction-aware-hover": {
     "device": "desktop",
@@ -8865,7 +9046,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "9rEMmpbD",
+    "tiers": true
   },
   "dither-field": {
     "device": "desktop",
@@ -8873,7 +9056,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "e2HrGckg",
+    "tiers": true
   },
   "dither-image": {
     "device": "desktop",
@@ -8919,7 +9104,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "XVFQfjov",
+    "tiers": true
   },
   "dotted-glow-background": {
     "device": "desktop",
@@ -8968,7 +9155,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SZiXZ0nL"
+    "v": "TSQdE_S3",
+    "tiers": true
   },
   "draw-line-text": {
     "device": "desktop",
@@ -8976,7 +9164,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "S9XnPpZK",
+    "tiers": true
   },
   "dropdown-menu": {
     "device": "desktop",
@@ -9005,7 +9195,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "u7IXDdM0"
+    "v": "ayAnE9xr",
+    "tiers": true
   },
   "edge-blur": {
     "device": "desktop",
@@ -9022,16 +9213,19 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "hsyJG96c",
+    "tiers": true
   },
   "editor-toolbar-dock": {
     "device": "desktop",
-    "height": 540,
+    "height": 700,
     "align": "center",
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "CSdtJx_X"
+    "v": "7DVE1t-S",
+    "tiers": true
   },
   "elastic-line": {
     "device": "desktop",
@@ -9039,7 +9233,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "8hqfB0yp",
+    "tiers": true
   },
   "elastic-mesh": {
     "device": "desktop",
@@ -9048,7 +9244,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "-gqhHmn4"
+    "v": "q3uj8ufQ",
+    "tiers": true
   },
   "electric-logo": {
     "device": "desktop",
@@ -9057,7 +9254,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "siJIyeGS"
+    "v": "tIFZG0Ex",
+    "tiers": true
   },
   "emoji-picker": {
     "device": "desktop",
@@ -9065,7 +9263,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "sd9YdBSI",
+    "tiers": true
   },
   "emoji-reaction": {
     "device": "desktop",
@@ -9073,7 +9273,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "JTpbSCTF",
+    "tiers": true
   },
   "emoji-spree-choice-chips": {
     "device": "desktop",
@@ -9081,7 +9283,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "EUuMM2q6",
+    "tiers": true
   },
   "empty-states": {
     "device": "desktop",
@@ -9089,7 +9293,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "mQc8rtCK",
+    "tiers": true
   },
   "encrypted-text": {
     "device": "desktop",
@@ -9107,7 +9313,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "mrLXLs4Z",
+    "tiers": true
   },
   "evervault-card": {
     "device": "desktop",
@@ -9135,7 +9343,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "kIJ4Swvp",
+    "tiers": true
   },
   "expandable-gallery": {
     "device": "desktop",
@@ -9163,7 +9373,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "knPF1rtQ",
+    "tiers": true
   },
   "face-rating": {
     "device": "desktop",
@@ -9171,7 +9383,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "NtdcTioQ",
+    "tiers": true
   },
   "family-button": {
     "device": "desktop",
@@ -9228,7 +9442,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "f3n8-wkT",
+    "tiers": true
   },
   "feature-bento": {
     "device": "desktop",
@@ -9345,7 +9561,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "zJOz5XXP",
+    "tiers": true
   },
   "fey-cards": {
     "device": "desktop",
@@ -9353,7 +9571,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "C_vqE5PS",
+    "tiers": true
   },
   "figma-comment": {
     "device": "desktop",
@@ -9361,7 +9581,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ACZUH1s_",
+    "tiers": true
   },
   "figma-cursor": {
     "device": "desktop",
@@ -9369,7 +9591,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "K42UtNF1",
+    "tiers": true
   },
   "file-icons": {
     "device": "desktop",
@@ -9377,7 +9601,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "z4x88MKx",
+    "tiers": true
   },
   "file-tree": {
     "device": "tablet",
@@ -9395,7 +9621,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "6JxvKyx-",
+    "tiers": true
   },
   "file-upload": {
     "device": "desktop",
@@ -9413,7 +9641,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "IrT7MWf7",
+    "tiers": true
   },
   "fixed-bg-image-masking": {
     "device": "desktop",
@@ -9440,7 +9670,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "BmObo1Hm"
+    "v": "FVQ8UyOU",
+    "tiers": true
   },
   "flickering-grid": {
     "device": "desktop",
@@ -9517,7 +9748,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Jzlmzx0n",
+    "tiers": true
   },
   "fluid-cursor": {
     "device": "desktop",
@@ -9534,7 +9767,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "W2MY0XSx",
+    "tiers": true
   },
   "flying-button": {
     "device": "desktop",
@@ -9543,7 +9778,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "v3KUs1cD"
+    "v": "pRgBwEbp",
+    "tiers": true
   },
   "focal-point-picker": {
     "device": "desktop",
@@ -9552,7 +9788,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "3A7QWAI_"
+    "v": "N513hriZ",
+    "tiers": true
   },
   "focus": {
     "device": "desktop",
@@ -9580,7 +9817,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pXjLnRaa"
+    "v": "wmMulMQJ",
+    "tiers": true
   },
   "folder-float": {
     "device": "desktop",
@@ -9589,7 +9827,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "6Oaiegjb"
+    "v": "7OrzJf8i",
+    "tiers": true
   },
   "follow-button": {
     "device": "desktop",
@@ -9597,7 +9836,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wnHNqmlH",
+    "tiers": true
   },
   "following-pointer": {
     "device": "desktop",
@@ -9615,7 +9856,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wGpkko9X",
+    "tiers": true
   },
   "footer-blocks": {
     "device": "desktop",
@@ -9623,7 +9866,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "7AHvs1ET",
+    "tiers": true
   },
   "footer-bold": {
     "device": "desktop",
@@ -9737,7 +9982,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "YSP9BBRG"
+    "v": "fXKOOYik",
+    "tiers": true
   },
   "gallery-modal-accordion": {
     "device": "desktop",
@@ -9755,7 +10001,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "X4nRPoUW",
+    "tiers": true
   },
   "gauge": {
     "device": "desktop",
@@ -9763,7 +10011,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "YMr1Lcw4",
+    "tiers": true
   },
   "ghost-fibers": {
     "device": "desktop",
@@ -9772,7 +10022,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3cFoXMrF"
+    "v": "SEeUupby",
+    "tiers": true
   },
   "github-globe": {
     "device": "desktop",
@@ -9789,7 +10040,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "LI2-CsCb",
+    "tiers": true
   },
   "github-stars-wheel": {
     "device": "desktop",
@@ -9797,7 +10050,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "aeTcNxJT",
+    "tiers": true
   },
   "glare-card": {
     "device": "desktop",
@@ -9826,7 +10081,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "zUiJbeko"
+    "v": "ac5NlSJG",
+    "tiers": true
   },
   "glitch-vault": {
     "device": "desktop",
@@ -9834,7 +10090,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "dj3huI0f",
+    "tiers": true
   },
   "globe": {
     "device": "desktop",
@@ -9880,7 +10138,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "V-xXi1r_",
+    "tiers": true
   },
   "glyph-matrix": {
     "device": "desktop",
@@ -9888,7 +10148,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "jY1KINzW",
+    "tiers": true
   },
   "goey-toast": {
     "device": "desktop",
@@ -9896,7 +10158,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "yUEY8v26",
+    "tiers": true
   },
   "gooey-dropdown": {
     "device": "desktop",
@@ -9904,7 +10168,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "0o1xbjlK",
+    "tiers": true
   },
   "gooey-input": {
     "device": "desktop",
@@ -9922,7 +10188,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "QcbUC3mS",
+    "tiers": true
   },
   "google-gemini-effect": {
     "device": "desktop",
@@ -10031,7 +10299,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Lk9JpVs_"
+    "v": "0vQBeW3e",
+    "tiers": true
   },
   "gradient-awesome-pine": {
     "device": "desktop",
@@ -11501,7 +11770,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "PEF2HSPF"
+    "v": "uCTJEw8w",
+    "tiers": true
   },
   "gradient-wide-matrix": {
     "device": "desktop",
@@ -11574,7 +11844,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "cY84Wfoh",
+    "tiers": true
   },
   "grid": {
     "device": "desktop",
@@ -11621,7 +11893,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "fchEOf0y",
+    "tiers": true
   },
   "halftone-reveal": {
     "device": "desktop",
@@ -11630,7 +11904,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "SeWIcLUp"
+    "v": "qnfyzWNM",
+    "tiers": true
   },
   "halo-card": {
     "device": "desktop",
@@ -11638,7 +11913,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "9HzBmFRP",
+    "tiers": true
   },
   "halo-dropzone": {
     "device": "desktop",
@@ -11646,7 +11923,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "hoPRpPVE",
+    "tiers": true
   },
   "halo-search": {
     "device": "desktop",
@@ -11822,7 +12101,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "7OVKgYUR"
+    "v": "kosH-snz",
+    "tiers": true
   },
   "holo-card": {
     "device": "desktop",
@@ -11830,7 +12110,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "FvRwmTec",
+    "tiers": true
   },
   "horizontal-progressive-carousel": {
     "device": "desktop",
@@ -11954,7 +12236,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "vmYND17a",
+    "tiers": true
   },
   "illustration-globe-vercel": {
     "device": "desktop",
@@ -11962,7 +12246,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "D90csuHh",
+    "tiers": true
   },
   "image-generation-loader": {
     "device": "desktop",
@@ -11970,7 +12256,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "KEzwlWHF",
+    "tiers": true
   },
   "image-hover-accordion": {
     "device": "desktop",
@@ -12122,7 +12410,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "uxI0y2NQ",
+    "tiers": true
   },
   "infinity-band-scroll": {
     "device": "desktop",
@@ -12148,7 +12438,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "f-vMzz7p"
+    "v": "KLG2H3dH",
+    "tiers": true
   },
   "inline-edit": {
     "device": "desktop",
@@ -12156,7 +12447,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "M4l-MAh0",
+    "tiers": true
   },
   "inline-testimonials": {
     "device": "desktop",
@@ -12164,7 +12457,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "XGdsGUtT",
+    "tiers": true
   },
   "input": {
     "device": "desktop",
@@ -12721,7 +13016,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "p2gO7TiQ",
+    "tiers": true
   },
   "interactive-grid-pattern": {
     "device": "desktop",
@@ -12749,7 +13046,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "15p0-2o_",
+    "tiers": true
   },
   "intro-disclosure": {
     "device": "desktop",
@@ -12767,7 +13066,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "C7vb_ILS",
+    "tiers": true
   },
   "iphone": {
     "device": "mobile",
@@ -12794,7 +13095,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "hgmwaY-X",
+    "tiers": true
   },
   "json-viewer": {
     "device": "desktop",
@@ -12802,7 +13105,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "7Qcc1a2E",
+    "tiers": true
   },
   "kanban-board": {
     "device": "desktop",
@@ -12810,7 +13115,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "GczleK5I",
+    "tiers": true
   },
   "key-value": {
     "device": "desktop",
@@ -12818,7 +13125,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "q9vQEIAr",
+    "tiers": true
   },
   "keyboard": {
     "device": "desktop",
@@ -12846,7 +13155,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "sAf3dMB-",
+    "tiers": true
   },
   "label": {
     "device": "mobile",
@@ -12884,7 +13195,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "BlTVLaLT"
+    "v": "yGOCsWiz",
+    "tiers": true
   },
   "lattice-loader": {
     "device": "desktop",
@@ -12893,7 +13205,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "YeQFIqzS"
+    "v": "YgyZquW5",
+    "tiers": true
   },
   "layered-progressive-disclosure": {
     "device": "desktop",
@@ -12901,7 +13214,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "tqcPR3pL",
+    "tiers": true
   },
   "layout-grid": {
     "device": "desktop",
@@ -12978,7 +13293,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "UFpxnnkY"
+    "v": "PYjmTD-7",
+    "tiers": true
   },
   "lightboard": {
     "device": "desktop",
@@ -12997,7 +13313,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "odRNsYlH"
+    "v": "3L9c72WI",
+    "tiers": true
   },
   "line-shadow-text": {
     "device": "desktop",
@@ -13016,7 +13333,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "RJoXbZvA"
+    "v": "58ytXSHz",
+    "tiers": true
   },
   "linear-modal": {
     "device": "desktop",
@@ -13072,7 +13390,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "xQ6bh398"
+    "v": "fKbnlJ2f",
+    "tiers": true
   },
   "liquid-glass": {
     "device": "desktop",
@@ -13101,7 +13420,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "dvzS2UCU"
+    "v": "eyM0kBrq",
+    "tiers": true
   },
   "liquid-glass-notification": {
     "device": "desktop",
@@ -13159,7 +13479,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "fauZcFzX",
+    "tiers": true
   },
   "loader": {
     "device": "desktop",
@@ -13188,7 +13510,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "dGCo0_Pn"
+    "v": "2mLLQbqk",
+    "tiers": true
   },
   "logo-carousel": {
     "device": "desktop",
@@ -13222,11 +13545,13 @@ export const previews: Record<string, PreviewConfig> = {
   },
   "logo-timeline": {
     "device": "desktop",
-    "height": 520,
+    "height": 600,
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "DTZ7-pRK",
+    "tiers": true
   },
   "logos-marquee": {
     "device": "desktop",
@@ -13254,7 +13579,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "uWJdll9G",
+    "tiers": true
   },
   "macbook-scroll": {
     "device": "desktop",
@@ -13360,7 +13687,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "XebzhjTh",
+    "tiers": true
   },
   "magnified-doc": {
     "device": "desktop",
@@ -13378,7 +13707,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "xAQI1SXJ",
+    "tiers": true
   },
   "markdown": {
     "device": "desktop",
@@ -13386,7 +13717,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "8ZP1iFWL",
+    "tiers": true
   },
   "marking-menu": {
     "device": "desktop",
@@ -13394,7 +13727,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "9QoX8OFI",
+    "tiers": true
   },
   "marque-testimonial": {
     "device": "desktop",
@@ -13422,7 +13757,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "y7TwyyiG"
+    "v": "jQmWeapP",
+    "tiers": true
   },
   "mask-input": {
     "device": "desktop",
@@ -13430,7 +13766,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "z_pq7kDr",
+    "tiers": true
   },
   "media-between-text": {
     "device": "desktop",
@@ -13438,7 +13776,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "7-7MRWvT",
+    "tiers": true
   },
   "media-modal": {
     "device": "desktop",
@@ -13465,15 +13805,19 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Vv5FSn1h",
+    "tiers": true
   },
   "mention": {
     "device": "desktop",
-    "height": 380,
+    "height": 460,
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "vktpiMcX",
+    "tiers": true
   },
   "menubar-animated": {
     "device": "desktop",
@@ -13481,7 +13825,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "oCus7UW_",
+    "tiers": true
   },
   "merging-bubbles": {
     "device": "desktop",
@@ -13489,7 +13835,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "COI5mVld",
+    "tiers": true
   },
   "mesh-gradient-background": {
     "device": "desktop",
@@ -13535,7 +13883,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "szBCFNrl",
+    "tiers": true
   },
   "messenger-testimonial": {
     "device": "desktop",
@@ -13573,7 +13923,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "fQ26l-FO",
+    "tiers": true
   },
   "micro-slats": {
     "device": "desktop",
@@ -13582,7 +13934,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "B46Rbsp9"
+    "v": "q_xo6yLD",
+    "tiers": true
   },
   "mini-calendar": {
     "device": "desktop",
@@ -13590,7 +13943,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "32Pf5B9H",
+    "tiers": true
   },
   "minimal-card": {
     "device": "desktop",
@@ -13619,7 +13974,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "MC0XEs6l"
+    "v": "hcjTQ9Wd",
+    "tiers": true
   },
   "morph-slider": {
     "device": "desktop",
@@ -13628,7 +13984,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "X6Q8y3-N"
+    "v": "lLfNGKco",
+    "tiers": true
   },
   "morph-surface": {
     "device": "desktop",
@@ -13647,7 +14004,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "NU49ZZrL"
+    "v": "rjmQUWEw",
+    "tiers": true
   },
   "morphing-discovery-bar": {
     "device": "desktop",
@@ -13655,7 +14013,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "jz94JptD",
+    "tiers": true
   },
   "morphing-tabs": {
     "device": "desktop",
@@ -13722,7 +14082,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "a-5H0w8U",
+    "tiers": true
   },
   "mousetrail": {
     "device": "desktop",
@@ -13808,7 +14170,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "LD9naoOV",
+    "tiers": true
   },
   "music-toggle-button": {
     "device": "desktop",
@@ -13816,7 +14180,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "_K6hwE7o",
+    "tiers": true
   },
   "navbar-menu": {
     "device": "desktop",
@@ -13874,7 +14240,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "K0czQzUz",
+    "tiers": true
   },
   "neumorph-button": {
     "device": "desktop",
@@ -13938,7 +14306,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "swBv98YN",
+    "tiers": true
   },
   "notch": {
     "device": "desktop",
@@ -13956,7 +14326,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Y1fUjHld",
+    "tiers": true
   },
   "notion-mention-link": {
     "device": "desktop",
@@ -13964,7 +14336,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "RKs3iJHP",
+    "tiers": true
   },
   "novatrix-background": {
     "device": "desktop",
@@ -13972,7 +14346,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "l1-yTcue",
+    "tiers": true
   },
   "number-flow-trading": {
     "device": "desktop",
@@ -14020,7 +14396,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "SrHpG30k",
+    "tiers": true
   },
   "option-wheel": {
     "device": "desktop",
@@ -14029,7 +14407,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Tol-RLwu"
+    "v": "ECWJsKKO",
+    "tiers": true
   },
   "orbit": {
     "device": "desktop",
@@ -14046,7 +14425,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eXUU6hZO",
+    "tiers": true
   },
   "orbiting-circles": {
     "device": "desktop",
@@ -14138,7 +14519,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "3xeYf66O"
+    "v": "V7hXbLCH",
+    "tiers": true
   },
   "pagination": {
     "device": "desktop",
@@ -14155,7 +14537,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "r0X-sUr5",
+    "tiers": true
   },
   "paper-crumple": {
     "device": "desktop",
@@ -14164,7 +14548,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "asJCoUof"
+    "v": "NwwbGN2w",
+    "tiers": true
   },
   "parallax-floating": {
     "device": "desktop",
@@ -14172,7 +14557,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "3MxtzdW4",
+    "tiers": true
   },
   "parallax-hero-images": {
     "device": "desktop",
@@ -14211,7 +14598,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "Y7pI_ZOS"
+    "v": "PDA54Kgy",
+    "tiers": true
   },
   "particle-image": {
     "device": "desktop",
@@ -14296,7 +14684,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "WwM1Mpgv"
+    "v": "88pL7JBt",
+    "tiers": true
   },
   "peek-rating": {
     "device": "desktop",
@@ -14305,7 +14694,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "L9Oa_i_D"
+    "v": "E7ZFst9I",
+    "tiers": true
   },
   "phone-input": {
     "device": "desktop",
@@ -14342,7 +14732,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "oiemI4VU",
+    "tiers": true
   },
   "pixel-flow-field": {
     "device": "desktop",
@@ -14350,7 +14742,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "1hZDT0xg",
+    "tiers": true
   },
   "pixel-heading-character": {
     "device": "desktop",
@@ -14358,7 +14752,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "BhV4heeQ",
+    "tiers": true
   },
   "pixel-image": {
     "device": "desktop",
@@ -14376,7 +14772,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "lP0kziOK",
+    "tiers": true
   },
   "pixelated-canvas": {
     "device": "desktop",
@@ -14404,7 +14802,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "218k411Y",
+    "tiers": true
   },
   "plucked-text": {
     "device": "desktop",
@@ -14412,7 +14812,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "WwJa1bwD",
+    "tiers": true
   },
   "pointer": {
     "device": "desktop",
@@ -14478,7 +14880,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "sQHdsdVr",
+    "tiers": true
   },
   "predictive-text": {
     "device": "desktop",
@@ -14486,7 +14890,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "4eL1SYGV",
+    "tiers": true
   },
   "presentation": {
     "device": "desktop",
@@ -14494,7 +14900,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "gbvU9_3K",
+    "tiers": true
   },
   "pricing-frequency-toggle": {
     "device": "desktop",
@@ -14502,7 +14910,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "QiBG5aXT",
+    "tiers": true
   },
   "pricing-grow-business": {
     "device": "desktop",
@@ -14519,7 +14929,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "QmDPCVp-",
+    "tiers": true
   },
   "primitives-animate-code-block": {
     "device": "desktop",
@@ -14790,7 +15202,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "ntdQERy-"
+    "v": "4OLWRX4e",
+    "tiers": true
   },
   "progress": {
     "device": "desktop",
@@ -14828,7 +15241,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "BIoJOr2q"
+    "v": "6NmQmZBI",
+    "tiers": true
   },
   "proxy-admin": {
     "device": "desktop",
@@ -14846,7 +15260,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "m3l05z7W"
+    "v": "W2fIkkv1",
+    "tiers": true
   },
   "pulsating-button": {
     "device": "desktop",
@@ -14865,7 +15280,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "E93PhPsj"
+    "v": "9xXrdjmY",
+    "tiers": true
   },
   "qr-code": {
     "device": "desktop",
@@ -14873,7 +15289,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wO9mmLS1",
+    "tiers": true
   },
   "query-builder": {
     "device": "desktop",
@@ -14881,7 +15299,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "1FDgRDHB",
+    "tiers": true
   },
   "questionnaire": {
     "device": "desktop",
@@ -14889,7 +15309,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "KNjhv1C9",
+    "tiers": true
   },
   "r3f-blob": {
     "device": "desktop",
@@ -14934,7 +15356,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "0ZQw7Pky",
+    "tiers": true
   },
   "rainbow-button": {
     "device": "desktop",
@@ -14961,7 +15385,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "UYvOm5oh",
+    "tiers": true
   },
   "raws-color-picker": {
     "device": "desktop",
@@ -14979,7 +15405,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "maLSQMAu"
+    "v": "TOrmyhwJ",
+    "tiers": true
   },
   "reel": {
     "device": "desktop",
@@ -14987,7 +15414,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "PCXXeqhv",
+    "tiers": true
   },
   "refine-frame": {
     "device": "desktop",
@@ -14995,7 +15424,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "-UaWafCB",
+    "tiers": true
   },
   "register-tab": {
     "device": "desktop",
@@ -15013,7 +15444,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "G1jP6_zm",
+    "tiers": true
   },
   "repeat-scroll": {
     "device": "desktop",
@@ -15029,7 +15462,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "G7OPTOg6",
+    "tiers": true
   },
   "resizable-navbar": {
     "device": "desktop",
@@ -15047,7 +15482,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ex8EZU9D",
+    "tiers": true
   },
   "responsive-dialog": {
     "device": "desktop",
@@ -15055,7 +15492,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ltAI_r_K",
+    "tiers": true
   },
   "retro-grid": {
     "device": "desktop",
@@ -15065,6 +15504,16 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "kA4zLIeG",
+    "tiers": true
+  },
+  "ribbon-background": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "pKN16DPi",
     "tiers": true
   },
   "right-motion-drawer": {
@@ -15103,7 +15552,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "AKSTUcaT"
+    "v": "NxThRiBA",
+    "tiers": true
   },
   "rubber-segment": {
     "device": "desktop",
@@ -15112,7 +15562,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "hUtqwm_c"
+    "v": "bq4o0N1q",
+    "tiers": true
   },
   "safari": {
     "device": "desktop",
@@ -15139,7 +15590,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Sq0Ashdy",
+    "tiers": true
   },
   "save-button": {
     "device": "desktop",
@@ -15148,7 +15601,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Ia1NH1Ys"
+    "v": "Cxc6UvRY",
+    "tiers": true
   },
   "scale-slider": {
     "device": "desktop",
@@ -15184,7 +15638,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eWmIIeTU",
+    "tiers": true
   },
   "scroll-and-swap": {
     "device": "desktop",
@@ -15192,7 +15648,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "upq6nrea",
+    "tiers": true
   },
   "scroll-animation": {
     "device": "desktop",
@@ -15266,7 +15724,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "V2HE2Qo2",
+    "tiers": true
   },
   "scroll-images-reveal-003": {
     "device": "desktop",
@@ -15274,7 +15734,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "mIFuiegE",
+    "tiers": true
   },
   "scroll-index": {
     "device": "desktop",
@@ -15282,7 +15744,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "bAUf-QoY",
+    "tiers": true
   },
   "scroll-island": {
     "device": "desktop",
@@ -15364,7 +15828,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "LxfVL-op"
+    "v": "gwzvyo5r",
+    "tiers": true
   },
   "scrubber": {
     "device": "desktop",
@@ -15372,7 +15837,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Fkb0fHo6",
+    "tiers": true
   },
   "seat-map": {
     "device": "desktop",
@@ -15380,7 +15847,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "ohjJx6wR",
+    "tiers": true
   },
   "security-checkpoint": {
     "device": "desktop",
@@ -15388,7 +15857,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "sL_QqEHA",
+    "tiers": true
   },
   "select": {
     "device": "desktop",
@@ -15416,7 +15887,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "qPwVcA37",
+    "tiers": true
   },
   "settings-page": {
     "device": "desktop",
@@ -15424,7 +15897,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "BXiAMAg4",
+    "tiers": true
   },
   "shader-lens-blur": {
     "device": "desktop",
@@ -15442,7 +15917,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "9d8weAlh",
+    "tiers": true
   },
   "shader-toy": {
     "device": "desktop",
@@ -15460,7 +15937,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "cTaEf5Ac"
+    "v": "j3UACne1",
+    "tiers": true
   },
   "shape-hero": {
     "device": "desktop",
@@ -15469,7 +15947,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4dcegJaQ"
+    "v": "5G_x8lQL",
+    "tiers": true
   },
   "shape-waves": {
     "device": "desktop",
@@ -15485,7 +15964,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Lb5HLrt6",
+    "tiers": true
   },
   "shift-card": {
     "device": "desktop",
@@ -15503,7 +15984,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "UQlmpUX2",
+    "tiers": true
   },
   "shimmer-button": {
     "device": "desktop",
@@ -15520,7 +16003,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Tmx3N9eL",
+    "tiers": true
   },
   "shine-border": {
     "device": "desktop",
@@ -15568,7 +16053,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "5DGONN8l"
+    "v": "5VO1RfW4",
+    "tiers": true
   },
   "shuffle-hero": {
     "device": "desktop",
@@ -15576,7 +16062,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "A26wzc_i",
+    "tiers": true
   },
   "side-panel": {
     "device": "desktop",
@@ -15604,7 +16092,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "KbHbqBMY",
+    "tiers": true
   },
   "signature-pad": {
     "device": "desktop",
@@ -15613,7 +16103,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "p_Qny96S"
+    "v": "41rUeMjY",
+    "tiers": true
   },
   "single-layout-accordion": {
     "device": "desktop",
@@ -15630,7 +16121,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "wtWayDWp",
+    "tiers": true
   },
   "sleek-line-cursor": {
     "device": "desktop",
@@ -15649,7 +16142,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "Sd8a_XUp"
+    "v": "tfJEmFiv",
+    "tiers": true
   },
   "slide-commit": {
     "device": "desktop",
@@ -15658,7 +16152,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "3UavXYqG"
+    "v": "JhJ8l3LO",
+    "tiers": true
   },
   "slider": {
     "device": "desktop",
@@ -15677,7 +16172,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "K50rq3ED"
+    "v": "sn38Nxzl",
+    "tiers": true
   },
   "smooth-caret-input": {
     "device": "desktop",
@@ -15686,7 +16182,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "CG1GVMbm"
+    "v": "QSKC_vH1",
+    "tiers": true
   },
   "smooth-cursor": {
     "device": "desktop",
@@ -15750,7 +16247,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "cHpubenm",
+    "tiers": true
   },
   "sparkles": {
     "device": "desktop",
@@ -15758,7 +16257,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Tv66KiNv",
+    "tiers": true
   },
   "sparkles-text": {
     "device": "desktop",
@@ -15776,7 +16277,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "Sypri9vN",
+    "tiers": true
   },
   "special-offer": {
     "device": "desktop",
@@ -15795,7 +16298,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "4g_zpjlm"
+    "v": "kgUYtfM4",
+    "tiers": true
   },
   "speech-input": {
     "device": "desktop",
@@ -15803,7 +16307,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "DBG7bJ59",
+    "tiers": true
   },
   "speed-dial": {
     "device": "desktop",
@@ -15811,7 +16317,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "K_KYNd9x",
+    "tiers": true
   },
   "spending-ring": {
     "device": "desktop",
@@ -15820,7 +16328,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "I2-_s-C9"
+    "v": "jKBOmmoN",
+    "tiers": true
   },
   "spinning-text": {
     "device": "desktop",
@@ -15858,7 +16367,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "bJ5Tedjq"
+    "v": "weVsrkix",
+    "tiers": true
   },
   "spoiler-text": {
     "device": "desktop",
@@ -15867,7 +16377,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "jxcdj8Um"
+    "v": "wSkpQeij",
+    "tiers": true
   },
   "spotlight": {
     "device": "desktop",
@@ -15962,7 +16473,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "3ZdN2jP9",
+    "tiers": true
   },
   "squiggle-arrow": {
     "device": "mobile",
@@ -15991,7 +16504,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "b-83fqSI"
+    "v": "--6NVhk1",
+    "tiers": true
   },
   "stack-panel": {
     "device": "desktop",
@@ -16000,7 +16514,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "BhsRDoap"
+    "v": "xIvjETFI",
+    "tiers": true
   },
   "stack-trace": {
     "device": "desktop",
@@ -16008,7 +16523,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "JTIsLG3b",
+    "tiers": true
   },
   "stacking-card": {
     "device": "desktop",
@@ -16104,7 +16621,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "L8UZoe93",
+    "tiers": true
   },
   "status-mark": {
     "device": "desktop",
@@ -16113,7 +16632,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "NnqNhOSI"
+    "v": "-Dad6TZ4",
+    "tiers": true
   },
   "stay-picker": {
     "device": "desktop",
@@ -16122,7 +16642,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "yneDZzKF"
+    "v": "i0K0l3w1",
+    "tiers": true
   },
   "stepper": {
     "device": "desktop",
@@ -16189,7 +16710,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "FTphyEa-",
+    "tiers": true
   },
   "strands": {
     "device": "desktop",
@@ -16198,15 +16721,18 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "T6xNLkHE"
+    "v": "5q4xU6EN",
+    "tiers": true
   },
   "streak-calendar": {
     "device": "desktop",
-    "height": 760,
-    "align": "top",
-    "scroll": true,
+    "height": 600,
+    "align": "center",
+    "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "d2dHFcGc",
+    "tiers": true
   },
   "stripe-bg-guides": {
     "device": "desktop",
@@ -16262,7 +16788,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "zh4-7hK4",
+    "tiers": true
   },
   "svg-follow-scroll": {
     "device": "desktop",
@@ -16271,7 +16799,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": true,
     "background": "none",
     "hasVideo": true,
-    "v": "54xrkAXm"
+    "v": "BmmjdbcY",
+    "tiers": true
   },
   "svg-mask": {
     "device": "desktop",
@@ -16298,7 +16827,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "pdYdxdVg",
+    "tiers": true
   },
   "svg-shapes": {
     "device": "desktop",
@@ -16362,7 +16893,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "gbOUc5oE"
+    "v": "MQrCYneT",
+    "tiers": true
   },
   "swipe-row": {
     "device": "desktop",
@@ -16371,7 +16903,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "LEuWfdiv"
+    "v": "0Fg4qS7f",
+    "tiers": true
   },
   "swipe-toast": {
     "device": "desktop",
@@ -16380,7 +16913,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "eMewhtmY"
+    "v": "rexDzSX-",
+    "tiers": true
   },
   "switch": {
     "device": "desktop",
@@ -16408,7 +16942,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "cS4y38IK",
+    "tiers": true
   },
   "table": {
     "device": "desktop",
@@ -16545,7 +17081,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "dNtdZhcT"
+    "v": "UTtZcjmf",
+    "tiers": true
   },
   "tech-text": {
     "device": "desktop",
@@ -16554,7 +17091,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "cAB3dV_g"
+    "v": "3-EhwR0N",
+    "tiers": true
   },
   "terminal": {
     "device": "desktop",
@@ -16581,7 +17119,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eMWKhIwt",
+    "tiers": true
   },
   "test-results": {
     "device": "desktop",
@@ -16589,7 +17129,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "QwbmdF6d",
+    "tiers": true
   },
   "testimonial-basic": {
     "device": "desktop",
@@ -16647,7 +17189,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "z23c5FYB",
+    "tiers": true
   },
   "text-animate": {
     "device": "desktop",
@@ -16665,7 +17209,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "knnEKJYs",
+    "tiers": true
   },
   "text-flipping-board": {
     "device": "desktop",
@@ -16732,7 +17278,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "pXX5n0-U"
+    "v": "5A0kaZ4J",
+    "tiers": true
   },
   "text-randomized": {
     "device": "desktop",
@@ -16769,7 +17316,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "b7PLM53L"
+    "v": "yDuLznlF",
+    "tiers": true
   },
   "text-scroll": {
     "device": "desktop",
@@ -16842,7 +17390,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "MACj4-Gg"
+    "v": "9e5bk0D0",
+    "tiers": true
   },
   "three-d-carousel": {
     "device": "desktop",
@@ -16870,7 +17419,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "lcAu4o7-",
+    "tiers": true
   },
   "time-picker": {
     "device": "desktop",
@@ -16916,7 +17467,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "DFlfreP5",
+    "tiers": true
   },
   "toast": {
     "device": "desktop",
@@ -16993,7 +17546,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "HVLqbYsg"
+    "v": "2uw8HRdP",
+    "tiers": true
   },
   "topography": {
     "device": "desktop",
@@ -17002,15 +17556,18 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "none",
     "hasVideo": true,
-    "v": "v3YGzTii"
+    "v": "7iF-FHV6",
+    "tiers": true
   },
   "tour": {
     "device": "desktop",
-    "height": 520,
+    "height": 660,
     "align": "center",
     "scroll": false,
-    "background": "dots",
-    "hasVideo": false
+    "background": "none",
+    "hasVideo": true,
+    "v": "rEbnMP0x",
+    "tiers": true
   },
   "tracing-beam": {
     "device": "desktop",
@@ -17028,7 +17585,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "9hvxNUdR",
+    "tiers": true
   },
   "transcription": {
     "device": "desktop",
@@ -17036,7 +17595,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "v_3wDrey",
+    "tiers": true
   },
   "transfer-funds-card": {
     "device": "desktop",
@@ -17044,7 +17605,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "buDvfBHx",
+    "tiers": true
   },
   "tree": {
     "device": "tablet",
@@ -17062,7 +17625,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "NTRUVf5v",
+    "tiers": true
   },
   "truck-loader": {
     "device": "desktop",
@@ -17070,7 +17635,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "U7KHDzUo",
+    "tiers": true
   },
   "tweet-card": {
     "device": "desktop",
@@ -17117,7 +17684,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "QKnbX6eH",
+    "tiers": true
   },
   "typing-animation": {
     "device": "desktop",
@@ -17220,7 +17789,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "0ADcHCje",
+    "tiers": true
   },
   "undo-button": {
     "device": "desktop",
@@ -17229,7 +17800,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "i-LwNF65"
+    "v": "PtlZG3-H",
+    "tiers": true
   },
   "undo-pill": {
     "device": "desktop",
@@ -17237,7 +17809,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "3i7eWkLU",
+    "tiers": true
   },
   "unlock-face-id": {
     "device": "desktop",
@@ -17245,7 +17819,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "42WMvxBn",
+    "tiers": true
   },
   "uptime-card": {
     "device": "desktop",
@@ -17254,7 +17830,8 @@ export const previews: Record<string, PreviewConfig> = {
     "scroll": false,
     "background": "dots",
     "hasVideo": true,
-    "v": "aGhahNEv"
+    "v": "p8e2SglZ",
+    "tiers": true
   },
   "vanishing-input": {
     "device": "desktop",
@@ -17271,7 +17848,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "8ZQ1IdqK",
+    "tiers": true
   },
   "vertical-progressive-carousel": {
     "device": "desktop",
@@ -17325,7 +17904,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "u7qtYR_B",
+    "tiers": true
   },
   "video-blur-vignette": {
     "device": "desktop",
@@ -17343,7 +17924,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "H39BJm3_",
+    "tiers": true
   },
   "video-text": {
     "device": "desktop",
@@ -17380,7 +17963,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "HiOuStES",
+    "tiers": true
   },
   "wake-slider": {
     "device": "desktop",
@@ -17388,7 +17973,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "92u2wgWn",
+    "tiers": true
   },
   "wallet-card": {
     "device": "desktop",
@@ -17396,7 +17983,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "V1607WMw",
+    "tiers": true
   },
   "warp-background": {
     "device": "desktop",
@@ -17414,7 +18003,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "XtszU69x",
+    "tiers": true
   },
   "water-splash-image-masking": {
     "device": "desktop",
@@ -17450,7 +18041,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "eE1HUogg",
+    "tiers": true
   },
   "wavy-background": {
     "device": "desktop",
@@ -17468,7 +18061,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "qvjzhp1h",
+    "tiers": true
   },
   "web-threads": {
     "device": "desktop",
@@ -17476,7 +18071,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "MCGqq-iG",
+    "tiers": true
   },
   "webcam-pixel-grid": {
     "device": "desktop",
@@ -17494,7 +18091,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "fMKsmVKX",
+    "tiers": true
   },
   "wheel-picker": {
     "device": "desktop",
@@ -17502,7 +18101,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "SETNFzk_",
+    "tiers": true
   },
   "wispr-flow-text-animation": {
     "device": "desktop",
@@ -17510,7 +18111,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "center",
     "scroll": false,
     "background": "none",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "17vc7GCk",
+    "tiers": true
   },
   "wizard-expandable": {
     "device": "desktop",
@@ -17518,7 +18121,9 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": false,
     "background": "dots",
-    "hasVideo": false
+    "hasVideo": true,
+    "v": "NzO1p4vz",
+    "tiers": true
   },
   "wobble-card": {
     "device": "desktop",

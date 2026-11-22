@@ -51,13 +51,13 @@ export const libraries: LibraryInfo[] = [
   {
     "name": "Aceternity UI",
     "slug": "aceternity-ui",
-    "count": 111,
+    "count": 112,
     "url": "https://ui.aceternity.com"
   },
   {
     "name": "Cult UI",
     "slug": "cult-ui",
-    "count": 69,
+    "count": 70,
     "url": "https://cult-ui.com"
   },
   {
@@ -257,6 +257,12 @@ export const libraries: LibraryInfo[] = [
     "slug": "trophy-ui",
     "count": 1,
     "url": "https://ui.trophy.so"
+  },
+  {
+    "name": "Inspira UI",
+    "slug": "inspira-ui",
+    "count": 1,
+    "url": "https://inspira-ui.com"
   }
 ];
 
@@ -9550,6 +9556,41 @@ export const componentsMeta: ComponentMeta[] = [
     "librarySlug": "cult-ui"
   },
   {
+    "name": "fey-cards",
+    "title": "Fey Cards",
+    "description": "A fanned stack of tilted device screens that spread apart on hover and swap their idle frame for a live screenshot while the headline shifts to a fading gradient.",
+    "tagline": "",
+    "category": "cards",
+    "categories": [
+      "cards",
+      "effects",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Aceternity UI",
+    "librarySlug": "aceternity-ui"
+  },
+  {
+    "name": "ribbon-background",
+    "title": "Ribbon Background",
+    "description": "A WebGL shader of five layered, flowing colour ribbons that sweep and twist across the stage with soft drop shadows between them.",
+    "tagline": "",
+    "category": "backgrounds",
+    "categories": [
+      "backgrounds",
+      "heroes"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Inspira UI",
+    "librarySlug": "inspira-ui"
+  },
+  {
     "name": "meteors",
     "title": "Meteors",
     "description": "A looping shower of thin diagonal light streaks that fall across whatever container it sits in, usually a dark card. It adds slow night-sky motion behind the text.",
@@ -17834,6 +17875,22 @@ export const componentsMeta: ComponentMeta[] = [
     ],
     "library": "Sera UI",
     "librarySlug": "sera-ui"
+  },
+  {
+    "name": "illustration-fluid-rendering",
+    "title": "Fluid Rendering Illustration",
+    "description": "SVG flow diagram of content sources feeding a central card that renders out to multiple storefront destinations.",
+    "tagline": "",
+    "category": "features",
+    "categories": [
+      "features"
+    ],
+    "frameworks": [
+      "react",
+      "next"
+    ],
+    "library": "Cult UI",
+    "librarySlug": "cult-ui"
   },
   {
     "name": "spotlight",

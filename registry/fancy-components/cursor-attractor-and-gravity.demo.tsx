@@ -11,19 +11,19 @@ function rand(seed: number) {
 const avatars = Array.from({ length: 70 }, (_, i) => ({
   id: i,
   size: Math.max(22, rand(i + 1) * 60),
-  x: `${rand(i + 101) * 100}%`,
+  x: `${20 + rand(i + 101) * 60}%`,
   y: `${rand(i + 201) * 30}%`,
   src: `https://i.pravatar.cc/120?img=${(i % 70) + 1}`,
 }))
 
 export default function CursorAttractorAndGravityDemo() {
   return (
-    <div className="relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-background md:items-end">
-      <p className="z-20 text-2xl text-foreground sm:text-3xl md:pr-24">
+    <div className="relative h-[600px] w-full overflow-hidden bg-background">
+      <p className="pointer-events-none absolute inset-x-0 bottom-8 z-20 text-center text-3xl text-foreground">
         join the <span className="font-serif italic">community</span>
       </p>
       <Gravity
-        attractorPoint={{ x: "33%", y: "50%" }}
+        attractorPoint={{ x: "50%", y: "45%" }}
         attractorStrength={0.0005}
         cursorStrength={-0.004}
         cursorFieldRadius={200}

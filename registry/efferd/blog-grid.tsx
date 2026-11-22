@@ -164,11 +164,15 @@ function BlogCard({
 	readTime,
 	image,
 	author,
+	href,
 	className,
 	...props
 }: React.ComponentProps<"a"> & BlogType) {
 	return (
 		<a
+			// "#" is a placeholder: render no href so hovering a sample card
+			// doesn't surface a link target.
+			href={href && href !== "#" ? href : undefined}
 			className={cn(
 				"rounded-lg group flex flex-col gap-2 p-3 hover:bg-muted/50 active:bg-muted",
 				className

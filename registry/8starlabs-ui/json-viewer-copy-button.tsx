@@ -8,6 +8,7 @@ import { Button } from "./json-viewer-button";
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
 
@@ -32,6 +33,7 @@ export function CopyButton({
   }, [hasCopied]);
 
   return (
+    <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
           <Button
@@ -56,5 +58,6 @@ export function CopyButton({
         {hasCopied ? "Copied" : "Copy to Clipboard"}
       </TooltipContent>
     </Tooltip>
+    </TooltipProvider>
   );
 }
