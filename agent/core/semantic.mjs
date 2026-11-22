@@ -28,7 +28,8 @@ const recent = new Map();   // query -> scores; people type the same things
 
 /**
  * How close every component is to the query, by meaning.
- * @returns {Promise<null | Map<string, number>>} name -> cosine similarity (about 0.1 unrelated, 0.5+ strong)
+ * @returns {Promise<null | Map<string, number>>} name -> cosine similarity (about 0.3 unrelated, 0.5+ strong).
+ *   The map also carries `.which`: name -> which of its vectors matched best (0 description, k its k-th phrase).
  */
 export async function meaning(query) {
   const q = String(query || "").trim().toLowerCase().slice(0, 300);
@@ -41,13 +42,17 @@ export async function meaning(query) {
   if (!embed) return null;
   const [v] = await embed([q]);
   const best = new Float32Array(ix.names.length).fill(-1);
+  const bestRow = new Int32Array(ix.names.length), firstRow = new Int32Array(ix.names.length).fill(-1);
   const { vectors, owner } = ix;
   for (let r = 0, o = 0; r < owner.length; r++, o += DIM) {
     let s = 0;
     for (let k = 0; k < DIM; k++) s += vectors[o + k] * v[k];
-    if (s > best[owner[r]]) best[owner[r]] = s;
+    if (firstRow[owner[r]] < 0) firstRow[owner[r]] = r;
+    if (s > best[owner[r]]) { best[owner[r]] = s; bestRow[owner[r]] = r; }
   }
   const out = new Map(ix.names.map((n, i) => [n, best[i] / 127]));
+  // which of a component's vectors matched best: 0 is its description, k > 0 its k-th search phrase
+  out.which = new Map(ix.names.map((n, i) => [n, bestRow[i] - firstRow[i]]));
   if (recent.size > 500) recent.delete(recent.keys().next().value);
   recent.set(key, out);
   return out;

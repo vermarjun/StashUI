@@ -113,7 +113,7 @@ export function rank(o) {
     let score = text + (inKind ? (o.plain ? 5 : 12) : 0);
     score *= 0.7 + 0.1 * it.quality;                                // the human review score is the taste prior
     if (it.render === "blank" || it.render === "broken") score -= 6; // its recording shows nothing usable
-    if (o.plain) { scored.push([score, it]); continue; }
+    if (o.plain) { scored.push([score, it, hits, o.sem instanceof Map ? o.sem.get(it.name) ?? 0 : 0]); continue; }
     // fit with the project the agent is building
     if (o.theme && it.theme !== "both" && it.theme !== o.theme) score -= 3;
     if (o.accent && it.accents?.length) score += it.accents.includes(o.accent) ? 1.5 : it.colours > 0 ? -1.5 : 0;
@@ -134,5 +134,10 @@ export function rank(o) {
     if (it.dupe) { if (seen.has(it.dupe)) continue; seen.add(it.dupe); }
     names.push(it.name);
   }
-  return { names, kinds, total: names.length, ...(o.explain && { scores: scored.slice(0, 20).map(([sc, it]) => [it.name, +sc.toFixed(1)]) }) };
+  return {
+    names, kinds, total: names.length,
+    ...(o.explain && { scores: scored.slice(0, 20).map(([sc, it]) => [it.name, +sc.toFixed(1)]) }),
+    // for the gallery: how each result matched, so weak matches can be told from strong ones
+    ...(o.plain && { words: q.length, info: new Map(scored.map(([, it, hits, sim]) => [it.name, { hits, sim }])) }),
+  };
 }

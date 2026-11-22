@@ -16,9 +16,10 @@ const PAGE = 24;
  * sentinel near the bottom reveals the next page as you scroll. Layout (columns
  * + preview height) is per component type.
  *
- * The box takes a description in plain words ("card that tilts toward the
- * mouse"). /api/search ranks the whole catalogue by words and meaning; this
- * grid shows the ones it holds, best match first. Until the server answers, and
+ * The box narrows THIS grid. It takes a description in plain words ("card that
+ * tilts toward the mouse"): /api/search ranks the whole catalogue by words and
+ * meaning, and the grid keeps the ones it holds, best match first. Searching
+ * everything is the header search (Cmd K) and its results page, /search. Until the server answers, and
  * if it cannot be reached, a local word match keeps the box responsive.
  */
 export function ComponentGrid({
@@ -75,7 +76,8 @@ export function ComponentGrid({
             setQuery(e.target.value);
             setLimit(PAGE);
           }}
-          placeholder="Describe what you need…"
+          placeholder="Filter this category…"
+          aria-label="Filter this category by describing what you need"
           className="pl-9"
         />
       </div>

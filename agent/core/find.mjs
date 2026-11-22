@@ -3,19 +3,56 @@
 // search (words + meaning + the quality score), without the parts that are about
 // an agent's project (theme and accent fit, adoption cost).
 import { catalog } from "./catalog.mjs";
-import { rank } from "./search.mjs";
+import { rank, tokens } from "./search.mjs";
 import { meaning } from "./semantic.mjs";
+
+// Measured on real queries (agent/test/find.eval.json plus junk such as "normal", "asdf"):
+// a component someone meant scores 0.5 or more by meaning; nonsense tops out near 0.4.
+const KEEP_SIM = 0.42;     // close enough by meaning to show
+const KEEP_WORDS = 0.5;    // or it contains at least half the words asked for
+const STRONG_SIM = 0.45;   // at least one result this close, or the whole answer is "closest matches"
+const CLOSEST = 12;        // how many to show when nothing really matches
+
+/** The search phrase that best explains why this component came back, or null. */
+function matched(it, queryTokens, which) {
+  const phrases = it.phrases || [];
+  if (!phrases.length) return null;
+  let best = null, bestHits = 0;
+  for (const p of phrases) {
+    const t = new Set(tokens(p)), hits = queryTokens.filter((q) => t.has(q)).length;
+    if (hits > bestHits) { best = p; bestHits = hits; }
+  }
+  if (bestHits >= 2) return best;
+  if (which > 0 && phrases[which - 1]) return phrases[which - 1];   // the phrase that matched by meaning
+  return best;
+}
 
 /**
  * @param {string} query
  * @param {{limit?: number}} [o]
- * @returns {Promise<{names: string[], total: number, meaning: boolean}>}
+ * @returns {Promise<{items: object[], names: string[], total: number, meaning: boolean, weak: boolean}>}
+ *   `weak` is true when nothing matched well and `items` are only the nearest components.
  */
 export async function find(query, o = {}) {
   const q = String(query || "").trim().slice(0, 300);
-  if (!q) return { names: [], total: 0, meaning: false };
-  catalog();                                                    // throws early, with a clear error, if the build has not run
+  if (!q) return { items: [], names: [], total: 0, meaning: false, weak: false };
+  const cat = catalog();                                        // throws early, with a clear error, if the build has not run
   const sem = await meaning(q).catch(() => null);
   const r = rank({ query: q, plain: true, sem });
-  return { names: r.names.slice(0, o.limit || 400), total: r.total, meaning: !!sem };
+  const good = (n) => { const i = r.info.get(n); return i.sim >= KEEP_SIM || (r.words > 0 && i.hits / r.words >= KEEP_WORDS); };
+  const solid = (n) => { const i = r.info.get(n); return i.sim >= STRONG_SIM || (r.words > 0 && i.hits / r.words >= KEEP_WORDS); };
+  let names = r.names.filter(good);
+  const weak = !names.some(solid);
+  if (weak) names = r.names.slice(0, CLOSEST);
+  const total = names.length;
+  names = names.slice(0, o.limit || 400);
+  const qt = tokens(q);
+  const items = names.map((n) => {
+    const it = cat.byName.get(n);
+    return {
+      name: n, kind: it.kind, weight: it.weight || null, deps: it.deps, content: it.content || null,
+      match: weak ? null : matched(it, qt, sem?.which?.get(n) ?? 0),
+    };
+  });
+  return { items, names, total, meaning: !!sem, weak };
 }

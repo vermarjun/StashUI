@@ -1,5 +1,6 @@
 "use client";
 
+import type * as React from "react";
 import Link from "next/link";
 import { ComponentPreview } from "@/components/site/component-preview";
 import { GridVideo } from "@/components/site/grid-video";
@@ -20,10 +21,13 @@ export function ComponentCard({
   item,
   designWidth,
   className,
+  note,
 }: {
   item: ComponentMeta;
   designWidth?: number;
   className?: string;
+  /** A small extra line under the tagline, e.g. why a search matched this card. */
+  note?: React.ReactNode;
 }) {
   const nextOnly = !item.frameworks.includes("react");
   return (
@@ -54,6 +58,9 @@ export function ComponentCard({
       </div>
       {item.tagline && (
         <p className="-mt-1.5 line-clamp-1 px-0.5 text-xs text-muted-foreground">{item.tagline}</p>
+      )}
+      {note && (
+        <p className="-mt-2 line-clamp-1 px-0.5 text-[11px] text-muted-foreground/70">{note}</p>
       )}
     </Link>
   );
