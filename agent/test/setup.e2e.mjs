@@ -76,7 +76,8 @@ for (const shell of shells) {
   check(shell[0], "setup.md's one command installs StashUI", ran.status === 0 && /StashUI is installed/.test(ran.stdout), ran.stderr || ran.stdout);
 }
 check(setupShell[0], "writes only .stashui, .claude and .agents in the home folder",
-  JSON.stringify(readdirSync(home).sort()) === JSON.stringify([".agents", ".claude", ".stashui"]) && JSON.stringify(readdirSync(join(home, ".stashui"))) === '["stashui.mjs"]', readdirSync(home));
+  // PowerShell makes AppData in any fresh profile folder for its own caches; that is not ours
+  JSON.stringify(readdirSync(home).filter((f) => !(WIN && f === "AppData")).sort()) === JSON.stringify([".agents", ".claude", ".stashui"]) && JSON.stringify(readdirSync(join(home, ".stashui"))) === '["stashui.mjs"]', readdirSync(home));
 check(setupShell[0], "nothing written into the project", readdirSync(project).join() === "src", readdirSync(project));
 // the step-by-step alternative for this platform's native shell
 const steps = WIN ? [shells.find((s) => s[0] === "powershell" || s[0] === "pwsh"), block("powershell"), "; "] : [shells.find((s) => s[0] === "bash") || shells[0], block("bash"), " && "];
