@@ -1,3 +1,5 @@
+/* eslint-disable */
+// A fixture for `stashui review`: its mistakes are the point.
 export default function Page() {
   return (
     <main className="min-h-dvh bg-background text-foreground">

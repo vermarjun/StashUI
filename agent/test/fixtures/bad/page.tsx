@@ -1,3 +1,5 @@
+/* eslint-disable */
+// A fixture for `stashui review`: its mistakes are the point.
 export default function Page() {
   return (
     <div className="h-screen bg-blue-500 text-white transition-all" onClick={() => {}}>

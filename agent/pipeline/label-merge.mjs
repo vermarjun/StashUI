@@ -2,7 +2,7 @@
 // Validates what the vision pass returned and files it as agent/data/labels/<name>.json.
 // Anything outside the contract is dropped and reported, never silently kept.
 //   node agent/pipeline/label-merge.mjs <work-dir>
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 

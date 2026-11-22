@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SPEC = ROOT / "agent-index" / "spec"
-SITE = "https://stashui.vercel.app"
+SITE = "https://stashui.vermarjun.xyz"
 
 # --- origin -> short tag used in the dense component rows -------------------
 SHORT = {

@@ -2,10 +2,10 @@
 
 # StashUI
 
-**The agentic UI library. 790 curated React components your agent can search, pick from and install.**
+**The agentic UI library. Curated React components your agent can see, choose from and install.**
 
 Browse, preview, copy, and install shadcn-style components, or let an AI agent
-navigate the same library through a purpose-built MCP server.
+look at the same library as numbered images and pick for you.
 
 [![Components](https://img.shields.io/badge/components-1%2C518-111111?style=flat-square)](https://stashui.vercel.app/)
 [![Categories](https://img.shields.io/badge/categories-31-111111?style=flat-square)](https://stashui.vercel.app/)
@@ -28,9 +28,9 @@ StashUI is an open component library built for two kinds of discovery:
 - **Humans** use the StashUI gallery to browse categories, search with
   <kbd>⌘ K</kbd>, watch lightweight previews, inspect live components, copy
   source, and get an install command.
-- **Agents** use the StashUI MCP server to reason through a four-layer index,
-  compare candidates, inspect their APIs and integration cost, and install a
-  whole screen in one command.
+- **Agents** ask in words and get back one image: a numbered grid of real
+  components. They choose by looking, check their picks side by side, show you
+  a proposal, and install a whole screen in one command.
 
 The components follow the shadcn model: source code is installed into your
 project and becomes yours to edit. StashUI is a registry and discovery system,
@@ -43,7 +43,7 @@ not a runtime UI package.
 | Browse the catalogue | [Open the live gallery](https://stashui.vercel.app/) |
 | Add one component to my app | [Install a component](#install-a-component) |
 | Run or contribute to StashUI | [Run the gallery locally](#run-the-gallery-locally) |
-| Let an agent choose components | [Set up the MCP server](#use-stashui-with-an-ai-agent) |
+| Let an agent choose components | [Give your agent one prompt](#use-stashui-with-an-ai-agent) |
 | Understand how data is generated | [Read the architecture](#architecture) |
 | Add a registry component | [Follow the contributor workflow](#add-or-update-a-component) |
 
@@ -59,8 +59,8 @@ not a runtime UI package.
   component.
 - **Framework-conscious source:** the registry records React and Next.js
   compatibility and warns when a component introduces a Next-only import.
-- **Agent-native retrieval:** MCP tools narrow the catalogue before loading
-  detailed prose or source code, keeping discovery focused and auditable.
+- **Agents that can see:** search returns a composed image of the matching
+  components, so an agent judges look and fit the way a person does.
 - **Inspectable generation:** the gallery, installable JSON, previews, and
   agent index all trace back to files committed in this repository.
 
@@ -98,7 +98,7 @@ export function SaveAction() {
 
 > [!TIP]
 > You can pass several registry URLs to one `shadcn add` command. The
-> `stashui_install` MCP tool prepares that combined command automatically and
+> agent `add` operation prepares that combined command automatically and
 > includes the shadcn primitives the selected components import.
 
 ## Run the gallery locally
@@ -133,193 +133,61 @@ are required for the gallery or MCP server.
 | `npm run typecheck` | Run TypeScript without emitting files |
 | `npm run registry` | Rebuild gallery data, installable JSON, and the agent index |
 | `npm run index` | Rebuild only the agent index |
-| `npm run mcp:build` | Compile the MCP server |
+| `npm run agent` | Rebuild everything agents are served (`public/agent/`) |
+| `npm run agent:test` | Test the agent API, CLI, MCP endpoint and skills |
+| `npm run agent:dev` | Serve the agent API alone on port 4317 |
 | `npm run capture -- <name>` | Record one component's grid preview |
 | `npm run capture:category -- <slug>` | Record every preview in a category |
 | `npm run previews` | Regenerate the preview manifest |
 
 ## Use StashUI with an AI agent
 
-The gallery is optimized for people. The local MCP server is optimized for
-agents that need to choose among 790 components without loading the entire
-catalogue into context.
+Paste this into Claude Code, Codex, Cursor or any coding agent with a shell:
 
-### Build the MCP server
+> Set up StashUI for me: follow https://stashui.vermarjun.xyz/setup.md
 
-From a cloned StashUI repository:
+The agent runs three commands. They install a one-file CLI and three skills
+into your home folder; nothing in your project changes, and there is no account
+or key. From then on, ask for UI the way you normally would:
 
-```bash
-npm --prefix mcp install
-npm run mcp:build
-```
+> Build the landing page: header, hero, features and pricing. Dark and calm.
 
-You will point your MCP client at this generated entry file:
+What the agent does with that:
 
-```text
-/absolute/path/to/StashUI/mcp/dist/index.js
-```
+1. **Reads the project**: stack, design tokens, components already installed.
+   It writes a `DESIGN.md` if there is none.
+2. **Looks at the catalogue.** `stashui browse` and `stashui search` return one
+   image each: a numbered grid of real components, cropped so each is legible,
+   plus one line per number with what it does and what it costs to adopt.
+3. **Looks closer.** `stashui view <name>` returns six frames of a component in
+   motion, so hover and click behaviour is visible in a still image.
+4. **Checks the set.** `stashui board` puts all its picks in one image, to see
+   whether they look like one product.
+5. **Asks you.** `stashui propose` gives you a link showing each pick as a live
+   clip with its runners-up. You swap what you dislike and approve.
+6. **Builds and verifies.** `stashui add` installs through shadcn;
+   `stashui review` returns counts that have to reach zero.
 
-Always use an absolute path. The server uses stdio, runs entirely on your
-machine, and needs no API key.
+Agents with no shell (Claude Desktop, claude.ai, ChatGPT) add
+`https://stashui.vermarjun.xyz/api/mcp` as a remote MCP server instead. It has
+no login and offers the same six operations with the images inline.
 
-### Connect Codex
-
-The shortest setup is the Codex CLI:
-
-```bash
-codex mcp add stashui -- node /absolute/path/to/StashUI/mcp/dist/index.js
-codex mcp list
-```
-
-Or add it to `~/.codex/config.toml` (global) or `.codex/config.toml`
-(project-scoped):
-
-```toml
-[mcp_servers.stashui]
-command = "node"
-args = ["/absolute/path/to/StashUI/mcp/dist/index.js"]
-```
-
-Restart Codex after editing configuration, then use `/mcp` to confirm that the
-server and its tools are available. See the
-[official Codex MCP documentation](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)
-for the full configuration reference.
-
-### Connect Claude Code
-
-Add it from the repository where you want to use the components:
-
-```bash
-claude mcp add stashui --scope project -- node /absolute/path/to/StashUI/mcp/dist/index.js
-claude mcp list
-```
-
-This writes a shareable `.mcp.json`. You can also create it yourself:
-
-```json
-{
-  "mcpServers": {
-    "stashui": {
-      "command": "node",
-      "args": ["/absolute/path/to/StashUI/mcp/dist/index.js"]
-    }
-  }
-}
-```
-
-Claude Code asks for approval before it uses a project-scoped server. See
-[Anthropic's MCP guide](https://docs.anthropic.com/en/docs/claude-code/mcp) for
-user and local scopes.
-
-### Connect Cursor or Claude Desktop
-
-Add the same `mcpServers` object above to:
-
-- Cursor: `.cursor/mcp.json` in a project, or the global `mcp.json` opened from
-  **Cursor Settings → Tools & MCP**.
-- Claude Desktop: `claude_desktop_config.json`, opened from
-  **Settings → Developer → Edit Config**.
-
-Restart the client after saving. Cursor's current transport and configuration
-options are documented in its
-[MCP guide](https://docs.cursor.com/context/model-context-protocol).
-
-### Connect VS Code
-
-VS Code uses `servers` rather than `mcpServers`. Create `.vscode/mcp.json`:
-
-```json
-{
-  "servers": {
-    "stashui": {
-      "type": "stdio",
-      "command": "node",
-      "args": ["/absolute/path/to/StashUI/mcp/dist/index.js"]
-    }
-  }
-}
-```
-
-See the [VS Code MCP configuration reference](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
-for workspace and user-level alternatives.
-
-### Custom index location
-
-The server normally finds `agent-index/index` relative to its compiled file. If
-you move or package the server separately, set `STASHUI_INDEX` to the directory
-that contains `categories.json`:
-
-```json
-{
-  "mcpServers": {
-    "stashui": {
-      "command": "node",
-      "args": ["/absolute/path/to/StashUI/mcp/dist/index.js"],
-      "env": {
-        "STASHUI_INDEX": "/absolute/path/to/StashUI/agent-index/index"
-      }
-    }
-  }
-}
-```
-
-### Verify with MCP Inspector
-
-```bash
-npm --prefix mcp run inspect
-```
-
-The inspector should show six tools whose names begin with `stashui_`.
-
-## How agents discover components
-
-StashUI uses **navigation, not embedding search**. An agent moves from a small
-map of the library toward detail only when detail is useful:
-
-| Stage | MCP tool | Question it answers |
-| --- | --- | --- |
-| Layer 1 | `stashui_categories()` | Which category should I inspect? |
-| Layer 2 | `stashui_category(slug, filters)` | Which components fit the need? |
-| Layer 3 | `stashui_component(name)` | Is this the right component? |
-| Layer 4 | `stashui_code(name)` | How is it implemented? |
-
-Two task-oriented tools sit across those layers:
-
-| Tool | Use it for |
+| Door | Address |
 | --- | --- |
-| `stashui_slot(slot)` | Find candidates for a page slot across all categories |
-| `stashui_install(names[])` | Produce one complete shadcn install command |
+| Setup document | `/setup.md` |
+| CLI (one file, no dependencies) | `/agent/stashui.mjs` |
+| MCP server (Streamable HTTP, stateless) | `/api/mcp` |
+| HTTP API, self-describing | `/api/agent/v1` |
+| Whole catalogue as JSON | `/agent/catalog.json` |
+| Skills index | `/.well-known/agent-skills/index.json` |
 
-The category tool can filter by interaction trigger, visual tone, page slot,
-dependency count, and whether the component contains hardcoded colors. Filters
-run before the agent reads the candidate list.
-
-### Recommended agent workflow
-
-```text
-1. stashui_categories()
-2. stashui_category("buttons", trigger="hover", tone="minimal", clean_only=true)
-3. stashui_component("shimmer-button")
-4. Compare two or three finalists; read ALTERNATIVES when present.
-5. stashui_code("shimmer-button") only if implementation details matter.
-6. stashui_install(["aurora-background", "shimmer-button", "bento-grid"])
-```
-
-An effective prompt is:
-
-> Use the StashUI MCP server to find a minimal, touch-friendly primary CTA.
-> Navigate from categories to a shortlist, compare the finalists, and return one
-> install command. Prefer no hardcoded colors and as few dependencies as
-> possible.
-
-See [mcp/README.md](mcp/README.md) for the server-focused guide and
-[agent-index/spec/SCHEMA.md](agent-index/spec/SCHEMA.md) for every field exposed
-at each layer.
+[agent/README.md](agent/README.md) explains how this is built and why each
+decision was made. [agent/SPEC.md](agent/SPEC.md) is the protocol.
 
 ## Architecture
 
 There is one authored source of truth. Everything used by the gallery, shadcn,
-and MCP is generated from it.
+and agents is generated from it.
 
 ```mermaid
 flowchart LR
@@ -337,12 +205,15 @@ flowchart LR
   InstallJSON --> Shadcn["shadcn CLI"]
 
   Source --> IndexBuild["Agent-index pipeline"]
-  IndexBuild --> Index["Four-layer JSON index"]
-  Index --> MCP["StashUI MCP server"]
+  IndexBuild --> Index["Text record per component"]
 
   Demo --> Capture["Playwright + ffmpeg"]
   Capture --> PreviewMedia["public/previews/*"]
   PreviewMedia --> Gallery
+  PreviewMedia --> Tiles["Tiles, film strips, measured facts"]
+  Index --> AgentBuild["agent build"]
+  Tiles --> AgentBuild
+  AgentBuild --> AgentAPI["Agent API: MCP, HTTP, CLI"]
 ```
 
 ### Project layers
@@ -354,8 +225,8 @@ flowchart LR
 | Install registry | `public/r/*.json` | Static shadcn registry items consumed by `shadcn add` |
 | Human experience | `src/app/`, `src/components/site/` | Search, category browsing, detail pages, code display, and responsive previews |
 | Preview pipeline | `scripts/capture*.mjs`, `scripts/captures/` | Records interaction choreography and emits optimized grid media |
-| Agent index | `agent-index/` | Builds validated category and component projections for reasoning |
-| MCP interface | `mcp/` | Exposes the index as six stdio tools |
+| Agent index | `agent-index/` | Builds a validated text record per component |
+| Agent protocol | `agent/` | Turns clips into images an agent can read, ranks, composes sheets, and serves them over MCP, HTTP and a CLI |
 
 ### Generated files
 
@@ -367,7 +238,8 @@ src/__registry__/meta.gen.ts       lightweight client-safe catalogue
 src/__registry__/demos.gen.ts      component name → lazy demo component
 src/__registry__/previews.gen.ts   client-safe preview manifest
 public/r/*.json                    installable shadcn registry items
-agent-index/index/                 files served by the MCP server
+agent-index/index/                 text records the agent build reads
+public/agent/                      everything agents are served (catalogue, CLI, skills)
 ```
 
 ## Preview system
@@ -462,19 +334,15 @@ StashUI/
 ├── public/r/                  generated installable registry items
 ├── public/previews/           generated grid videos and posters
 ├── scripts/                   registry and preview tooling
-├── agent-index/               retrieval data, schema, and build pipeline
-├── mcp/                       local TypeScript MCP server
-├── design-grill/              optional design-document skill
-└── ship-interface/            optional end-to-end interface skill
+├── agent-index/               text record per component, and its pipeline
+└── agent/                     the agent protocol: core, CLI, skills, pipeline
 ```
 
-The two included skills complement MCP:
-
-- [`design-grill`](design-grill/SKILL.md) turns product constraints into a
-  human-readable design document and machine-readable design tokens.
-- [`ship-interface`](ship-interface/SKILL.md) turns that document into page
-  slots, selects components through MCP, installs them, recolors them to the
-  tokens, and verifies the result.
+Three skills ship with the agent protocol and are installed by the setup
+prompt: [`stashui`](agent/skills/stashui/SKILL.md) builds UI from the catalogue,
+[`stashui-explore`](agent/skills/stashui-explore/SKILL.md) offers visual
+directions to choose from, and
+[`stashui-review`](agent/skills/stashui-review/SKILL.md) audits existing UI.
 
 ## Contributing
 
@@ -500,7 +368,8 @@ projects.
 
 ## Documentation
 
-- [MCP server guide](mcp/README.md)
+- [Agent protocol: how it works and why](agent/README.md)
+- [Agent protocol: the specification](agent/SPEC.md)
 - [Agent-index design](agent-index/README.md)
 - [Index schema and field ownership](agent-index/spec/SCHEMA.md)
 - [Index generation contract](agent-index/spec/PROMPT.md)

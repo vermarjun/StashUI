@@ -19,7 +19,7 @@
 //
 // Run: npm run agent
 import { createHash } from "node:crypto";
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,12 +27,15 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const at = (...p) => join(ROOT, ...p);
 const json = (p, fallback) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : fallback);
 const config = json(at("agent/config.json"));
+// A local flavour for end-to-end tests: STASHUI_SITE=http://127.0.0.1:4317 STASHUI_OUT=/some/dir/public
+if (process.env.STASHUI_SITE) config.site = process.env.STASHUI_SITE;
+const PUBLIC = process.env.STASHUI_OUT || at("public");
 const { kinds } = json(at("agent/pipeline/kinds.json"));
 const kindById = new Map(kinds.map((k) => [k.id, k]));
 const kindFromCategory = new Map(kinds.flatMap((k) => k.from.map((c) => [c, k.id])));
 const quality = json(at("registry/quality.json"), {});
 
-const out = at("public/agent");
+const out = join(PUBLIC, "agent");
 mkdirSync(join(out, "items"), { recursive: true });
 
 const clip = (s, n) => (s && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s || "");
@@ -43,7 +46,7 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
   const r = json(at("agent-index/index/components", file));
   const facets = json(at("agent/data/facets", `${r.name}.json`), null);
   const label = json(at("agent/data/labels", `${r.name}.json`), null);
-  const hasTile = existsSync(at("public/agent/tiles", `${r.name}.webp`));
+  const hasTile = existsSync(join(out, "tiles", `${r.name}.webp`));
   if (!hasTile) untiled++;
 
   // kind: the vision pass decides; until it has run, fall back to the category
@@ -116,8 +119,8 @@ rmSync(join(out, "skills"), { recursive: true, force: true });
 const files = [];
 const publish = (from, to) => {
   const body = fill(readFileSync(from, "utf8"));
-  mkdirSync(dirname(join(ROOT, "public", to)), { recursive: true });
-  writeFileSync(join(ROOT, "public", to), body);
+  mkdirSync(dirname(join(PUBLIC, to)), { recursive: true });
+  writeFileSync(join(PUBLIC, to), body);
   return { path: `/${to}`, sha256: sha(body), bytes: Buffer.byteLength(body) };
 };
 if (existsSync(at("agent/cli/stashui.mjs"))) {
@@ -142,8 +145,8 @@ for (const [from, to] of [["agent/site/setup.md", "setup.md"], ["agent/site/llms
 }
 writeFileSync(join(out, "manifest.json"), JSON.stringify({ protocol: config.protocol, site: config.site, files }, null, 2));
 for (const dir of ["agent-skills", "skills"]) {            // current RFC path, and the legacy one some tools still read
-  mkdirSync(at("public/.well-known", dir), { recursive: true });
-  writeFileSync(at("public/.well-known", dir, "index.json"), JSON.stringify({ skills }, null, 2));
+  mkdirSync(join(PUBLIC, ".well-known", dir), { recursive: true });
+  writeFileSync(join(PUBLIC, ".well-known", dir, "index.json"), JSON.stringify({ skills }, null, 2));
 }
 
 const kb = (p) => Math.round(statSync(p).size / 1024);

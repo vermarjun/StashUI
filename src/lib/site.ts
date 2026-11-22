@@ -9,14 +9,14 @@
  */
 export const siteConfig = {
   name: "StashUI",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://stashui.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://stashui.vermarjun.xyz",
   repo: "https://github.com/vermarjun/StashUI",
   tagline: "Agentic UI library",
   description:
     "An agentic UI library. Nearly 800 hand-picked shadcn components, indexed " +
     "so your agent can search them by what the screen needs and install the " +
     "best fit over MCP. People can browse, preview and copy them too.",
-  mcp: "https://github.com/vermarjun/StashUI/tree/main/mcp",
+  mcp: "https://stashui.vermarjun.xyz/setup.md",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

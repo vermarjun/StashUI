@@ -72,9 +72,17 @@ test("search: the legend's numbers are the image's numbers, and pages continue t
 test("search routes a plain sentence to the kind it names, and filters hold", () => {
   assert.deepEqual(kindsIn("navbar with links and a sign up button"), ["site-header"]);
   assert.deepEqual(kindsIn("pricing table with a monthly toggle"), ["pricing-section"]);
+  assert.deepEqual(kindsIn("primary call to action button with a glow"), ["button", "cta-section"]);
   assert.deepEqual(kindsIn("something quiet and dark"), []);
   for (const n of rank({ query: "", kind: "button", clean: true }).names) assert.equal(cat.byName.get(n).colours, 0);
   for (const n of rank({ query: "glow", kind: "button" }).names) assert.equal(cat.byName.get(n).kind, "button");
+});
+
+test("ranking: plain requests land on the right kind of thing", async () => {
+  const { evaluate } = await import("./search.eval.mjs");
+  const { kindRecall, namedHit } = evaluate();
+  assert.ok(kindRecall >= 0.9, `right kind on page one: ${(kindRecall * 100).toFixed(0)}%`);
+  assert.ok(namedHit >= 0.9, `named component in top five: ${(namedHit * 100).toFixed(0)}%`);
 });
 
 test("operations fail in words an agent can act on", () => {

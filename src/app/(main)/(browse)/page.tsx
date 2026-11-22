@@ -39,15 +39,15 @@ export default function Home() {
           Your agent picks the parts.
         </h1>
         <p className="mt-4 max-w-xl text-balance text-muted-foreground">
-          {total.toLocaleString()} hand-picked components, indexed so an agent
-          can search them by slot, tone and trigger. Connect the{" "}
+          {total.toLocaleString()} hand-picked components your agent can see:
+          it asks in words and gets back images to choose from.{" "}
           <a
             href={siteConfig.mcp}
             target="_blank"
             rel="noreferrer"
             className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
           >
-            MCP server
+            Set it up with one prompt
           </a>
           , or browse below and press{" "}
           <kbd className="rounded border border-border bg-muted px-1 font-mono text-xs">
@@ -64,7 +64,7 @@ export default function Home() {
             <span className="text-foreground">{sections.length}</span> categories
           </span>
           <span>
-            <span className="text-foreground">6</span> MCP tools
+            <span className="text-foreground">1</span> prompt to set up
           </span>
         </div>
       </section>

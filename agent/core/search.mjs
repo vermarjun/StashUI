@@ -26,7 +26,7 @@ function build() {
     };
   });
   const df = new Map();
-  for (const d of docs) for (const t of new Set([...d.hi, ...d.kind, ...d.mid, ...d.lo])) df.set(t, (df.get(t) || 0) + 1);
+  for (const d of docs) for (const t of new Set([...d.hi, ...d.mid, ...d.lo])) df.set(t, (df.get(t) || 0) + 1);   // rarity is about the components' own words
   const idf = (t) => Math.log(1 + docs.length / (1 + (df.get(t) || 0)));
   // phrases that name a kind, longest first: "nav bar" must win over "bar"
   const phrases = cat.kinds.flatMap((k) => [k.id.replaceAll("-", " "), ...k.aka].map((p) => ({ kind: k.id, toks: tokens(p) })))
@@ -34,20 +34,31 @@ function build() {
   return (index = { mtime: cat.mtime, docs, idf, phrases });
 }
 
-/** The kind a free-text query is about: the first one it names. "navbar with a sign up button" -> site-header. */
+const PREPOSITIONS = new Set("with for that which in on of to using like when where".split(" "));
+
+/**
+ * The kinds a free-text query is about. In "primary call to action button with a glow" the thing wanted
+ * is named before the first preposition ("...button"), and what follows describes it. So: every kind
+ * named in that head part, at most two; if the head names none, the first kind named anywhere.
+ */
 export function kindsIn(query) {
   const { phrases } = build();
-  const q = tokens(query);
-  const used = new Array(q.length).fill(false);
-  let first = null;
+  const raw = String(query || "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+  const q = raw.map((w, at) => ({ tok: stem(w), at })).filter((x) => !STOP.has(raw[x.at]));
+  const used = new Array(q.length).fill(false), found = [];
   for (const p of phrases) {                                        // longest phrase claims its words first
     for (let i = 0; i + p.toks.length <= q.length; i++) {
-      if (!p.toks.every((t, j) => q[i + j] === t && !used[i + j])) continue;
+      if (!p.toks.every((t, j) => q[i + j].tok === t && !used[i + j])) continue;
       p.toks.forEach((_, j) => (used[i + j] = true));
-      if (!first || i < first.at) first = { kind: p.kind, at: i };
+      found.push({ kind: p.kind, from: q[i].at, to: q[i + p.toks.length - 1].at });
     }
   }
-  return first ? [first.kind] : [];
+  if (!found.length) return [];
+  const inside = (at) => found.some((f) => at > f.from && at < f.to);   // the "to" in "call to action" is not a boundary
+  const cut = raw.findIndex((w, at) => PREPOSITIONS.has(w) && !inside(at));
+  const head = found.filter((f) => cut < 0 || f.from < cut).sort((a, b) => b.from - a.from);
+  const picked = head.length ? head : [found.sort((a, b) => a.from - b.from)[0]];
+  return [...new Set(picked.map((f) => f.kind))].slice(0, 2);
 }
 
 /**
@@ -68,13 +79,15 @@ export function rank(o) {
     if (o.clean && it.colours > 0) continue;
     if (like && it.name === like.name) continue;
 
+    const inKind = kinds.includes(it.kind);
     let text = 0, hits = 0;
     for (const t of q) {
-      const w = Math.max(d.hi.has(t) ? 3 : 0, d.kind.has(t) ? 2.5 : 0, d.mid.has(t) ? 2 : 0, d.lo.has(t) ? 1 : 0);
+      // an item of the wanted kind already has the kind bonus: its kind words must not count twice,
+      // or every globe-less 3D scene would match "globe"
+      const w = Math.max(d.hi.has(t) ? 3 : 0, !inKind && d.kind.has(t) ? 2.5 : 0, d.mid.has(t) ? 2 : 0, d.lo.has(t) ? 1 : 0);
       if (w) { text += w * idf(t); hits++; }
     }
     if (q.length) text *= 0.5 + 0.5 * (hits / q.length);           // matching more of the request beats matching one word hard
-    const inKind = kinds.includes(it.kind);
     if (!inKind && !like && (!q.length || hits === 0)) continue;   // nothing ties it to the request
     if (!inKind && kinds.length && hits < Math.min(2, q.length)) continue; // a different kind has to earn its place
 
@@ -99,5 +112,5 @@ export function rank(o) {
     if (it.dupe) { if (seen.has(it.dupe)) continue; seen.add(it.dupe); }
     names.push(it.name);
   }
-  return { names, kinds, total: names.length };
+  return { names, kinds, total: names.length, ...(o.explain && { scores: scored.slice(0, 20).map(([sc, it]) => [it.name, +sc.toFixed(1)]) }) };
 }
