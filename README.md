@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://stashui.vermarjun.xyz"><img src="docs/readme/banner.svg" alt="StashUI: describe the screen, your agent picks the parts by looking" width="100%"></a>
+  <a href="https://stashui.vermarjun.xyz"><img src="docs/readme/banner-real.svg" alt="StashUI: describe the screen, your agent picks the parts by looking" width="100%"></a>
 </p>
 
 <p align="center">
