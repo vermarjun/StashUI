@@ -173,13 +173,14 @@ export function CommandMenu() {
             <CommandList className="max-h-none min-h-0 flex-1 px-1">
               <CommandEmpty>No components found.</CommandEmpty>
               <CommandGroup
+                // No count here: the "See all N results" row right below already says it.
                 heading={
                   !q
                     ? "All components"
                     : answer?.weak
                       ? "No close match · nearest components"
                       : total != null
-                        ? `${total} result${total === 1 ? "" : "s"} · best match first`
+                        ? undefined
                         : "Searching…"
                 }
               >
