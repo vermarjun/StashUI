@@ -4,24 +4,104 @@
 
 <p align="center">
   <a href="https://stashui.vermarjun.xyz"><b>Gallery</b></a> &nbsp;·&nbsp;
-  <a href="#set-it-up-in-one-prompt"><b>Set up your agent</b></a> &nbsp;·&nbsp;
+  <a href="#connect-it-to-your-agent"><b>Connect your agent</b></a> &nbsp;·&nbsp;
   <a href="#how-a-screen-gets-built"><b>How it works</b></a> &nbsp;·&nbsp;
   <a href="agent/SPEC.md"><b>Protocol</b></a>
 </p>
 
 StashUI is a library of 1,118 hand-picked React components, built so a coding agent can **see** them before it uses them. Your agent describes what it needs and gets back a picture of real matches, numbered. It picks by looking, checks that its picks fit together, and installs the whole screen with one shadcn command. The code lands in your repo and is yours.
 
-## Set it up in one prompt
+## Connect it to your agent
 
-Paste this into Claude Code, Codex, Cursor or any coding agent with a shell:
+StashUI is a remote MCP server. There's nothing to install, and you don't need an account or an API key:
 
 ```text
-Set up StashUI for me: follow https://stashui.vermarjun.xyz/setup.md
+https://stashui.vermarjun.xyz/api/mcp
 ```
 
-The agent runs one command, the same on macOS, Linux and Windows. It puts a one-file CLI and three skills in your home folder. Nothing in your project changes, and there is no account, key or package to install.
+Find your client below and run the one thing under it. The first three were tested end to end: they connected, called `search` and got the image back.
 
-After that, ask for UI the way you already do:
+#### Claude Code
+
+```bash
+claude mcp add --transport http --scope user stashui https://stashui.vermarjun.xyz/api/mcp
+```
+
+#### Codex
+
+```bash
+codex mcp add stashui --url https://stashui.vermarjun.xyz/api/mcp
+```
+
+#### opencode
+
+Add this to `opencode.json` in your project, or to `~/.config/opencode/opencode.json` for every project:
+
+```json
+{
+  "mcp": {
+    "stashui": { "type": "remote", "url": "https://stashui.vermarjun.xyz/api/mcp" }
+  }
+}
+```
+
+#### Cursor
+
+<a href="https://cursor.com/en/install-mcp?name=stashui&config=eyJ1cmwiOiJodHRwczovL3N0YXNodWkudmVybWFyanVuLnh5ei9hcGkvbWNwIn0="><img src="https://img.shields.io/badge/Add_to-Cursor-0a0a0a?style=for-the-badge" alt="Add StashUI to Cursor"></a>
+
+Or add it to `~/.cursor/mcp.json`:
+
+```json
+{ "mcpServers": { "stashui": { "url": "https://stashui.vermarjun.xyz/api/mcp" } } }
+```
+
+#### VS Code (Copilot agent mode)
+
+<a href="https://insiders.vscode.dev/redirect/mcp/install?name=stashui&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fstashui.vermarjun.xyz%2Fapi%2Fmcp%22%7D"><img src="https://img.shields.io/badge/Install_in-VS_Code-0a0a0a?style=for-the-badge" alt="Install StashUI in VS Code"></a>
+
+Or run:
+
+```bash
+code --add-mcp '{"name":"stashui","type":"http","url":"https://stashui.vermarjun.xyz/api/mcp"}'
+```
+
+#### Gemini CLI
+
+```bash
+gemini mcp add --transport http stashui https://stashui.vermarjun.xyz/api/mcp
+```
+
+#### Windsurf
+
+Add it to `~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{ "mcpServers": { "stashui": { "serverUrl": "https://stashui.vermarjun.xyz/api/mcp" } } }
+```
+
+#### Claude Desktop and claude.ai
+
+Go to **Settings → Connectors → Add custom connector**. Name it `StashUI`, paste the URL and leave authentication empty.
+
+#### ChatGPT
+
+Go to **Settings → Apps & Connectors → Advanced** and turn on developer mode. Then create a connector with the URL and no authentication.
+
+#### Anything else
+
+Point any client that speaks MCP over Streamable HTTP at the URL. It needs no headers and no auth.
+
+### Check it worked
+
+Ask your agent:
+
+```text
+Use StashUI to show me three pricing sections.
+```
+
+You should get back a numbered image of real pricing sections, with one line of facts per number.
+
+### Then ask for UI the way you already do
 
 ```text
 Build a landing page for my app: header, hero, features, pricing, footer.
@@ -30,8 +110,15 @@ Dark and calm. Show me a mockup before you change anything.
 
 Leave off the last sentence and it goes straight to building.
 
-> [!TIP]
-> No shell? In Claude Desktop, claude.ai or ChatGPT, add `https://stashui.vermarjun.xyz/api/mcp` as a remote MCP server. No login, the same six tools, and the images arrive inline.
+### Optional: add the skills for better results
+
+The MCP server gives your agent the tools. The skills give it the method: plan the page, search, look closer, check that the picks fit together, install, then review. They add a mockup step and a review loop. If your agent has a shell, paste this into it once:
+
+```text
+Set up StashUI for me: follow https://stashui.vermarjun.xyz/setup.md
+```
+
+The agent runs one command, the same on macOS, Linux and Windows. It puts a one-file CLI and three skills in your home folder, and your project doesn't change. You can use the skills, the MCP server, or both.
 
 ## What your agent actually sees
 
