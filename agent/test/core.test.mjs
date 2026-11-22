@@ -100,8 +100,18 @@ test("view shows six frames numbered 1 to 6, and add returns one command", () =>
   assert.deepEqual(v.sheet.cells.map((c) => c.badge), ["1", "2", "3", "4", "5", "6"]);
   assert.ok(v.sheet.cells.every((c, k) => c.film === k && c.name === name));
   const a = call("add", { names: [name, cat.items[5].name] });
-  assert.match(a.text, /^npx shadcn@latest add https?:\/\/\S+\/r\/\S+\.json https?:\/\/\S+\.json/);
-  assert.equal(a.data.command.length, 5);
+  assert.match(a.text, /^npx shadcn@latest add .*https?:\/\/\S+\/r\/\S+\.json/);
+  assert.equal(a.data.command.filter((x) => x.startsWith("http")).length, 2);
+});
+
+test("add is honest about what an install needs", () => {
+  // shadcn primitives are named in the command, because registry items often fail to declare them
+  const nav = call("add", { names: ["comp-578"] });
+  assert.ok(["button", "navigation-menu", "popover"].every((p) => nav.data.command.includes(p)), nav.data.command.join(" "));
+  // a sibling file the item does not ship is flagged before the type checker finds it
+  const gap = cat.items.find((i) => i.unresolved);
+  assert.match(call("add", { names: [gap.name] }).text, /NOT installed/);
+  assert.match(call("view", { name: gap.name }).text, /Install gap/);
 });
 
 test("browse: no arguments is a text map; with kinds it is five cells per row", () => {

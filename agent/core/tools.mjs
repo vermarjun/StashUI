@@ -136,10 +136,11 @@ export const TOOLS = {
             `${it.accents?.length ? ` · demo colours: ${it.accents.join(", ")}` : " · demo is monochrome"}`,
           `Cost: ${d.npm.length ? `npm ${d.npm.join(", ")}` : "no npm deps"}${d.registry.length ? ` · shadcn ${d.registry.join(", ")}` : ""}` +
             ` · ${d.colours} hardcoded colours to replace with tokens`,
+          d.unresolved.length && `Install gap: it imports ${d.unresolved.join(", ")}, which the install does not provide. You will have to write or replace that.`,
           d.sizedParent && `Needs a sized parent or it renders at zero height: <div className="relative h-[560px] w-full overflow-hidden">`,
           d.alternatives.length && `Same idea, other ports: ${d.alternatives.join(", ")}`,
           props.length ? `Props:\n${props.join("\n")}` : `Exports: ${d.exports.join(", ") || "default"} (no documented props)`,
-          `Usage:\n${d.usage.split("\n").slice(0, 28).join("\n")}`,
+          `Usage, from its demo (adjust import paths to where the file lands):\n${d.usage.split("\n").slice(0, 28).join("\n")}`,
           times.length ? `Frames 1-6 are ${times.map((t) => `${t}s`).join(", ")} into its recorded interaction.` : `No recording for this component yet: judge it from the live page ${d.live}`,
         ].filter(Boolean).join("\n"),
         sheet: times.length ? { cols: 3, cells: times.map((t, k) => ({ name: d.name, film: k, badge: String(k + 1), caption: `${d.name} at ${t}s` })) } : undefined,
@@ -195,17 +196,22 @@ export const TOOLS = {
       const missing = (a.names || []).find((n) => !cat.byName.has(n));
       if (missing) return unknown(missing);
       const ds = a.names.map((n) => detail(n));
+      // shadcn primitives go in the command by name: registry items often fail to declare them
+      const primitives = [...new Set(ds.flatMap((d) => d.registry))].sort();
+      const command = ["npx", "shadcn@latest", "add", ...primitives, ...ds.map((d) => d.registryItem)];
       const notes = ds.flatMap((d) => [
-        d.colours ? `${d.name}: replace ${d.colours} hardcoded colours with your tokens` : null,
+        d.unresolved.length ? `${d.name}: imports ${d.unresolved.join(", ")}, which is NOT installed. Write that file or replace the import, or it will not compile` : null,
+        d.colours ? `${d.name}: ${d.colours} hardcoded colours to replace with your tokens (delete any demo code in the file first; some of them live there)` : null,
         d.sizedParent ? `${d.name}: wrap in a sized parent (relative h-[560px] w-full overflow-hidden)` : null,
       ]).filter(Boolean);
       return {
         text: [
-          `npx shadcn@latest add ${ds.map((d) => d.registryItem).join(" ")}`,
-          `Writes ${ds.map((d) => d.file).join(", ")}; npm and shadcn dependencies install with it.`,
+          command.join(" "),
+          `Writes ${ds.map((d) => d.file).join(", ")}${primitives.length ? `, plus the shadcn primitives ${primitives.join(", ")}` : ""}; npm dependencies install with it.`,
           ...(notes.length ? ["After install:", ...notes.map((n) => `  ${n}`)] : ["Nothing to fix after install: these take your tokens as they are."]),
+          "Then run your type check before going on.",
         ].join("\n"),
-        data: { command: ["npx", "shadcn@latest", "add", ...ds.map((d) => d.registryItem)] },
+        data: { command, primitives },
       };
     },
   },

@@ -20,12 +20,12 @@ Invoke-WebRequest {{SITE}}/agent/stashui.mjs -OutFile "$HOME\.stashui\stashui.mj
 node "$HOME\.stashui\stashui.mjs" init
 ```
 
-They write only `~/.stashui/` (one script) and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes. The script's SHA-256 is `{{CLI_SHA256}}`; `init` checks every skill file against its published hash before writing it.
+They write only `~/.stashui/stashui.mjs` and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes and nothing is added to your PATH. The script's SHA-256 is `{{CLI_SHA256}}`; `init` checks every skill file against its published hash before writing it.
 
 Then:
 
 1. Read the skill `init` names in its last line (`stashui/SKILL.md`) and follow it for all UI work from now on, including in this session.
-2. Run `stashui browse` (or `node ~/.stashui/stashui.mjs browse`) to confirm the catalogue answers.
+2. Run `node ~/.stashui/stashui.mjs browse` to confirm the catalogue answers.
 3. Tell the user StashUI is ready, in one line.
 
 Options: `init --project` puts the skills in this repository instead, so teammates get them through git. `init --mcp` also registers the MCP server.
@@ -36,6 +36,6 @@ Claude Desktop, claude.ai, ChatGPT and similar: add `{{SITE}}/api/mcp` as a remo
 
 ## What it touches
 
-`stashui add` runs `npx shadcn@latest add <urls>`; `--print` shows the command without running it. Images are saved under `.stashui/sheets/` in the project, in a folder that ignores itself in git. No telemetry beyond ordinary web server logs.
+The `add` command runs `npx shadcn@latest add <names and urls>`; `--print` shows the command without running it. Images are saved under `.stashui/sheets/` in the project, in a folder that ignores itself in git. No telemetry beyond ordinary web server logs.
 
 Protocol reference: {{SITE}}/api/agent/v1 · Skills index: {{SITE}}/.well-known/agent-skills/index.json

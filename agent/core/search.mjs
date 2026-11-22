@@ -99,6 +99,7 @@ export function rank(o) {
     if (it.colours === 0) score += 0.6;                             // takes the project's tokens untouched
     score -= 0.15 * it.deps + 0.01 * Math.min(it.colours, 60);
     if (!it.tile) score -= 4;                                       // cannot be shown, so cannot be judged
+    if (it.unresolved) score -= 3;                                  // installs with a missing import
     if (like) {
       score += (it.kind === like.kind ? 6 : 0) + (it.tone && it.tone === like.tone ? 2 : 0)
         + 3 * (it.accents || []).filter((a) => (like.accents || []).includes(a)).length

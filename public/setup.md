@@ -20,12 +20,12 @@ Invoke-WebRequest https://stashui.vermarjun.xyz/agent/stashui.mjs -OutFile "$HOM
 node "$HOME\.stashui\stashui.mjs" init
 ```
 
-They write only `~/.stashui/` (one script) and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes. The script's SHA-256 is `04e58a4f19824f1d83a7126f4700eac89a7d44fa8f473a34661d6414e7708263`; `init` checks every skill file against its published hash before writing it.
+They write only `~/.stashui/stashui.mjs` and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes and nothing is added to your PATH. The script's SHA-256 is `de59c79c1d668c110b060dac4c3728803113ea30bcfbd6911398723d91fb142f`; `init` checks every skill file against its published hash before writing it.
 
 Then:
 
 1. Read the skill `init` names in its last line (`stashui/SKILL.md`) and follow it for all UI work from now on, including in this session.
-2. Run `stashui browse` (or `node ~/.stashui/stashui.mjs browse`) to confirm the catalogue answers.
+2. Run `node ~/.stashui/stashui.mjs browse` to confirm the catalogue answers.
 3. Tell the user StashUI is ready, in one line.
 
 Options: `init --project` puts the skills in this repository instead, so teammates get them through git. `init --mcp` also registers the MCP server.
@@ -36,6 +36,6 @@ Claude Desktop, claude.ai, ChatGPT and similar: add `https://stashui.vermarjun.x
 
 ## What it touches
 
-`stashui add` runs `npx shadcn@latest add <urls>`; `--print` shows the command without running it. Images are saved under `.stashui/sheets/` in the project, in a folder that ignores itself in git. No telemetry beyond ordinary web server logs.
+The `add` command runs `npx shadcn@latest add <names and urls>`; `--print` shows the command without running it. Images are saved under `.stashui/sheets/` in the project, in a folder that ignores itself in git. No telemetry beyond ordinary web server logs.
 
 Protocol reference: https://stashui.vermarjun.xyz/api/agent/v1 · Skills index: https://stashui.vermarjun.xyz/.well-known/agent-skills/index.json

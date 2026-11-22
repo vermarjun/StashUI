@@ -54,11 +54,12 @@ test("review returns counts, fails on the bad fixture and passes the good one", 
   assert.equal(bad.status, 1);
   assert.equal(r.pass, false);
   assert.ok(by["off-token colours"] >= 6);
-  for (const k of ["transition: all", "focus outline removed", "image without alt", "click handler on a div", "h-screen", "no reduced-motion guard"]) assert.equal(by[k], 1, k);
+  for (const k of ["transition: all", "focus outline removed", "image without alt", "click handler on a div", "h-screen", "animates with no reduced-motion guard"]) assert.equal(by[k], 1, k);
   assert.ok(by["accent hue families"] >= 3 && by.gradients >= 1);
   const good = await run(ROOT, ["review", "agent/test/fixtures/good", "--json"]);
   assert.equal(good.status, 0);
   assert.equal(JSON.parse(good.stdout).pass, true);
+  assert.ok(JSON.parse(good.stdout).checks.some((c) => c.name === "animates with no reduced-motion guard" && c.count === 0), "every check is reported, also at zero");
 });
 
 test("init installs checksum-verified skills for every agent family and points them at the CLI", async () => {
@@ -67,11 +68,12 @@ test("init installs checksum-verified skills for every agent family and points t
   assert.equal(out.status, 0, out.stderr);
   for (const root of [".claude/skills", ".agents/skills"]) {
     const skill = readFileSync(join(home, root, "stashui/SKILL.md"), "utf8");
-    assert.ok(!skill.includes("{{CLI}}") && /stashui(\.mjs)? context/.test(skill));
+    assert.ok(!skill.includes("{{CLI}}") && skill.includes("node ~/.stashui/stashui.mjs context"));
     assert.deepEqual(readdirSync(join(home, root)).sort(), ["stashui", "stashui-explore", "stashui-review"]);
     assert.ok(existsSync(join(home, root, "stashui/references/design-doc.md")));
   }
-  assert.ok(existsSync(join(home, ".stashui/stashui.mjs")) && existsSync(join(home, ".stashui/bin/stashui")));
+  assert.deepEqual(readdirSync(join(home, ".stashui")), ["stashui.mjs"], "init writes one file under ~/.stashui and never touches PATH");
+  assert.deepEqual(readdirSync(home).sort(), [".agents", ".claude", ".stashui"], "init writes nowhere else in the home folder");
   assert.match(out.stdout, /StashUI is installed/);
   assert.ok(!existsSync(join(proj, ".claude")), "a default install must not write into the project");
 });

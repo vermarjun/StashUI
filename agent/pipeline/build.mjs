@@ -38,9 +38,30 @@ const quality = json(at("registry/quality.json"), {});
 const out = join(PUBLIC, "agent");
 mkdirSync(join(out, "items"), { recursive: true });
 
+// What an install really needs, read from the files it writes. The registry item's own
+// registryDependencies is often empty, so shadcn would not fetch the primitives; and some
+// components import a sibling file the item does not ship. Both are found here, per component.
+function installNeeds(name) {
+  const item = json(join(PUBLIC, "r", `${name}.json`), null);
+  if (!item) return { primitives: [], unresolved: [] };
+  const base = (p) => p.split("/").pop().replace(/\.\w+$/, "");
+  const own = new Set(item.files.map((f) => base(f.path)));
+  const primitives = new Set(item.registryDependencies || []), unresolved = new Set();
+  for (const f of item.files) {
+    for (const [, imp] of (f.content || "").matchAll(/from\s+["'](@\/[^"']+|\.{1,2}\/[^"']+)["']/g)) {
+      if (imp === "@/lib/utils") continue;
+      if (imp.startsWith("@/components/ui/")) { if (!own.has(base(imp))) primitives.add(base(imp)); continue; }
+      if (own.has(base(imp))) continue;                      // a file the item ships
+      unresolved.add(imp);
+    }
+  }
+  primitives.delete("utils");
+  return { primitives: [...primitives].sort(), unresolved: [...unresolved].sort() };
+}
+
 const clip = (s, n) => (s && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s || "");
 const items = [];
-let unlabelled = 0, untiled = 0;
+let unlabelled = 0, untiled = 0, incomplete = 0;
 
 for (const file of readdirSync(at("agent-index/index/components")).sort()) {
   const r = json(at("agent-index/index/components", file));
@@ -56,6 +77,8 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
     kind = (r.categories || [r.category]).map((c) => kindFromCategory.get(c)).find(Boolean) || "other";
   }
   const t = r.traits || {};
+  const needs = installNeeds(r.name);
+  if (needs.unresolved.length) incomplete++;
   const blurb = clip(label?.blurb || r.blurb || r.description || r.title, 110);
 
   items.push({
@@ -77,6 +100,7 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
     quality: quality[r.name] ?? 3,
     tile: hasTile,
     ...(r.dupe_group && { dupe: r.dupe_group }),
+    ...(needs.unresolved.length && { unresolved: needs.unresolved.length }),
     ...(facets && {
       size: facets.size, bleed: facets.bleed, accents: facets.accents,
       vivid: facets.vivid, lum: facets.luminance, moves: facets.motion, film: facets.film,
@@ -88,7 +112,7 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
     description: r.description || blurb,
     use: label?.use || r.use_when || "", avoid: r.avoid_when || "", a11y: r.a11y || "",
     exports: r.exports || [], props: r.props || [],
-    npm: r.npm_deps || [], registry: (r.registry_deps || []).filter((d) => d !== "utils"),
+    npm: r.npm_deps || [], registry: needs.primitives, unresolved: needs.unresolved,
     colours: r.hardcoded_colors ?? 0, sizedParent: !!t.needs_sized_parent, css: !!r.css,
     alternatives: (r.alternatives || []).map((a) => a.name || a).slice(0, 4),
     usage: r.usage || "",
@@ -153,4 +177,5 @@ const kb = (p) => Math.round(statSync(p).size / 1024);
 console.log(`catalog: ${items.length} components, ${kb(join(out, "catalog.json"))} KB`);
 console.log(`  kind from vision pass: ${items.length - unlabelled}   from category fallback: ${unlabelled}`);
 console.log(`  with a tile: ${items.length - untiled}   without: ${untiled}`);
+console.log(`  install leaves an import unresolved: ${incomplete}   (each is flagged in view and add, and ranked lower)`);
 console.log(`published: ${files.length} client files, ${skills.length} skills`);

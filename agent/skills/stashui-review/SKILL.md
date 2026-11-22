@@ -8,7 +8,7 @@ description: Reviews existing web UI with deterministic checks that return count
 Separate what is provably wrong from what is opinion. Fix the first, report the second.
 
 1. `{{CLI}} review [paths]` (add `--json` to parse it). Every FAIL row must reach 0:
-   off-token colours, `transition: all`, removed focus outlines, images without alt, click handlers on divs, `h-screen`, motion with no reduced-motion guard.
+   off-token colours, `transition: all`, removed focus outlines, images without alt, click handlers on divs, `h-screen`, animation with no reduced-motion guard.
 2. Read `DESIGN.md`. Anything that contradicts it is a defect, not a preference.
 3. Look at the page. Screenshot it at 375, 768 and 1440 wide (any browser tool; `npx playwright screenshot --full-page --viewport-size=1440,900 <url> shot.png` works with none). Check, in order:
    - nothing overflows sideways and no section is blank;

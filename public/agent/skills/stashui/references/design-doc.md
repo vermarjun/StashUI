@@ -6,7 +6,7 @@ One file at the project root. It holds the decisions that make generated UI look
 1. **Read before asking.** `{{CLI}} context`, the global CSS, the fonts, two existing screens. Whatever the project already decided goes in as-is.
 2. **Ask only for what is missing**, one question at a time, each with 3 or 4 concrete options and your recommendation first. Five questions at most:
    product and who opens it; two products whose feel is right and one that is close but wrong; mood, as a choice between prepared sets (calm / precise / trustworthy, loud / kinetic / playful, dense / technical / fast); light or dark by default; accent hue, argued from the domain.
-3. **Decide the rest yourself** and mark it `(assumed)`. A stated assumption the user can overturn beats a sixth question.
+3. **Decide the rest yourself** and mark it `(assumed)`. A stated assumption the user can overturn beats a sixth question. If the user cannot be asked at all, decide everything this way.
 
 ## Shape
 ```markdown
@@ -46,6 +46,6 @@ Five lines each, specific to this product.
 ```
 
 ## Then
-Write the colours into the global CSS as the shadcn variables of the same names (`--background`, `--primary`, …) **before installing anything**: components pick tokens up on arrival. Colour token names must match shadcn's so nothing needs a mapping.
+Write the colours into the global CSS as the shadcn variables of the same names (`--background`, `--primary`, …) **before installing anything**: components pick tokens up on arrival. Use the colour format that file already uses (oklch if it is oklch), and set what follows from your choices too: `--primary-foreground`, `--ring`, `--card`, `--popover`, and the default theme class.
 Every approved proposal adds one dated line per pick to Decisions. Read Decisions before shopping: a past choice is a constraint.
 Optional check: `npx @google/design.md lint DESIGN.md` reports contrast and broken references.

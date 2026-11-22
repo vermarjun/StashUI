@@ -34,7 +34,7 @@ Ask for page 2 only when page 1 gave fewer than two candidates. Two rephrased se
 Write `plan.json` ([references/plan.md](references/plan.md)), run `{{CLI}} propose plan.json`, give the user the link, and stop. Build nothing before they approve. Skip this only when the user said to just build.
 
 ## 6. Build
-`{{CLI}} add <names>`, then do what its notes say: replace hardcoded colours with tokens, wrap sized-parent components. Use the product's real copy, never the demo's. `{{CLI}} code <name>` only for a component you are changing.
+`{{CLI}} add <names>`, then do what its notes say: supply any import it flags as not installed, replace hardcoded colours with tokens, wrap sized-parent components. Run the type check. Delete demo code and use the product's real copy. `{{CLI}} code <name>` only for a component you are changing.
 
 ## 7. Verify
 Run `{{CLI}} review` until every FAIL row is 0. Then open the built page at 375, 768 and 1440 wide and look at it: no overflow, no blank section, one accent, and it still looks like the board. Keep a fix only if it made nothing worse. Append the approved picks to the Decisions section of DESIGN.md.

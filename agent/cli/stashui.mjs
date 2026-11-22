@@ -6,7 +6,7 @@
 // the legend with the path of the image so the agent can open it.
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { chmodSync, copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, symlinkSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,7 +26,7 @@ const HELP = `stashui: find, see and install UI components
   stashui code <name>               source, for a component you are about to modify
   stashui add <name…>               install into this project (shadcn)   --print to only show the command
   stashui context                   what this project already has: stack, tokens, installed components
-  stashui propose <plan.json>       the page a human approves: picks, runners-up, reasons
+  stashui propose <plan.json>       the page a human approves: picks, runners-up, reasons   --no-open
   stashui review [path…]            deterministic UI checks with counts   --json
   stashui init [--project] [--mcp]  install the skills (and optionally the MCP server) for your agent
 
@@ -50,7 +50,7 @@ async function get(op, params = {}) {
   let res;
   try { res = await fetch(`${API}/${op}?${qs}`); }
   catch (e) { die(`Cannot reach ${SITE} (${e.cause?.code || e.message}). Check the network, or set STASHUI_URL.`); }
-  const body = await res.json().catch(() => ({ error: `${res.status} ${res.statusText}` }));
+  const body = await res.json().catch(() => ({ error: `${SITE} answered ${res.status} for "${op}". The server may be older than this CLI, or STASHUI_URL points somewhere else.` }));
   if (!res.ok && !body.text) die(body.error || `StashUI returned ${res.status}`);
   return body;
 }
@@ -114,8 +114,15 @@ function project() {
   const accent = ["primary", "accent", "ring", "chart-1", "brand"].map((k) => tokens[k] && colour(tokens[k])?.hue).find(Boolean) || null;
   const components = join(cwd, existsSync(join(cwd, "src/components/ui")) ? "src/components/ui" : "components/ui");
   const installed = existsSync(components) ? readdirSync(components).filter((f) => /\.(t|j)sx?$/.test(f)).map((f) => f.replace(/\.\w+$/, "")) : [];
-  return { cwd, pkg, deps, cssFile, tokens, theme, accent, installed, components, design: existsSync(join(cwd, "DESIGN.md")), shadcn: existsSync(join(cwd, "components.json")) };
+  const style = JSON.parse(read(join(cwd, "components.json")) || "{}").style || "";
+  return { cwd, pkg, deps, cssFile, tokens, theme, accent, installed, components, style, design: existsSync(join(cwd, "DESIGN.md")), shadcn: existsSync(join(cwd, "components.json")) };
 }
+
+// StashUI components are written against shadcn's Radix primitives. A project on the Base UI style
+// gets primitives with slightly different props, so say so before the type checker does.
+const baseStyleNote = (style) => (style.startsWith("base")
+  ? `This project uses shadcn's Base UI style (${style}); StashUI components are written for the Radix style. Components that use shadcn primitives may need a prop or two changed: run the type check right after add.`
+  : null);
 
 // ── commands ────────────────────────────────────────────────────────────────
 const commands = {
@@ -136,6 +143,8 @@ const commands = {
     if (!words.length) die("add needs component names.");
     const out = await get("add", { names: words.join(",") });
     console.log(out.text);
+    const note = baseStyleNote(project().style);
+    if (note && out.data?.primitives.length) console.log(note);
     if (flags.print || !out.data) return;
     if (!existsSync(join(process.cwd(), "components.json"))) die("\nThis project has no components.json. Run `npx shadcn@latest init -d` first, then repeat this command.");
     const [bin, ...args] = out.data.command;
@@ -151,10 +160,11 @@ const commands = {
       `Design doc: ${p.design ? "DESIGN.md exists. Read it; it outranks your taste." : "none. Write DESIGN.md before choosing components."}`,
       `Tokens (${p.cssFile ? relative(p.cwd, p.cssFile) : "no global css found"}): ${["background", "foreground", "primary", "accent", "radius"].map(t).filter(Boolean).join(" · ") || "none defined"}`,
       `Read as: ${p.theme || "unknown"} theme, ${p.accent || "no"} accent hue. Searches rank against this unless you pass --theme/--accent or --no-context.`,
+      baseStyleNote(p.style),
       p.installed.length
         ? `Already installed (${p.installed.length}), reuse before adding a twin: ${p.installed.join(", ")}`
         : "No components installed yet.",
-    ].join("\n"));
+    ].filter(Boolean).join("\n"));
   },
 
   async propose() {
@@ -164,7 +174,7 @@ const commands = {
     const directions = plan.directions || [plan];
     for (const d of directions) if (!Array.isArray(d.slots) || !d.slots.every((s) => s.slot && s.pick)) die("Each direction needs `slots`, and each slot needs `slot` and `pick`.");
     const url = `${SITE}/agent/proposal.html#${Buffer.from(JSON.stringify(plan)).toString("base64url")}`;
-    console.log(`Proposal for the user (${directions.length > 1 ? `${directions.length} directions` : `${directions[0].slots.length} sections`}):\n${url}\n\nGive the user that link and stop. Build nothing until they answer.`);
+    console.log(`Proposal for the user (${directions.length > 1 ? `${directions.length} directions` : `${directions[0].slots.length} sections`}):\n${url}\n\nGive the user that link and stop. Build nothing until they answer, unless they already told you to go ahead.`);
     if (!flags["no-open"]) spawnSync(process.platform === "darwin" ? "open" : process.platform === "win32" ? "start" : "xdg-open", [url], { stdio: "ignore", shell: process.platform === "win32" });
   },
 
@@ -205,10 +215,13 @@ function review(paths) {
   };
   paths.forEach(walk);
   const found = rules.map(([name, level, , fix]) => ({ name, level, fix, count: 0, where: [] }));
-  const hues = new Set(), fonts = new Set();
-  let animates = false, guarded = false;
+  const hues = new Set(), fonts = new Set(), unguarded = [];
+  let globalGuard = false;
   for (const file of files) {
     const text = read(file), isCss = file.endsWith(".css");
+    const guard = /prefers-reduced-motion|motion-reduce:|motion-safe:|useReducedMotion|MotionConfig/.test(text);
+    if (isCss && guard) globalGuard = true;                               // one rule in the global CSS covers every component
+    if (!isCss && !guard && /\banimate-(?!none)|<motion\.|\buseAnimate\b|\bgsap\./.test(text)) unguarded.push(file);
     text.split("\n").forEach((line, n) => {
       if (isCss && /^\s*--[\w-]+\s*:/.test(line)) return;              // a token definition is where literals belong
       rules.forEach(([, , re], i) => {
@@ -220,11 +233,11 @@ function review(paths) {
         }
       });
       for (const m of line.matchAll(/font-\[['"]?([^\]'",]+)|font-family:\s*['"]?([^;'",]+)/g)) fonts.add((m[1] || m[2]).trim().toLowerCase());
-      if (/\banimate-|<motion\.|@keyframes|transition-/.test(line)) animates = true;
-      if (/prefers-reduced-motion|motion-reduce:|motion-safe:|useReducedMotion/.test(line)) guarded = true;
     });
   }
-  if (animates && !guarded) found.push({ name: "no reduced-motion guard", level: "must", count: 1, where: [], fix: "Honour prefers-reduced-motion once, globally or with motion-reduce:." });
+  const still = globalGuard ? [] : unguarded;
+  found.push({ name: "animates with no reduced-motion guard", level: "must", count: still.length, where: still.slice(0, 6),
+    fix: "Add one `@media (prefers-reduced-motion: reduce)` rule to the global CSS, or guard each with motion-reduce: / useReducedMotion." });
   found.push({ name: "accent hue families", level: "info", count: hues.size, where: [...hues], fix: "More than one hue family reads as several products. One accent per view." });
   found.push({ name: "font families declared", level: "info", count: fonts.size, where: [...fonts], fix: "Two families at most: one for text, one for display or code." });
   const failing = found.filter((f) => f.level === "must" && f.count);
@@ -241,20 +254,13 @@ function review(paths) {
 // ── init: everything an agent needs, written by the agent ───────────────────
 async function init() {
   const done = [];
-  // 1. keep this CLI where the skills expect it
-  mkdirSync(join(HOME, "bin"), { recursive: true });
+  // 1. keep this CLI where the skills expect it. Nothing is added to PATH: the skills call it by path,
+  //    so setup writes exactly what the setup document says it writes.
+  mkdirSync(HOME, { recursive: true });
   const home = join(HOME, "stashui.mjs");
   if (resolve(SELF) !== resolve(home)) copyFileSync(SELF, home);
-  const shim = join(HOME, "bin", "stashui");
-  writeFileSync(shim, `#!/bin/sh\nexec node "${home}" "$@"\n`); chmodSync(shim, 0o755);
-  writeFileSync(`${shim}.cmd`, `@node "${home}" %*\r\n`);
-  const onPath = (process.env.PATH || "").split(process.platform === "win32" ? ";" : ":");
-  let command = `node ${home}`;
-  for (const dir of [join(homedir(), ".local/bin"), "/usr/local/bin", "/opt/homebrew/bin"]) {
-    if (!onPath.includes(dir) || !existsSync(dir)) continue;
-    try { if (!existsSync(join(dir, "stashui"))) symlinkSync(shim, join(dir, "stashui")); command = "stashui"; break; } catch { /* not writable: try the next */ }
-  }
-  done.push(`CLI: ${home}${command === "stashui" ? " (on your PATH as `stashui`)" : ""}`);
+  const command = "node ~/.stashui/stashui.mjs";
+  done.push(`CLI: ${home}  (run it as \`${command}\`)`);
 
   // 2. skills, checked against the published hashes
   const manifest = await fetch(`${SITE}/agent/manifest.json`).then((r) => r.json()).catch(() => die(`Cannot reach ${SITE}/agent/manifest.json`));
