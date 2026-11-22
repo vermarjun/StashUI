@@ -21,7 +21,9 @@ import { matchesWords, useSearch, type SearchHit } from "@/lib/use-search";
 const MAX_RESULTS = 12;
 const SEE_ALL = "__see-all__";
 const byName = new Map(componentsMeta.map((c) => [c.name, c]));
-const byLowerName = new Map(componentsMeta.map((c) => [c.name.toLowerCase(), c]));
+const byLowerName = new Map(
+  componentsMeta.map((c) => [c.name.toLowerCase(), c]),
+);
 
 function urlsFor(name: string) {
   const { v, tiers } = getPreview(name);
@@ -61,12 +63,15 @@ export function CommandMenu() {
       ? componentsMeta
       : answer
         ? answer.names.flatMap((n) => byName.get(n) ?? [])
-        : componentsMeta.filter((c) => matchesWords(q, c.title, c.name, c.library, c.tagline));
+        : componentsMeta.filter((c) =>
+            matchesWords(q, c.title, c.name, c.library, c.tagline),
+          );
     return pool.slice(0, MAX_RESULTS);
   }, [q, answer]);
 
   const hits = React.useMemo(
-    () => new Map<string, SearchHit>((answer?.items ?? []).map((h) => [h.name, h])),
+    () =>
+      new Map<string, SearchHit>((answer?.items ?? []).map((h) => [h.name, h])),
     [answer],
   );
   const total = q && answer ? answer.total : null;
@@ -129,76 +134,85 @@ export function CommandMenu() {
           },
         }}
       >
-        <CommandInput
-          placeholder="Describe what you need, or type a name…"
-          value={query}
-          onValueChange={setQuery}
-        />
+        {/* Two columns for the whole height: the search (box, results, keys) on the
+            left, the highlighted component on the right. */}
         <div className="grid min-h-0 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-          <CommandList className="max-h-[min(460px,60vh)] md:border-r md:border-border">
-            <CommandEmpty>No components found.</CommandEmpty>
-            <CommandGroup
-              heading={
-                !q
-                  ? "All components"
-                  : answer?.weak
-                    ? "No close match · nearest components"
-                    : total != null
-                      ? `${total} result${total === 1 ? "" : "s"} · best match first`
-                      : "Searching…"
-              }
-            >
-              {results.map((c) => (
-                <CommandItem
-                  key={c.name}
-                  value={c.name}
-                  onSelect={() => go(`/c/${c.name}`)}
-                  className="gap-3 py-2"
-                >
-                  <Thumb name={c.name} />
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate font-medium">{c.title}</span>
-                    <span className="block truncate text-xs text-muted-foreground">
-                      {c.tagline || c.library || c.category}
+          <div className="flex min-h-0 min-w-0 flex-col md:border-r md:border-border">
+            <CommandInput
+              placeholder="Describe what you need, or type a name…"
+              value={query}
+              onValueChange={setQuery}
+            />
+            <CommandList className="h-[min(480px,60vh)] max-h-none">
+              <CommandEmpty>No components found.</CommandEmpty>
+              <CommandGroup
+                heading={
+                  !q
+                    ? "All components"
+                    : answer?.weak
+                      ? "No close match · nearest components"
+                      : total != null
+                        ? `${total} result${total === 1 ? "" : "s"} · best match first`
+                        : "Searching…"
+                }
+              >
+                {results.map((c) => (
+                  <CommandItem
+                    key={c.name}
+                    value={c.name}
+                    onSelect={() => go(`/c/${c.name}`)}
+                    className="gap-3 py-2"
+                  >
+                    <Thumb name={c.name} />
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate font-medium">
+                        {c.title}
+                      </span>
+                      <span className="block truncate text-xs text-muted-foreground">
+                        {c.tagline || c.library || c.category}
+                      </span>
                     </span>
-                  </span>
-                </CommandItem>
-              ))}
-              {q && total != null && total > 0 && (
-                <CommandItem value={SEE_ALL} onSelect={seeAll} className="gap-3 py-2.5">
-                  <span className="flex h-[40px] w-16 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground">
-                    <ArrowRight className="size-4" />
-                  </span>
-                  <span className="min-w-0 flex-1 truncate">
-                    See all {total} result{total === 1 ? "" : "s"}
-                  </span>
-                </CommandItem>
+                  </CommandItem>
+                ))}
+                {q && total != null && total > 0 && (
+                  <CommandItem
+                    value={SEE_ALL}
+                    onSelect={seeAll}
+                    className="gap-3 py-2.5"
+                  >
+                    <span className="flex h-[40px] w-16 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground">
+                      <ArrowRight className="size-4" />
+                    </span>
+                    <span className="min-w-0 flex-1 truncate">
+                      See all {total} result{total === 1 ? "" : "s"}
+                    </span>
+                  </CommandItem>
+                )}
+              </CommandGroup>
+            </CommandList>
+            <div className="flex items-center gap-4 border-t border-border px-3 py-2 text-xs text-muted-foreground">
+              <span>
+                <Key>↑</Key>
+                <Key>↓</Key> move
+              </span>
+              <span>
+                <Key>↵</Key> open
+              </span>
+              {q && (
+                <button
+                  type="button"
+                  onClick={seeAll}
+                  className="ml-auto rounded outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <Key>⌘↵</Key> see all results
+                </button>
               )}
-            </CommandGroup>
-          </CommandList>
+            </div>
+          </div>
 
           <div className="hidden min-w-0 md:block">
             {current && <Preview item={current} hit={hits.get(current.name)} />}
           </div>
-        </div>
-
-        <div className="flex items-center gap-4 border-t border-border px-3 py-2 text-xs text-muted-foreground">
-          <span>
-            <Key>↑</Key>
-            <Key>↓</Key> move
-          </span>
-          <span>
-            <Key>↵</Key> open
-          </span>
-          {q && (
-            <button
-              type="button"
-              onClick={seeAll}
-              className="ml-auto rounded outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <Key>⌘↵</Key> see all results
-            </button>
-          )}
         </div>
       </CommandDialog>
     </>
@@ -242,8 +256,16 @@ function Preview({ item, hit }: { item: ComponentMeta; hit?: SearchHit }) {
   const facts = [
     hit?.kind.replaceAll("-", " "),
     hit?.weight && `${hit.weight} at runtime`,
-    hit && (hit.deps ? `${hit.deps} npm dep${hit.deps > 1 ? "s" : ""}` : "no dependencies"),
-    hit?.content && (hit.content === "hardcoded" ? "content hardcoded" : hit.content === "none" ? null : `content: ${hit.content}`),
+    hit &&
+      (hit.deps
+        ? `${hit.deps} npm dep${hit.deps > 1 ? "s" : ""}`
+        : "no dependencies"),
+    hit?.content &&
+      (hit.content === "hardcoded"
+        ? "content hardcoded"
+        : hit.content === "none"
+          ? null
+          : `content: ${hit.content}`),
   ].filter(Boolean) as string[];
 
   return (
@@ -270,7 +292,9 @@ function Preview({ item, hit }: { item: ComponentMeta; hit?: SearchHit }) {
       <div className="min-w-0 px-1">
         <div className="flex items-baseline gap-2">
           <span className="truncate text-base font-semibold">{item.title}</span>
-          <span className="shrink-0 text-xs text-muted-foreground">{item.library ?? ""}</span>
+          <span className="shrink-0 text-xs text-muted-foreground">
+            {item.library ?? ""}
+          </span>
         </div>
         <p className="mt-1 line-clamp-3 text-sm text-muted-foreground">
           {item.description || item.tagline}
