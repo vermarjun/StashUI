@@ -1,0 +1,186 @@
+{
+ "name": "compare",
+ "frames": {
+  "code": "6887",
+  "best": 1,
+  "best_why": "Frame 1 shows both photos and the divider with its handle clearly at once.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A vertical divider drags across two photos to reveal before and after.",
+ "summary": "Two images are layered, with the top one clipped to a moving handle. Moving the pointer, or dragging the divider, shifts the seam so the second picture shows through.",
+ "title_fix": null,
+ "appearance": "A rounded square frame holds one photo on the left and a pale, blurred second image on the right. A thin vertical line with a small white grip splits them, tinted indigo near the seam.",
+ "behaviour": "On hover the divider follows the pointer across the frame, showing more of one picture or the other. Leaving resets the seam to the middle; in drag mode it stays where released.",
+ "parts": [
+  "photo",
+  "second image",
+  "divider line",
+  "handle grip"
+ ],
+ "demo_content": "A red-rock landscape on one side and a blurred image of hands on the other.",
+ "states": [
+  "hover",
+  "dragging"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "rounded",
+  "minimal",
+  "light",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "before and after image slider",
+  "two photos side by side",
+  "drag to reveal image",
+  "image comparison handle",
+  "split screen photo viewer",
+  "before after comparison widget",
+  "wipe between two pictures",
+  "photo diff slider"
+ ],
+ "resembles": [],
+ "use_when": "A retouch, renovation or product change needs a direct before-and-after comparison.",
+ "avoid_when": "Hover mode snaps back to the middle on leave, so it cannot hold a position without switching to drag mode.",
+ "suits": [
+  "portfolio",
+  "ecommerce",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Images, alt text, slideMode, initial percentage, autoplay timing and custom first/second/handle content are props; divider colours are baked into classes.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A clip-path update per pointer move, plus a small decorative star field near the line.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The slider is pointer-only with no focusable control, though both images do carry alt text."
+ },
+ "props": [
+  {
+   "name": "firstImage",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "secondImage",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "firstImageAlt",
+   "type": "string",
+   "default": "\"First image\"",
+   "required": false
+  },
+  {
+   "name": "secondImageAlt",
+   "type": "string",
+   "default": "\"Second image\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"h-[400px] w-[400px] overflow-hidden\", className)}",
+   "required": false
+  },
+  {
+   "name": "initialSliderPercentage",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "slideMode",
+   "type": "\"hover\" | \"drag\"",
+   "default": "\"hover\"",
+   "required": false
+  },
+  {
+   "name": "showHandlebar",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoplayDuration",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "firstContent",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "handle",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The handle grip is small and low contrast against the bright image."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp clip and clear divider line; the small handle grip is fiddly to grab.",
+ "unsure": [
+  "weight"
+ ],
+ "title": "Image Compare Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "426d52d5aaf325bc",
+  "film_hash": "9269d895caf1807b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

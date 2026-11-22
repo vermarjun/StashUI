@@ -1,0 +1,179 @@
+{
+ "name": "sortable-list",
+ "frames": {
+  "code": "5901",
+  "best": 1,
+  "best_why": "All five rows are stacked in order with checkbox, number and label clearly readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.1
+ },
+ "tagline": "Checkbox task rows you drag up or down to reorder.",
+ "summary": "A stacked task list where each row has a checkbox, a number and a label; rows can be dragged to reorder, and checking one shrinks it and reveals a delete button.",
+ "title_fix": null,
+ "appearance": "Five dark rounded rows stack with small gaps on black. Each row holds a round outline checkbox, a faint order number and light grey text; a checked row narrows and shows a red trash icon.",
+ "behaviour": "Dragging a row lifts it while the others spring aside; checking the box turns the label red, then shrinks the row and slides a delete button in from the side.",
+ "parts": [
+  "task row",
+  "checkbox",
+  "order number",
+  "task label",
+  "delete button"
+ ],
+ "demo_content": "Tasks Design system tokens, Component architecture, Write unit tests, Review pull request and Update documentation.",
+ "states": [
+  "checked",
+  "dragging"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "drag to reorder task list",
+  "todo list with checkboxes and delete",
+  "sortable rows you can rearrange",
+  "task list that animates when reordered",
+  "checklist with drag handles",
+  "reorderable list for a project board",
+  "todo items that collapse when done",
+  "list rows that spring into place"
+ ],
+ "resembles": [],
+ "use_when": "Users need to set the order of a short task or playlist list themselves, not just tick items off.",
+ "avoid_when": "The list is long; dragging every row is slow and there is no search or keyboard reorder.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "items and setItems drive the rows while renderItem controls each row's markup; drag, collapse and delete animations are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of rows with layout springs that run only while dragging or toggling.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Reordering is pointer-only; checkboxes work from the keyboard but their label says Mark to delete for a completion action."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "Item[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "setItems",
+   "type": "Dispatch<SetStateAction<Item[]>>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onCompleteItem",
+   "type": "(id: number) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderItem",
+   "type": "(item, order, onCompleteItem, onRemoveItem) => ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "item",
+   "type": "Item",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "order",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onRemoveItem",
+   "type": "(id: number) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderExtra",
+   "type": "(item: Item) => ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "isExpanded",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "handleDrag",
+   "type": "() => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Rows can only be reordered with a pointer; there is no keyboard path.",
+  "A checked row replaces its title with the word Delete, so done tasks lose their name.",
+  "The checkbox aria-label says Mark to delete although it marks completion."
+ ],
+ "polish": 4,
+ "polish_why": "Springy reorder and a neat collapse; done rows swapping their label for Delete is odd.",
+ "unsure": [],
+ "title": "Sortable List",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "015ad023f5c20b6e",
+  "film_hash": "65868ce21f9f4c53",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

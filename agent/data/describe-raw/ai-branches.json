@@ -1,0 +1,69 @@
+{
+  "name": "ai-branches",
+  "frames": {
+    "code": "5528",
+    "best": 6,
+    "best_why": "Shows the forked conversation after an edit, with four branches counted and the new reply fully written.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Editing a sent message forks a new chat branch, with a mini tree to jump.",
+  "summary": "A compact chat window where each sent message can be edited, and an edit grows a new branch. Arrows page through versions, a small tree on the right maps every branch, and clicking a node switches the conversation.",
+  "title_fix": null,
+  "appearance": "A rounded dark chat card titled Trip planning with a branch count at the top right. Bubbles alternate: right-aligned grey user messages with tiny edit and version arrows, left-aligned assistant paragraphs. A narrow rail of connected dots runs down the right edge.",
+  "behaviour": "Hovering a message lights it and reveals its controls; the pencil opens an inline editor, and sending adds a forked reply that types itself in. Version arrows slide between siblings, and the rail's nodes preview and switch branches.",
+  "parts": ["title", "branch count", "user bubble", "assistant reply", "version pager", "mini tree rail", "edit box"],
+  "demo_content": "Trip planning chat about three days in Lisbon and Porto, with edits like \"Make day 3 less touristy\".",
+  "states": ["hover", "focus", "active", "loading"],
+  "kind": "chat",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "chat with editable messages",
+    "fork a conversation branch",
+    "version arrows on a reply",
+    "conversation tree on the side",
+    "ai chat with alternate answers",
+    "compare different replies to same prompt",
+    "edit prompt and keep both responses",
+    "branching message history"
+  ],
+  "resembles": [],
+  "use_when": "People may want to rewrite a prompt and keep both answers side by side for comparison.",
+  "avoid_when": "The tiny version arrows and narrow tree rail demand a fine pointer, and you must supply the flat message history.",
+  "suits": ["ai-chat", "saas", "devtool"],
+  "slot_hints": ["body-text", "modal"],
+  "traits": {
+    "trigger": ["hover", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a flat messages array with ids and parents, a reply function that may stream, an onChange callback and a title; the tree layout and styling stay fixed.",
+  "technique": ["motion-library", "svg"],
+  "weight": "light",
+  "weight_why": "A short message list and a small SVG tree, animated only when something changes.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Controls are labelled and focus is moved for you, but the tree nodes are tiny targets and the streaming caret is hidden from screen readers."
+  },
+  "props": [
+    {"name": "title", "type": "string", "default": "Trip planning", "required": false},
+    {"name": "messages", "type": "BranchMessage[]", "default": "DEMO_MESSAGES", "required": false},
+    {"name": "reply", "type": "(prompt: string, history: BranchMessage[], signal: AbortSignal) => BranchReply", "default": "demoReply", "required": false},
+    {"name": "onChange", "type": "(messages: BranchMessage[]) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Message edit buttons stay invisible until hover or keyboard focus."],
+  "polish": 4,
+  "polish_why": "Tidy branching model and clear version controls; tiny targets and a cramped tree rail.",
+  "unsure": []
+}

@@ -1,0 +1,71 @@
+{
+  "name": "bg-media",
+  "frames": {
+    "code": "7911",
+    "best": 1,
+    "best_why": "The bear and cubs sit near the centre of the pale full-bleed photo with no cursor in the shot.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "Full-bleed photo backdrop washed with a pale white overlay.",
+  "summary": "A full-screen image or video layer that fills its container behind page content, with an optional light or dark overlay and a rounded bottom-right corner on images.",
+  "title_fix": null,
+  "appearance": "A wide landscape photo of a brown bear and two cubs on a snowy ridge, washed pale by a white overlay. The image fills the frame edge to edge, with only the bottom-right corner rounded.",
+  "behaviour": "Static for images. Video mode autoplays muted, with a small Pause button; clicking it stops and restarts the clip.",
+  "parts": ["background photo", "overlay wash", "rounded corner"],
+  "demo_content": "A brown bear and two cubs on a snowy rocky ridge under a pale sky.",
+  "states": [],
+  "kind": "background",
+  "look": ["light", "airy", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "full screen photo behind page content",
+    "video or image backdrop for a hero",
+    "background media with white wash",
+    "large landscape image filling the viewport",
+    "photo backdrop with dark overlay option",
+    "rounded corner full bleed banner image",
+    "muted video background that autoplays",
+    "website cover image with soft tint"
+  ],
+  "resembles": [],
+  "use_when": "You need a full-viewport photo or looping video behind hero copy, with a tint to keep text readable.",
+  "avoid_when": "The overlay is a fixed white or black wash; a busy photo can still fight text, and video autoplays.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "src and alt set the image, variant switches the overlay between none, light and dark, and type chooses image or video; the 88px rounded corner is fixed.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A single image or video element with a CSS overlay and no script loop.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Image mode has no controls; video autoplays without a reduced-motion check and its Pause button only exists for video."
+  },
+  "props": [
+    {"name": "src", "type": "string", "default": null, "required": true},
+    {"name": "variant", "type": "\"none\" | \"light\" | \"dark\"", "default": "light", "required": false},
+    {"name": "type", "type": "\"image\" | \"video\"", "default": "image", "required": false},
+    {"name": "alt", "type": "string", "default": "", "required": false}
+  ],
+  "issues": [
+    "Video autoplays with no loop and no reduced-motion guard.",
+    "The rounded corner is applied only to the image, so video mode has a square edge."
+  ],
+  "polish": 3,
+  "polish_why": "The pale photo sits cleanly, but it is a plain full-bleed image with little craft to judge.",
+  "unsure": ["traits.motion"]
+}

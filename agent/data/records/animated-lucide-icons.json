@@ -1,0 +1,180 @@
+{
+ "name": "animated-lucide-icons",
+ "frames": {
+  "code": "2799",
+  "best": 1,
+  "best_why": "The whole icon grid is clean and evenly lit, with no cursor covering any tile.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.9
+ },
+ "tagline": "A grid of outline icons that wiggle, ring and beat when you hover them.",
+ "summary": "Twenty outline icon buttons, each labelled, that play a small hand-tuned animation on hover: a bell rings, a heart beats, a gear turns. The wrapper can fire the same animation from any parent element.",
+ "title_fix": null,
+ "appearance": "A five-by-four grid of rounded dark tiles on black, each holding a thin white outline icon with a tiny grey lowercase name beneath it. One tile at a time lightens under the pointer.",
+ "behaviour": "Hovering a tile lightens its background and sets its icon moving: the bell swings, the heart pulses, the gear turns, the arrow shifts. The icon returns to rest when the pointer leaves.",
+ "parts": [
+  "icon grid",
+  "icon tile",
+  "outline icon",
+  "icon label",
+  "hover highlight"
+ ],
+ "demo_content": "A grid of twenty named icons including bell, heart, gear, search, send and trash.",
+ "states": [
+  "hover",
+  "active",
+  "focus"
+ ],
+ "kind": "icon",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "icons that animate on hover",
+  "outline icon button grid",
+  "bell rings when hovered",
+  "heart beats and gear spins",
+  "interactive icon set for buttons",
+  "small icon motions for ui buttons",
+  "animated line icons for a menu",
+  "hover micro interactions for icons"
+ ],
+ "resembles": [],
+ "use_when": "A toolbar or menu needs icon buttons that feel alive, with a small motion confirming each hover or tap.",
+ "avoid_when": "Each icon is its own file and only a fixed set ships, and the motions are decorative in a dense toolbar.",
+ "suits": [
+  "saas",
+  "devtool",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "nav",
+  "sidebar",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "AnimateIcon wraps any child and takes triggers, an animation name, loop, delay and speed props; each icon ships preset variants. New motion or icons need a source edit.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "SVG paths animate only while hovered; twenty idle icons cost almost nothing.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Buttons are labelled and honour reduced motion, but the icon animation fires on pointer hover only, so keyboard focus never triggers it."
+ },
+ "props": [
+  {
+   "name": "animateOnHover",
+   "type": "TriggerProp",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animateOnTap",
+   "type": "TriggerProp",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animateOnView",
+   "type": "TriggerProp",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animation",
+   "type": "string | StaticAnimations",
+   "default": "'default'",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "{speed ?? parentSpeed}",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "TriggerProp",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Several icons animate so slightly that the stills look static.",
+  "The tiny grey labels are low contrast on the dark tiles."
+ ],
+ "polish": 3,
+ "polish_why": "Neat, consistent icon grid; the tiles and tiny labels are plain and the motion is barely visible.",
+ "unsure": [
+  "responsive",
+  "content_from"
+ ],
+ "title": "Animated Lucide Icons",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bd25918a74820798",
+  "film_hash": "5990b378c9994c25",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

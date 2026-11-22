@@ -1,0 +1,81 @@
+{
+  "name": "background-gradient-animation",
+  "frames": {
+    "code": "2586",
+    "best": 3,
+    "best_why": "The central orb is at its largest and most saturated pink, filling the middle of the field.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A purple gradient field with a huge glowing orb that drifts and changes hue.",
+  "summary": "A full-screen animated backdrop of blurred coloured light blobs rotating over a purple-to-indigo gradient. The centre swells into a warm orb that shifts between yellow and pink, and a sixth glow follows the pointer.",
+  "title_fix": null,
+  "appearance": "A full purple-to-indigo gradient field with a huge soft glowing orb in the middle that fades from warm yellow through pink. Everything is heavily blurred, and a faint blue light patch trails the cursor across the field.",
+  "behaviour": "Five coloured blobs drift and rotate continuously over the purple base, so the central glow swells and changes hue without ever settling. Moving the pointer drags a sixth coloured patch along with it.",
+  "parts": ["gradient field", "glowing orb", "drifting colour blobs", "pointer glow"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["gradient", "glow", "dark", "colorful"],
+  "tone": "decorative",
+  "search_phrases": [
+    "animated gradient background with glowing orb",
+    "purple radial gradient hero backdrop",
+    "aurora blobs moving in background",
+    "cursor following light on gradient",
+    "full screen colorful gradient animation",
+    "soft glowing bubble background",
+    "css animated gradient for landing page",
+    "interactive gradient that follows mouse"
+  ],
+  "resembles": [],
+  "use_when": "A hero or full-page backdrop that needs a soft living gradient with no content of its own.",
+  "avoid_when": "Nested layouts: it fills the viewport and writes CSS variables onto the whole body.",
+  "suits": ["ai-chat", "marketing", "saas"],
+  "slot_hints": ["page-background", "section-background", "hero"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Every colour, the gradient ends, blob size, blending mode and the pointer toggle are props; the five animation keyframes live in the theme CSS.",
+  "technique": ["css-keyframes", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "Six blurred full-size blobs composited with blend modes plus a pointer glow.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Purely decorative divs that animate forever with no reduced-motion handling."
+  },
+  "props": [
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "firstColor", "type": "string", "default": "18, 113, 255", "required": false},
+    {"name": "secondColor", "type": "string", "default": "221, 74, 255", "required": false},
+    {"name": "thirdColor", "type": "string", "default": "100, 220, 255", "required": false},
+    {"name": "fourthColor", "type": "string", "default": "200, 50, 50", "required": false},
+    {"name": "fifthColor", "type": "string", "default": "180, 180, 50", "required": false},
+    {"name": "pointerColor", "type": "string", "default": "140, 100, 255", "required": false},
+    {"name": "size", "type": "string", "default": "80%", "required": false},
+    {"name": "blendingValue", "type": "string", "default": "hard-light", "required": false},
+    {"name": "gradientBackgroundStart", "type": "string", "default": "rgb(108, 0, 162)", "required": false},
+    {"name": "gradientBackgroundEnd", "type": "string", "default": "rgb(0, 17, 82)", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The blobs merge into one shapeless orb, so the five separate gradients are hard to read.",
+    "It writes CSS variables onto document.body, leaking colours to the whole page.",
+    "It fills the viewport with h-screen and w-screen, ignoring any container.",
+    "The animation never pauses, even off screen."
+  ],
+  "polish": 4,
+  "polish_why": "Rich colour field and smooth drifting blur; the blobs merge into one shapeless orb.",
+  "unsure": ["needs_sized_parent"]
+}

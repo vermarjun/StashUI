@@ -1,0 +1,63 @@
+{
+  "name": "comp-269",
+  "frames": {
+    "code": "7529",
+    "best": 6,
+    "best_why": "The card is shown largest, so the alert strip, both fields and the button are all legible at once.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "A thin bordered row with a red warning circle and one line of error text.",
+  "summary": "An inline error strip for forms: a rounded border around a small red circled exclamation and the words An error occurred. It never floats and has no close button.",
+  "title_fix": null,
+  "appearance": "Inside a dark sign-in card sits a full-width rounded rectangle with a thin border, holding a small ringed red exclamation mark and a short line of pale text. Below are an email row, a password row with a red edge, and a white button.",
+  "behaviour": "Static: nothing moves or responds. The strip stays in place above the fields and cannot be dismissed.",
+  "parts": ["alert border", "warning icon", "error message"],
+  "demo_content": "A sign-in card with \"An error occurred!\", alex@company.com, masked password dots and a Sign in button.",
+  "states": [],
+  "kind": "toast",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "red warning message inside a form",
+    "small error strip with a red circle icon",
+    "show that sign in failed",
+    "inline message after a wrong password",
+    "form error text with a symbol",
+    "alert line above a login form",
+    "tell someone something went wrong",
+    "red outlined box with error text"
+  ],
+  "resembles": [],
+  "use_when": "A form needs a short, permanent error line next to the fields that caused it.",
+  "avoid_when": "The message and its wording are fixed in the file, so varied or dismissible errors need editing.",
+  "suits": ["saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Only the border, padding and text classes are adjustable; the message itself is written into the file and there are no props.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A border, a 16px icon and one line of text.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The icon is hidden from assistive tech, but the strip has no alert role, so an error appearing later is not announced."
+  },
+  "props": [],
+  "issues": ["Without an alert role, screen readers will not announce the message when it appears."],
+  "polish": 3,
+  "polish_why": "Plain but tidy alert row; no fill or accent beyond the red icon.",
+  "unsure": []
+}

@@ -1,0 +1,73 @@
+{
+  "name": "pricing-tiers",
+  "frames": {
+    "code": "3534",
+    "best": 1,
+    "best_why": "The banner layout is complete with the eyebrow, heading, Yearly switch, blue Most popular ribbon and all three prices.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The bottom of the plan cards is clipped by the crop, so the feature lists never show.",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Three plan cards in four layouts, with prices that roll on a switch.",
+  "summary": "A tiered pricing section that can take four looks: a banner grid, tinted gradient columns, staggered cards or printed receipts. Each shows plan names, prices, feature lists and a call to action.",
+  "title_fix": null,
+  "appearance": "On black, a small eyebrow tag sits under a serif headline with a Yearly and Monthly switch below it. Three bordered cards run side by side: Starter at $9, a taller Growth card carrying a blue Most popular ribbon at $39, and Enterprise marked Custom, each with a tagline, price and dark button.",
+  "behaviour": "Cards reveal one after another as the section scrolls in. The Yearly and Monthly switch rolls the price digits to the other figure, and the variant option swaps the whole layout while keeping the same plans and copy.",
+  "parts": ["eyebrow", "heading", "billing switch", "plan card", "popular banner", "price", "cta button", "feature list"],
+  "demo_content": "Starter, Growth and Enterprise plans with project and event limits, under a layout switcher.",
+  "states": ["hover", "focus", "active", "selected"],
+  "kind": "pricing-section",
+  "look": ["dark", "outlined", "editorial", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "three subscription plans with a yearly switch",
+    "saas price cards that roll the numbers",
+    "pricing section with a most popular ribbon",
+    "monthly annual billing toggle on plan cards",
+    "receipt style price cards with totals",
+    "compare plan features with tick lists",
+    "subscription tiers for a startup landing page",
+    "how to lay out three pricing options"
+  ],
+  "resembles": [],
+  "use_when": "A product landing page needs several pricing looks to choose from, or a tier comparison with a billing switch.",
+  "avoid_when": "Four layouts share one file with colours baked into classes and dollar signs written in, so rebranding takes edits.",
+  "suits": ["saas", "marketing", "fintech"],
+  "slot_hints": ["section-background", "pricing-card"],
+  "traits": {
+    "trigger": ["click", "scroll", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass plans plus eyebrow, heading and subheading to PricingTiers and choose a variant. Each layout also has its own option, such as banner or badge, staggered or level, and tilted or straight receipts.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "A grid of static cards plus a short reveal keyframe and digit changes on billing only.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The switch is a labelled role switch, buttons show focus rings and reduced-motion transitions are disabled; feature ticks are decorative."
+  },
+  "props": [
+    {"name": "variant", "type": "PricingTiersVariant", "default": "banner", "required": false},
+    {"name": "plans", "type": "Plan[]", "default": "DEFAULT_PLANS", "required": false},
+    {"name": "eyebrow", "type": "string", "default": "Pricing", "required": false},
+    {"name": "heading", "type": "string", "default": "Simple plans that grow with your team", "required": false},
+    {"name": "subheading", "type": "string", "default": "Start free for 14 days. No card required, cancel any time.", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The bottom of the plan cards is clipped in every frame, so the feature lists are never visible.",
+    "In the receipt layout a red Popular stamp is tilted over the plan header, which makes it hard to read."
+  ],
+  "polish": 4,
+  "polish_why": "Neat, characterful pricing layouts with clean type; clipped cards hide the features.",
+  "unsure": ["best", "shows_interaction"]
+}

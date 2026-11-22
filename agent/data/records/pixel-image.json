@@ -1,0 +1,146 @@
+{
+ "name": "pixel-image",
+ "frames": {
+  "code": "7358",
+  "best": 6,
+  "best_why": "Every tile is in and the sunset colour has fully replaced greyscale: the finished state.",
+  "usable": [
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "A photo assembles from scattered square tiles, then colour bleeds in.",
+ "summary": "Splits an image into a grid of tiles that fade in one at a time at random, starting grey and then washing into full colour after a pause.",
+ "title_fix": null,
+ "appearance": "A rounded square photo of snowy peaks above a sea of cloud is centred on black. While it assembles it reads as a patchwork of square tiles with black gaps; settled, it is one unbroken picture with soft sunset pinks and blues.",
+ "behaviour": "On mount each tile of the grid fades in after a random delay, so the picture builds piecemeal, and the whole image starts greyscale. After a set pause the colours animate in together across every tile.",
+ "parts": [
+  "photo",
+  "tile grid",
+  "rounded frame"
+ ],
+ "demo_content": "A mountain range above a layer of cloud at sunset",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photo breaks into squares that fade in",
+  "image assembles from a grid of tiles",
+  "pixelated reveal of a picture",
+  "greyscale to color photo transition",
+  "retro 8 bit image entrance",
+  "mosaic load animation for a photo",
+  "picture builds itself tile by tile",
+  "square chips revealing a landscape"
+ ],
+ "resembles": [],
+ "use_when": "A hero or gallery image should reveal itself with playful pixel drama instead of a plain fade.",
+ "avoid_when": "Several images at once, since every tile loads and animates separately and the reveal gets slow.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "media",
+  "hero",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The image is src and the tile count comes from a preset grid name or a custom rows and columns object; fade time, stagger, colour delay and greyscale are props.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few dozen elements each fading one shared image with CSS opacity and filter.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Each tile has its own alt text, so a screen reader announces the same photo dozens of times."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{src}",
+   "required": true
+  },
+  {
+   "name": "grid",
+   "type": "PredefinedGridKey",
+   "default": "\"6x4\"",
+   "required": false
+  },
+  {
+   "name": "customGrid",
+   "type": "Grid",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "grayscaleAnimation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "pixelFadeInDuration",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "maxAnimationDelay",
+   "type": "number",
+   "default": "1200",
+   "required": false
+  },
+  {
+   "name": "colorRevealDelay",
+   "type": "number",
+   "default": "1300",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Every tile renders the whole image again, so the browser downloads and decodes the same photo many times."
+ ],
+ "polish": 4,
+ "polish_why": "The tile reveal is satisfying and lands sharp; the mid-build gaps look broken for a beat.",
+ "unsure": [],
+ "title": "Pixel Image",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "88240ed4cfcf58eb",
+  "film_hash": "264398f66f56741e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

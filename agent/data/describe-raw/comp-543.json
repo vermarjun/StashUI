@@ -1,0 +1,63 @@
+{
+  "name": "comp-543",
+  "frames": {
+    "code": "1974",
+    "best": 3,
+    "best_why": "The circle is filled with the uploaded picture and shows the remove badge; frames 1-2 are still empty.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dashed circle becomes a profile photo when you click or drop an image.",
+  "summary": "A compact profile-picture picker: a dashed circle with a person icon that opens a file dialog or takes a dropped image, then shows the photo with a small remove button.",
+  "title_fix": null,
+  "appearance": "A single dashed circle the size of a profile picture sits centered on the dark page, holding a small outline person icon. When an image is chosen it fills the circle edge to edge and a round white X badge appears at the top right.",
+  "behaviour": "Hovering tints the dashed circle and dragging a file darkens it, while a click opens the file picker. Picking an image swaps the icon for a cover-cropped preview and adds the remove badge.",
+  "parts": ["avatar circle", "person icon", "image preview", "remove button"],
+  "demo_content": "An abstract blue gradient image fills the circle; a caption names the uploader and links to its API.",
+  "states": ["hover", "focus", "dragging"],
+  "kind": "file-upload",
+  "look": ["dark", "outlined", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "upload profile picture",
+    "drag and drop avatar",
+    "circular image upload button",
+    "change profile photo",
+    "remove picture with x badge",
+    "account photo picker",
+    "user avatar photo upload",
+    "drop photo onto circle"
+  ],
+  "resembles": [],
+  "use_when": "A profile picture needs a compact picker that also accepts a dragged image.",
+  "avoid_when": "One image only, with no crop or zoom, and the 64px circle is a small touch target.",
+  "suits": ["social", "saas"],
+  "slot_hints": ["avatar", "form-field"],
+  "traits": {
+    "trigger": ["click", "drag", "hover"],
+    "motion": "subtle",
+    "affects": ["background", "border", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "No props: the file is picked at runtime. Circle size, accepted type and accent colours live in the source or theme tokens.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One small button and a single preview image; nothing loops.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Names and alt text are present; dropping needs a pointer, and there is no upload progress or error message in the UI."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Clean circular uploader with obvious hover and remove affordance, but tiny and plainly presented.",
+  "unsure": ["responsive"]
+}

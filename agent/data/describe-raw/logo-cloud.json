@@ -1,0 +1,69 @@
+{
+  "name": "logo-cloud",
+  "frames": {
+    "code": "3107",
+    "best": 3,
+    "best_why": "Frame 3 shows the scrolling row centred with six logos fully readable above the still grid.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A sliding band of brand logos sits above a still logo grid.",
+  "summary": "A social-proof block: one row of company logos drifts sideways behind soft edge fades, with a second static row of the same marks underneath.",
+  "title_fix": null,
+  "appearance": "Two stacked rows of small white brand logos on near-black. The upper row is a continuous moving strip that fades at both ends under the label Trusted by developers worldwide; the lower grid is static under BUILT WITH.",
+  "behaviour": "The top row scrolls steadily from right to left on a loop, repeating the same logos. The bottom grid never moves.",
+  "parts": ["title label", "scrolling logo strip", "static logo grid", "edge fade"],
+  "demo_content": "Vercel, React, Next.js, Tailwind, GitHub, Stripe, Figma and Supabase logos.",
+  "states": [],
+  "kind": "logo-cloud",
+  "look": ["dark", "minimal", "monochrome", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "trusted by logo strip",
+    "scrolling brand logos",
+    "company logo marquee",
+    "customer logos row",
+    "partners and integrations grid",
+    "brand wall animation",
+    "social proof logo band",
+    "moving logo carousel"
+  ],
+  "resembles": [],
+  "use_when": "A landing page wants to show partner or customer brands without spending much space.",
+  "avoid_when": "Logos are forced to solid white by a brightness filter, so multicolour brand marks lose their identity.",
+  "suits": ["saas", "marketing", "devtool"],
+  "slot_hints": ["logo-wall", "footer", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "logos (name and image path), title and className are props on each of the three variants; the scroll speed and fade mask are fixed.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "A duplicated row of images moved by one CSS keyframe; no script.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Images carry alt names, but the endless marquee ignores reduced-motion and cannot be paused."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "title", "type": "string", "default": null, "required": false},
+    {"name": "logos", "type": "Logo[]", "default": "[]", "required": false}
+  ],
+  "issues": [
+    "The forced monochrome filter flattens every brand's colours."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy and understated, but it is a standard logo wall with flattened brand marks.",
+  "unsure": []
+}

@@ -1,0 +1,74 @@
+{
+  "name": "code-comparison",
+  "frames": {
+    "code": "1460",
+    "best": 6,
+    "best_why": "Both panes are clear with the added and removed lines tinted, and the pointer is away from the code.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "Old and new code sit side by side with red and green lines.",
+  "summary": "A two-pane code viewer that shows an earlier snippet on the left and its rewrite on the right, with removed lines tinted red and added lines tinted green.",
+  "title_fix": null,
+  "appearance": "Two tall code panels share one thin-bordered dark frame. Each has a small header reading api.ts plus before or after, and a square VS badge sits between them at the centre. Code is set in a dim monospace, with a few rows washed red on the left and green on the right.",
+  "behaviour": "Static: the panes do not move. Hovering one side fades and blurs the lines that are not marked as the focus of the change.",
+  "parts": ["pane header", "code pane", "VS badge", "line tint"],
+  "demo_content": "A before and after TypeScript fetchUser function compared side by side.",
+  "states": ["hover"],
+  "kind": "code-block",
+  "look": ["dark", "technical", "flat", "minimal"],
+  "tone": "technical",
+  "search_phrases": [
+    "two versions of code shown together",
+    "before and after code diff",
+    "two code snippets next to each other",
+    "red and green code changes",
+    "old versus new function view",
+    "code diff viewer",
+    "compare two versions of code",
+    "highlighted additions and removals"
+  ],
+  "resembles": ["GitHub diff view"],
+  "use_when": "Show a refactor or migration as an old and new snippet side by side.",
+  "avoid_when": "Small screens; the panes stack and long lines need horizontal scrolling.",
+  "suits": ["docs", "devtool", "blog"],
+  "slot_hints": ["body-text"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass beforeCode, afterCode, language, filename and the light and dark theme names, plus highlightColor; the split layout and diff tints are in the source.",
+  "technique": ["css-transition"],
+  "weight": "moderate",
+  "weight_why": "Shiki is loaded and run to highlight both snippets at runtime, then the view is static.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The focus blur only responds to hover, so keyboard users cannot reach it, and the low-contrast syntax colours are hard to read."
+  },
+  "props": [
+    {"name": "beforeCode", "type": "string", "default": null, "required": true},
+    {"name": "afterCode", "type": "string", "default": null, "required": true},
+    {"name": "language", "type": "string", "default": null, "required": true},
+    {"name": "filename", "type": "string", "default": null, "required": true},
+    {"name": "lightTheme", "type": "string", "default": null, "required": true},
+    {"name": "darkTheme", "type": "string", "default": null, "required": true},
+    {"name": "highlightColor", "type": "string", "default": "\"#ff3333\"", "required": false}
+  ],
+  "issues": [
+    "The code text is very low contrast on the dark theme and hard to read.",
+    "On narrow screens the panes stack and long lines require sideways scrolling."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy diff framing and VS badge, but the code text is needlessly faint.",
+  "unsure": []
+}

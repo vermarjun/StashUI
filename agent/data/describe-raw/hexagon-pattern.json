@@ -1,0 +1,72 @@
+{
+  "name": "hexagon-pattern",
+  "frames": {
+    "code": "3822",
+    "best": 1,
+    "best_why": "The highlighted cells read most clearly against the honeycomb with the neck of the fade strongest.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "A faint honeycomb of hexagons with a few cells lit up.",
+  "summary": "An SVG honeycomb backdrop: faint outlined hexagons tile the whole area and fade at the edges, with a handful of cells filled in to draw the eye where you place them.",
+  "title_fix": null,
+  "appearance": "A dark honeycomb of flat-top hexagons drawn in faint grey outlines, tiled across the stage and fading out at the edges. A dozen cells are filled with a soft grey wash, scattered unevenly.",
+  "behaviour": "Static: nothing moves or responds. The filled cells are fixed by the coordinate list passed in, not by hover or time.",
+  "parts": ["hexagon grid", "cell outlines", "highlighted cells", "edge fade"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "monochrome", "technical", "minimal"],
+  "tone": "technical",
+  "search_phrases": [
+    "honeycomb hexagon background pattern",
+    "filled cells in a honeycomb grid",
+    "faint hex tile page texture",
+    "beehive pattern for a hero",
+    "hexagonal grid with highlighted cells",
+    "subtle tech background hexagons",
+    "geometric honeycomb section backdrop",
+    "dark hex mesh with glow"
+  ],
+  "resembles": [],
+  "use_when": "A dark section wants a geometric, technical texture with a few accent cells.",
+  "avoid_when": "Behind dense content: the faint pattern adds noise without carrying meaning.",
+  "suits": ["saas", "devtool", "ai-chat"],
+  "slot_hints": ["page-background", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "Cell radius, gap, offsets, orientation, dash style and a list of cells to fill are props; the stroke colour comes from classes.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One tiled SVG pattern and a few polygons; no script or animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative and aria-hidden, so assistive tech ignores it; nothing here needs operating."
+  },
+  "props": [
+    {"name": "radius", "type": "number", "default": "40", "required": false},
+    {"name": "gap", "type": "number", "default": "0", "required": false},
+    {"name": "x", "type": "number", "default": "-1", "required": false},
+    {"name": "y", "type": "number", "default": "-1", "required": false},
+    {"name": "direction", "type": "\"horizontal\" | \"vertical\"", "default": "\"horizontal\"", "required": false},
+    {"name": "strokeDasharray", "type": "string", "default": "\"0\"", "required": false},
+    {"name": "hexagons", "type": "Array<[col: number, row: number]>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Even honeycomb and a tasteful scatter of lit cells; the pattern stays very faint overall.",
+  "unsure": []
+}

@@ -1,0 +1,72 @@
+{
+  "name": "bar-list",
+  "frames": {
+    "code": "6675",
+    "best": 1,
+    "best_why": "Clean Pages view with all six ranked bars, labels and values, and no cursor in the way.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A ranked list of blue bars sized to each value, with a value column beside.",
+  "summary": "A card ranks pages, referrers or countries as horizontal blue bars, each labelled with its name and a right-aligned count. Tabs switch the dataset and the bars resize to the new maximum.",
+  "title_fix": null,
+  "appearance": "A dark card with a total and a three-tab switcher at the top, then rows of blue horizontal bars sized by value, with a name inside each bar and a number right-aligned beside. A grey hint line sits at the bottom.",
+  "behaviour": "Switching a tab swaps the dataset and the bars spring to their new widths; hovering a row brightens it, and clicking one filters the report and prints the chosen name below.",
+  "parts": ["total", "tab switcher", "column header", "bar", "row label", "value"],
+  "demo_content": "Visitor counts by page, referrer and country, such as /home 8,430 and google.com 5,120.",
+  "states": ["hover", "focus", "selected"],
+  "kind": "chart",
+  "look": ["dark", "flat", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "ranked bars for top pages",
+    "top pages with horizontal bars",
+    "bar chart list with values",
+    "referrers breakdown widget",
+    "clickable rows to filter report",
+    "countries ranked by visits",
+    "simple horizontal bar ranking",
+    "analytics table with progress bars"
+  ],
+  "resembles": [],
+  "use_when": "A dashboard needs a compact ranking of top pages, sources or countries with share-of-total bars.",
+  "avoid_when": "Values are encoded by bar width only against the max, so small entries look almost empty and there is no axis.",
+  "suits": ["saas", "dashboard", "marketing"],
+  "slot_hints": ["chart", "data-table", "stat"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["background", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a data array of name, value and optional href, plus valueFormatter, sortOrder, showAnimation and onValueChange. Colours are fixed blue and the row layout is in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A short list of divs with CSS width transitions; nothing runs between interactions.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Rows are real buttons with focus rings and aria-sort, but each button exposes only the name, not its value, and widths animate regardless of motion settings."
+  },
+  "props": [
+    {"name": "data", "type": "Bar<T>[]", "default": "[]", "required": true},
+    {"name": "valueFormatter", "type": "(value: number) => string", "default": "(value) => value.toString()", "required": false},
+    {"name": "showAnimation", "type": "boolean", "default": "false", "required": false},
+    {"name": "onValueChange", "type": "(payload: Bar<T>) => void", "default": null, "required": false},
+    {"name": "sortOrder", "type": "\"ascending\" | \"descending\" | \"none\"", "default": "descending", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The value sits in a separate column, so a focused row button announces only the name."
+  ],
+  "polish": 3,
+  "polish_why": "Clean, readable ranking with tidy tabs and bars; ordinary styling and a detached value column.",
+  "unsure": ["frames.shows_interaction"]
+}

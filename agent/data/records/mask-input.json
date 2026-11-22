@@ -1,0 +1,186 @@
+{
+ "name": "mask-input",
+ "frames": {
+  "code": "9936",
+  "best": 5,
+  "best_why": "Frame 5 shows a phone and date fully formatted plus a third field being typed.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "Formats phone, date and money as you type, adding brackets and symbols.",
+ "summary": "A text field that rewrites each keystroke into a chosen pattern, inserting brackets, slashes, currency symbols or percent signs between the digits. Built-in patterns cover phone, date, time, card, zip, currency and more.",
+ "title_fix": null,
+ "appearance": "A tidy grid of short labelled text boxes with thin grey borders on a near-black stage, each with a small label above and a dimmer helper line below. Typed values and placeholders sit left-aligned in small grey type.",
+ "behaviour": "Typing digits builds the value in place, with brackets, dashes, slashes or symbols appearing between them, and backspace steps back through the pattern. Filling one field leaves the rest untouched and the caret stays beside the last typed digit.",
+ "parts": [
+  "field label",
+  "text field",
+  "masked value",
+  "helper text"
+ ],
+ "demo_content": "Six fields labelled Phone number, Birth date, Currency, Currency (German), Credit card and Percentage.",
+ "states": [
+  "focus",
+  "disabled",
+  "error"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "flat",
+  "outlined",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "type phone number with brackets automatically",
+  "currency field that adds dollar sign",
+  "date entry with slashes",
+  "form input auto formatting digits",
+  "credit card number grouped in fours",
+  "percentage field with percent symbol",
+  "text field that formats as you type",
+  "phone number placeholder pattern"
+ ],
+ "resembles": [],
+ "use_when": "You need a fixed-format value like a phone, card or date and want the punctuation handled for the user.",
+ "avoid_when": "It formats but renders no error message, so you must display invalid-state feedback yourself.",
+ "suits": [
+  "saas",
+  "fintech",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Choose a named mask such as phone, date or currency through props, pass currency and locale for money, and add a new format by editing MASK_PATTERNS in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One input running regex formatting with cached Intl formatters; no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "No built-in label or error text: it only sets aria-invalid, so callers must supply a label and explain the error."
+ },
+ "props": [
+  {
+   "name": "mask",
+   "type": "MaskPatternKey | MaskPattern",
+   "default": "== \"currency\" ||",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": "{displayValue}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(maskedValue: string, unmaskedValue: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": "{placeholderValue}",
+   "required": false
+  },
+  {
+   "name": "currency",
+   "type": "string",
+   "default": "DEFAULT_CURRENCY",
+   "required": false
+  },
+  {
+   "name": "locale",
+   "type": "string",
+   "default": "DEFAULT_LOCALE",
+   "required": false
+  },
+  {
+   "name": "maskPlaceholder",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValidate",
+   "type": "(isValid: boolean, unmaskedValue: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "validationMode",
+   "type": "\"onChange\" | \"onBlur\" | \"onSubmit\" | \"onTouched\" | \"all\"",
+   "default": "\"onChange\"",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "invalid",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo's labels and helper lines are very dim against the dark stage, so the grid reads faintly.",
+  "Error styling exists in code but no error message is rendered, so invalid input only changes the border."
+ ],
+ "polish": 3,
+ "polish_why": "Careful formatting logic, but the plain rows of small grey fields are visually ordinary.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Mask Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "681ebcd82cfcee51",
+  "film_hash": "37fcb62f4696a727",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

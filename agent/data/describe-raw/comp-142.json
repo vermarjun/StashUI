@@ -1,0 +1,63 @@
+{
+  "name": "comp-142",
+  "frames": {
+    "code": "2206",
+    "best": 6,
+    "best_why": "The box is ticked and the revealed field holds typed text, showing the expansion fully working.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tick the box and a text field slides open beneath the description.",
+  "summary": "A labelled checkbox with a short description that, when ticked, unrolls a full-width text field and puts the cursor in it. Unticking folds the field away and disables it.",
+  "title_fix": null,
+  "appearance": "A small square checkbox sits left of a bold label and a grey description line on a near-black stage. Once ticked, the box fills light and a rounded outlined text field opens below the description, spanning the row.",
+  "behaviour": "Ticking grows the hidden field open with a smooth height change and moves focus straight into it; unticking collapses it and greys it out. The label and description stay in place above.",
+  "parts": ["checkbox", "label", "description", "revealed text field"],
+  "demo_content": "Label \"Checkbox with expansion\", a description line about labels, and the \"Enter details\" placeholder.",
+  "states": ["hover", "focus", "checked", "expanded", "disabled"],
+  "kind": "checkbox",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "checkbox that reveals a text field",
+    "tick to show more options",
+    "expandable option with details input",
+    "check to enable a form field",
+    "conditional input appears when checked",
+    "consent checkbox with extra question",
+    "tick box opening a description field",
+    "enable field on selection"
+  ],
+  "resembles": [],
+  "use_when": "Ticking a box should branch into one more detail, such as a reason or a date, without leaving the page.",
+  "avoid_when": "Only one field is revealed, its copy is fixed, and the input carries a hardcoded id.",
+  "suits": ["any"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Nothing is a prop: label, description and placeholder are literals and the field's id is hardcoded, so reuse means editing the file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A checkbox, a small text block and a grid-row height transition.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Checkbox, description and the revealed field are all labelled, but the height transition ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Tidy progressive disclosure with auto-focus; the demo copy is plain but the interaction is clean.",
+  "unsure": []
+}

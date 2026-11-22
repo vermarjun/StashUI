@@ -1,0 +1,79 @@
+{
+  "name": "PixelBlast-TS-TW",
+  "frames": {
+    "code": "3617",
+    "best": null,
+    "best_why": "No frame shows the effect; all six are the same white headline on plain black.",
+    "usable": [],
+    "render": "blank",
+    "render_note": "Only the demo's headline and subtitle are visible; no pixel pattern appears in any frame.",
+    "shows_interaction": "no"
+  },
+  "tagline": "A dotted field of coloured pixels ripples outward where you click.",
+  "summary": "A field of small coloured pixel shapes drifts like noise across the panel, and each click sends a spreading ring through it. A liquid wobble can distort the pattern near the pointer.",
+  "title_fix": null,
+  "appearance": "In every recorded frame the panel is flat black with a bold white heading and a line of grey text centred in it. Nothing of the pixel field, its colour or its texture is visible.",
+  "behaviour": "Nothing changes across the frames: the headline stays fixed and no ripple or pixel motion appears. Per the code, clicks push a ring through the dot field and pointer movement can wobble a liquid layer.",
+  "parts": ["pixel field", "click ripple", "demo heading", "demo subtitle"],
+  "demo_content": "White heading \"Click anywhere.\" with the line \"Every click sends a ripple through the pixels.\"",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "pixel dots background that ripples",
+    "click anywhere particle effect",
+    "dotted halftone field animation",
+    "pixels burst outward on click",
+    "liquid distortion behind a headline",
+    "interactive dot matrix backdrop",
+    "ripple through a grid of dots",
+    "playful pixel background for a hero"
+  ],
+  "resembles": [],
+  "use_when": "A playful landing page wants an interactive dotted backdrop that reacts to clicks.",
+  "avoid_when": "You need something visible on first paint: the recording shows no pattern at all, so verify it renders before shipping.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["page-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["click", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["fill", "image"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Shape variant, pixel size and jitter, colour, pattern scale and density, ripples, liquid distortion, speed, edge fade and transparency are props.",
+  "technique": ["three-js", "webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A Three.js shader with an optional liquid pass renders every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The canvas has an aria-label but no keyboard route to the click ripples and no reduced-motion handling."
+  },
+  "props": [
+    {"name": "variant", "type": "'square' | 'circle' | 'triangle' | 'diamond'", "default": "'square'", "required": false},
+    {"name": "pixelSize", "type": "number", "default": "3", "required": false},
+    {"name": "color", "type": "string", "default": "'#B497CF'", "required": false},
+    {"name": "patternScale", "type": "number", "default": "2", "required": false},
+    {"name": "patternDensity", "type": "number", "default": "1", "required": false},
+    {"name": "pixelSizeJitter", "type": "number", "default": "0", "required": false},
+    {"name": "enableRipples", "type": "boolean", "default": "true", "required": false},
+    {"name": "rippleSpeed", "type": "number", "default": "0.3", "required": false},
+    {"name": "rippleThickness", "type": "number", "default": "0.1", "required": false},
+    {"name": "liquid", "type": "boolean", "default": "false", "required": false},
+    {"name": "speed", "type": "number", "default": "0.5", "required": false},
+    {"name": "edgeFade", "type": "number", "default": "0.5", "required": false}
+  ],
+  "issues": [
+    "The recording never shows the pixel field: every frame is the demo headline on plain black.",
+    "The headline promises ripples on click, but no ripple is visible in the clip."
+  ],
+  "polish": 1,
+  "polish_why": "Judged on the frames, nothing of the component renders; only overlay text is seen.",
+  "unsure": ["appearance", "look", "tagline", "theme"]
+}

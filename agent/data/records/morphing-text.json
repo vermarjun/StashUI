@@ -1,0 +1,117 @@
+{
+ "name": "morphing-text",
+ "frames": {
+  "code": "6411",
+  "best": 1,
+  "best_why": "A single crisp bold word fills the stage, showing the effect in its settled state.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "One bold word blurs and melts into the next.",
+ "summary": "A large centred word that dissolves through a heavy blur and re-forms as the next phrase in a list, cycling forever without the layout moving.",
+ "title_fix": null,
+ "appearance": "A single very large, heavy white sans-serif word sits in the middle of an otherwise empty black canvas. During a transition the word softens into a fat, rounded blob before sharpening into the next word.",
+ "behaviour": "The current word blurs out while the incoming word sharpens in, the two briefly melting together, then the new word holds for half a second before the cycle repeats down the list.",
+ "parts": [
+  "word",
+  "blurred word",
+  "dark background"
+ ],
+ "demo_content": "The words Design, Prototype, Iterate, Ship it and Repeat cycle in turn.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "bold",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "words that blur into each other",
+  "big text that changes by itself",
+  "morphing headline text",
+  "rotating bold words",
+  "text crossfade with blur",
+  "animated word cycle for a hero",
+  "landing title that shifts between phrases",
+  "headline that cycles through words"
+ ],
+ "resembles": [],
+ "use_when": "A hero needs a short list of phrases to cycle in place without shifting the layout.",
+ "avoid_when": "Long phrases or many messages; big blurred text is hard to follow on a loop.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The phrases are passed as a texts array and size, height and spacing come from the class name; the blur filter and the 1.5s morph and 0.5s hold are fixed in the source.",
+ "technique": [
+  "js-animation",
+  "svg-filter"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame loop runs nonstop, blurring and fading two text spans every frame.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The rotating words sit in plain spans with no live region, and the endless loop ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "texts",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute inset-x-0 top-0 m-auto inline-block w-full\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp heavy type and a smooth blur melt; the loop is simple and reads cleanly.",
+ "unsure": [],
+ "title": "Morphing Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8475ec9beae637a2",
+  "film_hash": "730413fc546b2d27",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

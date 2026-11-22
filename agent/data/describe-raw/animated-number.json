@@ -1,0 +1,75 @@
+{
+  "name": "animated-number",
+  "frames": {
+    "code": "4512",
+    "best": 6,
+    "best_why": "The count has settled on the largest value, 1,000,000, with every target button visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A big number rolls and springs to each new value you pick.",
+  "summary": "Displays a single large number that animates toward any new value with a spring and comma formatting, with a row of pill buttons in the demo to pick targets.",
+  "title_fix": null,
+  "appearance": "One oversized white number sits centred on black, using tabular figures and comma separators. Under it, five grey rounded pill buttons show 0, 999, 1,234, 42,000 and 1,000,000.",
+  "behaviour": "Choosing a pill makes the number spring from its old value to the new one, counting through intermediate values before it settles.",
+  "parts": ["number", "comma separators", "target buttons", "dark stage"],
+  "demo_content": "Targets 0, 999, 1,234, 42,000 and 1,000,000 shown as pill buttons.",
+  "states": ["hover"],
+  "kind": "counter",
+  "look": ["dark", "minimal", "bold", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "big number that counts up on change",
+    "animated counter for a dashboard stat",
+    "number that springs to a new value",
+    "count up to a million effect",
+    "tweening number display with commas",
+    "kpi number with smooth counting",
+    "price or stat that rolls when it updates",
+    "figures that animate between values"
+  ],
+  "resembles": [],
+  "use_when": "A stat, balance or count changes and you want the eye to follow the move instead of a jump.",
+  "avoid_when": "Numbers update many times a second; the spring lags behind live data and reads as jitter.",
+  "suits": ["dashboard", "fintech"],
+  "slot_hints": ["stat"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "value drives the number; format, precision, mass, stiffness and damping are props, while colours and size come from the parent.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One spring value and a text transform; no layout work.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The changing number is a plain span with no aria-live region, so screen readers do not announce updates."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": true},
+    {"name": "mass", "type": "number", "default": "0.8", "required": false},
+    {"name": "stiffness", "type": "number", "default": "75", "required": false},
+    {"name": "damping", "type": "number", "default": "15", "required": false},
+    {"name": "precision", "type": "number", "default": "0", "required": false},
+    {"name": "format", "type": "(value: number) => string", "default": "(num) => num.toLocaleString()", "required": false},
+    {"name": "onAnimationStart", "type": "() => void", "default": null, "required": false},
+    {"name": "onAnimationComplete", "type": "() => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "Updated numbers are never announced to screen readers.",
+    "No reduced-motion check, so the count always springs."
+  ],
+  "polish": 4,
+  "polish_why": "Big readable figure and a smooth spring; the demo is just pills and lacks reduced-motion care.",
+  "unsure": []
+}

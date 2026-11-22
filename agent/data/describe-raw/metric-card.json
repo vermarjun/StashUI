@@ -1,0 +1,76 @@
+{
+  "name": "metric-card",
+  "frames": {
+    "code": "9240",
+    "best": 1,
+    "best_why": "Frame 1 is fully at rest: total, full trend line and all three breakdown rows.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A revenue tile whose figure rolls and chart re-shades as you scrub the days.",
+  "summary": "A card showing a metric total, its change against the previous period, a shaded trend line and a three-part breakdown. Dragging across the chart selects a day or a range and the number and captions update.",
+  "title_fix": null,
+  "appearance": "A tall dark rounded card: a Revenue label with 7D, 30D and 90D pills at the top, a huge white figure below with a small green or red percentage, then a white area chart over a dashed prior line, orange event ticks and three weighted bars with labelled value rows.",
+  "behaviour": "Hovering or dragging on the chart reads a single day or a span, rolling the figure and lighting only that slice while the caption names the compared dates; a dragged range stays until Clear is pressed. The period pills morph the line into a new shape.",
+  "parts": ["metric label", "period pills", "big figure", "change caption", "trend chart", "event marker", "breakdown bars", "segment row"],
+  "demo_content": "A Revenue card with Plans, Usage and Services segments, a $51,612 total and events Fall promo and New pricing.",
+  "states": ["hover", "focus", "active", "selected", "dragging"],
+  "kind": "stat-card",
+  "look": ["dark", "minimal", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "revenue chart with big number",
+    "kpi card with sparkline and total",
+    "dashboard tile you can scrub",
+    "drag across chart to pick dates",
+    "sales breakdown by category card",
+    "analytics card with rolling number",
+    "period toggle chart widget",
+    "number that counts as you hover"
+  ],
+  "resembles": ["Stripe dashboard metric"],
+  "use_when": "A dashboard needs one headline number that can also be examined day by day or over a dragged range.",
+  "avoid_when": "It needs at least twice the longest period of daily data, or the previous-period comparison line goes flat.",
+  "suits": ["saas", "fintech", "dashboard"],
+  "slot_hints": ["stat", "chart"],
+  "traits": {
+    "trigger": ["hover", "drag", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass label, segment names, daily data, event notes, periods, default period and currency through props; the colour palette and chart geometry are constants in the source.",
+  "technique": ["js-animation", "svg", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "An SVG path morph on a requestAnimationFrame loop plus rolling digit transitions.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Coverage is strong; the one gap is that selecting a range needs Shift plus arrow keys on the chart slider."
+  },
+  "props": [
+    {"name": "label", "type": "string", "default": "Revenue", "required": false},
+    {"name": "segments", "type": "string[]", "default": "Plans, Usage, Services", "required": false},
+    {"name": "data", "type": "MetricPoint[]", "default": "DEFAULT_DATA", "required": false},
+    {"name": "events", "type": "MetricEvent[]", "default": "DEFAULT_EVENTS", "required": false},
+    {"name": "periods", "type": "number[]", "default": "[7, 30, 90]", "required": false},
+    {"name": "defaultPeriod", "type": "number", "default": "30", "required": false},
+    {"name": "format", "type": "\"currency\" | \"number\"", "default": "currency", "required": false},
+    {"name": "currency", "type": "string", "default": "USD", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "In frames 2 to 4 the big figure is caught mid-roll, so its digits look garbled or doubled.",
+    "The dashed comparison line and orange event ticks are faint against the dark chart."
+  ],
+  "polish": 4,
+  "polish_why": "Rich micro-chart with strong hierarchy; mid-roll digits and faint reference lines blur it.",
+  "unsure": ["kind"]
+}

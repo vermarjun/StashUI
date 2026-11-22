@@ -1,0 +1,145 @@
+{
+ "name": "TargetCursor-TS-TW",
+ "frames": {
+  "code": "3063",
+  "best": 4,
+  "best_why": "Frame 4 shows the four corners snapped cleanly around the middle button.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.7
+ },
+ "tagline": "Four white corners snap around a button as the cursor lands on it.",
+ "summary": "A spinning four-corner reticle follows the mouse across a dark row of buttons, its corners flying out to lock onto whichever one the pointer enters.",
+ "title_fix": null,
+ "appearance": "Three dark rounded buttons in a row on black, labelled Hover me, Or me and Or me. A small white dot marks the pointer, with four white L-shaped corners arranged around it.",
+ "behaviour": "Out in the open the corners spin slowly around the dot. Over any button they break away and snap to its four corners, then return to the dot when the pointer leaves.",
+ "parts": [
+  "corner bracket",
+  "centre dot",
+  "button",
+  "button label"
+ ],
+ "demo_content": "Three buttons labelled \"Hover me\", \"Or me\" and \"Or me\".",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "sharp",
+  "monochrome"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "corners that lock onto a button",
+  "targeting reticle following the mouse",
+  "custom cursor with spinning brackets",
+  "sniper scope cursor effect",
+  "crosshair that frames hovered links",
+  "four corner brackets on hover",
+  "target lock mouse pointer",
+  "futuristic cursor for buttons"
+ ],
+ "resembles": [],
+ "use_when": "An interactive product page wants an aiming reticle that highlights the control under the pointer.",
+ "avoid_when": "It hides the system cursor and disappears on touch or small screens, so it is desktop only.",
+ "suits": [
+  "devtool",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "decoration",
+  "primary-cta",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "The selector to lock onto, spin duration, cursor hiding, hover snap duration and parallax are props. The reticle size, colour and centre dot are fixed.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "One fixed dot and four small divs tweened by GSAP; a ticker runs only while locked.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Desktop pointer only: it hides the system cursor, renders nothing on mobile and does not check reduced-motion."
+ },
+ "props": [
+  {
+   "name": "targetSelector",
+   "type": "string",
+   "default": "'.cursor-target'",
+   "required": false
+  },
+  {
+   "name": "spinDuration",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "hideDefaultCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hoverDuration",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "parallaxOn",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The reticle can cover the button label, making the text harder to read at the lock moment.",
+  "It hides the default cursor and is removed on mobile, so touch users lose the affordance."
+ ],
+ "polish": 4,
+ "polish_why": "The lock-on snap is crisp and legible; the corners overlapping labels is the main flaw.",
+ "unsure": [],
+ "title": "Target Lock Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5a1e1e86149c2996",
+  "film_hash": "d1cfbe24caab0c17",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

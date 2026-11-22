@@ -1,0 +1,76 @@
+{
+  "name": "github-stars",
+  "frames": {
+    "code": "5759",
+    "best": 6,
+    "best_why": "Digits are near the 12,480 target and the yellow star reads clearly beside the number.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Digits roll upward into a star count inside a pill beside a filled star.",
+  "summary": "A GitHub star counter where each digit slides upward until the total settles. The star beside the number fills yellow as the count rises and bursts into small particles at the end, with a Recount button below.",
+  "title_fix": null,
+  "appearance": "On a dark background sits a pale GitHub mark, a rounded grey pill holding large white tabular digits and a yellow star, and an outlined Recount pill below. Digits are mid-roll in some frames, appearing doubled.",
+  "behaviour": "The digits spin upward one place at a time and slow into the final count. The star's yellow fill tracks progress and a short particle burst plays when it lands; Recount restarts the run.",
+  "parts": ["GitHub logo", "number pill", "rolling digits", "star icon", "recount button", "particle"],
+  "demo_content": "Counter toward 12,480 stars with a Recount button below.",
+  "states": ["loading", "success", "hover", "focus"],
+  "kind": "counter",
+  "look": ["dark", "rounded", "minimal", "monochrome", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "github star counter animation",
+    "rolling digits count up",
+    "number that counts to a total",
+    "repository stars widget",
+    "sliding number counter",
+    "star fills as number climbs",
+    "animated repository star badge",
+    "count up with particles"
+  ],
+  "resembles": [],
+  "use_when": "A landing page or repo card wants to show its star total with a short, celebratory count.",
+  "avoid_when": "The exact number must be readable immediately; digits are mid-roll during the animation.",
+  "suits": ["devtool", "portfolio", "marketing"],
+  "slot_hints": ["badge", "stat"],
+  "traits": {
+    "trigger": ["viewport", "timer", "click"],
+    "motion": "pronounced",
+    "affects": ["text", "fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Set value directly or pass username and repo to fetch the count; delay and in-view options control timing. Digits and star are separate child components.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A handful of digit rollers on springs plus a small particle burst; stops when done.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The number has a screen-reader value and the logo is labelled; reduced motion is supported via the motion config."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "username", "type": "string", "default": null, "required": false},
+    {"name": "repo", "type": "string", "default": null, "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "inView", "type": "boolean", "default": "false", "required": false},
+    {"name": "inViewOnce", "type": "boolean", "default": "true", "required": false},
+    {"name": "inViewMargin", "type": "string", "default": "0px", "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true}
+  ],
+  "issues": [
+    "Mid-roll digits overlap and look garbled until the count settles.",
+    "No frame catches the fully settled number or the particle burst."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth digit rolls and a filled star; the rolling digits are unreadable mid-flight.",
+  "unsure": ["responsive"]
+}

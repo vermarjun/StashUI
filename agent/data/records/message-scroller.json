@@ -1,0 +1,156 @@
+{
+ "name": "message-scroller",
+ "frames": {
+  "code": "2023",
+  "best": 1,
+  "best_why": "Frame 1 shows the titled thread from its first question through three exchanges.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.1
+ },
+ "tagline": "A chat thread that keeps the newest reply in view with a jump pill.",
+ "summary": "A scrolling message list for a conversation: user turns sit right in pale bubbles, assistant replies run left as plain text, and the view follows a reply while it streams. Scrolling up reveals a button that returns to the newest message.",
+ "title_fix": null,
+ "appearance": "A rounded dark chat card with a Trip planner header, user questions in pale rounded bubbles on the right, and assistant answers as grey left-aligned paragraphs. A muted follow-up bar and a round arrow send button sit along the bottom edge.",
+ "behaviour": "New assistant text streams in and the viewport stays pinned to the bottom while it grows. Scrolling up detaches the pin and fades in a circular arrow button near the bottom, which returns to the latest message when pressed.",
+ "parts": [
+  "chat card",
+  "header",
+  "user bubble",
+  "assistant text",
+  "follow-up input",
+  "send button",
+  "jump button"
+ ],
+ "demo_content": "A Lisbon trip-planning chat with a three-day itinerary across several questions and answers.",
+ "states": [
+  "active",
+  "hover",
+  "focus"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "chat box that follows new messages",
+  "scroll to bottom button in chat",
+  "ai conversation thread layout",
+  "chat window pinned to latest reply",
+  "streaming answer that stays in view",
+  "message list with user and bot bubbles",
+  "chat with jump to newest button",
+  "scrollable conversation panel"
+ ],
+ "resembles": [
+  "ChatGPT conversation view",
+  "iMessage thread"
+ ],
+ "use_when": "A conversation receives long or streamed replies and the reader should stay at the newest text without scrolling.",
+ "avoid_when": "It is only the scroll plumbing; the header, message bubbles and composer are left for you to build.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "social"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Compose the provider, scroller, viewport and items as children with your own message markup; pass autoScroll and defaultScrollPosition to the provider and set the button direction.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A scroll container with visibility observers and a small transition on one button.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "No reduced-motion handling: the jump button still slides and scales for users who ask for less motion."
+ },
+ "props": [
+  {
+   "name": "scrollAnchor",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"start\" | \"end\"",
+   "default": "\"end\"",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "string",
+   "default": "\"secondary\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "string",
+   "default": "\"icon-sm\"",
+   "required": false
+  },
+  {
+   "name": "render",
+   "type": "React.ReactElement",
+   "default": "{render ?? <Button variant={variant} size={size} />}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The jump-to-latest button is barely visible in the frames, so the feature is easy to miss.",
+  "The scrollbar is very thin, giving little cue that more conversation sits above the view."
+ ],
+ "polish": 3,
+ "polish_why": "Clean standard chat layout with a tidy composer; the scroll affordances barely show in the stills.",
+ "unsure": [
+  "props"
+ ],
+ "title": "Message Scroller",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5cc5f5b874f473f7",
+  "film_hash": "527e7700a634995e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

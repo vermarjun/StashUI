@@ -1,0 +1,147 @@
+{
+ "name": "morphing-tabs",
+ "frames": {
+  "code": "7133",
+  "best": 4,
+  "best_why": "Gooey neck clearly bridges Home and About while Contact sits apart as the active pill.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "Tab pills melt and split apart as the active one is chosen.",
+ "summary": "Four rounded tab buttons sit side by side; the selected one pulls away from the others while the rest blend into one continuous bar. Choosing a new tab makes the shapes flow and stretch into their new arrangement.",
+ "title_fix": null,
+ "appearance": "Four light rounded rectangles labelled Home, About, Work and Contact lie in a row on a black stage. The chosen tab is pulled slightly away from its neighbours, while the remaining three touch and blend into a single bar with soft rounded ends. A small caption below reads the active tab name.",
+ "behaviour": "Clicking a tab makes it the active one: its side margins grow so it separates, the others close up and merge, and the gooey filter stretches and rounds the join while it moves. The row settles into the new arrangement in under a second.",
+ "parts": [
+  "tab buttons",
+  "merged tab bar",
+  "active caption"
+ ],
+ "demo_content": "Four tabs labelled Home, About, Work and Contact; a caption shows the active tab name.",
+ "states": [
+  "active"
+ ],
+ "kind": "tabs",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "tabs that blob together when clicked",
+  "gooey tab bar animation",
+  "pills that melt and separate",
+  "liquid tab switcher effect",
+  "rounded tab buttons that merge",
+  "nav tabs with squishy transition",
+  "tabs that split apart like blobs",
+  "animated tab bar for a website"
+ ],
+ "resembles": [],
+ "use_when": "A playful nav or settings switcher where switching tabs should feel physical rather than a plain fade.",
+ "avoid_when": "The demo is dark-only and the growing margins widen the row, so narrow mobile bars may overflow.",
+ "suits": [
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass the tab labels, active tab and a change handler as props; margin, blurStdDeviation and className tune gap, gooey strength and layout. Colours follow theme tokens.",
+ "technique": [
+  "svg-filter",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Four buttons and one static SVG filter; no script loop, only a CSS margin transition.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Plain buttons with no tablist roles or aria-selected, so assistive tech reads them as ordinary buttons; motion has no reduced-motion fallback."
+ },
+ "props": [
+  {
+   "name": "tabs",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "activeTab",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onTabChange",
+   "type": "(tab: string) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "margin",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "blurStdDeviation",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The Active label below the tabs is dim grey on black, low contrast."
+ ],
+ "polish": 3,
+ "polish_why": "Distinctive gooey transition, but the pills are plain and the caption is faint.",
+ "unsure": [
+  "responsive",
+  "focus_visible"
+ ],
+ "title": "Morphing Tabs",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c715272d82e646f0",
+  "film_hash": "362c71be49b6f026",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

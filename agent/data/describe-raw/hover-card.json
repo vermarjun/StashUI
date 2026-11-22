@@ -1,0 +1,73 @@
+{
+  "name": "hover-card",
+  "frames": {
+    "code": "1592",
+    "best": 6,
+    "best_why": "Panel is open with the avatar loaded, the bio readable and the join date shown, clear of the cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hover a handle to float up a mini profile with avatar and bio.",
+  "summary": "A line of small grey text credits an account, and the underlined handle opens a compact profile card on hover: portrait, handle, a short description and a join date.",
+  "title_fix": null,
+  "appearance": "One line of grey text on black reading 'Built and maintained by @origin_ui.', the handle underlined. Hovering it opens a dark rounded panel below with a circular portrait, the handle in white, a two-line bio and a small calendar line.",
+  "behaviour": "Hovering or focusing the underlined handle fades and zooms in the profile panel, and moving away fades it out. The portrait pops into the panel a moment after it opens.",
+  "parts": ["sentence", "underlined handle", "hover panel", "avatar", "bio text", "join date"],
+  "demo_content": "The sentence 'Built and maintained by @origin_ui.' and a profile of that handle with 'Joined December 2023'.",
+  "states": ["hover", "focus", "open"],
+  "kind": "popover",
+  "look": ["dark", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "profile preview when you hover a name",
+    "popup card with a person's details",
+    "info panel that appears on hover",
+    "mention with a mini profile",
+    "tooltip showing an account",
+    "small bio card over a link",
+    "preview someone before clicking",
+    "floating panel with avatar and join date"
+  ],
+  "resembles": ["Twitter profile hover card"],
+  "use_when": "A name or handle needs a glanceable profile without sending the reader to another page.",
+  "avoid_when": "It opens on hover or focus only, so touch users may never see the card at all.",
+  "suits": ["social", "saas", "blog"],
+  "slot_hints": ["tooltip", "list-item", "body-text"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "subtle",
+    "affects": ["background", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap your trigger and panel as children; open and close delays, alignment, side offset and the optional arrow are props, while panel width and content are yours.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "One small panel that fetches a single portrait only when it opens.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The panel has no dialog or tooltip role, the trigger has no focus ring, and its zoom and fade ignore reduced motion."
+  },
+  "props": [
+    {"name": "openDelay", "type": "number", "default": null, "required": false},
+    {"name": "closeDelay", "type": "number", "default": null, "required": false},
+    {"name": "align", "type": "string", "default": "center", "required": false},
+    {"name": "sideOffset", "type": "number", "default": "4", "required": false},
+    {"name": "showArrow", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 3 to 5 show the panel with an empty gap where the avatar should be",
+    "The panel's dark fill barely separates from the black page"
+  ],
+  "polish": 3,
+  "polish_why": "Compact profile preview with a clear layout; the dark panel and empty-avatar frames weaken it.",
+  "unsure": ["a11y.focus_visible"]
+}

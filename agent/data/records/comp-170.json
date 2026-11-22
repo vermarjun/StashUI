@@ -1,0 +1,111 @@
+{
+ "name": "comp-170",
+ "frames": {
+  "code": "2542",
+  "best": 1,
+  "best_why": "Yearly is chosen with its green discount and raised block at rest, and no cursor covers the control.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Two billing periods on a block that slides and dims the idle side.",
+ "summary": "A two-part switch for monthly or yearly billing that slides a raised block under the chosen half. The yearly side shows a green -20% note while it is active, and the other label fades to grey.",
+ "title_fix": null,
+ "appearance": "A rounded dark track holds two labels side by side: Bill Monthly, then Bill Yearly with a small -20% beside it. The chosen half sits on a lighter raised block with bold white text, while the idle label fades back.",
+ "behaviour": "Clicking either half slides the lighter block across in about a third of a second and dims the label it leaves. The recording opens on yearly, moves to monthly, then returns to yearly.",
+ "parts": [
+  "track",
+  "raised block",
+  "period label",
+  "discount note"
+ ],
+ "demo_content": "Bill Monthly and Bill Yearly -20%",
+ "states": [
+  "focus",
+  "selected"
+ ],
+ "kind": "pricing-card",
+ "look": [
+  "dark",
+  "pill",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "switch between monthly and yearly billing",
+  "billing period toggle with discount",
+  "segmented control for payment cycle",
+  "annual plan discount switch",
+  "monthly or annual pricing toggle",
+  "sliding toggle for billing options",
+  "choose monthly versus yearly",
+  "pricing page period switcher"
+ ],
+ "resembles": [],
+ "use_when": "On a pricing page or checkout, when a buyer should compare a monthly and a yearly charge.",
+ "avoid_when": "Only two fixed labels with one hardcoded discount; a third cycle or per-plan prices need edits in the file.",
+ "suits": [
+  "saas"
+ ],
+ "slot_hints": [
+  "pricing-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Both labels, the -20% note and the starting choice are written in the file; change them there. Slide time, easing curve and the green accent are classes in the same file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Two labels over a single pseudo-element that slides; idle once a choice is made.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Both halves are real radios reached with arrow keys, and the moving block shows a focus ring; the 300ms slide ignores reduced-motion settings."
+ },
+ "props": [],
+ "issues": [
+  "Mid-slide both labels look dim, so the choice reads as undecided for a moment."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp two-state control with a smooth slide; the mid-slide frame looks undecided.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Billing Period Toggle",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a668c424cf43f220",
+  "film_hash": "c3f0c098a3ee3dae",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

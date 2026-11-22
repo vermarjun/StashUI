@@ -1,0 +1,70 @@
+{
+  "name": "badge",
+  "frames": {
+    "code": "5657",
+    "best": 1,
+    "best_why": "Both rows of variants are fully visible and evenly lit with no cursor overlapping any pill.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "Small rounded pills label status, counts and categories in a row.",
+  "summary": "A set of compact pill labels in four fills, plus outlined versions carrying a tick, a coloured dot, a number or a link. Each is a single line of small medium-weight text on a full rounded background or border.",
+  "title_fix": null,
+  "appearance": "Two rows of short pills on a black stage. The top row runs from a light filled pill through a dark grey and a bordered clear one to a pink-red one; the second row mixes outlined pills with a green tick, an amber dot, a white counter pill and a dark link pill.",
+  "behaviour": "Static: the clip only shows the pills sitting still. In the code a linked pill darkens slightly on hover, and keyboard focus adds a soft ring.",
+  "parts": ["default pill", "secondary pill", "outline pill", "destructive pill", "icon pill", "counter pill", "link pill"],
+  "demo_content": "Labels Default, Secondary, Outline, Destructive, Verified, Pending, a count of 12 and Link badge.",
+  "states": ["hover", "focus"],
+  "kind": "badge",
+  "look": ["dark", "pill", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "small pill label for a status",
+    "count bubble next to a title",
+    "tag showing verified with a tick",
+    "red warning label for errors",
+    "chip style label for categories",
+    "inline status marker",
+    "tiny rounded tag in a list",
+    "notification count on an item"
+  ],
+  "resembles": [],
+  "use_when": "You need a compact inline label for status, counts or categories inside text or a list.",
+  "avoid_when": "Labels are kept on one line with no wrapping, so a long tag will overflow instead of growing taller.",
+  "suits": ["any"],
+  "slot_hints": ["badge", "list-item"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "none",
+    "affects": ["fill", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label is passed as children, the variant prop picks default, secondary, outline or destructive, and className overrides any style; asChild swaps the span for a link.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A span with background and border classes; nothing runs or animates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "yes",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The pill is presentational text with no role; only the linked variant is focusable, and then it shows a visible ring."
+  },
+  "props": [
+    {"name": "variant", "type": "string", "default": null, "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The secondary and outline variants are so close in darkness that they are hard to tell apart",
+    "No frame shows the hover or focus states the code defines"
+  ],
+  "polish": 3,
+  "polish_why": "Seven tidy variants in a clear grid; the dark variants barely separate from the background.",
+  "unsure": []
+}

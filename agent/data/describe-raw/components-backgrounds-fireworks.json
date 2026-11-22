@@ -1,0 +1,72 @@
+{
+  "name": "components-backgrounds-fireworks",
+  "frames": {
+    "code": "6621",
+    "best": 2,
+    "best_why": "Two clean green and purple burst rings are visible, the clearest explosion shapes of the six.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Coloured rockets shoot up and burst into rings of sparks.",
+  "summary": "A black sky where thin coloured streaks launch upward and explode into rings of small bright dots. The colour is drawn at random from the full spectrum, and clicking the background launches one at the pointer.",
+  "title_fix": null,
+  "appearance": "Mostly empty black, dotted with fine straight streaks in white, green and purple that climb from the bottom. Where a streak ends it opens into a round spray of dozens of tiny dots in one bright colour, fading outward. Several bursts can be in the air at once.",
+  "behaviour": "Rockets rise at random spots, drift slightly and explode near the top into fifty to a hundred and fifty particles that spread and fall under gravity before fading. Clicking anywhere sends a fresh rocket up to the clicked height.",
+  "parts": ["launch streaks", "burst ring", "spark particles", "black sky"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "colorful", "minimal"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "fireworks animation background",
+    "confetti burst on click",
+    "rockets that explode into sparks",
+    "celebration background effect",
+    "click to launch fireworks",
+    "colorful particle explosions",
+    "new year fireworks page backdrop",
+    "canvas fireworks effect"
+  ],
+  "resembles": [],
+  "use_when": "A New Year, launch or celebration hero where a few clicks should set off sparks behind the content.",
+  "avoid_when": "It fires rockets endlessly on a timer and runs a canvas loop, so it never rests and can distract from reading.",
+  "suits": ["marketing", "ecommerce"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Set the launch frequency, one colour or a palette, and ranges for rocket speed and size plus particle speed and size; the gravity, friction and burst counts are fixed.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A requestAnimationFrame canvas clears and redraws rockets plus hundreds of sparks every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Endless random bursts keep animating with no reduced-motion check, and the canvas has no label or keyboard control."
+  },
+  "props": [
+    {"name": "population", "type": "number", "default": "1", "required": false},
+    {"name": "color", "type": "string | string[]", "default": null, "required": false},
+    {"name": "canvasProps", "type": "React.ComponentProps<'canvas'>", "default": null, "required": false},
+    {"name": "fireworkSpeed", "type": "{ min: number; max: number } | number", "default": "{ min: 4, max: 8 }", "required": false},
+    {"name": "fireworkSize", "type": "{ min: number; max: number } | number", "default": "{ min: 2, max: 5 }", "required": false},
+    {"name": "particleSpeed", "type": "{ min: number; max: number } | number", "default": "{ min: 2, max: 7 }", "required": false},
+    {"name": "particleSize", "type": "{ min: number; max: number } | number", "default": "{ min: 1, max: 5 }", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Canvas is sized to the window width, not the container, so bursts can spill or misalign in a narrow box."],
+  "polish": 4,
+  "polish_why": "Bright, clear bursts and a satisfying click launch; the sizing uses window width, not the box.",
+  "unsure": ["theme"]
+}

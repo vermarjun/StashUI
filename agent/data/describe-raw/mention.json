@@ -1,0 +1,68 @@
+{
+  "name": "mention",
+  "frames": {
+    "code": "8482",
+    "best": 5,
+    "best_why": "Frame 5 shows the typed @is trigger with the filtered teammate list fully open.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Type @ in a comment box to pick a teammate from a filtered list.",
+  "summary": "A comment textarea that watches for the @ symbol and opens a small list of teammates, narrowing as you keep typing. Picking a row drops that person's name into the sentence as a highlighted mention.",
+  "title_fix": null,
+  "appearance": "A bordered dark textarea with a small Leave a comment label above and dim placeholder text inside, set on black. Typing @ brings a small rounded popover of rows, each a white name with a grey email beside it; the inserted name in the text is a blue pill.",
+  "behaviour": "Typing @ opens the list near the field, and each further letter filters the rows to matching names. Choosing a row inserts that name into the sentence as a blue highlighted mention and closes the list.",
+  "parts": ["label", "comment box", "placeholder text", "mention popover", "name row", "email text", "mention pill"],
+  "demo_content": "Northwind teammates Olivia Martin, Isabella Nguyen, Emma Wilson, Jackson Lee and William Kim with .dev emails.",
+  "states": ["focus", "open", "selected"],
+  "kind": "input",
+  "look": ["dark", "outlined", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "tag a teammate in a comment",
+    "at sign autocomplete names",
+    "type at to pick a person",
+    "comment box with user suggestions",
+    "filterable list of people while typing",
+    "insert a user name into text",
+    "autocomplete for team handles",
+    "chat composer person picker"
+  ],
+  "resembles": ["Slack @mention", "GitHub comment autocomplete"],
+  "use_when": "People write comments or messages where others must be addressed directly from a known team list.",
+  "avoid_when": "It needs a fixed list of people and a textarea; for a plain free-form note a normal textarea is simpler.",
+  "suits": ["saas", "social", "devtool"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["keyboard", "click"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose a label, an input and a content list of items as children; style the mention tag through classes on the root, and swap the textarea through asChild.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "A textarea plus a small popover that only mounts while an @ token is active.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "No reduced-motion handling: the popover still fades and zooms in for users who ask for less motion."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The suggestion popover opens far from the text field, near the bottom-right of the stage.",
+    "In frame 3 the third suggestion row is cut off at the panel edge."
+  ],
+  "polish": 3,
+  "polish_why": "Clean field and list styling, but the popover placement and a clipped row weaken the demo.",
+  "unsure": ["props", "kind"]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "shiny-button",
+  "frames": {
+    "code": "9020",
+    "best": 1,
+    "best_why": "The light band is clearly caught mid-sweep across the Request access label.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark pill buttons with a light sweep running across label and border.",
+  "summary": "Two dark outline buttons in a card whose labels and edges catch a soft light band that keeps travelling across them, giving a quiet metallic shimmer.",
+  "title_fix": null,
+  "appearance": "A rounded dark card holds a white heading, a short grey line of text, and two side-by-side pill buttons with thin light borders. Each button carries a small, widely spaced uppercase label in a muted tone.",
+  "behaviour": "A narrow light band slides across each label and around the border, pauses, then sweeps again in a loop. A button also casts a faint glow on hover and dips in size when pressed.",
+  "parts": ["button", "button label", "button border", "card heading", "card text"],
+  "demo_content": "A waitlist card headed Join the waitlist with Request access and Learn more buttons.",
+  "states": ["hover", "active"],
+  "kind": "button",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "button with a moving shine",
+    "light sweep across a button",
+    "glossy button border animation",
+    "shimmering call to action",
+    "button with border highlight loop",
+    "animated outline glow button",
+    "sparkle sweep on a cta",
+    "subtle light effect on a button"
+  ],
+  "resembles": [],
+  "use_when": "A primary call to action should shimmer subtly instead of shouting with colour.",
+  "avoid_when": "Pages with many buttons; the looping shine becomes noisy when repeated.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["primary-cta", "secondary-cta", "form-submit"],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the label as children and add classes; the sweep timing, spring and border mask are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A small mask sweep loops over a couple of buttons; nothing heavy runs.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "It is a real button with a text label, but the looping shine ignores reduced-motion and there is no custom focus style."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The shine repeats every second across both buttons, which is distracting in a pair."
+  ],
+  "polish": 4,
+  "polish_why": "Restrained metallic sweep on a tidy card; the cycle is frequent enough to distract.",
+  "unsure": []
+}

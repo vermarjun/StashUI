@@ -1,0 +1,115 @@
+{
+ "name": "comp-254",
+ "frames": {
+  "code": "1588",
+  "best": 3,
+  "best_why": "Reset tooltip is open above the undo arrow while the slider sits at 2 and the value field shows 2.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.6
+ },
+ "tagline": "Drag the bar or type a number; an undo arrow returns it to default.",
+ "summary": "A temperature setting that pairs a horizontal slider with a small editable number field. A reset arrow appears once the value changes and reveals a tooltip when hovered.",
+ "title_fix": null,
+ "appearance": "The word Temperature sits on the left, followed by a circular arrow icon and a compact rounded box holding a decimal number. Beneath is a grey track with a white filled length and a round white knob.",
+ "behaviour": "Moving the knob updates the field and typing in the field moves the knob. After any change an undo arrow fades in beside the field; hovering it shows Reset to default, and clicking it snaps everything back and the arrow fades out.",
+ "parts": [
+  "label",
+  "reset button",
+  "value field",
+  "track",
+  "filled track",
+  "knob",
+  "tooltip"
+ ],
+ "demo_content": "Label \"Temperature\"; the value starts at 1.25, climbs to 2 and resets to 1 on a 0 to 2 scale.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "slider with a typed value beside it",
+  "reset a setting back to its default",
+  "adjust temperature in a home app",
+  "decimal value picker between zero and two",
+  "track with an input box and undo arrow",
+  "control that combines dragging and typing",
+  "hover tooltip on a small round button",
+  "number field synced to a range bar"
+ ],
+ "resembles": [],
+ "use_when": "A value needs quick dragging and an exact typed figure, with a one-click way back to its default.",
+ "avoid_when": "The scale is fixed at 0 to 2 for thermostat-style values; another range means editing the source.",
+ "suits": [
+  "saas",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The label, minimum, maximum, starting value and default are set in the source; the tooltip wording and decimal step also need edits.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One slider, one input and a button; only opacity and position shift.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Slider, field and reset button all have names, but the invisible reset button stays in the tab order."
+ },
+ "props": [],
+ "issues": [
+  "The reset button is only faded to zero opacity and remains focusable when it appears hidden."
+ ],
+ "polish": 4,
+ "polish_why": "Tight, coherent spacing and a thoughtful reset affordance; small controls but usable.",
+ "unsure": [],
+ "title": "Temperature Slider Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "10fc9c3d6077a592",
+  "film_hash": "e8141630988f3f5a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

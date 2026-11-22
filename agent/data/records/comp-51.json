@@ -1,0 +1,111 @@
+{
+ "name": "comp-51",
+ "frames": {
+  "code": "1765",
+  "best": 6,
+  "best_why": "Field is full, the strength bar is green end to end and all four rules show green ticks.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.7
+ },
+ "tagline": "Password field with a live bar and tick list that fill as the rules are met.",
+ "summary": "A password input with an eye toggle, a thin progress bar that grows and warms from red to green, and a checklist of four rules whose crosses turn into green ticks as you type.",
+ "title_fix": null,
+ "appearance": "A dark rounded text field sits under a small heading label, with a faded eye icon at its right end. Below it a slim rounded track runs across the width, then a bold status line and four rows of small text, each prefixed by a grey cross or a green tick.",
+ "behaviour": "Typing fills the bar from the left and the status line changes from an empty prompt to weak, then strong; the bar animates its width and colour over half a second as each rule passes. Pressing the eye swaps the dots for plain characters and flips the icon and its label.",
+ "parts": [
+  "container label",
+  "password field",
+  "eye toggle",
+  "strength bar",
+  "status line",
+  "requirement row",
+  "requirement icon"
+ ],
+ "demo_content": "Label \"Input with password strength indicator\", placeholder \"Password\" and four rule lines such as \"At least 1 number\".",
+ "states": [
+  "focus",
+  "hover",
+  "success"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "password strength meter with checklist",
+  "show password eye toggle",
+  "sign up password requirements list",
+  "how strong is my password bar",
+  "red to green password meter",
+  "form field that checks password rules",
+  "password visibility toggle inside input",
+  "account creation password helper"
+ ],
+ "resembles": [],
+ "use_when": "A sign-up or reset form where people need to see, while typing, which password rules they still owe.",
+ "avoid_when": "Rules, wording and thresholds are hardcoded, so a different password policy needs a source edit.",
+ "suits": [
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "It takes no props: the label, the four regex rules and the colour thresholds sit in the file, so changing policy wording or colours means editing the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One text field, a four-item list and a CSS width transition with no loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Bar is a labelled progressbar and met state is hidden text, but the width animation never checks reduced-motion."
+ },
+ "props": [],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Tidy spacing and a clear colour story; the rule list itself is a plain default stack.",
+ "unsure": [],
+ "title": "Password Strength Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f196a93258047b0b",
+  "film_hash": "44403eb425c48d48",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

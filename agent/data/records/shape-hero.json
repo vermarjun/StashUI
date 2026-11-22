@@ -1,0 +1,164 @@
+{
+ "name": "shape-hero",
+ "frames": {
+  "code": "3824",
+  "best": 4,
+  "best_why": "Shapes have settled into a readable pile along the bottom with the full headline and buttons clear.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.5
+ },
+ "tagline": "Labelled pills and dots fall and pile up under a headline like loose objects.",
+ "summary": "A hero section where named component pills and coloured dots drop in, collide and settle into a heap along the bottom. The pile can be grabbed and thrown, and rests once it stops moving.",
+ "title_fix": null,
+ "appearance": "A full-width dark section with a small dot badge, a two-line white headline, a grey paragraph and two pill buttons centred above. Around and below them, outlined and dark labelled pills plus orange and white circles lie at odd angles in a loose pile.",
+ "behaviour": "On load the shapes fall from above in sequence, bounce off each other and the edges, and settle. Any shape can be dragged with the pointer and thrown, and the whole pile sleeps once it stops moving.",
+ "parts": [
+  "eyebrow badge",
+  "headline",
+  "description",
+  "action buttons",
+  "labelled pill",
+  "coloured dot"
+ ],
+ "demo_content": "Headline 'Components with a little gravity' with pill labels like Pull Cord, Detent Dial and Toss Board.",
+ "states": [
+  "dragging",
+  "hover"
+ ],
+ "kind": "hero",
+ "look": [
+  "dark",
+  "bold",
+  "playful",
+  "minimal",
+  "flat"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "hero with objects falling into a pile",
+  "physics playground on a landing page",
+  "pills that drop and stack",
+  "draggable shapes hero section",
+  "tiny rigid body physics banner",
+  "hero with bouncing tag chips",
+  "playful headline with falling labels",
+  "throw the badges around page"
+ ],
+ "resembles": [],
+ "use_when": "A product launch wants a memorable hero that invites people to touch and play before scrolling.",
+ "avoid_when": "The pile needs a tall section and is pointer-only, so on touch it competes with normal scrolling.",
+ "suits": [
+  "marketing",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "hero",
+  "section-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport",
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Eyebrow, title, description, actions, heading tag, shapes array and pile fill ratio are props; gravity and solver constants are fixed in the file.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A 120Hz rigid-body solver runs while shapes move, then sleeps once the pile settles.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Decorative shapes are hidden from assistive tech and settle instantly under reduced motion, but cannot be played with by keyboard."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "eyebrow",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "ReactNode",
+   "default": "\"Components with a little gravity\"",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "ReactNode",
+   "default": "\"Copy-paste components for React, built with Tailwind CSS an",
+   "required": false
+  },
+  {
+   "name": "actions",
+   "type": "ReactNode",
+   "default": "<DefaultActions />",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "\"h1\" | \"h2\" | \"h3\" | \"p\"",
+   "default": "\"h1\"",
+   "required": false
+  },
+  {
+   "name": "shapes",
+   "type": "HeroShape[]",
+   "default": "DEFAULT_SHAPES",
+   "required": false
+  },
+  {
+   "name": "fill",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Settled pills overlap, so several labels are partly hidden and hard to read."
+ ],
+ "polish": 4,
+ "polish_why": "The drop and pile feel physical and the hero stays readable; some stacked labels overlap.",
+ "unsure": [],
+ "title": "Shape Hero",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "39541bfebbc3d885",
+  "film_hash": "74ff84db2796fbf7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

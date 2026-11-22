@@ -1,0 +1,151 @@
+{
+ "name": "card-field",
+ "frames": {
+  "code": "5242",
+  "best": 6,
+  "best_why": "Shows the completed row with last-four number, expiry and security code, plus the enabled pay button.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 9.3
+ },
+ "tagline": "Card input where the number folds to its last four, opening room for expiry.",
+ "summary": "A single-row checkout field for card number, expiry and security code. The number groups as you type, then collapses to its last four so the other fields fit beside it.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holds a small Card heading, a Use test card link and one inset row with a brand badge, grouped digits, MM / YY and CVC, plus a hint line and a wide pay button below.",
+ "behaviour": "Typing digits groups the number in fours, and a valid full number slides away to its last four while expiry and security code appear in the same row. The pay button shifts from a dim idle tone to white once the form is complete.",
+ "parts": [
+  "card panel",
+  "brand badge",
+  "card number",
+  "expiry field",
+  "security code field",
+  "hint line",
+  "pay button"
+ ],
+ "demo_content": "A test Visa 4242 paying $48.00, expiry 04/28 and security code 123.",
+ "states": [
+  "focus",
+  "hover",
+  "disabled",
+  "error",
+  "loading",
+  "success"
+ ],
+ "kind": "checkout",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "card number input with expiry and cvc",
+  "one row payment form",
+  "credit card checkout field",
+  "card number that shows last four digits",
+  "payment card form with brand logo",
+  "inline expiry and security code input",
+  "stripe style payment input",
+  "test card button for checkout"
+ ],
+ "resembles": [
+  "Stripe card input"
+ ],
+ "use_when": "A checkout needs the card number, expiry and code in one compact row.",
+ "avoid_when": "The test-card helper and hardcoded zinc palette suit demos; real payment handling still needs a processor.",
+ "suits": [
+  "fintech",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "form-field",
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "focus",
+   "keyboard",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Amount, currency, a payment callback and test mode are props; the card layout, brand detection and colour palette are written in the source.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A single card row with a few motion values; no loop and no heavy drawing.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Fields are labelled and announce brand and payment state; motion respects reduced-motion."
+ },
+ "props": [
+  {
+   "name": "amount",
+   "type": "number",
+   "default": "48",
+   "required": false
+  },
+  {
+   "name": "currency",
+   "type": "string",
+   "default": "\"$\"",
+   "required": false
+  },
+  {
+   "name": "onPay",
+   "type": "(card: CardDetails) => Promise<void> | void",
+   "default": "{pay}",
+   "required": false
+  },
+  {
+   "name": "testMode",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"fill-zinc-100 stroke-zinc-300 dark:fill-zinc-800 dark:strok",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clever collapsing number with clear states and a tidy dark card.",
+ "unsure": [],
+ "title": "Card Field",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ba48d2354d8493ff",
+  "film_hash": "2851821d5f252c97",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

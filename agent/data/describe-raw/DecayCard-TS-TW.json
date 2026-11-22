@@ -1,0 +1,76 @@
+{
+  "name": "DecayCard-TS-TW",
+  "frames": {
+    "code": "9226",
+    "best": 4,
+    "best_why": "The photo is tilted with its edges chewed into ragged noise, showing the decay effect at full strength.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A photo card crumbles at the edges as the cursor moves fast.",
+  "summary": "A framed greyscale portrait tilts with the pointer while a noise filter tears away its edges when the cursor moves quickly. Large white words sit across the lower left of the image.",
+  "title_fix": null,
+  "appearance": "A tall greyscale photo of a pug wrapped in a blanket, with heavy white display words reading 'Decay Card' across its lower left. A short caption sits on the dark stage below.",
+  "behaviour": "The whole card drifts and tilts slightly with the pointer, and fast movement ramps up a noise distortion that gnaws the image edges into rough shapes. When the cursor slows, the edges settle back toward a rectangle.",
+  "parts": ["photo card", "overlay words", "caption", "torn edges"],
+  "demo_content": "Greyscale pug-in-a-blanket photo, overlay words 'Decay Card', caption 'Move the cursor quickly to distort the image.'",
+  "states": ["hover"],
+  "kind": "image-effect",
+  "look": ["monochrome", "dark", "bold", "textured"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "photo card that tears apart on hover",
+    "image disintegrates when mouse moves",
+    "distorted picture with glitchy edges",
+    "card with big words over a photo",
+    "parallax image card that wobbles",
+    "noise distortion photo effect",
+    "cursor speed warps a portrait",
+    "grayscale photo card with overlay text"
+  ],
+  "resembles": [],
+  "use_when": "A hero card or editorial feature needs a tactile, slightly unsettling image interaction.",
+  "avoid_when": "It listens to the whole window and runs a constant loop, so unrelated mouse motion distorts the card.",
+  "suits": ["portfolio", "marketing", "blog"],
+  "slot_hints": ["feature-card", "media", "hero"],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "pronounced",
+    "affects": ["image", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Image URL, width, height, noise frequency, octaves, seed, maximum displacement and movement bound are props; the overlay words come in as children.",
+  "technique": ["svg-filter", "gsap", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A permanent requestAnimationFrame loop drives an SVG displacement filter over a full-size photo.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The photo has no alt text and a permanent animation loop that ignores reduced-motion settings."
+  },
+  "props": [
+    {"name": "width", "type": "number", "default": "300", "required": false},
+    {"name": "height", "type": "number", "default": "400", "required": false},
+    {"name": "image", "type": "string", "default": "https://images.unsplash.com/photo-1504198266287-1659872e6590?w=300&h=400&fit=crop&auto=format&q=80&sat=-100", "required": false},
+    {"name": "baseFrequency", "type": "number", "default": "0.015", "required": false},
+    {"name": "numOctaves", "type": "number", "default": "5", "required": false},
+    {"name": "seed", "type": "number", "default": "4", "required": false},
+    {"name": "maxDisplacement", "type": "number", "default": "400", "required": false},
+    {"name": "movementBound", "type": "number", "default": "50", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The overlay words spill past the right edge of the photo onto the dark stage.",
+    "Movement anywhere in the window distorts the card, not only movement over it."
+  ],
+  "polish": 4,
+  "polish_why": "A memorable distortion on a striking photo; the oversized words overflow the card edge.",
+  "unsure": []
+}

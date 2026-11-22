@@ -1,0 +1,110 @@
+{
+ "name": "comp-332",
+ "frames": {
+  "code": "7230",
+  "best": 4,
+  "best_why": "First step is fully open with photo, heading, description, four dots and both buttons visible.",
+  "usable": [
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "Four dots track progress through illustrated intro screens with Next and Skip.",
+ "summary": "A dialog walks through a short illustrated onboarding: a photo, a heading, a description and four progress dots. Next advances the steps, Skip closes, and the last step shows Okay.",
+ "title_fix": null,
+ "appearance": "A dark rounded dialog over a near-black page. A muted landscape photo fills the top, followed by a bold heading and grey description, four small progress dots at lower left, and Skip plus a Next button with a right arrow at lower right.",
+ "behaviour": "Opening the dialog resets it to the first of four steps. Next replaces the photo, heading and description and moves the active dot; on the last step the button becomes Okay. Skip closes at any time.",
+ "parts": [
+  "close button",
+  "cover image",
+  "heading",
+  "description",
+  "progress dots",
+  "skip button",
+  "next button"
+ ],
+ "demo_content": "A green mountain landscape photo with the heading Welcome to coss.com and four product onboarding texts.",
+ "states": [
+  "open",
+  "hover"
+ ],
+ "kind": "modal",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "walkthrough popup with progress dots",
+  "intro screens shown one at a time",
+  "product tour with next and skip",
+  "welcome dialog with four steps",
+  "modal that explains features step by step",
+  "getting started tour for new users",
+  "onboarding carousel inside a popup",
+  "step by step feature introduction"
+ ],
+ "resembles": [],
+ "use_when": "New users need a quick four-step tour of what a product does before they start.",
+ "avoid_when": "The photo and copy are fixed inside the file, so a custom tour means editing the source.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The four titles, descriptions and the demo photo are written in the file and change only by editing it; button labels and width follow the shared dialog styles.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One small photo, a few text blocks and four dots; only the step content changes.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The dialog has a title and description for screen readers, but the photo's alt text is only 'dialog' and progress dots are unlabelled."
+ },
+ "props": [],
+ "issues": [
+  "Progress dots are decorative only and do not say which of the four steps is active.",
+  "The photo's alt text reads simply 'dialog' rather than describing the image."
+ ],
+ "polish": 3,
+ "polish_why": "Standard dialog with a plain photo; readable but unremarkable layout and type.",
+ "unsure": [],
+ "title": "Onboarding Stepper Dialog",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "41f55291a46508fa",
+  "film_hash": "aa9da97f4ee68c4f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

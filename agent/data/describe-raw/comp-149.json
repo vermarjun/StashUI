@@ -1,0 +1,63 @@
+{
+  "name": "comp-149",
+  "frames": {
+    "code": "9532",
+    "best": 6,
+    "best_why": "Most days are filled white while Saturday stays empty and Sunday stays dim and disabled.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Choose active weekdays with a row of round letter buttons.",
+  "summary": "Seven circular toggles, one per weekday, each showing its first letter. Tapping a circle fills it solid white; the last circle is permanently dimmed and does not respond.",
+  "title_fix": null,
+  "appearance": "Under a small \"Days of the week\" heading, seven equal circles line up on a near-black stage. Chosen days are solid white with dark letters, untouched ones are dark with a thin outline, and the final circle is faded almost to the background.",
+  "behaviour": "Clicking a circle flips it between solid white and dark outline, so several days can be on at once; the final circle ignores clicks because it is disabled. Hover and keyboard focus ring the circle under the pointer.",
+  "parts": ["legend", "day circle", "day letter"],
+  "demo_content": "The legend \"Days of the week\" and the letters M T W T F S S.",
+  "states": ["hover", "focus", "checked", "disabled"],
+  "kind": "checkbox",
+  "look": ["dark", "rounded", "minimal", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "pick days of the week",
+    "circular day toggles",
+    "availability weekday selector",
+    "select working days",
+    "round letter buttons for days",
+    "schedule days checkbox row",
+    "choose which days repeat",
+    "mon tue wed selector"
+  ],
+  "resembles": [],
+  "use_when": "A schedule or availability form needs a compact row for choosing which weekdays apply.",
+  "avoid_when": "Four days start ticked and Sunday is permanently disabled, with the start state hardcoded.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus"],
+    "motion": "subtle",
+    "affects": ["fill", "border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The days and their starting ticks come from an items array, while circle size and the disabled Sunday are fixed in the file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Seven small circles and hidden checkboxes with one colour transition.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Hidden full day names back the single letters and the row rings on focus, but the colour transition ignores reduced-motion."
+  },
+  "props": [],
+  "issues": ["The disabled Sunday is barely visible against the dark background."],
+  "polish": 4,
+  "polish_why": "Neat circular day row with clear on and off states; the disabled circle nearly disappears.",
+  "unsure": []
+}

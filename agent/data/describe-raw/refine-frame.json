@@ -1,0 +1,78 @@
+{
+  "name": "refine-frame",
+  "frames": {
+    "code": "4236",
+    "best": 6,
+    "best_why": "Photo is fully sharp with a tick and 'Ready', the finished state the frame exists to reach.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "An image sharpens from blocky pixels to detail as its generation progresses.",
+  "summary": "A rounded image frame that moves through queued, generating, refining and ready states, resolving a low-resolution mosaic into the sharp photo without shifting layout.",
+  "title_fix": null,
+  "appearance": "A rounded rectangle holding a landscape photo, with a small translucent pill in the bottom-left corner showing a spinner icon and a status word. Above it sits a quoted prompt line in grey, below a small outlined Regenerate button.",
+  "behaviour": "When the status changes the picture steps from a coarse pixel mosaic toward full sharpness under a moving sheen while the corner chip swaps icons and labels. At ready the chip shows a tick and then fades out.",
+  "parts": ["prompt caption", "image frame", "status chip", "status icon", "regenerate button"],
+  "demo_content": "Prompt 'Alpine lake at dawn, mist over the water, soft film grain' with a mountain photo.",
+  "states": ["loading", "success", "error"],
+  "kind": "image-effect",
+  "look": ["dark", "rounded", "minimal", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "image loading placeholder for ai generator",
+    "picture fading in from pixelated blur",
+    "progressive image resolution effect",
+    "generation status overlay on a photo",
+    "media frame with queued and ready chips",
+    "midjourney style image loading frame",
+    "photo that sharpens when it is ready",
+    "canvas mosaic reveal for images"
+  ],
+  "resembles": ["Midjourney"],
+  "use_when": "An AI image tool needs one result frame that shows queued, generating and ready without layout shift.",
+  "avoid_when": "It only styles your child image and a chip; real job status and polling must come from your own code.",
+  "suits": ["ai-chat", "saas"],
+  "slot_hints": ["media", "feature-card", "loading"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["image", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Status, aspect ratio, width, radius, background and text colour are props, as are stage duration, sweep, labels and retry; the child image is yours.",
+  "technique": ["canvas-2d", "js-animation", "css-keyframes"],
+  "weight": "moderate",
+  "weight_why": "A stack of downscaled canvas copies is rebuilt on resize and drawn per frame while active.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Role, busy state and status text are announced, but the retry button has no visible focus ring."
+  },
+  "props": [
+    {"name": "status", "type": "RefineFrameStatus", "default": "\"generating\"", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "aspectRatio", "type": "string", "default": "\"4 / 3\"", "required": false},
+    {"name": "width", "type": "number", "default": "320", "required": false},
+    {"name": "radius", "type": "number", "default": "16", "required": false},
+    {"name": "background", "type": "string", "default": "\"#27272a\"", "required": false},
+    {"name": "color", "type": "string", "default": "\"#f5f5f5\"", "required": false},
+    {"name": "stageDuration", "type": "number", "default": "400", "required": false},
+    {"name": "sweep", "type": "boolean", "default": "true", "required": false},
+    {"name": "showStatus", "type": "boolean", "default": "true", "required": false},
+    {"name": "hideAfter", "type": "number", "default": "1200", "required": false},
+    {"name": "labels", "type": "Partial<Record<RefineFrameStatus, string>>", "default": "DEFAULT_LABELS", "required": false}
+  ],
+  "issues": [
+    "The frame's role='img' hides the child photo's alt text from screen readers."
+  ],
+  "polish": 4,
+  "polish_why": "The mosaic-to-sharp resolve is convincing and layout stays put; small chips stay unobtrusive.",
+  "unsure": ["kind", "traits"]
+}

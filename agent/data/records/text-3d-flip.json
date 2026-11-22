@@ -1,0 +1,161 @@
+{
+ "name": "text-3d-flip",
+ "frames": {
+  "code": "1079",
+  "best": 5,
+  "best_why": "Several letters are caught mid-flip at different angles, the effect at its most visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "Letters pivot in 3D one after another when the pointer arrives.",
+ "summary": "A headline whose letters spring through a 3D flip in a stagger, starting from the first, last, centre or a random glyph, around the axis you choose.",
+ "title_fix": null,
+ "appearance": "Two left-aligned lines on black: a bold white headline and a smaller grey subheading. Each glyph has its own slot, and while animating some turn edge-on and show a mirrored back face before snapping upright.",
+ "behaviour": "Moving the pointer into the text sets every letter flipping around the chosen axis in a cascade, each springing back to face forward over a few tenths of a second. The sequence runs once per entry and never overlaps itself.",
+ "parts": [
+  "headline letters",
+  "subheading letters",
+  "letter slots"
+ ],
+ "demo_content": "The lines \"Hover to Flip\" and \"3D Typography\"",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "letters flip around in 3d on hover",
+  "headline characters turn like cards",
+  "staggered letter flip animation",
+  "3d rotating type effect",
+  "text that flips over on mouse over",
+  "interactive headline for a hero",
+  "letters spin to reveal themselves",
+  "springy character flip on hover"
+ ],
+ "resembles": [],
+ "use_when": "A short bold headline should answer the pointer with something more tactile than a colour shift.",
+ "avoid_when": "Long or small text, where flipped glyphs hurt reading, and touch screens where hover never fires.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The words are children and the wrapper element is as; rotation axis, stagger origin, stagger spacing, spring transition and class names for both faces are props.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One span per character with a spring transform on hover, idle the rest of the time.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Visible letters are exposed alongside a full hidden copy, so screen readers repeat the text, and the flip is hover-only."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": "\"p\"",
+   "required": false
+  },
+  {
+   "name": "rotateDirection",
+   "type": "\"top\" | \"right\" | \"bottom\" | \"left\"",
+   "default": "\"right\"",
+   "required": false
+  },
+  {
+   "name": "staggerDuration",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "staggerFrom",
+   "type": "\"first\" | \"last\" | \"center\" | number | \"random\"",
+   "default": "\"first\"",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "ValueAnimationTransition | AnimationOptions",
+   "default": "DEFAULT_TRANSITION",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative flex flex-wrap\", className)}",
+   "required": false
+  },
+  {
+   "name": "textClassName",
+   "type": "string",
+   "default": "{textClassName}",
+   "required": false
+  },
+  {
+   "name": "flipTextClassName",
+   "type": "string",
+   "default": "{flipTextClassName}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Mid-flip letters show a mirrored back face overlapping their neighbours, briefly muddying the line."
+ ],
+ "polish": 4,
+ "polish_why": "The flip has weight and staggers nicely; the mirrored mid-flight glyphs look messy for a beat.",
+ "unsure": [],
+ "title": "Text 3D Flip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d0ec56314f80b3e1",
+  "film_hash": "281cb3defbd3ddd5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

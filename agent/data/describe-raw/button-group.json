@@ -1,0 +1,123 @@
+{
+  "name": "button-group",
+  "frames": {
+    "code": "7895",
+    "best": 1,
+    "best_why": "Shows every grouped control cleanly at rest with no cursor covering any segment.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rows of joined buttons, inputs and counters with shared borders.",
+  "summary": "A set of horizontal controls where neighbouring buttons, text labels and inputs merge into one strip. The demo gathers message actions, text formatting, a URL field and a quantity stepper.",
+  "title_fix": null,
+  "appearance": "On a black stage, four rows of compact dark controls sit centred. Each row joins buttons edge to edge with single hairlines, some with icons, some with short labels, plus a wide URL field and a white Add to cart button.",
+  "behaviour": "Hovering brightens one segment inside its group, and clicking selectable icons such as Bold or centre alignment keeps that segment filled. The minus and plus ends of the counter change the number.",
+  "parts": [
+    "action group",
+    "format group",
+    "alignment group",
+    "url field",
+    "quantity stepper",
+    "add to cart button"
+  ],
+  "demo_content": "Toolbar actions Archive, Snooze, Star, Bold, Italic, Underline, alignment icons, stashui.dev URL field, Add to cart.",
+  "states": [
+    "hover",
+    "focus",
+    "active",
+    "selected"
+  ],
+  "kind": "button",
+  "look": [
+    "dark",
+    "outlined",
+    "rounded",
+    "minimal"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "grouped buttons with shared borders",
+    "toolbar of icon buttons",
+    "input with button on the side",
+    "quantity stepper with minus and plus",
+    "segmented formatting toolbar",
+    "add to cart with share button",
+    "joined button strip",
+    "url field with search button"
+  ],
+  "resembles": [],
+  "use_when": "Several small related actions or an input plus its button should read as a single control.",
+  "avoid_when": "Merged borders rely on direct child order, so wrapping a button in an extra element breaks the shared rounding.",
+  "suits": [
+    "saas",
+    "ecommerce"
+  ],
+  "slot_hints": [
+    "form-field",
+    "form-submit"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "hover"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "border",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap any buttons, inputs or labels; orientation and className are props, while individual button styling comes from the separate button component.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A handful of static controls with colour transitions only.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Icon-only buttons carry aria-labels and groups use role=group; only colour transitions run, with no reduced-motion check."
+  },
+  "props": [
+    {
+      "name": "orientation",
+      "type": "'horizontal' | 'vertical'",
+      "default": "horizontal",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "asChild",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Crisp dark toolbar with consistent hairline joins and clear hover states.",
+  "unsure": [
+    "responsive"
+  ]
+}

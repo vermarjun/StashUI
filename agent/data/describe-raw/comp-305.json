@@ -1,0 +1,63 @@
+{
+  "name": "comp-305",
+  "frames": {
+    "code": "7294",
+    "best": 6,
+    "best_why": "Frame 6 shows the strip from message through Learn more to the close X with no cursor over it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The left edge is cropped, so the leading eclipse icon and the start of the message are cut off.",
+    "shows_interaction": "no"
+  },
+  "tagline": "A dark strip announces a new feature and can be closed with an X.",
+  "summary": "A full-width dark bar with a short update message, a Learn more link whose arrow nudges on hover, and a close button that removes the bar from the page.",
+  "title_fix": null,
+  "appearance": "A full-width dark strip sits across the top of the stage with a faint divider beneath it. Small light text runs in from the left; at the right sit a Learn more link with a small arrow and a faint X.",
+  "behaviour": "Hovering Learn more slides its arrow a little and the X brightens. Pressing the X takes the whole banner away; otherwise nothing moves while it is open.",
+  "parts": ["message text", "learn more link", "arrow icon", "close button"],
+  "demo_content": "We just added something awesome to make your experience even better.",
+  "states": ["hover"],
+  "kind": "toast",
+  "look": ["dark", "minimal", "flat", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "feature announcement bar at top",
+    "dismissible update banner",
+    "what's new notification strip",
+    "bar with learn more and close",
+    "release announcement with x button",
+    "product update message across page",
+    "closeable promo bar",
+    "new feature banner you can hide"
+  ],
+  "resembles": [],
+  "use_when": "You want to announce a new feature in a skimmable strip that visitors can dismiss.",
+  "avoid_when": "Dismissal lives in memory only, so the bar returns on reload; long copy crowds the single row.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["toast", "nav"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The message, link target and labels are written into the file; visibility is local state and no props tune it.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One strip and a single state flag; nothing animates until hovered.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The close button is labelled and icons are hidden, but the link has no custom focus style and dismissal is not remembered."
+  },
+  "props": [],
+  "issues": ["The clip crops the banner's left edge, cutting the leading eclipse icon and first words.", "Dismissal is in-memory only, so the banner reappears on reload."],
+  "polish": 3,
+  "polish_why": "Clean compact strip; the clipped icon and one fixed line of copy hold it back.",
+  "unsure": ["render", "shows_interaction", "focus_visible"]
+}

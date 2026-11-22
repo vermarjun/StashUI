@@ -1,0 +1,124 @@
+{
+ "name": "primitives-radix-progress",
+ "frames": {
+  "code": "3344",
+  "best": 4,
+  "best_why": "All three bars sit at mid progress (54, 68 and 34 percent), showing filled and empty track together.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.7
+ },
+ "tagline": "Three upload rows with slim bars filling toward completion.",
+ "summary": "A dark upload card listing three files, each with a percentage, its size and a thin progress bar that fills from left to right as the number climbs.",
+ "title_fix": null,
+ "appearance": "A dark rounded card headed Uploading with a grey subtitle and three stacked rows. Each row has a filename on the left, a grey percentage and size on the right, and a slim rounded track with a white fill beneath.",
+ "behaviour": "Each bar's white fill slides right as its value rises and springs to the new width, while the percentage beside it counts up in step. Two bars loop back to zero after finishing.",
+ "parts": [
+  "upload card",
+  "file row",
+  "filename",
+  "percentage",
+  "bar track",
+  "bar fill"
+ ],
+ "demo_content": "Uploading three files to Shared Drive: design-system.fig, brand-assets.zip and launch-video.mp4 with their sizes.",
+ "states": [
+  "loading"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "file upload progress bars",
+  "progress bar that fills up",
+  "percentage and size for each file",
+  "uploading multiple files indicator",
+  "thin loading bar with percent",
+  "track upload completion in a card",
+  "animated progress fill",
+  "spring progress bar for downloads"
+ ],
+ "resembles": [],
+ "use_when": "Several uploads or jobs run at once and each needs its own progress readout.",
+ "avoid_when": "It has no error or cancel state, so a stalled upload cannot be acted on from the row.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "loading",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass a numeric value with your own track and indicator elements and classes; the spring transition is a prop while colours and heights come from your styles.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Three bars animating one transform each; nothing heavy.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Values are exposed as a progressbar, but the bars are not named with their filenames and no reduced-motion check is made."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number | null",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ type: 'spring', stiffness: 100, damping: 30 }",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Rows reset to zero mid-clip, which reads as a failed upload rather than a loop.",
+  "The grey percentage and size text is low contrast on the dark card."
+ ],
+ "polish": 4,
+ "polish_why": "Clean card and smooth fills; the looping reset and faint grey numbers are small flaws.",
+ "unsure": [],
+ "title": "Radix Progress",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "153f38b379673d3c",
+  "film_hash": "627861e25b17325f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

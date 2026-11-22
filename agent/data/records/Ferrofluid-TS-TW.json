@@ -1,0 +1,187 @@
+{
+ "name": "Ferrofluid-TS-TW",
+ "frames": {
+  "code": "6180",
+  "best": 5,
+  "best_why": "Several bright contour shapes cross the frame at once, showing the fluid's form better than the sparser frames.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 6.2
+ },
+ "tagline": "Glowing contour lines drift like magnetic fluid across a black field.",
+ "summary": "A dark canvas filled with thin luminous cyan and violet wisps that curl and merge like liquid metal seen through edge light. Moving the pointer dims the glow in a soft halo around it.",
+ "title_fix": null,
+ "appearance": "A black rectangle scattered with thin, bright cyan contour lines, some curling into loops and spikes, with occasional lilac streaks. Most of the surface is empty darkness; the marks are small, crisp and high contrast.",
+ "behaviour": "The lines flow steadily in one direction, bending and joining as they go, so the pattern never repeats. The pointer creates a soft circular dimple where the glow fades out around the cursor.",
+ "parts": [
+  "black field",
+  "contour lines",
+  "glow",
+  "pointer halo"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "neon",
+  "gradient",
+  "minimal"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "glowing lines flowing in the dark",
+  "liquid metal background animation",
+  "neon contour waves for a hero",
+  "dark shader background with glow",
+  "cursor distorts glow around pointer",
+  "electric fluid lines looping",
+  "abstract glowing webgl backdrop",
+  "thin light streaks on black"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero or full-page backdrop needs slow, organic light with no text in the way.",
+ "avoid_when": "Light themes or low-power devices: the glow relies on black, and the shader renders every frame.",
+ "suits": [
+  "saas",
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "The colour set, flow direction, speed, scale, turbulence, rim sharpness, glow and pointer strength are props. The shader's shape logic needs a source edit.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen fragment shader renders every animation frame for the whole session.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative only, with no reduced-motion check, so the shader keeps running for users who ask for less motion."
+ },
+ "props": [
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#ffffff', '#ffffff', '#ffffff']",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1.6",
+   "required": false
+  },
+  {
+   "name": "turbulence",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "fluidity",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "flowDirection",
+   "type": "'up' | 'down' | 'left' | 'right'",
+   "default": "'down'",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "mouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseStrength",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "mouseRadius",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Most of the frame stays empty black, so the effect reads faintly at small sizes."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive, clean shader look; thin lines and lots of dead black space.",
+ "unsure": [
+  "theme",
+  "states",
+  "shows_interaction"
+ ],
+ "title": "Ferrofluid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4036531dddb29c70",
+  "film_hash": "853fcf868d2145e4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

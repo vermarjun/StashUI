@@ -1,0 +1,66 @@
+{
+  "name": "r3f-blob",
+  "frames": {
+    "code": "4947",
+    "best": 6,
+    "best_why": "The blob is fully formed and centred with strong highlights and no cursor crossing it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark, lumpy 3D form that slowly warps and drifts toward the cursor.",
+  "summary": "A real-time 3D sculpture: a black blob whose noise-rippled surface keeps folding and bulging, lit by soft studio light on a black stage and leaning toward the pointer.",
+  "title_fix": null,
+  "appearance": "A single black, roughly spherical body fills the centre of a near-black stage. Its surface is heavily lumpy and folded like melted wax, lit from above so pale grey highlights catch the ridges while deep crevices stay in shadow.",
+  "behaviour": "The form keeps warping: noise displacement pushes its surface in and out each frame, and it drifts toward wherever the cursor moves. Moving the pointer over it increases the distortion and brightens the highlights.",
+  "parts": ["3d blob", "lumpy surface", "grey highlights", "shadowed crevices", "dark stage"],
+  "demo_content": "",
+  "states": ["hover"],
+  "kind": "3d-scene",
+  "look": ["dark", "3d", "organic", "monochrome"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "black liquid metal blob animation",
+    "three js noise sphere",
+    "gooey 3d shape that moves with mouse",
+    "dark morphing ball hero background",
+    "perlin noise displacement sculpture",
+    "webgl organic blob object",
+    "interactive 3d rubbery form",
+    "animated black orb for landing page"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or section needs a live, tactile centrepiece rather than a static illustration.",
+  "avoid_when": "Low-power or mobile devices: continuous WebGL rendering and a remote HDR file add real cost.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["hero", "page-background", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "It is a self-contained scene with no props: intensity, colours, camera and the remote HDR environment are all set inside the source file.",
+  "technique": ["three-js", "webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full Three.js canvas renders a high-poly displaced shader mesh every frame, plus an HDRI.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Purely visual: no text, role or alt, and the perpetual warp ignores prefers-reduced-motion, so it cannot be paused or described to assistive tech."
+  },
+  "props": [],
+  "issues": [
+    "The HDR environment loads from a remote URL, so reflections can fail if the network is blocked.",
+    "The blob's dark surface merges into the near-black stage in frames 1 and 6."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing organic motion and soft lighting; the dark form loses its edge against the black stage.",
+  "unsure": ["traits.affects"]
+}

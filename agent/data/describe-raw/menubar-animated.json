@@ -1,0 +1,78 @@
+{
+  "name": "menubar-animated",
+  "frames": {
+    "code": "4210",
+    "best": 5,
+    "best_why": "Frame 5 shows the View menu fully open with two checkmarks and a disabled row.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A desktop-style menu bar whose dropdowns glide between Edit, View and Profiles.",
+  "summary": "A thin application menu bar with Edit, View and Profiles menus. Opening one shows a dark dropdown of commands with shortcuts and ticks, and moving to a neighbour passes the open menu across in one motion.",
+  "title_fix": null,
+  "appearance": "A narrow rounded bar with a thin border holding three small command labels, Edit, View and Profiles, against black. Open, a translucent dark panel hangs below with rows of grey text, right-aligned shortcut hints, a submenu arrow and checkmarks on some rows.",
+  "behaviour": "Clicking a label drops its menu; moving the pointer along the bar swaps to the next menu with a single gliding highlight and staggered rows. Rows lighten under the cursor, and clicking elsewhere closes the panel.",
+  "parts": ["menu bar", "menu label", "shortcut hint", "menu panel", "command row", "checkmark", "submenu arrow"],
+  "demo_content": "Browser-style commands across Edit, View and Profiles menus, such as New Tab with command-T and Reload.",
+  "states": ["hover", "open", "selected", "checked", "disabled", "focus"],
+  "kind": "dropdown-menu",
+  "look": ["dark", "outlined", "minimal", "glass"],
+  "tone": "technical",
+  "search_phrases": [
+    "app menu bar with dropdowns",
+    "desktop style menu across the top",
+    "edit view profiles menu",
+    "dropdown menu that slides between tabs",
+    "command menu with keyboard shortcuts",
+    "file menu with checkable items",
+    "toolbar of menus on a website",
+    "menu that hands off on hover"
+  ],
+  "resembles": ["macOS menu bar", "Figma top menu"],
+  "use_when": "A web app imitates a desktop application and needs a compact top menu with several command dropdowns.",
+  "avoid_when": "Desktop-pointer metaphor: the hover handoff does not translate to touch and the small labels are hard to tap.",
+  "suits": ["devtool", "saas", "dashboard"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["click", "hover", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose menus from the exported parts (triggers, content, items, checkbox and radio items) and style the bar and panels with classes; motion tokens live in the provider.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Panels animate through motion and the highlight measures item rectangles while open.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Radix supplies roles, roving focus and Escape, and the provider honours reduced-motion, so the remaining gap is minor."
+  },
+  "props": [
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultOpen", "type": "boolean", "default": null, "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "transition", "type": "Transition", "default": null, "required": false},
+    {"name": "exitTransition", "type": "Transition", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "asChild", "type": "boolean", "default": null, "required": false},
+    {"name": "forceMount", "type": "true", "default": null, "required": false}
+  ],
+  "issues": [
+    "Disabled rows such as Incognito Window sit very dim on the dark panel, close to unreadable.",
+    "The panel is translucent, so its text can lose contrast over busy page content behind it."
+  ],
+  "polish": 4,
+  "polish_why": "Detailed motion and crisp panels; disabled rows are dim and the fade still is muddy.",
+  "unsure": ["props", "kind"]
+}

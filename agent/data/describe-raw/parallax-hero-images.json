@@ -1,0 +1,126 @@
+{
+  "name": "parallax-hero-images",
+  "frames": {
+    "code": "2061",
+    "best": 5,
+    "best_why": "Frame 5 shows all six photos apart and clear, with the headline fully legible between them.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo cards pin to the screen edges and drift gently with the cursor.",
+  "summary": "Up to eight rounded photos pinned around the edges of a hero, each floating a little against the pointer at its own depth. It is a calm, blurred-in collage meant to sit behind headline copy.",
+  "title_fix": null,
+  "appearance": "A dark hero with six rounded photo cards around its margins: mountain ranges along the top, a laptop and a black sneaker at the sides, a figure in soft cloud and a single leaf at the bottom. Between them sit a small pill, a very large bold white headline and a short grey paragraph.",
+  "behaviour": "Each photo stays pinned to its spot but glides up to forty pixels away from the pointer at its own depth on a spring, so the collage breathes as the cursor moves. On load the photos fade in one by one from blurred and slightly small.",
+  "parts": [
+    "photo cards",
+    "dark backdrop",
+    "pill",
+    "headline",
+    "paragraph"
+  ],
+  "demo_content": "A Moodboard pill, the headline Collect what moves you, plus mountain, laptop, sneaker, cloud and leaf photos.",
+  "states": [],
+  "kind": "background",
+  "look": [
+    "dark",
+    "airy",
+    "editorial",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "hero with floating photos around the edges",
+    "images that shift with the mouse",
+    "moodboard collage for a landing page",
+    "photo cards floating behind a headline",
+    "moving pictures arranged around text",
+    "subtle mouse parallax images",
+    "collage of photos that drifts",
+    "pinterest moodboard hero section"
+  ],
+  "resembles": [],
+  "use_when": "A landing hero wants a calm, editorial photo collage with gentle pointer depth.",
+  "avoid_when": "Touch devices or narrow screens: the photos crowd the copy and the parallax cannot fire.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "saas"
+  ],
+  "slot_hints": [
+    "hero",
+    "media",
+    "section-background"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move",
+      "always"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "images (up to eight) are placed in fixed edge spots; className and imageClassName restyle them, and variant swaps which photos move most. Positions and depth values are baked in.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "Six memoised images moved by two springs fed by one window mousemove listener.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The photos use empty alt text and the pointer parallax runs with no reduced-motion check."
+  },
+  "props": [
+    {
+      "name": "images",
+      "type": "string[]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "imageClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "variant",
+      "type": "\"default\" | \"edge-focus\"",
+      "default": "default",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The headline, pill and copy belong to the demo, so the component on its own is only the photo layer.",
+    "On touch screens there is no pointer, so the photos sit still and the effect disappears."
+  ],
+  "polish": 4,
+  "polish_why": "A calm, well-spaced collage with a gentle spring; it still needs the demo's copy to read as a hero.",
+  "unsure": [
+    "kind"
+  ]
+}

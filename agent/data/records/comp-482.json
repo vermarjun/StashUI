@@ -1,0 +1,118 @@
+{
+ "name": "comp-482",
+ "frames": {
+  "code": "1561",
+  "best": 3,
+  "best_why": "Top row is open with its full note text running across the table, which the folded frames lack.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.6
+ },
+ "tagline": "Rows fold open to reveal a written note with an info icon.",
+ "summary": "A dark account table where rows carrying a note show a chevron in the first column. Pressing it drops a full-width sub-row with an info icon and the note text; a checkbox column selects rows separately.",
+ "title_fix": null,
+ "appearance": "A black table led by a narrow chevron column and a checkbox column, then bold names, emails, flag emojis with cities, rounded status pills and right-aligned balances. Open rows add a lighter strip containing a small info glyph and a paragraph.",
+ "behaviour": "Clicking a row's downward chevron unfolds a sub-row of note text and flips the chevron upward; clicking again folds it away. Rows without a note have no chevron, and the checkboxes tick independently of expansion.",
+ "parts": [
+  "expander chevron",
+  "header checkbox",
+  "row checkbox",
+  "name",
+  "email",
+  "status pill",
+  "balance",
+  "note row"
+ ],
+ "demo_content": "Five people with flags, status pills and balances; one note about a quarterly performance review.",
+ "states": [
+  "expanded",
+  "selected",
+  "loading",
+  "empty"
+ ],
+ "kind": "data-table",
+ "look": [
+  "dark",
+  "flat",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "table rows that open to show a note",
+  "expand a row for more details",
+  "data table with chevron expand buttons",
+  "rows with hidden comments underneath",
+  "tick boxes plus expandable details",
+  "account table with expandable notes",
+  "click row arrow to reveal extra info",
+  "table with text sub rows"
+ ],
+ "resembles": [],
+ "use_when": "Each record carries a short note that should stay hidden until someone asks to read it.",
+ "avoid_when": "Notes are long single paragraphs, so an open row pushes everything below it down a long way.",
+ "suits": [
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Rows load from a remote JSON while columns and the note sub-row are written in the file; new fields or a different note layout mean editing the source.",
+ "technique": [
+  "static"
+ ],
+ "weight": "moderate",
+ "weight_why": "A table library over five remote rows adds one sub-row on demand; no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The expander is a labelled button reporting aria-expanded, and checkboxes are labelled; note text has no heading of its own."
+ },
+ "props": [],
+ "issues": [
+  "The first column is blank for rows without a note, so the chevrons look uneven.",
+  "The caption credits the table library instead of describing the example.",
+  "Open notes appear instantly with no height animation, so the table jumps."
+ ],
+ "polish": 4,
+ "polish_why": "Clean sub-row with an info icon and roomy spacing; a library caption and uneven expander column.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Expandable Rows Table",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "661ea0bd746b3316",
+  "film_hash": "13323fc995439b6c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,155 @@
+{
+ "name": "slider",
+ "frames": {
+  "code": "5552",
+  "best": 1,
+  "best_why": "Frame 1 shows both handles, the filled range and both value labels with no cursor over the track.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.6
+ },
+ "tagline": "Two handles set a low and high price on one white bar.",
+ "summary": "A price filter with a low and high handle on a single track; the chosen span between them is filled white. Dragging either handle moves the number shown above it and updates the range.",
+ "title_fix": null,
+ "appearance": "Inside a dark rounded card, a short horizontal track of tiny grid squares holds two white vertical grips, with the segment between them solid white. Dollar values float above each grip, and the endpoints of the full range sit below.",
+ "behaviour": "Dragging either grip slides it along the track and the numbers above roll to the new values, while the filled band between the grips grows or shrinks. Releasing settles it in place.",
+ "parts": [
+  "card",
+  "range track",
+  "filled range",
+  "low handle",
+  "high handle",
+  "value label"
+ ],
+ "demo_content": "A price filter set to $240 to $760 within $0 to $1,000, prompted by Drag either handle to filter products by price.",
+ "states": [
+  "focus",
+  "dragging"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "two handle price filter",
+  "min and max range selector",
+  "dual thumb range control",
+  "price range filter with dollar values",
+  "drag handles to set a range",
+  "low and high value picker",
+  "filled track between two knobs",
+  "ecommerce price range control"
+ ],
+ "resembles": [],
+ "use_when": "Shoppers or users need to choose a minimum and maximum, such as a price band.",
+ "avoid_when": "It suits numeric ranges only, and the 12px grips are hard to grab on a touch screen.",
+ "suits": [
+  "ecommerce",
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass value and onValueChange plus min, max and step; label and labelPosition place the number badges. Track colours and handle shapes are class overrides.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "Two handles on a native-style track plus a small number roll animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Handles take a focus ring and arrow keys, but no aria-label tells the low grip from the high one."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number[]",
+   "default": "{value}",
+   "required": false
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "ReactNode | ((value: number | undefined) => ReactNode)",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "labelPosition",
+   "type": "'top' | 'bottom' | 'static'",
+   "default": "== 'top' && '-top-7'",
+   "required": false
+  },
+  {
+   "name": "lableContenPos",
+   "type": "'left' | 'right'",
+   "default": "'right'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('relative flex w-full touch-none select-none items-cente",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Handles are only 12px wide, so they are hard to grab on a touch screen."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp track and smooth number roll; the tiny grips are the only weak point.",
+ "unsure": [],
+ "title": "Dual Range Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b28c0eb1dfcd920b",
+  "film_hash": "b19ca0569382b57e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

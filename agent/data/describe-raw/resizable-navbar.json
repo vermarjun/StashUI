@@ -1,0 +1,76 @@
+{
+  "name": "resizable-navbar",
+  "frames": {
+    "code": "5210",
+    "best": 3,
+    "best_why": "The navbar is settled into its narrow floating pill at the top, showing the scrolled state clearly.",
+    "usable": [1, 2, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A nav bar that shrinks into a floating rounded pill as you scroll.",
+  "summary": "A top navigation that starts full width and, once the page scrolls, contracts into a narrow blurred capsule holding the logo, links and buttons close together.",
+  "title_fix": null,
+  "appearance": "A dark site header with a small logo and wordmark at the left, four grey links centred and two buttons at the right. Scrolled, the same row narrows into a rounded dark pill with a soft shadow.",
+  "behaviour": "After about a hundred pixels of scroll the bar springs inward to forty percent width, drops slightly and gains blur plus a shadow; returning to the top expands it back. Hovering a link slides a grey pill behind it.",
+  "parts": ["logo", "wordmark", "nav link", "sign in button", "get started button", "shrunk pill"],
+  "demo_content": "Brand 'Startup', links Features, Pricing, About, Blog, and a page headed 'Plan, build and ship in one place'.",
+  "states": ["hover"],
+  "kind": "site-header",
+  "look": ["dark", "rounded", "glass", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "navbar that shrinks on scroll",
+    "floating pill navigation bar",
+    "sticky header that gets smaller",
+    "top nav with blur when scrolling",
+    "site header that becomes a capsule",
+    "landing page menu bar",
+    "collapsing header for a saas site",
+    "smooth scrolling navigation"
+  ],
+  "resembles": [],
+  "use_when": "A marketing page wants a full-width top bar at rest that stays out of the way while reading.",
+  "avoid_when": "The desktop bar keeps a hard 800px minimum width, so it crowds tablets and needs the separate mobile parts.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["scroll", "viewport", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "shadow", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose Navbar, NavBody, NavItems and the mobile parts; link labels arrive as an items array, while width, blur, shadow and breakpoints are set in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A scroll listener drives a few spring properties on one or two bars.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The mobile toggle is a bare SVG icon with no label or button role, so the mobile menu cannot be opened by keyboard."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "visible", "type": "boolean", "default": null, "required": false},
+    {"name": "items", "type": "{ name; link }[]", "default": null, "required": true},
+    {"name": "onItemClick", "type": "function", "default": null, "required": false},
+    {"name": "isOpen", "type": "boolean", "default": null, "required": true},
+    {"name": "onClose", "type": "function", "default": null, "required": true},
+    {"name": "href", "type": "string", "default": null, "required": false},
+    {"name": "as", "type": "React.ElementType", "default": "a", "required": false},
+    {"name": "variant", "type": "\"primary\" | \"secondary\" | \"dark\" | \"gradient\"", "default": "primary", "required": false}
+  ],
+  "issues": [
+    "Mid-transition the shrinking bar smears over the headline and briefly looks unresolved."
+  ],
+  "polish": 4,
+  "polish_why": "Confident scroll shrink with a soft glass pill; the mid-scroll frame overlaps the headline.",
+  "unsure": ["content_from", "props"]
+}

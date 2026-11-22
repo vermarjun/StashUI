@@ -1,0 +1,147 @@
+{
+ "name": "attachment",
+ "frames": {
+  "code": "2783",
+  "best": 1,
+  "best_why": "All three visible chips show done, uploading and processing states at once, no cursor in the way.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "File chips with image preview, upload progress and a remove button.",
+ "summary": "A row of attached-file chips, each with a thumbnail or icon, a name, a status line like Uploading 64% and a small remove button. A second row shows tall image tiles plus a dashed Add file tile.",
+ "title_fix": null,
+ "appearance": "A dark composer card holds a horizontal row of rounded chips, each a small image or file icon with a name, a grey status line and a tiny x button. Below sit three tall image tiles with names and sizes, and a dashed Add file tile.",
+ "behaviour": "Uploading and processing chips spin a small spinner and shimmer their filenames; when the upload lands the status swaps to its size and the shimmer stops. Each chip can be removed with its x, and the tile row opens the file picker.",
+ "parts": [
+  "attachment chip",
+  "thumbnail",
+  "file icon",
+  "filename",
+  "status line",
+  "remove button",
+  "image tile",
+  "add file tile"
+ ],
+ "demo_content": "Files hero-shot.jpg, Q3-board-deck.pdf, revenue-by-region.xlsx, plus valley.jpg, lake.jpg and an Add file tile.",
+ "states": [
+  "loading",
+  "error",
+  "hover",
+  "focus"
+ ],
+ "kind": "file-upload",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "file chips with remove button",
+  "upload progress file list",
+  "image thumbnail file card",
+  "spinner while a file uploads",
+  "add file tile in a composer",
+  "drag and drop file chips",
+  "chat message file previews",
+  "uploader with an error state"
+ ],
+ "resembles": [],
+ "use_when": "A chat or form composer needs to show several uploaded files with their progress, size and a quick remove.",
+ "avoid_when": "The chips are display-only; the demo has no real picker or dropzone, so you wire the file input yourself.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose each chip from media, content, title, description and action children; size, orientation and state are props. The spinner, shimmer and error styling are preset classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Plain divs and buttons with colour transitions; the spinner and shimmer are simple CSS animations.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The shimmer and spinner keep moving with no reduced-motion check; icon-only remove buttons are labelled only in the demo."
+ },
+ "props": [
+  {
+   "name": "state",
+   "type": "\"idle\" | \"uploading\" | \"processing\" | \"error\" | \"done\"",
+   "default": "\"done\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "\"default\" | \"sm\" | \"xs\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "orientation",
+   "type": "\"horizontal\" | \"vertical\"",
+   "default": "\"horizontal\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(attachmentVariants({ size, orientation }), className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The fourth error attachment sits off the right edge, so the error state is never visible.",
+  "Status lines are very small grey text and read faintly on the dark chip."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy, standard file chips with clear states; small grey status text and a clipped error chip.",
+ "unsure": [
+  "content_from",
+  "traits.trigger"
+ ],
+ "title": "Attachment",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2b21884b65f6ed32",
+  "film_hash": "de37c839ef56e8f4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "name": "dropdown-menu",
+ "frames": {
+  "code": "9464",
+  "best": 3,
+  "best_why": "Menu is fully open with every row readable and no cursor covering an item.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.0
+ },
+ "tagline": "Outlined button drops open a narrow list of account actions.",
+ "summary": "A compact account menu: an outlined button opens a rounded dark panel with a muted heading, icon rows carrying shortcut hints, a ticked toggle row and signed-out action, all stacked with faint dividers.",
+ "title_fix": null,
+ "appearance": "A small outlined 'Open menu' button on black. Opening it shows a narrow dark rounded panel with a muted 'My account' heading, four icon rows with tiny keys on the right, a ticked 'Show status bar' row, a 'Team' row and 'Log out', split by thin rules.",
+ "behaviour": "Clicking the button fades and zooms in a menu just below it. Passing over a row highlights it in a slightly lighter grey; choosing a row or clicking outside closes the panel, and the tick toggles in place.",
+ "parts": [
+  "trigger button",
+  "menu panel",
+  "heading",
+  "menu row",
+  "shortcut key",
+  "checkbox row",
+  "divider"
+ ],
+ "demo_content": "An account menu with Profile, Billing, Settings, Keyboard shortcuts, Show status bar, Team and Log out.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "checked"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "account menu under a button",
+  "list of actions that pops open",
+  "kebab menu for row actions",
+  "profile settings logout options",
+  "menu with keyboard shortcut hints",
+  "button that reveals a small list",
+  "user account switcher",
+  "context menu on click"
+ ],
+ "resembles": [],
+ "use_when": "A trigger needs to open a short list of account or row actions without leaving the page.",
+ "avoid_when": "Rows are single-line and the panel is narrow, so long labels or dozens of actions need another pattern.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "nav",
+  "list-item",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "You compose the label, groups, rows, dividers and shortcut hints yourself; width, inset and the destructive row styling are set per part through props and classes.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small portal panel that exists only while the menu is open.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Roles and arrow-key movement come from the menu primitive, but the zoom and slide animations ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "sideOffset",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "'default' | 'destructive'",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "inset",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "checked",
+   "type": "boolean",
+   "default": "{checked}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Shortcut glyphs such as the shift-command keys are tiny and low contrast",
+  "No frame shows the submenu or radio rows that the source exports"
+ ],
+ "polish": 3,
+ "polish_why": "Tidy, standard account menu; tiny shortcut keys and an all-dark palette on black.",
+ "unsure": [],
+ "title": "Dropdown Menu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c6edf242d124a826",
+  "film_hash": "0b6891d67ca5e223",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

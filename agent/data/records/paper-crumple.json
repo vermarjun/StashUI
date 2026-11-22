@@ -1,0 +1,193 @@
+{
+ "name": "paper-crumple",
+ "frames": {
+  "code": "6886",
+  "best": 2,
+  "best_why": "The photo is visibly crumpled into a large folded sheet with creases and the image still readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.1
+ },
+ "tagline": "A photo crumples into a folded paper ball while you drag it.",
+ "summary": "An image on a 3D paper sheet that crumples in your hand as you hold and drag it, the folds catching the light, then springs back flat when released.",
+ "title_fix": null,
+ "appearance": "A portrait photo of a mountain range above clouds, printed edge to edge on a sheet with a slight paper texture and soft drop shadow. Mid-gesture it balls up into a wrinkled, faceted clump with the image wrapped around the folds.",
+ "behaviour": "Pressing and dragging pushes the sheet into itself, buckling the image into creases and a rounded clump that follows the pointer and tilts as it is thrown. Releasing lets it smooth back into a flat photo.",
+ "parts": [
+  "photo sheet",
+  "paper folds",
+  "drop shadow",
+  "caption"
+ ],
+ "demo_content": "A mountain range above a sea of clouds at sunrise, with the prompt Hold and drag the photo to crumple it.",
+ "states": [
+  "hover",
+  "active",
+  "dragging",
+  "loading",
+  "disabled"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "3d",
+  "textured",
+  "shadowed",
+  "airy",
+  "minimal"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "photo that crumples like paper",
+  "drag to crumple image effect",
+  "3d paper fold photo",
+  "interactive image distortion",
+  "crumpled paper photo animation",
+  "hold and drag to wrinkle picture",
+  "paper ball image effect",
+  "tactile photo interaction"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio or campaign wants a playful, tactile image that reacts to a press and drag.",
+ "avoid_when": "The crumple is a heavy 3D physics scene, needs a sized canvas area, and remote images must allow CORS.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "keyboard",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Source and back image, alt, width, height, fit, release behaviour, crumple amount and durations, fold count, wrinkle depth, paper colour and texture, lighting, shadow, drag and rotation are props.",
+ "technique": [
+  "three-js",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A three.js mesh with a CPU paper simulation and shadow-mapped lights runs during the gesture.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Space, arrow keys and Escape operate it, but the focus outline is removed and only a tiny dot appears instead."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{src || undefined}",
+   "required": true
+  },
+  {
+   "name": "alt",
+   "type": "string",
+   "default": "'Crumplable image'",
+   "required": false
+  },
+  {
+   "name": "backSrc",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "320",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "imageFit",
+   "type": "string",
+   "default": "'cover'",
+   "required": false
+  },
+  {
+   "name": "releaseBehavior",
+   "type": "string",
+   "default": "'restore'",
+   "required": false
+  },
+  {
+   "name": "crumpleAmount",
+   "type": "number",
+   "default": "0.85",
+   "required": false
+  },
+  {
+   "name": "foldCount",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "paperColor",
+   "type": "string",
+   "default": "'#f4f0e8'",
+   "required": false
+  },
+  {
+   "name": "draggable",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "In the deepest crumple the sheet shrinks to a small ball, so the photo inside becomes unrecognisable."
+ ],
+ "polish": 4,
+ "polish_why": "Tactile, believable crumple with soft lighting; the result shrinks small enough to lose the image.",
+ "unsure": [
+  "responsive",
+  "a11y.focus_visible"
+ ],
+ "title": "Paper Crumple",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8c3a0bbb543332be",
+  "film_hash": "f7997ff5ac27384d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

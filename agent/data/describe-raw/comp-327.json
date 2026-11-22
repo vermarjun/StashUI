@@ -1,0 +1,63 @@
+{
+  "name": "comp-327",
+  "frames": {
+    "code": "9987",
+    "best": 2,
+    "best_why": "Frame 2 shows the whole dialog from the icon to the magic link with every field visible.",
+    "usable": [1, 2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Invite dialog adds email rows and copies a referral link.",
+  "summary": "A trigger opens a dark dialog where you can add several teammate emails, send invites, and copy a read-only magic link with a one-click copy button.",
+  "title_fix": null,
+  "appearance": "Closed, an outlined Invite members button. Open, a tall dark rounded dialog: a circled person-plus icon, a bold left-aligned title and grey subtitle, three stacked email fields, an underlined + Add another, a white full-width Send invites, a divider, and a read-only magic link field with a copy icon.",
+  "behaviour": "Opening focuses the empty email field. Add another appends a row, the copy icon copies the link and flips to a green check for a moment, and Send invites does nothing.",
+  "parts": ["trigger button", "person icon", "title", "email fields", "add another link", "send invites button", "magic link field", "copy button"],
+  "demo_content": "Prefilled emails mark@yourcompany.com and jane@yourcompany.com; magic link https://coss.com/ui/refer/87689.",
+  "states": ["hover", "focus", "open", "success"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "invite team members popup",
+    "add emails to invite people",
+    "magic link copy dialog",
+    "send invites modal with email fields",
+    "invite teammates form",
+    "referral link copy button",
+    "multi email invite dialog",
+    "add another email input"
+  ],
+  "resembles": [],
+  "use_when": "You want to invite several teammates by email or share a referral link from one dialog.",
+  "avoid_when": "Sending is not wired and the magic link is a fixed example URL.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["children", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Seeded emails, the magic link URL and all labels are hardcoded; adding a row is the only live behaviour.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with a short email array and a clipboard call.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The copy button is labelled and focus moves to the last email, but the email label is not bound to those inputs."
+  },
+  "props": [],
+  "issues": ["Send invites has no handler, so invites are never sent.", "The email label is not associated with the repeated email inputs."],
+  "polish": 4,
+  "polish_why": "Well-organised dialog with add-row and copy feedback; sending is not wired.",
+  "unsure": ["shows_interaction", "theme"]
+}

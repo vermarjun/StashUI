@@ -1,0 +1,134 @@
+{
+ "name": "hero-highlight",
+ "frames": {
+  "code": "4513",
+  "best": 6,
+  "best_why": "Headline, purple phrase highlight and the dotted panel are all clear, with no cursor over the text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 6.4
+ },
+ "tagline": "Dotted black hero with a lilac swipe behind a few words.",
+ "summary": "A full-width dark panel covered in a faint dot grid, wrapping a headline, copy and an inline phrase marker. Moving the pointer lights a small patch of coloured dots under it.",
+ "title_fix": null,
+ "appearance": "A black full-width panel covered edge to edge in a faint dotted grid. A large white headline sits centred, with one phrase set on a lilac-to-purple rounded swipe, and a small grey line of copy beneath.",
+ "behaviour": "The dot grid stays still until the pointer moves, then a soft 200px patch of brighter indigo dots follows the cursor. The phrase swipe fills its gradient in from the left once on load.",
+ "parts": [
+  "dot grid",
+  "headline text",
+  "phrase swipe",
+  "body copy",
+  "cursor spotlight"
+ ],
+ "demo_content": "Headline 'Build beautiful products...' and a line about a curated component library.",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "textured",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "dot grid hero background",
+  "colored marker behind key words",
+  "cursor spotlight over a dotted pattern",
+  "landing section with faint dots",
+  "purple swipe behind a phrase",
+  "animated ink mark on a headline",
+  "dark hero with mouse following glow",
+  "pattern of small dots across a banner"
+ ],
+ "resembles": [],
+ "use_when": "A marketing hero wants a quiet dotted texture with a spotlight that tracks the pointer.",
+ "avoid_when": "It needs mouse movement, so the coloured dot patch never appears on touch, and text over the dots needs care.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Put your headline and copy as children; a className styles the content wrapper and containerClassName the panel. Dot colours and the 200px spotlight radius are fixed in the file.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "SVG dot layers and a masked gradient following the pointer; no canvas loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The dot spotlight only reacts to the mouse and the sweep ignores reduced-motion; the dotted texture has no text alternative."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "White letters on the pale lilac half of the phrase swipe are hard to read.",
+  "The cursor dot spotlight is too faint to notice in the recorded frames."
+ ],
+ "polish": 3,
+ "polish_why": "Crisp type and a neat dot field; the phrase swipe is low contrast and the cursor effect faint.",
+ "unsure": [
+  "frames.shows_interaction"
+ ],
+ "title": "Hero Highlight",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "22ba0ea6a206dfef",
+  "film_hash": "87f0d11a5c5365a9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

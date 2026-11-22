@@ -1,0 +1,138 @@
+{
+ "name": "placeholders-and-vanish-input",
+ "frames": {
+  "code": "5286",
+  "best": 3,
+  "best_why": "Typed question is mid-dissolve with a visible spray of particles across the field.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.3
+ },
+ "tagline": "Grey prompt rotates in a pill field, then typed words dissolve into dots.",
+ "summary": "A rounded ask-anything field that cycles grey suggestion prompts every few seconds. Typing switches to white text and lights an arrow button, and submitting scatters the words into particles.",
+ "title_fix": null,
+ "appearance": "A pill-shaped dark grey field with a grey prompt inside and a small circular arrow button at its right end, sitting under a short white heading on a black stage. Typed text is white.",
+ "behaviour": "The prompt fades upward and swaps to the next suggestion on a timer. Typing replaces it with white text and enables the arrow; submitting breaks the text into a cloud of dots that scatters sideways before the field empties.",
+ "parts": [
+  "heading",
+  "prompt text",
+  "pill field",
+  "arrow button",
+  "vanish particles"
+ ],
+ "demo_content": "Heading 'Ask anything', prompts like 'What's on your mind today?', and typed lines about installing StashUI in Vite.",
+ "states": [
+  "focus",
+  "disabled"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "pill",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "search box with rotating placeholder",
+  "input that dissolves text into particles",
+  "ask anything prompt field",
+  "pill search bar with arrow button",
+  "animated placeholder suggestions input",
+  "text vanishing animation on submit",
+  "chat style question box",
+  "field where typed words scatter away"
+ ],
+ "resembles": [
+  "ChatGPT prompt box"
+ ],
+ "use_when": "A search or ask field should feel playful and clear itself with a flourish after submit.",
+ "avoid_when": "The dissolve needs a canvas and steady frame rate, and it wipes the typed value after submit.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the placeholders array and onChange and onSubmit handlers. The three-second cycle, pill styling and particle dissolve are fixed in the file.",
+ "technique": [
+  "canvas-2d",
+  "js-animation",
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "An 800px canvas is rescanned on every text change, with particles animated on submit.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The field has no label or aria-label, the arrow button has no name, and the text dissolve ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "placeholders",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(e: ChangeEvent) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onSubmit",
+   "type": "(e: FormEvent) => void",
+   "default": "{handleSubmit}",
+   "required": true
+  }
+ ],
+ "issues": [
+  "The arrow button has no accessible name and the field has no real label.",
+  "Prompts sit at low grey contrast against the dark pill."
+ ],
+ "polish": 4,
+ "polish_why": "Clean pill with a satisfying dissolve; the grey prompt is faint and the icon button unlabelled.",
+ "unsure": [
+  "resembles"
+ ],
+ "title": "Vanish Placeholder Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0decb6b2f53e2896",
+  "film_hash": "20a960910e6cd47e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

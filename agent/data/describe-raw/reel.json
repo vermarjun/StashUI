@@ -1,0 +1,80 @@
+{
+  "name": "reel",
+  "frames": {
+    "code": "2559",
+    "best": 1,
+    "best_why": "The mountain photo fills the frame and its caption matches, with progress bars and controls all visible.",
+    "usable": [1, 2, 4],
+    "render": "partial",
+    "render_note": "Two slides show black where media should be, and captions sit over the wrong photos.",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Stories-style vertical reel with segmented timers and tap-to-advance halves.",
+  "summary": "A portrait story viewer: full-bleed photos or video, a header with an avatar and handle, thin progress segments along the top, a caption footer, and previous, play, next and mute buttons.",
+  "title_fix": null,
+  "appearance": "A tall rounded 9:16 panel on black, filled by a photo under dark top and bottom gradients. A row of thin progress bars runs across the top beneath an avatar and handle, and small round icon buttons line the bottom edge.",
+  "behaviour": "The bar for the current slide fills over that item's duration and then moves to the next, wrapping at the end. Clicking the left or right half of the picture steps back or forward, and the bottom row pauses, plays, mutes or skips.",
+  "parts": ["reel frame", "progress segments", "avatar", "handle", "caption", "control buttons"],
+  "demo_content": "Maya Chen's Italy trip: Dolomites, a coast video, Lago di Braies and a city street.",
+  "states": ["hover", "focus", "disabled"],
+  "kind": "carousel",
+  "look": ["dark", "rounded", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "instagram stories style photo viewer",
+    "vertical slideshow with timer bars",
+    "tap left or right to go back and forth",
+    "portrait story player with a progress line",
+    "swipe through photos and short videos",
+    "social media story component for a site",
+    "auto advancing image sequence with captions",
+    "how to build a stories viewer on the web"
+  ],
+  "resembles": ["Instagram Stories"],
+  "use_when": "A site wants to present a short sequence of photos or clips as a story with clear timing and captions.",
+  "avoid_when": "It relies on remote media with no loading or error state, so a failed slide shows black with only its caption.",
+  "suits": ["social", "media", "marketing"],
+  "slot_hints": ["media", "hero", "feature-card"],
+  "traits": {
+    "trigger": ["always", "click"],
+    "motion": "subtle",
+    "affects": ["image", "background", "text"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "Pass a data array of items with id, type, src and duration, plus controlled index, playing and muted props. Overlay parts are children and slides render through a callback.",
+  "technique": ["motion-library", "js-animation"],
+  "weight": "light",
+  "weight_why": "One media element at a time plus a requestAnimationFrame tick for the progress.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Icon buttons are labelled, but the full-size tap area is an unnamed button with no focus style and slides advance regardless of motion preference."
+  },
+  "props": [
+    {"name": "data", "type": "ReelItem[]", "default": null, "required": true},
+    {"name": "index", "type": "number", "default": null, "required": false},
+    {"name": "defaultIndex", "type": "number", "default": "0", "required": false},
+    {"name": "onIndexChange", "type": "(index: number) => void", "default": null, "required": false},
+    {"name": "playing", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultPlaying", "type": "boolean", "default": null, "required": false},
+    {"name": "onPlayingChange", "type": "(playing: boolean) => void", "default": null, "required": false},
+    {"name": "muted", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultMuted", "type": "boolean", "default": "true", "required": false},
+    {"name": "onMutedChange", "type": "(muted: boolean) => void", "default": null, "required": false},
+    {"name": "autoPlay", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The coast video never appears: two frames are black apart from the caption and controls.",
+    "Captions are out of step with the pictures, so the coast text sits over mountain and forest photos.",
+    "Media failures are silent, with no loading or error placeholder for a slide."
+  ],
+  "polish": 2,
+  "polish_why": "Familiar story chrome, but the recording shows black slides and captions over the wrong photos.",
+  "unsure": ["render", "shows_interaction"]
+}

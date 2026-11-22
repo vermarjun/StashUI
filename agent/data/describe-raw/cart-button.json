@@ -1,0 +1,133 @@
+{
+  "name": "cart-button",
+  "frames": {
+    "code": "6358",
+    "best": 1,
+    "best_why": "Shows the clean default cart with two Add pills, one open stepper and the subtotal footer.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Product list whose Add pills open into quantity steppers and a live total.",
+  "summary": "A compact cart of three grocery items with an Add button on each row. Pressing Add turns the button into a minus, count and plus, and the subtotal and checkout total update.",
+  "title_fix": null,
+  "appearance": "A dark rounded panel lists three items, each with a tinted icon tile, name, price and detail, and a round pill button on the right. A footer row holds the subtotal and a white Checkout button.",
+  "behaviour": "Pressing Add widens the pill into a minus, quantity and plus; holding either end repeats. The count rolls digit by digit and the subtotal and Checkout sum update, while a limit message appears at the maximum.",
+  "parts": [
+    "cart panel",
+    "item row",
+    "icon tile",
+    "price line",
+    "add pill",
+    "stepper",
+    "subtotal",
+    "checkout button"
+  ],
+  "demo_content": "Grocery items Oat milk, Butter croissant and Cherries with prices and subtotal.",
+  "states": [
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "kind": "checkout",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "add control that becomes a stepper",
+    "product list with quantity stepper",
+    "shopping cart with subtotal",
+    "inline add and minus control",
+    "grocery cart list component",
+    "ecommerce cart with total updating",
+    "quantity picker on a product row",
+    "small cart with checkout button"
+  ],
+  "resembles": [],
+  "use_when": "A short product list needs inline quantity control and a running total without a full cart page.",
+  "avoid_when": "Item names, prices and icons are baked into the default array, so a real shop must supply its own list.",
+  "suits": [
+    "ecommerce"
+  ],
+  "slot_hints": [
+    "list-item"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "hover"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an items array, starting quantities, currency and a checkout callback; icon tints and layout classes are in the source.",
+  "technique": [
+    "motion-library",
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "Three rows with a few width and roll animations; idle when untouched.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Quantity buttons are labelled, totals are live, and motion honours reduced-motion."
+  },
+  "props": [
+    {
+      "name": "items",
+      "type": "CartItem[]",
+      "default": "DEFAULT_ITEMS",
+      "required": false
+    },
+    {
+      "name": "defaultQuantities",
+      "type": "Record<string, number>",
+      "default": "{ croissant: 2 }",
+      "required": false
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "default": "$",
+      "required": false
+    },
+    {
+      "name": "onCheckout",
+      "type": "(quantities: Record<string, number>) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Tidy cart rows with a clever rolling count and a clear total.",
+  "unsure": []
+}

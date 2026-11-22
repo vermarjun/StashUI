@@ -1,0 +1,78 @@
+{
+  "name": "text-animate",
+  "frames": {
+    "code": "2724",
+    "best": 1,
+    "best_why": "Both lines are fully settled and readable, which is the only state the clip ever shows.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "no"
+  },
+  "tagline": "A heading and a caption settle in with a soft staggered fade.",
+  "summary": "A bold heading over a smaller grey caption, both built to fade, slide and blur into place word by word or character by character when scrolled into view.",
+  "title_fix": null,
+  "appearance": "Two centred lines on black: a thick white heading reading Animate your text beautifully, and below it a smaller grey sentence. There is generous space above and below the pair.",
+  "behaviour": "The words rise and sharpen from a blur in a staggered sequence, while the caption below fades one character at a time. The clip itself only catches the finished state.",
+  "parts": ["heading text", "caption text", "dark background"],
+  "demo_content": "The heading Animate your text beautifully above Each character fades in one by one.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["monochrome", "minimal", "bold", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text that fades and blurs in",
+    "staggered word entrance",
+    "text reveal on scroll",
+    "words appearing one by one",
+    "fade in heading animation",
+    "animated paragraph entrance",
+    "blur up text effect",
+    "character fade in caption"
+  ],
+  "resembles": [],
+  "use_when": "A heading or tagline should enter with a soft staggered fade as it scrolls into view.",
+  "avoid_when": "Content that must be readable instantly, since the entrance briefly hides the words.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["headline", "hero", "body-text"],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the text as a string child and choose animation, by, delay, duration, as, startOnView, once and accessible, or supply your own variants; the presets live in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A short run of staggered opacity and blur tweens that stop once the text is revealed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "A hidden span and aria-label expose the full text, but the entrance ignores reduced-motion preferences."
+  },
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "animation", "type": "AnimationVariant", "default": "\"fadeIn\"", "required": false},
+    {"name": "by", "type": "\"text\" | \"word\" | \"character\" | \"line\"", "default": "\"word\"", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "duration", "type": "number", "default": "0.3", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "segmentClassName", "type": "string", "default": null, "required": false},
+    {"name": "as", "type": "MotionElementType", "default": "\"p\"", "required": false},
+    {"name": "startOnView", "type": "boolean", "default": "true", "required": false},
+    {"name": "once", "type": "boolean", "default": "false", "required": false},
+    {"name": "accessible", "type": "boolean", "default": "true", "required": false},
+    {"name": "variants", "type": "Variants", "default": null, "required": false}
+  ],
+  "issues": [
+    "The clip only captures the finished text, so the entrance animation is never shown."
+  ],
+  "polish": 3,
+  "polish_why": "Clean typographic demo, but the recording shows none of the motion that defines it.",
+  "unsure": []
+}

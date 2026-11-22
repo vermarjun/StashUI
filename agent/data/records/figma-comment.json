@@ -1,0 +1,161 @@
+{
+ "name": "figma-comment",
+ "frames": {
+  "code": "4612",
+  "best": 3,
+  "best_why": "Comment card is fully open with readable author, time and complete message over the canvas.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.7
+ },
+ "tagline": "Design comment pins that spring open into author, time and message.",
+ "summary": "Small avatar pins sit on a mock design canvas. Clicking one expands it into a rounded card showing who wrote it, when, and their comment, and an outside click closes it.",
+ "title_fix": null,
+ "appearance": "Round avatar pins scattered over a dark mock landing page. An open one becomes a dark rounded card with the avatar at its top left, a bold name, a muted time, and a few lines of light message text.",
+ "behaviour": "Clicking a pin spring-expands it into the comment card while the avatar slides in from the corner. The text fades and unblurs into place, and clicking outside collapses it back to a round pin.",
+ "parts": [
+  "avatar pin",
+  "comment card",
+  "author name",
+  "timestamp",
+  "message text",
+  "design canvas"
+ ],
+ "demo_content": "Mock landing hero labelled 'Landing / Hero: Desktop' with comments from Maya Chen, Leo Park and Ana Ruiz.",
+ "states": [
+  "open"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "shadowed"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "figma style comment pin",
+  "design feedback pin on canvas",
+  "click to open comment bubble",
+  "avatar pin with comment popup",
+  "leave comments on a mockup",
+  "collaborative design review marker",
+  "small round comment marker",
+  "comment pinned to layout"
+ ],
+ "resembles": [
+  "Figma comments"
+ ],
+ "use_when": "Reviewers need to leave or read notes anchored to a spot on a design, mockup or prototype.",
+ "avoid_when": "You need a threaded conversation with replies; the card shows only one author and message.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Author, avatar, message, timestamp, width and position class are all props. Card colours, radius and the spring are set in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One avatar, a short card and a single spring plus blur transition; nothing loops.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "The pin is a div with a click handler, so it cannot be opened from the keyboard or announced as a control."
+ },
+ "props": [
+  {
+   "name": "authorName",
+   "type": "string",
+   "default": "DEFAULT_AUTHOR.name",
+   "required": false
+  },
+  {
+   "name": "avatarUrl",
+   "type": "string",
+   "default": "DEFAULT_AUTHOR.avatar",
+   "required": false
+  },
+  {
+   "name": "avatarAlt",
+   "type": "string",
+   "default": "DEFAULT_AUTHOR.name",
+   "required": false
+  },
+  {
+   "name": "message",
+   "type": "string",
+   "default": "\"What happens if we adjust this to handle a light and dark m",
+   "required": false
+  },
+  {
+   "name": "timestamp",
+   "type": "string",
+   "default": "\"Just now\"",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "180",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute bottom-0 left-0 cursor-pointer overflow-hidden rou",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "function",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The pin trigger is a non-focusable div, so keyboard users cannot open a comment.",
+  "Frame 5 catches the card mid-blur, so its text is not readable."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp spring expansion and blurred text reveal; pins read clearly against the dark canvas.",
+ "unsure": [],
+ "title": "Figma Comment",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a341b64fe71fbba3",
+  "film_hash": "7010713622b732c0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

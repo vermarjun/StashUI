@@ -1,0 +1,185 @@
+{
+ "name": "electric-logo",
+ "frames": {
+  "code": "2001",
+  "best": 3,
+  "best_why": "The bolt is fully charged with a bright rim, visible glow and short arcs, and sits clear of the frame edges.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.0
+ },
+ "tagline": "A lightning-bolt mark traced in crackling electric light.",
+ "summary": "Any logo shape outlined by restless electric strands, glowing blue-white on black. The current wanders along the edge, throws short arcs, and flares brighter as the pointer nears.",
+ "title_fix": null,
+ "appearance": "A tall lightning bolt glows in pale electric light on pure black, its outline not a clean line but a bundle of thin wavering filaments. Soft blue halos follow the shape and faint loops of current flicker around the corners.",
+ "behaviour": "The edge never rests: strands drift and swell while brightness pulses and short arcs snap across the notches. Moving the pointer close heats the glow and draws more arcs, and a click sends a ripple and flash along the mark.",
+ "parts": [
+  "logo outline",
+  "electric strands",
+  "spark arcs",
+  "glow"
+ ],
+ "demo_content": "A lightning-bolt symbol.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "icon",
+ "look": [
+  "neon",
+  "glow",
+  "dark",
+  "technical"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "electric lightning logo",
+  "neon bolt animation",
+  "logo with electric border",
+  "crackling outline effect",
+  "blue energy logo for a brand",
+  "lightning sparks around an icon",
+  "glowing wireframe symbol",
+  "electricity effect on an svg"
+ ],
+ "resembles": [],
+ "use_when": "A brand mark, game icon or badge that should feel charged, alive or high-voltage.",
+ "avoid_when": "It is decorative only, needs a sized parent, and the constant crackle is costly on weak GPUs.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "logo-wall",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "shadow",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Pass any logo through src and set the core and glow colours, scale, intensity, strand count, thickness, bend, crackle, arcs and flicker. Speed, fill, cursor response and theme are props.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen shader runs six wandering strands and five arc fields every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": true,
+  "note": "The container exposes no role, name or aria-hidden flag, and the pointer flare has no keyboard route."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "BOLT",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "mix(color, vec3(alpha), clamp(hot * grow, 0.0, 1.0) * ink * ",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "'#ad6dff'",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "0.7",
+   "required": false
+  },
+  {
+   "name": "intensity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "thickness",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "strands",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "crackle",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "bend",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "arcs",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The first frame shows a flat thin outline with no electricity, a weak opening still."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing high-voltage light with varied strands; the uncharged first frame is a weak opening.",
+ "unsure": [],
+ "title": "Electric Logo",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "339630c61fb210fd",
+  "film_hash": "350be9ee476ad4f7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

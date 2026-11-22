@@ -1,0 +1,63 @@
+{
+  "name": "comp-319",
+  "frames": {
+    "code": "1860",
+    "best": 5,
+    "best_why": "Frame 5 shows the bottom of the terms with I agree finally enabled.",
+    "usable": [1, 2, 3, 4, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Terms dialog keeps I agree disabled until you scroll to the end.",
+  "summary": "A trigger opens a narrow dialog of legal text. An outlined Cancel sits beside a dimmed I agree that only lights up once the body is scrolled to the bottom.",
+  "title_fix": null,
+  "appearance": "Closed, a single outlined button. Open, a tall dark rounded dialog: a bordered title bar reading Terms & Conditions, dense small legal paragraphs with bold clause names, and a bordered footer with a grey hint plus Cancel and I agree.",
+  "behaviour": "Scrolling the body toward the bottom flips I agree from dim and disabled to an active button, and the footer hint disappears. Cancel or Escape closes the dialog.",
+  "parts": ["trigger button", "title bar", "terms text", "footer hint", "cancel button", "agree button"],
+  "demo_content": "Legal text on acceptance of terms, account responsibilities, content use, liability, conduct, changes and termination.",
+  "states": ["hover", "focus", "open", "disabled"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "dense", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "terms and conditions dialog",
+    "scroll to accept agreement popup",
+    "clickwrap terms modal",
+    "agree button enabled after reading",
+    "legal terms scroll box with cancel",
+    "must read before accepting dialog",
+    "license agreement acceptance modal",
+    "popup that unlocks when scrolled"
+  ],
+  "resembles": [],
+  "use_when": "You must record explicit acceptance of long terms and want to push readers to the end.",
+  "avoid_when": "The gate only checks scroll position, so it can be bypassed and proves nothing was read.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "scroll"],
+    "motion": "subtle",
+    "affects": ["children", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Every clause, heading and label is hardcoded; the only logic is a scroll check and an enabled flag.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with a scroll listener; no animation beyond the opening fade.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The dialog traps focus and Escape closes it, but nothing announces that I agree has unlocked after scrolling."
+  },
+  "props": [],
+  "issues": ["The read gate only checks scroll position, so it does not verify anything was read.", "Dense legal copy in a narrow column is slow to scan."],
+  "polish": 3,
+  "polish_why": "The unlock pattern reads clearly, but the wall of legal filler looks generic.",
+  "unsure": ["shows_interaction"]
+}

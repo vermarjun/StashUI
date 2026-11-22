@@ -1,0 +1,117 @@
+{
+ "name": "avatar",
+ "frames": {
+  "code": "8052",
+  "best": 1,
+  "best_why": "Both rows are fully lit with every face and fallback visible and no cursor near them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 0.5
+ },
+ "tagline": "Round face photos that drop back to grey initials when missing.",
+ "summary": "User portraits shown as clipped circles, with a grey initials fallback when a picture is unavailable, plus an overlapping stack of smaller faces that ends in a plus-eight counter.",
+ "title_fix": null,
+ "appearance": "Two rows on black. The top row has six large round portraits: four photos, a grey circle reading JL and a softened-square portrait. Below, five small round photos overlap and end in a grey circle reading +8.",
+ "behaviour": "Static: nothing moves. Photos simply fill their circles, and a missing or failed image would swap to initials on a flat grey circle.",
+ "parts": [
+  "round portrait",
+  "photo",
+  "initials fallback",
+  "square portrait",
+  "overlapping stack",
+  "overflow counter"
+ ],
+ "demo_content": "Portrait photos of named people, a grey JL fallback, a square-cornered portrait and a stacked group ending in +8.",
+ "states": [],
+ "kind": "avatar",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "round profile picture for a user",
+  "user photo with initials fallback",
+  "overlapping faces for a group",
+  "team member portrait circles",
+  "image that falls back to letters",
+  "stacked profile icons with a count",
+  "small headshot in a comment",
+  "user initials when no photo"
+ ],
+ "resembles": [],
+ "use_when": "You show people by face and need a tidy fallback when a photo is missing or fails.",
+ "avoid_when": "Falls back to dull initials, and the demo pulls images from an external placeholder service.",
+ "suits": [
+  "saas",
+  "social",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "avatar",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "You supply the image and the fallback as children; size and corner radius come from className, and the fallback text is whatever you put inside it.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Remote images clipped to a circle; no animation or script beyond image loading.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Images carry alt text in the demo and fallbacks show initials; the decorative stack images are given an empty alt."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The square portrait and grey JL circle sit in a row of round faces, which reads as accidental",
+  "Every frame is the same, so loading and fallback states are never actually shown"
+ ],
+ "polish": 3,
+ "polish_why": "Neat photo set with a working initials fallback; the mixed round and square shapes clash.",
+ "unsure": [
+  "traits.trigger"
+ ],
+ "title": "Avatar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a25795e612099da0",
+  "film_hash": "46e9650b2e054e51",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

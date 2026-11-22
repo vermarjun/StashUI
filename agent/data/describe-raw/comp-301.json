@@ -1,0 +1,63 @@
+{
+  "name": "comp-301",
+  "frames": {
+    "code": "4017",
+    "best": 1,
+    "best_why": "Slim bar with message and both buttons fully visible; frame 1 has no cursor over the controls.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "Slim bar asks visitors to accept or decline tracking, with two buttons.",
+  "summary": "A dark, wide bar that explains the site's cookie use and offers Accept and Decline buttons. The buttons sit inline beside the text on wide screens and wrap under it on narrow ones.",
+  "title_fix": null,
+  "appearance": "A thin near-black bar with a one-pixel border and softly rounded corners spans most of the stage. Small light-grey text sits on the left; on the right a filled white Accept button and an outlined Decline button sit side by side.",
+  "behaviour": "At rest, nothing moves: a fixed message with two buttons. The clip only shows the cursor drifting across them, and no click handler is wired in the source.",
+  "parts": ["message text", "accept button", "decline button"],
+  "demo_content": "Cookie notice text about improving experience, analysing usage and personalised content.",
+  "states": ["hover", "focus"],
+  "kind": "toast",
+  "look": ["dark", "outlined", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "cookie banner at bottom of page",
+    "accept or decline cookies notice",
+    "gdpr permission bar",
+    "website privacy consent strip",
+    "small bar asking to allow cookies",
+    "cookie policy alert with two buttons",
+    "site tracking consent prompt",
+    "eu cookie law message bar"
+  ],
+  "resembles": [],
+  "use_when": "Visitors must accept or decline tracking before they continue on a site.",
+  "avoid_when": "The demo buttons have no click handlers, so dismissal and saved choice must be wired yourself.",
+  "suits": ["marketing", "ecommerce", "saas"],
+  "slot_hints": ["toast", "footer"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The message and both button labels are written in the file; colours and spacing come from theme and shared button classes.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A thin static bar with two buttons; no script, no animation.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The bar has no role or live region, so screen readers are not told a consent notice appeared; the buttons do carry visible text."
+  },
+  "props": [],
+  "issues": ["Accept and Decline have no handlers, so in the clip neither button dismisses the bar."],
+  "polish": 3,
+  "polish_why": "Tidy default banner styling, but no behaviour and a lot of empty stage around it.",
+  "unsure": ["focus_visible"]
+}

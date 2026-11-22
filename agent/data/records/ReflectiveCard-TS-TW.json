@@ -1,0 +1,187 @@
+{
+ "name": "ReflectiveCard-TS-TW",
+ "frames": {
+  "code": "7612",
+  "best": 4,
+  "best_why": "A broad metallic sheen covers the card and the name reads most clearly against it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 4.0
+ },
+ "tagline": "A portrait card of frosted silver metal, mirrored live from the camera.",
+ "summary": "A tall frosted-metal ID card that mirrors whatever the webcam sees behind a blurred, grainy silver surface. White text shows a name and job title, a secure-access badge, an ID number and a fingerprint mark.",
+ "title_fix": null,
+ "appearance": "A tall rounded card filled by a light grey, grainy, blurred metal surface with a bright glow drifting across the middle. White uppercase text sits over it: a small badge and activity icon at the top, the name ALEXANDER DOE with SENIOR DEVELOPER beneath, and an ID number above a fingerprint icon.",
+ "behaviour": "The surface reflects the live camera feed through a blurred, monochrome, metallic filter, so the sheen and grain shift as the scene in front of the camera moves. The overlay text and badge stay fixed.",
+ "parts": [
+  "card surface",
+  "access badge",
+  "name",
+  "job title",
+  "id number",
+  "fingerprint icon"
+ ],
+ "demo_content": "Name ALEXANDER DOE, title SENIOR DEVELOPER, badge SECURE ACCESS and ID number 8901-2345-6789.",
+ "states": [],
+ "kind": "card",
+ "look": [
+  "light",
+  "textured",
+  "glass",
+  "monochrome",
+  "rounded"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "card that mirrors your webcam like metal",
+  "frosted silver id badge",
+  "live camera reflection on a card",
+  "security access pass card",
+  "brushed metal name card",
+  "webcam glass distortion card",
+  "developer id card with fingerprint",
+  "grayscale frosted glass panel"
+ ],
+ "resembles": [],
+ "use_when": "You want a login or profile card that shows a live, stylised camera view of the user as a security pass.",
+ "avoid_when": "It needs camera permission; without a working webcam the surface stays blank grey and the white text is low contrast.",
+ "suits": [
+  "fintech",
+  "saas"
+ ],
+ "slot_hints": [
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Props tune blur strength, text colour, metalness, roughness, overlay colour, displacement, noise scale, specular, grayscale and distortion. The name, title, badge and ID text are fixed in the source.",
+ "technique": [
+  "svg-filter",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "A live video stream runs an SVG turbulence and displacement filter on every frame.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "It requests the camera on mount with no visible fallback, and white text over a bright live surface is very low contrast."
+ },
+ "props": [
+  {
+   "name": "blurStrength",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'white'",
+   "required": false
+  },
+  {
+   "name": "metalness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "roughness",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "overlayColor",
+   "type": "string",
+   "default": "'rgba(255, 255, 255, 0.1)'",
+   "required": false
+  },
+  {
+   "name": "displacementStrength",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "noiseScale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "specularConstant",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "grayscale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "glassDistortion",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The catalogue says the glare tracks the cursor, but the code has no pointer handlers; only the webcam changes.",
+  "The white name, badge and ID text sit on a bright surface with very low contrast.",
+  "Camera permission is requested on load with no visible fallback when it is denied."
+ ],
+ "polish": 3,
+ "polish_why": "Distinctive metallic surface, but the washed-out reflection buries the text and detail.",
+ "unsure": [
+  "kind",
+  "frames.shows_interaction"
+ ],
+ "title": "Webcam Reflective Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "188489450c0a76a2",
+  "film_hash": "d08a41362cde4789",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

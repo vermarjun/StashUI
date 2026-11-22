@@ -1,0 +1,185 @@
+{
+ "name": "FuzzyText-TS-TW",
+ "frames": {
+  "code": "3184",
+  "best": 4,
+  "best_why": "The whole word reads cleanly while the horizontal tearing shows strongest at its edges.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 4.1
+ },
+ "tagline": "Heavy white letters tremble with horizontal static.",
+ "summary": "A word is drawn in a very heavy white face and redrawn each frame as thin horizontal slices shifted at random, so its outline buzzes like bad reception. Hovering over it makes the shake stronger.",
+ "title_fix": null,
+ "appearance": "One large white word fills a black stage in a very heavy sans face, its edges torn into uneven horizontal steps. A small grey caption sits centred below the word.",
+ "behaviour": "Each frame redraws the word as horizontal scanlines nudged left and right at random, so the outline shivers non-stop. Hovering over the letters roughly doubles the shake and releasing lets it calm.",
+ "parts": [
+  "white word",
+  "jagged edges",
+  "caption"
+ ],
+ "demo_content": "The word \"Fuzzy\" above the hint \"hover to intensify\".",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "bold",
+  "monochrome",
+  "technical",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "text that shakes like bad signal",
+  "glitchy vibrating letters",
+  "fuzzy edges on a headline",
+  "word jitter effect on hover",
+  "vhs static text distortion",
+  "big bold lettering with noise",
+  "shaky title for music site",
+  "signal interference text style"
+ ],
+ "resembles": [],
+ "use_when": "A loud title on a dark page should feel unstable, raw or lo-fi.",
+ "avoid_when": "Body copy or accessibility-critical text: the constant jitter hurts legibility.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "social"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The word is passed as children; size, weight, font, colour or gradient, base and hover shake, speed, direction and glitch or click extras are props.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "It loops over every row of the text and redraws them at up to 60fps.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The word exists only as canvas pixels, so screen readers cannot read it; the jitter never stops."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fontSize",
+   "type": "number | string",
+   "default": "'clamp(2rem, 8vw, 8rem)'",
+   "required": false
+  },
+  {
+   "name": "fontWeight",
+   "type": "string | number",
+   "default": "900",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "baseIntensity",
+   "type": "number",
+   "default": "0.18",
+   "required": false
+  },
+  {
+   "name": "hoverIntensity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "enableHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fuzzRange",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "fps",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"horizontal\" | \"vertical\" | \"both\"",
+   "default": "'horizontal'",
+   "required": false
+  },
+  {
+   "name": "gradient",
+   "type": "string[] | null",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "letterSpacing",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Bold legible word with a convincing signal buzz; a one-trick effect with plain framing.",
+ "unsure": [
+  "responsive",
+  "theme"
+ ],
+ "title": "Fuzzy Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "178b516d2ab8f43b",
+  "film_hash": "8ed1426590cf5956",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

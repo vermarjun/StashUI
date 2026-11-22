@@ -1,0 +1,186 @@
+{
+ "name": "call-chip",
+ "frames": {
+  "code": "4069",
+  "best": 2,
+  "best_why": "The bash chip is mid-run with a 2205 ms timer while the edit chip below also counts up, showing the live state.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 3.7
+ },
+ "tagline": "Compact tool-call chip with a live timer and a progress wash.",
+ "summary": "A small inline chip naming an agent's tool call, its argument and an elapsed time. A translucent wash fills across the bar while it runs, then it turns green with a tick when done or red with a retry on failure.",
+ "title_fix": null,
+ "appearance": "A stack of narrow dark rounded bars, each holding a tiny monochrome icon, a short bold tool name, a monospace argument and a right-aligned timer. Faint lighter fills sit inside the bars, and the rows are tightly stacked.",
+ "behaviour": "While a chip runs, a translucent wash creeps across its width toward the timer, which counts up in milliseconds. On completion the wash turns green and the icon rolls to a tick; on failure it turns red and the whole chip shakes.",
+ "parts": [
+  "icon",
+  "tool name",
+  "argument",
+  "timer",
+  "progress wash"
+ ],
+ "demo_content": "Tool calls grep \"TODO\" src/, read src/app/checkout.tsx, bash npm run test -- --ci and edit src/lib/cart.ts.",
+ "states": [
+  "loading",
+  "success",
+  "error"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "agent tool call status chip",
+  "inline command progress bar",
+  "chip with a running timer",
+  "terminal command that shows elapsed time",
+  "loading pill for a function call",
+  "small status bar for ai tools",
+  "task row with success and error states",
+  "shaking error chip"
+ ],
+ "resembles": [],
+ "use_when": "An agent interface should show which tool is running, what it is doing and how long it takes.",
+ "avoid_when": "The text is tiny and muted on a dark surface, and the timer needs a wide row to avoid crowding.",
+ "suits": [
+  "ai-chat",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Props set the icon, tool name, argument, status, expected duration, size, colours, wash opacity, shake, timer visibility and a retry callback.",
+ "technique": [
+  "css-transition",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A few chips; only the timer runs a frame loop, and only while a chip is running.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Status is announced and retry is a real button, but that button has no visible focus and the chip text is hidden from readers."
+ },
+ "props": [
+  {
+   "name": "icon",
+   "type": "CallChipIcon | ReactNode",
+   "default": "'terminal'",
+   "required": false
+  },
+  {
+   "name": "name",
+   "type": "string",
+   "default": "'bash'",
+   "required": false
+  },
+  {
+   "name": "argument",
+   "type": "string",
+   "default": "'npm test'",
+   "required": false
+  },
+  {
+   "name": "status",
+   "type": "CallChipStatus",
+   "default": "'running'",
+   "required": false
+  },
+  {
+   "name": "expectedMs",
+   "type": "number",
+   "default": "2500",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "34",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "surfaceColor",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  },
+  {
+   "name": "doneColor",
+   "type": "string",
+   "default": "'#22c55e'",
+   "required": false
+  },
+  {
+   "name": "errorColor",
+   "type": "string",
+   "default": "'#ef4444'",
+   "required": false
+  },
+  {
+   "name": "showTimer",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "onRetry",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The tool name, argument and timer are hidden from screen readers; only a composed status sentence is read."
+ ],
+ "polish": 3,
+ "polish_why": "Clean chip with a nice progress wash; tiny muted text and near-identical frames.",
+ "unsure": [],
+ "title": "Call Chip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "52ba0f395c14bc0c",
+  "film_hash": "01e5c13d8e1d83a4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

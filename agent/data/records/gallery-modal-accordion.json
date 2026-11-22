@@ -1,0 +1,118 @@
+{
+ "name": "gallery-modal-accordion",
+ "frames": {
+  "code": "1705",
+  "best": 5,
+  "best_why": "Frame 5 shows one photo opened large over the blurred strip; the rest are hover previews of the closed accordion.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "Slivers of photos widen under the cursor and open into a big square.",
+ "summary": "A row of thin photo strips that widen on hover and open one image large over a blurred page. A title and short description sit in a strip at the foot of the opened photo.",
+ "title_fix": null,
+ "appearance": "A horizontal row of narrow vertical image slivers with rounded corners; one sliver widens into a tall rectangle under the cursor. Opened, a single square photo floats over a blurred, darkened copy of the row, with a small caption strip at its base.",
+ "behaviour": "Sliding across the row widens whichever sliver is under the pointer; clicking it opens that photo as a centered square while the row behind blurs and dims. Clicking the backdrop or pressing Escape closes it.",
+ "parts": [
+  "image sliver",
+  "expanded photo",
+  "opened photo",
+  "caption strip",
+  "title",
+  "description",
+  "blurred backdrop"
+ ],
+ "demo_content": "Eleven mountain and nature photos with titles such as Misty Mountain Majesty and Winter Wonderland",
+ "states": [
+  "hover",
+  "open",
+  "active"
+ ],
+ "kind": "gallery-section",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "horizontal image accordion gallery",
+  "photo strips that widen on hover",
+  "click a picture to see it larger",
+  "image lightbox over a blurred page",
+  "expanding strip photo gallery",
+  "portfolio hover gallery with popup",
+  "row of tall thumbnails",
+  "gallery images that grow and open"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio needs many images in little space but still wants a big single view.",
+ "avoid_when": "Only slivers show at rest, so images are hard to judge without hovering each one.",
+ "suits": [
+  "portfolio",
+  "media"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "itemsArr holds each image URL, title, description and tags; sliver widths and overlay blur live in the file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Eleven remote photos with width animation and a full-screen blurred overlay.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Photos are click-only images with no alt; Escape closes the overlay but nothing on the strip can be tabbed to."
+ },
+ "props": [],
+ "issues": [
+  "Strip images have no alt text; only the opened photo gets a generic alt.",
+  "The caption over the opened photo is faint and hard to read."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive hover accordion and modal reveal; faint captions and no alt text cost a point.",
+ "unsure": [
+  "resembles"
+ ],
+ "title": "Gallery Modal Accordion",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "35d30198055d18c7",
+  "film_hash": "f76bc51480399b2f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

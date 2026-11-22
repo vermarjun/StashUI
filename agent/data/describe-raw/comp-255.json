@@ -1,0 +1,63 @@
+{
+  "name": "comp-255",
+  "frames": {
+    "code": "2558",
+    "best": 4,
+    "best_why": "Knob is at the far right with the track fully filled and the field reading 100, the clearest full-range view.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Slide the bar or type a number in the little box on its right.",
+  "summary": "A volume-style slider with a compact number field at its end. Dragging the knob fills the track and rewrites the field, and typing in the field moves the knob to match.",
+  "title_fix": null,
+  "appearance": "A small Volume label sits above a long grey track whose left portion is solid white behind a round white knob. A narrow rounded box at the right end of the row shows the same number in centred text.",
+  "behaviour": "Dragging the knob grows the filled track and updates the box as it moves; typing a number and pressing Enter or leaving the box jumps the knob to that spot, and out-of-range text is corrected on blur.",
+  "parts": ["label", "track", "filled track", "knob", "value field"],
+  "demo_content": "Label \"Volume\" on a 0 to 100 scale, starting at 25 and dragged up to 100 before settling at 60.",
+  "states": ["hover", "focus", "active"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "rounded", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "volume bar with a number box",
+    "slider and text field kept in sync",
+    "type a percentage or drag the knob",
+    "adjust a value out of one hundred",
+    "compact range control with a readout",
+    "set an exact number on a slider",
+    "horizontal fill bar with an input",
+    "control for picking a percentage"
+  ],
+  "resembles": [],
+  "use_when": "Users mostly drag a quick value but sometimes need to type an exact number.",
+  "avoid_when": "The number field is only about 56px wide, so long decimals or unit suffixes would clip.",
+  "suits": ["any"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label, minimum, maximum and starting value are written in the source; the field width and number format need edits.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A single track and one small input, with no animation while idle.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Both controls have names, but they are generic: the field says Enter value rather than what it sets."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Neat and legible, though it is essentially a plain slider with a stock input beside it.",
+  "unsure": []
+}

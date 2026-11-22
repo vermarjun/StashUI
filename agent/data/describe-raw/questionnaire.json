@@ -1,0 +1,72 @@
+{
+  "name": "questionnaire",
+  "frames": {
+    "code": "7262",
+    "best": 4,
+    "best_why": "Two answers are ticked and the full question, helper line and footer buttons are all in view.",
+    "usable": [1, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Step through questions one at a time, ticking answers as progress counts up.",
+  "summary": "A multi-step questionnaire showing one question at a time: single or multi-select answer cards, an optional freeform field, a counting progress label, and Previous, Skip and Next buttons that slide between steps.",
+  "title_fix": null,
+  "appearance": "A narrow form on black: a small Question 1 of 3 line, a bold question, a grey helper sentence, then stacked rounded answer cards each with a small square or round indicator and a letter at the right. Buttons run along the bottom edge.",
+  "behaviour": "Choosing an answer fills its indicator with a tick or dot while the card tints. Next slides the current question out and the following one in with a blur and a height change, the progress line counts up, Skip bypasses the question and Save plan replaces Next on the last step.",
+  "parts": ["progress label", "question title", "description", "answer card", "choice indicator", "shortcut key", "freeform input", "footer buttons"],
+  "demo_content": "Questions about agent handoffs and progress updates, with answers like Tool call timeline and Approval checkpoints.",
+  "states": ["hover", "focus", "active", "checked", "error"],
+  "kind": "form",
+  "look": ["dark", "outlined", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "multi step survey with one question at a time",
+    "wizard form with answer cards",
+    "choose options then click next flow",
+    "onboarding questions with a progress count",
+    "single and multiple choice form",
+    "skippable questions with a freeform box",
+    "guided setup form for a product",
+    "how to build a step by step questions form"
+  ],
+  "resembles": ["Typeform"],
+  "use_when": "A short guided survey or setup flow should ask one thing at a time instead of showing every field at once.",
+  "avoid_when": "Questions and answers are written into the demo markup, so real survey content means editing and re-authoring the steps.",
+  "suits": ["saas", "dashboard", "ai-chat"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["layout", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose steps from the Questionnaire parts: items with a title, description, choices and an input, then Previous, Skip, Next and Submit. Question copy is children; timings come from the motion tokens.",
+  "technique": ["motion-library", "js-animation"],
+  "weight": "light",
+  "weight_why": "A few cards and buttons; animations run only when the step or an answer changes.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Real inputs, visible focus rings and labelled groups, with reduced motion falling back to plain fades."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "name", "type": "string", "default": null, "required": false},
+    {"name": "required", "type": "boolean", "default": "false", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "render", "type": "ReactElement", "default": null, "required": false}
+  ],
+  "issues": [
+    "The freeform field in frame 1 has only a placeholder, so it reads as one more answer card rather than a text box.",
+    "Answer card borders and helper text are very faint against black, so the options take effort to read."
+  ],
+  "polish": 4,
+  "polish_why": "Refined step flow with springy checks and a rolling counter; the options are faint on black.",
+  "unsure": ["best"]
+}

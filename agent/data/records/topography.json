@@ -1,0 +1,182 @@
+{
+ "name": "topography",
+ "frames": {
+  "code": "9451",
+  "best": 3,
+  "best_why": "The contours are fully lit and a tall peak with dense rings fills the left of the frame.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 2.6
+ },
+ "tagline": "Endless glowing contour lines ripple across a dark 3D terrain.",
+ "summary": "A full-screen field of thin blue contour lines laid over rolling procedural hills, seen in perspective as the camera drifts. Moving the pointer lifts and lights the lines near the cursor, and a click sends rings outward.",
+ "title_fix": null,
+ "appearance": "A black stage covered edge to edge with fine blue-white contour rings that bunch over rounded hills and fan across flat valleys. Brightness fades with distance, so far ridges dissolve into the dark.",
+ "behaviour": "The camera glides forward slowly while the landscape shifts and re-forms, contour lines redrawing as peaks rise. The pointer lifts and brightens nearby lines, and clicking pushes a ring across the ground.",
+ "parts": [
+  "contour lines",
+  "terrain hills",
+  "distance fade",
+  "glow"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "technical",
+  "glow"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "glowing contour lines background",
+  "topographic map terrain animation",
+  "dark neon wave landscape",
+  "animated topographic lines for hero",
+  "3d mountain contour backdrop",
+  "shader terrain with moving lines",
+  "living map background effect",
+  "blue lines rippling over hills"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero or app background needs depth and motion without competing with foreground text.",
+ "avoid_when": "It is a WebGL scene needing a sized parent and a constant render loop, so it is heavy on phones.",
+ "suits": [
+  "saas",
+  "devtool",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Colour, line count and width, elevation, scale, speed, direction, morph, glow, depth of field, fog, pointer effect, click effect and markers are props.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "Full-screen WebGL terrain with a sculpt pass, four bloom levels and a constant frame loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The canvas is decorative and aria-hidden with nothing to operate; the pointer effects are mouse-only."
+ },
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "max(color + dither / 255.0 * step(0.002, top), 0.0);",
+   "required": false
+  },
+  {
+   "name": "lineCount",
+   "type": "number",
+   "default": "22",
+   "required": false
+  },
+  {
+   "name": "lineWidth",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "elevation",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "TopographyDirection",
+   "default": "'forward'",
+   "required": false
+  },
+  {
+   "name": "hoverEffect",
+   "type": "TopographyHoverEffect",
+   "default": "'lift'",
+   "required": false
+  },
+  {
+   "name": "clickEffect",
+   "type": "TopographyClickEffect",
+   "default": "'pulse'",
+   "required": false
+  },
+  {
+   "name": "markers",
+   "type": "TopographyMarkers",
+   "default": "'none'",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "mouseRadius",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "lightMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Convincing atmospheric terrain with fine line work; the scene is very dark by design.",
+ "unsure": [
+  "props"
+ ],
+ "title": "Topography",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a8eed92a3ac6fdbb",
+  "film_hash": "2eabafc1e84a20eb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

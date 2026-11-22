@@ -1,0 +1,156 @@
+{
+  "name": "BounceCards-TS-TW",
+  "frames": {
+    "code": "4033",
+    "best": 6,
+    "best_why": "All five cards are spread and readable, each tilted differently in the fan.",
+    "usable": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rounded photo cards fan out and settle into a springy row.",
+  "summary": "Five square photos with thick white borders and rounded corners sit in a tilted fan over a black stage. They pop in with a bounce and drift apart when you hover over one.",
+  "title_fix": "Bouncing Photo Card Fan",
+  "appearance": "Five square photo cards with thick white frames and rounded corners are fanned across a black stage, each tilted a little and overlapping its neighbours. Soft shadows lift them off the background.",
+  "behaviour": "On load the cards scale up from nothing one after another with a springy overshoot. Hovering a card straightens it and pushes the others aside, and leaving restores the original fan.",
+  "parts": [
+    "photo card",
+    "white frame",
+    "card fan"
+  ],
+  "demo_content": "Five landscape photos: a mountain lake, a forest, a green field, a dog portrait and misty hills.",
+  "states": [
+    "hover"
+  ],
+  "kind": "card",
+  "look": [
+    "dark",
+    "playful",
+    "rounded",
+    "colorful",
+    "shadowed"
+  ],
+  "tone": "playful",
+  "search_phrases": [
+    "fanned photo cards with white borders",
+    "photos pop in with a bounce",
+    "overlapping image stack",
+    "card fan that opens on hover",
+    "polaroid style photo cards",
+    "gallery of square pictures overlapping",
+    "springy entrance for image cards",
+    "team photo stack animation"
+  ],
+  "resembles": [],
+  "use_when": "A portfolio, gallery or team page wants a playful cluster of square photos.",
+  "avoid_when": "Tight layouts: the hover push moves cards up to 160px sideways and needs room.",
+  "suits": [
+    "portfolio",
+    "social",
+    "marketing"
+  ],
+  "slot_hints": [
+    "media",
+    "feature-card",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "always",
+      "hover"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "children",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The image list, container size, entrance delay and stagger, easing, hover spread and each card's transform are props. Border and rounding are fixed classes.",
+  "technique": [
+    "gsap"
+  ],
+  "weight": "light",
+  "weight_why": "Five image cards with one entrance timeline and short hover tweens.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The spread is mouse-only, alt text is just card-0 and so on, and the motion ignores reduced-motion."
+  },
+  "props": [
+    {
+      "name": "images",
+      "type": "string[]",
+      "default": "[]",
+      "required": true
+    },
+    {
+      "name": "containerWidth",
+      "type": "number",
+      "default": "400",
+      "required": false
+    },
+    {
+      "name": "containerHeight",
+      "type": "number",
+      "default": "400",
+      "required": false
+    },
+    {
+      "name": "animationDelay",
+      "type": "number",
+      "default": "0.5",
+      "required": false
+    },
+    {
+      "name": "animationStagger",
+      "type": "number",
+      "default": "0.06",
+      "required": false
+    },
+    {
+      "name": "easeType",
+      "type": "string",
+      "default": "elastic.out(1, 0.8)",
+      "required": false
+    },
+    {
+      "name": "transformStyles",
+      "type": "string[]",
+      "default": "['rotate(10deg) translate(-170px)', 'rotate(5deg) translate(-85px)', 'rotate(-3deg)', 'rotate(-10deg) translate(85px)', 'rotate(2deg) translate(170px)']",
+      "required": false
+    },
+    {
+      "name": "enableHover",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The cards occupy only the middle third of the frame, leaving wide empty margins."
+  ],
+  "polish": 4,
+  "polish_why": "Charming fan and clean white frames; the cluster floats in a lot of empty black.",
+  "unsure": [
+    "kind"
+  ]
+}

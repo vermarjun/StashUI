@@ -1,0 +1,123 @@
+{
+ "name": "tree-code-viewer",
+ "frames": {
+  "code": "4350",
+  "best": 1,
+  "best_why": "Tree fully expanded with every file listed and the pricing-card source filling the code pane.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "File tree on the left, highlighted source on the right, copy up top.",
+ "summary": "A two-pane source browser: a collapsible file tree beside a syntax-highlighted code pane. Clicking a file swaps the code, folders expand, and a corner button copies the raw text.",
+ "title_fix": null,
+ "appearance": "A bordered two-column frame. The left column lists folders and files with small icons and guide lines, one row shaded for the selection; the right column shows monospace code with coloured keywords and a small copy button in its corner.",
+ "behaviour": "Clicking a folder row expands or collapses it, while clicking a file row moves the selection and fades in that file's code. The copy button writes the raw source to the clipboard and swaps to a double tick for a moment.",
+ "parts": [
+  "file tree",
+  "folder rows",
+  "file rows",
+  "selection highlight",
+  "code pane",
+  "copy button"
+ ],
+ "demo_content": "A pricing-card example project with pricing-card.tsx, use-billing-cycle.ts, button.tsx, utils.ts and package.json.",
+ "states": [
+  "open",
+  "selected",
+  "hover"
+ ],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "flat",
+  "minimal",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "file tree next to code",
+  "source viewer for multiple files",
+  "docs code pane with copy button",
+  "collapsible project file browser",
+  "syntax highlighted code with sidebar",
+  "show a component and its dependencies",
+  "ide style file explorer panel",
+  "click a file to see its source"
+ ],
+ "resembles": [
+  "GitHub file browser"
+ ],
+ "use_when": "Documentation should show a component together with the several files it is built from.",
+ "avoid_when": "It needs pre-highlighted HTML handed in, so the highlighter has to run before this renders.",
+ "suits": [
+  "docs",
+  "devtool"
+ ],
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "layout"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "A files array with id, name, path, extension, raw text and pre-highlighted HTML drives it; default expansions and copy behaviour stay in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "The viewer itself is light, but the demo pulls in a full syntax highlighter to build the HTML.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Tree rows and the copy control are click-only divs with no roles or labels, so nothing here is keyboard reachable."
+ },
+ "props": [
+  {
+   "name": "files",
+   "type": "SourceFile[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Frame 2 highlights a new file while the pane still shows the previous file's code.",
+  "Tree rows and the copy button are divs, so the viewer cannot be used from the keyboard."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp two-pane layout and readable highlighting; mouse-only controls are the main flaw.",
+ "unsure": [],
+ "title": "Tree Code Viewer",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "cbae2662b0cc1d8f",
+  "film_hash": "b273c01048ecf76d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

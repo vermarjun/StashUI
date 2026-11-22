@@ -1,0 +1,184 @@
+{
+ "name": "loading-carousel",
+ "frames": {
+  "code": "1893",
+  "best": 1,
+  "best_why": "A single slide is fully at rest with its photo, caption and progress row all visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "A photo carousel with captions and segmented progress underneath.",
+ "summary": "A wide image carousel that autoplays through tips, each with a photo, a caption line and a row of thin progress segments you can click.",
+ "title_fix": "Tips Image Carousel",
+ "appearance": "A wide rounded image fills the top of a dark card, with a slim caption row below it. At the bottom, five hairline progress segments span the width, one filled solid white and the rest dim.",
+ "behaviour": "Slides slide in from the side every few seconds while the active progress segment fills from left to right; clicking a segment jumps to that tip and the caption swaps.",
+ "parts": [
+  "photo",
+  "caption bar",
+  "progress segments",
+  "card frame"
+ ],
+ "demo_content": "Photos of a snowy house, mountains and a red building, captioned with product tips about components and batch scripts.",
+ "states": [
+  "active"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "rounded",
+  "editorial",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "autoplaying image carousel with captions",
+  "photo slider with progress bars",
+  "tips carousel for a landing page",
+  "slideshow with text under each image",
+  "story style photo carousel",
+  "auto rotating banner with thumbnails",
+  "image gallery that advances on its own",
+  "carousel with clickable progress segments"
+ ],
+ "resembles": [],
+ "use_when": "You want to surface several product tips or announcements as photos that advance on their own.",
+ "avoid_when": "It autoplays and needs remote images; captions can be missed since slides move on a timer.",
+ "suits": [
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "tips takes objects with text, image and optional url; autoplay interval, aspect ratio, navigation, indicators and text position are props.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Five large remote photos and an autoplay timer; one slide animates at a time.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Captions change on a timer without a live region, so screen readers may not hear the new tip."
+ },
+ "props": [
+  {
+   "name": "tips",
+   "type": "Tip[]",
+   "default": "defaultTips",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "autoplayInterval",
+   "type": "number",
+   "default": "4500",
+   "required": false
+  },
+  {
+   "name": "showNavigation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showIndicators",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showProgress",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "aspectRatio",
+   "type": "\"video\" | \"square\" | \"wide\"",
+   "default": "\"video\"",
+   "required": false
+  },
+  {
+   "name": "textPosition",
+   "type": "\"top\" | \"bottom\"",
+   "default": "\"bottom\"",
+   "required": false
+  },
+  {
+   "name": "onTipChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "backgroundTips",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "backgroundGradient",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "shuffleTips",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Tips autoplay with no pause control, so captions can change before they are read.",
+  "The progress segments are hairline-thin, making their click targets hard to hit.",
+  "Reduced motion only shortens the slide transition; autoplay still advances the tips."
+ ],
+ "polish": 3,
+ "polish_why": "Clean editorial frame and a neat progress row; thin segments and forced autoplay limit it.",
+ "unsure": [],
+ "title": "Loading Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "dd2669e136ea6553",
+  "film_hash": "d99a8ea69e384488",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

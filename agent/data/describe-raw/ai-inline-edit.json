@@ -1,0 +1,69 @@
+{
+  "name": "ai-inline-edit",
+  "frames": {
+    "code": "5460",
+    "best": 3,
+    "best_why": "The review bar shows Accept and Discard while the changed words are marked in the sentence.",
+    "usable": [1, 2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Select a sentence, ask for an edit, and review the rewrite inline.",
+  "summary": "An editable document where selecting text opens a small Ask AI bar under the sentence. A rewritten version streams in word by word as a green and red diff you can accept, retry or discard.",
+  "title_fix": null,
+  "appearance": "A rounded dark card titled \"Billing launch update\" with three muted paragraphs, and a floating pale bar below the selected sentence. The bar holds an input and four action chips, or Accept and Discard with a version counter.",
+  "behaviour": "Selecting a sentence opens the prompt bar; choosing or typing an instruction starts a word-by-word rewrite with a caret. The finished diff shows green additions and struck-through removals until Accept applies it or Discard reverts.",
+  "parts": ["document card", "title", "paragraphs", "ask bar", "action chips", "diff marks", "accept button"],
+  "demo_content": "A billing launch update with three paragraphs about the new dashboard and invoices.",
+  "states": ["selected", "loading", "disabled"],
+  "kind": "editor",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "technical",
+  "search_phrases": [
+    "select text ask ai to rewrite",
+    "inline editing with accept discard",
+    "word level diff in a document",
+    "ai writing assistant bar",
+    "rewrite sentence without leaving page",
+    "grammar fix with suggested changes",
+    "streaming text edit preview",
+    "document editor with ai actions"
+  ],
+  "resembles": ["Notion AI writing menu"],
+  "use_when": "A writing surface should let people rewrite a sentence in place and compare the change before accepting.",
+  "avoid_when": "It edits one paragraph at a time, needs a selection first, and the demo rewrite is a local rule set.",
+  "suits": ["ai-chat", "saas", "docs"],
+  "slot_hints": ["body-text", "toast"],
+  "traits": {
+    "trigger": ["click", "keyboard", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Title, paragraphs, a rewrite function that can return text or a stream, and an onChange callback are props; the demo's canned rewrites live in the file.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Timers and small text animations run only while a rewrite is in flight.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "Buttons carry labels and keep focus while phases swap, but selecting text is the only way to start an edit."
+  },
+  "props": [
+    {"name": "title", "type": "string", "default": "'Billing launch update'", "required": false},
+    {"name": "paragraphs", "type": "string[]", "default": "DEMO_PARAGRAPHS", "required": false},
+    {"name": "rewrite", "type": "(text, instruction, attempt, signal) => Rewrite", "default": "demoRewrite", "required": false},
+    {"name": "onChange", "type": "(paragraphs: string[]) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The prompt bar covers the paragraph while open, hiding the lines just below the selection."],
+  "polish": 4,
+  "polish_why": "Convincing in-place editing with a neat diff; the prompt bar overlaps the text it is editing.",
+  "unsure": ["responsive"]
+}

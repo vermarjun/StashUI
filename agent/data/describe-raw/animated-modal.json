@@ -1,0 +1,69 @@
+{
+  "name": "animated-modal",
+  "frames": {
+    "code": "9557",
+    "best": 4,
+    "best_why": "Fully open panel with the photo fan, heading and detail list all sharp.",
+    "usable": [2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Travel booking dialog springs up over a blurred page with a fan of photos.",
+  "summary": "A dark rounded dialog with a bold trip heading, a stack of tilted travel photos and a short details list. It opens from a tilted, shrunken pose over a dimmed blurred page.",
+  "title_fix": null,
+  "appearance": "A dark rounded dialog over a blurred black backdrop, with a small close X in its top corner. A bold white heading sits above four overlapping tilted photos, with a two-column list of short trip details beneath.",
+  "behaviour": "Clicking the white trigger button dims and blurs the page, then the panel springs in from a tilted, smaller pose. The close X or a click outside dismisses it, and the page unblurs.",
+  "parts": ["trigger button", "dialog panel", "close icon", "heading", "photo stack", "detail list", "footer buttons"],
+  "demo_content": "Heading 'Your summer escape, booked ✈️', four tilted travel photos, and trip details like flights from 6 cities.",
+  "states": ["open", "hover"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "shadowed", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "travel booking modal popup",
+    "dialog with tilted photo cards",
+    "booking confirmation overlay",
+    "modal that springs up from the page",
+    "popup with a stack of photos",
+    "flight booking dialog overlay",
+    "center screen card over blurred background",
+    "modal with close x in the corner"
+  ],
+  "resembles": [],
+  "use_when": "A short focused flow, like confirming a booking, needs to interrupt the page without leaving it.",
+  "avoid_when": "The footer is clipped in the recorded demo, and nothing handles Escape, which keyboard users expect.",
+  "suits": ["saas", "ecommerce", "marketing"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose Modal, ModalTrigger, ModalBody, ModalContent and ModalFooter with your own content and classes. The spring, 3D tilt, blur and overlay are fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A single spring-animated panel and blur overlay; no canvas or loops.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "No Escape handling, no focus trap, and the close button is an unlabelled X; the entry spring ignores reduced-motion."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The Cancel and Book now footer is clipped out of the open panel in frames 3 and 4.",
+    "No Escape-key close, and the X button has no accessible label."
+  ],
+  "polish": 4,
+  "polish_why": "Strong spring entrance and a tidy photo fan; the footer is clipped and the panel is very dark.",
+  "unsure": ["a11y.keyboard"]
+}

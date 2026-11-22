@@ -1,0 +1,195 @@
+{
+ "name": "scrub-field",
+ "frames": {
+  "code": "4594",
+  "best": 2,
+  "best_why": "Radius chip is mid-scrub with a +22 bubble and the preview showing a wide soft shadow.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.5
+ },
+ "tagline": "Drag a number chip sideways to scrub its value, with a live change bubble.",
+ "summary": "A compact settings row of labelled number chips. Dragging a chip sideways changes its value, a bubble shows the change, and clicking the number lets you type an exact amount.",
+ "title_fix": null,
+ "appearance": "A dark rounded panel headed SHADOW holds three stacked chips, each with a small label at the left and a right-aligned number with a unit. Beside it a rounded preview square casts a soft shadow that follows the values; while dragging, a small white bubble floats above the chip.",
+ "behaviour": "Pulling a chip sideways scrubs its number, easing past the limits with a rubber band and springing back on release while the bubble tracks the change. A plain click focuses the digits so you can type a value and confirm with Enter.",
+ "parts": [
+  "panel heading",
+  "label",
+  "value chip",
+  "number",
+  "unit",
+  "delta bubble",
+  "preview square"
+ ],
+ "demo_content": "Shadow settings Radius 16px, Blur 24px, Opacity 80%, next to a Preview square.",
+ "states": [
+  "hover",
+  "active",
+  "focus",
+  "dragging",
+  "disabled"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "technical",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "draggable number input for settings",
+  "scrub control to change a value",
+  "drag sideways to adjust px",
+  "figma style number field",
+  "shadow settings panel with sliders",
+  "click to type a number value",
+  "rubber band number picker",
+  "compact value chip with delta"
+ ],
+ "resembles": [
+  "Figma property inputs"
+ ],
+ "use_when": "A settings or inspector panel needs precise numbers that are also quick to nudge by dragging.",
+ "avoid_when": "Chips are fixed-width and dark by default, so they need colour props and overrides to fit a light toolbar.",
+ "suits": [
+  "devtool",
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Label, suffix, value, range, step, size, sensitivity, rubber reach, colours and the delta, fill and dirty toggles are props; the internal layout is fixed.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Three chips with motion values; work happens only during a drag.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The number field is a spinbutton with full key support, but the focused input has no visible outline."
+ },
+ "props": [
+  {
+   "name": "label",
+   "type": "string",
+   "default": "'Radius'",
+   "required": false
+  },
+  {
+   "name": "suffix",
+   "type": "string",
+   "default": "'px'",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "number",
+   "default": "24",
+   "required": false
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "ScrubFieldSize",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "sensitivity",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "accent",
+   "type": "string",
+   "default": "'#f5f5f5'",
+   "required": false
+  },
+  {
+   "name": "chipColor",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The number input, which is the keyboard entry point, has no visible focus ring."
+ ],
+ "polish": 4,
+ "polish_why": "The scrub feel, delta bubble and rubber limits are well judged and readable.",
+ "unsure": [],
+ "title": "Scrub Field",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9b812bf7af4b2760",
+  "film_hash": "f0e72a63daa0db6f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

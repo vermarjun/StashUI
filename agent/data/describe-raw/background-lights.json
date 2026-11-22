@@ -1,0 +1,67 @@
+{
+  "name": "background-lights",
+  "frames": {
+    "code": "3843",
+    "best": 6,
+    "best_why": "The blue-to-yellow glow is at its strongest and the hero text is fully lit above it.",
+    "usable": [3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "A blurred blue-cyan-yellow glow rising softly behind a hero section.",
+  "summary": "A wide blurred conic gradient that sweeps blue into cyan and yellow near the bottom of the screen, giving a dark hero a soft coloured glow. It is a single non-interactive backdrop layer.",
+  "title_fix": null,
+  "appearance": "A full-width, low band of soft colour along the bottom of a dark page: deep blue on the left shifting through teal to yellow on the right, blurred so no edges show. Above it sit a white headline, grey subtext and two buttons.",
+  "behaviour": "Static: the blurred glow sits still and never moves or responds; the demo simply fades it in once on load.",
+  "parts": ["glow band", "blue wash", "cyan wash", "yellow wash"],
+  "demo_content": "Headline Ship interfaces people trust, subtext about 4,200 teams, and Our work and Contact us buttons.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "gradient", "glow", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "soft gradient glow behind hero",
+    "blurred conic light background",
+    "blue and yellow ambient glow",
+    "colored light under a headline",
+    "aurora style section backdrop",
+    "subtle bottom glow for landing page",
+    "site background with colored haze",
+    "dark hero with light wash"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or section needs a soft band of colour at the bottom to lift it without a heavy image.",
+  "avoid_when": "It is a fixed conic gradient at 20% opacity, so on light backgrounds the glow barely shows and the colours cannot adapt.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["page-background", "section-background", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "Only className is accepted; the conic colours, blur radius and 20% opacity are hardcoded in the source, so a different palette means editing the file.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One div painted with a blurred conic gradient; no script, no per-frame work.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "It is a decorative empty layer with no roles; that is fine, but it carries no aria-hidden and nothing adapts for light themes."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "At 20% opacity the glow is barely visible on the dark stage, so the effect reads as faint."
+  ],
+  "polish": 3,
+  "polish_why": "Soft, tasteful glow that lifts the hero; it is very faint and the palette is fixed.",
+  "unsure": ["traits.motion", "traits.needs_sized_parent", "title_fix"]
+}

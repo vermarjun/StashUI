@@ -1,0 +1,71 @@
+{
+  "name": "novatrix-background",
+  "frames": {
+    "code": "6868",
+    "best": 1,
+    "best_why": "Frame 1 shows broad mint, pink and lavender bands with clearly folded ridges.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Soft iridescent ribbons of mint, pink and lavender drift like folded silk.",
+  "summary": "A full-bleed animated background of flowing pastel bands in mint, pink and purple, like light folding through silk. It drifts on its own and can be set to lean toward the pointer.",
+  "title_fix": null,
+  "appearance": "The whole frame is filled with smooth, glossy bands of pale mint, bubblegum pink, lavender and white, curving into folds and hollows with no text or controls. The palette is light and high-key.",
+  "behaviour": "The bands slide and fold continuously in a slow loop, so no shape ever settles. With pointer response switched on, the pattern drifts slightly toward the cursor.",
+  "parts": ["colour bands", "fold highlights", "shadowed troughs"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["gradient", "pastel", "colorful", "airy", "organic"],
+  "tone": "decorative",
+  "search_phrases": [
+    "iridescent liquid background",
+    "pastel flowing gradient wallpaper",
+    "soft silk wave backdrop",
+    "animated holographic hero background",
+    "mint pink purple swirl",
+    "liquid chrome gradient shader",
+    "shifting gradient for a landing page",
+    "dreamy fluid background animation"
+  ],
+  "resembles": ["Stripe gradient mesh"],
+  "use_when": "A landing or hero area wants a soft moving backdrop behind text without images or video.",
+  "avoid_when": "It is a full-bleed canvas needing a sized parent, and the bright field clashes with white or high-contrast text.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "light",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Tune the overall tint through the color prop, adjust speed and amplitude, and toggle pointer response with mouseReact; the shader itself needs a source edit.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A WebGL fragment shader redrawing every frame with an eight-step loop per pixel.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The shader animates forever with no pause or reduced-motion handling, and the canvas is purely decorative."
+  },
+  "props": [
+    {"name": "color", "type": "[number, number, number]", "default": "[1, 1, 1]", "required": false},
+    {"name": "speed", "type": "number", "default": "1.0", "required": false},
+    {"name": "amplitude", "type": "number", "default": "0.1", "required": false},
+    {"name": "mouseReact", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "The pastel field is very light overall, so white or pale text over it would be hard to read.",
+    "It never pauses, keeping the GPU busy for as long as the page is open."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth, richly coloured shader with continuous flow; the bright field and nonstop cost are caveats.",
+  "unsure": ["theme"]
+}

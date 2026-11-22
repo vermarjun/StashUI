@@ -1,0 +1,184 @@
+{
+ "name": "wake-slider",
+ "frames": {
+  "code": "6470",
+  "best": 2,
+  "best_why": "The handle is mid-drag with a clear raised wake of taller bars and the value at 86%.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.3
+ },
+ "tagline": "Thin bars rise into a wake as you drag the volume across them.",
+ "summary": "A horizontal volume control drawn as a row of slim vertical bars. Bars up to the value glow white, and dragging faster lifts the bars around the handle into a short wave that settles when you stop.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holds a small title and subtitle above a single row of about thirty evenly spaced rounded bars. Filled bars are pale grey and the rest sit dim, with a percentage at the right.",
+ "behaviour": "Clicking or dragging anywhere on the bar row sets the level, and the lit bars follow the pointer. Moving quickly lifts neighbouring bars into a peaked wake that flattens as the drag slows.",
+ "parts": [
+  "bar row",
+  "lit bars",
+  "wake",
+  "percentage label",
+  "title"
+ ],
+ "demo_content": "Master volume, Studio Monitors · Output 1-2, values from 22% to 86%.",
+ "states": [
+  "dragging",
+  "disabled"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "volume slider made of bars",
+  "equalizer style range control",
+  "bars rise while dragging",
+  "thin vertical line slider",
+  "audio level control with wave",
+  "drag to set volume level",
+  "minimal slider without handle",
+  "music player volume bars"
+ ],
+ "resembles": [],
+ "use_when": "An audio, brightness or any 0-100 control wants a more tactile readout than a plain track and knob.",
+ "avoid_when": "The wake only shows mid-drag, and on touch the narrow bars make precise values fiddly.",
+ "suits": [
+  "dashboard",
+  "media",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Value, min, max, step, bar count, height, gaps, colours, sensitivity, wake reach and skew are props; the label format is a function prop.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "32 CSS-transformed bars updated by springs only while the value moves.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "A hidden slider button makes every key work and exposes value text, but it has no visible focus ring."
+ },
+ "props": [
+  {
+   "name": "defaultValue",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "bars",
+   "type": "number",
+   "default": "32",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "56",
+   "required": false
+  },
+  {
+   "name": "fillColor",
+   "type": "string",
+   "default": "'#f5f5f5'",
+   "required": false
+  },
+  {
+   "name": "trackColor",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  },
+  {
+   "name": "showValue",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "ariaLabel",
+   "type": "string",
+   "default": "'Value'",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Tactile, well-spaced bars and a clear wake; the unfilled bars nearly vanish on the card.",
+ "unsure": [],
+ "title": "Wake Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8137729eb58e9533",
+  "film_hash": "f380012a5b58fcaf",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

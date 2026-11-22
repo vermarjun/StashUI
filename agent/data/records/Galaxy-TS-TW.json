@@ -1,0 +1,182 @@
+{
+ "name": "Galaxy-TS-TW",
+ "frames": {
+  "code": "2279",
+  "best": 1,
+  "best_why": "A natural spread of stars with bright cross-shaped flares, unobstructed by the pointer warp.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "A deep starfield of white and pink points drifts and warps around the cursor.",
+ "summary": "A full-screen realistic starfield of tiny white, pink and blue stars with glowing cross flares. The field drifts and twinkles slowly, and moving the pointer bends nearby stars into radial streaks.",
+ "title_fix": null,
+ "appearance": "A near-black sky packed with hundreds of small stars in white, pink and cold blue, a few bright ones carrying thin cross-shaped flares and soft halos. Larger glows scatter across the field like distant clusters, and the background stays very dark.",
+ "behaviour": "The stars drift, twinkle and rotate slowly in parallax layers at different depths. Moving the cursor repels the nearby stars so they stretch into radial streaks, then the field relaxes when the pointer leaves.",
+ "parts": [
+  "star",
+  "cross flare",
+  "star cluster",
+  "dark sky"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "minimal",
+  "airy",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "realistic star field background",
+  "twinkling stars that react to the mouse",
+  "space sky with cross shaped flares",
+  "parallax starfield for a landing page",
+  "stars warp around the cursor",
+  "dark night sky animated backdrop",
+  "deep space background for a hero",
+  "hundreds of tiny stars drifting"
+ ],
+ "resembles": [],
+ "use_when": "You want a calm, deep-space backdrop for a dark hero, with a subtle pointer reaction to reward exploring.",
+ "avoid_when": "The stars are small and sparse, so on a bright screen they nearly disappear, and the motion never stops.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Props set focal point, rotation, star speed, density, hue, animation toggle, speed, mouse interaction and repulsion, glow, saturation, twinkle, rotation speed and transparency.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen WebGL shader renders four star layers with 3x3 neighbourhoods every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The starfield animates forever and ignores reduced-motion; the pointer warp has no keyboard or touch path."
+ },
+ "props": [
+  {
+   "name": "density",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "starSpeed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "hueShift",
+   "type": "number",
+   "default": "140",
+   "required": false
+  },
+  {
+   "name": "glowIntensity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "twinkleIntensity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "rotationSpeed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "mouseInteraction",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseRepulsion",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "transparent",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "focal",
+   "type": "[number, number]",
+   "default": "[0.5, 0.5]",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The starfield is very dark and sparse, so on a bright display the stars almost vanish.",
+  "It ignores reduced-motion and never stops or pauses."
+ ],
+ "polish": 4,
+ "polish_why": "Believable starfield with convincing flares and parallax; the cursor warp is a little dramatic.",
+ "unsure": [],
+ "title": "Galaxy",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "92eb51212c415f8a",
+  "film_hash": "cbb5ada69324324d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

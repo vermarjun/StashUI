@@ -1,0 +1,63 @@
+{
+  "name": "comp-252",
+  "frames": {
+    "code": "6185",
+    "best": 4,
+    "best_why": "Knob is pulled well past the middle with the readout at 55, showing the full track and both speaker icons.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A speaker slider that raises a number as its knob slides right.",
+  "summary": "A sound-level setting inside a dark card. A muted speaker, a horizontal level slider and a loud speaker sit on one row, with the current level printed beside the heading.",
+  "title_fix": null,
+  "appearance": "A bordered dark card holds a small heading with a grey helper line, then a row with the word Volume on the left and a number on the right. Beneath it a muted speaker icon, a grey track with a round white knob, and a speaker icon at the far end.",
+  "behaviour": "Sliding the knob right lengthens the white filled portion and raises the number beside Volume. The knob gains a soft ring while it is being dragged and everything settles in place on release.",
+  "parts": ["heading", "helper text", "volume label", "level number", "mute icon", "track", "knob", "speaker icon"],
+  "demo_content": "Card title \"Sound\" with the line \"Adjust the output level for notifications and media.\", a Volume row starting at 25.",
+  "states": ["hover", "focus", "active"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "rounded", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "sound level control for a media app",
+    "slider with small and large speaker icons",
+    "adjust volume in preference settings",
+    "horizontal audio level bar",
+    "number next to a volume knob",
+    "mute to loud slider",
+    "control loudness of notifications",
+    "speaker icon on each end of a track"
+  ],
+  "resembles": [],
+  "use_when": "A settings panel or player needs a readable sound level with the current number in view.",
+  "avoid_when": "The two speaker icons are decoration only, so there is no working mute toggle here.",
+  "suits": ["saas", "media"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The Volume label and the starting level are written in the source; the icons and number layout need edits to change.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A card, one track and a couple of icons; nothing runs until the knob is dragged.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The slider is labelled for screen readers, but the speaker icons are hidden from assistive tech and the number is not tied to the slider."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Well spaced card with a clear hierarchy; the control itself is a stock slider.",
+  "unsure": []
+}

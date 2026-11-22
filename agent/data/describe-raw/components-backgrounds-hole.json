@@ -1,0 +1,70 @@
+{
+  "name": "components-backgrounds-hole",
+  "frames": {
+    "code": "3772",
+    "best": 1,
+    "best_why": "The magenta glow at the funnel mouth is strongest here with the concentric rings fully visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A glowing tunnel of thin rings with motes drifting through it.",
+  "summary": "A dark canvas draws a funnel of fine concentric rings that narrows toward a bright glowing mouth at the bottom. A coloured beam shifts hue across the opening while small white specks drift upward.",
+  "title_fix": null,
+  "appearance": "Nearly black frame filled with faint grey concentric ellipses that widen from a bright opening near the bottom centre, like looking into a funnel. A blurred vertical beam of magenta, purple and blue light rises from that mouth, and tiny white dots float inside. A subtle scanline texture lies over everything.",
+  "behaviour": "The coloured beam slides its gradient upward on a five-second loop so the mouth shifts from magenta through purple to blue, and the whole ring field slowly recedes. Small particles rise and respawn, giving a slow drift.",
+  "parts": ["tunnel rings", "glowing mouth", "colour beam", "particles", "scanlines"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "gradient", "neon", "glow"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "glowing tunnel background",
+    "concentric rings vortex backdrop",
+    "portal hole animation",
+    "futuristic wormhole hero background",
+    "particles rising through a funnel",
+    "neon glow behind a homepage",
+    "animated grid tunnel",
+    "dark sci fi background effect"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or section background for a sci-fi, AI or event page that wants depth without a photo.",
+  "avoid_when": "It is a full-bleed canvas that needs a sized parent, runs a constant loop, and its purple beam fights light themes.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Set the stroke colour, number of rings, number of discs and particle colour through props; the beam hues, loop timing and overlay gradients are fixed in the source.",
+  "technique": ["canvas-2d", "motion-library", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A requestAnimationFrame canvas redraws dozens of rings, lines and 100 particles every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative canvas with no reduced-motion pause; the constant ring render and drifting particles keep running off screen."
+  },
+  "props": [
+    {"name": "strokeColor", "type": "string", "default": "#737373", "required": false},
+    {"name": "numberOfLines", "type": "number", "default": "50", "required": false},
+    {"name": "numberOfDiscs", "type": "number", "default": "50", "required": false},
+    {"name": "particleRGBColor", "type": "[number, number, number]", "default": "[255, 255, 255]", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": ["The faint grey rings are low contrast and nearly vanish at the edges."],
+  "polish": 4,
+  "polish_why": "Moody tunnel with a smooth colour shift; the grey rings are faint and scanlines barely show.",
+  "unsure": ["theme", "shows_interaction"]
+}

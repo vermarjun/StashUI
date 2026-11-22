@@ -1,0 +1,72 @@
+{
+  "name": "sidebar",
+  "frames": {
+    "code": "4050",
+    "best": 4,
+    "best_why": "Rail is fully open with every icon labelled beside it and the content panel visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Narrow icon rail widens on hover to reveal menu names.",
+  "summary": "A dark left-hand navigation strip of icons that expands into a wider panel with labels when hovered, easing back to icons alone. It sits beside the page content.",
+  "title_fix": null,
+  "appearance": "A narrow dark grey rail pinned to the left of a bordered panel, holding five small line icons in a vertical stack. Expanded, it widens into a slab and each icon gains a small grey label; the rest of the panel reads 'Main content area'.",
+  "behaviour": "Hovering the rail slides it open to show labels and pushes the content area aside; moving away shrinks it back to the icon strip. The width eases rather than snapping.",
+  "parts": ["sidebar rail", "nav icons", "nav labels", "content area"],
+  "demo_content": "Five links named Home, Dashboard, Documents, Profile and Settings; the body reads 'Main content area'.",
+  "states": ["hover", "open"],
+  "kind": "sidebar",
+  "look": ["dark", "minimal", "flat", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "collapsible icon rail that opens on hover",
+    "side navigation with icons only",
+    "narrow menu rail that expands",
+    "app nav with labels on hover",
+    "left menu strip with small icons",
+    "hover to reveal menu names",
+    "minimal dashboard side navigation",
+    "icon rail beside the main content"
+  ],
+  "resembles": [],
+  "use_when": "A dashboard needs to save width but still let people read the menu labels on demand.",
+  "avoid_when": "Labels only appear on hover, so touch users see icons alone, and the width jump reflows the page.",
+  "suits": ["dashboard", "saas", "docs"],
+  "slot_hints": ["sidebar", "nav"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["layout", "text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose Sidebar, SidebarBody and SidebarLink with your own link objects, and control open state through Sidebar props. Widths, hover behaviour and colours are fixed in the file.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A handful of links and one width animation; no loops or heavy assets.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Collapsed links hide their text with display:none, leaving icon-only anchors unnamed, and the width change ignores reduced-motion."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "setOpen", "type": "Dispatch<SetStateAction<boolean>>", "default": null, "required": false},
+    {"name": "animate", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Collapsed links show icons only, with their text hidden and no accessible name.",
+    "The content area jumps sideways as the rail opens and closes."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy icon rail and smooth width change; it is plain and the hover-only labels are limiting.",
+  "unsure": ["content_from"]
+}

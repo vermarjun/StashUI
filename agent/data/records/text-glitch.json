@@ -1,0 +1,143 @@
+{
+ "name": "text-glitch",
+ "frames": {
+  "code": "2382",
+  "best": 5,
+  "best_why": "GLITCH shows the strongest red and cyan slice displacement here, while HOVER ME stays crisp.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.0
+ },
+ "tagline": "Headlines jitter into red and cyan slices like a broken screen.",
+ "summary": "Bold white words with two offset copies behind, tinted red and cyan, chopped into shifting horizontal bands. One version glitches constantly; the other only when hovered.",
+ "title_fix": null,
+ "appearance": "Two lines of heavy white uppercase type on near-black. The top word, GLITCH, is sliced into offset horizontal bands with red and cyan copies peeking out at the edges, while the larger HOVER ME below reads clean and solid. Everything is tightly tracked and weighted.",
+ "behaviour": "The two offset copies of the text are clipped to changing horizontal strips and leap left and right, so the word appears to tear and flicker. On the hover version the effect stays off until the pointer enters, then it runs until it leaves.",
+ "parts": [
+  "main text",
+  "red copy",
+  "cyan copy",
+  "clipped bands"
+ ],
+ "demo_content": "The words GLITCH and HOVER ME stacked on a dark panel.",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "technical",
+  "bold",
+  "dark",
+  "sharp"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "glitching text effect",
+  "red and cyan split letters",
+  "broken screen headline",
+  "hacker style text animation",
+  "distorted text on hover",
+  "rgb offset text effect",
+  "cyberpunk title glitch",
+  "flickering letters animation"
+ ],
+ "resembles": [
+  "Cyberpunk 2077"
+ ],
+ "use_when": "A gaming, tech or event hero that wants a tense, broken-signal headline instead of smooth type.",
+ "avoid_when": "The constant glitch is hard to read and never stops, and the sliced copies rely on a dark background.",
+ "suits": [
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Set the text, glitch speed, shadows on/off, hover-only mode and className; the clip-path keyframes and red/cyan tints are fixed in the source.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "Two text nodes with pseudo-element keyframe animations; no script at runtime.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "One word glitches with no pause for reduced motion, and the hover version only triggers on pointer hover, never keyboard focus."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "enableShadows",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(styleId, hoverClass, className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The permanent glitch makes GLITCH hard to read at a glance."
+ ],
+ "polish": 4,
+ "polish_why": "Sharp glitch with convincing RGB slices; the always-on version sacrifices readability.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Text Glitch",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6d9b6bdafc0d1b38",
+  "film_hash": "82d4a6ecb71fb1b8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

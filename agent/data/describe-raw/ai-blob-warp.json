@@ -1,0 +1,66 @@
+{
+  "name": "ai-blob-warp",
+  "frames": {
+    "code": "5230",
+    "best": 6,
+    "best_why": "The large avatar shows the most intricate swirl of cyan, blue and magenta bands, with all small avatars visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Circular assistant avatar filled with a slow-swirling liquid gradient.",
+  "summary": "A round avatar whose fill is an animated warp shader: thin liquid bands of blue, pink and purple that slowly twist and breathe. It stops animating off-screen or when reduced motion is set.",
+  "title_fix": null,
+  "appearance": "A small perfect circle with a dark base crossed by curling ribbons of cyan, blue and magenta, like oil on water. A thin border and a faint inner glow separate it from the black page.",
+  "behaviour": "The swirling bands drift and fold continuously while the circle quietly scales and rotates a degree or two back and forth. It freezes when scrolled out of view.",
+  "parts": ["round frame", "swirl pattern", "border"],
+  "demo_content": "Chat with Atlas about churn, plus small pink, ocean and forest avatars.",
+  "states": [],
+  "kind": "avatar",
+  "look": ["dark", "gradient", "glow", "rounded", "organic"],
+  "tone": "decorative",
+  "search_phrases": [
+    "animated gradient avatar",
+    "swirling blob profile picture",
+    "ai assistant avatar orb",
+    "liquid gradient circle icon",
+    "holographic avatar for chat",
+    "morphing gradient dot",
+    "shader avatar for bot",
+    "colorful round ai icon"
+  ],
+  "resembles": [],
+  "use_when": "An AI assistant needs a compact identity mark that feels alive without loading a video or image.",
+  "avoid_when": "It is a WebGL shader per instance, so many avatars add up, and the detail is lost at small sizes.",
+  "suits": ["ai-chat", "saas", "devtool"],
+  "slot_hints": ["avatar", "list-item"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["image", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "All shader settings are passed through warpProps: colours, swirl, distortion, scale, shape and speed; size and shape come from className.",
+  "technique": ["webgl-shader", "motion-library"],
+  "weight": "heavy",
+  "weight_why": "Each avatar runs its own WebGL warp shader every frame; several on screen multiply the cost.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "The shader is hidden from assistive tech and the root has no role, so a passed aria-label may not be announced."
+  },
+  "props": [
+    {"name": "warpProps", "type": "Partial<WarpProps>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Small sizes turn the swirl into a soft blur with little visible detail."],
+  "polish": 4,
+  "polish_why": "Rich, organic gradient mark that suits an assistant; the pattern blurs away at small sizes.",
+  "unsure": []
+}

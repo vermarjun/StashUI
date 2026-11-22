@@ -1,0 +1,111 @@
+{
+  "name": "comp-504",
+  "frames": {
+    "code": "5426",
+    "best": 3,
+    "best_why": "Month chooser is open with 2026 expanded and November filled, the feature the day views lack.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Calendar caption opens a collapsible list of years and months.",
+  "summary": "A compact month calendar whose heading is a button: pressing it swaps the day grid for a scrollable run of years, each opening into a three-across grid of month buttons. Picking a month returns to the days.",
+  "title_fix": null,
+  "appearance": "A small bordered black panel shows the month name with a chevron, dim angle arrows, a weekday row and five rows of day numbers. Overlaid, the same panel becomes a stack of year rows, the open year showing twelve rounded month buttons in three columns.",
+  "behaviour": "Pressing the month heading covers the days with the year list and rotates its chevron. Each year row expands or folds; tapping a month closes the list and drops back to that month's days, as November gives way to March in the frames.",
+  "parts": [
+    "month heading button",
+    "caption chevron",
+    "nav arrows",
+    "weekday row",
+    "day grid",
+    "year row",
+    "month button grid",
+    "caption"
+  ],
+  "demo_content": "November 2026 with 14 selected, a year list open at 2026, then March 2026.",
+  "states": [
+    "open",
+    "hover",
+    "selected",
+    "focus"
+  ],
+  "kind": "calendar",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "calendar where you jump to any month",
+    "month and year picker grid",
+    "click the month name to choose a year",
+    "jump quickly to an old month",
+    "calendar with collapsible years list",
+    "date picker with a month grid overlay",
+    "choose a month from a list of years",
+    "scroll through years to pick a month"
+  ],
+  "resembles": [],
+  "use_when": "People jump far back or forward in time and picking a month and year beats paging month by month.",
+  "avoid_when": "The jump list only covers 1980 to 2030, so dates outside that span can never be reached.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "keyboard"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The 1980-2030 year span, starting month and caption link are set in the file; month labels and single-date mode come from the shared calendar.",
+  "technique": [
+    "css-transition",
+    "css-keyframes"
+  ],
+  "weight": "light",
+  "weight_why": "One month grid plus a scrollable list of 51 years; no continuous animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Year rows report aria-expanded and days are buttons, but the month heading never says it opens a chooser."
+  },
+  "props": [],
+  "issues": [
+    "The caption button gives no hint that it opens a month chooser.",
+    "The year list is fixed to 1980-2030 with no way to widen it.",
+    "The caption credits the calendar library instead of describing the picker."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy month grid and a neat year accordion; the mute caption toggle and library credit stop it short.",
+  "unsure": [
+    "states",
+    "responsive"
+  ]
+}

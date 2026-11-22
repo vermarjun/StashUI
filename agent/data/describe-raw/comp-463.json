@@ -1,0 +1,66 @@
+{
+  "name": "comp-463",
+  "frames": {
+    "code": "9001",
+    "best": 1,
+    "best_why": "Shows the full footer row: rows-per-page picker, the 1–25 of 100 range and all four arrow links.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A footer pairing a rows-per-page picker, a range count and four arrow links.",
+  "summary": "A single footer row with a Rows per page dropdown, a 1–25 of 100 range in the middle, and first, back, next and last arrows at the right.",
+  "title_fix": null,
+  "appearance": "On black, a small Rows per page label sits beside an outlined 25 selector at the left, a dim 1–25 of 100 range runs in the middle, and four tiny chevron arrows close the right end. The open menu lists 10, 25, 50 and 100 with a tick.",
+  "behaviour": "Opening the selector drops a short menu; choosing 50 updates the trigger to 50 while the range and arrows hold still. A tick stays on the current choice.",
+  "parts": ["rows label", "rows select", "range text", "first arrow", "previous arrow", "next arrow", "last arrow"],
+  "demo_content": "Rows per page options 10, 25, 50 and 100, with the range 1–25 of 100.",
+  "states": ["hover", "focus", "open", "selected", "disabled"],
+  "kind": "pagination",
+  "look": ["dark", "minimal", "outlined", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "rows per page selector in a table footer",
+    "change results shown per page",
+    "pagination with items per page menu",
+    "showing 1 to 25 of 100",
+    "table footer with page arrows",
+    "page size dropdown and pager",
+    "how many results to show at once",
+    "first previous next last page controls"
+  ],
+  "resembles": [],
+  "use_when": "A table footer where people should choose page size and also jump to the ends.",
+  "avoid_when": "When the row is narrow: label, select, range and four arrows stay on one line without wrapping.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["data-table", "footer"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["background", "text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "currentPage and totalPages drive the arrows; the rows-per-page options and the visible 1–25 of 100 text are hardcoded, so real totals need edits.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One small select and four arrow links; nothing runs in the background.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The select is tied to its label and each arrow has a name; menu and hover transitions have no reduced-motion handling."
+  },
+  "props": [
+    {"name": "currentPage", "type": "number", "default": null, "required": true},
+    {"name": "totalPages", "type": "number", "default": null, "required": true}
+  ],
+  "issues": ["The 1–25 of 100 range is hardcoded and does not follow the chosen rows per page."],
+  "polish": 3,
+  "polish_why": "Three tidy zones with clear spacing, but a familiar table footer.",
+  "unsure": []
+}

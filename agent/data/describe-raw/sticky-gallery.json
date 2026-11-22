@@ -1,0 +1,95 @@
+{
+  "name": "sticky-gallery",
+  "frames": {
+    "code": "6180",
+    "best": 3,
+    "best_why": "All three columns are filled with buildings and the pinned middle strip shows its three stacked photos.",
+    "usable": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A three-column photo wall with its middle strip pinned while the sides scroll.",
+  "summary": "Architecture photos fill three equal columns on dark ground, and the centre column is held in place while the outer two keep sliding past. A large heading at the top explains the sticky trick.",
+  "title_fix": null,
+  "appearance": "Three equal columns of square building photos separated by thin dark gaps, with a white sculpture, an orange block and a glass tower in the middle column. Above them a big white heading sits on a faint dark grid.",
+  "behaviour": "Scrolling moves the left and right photo columns upward while the centre column stays fixed at the top, so fresh side pictures keep arriving beside the same three stills. The whole grid departs once the section ends.",
+  "parts": [
+    "hero heading",
+    "photo column",
+    "pinned column",
+    "photo"
+  ],
+  "demo_content": "Building photos: a red brick block, a grey apartment block, a white sculpture and a glass tower.",
+  "states": [],
+  "kind": "gallery-section",
+  "look": [
+    "dark",
+    "editorial",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "photo wall with a pinned middle column",
+    "three column gallery that sticks",
+    "photos scrolling past a fixed centre",
+    "photo grid held in place while scrolling",
+    "architecture pictures in columns",
+    "gallery where the middle stays put",
+    "photo grid with one still column",
+    "scroll page with a pinned centre image"
+  ],
+  "resembles": [],
+  "use_when": "A gallery wants a still focal column while the outer images keep moving past it.",
+  "avoid_when": "Every photo has empty alt text, rows are fixed at 384 px, and thirteen large pictures load up front.",
+  "suits": [
+    "portfolio",
+    "marketing"
+  ],
+  "slot_hints": [
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "image"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the thirteen photo links are written one figure at a time in the file, and the column spans, fixed heights and heading copy are classes.",
+  "technique": [
+    "js-animation"
+  ],
+  "weight": "moderate",
+  "weight_why": "Thirteen remote photos load at once; the pinning itself is plain CSS.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "All photos use empty alt text, so the grid says nothing to screen readers, and smooth scrolling ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [
+    "The sticky middle column leaves a black gap under its three photos in frames 1, 5 and 6.",
+    "Every photo has empty alt text and no captions.",
+    "Three fixed columns with 384 px rows will not work on a phone."
+  ],
+  "polish": 3,
+  "polish_why": "Crisp photo grid and a clever pinned centre; the middle column leaves a black hole beneath it.",
+  "unsure": []
+}

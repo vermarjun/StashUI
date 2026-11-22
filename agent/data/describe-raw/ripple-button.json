@@ -1,0 +1,71 @@
+{
+  "name": "ripple-button",
+  "frames": {
+    "code": "2990",
+    "best": 5,
+    "best_why": "The pale ripple has spread across most of the button while the white label stays crisp.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A pale circle blooms from the exact click point and washes across the button.",
+  "summary": "A dark outlined button that answers each press with a circle growing out of the spot the pointer hit. The pale disc swells to twice its size and fades away.",
+  "title_fix": null,
+  "appearance": "One rounded rectangle on black, drawn with a thin grey border, a near-black fill and bold white text. On a press a pale blue-grey disc appears beneath the label, widening past the button's inside edges before it thins.",
+  "behaviour": "Every click drops a circle centred on the pointer; over about six hundred milliseconds it scales from nothing to double size while fading to transparent, then disappears. Between presses the button does not move.",
+  "parts": ["button outline", "button label", "ripple circle"],
+  "demo_content": "A button labelled \"Send invitation\"",
+  "states": ["active"],
+  "kind": "button",
+  "look": ["dark", "rounded", "minimal", "outlined", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "click makes a circle spread across the button",
+    "material style touch ripple",
+    "button that reacts where you tap",
+    "ink drop effect on press",
+    "subtle feedback for clicking a button",
+    "expanding disc under the pointer",
+    "tap response animation for mobile",
+    "send invite button with a splash"
+  ],
+  "resembles": [],
+  "use_when": "A press needs clear visual confirmation without shifting the layout, especially on touch screens.",
+  "avoid_when": "Buttons that already animate their state, or tiny buttons where the disc has no room to read.",
+  "suits": ["any"],
+  "slot_hints": ["primary-cta", "secondary-cta", "form-submit"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label is children and a click handler can be passed through; ripple colour and duration are props, while border, padding and type come from className and the base classes.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "One absolutely positioned span per press with a single keyframe, removed after it runs.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Keyboard activation drops the ripple at the top-left corner since there are no pointer coordinates; reduced motion is ignored."
+  },
+  "props": [
+    {"name": "rippleColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "duration", "type": "string", "default": "600ms", "required": false},
+    {"name": "onClick", "type": "MouseEventHandler", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The ripple is clipped inside the button, so it reads as a wash of fill rather than a wave leaving the edge."
+  ],
+  "polish": 3,
+  "polish_why": "A competent, standard material-style ripple, but the plain bordered button adds little.",
+  "unsure": ["states"]
+}

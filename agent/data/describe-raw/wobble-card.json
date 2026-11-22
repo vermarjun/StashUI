@@ -1,0 +1,122 @@
+{
+  "name": "wobble-card",
+  "frames": {
+    "code": "8232",
+    "best": 5,
+    "best_why": "Card is shifted off centre with the pointer inside, showing the tilt and parallax.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Blue gradient card leans toward the cursor as its text drifts the other way.",
+  "summary": "A rounded content card with an indigo gradient and faint grain. The whole card follows the pointer a little, and the text inside slides opposite and scales slightly for depth.",
+  "title_fix": null,
+  "appearance": "A rounded card filled with an indigo-to-violet gradient that glows lighter at the top, holding a bold white heading and two lines of pale body copy left-aligned. A soft radial highlight and faint grain cover the surface.",
+  "behaviour": "Moving the pointer over the card nudges it toward the cursor while the inner text shifts the opposite way and grows a touch. It settles back to centre when the pointer leaves.",
+  "parts": [
+    "card surface",
+    "gradient wash",
+    "heading",
+    "body copy",
+    "noise grain"
+  ],
+  "demo_content": "Heading 'Ship faster.' and a short paragraph about a card that tilts on mouse move.",
+  "states": [
+    "hover"
+  ],
+  "kind": "card",
+  "look": [
+    "gradient",
+    "rounded",
+    "bold",
+    "colorful"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "card that tilts toward the mouse",
+    "blue gradient feature card",
+    "parallax card with moving text",
+    "card that shifts under the cursor",
+    "depth effect on a content tile",
+    "indigo panel with soft grain",
+    "pointer tracking card animation",
+    "hero tile that leans while you move"
+  ],
+  "resembles": [],
+  "use_when": "A feature or promo card should feel physical and respond to the cursor without a full 3D scene.",
+  "avoid_when": "The tilt is mouse-only, so touch users get a still card, and the indigo gradient is fixed.",
+  "suits": [
+    "saas",
+    "marketing",
+    "portfolio"
+  ],
+  "slot_hints": [
+    "feature-card"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "pointer-move"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "children",
+      "background"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Drop any heading and copy in as children; adjust the outer size and inner padding with containerClassName and className. The indigo gradient, shadow and noise image are fixed.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "One card with a couple of CSS transform transitions and a static noise image.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The tilt is decorative and pointer-only; there is no keyboard or touch equivalent and no reduced-motion guard."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "containerClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The tilt is so slight in the frames that hover is hard to tell from rest.",
+    "The grain comes from a hardcoded /noise.webp path, so it may 404 in another setup."
+  ],
+  "polish": 4,
+  "polish_why": "Rich indigo gradient and clean type; the tilt is subtle and the grain relies on an external image.",
+  "unsure": [
+    "technique"
+  ]
+}

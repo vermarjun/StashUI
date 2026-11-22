@@ -1,0 +1,116 @@
+{
+  "name": "InfiniteMenu-TS-TW",
+  "frames": {
+    "code": "9117",
+    "best": 6,
+    "best_why": "The sphere is settled with one disc forward, the full 'Design' title, its caption and the cyan arrow all visible.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo discs orbit a sphere, then one snaps forward with its title.",
+  "title_fix": null,
+  "summary": "Colour photos sit as circular discs sprinkled over a spinning 3D sphere. Dragging rotates the ball; when it settles, one disc faces front with a large title, a short caption and a round arrow button.",
+  "appearance": "A dark stage holds a loose sphere of round photo discs, each a different scene, some seen edge-on as thin slivers. At rest one disc sits large and centred, with a heavy white title to its left and a two-line caption to its right.",
+  "behaviour": "Dragging spins the sphere, tucking discs around the back and showing slivers edge-on while the labels fade. On release the nearest disc snaps to face the viewer and the title, caption and cyan arrow slide back in.",
+  "parts": [
+    "photo discs",
+    "sphere surface",
+    "title text",
+    "caption text",
+    "round arrow button"
+  ],
+  "demo_content": "Six photos titled Explore, Design, Build, Launch, Iterate and Scale, each with a short caption.",
+  "states": [
+    "dragging",
+    "selected"
+  ],
+  "kind": "carousel",
+  "look": [
+    "dark",
+    "3d",
+    "colorful",
+    "rounded"
+  ],
+  "tone": "dramatic",
+  "search_phrases": [
+    "spinning ball of circular photos",
+    "3d photo carousel you can drag",
+    "images on a sphere that rotate",
+    "orbiting picture menu for a portfolio",
+    "wheel of photos that snaps to one",
+    "webgl gallery with floating discs",
+    "rotate a globe of pictures to pick one",
+    "interactive photo sphere menu"
+  ],
+  "resembles": [],
+  "use_when": "A portfolio wants an unusual, tactile way to browse a handful of projects.",
+  "avoid_when": "It needs WebGL and a sized parent, and touch or keyboard users cannot drive the spin.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "devtool"
+  ],
+  "slot_hints": [
+    "media",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "drag"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "image",
+      "layout"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "Items with an image, title, description and link plus a scale factor are props; the disc layout, colours and spin behaviour are fixed in the source.",
+  "technique": [
+    "webgl-shader",
+    "js-animation"
+  ],
+  "weight": "heavy",
+  "weight_why": "A raw WebGL2 canvas draws a sphere of textured discs on every animation frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no keyboard control or text alternative, and the spin and snap ignore reduced-motion settings."
+  },
+  "props": [
+    {
+      "name": "items",
+      "type": "MenuItem[]",
+      "default": "[]",
+      "required": false
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "default": "1.0",
+      "required": false
+    }
+  ],
+  "issues": [
+    "Long titles sit close to the left edge and can clip, as the 'Iterate' label does in frame 1."
+  ],
+  "polish": 4,
+  "polish_why": "A striking 3D photo carousel with clean type; titles hug the edge and labels vanish while spinning.",
+  "unsure": [
+    "kind"
+  ]
+}

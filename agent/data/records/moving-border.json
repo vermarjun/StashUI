@@ -1,0 +1,152 @@
+{
+ "name": "moving-border",
+ "frames": {
+  "code": "8531",
+  "best": 6,
+  "best_why": "Frame 6 catches a clear blue glow running along the bottom-right rim with the whole button in view.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "A blue spark runs around the rim of a dark pill-shaped button.",
+ "summary": "A pill button on a translucent dark slate fill with a white label. A small blue glow travels the full perimeter on a loop, so the edge is always lit in one moving spot.",
+ "title_fix": null,
+ "appearance": "A rounded pill button on black, filled in a translucent dark slate with a faint darker border and a white medium-weight label reading Moving Border. A soft blue highlight glows on one part of the rim at a time.",
+ "behaviour": "A blue radial glow circles the entire perimeter continuously, completing a lap roughly every three seconds, so the bright spot travels along the rim without a pause. The fill and label never move.",
+ "parts": [
+  "button",
+  "label",
+  "glowing rim"
+ ],
+ "demo_content": "A single button labelled \"Moving Border\".",
+ "states": [],
+ "kind": "button",
+ "look": [
+  "dark",
+  "glow",
+  "pill",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "button with light running around its edge",
+  "glowing ring that circles a button",
+  "animated outline button",
+  "neon light circling a pill button",
+  "shiny border animation button",
+  "call to action with a moving glow",
+  "rotating conic gradient border",
+  "button rim lit up and rotating"
+ ],
+ "resembles": [],
+ "use_when": "A primary button should keep drawing the eye with a slow glowing rim.",
+ "avoid_when": "You need a strong focus state, or the glow must stop for motion-sensitive users.",
+ "suits": [
+  "saas",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "shadow"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "children is the label, and borderRadius, as, containerClassName, borderClassName and duration are props. The blue glow colour and the 30% corner radii are fixed in the source.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "One SVG rect path sampled every frame to move a single small glow.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "It is a real button with a text label, but there is no visible focus ring and the glow never stops for reduced-motion."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "borderRadius",
+   "type": "string",
+   "default": "\"1.75rem\"",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "any",
+   "default": "button",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "borderClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The glow is faint against the dark pill, so the effect is easy to miss at a glance.",
+  "No visible focus ring, and the loop never stops for reduced-motion."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth travelling glow on a clean pill; a faint rim and missing focus ring are small flaws.",
+ "unsure": [],
+ "title": "Moving Border Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b1cf4ffc66cc3c22",
+  "film_hash": "754152129f2a93a1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

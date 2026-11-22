@@ -1,0 +1,132 @@
+{
+ "name": "SpotlightCard-TS-TW",
+ "frames": {
+  "code": "8695",
+  "best": 4,
+  "best_why": "A soft white spotlight is clearly visible on the left card with the cursor clear of its text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.6
+ },
+ "tagline": "A soft pool of light trails the pointer across each dark card.",
+ "summary": "A pair of rounded dark cards that stay flat until the pointer moves over them, then a colourless or tinted radial glow follows the cursor across the surface and fades when it leaves.",
+ "title_fix": null,
+ "appearance": "Two rounded charcoal cards sit side by side on a black stage, each with a thin lighter border. Inside, a bold white heading and a few lines of grey body text are aligned top-left, leaving the lower half empty. When lit, a soft circular patch of light washes one area of the card.",
+ "behaviour": "Moving the pointer over a card places a radial spotlight directly under it and raises its opacity; leaving fades it out over half a second. Otherwise the cards stay flat and still.",
+ "parts": [
+  "card",
+  "heading",
+  "body text",
+  "spotlight"
+ ],
+ "demo_content": "Two cards headed 'White spotlight' and 'Purple spotlight', with lines about moving the cursor and a customisable colour.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "dark card with a light that follows the mouse",
+  "cursor following light effect on a panel",
+  "hover glow that tracks the pointer",
+  "radial gradient highlight card",
+  "mouse following light on a dark tile",
+  "light that fades when the pointer leaves",
+  "soft light spot on a feature card",
+  "coloured highlight under the cursor"
+ ],
+ "resembles": [],
+ "use_when": "You want a dark feature or pricing card that rewards a hover with a subtle moving light, without extra assets.",
+ "avoid_when": "The light is pointer-only, so touch gets a flat card, and the effect barely shows on light backgrounds.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "pricing-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Children fill the card and spotlightColor sets the glow as an rgba string; width and spacing come from your own classes. Radius, padding, border and the dark surface are fixed in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Two divs and a mouse-driven gradient; no animation loop runs while the pointer is still.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The spotlight is pointer-only and the card cannot take focus, so keyboard and touch users never trigger it."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "spotlightColor",
+   "type": "rgba string",
+   "default": "'rgba(255, 255, 255, 0.25)'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The card wires focus handlers but has no tabIndex, so its focus state can never fire.",
+  "The dim grey body copy is low contrast against the dark card.",
+  "The glow only works for a mouse and disappears entirely without a pointer."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy dark cards and a gentle glow, but the effect is faint and the demo is plain.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Spotlight Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "68a097df6a661390",
+  "film_hash": "28e3f7892f3ac581",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

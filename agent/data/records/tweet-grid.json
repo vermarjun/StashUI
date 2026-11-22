@@ -1,0 +1,138 @@
+{
+ "name": "tweet-grid",
+ "frames": {
+  "code": "2113",
+  "best": 4,
+  "best_why": "All six cards are fully in view with no cursor over any text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 4.6
+ },
+ "tagline": "Three-column wall of tweet cards in a staggered masonry layout.",
+ "summary": "A responsive masonry grid of tweet-style cards, each with author, handle, body, date and reply, repost and like counts.",
+ "title_fix": null,
+ "appearance": "Six dark rounded tweet cards sit in three staggered columns, each with a round avatar, bold name, grey handle, small X mark, a few lines of text, a date and a row of emoji counts.",
+ "behaviour": "Static: nothing moves or responds beyond a faint border shift on hover.",
+ "parts": [
+  "tweet card",
+  "avatar",
+  "name",
+  "handle",
+  "x logo",
+  "body text",
+  "date",
+  "counts"
+ ],
+ "demo_content": "Six invented tweets from Maya Chen, Diego Alvarez, Priya Raman, Tom Becker, Aisha Bello and Lucas Moreau.",
+ "states": [
+  "hover"
+ ],
+ "kind": "testimonial-section",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "wall of tweets in three columns",
+  "masonry grid of testimonial cards",
+  "social proof section with posts",
+  "twitter style quote wall",
+  "testimonials with avatars and likes",
+  "staggered grid of review cards",
+  "embedded posts without an api",
+  "customer love wall for a landing page"
+ ],
+ "resembles": [
+  "X (Twitter) posts"
+ ],
+ "use_when": "You want a dense wall of short social-style quotes with author photos and engagement counts.",
+ "avoid_when": "You need live posts; these are static mock cards with no network fetch.",
+ "suits": [
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "testimonial"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "tweets takes inline objects with name, handle, avatar, text and counts, and columns and spacing are props; card styling is fixed in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Static cards with a single CSS border transition.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Cards are not interactive; avatars use the name as alt, but counts are emoji plus digits with no text labels for screen readers."
+ },
+ "props": [
+  {
+   "name": "tweets",
+   "type": "(string | TweetData)[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "columns",
+   "type": "1 | 2 | 3 | 4 | 5",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "spacing",
+   "type": "\"sm\" | \"md\" | \"lg\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"size-10 shrink-0 rounded-full object-cover\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Reply, repost and like counts are emoji plus digits with no text label.",
+  "Cards are not links or buttons, so nothing in the wall is interactive."
+ ],
+ "polish": 3,
+ "polish_why": "Clean masonry and believable cards, but standard bordered tiles with little distinction.",
+ "unsure": [],
+ "title": "Tweet Grid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "91f51d5df7ba5603",
+  "film_hash": "c43e8b670cb77073",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

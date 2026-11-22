@@ -1,0 +1,114 @@
+{
+ "name": "comp-387",
+ "frames": {
+  "code": "7963",
+  "best": 3,
+  "best_why": "Popover is fully open with the Share code label, four share icons and the link field.",
+  "usable": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.7
+ },
+ "tagline": "A share button opens social icons and a copyable link field.",
+ "summary": "A Share button opens a small popover with a row of icon buttons for embed, X, Facebook and email, above a read-only link field with a copy button.",
+ "title_fix": null,
+ "appearance": "A dark rounded popover floats above a small outlined Share button. It centers a bold 'Share code' label over four square outlined icon buttons, then shows a dark read-only field with a grey URL and a copy icon inside its right edge.",
+ "behaviour": "Clicking Share opens the popover. The copy icon writes the link to the clipboard and briefly swaps to a green tick while a tooltip reads 'Copy to clipboard'; clicking outside closes the popover.",
+ "parts": [
+  "share button",
+  "popover",
+  "share code label",
+  "icon buttons",
+  "link field",
+  "copy button",
+  "tooltip"
+ ],
+ "demo_content": "Trigger 'Share'; popover titled 'Share code' with a coss.com share link and embed, X, Facebook and email icons.",
+ "states": [
+  "open",
+  "hover",
+  "focus",
+  "success"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "outlined",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "popup to share a link",
+  "social share buttons in a card",
+  "copy link to clipboard button",
+  "share sheet with twitter and facebook",
+  "click share to copy url",
+  "small popover with social icons",
+  "email embed and copy link options",
+  "link sharing widget"
+ ],
+ "resembles": [],
+ "use_when": "A page needs a quick way to share or copy its link from a compact control.",
+ "avoid_when": "The social buttons only render icons; none of them build a share URL or open a window in this code.",
+ "suits": [
+  "blog",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "secondary-cta"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The share URL is a fixed default value and the icon buttons have no handlers; making them real means editing the source. Width and colours use tokens.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small popover with four icons and an input; nothing runs until opened.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Every icon button and the copy control have aria-labels and focus rings; the copied confirmation is visual only."
+ },
+ "props": [],
+ "issues": [
+  "The social and embed buttons have no handlers; only copying the link works.",
+  "The copied confirmation is a visual tick with no live announcement."
+ ],
+ "polish": 3,
+ "polish_why": "Neat share popover; unwired social buttons and a fixed link make it a demo.",
+ "unsure": [],
+ "title": "Share Link Popover",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "85acfe0ec9fc4a44",
+  "film_hash": "c56095f80c9b8022",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "balance-slider",
+  "frames": {
+    "code": "5577",
+    "best": 1,
+    "best_why": "Frame 1 shows both sliders at even halves with all four percentage labels clearly placed.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "One value split across two coloured bars, percentages on each end.",
+  "summary": "A horizontal control that splits a hundred percent between a left side and a right side. Dragging shifts the two coloured fills and a thin divider while both end percentages update live.",
+  "title_fix": null,
+  "appearance": "Inside a dark rounded card, a wide bar is cut into a dim left fill and a pale right fill with a slim white divider between them. A percentage label sits at each end, and the bar's hue follows the chosen side colours.",
+  "behaviour": "Dragging anywhere on the bar moves the divider and resizes both fills as the two percentages count up and down. Hovering or focusing lifts the label row and brightens the indicator, easing back on leave.",
+  "parts": ["left label", "percentage", "left fill", "right fill", "divider indicator", "right label"],
+  "demo_content": "Two sliders: LEFT and RIGHT in orange and white, and WARM and COOL in red and blue held at thirty percent.",
+  "states": ["hover", "focus", "dragging"],
+  "kind": "slider",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "two sided meter with percentages",
+    "left right volume control",
+    "range slider split into two colors",
+    "audio panning control for web",
+    "slider showing percent on both ends",
+    "dual color bar with a divider",
+    "warm and cool color slider",
+    "drag control that shifts between sides"
+  ],
+  "resembles": [],
+  "use_when": "One value should read as a trade-off between two named sides, such as warmth or audio panning.",
+  "avoid_when": "Its size is pinned at 320 by 120 pixels, so it will not stretch to a wide container.",
+  "suits": ["any"],
+  "slot_hints": ["form-field", "media"],
+  "traits": {
+    "trigger": ["drag", "hover", "focus"],
+    "motion": "subtle",
+    "affects": ["fill", "layout", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "initialValue, both side colours, both labels, the shift limits, indicator colour and corner radius are props; the 320 by 120 frame is fixed in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A single native range input driving CSS transitions on two fills and a label row.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Arrow keys drive the native range input, but the see-through input has no name and the visible LEFT and RIGHT text is aria-hidden."
+  },
+  "props": [
+    {"name": "initialValue", "type": "number", "default": "50", "required": false},
+    {"name": "leftColor", "type": "string", "default": "#e68a00", "required": false},
+    {"name": "rightColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "minShiftLimit", "type": "number", "default": "40", "required": false},
+    {"name": "maxShiftLimit", "type": "number", "default": "68", "required": false},
+    {"name": "leftContent", "type": "string", "default": "LEFT", "required": false},
+    {"name": "rightContent", "type": "string", "default": "RIGHT", "required": false},
+    {"name": "indicatorColor", "type": "string", "default": "#FFFFFF", "required": false},
+    {"name": "borderRadius", "type": "number", "default": "8", "required": false}
+  ],
+  "issues": [
+    "The percentage labels are aria-hidden while the transparent range input has no accessible name."
+  ],
+  "polish": 3,
+  "polish_why": "Neat two-sided meter with tidy type; flat surfaces and a hardcoded size keep it ordinary.",
+  "unsure": ["traits.theme"]
+}

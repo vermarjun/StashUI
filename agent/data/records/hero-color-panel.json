@@ -1,0 +1,188 @@
+{
+ "name": "hero-color-panel",
+ "frames": {
+  "code": "4419",
+  "best": 3,
+  "best_why": "The stacked bars are most distinct here, with purple, lime, mint and green layers each reading as a separate band.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "Stacks of neon colour bars drift beside a headline and pill button.",
+ "summary": "A split landing hero with a big two-line headline, short paragraph, pill button and two tech badges on the left, and a block of floating horizontal colour panels on the right. The stacked bars slide and blend like a soft moving gradient.",
+ "title_fix": null,
+ "appearance": "On black, a left column stacks a large white two-line heading, a small grey paragraph, an outlined pill button and two bordered badges. The right visual is a loose pile of horizontal rounded bars in lime, mint, violet, magenta and green that fade to black at their tips.",
+ "behaviour": "The stacked bars glide sideways at different speeds, each sliding out of and back into the pile, so the block keeps reshaping. The text and buttons hold still, hover lifts the button and badges, and on small screens the bars move to a dimmed strip under the copy.",
+ "parts": [
+  "headline",
+  "paragraph",
+  "call-to-action button",
+  "tech badges",
+  "stacked colour bars"
+ ],
+ "demo_content": "Heading AI SDK Agents / Copy and Paste, copy about Vercel AI SDK, Next.js v16 and AI SDK v6 badges.",
+ "states": [
+  "hover"
+ ],
+ "kind": "hero",
+ "look": [
+  "dark",
+  "colorful",
+  "gradient",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "neon color bars floating in hero",
+  "stacked gradient stripes beside headline",
+  "colorful layered panels animation",
+  "split hero text and abstract visual",
+  "holographic stripe visual for landing page",
+  "soft gradient ribbons on black",
+  "developer tools landing page hero",
+  "animated color blocks hero section"
+ ],
+ "resembles": [],
+ "use_when": "A product landing page wants an abstract, always-moving colour visual next to its headline without using video.",
+ "avoid_when": "The shader animates without pause and needs WebGL, and its fixed neon palette can fight a muted brand.",
+ "suits": [
+  "saas",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Set heading, subtitle, description, CTA and badges as props, and tune the shader with colours, density, speed and angles. Layout changes are classes.",
+ "technique": [
+  "webgl-shader",
+  "css-transition"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-time WebGL colour-panel shader redraws half the hero every frame.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "A screen-reader h1 names the hero and the button carries text, but the endless shader never stops for reduced-motion users."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "React.ReactNode",
+   "default": "Copy and Paste",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "ctaProps",
+   "type": "Partial<HeroColorPanelsCTAProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "techStack",
+   "type": "HeroColorPanelsTechItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showCta",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showBadges",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "srTitle",
+   "type": "string",
+   "default": "AI SDK Agents",
+   "required": false
+  },
+  {
+   "name": "desktopShaderProps",
+   "type": "Partial<ColorPanelsProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mobileShaderProps",
+   "type": "Partial<ColorPanelsProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "renderCta",
+   "type": "(defaultCta: React.ReactNode) => React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-full w-full overflow-hidden\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The description is small and dim against the black stage, so it is easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "Vivid layered bars and a balanced split layout; the small body copy is the weak spot.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Hero Color Panel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6db98a0dea11f51c",
+  "film_hash": "a966d410c2016303",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

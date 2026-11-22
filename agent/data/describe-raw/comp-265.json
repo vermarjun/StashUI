@@ -1,0 +1,63 @@
+{
+  "name": "comp-265",
+  "frames": {
+    "code": "8568",
+    "best": 4,
+    "best_why": "Range is narrowed to $200-$533 so both handles, the filled band, the histogram and the item count are all readable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A histogram of prices with a two-handle filter drawn straight across it.",
+  "summary": "A price filter that stacks a row of thin histogram bars above a dual-handle slider. Below sit min and max price fields, and an outlined button reports how many items fall in the range.",
+  "title_fix": null,
+  "appearance": "A small Price slider label tops a band of many narrow grey bars of uneven height. A two-handle track lies across their base, with a solid white band between the handles. Two outlined fields labelled Min price and Max price follow, then a full-width outlined button.",
+  "behaviour": "Dragging either handle reshapes the white band and rewrites both price fields and the number on the button. Typing in a field moves the matching handle and recalculates the count.",
+  "parts": ["label", "histogram bars", "track", "lower handle", "upper handle", "min price field", "max price field", "count button"],
+  "demo_content": "A fixed list of 120 item prices from 80 to 900; the fields open at $200 and $780 and the button reads Show 93 items.",
+  "states": ["hover", "focus", "active"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "dense", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "filter a list by minimum and maximum cost",
+    "distribution chart behind a range bar",
+    "shop filter with a histogram",
+    "two handles over a bar chart",
+    "narrow results with lower and upper limits",
+    "price filter with boxes for each bound",
+    "data distribution slider for a catalogue",
+    "range picker showing how many match"
+  ],
+  "resembles": [],
+  "use_when": "Shoppers should see where the stock is concentrated while setting a budget window.",
+  "avoid_when": "The chart is built from a hardcoded price list, so real catalogue data has to be wired in.",
+  "suits": ["ecommerce"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The price list, label and currency symbol sit in the source; bucket count and formatting need edits, and the count button follows the data.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Forty bars and two inputs; counts are recomputed only when the range moves.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Fields and slider are labelled, but the changing item count is plain button text and is not announced."
+  },
+  "props": [],
+  "issues": ["Bars keep the same grey inside and outside the range, so the selection highlight does not show."],
+  "polish": 4,
+  "polish_why": "Well built composition of chart, slider and fields; the missing bar highlight is the one flaw.",
+  "unsure": []
+}

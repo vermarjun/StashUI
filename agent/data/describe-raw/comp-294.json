@@ -1,0 +1,99 @@
+{
+  "name": "comp-294",
+  "frames": {
+    "code": "7602",
+    "best": 6,
+    "best_why": "The card is shown largest, with the refresh badge, version line, description, both buttons and close cross clear.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A refresh badge and two buttons announce that a new version is ready.",
+  "summary": "A software update notification. A round badge with a circular refresh arrow leads a version headline and short explanation, with a filled Install button, a link-style Later and a close cross.",
+  "title_fix": null,
+  "appearance": "A bordered card with a soft shadow holds a circular outlined badge containing two curved arrows. Beside it a bold version sentence and two muted lines of release notes, then a light Install button, an underlined Later, and a grey X at the top right.",
+  "behaviour": "Hovering shades the Install button and the close cross and underlines Later, but no click is wired: the card never closes and no update starts.",
+  "parts": [
+    "refresh badge",
+    "version title",
+    "description",
+    "install button",
+    "later button",
+    "close button"
+  ],
+  "demo_content": "The line \"Version 1.4 is now available!\" with a note about bug fixes and performance improvements.",
+  "states": [
+    "hover",
+    "focus",
+    "active"
+  ],
+  "kind": "toast",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "shadowed"
+  ],
+  "tone": "minimal",
+  "resembles": [],
+  "use_when": "A web app should nudge people toward a new version without blocking their work.",
+  "avoid_when": "Every control is decorative: the card cannot be closed, installed or deferred.",
+  "suits": [
+    "saas"
+  ],
+  "slot_hints": [
+    "toast"
+  ],
+  "traits": {
+    "trigger": [
+      "hover"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Version line, description and both button labels are written in the file; there are no props and the width cap is fixed in a class.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A card with one icon and three simple buttons; only hover fades run.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The close button is named and all controls take focus, but none of them has an action attached."
+  },
+  "props": [],
+  "issues": [
+    "Install, Later and the close cross have no handlers, so pressing any of them does nothing."
+  ],
+  "polish": 4,
+  "polish_why": "Clear hierarchy and tidy spacing; the buttons are the only unfinished part.",
+  "unsure": [],
+  "search_phrases": [
+    "new version available card",
+    "update prompt with install and later",
+    "remind me to update the app",
+    "refresh icon in a notification",
+    "software update box in the corner",
+    "two choice buttons on an alert",
+    "popup telling someone to restart",
+    "release notes notice with download"
+  ]
+}

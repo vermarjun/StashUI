@@ -1,0 +1,78 @@
+{
+  "name": "depth-carousel",
+  "frames": {
+    "code": "1079",
+    "best": 2,
+    "best_why": "The front photo is crisp and bright while two dimmer cards step away behind it, with arrows and dots visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo cards recede down a tilted rail, blurred and dimmed behind the front one.",
+  "summary": "A carousel of photography cards arranged on a 3D rail: the leading image is sharp while the rest shrink, blur and darken behind it. Drag, scroll, click, use the arrows, the dots or the arrow keys to move.",
+  "title_fix": null,
+  "appearance": "One large rounded photo sits centred on a black stage, with two or three more cards stepped behind it to the right, each smaller and hazier. Small round arrow buttons flank the stage and a row of tiny dots rests at the bottom centre.",
+  "behaviour": "Cards glide along the rail with a springy ease, the new front image sharpening as the old ones sink back. Dragging follows the pointer and flicks to the nearest card; scrolling, clicking a card, the arrows and the dot row all advance it.",
+  "parts": ["photo card", "rear cards", "arrow buttons", "dot indicators"],
+  "demo_content": "Stock shots of a mountain lake, a red flower against blue sky, and a sunset bloom.",
+  "states": ["active", "dragging", "hover", "focus"],
+  "kind": "carousel",
+  "look": ["dark", "3d", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "3d card carousel",
+    "photos stacked in depth",
+    "draggable photo slider",
+    "coverflow gallery",
+    "image carousel with blurred rear cards",
+    "swipe through photos in perspective",
+    "picture rail with arrows and dots",
+    "portfolio slideshow with depth"
+  ],
+  "resembles": ["Apple Cover Flow"],
+  "use_when": "A gallery or portfolio where photos should feel like physical objects on a rail, not a flat strip.",
+  "avoid_when": "It needs a tall container, hides most slides behind blur, and captures the mouse wheel from the page.",
+  "suits": ["portfolio", "marketing", "ecommerce"],
+  "slot_hints": ["hero", "media"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["children", "image", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an items array of image URLs or image and alt objects. Card size, depth, spread, tilt, blur, tint, autoplay, loop, controls and indicators are all props.",
+  "technique": ["gsap", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "Six image cards animated with GSAP transforms and blur filters; idle once settled.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Arrow keys step the carousel, controls are labelled buttons, and slides carry alt text and counts."
+  },
+  "props": [
+    {"name": "items", "type": "DepthCarouselItem[]", "default": "DEFAULT_ITEMS", "required": false},
+    {"name": "cardWidth", "type": "number", "default": "300", "required": false},
+    {"name": "cardHeight", "type": "number", "default": "380", "required": false},
+    {"name": "depth", "type": "number", "default": "220", "required": false},
+    {"name": "spread", "type": "number", "default": "90", "required": false},
+    {"name": "tilt", "type": "number", "default": "22", "required": false},
+    {"name": "tiltDirection", "type": "'left' | 'right'", "default": "right", "required": false},
+    {"name": "visibleCards", "type": "number", "default": "4", "required": false},
+    {"name": "blur", "type": "number", "default": "6", "required": false},
+    {"name": "autoplay", "type": "boolean", "default": "false", "required": false},
+    {"name": "loop", "type": "boolean", "default": "true", "required": false},
+    {"name": "showControls", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "The arrow buttons are very dim against the black stage and easy to miss."
+  ],
+  "polish": 4,
+  "polish_why": "Strong depth and smooth easing; dim arrows and heavily blurred rear cards cost some clarity.",
+  "unsure": []
+}

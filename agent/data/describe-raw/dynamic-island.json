@@ -1,0 +1,68 @@
+{
+  "name": "dynamic-island",
+  "frames": {
+    "code": "9003",
+    "best": 4,
+    "best_why": "Widest fully visible island, showing the expanded Playing music state and its preset row.",
+    "usable": [1, 2, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A black pill expands from a thin strip into a wider banner.",
+  "summary": "A black rounded island rests as a small pill with one short label and springs into wider and taller shapes on demand. Its text fades and blurs out as the pill resizes.",
+  "title_fix": null,
+  "appearance": "A solid black rounded pill sits in the middle of a dark panel above a row of grey preset buttons. At rest it holds a single short white label, and it stretches into a long shallow pill holding the same centred text.",
+  "behaviour": "Choosing a preset springs the island to a new width and height, its corners and label settling with it. The previous text fades and blurs away while the new label scales in.",
+  "parts": ["black pill", "label", "preset buttons"],
+  "demo_content": "Preset buttons labelled default, compact, medium and large beneath the island.",
+  "states": ["expanded", "hover", "focus"],
+  "kind": "toast",
+  "look": ["dark", "pill", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "apple style live activity pill",
+    "black pill that expands on click",
+    "notification island with size presets",
+    "expanding status pill at top of screen",
+    "apple style live activity widget",
+    "collapsible pill notification",
+    "music playing mini banner",
+    "spring animated rounded notification"
+  ],
+  "resembles": ["iOS Dynamic Island"],
+  "use_when": "You want a compact status pill that can grow into a small panel without leaving the page.",
+  "avoid_when": "It needs a context provider around it, and only fixed size presets exist rather than free content.",
+  "suits": ["mobile-app", "saas", "ai-chat"],
+  "slot_hints": ["toast", "badge", "nav"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "children", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The island's label goes in as children and its size is set through a context hook; each preset's width and radius sit in a lookup table in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A few motion divs with spring resizes; fully idle when the size is unchanged.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The island is a plain div with no role or live region, and the spring resize ignores reduced motion."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "id", "type": "string", "default": null, "required": true},
+    {"name": "initialSize", "type": "SizePresets", "default": "'default'", "required": false},
+    {"name": "initialAnimation", "type": "Array<{ size: SizePresets; delay: number }>", "default": "[]", "required": false}
+  ],
+  "issues": ["The large preset runs past the panel edge and is clipped in frame 3."],
+  "polish": 4,
+  "polish_why": "Confident spring resize and clean clipped corners; fixed preset widths limit the content that fits.",
+  "unsure": []
+}

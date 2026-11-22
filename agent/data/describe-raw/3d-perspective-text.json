@@ -1,0 +1,66 @@
+{
+  "name": "3d-perspective-text",
+  "frames": {
+    "code": "5295",
+    "best": 5,
+    "best_why": "The whole paragraph is in view, tilted back so lower lines crowd together; earlier frames show only a slice.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Oversized orange text lies back in perspective and rolls upright as you scroll.",
+  "summary": "A large block of bold orange copy is tilted back in strong 3D perspective on a dark stage. As the page scrolls the text lifts and flattens toward the reader, with a small hint above telling you to scroll.",
+  "title_fix": null,
+  "appearance": "A dark full-width stage holding a wide paragraph of heavy orange text set in a deep backward tilt, the top lines larger and the lower ones compressed. A tiny two-line hint sits above centre with a thin vertical rule hanging from it.",
+  "behaviour": "The block is pinned while the page scrolls, its backward tilt easing from steep toward nearly flat as progress advances. A gradient fades the bottom edge into the dark as the lines rise into view.",
+  "parts": ["text block", "scroll hint", "vertical rule", "bottom fade"],
+  "demo_content": "A paragraph beginning \"Every great interface starts as a sentence\" and the hint \"scroll down to see\".",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "bold", "colorful", "3d"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "text tilted back in 3d",
+    "scroll driven perspective paragraph",
+    "orange headline that lifts as you scroll",
+    "big copy in forced perspective",
+    "type that rolls toward reader",
+    "cinematic scrolling text block",
+    "words flatten as page scrolls",
+    "deep perspective typography section"
+  ],
+  "resembles": [],
+  "use_when": "A manifesto or intro should feel cinematic, with a paragraph that pulls the reader in as they scroll.",
+  "avoid_when": "It needs a very tall scroll parent and spreads the paragraph over many screens, so it cannot be skimmed.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["hero", "body-text"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Only the paragraph text and the hint line are props; the orange, type size, scroll length and the 3D tilt are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One text node transformed from scroll progress, plus a smooth-scroll wrapper.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The tilt and smooth scrolling ignore reduced-motion, and a 300vh pinned section spreads the paragraph over several screens."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "DEFAULT_TEXT", "required": false},
+    {"name": "hint", "type": "string", "default": "scroll down to see", "required": false}
+  ],
+  "issues": ["The first frame is almost empty apart from the scroll hint.", "The deep tilt clips lines at the edges mid-scroll.", "No reduced-motion handling guards the scroll transform."],
+  "polish": 4,
+  "polish_why": "Bold, coherent scroll typography; edges clip and the opening frame looks empty.",
+  "unsure": []
+}

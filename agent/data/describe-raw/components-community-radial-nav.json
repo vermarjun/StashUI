@@ -1,0 +1,72 @@
+{
+  "name": "components-community-radial-nav",
+  "frames": {
+    "code": "9547",
+    "best": 4,
+    "best_why": "Notifications is fully stretched into a readable pill while every other node and the centre arrow stay clean.",
+    "usable": [1, 2, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Ring of icon pills with one stretching out to show its name.",
+  "summary": "Five icon buttons sit on a thin circular track; selecting one stretches it into a pill with its label and swings a small arrow in the middle to point at it.",
+  "title_fix": null,
+  "appearance": "A thin white circle on black with five round outlined buttons spaced around its rim, each holding a black-line icon. The selected one widens into a rounded pill showing its icon and name, and a small cursor arrow sits in the middle.",
+  "behaviour": "Clicking a node expands that button into a labelled pill and shrinks the previous one back to a circle, while a spring rotates the centred pointer the shortest way to face the chosen item.",
+  "parts": ["circle track", "icon button", "expanded label", "centre pointer"],
+  "demo_content": "Home, Search, Notifications, Profile and Settings icons arranged around the ring.",
+  "states": ["selected"],
+  "kind": "dock",
+  "look": ["dark", "outlined", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "circular navigation menu with icons",
+    "radial menu that expands labels",
+    "ring of buttons around a circle",
+    "floating speed dial navigation",
+    "icon menu that points to the active item",
+    "round menu for a small app",
+    "circular tab bar with an arrow",
+    "orbit menu with five actions"
+  ],
+  "resembles": [],
+  "use_when": "A compact menu needs five or so destinations in little space and can afford a circular footprint.",
+  "avoid_when": "The ring wastes space in corners, and long expanded labels need a wide parent or they overlap the track.",
+  "suits": ["mobile-app", "saas", "dashboard"],
+  "slot_hints": ["nav", "decoration"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Items with icon, label and angle, the circle size, menu-button sizing and a default active id are props; the ring geometry and springs are fixed in source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Five small buttons and one rotating icon; nothing animates at rest.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Buttons have labels and a pressed state, but there are no focus-visible rings, so keyboard focus is invisible on the dark track."
+  },
+  "props": [
+    {"name": "items", "type": "RadialNavItem[]", "default": null, "required": true},
+    {"name": "size", "type": "number", "default": "180", "required": false},
+    {"name": "menuButtonConfig", "type": "MenuButtonConfig", "default": null, "required": false},
+    {"name": "defaultActiveId", "type": "number", "default": null, "required": false},
+    {"name": "onActiveChange", "type": "(id: number) => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The expanded Notifications pill spills past the circle and crowds the ring edge.",
+    "The active arrow is small and can read as a stray mouse cursor."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp line work and a neat pointer; the long label spilling outside the ring is the main flaw.",
+  "unsure": []
+}

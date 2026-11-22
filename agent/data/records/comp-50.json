@@ -1,0 +1,113 @@
+{
+ "name": "comp-50",
+ "frames": {
+  "code": "1069",
+  "best": 6,
+  "best_why": "All three fields are filled and the card number carries the Visa badge, showing the complete state.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.6
+ },
+ "tagline": "Stacked card, expiry and CVC fields that reveal the card brand as you type.",
+ "summary": "A compact card entry group: one wide card-number row with a brand logo slot, split below into expiry and CVC boxes. Digits are grouped automatically and the generic card glyph becomes a Visa badge.",
+ "title_fix": null,
+ "appearance": "Under a small \"Card Details\" heading, three dark fields join into one block with shared hairlines and rounded outer corners: a full-width number row with a small card glyph at its right, then an MM/YY box and a CVC box side by side.",
+ "behaviour": "Typing numbers spaces the card number into groups of four, and once the first digits name the brand a coloured Visa badge replaces the plain card glyph. Focus raises a ring around whichever field is active; the expiry and CVC boxes accept their own values.",
+ "parts": [
+  "heading",
+  "card number field",
+  "card brand badge",
+  "expiry field",
+  "CVC field"
+ ],
+ "demo_content": "Heading \"Card Details\", placeholders Card number, MM/YY and CVC, a 4242 test number and the React Payment Inputs credit.",
+ "states": [
+  "focus"
+ ],
+ "kind": "checkout",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "credit card number expiry cvc form",
+  "payment details fields stacked",
+  "type card and see visa logo",
+  "checkout card entry box",
+  "billing information form for cards",
+  "card number field with brand badge",
+  "secure payment input group",
+  "enter debit card to pay"
+ ],
+ "resembles": [
+  "Stripe card element"
+ ],
+ "use_when": "A checkout or billing step needs the three standard card fields with automatic brand detection and a tidy grouped look.",
+ "avoid_when": "It needs the react-payment-inputs dependency and only renders fields, with no validation text or pay action.",
+ "suits": [
+  "ecommerce",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "text",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "There are no props: heading, field order and vendor credit are fixed, so changing layout, labels or copy means editing the file.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Three inputs and a small brand badge; no loops, timers or heavy drawing.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The inputs and focus rings work, but fields depend on placeholders and library aria labels, and the heading is not tied to them."
+ },
+ "props": [],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Tidy joined group and a live brand badge; otherwise plain stock inputs plus a vendor credit.",
+ "unsure": [
+  "a11y.labels",
+  "content_from"
+ ],
+ "title": "Card Details Form",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2ac70340316642b0",
+  "film_hash": "d161fbd9c2b6d19d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

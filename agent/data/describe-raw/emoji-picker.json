@@ -1,0 +1,69 @@
+{
+  "name": "emoji-picker",
+  "frames": {
+    "code": "2696",
+    "best": 1,
+    "best_why": "Full picker with search, category tabs, a dense emoji grid and the preview footer all visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Searchable emoji grid in a compact popover with a preview footer.",
+  "summary": "A compact emoji picker with a search box, a row of category tabs, a scrollable grid of native emoji and a footer preview. Typing filters by name or shortcode, and picking one writes it to the linked field.",
+  "title_fix": null,
+  "appearance": "A narrow dark rounded panel with a pill search field on top, then a row of small grey category icons, a caption for the current category and a dense six-column grid of yellow emoji. A footer strip shows a larger emoji with its name and shortcode and a small hand icon at the right.",
+  "behaviour": "Typing in the search filters the grid live and switches the heading to Search results, while a clear button empties it. Hovering an emoji updates the footer preview, and clicking one selects it and writes its value to the field below the panel.",
+  "parts": ["search field", "category tabs", "emoji grid", "category caption", "preview footer", "skin tone button"],
+  "demo_content": "Search terms 'rd' and 'rocket'; smiley, flag and food emoji; and the status line 'Status for #design-crit'.",
+  "states": ["hover", "focus", "open", "selected", "loading", "empty", "error"],
+  "kind": "popover",
+  "look": ["dark", "rounded", "dense", "colorful", "flat"],
+  "tone": "playful",
+  "search_phrases": [
+    "searchable smiley keyboard",
+    "insert a reaction into a message",
+    "smiley face selector grid",
+    "reaction palette with categories",
+    "search shortcodes for emoji",
+    "pick a face for a comment",
+    "icon grid with skin tones",
+    "popup for choosing an emoji"
+  ],
+  "resembles": ["Slack emoji picker"],
+  "use_when": "Users need to drop an emoji into a chat, comment or status field and want search and categories, not a long scroll.",
+  "avoid_when": "It fetches its emoji data from a CDN by default, so it needs network access or a self-hosted data URL.",
+  "suits": ["social", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Locale, data URL or bundled data, shortcode presets, labels, skin tone, custom emoji and categories, multi-select and recents are options; styling comes from CSS variables.",
+  "technique": ["css-transition"],
+  "weight": "moderate",
+  "weight_why": "Fetches a large emoji dataset and renders a virtualized grid; heavier than it looks.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Search, categories and the grid are labelled and keyboard-driven with a polite live region; reduced motion is not explicitly detected."
+  },
+  "props": [
+    {"name": "value", "type": "string | null", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string | null) => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The six-column emoji grid is dense and small, so rows are hard to scan at this width.",
+    "The category tabs and clear button are tiny icon-only controls with no visible labels."
+  ],
+  "polish": 4,
+  "polish_why": "Compact picker with a clear preview; the dense grid and tiny icon tabs are hard to read.",
+  "unsure": ["props", "responsive"]
+}

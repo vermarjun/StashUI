@@ -1,0 +1,144 @@
+{
+ "name": "direction-aware-hover",
+ "frames": {
+  "code": "8760",
+  "best": 2,
+  "best_why": "The office card is darkened with its Forest and Nature caption fully visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.3
+ },
+ "tagline": "Photo cards that nudge and reveal a caption based on your entry side.",
+ "summary": "Square image cards on a black page. Entering one from a side shifts the photo and its caption a little in opposite directions, darkens the picture and fades in a white label at the bottom-left.",
+ "title_fix": null,
+ "appearance": "Three square rounded image cards on black: a black-and-white swirl of contour lines, a bright office interior and a sky full of clouds. Each sits flat at rest, and a hovered one carries a dark veil with a small white label at its bottom-left.",
+ "behaviour": "Entering a card from above, below, left or right nudges the image and the overlay text a few pixels in opposite directions, fades in a dark veil and reveals the label. Leaving reverses it.",
+ "parts": [
+  "photo card",
+  "image",
+  "dark veil",
+  "label",
+  "subtitle"
+ ],
+ "demo_content": "A swirl, an office and a cloudy sky, labelled Mountains, Forest and Ocean.",
+ "states": [
+  "hover"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "image card that reveals text on hover",
+  "photo reacts to which side cursor enters",
+  "hover card with sliding image",
+  "picture tiles with caption overlay",
+  "portfolio thumbnails with hover labels",
+  "directional hover image effect",
+  "gallery cards that darken on hover",
+  "text appears when hovering a photo"
+ ],
+ "resembles": [],
+ "use_when": "A gallery of people or destinations where captions should stay hidden until someone points at a card.",
+ "avoid_when": "Touch screens: the caption and dark veil appear on hover only.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass imageUrl plus overlay content as children; imageClassName, childrenClassName and className tune styling, while the nudge distances are fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A few image cards with short transform and opacity transitions; no loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Captions appear only on mouse hover, so keyboard and touch users never see them; alt text is just the word image."
+ },
+ "props": [
+  {
+   "name": "imageUrl",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "childrenClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "imageClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Captions are hidden on touch and keyboard, with no focus handling.",
+  "Demo images do not match their labels: a swirl is Mountains, an office Forest, a sky Ocean.",
+  "The directional nudge is only a few pixels; frames 1 and 6 look identical."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy cards and a subtle directional nudge; captions are invisible without a mouse.",
+ "unsure": [],
+ "title": "Direction Aware Hover",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8667bdfa7fe1e7ae",
+  "film_hash": "a579add785f3539b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

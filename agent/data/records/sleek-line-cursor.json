@@ -1,0 +1,144 @@
+{
+ "name": "sleek-line-cursor",
+ "frames": {
+  "code": "9151",
+  "best": 5,
+  "best_why": "The trail forms a bright pink loop, the clearest single curve of all six frames.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.2
+ },
+ "tagline": "A thin coloured line trails behind the pointer, bending as it moves.",
+ "summary": "A single hair-thin stroke is pulled along behind the mouse by a spring, so it swoops and loops rather than tracking exactly. Its colour drifts slowly through hues over a dark stage.",
+ "title_fix": null,
+ "appearance": "Almost nothing sits on the black stage except a thin bordered rectangle holding a line of pale text. Across it runs one hair-thin curved stroke in a dim pinkish red, following the moving pointer. The rest of the frame is empty black.",
+ "behaviour": "The stroke is a chain of points pulled toward the cursor by a spring, so it lags, overshoots and curls into loops like a loose thread. Its hue cycles slowly, and it redraws every frame over the cleared canvas.",
+ "parts": [
+  "line trail",
+  "looping curve",
+  "demo panel",
+  "instruction text"
+ ],
+ "demo_content": "A dark bordered panel with the text Move your mouse to see the cursor trail effect.",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "technical"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "line that follows the mouse pointer",
+  "mouse trail effect on a website",
+  "spring physics cursor line",
+  "colored pointer trail",
+  "custom cursor that leaves a streak",
+  "smooth line chasing the cursor",
+  "canvas mouse follower",
+  "website cursor swoosh effect"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio or creative landing page that wants a subtle, distinctive pointer flourish over a dark hero.",
+ "avoid_when": "Runs a full-screen fixed canvas with global listeners, is faint at 1px, and offers nothing on keyboard or touch.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "cursor"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "Tune the number of trail lines, spring friction, node count, dampening and tension as props; the hue range and stroke opacity are written into the source.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame loop updates about a thousand spring nodes every frame across the window.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative pointer effect with no reduced-motion check, so the constant full-screen animation keeps running for motion-sensitive users."
+ },
+ "props": [
+  {
+   "name": "friction",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "trails",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "dampening",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "tension",
+   "type": "number",
+   "default": "0.98",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"pointer-events-none fixed inset-0 z-50\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The 1px line is very faint against black.",
+  "Prevents default on pointer moves, which can block scrolling on touch devices."
+ ],
+ "polish": 3,
+ "polish_why": "Subtle and smooth, but the line is so faint it barely registers as a custom cursor.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Sleek Line Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "56738103ab290da0",
+  "film_hash": "33d63ffb0cabfd5b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

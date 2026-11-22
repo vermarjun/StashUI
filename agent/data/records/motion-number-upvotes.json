@@ -1,0 +1,114 @@
+{
+ "name": "motion-number-upvotes",
+ "frames": {
+  "code": "1615",
+  "best": 4,
+  "best_why": "The green upvote state is fully settled at 16, with both round arrow buttons and the count all clear.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.8
+ },
+ "tagline": "An upvote card whose count rolls and flips green or red as you vote.",
+ "summary": "A small rounded card showing an upvote total between two round arrow buttons. Clicking up or down rolls the number and tints the card and the chosen button green or red.",
+ "title_fix": null,
+ "appearance": "A compact rounded card with bold light text reading 14 Upvotes above two black circular buttons, one holding an up arrow and one a down arrow. It sits on black; pressing an arrow turns the card deep green or deep red.",
+ "behaviour": "Pressing an arrow nudges the number up or down with a vertical rolling animation inside the total. The card background and the pressed button switch to green for up or red for down, and each button shrinks a little while held.",
+ "parts": [
+  "card",
+  "vote count",
+  "up arrow button",
+  "down arrow button"
+ ],
+ "demo_content": "The count starts at 14 and changes to 16 or 15 during the clip.",
+ "states": [
+  "active",
+  "selected"
+ ],
+ "kind": "counter",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "upvote downvote button counter",
+  "number rolls when voting",
+  "reddit style vote widget",
+  "green and red vote card",
+  "animated vote count",
+  "like button with two arrows",
+  "community score control",
+  "small card with up down arrows"
+ ],
+ "resembles": [
+  "Reddit vote buttons"
+ ],
+ "use_when": "A post, comment or feature needs a lightweight up and down vote control with an animated score.",
+ "avoid_when": "It only changes local state with no undo or persistence, and the colours are fixed to green and red.",
+ "suits": [
+  "social",
+  "blog"
+ ],
+ "slot_hints": [
+  "list-item",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The starting count and the green and red colours are hardcoded and it takes no props; wiring it to real data means editing the component.",
+ "technique": [
+  "motion-library",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "Two buttons and one number with a short spring; no canvas or loop.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Both arrow controls are icon-only with no aria-labels, so screen readers announce them as unlabelled buttons."
+ },
+ "props": [],
+ "issues": [
+  "The arrow buttons have no accessible labels, so their purpose is not announced.",
+  "Frames 3 and 5 catch the digits overlapping mid-roll, which reads as a glitch in a still."
+ ],
+ "polish": 3,
+ "polish_why": "Readable count and clear green and red feedback, but the layout and styling are plain.",
+ "unsure": [],
+ "title": "Animated Upvote Counter",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "80d03cf76a163fbf",
+  "film_hash": "e3bb548f5d6c20e2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

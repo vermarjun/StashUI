@@ -1,0 +1,78 @@
+{
+  "name": "crystalized-ball",
+  "frames": {
+    "code": "5503",
+    "best": 4,
+    "best_why": "The rim reads all the way round and dense dust fills the lower half without the cursor covering the ball.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A pink glowing ring encloses violet dust that drifts like a snow globe.",
+  "summary": "A dark sphere marked only by a bright, slightly broken pink rim, with thousands of tiny lilac particles floating inside. The dust rises and swirls, and follows and scatters when the pointer moves or clicks.",
+  "title_fix": null,
+  "appearance": "On a black stage a thin ring of hot pink light draws a circle, brightest near the top and subtly uneven along its length. Inside, fine violet and white specks gather toward the bottom, thinning to scattered points in the upper half.",
+  "behaviour": "The ring brightens into view while the dust drifts upward, softens, and sways inside the circle. Moving the pointer turns the field and draws the dust after it; a click sends a small shockwave and short bright arcs along the rim.",
+  "parts": ["glowing rim", "sphere interior", "dust particles", "spark arcs"],
+  "demo_content": "",
+  "states": [],
+  "kind": "3d-scene",
+  "look": ["dark", "neon", "glow", "3d"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "glowing orb with floating particles",
+    "magic snow globe effect",
+    "pink plasma sphere",
+    "particle ball for a hero",
+    "electric rim circle",
+    "interactive dust globe",
+    "webgl glowing sphere",
+    "click to stir particles"
+  ],
+  "resembles": [],
+  "use_when": "A focal decorative object for a dark hero, launch page or event site that needs atmosphere.",
+  "avoid_when": "It is a canvas visual with no content, needs a sized parent, and only comes alive with a pointer.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["hero", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move", "click"],
+    "motion": "continuous",
+    "affects": ["children"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Pick a preset for colour and particle feel, or override strands, crackle, glow, spark count, particle count and motion. Size, theme, speed, hover strength and intro are props.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "Fifteen thousand GPU particles plus field, dust and stir passes every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": true,
+    "note": "Canvas is hidden from assistive tech as decoration; reduced motion stops the drift and the click reaction."
+  },
+  "props": [
+    {"name": "preset", "type": "'plasma' | 'aurora' | 'nebula' | 'ember' | 'frost' | 'solar' | 'eclipse' | 'abyss'", "default": "plasma", "required": false},
+    {"name": "theme", "type": "'dark' | 'light'", "default": "dark", "required": false},
+    {"name": "size", "type": "number", "default": "0.7", "required": false},
+    {"name": "color", "type": "string", "default": null, "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "hoverStrength", "type": "number", "default": "0.7", "required": false},
+    {"name": "intro", "type": "boolean", "default": "true", "required": false},
+    {"name": "paused", "type": "boolean", "default": "false", "required": false},
+    {"name": "particleCount", "type": "number", "default": null, "required": false},
+    {"name": "motion", "type": "'rise' | 'fall' | 'drift' | 'orbit'", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false}
+  ],
+  "issues": [
+    "The recorded rim reads as a smooth glowing circle rather than the crackling electric edge the description promises."
+  ],
+  "polish": 4,
+  "polish_why": "Rich depth and believable dust; the rim stays a bit plain next to the motion inside.",
+  "unsure": ["kind"]
+}

@@ -4,6 +4,8 @@ export interface RegistryEntry {
   name: string;
   title: string;
   description: string;
+  /** One line on what it looks like or does; empty until the component has been described. */
+  tagline: string;
   /** Primary type (first of `categories`). */
   category: string;
   /** Every category slug: primary type, extra types, use cases. */
@@ -30,7 +32,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "evervault-card",
     "title": "Evervault Card",
-    "description": "A circular badge with centered text and a pointer-tracked radial gradient that reveals an animated, randomized character grid on hover. Renders with a dark/light mode blur backdrop.",
+    "description": "A circular badge with a single word sits on black; moving the pointer over it unveils a green-to-blue radial glow and a dense scramble of tiny characters that follows the cursor.",
+    "tagline": "A glass disc of scrambling code characters blooms out under the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -58,7 +61,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "3d-marquee",
     "title": "3D Image Marquee",
-    "description": "An image gallery with CSS 3D perspective transforms that divides images into 4 columns, each scrolling vertically at different speeds with hover elevation effects.",
+    "description": "A gallery of many photos arranged in four columns on a rotated 3D plane, so the grid runs diagonally while neighbouring columns slide slowly in opposite directions.",
+    "tagline": "Photos tile a tilted wall and drift up and down in columns.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -83,7 +87,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ChromaGrid-TS-TW",
     "title": "ChromaGrid",
-    "description": "A responsive grid of grayscale tiles. Hovering the grid reaveals their colors.",
+    "description": "Six people cards sit in a neat grid, all greyscale at rest. Moving the pointer across them lifts the grey in a soft circular window, exposing each photo and its coloured card gradient.",
+    "tagline": "A wall of grey portraits turns to colour under the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -112,7 +117,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "DomeGallery-TS-TW",
     "title": "DomeGallery",
-    "description": "Immersive 3D dome gallery projecting images on a hemispheric surface.",
+    "description": "Dozens of rounded photo tiles wrap around a virtual sphere that fills the view. Dragging turns the ball of images with momentum, and clicking one tile enlarges it toward the middle.",
+    "tagline": "A hollow sphere of small photos you can spin around.",
     "category": "media",
     "categories": [
       "media",
@@ -138,7 +144,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "InfiniteMenu-TS-TW",
     "title": "Infinite Menu",
-    "description": "Horizontally looping menu effect that scrolls endlessly with seamless wrap.",
+    "description": "Colour photos sit as circular discs sprinkled over a spinning 3D sphere. Dragging rotates the ball; when it settles, one disc faces front with a large title, a short caption and a round arrow button.",
+    "tagline": "Photo discs orbit a sphere, then one snaps forward with its title.",
     "category": "3d",
     "categories": [
       "3d",
@@ -165,7 +172,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Lightfall-TS-TW",
     "title": "Lightfall",
-    "description": "Colorful light streaks raining down a glowing tunnel with a cursor light.",
+    "description": "A violet-blue backdrop of curved white streaks falling from a bright patch at the top centre, like light through a tunnel. The streaks shift and twinkle while the whole scene flows slowly outward.",
+    "tagline": "Pale streaks pour down a violet tunnel that arcs away from the centre.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -191,7 +199,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Iridescence-TS-TW",
     "title": "Iridescence",
-    "description": "Slick iridescent shader with shifting waves.",
+    "description": "A full-bleed surface of smooth iridescent bands in pastel pink, mint, lavender and white. The bands slide and fold continuously, and the pointer nudges the whole pattern sideways.",
+    "tagline": "Silky pink, mint and lilac waves roll like soap film.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -217,7 +226,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "FloatingLines-TS-TW",
     "title": "Floating Lines",
-    "description": "3D floating lines that react to cursor movement.",
+    "description": "Soft bands of violet-blue light float across a dark magenta haze, bending and crossing as they drift. The pointer pushes the nearest lines so the ribbons flex around it.",
+    "tagline": "Glowing purple light ribbons drift across a dark haze.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -243,7 +253,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LightPillar-TS-TW",
     "title": "Light Pillar",
-    "description": "Vertical pillar of light with glow effects.",
+    "description": "A tall column of violet light rises from the middle of a black stage, with a white-hot wavy core and a soft glow spreading sideways. It shimmers and turns slowly without ever breaking apart.",
+    "tagline": "A violet pillar of light shimmers up a dark stage.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -270,7 +281,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-glass-weather",
     "title": "Liquid Glass Weather",
-    "description": "A weather-themed layout using LiquidGlassCard components with weather icons, time, and temperature data in a grid. Shows hourly and daily forecasts.",
+    "description": "A compact weather panel built from translucent glass cards: an hourly strip across the top, the current temperature and a clock beside it, and a five-day forecast below, all over a cloud photo.",
+    "tagline": "White weather readouts sit on glass panes over a bright cloudscape.",
     "category": "cards",
     "categories": [
       "cards",
@@ -296,7 +308,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "team-clippath",
     "title": "Team Clip Path",
-    "description": "A team grid where each card's image is clipped and expands on hover, revealing full photo. Cards display name, role, and descriptive tags.",
+    "description": "A team row of four tall photo cards on a light page. Hovering one widens it and slides in the teammate's name, role and a row of small tags while the others shrink and blur.",
+    "tagline": "Arched team portraits that widen on hover to name the person.",
     "category": "cards",
     "categories": [
       "cards",
@@ -324,7 +337,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "infinite-grid",
     "title": "Infinite Grid",
-    "description": "OGL/WebGL-based infinite scrolling grid of card tiles with post-processing effects (barrel distortion, vignette). The 7 framework-agnostic TypeScript helper files (InfiniteGridClass, GridManager, EventHandler, DisposalManager, PostProcessShader, createTexture, shaders) are copied verbatim into infinite-grid-helpers/. The React component is a thin useEffect wrapper that instantiates the class on mount and disposes it on unmount.",
+    "description": "A full-screen grid of image cards that drifts continuously and wraps around as it goes. A slight barrel distortion bends the edges, and each card holds a title, badge, date and tags.",
+    "tagline": "Photo cards scroll endlessly on a tilted, curving grid.",
     "category": "3d",
     "categories": [
       "3d",
@@ -346,7 +360,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "activity-terrain",
     "title": "Activity Terrain",
-    "description": "A contribution heatmap that tilts up into a 3D terrain of bars you can drag to rotate, with a Flat/Terrain toggle.",
+    "description": "A contribution heatmap inside a rounded card that lifts each day into a bar, forming a tilted 3D terrain. A Flat and Terrain switch swaps views, hovering a day bumps and highlights it, and dragging turns the model.",
+    "tagline": "Contribution squares rise into a tilting 3D terrain you can drag to turn.",
     "category": "charts",
     "categories": [
       "charts",
@@ -370,7 +385,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "crystalized-ball",
     "title": "Crystalized Ball",
-    "description": "A glass ball with a crackling electric rim and glowing dust that swirls with the cursor.",
+    "description": "A dark sphere marked only by a bright, slightly broken pink rim, with thousands of tiny lilac particles floating inside. The dust rises and swirls, and follows and scatters when the pointer moves or clicks.",
+    "tagline": "A pink glowing ring encloses violet dust that drifts like a snow globe.",
     "category": "effects",
     "categories": [
       "effects",
@@ -397,7 +413,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "holo-card",
     "title": "Holo Card",
-    "description": "A collectible trading card with a holographic foil and glitter layer that sparkles and shifts as it tilts.",
+    "description": "A collectible-style card holding a photo, covered edge to edge in a shimmering holographic pattern of concentric rings that moves and changes colour as you tilt it or move the pointer across it.",
+    "tagline": "Rainbow foil rings shift across a photo as the card tilts.",
     "category": "cards",
     "categories": [
       "cards",
@@ -421,7 +438,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "lanyard-react-bits",
     "title": "Lanyard",
-    "description": "A swinging 3D ID badge on a stretchy woven strap that you can drag, throw and click to flip, now built on plain three.js with no GLB.",
+    "description": "A realistic ID badge hanging from a woven strap on a black stage. It sways under gravity, can be grabbed and thrown with the pointer, and flips over when clicked.",
+    "tagline": "A photo ID badge on a strap swings, drags and flips in 3D.",
     "category": "3d",
     "categories": [
       "3d",
@@ -447,7 +465,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "paper-crumple",
     "title": "Paper Crumple",
-    "description": "An image that crumples into a textured 3D sheet while you hold and drag it, then flattens back.",
+    "description": "An image on a 3D paper sheet that crumples in your hand as you hold and drag it, the folds catching the light, then springs back flat when released.",
+    "tagline": "A photo crumples into a folded paper ball while you drag it.",
     "category": "effects",
     "categories": [
       "effects",
@@ -474,7 +493,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shape-hero",
     "title": "Shape Hero",
-    "description": "A hero section where labelled pills drop in under the headline, pile up with real rigid-body physics, and can be grabbed and thrown.",
+    "description": "A hero section where named component pills and coloured dots drop in, collide and settle into a heap along the bottom. The pile can be grabbed and thrown, and rests once it stops moving.",
+    "tagline": "Labelled pills and dots fall and pile up under a headline like loose objects.",
     "category": "heroes",
     "categories": [
       "heroes",
@@ -498,7 +518,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tear-ticket",
     "title": "Tear Ticket",
-    "description": "A physical event ticket whose perforated stub you grab and tear off, with tilt, parallax and a ragged torn edge.",
+    "description": "A boarding-pass style ticket with a photo header, trip details and a perforated stub. Moving the mouse tips it in perspective; dragging the stub pulls thin fibres until it rips away and tumbles off.",
+    "tagline": "Event ticket tilts in 3D; grab the perforated stub and tear it free.",
     "category": "cards",
     "categories": [
       "cards",
@@ -524,7 +545,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-inline-edit",
     "title": "AI Inline Edit",
-    "description": "Select text, ask the AI for an edit, and the rewrite streams in as a word-level diff you can accept, retry or discard.",
+    "description": "An editable document where selecting text opens a small Ask AI bar under the sentence. A rewritten version streams in word by word as a green and red diff you can accept, retry or discard.",
+    "tagline": "Select a sentence, ask for an edit, and review the rewrite inline.",
     "category": "chat",
     "categories": [
       "chat",
@@ -551,7 +573,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-orb-face",
     "title": "AI Orb Face",
-    "description": "A WebGL marbled orb with a cartoon face whose expression reflects AI state (idle, listening, thinking, streaming, done, error) and whose eyes follow the cursor.",
+    "description": "A round painted orb with two dark eyes that blinks, follows the pointer and swaps expression for idle, listening, thinking, streaming, done and error. A row of pills under it switches the state.",
+    "tagline": "A lavender sphere with two dark eyes that shifts expression with AI state.",
     "category": "chat",
     "categories": [
       "chat",
@@ -577,7 +600,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "box-carousel",
     "title": "Box Carousel",
-    "description": "A 3D cube carousel that rotates between image/video faces with buttons, keyboard or drag.",
+    "description": "A 3D cube whose faces are photos; buttons, arrow keys or a drag rotate it a quarter turn to reveal the next image.",
+    "tagline": "A cube of photos spins face by face as you drag or tap.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -603,7 +627,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dashboard-01",
     "title": "Dashboard 01",
-    "description": "A full app dashboard: inset sidebar, KPI cards, an interactive area chart with range toggles, and a sortable, draggable, paginated data table.",
+    "description": "A complete dark admin screen: an inset sidebar with search and grouped links, four metric cards, a visitors area chart with range toggles, and a data table with tabs, editable cells and row controls.",
+    "tagline": "Admin screen pairs KPI tiles and a grey area chart with a sortable table.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -662,7 +687,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dither-field",
     "title": "Dither Field",
-    "description": "A WebGL2 Bayer-dithered dot field that renders a light pattern, image or video in three theme colours and brightens around the pointer.",
+    "description": "A full-bleed background of purple light rendered as crisp square dots, glowing like a horizon and blooming around the mouse. It can also dither an image or video, and it holds overlaid page content.",
+    "tagline": "Purple dithered light haze that brightens under the pointer.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -686,7 +712,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "event-calendar-reui",
     "title": "Event Calendar",
-    "description": "Google-Calendar-style month, week, day, agenda and resource views with draggable, resizable events and a view switcher.",
+    "description": "A full event calendar with a month grid and a week time grid, coloured event chips, an all-day row and a view dropdown. Events can be dragged and resized, and a New event button adds one.",
+    "tagline": "Dark month and week calendar with draggable coloured events.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -718,7 +745,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "filters-reui",
     "title": "Filters",
-    "description": "Linear-style filter bar: add chips, then pick field, operator and value from nested popovers, with an advanced grouped builder.",
+    "description": "A filter bar where each condition is a chip built from a field, an operator and a value chosen in popovers. It also offers an advanced builder that groups rules with combinators, and reports the query tree.",
+    "tagline": "Stack addable condition chips that nest into AND/OR filter groups.",
     "category": "search",
     "categories": [
       "search",
@@ -749,7 +777,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glyph-background",
     "title": "Glyph Background",
-    "description": "A WebGL field of monospace characters lit by drifting glows; the cursor leaves a light trail and clicks send a ripple pulse.",
+    "description": "A WebGL background of monospace letters that gather into drifting clouds of light. Moving the pointer leaves a glowing trail, and clicking sends a rounded ring of characters outward.",
+    "tagline": "A field of tiny characters glows and ripples under the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -775,7 +804,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "goey-toast",
     "title": "Goey Toast",
-    "description": "Sonner-based toasts that morph from a pill into a blob card, with promise, action and progress states.",
+    "description": "A toast system whose compact pill widens into an organic card holding a status icon, title, description, optional action and a thin progress bar. Success, error and promise versions share the same morph.",
+    "tagline": "A pill melts into a blob toast card with icon, text and progress.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -802,7 +832,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gravity",
     "title": "Gravity",
-    "description": "Drop any DOM elements into a matter-js world where they fall, collide and can be grabbed and flung with the mouse.",
+    "description": "A physics surface that turns whatever elements you put inside it into falling, colliding bodies you can grab and throw with the mouse. Here eight coloured technology tags tumble down and settle in a heap.",
+    "tagline": "Coloured tag pills drop, bounce and pile up on the floor of a dark stage.",
     "category": "effects",
     "categories": [
       "effects",
@@ -831,7 +862,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "metric-card",
     "title": "Metric Card",
-    "description": "Revenue KPI card: scrub across days or drag out a range and the number rolls while the line re-shades, with event markers and period tabs.",
+    "description": "A card showing a metric total, its change against the previous period, a shaded trend line and a three-part breakdown. Dragging across the chart selects a day or a range and the number and captions update.",
+    "tagline": "A revenue tile whose figure rolls and chart re-shades as you scrub the days.",
     "category": "charts",
     "categories": [
       "charts",
@@ -856,7 +888,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "rain-glass-background",
     "title": "Rain Glass Background",
-    "description": "Hero seen through rainy glass: WebGL drops act as lenses over a photo and dragging wipes a clear streak through the fog.",
+    "description": "A tall window pane with a photo behind fogged glass, dotted with water droplets that gather, run and merge. Pressing and dragging wipes a clear streak through the fog that slowly clouds over again.",
+    "tagline": "Rain beads on fogged glass over a dusk view; drag to wipe it clear.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -881,7 +914,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "timezone-planner",
     "title": "Timezone Planner",
-    "description": "24-hour dial with a ring per teammate's working day; drag the meeting wedge or jump to the best shared hour.",
+    "description": "A 24-hour dial where each colleague gets a ring shaded for their working hours. Drag a wedge around the clock to choose a meeting and watch every person's local time and status change.",
+    "tagline": "Radial day clock with a ring per colleague and a draggable meeting wedge.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -907,7 +941,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "3d-pin",
     "title": "3D Pin Card",
-    "description": "Wraps children in an anchor; applies 3D perspective transform (rotateX) on hover. Shows title in label and animated background rings. Requires Framer Motion.",
+    "description": "A dark link card holding an avatar, a name, a short paragraph and tag pills. Hovering tips it into perspective, fades in a site-name pill above and pulses blue rings behind a thin cyan stem.",
+    "tagline": "A dark card tips back in 3D, sprouting a site label and cyan beam on hover.",
     "category": "3d",
     "categories": [
       "3d",
@@ -936,7 +971,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glowing-stars",
     "title": "Glowing Stars",
-    "description": "Card component wrapping an animated star grid that glows randomly on a loop. Brightness increases on hover. Includes helper components for title and description.",
+    "description": "A dark rounded card with a grid of one-pixel stars over its top half and a title and description beneath. Random stars flicker on a timer, and hovering lights the whole field.",
+    "tagline": "Tiny stars dot a dark card and flare white when the cursor crosses it.",
     "category": "cards",
     "categories": [
       "cards",
@@ -964,7 +1000,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-reveal-card",
     "title": "Text Reveal Card",
-    "description": "Card that tracks pointer position and animates a clip-path inset to reveal an overlay text. Includes animated star particles in the background. Supports both mouse and touch input.",
+    "description": "A dark card shows a faint sentence that a second, brighter message replaces wherever your pointer has crossed. A thin divider bar rides the cursor edge, and the reveal snaps back when you leave.",
+    "tagline": "Sweep the cursor across the card to wipe one sentence over another.",
     "category": "cards",
     "categories": [
       "cards",
@@ -993,7 +1030,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "following-pointer",
     "title": "Custom Cursor Follower",
-    "description": "Card wrapper that hides the native cursor and renders a custom pointer icon with optional label that tracks mouse movement. Uses motion/react for enter/exit animations.",
+    "description": "A rounded article card with a bright gradient banner, a tag, a heading, body copy and an author line. On hover the normal pointer becomes a small arrow carrying a randomly coloured call-to-action label.",
+    "tagline": "A coloured tag reading Read more chases the cursor across a blog card.",
     "category": "cursors",
     "categories": [
       "cursors"
@@ -1018,7 +1056,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "parallax-scroll",
     "title": "Parallax Scroll Grid",
-    "description": "A 3-column grid where each column scrolls at different speeds via motion/react useTransform. Images are distributed evenly across columns and animate vertically based on scroll position.",
+    "description": "A scroll box holding three columns of photo tiles. As it scrolls, the outer columns rise while the middle one sinks, so the pictures slide past each other and the rows never stay level.",
+    "tagline": "Three columns of photos drift at different speeds as you scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -1045,7 +1084,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-generate-effect",
     "title": "Text Generate Effect",
-    "description": "Displays text by animating words in sequence, creating a progressive reveal effect.",
+    "description": "Takes a sentence and splits it into words that fade in from a blur one after another, so the line assembles itself on load. It plays once and settles as plain bold text.",
+    "tagline": "A bold sentence sharpens into focus one word at a time.",
     "category": "text",
     "categories": [
       "text"
@@ -1070,7 +1110,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "moving-border",
     "title": "Moving Border Button",
-    "description": "A button with a continuously rotating conic-gradient border using Framer Motion, wrapped with a visible animated ring effect.",
+    "description": "A pill button on a translucent dark slate fill with a white label. A small blue glow travels the full perimeter on a loop, so the edge is always lit in one moving spot.",
+    "tagline": "A blue spark runs around the rim of a dark pill-shaped button.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -1098,7 +1139,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "lamp",
     "title": "Lamp",
-    "description": "Full-screen container with animated conic gradient layers creating a glowing lamp effect. Multiple masked gradients and blurs create depth and luminosity.",
+    "description": "A deep navy panel with a bright cyan lip and a soft cone of light fanning downward over a centred headline. On entering view the light widens and the words rise and fade in.",
+    "tagline": "A cyan lamp glow beams down onto a headline in a dark panel.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -1124,7 +1166,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sticky-scroll-reveal",
     "title": "Sticky Scroll Reveal",
-    "description": "A scroll-triggered reveal with text descriptions on the left and sticky content on the right. Background color animates based on the active item as the user scrolls.",
+    "description": "A scroll-driven feature section: paragraphs sit on the left while a sticky gradient tile on the right shows the matching visual. As you scroll, the active paragraph brightens and both the tile and the panel background change colour.",
+    "tagline": "Text list scrolls beside a sticky gradient tile that swaps with each item.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -1150,7 +1193,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "navbar-menu",
     "title": "Navbar Menu",
-    "description": "Exports four composable components: Menu (container), MenuItem (triggers), ProductItem (card grid), and HoveredLink (text link). Uses Framer Motion for dropdown scale and fade animations triggered on mouse enter.",
+    "description": "A compact rounded navigation with three word links. Hovering a link opens a panel beneath the bar, either with product rows showing screenshots or with a short column of sublinks.",
+    "tagline": "Hover a nav link and a bordered panel drops down with product previews.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -1176,7 +1220,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "card-hover-effect",
     "title": "Card Hover Effect",
-    "description": "Grid component that renders cards from an items array. Each card has title, description, and link. Hover effect adds a glowing border. Uses a smooth easing for the glow animation.",
+    "description": "A three-by-two grid of near-black cards, each with a short title, a few lines of grey copy and a link. Pointing at a card slides a rounded grey backing in behind it.",
+    "tagline": "Dark card grid where a soft grey backing fades in behind the card you hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -1203,7 +1248,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gooey-input",
     "title": "Gooey Input",
-    "description": "An animated search input using Framer Motion that collapses to a circular button and smoothly expands into a full field, with an SVG gooey filter creating a liquid morphing visual effect.",
+    "description": "A compact white search pill with a magnifier and placeholder. Clicking it springs open into a separate round icon button and a long input joined for a moment by a gooey bridge, then collapses again when left empty.",
+    "tagline": "Search pills that split apart with a liquid neck and open into a field.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -1230,7 +1276,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "typewriter-effect",
     "title": "Typewriter Effect",
-    "description": "Takes an array of word objects and renders them as characters that fade in with staggered timing when the component enters the viewport. Includes a blinking blue cursor bar.",
+    "description": "A small grey eyebrow line above a large bold headline that fills in one character at a time when it enters view. A thin blue cursor bar blinks after the text and the last word is blue.",
+    "tagline": "A bold headline types itself out letter by letter behind a blue caret.",
     "category": "text",
     "categories": [
       "text",
@@ -1256,7 +1303,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "3d-card",
     "title": "3D Card",
-    "description": "Composite 3D card system: CardContainer tracks mouse position and applies rotateY/X transforms; CardBody is the card wrapper; CardItem elements translate and rotate in 3D on hover. Uses CSS perspective and preserve-3d.",
+    "description": "A dark product card whose body rotates toward the cursor while the title, paragraph, photo and buttons sit at separate depths. Move away and it eases back flat.",
+    "tagline": "Card tips in 3D toward the pointer and its layers pull apart.",
     "category": "cards",
     "categories": [
       "cards",
@@ -1282,7 +1330,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "images-slider",
     "title": "Images Slider",
-    "description": "Displays a sequence of images with fade-in animations and direction-based exit transitions. Auto-advances every 5 seconds or responds to arrow keys.",
+    "description": "A full-screen photo carousel where each landscape image tips and slides out while the next scales up from a tilted card. A dark overlay holds a white headline and a small pill button still.",
+    "tagline": "Full-bleed photos tip away every five seconds behind a fixed headline.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -1309,7 +1358,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "direction-aware-hover",
     "title": "Direction Aware Hover",
-    "description": "Card with background image that detects which border (top/bottom/left/right) the mouse enters from and animates the image and overlay text in opposite directions.",
+    "description": "Square image cards on a black page. Entering one from a side shifts the photo and its caption a little in opposite directions, darkens the picture and fades in a white label at the bottom-left.",
+    "tagline": "Photo cards that nudge and reveal a caption based on your entry side.",
     "category": "effects",
     "categories": [
       "effects",
@@ -1336,7 +1386,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tabs",
     "title": "Animated Tabs",
-    "description": "Controlled tab component that animates the active tab indicator with Framer Motion spring physics. Renders tab buttons and animated content pane with fade-in effects. Includes FadeInDiv helper for content transitions.",
+    "description": "A row of four small pill labels, one filled to mark the active tab, above a large rounded gradient card. Clicking a label springs the highlight across and brings that card to the front of a shallow stack.",
+    "tagline": "Pill tabs switch a stack of bright gradient panels with a spring.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -1362,7 +1413,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-parallax",
     "title": "Hero Parallax",
-    "description": "Takes 300vh of viewport scrolling to animate 15 product cards (5 per row, 3 rows) with 3D perspective, opacity, and horizontal translate. Cards tilt and rotate on scroll, reverse direction per row. Spring damping smooths the parallax…",
+    "description": "A full-width dark hero with a huge white headline and a short paragraph, backed by three rows of large photo cards caught in perspective. Scrolling slides the rows sideways and raises the wall upright.",
+    "tagline": "A bold studio headline over rows of tilted photos that slide as you scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -1390,7 +1442,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wavy-background",
     "title": "Wavy Background",
-    "description": "SVG waves animated via CSS keyframes or requestAnimationFrame; layered waves with phase shifts.",
+    "description": "A full-screen dark backdrop crossed by five thick, heavily blurred waves that weave over each other in blue, teal, purple and pink. The ribbons drift and reshape continuously with no pointer input.",
+    "tagline": "Soft blurred ribbons of blue, teal and pink drift across a black backdrop.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -1416,7 +1469,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-gradient",
     "title": "Background Gradient",
-    "description": "A container that wraps children with a continuously animated multi-color radial gradient background. Uses Framer Motion to shift backgroundPosition, with opacity and blur effects. Gradient opacity increases from 60% to 100% on hover.",
+    "description": "A product card on a black page surrounded by a blurred gradient glow in teal, blue, purple and gold. The halo drifts around the edge continuously and brightens when the card is hovered.",
+    "tagline": "A dark product card wrapped in a soft, slowly shifting coloured halo.",
     "category": "gradients",
     "categories": [
       "gradients",
@@ -1443,7 +1497,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "layout-grid",
     "title": "Layout Grid",
-    "description": "A responsive grid layout with click-to-expand functionality. Selected cards zoom to center with layout animation and dark backdrop, returning to grid when clicking outside.",
+    "description": "A four-photo mosaic of travel images. Clicking one lifts it into the middle of the grid, dims the rest and slides a white title and caption up over the picture; clicking the dark area puts it back.",
+    "tagline": "Click any photo in the mosaic and it grows into the centre with its caption.",
     "category": "media",
     "categories": [
       "media",
@@ -1469,7 +1524,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-gradient-animation",
     "title": "Background Gradient Animation",
-    "description": "Fullscreen background composing five continuously rotating radial gradients with customizable colors. When interactive=true, adds sixth gradient that tracks pointer position. Uses CSS variables and blend modes, applies blur filter.",
+    "description": "A full-screen animated backdrop of blurred coloured light blobs rotating over a purple-to-indigo gradient. The centre swells into a warm orb that shifts between yellow and pink, and a sixth glow follows the pointer.",
+    "tagline": "A purple gradient field with a huge glowing orb that drifts and changes hue.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -1493,7 +1549,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "macbook-scroll",
     "title": "Macbook Scroll",
-    "description": "Renders a 3D MacBook with animated opening on scroll. The device scales, rotates, and opens via scroll progress, revealing a keyboard and trackpad below.",
+    "description": "A flat-shaded dark laptop with a rounded screen lid, a deck of tiny keys and a trackpad. Scrolling swings the lid open, enlarges the whole machine and reveals an analytics dashboard on the screen.",
+    "tagline": "A laptop mockup that opens its lid and scales up as you scroll.",
     "category": "devices",
     "categories": [
       "devices",
@@ -1522,7 +1579,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "multi-step-loader",
     "title": "Multi Step Loader",
-    "description": "A full-screen overlay loader that animates through loading states with check icons, supporting looping or single-pass progression through the sequence.",
+    "description": "A full-screen loading overlay that lists the stages of a task and advances through them. Finished stages get filled check marks, the current one turns green, and later ones wait greyed out.",
+    "tagline": "Dark veil blurs the page while a checklist ticks through setup steps.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -1549,7 +1607,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "canvas-reveal-effect",
     "title": "Canvas Reveal Effect",
-    "description": "Renders a Three.js dot matrix with WebGL shader that animates dots appearing from the center outward. Supports customizable colors, opacity, and animation speed.",
+    "description": "A shader effect that floods its container with a fine grid of dots spreading out from the middle. It appears on hover over a tinted wash and fades away when the pointer leaves.",
+    "tagline": "Hovering fills a panel with a burst of tiny glowing dots.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -1577,7 +1636,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-highlight",
     "title": "Hero Highlight",
-    "description": "Wrapper div tracking mouse position and revealing colored dot pattern in 200px radial gradient. Light and dark variants. Height 40rem, full width. Also exports Highlight span for inline gradient text animation.",
+    "description": "A full-width dark panel covered in a faint dot grid, wrapping a headline, copy and an inline phrase marker. Moving the pointer lights a small patch of coloured dots under it.",
+    "tagline": "Dotted black hero with a lilac swipe behind a few words.",
     "category": "effects",
     "categories": [
       "effects",
@@ -1604,7 +1664,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "vortex",
     "title": "Vortex",
-    "description": "Animated gradient vortex using CSS transforms and keyframe rotation; responsive to viewport.",
+    "description": "A canvas backdrop of hundreds of short particle streaks that drift on a noise field, leaving glowing tails. The streaks gather in a loose band and keep swirling without end.",
+    "tagline": "Streams of glowing blue and pink particles curl across black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -1631,7 +1692,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wobble-card",
     "title": "Wobble Card",
-    "description": "Motion wrapper that tracks pointer position and applies translate/scale transforms to create a 3D tilt effect. Outer card moves toward cursor while inner content scales and counter-translates for parallax depth. Includes noise texture…",
+    "description": "A rounded content card with an indigo gradient and faint grain. The whole card follows the pointer a little, and the text inside slides opposite and scales slightly for depth.",
+    "tagline": "Blue gradient card leans toward the cursor as its text drifts the other way.",
     "category": "cards",
     "categories": [
       "cards",
@@ -1660,7 +1722,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "placeholders-and-vanish-input",
     "title": "Vanish Placeholder Input",
-    "description": "An input field with cycling placeholder suggestions that change every 3 seconds, and a canvas-based particle animation when submitted that dissolves the text into vanishing particles.",
+    "description": "A rounded ask-anything field that cycles grey suggestion prompts every few seconds. Typing switches to white text and lights an arrow button, and submitting scatters the words into particles.",
+    "tagline": "Grey prompt rotates in a pill field, then typed words dissolve into dots.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -1687,7 +1750,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "flip-words",
     "title": "Flip Words",
-    "description": "Cycles through a list of words with letters and sub-words animating in staggered fashion. Each word's letters blur and fade in, then the entire word blurs out and scales up before the next word appears.",
+    "description": "A line of headline text where a single bold white word cycles through a list. Each word sharpens in letter by letter, rests a moment, then swells and blurs out.",
+    "tagline": "One bold word in a headline blurs away and is replaced by the next.",
     "category": "text",
     "categories": [
       "text"
@@ -1712,7 +1776,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "link-preview",
     "title": "Link Preview",
-    "description": "Radix HoverCard-based link preview that displays a screenshot (live or static) with spring-animated entrance. Preview translates based on cursor position within the link.",
+    "description": "A word inside body copy opens a rounded card showing a screenshot of the page it points to. The card springs up above the link and drifts sideways as the pointer moves.",
+    "tagline": "Hovering an underlined link floats up a small screenshot of its page.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -1740,7 +1805,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glare-card",
     "title": "Glare Card",
-    "description": "A 3D card that rotates and tilts toward the pointer, with a rainbow gradient and SVG foil pattern that shift position. Glare intensity and background position follow mouse movement.",
+    "description": "A portrait card with a dark metallic finish that rotates in 3D as the pointer crosses it. Light bands and a glare move over the surface, and the card settles flat when left alone.",
+    "tagline": "Tall navy card tilts like a collectible, sliding a foil sheen with the pointer.",
     "category": "cards",
     "categories": [
       "cards",
@@ -1766,7 +1832,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-modal",
     "title": "Animated Modal",
-    "description": "A compound modal component with spring-driven 3D entrance animation, blurred background, automatic scroll locking, and keyboard/click-outside dismissal.",
+    "description": "A dark rounded dialog with a bold trip heading, a stack of tilted travel photos and a short details list. It opens from a tilted, shrunken pose over a dimmed blurred page.",
+    "tagline": "Travel booking dialog springs up over a blurred page with a fan of photos.",
     "category": "modals",
     "categories": [
       "modals"
@@ -1791,7 +1858,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "card-spotlight",
     "title": "Card Spotlight",
-    "description": "A card that displays a spotlight effect tracking mouse movement. Uses a canvas layer underneath for particle animations. Radius and color are customizable. High z-index content stays above the effect.",
+    "description": "A rounded black information card whose surface lights up on hover. A soft radial light follows the pointer while a fine canvas of blue and purple dots spreads across the face.",
+    "tagline": "Violet speckles and a soft spotlight bloom on a dark card under the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -1819,7 +1887,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "file-upload",
     "title": "File Upload",
-    "description": "Drag-and-drop file uploader with animated file list display. Background has radial gradient grid pattern. Uses Framer Motion for layout animations.",
+    "description": "A rounded upload panel with a faint grid, a heading and a small tile with an upload arrow. Hovering nudges the tile and draws a dashed outline, and a chosen file becomes a details row.",
+    "tagline": "A dark dropzone whose pale tile shifts aside to show your uploaded file.",
     "category": "file-upload",
     "categories": [
       "file-upload"
@@ -1846,7 +1915,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "floating-dock",
     "title": "Floating Dock",
-    "description": "Responsive dock showing different layouts on desktop (magnifying hover) vs. mobile (expanding menu). Items have title, icon, and href.",
+    "description": "A rounded dark dock of five circular icon links that magnify like a desktop dock. The nearest icon grows on a spring, its neighbours swell a little, and a small label appears above.",
+    "tagline": "Bottom icon bar where the circle nearest the cursor swells and names itself.",
     "category": "menus",
     "categories": [
       "menus",
@@ -1874,7 +1944,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "focus-cards",
     "title": "Focus Cards",
-    "description": "A responsive image card grid that tracks hover state, blurring and scaling sibling cards while the hovered card stays in focus. Gradient title overlay appears on hover.",
+    "description": "A three-by-two grid of landscape photo cards. Pointing at one keeps it sharp, darkens it with a white title, and blurs and shrinks the others.",
+    "tagline": "Photo grid where hovering one picture blurs the rest and names it.",
     "category": "cards",
     "categories": [
       "cards",
@@ -1899,7 +1970,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "timeline",
     "title": "Timeline",
-    "description": "Displays timeline entries with titles and content. An animated gradient line traces from top to bottom as the container scrolls into view. Built with Framer Motion and scroll-triggered animation.",
+    "description": "A changelog or journey laid out as dated entries: a bold year, a paragraph and paired photos, joined by a thin vertical line whose coloured section follows your scroll position.",
+    "tagline": "Years stack down a vertical line that fills with colour as you scroll.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -1926,7 +1998,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "colourful-text",
     "title": "Colourful Text",
-    "description": "Renders each character with motion animations including color cycling from a 10-color palette, subtle vertical bounce, scale pulse, and blur effect. Colors reshuffle every 5 seconds.",
+    "description": "A short phrase drawn one letter at a time, each character in a vivid rotating colour that bounces, swells and briefly blurs, with the palette reshuffling every few seconds.",
+    "tagline": "Each letter of a big heading pulses its own bright colour.",
     "category": "text",
     "categories": [
       "text"
@@ -1949,7 +2022,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glowing-effect",
     "title": "Glowing Effect",
-    "description": "Wrapper component applying neon glow shadow filters; typically combined with dark backgrounds.",
+    "description": "A border glow that tracks the pointer: a card outline lights up with a short arc on the side facing the cursor and fades when the pointer moves away.",
+    "tagline": "A bright arc of light runs along the card border nearest your cursor.",
     "category": "effects",
     "categories": [
       "effects",
@@ -1976,7 +2050,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "resizable-navbar",
     "title": "Resizable Navbar",
-    "description": "Multi-component navbar system (Navbar, NavBody, NavItems, MobileNav) with scroll detection via Framer Motion. Adds glass-morphism blur effect at scroll threshold and toggles mobile menu visibility using ResizeObserver.",
+    "description": "A top navigation that starts full width and, once the page scrolls, contracts into a narrow blurred capsule holding the logo, links and buttons close together.",
+    "tagline": "A nav bar that shrinks into a floating rounded pill as you scroll.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -2000,7 +2075,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stateful-button",
     "title": "Stateful Button",
-    "description": "A button that toggles between active/inactive states, animating icon transitions. Uses Framer Motion for entrance/exit animations.",
+    "description": "A rounded green submit button that spins up a loader while its click handler runs, then flashes a circled tick before settling back to its normal label.",
+    "tagline": "A green pill that swaps in a spinner, then a tick, after a click.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -2024,7 +2100,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "images-badge",
     "title": "Images Badge",
-    "description": "Badge component showing multiple avatar images stacked/overlapped via negative margins.",
+    "description": "An inline folder icon with the label \"View Photos\". Hovering makes up to three little photos spring up and fan out above the folder, then fold away when the pointer leaves.",
+    "tagline": "A small amber folder that fans three photos out over itself on hover.",
     "category": "badges",
     "categories": [
       "badges",
@@ -2049,7 +2126,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "keyboard",
     "title": "Interactive Keyboard",
-    "description": "A visual keyboard UI with styled keys that respond to physical keyboard events and mouse clicks. Includes optional keystroke preview and audio sprite sound effects.",
+    "description": "A light 75% keyboard drawn as tiny square keys, from the function row down to the arrow cluster. Clicking a key, or typing on the real keyboard while it is in view, squeezes that key.",
+    "tagline": "A miniature Mac keyboard whose keys press under your fingers.",
     "category": "devices",
     "categories": [
       "devices"
@@ -2075,7 +2153,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cards-demo-1",
     "title": "Hover Overlay Card",
-    "description": "A demo card component showcasing hover effects: overlay appears on hover with smooth fade and backdrop blur. Uses CardDemo component (likely a wrapper). Styled with gradients and transitions.",
+    "description": "A tall photo card with a bold title and short paragraph pinned to the bottom. Hovering swaps the still fern backdrop for a muted moving clip and adds a dark scrim behind the words.",
+    "tagline": "A photo card whose background turns into a moving clip when hovered.",
     "category": "cards",
     "categories": [
       "cards",
@@ -2102,7 +2181,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "features-section-demo-3",
     "title": "Bento Feature Section",
-    "description": "Four feature cards in a bento layout (varied column spans) with titles, descriptions, and placeholder skeleton components. Responsive 1-column mobile to 6-column desktop.",
+    "description": "A wide bento layout under a centred heading. One large card holds a sunset bridge photo, a narrow card shows tilted stacks of small photos, and the lower row pairs copy panels with a slowly turning globe.",
+    "tagline": "A bento feature grid mixing a bridge photo, stacked snapshots and a globe.",
     "category": "cards",
     "categories": [
       "cards",
@@ -2130,7 +2210,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-video-dialog",
     "title": "Hero Video Dialog",
-    "description": "Displays a thumbnail image with an animated play button overlay. Click to open a modal with the embedded video (iframe). Modal animates in from configurable directions and dismisses on close button or Escape key.",
+    "description": "A click-to-play video card: the round play button on the thumbnail opens a blurred full-screen dialog holding the embedded video, springing in from a chosen side.",
+    "tagline": "A thumbnail with a frosted play button opens a full-screen video.",
     "category": "media",
     "categories": [
       "media",
@@ -2158,7 +2239,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "number-ticker",
     "title": "Number Ticker",
-    "description": "Animate numbers to count up or down to a target number",
+    "description": "An animated figure that counts up or down to a target with a spring easing the first time it scrolls into view, formatted with commas and optional decimals.",
+    "tagline": "Numbers spring upward from zero to their target values.",
     "category": "charts",
     "categories": [
       "charts",
@@ -2186,7 +2268,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-list",
     "title": "Animated List",
-    "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+    "description": "A vertical feed of notification cards that appear one after another with a spring, newest on top, pushing the earlier cards down as the list grows.",
+    "tagline": "Notification cards spring in one by one and stack up.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -2213,7 +2296,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dia-text-reveal",
     "title": "Dia Text Reveal",
-    "description": "A horizontal color band sweeps across text, revealing a gradient shine before settling on the base color.",
+    "description": "A heading whose trailing word changes between phrases while a multicoloured band sweeps across it, revealing each new word with a brief rainbow shine.",
+    "tagline": "A colour band wipes across a rotating word in a headline.",
     "category": "text",
     "categories": [
       "text"
@@ -2238,7 +2322,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hyper-text",
     "title": "Hyper Text",
-    "description": "A text animation that scrambles letters before revealing the final text.",
+    "description": "A line of bold monospace text that briefly breaks into random uppercase letters and then locks in letter by letter from left to right, like a decoder resolving a message.",
+    "tagline": "Random capitals flicker and settle into the real words on hover.",
     "category": "text",
     "categories": [
       "text",
@@ -2264,7 +2349,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "typing-animation",
     "title": "Typing Animation",
-    "description": "Characters appearing in typed animation",
+    "description": "A line of bold text that types itself out one character at a time with a small blinking cursor, pauses, deletes, and moves on to the next phrase in a loop.",
+    "tagline": "Words type out letter by letter behind a blinking bar.",
     "category": "text",
     "categories": [
       "text",
@@ -2290,7 +2376,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spinning-text",
     "title": "Spinning Text",
-    "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+    "description": "A string of small text laid out around a circle with dot separators, rotating continuously so the whole ring of words travels around the centre.",
+    "tagline": "A circular caption of white letters turns steadily on black.",
     "category": "text",
     "categories": [
       "text"
@@ -2315,7 +2402,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sparkles-text",
     "title": "Sparkles Text",
-    "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+    "description": "A heavy heading with a handful of small four-point stars scattered over and around it, each fading and scaling in and out at random spots so the text keeps glittering.",
+    "tagline": "Tiny lilac and pink stars twinkle around a bold heading.",
     "category": "text",
     "categories": [
       "text"
@@ -2340,7 +2428,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "icon-cloud",
     "title": "Icon Cloud",
-    "description": "Interactive canvas component rendering a rotating globe of icons or image URLs. Responds to mouse drag with momentum animation and smooth rotation.",
+    "description": "A canvas showing dozens of small brand icons arranged on a sphere, with front logos bright and rear ones faded, rotating on its own and spinning when dragged.",
+    "tagline": "Tech logos float on an invisible globe that slowly turns.",
     "category": "3d",
     "categories": [
       "3d",
@@ -2365,7 +2454,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shine-border",
     "title": "Shine Border",
-    "description": "Shine border is an animated background border effect.",
+    "description": "A thin animated border of gradient light that sweeps around a card's outline, here wrapping a login form in shifting lilac, pink and peach.",
+    "tagline": "A purple-pink glow travels around the edge of a dark card.",
     "category": "borders",
     "categories": [
       "borders",
@@ -2389,7 +2479,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "confetti",
     "title": "Confetti",
-    "description": "Confetti animations are best used to delight your users when something special happens",
+    "description": "A full-screen canvas that shoots paper confetti from the middle of whichever button is pressed. Two presets fire different bursts: a broad multicoloured one and a narrower red, orange and yellow one.",
+    "tagline": "Coloured paper erupts from the button you click and rains down the screen.",
     "category": "effects",
     "categories": [
       "effects",
@@ -2418,7 +2509,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-circular-progress-bar",
     "title": "Circular Progress Bar",
-    "description": "Animated Circular Progress Bar is a component that displays a circular gauge with a percentage value.",
+    "description": "A circular gauge made of a dim track and a coloured arc that grows clockwise as the value rises. The current percentage sits in the middle and swaps in as the value steps up.",
+    "tagline": "A ring fills clockwise with colour as the number in the middle counts up.",
     "category": "loaders",
     "categories": [
       "loaders"
@@ -2441,7 +2533,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "interactive-hover-button",
     "title": "Interactive Hover Button",
-    "description": "A button that animates outgoing text left while new text slides in from the right on hover.",
+    "description": "A rounded button whose small dot grows to flood the whole pill when hovered. The resting label drifts away and a second copy with a right arrow slides in.",
+    "tagline": "A dot swells to fill the pill on hover as the label slides out for an arrow.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -2464,7 +2557,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "video-text",
     "title": "Video Text",
-    "description": "A component that displays text with a video playing in the background.",
+    "description": "Renders a short word as a mask over a looping video, so the footage appears only inside the letterforms while the space between them stays empty.",
+    "tagline": "A huge word cut out of a live underwater video.",
     "category": "text",
     "categories": [
       "text",
@@ -2489,7 +2583,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pixel-image",
     "title": "Pixel Image",
-    "description": "A component that displays an image with a pixelated effect, creating a retro aesthetic.",
+    "description": "Splits an image into a grid of tiles that fade in one at a time at random, starting grey and then washing into full colour after a pause.",
+    "tagline": "A photo assembles from scattered square tiles, then colour bleeds in.",
     "category": "media",
     "categories": [
       "media",
@@ -2513,7 +2608,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magic-ui-terminal",
     "title": "Terminal",
-    "description": "Terminal wrapper (Terminal, TypingAnimation, AnimatedSpan) simulating a CLI output. TypingAnimation character-by-character types a string at a configurable speed. AnimatedSpan fades in already-rendered lines. All animations can sequence…",
+    "description": "A small shell panel with three window dots that plays log lines in order: commands type themselves character by character and result lines fade in one after another.",
+    "tagline": "A console window types its log out line by line in green and grey.",
     "category": "code",
     "categories": [
       "code",
@@ -2537,7 +2633,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "backlight",
     "title": "Backlight",
-    "description": "A backlight glow effect for videos, images, and SVGs.",
+    "description": "Wraps content in a blurred, colour-boosted copy of itself, so a colourful card throws a soft backlight halo. In this demo the blur deepens on hover.",
+    "tagline": "A dark card whose colours spill out as a soft glow all around it.",
     "category": "effects",
     "categories": [
       "effects"
@@ -2560,7 +2657,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ElectricBorder-TS-TW",
     "title": "Electric Border",
-    "description": "Jittery electric energy border with animated arcs, glow and adjustable intensity.",
+    "description": "A content card outlined by a glowing turquoise frame, with a second loose ring of lightning-like lines that shifts and flickers around it.",
+    "tagline": "A turquoise border crackles with jagged electric arcs.",
     "category": "borders",
     "categories": [
       "borders",
@@ -2585,7 +2683,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GhostCursor-TS-TW",
     "title": "Ghost Cursor Trail",
-    "description": "Semi-transparent ghost cursor that smoothly follows the real cursor with a trailing effect.",
+    "description": "A soft cloud of lilac light chases the mouse across a dark panel, smearing into a blurry trail on fast moves and dimming out when the pointer stops.",
+    "tagline": "A smoky violet halo drifts after the pointer, then fades.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -2611,7 +2710,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ImageTrail-TS-TW",
     "title": "Image Cursor Trail",
-    "description": "Cursor-based image trail with several built-in variants.",
+    "description": "A large heading sits on a dark card while snapshots of coastlines pop up along the pointer path, each one growing, drifting and shrinking away.",
+    "tagline": "Photos flick into view and peel away as the pointer sweeps.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -2640,7 +2740,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LogoLoop-TS-TW",
     "title": "Logo Marquee Loop",
-    "description": "Continuously looping marquee of brand or tech logos with seamless repeat and hover pause.",
+    "description": "A single row of white brand marks scrolls steadily past under a small \"Trusted by teams at\" label, dissolving at both edges and pausing for the pointer.",
+    "tagline": "Brand logos glide sideways in an endless fading strip.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -2664,7 +2765,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "MetaBalls-TS-TW",
     "title": "Liquid Metaballs",
-    "description": "Liquid metaball blobs that merge and separate with smooth implicit surface animation.",
+    "description": "Soft white and purple liquid blobs float on black, joining into larger shapes when close and splitting apart as they drift, with one blob following the pointer.",
+    "tagline": "White and violet blobs drift, merge and pull apart like mercury.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -2690,7 +2792,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PixelTransition-TS-TW",
     "title": "Pixel Dissolve Transition",
-    "description": "Pixel dissolve transition for content reveal on hover.",
+    "description": "A photo card breaks into a grid of white squares on hover, settling into a dark panel of route details; leaving dissolves it back to the photo.",
+    "tagline": "White pixels scatter to swap a mountain photo for trip details.",
     "category": "effects",
     "categories": [
       "effects",
@@ -2716,7 +2819,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "SplashCursor-TS-TW",
     "title": "Fluid Splash Cursor",
-    "description": "Liquid splash burst at cursor with curling ripples and waves.",
+    "description": "Liquid dye in green, violet and amber blooms under the pointer and streams across a black panel, curling and dissolving like ink in water.",
+    "tagline": "Coloured fluid swirls spill out and drift wherever the pointer drags.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -2741,7 +2845,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "TargetCursor-TS-TW",
     "title": "Target Lock Cursor",
-    "description": "A cursor follow animation with 4 corners that lock onto targets.",
+    "description": "A spinning four-corner reticle follows the mouse across a dark row of buttons, its corners flying out to lock onto whichever one the pointer enters.",
+    "tagline": "Four white corners snap around a button as the cursor lands on it.",
     "category": "cursors",
     "categories": [
       "cursors"
@@ -2766,7 +2871,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "MagicRings-TS-TW",
     "title": "Magic Rings Effect",
-    "description": "Interactive magic rings effect with customizable parameters.",
+    "description": "A full-bleed black canvas where glowing rings grow from the left and right edges, shifting between magenta and cyan. The arcs lean toward the pointer, widen on hover and flare out on click.",
+    "tagline": "Pink and cyan light arcs sweep outward from both screen edges.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -2794,7 +2900,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LaserFlow-TS-TW",
     "title": "Laser Flow",
-    "description": "Dynamic laser light that flows onto a surface, customizable effect.",
+    "description": "One thin shaft of pink light climbs from a soft horizontal pool at the bottom of a black stage, with faint streaks drifting along it. The beam leans a little as the pointer moves.",
+    "tagline": "A pink beam of light rises from a bright pool on black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -2821,7 +2928,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ASCIIText-TS-TW",
     "title": "ASCII Text",
-    "description": "Renders text with an animated ASCII background for a retro feel.",
+    "description": "A word is drawn as blocky pixel glyphs on a black field. It tilts in 3D toward the pointer, ripples in waves, and its tint slides through cream, green and purple as time passes.",
+    "tagline": "Chunky pixel letters shimmer with red and green fringes.",
     "category": "text",
     "categories": [
       "text",
@@ -2847,7 +2955,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "CurvedLoop-TS-TW",
     "title": "Curved Loop",
-    "description": "Flowing looping text path along a customizable curve with drag interaction.",
+    "description": "White uppercase words run continuously along a gently curved baseline and wrap around so the line never ends. The strip can be dragged to scrub the text, which then resumes in the direction you flick.",
+    "tagline": "A line of heavy uppercase words slides along a shallow arc.",
     "category": "text",
     "categories": [
       "text"
@@ -2870,7 +2979,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "DecryptedText-TS-TW",
     "title": "Decrypted Text",
-    "description": "Hacker-style decryption cycling random glyphs until resolving to real text.",
+    "description": "A line of text flickers through random letters and punctuation before resolving character by character into the real sentence. It can start on hover, when scrolled into view, or on a click.",
+    "tagline": "Words dissolve into random symbols, then snap back into reading order.",
     "category": "text",
     "categories": [
       "text"
@@ -2895,7 +3005,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "FuzzyText-TS-TW",
     "title": "Fuzzy Text",
-    "description": "Vibrating fuzzy text with controllable hover intensity.",
+    "description": "A word is drawn in a very heavy white face and redrawn each frame as thin horizontal slices shifted at random, so its outline buzzes like bad reception. Hovering over it makes the shake stronger.",
+    "tagline": "Heavy white letters tremble with horizontal static.",
     "category": "text",
     "categories": [
       "text"
@@ -2918,7 +3029,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "TrueFocus-TS-TW",
     "title": "TrueFocus",
-    "description": "Applies dynamic blur / clarity based over a series of words in order.",
+    "description": "A short sentence sits on a dark stage with all but one word softly blurred. Four corner brackets slide to whichever word is in focus and that word sharpens while the others soften.",
+    "tagline": "A bracket hops from word to word, sharpening one at a time.",
     "category": "text",
     "categories": [
       "text"
@@ -2943,7 +3055,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "BounceCards-TS-TW",
     "title": "BounceCards",
-    "description": "Cards bounce that bounce in on mount.",
+    "description": "Five square photos with thick white borders and rounded corners sit in a tilted fan over a black stage. They pop in with a bounce and drift apart when you hover over one.",
+    "tagline": "Rounded photo cards fan out and settle into a springy row.",
     "category": "cards",
     "categories": [
       "cards",
@@ -2971,7 +3084,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "BubbleMenu-TS-TW",
     "title": "BubbleMenu",
-    "description": "Floating circular expanding menu with staggered item reveal.",
+    "description": "A white pill logo and a round menu button sit at the top of a pale page. Pressing the button blooms five oversized white pill links across the centre in a staggered fan, each with its own hover colour.",
+    "tagline": "Menu of white pill buttons bursts open beneath a logo.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -2997,7 +3111,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "CardNav-TS-TW",
     "title": "CardNav",
-    "description": "Expandable navigation bar with card panels revealing nested links.",
+    "description": "A slim dark navbar holds a centred logo, a hamburger and a light Get Started button. Tapping the menu drops the bar open into three tinted cards, each listing nested links with small arrows.",
+    "tagline": "The navbar unfolds into three link cards beneath it.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -3024,7 +3139,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "CardSwap-TS-TW",
     "title": "CardSwap",
-    "description": "Cards animate position swapping with smooth layout transitions.",
+    "description": "Three near-black info cards sit in a fanned stack. Every few seconds the front card drops away and the one behind steps forward, so a new card and its copy reach the front.",
+    "tagline": "A stack of dark cards cycles front to back on a timer.",
     "category": "cards",
     "categories": [
       "cards",
@@ -3053,7 +3169,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "OrbitImages-TS-TW",
     "title": "OrbitImages",
-    "description": "SVG Path customizable orbiting images effect",
+    "description": "Eight small photos travel continuously around a slanted ellipse, passing behind a two-line title in the middle. The path can also be a circle, square, star, heart, wave or a custom curve.",
+    "tagline": "Photos glide around a tilted ellipse that frames a centred headline.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -3081,7 +3198,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ElasticSlider-TS-TW",
     "title": "ElasticSlider",
-    "description": "Slider handle stretches elastically then snaps with spring physics.",
+    "description": "A flat grey slider sets a value shown above it, with a muted speaker on the left and a loud one on the right. Dragging beyond an end stretches the track and grows that icon until it springs back.",
+    "tagline": "A volume bar stretches past its end and snaps back.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -3106,7 +3224,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "FlowingMenu-TS-TW",
     "title": "FlowingMenu",
-    "description": "Liquid flowing active indicator glides between menu items.",
+    "description": "A full-screen stacked menu lists links in tall rows divided by thin lines. Hovering a row slides in a white band that endlessly scrolls its label alongside rounded photo chips.",
+    "tagline": "Rows fill with a scrolling ribbon of words and pictures on hover.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -3133,7 +3252,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GlassIcons-TS-TW",
     "title": "GlassIcons",
-    "description": "Icon set styled with frosted glass blur.",
+    "description": "Six rounded app-icon tiles in bright gradients sit tilted on a dark stage, each with a white line symbol behind a frosted glass pane. Hovering raises a tile and fades its name in below.",
+    "tagline": "Glossy gradient tiles lift and name themselves on hover.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -3158,7 +3278,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "FluidGlass-TS-TW",
     "title": "FluidGlass",
-    "description": "Glassmorphism container with animated liquid distortion refraction.",
+    "description": "A violet full-screen scene shows two large photos and a bold wordmark. A round glass disc follows the cursor, refracting and warping whatever passes beneath it.",
+    "tagline": "A glass lens drifts with the pointer and bends the photos behind it.",
     "category": "3d",
     "categories": [
       "3d",
@@ -3188,7 +3309,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "MagicBento-TS-TW",
     "title": "Magic Bento Grid",
-    "description": "Interactive bento grid tiles expand + animate with various options.",
+    "description": "Six dark feature tiles of different sizes form a bento grid with labels, titles and one-line descriptions. A purple spotlight and glowing borders follow the pointer across the cards.",
+    "tagline": "A bento grid of dark cards lights up purple under the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -3216,7 +3338,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Masonry-TS-TW",
     "title": "Masonry Gallery",
-    "description": "Responsive masonry layout with animated reflow + gaps optimization.",
+    "description": "Photos of different heights pack into tight columns with small even gaps. Images fade and drift into place on load, and each one shrinks slightly under the cursor.",
+    "tagline": "A staggered wall of photos in uneven columns.",
     "category": "media",
     "categories": [
       "media",
@@ -3242,7 +3365,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ScrollStack-TS-TW",
     "title": "Scroll Stack Cards",
-    "description": "Overlapping card stack reveals on scroll with depth layering.",
+    "description": "A stack of full-width cards that pin near the top of the viewport as you scroll, each new card sliding up and shrinking the ones behind into a tidy pile.",
+    "tagline": "Cards slide up and pin into a pile as you scroll.",
     "category": "cards",
     "categories": [
       "cards",
@@ -3269,7 +3393,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ProfileCard-TS-TW",
     "title": "Profile Card",
-    "description": "Animated profile card glare with 3D hover effect.",
+    "description": "A tall portrait card with a tinted headshot, a large name and a glassy footer bar holding a handle, status and contact button. Moving the pointer tilts it and drags a colourful glare across the surface.",
+    "tagline": "Portrait card tilts and slides a holographic sheen under the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -3295,7 +3420,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Stack-TS-TW",
     "title": "Swipeable Card Stack",
-    "description": "Layered stack with swipe animations, autoplay and smooth transitions.",
+    "description": "A small deck of square photo cards stacked with a slight fan. Drag the top card off to throw it to the back of the pile, or click it to shuffle it under while a spring settles the rest.",
+    "tagline": "A deck of square photos fans out, and the top card swipes away.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -3323,7 +3449,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "TiltedCard-TS-TW",
     "title": "Tilted Card",
-    "description": "3D perspective tilt card reacting to pointer.",
+    "description": "Two tall photos in rounded frames that tilt in 3D toward the cursor and lift slightly, with a small white caption tag that follows the pointer and a brief mobile warning.",
+    "tagline": "Photos lean with the pointer while a small white caption follows it.",
     "category": "cards",
     "categories": [
       "cards",
@@ -3351,7 +3478,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "StaggeredMenu-TS-TW",
     "title": "Staggered Menu",
-    "description": "Menu with staggered item animations and smooth transitions on open/close.",
+    "description": "A slim header with a logo and a Menu toggle that opens a tall white panel from the right, layered over coloured strips. Huge uppercase links rise in one by one, each numbered, with social links at the bottom.",
+    "tagline": "A white side panel slides in with big links that rise in one after another.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -3377,7 +3505,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Aurora-TS-TW",
     "title": "Aurora",
-    "description": "Flowing aurora gradient background.",
+    "description": "A wide strip of soft light blends violet, green and cyan and undulates like a slow aurora. It fills its container edge to edge in a loop, sitting behind whatever you place on top.",
+    "tagline": "A glowing green and violet ribbon ripples across the top of the screen.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3403,7 +3532,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Balatro-TS-TW",
     "title": "Balatro Shader",
-    "description": "The balatro shader, fully customizalbe and interactive.",
+    "description": "A full-screen animated shader that churns deep blue and crimson into a marbled, liquid-like pattern with pale highlights, slowly rotating and drifting as it runs.",
+    "tagline": "Red and blue paint swirl into marbled eddies across the whole screen.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3429,7 +3559,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Ballpit-TS-TW",
     "title": "Ballpit",
-    "description": "Physics ball pit simulation with bouncing colorful spheres.",
+    "description": "A 3D physics toy of dozens of glossy spheres in white, grey and graphite that fall, collide and settle into a heap on a black stage. Moving the cursor pushes them around.",
+    "tagline": "Grey and white spheres tumble, bounce and pile up like a ball pit.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3457,7 +3588,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Dither-TS-TW",
     "title": "Dither",
-    "description": "Retro dithered noise shader background.",
+    "description": "A full-screen retro dithered background of soft grey clouds and wisps rendered in coarse pixel dots over black, with the whole field slowly flowing and the cursor dimming a spot.",
+    "tagline": "Speckled grey clouds drift across black like an old one-bit screen.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3486,7 +3618,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "FaultyTerminal-TS-TW",
     "title": "Faulty Terminal",
-    "description": "Terminal CRT scanline squares effect with flicker + noise.",
+    "description": "A full-screen green terminal grid of tiny glyphs that clump into drifting cloud shapes, with scanlines, flicker and noise, plus a cursor that brightens a ripple near it.",
+    "tagline": "Green glyphs flicker into cloudy shapes on a black CRT grid.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3514,7 +3647,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Galaxy-TS-TW",
     "title": "Galaxy",
-    "description": "Parallax realistic starfield with pointer interactions.",
+    "description": "A full-screen realistic starfield of tiny white, pink and blue stars with glowing cross flares. The field drifts and twinkles slowly, and moving the pointer bends nearby stars into radial streaks.",
+    "tagline": "A deep starfield of white and pink points drifts and warps around the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3540,7 +3674,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GradientBlinds-TS-TW",
     "title": "Gradient Blinds",
-    "description": "Layered gradient blinds with spotlight and noise distortion.",
+    "description": "A full-screen field of soft diagonal gradient stripes in pink, violet and blue, with a bright spotlight that follows the pointer and a fine film-grain noise over the top.",
+    "tagline": "Diagonal stripes of pink, violet and blue glow like lit venetian blinds.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3566,7 +3701,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Grainient-TS-TW",
     "title": "Grainient",
-    "description": "Grainy gradient swirls with soft wave distortion.",
+    "description": "A full-bleed wash of pastel pink, lavender and deep violet that drifts and warps in slow diagonal waves. A light speckled grain sits over everything, giving it a printed, filmic surface.",
+    "tagline": "Pink and indigo melt together under a fine film of grain.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3592,7 +3728,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GridMotion-TS-TW",
     "title": "Grid Motion",
-    "description": "Perspective moving grid lines based on cusror position.",
+    "description": "Four rows of photo and text tiles sit in a grid turned about fifteen degrees off level. Moving the pointer left or right shoves alternating rows in opposite directions with a soft lag.",
+    "tagline": "A tilted wall of photos slides sideways as the pointer crosses.",
     "category": "effects",
     "categories": [
       "effects",
@@ -3618,7 +3755,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LightRays-TS-TW",
     "title": "Light Rays",
-    "description": "Volumetric light rays/beams with customizable direction.",
+    "description": "Soft grey-white beams spread from a point above the frame and fade toward the bottom on near-black. The beams drift slowly and lean toward wherever the pointer moves.",
+    "tagline": "Faint white spotlights fan down from the top edge.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3644,7 +3782,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Lightning-TS-TW",
     "title": "Lightning",
-    "description": "Procedural lightning bolts with branching and glow flicker.",
+    "description": "One thin electric-blue bolt runs from top to bottom of a black stage, kinking and branching as it goes. The shape keeps re-forming, brightening and thinning like a live strike.",
+    "tagline": "A blue-white lightning bolt cracks down the dark and flickers.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3668,7 +3807,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LineWaves-TS-TW",
     "title": "Line Waves",
-    "description": "Animated line wave pattern with colorful warped distortion.",
+    "description": "A black field is covered in thin, closely spaced white lines that curve together in long waves. The waves flow continuously, and the pointer parts them in a soft bulge where it rests.",
+    "tagline": "Hundreds of fine white lines sweep across black like wind over grass.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3694,7 +3834,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "EvilEye-TS-TW",
     "title": "Evil Eye",
-    "description": "Procedural evil eye shader with animated iris, slit pupil, and fiery outer glow.",
+    "description": "A wide ellipse of orange flame draws a single eye on black, with fibrous rays around a dark vertical slit. The flame ripples and the pupil slides toward the pointer.",
+    "tagline": "A fiery orange eye with a slit pupil glares from the dark.",
     "category": "3d",
     "categories": [
       "3d",
@@ -3721,7 +3862,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "SoftAurora-TS-TW",
     "title": "Soft Aurora",
-    "description": "Soft aurora borealis shader with 3D Perlin noise and cosine gradient palettes.",
+    "description": "A hazy ribbon of magenta, pink and pale blue light runs across a black frame, fading softly at both ends. The ribbon undulates and its colours slide along it continuously.",
+    "tagline": "A soft pink and violet aurora drifts in a band across the dark.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -3746,7 +3888,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LiquidChrome-TS-TW",
     "title": "Liquid Chrome",
-    "description": "Liquid metallic chrome shader with flowing reflective surface.",
+    "description": "A full-bleed surface of molten chrome: white metallic ribbons twist through pools of black, with sharp specular highlights. The liquid keeps folding and the pointer stirs a local ripple.",
+    "tagline": "Black and silver liquid chrome curls into glossy ribbons.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3772,7 +3915,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Orb-TS-TW",
     "title": "Orb",
-    "description": "Floating energy orb with customizable hover effect.",
+    "description": "A fuzzy ring of coloured light hovers on black, its rim shading from yellow-green to magenta. The edge wobbles and swirls while it turns, brighter under the pointer.",
+    "tagline": "A thin glowing ring of red and green light pulses on black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3798,7 +3942,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PlasmaWave-TS-TW",
     "title": "Plasma Wave",
-    "description": "Raymarched plasma waves with dual-wave interference and OGL.",
+    "description": "Glowing three-dimensional ribbons of cyan and magenta twist like neon tubes through a dark space. The shapes curl and travel continuously, lit from within and fading at the edges.",
+    "tagline": "Cyan and violet light ribbons loop and bend across black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3824,7 +3969,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Prism-TS-TW",
     "title": "Prism",
-    "description": "Rotating prism with configurable intensity, size, and colors.",
+    "description": "A WebGL shader draws a luminous prism outline on black. It rotates and wobbles, with pale blue-white edges and faint teal and rust colour shifting inside, made to sit behind page content.",
+    "tagline": "A glowing triangular prism turns slowly on black.",
     "category": "3d",
     "categories": [
       "3d",
@@ -3851,7 +3997,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PrismaticBurst-TS-TW",
     "title": "Prismatic Burst",
-    "description": "Burst of light rays with controllable color, distortion, amount.",
+    "description": "A full-bleed shader shoots soft rays of magenta, teal and blue outward from a black centre and slowly turns them. The colours cycle, giving a dark page a glowing light-burst backdrop.",
+    "tagline": "Rays of pink and teal light fan out from a dark centre.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3877,7 +4024,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Silk-TS-TW",
     "title": "Silk",
-    "description": "Smooth waves background with soft lighting.",
+    "description": "A full-screen shader paints soft diagonal folds of grey-lilac silk that drift and bend without end. It turns an empty section into a textured, fabric-like backdrop.",
+    "tagline": "Folds of grey silk ripple slowly across the whole screen.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3904,7 +4052,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Waves-TS-TW",
     "title": "Waves",
-    "description": "Layered lines that form smooth wave patterns with animation.",
+    "description": "Hundreds of thin pale lines hang across a near-black stage and sway in soft waves, bunching into ribbons with dark gaps. Dragging the pointer pulls nearby strands and they spring back.",
+    "tagline": "A dense curtain of pale lines sways in slow waves.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -3928,7 +4077,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LiquidEther-TS-TW",
     "title": "Liquid Ether",
-    "description": "Interactive liquid shader with flowing distortion and customizable colors.",
+    "description": "A fluid simulation stirs smoky purple liquid over black, folding colour into dark hollows and letting it fade again. Moving the pointer pushes a glowing splash of colour through the liquid.",
+    "tagline": "Purple liquid curls and swirls across a black field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -3953,7 +4103,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "direction-aware-tabs",
     "title": "Direction Aware Tabs",
-    "description": "Tab component with direction-aware animations and smooth transitions",
+    "description": "A dark pill-shaped bar holds three tabs, with a lighter cap that springs to whichever is chosen. The panel beneath swaps its heading and copy with a sideways slide and a soft blur.",
+    "tagline": "A sliding pill marks the chosen tab and swaps the copy.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -3980,7 +4131,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "three-d-carousel",
     "title": "3D Carousel",
-    "description": "3D carousel component with perspective effects and smooth item transitions",
+    "description": "A rotating cylinder of square photos that you drag sideways to spin; clicking a photo stops the carousel and opens that image large in an overlay.",
+    "tagline": "A drum of photos spins sideways in draggable 3D perspective.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -4007,7 +4159,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-number",
     "title": "Animated Number",
-    "description": "Number component with smooth counting animations and customizable formatting",
+    "description": "Displays a single large number that animates toward any new value with a spring and comma formatting, with a row of pill buttons in the demo to pick targets.",
+    "tagline": "A big number rolls and springs to each new value you pick.",
     "category": "charts",
     "categories": [
       "charts",
@@ -4034,7 +4187,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sortable-list",
     "title": "Sortable List",
-    "description": "Drag-and-drop sortable list component with smooth animations and reordering",
+    "description": "A stacked task list where each row has a checkbox, a number and a label; rows can be dragged to reorder, and checking one shrinks it and reveals a delete button.",
+    "tagline": "Checkbox task rows you drag up or down to reorder.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -4062,7 +4216,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "color-picker",
     "title": "Color Picker",
-    "description": "Interactive color picker component with HSL support and preset colors",
+    "description": "An outline button showing the current colour opens a panel with a saturation-lightness square, a rainbow hue slider, an editable colour value and twelve preset dots.",
+    "tagline": "A swatch button opens a hue slider, colour square and presets.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -4088,7 +4243,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "expandable",
     "title": "Expandable",
-    "description": "Expandable component system with smooth animations and customizable presets",
+    "description": "A compact card that expands on click to reveal a list of status checks, with a chevron that flips and a Show more or Show less link at the bottom.",
+    "tagline": "A Quick Actions card springs open to show three status rows.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -4115,7 +4271,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "family-drawer",
     "title": "Family Drawer",
-    "description": "A multi-view drawer component with smooth animations, view navigation, and customizable content views",
+    "description": "A bottom-anchored drawer that opens from a Share button with a title, description and large action rows. Choosing an action swaps the sheet to a second view, such as a copied-link confirmation, and resizes to fit.",
+    "tagline": "A rounded sheet rises from the bottom edge with share actions.",
     "category": "modals",
     "categories": [
       "modals"
@@ -4143,7 +4300,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "morph-surface",
     "title": "Morph Surface",
-    "description": "A morphing surface component with smooth animations, customizable dimensions, and configurable content",
+    "description": "A collapsed pill with a dot, a label and a Send Feedback prompt springs open into a rounded card holding a textarea and a cmd-Enter shortcut. Submitting folds it back and briefly flashes a tick.",
+    "tagline": "A tiny pill grows into a small message box.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -4169,7 +4327,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "expandable-screen",
     "title": "Expandable Screen",
-    "description": "A full-screen expandable component with morphing animations using shared layout IDs for smooth transitions",
+    "description": "A preview card with a photo, title and Tap to expand hint that morphs into a near full-screen panel with a bigger photo, heading, copy and a Get Started button. An X collapses it back to the card.",
+    "tagline": "A small photo card blooms into a full-screen panel.",
     "category": "modals",
     "categories": [
       "modals",
@@ -4196,7 +4355,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-dithering",
     "title": "Hero Dithering",
-    "description": "Split-layout hero section with responsive dithering shader visuals, CTA, and tech stack badges",
+    "description": "A split landing hero: a big two-line headline, short paragraph, pill button and two tech badges on the left, and a circular dithering swirl on the right. The swirl keeps rotating behind a field of square dots.",
+    "tagline": "Headline and button beside a pixelated blue vortex that never stops turning.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4225,7 +4385,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-liquid-metal",
     "title": "Hero Liquid Metal",
-    "description": "Split-layout hero section with responsive LiquidMetal shader visuals, CTA, and tech stack badges",
+    "description": "A split landing hero: a large two-line heading, short paragraph, pill button and two tech badges on the left, and a rounded block of iridescent liquid metal on the right. Concentric teal rings keep rolling across the glossy surface.",
+    "tagline": "Glossy teal liquid metal ripples beside a headline and pill button.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4254,7 +4415,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-heatmap",
     "title": "Hero Heatmap",
-    "description": "Split-layout hero section with responsive Heatmap shader visuals, CTA, and tech stack badges",
+    "description": "A split landing hero with a two-line headline, short paragraph, pill button and two tech badges on the left, and a glowing lightning-bolt heatmap on the right. The bolt pulses through blue, green, yellow and magenta.",
+    "tagline": "A rainbow heatmap lightning bolt glows beside the headline.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4283,7 +4445,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "motion-number-upvotes",
     "title": "Animated Upvote Counter",
-    "description": "A counter button that animates the numeric value up/down using Framer Motion's AnimatePresence and slide transitions.",
+    "description": "A small rounded card showing an upvote total between two round arrow buttons. Clicking up or down rolls the number and tints the card and the chosen button green or red.",
+    "tagline": "An upvote card whose count rolls and flips green or red as you vote.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -4308,7 +4471,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "motion-number-input",
     "title": "Animated Number Input",
-    "description": "A controlled number input using the NumberFlow library for smooth animated digit transitions, with +/- buttons to adjust value, input validation, and min/max bounds.",
+    "description": "A stack of labelled rows for Adults, Children and Rooms, each with a minus and plus button around a large number. Pressing a button or typing changes the figure with a rolling digit animation.",
+    "tagline": "A booking card with minus and plus steppers whose numbers roll.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -4332,7 +4496,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-text-marquee",
     "title": "Scroll Text Marquee",
-    "description": "Horizontally scrolling text loop, typically used for news tickers or flowing announcements.",
+    "description": "A full-width ticker of two oversized text lines moving sideways in opposite directions, the top white and the bottom grey. An option ties their speed to page scrolling.",
+    "tagline": "Two giant lines of text scroll past in opposite directions.",
     "category": "text",
     "categories": [
       "text"
@@ -4358,7 +4523,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mesh-shadergradient",
     "title": "Mesh Shader Gradient",
-    "description": "WebGL gradient animation powered by ShaderGradient library. Renders a full-screen canvas with customizable animated gradient patterns.",
+    "description": "A full-bleed animated gradient that keeps moving: broad orange and rust bands slide across deep shadow, with a faint grain and cool blue-grey glow creeping into the corners.",
+    "tagline": "Warm orange gradient bands sweep and drift like flowing light.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4384,7 +4550,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hovercard1",
     "title": "Image Hover Card",
-    "description": "A rounded image card with title badge and an icon button at bottom-right. Button expands horizontally to show 'Visit' text on hover.",
+    "description": "A wide image card of a glossy red 3D object with a black name pill at the lower left and a round arrow button at the lower right that stretches into a Visit label on hover.",
+    "tagline": "Red abstract photo card whose round arrow button widens to say Visit.",
     "category": "cards",
     "categories": [
       "cards",
@@ -4411,7 +4578,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "symbolic-clippath",
     "title": "Symbolic Clip Path",
-    "description": "A six-item gallery where images are clipped with various SVG paths (star, diamond, organic shapes). Images zoom and transition padding on hover.",
+    "description": "A two-row gallery of six colour-washed tiles, each framing a surreal painting inside a different cut-out shape: a star, an arrow, a horseshoe, a quarter disc and more.",
+    "tagline": "Six painted scenes clipped into stars, arrows and other symbolic shapes.",
     "category": "media",
     "categories": [
       "media",
@@ -4438,7 +4606,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "image-hover-accordion",
     "title": "Image Hover Accordion",
-    "description": "Each accordion header has an associated image that appears/animates on hover before expanding.",
+    "description": "Five landscape photos sit side by side as narrow vertical strips; the strip under the pointer grows into a large picture and fades in a title and short description over a bottom gradient.",
+    "tagline": "Hovering a thin photo sliver widens it and slides in its caption.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -4463,7 +4632,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magnified-doc",
     "title": "Magnified Doc Tooltip",
-    "description": "Radix-based tooltip with custom backdrop blur and dark/light theme styling. Exports TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent as a compound component system.",
+    "description": "A tooltip wrapper for icon controls: pointing at or focusing a trigger opens a compact dark label with a hairline border and blurred backing, while the demo dock grows the icon under the cursor.",
+    "tagline": "Hovering an icon swells it and lifts a small bordered label above.",
     "category": "tooltips",
     "categories": [
       "tooltips"
@@ -4489,7 +4659,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "swapy",
     "title": "Swapy Layout Primitives",
-    "description": "A set of components wrapping the Swapy library to create draggable dashboard layouts. Includes SwapyLayout container, DragHandle icon, SwapySlot targets, and SwapyItem draggables with configurable animations.",
+    "description": "A grid of rounded cards, each with a small six-dot grip in the corner. Dragging one lifts it out of its slot and greys the other slots as targets; dropping swaps the cards' places with a spring.",
+    "tagline": "Grab a dashboard tile by its dotted grip and drop it into another slot.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -4515,7 +4686,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "default-swapy",
     "title": "Draggable Stats Bento",
-    "description": "A 12-column grid layout with drag-to-rearrange cards. Cards snap into grid positions; swap detection logs reordered items.",
+    "description": "Nine flat-colour cards of different widths form a tight bento grid mixing big metrics, client praise and a balance panel. Dragging any tile onto another swaps their places and the grid closes up around them.",
+    "tagline": "A bright mosaic of stat and quote tiles you can drag to new spots.",
     "category": "cards",
     "categories": [
       "cards",
@@ -4541,7 +4713,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-animation-default",
     "title": "Scroll Reveal Images",
-    "description": "A section component rendering a three-column image gallery with scroll-triggered reveal animations. Images fade in and slide as the user scrolls; uses ScrollAnimation internally.",
+    "description": "A full-width gallery of horse and landscape pictures laid out in three masonry columns. Each photo starts faint and off position, then fades into place once about half of it is on screen.",
+    "tagline": "Horse photos fade and slide into a three-column wall as you scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -4568,7 +4741,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stacking-card",
     "title": "Stacking Card",
-    "description": "A photographer portfolio using ReactLenis scroll physics. Cards stack and scale down as user scrolls, with images and bio text revealed sequentially.",
+    "description": "A photographer's project list where each large coloured card sticks near the top of the screen and the next slides up over it. Each card pairs a short bio and See more link with a big image panel.",
+    "tagline": "Colour-block cards pin near the top and shrink as the next one covers them.",
     "category": "cards",
     "categories": [
       "cards",
@@ -4595,7 +4769,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sticky-gallery",
     "title": "Sticky Gallery",
-    "description": "A full-page layout using CSS sticky positioning with ReactLenis smooth scrolling. Hero section remains visible while scrolling past a 3-column image gallery grid below.",
+    "description": "Architecture photos fill three equal columns on dark ground, and the centre column is held in place while the outer two keep sliding past. A large heading at the top explains the sticky trick.",
+    "tagline": "A three-column photo wall with its middle strip pinned while the sides scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -4621,7 +4796,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-glass",
     "title": "Liquid Glass Card",
-    "description": "A frosted-glass card with extensive styling options (blur intensity, shadow insets, glow effects, border radius). Optional draggable and expandable states via motion.",
+    "description": "A translucent rounded card sits on a coloured background and blurs whatever shows through it, with bright inner edges and a soft outer halo. It can be picked up and dragged, and it lifts a little on hover.",
+    "tagline": "A frosted pane floats on a purple gradient and blurs what is behind it.",
     "category": "cards",
     "categories": [
       "cards",
@@ -4649,7 +4825,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-glass-mobile-icons",
     "title": "Liquid Glass Mobile Icons",
-    "description": "A premade layout of liquid glass cards containing icons arranged in a grid pattern, mimicking iOS or Android control center aesthetics.",
+    "description": "A grid of translucent rounded glass tiles holds phone control icons — rotation, notifications, brightness, mute, focus, flashlight, timer, camera and screen record — floating over a photo backdrop.",
+    "tagline": "Glassy icon tiles float over a leaf photo like a phone control centre.",
     "category": "cards",
     "categories": [
       "cards",
@@ -4675,7 +4852,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tags-input",
     "title": "Tags Input",
-    "description": "A controlled tags input that displays tags as clickable pills, supports inline editing, and allows adding tags by pressing Enter or comma.",
+    "description": "An input that keeps chosen skills as removable blue pills. You type in the field and press Enter or comma to add one; clicking a pill loads it back into the field to edit.",
+    "tagline": "Blue tag pills collect inside a box as you type and press Enter.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -4698,7 +4876,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "date-picker",
     "title": "Date Picker",
-    "description": "An input field that parses natural language dates (like 'tomorrow', 'next Friday') via chrono-node. Shows a calendar popover for visual selection. Triggers on focus with no time picker.",
+    "description": "A dark input that understands plain-language dates and resolves them to a calendar date. A calendar button is there for picking a day visually; no time is asked for.",
+    "tagline": "Type \"next friday\" and it becomes a real dated calendar entry.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -4725,7 +4904,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "linear-modal-center-content",
     "title": "Linear Modal Centered",
-    "description": "A layered modal that morphs from a trigger element to a centered, expanded view. Animated with spring physics (Framer Motion). Content scales and fades in while a backdrop blurs and darkens, with support for images and scrollable…",
+    "description": "Three photo cards that expand into one large centered reading panel when clicked. The backdrop blurs, the picture stays on top and the text fades in below it.",
+    "tagline": "A photo tile springs open into a full centered article card.",
     "category": "modals",
     "categories": [
       "modals"
@@ -4751,7 +4931,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gallery-modal-accordion",
     "title": "Gallery Modal Accordion",
-    "description": "An AccordionModal using Framer Motion; displays horizontal image accordion that expands to full-screen on click with title and description.",
+    "description": "A row of thin photo strips that widen on hover and open one image large over a blurred page. A title and short description sit in a strip at the foot of the opened photo.",
+    "tagline": "Slivers of photos widen under the cursor and open into a big square.",
     "category": "modals",
     "categories": [
       "modals",
@@ -4780,7 +4961,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "media-modal-default",
     "title": "Media Modal Default",
-    "description": "A pre-configured 2-column grid of media modals displaying images and videos side-by-side. Each item expands to fullscreen when clicked. Ready to drop in with default styling and layout.",
+    "description": "A two-up grid of media panels, one still image and one video, that each expand to a large view when clicked. The pair sits edge to edge in its container.",
+    "tagline": "Two media tiles; click one to blow it up over the other.",
     "category": "modals",
     "categories": [
       "modals",
@@ -4807,7 +4989,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "image-reveal",
     "title": "Image Reveal Hover",
-    "description": "List of text items that reveal associated images on hover. Image tracks cursor position with spring physics animation and fades in/out.",
+    "description": "Four oversized text rows, each with a small category tag, that fade in a related photo while the pointer is on them. The picture follows the cursor and vanishes when you leave.",
+    "tagline": "Hover a large word and a photo springs up beside the pointer.",
     "category": "effects",
     "categories": [
       "effects",
@@ -4833,7 +5016,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "framer-multi-carousel",
     "title": "Framer Multi Carousel",
-    "description": "Multi-slide carousel with responsive breakpoints. Shows 1 slide on mobile, 2 on tablet, 3 on desktop. Supports custom breakpoint configuration. Navigate with prev/next buttons, snap animation via spring physics.",
+    "description": "A row of image cards with a caption strip along the bottom, advanced one card at a time by overlay arrows. The visible count follows the window: one card on phones, three on desktops.",
+    "tagline": "Three captioned photo cards step sideways under round arrows.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -4860,7 +5044,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-digital-success",
     "title": "Hero Digital Success",
-    "description": "Full-screen hero (dark) with ShaderGradient WebGL backdrop (cyan to deep blue), responsive nav, large headline with gradient text accent, dual CTAs, and service card grid footer. Uses TimelineAnimation for scroll-triggered stagger.",
+    "description": "A full-screen dark hero with a moving blue gradient wash, a split-colour headline, two pill buttons, a short pitch and a frosted grid of service labels.",
+    "tagline": "Blue light sweeps behind a huge headline that fades in on scroll.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4886,7 +5071,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-ai-value-proposition",
     "title": "Hero AI Value Proposition",
-    "description": "Full-screen hero (light background) with headline, description, CTA, and embedded design-app mockup. Uses TimelineAnimation for scroll-based stagger of text, buttons, avatars, and card selections.",
+    "description": "A light landing hero with a centred two-line headline, short pitch, one black call to action and a row of designer faces. A product mockup of a brief builder rises beneath it.",
+    "tagline": "Centred headline, black pill button, avatar row and a big app mockup.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -4912,7 +5098,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-share-app",
     "title": "Hero Share App",
-    "description": "App-store focused hero with warm red gradient (radial overlay), responsive nav, headline, dual download buttons (App Store/Play Store), and three floating image cards on scroll reveal. Uses TimelineAnimation for scroll-triggered stagger.",
+    "description": "An app-marketing hero on a warm peach radial glow: slim top nav, a small row of faces vouching for 12,000+ users, and a huge two-line slogan as the centrepiece.",
+    "tagline": "Warm glow behind an oversized two-line slogan and a trust pill.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4938,7 +5125,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-ai-infrastructure",
     "title": "Hero AI Infrastructure",
-    "description": "Dark hero section with ShaderGradient 3D background (WebGL), responsive nav, headline, dual CTAs, and logo wall. Uses TimelineAnimation to stagger text and button reveals on scroll.",
+    "description": "A dark infrastructure hero washed in a deep blue glow, with slim nav, a New badge, a three-line headline, two call-to-action buttons and a partner logo wall below.",
+    "tagline": "Deep blue glow behind a three-line AI infrastructure headline.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -4964,7 +5152,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-hero",
     "title": "Feature AI Cards",
-    "description": "A centered hero heading with animated entrance, featuring a 5-card grid below (3 cards, then 2 staggered). Diagonal striped background with radial gradient overlay.",
+    "description": "A centred heading and paragraph over five icon features: three across the top, two beneath. The middle item is scaled up with a filled blue icon to mark it as the key one.",
+    "tagline": "Five AI feature blurbs around a blue glow, middle card enlarged.",
     "category": "cards",
     "categories": [
       "cards",
@@ -4991,7 +5180,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-velocity",
     "title": "Feature Velocity Grid",
-    "description": "Three feature cards (Neural Link, Data Core, Fluid UI) with icons on a striped dark background. Cards reveal gradient overlays on hover.",
+    "description": "A black feature grid under an oversized uppercase headline: three cards with icon tiles and short labels, each lighting up with its own colour wash when hovered.",
+    "tagline": "Three dark feature cards bloom with colour as the cursor passes.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5017,7 +5207,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-bento",
     "title": "Feature Bento Grid",
-    "description": "A responsive bento layout showcasing an enlarged hero card, statistics, feature highlights, and CTA cards with gradient backgrounds and hover scale effects.",
+    "description": "A bento feature grid on a pale page: one large mountain photo card with a headline, plus smaller tiles for a statistic, a feature, a pass call to action and two more numbers.",
+    "tagline": "Bento grid of blue cards around a mountain hero tile.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5044,7 +5235,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "about-ecommerse",
     "title": "About E-Commerce Brand",
-    "description": "A centered about section for e-commerce brands with warm orange accent colors, heritage messaging, and image grid showcasing product values like ethical sourcing and craftsmanship.",
+    "description": "A centred about block on a cream backdrop: a small craft label, an italic serif headline, a quote, then three tall rounded photos offset in height with short value notes beneath.",
+    "tagline": "Three rounded photo cards under a serif heritage headline.",
     "category": "text",
     "categories": [
       "text",
@@ -5071,7 +5263,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "about-sass",
     "title": "About SaaS Company",
-    "description": "A SaaS-focused about section featuring feature cards with icons (Global Network, Scaling, Security), integrations list, and benefit-driven messaging with scroll animations.",
+    "description": "A light about page: a white card with a bold developer-focused headline and integration names, a stat pair beside a dark health chart, and three feature cards beneath.",
+    "tagline": "Developer SaaS story beside a system-health bar chart.",
     "category": "text",
     "categories": [
       "text",
@@ -5097,7 +5290,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "about-architecture",
     "title": "About Architecture Studio",
-    "description": "A full-width about/hero section for architecture studios with scroll-triggered fade animations, large typography, and images with grayscale-to-color hover transitions.",
+    "description": "A white studio about block with a giant 'Building Modernity.' headline, a short positioning note and two tall greyscale building photos set at different heights.",
+    "tagline": "Oversized architecture headline over two grayscale tower photos.",
     "category": "text",
     "categories": [
       "text",
@@ -5124,7 +5318,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "team-expert",
     "title": "Team Expert Grid",
-    "description": "A team showcase with white card backgrounds, expert photos, names, and specialist roles. Activity cards below highlight key specialties.",
+    "description": "A light team showcase: a four-across row of portrait cards with names and roles that fill with orange on hover, and four activity cards beneath.",
+    "tagline": "Four expert portrait cards that turn burnt orange on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5151,7 +5346,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "team-classic",
     "title": "Team Classic Grid",
-    "description": "A team showcase layout with pink background, animated heading and description. Team member cards with photos, names, roles, and social media links.",
+    "description": "A pink team page with a script-like heading and four member cards: square photos, names, green role labels and three small social icons each.",
+    "tagline": "Four portrait cards on pink, each with a coloured ring on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5178,7 +5374,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "team-synth",
     "title": "Team Synth Grid",
-    "description": "A dark section with animated heading (cyan-to-blue gradient text), team member cards with photos and roles, and gradient background overlays.",
+    "description": "A near-black team section with a glowing purple floor, a huge gradient title and three photo cards. Hovering a card lifts it, brings the portrait into colour and lights cyan details.",
+    "tagline": "Grey team portraits on a purple grid that light up in colour under the pointer.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5205,7 +5402,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "team-vr",
     "title": "Team VR Section",
-    "description": "Full-height section displaying team members with cascading blur-in animations on viewport entry. Each card removes grayscale and scales on hover, revealing a quote overlay. Uses TimelineAnimation for staggered reveals.",
+    "description": "A tall dark team section ending in a magenta and orange glow. Three square portraits sit under a bold heading, and hovering one floods it with a hot gradient, a quote mark and a line of white text.",
+    "tagline": "Team portraits that turn into a warm quote panel when hovered.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5233,7 +5431,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stats-section",
     "title": "Stats Section",
-    "description": "Full-section component with dark background (neutral-950) and purple radial gradient. Left column shows heading, stat grid (Founded, Remote, Capital, Partners), and right column contains narrative paragraphs. Stats animate in on scroll…",
+    "description": "A tall dark band with a lavender glow at its edges. One side holds a small label, a two-line headline and four big facts in a two-by-two grid; the other side holds two short paragraphs split by a hairline.",
+    "tagline": "Four founding facts on the left, a mission statement on the right.",
     "category": "charts",
     "categories": [
       "charts",
@@ -5259,7 +5458,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "messenger-testimonial",
     "title": "Messenger Testimonial",
-    "description": "Full-screen messenger-style testimonial display with messages appearing sequentially with typing indicator between them. Messages are clickable to show emoji reactions. Includes sender avatars, names, timestamps, customer stats, and live…",
+    "description": "A pale page holding a narrow messenger window where a support conversation types itself out one message at a time. Bubbles carry avatars, names and times, reactions pop underneath, and live stats sit at the bottom.",
+    "tagline": "Customer praise plays out as a live chat thread with emoji reactions.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -5288,7 +5488,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "impact-experience",
     "title": "Impact Experience Timeline",
-    "description": "Full-section component displaying a hardcoded experience timeline. Each item shows company, position, location, industry, tagline, and multi-line description in a grid layout. Background images (Unsplash URLs) fade in on hover of each…",
+    "description": "A light page headed EXPERIENCE, stacked with three job rows. Each row gives the company and dates, a small Position, Location, Industry and Website table, and a pair of paragraphs, and fades in a pink-orange photo when hovered.",
+    "tagline": "A résumé of past roles, each row flooding with a warm photo on hover.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -5314,7 +5515,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "portfolio-experience",
     "title": "Portfolio Experience",
-    "description": "Full-section component displaying SaaS career highlights. Each role shows company, position, location, metrics (ARR, uptime, users), tech stack, and narrative description. Items fade in as they scroll into view. Hard-coded content.",
+    "description": "A long career section headed SaaS Expertise. Three roles are stacked, each with company name, period, impact figures, role details, a tech-stack chip row and two paragraphs, fading in as you scroll.",
+    "tagline": "A resume-style career page stacks roles with metrics and tech tags.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -5340,7 +5542,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "faq-interactive-preview",
     "title": "Interactive FAQ Preview",
-    "description": "FAQ layout with a preview or comparison panel alongside accordion content.",
+    "description": "A dark split FAQ: six questions sit as a plain list while a large rounded panel beside them shows the chosen question, its answer and an abstract swirl picture. Hovering or clicking a row changes the panel.",
+    "tagline": "A question list on the left swaps a big visual answer on the right.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -5366,7 +5569,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "special-offer",
     "title": "Special Offer Banner",
-    "description": "Full-page-width cyber sale banner with gradient background, animated countdown timer (days/hours/minutes/seconds via useEffect RAF), promotional text, promo code box, and responsive layout.",
+    "description": "A full-width bar for a limited-time sale: copy on the left, a countdown of days, hours, minutes and seconds in the middle, and a boxed discount code on the right. It ticks down each second, then swaps to an ended message.",
+    "tagline": "Cyber sale strip with a glowing countdown and a boxed promo code.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -5391,7 +5595,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mac-genie",
     "title": "Mac Genie Dock",
-    "description": "Renders a macOS-style dock with spring-based icon magnification on hover. Clicking an icon opens a window with a canvas-based genie animation that morphs between dock and open position, mirroring macOS behavior.",
+    "description": "A miniature desktop with a translucent dock of app icons. Hovering makes the nearest icons grow, and clicking one sends a window up out of the dock through a triangular genie morph; closing it flies the window back down.",
+    "tagline": "Desktop dock whose app icons swell and fling open a window.",
     "category": "menus",
     "categories": [
       "menus",
@@ -5419,7 +5624,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "command",
     "title": "Command Palette",
-    "description": "A compound component wrapping cmdk library with styled input, grouped results, keyboard shortcuts display, and dialog wrapper for full-screen command palette UI.",
+    "description": "A modal command menu with a search box, grouped actions and a shortcut key at the right of each row. Typing filters the list down and the first match is highlighted.",
+    "tagline": "A dark command palette with grouped shortcuts and a search field.",
     "category": "modals",
     "categories": [
       "modals",
@@ -5446,7 +5652,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "checkbox-tree",
     "title": "Checkbox Tree",
-    "description": "Render-prop-based tree checkbox component. Manages nested checkbox state with parent-child synchronization: checking a parent checks all children; partially-checked parents show indeterminate state. Supports default-checked nodes.",
+    "description": "A tree of category labels, each with a small square box, nested under thin indent rules. Ticking a parent selects everything beneath it, and a parent with only some children ticked shows a dash.",
+    "tagline": "Nested categories where ticking a parent ticks all its children.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -5472,7 +5679,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sonner",
     "title": "Sonner Toaster",
-    "description": "Wrapper component around Sonner's Toaster with useTheme integration, CSS custom properties for styling, and toastOptions for description styling.",
+    "description": "A notification card that appears near the bottom of the screen with a status icon, a short title and a line of detail. Trigger buttons in the demo fire plain, success, error and loading versions.",
+    "tagline": "A small dark card rises near the bottom edge to report a failure.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -5498,7 +5706,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-51",
     "title": "Password Strength Input",
-    "description": "A password field with an eye toggle, an animated progress bar showing strength (0-4 requirements met), and a checklist of requirements. Color-codes from red (weak) to green (strong).",
+    "description": "A password input with an eye toggle, a thin progress bar that grows and warms from red to green, and a checklist of four rules whose crosses turn into green ticks as you type.",
+    "tagline": "Password field with a live bar and tick list that fill as the rules are met.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -5522,7 +5731,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-252",
     "title": "Volume Slider",
-    "description": "A vertical slider track with a volume-icon indicator, typical for audio/video applications.",
+    "description": "A sound-level setting inside a dark card. A muted speaker, a horizontal level slider and a loud speaker sit on one row, with the current level printed beside the heading.",
+    "tagline": "A speaker slider that raises a number as its knob slides right.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -5545,7 +5755,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-256",
     "title": "Emoji Rating Slider",
-    "description": "A slider where the thumb or track markers display emoji (😞 to 😄) representing rating or satisfaction.",
+    "description": "A five-step satisfaction slider with a cross face at one end and a heart-eyes face at the other. The current step is spelled out in a word beside the prompt.",
+    "tagline": "Slide between an angry face and a smitten one to name your rating.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -5569,7 +5780,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-265",
     "title": "Histogram Range Slider",
-    "description": "A range slider with a histogram background showing data distribution, common for image or signal filtering.",
+    "description": "A price filter that stacks a row of thin histogram bars above a dual-handle slider. Below sit min and max price fields, and an outlined button reports how many items fall in the range.",
+    "tagline": "A histogram of prices with a two-handle filter drawn straight across it.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -5593,7 +5805,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-266",
     "title": "Audio Equalizer Slider",
-    "description": "Multiple vertical sliders arranged in a row, each controlling a frequency band or level, styled like an audio EQ.",
+    "description": "A graphic equalizer: five vertical sliders spaced evenly under the heading Equalizer, each capped with a white pill handle and named by a frequency underneath.",
+    "tagline": "Five thin faders stand in a row, each setting one audio band.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -5616,7 +5829,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-310",
     "title": "Sale Countdown Banner",
-    "description": "Dark sale banner with ticket icon, sale headline, live countdown timer showing days/hours/minutes/seconds via useEffect RAF loop, Buy now button, and dismissible close.",
+    "description": "A full-width dark promo bar with a Black Friday headline, a live countdown in divided cells, a white Buy now button and a close X. It removes itself when the timer runs out.",
+    "tagline": "Sale strip counts down hours, minutes and seconds beside a Buy now button.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -5641,7 +5855,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-320",
     "title": "Delete Confirm Dialog",
-    "description": "A shadcn Dialog with a warning icon and text input that enables the delete button only after the user types the exact project name to confirm.",
+    "description": "A trigger opens a dark confirmation dialog with a warning icon and a name field. Delete stays dim until the typed text matches the project name exactly, then turns solid.",
+    "tagline": "Delete dialog unlocks only after you type the project name exactly.",
     "category": "modals",
     "categories": [
       "modals"
@@ -5664,7 +5879,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-325",
     "title": "Sign Up Dialog",
-    "description": "A shadcn Dialog collecting full name, email, and password; includes a Google authentication option and terms link.",
+    "description": "A trigger opens a compact dark dialog with a ring icon, a welcome line, three labelled fields, a white Sign up button, an Or divider, Continue with Google and a terms note.",
+    "tagline": "Sign-up dialog stacks name, email and password with a Google option.",
     "category": "modals",
     "categories": [
       "modals",
@@ -5689,7 +5905,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-324",
     "title": "OTP Verify Dialog",
-    "description": "A shadcn Dialog with a 4-slot OTP input using the input-otp library; displays success on valid code or error on invalid, with a resend link.",
+    "description": "A trigger opens a dark dialog with four square code slots. Entering the right four digits turns the panel into a Code verified message with a Close button; a wrong code shows an error and a resend link.",
+    "tagline": "Popup asks for a four-digit code, then swaps to a verified message.",
     "category": "modals",
     "categories": [
       "modals",
@@ -5716,7 +5933,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-331",
     "title": "Edit Profile Dialog",
-    "description": "A scrollable shadcn Dialog with background and avatar image uploads, name fields, website, bio with character counter.",
+    "description": "A dialog for editing a profile: a wide cover photo and round avatar sit above first and last name, username, website and bio fields. Save or Cancel closes it and the bio shows how many characters remain.",
+    "tagline": "Photo banner and avatar sit above a profile form with a live character count.",
     "category": "modals",
     "categories": [
       "modals",
@@ -5740,7 +5958,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-332",
     "title": "Onboarding Stepper Dialog",
-    "description": "A shadcn Dialog with 4 steps, each displaying an image, title, and description; progress dots show current position; next/okay buttons advance.",
+    "description": "A dialog walks through a short illustrated onboarding: a photo, a heading, a description and four progress dots. Next advances the steps, Skip closes, and the last step shows Okay.",
+    "tagline": "Four dots track progress through illustrated intro screens with Next and Skip.",
     "category": "modals",
     "categories": [
       "modals",
@@ -5765,7 +5984,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-383",
     "title": "Avatar Notification Feed",
-    "description": "Bell icon button with unread badge, opens Popover showing notification list with user avatars, actions, timestamps, Mark all as read button, and unread indicators.",
+    "description": "A bell button with a red unread badge opens a popover feed. Each row pairs a user photo with a sentence about what they did, a timestamp and a dot for unread items; Mark all as read clears them.",
+    "tagline": "A bell with an unread count opens a list of avatar notifications.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -5790,7 +6010,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-485",
     "title": "Filterable Data Table",
-    "description": "Full-featured data table with multi-column search (name/email), status filter popover with counts, column visibility toggle, sortable columns, pagination controls, row selection, bulk delete with confirmation, row action menu, and add user…",
+    "description": "A complete people-management table. It searches by name or email, filters by status, hides columns, sorts, selects rows for bulk delete and pages through results.",
+    "tagline": "Admin table you can search, filter, sort and page through.",
     "category": "tables",
     "categories": [
       "tables",
@@ -5817,7 +6038,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-505",
     "title": "Calendar Time Slot Picker",
-    "description": "A date picker paired with a scrollable time slot list. Selecting a date updates the time slots shown. Disabled slots are unclickable.",
+    "description": "A bordered panel splits a month calendar from a narrow slot list. The right side names the chosen weekday and date above a scrollable stack of half-hour times, some greyed out, which fill white when picked.",
+    "tagline": "Day calendar beside a scrolling column of bookable time slots.",
     "category": "calendar",
     "categories": [
       "calendar"
@@ -5840,7 +6062,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-507",
     "title": "Date Range Preset Picker",
-    "description": "Selects a start and end date using a calendar in range mode. Preset buttons set common ranges (Today, Last 7 days, Month to date, etc). Only past dates are available.",
+    "description": "A bordered panel pairing a column of range shortcuts (Today, Yesterday, Last 7 days, Last month and more) with a month calendar. Presets jump the month and shade their span while future days stay greyed out.",
+    "tagline": "Calendar with preset range buttons for common reporting periods.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -5864,7 +6087,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-512",
     "title": "Date Range Popover Picker",
-    "description": "A labeled form control showing the selected date range or placeholder. Button displays 'Start - End' format. Popover contains a calendar in range mode for selecting both dates.",
+    "description": "A form field labelled Date range picker: an outlined button showing Pick a date range and a small calendar glyph. Opening it reveals a month calendar where two clicks shade a span and rewrite the button text.",
+    "tagline": "Labelled button that opens a calendar for picking two dates.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -5888,7 +6112,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-546",
     "title": "Multi Image Upload Grid",
-    "description": "Multi-image uploader with drag-and-drop support, displaying thumbnails in a grid layout. Each image can be individually removed.",
+    "description": "A dashed dark container holding a three-column grid of square image thumbnails under an Uploaded Files count. Add more opens the file picker, and a round X on each photo removes it.",
+    "tagline": "Grid of uploaded photos, each with a small remove button.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -5912,7 +6137,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-578",
     "title": "Mega Menu Navbar",
-    "description": "Responsive header with desktop mega menu (descriptions/icons/simple items) and mobile popover. Collapses cleanly at breakpoint.",
+    "description": "A dark site header with a logo, four nav items, and Sign In plus a Get Started button; Features, Pricing and About each open a dropdown panel of links, some with descriptions or icons.",
+    "tagline": "A slim top bar whose nav items drop rich panels of links underneath.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -5936,7 +6162,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-591",
     "title": "AI Model Selector Header",
-    "description": "Header with AI model dropdown (showing descriptions), chat layout toggle, and user menu. Minimal, focused on model selection.",
+    "description": "A sparse dark chat header holding one model selector button on the left, with a bot icon and the active model name, and a temporary-chat icon plus user avatar on the right.",
+    "tagline": "Switch AI models from a header button that lists each with a short description.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -5961,7 +6188,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animate-grid",
     "title": "3D Hover Grid",
-    "description": "A 3D perspective grid of cards that raises neighbors on hover with glow animations. Mouse-enter/leave events drive CSS transform and keyframe glow on each card and its 4 adjacent neighbors.",
+    "description": "A four-by-four grid of dark emoji tiles shown at a 3D angle. Hovering a tile pops it forward on a white fill with a green glow, and its four neighbours rise a little too.",
+    "tagline": "Tilted icon tiles lift and glow as the cursor crosses them.",
     "category": "cards",
     "categories": [
       "cards",
@@ -5984,7 +6212,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-animated-testimonials",
     "title": "Animated Testimonials",
-    "description": "A testimonials carousel with a stacked image deck and word-by-word blur-in quote animation. Supports autoplay, prev/next navigation, and AnimatePresence-based transitions on both images and text.",
+    "description": "One customer testimonial at a time: a stack of slightly rotated portrait photos on the left, and on the right a name, job title, quote and two round arrow buttons that cycle to the next person.",
+    "tagline": "A tilted portrait deck beside a quote that sharpens in word by word.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -6006,7 +6235,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-animated-tooltip",
     "title": "Animated Tooltip",
-    "description": "An avatar row that shows a spring-animated tooltip on hover. The tooltip rotates and translates based on the horizontal mouse position within each avatar, mimicking a parallax tilt effect.",
+    "description": "A row of overlapping circular portraits with white rings. Hovering a face springs a black tooltip above it with the person's name and role, tilting and sliding as the pointer moves sideways.",
+    "tagline": "Overlapping face row; hovering one pops a tilted name card.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -6028,7 +6258,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "apple-card-carousel",
     "title": "Apple Card Carousel",
-    "description": "Horizontally scrolling card carousel with expandable card detail overlay.",
+    "description": "A sideways scroller of tall image cards, each labelled with a category and a big title. Clicking one expands it into a large centred panel with the description and a small close button over a blurred dark backdrop.",
+    "tagline": "Photo cards scroll sideways and grow into a full read when clicked.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -6052,7 +6283,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bending-gallery",
     "title": "Bending Gallery",
-    "description": "WebGL-powered infinite scrolling gallery where images curve along an arc based on horizontal position. OGL Renderer/Camera/Transform/Mesh/Program/Plane replicated with a custom BendingGalleryApp class. Text labels rendered via Canvas2D and uploaded as WebGL textures.",
+    "description": "A band of rounded photo cards with short captions, arranged on a shallow arc where outer cards dip and lean away. Dragging or swiping slides them endlessly while the pictures ripple gently.",
+    "tagline": "Photo cards ride a curved arc and slide sideways as you drag.",
     "category": "media",
     "categories": [
       "media",
@@ -6075,7 +6307,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-bubbles",
     "title": "Bubbles Background",
-    "description": "Three.js scene with 250 floating gradient spheres inside a gradient sphere background. Uses dual warm/cool temperature-based ShaderMaterial with animated float.",
+    "description": "A full-bleed animated backdrop of about two hundred and fifty soft-edged spheres in blue, green and yellow, floating in front of a very large pale sphere, with a slow warm-to-cool colour shift.",
+    "tagline": "Soft coloured bubbles drift across a blue sky behind your content.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6096,7 +6329,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-neural",
     "title": "Neural Background",
-    "description": "WebGL canvas background using OGL with a custom GLSL neuro-shape shader. Reacts to pointer and scroll. Props: hue, saturation, chroma. Written to /registry/inspira-react/bg-neural.tsx + bg-neural.demo.tsx. Uses OGL directly (no ShaderToy wrapper) because it has its own uniforms and render loop.",
+    "description": "A full-bleed shader backdrop that draws thin luminous blue tendrils, brightening where they cross, over pure black. The pattern moves on its own and shifts toward the pointer.",
+    "tagline": "Electric blue filaments fork and drift across a black field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6117,7 +6351,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-singularity",
     "title": "Singularity Background",
-    "description": "GLSL blackhole/singularity swirl shader (ShaderToy 3csSWB by @XorDev) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-singularity.tsx + .demo.tsx.",
+    "description": "A full-bleed shader that renders something like a black hole: a dark circular void edged with a glowing rim that runs cold blue on one side and warm orange on the other, with wispy gas trailing into black.",
+    "tagline": "A black void ringed by a thin blue and orange halo of gas.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6138,7 +6373,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-stractium",
     "title": "Stractium Background",
-    "description": "Full ray-marched 3D structure shader (ShaderToy Mlf3R4) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-stractium.tsx + .demo.tsx.",
+    "description": "A full-bleed animated 3D backdrop: a dark red and teal organic mass that continuously morphs between a smooth sphere and a burst of blade-like spines. The viewpoint drifts and follows the pointer.",
+    "tagline": "A glossy orb erupts into layered metal fins and folds back again.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6159,7 +6395,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "book",
     "title": "3D Book Display",
-    "description": "3D CSS book component with hover tilt animation, configurable cover colour/size/radius, and sub-components BookHeader, BookTitle, BookDescription.",
+    "description": "A row of book-shaped cards with gradient covers, a pale page edge and a title block. Pointing at one rotates it about thirty degrees so its spine comes into view.",
+    "tagline": "Three book covers stand in 3D and tip back on hover to show their spines.",
     "category": "3d",
     "categories": [
       "3d",
@@ -6181,7 +6418,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "compare",
     "title": "Image Compare Slider",
-    "description": "Image/content comparison slider with hover and drag modes, autoplay, star field decorative effect on the slider line, and full slot system via firstContent/secondContent/handle render props.",
+    "description": "Two images are layered, with the top one clipped to a moving handle. Moving the pointer, or dragging the divider, shifts the seam so the second picture shows through.",
+    "tagline": "A vertical divider drags across two photos to reveal before and after.",
     "category": "media",
     "categories": [
       "media",
@@ -6203,7 +6441,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "container-text-flip",
     "title": "Container Text Flip",
-    "description": "Animated word-cycling component using motion/react LayoutGroup + AnimatePresence. Each letter fades/blurs in with staggered delay. Container width animates to match the current word.",
+    "description": "An animated headline that cycles through a list of words. Each word blurs in letter by letter while the slab behind it smoothly changes width.",
+    "tagline": "A word swaps out letter by letter inside a slab that resizes to fit.",
     "category": "text",
     "categories": [
       "text"
@@ -6223,7 +6462,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-dither-shader",
     "title": "Dither Shader",
-    "description": "CPU canvas dithering renderer supporting bayer, halftone, noise, and crosshatch patterns; grayscale, duotone, original, and custom color modes; brightness/contrast/invert/threshold controls; optional animation loop; ResizeObserver-driven responsive canvas.",
+    "description": "A canvas that redraws an image in a choice of dither patterns: ordered dots, halftone blobs, noise or crosshatch, in grayscale, duotone or custom palettes.",
+    "tagline": "A photo becomes crisp black-and-white dots and crosshatch patterns.",
     "category": "media",
     "categories": [
       "media",
@@ -6245,7 +6485,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "expandable-gallery",
     "title": "Expandable Gallery",
-    "description": "Horizontal image gallery where each panel expands (flex-[3]) on hover via CSS transition. Minimal pure-CSS implementation using Tailwind flex classes.",
+    "description": "A row of equally sized image panels fills the width. Hovering one lets it grow to three times its share while the others narrow, with a slow ease.",
+    "tagline": "Photo panels sit in a row and widen under the pointer.",
     "category": "media",
     "categories": [
       "media",
@@ -6266,7 +6507,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "light-speed",
     "title": "Light Speed",
-    "description": "Three.js highway night-drive effect with instanced car lights, road markings, and postprocessing bloom. Logic split into light-speed.tsx (React wrapper), light-speed-app.ts (Three.js engine class), and light-speed-shaders.ts (GLSL shader strings). Requires three and postprocessing npm packages.",
+    "description": "A night drive rendered in 3D: glowing car lights and lane markers stream toward the viewer and bend with the road. Holding the pointer speeds them up.",
+    "tagline": "Streaks of pink and teal light rush down a dark highway.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6287,7 +6529,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "logo-origami",
     "title": "Logo Origami",
-    "description": "Flip-card origami animation cycling through children at a configurable interval. Includes LogoOrigamiItem helper component.",
+    "description": "A tilted rounded card splits along its middle: the top half folds away while the next logo's lower half flips up, then it rests before cycling again.",
+    "tagline": "A little card folds over like origami to swap one logo for the next.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -6309,7 +6552,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "photo-gallery",
     "title": "Photo Gallery",
-    "description": "CSS diamond clip-path gallery grid that expands hovered images to a rectangle and dims the rest using :has() selector.",
+    "description": "A honeycomb of diamond-cropped photos on a dark background. Pointing at one turns its diamond into a full rectangle, boosts its colour and greys out every other tile.",
+    "tagline": "Diamond photos straighten into a rectangle while the rest fade grey.",
     "category": "media",
     "categories": [
       "media",
@@ -6330,7 +6574,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scratch-to-reveal",
     "title": "Scratch To Reveal",
-    "description": "Canvas-based scratch card that reveals hidden content underneath a gradient overlay. Triggers an animation and onComplete callback when the scratch percentage threshold is met. Written at registry/inspira-react/scratch-to-reveal.tsx.",
+    "description": "A card covered by a purple-to-peach gradient. Dragging the pointer across it scrapes the layer away, and once enough is cleared the card shakes and reveals the hidden message underneath.",
+    "tagline": "Scratch the gradient card with the cursor to uncover a prize.",
     "category": "effects",
     "categories": [
       "effects",
@@ -6351,7 +6596,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tailed-cursor",
     "title": "Tailed Cursor",
-    "description": "OGL WebGL multi-ribbon cursor trail. Each ribbon follows the mouse with configurable spring/friction physics, fade, and optional shader wave effect.",
+    "description": "Multiple flat ribbons in orange, green, yellow and blue chase the pointer with a soft spring, bending into curves as they follow. They fade toward their tails over a black surface.",
+    "tagline": "Several coloured ribbons stream behind the cursor like ribbons in water.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -6373,7 +6619,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-backgrounds-hole",
     "title": "Hole Background",
-    "description": "A background component featuring an animated hole grid.",
+    "description": "A dark canvas draws a funnel of fine concentric rings that narrows toward a bright glowing mouth at the bottom. A coloured beam shifts hue across the opening while small white specks drift upward.",
+    "tagline": "A glowing tunnel of thin rings with motes drifting through it.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6399,7 +6646,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-backgrounds-bubble",
     "title": "Bubble Background",
-    "description": "An interactive background featuring smoothly animated gradient bubbles, creating a playful, dynamic, and visually engaging backdrop.",
+    "description": "A full-bleed gradient of deep violet and blue with large, heavily blurred circles of orange, pink and cyan floating over it. The blobs slowly drift and overlap, blending like a lava lamp.",
+    "tagline": "Soft colour blobs drift and merge over a purple-blue field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6425,7 +6673,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-community-flip-card",
     "title": "Flip Card",
-    "description": "A 3D animated card component that flips to reveal content on the back.",
+    "description": "A dark profile card shows an avatar, a name and a handle; turning it over reveals a short bio, three follower counts, social icons and a follow button.",
+    "tagline": "Flips over on hover to show the bio, follower counts and a Follow button.",
     "category": "cards",
     "categories": [
       "cards",
@@ -6453,7 +6702,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-community-notification-list",
     "title": "Notification List",
-    "description": "A fun notification list with animated stacking and cards that expand as you interact.",
+    "description": "A small dark panel holds three notification rows stacked on top of each other; hovering spreads them into a readable list and swaps the footer label to View all.",
+    "tagline": "Stacked alert cards fan apart when the panel is hovered.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -6481,7 +6731,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-community-pin-list",
     "title": "Pin List",
-    "description": "A playful list for pinning and unpinning items, with smooth animated transitions as items move between groups.",
+    "description": "A two-part list of menu items: clicking a row pins it to the top section, clicking again sends it back below the All Items divider, and rows spring between groups.",
+    "tagline": "Click a row to pin it and watch it glide into the group above.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -6509,7 +6760,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-community-radial-nav",
     "title": "Radial Nav",
-    "description": "A circular navigation menu with animated pointer and expanding buttons for smooth interactive transitions.",
+    "description": "Five icon buttons sit on a thin circular track; selecting one stretches it into a pill with its label and swings a small arrow in the middle to point at it.",
+    "tagline": "Ring of icon pills with one stretching out to show its name.",
     "category": "menus",
     "categories": [
       "menus",
@@ -6536,7 +6788,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-effects-theme-toggler",
     "title": "Theme Toggler",
-    "description": "An effect that allows you to toggle the theme gradually.",
+    "description": "A small settings card with a segmented control for Light, Dark and System; picking one flips the whole page's theme with a gradual sweep instead of an instant snap.",
+    "tagline": "Three-way Light, Dark and System switch with a page-wide wipe.",
     "category": "switches",
     "categories": [
       "switches",
@@ -6561,7 +6814,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-texts-sliding-number",
     "title": "Sliding Number",
-    "description": "A sliding number animation.",
+    "description": "A live number display whose digits spring vertically to their new value, with columns of numerals sliding past inside fixed slots. The demo runs three sizes, including a comma-grouped and a two-decimal version.",
+    "tagline": "Each digit rolls upward like an odometer wheel to the next number.",
     "category": "charts",
     "categories": [
       "charts",
@@ -6591,7 +6845,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-texts-morphing",
     "title": "Morphing Text",
-    "description": "A text component that smoothly morphs characters to transition between strings.",
+    "description": "A big looping headline that periodically changes word, with each letter fading and sliding into its new position, and a smaller supporting line morphing underneath.",
+    "tagline": "Letters blur, stretch and swap places until one phrase becomes another.",
     "category": "text",
     "categories": [
       "text"
@@ -6618,7 +6873,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-agent-lanes",
     "title": "AI Agent Lanes",
-    "description": "A lead agent fans work out to parallel sub-agent lanes of tool-call bars, with a scrubbable timeline and a typed-out final answer.",
+    "description": "A dark card that replays an AI run: a lead lane forks into parallel sub-agent lanes of tool-call bars on a timed track, with hover tooltips, a scrubber and a transcript that types out the final answer.",
+    "tagline": "A playhead sweeps a gantt chart as one agent fans work out to three helpers.",
     "category": "chat",
     "categories": [
       "chat",
@@ -6645,7 +6901,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-citations",
     "title": "AI Citations",
-    "description": "An AI answer with inline source chips; hovering a chip glides a preview card over and highlights the sentence it backs.",
+    "description": "An AI answer paragraph with small source chips after cited claims. Hovering or focusing a chip highlights that sentence in blue and floats a preview of the source's site, title and snippet.",
+    "tagline": "Hover a tiny source chip and its sentence lights up as a card glides in.",
     "category": "chat",
     "categories": [
       "chat",
@@ -6672,7 +6929,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-message-queue",
     "title": "AI Message Queue",
-    "description": "An agent chat where follow-ups queue above the composer while the agent works; reorder, edit, remove or send any of them now.",
+    "description": "A compact agent chat that holds your next messages in a numbered queue above the input. Each queued prompt can be dragged, reordered, edited, sent immediately or removed, and runs start as the agent finishes.",
+    "tagline": "Follow-ups line up above the composer while the agent keeps working.",
     "category": "chat",
     "categories": [
       "chat",
@@ -6699,7 +6957,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-tool-approval",
     "title": "AI Tool Approval",
-    "description": "An approval gate for agent tool calls: allow or deny each call, watch its output stream, and press-and-hold to confirm destructive ones.",
+    "description": "A stack of tool-call cards for an AI agent: each pending call shows the command or fields it wants to run, its reason and Allow or Deny, then folds into a one-line trace as its output streams in.",
+    "tagline": "Approve or deny an agent's tool call, or press and hold for a destructive one.",
     "category": "chat",
     "categories": [
       "chat",
@@ -6726,7 +6985,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-voice",
     "title": "AI Voice",
-    "description": "Voice input with a scrolling live waveform, then playback, discard or send of the recorded take.",
+    "description": "A voice capture control: a round microphone button starts recording, a scrolling level waveform and timer track the take, then play, discard and send appear for review.",
+    "tagline": "Tap the mic and a live waveform scrolls while the voice timer runs.",
     "category": "chat",
     "categories": [
       "chat",
@@ -6753,7 +7013,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "carousel-cards",
     "title": "Carousel Cards",
-    "description": "Travel listing rail with momentum drag, spring snap, cover-flow tilt and parallax, favourite hearts and a card counter.",
+    "description": "A horizontal rail of travel listing cards with drawn landscape covers. The centred card shows its rating, dates and price, hearts save favourites, and the rail snaps between cards with momentum.",
+    "tagline": "Flick a rail of trip cards; it glides, tilts and snaps one card to centre.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -6779,7 +7040,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "command-button",
     "title": "Command Button",
-    "description": "A button with its keyboard shortcut drawn as physical keycaps that sink as the real keys are pressed and fire the click.",
+    "description": "A small action button with its keyboard shortcut shown as raised keycaps. Pressing the combination anywhere on the page pushes each cap down and fires the button, and a caption can report what happened.",
+    "tagline": "Its shortcut is drawn as real keycaps that sink when you press the keys.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -6803,7 +7065,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "focal-point-picker",
     "title": "Focal Point Picker",
-    "description": "Drag a crosshair to set an image's focal point and watch avatar, banner and story crops reframe live.",
+    "description": "A control for setting an image's focal point. Moving the crosshair on the photo re-crops three preview shapes live: a square avatar, a wide banner and a tall story.",
+    "tagline": "Drag a crosshair over a photo and its crops reframe as you move.",
     "category": "media",
     "categories": [
       "media",
@@ -6827,7 +7090,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ink-background",
     "title": "Ink Background",
-    "description": "WebGL fluid hero where the headline is written in ink on water: stirring bleeds the letters, clicks drop ink, and the words gather back.",
+    "description": "A full-bleed hero backdrop where the headline is drawn in ink on a simulated fluid. Moving the pointer stirs the letters into smoky curls, clicks drop ink, and the words gather themselves back.",
+    "tagline": "A headline written on black water that smears into ink when you stir it.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -6851,7 +7115,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "lightbox-grid",
     "title": "Lightbox Grid",
-    "description": "Photo grid whose thumbnails grow into a full-screen shared-element lightbox, with swipe between photos and drag-down to fly back into the slot.",
+    "description": "A compact grid of rounded nature photos where the first tile spans four cells. Any thumbnail opens into a full-window viewer with arrows, a counter and a caption, and can be swiped or dragged back into place.",
+    "tagline": "Click a photo tile and it grows out of its slot into a full-screen view.",
     "category": "media",
     "categories": [
       "media",
@@ -6877,7 +7142,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-gauge",
     "title": "Liquid Gauge",
-    "description": "Draggable usage meter filled with spring-simulated liquid that sloshes, bubbles while rising and turns red past a warning threshold.",
+    "description": "A tall usage gauge filled from the bottom with simulated liquid. Dragging sets the fill, the surface ripples and bubbles rise, and past a warning threshold the liquid turns red with an Almost full label.",
+    "tagline": "Drag the liquid level up or down and the surface sloshes like water.",
     "category": "charts",
     "categories": [
       "charts",
@@ -6901,7 +7167,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "location-picker",
     "title": "Location Picker",
-    "description": "A ride-app pickup picker: drag a drawn town map under a fixed pin that lifts while moving, glides to the nearest curb, drops and names the street.",
+    "description": "A ride-app style pickup picker: a drawn town slides under a central pin, the pin lifts while moving and drops onto the closest street, then the address and walking time appear with a confirm button.",
+    "tagline": "Drag the town map under a fixed pin and it snaps to the nearest curb.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -6928,7 +7195,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "morphic-navbar",
     "title": "Morphic Navbar",
-    "description": "A pill nav bar that splits into separate segments around the active link, opens a hairline gap on hover and can be press-dragged to scrub the split.",
+    "description": "A compact pill navigation bar on black. The active link sits in its own gap-separated pill, hover opens a hairline gap, clicking moves the split, and pressing and dragging across the bar scrubs between links.",
+    "tagline": "The nav links pull apart into separate pills around whichever one is active.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -6954,7 +7222,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "particle-button",
     "title": "Particle Button",
-    "description": "An async status button that crossfades to a spinner, then a drawn check with a particle burst, or shakes on error.",
+    "description": "A button for async actions. Returning a promise makes the label crossfade to a spinner and a pending word, then to a drawn tick and success word with a burst of particles, or to a red shaking error.",
+    "tagline": "It flips to a spinner, then a tick, or shakes red when the save fails.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -6984,7 +7253,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pull-cord",
     "title": "Pull Cord",
-    "description": "A lamp switch with a physically simulated pull cord: tug the bead down and the light toggles on or off.",
+    "description": "A lamp switch shaped like a pendant light. Dragging the bead below the shade stretches a simulated cord until it clicks, lighting the bulb and inverting the card, and the cord swings back when released.",
+    "tagline": "Tug the hanging bead and the pendant lamp clicks on or off.",
     "category": "switches",
     "categories": [
       "switches",
@@ -7008,7 +7278,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "signature-pad",
     "title": "Signature Pad",
-    "description": "A signature field whose pen tip trails the pointer on a spring, with speed-weighted ink, undo/clear and SVG export.",
+    "description": "A canvas signature field. Strokes follow the pointer with springy, speed-tapered ink, and a signed state unlocks the Submit button after Undo or Clear.",
+    "tagline": "Draw a signature by hand on a pad, then undo, clear or submit it.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -7032,7 +7303,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spoiler-text",
     "title": "Spoiler Text",
-    "description": "Inline spoiler that hides text under a shimmering speck cloud and scatters it outward in a wave when clicked.",
+    "description": "Inline hidden text covered by a drifting field of speckles, shown inside a small group chat. Clicking or focusing a patch throws the specks outward and fades the words into view, and Hide again restores them.",
+    "tagline": "Hidden phrases sit under shimmering static that scatters away when clicked.",
     "category": "text",
     "categories": [
       "text",
@@ -7057,7 +7329,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stack-panel",
     "title": "Stack Panel",
-    "description": "A phone-settings style drill-in panel: tapping a row pushes its page from the right while the row label flies up into the header title; swipe or Back to pop.",
+    "description": "A phone-style settings panel that drills down through levels. Choosing a row pushes its page in from the right as the row's label becomes the header, and a swipe, Back or Escape pops it again.",
+    "tagline": "Tap a settings row: its page slides in and the label flies up into the title.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -7085,7 +7358,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stay-picker",
     "title": "Stay Picker",
-    "description": "A booking date-range calendar showing nightly prices, hatched sold-out nights and a single pill that wraps across week rows, with a running total and Reserve button.",
+    "description": "A booking calendar for choosing a stay. Each night shows its price, sold-out nights are hatched, and the chosen range becomes one pill with a running total and a Reserve button.",
+    "tagline": "Pick check-in and check-out on a price-per-night calendar.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -7113,7 +7387,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "topo-background",
     "title": "Topo Background",
-    "description": "Living 2D contour map with elevation labels that raises a hill under the cursor and sends a ripple on click, behind a hero headline.",
+    "description": "A full-bleed map of thin topographic contour lines with small elevation numbers, slowly drifting across a dark stage. Moving the pointer raises a hill of tighter rings, and a click sends ripples outward through the terrain.",
+    "tagline": "Faint contour lines drift and gather into rings under the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -7137,7 +7412,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "undo-button",
     "title": "Undo Button",
-    "description": "A pill button that commits an action after a countdown drawn as a draining outline, with Undo and Cmd+Z in the meantime.",
+    "description": "A pill action button that opens a short undo window when pressed. It widens into a past-tense label with an Undo action, a ticking number and a command-key hint while its outline slowly drains, then commits.",
+    "tagline": "Turns a plain action into a countdown you can still take back.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -7164,7 +7440,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "uptime-card",
     "title": "Uptime Card",
-    "description": "A status-page card with 90-day uptime bars per service that swell under the pointer; clicking a day pins it and opens that day's incident log.",
+    "description": "A status-page card listing services, each with ninety days of coloured uptime bars and a percentage. Hovering swells the bars around the cursor and names the day, and clicking pins that day to slide open its incident timeline.",
+    "tagline": "Rows of green day bars swell under the pointer and open a day's incidents.",
     "category": "charts",
     "categories": [
       "charts",
@@ -7191,7 +7468,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "3d-perspective-text",
     "title": "3D Perspective Text",
-    "description": "A block of oversized text tilted back in steep 3D perspective that rolls toward you as the page scrolls.",
+    "description": "A large block of bold orange copy is tilted back in strong 3D perspective on a dark stage. As the page scrolls the text lifts and flattens toward the reader, with a small hint above telling you to scroll.",
+    "tagline": "Oversized orange text lies back in perspective and rolls upright as you scroll.",
     "category": "text",
     "categories": [
       "text",
@@ -7218,7 +7496,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "acid-squares",
     "title": "Acid Squares",
-    "description": "A full-bleed WebGL field of glossy beveled tiles that ripple in waves of acid colour and press in under the cursor.",
+    "description": "A full-bleed WebGL field of rounded square tiles with glassy bevels, lit pink and blue on black. The surface breathes in slow waves, dents beneath the pointer and sends a pulse across the grid when clicked.",
+    "tagline": "Glossy beveled tiles ripple in pink and blue and dent under the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -7242,7 +7521,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-autocomplete",
     "title": "AI Autocomplete",
-    "description": "A text box that shows a grey ghost-text completion as you pause typing; Tab accepts all of it, the right arrow takes one word.",
+    "description": "An email-style text box that asks for a completion when typing pauses and shows the next words as grey ghost text after the caret. Tab accepts it all, the right arrow takes one word, and Escape dismisses it.",
+    "tagline": "A text box that finishes your sentence in grey, one Tab away.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -7266,7 +7546,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-branches",
     "title": "AI Branches",
-    "description": "A chat where editing a sent message forks a new branch, with version arrows and a mini tree to jump between branches.",
+    "description": "A compact chat window where each sent message can be edited, and an edit grows a new branch. Arrows page through versions, a small tree on the right maps every branch, and clicking a node switches the conversation.",
+    "tagline": "Editing a sent message forks a new chat branch, with a mini tree to jump.",
     "category": "chat",
     "categories": [
       "chat"
@@ -7292,7 +7573,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-diff-review",
     "title": "AI Diff Review",
-    "description": "An agent's code edits stream in file by file as diffs, then each file is accepted, rejected or undone, with accept-all and reject-all.",
+    "description": "A compact review panel where an agent's code edits appear file by file as coloured diffs with plus and minus counts. Each file can be accepted, rejected or undone, or all at once, and the header tallies how many were kept.",
+    "tagline": "Streams an agent's code changes file by file, each accepted or rejected.",
     "category": "chat",
     "categories": [
       "chat",
@@ -7319,7 +7601,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-model-selector",
     "title": "AI Model Selector",
-    "description": "A composer model picker that opens upward with a model list and a detent effort track whose stops reshape for each model.",
+    "description": "A pill in an AI composer showing the current model and effort. Pressing it opens a panel above with a radio list of models and a segmented effort track whose stops change with the chosen model, plus a line explaining the trade-off.",
+    "tagline": "Model picker that opens upward with an effort slider that reshapes per model.",
     "category": "chat",
     "categories": [
       "chat",
@@ -7346,7 +7629,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "amount-pad",
     "title": "Amount Pad",
-    "description": "A send-money keypad where digits spring in, the amount shrinks to fit, and presets and a balance cap guard the value.",
+    "description": "A send-money keypad. Digits spring into a large amount that shrinks to fit, with quick presets, a balance line and a cap that refuses amounts past the limit.",
+    "tagline": "Tap a keypad to set an amount, then send it in one press.",
     "category": "payments",
     "categories": [
       "payments",
@@ -7373,7 +7657,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "attract-button",
     "title": "Attract Button",
-    "description": "A call-to-action button ringed by iron filings drawn on canvas that turn to follow a magnetic field toward the cursor.",
+    "description": "A dark rounded call-to-action button with a magnet icon, ringed by a field of small iron filings drawn on a canvas. Moving the pointer nearby makes the filings rotate to point at it, and focussing the button pulls them inward.",
+    "tagline": "Iron filings around a call to action swing toward the cursor.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -7399,7 +7684,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-paths",
     "title": "Background Paths",
-    "description": "A hero background where a ribbon of flowing lines draws itself in and parts around the cursor, in the text colour.",
+    "description": "A full-bleed dark backdrop of dozens of fine curves that draw themselves in left to right, then keep flowing. The lines bend away from the mouse pointer while any headline placed on top stays centred.",
+    "tagline": "Thin curved lines drift across a dark hero and ease apart around the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -7423,7 +7709,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bento-grid-draggable",
     "title": "Bento Grid (draggable)",
-    "description": "A dashboard of analytics widgets on a 6-column grid that you lift, drag and resize by their handles, with spring reflow.",
+    "description": "A dashboard of small analytics widgets laid on a six-column grid. Each tile can be pressed and held to lift it, dragged to a new slot with a spring reflow, and resized by a corner handle; the grid folds to two columns when narrow.",
+    "tagline": "Analytics widgets on a grid you can pick up, drag and resize.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -7450,7 +7737,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "branched-menu",
     "title": "Branched Menu",
-    "description": "A collapsible menu that branches each section from a trunk and traces a line to the selected item.",
+    "description": "A compact vertical navigation menu where each section hangs off a central trunk with curved branch lines. Sections expand and collapse, and the selected child gets an accent line traced back along the branch to the trunk.",
+    "tagline": "Menu sections branch off a trunk, with a line drawn to the active item.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -7477,7 +7765,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "call-chip",
     "title": "Call Chip",
-    "description": "An inline agent tool-call chip that shows a running progress wash, a timer, and a done or shaking error state.",
+    "description": "A small inline chip naming an agent's tool call, its argument and an elapsed time. A translucent wash fills across the bar while it runs, then it turns green with a tick when done or red with a retry on failure.",
+    "tagline": "Compact tool-call chip with a live timer and a progress wash.",
     "category": "chat",
     "categories": [
       "chat",
@@ -7504,7 +7793,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "clip-path-carousel",
     "title": "Clip Path Carousel",
-    "description": "A shadcn/Embla carousel where the active slide unclips to full height while its neighbours stay inset, with a blurred caption.",
+    "description": "A horizontal carousel of tall photographs on black. The centred slide opens to its full height and fades in a title, while the slides either side stay clipped shorter; arrows and dots move between them.",
+    "tagline": "A photo strip where the centred slide unclips to full height with its caption.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -7533,7 +7823,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "clip-trimmer",
     "title": "Clip Trimmer",
-    "description": "A video trim timeline with a filmstrip, snapping start/end handles, a ruler and a looping playhead over the kept range.",
+    "description": "A video trimming card with a preview image, a ten-frame filmstrip and a ruler. Two orange handles set the start and end of the kept clip, dimming what gets cut, and a playhead loops over the selection.",
+    "tagline": "Drag orange handles along a filmstrip to choose the seconds you keep.",
     "category": "media",
     "categories": [
       "media",
@@ -7559,7 +7850,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "code-slots",
     "title": "Code Slots",
-    "description": "A one-time code input whose digits spring into their slots, with paste, SMS autofill and success/error states.",
+    "description": "A one-time code field split into individual rounded slots. Digits spring into place as you type or paste, the caret follows along, and a full code can show a success wash with a tick or drain away on error.",
+    "tagline": "Six code boxes that spring each digit in, then flash a tick on success.",
     "category": "auth",
     "categories": [
       "auth",
@@ -7587,7 +7879,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comet-dial",
     "title": "Comet Dial",
-    "description": "A radial dial you drag or flick around its arc, with a comet tail streaking behind the value and springy bounce at the ends.",
+    "description": "A circular control open at the bottom, showing a large number inside and a coloured arc from the start to the current value. Dragging or flicking the arc changes the value with a springy overshoot, and a comet tail trails the moving handle.",
+    "tagline": "A radial dial you drag or flick, with a comet streak behind the value.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -7613,7 +7906,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cradle-text",
     "title": "Cradle Text",
-    "description": "A headline whose letters hang like a Newton's cradle; pull an end letter and the knock clacks through to the other end.",
+    "description": "A word whose letters dangle from thin threads under a horizontal rail. Drag one letter sideways or brush it with the cursor and a knock runs along the row, then the letters swing down and settle.",
+    "tagline": "Letters hang from threads on a rail and knock each other like swinging balls.",
     "category": "text",
     "categories": [
       "text",
@@ -7637,7 +7931,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "crt-warp",
     "title": "CRT Warp",
-    "description": "A blocky plasma glowing on a curved CRT, with scanlines, a phosphor mask, afterglow and a power-on intro.",
+    "description": "A full-bleed animated background of coarse violet pixels on black, seen through a curved CRT screen with scanlines, glow and grain. It powers on, then flows and bends toward the pointer.",
+    "tagline": "Blocky purple plasma churns behind scanlines like a glowing old monitor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -7661,7 +7956,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "depth-carousel",
     "title": "Depth Carousel",
-    "description": "Cards recede into depth on a 3D rail, with drag, keyboard, arrows and optional auto-advance.",
+    "description": "A carousel of photography cards arranged on a 3D rail: the leading image is sharp while the rest shrink, blur and darken behind it. Drag, scroll, click, use the arrows, the dots or the arrow keys to move.",
+    "tagline": "Photo cards recede down a tilted rail, blurred and dimmed behind the front one.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -7688,7 +7984,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "depth-text",
     "title": "Depth Text",
-    "description": "Layered extruded type with a purple depth stack and parallax that shifts against the pointer.",
+    "description": "A single word built from dozens of stacked copies: a bright white face with a thick pale purple side behind it. It turns slowly on its own and leans with the pointer.",
+    "tagline": "Heavy white letters extrude back into lavender layers and tilt in space.",
     "category": "text",
     "categories": [
       "text",
@@ -7713,7 +8010,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "drape-background",
     "title": "Drape Background",
-    "description": "A full-bleed pleated curtain rendered in WebGL as a cloth simulation that sways in the wind and can be pushed and pulled.",
+    "description": "A full-bleed simulated fabric backdrop in charcoal tones, hanging in soft vertical pleats with white copy centred over it. It sways in a slow breeze and can be pushed, grabbed and pulled aside.",
+    "tagline": "A dark pleated curtain ripples and parts when the cursor pushes it.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -7737,7 +8035,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "echo-text",
     "title": "Echo Text",
-    "description": "Ghosted copies of a word trail behind it and settle back into a single word, following the pointer.",
+    "description": "A heavy white word with a train of faded, softly blurred copies behind it. The copies lag and stretch as the pointer moves, flare outward on a click, then gather back into one word.",
+    "tagline": "Ghost copies of a word trail behind it and lean with the cursor.",
     "category": "text",
     "categories": [
       "text"
@@ -7760,7 +8059,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "editor-toolbar-dock",
     "title": "Editor Toolbar Dock",
-    "description": "A design-tool dock with a sliding selection plate, tooltips, flyout tool groups, and a grip to throw it to any edge of the canvas.",
+    "description": "A compact design-tool dock on a dark canvas: a grip plus six line icons, the active one sitting on a white sliding plate. Tools show labels, grouped tools open flyouts, and the strip can be dragged to another edge.",
+    "tagline": "A tiny icon toolbar hops between the edges of a dark canvas.",
     "category": "menus",
     "categories": [
       "menus",
@@ -7787,7 +8087,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "elastic-mesh",
     "title": "Elastic Mesh",
-    "description": "Turns a word or logo into a puffy inflated shape you can press, poke and stretch like jelly.",
+    "description": "A word turned into a puffy, shiny blue solid that looks like inflated rubber. The letters spring in on load, lean toward the pointer, and dent and stretch when pressed or dragged.",
+    "tagline": "Glossy blue letters inflate like balloons and wobble when poked.",
     "category": "effects",
     "categories": [
       "effects",
@@ -7811,7 +8112,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "electric-logo",
     "title": "Electric Logo",
-    "description": "Any logo or SVG wrapped in crackling WebGL electricity: strands, arcs and flicker that intensify near the cursor.",
+    "description": "Any logo shape outlined by restless electric strands, glowing blue-white on black. The current wanders along the edge, throws short arcs, and flares brighter as the pointer nears.",
+    "tagline": "A lightning-bolt mark traced in crackling electric light.",
     "category": "effects",
     "categories": [
       "effects",
@@ -7837,7 +8139,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "flex-carousel",
     "title": "Flex Carousel",
-    "description": "An infinite image row that bends and refracts through invisible liquid glass at its edges, with drag and autoplay.",
+    "description": "An endless horizontal strip of photo cards where the centre image is sharp and the ones either side stretch and warp like liquid glass. It drifts on its own and can be dragged, scrolled or stepped with keys.",
+    "tagline": "Photos glide past in a row, bending as if behind rippling glass.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -7863,7 +8166,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "flying-button",
     "title": "Flying Button",
-    "description": "A button that lifts off on hover with jet thrusters, smoke and turbulence, carrying the cursor with it.",
+    "description": "A rounded charcoal call-to-action reading Launch project, with two little engine pods beneath it. The recording only shows it at rest; the code is built to lift it on a jet of smoke when hovered.",
+    "tagline": "A dark pill button with two small thruster pods under its edge.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -7887,7 +8191,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "fold-text",
     "title": "Fold Text",
-    "description": "Lines unfold into place like creased paper opening flat.",
+    "description": "A short two-line phrase whose letters swing up from folded flat into place, then fold away again. Each character turns on a crease with a soft shadow, repeating in a loop.",
+    "tagline": "Heavy white words fold open letter by letter like paper.",
     "category": "text",
     "categories": [
       "text",
@@ -7913,7 +8218,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "folder-float",
     "title": "Folder Float",
-    "description": "A folder whose flap opens on hover so its notes float out as physics-driven paper tags you can pick.",
+    "description": "A folder card that opens on hover, releasing its notes as small white pills that scatter, wobble and can be dragged. The folder label and note count stay on the front panel.",
+    "tagline": "Notes float out of a folder and drift like paper on hover.",
     "category": "effects",
     "categories": [
       "effects",
@@ -7939,7 +8245,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "fuse-button",
     "title": "Fuse Button",
-    "description": "An action button whose done state offers an undo on a burning fuse that commits when it runs out.",
+    "description": "A compact action button that becomes Undo once pressed, while a thin orange fuse burns around its edge. When the fuse runs out the action commits; pressing Undo cancels it first.",
+    "tagline": "An orange fuse burns around a button to hold a short undo window.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -7966,7 +8273,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ghost-fibers",
     "title": "Ghost Fibers",
-    "description": "Layered ribbons of fine glowing fibers that twist, fold and drift through soft depth of field.",
+    "description": "An almost-black backdrop with a slow current of tiny lilac fibers twisting through it in soft-focus ribbons. The strands glow at the folds and drift all the time, with a faint answer to the pointer.",
+    "tagline": "A dim lavender river of stitched dots ripples across black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -7991,7 +8299,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glide-select",
     "title": "Glide Select",
-    "description": "A compact select chip that pops open a menu where the highlight glides between options.",
+    "description": "A compact dropdown for choosing a sort order: the chosen value sits in a dark chip, and its menu opens below with a highlight that slides from option to option. A tick marks the current choice.",
+    "tagline": "A small sort chip opens a menu whose highlight glides between rows.",
     "category": "selects",
     "categories": [
       "selects",
@@ -8018,7 +8327,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-ascii",
     "title": "Gradient ASCII",
-    "description": "Soft gradient glows rendered entirely in ASCII characters that scramble under the cursor.",
+    "description": "A soft blue aurora arc on black, rendered completely in monospaced ASCII glyphs that shimmer and re-sort. The pointer scrambles characters as it passes, and a click throws a wave of them across the glow.",
+    "tagline": "A glowing blue horizon drawn entirely from tiny characters.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8042,7 +8352,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-waves",
     "title": "Gradient Waves",
-    "description": "A full-bleed shader seascape of rolling gradient waves under a glowing horizon, with mouse parallax and a click swell.",
+    "description": "A full-bleed shader seascape of soft purple waves rolling under a dark sky, lit by a low glow at the horizon. It drifts on its own and answers the pointer with slight parallax and click swells.",
+    "tagline": "Slow violet waves roll beneath a black horizon.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8066,7 +8377,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "halftone-reveal",
     "title": "Halftone Reveal",
-    "description": "A halftone print of an image whose dots swell into the real photo under the cursor.",
+    "description": "A photograph printed as a coarse two-colour halftone. Where the pointer moves the dots swell open and the sharp picture shows through, and a click spreads a clearing ring across the print.",
+    "tagline": "A dotted halftone portrait clears to a real photo under the cursor.",
     "category": "media",
     "categories": [
       "media",
@@ -8090,7 +8402,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hold-button",
     "title": "Hold Button",
-    "description": "A hold-to-confirm button whose liquid fill rises while pressed and drains back if you let go early.",
+    "description": "A confirmation button that fills with colour while you keep it pressed, then switches to a done label when the hold completes. Letting go too soon drains the fill back out.",
+    "tagline": "Press and hold to fill it with red liquid, releasing early drains it.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -8113,7 +8426,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "infinite-spiral",
     "title": "Infinite Spiral",
-    "description": "An endlessly looping 3D helix of images with adjustable motion, depth and spacing.",
+    "description": "A ring of photo cards arranged along a vertical helix, largest and sharpest at the centre and fading into blur at the edges. It turns on its own and can be paused by hovering.",
+    "tagline": "Photo cards stack into a slowly turning 3D spiral on a dark stage.",
     "category": "3d",
     "categories": [
       "3d",
@@ -8138,7 +8452,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "jelly-radio",
     "title": "Jelly Radio",
-    "description": "Radio group of chips where the chosen one swells and barges its neighbours outward.",
+    "description": "A single-choice row of rounded chips where the selected one grows, turns light and pushes the others outward with a springy wobble. Arrow keys move the choice.",
+    "tagline": "The chosen pill swells white and shoves its neighbours aside.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -8165,7 +8480,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "lattice-loader",
     "title": "Lattice Loader",
-    "description": "An agent status row with a small lattice of cells that brighten in a pattern beside a live stopwatch.",
+    "description": "Compact status rows for background tasks: a grid of cells pulses in patterns beside a label and a running stopwatch, then switches to a green done mark when the row finishes.",
+    "tagline": "Rows of tiny dot lattices tick beside labels as an agent works.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -8189,7 +8505,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "light-tunnel",
     "title": "Light Tunnel",
-    "description": "A swirling fibre-optic tunnel where comets of light race toward a vanishing point that follows the cursor.",
+    "description": "A full-screen swirl of curved light filaments converging into a dark vanishing point. The strands drift and carry racing comets, the centre bends toward the pointer, and a click sends a surge inward.",
+    "tagline": "White light strands swirl into a tunnel that drifts with the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8213,7 +8530,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "line-sidebar",
     "title": "Line Sidebar",
-    "description": "A sidebar of labels with tick marks that bulge toward the cursor like a fisheye, with an animated active marker.",
+    "description": "A vertical menu where each numbered label and its short tick react to pointer proximity, shifting right and turning purple. Clicking a row sets a lasting accent and grows the marker beside it.",
+    "tagline": "Menu labels slide right and glow purple near the cursor.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -8237,7 +8555,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-glass-music-card",
     "title": "Liquid Glass Music Card",
-    "description": "A now-playing card with a spinning vinyl disc you grab to scrub, a seek bar and track controls, optionally in liquid glass.",
+    "description": "A compact now-playing card with a spinning vinyl disc you can grab to scrub, a progress bar, rolling timestamps and previous, play and next buttons, optionally set on a frosted glass panel.",
+    "tagline": "A spinning vinyl record sits beside the track title, seek bar and controls.",
     "category": "media",
     "categories": [
       "media",
@@ -8267,7 +8586,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "marquee-along-svg-path",
     "title": "Marquee Along SVG Path",
-    "description": "A marquee that moves any children along a custom SVG path, with drag, hover slowdown, scroll velocity and rolling z-index.",
+    "description": "A marquee of image cards that travels along an invisible curving path, each card rotating to follow the line. It slows on hover, reacts to scroll and can be dragged.",
+    "tagline": "Photo tiles glide along a curving line like a moving filmstrip.",
     "category": "effects",
     "categories": [
       "effects",
@@ -8293,7 +8613,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "micro-slats",
     "title": "Micro Slats",
-    "description": "A full-bleed WebGL wall of tiny rounded slats that tilt in swells and catch glints, swirling around the cursor.",
+    "description": "A full-screen field of small rounded purple slats whose heights rise and fall in slow swells, catching white glints. Moving the pointer stirs a fluid swirl through the field.",
+    "tagline": "A wall of tiny purple slats ripples with bright glints.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8319,7 +8640,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "molten-metal",
     "title": "Molten Metal",
-    "description": "A full-bleed shader of glowing, swirling molten metal with molten, ember and frost colour modes and a click flare.",
+    "description": "A full-screen shader of slow-moving molten filaments in violet and white on black. The ribbons curl and brighten, drift toward the cursor, and flare where you click.",
+    "tagline": "Glowing purple filaments swirl across black like molten wire.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8343,7 +8665,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "morph-slider",
     "title": "Morph Slider",
-    "description": "A WebGL image slider that melts, ripples, shears or swirls one photo into the next, with captions, arrows and dots.",
+    "description": "A full-width image slider whose slides dissolve through a liquid melt, ripple, shear or swirl effect. Captions cross-fade, arrows step through slides and dots mark the position.",
+    "tagline": "Photos melt into each other inside a rounded slider with arrows and dots.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -8370,7 +8693,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "option-wheel",
     "title": "Option Wheel",
-    "description": "Curved option picker that spins with scroll, drag or arrow keys, tilting and blurring items away from the focus.",
+    "description": "A vertical wheel of word options arranged on an arc. Scrolling, dragging or arrow keys spin it with momentum, and the item at rest sits sharp and white while its neighbours tilt and blur.",
+    "tagline": "A curved list of options spins to a blurred, tilting selection.",
     "category": "selects",
     "categories": [
       "selects",
@@ -8394,7 +8718,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "page-flip",
     "title": "Page Flip",
-    "description": "A book whose pages you turn by dragging the corner over the spine, with a live fold, curl shadow and spring settle.",
+    "description": "A two-page book styled like a printed menu. Dragging a corner folds the paper over the spine with a live shadow, and releasing springs it flat onto the next spread, with arrows and a page counter below.",
+    "tagline": "A book whose pages you drag by the corner to turn.",
     "category": "3d",
     "categories": [
       "3d",
@@ -8420,7 +8745,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pattern-waves",
     "title": "Pattern Waves",
-    "description": "A lit halftone surface of dots, lines or glyphs that moves like draped silk.",
+    "description": "A full-screen field of tiny dots that rises and folds like fabric, with bright specular bands sliding over the crests. Moving the pointer sends ripples across the surface.",
+    "tagline": "A halftone dot surface ripples and shines like draped silk.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8446,7 +8772,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "peek-rating",
     "title": "Peek Rating",
-    "description": "A star rating that lifts a wave of stars toward the pointer and commits the score with a pop and a tooltip label.",
+    "description": "A five-star rating where hovering lights and lifts the stars in a wave while a word label floats above the score. Clicking commits the value and pops the chosen star once.",
+    "tagline": "Stars lift in a wave under the cursor and show a word for the score.",
     "category": "feedback",
     "categories": [
       "feedback",
@@ -8473,7 +8800,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "profile-dropdown",
     "title": "Profile Dropdown",
-    "description": "An account card that morphs into its menu, with status, theme, account switching and hold-to-sign-out.",
+    "description": "A compact account chip that grows into a tall menu: the avatar, name and email slide up into a header, and rows for status, theme, profile links, account switching and a hold-to-confirm sign-out appear below.",
+    "tagline": "Avatar chip springs open into an account menu with status, theme and sign-out.",
     "category": "menus",
     "categories": [
       "menus",
@@ -8501,7 +8829,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "prompt-bar",
     "title": "Prompt Bar",
-    "description": "Chat composer with @ sources, / commands, a model and effort picker, dictation and attachments, with a sparking send button.",
+    "description": "A rounded chat input with a placeholder, an @ menu for sources and slash commands, model and effort selectors, a dictation mic and a send button that morphs to stop while busy.",
+    "tagline": "A chat composer with @ sources, model and effort pickers and a send arrow.",
     "category": "chat",
     "categories": [
       "chat",
@@ -8530,7 +8859,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pulse-heart",
     "title": "Pulse Heart",
-    "description": "A like pill whose heart (or star, or thumb) bursts with particles and beats while the count rolls up.",
+    "description": "A row of dark like pills, each holding a line icon and a formatted number. Clicking one fills the icon with its accent colour, compresses the pill and rolls the count by one.",
+    "tagline": "Like pills that fill with colour and tick their count up when clicked.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -8556,7 +8886,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "receipt-printer",
     "title": "Receipt Printer",
-    "description": "A little printer that feeds a receipt out line by line; pull the paper and it tears off and falls with physics.",
+    "description": "A dark card shaped like a receipt printer. It prints a coffee receipt line by line, then you drag the paper down to rip it off and watch it tumble away.",
+    "tagline": "A small printer feeds out a paper receipt that you pull until it tears free.",
     "category": "ecommerce",
     "categories": [
       "ecommerce",
@@ -8580,7 +8911,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "refine-frame",
     "title": "Refine Frame",
-    "description": "Media frame that steps an image through queued, generating, refining and complete stages without layout shift.",
+    "description": "A rounded image frame that moves through queued, generating, refining and ready states, resolving a low-resolution mosaic into the sharp photo without shifting layout.",
+    "tagline": "An image sharpens from blocky pixels to detail as its generation progresses.",
     "category": "chat",
     "categories": [
       "chat",
@@ -8608,7 +8940,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ripple-distortion",
     "title": "Ripple Distortion",
-    "description": "A pointer-driven water displacement that warps an image and leaves a decaying wake of ripples.",
+    "description": "A full-bleed grayscale landscape where the pointer pushes water-like ripples that distort the image and slowly fade, tinted faintly violet.",
+    "tagline": "Moving the pointer across a photo leaves a swelling, water-like warp.",
     "category": "effects",
     "categories": [
       "effects",
@@ -8634,7 +8967,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "rubber-segment",
     "title": "Rubber Segment",
-    "description": "A segmented control whose thumb stretches and squashes like rubber as it travels and can be dragged or flicked.",
+    "description": "A segmented control with a bright sliding thumb. Choosing a segment stretches the thumb toward its new home, and you can drag or flick it across the track.",
+    "tagline": "The selected tab stretches like elastic as it slides between segments.",
     "category": "switches",
     "categories": [
       "switches",
@@ -8660,7 +8994,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "save-button",
     "title": "Save Button",
-    "description": "A bookmark button that saves into your last collection and shows a strip to change it, pick another, or create a new collection.",
+    "description": "A bookmark button for a content card. Saving turns it dark and drops a strip naming the collection; from there you can move the item or create a new collection.",
+    "tagline": "Saves a card and shows a strip for picking its collection.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -8687,7 +9022,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-images-reveal-003",
     "title": "Scroll Images Reveal 003",
-    "description": "Full-height sticky image cards that stack as you scroll, each one shrinking and spinning away as the next arrives.",
+    "description": "A scrolling stack of sticky, nearly full-height image cards. Each card pins near the top, and as you scroll past it rotates, shrinks and fades out while the next one takes over.",
+    "tagline": "Full-height photo cards pile up as you scroll, then shrink and spin away.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -8714,7 +9050,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scrub-field",
     "title": "Scrub Field",
-    "description": "Number chip you drag sideways to scrub, with rubber-band limits and click to type.",
+    "description": "A compact settings row of labelled number chips. Dragging a chip sideways changes its value, a bubble shows the change, and clicking the number lets you type an exact amount.",
+    "tagline": "Drag a number chip sideways to scrub its value, with a live change bubble.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -8741,7 +9078,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shadow-text",
     "title": "Shadow Text",
-    "description": "Headline letters cast sundial shadows set by the current time, and the pointer becomes a lamp the shadows swing away from.",
+    "description": "A hero heading whose letters throw long, soft shadows angled by the time of day or by the pointer acting as a lamp. A subtitle and call-to-action button sit beneath.",
+    "tagline": "Big headline letters cast long shadows that swing away from the pointer.",
     "category": "text",
     "categories": [
       "text",
@@ -8765,7 +9103,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shredder",
     "title": "Shredder",
-    "description": "A list with a paper shredder slit at the bottom: drag a row in and it is cut into curling strips.",
+    "description": "A vertical list of files sits above a thin shredder slot. Drag a row into the slot, or press Delete, and it is shredded into coloured curls that fall below.",
+    "tagline": "File rows drop into a slit and come out as curling paper strips.",
     "category": "effects",
     "categories": [
       "effects",
@@ -8789,7 +9128,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sliced-waves",
     "title": "Sliced Waves",
-    "description": "Waves of colored light sliced into glowing bars, seen in depth with a focus that follows the cursor.",
+    "description": "A background of thin vertical bars in cream-to-pink-to-blue gradients, bent into rolling ribbons that drift and blur with depth. Focus follows the pointer.",
+    "tagline": "Bars of blue and pink light ripple in layered waves across a black stage.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -8814,7 +9154,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "slide-commit",
     "title": "Slide Commit",
-    "description": "Slide-to-confirm handle that spins while your action runs and unfurls into a done pill.",
+    "description": "An invoice card with a slide-to-pay control. Dragging the round handle to the end starts the payment, spins a loader, then the whole bar turns green with a tick and Paid.",
+    "tagline": "Drag a pay slider across and it unfurls into a green Paid pill.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -8843,7 +9184,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "slot-picker",
     "title": "Slot Picker",
-    "description": "A meeting scheduler with a day rail: click a free gap to place a slot, drag it to hop over busy blocks, change length, and confirm.",
+    "description": "A meeting scheduler with a five-day strip, duration choices and an hourly day rail. Click a free gap to drop a slot, drag it around busy blocks, then confirm.",
+    "tagline": "A compact booking panel with a day rail; click a free gap to place a meeting.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -8870,7 +9212,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "smooth-caret-input",
     "title": "Smooth Caret Input",
-    "description": "A text input whose caret glides to each new position on a spring instead of jumping, shown next to a native caret.",
+    "description": "A pair of text inputs, one with a spring-animated caret that slides to each new spot and a plain input for comparison, so you can feel the difference while typing.",
+    "tagline": "Two text fields compare a gliding custom caret against a plain native one.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -8896,7 +9239,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "specular-button",
     "title": "Specular Button",
-    "description": "A frosted glass button with a specular light sheen that follows the cursor and glides around its rim.",
+    "description": "A pair of rounded glass buttons on black. A specular highlight and faint glow travel along the button's edge toward the pointer, brightening as it approaches and easing back to a dim idle shine.",
+    "tagline": "Dark glass buttons with a bright sheen that follows the cursor around the rim.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -8920,7 +9264,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spending-ring",
     "title": "Spending Ring",
-    "description": "A spending donut you spin like a dial; it settles with one category under the marker and shows that category's total.",
+    "description": "A monthly spending donut chart you can spin like a dial. Each slice that passes the top marker takes over the centre, showing its name, amount, share and change.",
+    "tagline": "Spin a spending donut and it settles with one category's total under the marker.",
     "category": "charts",
     "categories": [
       "charts",
@@ -8944,7 +9289,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "split-flap-text",
     "title": "Split Flap Text",
-    "description": "Mechanical split-flap departure board that clacks through to each new phrase.",
+    "description": "A split-flap board that scrambles its letter tiles and settles on a new line each cycle, styled like an airport departures sign. Words, timing and tile styling are configurable.",
+    "tagline": "A departure board of dark letter tiles that clacks through to each new phrase.",
     "category": "text",
     "categories": [
       "text",
@@ -8968,7 +9314,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "squish-switch",
     "title": "Squish Switch",
-    "description": "A toggle switch whose thumb stretches with speed and squashes against the end of the track when flicked.",
+    "description": "A row of preference switches in a dark card. Each pill flips on click or drag, and its round thumb stretches along the track as it moves, then squashes back when it lands.",
+    "tagline": "Toggle thumbs stretch with speed and squash against the end of the track.",
     "category": "switches",
     "categories": [
       "switches",
@@ -8994,7 +9341,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "status-mark",
     "title": "Status Mark",
-    "description": "Agent task status glyph that morphs from an idle ring to a progress arc, then draws a check.",
+    "description": "A compact agent-run checklist where each task row carries a small status glyph: a dashed ring while pending, a filling arc while running, and a green tick when done.",
+    "tagline": "Task rows whose status icons go from dashed ring to progress arc to green tick.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -9021,7 +9369,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "strands",
     "title": "Strands",
-    "description": "A frosted glass orb with spectral strands that twist inside and swell into a bulge as it listens, like a voice assistant.",
+    "description": "A dark glass sphere with a bright spectral band twisting inside it. It swells and leans as a voice assistant listens or as the pointer moves near it.",
+    "tagline": "A frosted glass orb holding a glowing red-to-blue ribbon of light that swells.",
     "category": "effects",
     "categories": [
       "effects",
@@ -9045,7 +9394,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "svg-follow-scroll",
     "title": "SVG Follow Scroll",
-    "description": "A big scribbled SVG stroke that draws itself further along its path as you scroll down the page.",
+    "description": "A long hero section where scrolling progressively draws a bright green, looping line across the screen while the headline moves up and a dark title panel slides in.",
+    "tagline": "A lime scribble sweeps across the page and draws itself as you scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -9071,7 +9421,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "swarm-cursor",
     "title": "Swarm Cursor",
-    "description": "A liquid swarm of particles that flows after the cursor, curls into eddies and pours around hovered buttons.",
+    "description": "Hundreds of white specks drift over a dark area and gather into a liquid, spinning cloud that follows the mouse. Clicking throws the particles outward before they settle again.",
+    "tagline": "Tiny white dots swarm after the pointer and swirl into a dense wake.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -9095,7 +9446,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "swipe-row",
     "title": "Swipe Row",
-    "description": "An iOS-style list row you swipe to reveal actions, with rubber-band resistance, snap bounce and full-swipe commit.",
+    "description": "A rounded message row that drags sideways with resistance and snaps open to reveal coloured action buttons. Pull far enough and the primary action takes over, then the row collapses away.",
+    "tagline": "Mail rows slide aside under a finger to uncover a red Delete button.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -9123,7 +9475,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "swipe-toast",
     "title": "Swipe Toast",
-    "description": "Toast that swipes down to dismiss and burns a thin fuse for its remaining time.",
+    "description": "A compact dark toast for the corner of the screen. It holds a title, a short line, an Undo button and a glowing orange line that shrinks as its timer runs out; it can be swiped down or closed with Escape.",
+    "tagline": "Dark notice slides in low, with a thin orange fuse burning down to dismissal.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -9151,7 +9504,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tech-text",
     "title": "Tech Text",
-    "description": "A wordmark whose letters turn into dashed vector outlines with construction guides under the cursor.",
+    "description": "A large single-word headline where the letter beneath the pointer switches from solid white to a dashed technical outline ringed by measuring lines and small size labels. Clicking or dragging a letter nudges it.",
+    "tagline": "Plain white wordmark turns the letter under the cursor into a dashed blueprint.",
     "category": "text",
     "categories": [
       "text",
@@ -9175,7 +9529,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-loop",
     "title": "Text Loop",
-    "description": "Text that flows endlessly along a wave, circle, infinity or custom SVG path, optionally on a ribbon with a crossing twin.",
+    "description": "Uppercase words and star separators run endlessly along a thick wavy ribbon, with a second pale ribbon crossing it at an angle. The text loops without a seam and slows when hovered.",
+    "tagline": "Two crossing purple ribbons carry looping white text along a wave.",
     "category": "text",
     "categories": [
       "text",
@@ -9201,7 +9556,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-roll-navigation",
     "title": "Text Roll Navigation",
-    "description": "A stacked navigation menu where each link rolls its letters up from the centre outward on hover.",
+    "description": "A vertical menu of oversized uppercase words stacked tightly. Hovering a word splits it into letters that roll up and away while a fresh copy rises into place, starting from the centre out.",
+    "tagline": "Six stacked all-caps links roll their letters upward on hover.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -9227,7 +9583,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "thought-line",
     "title": "Thought Line",
-    "description": "A reasoning-trace header with a live clock that lists the agent's steps and folds them into a single line when it finishes.",
+    "description": "A small inline status line for an AI assistant's reasoning: a sparkle, a shimmering label, a running timer and an expandable list of steps. When the work ends it folds into one line reading \"Thought for 3.9s\".",
+    "tagline": "Sparkle, live timer and a tick list of an agent's reasoning steps.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9255,7 +9612,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "topography",
     "title": "Topography",
-    "description": "A full-bleed 3D contour-line terrain that drifts and morphs, lifting or tracing lines under the cursor and pulsing on click.",
+    "description": "A full-screen field of thin blue contour lines laid over rolling procedural hills, seen in perspective as the camera drifts. Moving the pointer lifts and lights the lines near the cursor, and a click sends rings outward.",
+    "tagline": "Endless glowing contour lines ripple across a dark 3D terrain.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -9279,7 +9637,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wake-slider",
     "title": "Wake Slider",
-    "description": "A thumbless range slider of thin bars where drag speed raises a wake of taller bars behind the handle.",
+    "description": "A horizontal volume control drawn as a row of slim vertical bars. Bars up to the value glow white, and dragging faster lifts the bars around the handle into a short wave that settles when you stop.",
+    "tagline": "Thin bars rise into a wake as you drag the volume across them.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -9305,7 +9664,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "warp-text",
     "title": "Warp Text",
-    "description": "WebGL lens that bends and refracts text around the pointer, with click ripples.",
+    "description": "A heavy single-line headline rendered as a WebGL texture. A lens follows the pointer, bending letters and separating their edges into faint blue and orange fringes; clicks send ripples through the text.",
+    "tagline": "Big white headline bends and splits into colour under the cursor.",
     "category": "text",
     "categories": [
       "text",
@@ -9331,7 +9691,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "web-threads",
     "title": "Web Threads",
-    "description": "Glowing threads woven through luminous pinch points that light up under the cursor and carry a pulse of light on click.",
+    "description": "A full-bleed WebGL backdrop of thin luminous threads that cross, curve and gather at a glowing pinch point. The nearest thread brightens under the cursor, and clicks send a pulse of light along the web.",
+    "tagline": "Glowing violet threads weave to a bright knot on a dark stage.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -9355,7 +9716,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wheel-picker",
     "title": "Wheel Picker",
-    "description": "An iOS-style 3D drum picker for hours, minutes and am/pm that you flick and it coasts with momentum before snapping to a value.",
+    "description": "An iOS-style time picker with three vertical drums for hour, minute and AM/PM. Rows curve away in perspective above and below a grey selection band; drag or flick a drum and it coasts then snaps to a value.",
+    "tagline": "Three tiny drums of numbers spin under a highlight bar to set a time.",
     "category": "selects",
     "categories": [
       "selects",
@@ -9381,7 +9743,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "action-bar",
     "title": "Action Bar",
-    "description": "A floating bulk-action bar that slides up when rows are selected, showing the count with duplicate and delete actions.",
+    "description": "A small rounded toolbar that appears at the bottom of the screen when list rows are checked. It reports how many are selected and offers Duplicate, Delete and a close button.",
+    "tagline": "Floating bar slides up with the selected count, duplicate and delete.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -9412,7 +9775,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-approval",
     "title": "AI Approval",
-    "description": "A human-in-the-loop approval card where the chosen option expands to fill the card and the alternatives collapse away.",
+    "description": "A human-in-the-loop card an AI agent shows before acting: a question, a context line and three choice buttons. Picking one collapses the rest and leaves the choice as a single checked row.",
+    "tagline": "Agent approval card where the picked option swallows the others.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9439,7 +9803,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-blob-warp",
     "title": "AI Blob Warp",
-    "description": "Circular assistant avatar filled with a Paper Design Warp shader that pulses gently and pauses off-screen.",
+    "description": "A round avatar whose fill is an animated warp shader: thin liquid bands of blue, pink and purple that slowly twist and breathe. It stops animating off-screen or when reduced motion is set.",
+    "tagline": "Circular assistant avatar filled with a slow-swirling liquid gradient.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9466,7 +9831,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-context-meter",
     "title": "AI Context Meter",
-    "description": "Context-window ring for a prompt footer that fills as the chat grows, opens a token breakdown and compacts the conversation.",
+    "description": "A slim prompt-footer bar shows how full the model's context window is, as a small ring and a percentage beside the model name. Clicking it opens a panel that breaks the used tokens down by source and offers to compact the conversation.",
+    "tagline": "A token gauge in a chat footer opens into a stacked context breakdown.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9492,7 +9858,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-sources",
     "title": "AI Sources",
-    "description": "A collapsed favicon stack for AI citations that fans out into a list of sources, each icon flying into its row.",
+    "description": "Three overlapping source icons and an overflow count sit under an AI answer. Clicking opens a list where each source's icon slides into its own row with a title and a short snippet.",
+    "tagline": "A tidy favicon stack under an answer opens into a list of cited sources.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9519,7 +9886,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-task-list",
     "title": "AI Task List",
-    "description": "A live agent plan with nested steps, a shimmer on the running step and checkmarks drawn as steps complete.",
+    "description": "A bordered panel headed Plan lists nested task rows with square checkboxes, and a count of finished steps sits at the top right. A green check draws in as each step completes while a moving underline marks the one still running.",
+    "tagline": "A live plan checklist that ticks off steps as an agent works through them.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9545,7 +9913,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-token-alternatives",
     "title": "AI Token Alternatives",
-    "description": "AI reply where uncertain words show the alternatives the model weighed; picking one regenerates the answer from that point.",
+    "description": "An AI answer marks words the model was unsure about with a dotted underline. Clicking one opens a small panel of the other words it considered, each with a probability bar; choosing one rewrites the reply from that word on.",
+    "tagline": "Dotted words in an AI reply open a list of the alternatives it weighed.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9572,7 +9941,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-lucide-icons",
     "title": "Animated Lucide Icons",
-    "description": "Lucide icons with hand-tuned hover and tap animations (bell rings, heart beats, gear spins), driven by an AnimateIcon wrapper that can trigger them from any parent.",
+    "description": "Twenty outline icon buttons, each labelled, that play a small hand-tuned animation on hover: a bell rings, a heart beats, a gear turns. The wrapper can fire the same animation from any parent element.",
+    "tagline": "A grid of outline icons that wiggle, ring and beat when you hover them.",
     "category": "effects",
     "categories": [
       "effects",
@@ -9598,7 +9968,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "app-shell",
     "title": "App Shell",
-    "description": "An inset dashboard shell with a collapsible-to-icons sidebar, grouped nav with expandable sub-menus, a breadcrumb header and a user menu.",
+    "description": "An app shell with a dark grouped sidebar that collapses to icons, a sticky header with breadcrumb and user avatar, and a main area holding headline stats and a queue of conversations.",
+    "tagline": "Inset dashboard with a grouped sidebar, stat cards and a queue list.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -9635,7 +10006,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "apple-activity-card",
     "title": "Apple Activity Card",
-    "description": "Move, exercise and stand rings that count up and lap past 100% with an end-cap shadow.",
+    "description": "Three concentric progress rings in pink, green and cyan under the title Activity Rings, with Move, Exercise and Stand values beside them. The rings draw and their counts rise on view, and pointing at one dims the others.",
+    "tagline": "Three nested activity rings that fill and count up, one highlighted on hover.",
     "category": "charts",
     "categories": [
       "charts",
@@ -9661,7 +10033,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "apple-invites",
     "title": "Apple Invites",
-    "description": "Apple Invites-style event cards that auto-rotate in a fanned stack with tilted neighbours and a progressive blur footer.",
+    "description": "A fanned stack of event invitation cards: one upright in the middle with a photo, crown badge, avatars, title, date and place, and two tilted neighbours peeking out. It advances to the next event on a timer.",
+    "tagline": "Event cards fan in a tilted stack and rotate to the next one on a timer.",
     "category": "cards",
     "categories": [
       "cards",
@@ -9688,7 +10061,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "apple-pro-display-xdr",
     "title": "Studio Display Mockup",
-    "description": "Aluminium studio-display mockup with switchable screen modes and a magnifying macOS-style dock with tooltips.",
+    "description": "A photorealistic studio display on a dark backdrop, with a camera dot, a slim stand and a macOS-style dock of app icons. The dock magnifies under the pointer with tooltips, and clicking the screen swaps the wallpaper for a dark app view.",
+    "tagline": "An aluminium monitor mockup whose dock icons magnify and show tooltips.",
     "category": "devices",
     "categories": [
       "devices",
@@ -9717,7 +10091,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "arcade-pixel",
     "title": "Arcade Pixel",
-    "description": "Retro arcade pixel text and sprites on canvas with type, blink, wipe and marquee animations, phosphor glow and CRT scanlines.",
+    "description": "A black arcade screen draws messages in a chunky 5x7 pixel font on canvas, with space-invader sprites, typing and marquee animations, phosphor glow, scanlines and a faint CRT flicker.",
+    "tagline": "Pixel-art arcade text and sprites scroll, type and blink with CRT glow.",
     "category": "text",
     "categories": [
       "text",
@@ -9743,7 +10118,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "attachment",
     "title": "Attachment",
-    "description": "File and image attachment chips with media, name, metadata, upload/processing/error states and remove actions, in horizontal or vertical layouts.",
+    "description": "A row of attached-file chips, each with a thumbnail or icon, a name, a status line like Uploading 64% and a small remove button. A second row shows tall image tiles plus a dashed Add file tile.",
+    "tagline": "File chips with image preview, upload progress and a remove button.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9772,7 +10148,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "audio-meters",
     "title": "Audio Meters",
-    "description": "Broadcast-style audio level meters (solid, segmented LED or gradient, horizontal or vertical) with peak hold, dB scale, live dB readout and a clip light, driven by a frame source.",
+    "description": "A two-channel master LED meter with a dB scale, a live readout and a clip light, above six vertical gradient meters for Kick, Snare, Bass, Keys, Vocal and FX that move with synthetic audio.",
+    "tagline": "Broadcast-style LED level meters that bounce with the beat and flag clipping.",
     "category": "media",
     "categories": [
       "media",
@@ -9798,7 +10175,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-cubes-grid",
     "title": "Background Cubes Grid",
-    "description": "A three.js field of 3D cubes that ripples under the cursor, in an isometric or tilted-perspective variant with glowing wave crests.",
+    "description": "A full-bleed three.js background of a tilted grid of cubes. Moving the pointer sends glowing orange waves rippling across the surface, which settles flat and then drops idle ripples on its own.",
+    "tagline": "Glowing orange waves ripple across a tilted grid of 3D cubes under the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -9826,7 +10204,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bar-list",
     "title": "Bar List",
-    "description": "A ranked horizontal bar list for top pages, referrers or countries, with values, animated widths and clickable rows.",
+    "description": "A card ranks pages, referrers or countries as horizontal blue bars, each labelled with its name and a right-aligned count. Tabs switch the dataset and the bars resize to the new maximum.",
+    "tagline": "A ranked list of blue bars sized to each value, with a value column beside.",
     "category": "charts",
     "categories": [
       "charts",
@@ -9854,7 +10233,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bell-button",
     "title": "Bell Button",
-    "description": "Subscribe pill whose bell swings and rings with a real clapper, in default, compact and icon variants.",
+    "description": "A pill-shaped subscribe button with a bell icon and a subscriber count. Hovering nudges the bell, and clicking toggles it between a muted bell and a filled one, swapping the label to Following and rolling the count.",
+    "tagline": "A subscribe pill whose bell swings and rings when you click or hover.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -9878,7 +10258,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "blob-card",
     "title": "Blob Card",
-    "description": "A pricing card whose header is a pool of soft fluid blobs that chase the cursor, wrapped in a rotating conic glow border.",
+    "description": "A dark pricing card for a Pro plan at $99, whose header is a pool of blurred pink blobs that drift and chase the cursor. A slow conic glow runs around the card edge, with a CTA and a feature list below.",
+    "tagline": "Soft pink blobs drift across the header while a glow circles the card.",
     "category": "cards",
     "categories": [
       "cards",
@@ -9907,7 +10288,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "blog-grid",
     "title": "Blog Grid",
-    "description": "A three-column blog section of image cards with author, date and read time, whose covers fade in lazily and zoom on hover.",
+    "description": "A blog listing with a heading, subtitle and thin divider above a grid of article cards. Each card pairs a wide cover photo with author, date, read time, title and a short excerpt.",
+    "tagline": "Three-column journal grid whose cover photos zoom and light up under the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -9935,7 +10317,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bottom-navigation",
     "title": "Bottom Navigation",
-    "description": "A mobile bottom tab bar with a gliding highlight that minimizes to icons when the content scrolls.",
+    "description": "A mobile bottom tab bar floating over a payment list. It highlights the active tab, shows labels under each icon, and collapses to bare icons as the list scrolls.",
+    "tagline": "Floating tab bar that shrinks to icons while its content scrolls.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -9961,7 +10344,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bubble",
     "title": "Bubble",
-    "description": "Chat message bubbles with default, muted, tinted, outline, ghost and destructive variants, start/end alignment, grouping and reaction badges.",
+    "description": "A small chat window with a contact header and message bubbles in several tones and alignments. Clicking the long reply adds a party-popper reaction badge with a count.",
+    "tagline": "Chat thread whose long message pops a party reaction when clicked.",
     "category": "chat",
     "categories": [
       "chat",
@@ -9988,7 +10372,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "card-field",
     "title": "Card Field",
-    "description": "Single-row payment card input that detects the brand and collapses the number to its last four as you move on to expiry and CVC.",
+    "description": "A single-row checkout field for card number, expiry and security code. The number groups as you type, then collapses to its last four so the other fields fit beside it.",
+    "tagline": "Card input where the number folds to its last four, opening room for expiry.",
     "category": "payments",
     "categories": [
       "payments",
@@ -10016,7 +10401,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "card-flip-physics",
     "title": "Card Flip (physics)",
-    "description": "Two-sided event ticket you drag or flick to spin, with real thickness, moving light and a shadow.",
+    "description": "A two-sided ticket card that turns over on a drag, a flick or the keyboard, with visible thickness and a moving band of light. The front lists event details; the back carries a QR code.",
+    "tagline": "An event ticket you flick to spin, revealing a QR entry code on the back.",
     "category": "cards",
     "categories": [
       "cards",
@@ -10040,7 +10426,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "card-swipe-deck",
     "title": "Card Swipe Deck",
-    "description": "A Tinder-style deck: drag or throw the top card left/right with rotation, stamps and a stack that slides forward.",
+    "description": "A stack of photo cards you drag left or right; past a threshold the top card tilts away with a coloured wash and a Save or Skip stamp, and the next slides forward.",
+    "tagline": "Tinder-style deck of travel cards that fly off with a SAVE stamp.",
     "category": "cards",
     "categories": [
       "cards",
@@ -10066,7 +10453,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cart-button",
     "title": "Cart Button",
-    "description": "Product list whose Add buttons open in place into quantity steppers, with a rolling cart total and checkout.",
+    "description": "A compact cart of three grocery items with an Add button on each row. Pressing Add turns the button into a minus, count and plus, and the subtotal and checkout total update.",
+    "tagline": "Product list whose Add pills open into quantity steppers and a live total.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -10093,7 +10481,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cascader",
     "title": "Cascader",
-    "description": "Hierarchical combobox that drills through nested levels with search, breadcrumb and keyboard navigation.",
+    "description": "A single select for hierarchical data: the trigger opens a searchable list, and picking a branch replaces the list with its children while a breadcrumb shows the path.",
+    "tagline": "A dropdown that drills through nested attribute levels with breadcrumbs.",
     "category": "selects",
     "categories": [
       "selects",
@@ -10122,7 +10511,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "category-bar",
     "title": "Category Bar",
-    "description": "A segmented single bar that shows ranges or thresholds, with optional labels and an animated marker with tooltip.",
+    "description": "A single horizontal bar split into coloured ranges, with an optional marker and labels. It plots values like a credit score or storage usage against their bands.",
+    "tagline": "A stacked colour bar with a sliding marker that names the current score.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10151,7 +10541,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "caustics-background",
     "title": "Caustics Background",
-    "description": "Pool-floor caustic light rippling under a headline whose shadow wobbles with the water; the cursor stirs it and clicks drop rings.",
+    "description": "A full-width hero backdrop painting moving pool-floor caustics, with a headline and buttons above. Moving the cursor or clicking sends ripples through the light.",
+    "tagline": "Headline floating over a rippling pool of light that stirs at the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -10176,7 +10567,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "changeable-pricing-section",
     "title": "Changeable Pricing Section",
-    "description": "A plan picker card with a springy monthly/yearly toggle, blur-rolling prices and the selected plan expanding to reveal its features.",
+    "description": "A compact pricing card listing three plans as radio rows. A Monthly/Yearly switch springs across, prices roll, and the chosen plan expands to show its feature list.",
+    "tagline": "Plan picker with a monthly/yearly switch and features that unfold when picked.",
     "category": "pricing",
     "categories": [
       "pricing",
@@ -10203,7 +10595,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-area",
     "title": "Area Chart",
-    "description": "Ten shadcn area-chart variants in one file: default, linear, step, stacked, expanded, gradient, legend, icons, axes and an interactive date-range chart.",
+    "description": "Three small analytics cards each holding an area chart of visitor numbers. Gradient and stacked fills sit beside a stepped version, and hovering a chart shows a tooltip.",
+    "tagline": "A row of area charts with gradient, legend and step variants.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10234,7 +10627,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-bar",
     "title": "Bar Chart",
-    "description": "Ten shadcn bar-chart variants in one file: default, horizontal, multiple, stacked, labelled, custom label, mixed, negative, active and interactive.",
+    "description": "Three dark analytics cards showing bar charts: grouped monthly columns, horizontal browser bars and a chart with values below the baseline. Hovering shows a small tooltip.",
+    "tagline": "A trio of bar charts: paired columns, horizontal bars and negatives.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10264,7 +10658,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-line",
     "title": "Line Chart",
-    "description": "Ten shadcn line-chart variants in one file: default, linear, step, multiple, dots, custom dots, coloured dots, labels, custom labels and interactive.",
+    "description": "A row of dark cards each holding a line chart. One plots two series, one marks each point in a colour, and one writes values above the dots.",
+    "tagline": "Three small line charts: multiple series, coloured dots and labels.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10294,7 +10689,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-pie",
     "title": "Pie Chart",
-    "description": "Eleven shadcn pie and donut variants in one file: simple, separator-less, labels, label list, custom labels, legend, donut, donut with text, active sector, stacked and an interactive month picker.",
+    "description": "Three dark chart cards: a donut with a total in its hole, an interactive donut whose value changes with a month selector, and a pie with value labels on each slice.",
+    "tagline": "Donut and pie charts with centre totals, labels and a month picker.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10325,7 +10721,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-radar",
     "title": "Radar Chart",
-    "description": "Fourteen shadcn radar-chart variants in one file: grid styles (polygon, circle, filled, none, custom), dots, lines only, icons, legend, custom labels, radius axis and multiple series.",
+    "description": "A row of dark cards, each holding a spider plot over six months with a spoke or ring grid, a pale filled area and month labels around the rim. Some cards add a two-item legend.",
+    "tagline": "Six-sided spider plots compare monthly visitors across dark cards.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10355,7 +10752,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-radial",
     "title": "Radial Chart",
-    "description": "Six shadcn radial-bar variants in one file: simple, label, grid, centre text, shape and stacked.",
+    "description": "Three radial cards: a near-full ring, a half-circle gauge and a set of concentric browser bands, each with a large total in the middle and a footer trend line.",
+    "tagline": "Hollow rings and half gauges hold visitor totals at their centre.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10385,7 +10783,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart",
     "title": "Chart",
-    "description": "A Recharts wrapper: ChartContainer themes series from a config, with matching tooltip and legend components.",
+    "description": "A chart wrapper demo: a wide card of stacked monthly revenue bars with a two-item legend, and a narrow card of two smooth API latency lines across a week, both in grey on dark surfaces.",
+    "tagline": "Stacked revenue bars and two latency lines sit on paired dark cards.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10413,7 +10812,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chat-coss",
     "title": "Chat",
-    "description": "Composable chat primitives: grouped message bubbles with reactions, reply references, delivery ticks, a typing indicator, date pills and a stick-to-bottom conversation.",
+    "description": "A dark group chat panel: an avatar stack header, a date pill and unread divider, incoming and outgoing bubbles with emoji reaction chips, quoted reply references, delivery ticks and a typing line above the composer.",
+    "tagline": "Rounded chat thread with reactions, quoted replies and a typing indicator.",
     "category": "chat",
     "categories": [
       "chat",
@@ -10442,7 +10842,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chromatic-image",
     "title": "Chromatic Image",
-    "description": "A WebGL image that splits into RGB channels, displaces and tilts toward the pointer.",
+    "description": "A landscape photo on a rounded canvas that warps into horizontal bands and splits into shifted colour copies under the pointer, tilting in 3D and easing back when the pointer leaves.",
+    "tagline": "Mountains tear into red, green and blue ghosts as the pointer moves.",
     "category": "media",
     "categories": [
       "media",
@@ -10466,7 +10867,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "circuit-board",
     "title": "Circuit Board",
-    "description": "Animated SVG circuit with glowing traces and pulses running into a central chip, above a row of tech cards.",
+    "description": "A dark band of hairline circuit traces with coloured pulses converging on a raised Powered By chip, over three rounded cards that fade in with icons and short descriptions.",
+    "tagline": "Glowing circuit traces feed a Powered By chip above three tech cards.",
     "category": "features",
     "categories": [
       "features",
@@ -10493,7 +10895,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "clerk-otp",
     "title": "Animated OTP Card",
-    "description": "A verification-code card that types a random six-digit code into glowing cells, flashes the whole row and loops.",
+    "description": "A small dark verification card with six code boxes that type a random number into one cell after another, glow cyan on the current cell, flash together and repeat.",
+    "tagline": "Six code cells fill themselves one digit at a time with cyan glows.",
     "category": "auth",
     "categories": [
       "auth",
@@ -10520,7 +10923,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cloud-shader",
     "title": "Cloud Shader",
-    "description": "A raw-WebGL sky of soft procedural clouds drifting in parallax layers, with tunable speed, cloud count and sky colours.",
+    "description": "A full-bleed animated sky with layered procedural clouds drifting past a sunlit haze, used as a backdrop that holds any centred content.",
+    "tagline": "Soft white clouds drift across a blue sky behind whatever sits on it.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -10544,7 +10948,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "code-tabs-animate",
     "title": "Code Tabs",
-    "description": "Tabbed code block for package managers or languages with a gliding active underline, animated content swap, shiki highlighting and a copy button.",
+    "description": "A compact code block with pnpm, npm, yarn and bun tabs; picking one moves the active underline and fades in that manager's install commands, with a copy button on the right.",
+    "tagline": "Package-manager tabs swap install commands inside a dark code panel.",
     "category": "code",
     "categories": [
       "code",
@@ -10573,7 +10978,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "commit",
     "title": "Commit",
-    "description": "Collapsible git commit card with author, hash copy, relative time and a per-file A/M/D/R list with +/- line counts.",
+    "description": "A compact commit card with avatar, message, short hash, author and relative time, plus a copy button; clicking the header reveals each changed file with an A/M/D/R status and green or red line counts.",
+    "tagline": "Commit summary that folds open into a per-file changed-lines list.",
     "category": "code",
     "categories": [
       "code",
@@ -10603,7 +11009,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "contact-us",
     "title": "Contact Us",
-    "description": "A contact section with a name, email and message form, sparkle-dusted heading and a rose card holding a spinning cobe globe.",
+    "description": "A two-column contact block: a sparkle-dusted Contact Us form with name, email and message fields on the left, and a rose gradient card with a slowly turning globe on the right.",
+    "tagline": "Pink-lit contact form beside a spinning globe card.",
     "category": "contact",
     "categories": [
       "contact",
@@ -10640,7 +11047,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "context-menu-animated",
     "title": "Context Menu (animated)",
-    "description": "A Radix context menu that opens with a staggered reveal, a gliding item highlight, animated checks and smooth submenu handoff.",
+    "description": "A browser-style right-click menu with shortcut hints, a More Tools submenu, bookmark checkboxes and a people radio group; rows animate in sequence and the highlight glides between them.",
+    "tagline": "Right-click menu that unfolds in a soft stagger with gliding highlights.",
     "category": "menus",
     "categories": [
       "menus",
@@ -10667,7 +11075,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "contextual-ai-bar",
     "title": "Contextual AI Bar",
-    "description": "A pill toolbar that morphs from a row of tool icons into an AI prompt field with a sliding active indicator.",
+    "description": "A narrow dark pill with a music and a sparkle button on the left; the sparkle expands it into a prompt field with a send arrow while four tool icons slide away, and the music button collapses it again.",
+    "tagline": "Pill toolbar that morphs into an AI prompt box on a tap.",
     "category": "chat",
     "categories": [
       "chat",
@@ -10694,7 +11103,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "continuous-pagination",
     "title": "Continuous Pagination",
-    "description": "Pagination buttons with a glossy 3D active tile that springs between pages on a shared layout id.",
+    "description": "A row of five numbered page tiles between left and right chevrons; the current page wears a dark glossy raised tile that springs to whichever number you click.",
+    "tagline": "Glossy raised page tile springs between numbers in a dark pager row.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -10721,7 +11131,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cover",
     "title": "Cover",
-    "description": "Wraps inline text in a box of travelling light beams; on hover the beams race, a starfield streams past and the text shakes at warp speed.",
+    "description": "Inline text wrapped in a dark box with corner dots; hovering makes horizontal light beams race across it, a starfield stream past and the words shudder as if jumping to warp.",
+    "tagline": "Boxed words light up with racing beams and a warp-speed shake.",
     "category": "text",
     "categories": [
       "text",
@@ -10751,7 +11162,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "credit-usage-card",
     "title": "Credit Usage Card",
-    "description": "A monospace billing card with a segmented credit meter, auto-switch toggle, period picker and usage history table.",
+    "description": "A monospace credit-usage card: a 56.4% headline, an auto-switch toggle, a long segmented orange meter, a period picker, a four-row usage table and small export and plan actions.",
+    "tagline": "Billing card with a segmented credit meter and a usage table.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -10778,7 +11190,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "currency-transfer",
     "title": "Currency Transfer",
-    "description": "Money-transfer tracker that converts the amount, ticks through a step rail to completed and offers a copyable reference.",
+    "description": "A compact money-transfer tracker: recipient header and status pill, a large amount that rolls from dollars to euros, a four-step rail that fills with ticks, and a copyable reference in the footer.",
+    "tagline": "Transfer card that rolls dollars into euros and ticks through its steps.",
     "category": "payments",
     "categories": [
       "payments",
@@ -10804,7 +11217,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cursor-attractor-and-gravity",
     "title": "Cursor Attractor & Gravity",
-    "description": "A matter-js physics field where elements are pulled toward an attractor point and pushed away by the cursor.",
+    "description": "Dozens of small circular profile photos behave like a physics playground: pulled toward an invisible attractor on the left, shoved aside by the pointer, and bouncing off the stage edges.",
+    "tagline": "Crowd of avatar discs drifts toward a point and parts around the cursor.",
     "category": "effects",
     "categories": [
       "effects",
@@ -10833,7 +11247,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "custom-kanban",
     "title": "Custom Kanban",
-    "description": "A dark kanban board with draggable cards, drop indicators, inline add-card and a burn-barrel delete zone.",
+    "description": "A dark task board with Backlog, TODO, In progress and Complete columns. Cards are dragged from one column to another, counts update, and dropping on the trash zone deletes a card.",
+    "tagline": "Drag task cards between four dark columns onto a drop line.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -10860,7 +11275,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "day-night-theme-switch",
     "title": "Day Night Theme Switch",
-    "description": "A theme toggle where the sun slides across a sky, clouds sink and stars rise as it morphs into a cratered moon.",
+    "description": "A pill-shaped theme toggle drawn like a little landscape. Flipping it slides the sun away as it turns into a moon, clouds sink and stars appear; switching back brings daylight.",
+    "tagline": "Sun slides across a tiny sky and becomes a cratered moon.",
     "category": "switches",
     "categories": [
       "switches",
@@ -10884,7 +11300,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "detent-dial",
     "title": "Detent Dial",
-    "description": "Rotary knob that clicks from notch to notch and coasts on a flick, with keyboard and wheel support.",
+    "description": "A circular temperature dial with a ring of ticks around a large knob. Turning it snaps from notch to notch, flicks coast and settle, and the big readout rolls its digits as the value changes.",
+    "tagline": "Dark rotary knob clicks through degrees of temperature.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -10910,7 +11327,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dialog-stack",
     "title": "Dialog Stack",
-    "description": "Stacked nested dialogs for multi-step flows: each step slides in front while previous steps stay stacked behind and can be clicked back to.",
+    "description": "A three-step flow where each new dialog appears in front of the last, leaving earlier steps stacked behind as narrow edges you can click to go back. Steps move with Back and Continue buttons.",
+    "tagline": "Multi-step dialogs stack up, older steps peeking behind the top one.",
     "category": "modals",
     "categories": [
       "modals",
@@ -10937,7 +11355,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dither-chart",
     "title": "Dither Chart",
-    "description": "Charts (bar, line, donut, gauge, funnel, heatmap, bubbles) rendered with Bayer-dithered pixel fills that draw in on mount.",
+    "description": "A chart card that renders bar, line, donut or funnel views from packs of tiny coloured dots, giving each fill a pixelated halftone texture. Switching a tab redraws the chart in front of you.",
+    "tagline": "Charts drawn from coloured dither dots with tabbed variants.",
     "category": "charts",
     "categories": [
       "charts",
@@ -10963,7 +11382,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dotmatrix-loaders",
     "title": "Dotmatrix Loaders",
-    "description": "A family of dot-matrix / LED-grid loaders (square, circular, triangle, hex and 3x3 grids) with sweeps, ripples, spirals, gradients and bloom.",
+    "description": "A collection of nineteen small loading indicators, each a grid of glowing dots arranged as a square, circle, triangle, hexagon or 3x3 block. They animate with sweeps, ripples, spirals and gradient blooms.",
+    "tagline": "A grid of glowing dot-matrix loaders in many shapes and hues.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -10987,7 +11407,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "draw-line-text",
     "title": "Draw Line Text",
-    "description": "SVG text that is drawn letter by letter like handwriting with GSAP stroke-dash animation, then filled in.",
+    "description": "A single word of serif italic text that draws itself in outline letter by letter like handwriting, then fills in solid. It replays and can stagger each letter.",
+    "tagline": "Serif word traced in outline, then filled solid white.",
     "category": "text",
     "categories": [
       "text",
@@ -11014,7 +11435,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "editor",
     "title": "Editor",
-    "description": "A Tiptap rich text editor with a selection bubble menu, slash commands, a floating block menu, tables, task lists and a live word count.",
+    "description": "A rich text editor showing a launch-plan document with headings, bold and italic text, a checklist and a quote. Selecting text raises a floating toolbar with block, format and link controls, plus a word count.",
+    "tagline": "Rich text editor with a selection toolbar and task-list content.",
     "category": "forms",
     "categories": [
       "forms",
@@ -11057,7 +11479,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "elastic-line",
     "title": "Elastic Line",
-    "description": "An SVG line that the cursor can catch and stretch, springing back with an elastic wobble on release.",
+    "description": "A hairline drawn across a dark page that can be caught by the pointer. Moving near it drags the middle into a stretch, and letting go springs it back to a straight line.",
+    "tagline": "Thin line bends toward the cursor and springs back.",
     "category": "effects",
     "categories": [
       "effects",
@@ -11083,7 +11506,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "emoji-picker",
     "title": "Emoji Picker",
-    "description": "Searchable, categorised emoji picker with skin tones, recents and a preview footer, inline or in a popover.",
+    "description": "A compact emoji picker with a search box, a row of category tabs, a scrollable grid of native emoji and a footer preview. Typing filters by name or shortcode, and picking one writes it to the linked field.",
+    "tagline": "Searchable emoji grid in a compact popover with a preview footer.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -11112,7 +11536,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "emoji-reaction",
     "title": "Emoji Reaction",
-    "description": "A reaction bar where tapping an emoji fires a particle burst and rolls the count like an odometer, with a hover picker for more reactions.",
+    "description": "A row of rounded reaction pills, each holding an emoji and a count. Clicking toggles your reaction, rolls the number like an odometer and fires a small particle burst, with an optional picker for more emoji.",
+    "tagline": "Pill reaction bar with emoji, rolling counts and a particle burst.",
     "category": "social",
     "categories": [
       "social",
@@ -11139,7 +11564,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "emoji-spree-choice-chips",
     "title": "Emoji Spree Choice Chips",
-    "description": "Draggable rows of interest chips that launch big floating emoji when picked and count your selections in a pill.",
+    "description": "Three draggable rows of rounded interest chips, each with an emoji and a label. Picking one lights it up, floats a huge copy of its emoji upward, and a pill at the bottom counts how many you have chosen.",
+    "tagline": "Interest chips that launch giant emoji and count your picks.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -11165,7 +11591,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "empty-states",
     "title": "Empty States",
-    "description": "Six product empty states in shared panel chrome: a no-results search that resolves a suggested term, a cleared inbox, a project starter with templates, an upload dropzone, a chart that springs in sample data and a seeded activity timeline.",
+    "description": "A set of empty-state panels sharing one framed product surface. Search shows did-you-mean terms and actions, the chart offers a Load sample data button, and other variants cover an inbox, uploads, a project board and activity.",
+    "tagline": "Placeholder screens for empty search, chart, inbox and project views.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -11194,7 +11621,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "expandable-card",
     "title": "Expandable Card",
-    "description": "A list of items where clicking a row morphs it, via shared layout animation, into a modal card with cover art, CTA and scrollable detail.",
+    "description": "A compact list of titled items with thumbnails and a Play button. Clicking a row animates it into a large centred card with a big cover image, a green call to action and scrollable detail text, over a blurred backdrop.",
+    "tagline": "List rows morph into a full card with cover art and copy.",
     "category": "cards",
     "categories": [
       "cards",
@@ -11221,7 +11649,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "exposure-slider",
     "title": "Exposure Slider",
-    "description": "An iOS camera-style exposure control: drag a tick ruler and a ring + value readout follow with spring physics.",
+    "description": "A camera-style exposure control: a horizontal ruler of fine ticks you drag to change exposure, with a small circular gauge and number above it. The demo photo brightens or darkens as the value moves.",
+    "tagline": "Tick ruler drives a ring readout that brightens a photo.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -11247,7 +11676,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "face-rating",
     "title": "Face Rating",
-    "description": "A five-level rating where one SVG face springs between moods as you hover the segments, its mouth, eyes, brows and colour morphing from frown to grin, with a joy bounce on commit.",
+    "description": "A five-level feedback rating built around one large line-drawn face. Hovering a number previews that mood as the mouth, eyes, brows and colour spring to it, and clicking commits the rating with a small bounce.",
+    "tagline": "A cartoon face morphs from frown to grin as you rate.",
     "category": "feedback",
     "categories": [
       "feedback",
@@ -11273,7 +11703,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "faq-search",
     "title": "FAQ Search",
-    "description": "An FAQ page with live search, underlined category tabs, accordion answers and an empty state when nothing matches.",
+    "description": "A help-centre FAQ page with a live search box, underlined category tabs and a list of question rows that expand to reveal answers. Searching or filtering leaves either matching questions or a no-results state with a clear button.",
+    "tagline": "Searchable FAQ list with category tabs and expanding answers.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -11304,7 +11735,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feedback-popover",
     "title": "Feedback Popover",
-    "description": "Pill asking 'Like our service?' that morphs into a feedback form on picking a mood, then a thank-you state.",
+    "description": "A small dark pill asks 'Like our service?' with four mood faces. Picking one expands it into a comment box with Submit, then flashes a check and a thank-you message.",
+    "tagline": "Ask for a quick mood rating, then unfold a comment box and thank-you.",
     "category": "feedback",
     "categories": [
       "feedback",
@@ -11332,7 +11764,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "figma-comment",
     "title": "Figma Comment",
-    "description": "A Figma-style comment pin that springs open into the author, timestamp and message, and closes on outside click.",
+    "description": "Small avatar pins sit on a mock design canvas. Clicking one expands it into a rounded card showing who wrote it, when, and their comment, and an outside click closes it.",
+    "tagline": "Design comment pins that spring open into author, time and message.",
     "category": "social",
     "categories": [
       "social",
@@ -11360,7 +11793,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "flow-field",
     "title": "Flow Field",
-    "description": "Canvas wind of streamlines that part around the cursor, swirl in its wake and scatter on click.",
+    "description": "A full-bleed canvas of hundreds of particle trails that flow left to right like wind. Moving the pointer bends the streams around it and sheds small vortices, while a click sends a ripple outward.",
+    "tagline": "Fine white streamlines drift across a dark field and swirl around the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -11385,7 +11819,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "fluted-glass",
     "title": "Fluted Glass",
-    "description": "Paper Design fluted-glass image shader that lays ribbed, streaked glass distortion over a photo.",
+    "description": "A scenic photograph is covered by a vertical fluted-glass shader that splits it into fine ribbed streaks. Moving the pointer slides and warps the ribs over the image, adding soft shadows and highlights.",
+    "tagline": "A mountain photo seen through shifting vertical ribbed glass.",
     "category": "media",
     "categories": [
       "media",
@@ -11411,7 +11846,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "follow-button",
     "title": "Follow Button",
-    "description": "Social follow pill that springs its width to fit 'Following', crossfades into an outline and draws a check, then previews a rose 'Unfollow' on hover.",
+    "description": "A small social follow button that flips between a solid Follow pill and an outlined Following pill with a drawn check. Hovering the followed state previews a rose Unfollow before you click.",
+    "tagline": "A follow pill that morphs into a check and 'Following', then previews Unfollow.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -11438,7 +11874,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "footer-blocks",
     "title": "Footer Blocks",
-    "description": "Four site footers behind one variant prop: a mega sitemap with region and language selectors, a link-search footer that filters every page as you type, a contact footer with copy-to-clipboard rows and a live clock, and a minimal bar with popover link clusters.",
+    "description": "One footer component with four layouts. It can show a mega sitemap with region and language pickers, a searchable page index, a contact card with a live clock, or a slim link bar.",
+    "tagline": "Four footer layouts switchable: sitemap, link search, contact and minimal.",
     "category": "footers",
     "categories": [
       "footers",
@@ -11466,7 +11903,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gantt",
     "title": "Gantt",
-    "description": "A Gantt roadmap timeline with grouped sidebar, draggable and resizable feature bars, markers, a today line and daily/monthly/quarterly ranges.",
+    "description": "A project Gantt chart with a grouped task sidebar and a month timeline. Feature bars are coloured by status and can be dragged or resized, with milestone markers and a today line.",
+    "tagline": "A roadmap timeline with grouped tasks, coloured bars and a today line.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -11498,7 +11936,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gauge",
     "title": "Gauge",
-    "description": "A radial gauge meter with track, animated range arc and centred value text.",
+    "description": "A set of radial gauges, each a full ring with a grey track and a coloured arc that fills to show its value. Large numbers sit in the middle with a small label below, and the values animate.",
+    "tagline": "Three circular dials fill with colour and show live numeric values.",
     "category": "charts",
     "categories": [
       "charts",
@@ -11525,7 +11964,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "github-stars-wheel",
     "title": "GitHub Stars Wheel",
-    "description": "A vertical number wheel that spins up to a repository star count, filling a star icon and bursting particles when it lands.",
+    "description": "A vertical odometer of numbers races upward and lands on a GitHub repository's star total. A star in the highlighted row fills yellow, and small particles burst when it settles.",
+    "tagline": "Two number wheels spin up to a repo's star count with a filled star.",
     "category": "social",
     "categories": [
       "social",
@@ -11552,7 +11992,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "github-stars",
     "title": "GitHub Stars",
-    "description": "A repository star counter whose digits slide up while the star fills, ending in a particle burst.",
+    "description": "A GitHub star counter where each digit slides upward until the total settles. The star beside the number fills yellow as the count rises and bursts into small particles at the end, with a Recount button below.",
+    "tagline": "Digits roll upward into a star count inside a pill beside a filled star.",
     "category": "social",
     "categories": [
       "social",
@@ -11578,7 +12019,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glitch-vault",
     "title": "Glitch Vault",
-    "description": "Card wrapper that paints a canvas of glowing matrix glyphs around the cursor as you move over it, fading out when you leave.",
+    "description": "A wrapper that paints a field of glowing monospace characters on a canvas behind its content. Moving the pointer over the card lights the nearby glyphs, which fade when it leaves.",
+    "tagline": "Two glass cards with glowing matrix glyphs that trail the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -11602,7 +12044,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glyph-matrix",
     "title": "Glyph Matrix",
-    "description": "A canvas grid of glyphs that mutate and fade in and out, with an optional bottom fade, for quiet techy backgrounds.",
+    "description": "A canvas background tiles small characters in an even grid. Random cells swap glyphs and settle at different opacities on a timer, giving a quiet static-like texture with an optional fade toward the bottom.",
+    "tagline": "A faint grid of tiny symbols flickers and mutates across a dark field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -11626,7 +12069,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gooey-dropdown",
     "title": "Gooey Dropdown",
-    "description": "A Share pill that melts into its menu panel through an SVG goo filter and a spring-interpolated CSS shape() clip path.",
+    "description": "A compact Share button that opens into a menu through a liquid goo effect. The pill's rounded shape stretches into a larger panel listing actions, and clicking one or outside closes it.",
+    "tagline": "A Share pill melts downward into a gooey menu panel, then snaps back.",
     "category": "menus",
     "categories": [
       "menus",
@@ -11652,7 +12096,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gooey-svg-filter",
     "title": "Gooey SVG Filter",
-    "description": "An SVG blur and colour-matrix filter that makes overlapping shapes merge like liquid, shown on a gooey tab switcher.",
+    "description": "A white rounded card with four year tabs along the top. The selected tab rises into a bump that merges with the card body through a liquid blur, and the list of notes below fades and swaps as tabs change.",
+    "tagline": "Tab labels sit on a white card and the active one melts into the panel below.",
     "category": "effects",
     "categories": [
       "effects",
@@ -11678,7 +12123,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "halo-card",
     "title": "Halo Card",
-    "description": "Composable card with an animated gradient rim, frosted fill, layered shadow and matching gradient-rim buttons.",
+    "description": "A rounded, frosted dark card with a hairline border and soft multicolour light bleeding from under its bottom edge. It stacks a heading, a short paragraph, an avatar list and two pill buttons, and lights its rim on hover.",
+    "tagline": "Dark card with a pink, purple and cyan glow shifting along its lower edge.",
     "category": "cards",
     "categories": [
       "cards"
@@ -11703,7 +12149,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "halo-dropzone",
     "title": "Halo Dropzone",
-    "description": "File dropzone with an animated gradient rim, frosted fill, file-type glyphs and an upload list with progress rows.",
+    "description": "A frosted dark panel with a dashed edge and a wash of pink, blue and green light inside it, asking you to drop or browse for files. Underneath, each queued file shows a thumbnail, name, size, progress bar and remove cross.",
+    "tagline": "Drop area with a glowing gradient rim above rows of files uploading.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -11730,7 +12177,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "illustration-globe-vercel",
     "title": "Deploy Globe",
-    "description": "Wireframe half-globe where deploy paths draw from edge nodes to the core, with deploying, deployed and failed states.",
+    "description": "A half-globe drawn in thin lines, with coloured paths that travel from the north pole down to small circular nodes and ring out as they land. A small badge underneath reports whether the deploy is running, done or failed.",
+    "tagline": "Wireframe hemisphere with glowing deploy paths arcing down to node dots.",
     "category": "3d",
     "categories": [
       "3d",
@@ -11754,7 +12202,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "image-generation-loader",
     "title": "Image Generation Loader",
-    "description": "A canvas overlay that sweeps a glowing pixel-grid band down an image, with optional masked text and wave or scale-wave effects, like an AI image rendering in.",
+    "description": "A transparent layer for pictures: a strip of small coloured squares travels down the frame, tinting the image and revealing it as it passes. It can also spell a short word in blocky pixels.",
+    "tagline": "Pixel-grid band sweeps down a photo like the image is being rendered.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -11779,7 +12228,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inline-edit",
     "title": "Inline Edit",
-    "description": "An event details card whose rows turn into in-place editors with springy save and cancel buttons.",
+    "description": "A compact dark card listing event details as labelled rows. Hovering a row shows a pencil, and clicking it swaps the value for a text field with springy save and cancel buttons that write the change back.",
+    "tagline": "Detail rows turn into text fields with round tick and cross buttons.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -11807,7 +12257,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inline-testimonials",
     "title": "Inline Testimonials",
-    "description": "Customer names woven into a paragraph with tiny avatars; hovering or focusing a name pops its quote card inline.",
+    "description": "A paragraph of plain text where chosen names sit with tiny round photos and a fine underline. Hovering or focusing a name opens a small card with the person's role, quote and star rating, placed above or below the line.",
+    "tagline": "Names in a sentence carry avatars, and hovering one opens its quote card.",
     "category": "testimonials",
     "categories": [
       "testimonials",
@@ -11834,7 +12285,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "integrations",
     "title": "Integrations",
-    "description": "Rows of glowing app-icon tiles drifting in marquees at different speeds, fading in at random under a soft vignette.",
+    "description": "Several rows of dark rounded tiles, each holding a thin line icon over a soft patch of coloured light, slide across a black background at different speeds and directions. The tiles fade up one by one and the stack darkens toward its edges.",
+    "tagline": "Rows of glowing app-icon tiles drift sideways at different speeds.",
     "category": "features",
     "categories": [
       "features",
@@ -11862,7 +12314,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "interface-craft-cards",
     "title": "Interface Craft Cards",
-    "description": "A fanned, tilted stack of colourful cards; clicking one springs it to the centre and enlarges it with its description while the others drop away.",
+    "description": "Five coloured cards lie in a loose tilted fan. Clicking one straightens it, scales it up and brings it to the middle with a short description, while the others shrink and drop away; a click outside restores the fan.",
+    "tagline": "Fanned stack of tilted colour cards that springs one forward when clicked.",
     "category": "cards",
     "categories": [
       "cards",
@@ -11888,7 +12341,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "json-viewer",
     "title": "JSON Viewer",
-    "description": "A collapsible JSON tree with line numbers, type colouring, relative-date hints, array truncation, expand/collapse all and copy.",
+    "description": "A bordered code panel that renders a JSON object as an indented tree. Keys and values are colour-coded by type, branches fold open, long arrays truncate, dates get a relative hint, and the header offers Expand All, Collapse All and Copy.",
+    "tagline": "Folds a raw JSON payload into a colour-coded tree with line numbers and copy.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -11916,7 +12370,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "kanban-board",
     "title": "Kanban Board",
-    "description": "Three-column kanban board with springy drag-and-drop cards, tags, assignees and due dates.",
+    "description": "A small kanban board with three columns of dark cards, each card carrying a coloured tag, a title, an assignee avatar and a due date. Cards lift while dragged and spring into their new column over a glowing drop line.",
+    "tagline": "Three stacked columns of task cards that can be dragged between.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -11942,7 +12397,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "key-value",
     "title": "Key Value",
-    "description": "A dynamic key/value pair editor for env vars or headers, with add/remove rows, validation and .env paste support.",
+    "description": "An editor for key/value pairs where each row has a monospaced key field, a value field and a remove button, plus an add button that appends an empty row. Pasting a .env listing fills several rows at once.",
+    "tagline": "Rows of key and value fields with remove crosses and an add button.",
     "category": "forms",
     "categories": [
       "forms",
@@ -11974,7 +12430,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "knob-slider",
     "title": "Knob Slider",
-    "description": "A radial dial control snapping to 72 ticks, with a slot-machine number that blurs while you spin it.",
+    "description": "A circular knob edged with fine tick marks. Dragging around the ring turns a small triangle pointer and snaps the value to the nearest tick, while the big number rolls and blurs as it spins, then sharpens when it stops.",
+    "tagline": "Round dial ringed with ticks that spins and blurs its number as you drag.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -12001,7 +12458,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "layered-progressive-disclosure",
     "title": "Layered Progressive Disclosure",
-    "description": "A layered config panel that progressively reveals nested toggles and tabs with blur-spring transitions.",
+    "description": "A stack of inset rounded cards showing width and height readouts, a row whose label flips, and an asymmetric switch that reveals a two-tab selector and reverses the opacity and blur values. Each new layer springs in out of a blur.",
+    "tagline": "Nested config panel that uncovers a switch, then tabs, as you switch it on.",
     "category": "settings",
     "categories": [
       "settings",
@@ -12029,7 +12487,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-slider",
     "title": "Liquid Slider",
-    "description": "Vertical slider that fills like a glass of water, its surface sloshing as you drag the level.",
+    "description": "A vertical water-volume control shaped like a drinking glass. Dragging or using the keys raises and lowers the blue liquid, whose surface ripples and sloshes, with bubbles rising when it is poured quickly.",
+    "tagline": "Fills a glass with blue water as you drag the level up or down.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -12053,7 +12512,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "logo-timeline",
     "title": "Logo Timeline",
-    "description": "Tool logos glide in pill chips along dashed horizontal rails at staggered speeds behind a large faded headline.",
+    "description": "Several horizontal dotted rails carry rounded chips, each holding a brand icon and its name. The chips drift sideways at staggered speeds and offsets while a large, very low-contrast headline stays fixed in the middle.",
+    "tagline": "Tool-logo chips glide along faint dashed rails behind a ghosted headline.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -12081,7 +12541,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magnetic-field",
     "title": "Magnetic Field",
-    "description": "A field of elements that attract to, repel from or orbit the cursor with spring physics and optional rotation, like iron filings.",
+    "description": "A grid of short dashes that lean, swing or swirl as the pointer passes near, standing in for iron filings. A small switch changes the behaviour between attract, repel and orbit.",
+    "tagline": "Dashes twist toward the cursor like iron filings in a magnetic field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -12108,7 +12569,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "management-bar",
     "title": "Management Bar",
-    "description": "A compact action bar for reviewing items: paginator with sliding digits, icon buttons that spring open to reveal labels on hover, and a move-to CTA with shortcut hint.",
+    "description": "A small rounded toolbar for reviewing candidates: chevrons around a page count, three colour-coded icon actions, and a teal button that names the stage it moves the item to, with a keyboard shortcut keycap.",
+    "tagline": "Compact action bar with a page counter, three icon buttons and a move button.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -12136,7 +12598,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "markdown",
     "title": "Markdown",
-    "description": "A streaming-safe markdown renderer that splits content into memoized blocks and highlights fenced code with Shiki.",
+    "description": "A renderer that grows an answer in place as it arrives, turning hashes, dashes and backticks into a heading, numbered steps, syntax-highlighted code and a table. Content is split into blocks so parts already finished do not redraw.",
+    "tagline": "Streamed text fills in as formatted prose, code and a table.",
     "category": "chat",
     "categories": [
       "chat",
@@ -12167,7 +12630,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "marking-menu",
     "title": "Marking Menu",
-    "description": "Radial marking menu: press and hold to open it, or flick in a direction to pick blind.",
+    "description": "A gesture surface that opens a circular menu of eight destinations around the pointer. Hold still to see the ring, flick a direction to pick blind, or use the Menu button and the arrow keys.",
+    "tagline": "Hold and flick in a direction to pick from a ring of icons.",
     "category": "menus",
     "categories": [
       "menus",
@@ -12194,7 +12658,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mask-input",
     "title": "Mask Input",
-    "description": "An input that formats as you type for phone numbers, dates, currencies, credit cards and percentages.",
+    "description": "A text field that rewrites each keystroke into a chosen pattern, inserting brackets, slashes, currency symbols or percent signs between the digits. Built-in patterns cover phone, date, time, card, zip, currency and more.",
+    "tagline": "Formats phone, date and money as you type, adding brackets and symbols.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -12221,7 +12686,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "media-between-text",
     "title": "Media Between Text",
-    "description": "A sentence that splits open on hover (or in view / via ref) to reveal an image or video between its words.",
+    "description": "A headline-sized sentence whose middle brackets widen on hover to slide in a photo or video, then close again when the pointer leaves. It can also open on scroll into view or on a ref call.",
+    "tagline": "Hover the sentence and a photo grows out between two brackets.",
     "category": "text",
     "categories": [
       "text",
@@ -12247,7 +12713,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "media-player",
     "title": "Media Player",
-    "description": "A composable video player with seek bar, hover time preview, volume, playback speed, picture-in-picture and fullscreen controls.",
+    "description": "A full video player assembled from parts: the seek bar previews the frame under the cursor, and a control row handles play, skip, volume, time, speed, picture-in-picture and fullscreen, with keyboard shortcuts.",
+    "tagline": "Video surface with a seek bar, hover thumbnail preview and a full control strip.",
     "category": "media",
     "categories": [
       "media",
@@ -12280,7 +12747,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mention",
     "title": "Mention",
-    "description": "A textarea that opens a filterable teammate list when you type @ and inserts the picked name as a mention.",
+    "description": "A comment textarea that watches for the @ symbol and opens a small list of teammates, narrowing as you keep typing. Picking a row drops that person's name into the sentence as a highlighted mention.",
+    "tagline": "Type @ in a comment box to pick a teammate from a filtered list.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -12309,7 +12777,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "menubar-animated",
     "title": "Menubar (animated)",
-    "description": "A desktop-style Radix menubar whose menus hand off with one gliding highlight, staggered items and animated checks.",
+    "description": "A thin application menu bar with Edit, View and Profiles menus. Opening one shows a dark dropdown of commands with shortcuts and ticks, and moving to a neighbour passes the open menu across in one motion.",
+    "tagline": "A desktop-style menu bar whose dropdowns glide between Edit, View and Profiles.",
     "category": "menus",
     "categories": [
       "menus",
@@ -12336,7 +12805,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "message-scroller",
     "title": "Message Scroller",
-    "description": "A chat scroll container that anchors each turn, follows streaming replies at the bottom and shows a jump-to-latest button when you scroll away.",
+    "description": "A scrolling message list for a conversation: user turns sit right in pale bubbles, assistant replies run left as plain text, and the view follows a reply while it streams. Scrolling up reveals a button that returns to the newest message.",
+    "tagline": "A chat thread that keeps the newest reply in view with a jump pill.",
     "category": "chat",
     "categories": [
       "chat",
@@ -12365,7 +12835,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "morphing-discovery-bar",
     "title": "Morphing Discovery Bar",
-    "description": "A category pill bar whose search button morphs into a full search field while the tabs blur away.",
+    "description": "A rounded row of category pills with a search button at one end. Clicking search widens it into a typing field while the category pills blur and slide off, and a close button brings them back.",
+    "tagline": "Category pills blur away as the search circle grows into a field.",
     "category": "search",
     "categories": [
       "search",
@@ -12392,7 +12863,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mouse-wave-text",
     "title": "Mouse Wave Text",
-    "description": "Display text sliced into hundreds of strips that ripple up in a wave following the cursor's horizontal position, and squash on press.",
+    "description": "A giant word cut into thin vertical strips, each bobbing up and down with a moving delay so the letters ripple in a wave. Moving the cursor steers the wave and pressing the mouse squashes the whole word.",
+    "tagline": "Bold letters ride a rolling wave that follows the cursor across the page.",
     "category": "text",
     "categories": [
       "text",
@@ -12418,7 +12890,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "music-toggle",
     "title": "Music Toggle",
-    "description": "A play/pause toggle shaped like a spinning record with cover art, a live waveform and a seekable progress ring.",
+    "description": "A round record whose cover art turns while a track plays, ringed by a pink progress arc. A centre button toggles play and pause, and a small bar waveform pulses beside the title and artist.",
+    "tagline": "A spinning record with cover art, a pink progress ring and a live waveform.",
     "category": "media",
     "categories": [
       "media",
@@ -12445,7 +12918,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "notification-stack",
     "title": "Notification Stack",
-    "description": "Stacked notification cards that fan out on hover and swipe away to dismiss.",
+    "description": "A short pile of notification cards showing app, message and time, with a count and a Show all toggle. Hovering fans them into a list, and swiping one or pressing its corner cross removes it.",
+    "tagline": "A stack of notification cards that fans open on hover and swipes off to dismiss.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -12471,7 +12945,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "notion-mention-link",
     "title": "Notion Mention Link",
-    "description": "An inline Notion-style link mention with favicon chip that opens a rich page preview card on hover.",
+    "description": "A Notion-style inline mention of a web page, shown with a tiny favicon and the page title. Hovering it brings up a card with the page's image, summary and domain without leaving the document.",
+    "tagline": "Hover a page link to pop open a card with image, blurb and domain.",
     "category": "text",
     "categories": [
       "text",
@@ -12499,7 +12974,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "novatrix-background",
     "title": "Novatrix Background",
-    "description": "An OGL fragment-shader background of flowing iridescent colour bands that can lean toward the cursor.",
+    "description": "A full-bleed animated background of flowing pastel bands in mint, pink and purple, like light folding through silk. It drifts on its own and can be set to lean toward the pointer.",
+    "tagline": "Soft iridescent ribbons of mint, pink and lavender drift like folded silk.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -12526,7 +13002,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "open-in-chat",
     "title": "Open in Chat",
-    "description": "A dropdown or inline icon bar of 'Open in ChatGPT / Claude / Perplexity / Grok / v0' links that prefill a prompt.",
+    "description": "A small control that turns a prompt into links opening it in ChatGPT, Claude, Perplexity, Grok or v0. It can appear as an inline row of brand icons or as a dropdown under one trigger.",
+    "tagline": "Buttons and a dropdown that send a prompt into ChatGPT, Claude or Perplexity.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -12555,7 +13032,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "orbit-carousel",
     "title": "Orbit Carousel",
-    "description": "Team carousel where avatars orbit a ring around a focused profile card, swinging round with a springy overshoot when you step or click one.",
+    "description": "A team carousel where eight round avatars sit on a circle around a centred profile card. Stepping with the arrows, or clicking an avatar, swings the ring around with a springy overshoot and swaps the card.",
+    "tagline": "Profile photos orbit a ring while the chosen one fills a card in the centre.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -12583,7 +13061,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "parallax-floating",
     "title": "Parallax Floating",
-    "description": "Floating images at different depths that drift with the cursor for a layered parallax hero.",
+    "description": "A set of small photographs scattered around a centred serif wordmark, each sitting at its own depth so the collage slides in layers when the pointer moves and the headline stays still.",
+    "tagline": "Scattered photos drift at different speeds as the pointer crosses the page.",
     "category": "heroes",
     "categories": [
       "heroes",
@@ -12609,7 +13088,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "photon-beam",
     "title": "Photon Beam",
-    "description": "A three.js field of curved light lines with bright signals racing along them, finished with an unreal bloom pass.",
+    "description": "A full-bleed dark backdrop of many fine curved lines that converge at a bright point on the left and run off to the right. Small glowing cyan pulses travel along the lanes under a soft bloom.",
+    "tagline": "Cyan light signals race along a fan of thin lines in a dark 3D field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -12636,7 +13116,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pixel-flow-field",
     "title": "Pixel Flow Field",
-    "description": "A canvas of pixel cells drifting along a flow field that resolve into a word or image and scatter around the cursor.",
+    "description": "A dark canvas tiled with thousands of small square cells that drift along a noise flow, gather into a heavy word, and get shoved aside in a fading wake wherever the pointer moves.",
+    "tagline": "Tiny squares swirl into a blocky word, then scatter away from the pointer.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -12663,7 +13144,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pixel-heading-character",
     "title": "Pixel Heading",
-    "description": "Heading that cycles each character through Geist pixel typefaces in wave, multi, random or uniform modes.",
+    "description": "A large display heading where each character is set in a different pixel font, the mix stepping through its faces on a timer so the word ripples and re-forms in new lettering.",
+    "tagline": "Every letter sits in its own dotted, blocky typeface and keeps switching.",
     "category": "text",
     "categories": [
       "text"
@@ -12688,7 +13170,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pixel-liquid-bg",
     "title": "Pixel Liquid Background",
-    "description": "A Navier-Stokes fluid simulation rendered as Bayer-dithered pixels with film grain, stirred by the cursor or an idle auto-driver.",
+    "description": "A near-black backdrop where a pink fluid simulation is stirred by the pointer and then rendered as large dithered blocks with faint grain, so the motion reads as low-resolution liquid.",
+    "tagline": "Pink liquid churns across black in chunky, dithered blocks.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -12715,7 +13198,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "playful-todolist",
     "title": "Playful Todolist",
-    "description": "A todo list whose completed tasks get a hand-drawn wavy strikethrough that draws across the label, with springy animated checkboxes.",
+    "description": "A small dark checklist of three rows, each with a rounded checkbox and a line of text. Checking one pops in a tick and writes a squiggly hand-drawn strike across the words.",
+    "tagline": "Ticking a task draws a wavy pen line through its label.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -12744,7 +13228,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "plucked-text",
     "title": "Plucked Text",
-    "description": "Headline sitting on a string you can pull and let twang, or sweep across to strum the letters.",
+    "description": "A bold one-line headline resting on a taut string stretched between two dots. Drag the line down or sweep the cursor across it and the letters ride the vibration until it settles flat again.",
+    "tagline": "Pull the line under a headline and let it twang back into place.",
     "category": "text",
     "categories": [
       "text",
@@ -12768,7 +13253,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "predictive-text",
     "title": "Predictive Text",
-    "description": "A message composer that offers next-word completions in a floating pill as you type, with Tab to cycle and arrow-right to accept.",
+    "description": "A rounded message composer that watches the word you are part-way through and floats a small pill of completions above it. Tab cycles the options, arrow-right accepts one and Enter sends.",
+    "tagline": "Word suggestions float above the message box as you type.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -12795,7 +13281,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pricing-frequency-toggle",
     "title": "Pricing Frequency Toggle",
-    "description": "A three-tier pricing section with a sliding monthly/yearly toggle, rolling NumberFlow prices and animated discount badges.",
+    "description": "A three-tier pricing block: a centred heading, a small sliding monthly or yearly switch, and three plan cards whose prices animate to the new figure while percentage-off badges pop in for yearly billing.",
+    "tagline": "Three plan cards with a monthly-yearly switch that rolls the prices.",
     "category": "pricing",
     "categories": [
       "pricing",
@@ -12825,7 +13312,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pricing-tiers",
     "title": "Pricing Tiers",
-    "description": "Three-tier pricing in four layouts behind one variant prop: a banner grid with a yearly/monthly switch and rolling price digits, tinted gradient columns, staggered offset cards and printed receipts.",
+    "description": "A tiered pricing section that can take four looks: a banner grid, tinted gradient columns, staggered cards or printed receipts. Each shows plan names, prices, feature lists and a call to action.",
+    "tagline": "Three plan cards in four layouts, with prices that roll on a switch.",
     "category": "pricing",
     "categories": [
       "pricing",
@@ -12852,7 +13340,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "query-builder",
     "title": "Query Builder",
-    "description": "A visual filter builder for nested AND/OR rule groups, with typed fields, operators and value pickers.",
+    "description": "A visual filter composer where each row picks a field, an operator and a value, joined by And or Or. Add rule grows the list, Add group nests an indented subgroup, and each row can be removed.",
+    "tagline": "Stack rows of field, operator and value to build an AND/OR filter.",
     "category": "search",
     "categories": [
       "search",
@@ -12887,7 +13376,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "questionnaire",
     "title": "Questionnaire",
-    "description": "A multi-step questionnaire with single and multi-choice, freeform and skippable questions that slide in with animated checks and a counting progress label.",
+    "description": "A multi-step questionnaire showing one question at a time: single or multi-select answer cards, an optional freeform field, a counting progress label, and Previous, Skip and Next buttons that slide between steps.",
+    "tagline": "Step through questions one at a time, ticking answers as progress counts up.",
     "category": "forms",
     "categories": [
       "forms",
@@ -12914,7 +13404,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "reel",
     "title": "Reel",
-    "description": "An Instagram-Stories style reel of images and videos with segmented progress bars, tap-to-advance halves and play/mute controls.",
+    "description": "A portrait story viewer: full-bleed photos or video, a header with an avatar and handle, thin progress segments along the top, a caption footer, and previous, play, next and mute buttons.",
+    "tagline": "Stories-style vertical reel with segmented timers and tap-to-advance halves.",
     "category": "media",
     "categories": [
       "media",
@@ -12942,7 +13433,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "resizable",
     "title": "Resizable",
-    "description": "Accessible resizable panel groups and drag handles, nested horizontally and vertically, built on react-resizable-panels v4.",
+    "description": "A three-pane editor workspace: a file explorer, a syntax-highlighted code area and a terminal, split by draggable handles that also respond to the keyboard and keep each pane above a minimum size.",
+    "tagline": "Drag the seams to resize a file tree, code pane and terminal.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -12969,7 +13461,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-and-swap",
     "title": "Scroll and Swap Text",
-    "description": "Text that rolls over to a duplicate of itself as it scrolls through a band of its container.",
+    "description": "A tall column of bold text scrolls smoothly; as any line crosses the middle band it slides away and an identical copy slides in behind it, so the list appears to roll over itself.",
+    "tagline": "Names roll upward and each line swaps to a copy of itself as it scrolls.",
     "category": "text",
     "categories": [
       "text",
@@ -12996,7 +13489,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-fade",
     "title": "Scroll Fade",
-    "description": "A scroll container whose edges fade, shrink and blur only on the sides where more content is hidden.",
+    "description": "A scrolling list wrapper that masks its own top and bottom edges and gently scales and blurs rows as they approach the hidden edge, so cut-off content tapers away instead of being sharply clipped.",
+    "tagline": "Lists fade, shrink and blur at whichever edge hides more content.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -13022,7 +13516,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-index",
     "title": "Scroll Index",
-    "description": "Section rail with a tick per heading that tracks scroll; hover, click or drag it to scrub through the article.",
+    "description": "A self-scrolling article paired with a vertical rail of ticks, one per heading. The rail marks passed and current sections, names them on hover, and can be dragged or clicked to jump through the text.",
+    "tagline": "Tick rail beside an article tracks reading position and scrubs on drag.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -13046,7 +13541,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scrubber",
     "title": "Scrubber",
-    "description": "A design-tool style value scrubber: the label sits inside the track and dragging anywhere scrubs the value with ticks and a live readout.",
+    "description": "A compact stack of horizontal sliders where each label sits inside its track. Dragging along the bar changes the value in steps, with tick marks and a readout, and a preview shape reacts.",
+    "tagline": "Four labelled tracks you drag to scrub values, with ticks and a live number.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -13072,7 +13568,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "seat-map",
     "title": "Seat Map",
-    "description": "Cinema seat picker: drag along a row to paint seats across price tiers, with a running total and a warning when a single seat would be stranded.",
+    "description": "A cinema seat picker split into front, standard and premium price bands. Dragging across a row selects a run of seats, chips show the picks with a running total, and a note warns when a lone seat would be stranded.",
+    "tagline": "Drag along a row to paint cinema seats, with total and stray-seat warning.",
     "category": "ecommerce",
     "categories": [
       "ecommerce",
@@ -13099,7 +13596,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "security-checkpoint",
     "title": "Security Checkpoint",
-    "description": "Browser-verification card with animated traffic lines streaming in and a pulsing check state.",
+    "description": "A small rounded card explains that the browser is being checked while thin blue and red lines run in from the right and left toward its edges, as if traffic is being inspected before entry.",
+    "tagline": "A verification card with blue and red lines streaming in from both sides.",
     "category": "features",
     "categories": [
       "features",
@@ -13123,7 +13621,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "selection-toolbar",
     "title": "Selection Toolbar",
-    "description": "A floating formatting toolbar that appears above any text you select, with bold, italic, link, copy and share actions.",
+    "description": "A floating formatting bar that appears whenever text is selected inside an editable area. It offers bold, italic, link, copy and share actions, follows the selection and stays inside the viewport.",
+    "tagline": "Select text and a small icon toolbar pops up above the highlighted words.",
     "category": "menus",
     "categories": [
       "menus",
@@ -13153,7 +13652,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "settings-page",
     "title": "Settings Page",
-    "description": "A bordered three-column account settings grid: profile with avatar upload and input groups, notification switches, theme toggle and language select, security and a danger zone.",
+    "description": "An account settings screen laid out as a bordered three-column grid: profile fields with an avatar, notification switches, appearance and language options, security actions and a danger zone, with Cancel and Save at the bottom.",
+    "tagline": "A grid of bordered settings cards for profile, alerts, theme and security.",
     "category": "settings",
     "categories": [
       "settings",
@@ -13190,7 +13690,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shader-reveal-transition",
     "title": "Shader Reveal Transition",
-    "description": "A WebGL shader overlay that wipes between two pieces of content with eight variants (noise, wipe, circle, stripes, zoom, luma, planetary, push).",
+    "description": "A framed image card that swaps scenes behind a full-cover WebGL shader. Each change plays one of eight effects — noise, wipe, circle, stripes, zoom, luma, planetary or push — chosen from pills beneath the frame.",
+    "tagline": "Photos wipe into each other under a colourful noise or stripe shader.",
     "category": "effects",
     "categories": [
       "effects",
@@ -13216,7 +13717,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shared-tooltip",
     "title": "Shared Tooltip",
-    "description": "Tooltips under one provider share a single popup that glides from trigger to trigger, arrow included.",
+    "description": "A row of formatting icons where a single shared tooltip follows the pointer from button to button, sliding and reshaping to show each action's name and keyboard shortcut with an arrow.",
+    "tagline": "One tooltip glides between toolbar buttons, showing each name and shortcut.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -13243,7 +13745,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shifting-dropdown",
     "title": "Shifting Dropdown",
-    "description": "A nav mega-dropdown that stays open while you hover across tabs, sliding content sideways and moving a nub under the active tab.",
+    "description": "A compact top navigation where hovering or clicking a tab opens a wide dropdown panel beneath it. The panel stays open while you move between tabs, sliding new content in sideways, and a small pointer follows the active tab.",
+    "tagline": "Hover a nav tab and a wide menu drops below with a nub tracking the tab.",
     "category": "menus",
     "categories": [
       "menus",
@@ -13270,7 +13773,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shimmer-loader",
     "title": "Shimmer Loader",
-    "description": "A terminal-style progress bar: a monospace cell strip with a moving purple shimmer, cycling labels, spinner glyph, percent and token counter.",
+    "description": "A stack of monospace progress bars that a purple shimmer sweeps across while the labels cycle and the percentages and token counts climb, then restart from zero when finished.",
+    "tagline": "Three purple terminal progress bars shimmer and tick up with percent and tokens.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -13294,7 +13798,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shuffle-hero",
     "title": "Shuffle Hero",
-    "description": "A split hero with copy on the left and a 4x4 photo grid that reshuffles itself with spring layout animations.",
+    "description": "A split hero: a small orange eyebrow, a large headline, a short paragraph and a call-to-action button on the left, with a 4x4 grid of photos on the right that springs into a new random order every three seconds.",
+    "tagline": "A hero with copy beside a photo grid that reshuffles itself every few seconds.",
     "category": "heroes",
     "categories": [
       "heroes",
@@ -13320,7 +13825,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sidebar-animated",
     "title": "Sidebar (animated)",
-    "description": "A shadcn-style app sidebar with one gliding highlight across menu buttons and an animated collapse to icons.",
+    "description": "A shadcn-style application sidebar with grouped navigation, a project list and a user footer. A single rounded highlight slides from item to item, and the panel can collapse to a narrow icon rail.",
+    "tagline": "App sidebar with one highlight that glides between items and collapses to icons.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -13346,7 +13852,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spark-chart",
     "title": "Spark Chart",
-    "description": "Tiny area, line and bar sparklines for KPI cards and watchlists, built on Recharts.",
+    "description": "A compact watchlist where each entry pairs a ticker and name with a tiny sparkline — filled area, line or bars — and a live price with its percentage change, updating every moment.",
+    "tagline": "A watchlist card where each stock has a tiny area, line or bar sparkline.",
     "category": "charts",
     "categories": [
       "charts",
@@ -13375,7 +13882,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sparkles-title",
     "title": "Sparkles Title",
-    "description": "A hero title over a glowing horizon arc with rising sparkle particles and a faint grid.",
+    "description": "A hero block with a glowing blue arc at the bottom, a faint grid, tiny rising sparkle particles, a small white logo tile and a centred white headline over a short paragraph.",
+    "tagline": "A glowing blue horizon with sparkles behind a centred logo and headline.",
     "category": "text",
     "categories": [
       "text",
@@ -13403,7 +13911,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sparkles",
     "title": "Sparkles",
-    "description": "A tsParticles sparkle field with density, size, speed, direction, hover-grab and click-to-burst options.",
+    "description": "A full-bleed field of tiny white particles drifting upward while their brightness pulses. Moving the pointer pulls thin lines between nearby dots and a click adds a burst of new ones.",
+    "tagline": "White specks drift upward on black, twinkling and sparking under the pointer.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -13431,7 +13940,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "speed-dial",
     "title": "Speed Dial",
-    "description": "A floating action button that fans out labelled secondary actions with a staggered animation.",
+    "description": "A round floating button that opens a vertical stack of quick actions. The plus rotates into a close cross while Share, Copy and Like slide up with their labels, arriving one after another.",
+    "tagline": "Plus button spins to a cross as labelled actions fan upward.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -13460,7 +13970,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spring-element",
     "title": "Spring",
-    "description": "A draggable element tied to its resting spot by a visible SVG spring coil that stretches and snaps back on release.",
+    "description": "A small round label that can be dragged anywhere; a drawn coil stretches between it and its resting spot, and letting go lets the spring pull it back with a wobble.",
+    "tagline": "Tag you can drag away on a coiled spring that snaps it home.",
     "category": "effects",
     "categories": [
       "effects",
@@ -13486,7 +13997,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stack-trace",
     "title": "Stack Trace",
-    "description": "Parses a JS error stack into a collapsible panel with error type, message, copy button and dimmed internal frames.",
+    "description": "A compact error panel showing the error type and message with copy and expand controls. Opening it lists each call frame and greys out library and runtime internals.",
+    "tagline": "Red error bar unfolds into dimmed monospace call frames.",
     "category": "code",
     "categories": [
       "code",
@@ -13516,7 +14028,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "status-island",
     "title": "Status Island",
-    "description": "Pill that reports background tasks and opens into a list of in-flight jobs with progress.",
+    "description": "A floating pill appears when a background task starts, showing its spinner and percentage. Hovering, focusing or clicking it expands into a list of every task, where finished ones get a green tick and an action button.",
+    "tagline": "Dark pill tracks running jobs and opens into their full progress list.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -13542,7 +14055,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "streak-calendar",
     "title": "Streak Calendar",
-    "description": "Streak tracker with a GitHub-style 365-day heatmap with day tooltips, plus month and week views that mark active days with checks and freezes with snowflakes.",
+    "description": "A streak tracker drawn three ways: a 365-day contribution heatmap, a month grid and a current-week row. Active days fill in, used freezes turn blue, today is ringed and future days dim.",
+    "tagline": "Year heatmap, month grid and week row mark days of a streak.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -13570,7 +14084,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "svg-draw-on-scroll",
     "title": "SVG Draw On Scroll",
-    "description": "An SVG path that draws itself as you scroll, with a marker riding the tip of the stroke.",
+    "description": "A single curvy line that draws itself from start to finish as its container scrolls, with a glowing dot riding the growing tip and small tags pinned beside the route.",
+    "tagline": "Winding route draws itself as you scroll, a pink dot on its tip.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -13596,7 +14111,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "svg-path-morphing",
     "title": "SVG Path Morphing",
-    "description": "A pause/play button whose two bars spring-morph into a play triangle by interpolating matching SVG paths.",
+    "description": "A single icon button that toggles between pause bars and a play triangle. Both states are drawn from matching SVG paths, so the change is a springy morph rather than a straight swap.",
+    "tagline": "Two pause bars spring into a play triangle when tapped, and back again.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -13622,7 +14138,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "synced-transcript",
     "title": "Synced Transcript",
-    "description": "Podcast transcript that highlights each word as it's spoken, with a scrubber, speed control and click-a-word-to-seek.",
+    "description": "A transcript player for dialogue: paragraphs dim ahead of the audio and brighten word by word while one grey highlight slides along the current word. A play button and thin scrub bar track the recording.",
+    "tagline": "Podcast transcript lights each spoken word inside a sliding highlight.",
     "category": "media",
     "categories": [
       "media",
@@ -13648,7 +14165,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "terminal-ui",
     "title": "Terminal UI",
-    "description": "A scripted terminal intro sequence of shimmer progress bars, typed lines and messages, like a CLI onboarding.",
+    "description": "A scripted CLI onboarding inside a fake terminal window. Shimmering purple bars spell out scanning and profiling steps with percentages, then status lines type themselves out and further bars and rules follow.",
+    "tagline": "Mac-style terminal types onboarding lines under glowing purple bars.",
     "category": "code",
     "categories": [
       "code",
@@ -13672,7 +14190,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "test-results",
     "title": "Test Results",
-    "description": "Test run report with pass/fail/skip badges, progress bar, collapsible suites, per-test status and inline error stacks.",
+    "description": "A test run report card that sums the run in pass, fail and skip badges over a green progress bar. Suites expand to list each test, its duration and status, with a red error block for failures.",
+    "tagline": "Test report where suites fold open to pass, fail and error rows.",
     "category": "code",
     "categories": [
       "code",
@@ -13701,7 +14220,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-along-path",
     "title": "Text Along Path",
-    "description": "Text that flows along any SVG path, animated automatically or driven by scroll.",
+    "description": "A line of repeated text travels endlessly along a rounded rectangle outline, wrapping from one side to the next. It can loop on a timer or follow the reader's scroll, with room in the middle for a form.",
+    "tagline": "Blue monospace words march around a rounded rectangle like a ticker.",
     "category": "text",
     "categories": [
       "text",
@@ -13727,7 +14247,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-cursor-proximity",
     "title": "Text Cursor Proximity",
-    "description": "Letters restyle (blur, scale, colour, any CSS) based on how close the cursor is, with linear/exponential/gaussian falloff.",
+    "description": "Display text that restyles letter by letter according to how near the pointer is. In the demo the closest letters turn soft and blurred while the rest of the words stay crisp.",
+    "tagline": "Bold blue poster whose letters blur wherever the cursor passes.",
     "category": "text",
     "categories": [
       "text",
@@ -13753,7 +14274,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "time-machine-stack",
     "title": "Time Machine Stack",
-    "description": "A macOS Time Machine-style stack of receding panels navigated by wheel, drag or keys, the front panel flying past as you go back.",
+    "description": "A macOS-style stack of document snapshots. The front card shows one version while earlier ones recede above it, and scrolling, dragging or arrow keys walk through history as the leaving card flies past.",
+    "tagline": "Stack of saved versions, older ones peeking out above the front card.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -13779,7 +14301,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tour",
     "title": "Tour",
-    "description": "A step-by-step product tour that dims the page, spotlights each target element and walks through it with a popover card.",
+    "description": "A guided product tour: the page is masked so a single element stays bright while a popover card beside it explains each step, with Previous, Next and a step count.",
+    "tagline": "Page dims, one card lights up and a small popover explains it.",
     "category": "onboarding",
     "categories": [
       "onboarding",
@@ -13810,7 +14333,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "transaction-list",
     "title": "Transaction List",
-    "description": "A compact transaction list where each row morphs via shared layout into a detailed receipt view.",
+    "description": "A short list of recent payments. Tapping a row morphs the whole card into a receipt for that purchase, carrying its icon, name and amount across before closing back to the list.",
+    "tagline": "Compact payments that unfold one row into a full receipt.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -13838,7 +14362,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "transcription",
     "title": "Transcription",
-    "description": "Word-by-word transcript synced to playback time; the current word highlights and clicking any word seeks to it.",
+    "description": "A podcast transcript tied to a running clock. The word being spoken is highlighted, words already spoken dim, and clicking any word jumps the playback to that moment.",
+    "tagline": "Read-along transcript where the spoken word is boxed as playback runs.",
     "category": "media",
     "categories": [
       "media",
@@ -13864,7 +14389,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tree-code-viewer",
     "title": "Tree Code Viewer",
-    "description": "A file-tree sidebar beside a syntax-highlighted code pane with copy button, for showing multi-file components.",
+    "description": "A two-pane source browser: a collapsible file tree beside a syntax-highlighted code pane. Clicking a file swaps the code, folders expand, and a corner button copies the raw text.",
+    "tagline": "File tree on the left, highlighted source on the right, copy up top.",
     "category": "code",
     "categories": [
       "code",
@@ -13891,7 +14417,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "underline-animation",
     "title": "Underline Animation",
-    "description": "Four hover-underline link styles: grow from centre, comes in/goes out, goes out/comes in, and underline-to-background.",
+    "description": "A set of link hover effects: one line swells from the centre, others sweep in and out, and another rises into a solid block that flips the text colour. Meant for typographic link lists.",
+    "tagline": "Hovering a link grows, sweeps or floods an underline beneath it.",
     "category": "text",
     "categories": [
       "text",
@@ -13918,7 +14445,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "undo-pill",
     "title": "Undo Pill",
-    "description": "Inline undo pill that springs up with a draining countdown ring and seconds ticker, pauses on hover, and bounces out when you hit Undo.",
+    "description": "After a row is deleted, a compact undo bar appears near the bottom edge with a countdown ring, a message and an Undo button. It fades when time runs out or bounces away after a restore.",
+    "tagline": "A white undo bar slides up with a draining ring and a seconds count.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -13944,7 +14472,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "unlock-face-id",
     "title": "Unlock Face ID",
-    "description": "A Face ID scan-to-unlock animation: brackets draw, a scan line sweeps, a check springs in and the protected content unblurs.",
+    "description": "A Face ID style glyph with corner brackets draws in, a blue band sweeps over it, and on success a green tick replaces the face while the content below sharpens from a blur.",
+    "tagline": "A face outline draws itself, scans, then a green tick unblurs the page behind.",
     "category": "auth",
     "categories": [
       "auth",
@@ -13970,7 +14499,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "variable-font-and-cursor",
     "title": "Variable Font and Cursor",
-    "description": "Maps cursor x/y onto variable-font axes, so a word's weight and slant follow the mouse.",
+    "description": "A single word whose thickness and slant follow the mouse across its container, with faint crosshair guides and a live x and y readout tracking the pointer.",
+    "tagline": "Moving the cursor changes the word's weight and slant.",
     "category": "text",
     "categories": [
       "text",
@@ -13996,7 +14526,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "video-ambient",
     "title": "Video Ambient",
-    "description": "A video player with an Ambilight-style glow sampled from its own frames, bleeding colour past its edges.",
+    "description": "A rounded video player samples its own frames into a soft halo that bleeds past its borders, with a small toggle that switches the ambient glow off to compare.",
+    "tagline": "A video whose colours spill past its edges as a glowing halo.",
     "category": "media",
     "categories": [
       "media",
@@ -14022,7 +14553,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "waitlist",
     "title": "Waitlist",
-    "description": "A waitlist landing page with a spotlight sweep, drifting particles, stat tiles, an email capture that swaps to a thank-you pill, and stacked avatars.",
+    "description": "A centred early-access page with a badge, large gradient headline, three stat tiles, an email field and a pink Join button. Submitting swaps the form for a thank-you pill, with avatars and a joined count below.",
+    "tagline": "Collect early-access emails under a drifting pink spotlight and particle field.",
     "category": "ctas",
     "categories": [
       "ctas",
@@ -14050,7 +14582,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wallet-card",
     "title": "Wallet Card",
-    "description": "Apple Wallet-style stacked payment cards with a pointer-tracking sheen, masked balances and a member row.",
+    "description": "A stack of payment cards fans back in 3D while the front card shows its holder, masked number, expiry and balance. A button hides the balance and an avatar row lists members.",
+    "tagline": "A purple bank card stacked over others, with balance and member avatars.",
     "category": "payments",
     "categories": [
       "payments",
@@ -14078,7 +14611,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "waveform-scrub",
     "title": "Waveform Scrub",
-    "description": "An audio waveform card with a draggable playhead that scrubs through playback and fills the bars as it plays.",
+    "description": "A compact audio card with a play button, file name and remaining time above a bar waveform. A white pin can be dragged to scrub, and the bars behind it darken as the track plays.",
+    "tagline": "An audio waveform with a draggable pin that fills bars as it plays.",
     "category": "media",
     "categories": [
       "media",
@@ -14105,7 +14639,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "web-analytics-dashboard",
     "title": "Web Analytics Dashboard",
-    "description": "A web analytics dashboard grid: 12-month visitors area chart, live visitors with device split, top pages, countries and referrers tables, share bars for sources, audience and browsers, and Core Web Vitals.",
+    "description": "A responsive dashboard grid with a twelve-month visitor area chart, a live visitor count split by device, ranked tables for pages, countries and referrers, share bars, and Core Web Vitals.",
+    "tagline": "A web analytics board with traffic charts, live visitors and top-page tables.",
     "category": "dashboards",
     "categories": [
       "dashboards",
@@ -14141,7 +14676,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "weight-widget",
     "title": "Weight Widget",
-    "description": "A swipeable number dial where values ride a curved arc and spring into place under a fixed pointer.",
+    "description": "A pocket-sized dial shows a weight value on a curved scale; dragging left or right slides neighbouring numbers past a fixed pointer and springs to the next whole number.",
+    "tagline": "Swipe a curved row of numbers until one springs under the pointer.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -14167,7 +14703,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wispr-flow-text-animation",
     "title": "Wispr Flow Text Animation",
-    "description": "A paragraph of text marquees endlessly along a looping bezier curve, with an edit mode whose anchors and handles can be dragged to reshape the path live.",
+    "description": "A block of spoken-style text marches continuously along a bezier curve across a dark screen. Edit path reveals draggable anchors and handles that bend the curve live while the text keeps flowing.",
+    "tagline": "A paragraph streams endlessly along a looping curve you can reshape.",
     "category": "text",
     "categories": [
       "text",
@@ -14194,7 +14731,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "wizard-expandable",
     "title": "Wizard Expandable",
-    "description": "Multi-step wizard whose step rail expands into a panel with animated height, optional forward validation and back/next/finish nav.",
+    "description": "A horizontal wizard rail of numbered steps; clicking one expands a panel under it with that step's fields, description and Back or Next buttons. The last step turns the action into Finish.",
+    "tagline": "A numbered step rail that opens a form panel beneath the active step.",
     "category": "steppers",
     "categories": [
       "steppers",
@@ -14226,7 +14764,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "meteors",
     "title": "Meteors",
-    "description": "Renders animated meteors that fall vertically within a container. Each meteor has randomized delay and duration with a CSS-gradient glow trail.",
+    "description": "A looping shower of thin diagonal light streaks that fall across whatever container it sits in, usually a dark card. It adds slow night-sky motion behind the text.",
+    "tagline": "Faint shooting stars streak diagonally across a dark, softly glowing card.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -14250,7 +14789,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "infinite-moving-cards",
     "title": "Infinite Moving Cards",
-    "description": "Clones items to create an infinite scrolling marquee of cards with quote, name, and title fields. Configurable direction and speed; mask gradients fade edges.",
+    "description": "A horizontal strip of dark rounded testimonial cards that scrolls sideways on a loop, the list duplicated so it never ends. Each card holds a quote, a name and a role.",
+    "tagline": "A steady row of dark quote cards slides sideways and repeats.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -14275,7 +14815,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "parallax-scroll-2",
     "title": "Rotated Parallax Grid",
-    "description": "A 3-column image grid with advanced parallax combining Y/X translation and rotateZ transforms per column. Effects are driven by scroll progress via motion/react useTransform.",
+    "description": "Three columns of photo tiles whose outer two lean and travel sideways as the box scrolls, one clockwise and one anticlockwise, while the middle one stays upright. It reads as a leaning gallery wall.",
+    "tagline": "Photo columns tilt and slide in opposite directions as you scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -14302,7 +14843,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tracing-beam",
     "title": "Tracing Beam",
-    "description": "A scroll-linked vertical beam with animated gradient that traces from top to bottom. Includes an animated dot and SVG path responding to scroll velocity with spring physics.",
+    "description": "A long-form reading column of photo posts wrapped by a thin left-hand rule. As the page scrolls, a cyan-to-violet glow and a small dot travel down the rule to mark progress.",
+    "tagline": "A glowing gradient slides down a thin rail beside a scrolling article.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -14328,7 +14870,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "container-scroll-animation",
     "title": "Container Scroll Animation",
-    "description": "Scroll-triggered 3D perspective animation using Framer Motion. Card rotates from 20deg down to 0 and scales in, with responsive mobile scaling. Title parallax translates upward.",
+    "description": "A headline sits above a large framed product screen that starts tilted back in 3D. Scrolling straightens the screen to flat and grows it slightly while the headline drifts up, showing off the app.",
+    "tagline": "A dashboard screenshot leans back then flattens as the page scrolls.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -14356,7 +14899,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "card-stack",
     "title": "Card Stack",
-    "description": "Renders an array of cards in a stacked layout where they progressively fan out and scale. Configurable offset (gap between cards) and scaleFactor (how much smaller each card gets). Responsive animations as user scrolls or interacts.",
+    "description": "A small pile of dark quote cards with the front one at full size and the rest fanned behind, each slightly smaller and higher. On a timer the top card slips to the back so the deck keeps cycling.",
+    "tagline": "Quote cards fan into a pile and shuffle themselves every few seconds.",
     "category": "cards",
     "categories": [
       "cards",
@@ -14384,7 +14928,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "floating-navbar",
     "title": "Floating Navbar",
-    "description": "Navbar that animates in/out based on scroll direction. Shows when scrolling up, hides when scrolling down. Nav items can include icons.",
+    "description": "A fixed pill of four text links with a Login button. It sits at the top of the viewport and hides while the page scrolls down, sliding back into view the moment you scroll up.",
+    "tagline": "Menu bar that slides away as you read and floats back when you scroll up.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -14410,7 +14955,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tailwindcss-buttons",
     "title": "Tailwind CSS Buttons",
-    "description": "A showcase component rendering multiple button variations (default, outline, secondary, ghost) with hover state transitions.",
+    "description": "A showcase grid of tall black cards, each holding one button in a different style: solid white, outline, filled blue, outlined blue, purple gradient or grey. Hovering a card reveals a small copy icon.",
+    "tagline": "Six button styles laid out in a grid of black cards, each with a hover.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -14435,7 +14981,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bento-grid",
     "title": "Bento Grid",
-    "description": "BentoGrid is a CSS grid container. BentoGridItem wraps each cell with title, description, header (top content), and optional icon. Items are sized with responsive Tailwind classes. No built-in animation.",
+    "description": "An asymmetric grid of black feature cards, each pairing a small visual with an icon, title and description. Two wide cards and two narrow ones form a bento layout that reacts to hover.",
+    "tagline": "Four black feature tiles with tiny terminals, code and UI previews inside.",
     "category": "cards",
     "categories": [
       "cards",
@@ -14461,7 +15008,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-boxes",
     "title": "Background Boxes",
-    "description": "Renders 15,000-element grid with 3D skew/perspective transform. Boxes respond to hover with random color fill from a hardcoded palette. Positioned absolutely with complex transforms.",
+    "description": "A deep navy backdrop built from a huge diagonal grid of thin cells, with small plus marks at some corners. Pointing at a cell fills it with a random pastel colour that later fades away.",
+    "tagline": "A faint skewed grid whose cells glow pastel when the pointer crosses them.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -14488,7 +15036,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "input",
     "title": "Radial Glow Input",
-    "description": "An input component wrapped in a motion.div that renders a radial gradient glow centered at the cursor position on hover, tracking mouse movement with Framer Motion.",
+    "description": "A dark sign-up card with two labelled text fields. Hovering a field lights a soft blue radial glow under the cursor that trails as it moves, and focusing adds a thin ring for typing.",
+    "tagline": "Dark text fields with a blue glow that follows the mouse.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -14513,7 +15062,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "aurora-background",
     "title": "Aurora Background",
-    "description": "Multi-color aurora shader with Perlin noise and layered animation.",
+    "description": "A full-bleed animated backdrop of out-of-focus white and blue streaks over a near-black field. It drifts slowly and continuously, wrapping whatever children you place on it.",
+    "tagline": "Soft blurred light bands drift across a dark page behind your content.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -14537,7 +15087,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hover-border-gradient",
     "title": "Hover Border Gradient",
-    "description": "Wraps children in a border with a continuously rotating gradient that cycles through edges. On hover, the gradient animates to a bright central highlight. Driven by timer and mouse events.",
+    "description": "A rounded call-to-action button wrapped in a blurred gradient border. The glow creeps around the edge on a timer and washes blue when hovered.",
+    "tagline": "Soft glow travels around the rim of a black pill CTA.",
     "category": "borders",
     "categories": [
       "borders",
@@ -14564,7 +15115,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sidebar",
     "title": "Sidebar",
-    "description": "Context-based sidebar system with SidebarProvider, Sidebar, SidebarBody, DesktopSidebar, MobileSidebar, and SidebarLink components. Uses Framer Motion for smooth collapse/expand and provides a custom hook for managing open state.",
+    "description": "A dark left-hand navigation strip of icons that expands into a wider panel with labels when hovered, easing back to icons alone. It sits beside the page content.",
+    "tagline": "Narrow icon rail widens on hover to reveal menu names.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -14591,7 +15143,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-beams-with-collision",
     "title": "Background Beams With Collision",
-    "description": "Container with gradient background that animates falling beams. Detects collision with a bottom surface and triggers explosion particles on impact using motion/react. Supports light and dark themes.",
+    "description": "A dark gradient section with thin beams dropping on separate loops. Each beam bursts into a small shower of purple sparks when it reaches the bottom, then starts again.",
+    "tagline": "Faint purple beams fall and burst into sparks along a dark panel's floor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -14617,7 +15170,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-hover-effect",
     "title": "Text Hover Effect",
-    "description": "SVG text component with a radial mask gradient that follows the cursor, revealing a rainbow fill underneath. Initial stroke-dasharray animation draws the outline before hover.",
+    "description": "An oversized single word drawn as a thin grey outline on black. Moving the pointer over it wipes in a patch of blue and teal along the letter strokes, like a torch on the text.",
+    "tagline": "Giant outlined letters light up in blue around your cursor.",
     "category": "text",
     "categories": [
       "text",
@@ -14643,7 +15197,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "world-map",
     "title": "World Map",
-    "description": "Renders a dotted world map with theme-aware coloring via next-themes (dark/light backgrounds). Displays animated curved SVG paths connecting geographic coordinates with customizable line color.",
+    "description": "A dotted map of the world with glowing location dots and curved blue routes drawn between cities, each line animating into place while every dot pulses.",
+    "tagline": "Blue arcs link cities across a dotted globe as it loads.",
     "category": "media",
     "categories": [
       "media",
@@ -14671,7 +15226,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "code-block",
     "title": "Code Block",
-    "description": "Code block using Prism syntax highlighter with filename display and copy-to-clipboard functionality. Supports multi-file tabs with per-tab language and highlighting.",
+    "description": "A dark block that prints source code with numbered lines and colour highlighting, a filename row with a copy icon, and optional file tabs for switching between snippets.",
+    "tagline": "Two stacked code panels with a file tab row and a copy button.",
     "category": "code",
     "categories": [
       "code"
@@ -14697,7 +15253,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "carousel",
     "title": "Carousel",
-    "description": "Interactive image carousel where each slide scales and rotates in 3D on hover. Active slide shows content overlay with title and button. Image position parallaxes with mouse movement using RAF animation.",
+    "description": "A row of square photo slides where the selected one comes forward with its title over a dark tint and a white button, while its neighbours wait dimmed and tilted back.",
+    "tagline": "Photo slides sit side by side, the chosen one bright with a title and button.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -14725,7 +15282,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "squiggly-text",
     "title": "Squiggly Text",
-    "description": "An underline beneath text that waves or squiggles with a smooth animation, creating a hand-drawn feel.",
+    "description": "Wraps any run of text in a live filter that keeps warping it, so a single word quivers and ruffles in place while the rest of the sentence stays crisp.",
+    "tagline": "One word in a sentence jitters like a hand-drawn wave.",
     "category": "text",
     "categories": [
       "text"
@@ -14748,7 +15306,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magnetic-button",
     "title": "Magnetic Button",
-    "description": "Wraps a child and translates it toward the pointer within a radius, easing back to rest when the pointer leaves. Spring-based, no layout shift.",
+    "description": "A pair of buttons with a padded hit area; when the pointer enters, the button drifts toward it and a dashed blue field lights up, springing back when the cursor leaves.",
+    "tagline": "Two buttons tug toward your cursor inside a dashed blue field.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -14776,7 +15335,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spotlight-new",
     "title": "Spotlight",
-    "description": "Upgraded spotlight using CSS blur and position tracking; smoother animations and better performance.",
+    "description": "A black hero backdrop with two wide diagonal shafts of pale blue light that drift slowly in opposite directions behind centred white copy.",
+    "tagline": "Two soft blue beams sweep down from the top corners behind a headline.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -14800,7 +15360,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "draggable-card",
     "title": "Draggable Card",
-    "description": "A card that tilts and rotates toward the pointer via motion values, scales on hover, and can be dragged across the viewport with physics-based momentum. 3D perspective effects apply during interaction.",
+    "description": "A set of tilted photo cards strewn across a dark stage; each tilts in 3D under the pointer, lifts on hover, and can be dragged around with momentum before settling.",
+    "tagline": "Scattered polaroid-style photo cards you can drag and tilt.",
     "category": "cards",
     "categories": [
       "cards",
@@ -14825,7 +15386,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sticky-banner",
     "title": "Sticky Banner",
-    "description": "Sticky positioned container that animates down from top on mount, hides on scroll (if hideOnScroll enabled) via useScroll and useMotionValueEvent, with toggle close button.",
+    "description": "A full-width announcement bar that slides down at the top of the page, stays pinned while scrolling, and disappears when its close icon is clicked.",
+    "tagline": "A bright blue announcement strip pinned across the top of the page.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -14849,7 +15411,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pointer-highlight",
     "title": "Pointer Highlight",
-    "description": "Wraps content in a glowing border rectangle with a pointer/cursor indicator that tracks mouse position, creating a highlighted interactive zone.",
+    "description": "Wraps a line of text in a thin rectangle that draws itself when it scrolls into view, with a little click cursor landing at the bottom-right corner in a colour you choose.",
+    "tagline": "Thin boxes draw around text and finish with a small cursor arrow.",
     "category": "effects",
     "categories": [
       "effects",
@@ -14875,7 +15438,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "loader",
     "title": "Loader",
-    "description": "A collection of 5 animated loader components - bobbing dots, sliding dots, lightning animation, glitchy text, and wave text - each with unique continuous animations.",
+    "description": "A set of five tiny loaders: three bouncing dots, three sliding dots, a lightning bolt that fills, glitching text and shimmering text, each looping on its own.",
+    "tagline": "Five small loading animations, from bouncing dots to a glitching label.",
     "category": "loaders",
     "categories": [
       "loaders"
@@ -14898,7 +15462,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comet-card",
     "title": "Comet Card",
-    "description": "Card that rotates and translates in 3D based on mouse position. A bright glare spot (comet) trails the cursor across the card surface. Highly customizable rotation and translation depth.",
+    "description": "A dark portrait card that leans and shifts in 3D under the pointer while a soft white spotlight trails across its surface and the frame lifts slightly.",
+    "tagline": "A portrait card tips in 3D and a white glare follows the cursor.",
     "category": "cards",
     "categories": [
       "cards",
@@ -14924,7 +15489,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pixelated-canvas",
     "title": "Pixelated Canvas",
-    "description": "Renders an image as a canvas of dots/pixels with real-time distortion based on cursor position. Supports multiple distortion modes (repel, attract, swirl) and visual effects.",
+    "description": "Turns a photograph into a dotted, halftone-like picture on a dark canvas. Moving the pointer swirls the dots near it while the rest keeps still, then the image settles back.",
+    "tagline": "A photo rebuilt from tiny dots that swirl away from the cursor.",
     "category": "media",
     "categories": [
       "media",
@@ -14949,7 +15515,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "layout-text-flip",
     "title": "Layout Text Flip",
-    "description": "Uses Framer Motion to create a 3D card-flip effect when content swaps, revealing new text on the flip side.",
+    "description": "A fixed line of heading text with a rounded badge beside it that holds one word at a time. Every few seconds the word blurs out and a new one drops in, the badge resizing to fit each phrase.",
+    "tagline": "A headline word that blurs out and swaps for the next phrase on a timer.",
     "category": "text",
     "categories": [
       "text"
@@ -14974,7 +15541,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tooltip-card",
     "title": "Tooltip Card",
-    "description": "Custom tooltip that tracks mouse position and displays content with automatic edge detection and repositioning. Supports both mouse and touch events with spring-animated height transitions.",
+    "description": "Attaches a tooltip to any element. Hovering or tapping shows a small dark panel with a title and text near the pointer; it springs open, flips at screen edges and closes on leave.",
+    "tagline": "Follows the cursor with a dark hint panel that springs open beside it.",
     "category": "tooltips",
     "categories": [
       "tooltips"
@@ -14997,7 +15565,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "encrypted-text",
     "title": "Encrypted Text",
-    "description": "Renders text where characters progressively reveal from left to right when scrolled into view. Unrevealed characters continuously shuffle through random gibberish. Configurable reveal speed and character set.",
+    "description": "A line of type that decrypts itself when it scrolls into view. Characters settle from left to right into the real words while the unfinished tail keeps flipping through random symbols.",
+    "tagline": "Letters lock into place one by one while the rest churn through random symbols.",
     "category": "text",
     "categories": [
       "text"
@@ -15022,7 +15591,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "noise-background",
     "title": "Noise Background",
-    "description": "Motion-based background with multiple coloured gradient layers that move organically within the container. Layered with noise texture and optional backdrop blur.",
+    "description": "A soft full-bleed panel of drifting colour: violet-pink and warm orange blobs move slowly over deep blue-green, with a fine grain texture and a thin rainbow strip along the top edge.",
+    "tagline": "Slow pink, blue and orange blobs drift behind a fine grain wash.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -15045,7 +15615,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "webcam-pixel-grid",
     "title": "Webcam Pixel Grid",
-    "description": "Captures live webcam video, downsamples to a configurable grid, and renders each pixel as a 3D block elevated by detected motion. Supports monochrome and color modes.",
+    "description": "Samples a live camera into a coarse grid of square cells. Any cell that sees movement rises into a little 3D block and settles back, so a rough silhouette lifts out of the grid as you move.",
+    "tagline": "A webcam feed becomes a dark grid where motion lifts tiles into 3D blocks.",
     "category": "media",
     "categories": [
       "media",
@@ -15070,7 +15641,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "3d-globe",
     "title": "3D Globe",
-    "description": "An interactive Three.js-based 3D globe with optional Earth texture, atmosphere effects, orbital controls, and customizable markers placed at geographic coordinates.",
+    "description": "A rotating photorealistic globe with a soft blue atmospheric glow. Small round photo markers rise from points on its surface, and the planet can be dragged to turn it.",
+    "tagline": "A textured 3D Earth spins slowly while avatar pins stand off its surface.",
     "category": "3d",
     "categories": [
       "3d",
@@ -15099,7 +15671,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ascii-art",
     "title": "ASCII Art Renderer",
-    "description": "Converts an image to ASCII art using various character sets (blocks, symbols, braille, etc.). Dynamically computes character based on pixel brightness.",
+    "description": "Turns an image into a grid of text characters whose density follows brightness. A panel can animate in with a green matrix sweep, a fade or a typewriter, leaving a character-drawn picture.",
+    "tagline": "Photographs rebuilt from text characters, revealed by a green diagonal sweep.",
     "category": "media",
     "categories": [
       "media",
@@ -15126,7 +15699,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cards-demo-2",
     "title": "Author Blog Card",
-    "description": "Demo card designed as a blog post or article card. Displays author image/avatar, title, and author byline. CardDemo component wrapper with semantic article styling.",
+    "description": "A tall editorial card with a night city skyline behind an avatar, author name and read time at the top, and a title with a short paragraph at the bottom. Hovering darkens the photo.",
+    "tagline": "A blog card with an author row over a dim night-skyline photo.",
     "category": "cards",
     "categories": [
       "cards",
@@ -15151,7 +15725,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "features-section-demo-1",
     "title": "Feature Grid Section",
-    "description": "Eight feature cards with gradient backgrounds and decorative SVG grid patterns. Responsive layout adapts from 1-column mobile to 4-column desktop.",
+    "description": "Lays out eight feature cards in a responsive grid that steps from one to four columns. Each card has a soft dark gradient, a faint grid pattern, a bold title and a short grey description.",
+    "tagline": "A four-column grid of dark feature cards, each with a title and short copy.",
     "category": "cards",
     "categories": [
       "cards",
@@ -15175,7 +15750,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "features-section-demo-2",
     "title": "Icon Feature Grid",
-    "description": "Eight feature cards with leading icons (from tabler-icons), bold titles, and descriptive text. Responsive 1-to-4 column layout.",
+    "description": "Arranges eight icon-led features in a responsive four-column grid with thin dividers. Each cell shows a line icon, a bold title with a short accent bar and a short description; hovering lights the bar blue.",
+    "tagline": "A bordered grid of icon feature cells that glow on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -15201,7 +15777,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magic-card",
     "title": "Magic Card",
-    "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+    "description": "A rounded card wrapper that tracks the pointer. A soft spotlight glides along its border and surface, or in orb mode a blurred purple-orange bloom drifts behind the content, fading when the cursor leaves.",
+    "tagline": "A dark card whose border glow follows the pointer as it moves.",
     "category": "cards",
     "categories": [
       "cards",
@@ -15230,7 +15807,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "neon-gradient-card",
     "title": "Neon Gradient Card",
-    "description": "A beautiful neon card effect",
+    "description": "A dark rounded card whose thin border runs a pink-to-teal gradient that slides and pulses endlessly, throwing a blurred glow onto the backdrop. The content sits untouched inside.",
+    "tagline": "Card border drifts through pink and cyan with a soft coloured halo.",
     "category": "cards",
     "categories": [
       "cards",
@@ -15256,7 +15834,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "android",
     "title": "Android Mockup",
-    "description": "A mockup of an Android device.",
+    "description": "An SVG mockup of a phone with rounded corners, a small centred front camera and slim side buttons, holding whatever image or looping video you pass in.",
+    "tagline": "A tall phone frame shows a photo inside its rounded screen.",
     "category": "devices",
     "categories": [
       "devices",
@@ -15281,7 +15860,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "interactive-grid-pattern",
     "title": "Interactive Grid Pattern",
-    "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "description": "An SVG grid of small square cells that fills the one you hover with a soft grey wash, then fades it out slowly, leaving a short trail as the pointer moves.",
+    "tagline": "A faint square grid lights up the cell under the pointer.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -15304,7 +15884,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magic-ui-marquee",
     "title": "Marquee",
-    "description": "An infinite scrolling component that can be used to display text, images, or videos.",
+    "description": "A horizontal ticker of testimonial cards, duplicated enough times to loop seamlessly; the two demo rows glide opposite ways and freeze when hovered.",
+    "tagline": "Two rows of review cards scroll past in opposite directions.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -15328,7 +15909,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magic-ui-globe",
     "title": "Globe",
-    "description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+    "description": "A WebGL globe of grey dots that spins on its own and can be dragged to turn it; small orange markers sit on chosen cities and the continents sweep past.",
+    "tagline": "A dotted globe turns slowly with orange pins on world cities.",
     "category": "3d",
     "categories": [
       "3d",
@@ -15356,7 +15938,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "glare-hover",
     "title": "Glare Hover",
-    "description": "A diagonal glare on hover using a ::before gradient and CSS variables (angle, size, duration, color).",
+    "description": "A wrapper that lays a wide diagonal light band over any card; on hover the band slides across the surface, lighting it up in a chosen colour and fading away on leave.",
+    "tagline": "A diagonal sheen sweeps across a card on hover.",
     "category": "effects",
     "categories": [
       "effects",
@@ -15380,7 +15963,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magic-ui-shimmer-button",
     "title": "Shimmer Button",
-    "description": "A button with a shimmering light which travels around the perimeter.",
+    "description": "A black pill-shaped call-to-action with white text whose border is lit by a bright glint that circles the edge continuously; hovering deepens the inner bottom shadow.",
+    "tagline": "A band of light travels around the rim of a black pill button.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -15403,7 +15987,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tweet-card",
     "title": "Tweet Card",
-    "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
+    "description": "A social-post card showing a single post: the author's picture and name with a verified tick, the handle, the message text and any attached photo, linking out to the original.",
+    "tagline": "A dark card lays out one social post with avatar, handle and photo.",
     "category": "cards",
     "categories": [
       "cards",
@@ -15430,7 +16015,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hexagon-pattern",
     "title": "Hexagon Pattern",
-    "description": "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "description": "An SVG honeycomb backdrop: faint outlined hexagons tile the whole area and fade at the edges, with a handful of cells filled in to draw the eye where you place them.",
+    "tagline": "A faint honeycomb of hexagons with a few cells lit up.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -15453,7 +16039,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "warp-background",
     "title": "Warp Background",
-    "description": "A card with a time warping background effect.",
+    "description": "A card background drawn as a 3D perspective grid tunnel, with coloured light beams racing from the edges toward the centre on looping timers.",
+    "tagline": "Coloured beams shoot through a receding grid tunnel.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -15479,7 +16066,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ripple",
     "title": "Ripple",
-    "description": "An animated ripple effect typically used behind elements to emphasize them.",
+    "description": "A decorative set of thin concentric circles that continuously expand and fade from the middle, giving a soft radar-like pulse behind content.",
+    "tagline": "Faint rings ripple outward from the centre of a dark stage.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -15504,7 +16092,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "retro-grid",
     "title": "Retro Grid",
-    "description": "An animated scrolling retro grid effect",
+    "description": "A synthwave-style perspective floor of thin grid lines that scroll toward the viewer and fade into a glow at the horizon, leaving space above for a headline.",
+    "tagline": "A neon-era grid floor scrolls toward the horizon under a headline.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -15528,7 +16117,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-grid-pattern",
     "title": "Animated Grid Pattern",
-    "description": "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "description": "A decorative background of thin grid lines dotted with pale grey squares that fade in, linger, then move to another cell, giving a canvas a slowly shifting technical texture.",
+    "tagline": "Faint grid tiles blink in and out across a near-black panel.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -15554,7 +16144,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-progress",
     "title": "Scroll Progress",
-    "description": "Animated Scroll Progress for your pages",
+    "description": "A reading progress bar pinned to the top of the viewport, shaded from purple through pink to peach, that fills further the more of the page you scroll.",
+    "tagline": "A thin coloured line along the top edge grows as the page is read.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -15580,7 +16171,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "smooth-cursor",
     "title": "Smooth Cursor",
-    "description": "A customizable, physics-based smooth cursor animation component with spring animations and rotation effects",
+    "description": "Replaces the system pointer on desktop with a spring-animated arrow that lags behind the mouse, rotates toward the direction of travel and dips slightly when it moves fast.",
+    "tagline": "A white arrow pointer trails the mouse and tilts with its motion.",
     "category": "cursors",
     "categories": [
       "cursors"
@@ -15605,7 +16197,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-reveal",
     "title": "Text Reveal",
-    "description": "Fade in text as you scroll down the page.",
+    "description": "A bold multi-line sentence that starts as faint grey text and brightens word by word as the reader scrolls through a tall section, leaving a trail of highlighted words.",
+    "tagline": "Words in a paragraph light up one by one as you scroll.",
     "category": "text",
     "categories": [
       "text",
@@ -15631,7 +16224,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "aurora-text",
     "title": "Aurora Text",
-    "description": "A beautiful aurora text effect",
+    "description": "A span of text filled with a sliding pink-to-blue gradient that keeps drifting sideways, so a single word in a headline keeps catching the light.",
+    "tagline": "One word in a headline shimmers through pink, purple and blue.",
     "category": "text",
     "categories": [
       "text"
@@ -15654,7 +16248,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "orbiting-circles",
     "title": "Orbiting Circles",
-    "description": "A collection of circles which move in orbit along a circular path",
+    "description": "Small coloured discs marked with letters travel along two circular orbits around a central Hub circle, the inner ring spinning faster and the opposite way from the outer.",
+    "tagline": "Coloured lettered dots circle a small hub on two faint rings.",
     "category": "effects",
     "categories": [
       "effects",
@@ -15678,7 +16273,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "avatar-circles",
     "title": "Avatar Circles",
-    "description": "Overlapping circles of avatars.",
+    "description": "A compact avatar group where round photos overlap shoulder to shoulder and end in a light disc showing how many more people there are.",
+    "tagline": "A row of circular photos overlaps into a white +99 disc.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -15702,7 +16298,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-animate",
     "title": "Text Animate",
-    "description": "A text animation component that animates text using a variety of different animations.",
+    "description": "A bold heading over a smaller grey caption, both built to fade, slide and blur into place word by word or character by character when scrolled into view.",
+    "tagline": "A heading and a caption settle in with a soft staggered fade.",
     "category": "text",
     "categories": [
       "text"
@@ -15727,7 +16324,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-based-velocity",
     "title": "Scroll Based Velocity",
-    "description": "Scrolling text whose speed changes based on scroll speed",
+    "description": "Stacked rows of large repeated text that scroll horizontally without end, one left and one right, speeding up, slowing and reversing in response to how the page is being scrolled.",
+    "tagline": "Two big word rows slide sideways in opposite directions.",
     "category": "text",
     "categories": [
       "text",
@@ -15753,7 +16351,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shiny-button",
     "title": "Shiny Button",
-    "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+    "description": "Two dark outline buttons in a card whose labels and edges catch a soft light band that keeps travelling across them, giving a quiet metallic shimmer.",
+    "tagline": "Dark pill buttons with a light sweep running across label and border.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -15778,7 +16377,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cool-mode",
     "title": "Cool Mode",
-    "description": "Cool mode effect for buttons, links, and other DOMs",
+    "description": "Wrap a button or link, press and hold, and particles fountain from the pointer, drifting, spinning and falling away. It adds a decorative celebration on top of your own control.",
+    "tagline": "Holding a button sprays a burst of glowing stars across the page.",
     "category": "effects",
     "categories": [
       "effects",
@@ -15802,7 +16402,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ripple-button",
     "title": "Ripple Button",
-    "description": "An animated button with ripple useful for user engagement.",
+    "description": "A dark outlined button that answers each press with a circle growing out of the spot the pointer hit. The pale disc swells to twice its size and fades away.",
+    "tagline": "A pale circle blooms from the exact click point and washes across the button.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -15825,7 +16426,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "file-tree",
     "title": "File Tree",
-    "description": "A component used to showcase the folder and file structure of a directory.",
+    "description": "A compact panel listing folders and files with small icons and stepped indentation. Clicking a folder unfolds it to show its contents, and clicking any row highlights it as selected.",
+    "tagline": "Nested folders open in place to reveal the files inside.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -15850,7 +16452,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "blur-fade",
     "title": "Blur Fade",
-    "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+    "description": "A wrapper that eases content in from a blurred, offset ghost to full focus, optionally waiting until it scrolls into view. Here a heading, a line of copy and eight photos stagger into focus, plus a Replay button.",
+    "tagline": "Photos and text sharpen out of a soft blur into place, one after another.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -15876,7 +16479,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "safari",
     "title": "Safari Browser Mockup",
-    "description": "A safari browser mockup to showcase your website.",
+    "description": "A browser window drawn in SVG, with traffic-light dots, back and forward arrows, a URL field and toolbar icons, sized to wrap a screenshot or a looping video as its page.",
+    "tagline": "A macOS browser window that frames any screenshot dropped inside it.",
     "category": "devices",
     "categories": [
       "devices",
@@ -15901,7 +16505,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "iphone",
     "title": "iPhone Mockup",
-    "description": "A mockup of the iPhone",
+    "description": "An iPhone-shaped mockup drawn in SVG, with side buttons, a dark bezel, a pill cut-out at the top and a screen that wraps a photo or a looping video.",
+    "tagline": "A tall phone frame holding a purple and blue wallpaper on its screen.",
     "category": "devices",
     "categories": [
       "devices",
@@ -15926,7 +16531,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "highlighter",
     "title": "Highlighter",
-    "description": "A text highlighter that mimics the effect of a human-drawn marker stroke.",
+    "description": "Wraps a phrase so a rough, hand-drawn stroke draws over it: a highlighter wash, an underline, a box and other styles, each in a colour you choose.",
+    "tagline": "Words get a hand-drawn marker wash, wavy underline or shaky box.",
     "category": "text",
     "categories": [
       "text"
@@ -15952,7 +16558,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "rainbow-button",
     "title": "Rainbow Button",
-    "description": "An animated button with a rainbow effect.",
+    "description": "A rounded white button with dark text, trimmed by a thin animated rainbow border that blurs into a soft coloured halo under the bottom edge.",
+    "tagline": "A white pill button with a rainbow glow sliding along its lower edge.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -15978,7 +16585,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dotted-map",
     "title": "Dotted Map",
-    "description": "A component with a dotted map.",
+    "description": "A dotted world map built from thousands of small circles, with pulsing orange markers placed at given latitudes and longitudes.",
+    "tagline": "A world map of tiny dots with orange pulses over eight cities.",
     "category": "media",
     "categories": [
       "media",
@@ -16004,7 +16612,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "kinetic-text",
     "title": "Kinetic Text",
-    "description": "A text component that animates font weight of characters on hover.",
+    "description": "Three stacked lines of text whose individual letters thicken as the pointer passes over them, with the neighbours taking a smaller boost. It reads like type reacting to touch.",
+    "tagline": "Letter weight swells under the cursor, a few glyphs at a time.",
     "category": "text",
     "categories": [
       "text"
@@ -16027,7 +16636,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-3d-flip",
     "title": "Text 3D Flip",
-    "description": "A text effect that flips each letter in 3D with a staggered animation on hover.",
+    "description": "A headline whose letters spring through a 3D flip in a stagger, starting from the first, last, centre or a random glyph, around the axis you choose.",
+    "tagline": "Letters pivot in 3D one after another when the pointer arrives.",
     "category": "text",
     "categories": [
       "text",
@@ -16053,7 +16663,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "AnimatedContent-TS-TW",
     "title": "Animated Content",
-    "description": "Wrapper that animates any children on scroll or mount with configurable direction, distance, duration, easing and disappear options.",
+    "description": "A wrapper that slides its child in from the side or from below, fading and optionally scaling, once the child scrolls into view. The demo applies it to a stack of changelog cards.",
+    "tagline": "Cards slide and fade into place as the page scrolls past them.",
     "category": "effects",
     "categories": [
       "effects",
@@ -16080,7 +16691,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Magnet-TS-TW",
     "title": "Magnet Effect",
-    "description": "Elements magnetically ease toward the cursor then settle back with spring physics.",
+    "description": "Wraps anything so it leans toward the pointer when it comes within a set distance, scaled by a strength you choose, and eases back to rest once the pointer moves away.",
+    "tagline": "Elements drift toward the cursor, then settle back when it leaves.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -16105,7 +16717,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ClickSpark-TS-TW",
     "title": "Click Spark",
-    "description": "Creates particle spark bursts at click position.",
+    "description": "A full-panel click catcher. Each click sends a ring of short straight streaks outward from the pointer, which shrink and fade while the text underneath stays put.",
+    "tagline": "Sparks shoot out from the pointer when you click.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -16129,7 +16742,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "BlobCursor-TS-TW",
     "title": "Blob Cursor",
-    "description": "Organic blob cursor that smoothly follows the pointer with inertia and elastic morphing.",
+    "description": "A round violet shape chases the mouse across a dark panel, flexing into a teardrop as it moves, with fainter copies lagging behind it.",
+    "tagline": "A soft purple blob trails the pointer and stretches to catch up.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -16156,7 +16770,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Cubes-TS-TW",
     "title": "3D Cube Grid",
-    "description": "3D rotating cube cluster. Supports auto-rotation or hover interaction.",
+    "description": "An eight-by-eight field of dashed purple squares sits flat until cells near the pointer rotate into 3D cubes; a click sends rings of pale lilac across the faces.",
+    "tagline": "Squares tip into small cubes as the pointer crosses the grid.",
     "category": "3d",
     "categories": [
       "3d",
@@ -16183,7 +16798,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "MagnetLines-TS-TW",
     "title": "Magnet Field Lines",
-    "description": "Animated field lines bend toward the cursor.",
+    "description": "A square grid of short white line segments, all rotating toward the pointer, so the field bends into a radial pattern that follows it around the panel.",
+    "tagline": "White dashes across a grid swing to point at the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -16208,7 +16824,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PixelTrail-TS-TW",
     "title": "Pixel Cursor Trail",
-    "description": "Pixelated cursor trail emitting fading squares with retro digital feel.",
+    "description": "The pointer paints stair-stepped white squares onto a black panel; each burst holds a moment then dissolves, leaving a blocky trail behind the cursor.",
+    "tagline": "Chunky white pixels bloom and fade along the pointer path.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -16236,7 +16853,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ShapeBlur-TS-TW",
     "title": "Shape Blur Effect",
-    "description": "Morphing blurred geometric shape. The effect occurs on hover.",
+    "description": "A thin white rounded-square frame on black grows a smoky grey bloom wherever the pointer hovers, the glow sliding along the outline with a damped lag.",
+    "tagline": "A rounded square outline smears into a soft plume under the pointer.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -16262,7 +16880,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "StarBorder-TS-TW",
     "title": "Star Border",
-    "description": "Animated star / sparkle border orbiting content with twinkle pulses.",
+    "description": "Two dark rounded panels on black, one teal and one pink, with a soft coloured glow that slides along their top and bottom edges in a loop.",
+    "tagline": "Glowing sparks sweep around the edge of dark rounded buttons.",
     "category": "borders",
     "categories": [
       "borders",
@@ -16287,7 +16906,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Antigravity-TS-TW",
     "title": "Antigravity Particle Field",
-    "description": "3D antigravity particle field that repels from the cursor with smooth motion.",
+    "description": "Hundreds of small pink particles gather into a loose ring around the pointer and shove outward as it moves, drifting across a black field.",
+    "tagline": "Tiny pink capsules orbit a hollow ring, repelled by the pointer.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -16315,7 +16935,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "BlurText-TS-TW",
     "title": "Blur Text",
-    "description": "Text starts blurred then crisply resolves for a soft-focus reveal effect.",
+    "description": "Two lines of type arrive out of a heavy blur, resolving word by word into crisp text with a short stagger. The reveal fires when the block scrolls into view.",
+    "tagline": "Words sharpen into focus one after another.",
     "category": "text",
     "categories": [
       "text",
@@ -16341,7 +16962,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ScrollReveal-TS-TW",
     "title": "Scroll Reveal",
-    "description": "Text gently unblurs and reveals on scroll.",
+    "description": "Two paragraphs of copy sit on a black stage and come into focus progressively: each word rises from near-transparent and blurred to full clarity as it enters view, driven by scroll position.",
+    "tagline": "Paragraphs sharpen word by word as you scroll.",
     "category": "text",
     "categories": [
       "text",
@@ -16367,7 +16989,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ScrollFloat-TS-TW",
     "title": "Scroll Float",
-    "description": "Text gently floats / parallax shifts on scroll.",
+    "description": "A huge word and a smaller caption assemble letter by letter as the block scrolls into view, each character dropping from below, stretched tall, then snapping to its final shape.",
+    "tagline": "Oversized characters stretch and drop into place on scroll.",
     "category": "text",
     "categories": [
       "text",
@@ -16393,7 +17016,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "SplitText-TS-TW",
     "title": "SplitText",
-    "description": "Splits text into characters / words for staggered entrance animation.",
+    "description": "A heading and a smaller line split into individual characters or words, then fade and lift into position in sequence as they enter the viewport. A replay button restarts the entrance.",
+    "tagline": "Headline letters rise into place one after another.",
     "category": "text",
     "categories": [
       "text",
@@ -16420,7 +17044,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ScrambledText-TS-TW",
     "title": "Scrambled Text",
-    "description": "Detects cursor position and applies a distortion effect to text.",
+    "description": "A short monospace paragraph sits still until the pointer passes over it, then the characters nearest the cursor flicker into a rolling mix of dots and colons before settling back to the real words.",
+    "tagline": "Letters near the cursor dissolve into dots and colons.",
     "category": "text",
     "categories": [
       "text"
@@ -16445,7 +17070,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "RotatingText-TS-TW",
     "title": "Rotating Text",
-    "description": "Cycles through multiple phrases with 3D rotate / flip transitions.",
+    "description": "A fixed sentence keeps one slot open for a changing word: each phrase slides up from below as the last slides out. The swapping word sits in bright blue against the white rest.",
+    "tagline": "One word in a sentence swaps out for another every couple of seconds.",
     "category": "text",
     "categories": [
       "text"
@@ -16470,7 +17096,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "TextCursor-TS-TW",
     "title": "Text Cursor Trail",
-    "description": "Make any text element follow your cursor, leaving a trail of copies behind it.",
+    "description": "Moving the pointer inside a rounded dark panel scatters copies of a chosen glyph along its path, each drifting and twisting slightly before fading. Only the most recent handful of marks stay on screen.",
+    "tagline": "Small stars trail behind the pointer across a dark panel.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -16497,7 +17124,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "TextPressure-TS-TW",
     "title": "Text Pressure",
-    "description": "Characters scale / warp interactively based on pointer pressure zone.",
+    "description": "One large word spans the stage and each letter's weight, width and slant follow the pointer: characters close to the cursor fatten and widen while distant ones stay thin.",
+    "tagline": "Letters swell heavier and wider near the pointer.",
     "category": "text",
     "categories": [
       "text",
@@ -16521,7 +17149,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "VariableProximity-TS-TW",
     "title": "Variable Proximity",
-    "description": "Letter styling changes continuously with pointer distance mapping.",
+    "description": "Two lines of a sentence sit on black, and each letter grows heavier and wider the closer the pointer comes, easing back to thin as it moves away.",
+    "tagline": "Letters swell to bold wherever the pointer touches them.",
     "category": "text",
     "categories": [
       "text"
@@ -16546,7 +17175,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Shuffle-TS-TW",
     "title": "Shuffle",
-    "description": "Animated text reveal where characters shuffle before settling.",
+    "description": "The letters of a single word are split into vertical strips and rolled upward into their final shapes, so the word clicks into place a character at a time. Hovering replays the roll.",
+    "tagline": "Wide letters roll into place one after another.",
     "category": "text",
     "categories": [
       "text",
@@ -16573,7 +17203,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "AnimatedList-TS-TW",
     "title": "AnimatedList",
-    "description": "List items enter with staggered motion variants for polished reveals.",
+    "description": "A tall column of short status messages in rounded dark rows scrolls inside a fixed panel, with rows fading at the top and bottom. Hovering a row brightens it and arrow keys walk the selection.",
+    "tagline": "Rounded rows scroll by, one lit under the pointer.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -16600,7 +17231,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Carousel-TS-TW",
     "title": "Animated Card Carousel",
-    "description": "Responsive carousel with touch gestures, looping and transitions.",
+    "description": "One rounded card at a time shows an icon, a bold title and a short blurb. Dragging it sideways, or tapping the dots, slides the next card in with a slight 3D turn.",
+    "tagline": "Swipe a dark feature card sideways to page through five slides.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -16628,7 +17260,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "DecayCard-TS-TW",
     "title": "DecayCard",
-    "description": "Hover parallax effect that disintegrates the content of a card.",
+    "description": "A framed greyscale portrait tilts with the pointer while a noise filter tears away its edges when the cursor moves quickly. Large white words sit across the lower left of the image.",
+    "tagline": "A photo card crumbles at the edges as the cursor moves fast.",
     "category": "media",
     "categories": [
       "media",
@@ -16656,7 +17289,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ShinyText-TS-TW",
     "title": "ShinyText",
-    "description": "Metallic sheen sweeps across text producing a reflective highlight.",
+    "description": "Two lines of grey text sit on black while a metallic white highlight travels through the letters. The band moves from one side to the other and repeats without pausing.",
+    "tagline": "A bright sheen sweeps across dim text in an endless loop.",
     "category": "text",
     "categories": [
       "text"
@@ -16681,7 +17315,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Folder-TS-TW",
     "title": "Interactive File Folder",
-    "description": "Interactive folder opens to reveal nested content smooth motion.",
+    "description": "A plain grey folder sits closed until clicked, when its front flaps fold down and three tilted photo cards rise and spread out. Moving over the photos shifts them slightly.",
+    "tagline": "A grey folder opens and three photos fan out above it.",
     "category": "effects",
     "categories": [
       "effects",
@@ -16705,7 +17340,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GooeyNav-TS-TW",
     "title": "GooeyNav",
-    "description": "Navigation indicator morphs with gooey blob transitions between items.",
+    "description": "A short row of links keeps one item wrapped in a white pill. Clicking another link launches a cluster of soft white blobs that merge into a new pill around the chosen label.",
+    "tagline": "Gooey white blobs splash the active link into a pill.",
     "category": "navigation",
     "categories": [
       "navigation"
@@ -16728,7 +17364,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GlassSurface-TS-TW",
     "title": "GlassSurface",
-    "description": "Advanced Apple-style glass surface with real-time distortion + lighting.",
+    "description": "A wall of eight photos fills the stage under huge white words. A frosted glass rectangle can be dragged around, magnifying and warping the pictures beneath it with faint colour fringes.",
+    "tagline": "A rounded glass pane drags across photos and bends them.",
     "category": "effects",
     "categories": [
       "effects"
@@ -16751,7 +17388,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ModelViewer-TS-TW",
     "title": "3D Model Viewer",
-    "description": "Three.js model viewer with orbit controls and lighting presets.",
+    "description": "A 3D model floats in the middle of an empty dark viewport and rotates on its own. Visitors can drag to turn it and scroll to zoom.",
+    "tagline": "An astronaut model turns slowly on a black stage.",
     "category": "3d",
     "categories": [
       "3d",
@@ -16781,7 +17419,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PixelCard-TS-TW",
     "title": "Pixel Reveal Card",
-    "description": "Card content revealed through pixel expansion transition.",
+    "description": "Three dark rounded cards sit side by side, each with a title and a hint to hover. On hover a field of small squares swells across the card and shimmers until the pointer leaves.",
+    "tagline": "Tiny pixels bloom across a card when the pointer enters.",
     "category": "cards",
     "categories": [
       "cards",
@@ -16807,7 +17446,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "BorderGlow-TS-TW",
     "title": "Border Glow",
-    "description": "Glowing mesh-gradient border that follows cursor direction and intensifies near edges.",
+    "description": "A dark, softly shadowed card whose border and a small outer halo brighten with a violet mesh gradient toward whichever edge the pointer approaches, then fade when it leaves.",
+    "tagline": "Violet light creeps along the border toward the cursor.",
     "category": "borders",
     "categories": [
       "borders",
@@ -16832,7 +17472,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PillNav-TS-TW",
     "title": "Pill Nav",
-    "description": "Minimal pill nav with sliding active highlight + smooth easing.",
+    "description": "A slim top navigation with a round logo and a row of small pill links. Hovering a pill grows a circle that fills it and flips the label to white, while the active link shows a dot beneath.",
+    "tagline": "Rounded white pills sit in a bar; the hovered one fills with a dark circle.",
     "category": "navigation",
     "categories": [
       "navigation"
@@ -16858,7 +17499,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Stepper-TS-TW",
     "title": "Stepper",
-    "description": "Animated multi-step progress indicator with active state transitions.",
+    "description": "A small dark panel with three numbered circles linked by bars, a title and paragraph for the current step, and Back and Continue buttons. Completed steps turn purple with a tick and the content slides sideways to the next step.",
+    "tagline": "Numbered circles join by thin bars, and each finished step fills purple.",
     "category": "steppers",
     "categories": [
       "steppers",
@@ -16885,7 +17527,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "SpotlightCard-TS-TW",
     "title": "Spotlight Card",
-    "description": "Dynamic spotlight follows cursor casting gradient illumination.",
+    "description": "A pair of rounded dark cards that stay flat until the pointer moves over them, then a colourless or tinted radial glow follows the cursor across the surface and fades when it leaves.",
+    "tagline": "A soft pool of light trails the pointer across each dark card.",
     "category": "cards",
     "categories": [
       "cards",
@@ -16910,7 +17553,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ReflectiveCard-TS-TW",
     "title": "Webcam Reflective Card",
-    "description": "Card with dynamic webcam reflection and glare effects that respond to cursor movement.",
+    "description": "A tall frosted-metal ID card that mirrors whatever the webcam sees behind a blurred, grainy silver surface. White text shows a name and job title, a secure-access badge, an ID number and a fingerprint mark.",
+    "tagline": "A portrait card of frosted silver metal, mirrored live from the camera.",
     "category": "cards",
     "categories": [
       "cards",
@@ -16937,7 +17581,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "DarkVeil-TS-TW",
     "title": "Dark Veil",
-    "description": "Subtle dark background with a smooth animation and postprocessing.",
+    "description": "A very dark animated backdrop of deep blue light that slowly folds and drifts like a veil across black, with faint horizontal scanlines and a soft glow.",
+    "tagline": "Deep blue light creeps in slow folds over a near-black field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -16963,7 +17608,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ColorBends-TS-TW",
     "title": "Color Bends",
-    "description": "Vibrant color bends with smooth flowing animation.",
+    "description": "A dark animated background where soft, out-of-focus bands of blue, cyan, pink and white drift and bend across the black like light through frosted glass.",
+    "tagline": "Blurred ribbons of blue, cyan and pink glow across black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -16989,7 +17635,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Beams-TS-TW",
     "title": "Beams",
-    "description": "Crossing animated ribbons with customizable properties.",
+    "description": "A dark scene of tall, soft white light beams standing in a loose cluster, their edges rippling and drifting as if made of silk, with a faint grain over everything.",
+    "tagline": "Upright ribbons of soft white light ripple and cross on black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17018,7 +17665,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "DotField-TS-TW",
     "title": "Dot Field",
-    "description": "Interactive dot grid with cursor bulge, glow, sparkle, and wave effects.",
+    "description": "A near-black background covered in a fine grid of small violet dots. A soft purple glow follows the pointer and pushes the nearby dots outward, then they settle back.",
+    "tagline": "A purple glow bends a grid of tiny dots as the cursor moves.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17042,7 +17690,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "DotGrid-TS-TW",
     "title": "Dot Grid",
-    "description": "Animated dot grid with cursor interactions.",
+    "description": "A full-bleed canvas draws an even grid of round violet dots. Moving the pointer tints nearby dots toward cyan, and fast swipes or clicks knock dots out of place so they spring back.",
+    "tagline": "A field of violet dots that scatters and lights up cyan around the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17068,7 +17717,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Ferrofluid-TS-TW",
     "title": "Ferrofluid",
-    "description": "A churning magnetic fluid traced by glowing contour lines, with a cursor magnet.",
+    "description": "A dark canvas filled with thin luminous cyan and violet wisps that curl and merge like liquid metal seen through edge light. Moving the pointer dims the glow in a soft halo around it.",
+    "tagline": "Glowing contour lines drift like magnetic fluid across a black field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17094,7 +17744,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GridDistortion-TS-TW",
     "title": "Grid Distortion",
-    "description": "Warped grid mesh distorts smoothly reacting to cursor.",
+    "description": "A photograph sits full-bleed, and moving the pointer drags nearby patches of it aside in a blocky grid. The displaced tiles ease back to their places once the cursor moves on.",
+    "tagline": "Glides a photo into square ripples wherever the cursor passes.",
     "category": "media",
     "categories": [
       "media",
@@ -17122,7 +17773,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "GridScan-TS-TW",
     "title": "Grid Scan",
-    "description": "Animated grid room 3D scan effect and cool interactions.",
+    "description": "A perspective grid room drawn in thin pink lines, with a black void at the far end. The whole space leans and skews toward the pointer, and a bright band repeatedly travels down the corridor.",
+    "tagline": "A pink wireframe corridor tilts with the cursor as a scan sweeps.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17151,7 +17803,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "LetterGlitch-TS-TW",
     "title": "Letter Glitch",
-    "description": "Matrix style letter animation.",
+    "description": "Thousands of small monospace characters and symbols fill a black panel in rows. Scattered glyphs swap to new characters every moment and fade between green, teal and blue.",
+    "tagline": "A dense wall of tiny letters flickers like a broken terminal.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17175,7 +17828,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Radar-TS-TW",
     "title": "Radar",
-    "description": "Radar sweep effect with concentric rings, radial spokes, and a rotating beam.",
+    "description": "A radar display in violet on black, built from even concentric rings and straight spokes converging on a bright hub. A brighter beam rotates around it, lighting the rings as it passes.",
+    "tagline": "A purple radar sweep turns over rings and spokes on black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17202,7 +17856,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Plasma-TS-TW",
     "title": "Plasma",
-    "description": "Organic plasma gradients swirl + morph with smooth turbulence.",
+    "description": "A raymarched mass of white and grey folds against black, like dense smoke or melting wax. The form kneads and re-forms continuously, and dragging the pointer nudges its shape.",
+    "tagline": "Soft white blobs swell and fold out of black like smoke.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17228,7 +17883,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PixelBlast-TS-TW",
     "title": "Pixel Blast",
-    "description": "Exploding pixel particle bursts with optional liquid postprocessing.",
+    "description": "A field of small coloured pixel shapes drifts like noise across the panel, and each click sends a spreading ring through it. A liquid wobble can distort the pattern near the pointer.",
+    "tagline": "A dotted field of coloured pixels ripples outward where you click.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17255,7 +17911,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "RippleGrid-TS-TW",
     "title": "Ripple Grid",
-    "description": "A grid that continuously animates with a ripple effect.",
+    "description": "A WebGL grid of thin white lines on black keeps rippling outward, brightest at the middle and fading into darkness at the edges. The pointer adds a local wave so the grid bends around it.",
+    "tagline": "A white wireframe grid pulses and warps around the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17281,7 +17938,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Threads-TS-TW",
     "title": "Threads",
-    "description": "Animated pattern of lines forming a fabric-like motion.",
+    "description": "Forty hair-thin white lines weave into a ribbon that ripples across a black stage. Each strand drifts on its own, so the band swells into a crest and dips like cloth in wind.",
+    "tagline": "Fine white threads roll into a slow wave across black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17307,7 +17965,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "PixelSnow-TS-TW",
     "title": "Pixel Snow",
-    "description": "Falling pixelated snow effect with customizable density and speed.",
+    "description": "Tiny square snow flecks fall steadily through black space, larger and brighter close up and fading to specks in the distance. It adds a quiet winter drift to a dark section.",
+    "tagline": "Pixel-sized snow drifts down across a black stage.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17333,7 +17992,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "minimal-card",
     "title": "Minimal Card",
-    "description": "Clean and minimal card component with subtle styling and hover effects",
+    "description": "A rounded dark card with a photo filling its top and a title plus three lines of muted text beneath. Its only change is a slight lightening of the surface when hovered.",
+    "tagline": "A soft dark card holding a photo, title and short copy.",
     "category": "cards",
     "categories": [
       "cards",
@@ -17357,7 +18017,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "timer",
     "title": "Timer",
-    "description": "Countdown timer component with customizable duration and visual styles",
+    "description": "A dark pill shows a clock icon and a monospaced stopwatch counting in hundredths of a second. Start, Pause and Reset buttons below drive it, and the clock spins while it runs.",
+    "tagline": "A small pill counts elapsed time beside start and reset controls.",
     "category": "charts",
     "categories": [
       "charts",
@@ -17382,7 +18043,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "border-beam-button",
     "title": "Border Beam Button",
-    "description": "Shadcn Button wrapped in Border Beam: animated border glow with compact icon and text variants",
+    "description": "Two rounded buttons, one filled and one outlined, sit on black with a short coloured beam circling each border. The beam shifts through green, violet and pink as it travels.",
+    "tagline": "Coloured light runs around the rim of two buttons.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -17411,7 +18073,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dynamic-island",
     "title": "Dynamic Island",
-    "description": "iOS-style dynamic island component with expandable content and smooth animations",
+    "description": "A black rounded island rests as a small pill with one short label and springs into wider and taller shapes on demand. Its text fades and blurs out as the pill resizes.",
+    "tagline": "A black pill expands from a thin strip into a wider banner.",
     "category": "effects",
     "categories": [
       "effects",
@@ -17437,7 +18100,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-animate-button",
     "title": "Animated Gradient Button",
-    "description": "Button component with animated background effects and gradient transitions",
+    "description": "Three rounded pill buttons sit on black, filled with turning orange, pale blue and violet gradients. The colour sweeps around inside each pill while the bold label stays still.",
+    "tagline": "Pill buttons whose orange, blue and violet fills slowly turn.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -17462,7 +18126,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "family-button",
     "title": "Family Button",
-    "description": "Button component with family-style design and interactive hover effects",
+    "description": "A compact plus button that grows on click into a card holding an avatar, plan label and four account actions, with a round close button at the bottom.",
+    "tagline": "Small plus button unfolds into a profile menu of account actions.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -17486,7 +18151,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "texture-card",
     "title": "Texture Card",
-    "description": "Card component with texture background and customizable styling options",
+    "description": "A content card built from several inset border rings that give it a soft stacked edge instead of a heavy shadow, with header, body and footer slots.",
+    "tagline": "Dark card edged with stacked border rings and a faint surface texture.",
     "category": "cards",
     "categories": [
       "cards",
@@ -17511,7 +18177,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cutout-card",
     "title": "Cutout Card",
-    "description": "Image card with cutout corners, hover motion, inset labels, pins, and reveal actions",
+    "description": "A media card with a photo, cut-out corner labels, a title, description and footer, whose image scales and shadow deepens when the pointer enters.",
+    "tagline": "Rounded photo card lifts its shadow and zooms the image on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -17539,7 +18206,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shift-card",
     "title": "Shift Card",
-    "description": "Card component with shift animation effects and hover interactions",
+    "description": "A profile card that shows a large portrait at rest and, on hover, moves the photo into a small avatar while the name, bio, follower counts and Follow button slide up.",
+    "tagline": "Portrait card shrinks its photo and unfolds profile details on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -17564,7 +18232,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-media",
     "title": "Media Background",
-    "description": "Background media component with video/image support and overlay effects",
+    "description": "A full-screen image or video layer that fills its container behind page content, with an optional light or dark overlay and a rounded bottom-right corner on images.",
+    "tagline": "Full-bleed photo backdrop washed with a pale white overlay.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17589,7 +18258,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "canvas-fractal-grid",
     "title": "Fractal Dot Grid",
-    "description": "Interactive canvas-based fractal dot grid with mouse tracking and wave effects",
+    "description": "A full-bleed grid of small blue dots over a soft pastel gradient, with a glowing halo and gentle wave that follow the pointer.",
+    "tagline": "A fine dot grid ripples and glows around the moving cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17615,7 +18285,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-animated-gradient",
     "title": "Animated Gradient",
-    "description": "Animated gradient background component with customizable color transitions",
+    "description": "A full-bleed animated gradient built from layered radial colour spots that smoothly cross-fade and drift, meant to sit behind page content.",
+    "tagline": "A full-screen violet-to-pink gradient drifts and slowly changes hue.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17641,7 +18312,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "floating-panel",
     "title": "Floating Panel",
-    "description": "Floating panel component with backdrop blur and position-aware animations",
+    "description": "A compact Add Note button that expands into a floating card holding a title, a labelled textarea and, in the code, close and submit actions.",
+    "tagline": "A note button unfurls into a small writing panel with a textarea.",
     "category": "modals",
     "categories": [
       "modals"
@@ -17666,7 +18338,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "popover",
     "title": "Popover",
-    "description": "Animated popover component with form support and smooth transitions",
+    "description": "A Leave a note button that morphs into a large rounded form with a placeholder, a textarea, and close and submit buttons in its footer.",
+    "tagline": "A small button swells into a note panel you can type in.",
     "category": "modals",
     "categories": [
       "modals",
@@ -17692,7 +18365,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shader-lens-blur",
     "title": "Shader Lens Blur",
-    "description": "WebGL shader component with lens blur effects and mouse interaction",
+    "description": "A WebGL shader that draws a large rounded triangle filled with drifting pastel colour, blurring and inverting near the pointer and following touch.",
+    "tagline": "A soft gradient triangle blurs and inverts around the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -17720,7 +18394,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "logo-carousel",
     "title": "Logo Carousel",
-    "description": "Animated logo carousel with staggered animations and customizable columns",
+    "description": "A slim trust strip: three evenly spaced columns each show one brand mark, cycling through a list so a new logo blurs and rises into place every couple of seconds.",
+    "tagline": "Three columns of customer logos swap in and out on a loop.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -17746,7 +18421,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hover-video-player",
     "title": "Hover Video Player",
-    "description": "Video player component that plays on hover with smooth animations",
+    "description": "A rounded video tile that holds on a thumbnail until the pointer arrives, then plays a muted looping clip inside the frame and fades back to the still when the pointer leaves.",
+    "tagline": "A still that comes alive with swirling video when pointed at.",
     "category": "media",
     "categories": [
       "media",
@@ -17772,7 +18448,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-voting",
     "title": "Feature Voting",
-    "description": "List of features with up-vote support, optional sorting by vote count, and controlled or uncontrolled state",
+    "description": "A list of requested features, each with a small up-arrow button and a live vote count. Clicking the arrow adds your vote and highlights the button; clicking again takes it back.",
+    "tagline": "Rows of feature requests with a clickable upvote counter.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -17801,7 +18478,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "neumorph-eyebrow",
     "title": "Neumorph Eyebrow",
-    "description": "Neumorphic eyebrow component with soft shadow effects and modern styling",
+    "description": "A short, pill-shaped label with a thin border and a soft pressed-in shadow, made to sit above a section heading. It comes in cream, pale blue and pale green.",
+    "tagline": "Tiny embossed labels that sit above a heading.",
     "category": "badges",
     "categories": [
       "badges",
@@ -17825,7 +18503,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "choice-poll",
     "title": "Choice Poll",
-    "description": "Poll component with single or multiple selection, optional results, and keyboard navigation",
+    "description": "A one-question poll: a heading and description over four radio rows. Choosing one locks the vote and turns every row into a bar with its share, a percentage and the total count.",
+    "tagline": "Pick one answer, then the rows fill to show the vote split.",
     "category": "forms",
     "categories": [
       "forms",
@@ -17853,7 +18532,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-instructions",
     "title": "AI Instructions Manager",
-    "description": "Manage and toggle AI instructions with a popover, search, and create-dialog",
+    "description": "A settings popover for choosing how an assistant should reply. It lists instruction presets with checkboxes, filters them by typing, previews a rule on hover, and lets you create a new one.",
+    "tagline": "A small button opens a searchable checklist of AI behaviour rules.",
     "category": "modals",
     "categories": [
       "modals",
@@ -17880,7 +18560,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "poll-widget",
     "title": "Poll Widget",
-    "description": "Poll widget with inline, popover, and dialog modes, optional results, and animations",
+    "description": "An inline poll card with a question and four radio options. Choosing one enables a submit button; submitting plays a spinner and flips the panel to a centred success message naming the chosen option.",
+    "tagline": "Ask one question, take a vote, then thank the voter.",
     "category": "forms",
     "categories": [
       "forms",
@@ -17911,7 +18592,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "intro-disclosure",
     "title": "Intro Disclosure",
-    "description": "Intro disclosure component with expandable content and smooth animations",
+    "description": "A two-column feature tour. Step cards down the left list the stops with short lines and ticks; the right side shows a large photo with the step title and full description laid over it, advanced by Next, Previous or the step cards.",
+    "tagline": "A guided tour modal slides through app features with pictures.",
     "category": "modals",
     "categories": [
       "modals",
@@ -17942,7 +18624,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "youtube-video-player",
     "title": "YouTube Video Player",
-    "description": "YouTube video player component with custom controls and smooth animations",
+    "description": "A rounded 16:9 video card showing a poster, a centred play button and the title. Pressing play swaps in an autoplaying YouTube embed, and the corner expand button blows it up over a dimmed page.",
+    "tagline": "Cover image with a play button opens the clip large.",
     "category": "media",
     "categories": [
       "media",
@@ -17971,7 +18654,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "toolbar-expandable",
     "title": "Toolbar Expandable",
-    "description": "Expandable toolbar component with step-based navigation, smooth animations, and enhanced scrolling",
+    "description": "A compact horizontal toolbar of numbered tabs with a small badge above it. Choosing a tab grows a card above the bar holding that section's title, description and content; choosing it again or clicking away folds it shut.",
+    "tagline": "Numbered tabs rise open into a small panel of details.",
     "category": "menus",
     "categories": [
       "menus",
@@ -18001,7 +18685,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "squiggle-arrow",
     "title": "Squiggle Arrow",
-    "description": "A playful, hand-drawn squiggly arrow component with customizable variants, directions, and sizes",
+    "description": "A thin hand-drawn squiggle ending in a small arrowhead, meant to point at a nearby button or field. Three waveform styles and four directions, sized by width and height.",
+    "tagline": "A wobbly hand-drawn arrow points the way to a button.",
     "category": "effects",
     "categories": [
       "effects",
@@ -18025,7 +18710,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mock-browser-window",
     "title": "Mock Browser Window",
-    "description": "A customizable browser window mockup component with support for Chrome, Safari, and generic styles, customizable sidebars, and themes",
+    "description": "A rounded mock app window with three macOS dots, a URL bar and a left sidebar, holding a demo dashboard of three stat cards and a bar chart. It is a frame; the sidebar and content come from props and children.",
+    "tagline": "A dark browser window frames a small analytics dashboard.",
     "category": "devices",
     "categories": [
       "devices",
@@ -18052,7 +18738,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "metal-button",
     "title": "Metal Button",
-    "description": "Shadcn Button wrapped in MetalFx: animated liquid metal ring with text and icon variants",
+    "description": "A pair of pill buttons, one near-white and one dark, each ringed by an animated metallic edge and a faint glow. The shader drifts around the rim while the label, size and fill behave like normal buttons.",
+    "tagline": "Pill buttons wrapped in a slow liquid-metal sheen.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -18079,7 +18766,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "distorted-glass",
     "title": "Distorted Glass",
-    "description": "A glass morphism effect component using SVG filters with fractal noise to create visual transitions between sections",
+    "description": "A short strip of frosted glass with a rippled surface, pinned over the bottom of a scrolling image feed. It warps and blurs whatever passes underneath and lets scrolling pass through.",
+    "tagline": "A frosted, rippled glass band sits across the bottom edge.",
     "category": "effects",
     "categories": [
       "effects",
@@ -18104,7 +18792,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "onboarding",
     "title": "Onboarding",
-    "description": "Composable multi-step onboarding primitives: Onboarding root with step navigation, FeatureCarousel, ChoiceGroup radio selector, TipsList, and StepIndicator with dots and pills variants",
+    "description": "A bordered setup card that walks through a few steps: dot progress at the top, a serif title and description, step content, then Back and Next buttons, with Start Creating on the last step.",
+    "tagline": "A short setup card steps through dots, choices and Next.",
     "category": "steppers",
     "categories": [
       "steppers",
@@ -18134,7 +18823,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-button-group",
     "title": "Gradient Button Group",
-    "description": "Premium layered button group with animated active state, gradient ring accents, and theme toggle underlay",
+    "description": "An icon toolbar for jumping between app sections, with a sun button that flips the theme. The selected section drops into a recessed slot inside a thin animated gradient ring.",
+    "tagline": "Four icon buttons in a dark tray; the chosen one wears a glowing green ring.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -18161,7 +18851,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hero-color-panel",
     "title": "Hero Color Panel",
-    "description": "Split-layout hero section with responsive ColorPanels shader visuals, CTA, and tech stack badges",
+    "description": "A split landing hero with a big two-line headline, short paragraph, pill button and two tech badges on the left, and a block of floating horizontal colour panels on the right. The stacked bars slide and blend like a soft moving gradient.",
+    "tagline": "Stacks of neon colour bars drift beside a headline and pill button.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -18190,7 +18881,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-bg-shine",
     "title": "Background Shine Button",
-    "description": "A button with a linear gradient background that animates continuously across its width, creating a light-sweep effect. Driven by CSS animation.",
+    "description": "A single large rounded button labelled Click Me, filled with a blue-violet gradient that slides continuously. Its thin outline turns bright white while the pointer is over it.",
+    "tagline": "Pale light sweeps across a wide blue button, looping end to end.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -18214,7 +18906,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-creative-right",
     "title": "Arrow Reveal Button",
-    "description": "A circular button where the text fades and slides to the right on hover, while an arrow and duplicate text fade in and slide from the left. A black dot in the background expands into a full-width bar.",
+    "description": "A pill-shaped link button that starts white with a black dot and the word About. On hover the dot grows into a solid gold fill, the label slides across and a right arrow joins it.",
+    "tagline": "White pill floods gold on hover, its label slides and an arrow appears.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -18240,7 +18933,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-hover-multiple",
     "title": "Multi Shadow Hover Button",
-    "description": "A button with multiple shadow layers stacked beneath it. On hover, the button and all shadows translate up and to the left, creating a cascading multi-shadow effect.",
+    "description": "A blue Contact me pill that sits alone until hovered. Then it shifts up and left while three progressively paler copies fan out below and to its right, like a stack of cards.",
+    "tagline": "Hover lifts a blue pill off a stack of offset blue copies.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -18263,7 +18957,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "button-hover-right",
     "title": "Expanding Icon Button",
-    "description": "A circular icon button that expands horizontally on hover to reveal text alongside the arrow icon. Text fades in as the button width increases.",
+    "description": "A circular blue button that shows only a white arrow. Hovering widens it into a pill that reveals the word Visit beside the arrow, and leaving shrinks it back.",
+    "tagline": "A round arrow button stretches into a pill reading Visit on hover.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -18286,7 +18981,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-hover-underline",
     "title": "Underline Hover Button",
-    "description": "A simple button with a scale-animated underline that grows from left to right on hover, using a custom cubic-bezier easing for a smooth reveal.",
+    "description": "A large plain-text link that reads like a heading. When hovered, a thin line grows from left to right underneath the words, then retracts when the pointer leaves.",
+    "tagline": "Big white Contact me text; hovering draws a line under it.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -18309,7 +19005,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-hover-down",
     "title": "Push Shadow Button",
-    "description": "A button with a visible drop shadow. On hover, the shadow disappears while the button translates down and right as if being pulled toward it.",
+    "description": "A rounded-rectangle Contact me button in a navy gradient with a solid blue shadow set behind its lower-right edge. On hover the button shifts into the shadow and the shadow disappears, so it looks pressed.",
+    "tagline": "Blue Contact me button with a hard offset shadow that flattens on hover.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -18332,7 +19029,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-creative-top",
     "title": "Top Slide Reveal Button",
-    "description": "A circular button where the text slides up and fades out on hover, while a colourful background bar slides up from the bottom to fill the button. Button becomes rectangular on hover.",
+    "description": "A pill-shaped Our Work link that starts white with black text. On hover a green fill slides up from the bottom edge to cover it, and the label turns white.",
+    "tagline": "A white pill floods green from the bottom on hover.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -18358,7 +19056,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-cross-arrow",
     "title": "Cross Arrow Button",
-    "description": "A button with a circular arrow icon on the right. On hover, the arrow animates with a cross motion: one arrow translates up and right while another slides in from bottom-left, creating a dynamic sweeping effect.",
+    "description": "A wide blue pill reading Contact me, with a white circle at its right holding a small diagonal arrow. On hover the arrow sweeps up and out while a second one slides in from the lower left.",
+    "tagline": "A blue Contact me pill with a round arrow badge that crosses on hover.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -18382,7 +19081,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-hover-outline",
     "title": "Outline Toggle Button",
-    "description": "A link-styled button with a dark background and light text. On hover, the background becomes light and text becomes dark, creating an invert effect.",
+    "description": "A pill-shaped Know More link with a double chevron. At rest it is white with black text; on hover it flips to black with a white outline, white text and white chevrons.",
+    "tagline": "A white pill inverts to black with white text and a double arrow on hover.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -18407,7 +19107,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ui-layouts-color-picker",
     "title": "Hex Color Picker",
-    "description": "A controlled color picker component using HexColorPicker that opens in a popover, with direct hex input, copy-to-clipboard, and optional eyedropper tool support.",
+    "description": "A labelled colour field that shows the current colour as a small swatch. Clicking it opens a popover with a saturation square, a rainbow hue slider, a hex input and a copy button.",
+    "tagline": "A colour swatch opens a panel with a shade square, hue bar and hex field.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -18431,7 +19132,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "number-flow-trading",
     "title": "Live Price Ticker",
-    "description": "Trading-style price display showing a USD-formatted price with an up/down diff percentage. Numbers animate smoothly via NumberFlow library. Arrow icon rotates 180° when diff is negative. Includes a shuffle button cycling through hardcoded…",
+    "description": "A stock-style price display for NVDA showing a large dollar figure and a rounded badge with an arrow and percent change. A Shuffle button cycles sample prices, rolling the digits and turning the arrow for losses.",
+    "tagline": "A share price that rolls to new numbers, with a green or red change badge.",
     "category": "charts",
     "categories": [
       "charts",
@@ -18456,7 +19158,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "r3f-blob",
     "title": "3D Shader Blob",
-    "description": "3D icosahedron rendered with Three.js shaders and Perlin noise displacement. Increases distortion on hover and follows mouse cursor position in real time.",
+    "description": "A real-time 3D sculpture: a black blob whose noise-rippled surface keeps folding and bulging, lit by soft studio light on a black stage and leaning toward the pointer.",
+    "tagline": "A dark, lumpy 3D form that slowly warps and drifts toward the cursor.",
     "category": "3d",
     "categories": [
       "3d",
@@ -18486,7 +19189,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mesh-gradient-background",
     "title": "Mesh Gradient Background",
-    "description": "React Three Fiber scene with animated icosahedron geometry using vertex displacement shader and Perlin noise. Includes post-processing (Bloom, N8AO) and OrbitControls.",
+    "description": "A bright green animated backdrop with a bold white line of text centred over it; soft light pools swell and shift behind the words as it runs.",
+    "tagline": "Bright green glow pools drift behind a large white heading.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -18516,7 +19220,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "conditionGrid",
     "title": "Responsive Image Grid",
-    "description": "Renders a 12-column grid with images that reflow responsively. Column spans vary by item index. Motion triggers on viewport entry with a slide-up fade animation.",
+    "description": "A responsive twelve-column project grid: two wide photos on top and two staggered below, each with a rounded image, a black title pill and a circular arrow link.",
+    "tagline": "A lopsided grid of four product photos with black name pills and arrow buttons.",
     "category": "media",
     "categories": [
       "media",
@@ -18542,7 +19247,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stripecard",
     "title": "Stripe Style Card",
-    "description": "A product-like card with blue gradient overlay that reveals on hover. Image slides and scales; a CTA link slides in from below.",
+    "description": "A compact dark card pairing a coastal photo with a blue logo block, heading, short body copy and a Learn link that slides in when the card is hovered.",
+    "tagline": "Dark promo card with a cliff photo that lifts and tints blue on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -18569,7 +19275,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "creative-hover-card",
     "title": "Creative Hover Card",
-    "description": "Grid of three demo cards with creative hover effects: badge color changes, text swaps between states, images fade in/out, and subtle Y-axis translation. Each card has unique styling and behavior.",
+    "description": "A row of three dark feature cards, each with a coloured tag, a heading, a short line of copy and a photo that fades to a second image on hover while the title and tag change.",
+    "tagline": "Three dark cards swap badges, titles and photos when hovered.",
     "category": "cards",
     "categories": [
       "cards",
@@ -18596,7 +19303,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stripecard2",
     "title": "Image Reveal Card",
-    "description": "An image card with green linear gradient overlay. Title and link slide up from bottom on hover, revealing detail text and CTA.",
+    "description": "A square photo card overlaid with a green gradient where a long white headline sits over the lower half and a Read Story link slides into view on hover.",
+    "tagline": "Mountain photo fades into green as a title and Read Story link slide up.",
     "category": "cards",
     "categories": [
       "cards",
@@ -18622,7 +19330,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hovercard3",
     "title": "Profile Hover Card",
-    "description": "A card with background image that zooms on hover. A colored overlay panel slides up to reveal full description, button, and heading. Default overlay shows small header.",
+    "description": "A tall portrait card shows a man's photo with his name and role along the bottom; hovering swaps the image for a flat red-orange bio panel with a short paragraph and Learn More button.",
+    "tagline": "Portrait card turns into a red bio panel with a button on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -18649,7 +19358,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "buyme-acoffee",
     "title": "Buy Me Coffee Button",
-    "description": "A clickable card linking to a Buy Me Coffee profile with SVG graphics that transform via CSS animations on hover. The card is fully responsive and supports dark mode via theme tokens.",
+    "description": "A tiled cream card covered in handwritten 'coffee' script with a yellow cup tile at centre; hovering clears the pattern to a yellow card reading 'Buy me a coffee' with a heart and bigger cup.",
+    "tagline": "Coffee cup badge that turns into a yellow 'Buy me a coffee' card on hover.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -18675,7 +19385,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hovercard4",
     "title": "Blog Post Card",
-    "description": "A card with featured image and blog metadata (date, title, CTA link). Image zooms on hover; CTA arrow animates from single to double chevron.",
+    "description": "A dark blog post card pairing a close-up plant photo with a publish date, a two-line headline that underlines on hover, and a green Read Story button whose arrow doubles.",
+    "tagline": "Blog card with a plant photo, date line and bright green Read Story button.",
     "category": "cards",
     "categories": [
       "cards",
@@ -18702,7 +19413,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "productcard5",
     "title": "Shoe Size Selector Card",
-    "description": "A product card with image, title, description, size selector (with hover scale), price, and CTA button with shopping cart icon. Wishlist heart toggle included.",
+    "description": "A light product card for a tan suede boot with a heart wishlist toggle, size chips from 7 to 8.5, a $248 price and a blue Add to cart button.",
+    "tagline": "Tan boot product card with size chips, a price and Add to cart.",
     "category": "cards",
     "categories": [
       "cards",
@@ -18729,7 +19441,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "creative-clippath",
     "title": "Creative Squiggle Clip Path",
-    "description": "Renders a 3-column grid of images/videos clipped to creative organic shapes via SVG clip paths. Includes hover scale animation.",
+    "description": "A three-column strip where each media item is cut out with a hand-drawn squiggly silhouette: a red-toned camera portrait, a broccoli clip on deep blue, and a pale tower-and-camera shot.",
+    "tagline": "Three photos clipped into lumpy organic shapes in a row.",
     "category": "media",
     "categories": [
       "media",
@@ -18756,7 +19469,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animal-imagemasking",
     "title": "Animal Shape Image Mask",
-    "description": "Renders a grid of images clipped to animal shapes (cat, panda) using CSS mask-image. Requires pre-existing SVG masks in public/.",
+    "description": "Two side-by-side photos each masked into an animal silhouette: a warm sunset scene shaped like a cat with pointed ears, and a misty forest shaped like a round-eared panda.",
+    "tagline": "Landscapes masked into a cat head and a panda head.",
     "category": "media",
     "categories": [
       "media",
@@ -18783,7 +19497,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "watersplash-imagemasking",
     "title": "Water Splash Image Mask",
-    "description": "Applies CSS mask-image property to show images through an SVG splash silhouette. Scales and centers to cover the container.",
+    "description": "A single photo of snow-capped mountains and clouds masked into an irregular splash shape, with scattered round droplets floating around it on black.",
+    "tagline": "Mountain landscape seen through a water-splash cut-out with droplets.",
     "category": "media",
     "categories": [
       "media",
@@ -18810,7 +19525,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "watersplash-clippath",
     "title": "Water Splash Clip Path",
-    "description": "Applies SVG clipPath definitions to create organic water splash silhouettes around images. Effects scale on hover.",
+    "description": "A pair of photos each clipped to an inky water-splash silhouette: a blue city skyline on the left and a yellow-toned landscape with a building on the right, both on black.",
+    "tagline": "Two photos shaped like splashing paint on a black stage.",
     "category": "media",
     "categories": [
       "media",
@@ -18837,7 +19553,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "fixedbg-imagemasking",
     "title": "Fixed Background Image Mask",
-    "description": "Hero section with a fixed background image clipped by SVG mask at /splash-center.svg. Background stays pinned while page scrolls.",
+    "description": "A full-width band where a pinned mountain-and-cloud photo is revealed through a splash-shaped mask; as the page scrolls, new parts of the photo drift through the same cut-out.",
+    "tagline": "Fixed photo of mountains seen through a paint-splash hole while you scroll.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -18864,7 +19581,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "progressive-carousel",
     "title": "Progressive Carousel",
-    "description": "A compound component carousel with ProgressSlider managing timing and active slide state. Includes SliderContent, SliderWrapper for slide content, and SliderBtn with progress bars for navigation. Auto-advances on configurable duration or…",
+    "description": "An auto-playing image carousel: one large 16:9 slide with a caption fades to the next every few seconds, while four thin bars below fill to show progress and double as slide buttons.",
+    "tagline": "Full-width photo carousel that auto-advances with thin progress bars.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -18891,7 +19609,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "textoverlay-videomasking",
     "title": "Text Overlay Video Mask",
-    "description": "An autoplay video with text overlaid via SVG mask element. Text acts as a mask cutout allowing video to display through text shape, with background fill in non-text areas.",
+    "description": "One line of oversized bold italic text works as a cut-out window, so a nature clip moves inside the letterforms while everything around them stays near-black.",
+    "tagline": "A looping video plays only inside big italic letters on black.",
     "category": "media",
     "categories": [
       "media",
@@ -18918,7 +19637,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ui-layouts-tabs",
     "title": "Animated Wobbly Tabs",
-    "description": "Context-based animated tab system with TabsProvider, TabsBtn, and TabsContent. Active indicator animates with spring physics, creating a wobbly follow effect. Supports hover previews and directional slide animations.",
+    "description": "A compact tab bar of grey labels on a rounded track, where a raised chip marks the active tab and the paragraph beneath swaps to match, sliding in from the side you moved.",
+    "tagline": "A pale chip slides between three labels in a dark rounded bar.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -18945,7 +19665,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "img-tabs-standalone",
     "title": "Image Tabs Standalone",
-    "description": "Standalone tab component managing its own state. Click tabs to switch content, image, and description. No props required; fully self-contained.",
+    "description": "Three bold questions stack down the left of a dark stage; choosing one outlines it in blue, drops a short answer underneath and shows a large rounded photo on the right.",
+    "tagline": "Picking a question on the left opens its answer beside a photo.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -18970,7 +19691,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "register-tab",
     "title": "Login Register Tab",
-    "description": "A two-panel form using TabsProvider. Login tab has email, password, and OAuth buttons (Google, Apple, Facebook). Register tab includes username, phone with icon, email, password, and OAuth buttons. Dark/light theme aware.",
+    "description": "A centred dark auth card with a small two-pill mode switch above it. Login offers Google, Apple and Facebook buttons, email and password fields and a white submit; Register adds a username and phone number.",
+    "tagline": "A dark sign-in card with social buttons and a Login/Register switch on top.",
     "category": "forms",
     "categories": [
       "forms",
@@ -18997,7 +19719,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tailwind-image-accordion",
     "title": "Tailwind Image Accordion",
-    "description": "No component library dependencies, Tailwind-only accordion using utility classes.",
+    "description": "Three tall portrait photos share a row on a dark page; the card under the pointer grows to most of the width and the others shrink behind a pale blur. The open card lifts its name and job title into view.",
+    "tagline": "Portrait cards widen under the pointer while the rest dim and blur.",
     "category": "accordions",
     "categories": [
       "accordions"
@@ -19020,7 +19743,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "drag-items",
     "title": "Draggable Reorder List",
-    "description": "A draggable list component using motion/react Reorder for smooth item reordering. Items can be dragged vertically to change order with automatic state management.",
+    "description": "A narrow stack of white task cards, each with a title, a line of detail, a due date, a black Open task button and a nine-dot grip on the right. Dragging a grip lifts its card while the rest slide aside to make room.",
+    "tagline": "White task cards slide up and down the list when pulled by their dot grip.",
     "category": "data-display",
     "categories": [
       "data-display"
@@ -19045,7 +19769,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "swapy-handle",
     "title": "Swapy Handle Bento Grid",
-    "description": "A 12-column draggable grid using Swapy with DragHandle components visible on cards. Cards have emojis and titles; drag-to-rearrange with visual feedback.",
+    "description": "Six flat-colour feature tiles of different widths form a tight grid, each showing an emoji, a short claim and a dotted grip. Dragging a grip lifts the tile, and dropping it on another swaps their places.",
+    "tagline": "Bright emoji feature cards that rearrange when dragged by a corner grip.",
     "category": "cards",
     "categories": [
       "cards",
@@ -19071,7 +19796,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-animation-text",
     "title": "Scroll Reveal Text",
-    "description": "A section component displaying three text blocks animating in from different directions on scroll: left, right, and down. Uses ScrollAnimation for directional reveals.",
+    "description": "A tall black page with one huge centred sentence per screen. Each line waits until it is halfway into view, then fades in while sliding from the left, from the right, or up from below.",
+    "tagline": "Big white sentences drift in from the left and right as the page scrolls.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -19097,7 +19823,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "opacity-swapy",
     "title": "Opacity Swapy Layout",
-    "description": "Wraps items in a drag-and-drop layout using Swapy library. Items reorder on hover-mode swap and dragged items show reduced opacity for visual feedback.",
+    "description": "Six pale tinted rows, each with a coloured line icon and a short benefit title, stacked in a narrow column. Dragging a row drops it to half opacity while the others slide apart to show where it will land.",
+    "tagline": "Pastel icon rows in a narrow list that turns half see-through while dragged.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -19124,7 +19851,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "framerhorizontalscroll",
     "title": "Framer Horizontal Scroll",
-    "description": "Full-page layout with a sticky carousel that scrolls horizontally as the user scrolls down the page. Images animate in sequence with whileInView states.",
+    "description": "A tall page pins a single strip of square photos across its middle and moves the whole strip sideways as you scroll down, so vertical scrolling becomes horizontal travel through the pictures.",
+    "tagline": "A row of square photos slides sideways as you scroll the page down.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -19149,7 +19877,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "css-image-stacking",
     "title": "CSS Image Stacking",
-    "description": "Multiple sections with sticky positioning create a stacking card effect as viewport scrolls. Images grow wider and layer on top of each other. Uses ReactLenis for smooth scrolling.",
+    "description": "A dark page of architectural photographs that pin in place as you scroll, each new picture settling over the previous one at a slightly larger width until six images have gathered into a stack.",
+    "tagline": "Building photos pin and pile up, each one a little wider than the last.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -19175,7 +19904,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "horizontal-scroll",
     "title": "Horizontal Scroll",
-    "description": "Full-page layout using Motion library and ReactLenis to create a horizontal scroll effect animated by vertical scrolling. Each slide has animated text overlays and images.",
+    "description": "Full-screen colour panels, one per word, slide sideways as you scroll. Each panel carries an enormous black word across its middle and a small square photo of people working at the bottom edge.",
+    "tagline": "Giant colour words sweep across the screen as the page scrolls down.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -19203,7 +19933,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sticky-hero-section",
     "title": "Sticky Hero Section",
-    "description": "200vh container with two sticky viewport-height sections. Section 1 (light) and Section 2 (dark) scale and rotate on scroll. Grid pattern overlays with image gallery. No props, default export.",
+    "description": "A pale headline screen pinned in place shrinks and tips back while a dark second screen scales up and levels out over it, ending as a building gallery with four photos.",
+    "tagline": "Two full-screen panels tilt and shrink as the dark one rises over the light.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -19227,7 +19958,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "css-card-stacking",
     "title": "CSS Card Stacking",
-    "description": "A scroll-based card stacking effect using CSS sticky positioning. Multiple cards layer on top of each other as the user scrolls. Uses ReactLenis for smooth scrolling. Cards contain titles, descriptions, and links.",
+    "description": "A full-screen section where tilted coloured cards stay pinned to the viewport and pile up on top of each other while the page scrolls, with a fixed heading beside them.",
+    "tagline": "Cards pin in place and slide over one another as you scroll.",
     "category": "cards",
     "categories": [
       "cards",
@@ -19252,7 +19984,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "default-marquee",
     "title": "Default Marquee",
-    "description": "Testimonial display with two marquee rows scrolling horizontally in opposite directions. Review cards show avatar, name, username, and body. Includes pause-on-hover, noise texture overlay, and gradient fade edges for seamless loop effect.",
+    "description": "Two horizontal strips of testimonial cards loop endlessly, one drifting left and the other right. Each card carries a coloured avatar dot, a name, a handle and a short quote, and hover freezes the motion.",
+    "tagline": "Two rows of review cards drift in opposite directions, pausing on hover.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -19277,7 +20010,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "logos-marquee",
     "title": "Logos Marquee",
-    "description": "A horizontal scrolling marquee of logos with gradient fade overlays on left and right edges. Uses the Marquee component with hardcoded logo data; serves as a template implementation.",
+    "description": "A single row of well-known company logos drifts sideways on a dark rounded panel and loops endlessly. Soft fades at each end hide the cut edges so the row appears to run on without a join.",
+    "tagline": "Brand logos glide sideways on a dark strip and fade at both ends.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -19301,7 +20035,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-glass-sidebar-menu",
     "title": "Liquid Glass Sidebar",
-    "description": "Sidebar with liquid glass styling (blur, shadow, glow). Icon + text buttons. Draggable component. Supports customization via LiquidGlassCard props.",
+    "description": "A narrow rounded sidebar of five icon-and-label rows — Dashboard, Search, Sales Analytics, Notification and Account Settings — on a smoky glass panel over a photo, with the active row as a white pill.",
+    "tagline": "A dark glass menu panel with icon rows floats over a mossy photo.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -19328,7 +20063,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-glass-notification",
     "title": "Liquid Glass Notification",
-    "description": "Two LiquidGlassCard components with icon, title, description, timestamp, and optional expanded image preview. Uses blur and glow effects with backdrop styling.",
+    "description": "Two stacked glass notifications sit at the bottom of a photo backdrop, each with an app icon, title, message and time. Hovering or clicking the top one expands it from a slim row into a card with a preview image.",
+    "tagline": "A glass notification stack blooms open to reveal a photo.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -19355,7 +20091,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "blur-vignette",
     "title": "Blur Vignette",
-    "description": "Wraps children in a container that gradually blurs edges using CSS radial gradient and mask. Provides context for consistent vignette styling.",
+    "description": "A square container whose outer edges blur and fade into the background, leaving the middle crisp. The demo pairs a dark text panel with a mountain photo to show the effect on copy and imagery.",
+    "tagline": "Edges melt into a soft blur while the centre of a panel stays sharp.",
     "category": "effects",
     "categories": [
       "effects",
@@ -19380,7 +20117,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "video-blur-vignette",
     "title": "Video Blur Vignette",
-    "description": "An autoplay video wrapped in a BlurVignette component that applies blurred, soft edges with vignetting effect. Creates elegant framed appearance around video content.",
+    "description": "An autoplaying, muted forest video fills a rounded frame whose edges blur and fade into the page. The centre stays sharp, and the footage zooms slightly when hovered.",
+    "tagline": "A looping forest clip plays inside a frame with softly blurred edges.",
     "category": "media",
     "categories": [
       "media",
@@ -19404,7 +20142,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "blur-vignette-card",
     "title": "Blur Vignette Card",
-    "description": "Demo component that shows BlurVignette and BlurVignetteArticle in action. Image has a radial blur gradient from edges. Text article is overlaid at bottom with custom styling. Configurable via radius, inset, blur, and transition props.",
+    "description": "Two square image cards with blurred vignette edges and a frosted caption strip at the bottom. Hovering slides the caption up and fades in a short paragraph while the artwork zooms slightly.",
+    "tagline": "A photo card whose frosted caption slides up on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -19429,7 +20168,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-gradient",
     "title": "Liquid Gradient",
-    "description": "Layered SVG gradients with Framer Motion animation. Cycles through transform sequences; animation slows on hover (50s cycle) and speeds up on blur (10s cycle).",
+    "description": "Seven overlapping gradient sheets blend into a slow, liquid rainbow that keeps reshaping. In the demo it fills a rounded pill behind the words Get early access and slows down while hovered.",
+    "tagline": "Rainbow ribbons swirl inside a rounded banner behind white text.",
     "category": "gradients",
     "categories": [
       "gradients",
@@ -19455,7 +20195,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "grid-layout-accordion",
     "title": "Grid Layout Accordion",
-    "description": "Accordion items arranged in a responsive grid instead of a single column stack.",
+    "description": "An FAQ built as two side-by-side columns of collapsible question rows. Opening a row reveals its answer and closes the other open row in that column, so each side keeps one answer visible.",
+    "tagline": "Two columns of questions, each opening one answer at a time.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -19479,7 +20220,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "multi-layout-accordion",
     "title": "Multi Open Accordion",
-    "description": "Accordion with `multiple` prop set to true, enabling several sections to expand at once.",
+    "description": "A single column of FAQ rows that can all be expanded at once. Each question opens its answer in place and stays open while others are opened, without collapsing the rest.",
+    "tagline": "A question list where several answers can stay open together.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -19503,7 +20245,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "accordion",
     "title": "Accordion",
-    "description": "Stack of collapsible sections with click-to-expand headers and animated content reveal. Supports single or multiple open sections via the `multiple` prop.",
+    "description": "A single column of collapsible question rows; clicking one rotates its chevron and slides the answer open while closing any other. The rest of the list stays compact.",
+    "tagline": "Rows of questions that push open to show their answer.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -19527,7 +20270,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "slider",
     "title": "Dual Range Slider",
-    "description": "A DualRangeSlider component providing min/max selection with a filled track between thumbs.",
+    "description": "A price filter with a low and high handle on a single track; the chosen span between them is filled white. Dragging either handle moves the number shown above it and updates the range.",
+    "tagline": "Two handles set a low and high price on one white bar.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -19553,7 +20297,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pass-strength-dotted-indicator",
     "title": "Password Strength Dotted",
-    "description": "A password form with a visual 5-dot strength indicator that fills and changes color progressively, combined with a requirements checklist using check/cross icons.",
+    "description": "A password field that fills a row of five dots and ticks off five rules as you type. A status line names the current strength and an eye button reveals what you entered.",
+    "tagline": "Password field fills five colour-coded dots as the rules pass.",
     "category": "forms",
     "categories": [
       "forms",
@@ -19579,7 +20324,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pass-strength-hover-indicator",
     "title": "Password Strength Hover",
-    "description": "A password form with 5 dots showing strength and an info icon that triggers a hover card displaying the requirements checklist with check/cross icons.",
+    "description": "A password field with an eye toggle and five strength bars beneath it that fill as rules are met. An info icon beside the label opens a hover card listing each requirement with a tick or cross.",
+    "tagline": "A password box fills five green bars and explains the rules on hover.",
     "category": "forms",
     "categories": [
       "forms",
@@ -19605,7 +20351,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "confirm-pass-check",
     "title": "Confirm Password Check",
-    "description": "A complete password input form with real-time strength scoring based on character requirements (length, digits, case, special chars), show/hide toggle, and confirmation field matching with visual feedback.",
+    "description": "A password and confirm-password pair with an eye toggle and a matching check. The confirmation border turns red with a do-not-match note or green when it matches, and an info icon shows the rules.",
+    "tagline": "Two password fields turn green together only when they match.",
     "category": "forms",
     "categories": [
       "forms",
@@ -19631,7 +20378,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "phone-input",
     "title": "Phone Input",
-    "description": "A phone number input using react-phone-number-input with a popover country selector featuring flag icons, search capability, and calling codes.",
+    "description": "A phone number field with a country flag button on the left. Pressing it opens a searchable list of countries showing flags, names and dialling codes; chosen numbers carry the matching flag.",
+    "tagline": "Pick a country flag, then type the number; the list searches as you type.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -19659,7 +20407,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "datetime-input",
     "title": "Datetime Input",
-    "description": "SmartDatetimeInput component that accepts natural language input (via chrono-node) on one side and a calendar/time picker popover on the other. Configurable to show calendar, time picker, or both via showCalendar and showTimePicker props.",
+    "description": "A single-line field that turns phrases like \"tomorrow at 5pm\" into a real date and time, with a calendar button for picking by hand. Options hide the calendar, the time list, or show both.",
+    "tagline": "Type a date in plain English; it fills in the exact date and time.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -19686,7 +20435,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "multi-selector",
     "title": "Multi Selector",
-    "description": "A fully-featured multi-select component with search, optional badges showing selections, select-all option, and support for displaying extra count when exceeding maxCount.",
+    "description": "A dropdown for choosing more than one option at once. Selected items collect as removable chips in the closed field, and the open panel adds search, select-all and a Clear action.",
+    "tagline": "Pick several options from a searchable checklist that collects chips.",
     "category": "selects",
     "categories": [
       "selects",
@@ -19712,7 +20462,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "imgpreview-dropzone",
     "title": "Image Preview Dropzone",
-    "description": "Drag-and-drop image uploader supporting up to 4 files (1MB max each). Shows thumbnails inline; supports SVG, PNG, JPG, GIF.",
+    "description": "A dashed upload box for images that lists picked files as small square thumbnails underneath. Each can be removed, and the upload is capped at four files of 1MB.",
+    "tagline": "Drop images into a dashed box and see square previews appear below.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -19738,7 +20489,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chat-form-dropzone",
     "title": "Chat File Dropzone",
-    "description": "Combines file uploader with a text input field. Displays dropped/selected images as thumbnails; supports max 4 files up to 1MB each.",
+    "description": "A chat-style composer bar: a paperclip opens the picker, chosen images line up as thumbnails and a message box sits alongside. Four images of 1MB are the cap.",
+    "tagline": "Attach photos beside a paperclip and write a message underneath.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -19765,7 +20517,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dialog",
     "title": "Animated Dialog",
-    "description": "A FramerModal component using Framer Motion; fades and slides in on open; closes on Escape or backdrop click; supports controlled/uncontrolled state.",
+    "description": "A compact confirmation dialog with a heading, a warning paragraph and a bright primary button paired with an outlined cancel. It fades and slides in over a blurred dark page.",
+    "tagline": "A dark confirm card fades over the page with two 50/50 buttons.",
     "category": "modals",
     "categories": [
       "modals"
@@ -19791,7 +20544,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dialog-default",
     "title": "Dialog Default",
-    "description": "A complete DialogDefault component using FramerModal with name and username input fields, animated trigger button with gradient background.",
+    "description": "A modal with a short edit-profile form: two labelled text fields and one wide save button, plus a close X. It fades up over a blurred backdrop.",
+    "tagline": "A small profile-edit card fades in over the page when you click.",
     "category": "modals",
     "categories": [
       "modals",
@@ -19818,7 +20572,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "directional-drawer",
     "title": "Directional Drawer",
-    "description": "A DirectionalDrawer using vaul library with configurable direction (left/right/top/bottom); responsive 450px desktop or 90% mobile; dismissible on mobile with backdrop overlay.",
+    "description": "A left-side slide-in panel with a small nav list and one call-to-action button at its base. Opening it dims the page behind, and the X or an outside click closes it.",
+    "tagline": "A dark settings drawer slides in from the left edge of the screen.",
     "category": "modals",
     "categories": [
       "modals",
@@ -19845,7 +20600,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "left-directional-drawer",
     "title": "Left Directional Drawer",
-    "description": "A complete LeftDirectionalDrawer using DirectionalDrawer configured for left-side; includes profile image upload form with preview.",
+    "description": "A profile-picture editor that slides in from the left when you tap the pencil over a portrait. It offers an initials placeholder, a file picker and a save button.",
+    "tagline": "A pencil on a portrait opens a slide-in panel to swap the photo.",
     "category": "modals",
     "categories": [
       "modals",
@@ -19872,7 +20628,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "motion-drawer",
     "title": "Motion Drawer",
-    "description": "A full-height off-canvas drawer that slides from left or right with spring physics. Toggle button can merge into the drawer or stay/push. Draggable to close with threshold detection. Overlay fade on open.",
+    "description": "An off-canvas navigation drawer that springs in from the left with a link list and one upgrade button. It closes from its X, the dimmed overlay, or a sideways drag.",
+    "tagline": "A springy mobile-style menu slides in from the left edge.",
     "category": "modals",
     "categories": [
       "modals",
@@ -19899,7 +20656,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ui-layouts-spotlight",
     "title": "Spotlight Effect",
-    "description": "Provider wrapper that enables cursor-tracking spotlight effects on child items. Three effects: proximity spotlights, hover focus, and local cursor gradients.",
+    "description": "Three dark feature cards that light up with a radial glow wherever the cursor moves. The light falls off gently and nothing on the cards is interactive.",
+    "tagline": "A soft white glow follows the pointer across a stack of cards.",
     "category": "effects",
     "categories": [
       "effects",
@@ -19923,7 +20681,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spotlight-card1",
     "title": "Spotlight Bento Grid",
-    "description": "A multi-card bento layout using Spotlight and SpotLightItem components. Cards show charts/stats with varying grid spans. Dark background with gradient overlays.",
+    "description": "A rounded black panel of photo tiles arranged in a bento grid, one large and two small. A faint light tracks the cursor, and one card can carry a heading and paragraph.",
+    "tagline": "Photo tiles in a bento grid lit by a faint pointer glow.",
     "category": "cards",
     "categories": [
       "cards",
@@ -19948,7 +20707,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spotlight-card4",
     "title": "Proximity Spotlight Card",
-    "description": "A card using ProximitySpotlight mode. Spotlight appears based on pointer proximity to the card (not just on hover). Includes image, title, and tech stack description.",
+    "description": "A single dark card pairing a city-at-dusk photo with a heading and a line about supported technologies. A faint spotlight follows the pointer near it.",
+    "tagline": "A skyline photo card with a heading and a quiet pointer glow.",
     "category": "cards",
     "categories": [
       "cards",
@@ -19974,7 +20734,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ui-layouts-carousel",
     "title": "Carousel",
-    "description": "Compound carousel system built on embla-carousel. Includes Carousel context provider, SliderContainer, Slider items, navigation buttons (prev/next), dot indicators, and snap counter. Supports vertical or horizontal orientation, looping…",
+    "description": "A horizontal image carousel with translucent round arrow buttons, a current-slide counter and dash-style dots. Slides glide sideways and wrap around at the ends.",
+    "tagline": "A rounded photo slider with side arrows, a counter and dash dots.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20005,7 +20766,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "default-slider",
     "title": "Default Image Slider",
-    "description": "Embla-based image slider with no looping. Includes left/right navigation buttons, dot indicators, and backdrop-blur styling. Responsive height with full-width image slides.",
+    "description": "A wide image slider showing four portrait photos one at a time, with faint round side arrows and dash dots below. It stops at the first and last slide instead of looping.",
+    "tagline": "Close-up portrait photos slide sideways in a wide dark frame.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20037,7 +20799,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "thumbnail-slider",
     "title": "Thumbnail Slider",
-    "description": "Embla-carousel with large main slide and clickable thumbnail strip for navigation. Each slide has an associated thumbnail image for quick preview.",
+    "description": "A photo viewer with one large rounded frame on top and a row of small previews beneath. Picking a thumbnail swaps the main picture and lights that thumbnail.",
+    "tagline": "A large photo above a dimmed strip of thumbnails, one lit.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20070,7 +20833,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "vertical-thumbnail-slider",
     "title": "Vertical Thumbnail Slider",
-    "description": "Vertical carousel with main slide display and vertical thumbnail navigation. Uses embla-carousel with axis='y' and right-to-left direction. Thumbnails are clickable to jump to slides.",
+    "description": "A photo gallery where a tall column of small previews sits to the left of one large image. Clicking or dragging through the column moves the main photo, which scrolls vertically instead of sideways.",
+    "tagline": "Tiny photo strip on the left drags a big picture up and down.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20103,7 +20867,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "framer-draggable-carousel",
     "title": "Framer Draggable Carousel",
-    "description": "Full-width carousel with drag-to-navigate interaction. Images snap to grid on release with spring physics. Elastic drag resistance prevents over-dragging.",
+    "description": "A full-width photo slider that moves when you grab and drag it, then springs onto the nearest image. Round arrows and a row of dots offer the same navigation without dragging.",
+    "tagline": "Pull the photo sideways and it snaps to the next one.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20130,7 +20895,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "framer-thumnbails",
     "title": "Framer Thumbnail Carousel",
-    "description": "Image carousel with compact horizontal thumbnail navigation. Selected thumbnail displays at full width; unselected ones collapse to narrow strips. Click thumbnails to navigate and expand.",
+    "description": "A large photo sits above a single rail of small previews, where the current one is three times wider than the rest. Choosing a preview widens it, slides the rail and springs the big picture across.",
+    "tagline": "Tap a thin preview to widen it and swap the big photo.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20157,7 +20923,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-flow",
     "title": "Feature Flow Carousel",
-    "description": "A horizontally scrollable carousel displaying feature items with icons, titles, and descriptive text. Navigation buttons and progress indicators included.",
+    "description": "A white feature block with a bold sales pitch, a row of icon cards that scroll horizontally, and round arrow buttons above the cards.",
+    "tagline": "Four feature cards slide sideways under a headline and round arrows.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20184,7 +20951,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-highlights",
     "title": "Feature Highlight Cards",
-    "description": "Three feature cards with icons, titles, descriptions, and call-to-action links on a dark background. Cards have hover background and border effects.",
+    "description": "A black highlights block with a pink eyebrow, a big white question as the heading, and three bordered cards each with an icon, blurb and a Learn more link.",
+    "tagline": "Three outlined cards with pink icons lift on hover.",
     "category": "cards",
     "categories": [
       "cards",
@@ -20210,7 +20978,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "about-whyus",
     "title": "About Why Us",
-    "description": "An about/why-us section template showcasing company values, benefits, and differentiators through visual content and messaging. Designed for emphasizing competitive advantages.",
+    "description": "A light about block split in two: the studio's values and a five-star client quote on the left, a positioning statement and three big stat cards on the right.",
+    "tagline": "Why-us split with a client review and three big stat cards.",
     "category": "text",
     "categories": [
       "text",
@@ -20236,7 +21005,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stats-banner",
     "title": "Stats Banner",
-    "description": "Section component displaying stats in a staged scroll-reveal layout. Hero stat (e.g., 500K+ Campaigns) animates with scale and fade. Secondary stats grid (3 columns) reveals with staggered delays. Includes background image overlay and…",
+    "description": "A dark metrics band with a heading and one wide banner showing a large total on an orange-pink gradient. Beneath it, three bordered cards count up smaller figures when the section comes into view.",
+    "tagline": "One huge number on a hot gradient banner, over three counting stat cards.",
     "category": "charts",
     "categories": [
       "charts",
@@ -20263,7 +21033,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stats-bento",
     "title": "Stats Bento Grid",
-    "description": "Section component arranging stats in a Bento grid (6 cols × 2 rows). Primary stat (64%) spans 3×2 with diagonal pattern overlay. Secondary row shows growth (+240% with inline bar chart), award count (12), and G2 rating (4.9/5) as smaller…",
+    "description": "A compact stats grid on black: one tall card holds a huge percentage, a growth card carries a small rising bar chart, and two smaller tiles show awards and a peer review score. Figures count up on first view.",
+    "tagline": "Bento of dark metric tiles led by a giant market share number.",
     "category": "charts",
     "categories": [
       "charts",
@@ -20292,7 +21063,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stats-details",
     "title": "Detailed Stats Cards",
-    "description": "Section component displaying stats in a 3-column grid. Each card has an icon, label, value, and detailed description. On hover, the icon button fills with orange and a background image fades in. Hardcoded stat data with Unsplash images.",
+    "description": "A row of three black stat cards, each with a small icon, a short label, a large figure and a couple of lines of explanation. Hovering one fills it with a hot pink photograph and turns the text white.",
+    "tagline": "Three dark metric cards that bloom into a colour photo under the pointer.",
     "category": "charts",
     "categories": [
       "charts",
@@ -20320,7 +21092,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stats-bold",
     "title": "Bold Stats Display",
-    "description": "Section component showcasing stats with bold, large typography (8xl-9xl). Primary stat (10B+ API Calls) paired with Unsplash image. Secondary stats row below (3 columns) showing P99 latency, regions, and support availability. Hardcoded…",
+    "description": "A full-width stats section pairing an oversized 10B+ API-calls figure and a bright gradient image with three smaller metrics below: latency, regions and support hours. Numbers count up as it scrolls into view.",
+    "tagline": "A huge 10B+ tally counts up beside a hot pink photo and three small stats.",
     "category": "charts",
     "categories": [
       "charts",
@@ -20347,7 +21120,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spotlight-testimonial",
     "title": "Spotlight Testimonial",
-    "description": "Centered testimonial showcase with auto-rotating quotes (3s interval), highlighted phrase in italics, author avatar/name/role, quote icon, and dot navigation. All elements use TimelineAnimation for scroll-based reveal with staggered timing.",
+    "description": "A wide pale section with a heading, then a single oversized testimonial under a round quote mark. The quote fades to the next automatically, each with a portrait, name and role, and three dots below switch between them.",
+    "tagline": "One big customer quote at a time, fading to the next every few seconds.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20374,7 +21148,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "testimonial-basic",
     "title": "Testimonial Basic",
-    "description": "Two-column grid layout showing testimonials with video thumbnails and quote content. Rows alternate between video-left/text-right and text-left/video-right. Each includes author avatar, name, role, 5-star rating, and quote. Diagonal stripe…",
+    "description": "A white editorial page stacked with review rows. Each row pairs a wide video thumbnail with a play badge and timecode next to a rounded avatar, bold name, monospaced role, an oversized quotation and five gold stars.",
+    "tagline": "Big video stills beside long five-star customer quotes.",
     "category": "cards",
     "categories": [
       "cards",
@@ -20401,7 +21176,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "marque-testimonial",
     "title": "Marquee Testimonials",
-    "description": "Continuous testimonial scroll display with two rows of cards moving in opposite directions (25s and 30s). Each card shows 5-star rating, quote icon, testimonial text, and author details (avatar, name, role, company). Includes gradient…",
+    "description": "A light section headed Trusted by Industry Leaders, with two rows of white testimonial cards scrolling continuously in opposite directions. Each card carries five stars, a quote, and an author's initials, name, role and company.",
+    "tagline": "Two rows of star-rated quote cards glide past in opposite directions.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -20428,7 +21204,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "work-experience",
     "title": "Work Experience List",
-    "description": "Displays chronological work experience with staggered entrance animations. Shows company logo, role, period, location, description, and skill tags. Includes footer statistics. Uses Framer Motion for timing.",
+    "description": "A vertical career timeline of three white cards, each with a company logo, role, period, location, a one-line summary and small skill pills, joined by a faint line with small badge nodes.",
+    "tagline": "Past jobs as white cards strung down a thin dotted timeline.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -20454,7 +21231,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "customer-experience",
     "title": "Customer Photo Gallery",
-    "description": "Renders a vertical list of photo items with labels and descriptions. Hovering an item reveals a large preview image that follows cursor movement via spring physics.",
+    "description": "A peach page with a giant orange EXPERIENCE title over a list of photo categories. Each row pairs an arrow and label with a right-aligned description, and hovering any row releases a floating photo that follows the cursor.",
+    "tagline": "A photo index where a picture springs along with the pointer.",
     "category": "media",
     "categories": [
       "media",
@@ -20480,7 +21258,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "faq-founder",
     "title": "Founder FAQ",
-    "description": "Full-page FAQ layout featuring a founder profile section with styled accordion items.",
+    "description": "A dark FAQ page with a small centred heading. On the left a card introduces the founder with a photo, quote and blue LinkedIn button; on the right a stack of dark panels opens and closes one question at a time.",
+    "tagline": "Opens questions with a plus sign beside a founder's photo card.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -20507,7 +21286,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "footer-bold",
     "title": "Footer Bold",
-    "description": "A landing-page footer with a large background text watermark, contact CTA with email link, location and social media sections, and a minimalist bottom bar. Spans full viewport height.",
+    "description": "A tall white page footer. It opens with an invitation and a big underlined email on the left, address and social columns on the right, then a huge pale brand name above a thin baseline with copyright and a back-to-top control.",
+    "tagline": "An airy contact footer with a giant faded wordmark across it.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -20533,7 +21313,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "footer-privilege",
     "title": "Footer Privilege",
-    "description": "A sophisticated footer featuring asymmetrical layout with large heading, SVG-based logo lockup, descriptive tagline, contact CTA button, and copyright bar. Fully theme-aware with smooth color transitions.",
+    "description": "A black footer split in two halves: a large thin \"A Privilege.\" headline over a small logo and brand name on the left, and a dim \"Beyond Reach.\" headline, short paragraph and contact button on the right.",
+    "tagline": "Two oversized headlines on black with one contact button at the bottom.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -20559,7 +21340,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "flipcountdown",
     "title": "Flip Countdown Timer",
-    "description": "Client component counting down to a hardcoded target date (Dec 31, 2026). Updates every second and stops at zero. Each time unit (days, hours, minutes, seconds) renders in a colored box with a horizontal divider line. Uses CSS animations…",
+    "description": "A black page with a small spaced caption over four square number tiles: a glowing orange days box and three navy boxes for hours, minutes and seconds. The seconds tick down live and the layout ends in a Time's Up message.",
+    "tagline": "Four glowing number tiles ticking down the seconds to the new year.",
     "category": "charts",
     "categories": [
       "charts",
@@ -20584,7 +21366,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "alert-dialog",
     "title": "Alert Dialog",
-    "description": "A compound component wrapping Radix AlertDialog with styled overlay, animations, and footer buttons for confirm/cancel flows.",
+    "description": "A confirmation dialog for destructive actions. A trigger button opens a dark rounded panel on a dimmed page, showing a bold question, a warning paragraph, and Cancel next to a red confirm button.",
+    "tagline": "Red delete button opens a centred confirm panel with two choices.",
     "category": "modals",
     "categories": [
       "modals"
@@ -20609,7 +21392,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "calendar",
     "title": "Calendar",
-    "description": "A date picker calendar using React hooks and date utilities. Displays a grid of dates for the selected month with navigation arrows.",
+    "description": "A single-month date picker: the month and year sit between two chevrons above a grid of weekday headings and date numbers. Arrows move between months and a click chooses a day.",
+    "tagline": "Month grid with arrows that step through dates to pick one.",
     "category": "calendar",
     "categories": [
       "calendar"
@@ -20635,7 +21419,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "checkbox",
     "title": "Checkbox",
-    "description": "Radix UI Checkbox wrapper with built-in states for checked, indeterminate, and disabled. Shows check mark or dash indicator. Includes focus ring and error states via aria-invalid.",
+    "description": "A small square checkbox with a tick, a dash for the mixed state, a focus ring and a faded disabled look, shown inside a card of account preferences with a label and a second line per row.",
+    "tagline": "Light square ticks a preference on, with a dash for partly on.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -20661,7 +21446,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "badge",
     "title": "Badge",
-    "description": "Simple badge component accepting children; styled via className.",
+    "description": "A set of compact pill labels in four fills, plus outlined versions carrying a tick, a coloured dot, a number or a link. Each is a single line of small medium-weight text on a full rounded background or border.",
+    "tagline": "Small rounded pills label status, counts and categories in a row.",
     "category": "badges",
     "categories": [
       "badges"
@@ -20686,7 +21472,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "button",
     "title": "Button",
-    "description": "A versatile button component using CVA (class-variance-authority) for variant and size control. Supports six variants (default, secondary, outline, ghost, destructive, link) and four sizes (sm, default, lg, icon).",
+    "description": "A matching set of action controls in six looks: a light filled primary, a dark secondary, an outlined one, a ghost with no fill, a red destructive and a plain text link, all sharing one rounded rectangle and small medium text.",
+    "tagline": "Six clickable action styles in a row, from solid white to bare link.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -20712,7 +21499,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "avatar",
     "title": "Avatar",
-    "description": "Shows an image; if load fails or src is missing, displays initials/text fallback. Radix UI Avatar primitive.",
+    "description": "User portraits shown as clipped circles, with a grey initials fallback when a picture is unavailable, plus an overlapping stack of smaller faces that ends in a plus-eight counter.",
+    "tagline": "Round face photos that drop back to grey initials when missing.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -20738,7 +21526,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cropper",
     "title": "Image Cropper",
-    "description": "Wraps @origin-space/image-cropper with styled sub-components. Displays an image with a draggable crop area overlay. Supports pinch zoom and scroll zoom within min/max bounds.",
+    "description": "An image cropper: a photo sits in a rounded frame with a fixed square outline and everything outside it dimmed. Dragging moves the picture beneath the square and scrolling or pinching zooms it.",
+    "tagline": "Drag and zoom a photo behind a fixed white square frame.",
     "category": "media",
     "categories": [
       "media",
@@ -20764,7 +21553,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dropdown-menu",
     "title": "Dropdown Menu",
-    "description": "A set of Radix UI dropdown menu primitives including root, trigger, content, items, groups, separators, checkboxes, radio groups, and submenus with keyboard and mouse support.",
+    "description": "A compact account menu: an outlined button opens a rounded dark panel with a muted heading, icon rows carrying shortcut hints, a ticked toggle row and signed-out action, all stacked with faint dividers.",
+    "tagline": "Outlined button drops open a narrow list of account actions.",
     "category": "selects",
     "categories": [
       "selects",
@@ -20790,7 +21580,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "navigation-menu",
     "title": "Navigation Menu",
-    "description": "Composable wrapper around Radix UI's NavigationMenu primitive. Exports NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, NavigationMenuIndicator, and…",
+    "description": "A short horizontal menu of top-level links where Products and Docs carry chevrons and open a bordered panel of two-line destinations. Hovering a trigger highlights it and flips its chevron while the panel slides in.",
+    "tagline": "Header links whose chevrons drop a panel of sub-pages.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -20814,7 +21605,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "radio-group",
     "title": "Radio Group",
-    "description": "Radio group built on Radix UI with consistent border, shadow, and focus styles. Includes RadioGroup and RadioGroupItem components.",
+    "description": "A plan chooser: a card lists four subscription rows, each with a small circle, a name, a short description and a price. Clicking a row moves the single selection and highlights that row.",
+    "tagline": "Stacked pricing rows where one circle marks the chosen plan.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -20840,7 +21632,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hover-card",
     "title": "Hover Card",
-    "description": "Radix-based hover card system with three parts: HoverCard (root), HoverCardTrigger (activator), and HoverCardContent (popover). Supports animations on open/close and optional arrow.",
+    "description": "A line of small grey text credits an account, and the underlined handle opens a compact profile card on hover: portrait, handle, a short description and a join date.",
+    "tagline": "Hover a handle to float up a mini profile with avatar and bio.",
     "category": "tooltips",
     "categories": [
       "tooltips"
@@ -20865,7 +21658,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "datefield-rac",
     "title": "Date Field",
-    "description": "A set of composable components (DateField, DateInput, TimeField, DateSegment) built on react-aria-components. Users tab through editable segments for date/time values. Includes focus and invalid states.",
+    "description": "A scheduling form with Date, Start time and Follow-up fields. Each bordered box holds small editable pieces for month, day, year, hour, minute and AM/PM, with grey placeholders when empty.",
+    "tagline": "Boxed fields where each part of a date is its own editable piece.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -20891,7 +21685,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "select-native",
     "title": "Native Select",
-    "description": "A thin wrapper over <select> that applies custom styling. Works as a standard form control.",
+    "description": "A shipping form of three plain dropdown controls: Country and Delivery speed are single-line boxes with a chevron, while Extras is an open list box of four selectable rows.",
+    "tagline": "Boxed dropdowns with a chevron, plus an always-open option list.",
     "category": "selects",
     "categories": [
       "selects"
@@ -20914,7 +21709,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "select",
     "title": "Select",
-    "description": "Radix Select primitive wrapper with support for item groups, labels, separators, and scroll controls on open.",
+    "description": "A form of single-choice dropdowns: a 'New project' card holds Framework and Region, with a Timezone control beside it. Each closed box shows its value and a chevron, and opens a dark panel of options.",
+    "tagline": "Thin bordered dropdowns that open a short ticked option list.",
     "category": "selects",
     "categories": [
       "selects"
@@ -20939,7 +21735,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stepper",
     "title": "Stepper",
-    "description": "Composable stepper with Stepper, StepperItem, StepperTitle, StepperDescription, StepperIndicator, StepperTrigger, and StepperSeparator. Supports horizontal and vertical orientation, loading states, and click-to-navigate functionality via…",
+    "description": "A four-step progress path: each step is a small numbered circle above a bold title and a muted description, with Back and Next buttons underneath. Reaching a step fills the previous circle into a tick.",
+    "tagline": "Numbered steps turn into ticks as you page through a short flow.",
     "category": "steppers",
     "categories": [
       "steppers",
@@ -20965,7 +21762,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "switch",
     "title": "Switch",
-    "description": "Switch component built on Radix UI with sliding thumb animation and consistent styling. Supports disabled state and focus-visible.",
+    "description": "A preferences card lists four rows, each with a label, a short description and a pill-shaped toggle at the right. Flipping a toggle slides its thumb across and changes the track fill.",
+    "tagline": "Rounded tracks with sliding white thumbs flip settings on and off.",
     "category": "switches",
     "categories": [
       "switches",
@@ -20991,7 +21789,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "table",
     "title": "Table",
-    "description": "Set of wrapper components for HTML table elements (Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption). Applies theme-aware styling with hover states and selection states.",
+    "description": "A five-column invoice table with a small header row, five customer records, a shaded total footer and a caption underneath. Each row tints grey when hovered.",
+    "tagline": "Invoice rows on a dark panel light up as the pointer sweeps down.",
     "category": "tables",
     "categories": [
       "tables"
@@ -21014,7 +21813,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "origin-ui-timeline",
     "title": "Timeline",
-    "description": "Compound component system (Timeline, TimelineItem, TimelineIndicator, TimelineDate, TimelineTitle, TimelineContent) for status/workflow tracking. Tracks active step via controlled (value prop) or uncontrolled (defaultValue) state. Steps…",
+    "description": "A vertical list of five numbered stages, each with a small date, a bold title, a description and a hollow circle on a connecting line. Steps up to the active one brighten, and clicking a title moves the marker.",
+    "tagline": "Steps stack on a thin vertical rail, filled up to the current stage.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -21042,7 +21842,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "toggle",
     "title": "Toggle",
-    "description": "Toggle button built on Radix UI with CVA variants for size (sm, default, lg) and style (default, outline). Shows active state with accent color.",
+    "description": "A compact row of icon buttons for bold, italic, underline, strikethrough and text alignment. Each button holds a light grey fill while it is on, and clicks flip one without touching the others.",
+    "tagline": "Icon buttons that stay lit while pressed, lined up in a formatting bar.",
     "category": "switches",
     "categories": [
       "switches",
@@ -21069,7 +21870,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tree",
     "title": "File Tree",
-    "description": "Renders a tree structure using @headless-tree for state management. Supports expand/collapse, item selection, drag indicators, and keyboard shortcuts. Context-driven sub-components handle items and labels.",
+    "description": "A file tree in a small bordered card, with chevrons on folders and file icons on the leaves. Rows highlight on selection, and folders expand in place to reveal their contents.",
+    "tagline": "Folders open and files highlight inside a narrow project sidebar.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -21098,7 +21900,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tooltip",
     "title": "Tooltip",
-    "description": "Radix-based tooltip system with automatic provider wrapping. Exports TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent as a compound component.",
+    "description": "A four-button formatting bar whose icons reveal a compact bubble with the action name and its keyboard shortcut when hovered or focused.",
+    "tagline": "Hovering an icon lifts a small bubble showing its name and shortcut.",
     "category": "tooltips",
     "categories": [
       "tooltips"
@@ -21123,7 +21926,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-13",
     "title": "Currency Input Add-on",
-    "description": "Input with € prefix and EUR suffix text overlays for currency formatting.",
+    "description": "A single-line amount field with a label above it, a euro sign fixed inside the left edge and the letters EUR inside the right edge. Typing an amount pushes the placeholder out of the way.",
+    "tagline": "A money field keeping the euro sign inside its left edge and EUR on the right.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21147,7 +21951,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-22",
     "title": "Input With Button",
-    "description": "An email input with an outline Button component separated by a gap. Uses standard Button component styling with outline variant.",
+    "description": "A labelled email field paired with a separate outlined Send button in one row. The field takes an address and the button sits at its right with a small gap.",
+    "tagline": "An email box with a Send button sitting beside it.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21171,7 +21976,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-23",
     "title": "Password Visibility Toggle",
-    "description": "A password field with an eye icon button that toggles between password and text input types. Tracks visibility state with useState.",
+    "description": "A labelled password field with a small eye button at its right edge. Typing hides the characters as dots, and the eye is meant to switch between masked and plain text.",
+    "tagline": "A password box with an eye button meant to swap the dots for text.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21195,7 +22001,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-25",
     "title": "Search Keyboard Shortcut Input",
-    "description": "A search input with a read-only kbd element showing ⌘K in the end. The shortcut display is purely visual and non-interactive.",
+    "description": "A labelled search field with a small bordered shortcut badge fixed inside the right edge. Typing shows a native clear cross beside the badge; the shortcut itself is only a visual hint.",
+    "tagline": "A search box with a tiny command-key badge tucked inside its right edge.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21219,7 +22026,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-27",
     "title": "Search Input With Loader",
-    "description": "A search field with a magnifying glass that becomes a spinning LoaderCircleIcon on input. A mic button on the right for voice search. Loading state is simulated with useEffect.",
+    "description": "A labelled search field with a magnifier inside its left edge and a microphone inside the right. While a query is being entered the magnifier briefly becomes a spinning ring before settling back.",
+    "tagline": "A search bar whose magnifier turns into a spinner while you type.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21243,7 +22051,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-32",
     "title": "Floating Label Input",
-    "description": "An email field where the label starts centered and smoothly animates upward when focused or when text is entered. Uses CSS :has() selector and focus-within to trigger animation.",
+    "description": "An email field whose label starts centred inside the box like a placeholder, then shrinks and rises to sit across the top border when focused or filled.",
+    "tagline": "A field label that slides up out of the box and shrinks onto its top edge.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21266,7 +22075,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-28",
     "title": "Number Stepper Input",
-    "description": "A number field with minus and plus buttons flanking a centered numeric input. Built with React Aria NumberField, supporting arrow keys and button clicks. Defaults to 2048 with minValue of 0.",
+    "description": "A labelled number field with a square minus button on its left and a square plus button on its right. The value sits centred between them and steps up or down when the buttons are pressed.",
+    "tagline": "A number held between a minus and a plus button on one thin bar.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21291,7 +22101,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-34",
     "title": "Character Limit Input",
-    "description": "A text input with maxLength 50 displaying character count as 'X/50' in the bottom right. Uses a custom useCharacterLimit hook to track input state.",
+    "description": "A labelled single-line text field that shows a live character count such as 0/50 inside the right edge and stops accepting input once the limit is reached.",
+    "tagline": "A text line with a running character count pinned inside its right edge.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21314,7 +22125,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-44",
     "title": "OTP Input Grouped",
-    "description": "An OTP field with 4 connected digit slots. Built with input-otp library. Slots are adjacent boxes with the active slot showing a ring.",
+    "description": "A row of four connected single-digit slots with a shared border. The slot waiting for input carries a pale ring, and typing advances the focus until all four digits are filled.",
+    "tagline": "Four connected digit boxes that fill up one number at a time.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21340,7 +22152,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-47",
     "title": "Card Number Input",
-    "description": "A card number input with a credit card icon on the left. Built with react-payment-inputs library which handles validation and formatting.",
+    "description": "A labelled card-number field with a credit-card icon inside its left edge. Typed digits are grouped into fours with spaces, and a grey placeholder sits there until the first keypress.",
+    "tagline": "Card digits space out into blocks of four as you type.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -21366,7 +22179,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-46",
     "title": "Phone Number Input",
-    "description": "A phone input with an integrated country select dropdown showing country flags. Built with react-phone-number-input library supporting international numbers.",
+    "description": "A labelled phone field joined to a country selector. Typing an international number spaces the digits into a readable phone number and makes the selector detect the country and show its flag.",
+    "tagline": "A phone field that spots the country and adds its flag as you type.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21391,7 +22205,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-53",
     "title": "Copy to Clipboard Input",
-    "description": "A read-only text field with a copy button that writes to clipboard and shows a check icon for 1.5 seconds. Includes a tooltip and button disable on copy.",
+    "description": "A single-line read-only text field holding a value to reuse, with a copy button on the right. Hovering shows a small tooltip; clicking copies the text and briefly swaps the icon for a check.",
+    "tagline": "Read-only command field whose copy icon turns into a check when clicked.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21414,7 +22229,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-57",
     "title": "Inline Tags Input",
-    "description": "A tag input built with emblor where tags appear inline in the same container as the input field. Starts with Red tag. Close buttons for each tag.",
+    "description": "A wide single-line field that holds several small outlined labels, each with its own cross, alongside a muted placeholder for adding another. Typing and confirming grows the row of chips.",
+    "tagline": "Type a word, press enter, and it becomes a removable chip inside the field.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21439,7 +22255,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-50",
     "title": "Card Details Form",
-    "description": "A stacked card entry form with card number (showing dynamic logo), expiry date, and CVC fields. Built with react-payment-inputs, logo updates based on detected card type.",
+    "description": "A compact card entry group: one wide card-number row with a brand logo slot, split below into expiry and CVC boxes. Digits are grouped automatically and the generic card glyph becomes a Visa badge.",
+    "tagline": "Stacked card, expiry and CVC fields that reveal the card brand as you type.",
     "category": "forms",
     "categories": [
       "forms",
@@ -21465,7 +22282,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-73",
     "title": "Textarea Inset Label",
-    "description": "A textarea where the label is positioned inside the top of the bordered container as a permanent visual element, creating a unified field appearance.",
+    "description": "A multi-line text box whose label sits permanently inside the top of the bordered panel, so the field name and the writing area read as one unit. Focus rings the whole frame.",
+    "tagline": "Room to write with the field name tucked inside the top border.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -21488,7 +22306,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-100",
     "title": "Hamburger Menu Button",
-    "description": "A stateful button component that toggles a hamburger menu icon to an X. Uses SVG paths with transform animations and aria labels for accessibility.",
+    "description": "An icon button holding a hamburger menu symbol. Clicking it swings the three bars into an X and back again, while announcing whether the menu is open.",
+    "tagline": "Three stacked lines fold into an X when clicked.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -21512,7 +22331,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-105",
     "title": "Copy To Clipboard Button",
-    "description": "A stateful button that toggles from copy icon to checkmark with scale transitions. Disables itself for 1.5 seconds after click to provide feedback, and includes a tooltip.",
+    "description": "A compact outlined icon button for copying something already on the page. Hovering shows a tooltip; a click swaps the copy glyph for a green check and briefly blocks further clicks.",
+    "tagline": "Flashes a green check after copying, with a Click to copy tooltip.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -21535,7 +22355,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-107",
     "title": "Text Align Toggle",
-    "description": "A ToggleGroup with four mutually exclusive text alignment options: left, center, right, and justify. Initializes to center and uses primary background colors.",
+    "description": "A single-choice row of four rounded square buttons, each showing a little paragraph-alignment glyph. Picking one makes it the only bright tile while the others fade to grey.",
+    "tagline": "Four alignment squares where only the chosen one stays bright white.",
     "category": "switches",
     "categories": [
       "switches",
@@ -21559,7 +22380,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-122",
     "title": "Social Login Branded Buttons",
-    "description": "Four full-width buttons with brand-specific background colors and white text. Each has a hover state with darkened background.",
+    "description": "A stack of four full-width buttons for signing in through Google, X, Facebook or GitHub, each filled with a saturated brand colour and led by a small brand glyph.",
+    "tagline": "Four solid brand-coloured login buttons, one provider per row.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -21585,7 +22407,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-125",
     "title": "Image Upload Button",
-    "description": "Single-image uploader with a small preview icon and button. Shows file name and offers removal. Built on useFileUpload hook.",
+    "description": "A small avatar-style uploader: an outline square placeholder and an Upload image button. Choosing a file fills the square with a preview, relabels the button and reveals the filename and a Remove link.",
+    "tagline": "Pick one image, see a thumbnail, then change or remove it.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -21610,7 +22433,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-128",
     "title": "Navigation Card Button",
-    "description": "An outline button formatted as a card with heading, subtitle text, and animated chevron icon. Icon translates right on hover.",
+    "description": "A single outlined button shaped like a card: a bold heading over a smaller grey subtitle, with a small right chevron at the edge. Hovering nudges the chevron right.",
+    "tagline": "A wide outlined tile with a title, a hint and an arrow pointing onward.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -21634,7 +22458,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-142",
     "title": "Checkbox With Expansion",
-    "description": "Checkbox with description that reveals a text input when checked. Input auto-focuses on expansion and disables when unchecked. Uses CSS grid for smooth height animation.",
+    "description": "A labelled checkbox with a short description that, when ticked, unrolls a full-width text field and puts the cursor in it. Unticking folds the field away and disables it.",
+    "tagline": "Tick the box and a text field slides open beneath the description.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21659,7 +22484,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-147",
     "title": "Icon Grid Checkboxes",
-    "description": "2-column grid of checkbox cards with lucide-react icons. Each card includes a checkbox, icon, and label. One card pre-checked by default.",
+    "description": "Four small cards in two columns, each with a faded icon, an empty checkbox and a tool name. Clicking a card ticks its box and several can be chosen together.",
+    "tagline": "A grid of icon cards you tick to pick several tools at once.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21684,7 +22510,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-150",
     "title": "Dark Mode Toggle",
-    "description": "Dark/light mode toggle using plain HTML checkbox with Sun and Moon icons. Icons animate via peer selector. Includes aria-label for screen readers.",
+    "description": "A compact icon tile that toggles light and dark appearance. It shows a sun while light and a crescent moon while dark, swapping the two with a quick scale and fade.",
+    "tagline": "One square tile where a sun swaps to a moon to flip the theme.",
     "category": "switches",
     "categories": [
       "switches",
@@ -21708,7 +22535,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-158",
     "title": "Color Swatch Radio Picker",
-    "description": "Fieldset with 7 colored radio buttons (blue, indigo, pink, red, orange, amber, emerald). Each swatch is 6x6 sized with full-color fill. Blue is pre-selected.",
+    "description": "A single-choice row of seven coloured rings that lets someone choose an accent colour. The chosen ring becomes a white disc with a dark dot while the others stay hollow.",
+    "tagline": "Pick one colour from a row of bright rings.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21733,7 +22561,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-157",
     "title": "Star Rating Filter Radio",
-    "description": "Radio group with 6 options: all reviews, and 5-1 star ratings. Each option displays filled/empty stars and review count. Stars use Remix icons with opacity for empty ratings.",
+    "description": "A vertical radio list of review ratings, from all reviews down to one star, each row showing amber stars, dimmed empty stars and a count. Choosing a row keeps that rating selected.",
+    "tagline": "Rows of stars with review counts pick a rating to filter by.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21761,7 +22590,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-163",
     "title": "Payment Method Selector",
-    "description": "Compact payment method selector with radio buttons, icons, and labels. Built on shadcn's RadioGroup with hidden radio inputs.",
+    "description": "A row of three equal tiles for Card, PayPal and Apple Pay, each with a payment icon above its name. Picking a tile lights up its border so the selected method reads at a glance.",
+    "tagline": "Three payment tiles; the chosen one takes a brighter outline.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21789,7 +22619,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-164",
     "title": "CPU Core Selector",
-    "description": "CPU core selector as a 3-column grid of radio cards with disabled states. Built on shadcn's RadioGroup.",
+    "description": "A labelled grid of tile radios offering 2 to 16 CPU, three across and two deep, with the selected size outlined lighter. The 16 CPU tile is disabled and faded.",
+    "tagline": "Core-count tiles in a grid; the chosen one brightens.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21815,7 +22646,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-166",
     "title": "Pricing Plan Radio Picker",
-    "description": "RadioGroup with four pricing tiers (Hobby, Plus, Team, Enterprise). Each tier shows label, price, and Plus tier has a Popular badge. Uses aria-describedby for price descriptions.",
+    "description": "A vertical radio list of four subscription plans with their prices, joined into one bordered column. The selected plan takes a lighter background, and the Plus row carries a Popular badge.",
+    "tagline": "Four stacked plans; the picked row lifts out of the column.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21839,7 +22671,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-167",
     "title": "Emoji Sentiment Picker",
-    "description": "Emoji-based sentiment selector with five expressions in a flex row. Built on shadcn's RadioGroup.",
+    "description": "A one-row sentiment picker: five round radio buttons, each wrapping an emoji from angry to laughing, under the question How did it go? The chosen face takes a brighter ring.",
+    "tagline": "Five emoji faces in circles ask you to rate how it went.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21863,7 +22696,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-171",
     "title": "Interactive Star Rating",
-    "description": "Interactive star rating selector with hover preview and scale animation. Built on shadcn's RadioGroup with state.",
+    "description": "Five large stars under the line Rate your experience, grey at rest, that preview a score on hover and keep it once clicked. The star under the cursor swells slightly as it lights.",
+    "tagline": "Hover the stars and they fill amber up to your pointer.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21890,7 +22724,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-169",
     "title": "Theme Selector Radio",
-    "description": "Theme selector using radio buttons with preview images and conditional icons. Built on shadcn's RadioGroup.",
+    "description": "Three thumbnail radios show a white, a black and a diagonally split layout preview, captioned Light, Dark and System. The chosen one gains a brighter edge and a tick instead of a dash.",
+    "tagline": "Thumbnail previews let you pick light, dark or system.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -21914,7 +22749,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-170",
     "title": "Billing Period Toggle",
-    "description": "Billing period selector with animated sliding background indicator. Built on shadcn's RadioGroup with state management.",
+    "description": "A two-part switch for monthly or yearly billing that slides a raised block under the chosen half. The yearly side shows a green -20% note while it is active, and the other label fades to grey.",
+    "tagline": "Two billing periods on a block that slides and dims the idle side.",
     "category": "switches",
     "categories": [
       "switches",
@@ -21939,7 +22775,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-220",
     "title": "Status Select",
-    "description": "A select where each option shows a colored circular SVG dot followed by a status label. Dots use semantic colors (green, blue, amber, gray, red).",
+    "description": "A labelled dropdown whose trigger shows the current status as a coloured dot and a word. Opening it lists Completed, In Progress, Pending, Cancelled and Failed, each with its own dot and the chosen row ticked.",
+    "tagline": "A dropdown of statuses, each marked by a coloured dot.",
     "category": "selects",
     "categories": [
       "selects",
@@ -21963,7 +22800,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-224",
     "title": "Plan Description Select",
-    "description": "A select for plans where each option shows a plan title and a small gray description underneath. Descriptions are hidden in the trigger via CSS.",
+    "description": "A labelled dropdown of plans whose open rows pair each plan name with a short grey description, while the closed trigger keeps only the name. The chosen plan ends in a tick.",
+    "tagline": "A plan dropdown that shows a one-line reason under each name.",
     "category": "selects",
     "categories": [
       "selects",
@@ -21987,7 +22825,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-231",
     "title": "Searchable Timezone Select",
-    "description": "Uses Intl API and custom search filter.",
+    "description": "A dropdown that lists timezones by GMT offset and place, with a search field on top to narrow it. Choosing a row closes the panel and puts that zone into the trigger.",
+    "tagline": "A timezone dropdown with a search box over a long offset list.",
     "category": "selects",
     "categories": [
       "selects",
@@ -22012,7 +22851,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-229",
     "title": "Searchable Combobox Select",
-    "description": "A combobox built with Popover and Command, allowing users to search/filter options from a list and select via keyboard or click.",
+    "description": "A labelled picker over sixteen frameworks, with a search field that filters as you type and a tick on the current choice. Picking a row closes the list and writes that name into the trigger.",
+    "tagline": "A dropdown you can type in to find a framework.",
     "category": "selects",
     "categories": [
       "selects",
@@ -22036,7 +22876,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-228",
     "title": "Portrait Avatar Select",
-    "description": "A select to pick users with larger avatars, names, and usernames. The trigger expands in height to fit portrait items.",
+    "description": "A dropdown for choosing one person from a short team list. Each choice shows a large round photo, a name and a handle, and the closed trigger mirrors the chosen person.",
+    "tagline": "Pick a person from a list of portrait rows with names and handles.",
     "category": "selects",
     "categories": [
       "selects",
@@ -22061,7 +22902,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-230",
     "title": "Combobox With Action",
-    "description": "A combobox with search built on Popover and Command, plus an action button at the bottom (e.g., 'New organization').",
+    "description": "A labelled picker over a couple of organisations, with a search field, a tick on the current one and a New organization action below a divider. Choosing a row closes the panel and fills the trigger.",
+    "tagline": "A searchable organisation picker with a create-new row at its foot.",
     "category": "selects",
     "categories": [
       "selects",
@@ -22085,7 +22927,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-233",
     "title": "Icon Count Combobox",
-    "description": "A combobox showing service categories with icons and numeric counts. Each option displays icon, label, and count.",
+    "description": "A searchable category picker where every row shows an icon, a service name and a right-aligned total. Choosing a row puts its icon and name into the closed trigger.",
+    "tagline": "A service picker whose rows pair a small icon with a running count.",
     "category": "selects",
     "categories": [
       "selects",
@@ -22109,7 +22952,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-232",
     "title": "Flag Country Combobox",
-    "description": "A combobox for countries grouped by continent, with flag emojis and search filtering.",
+    "description": "A searchable country picker whose list is split into continent headings, with a flag before every name. Choosing a country closes the panel and fills the trigger with its flag and name.",
+    "tagline": "Countries grouped by continent, each row led by its flag.",
     "category": "selects",
     "categories": [
       "selects",
@@ -22134,7 +22978,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-238",
     "title": "Multi-Select Listbox",
-    "description": "A listbox for selecting multiple items built on React Aria. Supports keyboard navigation and shows all selected items at once.",
+    "description": "A bordered multi-select list of four frameworks that keeps every chosen row filled in. React and Vue start selected, and clicking a row adds it to or takes it out of the set.",
+    "tagline": "A short list where several framework names can stay lit at once.",
     "category": "selects",
     "categories": [
       "selects"
@@ -22159,7 +23004,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-245",
     "title": "Slider Reference Labels",
-    "description": "A slider with tick marks or labels aligned to specific values along the track, aiding value reference.",
+    "description": "A horizontal slider for a size in gigabytes, with the filled range in white ahead of a round thumb and three grey labels marking the low, middle and high end beneath it.",
+    "tagline": "A slider with fixed size labels spread under its track.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -22182,7 +23028,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-246",
     "title": "Slider With Ticks",
-    "description": "A slider showing evenly-spaced tick marks along the track, providing visual reference points.",
+    "description": "A one-handle range slider on a dark surface. Its track fills to the left of the knob and a row of ticks with even numbers sits underneath as reference points.",
+    "tagline": "Drag the white knob along a track with numbered tick marks beneath.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -22205,7 +23052,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-251",
     "title": "Dual Range With Output",
-    "description": "A range slider paired with two input fields, allowing both drag and direct number entry for min and max.",
+    "description": "A dual-handle range slider. A label sits on the left and a live pair of values on the right, with the selected span drawn as a bright band between the two knobs.",
+    "tagline": "Two white knobs set a range while the chosen pair of numbers updates above.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -22228,7 +23076,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-254",
     "title": "Temperature Slider Input",
-    "description": "A slider pair styled for temperature selection, showing a numeric value and often a unit indicator.",
+    "description": "A temperature setting that pairs a horizontal slider with a small editable number field. A reset arrow appears once the value changes and reveals a tooltip when hovered.",
+    "tagline": "Drag the bar or type a number; an undo arrow returns it to default.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -22252,7 +23101,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-255",
     "title": "Slider With Input",
-    "description": "A slider and text input in sync, allowing drag or direct typing to set a value.",
+    "description": "A volume-style slider with a compact number field at its end. Dragging the knob fills the track and rewrites the field, and typing in the field moves the knob to match.",
+    "tagline": "Slide the bar or type a number in the little box on its right.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -22275,7 +23125,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-260",
     "title": "Price Range Slider",
-    "description": "A range slider with currency symbol or price labels, designed for e-commerce price selection.",
+    "description": "A two-handle slider for a price bracket, with the chosen minimum and maximum written in currency above it and a rounded Go button to the right.",
+    "tagline": "Two handles narrow a price band while the total range reads out above.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -22299,7 +23150,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-261",
     "title": "Vertical Slider",
-    "description": "A vertically-oriented slider for selecting a single value, useful for height/depth controls.",
+    "description": "A single-value slider turned on its side, standing vertically under a small centred label. The track fills white beneath the knob as the value climbs.",
+    "tagline": "Drag a round knob up and down a short upright track.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -22322,7 +23174,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-269",
     "title": "Error Inline Alert",
-    "description": "Minimal inline alert for error messages using a red error icon from lucide-react. No dismiss action; purely informational for error display.",
+    "description": "An inline error strip for forms: a rounded border around a small red circled exclamation and the words An error occurred. It never floats and has no close button.",
+    "tagline": "A thin bordered row with a red warning circle and one line of error text.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22345,7 +23198,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-264",
     "title": "Object Position Slider",
-    "description": "A 2D slider allowing independent X and Y value selection via dragging, useful for object positioning.",
+    "description": "A position panel with one slider and one small number box per axis. X, Y and Z can be dragged or typed, and a Reset button puts all three back to zero.",
+    "tagline": "Three stacked rows nudge an object on the X, Y and Z axes.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -22368,7 +23222,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-277",
     "title": "Error List Alert",
-    "description": "Error alert that displays multiple error messages as a bulleted list. Useful for form validation showing all failures at once.",
+    "description": "A multi-line error notice for forms. A faded red warning circle sits beside a bold heading and a bulleted list of the conditions that failed.",
+    "tagline": "A bordered notice lists every rejected password rule under one red icon.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22391,7 +23246,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-283",
     "title": "Warning Alert Banner",
-    "description": "Static warning alert banner with TriangleAlert icon, message text, optional action link, and dismissible close button. No interaction hooks.",
+    "description": "A dismissible warning banner. An amber triangle sits beside a short message, a link with an arrow, and an X; clicking the X removes the banner entirely.",
+    "tagline": "A slim warning strip with a Fix it link and a close cross that clears it.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22414,7 +23270,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-290",
     "title": "Error Notification Card",
-    "description": "Static error notification card with red alert icon, bold title, descriptive text, action button, and dismissible close. Larger vertical card layout.",
+    "description": "A rounded notification card for a failed action. A red alert circle sits beside a bold headline and grey explanation, with a light action button below and an X in the corner.",
+    "tagline": "A small error card with a headline, an explanation and a Learn more button.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22438,7 +23295,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-293",
     "title": "Cookie Consent Prompt",
-    "description": "Static cookie consent notification card with title, explanation, Accept and Decline buttons, and dismissible close.",
+    "description": "A non-blocking cookie notice. It explains how cookies are used, offers Accept and Decline, and carries a close icon in the corner.",
+    "tagline": "Small dark card with a cookie headline, two short buttons and a close X.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22461,7 +23319,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-296",
     "title": "Live Event Notification",
-    "description": "Static live event notification with radio icon, event title, date/time, notify button, and dismissible close.",
+    "description": "A notification for an upcoming live event. A ringed radio-wave badge leads into a short countdown and a date, with a light reminder button and an X to close.",
+    "tagline": "A wide card counts down to a broadcast and offers a Notify me button.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22484,7 +23343,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-294",
     "title": "App Update Notification",
-    "description": "Static app update notification with refresh icon, version heading, description, Install and Later buttons, and dismissible close.",
+    "description": "A software update notification. A round badge with a circular refresh arrow leads a version headline and short explanation, with a filled Install button, a link-style Later and a close cross.",
+    "tagline": "A refresh badge and two buttons announce that a new version is ready.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22507,7 +23367,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-288",
     "title": "Success With Undo Actions",
-    "description": "Static success notification with green checkmark, single message line, two action buttons separated by a divider, and dismissible close.",
+    "description": "A slim success notification. A green circled check precedes a one-line confirmation, followed by two underlined-on-hover text actions and a quiet close cross.",
+    "tagline": "A green tick confirms the send, with View and Undo links on the same line.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22531,7 +23392,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-295",
     "title": "Social Mention Notification",
-    "description": "Static social mention notification with user avatar, linked names for person and project, timestamp, accept/decline buttons, and dismissible close.",
+    "description": "A mention notification card. A round avatar sits beside a sentence with the person and project in bold, a timestamp below, and Accept and Decline buttons at the foot.",
+    "tagline": "A tiny profile photo precedes the line naming who mentioned you and where.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22556,7 +23418,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-301",
     "title": "Cookie Consent Banner",
-    "description": "Full-width cookie consent banner with message text and two action buttons, responsive layout (stacked on mobile, inline on desktop).",
+    "description": "A dark, wide bar that explains the site's cookie use and offers Accept and Decline buttons. The buttons sit inline beside the text on wide screens and wrap under it on narrow ones.",
+    "tagline": "Slim bar asks visitors to accept or decline tracking, with two buttons.",
     "category": "notifications",
     "categories": [
       "notifications"
@@ -22579,7 +23442,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-302",
     "title": "Dark Announcement Banner",
-    "description": "Full-width dark-themed announcement banner with emoji, announcement headline, and linked arrow icon with hover animation.",
+    "description": "A one-line dark announcement bar with a sparkle before the headline and a small arrow after it, all wrapped in a single link. Hovering nudges the arrow a little to the right.",
+    "tagline": "A dark strip links to news with a sparkle emoji and a nudging arrow.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22603,7 +23467,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-300",
     "title": "Custom Sonner Toast",
-    "description": "Button that programmatically triggers a custom-rendered Sonner toast with success icon, message, and dual action buttons (View, Undo).",
+    "description": "A small outline button that opens a custom notification at the bottom of the screen. The toast shows a green tick, a short confirmation, then View and Undo links and a close icon.",
+    "tagline": "Clicking spawns a bottom toast confirming a send, with view, undo and close.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22629,7 +23494,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-305",
     "title": "Dismissible Feature Banner",
-    "description": "Full-width dark-themed feature banner with eclipse icon, message, Learn more link, and dismissible close button. Uses useState for visibility.",
+    "description": "A full-width dark bar with a short update message, a Learn more link whose arrow nudges on hover, and a close button that removes the bar from the page.",
+    "tagline": "A dark strip announces a new feature and can be closed with an X.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22653,7 +23519,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-307",
     "title": "Feature Launch Banner",
-    "description": "Full-width dark-themed feature launch banner with eclipse icon, message, Download primary button, Learn more link-style button, and dismissible close.",
+    "description": "A full-width dark strip announcing a launch, with a white Download button, a plain Learn more link and a close X that hides the bar.",
+    "tagline": "Thin launch bar offers a Download button and a dismiss X.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22677,7 +23544,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-309",
     "title": "Feature Launch Banner",
-    "description": "Full-width dark-themed feature launch with rocket icon in colored circle background, title, description text, Try now button, and dismissible close.",
+    "description": "A full-width dark banner with a bold headline over a muted one-line description, a white Try now button and a close X that removes it.",
+    "tagline": "Two-line launch strip pairs a headline with a Try now pill.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22701,7 +23569,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-314",
     "title": "Alert Dialog With Icon",
-    "description": "A premade alert dialog template showing how to add an icon alongside the header, with responsive flex layout.",
+    "description": "An outlined trigger button opens a centred alert with a circled warning icon, a short question, a line of explanation, and Cancel and Confirm actions.",
+    "tagline": "A button opens a warning panel asking if you really want to delete.",
     "category": "modals",
     "categories": [
       "modals"
@@ -22724,7 +23593,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-312",
     "title": "Version Update Banner",
-    "description": "Muted background banner showing version number, feature description, and Update now button. Button shows loading spinner via useState during simulated download.",
+    "description": "A slim centred bar showing a version number and release line beside an outlined Update now button, which becomes a spinner and Updating label while it pretends to work.",
+    "tagline": "Thin bar offers a new version with an Update now button that spins.",
     "category": "notifications",
     "categories": [
       "notifications",
@@ -22748,7 +23618,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-318",
     "title": "Sticky Footer Dialog",
-    "description": "A premade dialog template showing how to keep action buttons fixed at the bottom while content scrolls independently.",
+    "description": "A trigger opens a narrow, tall dialog full of FAQ paragraphs. The body scrolls on its own while an outlined Cancel and a white Okay stay fixed in a bordered footer.",
+    "tagline": "Tall FAQ dialog keeps its Cancel and Okay buttons pinned while text scrolls.",
     "category": "modals",
     "categories": [
       "modals"
@@ -22771,7 +23642,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-319",
     "title": "Terms Acceptance Dialog",
-    "description": "A premade dialog template for terms acceptance that tracks scroll position and enables the action button only when the user has read to the bottom.",
+    "description": "A trigger opens a narrow dialog of legal text. An outlined Cancel sits beside a dimmed I agree that only lights up once the body is scrolled to the bottom.",
+    "tagline": "Terms dialog keeps I agree disabled until you scroll to the end.",
     "category": "modals",
     "categories": [
       "modals"
@@ -22794,7 +23666,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-322",
     "title": "Feedback Dialog",
-    "description": "A shadcn Dialog with a textarea for feedback, links to tutorials and documentation, and a send button.",
+    "description": "A trigger opens a dark dialog with a short intro linking to tutorials, documentation and Discord, a large feedback textarea, and a white Send feedback button.",
+    "tagline": "Feedback popup pairs a big message box with links to docs and Discord.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22818,7 +23691,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-323",
     "title": "Rating Dialog",
-    "description": "A shadcn Dialog with a 9-option radio button scale (0-8) and textarea for explaining the rating, separated by a header border.",
+    "description": "A trigger opens a compact dialog with a title strip, a rating question, nine numbered cells from easy to difficult, a free-text box and a full-width Send feedback button.",
+    "tagline": "Popup rates setup with nine joined cells from 0 to 8, plus a comment box.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22842,7 +23716,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-327",
     "title": "Invite Members Dialog",
-    "description": "A shadcn Dialog with dynamically addable email input fields and a read-only magic link with copy-to-clipboard button.",
+    "description": "A trigger opens a dark dialog where you can add several teammate emails, send invites, and copy a read-only magic link with a one-click copy button.",
+    "tagline": "Invite dialog adds email rows and copies a referral link.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22866,7 +23741,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-326",
     "title": "Sign In Dialog",
-    "description": "A shadcn Dialog with email and password fields, a remember-me checkbox, forgot-password link, and Google login option.",
+    "description": "A trigger opens a compact dark sign-in dialog with a ring icon, email and password fields, a Remember me checkbox, a Forgot password link, a white Sign in button and Login with Google.",
+    "tagline": "Login dialog pairs email and password with a Google sign-in option.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22890,7 +23766,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-328",
     "title": "Card Details Dialog",
-    "description": "A shadcn Dialog using react-payment-inputs for card number, expiry, and CVC fields; includes name, card type detection, and default payment method checkbox.",
+    "description": "A trigger opens a dark dialog to replace a saved card: name, card number with brand detection, expiry and CVC side by side, a default-payment checkbox and an Update card button.",
+    "tagline": "Card update modal takes number, expiry and CVC and shows the card brand.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22917,7 +23794,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-330",
     "title": "Change Plan Dialog",
-    "description": "A shadcn Dialog with radio-button plan selector (Essential, Standard, Enterprise) and a checklist of included features.",
+    "description": "A trigger opens a tall narrow dialog listing three plans as radio rows with prices, a checked feature list below, and Change plan and Cancel buttons.",
+    "tagline": "Plan chooser lists three tiers with radios and ticks what each gives.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22942,7 +23820,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-342",
     "title": "Accordion Icon Subheader Chevron",
-    "description": "Leading icon (left side) with header and subheader text, chevron on right.",
+    "description": "A four-row accordion for account settings. Each row has a circular icon, a bold title and a grey subtitle; clicking a row opens its paragraph and closes the one before.",
+    "tagline": "Rows with round icons and a second line of grey text fold open one at a time.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -22966,7 +23845,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-321",
     "title": "Newsletter Subscribe Dialog",
-    "description": "A shadcn Dialog containing an email input with a mail icon, subscribe button, and privacy policy notice.",
+    "description": "A compact newsletter signup. A trigger button opens a centred dialog with an email field, a full-width Subscribe button and a short privacy note.",
+    "tagline": "Click Newsletter and a dark dialog asks for an email to subscribe.",
     "category": "modals",
     "categories": [
       "modals",
@@ -22991,7 +23871,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-352",
     "title": "Multi-Level Nested Accordion",
-    "description": "Accordion items can contain nested accordion items, enabling category/subcategory structures.",
+    "description": "A five-line FAQ accordion whose open answer holds two more collapsible questions. Opening one top row closes the others; nested rows show or hide their explanation.",
+    "tagline": "Faq rows open to reveal a second layer of smaller collapsible questions.",
     "category": "accordions",
     "categories": [
       "accordions",
@@ -23015,7 +23896,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-360",
     "title": "Directional Pan Tooltips",
-    "description": "3x3 grid of arrow buttons arranged in a directional pad layout. Each button has a tooltip displaying the action and a keyboard shortcut in a kbd element.",
+    "description": "A small cluster of four outlined arrow buttons around a centre dot, laid out like a directional pad. Hovering any arrow opens a tooltip naming the pan direction and its keyboard shortcut.",
+    "tagline": "Four arrow buttons around a dot show shortcut hints when hovered.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23039,7 +23921,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-362",
     "title": "Chart Data Tooltip",
-    "description": "Tooltip displaying a date header and multi-row chart data, each row with a colored circle indicator and label/value pair.",
+    "description": "A small outlined Chart button opens a compact tooltip on hover. The tooltip shows a date heading and three rows, each pairing a coloured dot and a metric name with a right-aligned value.",
+    "tagline": "A hover popup breaks a day into coloured dots, labels and dollar amounts.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23064,7 +23947,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-359",
     "title": "Image Tooltip",
-    "description": "Tooltip displaying a static image preview at the top, with title and description text below.",
+    "description": "An outlined button opens a rich tooltip that holds a wide image above a short title and paragraph. In the recording the popup is cropped, so only its lower edge and pointer are actually seen.",
+    "tagline": "Hovering a small labelled button starts to open a light popup above it.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23088,7 +23972,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-361",
     "title": "Stats Tooltip",
-    "description": "Tooltip displaying a list of metric names on the left and their values on the right in a compact grid format.",
+    "description": "An outlined Stats button reveals a compact tooltip listing four build metrics. Each row puts a muted label above a bold value, from status to coverage and performance score.",
+    "tagline": "A light popup of build metrics opens above a small Stats button.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23112,7 +23997,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-364",
     "title": "User Profile Hovercard",
-    "description": "Text link that triggers a hover card displaying avatar, full name, handle, bio, and a stack of mutual friend avatars with count.",
+    "description": "A name with avatar and handle reveals a profile card on hover. The card repeats the person's photo, name and handle, adds a short bio, and shows overlapping friend avatars with a mutual-friend count.",
+    "tagline": "Hovering a name opens a small profile card with bio and mutual friends.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23137,7 +24023,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-365",
     "title": "Article Preview Hovercard",
-    "description": "Image link that triggers a hover card displaying article title, summary text, read time, and last update date. Includes an arrow pointer.",
+    "description": "A small rounded card holds an article thumbnail beside its title and a hover hint. Hovering the thumbnail opens a wider popup with the full headline, a summary, read time and last-updated date.",
+    "tagline": "Hovering a thumbnail unfurls a note with article title, summary and read time.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23161,7 +24048,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-371",
     "title": "Checkbox Dropdown Menu",
-    "description": "A stateful dropdown where each item is a checkbox that toggles a boolean value. Supports disabled state.",
+    "description": "A dropdown of checkbox options. Opening it reveals four named rows, any that are on show a tick at the right, and one row is disabled.",
+    "tagline": "A menu of framework names where each row can be ticked on or off.",
     "category": "selects",
     "categories": [
       "selects",
@@ -23186,7 +24074,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-374",
     "title": "Rich Icon Dropdown",
-    "description": "A comprehensive dropdown combining icons, keyboard shortcuts, nested submenus with radio buttons and checkboxes for controlling settings.",
+    "description": "An outlined button opens a dark dropdown with a New action, two submenus for Framework and Notifications, plus Share, Archive and a red Delete. Icons and keyboard shortcuts sit beside the labels.",
+    "tagline": "A button drops a dark menu of icon actions, shortcuts and two submenus.",
     "category": "menus",
     "categories": [
       "menus",
@@ -23211,7 +24100,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-380",
     "title": "Theme Switcher Dropdown",
-    "description": "A dropdown menu to switch between light, dark, and system theme preferences. The trigger button shows the current theme icon.",
+    "description": "A square icon button shows the current appearance and opens a short menu with Light, Dark and System options. Picking one swaps the button's sun or moon icon.",
+    "tagline": "A sun icon opens a tiny menu for light, dark and system themes.",
     "category": "selects",
     "categories": [
       "selects",
@@ -23237,7 +24127,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-379",
     "title": "Content Block Picker",
-    "description": "A dropdown menu for adding content blocks (text, quote, heading). Each item shows an icon, title, and description.",
+    "description": "A plus button beside a document title opens a menu for adding content. Five rows pair a bordered icon tile with a block type and a one-line description: text, quote, divider and two headings.",
+    "tagline": "A plus button opens a menu of block types, each with an icon and a short hint.",
     "category": "selects",
     "categories": [
       "selects",
@@ -23262,7 +24153,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-384",
     "title": "Interactive Tooltip Popover",
-    "description": "Popover (not a pure tooltip) containing title, description text, and an interactive button. Used for richer content that requires interaction.",
+    "description": "An outlined button opens a compact card above it with a bold heading, a short explanatory paragraph and a white action button. It is a popover styled to resemble a tooltip.",
+    "tagline": "A small callout above a button holds a short note and a Know more action.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23286,7 +24178,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-386",
     "title": "Paginated Tour Tooltip",
-    "description": "Multi-step tour popover with previous/next buttons and step counter. Buttons disable at the first and last steps.",
+    "description": "A button opens a tour popover that pages through five short tips. Each page shows a heading, a sentence, a step counter and left/right arrows; the left arrow is disabled on the first step.",
+    "tagline": "A popover walks through tips with a step count and previous/next arrows.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23311,7 +24204,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-387",
     "title": "Share Link Popover",
-    "description": "A shadcn Popover with social sharing buttons (Twitter, Facebook, Email, Embed) and a copy-to-clipboard link field.",
+    "description": "A Share button opens a small popover with a row of icon buttons for embed, X, Facebook and email, above a read-only link field with a copy button.",
+    "tagline": "A share button opens social icons and a copyable link field.",
     "category": "modals",
     "categories": [
       "modals",
@@ -23335,7 +24229,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-389",
     "title": "Anchored Product Tour",
-    "description": "Interactive tour that shows a grid of numbered cards. Clicking 'Start tour' opens a popover anchored to the active card, cycling through tour steps.",
+    "description": "A grid of four numbered cards sits above a Start tour button. Starting opens a popover beside the current card with a step title, description, a counter and a Next link that moves to the following card.",
+    "tagline": "A tour bubble hops between four numbered cards as you press Next.",
     "category": "tooltips",
     "categories": [
       "tooltips",
@@ -23360,7 +24255,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-409",
     "title": "Avatar Group Overflow",
-    "description": "Renders four circular avatars at 40px size with negative margins, plus a secondary-colored button showing \"+3\" to indicate more avatars are hidden. Uses a Button component with hover effects.",
+    "description": "A row of four circular portraits overlapping with dark rims, finished by a round grey button reading +3 for the people left out.",
+    "tagline": "Four faces overlap in a line and end in a dark +3 circle.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -23384,7 +24280,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-412",
     "title": "Social Proof Avatars",
-    "description": "Renders four circular avatars at 20px size inside a bordered pill with text saying 'Trusted by 60K+ developers.' The avatars have ring-1 borders and are tightly packed with negative margins.",
+    "description": "A slim outlined pill holding four overlapping miniature portraits and the line Trusted by 60K+ developers, with the figure set in bright white.",
+    "tagline": "A bordered capsule stacks four tiny faces beside a bold trust count.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -23410,7 +24307,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-433",
     "title": "Tabs With Icon Badges",
-    "description": "Tab buttons with icon badges displaying notification counts or status indicators. Icons accompany tab labels.",
+    "description": "Three icon-and-label tabs in a dark rounded bar, two carrying badge pills reading 3 and New; the active tab shifts onto a lighter block and swaps the caption below.",
+    "tagline": "A dark pill tab bar whose icons sit beside count and New badges.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -23434,7 +24332,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-436",
     "title": "Browser Icon Tabs",
-    "description": "Browser tab variant displaying icon-only buttons with rounded tops and overlapping z-index layout.",
+    "description": "Three browser-style tabs with a house, panels and box icon switch the panel below between a deploy note, a project status list and package versions.",
+    "tagline": "Browser-shaped icon tabs flip the panel content underneath.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -23458,7 +24357,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-439",
     "title": "Badged Count Tabs",
-    "description": "Tab buttons with numeric badge indicators showing item counts or notification numbers.",
+    "description": "A row of three tabs, each a small pale number circle over a short label, where the chosen tab gains a soft rounded panel and changes the note beneath.",
+    "tagline": "Counts ride above the labels in a row of tabs that swap the caption.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -23483,7 +24383,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-446",
     "title": "Breadcrumb Ellipsis Dropdown",
-    "description": "Breadcrumb navigation with ellipsis dropdown that expands to show hidden breadcrumb items.",
+    "description": "A flat line of breadcrumb links with a three-dot button in the middle that drops a small menu of the pages left out: Documentation, Themes and GitHub.",
+    "tagline": "A breadcrumb trail whose ellipsis opens a menu of skipped pages.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23507,7 +24408,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-449",
     "title": "Breadcrumb With Icons",
-    "description": "Breadcrumb where each navigation item includes an accompanying icon.",
+    "description": "A flat breadcrumb row pairing a house outline with Home and a small blocks glyph with Components, before a brighter current-page label.",
+    "tagline": "A path line where a house and a block icon lead to the current page.",
     "category": "navigation",
     "categories": [
       "navigation"
@@ -23530,7 +24432,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-453",
     "title": "Breadcrumb Select Dropdown",
-    "description": "Breadcrumb allowing navigation to any level via dropdown select from the breadcrumb trail.",
+    "description": "A path starting at Databases whose next crumb is a dropdown showing a database glyph and the chosen name; opening it lists Orion, Sigma and Dorado with a tick on the current one.",
+    "tagline": "A breadcrumb crumb that opens into a list of databases to pick.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23554,7 +24457,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-455",
     "title": "Ghost Arrow Pagination",
-    "description": "Previous/Next pagination using ghost button variant with transparent background styling.",
+    "description": "A minimum pagination footer with a ghost Previous on the left and Next on the right; hovering slides the small arrow a touch outward and no button gains a fill.",
+    "tagline": "Bare Previous and Next links at a card footer, their arrows nudging on hover.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23578,7 +24482,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-457",
     "title": "Compact Page Pagination",
-    "description": "Pagination combining page counter display with previous/next buttons in compact layout.",
+    "description": "A small pagination footer that states the current page and total between left and right chevron links, with no numbered pages.",
+    "tagline": "A centred page counter flanked by two chevrons in a card footer.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23602,7 +24507,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-459",
     "title": "Pagination With Ellipsis",
-    "description": "Pagination displaying page numbers with ellipsis (...) indicating skipped page ranges.",
+    "description": "A single-row pager showing Previous and Next around pages 1 to 4, a three-dot ellipsis before the end, and the current page lifted onto a rounded block.",
+    "tagline": "Numbered page links with a dotted gap and Previous and Next ends.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23626,7 +24532,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-460",
     "title": "Pagination First Last",
-    "description": "Pagination with navigation buttons for First, Previous, Next, and Last page.",
+    "description": "A flat numbered pager with first-page and previous chevrons before the page links, an ellipsis for skipped pages, and next and last chevrons after them in the code.",
+    "tagline": "Numbered pages led by jump-to-first and step-back chevrons.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23650,7 +24557,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-461",
     "title": "Grouped Pagination",
-    "description": "Pagination with navigation controls grouped or arranged by category/section.",
+    "description": "A single pill-shaped pager whose cells hold a back chevron, pages 1 to 4, an ellipsis and a forward chevron, split by thin borders with the current page shaded.",
+    "tagline": "Page numbers joined into one segmented bar with arrow ends.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23674,7 +24582,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-463",
     "title": "Pagination Rows Per Page",
-    "description": "Pagination with dropdown to change results per page (items shown per result set).",
+    "description": "A single footer row with a Rows per page dropdown, a 1–25 of 100 range in the middle, and first, back, next and last arrows at the right.",
+    "tagline": "A footer pairing a rows-per-page picker, a range count and four arrow links.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23699,7 +24608,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-464",
     "title": "Pagination Page Select",
-    "description": "Pagination with input field allowing users to directly type and jump to a specific page number.",
+    "description": "A compact pager of first, previous, next and last arrows wrapped around a centred dropdown listing every page, ticking the current one.",
+    "tagline": "Page arrows with a page-number dropdown in the middle.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23724,7 +24634,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-465",
     "title": "Pagination With Counter",
-    "description": "Pagination control with clickable page numbers, ellipsis for skipped ranges, and a text input to jump directly to a page.",
+    "description": "A slim pager with Previous and Next around pages 1 to 4 and an ellipsis, paired with a Go to page field for typing a number directly.",
+    "tagline": "A small numbered pager beside a box for typing a page to jump to.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -23749,7 +24660,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-467",
     "title": "Table With Avatars",
-    "description": "A table variant where one column displays circular avatar images, common for user/contributor lists.",
+    "description": "A four-row account table whose first column holds a circular photo next to a name and handle, followed by email, location, status and a right-aligned balance.",
+    "tagline": "Dark table rows pairing round profile photos with names, emails and balances.",
     "category": "tables",
     "categories": [
       "tables",
@@ -23773,7 +24685,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-477",
     "title": "Interactive Selectable Table",
-    "description": "Data table with checkbox column for selecting individual rows and all rows, displaying user data with status badges and currency-formatted balance. Includes footer row showing total balance.",
+    "description": "A dark table of five accounts, each row starting with a checkbox. Columns cover name, email, country flag and city, a status pill, and a right-aligned balance, with a total row underneath.",
+    "tagline": "Checkbox table of accounts with flag emojis, status pills and a running total.",
     "category": "tables",
     "categories": [
       "tables",
@@ -23799,7 +24712,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-479",
     "title": "Sortable Columns Table",
-    "description": "Data table where columns are sortable with chevron indicators and resizable by dragging handles between headers. Supports keyboard navigation (Enter/Space for sorting) with aria-sort attributes.",
+    "description": "A dark account table with more columns than fit, showing name, email, country flag and city, status and balance. Clicking a header sorts the rows and drags a thin divider beside it to widen or narrow the column.",
+    "tagline": "Wide dark table with click-to-sort headers and drag-to-resize columns.",
     "category": "tables",
     "categories": [
       "tables",
@@ -23825,7 +24739,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-480",
     "title": "Pinnable Columns Table",
-    "description": "Data table where columns can be pinned to the left or right side via dropdown menu controls. Pinned columns remain visible during horizontal scroll with sticky positioning and subtle backdrop blur separation.",
+    "description": "A wide people table with ten columns and a pin menu on every header. Scrolling sideways keeps a pinned column in view so each row's identity never leaves the screen.",
+    "tagline": "Spreadsheet of staff rows where the first column stays pinned as you scroll.",
     "category": "tables",
     "categories": [
       "tables",
@@ -23851,7 +24766,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-476",
     "title": "Feature Compatibility Table",
-    "description": "Displays CSS feature support across desktop and mobile browsers with version numbers. Each cell shows a checkmark or X with browser version in a compact, scannable grid with sideways-oriented headers.",
+    "description": "A feature support matrix: three CSS features run down the left, ten desktop and mobile browsers run across the top in sideways labels, and each cell holds a green tick or red cross with the version number.",
+    "tagline": "Grid of green ticks and red crosses showing CSS support per browser.",
     "category": "tables",
     "categories": [
       "tables"
@@ -23874,7 +24790,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-481",
     "title": "Draggable Columns Table",
-    "description": "Data table where column headers have drag handles to reorder columns horizontally. Each column can also be sorted via chevron button. Uses dnd-kit with horizontal-axis restriction and supports mouse, touch, and keyboard input.",
+    "description": "A dark five-column account table. Every header holds a small grip for dragging that column to a new place and an arrow button for sorting, and the rows move with the column mid-drag.",
+    "tagline": "Table whose columns you can drag sideways into a new order.",
     "category": "tables",
     "categories": [
       "tables",
@@ -23904,7 +24821,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-483",
     "title": "Paginated Sortable Table",
-    "description": "Data table with pagination controls (first/previous/next/last buttons), adjustable rows per page (5/10/25/50), page info display, and sortable columns with chevrow indicators. Uses aria-live for page info updates.",
+    "description": "A dark account table inside a rounded border, with sortable headers, row checkboxes and a footer bar. That bar holds a rows-per-page menu, a live count like 1-5 of 60, and first, previous, next and last buttons.",
+    "tagline": "Account table paged five at a time with a rows-per-page picker.",
     "category": "tables",
     "categories": [
       "tables",
@@ -23930,7 +24848,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-491",
     "title": "Date Range Calendar",
-    "description": "A calendar for selecting a date range by clicking a start date then an end date.",
+    "description": "A single month of dates in a rounded dark panel. Clicking one day then another circles both in white and shades every day between them, with arrows either side of the month name to change month.",
+    "tagline": "Month grid where two clicked days shade everything between them.",
     "category": "calendar",
     "categories": [
       "calendar"
@@ -23953,7 +24872,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-504",
     "title": "Advanced Year Month Picker",
-    "description": "An advanced calendar interface allowing simultaneous year and month selection with a grid-based picker.",
+    "description": "A compact month calendar whose heading is a button: pressing it swaps the day grid for a scrollable run of years, each opening into a three-across grid of month buttons. Picking a month returns to the days.",
+    "tagline": "Calendar caption opens a collapsible list of years and months.",
     "category": "calendar",
     "categories": [
       "calendar"
@@ -23976,7 +24896,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-503",
     "title": "Calendar With Time Input",
-    "description": "A calendar with integrated time input (hours and minutes) for selecting a specific date and time.",
+    "description": "A single month calendar in a bordered panel, with a divider below and a label reading Enter time. The time field shows hours, minutes and seconds beside a clock icon, and days circle in white when pressed.",
+    "tagline": "Month calendar with a clock field for entering an exact time.",
     "category": "calendar",
     "categories": [
       "calendar"
@@ -23999,7 +24920,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-508",
     "title": "Two Month Range Calendar",
-    "description": "Displays two consecutive months side-by-side in range mode. Uses paged navigation (forward/back arrows) to move through months. Separator line divides the two calendars.",
+    "description": "One bordered dark panel holding November and December one above the other, each with its own weekday row. A single range runs from a day in the first month to a day in the second, both ends circled in white.",
+    "tagline": "Two stacked month grids for choosing a range across months.",
     "category": "calendar",
     "categories": [
       "calendar"
@@ -24022,7 +24944,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-510",
     "title": "Pricing Calendar",
-    "description": "Two-month calendar overlaying prices on each day. Good prices (under $100) are highlighted in emerald green. Custom DayButton component renders date + price. Dates without pricing data are disabled.",
+    "description": "A tall calendar showing November and December stacked, with a small dollar price beneath every available day. Nights under a hundred dollars are tinted green, days without a price are dimmed and unclickable, and a chosen day fills white.",
+    "tagline": "Two-month calendar printing nightly prices under each date.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -24046,7 +24969,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-511",
     "title": "Single Date Popover Picker",
-    "description": "A labeled form control with a button trigger showing the selected date or placeholder. Clicking opens a popover with a calendar. Uses Radix Popover and React DayPicker.",
+    "description": "A field labelled Date picker: a dark outlined button reading Pick a date beside a calendar icon. Pressing it opens a floating month calendar, and choosing a day rewrites the button with a full date.",
+    "tagline": "Date button that drops open a single-month calendar.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -24070,7 +24994,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-544",
     "title": "Image Cover Dropzone",
-    "description": "Drag-and-drop upload area that displays selected image as full background when loaded. Shows upload instructions when empty; 5MB size limit.",
+    "description": "A dashed rounded panel inviting you to drop an image or click to browse, with a 5MB note underneath. Once a file loads, the panel becomes the picture itself, with a round close button in the corner.",
+    "tagline": "Dashed box that takes a dropped image and fills with a preview.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -24094,7 +25019,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-549",
     "title": "Multi File Upload List",
-    "description": "Multi-file uploader in list format showing file names, sizes, and upload progress. Each file has individual remove control.",
+    "description": "A tall uploader: a dashed drop box at the top and one bordered row per file below, each with a type icon, filename, size and an X, with a Remove all button under the list.",
+    "tagline": "Narrow file list with an icon, name and size for each upload.",
     "category": "file-upload",
     "categories": [
       "file-upload"
@@ -24117,7 +25043,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-551",
     "title": "File Upload Table View",
-    "description": "Multi-file upload manager using table layout. Shows file name, size, upload date, status with sortable columns and bulk actions.",
+    "description": "A files manager in table form: a count heading with Add files and Remove all, then a bordered table listing each attachment's icon and name, its type, size, and download and delete buttons.",
+    "tagline": "Table of uploaded files with type, size and per-row actions.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -24142,7 +25069,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-553",
     "title": "Mixed File Upload Manager",
-    "description": "Multi-file uploader displaying both images as thumbnails and other files as type icons in a single grid. All removable.",
+    "description": "A rounded upload panel collects up to six files and shows each as a row with a type icon, name, size and remove button, filling a thin progress bar while it uploads.",
+    "tagline": "Lists chosen files with sizes and uploads each with its own progress bar.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -24166,7 +25094,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-543",
     "title": "Avatar Image Uploader",
-    "description": "Circular avatar upload button that accepts click or drag-drop. Shows hover/dragging state and displays preview when image is loaded.",
+    "description": "A compact profile-picture picker: a dashed circle with a person icon that opens a file dialog or takes a dropped image, then shows the photo with a small remove button.",
+    "tagline": "A dashed circle becomes a profile photo when you click or drop an image.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -24191,7 +25120,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-582",
     "title": "Icon Nav With Language Select",
-    "description": "Header with icon nav links, language select dropdown, and theme toggle. Icons shown with tooltips on desktop; text labels on mobile.",
+    "description": "A compact dark header holding a logo, four unlabelled icon links that name themselves on hover, a light/dark toggle, a globe language dropdown and a user avatar.",
+    "tagline": "Icon-only nav bar with hover tooltips, a theme switch and a language picker.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24216,7 +25146,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-580",
     "title": "Ecommerce Search Navbar",
-    "description": "Header with logo, search input (desktop + mobile), category nav, cart/sign-in buttons. Mobile menu hides nav, includes cart counter.",
+    "description": "A dark ecommerce top bar with a starburst logo, Products, Categories and Deals links, a search field with a magnifier, a Sign In action and a white Cart button showing a count.",
+    "tagline": "Store header with category links, a search box and a cart badge.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24241,7 +25172,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-581",
     "title": "Minimal Auth Navbar",
-    "description": "Clean header with logo, simple nav links, and icon-based menus (info, notifications, user). Responsive mobile menu.",
+    "description": "A dark site header with a logo, four plain nav links, and three round icon buttons on the right for help, notifications and the user menu; the bell opens a panel of recent updates.",
+    "tagline": "Minimal top bar with help and notification menus beside a user avatar.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24265,7 +25197,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-583",
     "title": "Breadcrumb Project Header",
-    "description": "Header showing breadcrumb navigation with account/project hierarchy. Project selector is a dropdown menu. Notification and user menus included.",
+    "description": "A slim dark header with a breadcrumb trail from logo through Personal Account and Projects to a project switcher button, plus a notification bell and user avatar.",
+    "tagline": "Breadcrumb header that shows your account path and switches project in place.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24289,7 +25222,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-584",
     "title": "Simple Nav Header",
-    "description": "Header with logo, search input, notifications, and user menu. Below-header strip with text nav links. Responsive: mobile hides nav strip.",
+    "description": "A dark site header whose top row has a logo, a centered search field with a shortcut hint, a bell and an avatar, plus a second row of Home, Features, Pricing and About links.",
+    "tagline": "Two-row header with a command-K search box above a strip of section links.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24313,7 +25247,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-587",
     "title": "App Icon Nav Header",
-    "description": "Header with icon navigation menu, app switcher menu (multiple apps), notifications, user dropdown, and highlighted upgrade button.",
+    "description": "A dark header with a starburst logo, three rounded links that pair an icon with a word (Home, Inbox, Insights), and a search box with a magnifier at the right.",
+    "tagline": "Slim app bar pairing three icon links with a search field.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24337,7 +25272,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-589",
     "title": "Breadcrumb Version Header",
-    "description": "Header with breadcrumb showing account and project dropdowns. Secondary nav menu below (desktop only). Notifications and user menus included.",
+    "description": "A slim dark header with a two-part breadcrumb for account type and project, each opening a small dropdown, followed by Dashboard, Docs, API reference links, a gear and an avatar.",
+    "tagline": "Breadcrumb header whose account and project names open dropdowns to switch.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24361,7 +25297,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-590",
     "title": "Team Nav Header",
-    "description": "Header with team switcher, icon nav menu, post button, notifications, and user menu. Compact icon layout for content creation apps.",
+    "description": "A compact dark header pairing a team pill with four icon-only nav links, a white plus Post button, a notification bell and a user avatar.",
+    "tagline": "Creator app header with a team switcher, icon nav and a white Post button.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24385,7 +25322,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-593",
     "title": "Breadcrumb Filter Header",
-    "description": "Header with breadcrumb (home icon + page title), date picker, filters panel, and save/bookmark button.",
+    "description": "A quiet dark toolbar with a home-icon breadcrumb ending in Reports, a date range field that opens a month calendar, plus Filters and Saved buttons on the right.",
+    "tagline": "Reports header with a home breadcrumb, date range picker and filter buttons.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24411,7 +25349,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-595",
     "title": "Collab Nav Header",
-    "description": "Header with back button, page title, history/comments/add-user buttons, and avatar stack showing online collaborators.",
+    "description": "A slim dark header for a shared document, holding a back chevron, the title Basic UI, three round icon actions for history, comments and adding people, and an avatar stack with presence dots.",
+    "tagline": "Editor toolbar with a back arrow, page title and a row of online collaborators.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -24436,7 +25375,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-animated-beam",
     "title": "Animated Beam",
-    "description": "An SVG beam that draws a quadratic bezier path between two DOM refs inside a container, with a traveling gradient light using motion/react linearGradient animation. Tracks resizes via ResizeObserver.",
+    "description": "A connector graphic: four small circular nodes on the left feed through gently bowed hairlines into one larger circle on the right, while a coloured light runs along each path in turn.",
+    "tagline": "Hairline curves link four small icons to a hub, with a light sliding along them.",
     "category": "effects",
     "categories": [
       "effects",
@@ -24457,7 +25397,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-animated-tabs",
     "title": "Animated Tabs",
-    "description": "Tab bar with a shared layout-id pill indicator that springs between tabs. The content area shows a stacked card effect where background tabs peek out on hover, scaling down by 10% per index.",
+    "description": "A rounded tab bar whose highlight springs from label to label, above a large gradient card that changes colour with the chosen tab. Inactive cards sit stacked behind at reduced size.",
+    "tagline": "Pill highlight slides between tabs while a colour card swaps underneath.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -24478,7 +25419,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "balance-slider",
     "title": "Balance Slider",
-    "description": "Two-sided range slider that shows left/right balance percentages with animated fill bars.",
+    "description": "A horizontal control that splits a hundred percent between a left side and a right side. Dragging shifts the two coloured fills and a thin divider while both end percentages update live.",
+    "tagline": "One value split across two coloured bars, percentages on each end.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -24498,7 +25440,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-falling-stars",
     "title": "Falling Stars Background",
-    "description": "Canvas 2D falling stars / warp-speed star field with DPR-aware sizing, layered stroke blur simulation, and 3D perspective projection. Pure canvas with no external deps.",
+    "description": "A dark full-bleed starfield drawn on a canvas: small dots in the middle stretch into long white lines as they fly toward the viewer and out past the edges, forever.",
+    "tagline": "White streaks race outward from the centre like a jump to light speed.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -24519,7 +25462,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-particle-whirlpool",
     "title": "Particle Whirlpool Background",
-    "description": "Three.js InstancedMesh particle field with OrbitControls, UnrealBloom post-processing, and mouse-following whirlpool attractor. Props: particleCount, blur, children. Written to /registry/inspira-react/bg-particle-whirlpool.tsx + .demo.tsx.",
+    "description": "A glowing cloud of hundreds of tiny coloured bars that swirl and cluster on a black stage, drifting toward wherever the pointer moves, with white copy over the lower centre.",
+    "tagline": "A swarm of neon sticks chases the cursor across black.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -24540,7 +25484,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bg-thunderstorm",
     "title": "Thunderstorm Background",
-    "description": "GLSL noise-field thunderstorm light shader (ShaderToy W3d3z7) via ShaderToy helper. Props: hue, saturation, brightness, speed, mouseSensitivity, damping, noise. Written to /registry/inspira-react/bg-thunderstorm.tsx + .demo.tsx.",
+    "description": "A dark, full-bleed animated backdrop of storm clouds lit by flickering electric bolts. Branches of white, blue and amber light flare and fade at random spots while the haze slowly churns.",
+    "tagline": "Jagged lightning flickers through drifting smoke on a black sky.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -24561,7 +25506,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "box-reveal",
     "title": "Box Reveal",
-    "description": "Reveals children with a sliding colour box animation using motion/react whileInView: box sweeps away left to expose the content underneath.",
+    "description": "A wrapper that hides its content behind solid colour boxes, then slides them away so the text and button fade up in place. Each box can be recoloured and timed.",
+    "tagline": "Colour bars sweep aside to uncover a headline block.",
     "category": "effects",
     "categories": [
       "effects"
@@ -24581,7 +25527,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "carousel-3d",
     "title": "Carousel 3D",
-    "description": "Drag-to-rotate 3D image carousel powered by Three.js CSS3DRenderer (dynamically imported for SSR safety) with continuous auto-rotation via motion/react animate..",
+    "description": "A draggable carousel that places image cards around an invisible circle in 3D space, tilts the ring and turns it slowly. Dragging spins it; releasing resumes the auto-spin.",
+    "tagline": "A ring of photo cards rotates in 3D and follows a drag.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -24604,7 +25551,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cosmic-portal",
     "title": "Cosmic Portal",
-    "description": "Full Three.js WebGL portal scene: cosmic star background, shader core sphere, vortex rings, floating octahedron crystals, portal frame torus, energy particles, bloom post-processing, OrbitControls. Exposes activatePortal() and shiftDimensions() via forwardRef.",
+    "description": "A full 3D cosmic scene: a starry void with a luminous torus frame, circling rings and floating crystals around a bright core. A pulse and a recolour can be triggered from outside.",
+    "tagline": "A glowing ring portal pulses open over a starfield you can orbit.",
     "category": "3d",
     "categories": [
       "3d",
@@ -24625,7 +25573,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "design-testimonials",
     "title": "Design Testimonials",
-    "description": "Editorial-style testimonial rotator with oversized parallax index number, animated word-by-word quote reveal, vertical progress bar, company badge, author row, and a scrolling ticker. Uses motion/react springs and AnimatePresence.",
+    "description": "An editorial testimonial rotator: one large quote at a time, a soft oversized index behind it, a company badge, author line and arrow buttons. Quotes swap on a timer and words fade in one by one.",
+    "tagline": "A giant ghosted number backs an oversized quote that rotates.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -24648,7 +25597,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-gradient-button",
     "title": "Gradient Button",
-    "description": "Rotating conic-gradient rainbow border button.",
+    "description": "A pill or rounded button wrapped in a blurred conic gradient that rotates, so the outline cycles through colours. Fill, radius, border width and speed are configurable.",
+    "tagline": "Two dark buttons with a glowing rainbow border that slowly turns.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -24670,7 +25620,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "halo-search",
     "title": "Halo Search",
-    "description": "A search input with animated aurora/halo glow effects using CSS conic-gradients that respond to hover and focus states.",
+    "description": "A rounded search field with a magnifier on the right, wrapped in layered blurred gradients. The halo shifts on hover and glows harder while the field has focus.",
+    "tagline": "A dark search box ringed by a soft pink aurora that brightens on focus.",
     "category": "inputs",
     "categories": [
       "inputs",
@@ -24691,7 +25642,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-lens",
     "title": "Lens Magnifier",
-    "description": "Magnifying-lens overlay that follows the cursor over any child content. Uses motion/react AnimatePresence for enter/exit, radial-gradient CSS mask to punch out the lens circle, and a scaled duplicate of children for the zoomed view.",
+    "description": "A wrapper that adds a circular magnifying lens over its child. Moving the pointer drags the zoomed circle around; leaving the image makes it fade away.",
+    "tagline": "A round magnifier follows the pointer and enlarges part of the photo.",
     "category": "effects",
     "categories": [
       "effects",
@@ -24714,7 +25666,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "liquid-logo",
     "title": "Liquid Logo",
-    "description": "WebGL2 canvas that renders a logo with a liquid distortion shader.",
+    "description": "A canvas that renders an image as a glossy, melting surface, bending its shape and adding thin iridescent highlights that drift over it.",
+    "tagline": "A black logo mark shimmers like liquid chrome with rainbow edges.",
     "category": "effects",
     "categories": [
       "effects",
@@ -24736,7 +25689,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "morphing-tabs",
     "title": "Morphing Tabs",
-    "description": "Tab bar with a gooey SVG filter effect: adjacent tabs appear to morph together when the active tab is marked with expanded margins. SVG filter inline in JSX.",
+    "description": "Four rounded tab buttons sit side by side; the selected one pulls away from the others while the rest blend into one continuous bar. Choosing a new tab makes the shapes flow and stretch into their new arrangement.",
+    "tagline": "Tab pills melt and split apart as the active one is chosen.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -24758,7 +25712,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "neon-border",
     "title": "Neon Border",
-    "description": "Container with a two-color neon glowing border using CSS filter drop-shadow and absolute positioned gradient layers. Supports none/half/full animation width and configurable duration.",
+    "description": "A rounded panel wrapped in a thin gradient ring that glows outward in two colours. Three versions show the glow travelling around the edge, covering half or all of the border, or sitting still.",
+    "tagline": "Pill-shaped cards ringed by a glowing two-colour gradient border.",
     "category": "borders",
     "categories": [
       "borders",
@@ -24780,7 +25735,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sleek-line-cursor",
     "title": "Sleek Line Cursor",
-    "description": "Canvas cursor trail effect that renders multiple spring-physics lines following the mouse with hue-cycling stroke color. Written at registry/inspira-react/sleek-line-cursor.tsx.",
+    "description": "A single hair-thin stroke is pulled along behind the mouse by a spring, so it swoops and loops rather than tracking exactly. Its colour drifts slowly through hues over a dark stage.",
+    "tagline": "A thin coloured line trails behind the pointer, bending as it moves.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -24801,7 +25757,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spring-calendar",
     "title": "Spring Calendar",
-    "description": "Animated day-picker calendar with spring physics via framer-motion MotionConfig. Displays upcoming events per day. Includes a TextMorph helper (spring-calendar-text-morph.tsx) that morphs day labels with blur transitions.",
+    "description": "A small dark card listing upcoming events for one day. Five dated buttons sit at the bottom; tapping one morphs the big weekday label with a blur, swaps in that day's events and springs the card to a new height.",
+    "tagline": "Day name blurs and re-forms as you switch between upcoming dates.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -24822,7 +25779,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "testimonial-slider",
     "title": "Testimonial Slider",
-    "description": "Auto-rotating testimonial carousel with image, quote, name and role. Supports manual prev/next navigation.",
+    "description": "A single large testimonial on a dark panel: a circular avatar under a soft halo, a bold quote and a name with role. It rotates to the next quote on a timer, or by the round arrow buttons.",
+    "tagline": "Quotes fade and swap around a round photo, with arrows on either side.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -24843,7 +25801,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tetris",
     "title": "Tetris Background",
-    "description": "Animated falling-block Tetris grid background. Cells spawn at the top and fall down; filled rows clear. Click a cell to remove it.",
+    "description": "A dark grid of thin-bordered cells covering the background. One indigo square drops a row at a time, one column at a time, and clicking a filled cell deletes it; full bottom rows clear.",
+    "tagline": "A quiet grid where single blocks drift down and stack up.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -24864,7 +25823,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-3d",
     "title": "Text 3D",
-    "description": "3D-styled text with configurable stroke, shadow layers and a wiggle animation.",
+    "description": "The words Hello 3D are set in heavy white type with a thick black outline and two offset copies behind, one black and one yellow. The whole word gently rocks back and forth.",
+    "tagline": "White letters with black and yellow offset layers that tilt and wobble.",
     "category": "text",
     "categories": [
       "text",
@@ -24886,7 +25846,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-glitch",
     "title": "Text Glitch",
-    "description": "CSS glitch effect using ::before/::after pseudo-elements driven by clip-path keyframe animations. Supports always-on or hover-only modes. Scoped CSS emulated with a random per-instance class name and an injected <style> tag.",
+    "description": "Bold white words with two offset copies behind, tinted red and cyan, chopped into shifting horizontal bands. One version glitches constantly; the other only when hovered.",
+    "tagline": "Headlines jitter into red and cyan slices like a broken screen.",
     "category": "text",
     "categories": [
       "text"
@@ -24906,7 +25867,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-backgrounds-hexagon",
     "title": "Hexagon Background",
-    "description": "A background component featuring an interactive hexagon grid.",
+    "description": "A full-screen grid of flat hexagons in barely-there outline on a near-black surface. Moving the pointer across it brightens the few hexagons beneath it to a slightly lighter grey.",
+    "tagline": "A faint honeycomb wall that lights up in patches under the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -24929,7 +25891,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-backgrounds-fireworks",
     "title": "Fireworks Background",
-    "description": "A background component that displays a fireworks animation.",
+    "description": "A black sky where thin coloured streaks launch upward and explode into rings of small bright dots. The colour is drawn at random from the full spectrum, and clicking the background launches one at the pointer.",
+    "tagline": "Coloured rockets shoot up and burst into rings of sparks.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -24953,7 +25916,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-community-radial-intro",
     "title": "Radial Intro",
-    "description": "A circular intro animation component that arranges elements in a radial layout, smoothly transitioning them into orbit with looping motion.",
+    "description": "A ring of circular photos spins slowly around an empty middle, each picture staying upright as the ring turns.",
+    "tagline": "Round photos glide into a ring and orbit the empty centre.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -24981,7 +25945,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-community-share-button",
     "title": "Share Button",
-    "description": "This is a button for sharing.",
+    "description": "A wide pale button showing a share glyph and the word Share; on hover the label slides away and three social icons pop up in its place, each lifting when pointed at.",
+    "tagline": "Hovering swaps the Share label for GitHub, X and Facebook icons.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -25009,7 +25974,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-animate-code-block",
     "title": "Animated Code Block",
-    "description": "A code block component that animates the code as it is written.",
+    "description": "A dark code panel with a filename bar where syntax-highlighted code is written out character by character when it scrolls into view, scrolling down as it grows.",
+    "tagline": "Code types itself out inside a dark editor window.",
     "category": "code",
     "categories": [
       "code",
@@ -25037,7 +26003,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-effects-click",
     "title": "Click",
-    "description": "An effect that creates animated effects at the click position, adding interactive feedback to user actions.",
+    "description": "A row of labelled demo buttons; pressing one draws a short white effect at the pointer, with variants for a ring, a ripple, a crosshair, a burst and particles.",
+    "tagline": "Buttons that fire a ring, ripple or crosshair where you click.",
     "category": "effects",
     "categories": [
       "effects",
@@ -25064,7 +26031,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-headless-checkbox",
     "title": "Headless Checkbox",
-    "description": "Checkboxes provide the same functionality as native HTML checkboxes, without any of the styling, giving you a clean slate to design them however you'd like.",
+    "description": "A launch checklist card with four task rows; clicking a square toggles it, filling the box and drawing the tick in with a short animation.",
+    "tagline": "Checklist squares fill white and draw a tick when clicked.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -25091,7 +26059,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-headless-dialog",
     "title": "Headless Dialog",
-    "description": "A fully-managed, renderless dialog component jam-packed with accessibility and keyboard features, perfect for building completely custom dialogs and alerts.",
+    "description": "A white Open Dialog button opens a dark panel warning that a project will be archived, with a short explanation and Cancel and Archive actions; it tilts in with a blur.",
+    "tagline": "A confirmation panel tilts open inside a blurred dark page.",
     "category": "modals",
     "categories": [
       "modals"
@@ -25117,7 +26086,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-headless-disclosure",
     "title": "Headless Disclosure",
-    "description": "A simple, accessible foundation for building custom UIs that show and hide content, like togglable accordion panels.",
+    "description": "Three bordered question rows with chevrons; clicking a row expands it to show a short answer, sliding the height open and fading the text in.",
+    "tagline": "FAQ rows slide open to reveal a paragraph of answer text.",
     "category": "accordions",
     "categories": [
       "accordions"
@@ -25145,7 +26115,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-headless-popover",
     "title": "Headless Popover",
-    "description": "Popovers are perfect for floating panels with arbitrary content like navigation menus, mobile menus and flyout menus.",
+    "description": "A Quick settings button opens a small floating card with a short explanation and a Save changes button; the card scales up from the trigger and shrinks away on close.",
+    "tagline": "A small button drops down a settings card with a save action.",
     "category": "modals",
     "categories": [
       "modals"
@@ -25173,7 +26144,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-headless-switch",
     "title": "Headless Switch",
-    "description": "Switches are a pleasant interface for toggling a value between two states, and offer the same semantics and keyboard navigation as native checkbox elements.",
+    "description": "A Connections card listing four options, each with a small pill switch; tapping one slides the thumb across and the thumb widens while held, with sun and moon icons on the theme row.",
+    "tagline": "Settings rows whose small switches slide and stretch when tapped.",
     "category": "switches",
     "categories": [
       "switches",
@@ -25202,7 +26174,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-radix-progress",
     "title": "Radix Progress",
-    "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    "description": "A dark upload card listing three files, each with a percentage, its size and a thin progress bar that fills from left to right as the number climbs.",
+    "tagline": "Three upload rows with slim bars filling toward completion.",
     "category": "loaders",
     "categories": [
       "loaders"
@@ -25230,7 +26203,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-texts-gradient",
     "title": "Gradient Text",
-    "description": "A gradient text animation.",
+    "description": "Two lines of bold display text with a looping blue, purple and pink gradient; the second line repeats itself as a soft blurred glow.",
+    "tagline": "Headline text shaded in a slowly drifting blue-to-pink gradient.",
     "category": "text",
     "categories": [
       "text"
@@ -25255,7 +26229,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-texts-rolling",
     "title": "Rolling Text",
-    "description": "A rolling text animation.",
+    "description": "Two lines of text that arrive as individual characters flipping around a horizontal axis, sweeping left to right, the subtitle starting after a short pause.",
+    "tagline": "Every letter tips up on a hinge and lands in place, one after another.",
     "category": "text",
     "categories": [
       "text"
@@ -25282,7 +26257,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ai-text-loading",
     "title": "AI Text Loading",
-    "description": "A thinking indicator where a soft opacity wave runs through the letters and the word swaps letter by letter between phrases.",
+    "description": "A large loading word from a rotating set of thinking phrases, with a faint brightness wave running through its letters. An optional second style adds a changing status phrase and a seconds counter.",
+    "tagline": "Words cycle with a soft wave of dimming letters while an AI thinks.",
     "category": "text",
     "categories": [
       "text",
@@ -25308,7 +26284,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "canvas-crowd",
     "title": "Canvas Crowd",
-    "description": "A canvas crowd of hand-drawn Open Peeps characters walking back and forth across the bottom of the screen.",
+    "description": "A canvas strip of sketchy black-and-white people walking across the bottom of the screen. Characters enter from both sides at different depths and leave, so the crowd keeps cycling, with a small label centred above.",
+    "tagline": "Hand-drawn black-and-white characters stroll back and forth across the bottom.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -25334,7 +26311,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "music-toggle-button",
     "title": "Music Toggle Button",
-    "description": "A pill music button whose waveform bars spring to life and the pill expands when you press play.",
+    "description": "A compact play and pause button with five thin waveform bars that spring to random heights while playing and settle flat when paused. The pill swells on hover and press.",
+    "tagline": "Tiny waveform bars bounce inside a round play button.",
     "category": "switches",
     "categories": [
       "switches",
@@ -25358,7 +26336,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "about-bento",
     "title": "About Bento",
-    "description": "An about-us bento grid with an impact headline card, growth stat, status tile and community CTA.",
+    "description": "An about-us block: a centred headline over a grid of four cards. A large dark card states the mission beside a green growth stat, a small status tile and a wide violet community banner.",
+    "tagline": "Bento about section with a big statement, growth stat and purple CTA.",
     "category": "features",
     "categories": [
       "features",
@@ -25382,7 +26361,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "agent-avatar",
     "title": "Agent Avatar",
-    "description": "A canvas-drawn generative pixel avatar, unique per seed, with pulsing, sweeping and sparkling cells.",
+    "description": "Generative avatars drawn on canvas: a circular six-by-six grid of coloured squares derived from a string seed. Each cell slowly pulses, sweeps and occasionally sparkles, so no two agents look alike.",
+    "tagline": "Round pixel-grid avatars generated from a name, each a different colour.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -25406,7 +26386,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "agent-suggest-card-stack",
     "title": "Agent Suggest Card Stack",
-    "description": "Stacked SVG cards summarising an AI agent's suggested changes with progress, pass/fail split and a commit action.",
+    "description": "Two overlapping cards summarise an AI agent's suggestions: a header with a count and title, two file rows with a bot badge, and two progress bars. The second bar splits green and red to show passed and failed work.",
+    "tagline": "Stacked agent report cards with green and red progress bars and Apply changes.",
     "category": "chat",
     "categories": [
       "chat",
@@ -25430,7 +26411,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-chart",
     "title": "Animated Chart",
-    "description": "Area chart card whose line draws itself in over a grid with a headline metric.",
+    "description": "A small chart card with a metric in the corner and a jagged line chart over a square grid. On load the line traces itself left to right and the shaded area underneath fades in.",
+    "tagline": "Area chart whose line draws itself across a grid before the fill rises.",
     "category": "charts",
     "categories": [
       "charts",
@@ -25456,7 +26438,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "animated-frameworks",
     "title": "Animated Frameworks",
-    "description": "A feature card where framework tiles lift in turn in 3D while a light pulse travels a circuit path behind them.",
+    "description": "A compatibility card with React, Next.js and HTML5 tiles that lift and tilt in 3D one after another. A faint circuit path behind them carries a travelling blue pulse, with a heading and blurb underneath.",
+    "tagline": "Three framework tiles tilt up in turn above a softly pulsing circuit line.",
     "category": "features",
     "categories": [
       "features",
@@ -25482,7 +26465,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "auto-height",
     "title": "Auto Height",
-    "description": "A container that smoothly animates its height whenever its content changes.",
+    "description": "A bordered card holding a short release note. Clicking Show more swaps in a longer three-paragraph version while the card springs to the new height and the text crossfades.",
+    "tagline": "Grows and shrinks its height smoothly as the content inside changes.",
     "category": "effects",
     "categories": [
       "effects",
@@ -25508,7 +26492,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-lights",
     "title": "Background Lights",
-    "description": "Blurred blue-cyan-yellow conic glow that rises behind a hero section.",
+    "description": "A wide blurred conic gradient that sweeps blue into cyan and yellow near the bottom of the screen, giving a dark hero a soft coloured glow. It is a single non-interactive backdrop layer.",
+    "tagline": "A blurred blue-cyan-yellow glow rising softly behind a hero section.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -25532,7 +26517,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "bubble-board",
     "title": "Bubble Board",
-    "description": "A draggable honeycomb of bubbles, Apple Watch home-screen style, where bubbles swell near the centre and shrink away at the edges as you pan.",
+    "description": "A rounded board filled with overlapping circular tiles in a hex grid. Dragging pans the field, and each bubble scales up as it nears the middle and down toward the frame.",
+    "tagline": "Pannable honeycomb of bubbles that swell near centre and shrink at edges.",
     "category": "effects",
     "categories": [
       "effects",
@@ -25558,7 +26544,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "button-group",
     "title": "Button Group",
-    "description": "Groups related buttons, inputs and text addons into one control with merged borders, nested groups and separators.",
+    "description": "A set of horizontal controls where neighbouring buttons, text labels and inputs merge into one strip. The demo gathers message actions, text formatting, a URL field and a quantity stepper.",
+    "tagline": "Rows of joined buttons, inputs and counters with shared borders.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -25588,7 +26575,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "canvas",
     "title": "Canvas",
-    "description": "React Flow workflow canvas with themed background, pan-on-scroll and node selection, for agent and automation graphs.",
+    "description": "A zoomable workflow canvas showing trigger, agent and tool steps connected by thin lines. Scrolling pans the field and clicking a node selects it.",
+    "tagline": "A dark node graph of an email workflow that pans as you scroll.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -25614,7 +26602,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "chart-kit",
     "title": "Chart Kit",
-    "description": "Recharts toolkit of staggered grow-in bars, reveal masks, hatched/duotone/gradient fills, hover dimming and a glass tooltip, shown as a traffic bar chart and a price area chart.",
+    "description": "Two dark chart cards: monthly visitor bars pairing a blue gradient series with orange hatching, and a teal price area. Hovering shows a frosted tooltip with values.",
+    "tagline": "Bar and area charts with hatched columns and a glassy hover tooltip.",
     "category": "charts",
     "categories": [
       "charts",
@@ -25641,7 +26630,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "circling-elements",
     "title": "Circling Elements",
-    "description": "Children orbit a centre point on a CSS keyframe ring, with optional pause-on-hover.",
+    "description": "Small square images spaced evenly on an invisible ring orbit a blank middle at a steady speed; hovering the group freezes the motion and each tile enlarges.",
+    "tagline": "Six square photos drift around an empty centre, pausing under the cursor.",
     "category": "effects",
     "categories": [
       "effects",
@@ -25667,7 +26657,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "contact-section",
     "title": "Contact Section",
-    "description": "A bordered contact block with phone and email details over a two-column message form, framed by corner crosshair marks.",
+    "description": "A slim bordered contact block with corner crosshair marks: a Get in touch header, phone and email rows, then a Send a message form with name, email, phone, message and a full-width Submit button.",
+    "tagline": "Bordered contact panel with phone and email above a two-column message form.",
     "category": "contact",
     "categories": [
       "contact",
@@ -25699,7 +26690,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "figma-cursor",
     "title": "Figma Cursor",
-    "description": "Figma-style multiplayer cursor with a coloured name pill that drifts on a looping path.",
+    "description": "Three labelled cursors in blue, pink and green move slowly along looping paths over a mock design. Each pill carries a name and an arrow, like collaborators in a shared editing tool.",
+    "tagline": "Coloured name tags with pointer arrows drift around a shared canvas.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -25725,7 +26717,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "file-icons",
     "title": "File Icons",
-    "description": "Icon set for common file types and languages, plus a helper that maps a file extension to its icon.",
+    "description": "A collection of monochrome icons for file types, languages and developer tools, with a helper that picks the right glyph from a file extension. The demo shows them in a labelled grid and a small source tree.",
+    "tagline": "A grid of file-type and brand icons above a matching file tree.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -25751,7 +26744,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "file-type",
     "title": "File Type",
-    "description": "Colour-coded file-type icons (PDF, DOCX, XLSX, MP4, ZIP and more) in outline, solid, light and mono variants, resolved from extension, file name or MIME type.",
+    "description": "A set of file-type icons in brand colours and several variants, picked by extension, file name or MIME type. The demo shows ten large icons above a recent-files list with names, editors and sizes.",
+    "tagline": "Colour-coded file icons for document formats, with a recent-files list.",
     "category": "file-upload",
     "categories": [
       "file-upload",
@@ -25778,7 +26772,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "footer-bento",
     "title": "Footer Bento",
-    "description": "A bento-style footer with a CTA card, social links, newsletter signup, location and legal tiles.",
+    "description": "A multi-tile footer laid out as a bento grid. A large card carries the call to action, while smaller tiles hold social links, an email signup, the office location and privacy links.",
+    "tagline": "Bento footer with a big CTA card, socials, newsletter, location and legal tiles.",
     "category": "footers",
     "categories": [
       "footers",
@@ -25802,7 +26797,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "hacker-background",
     "title": "Hacker Background",
-    "description": "A canvas Matrix rain of falling green characters that fills its container.",
+    "description": "A canvas of bright green letters raining down in narrow columns over black, each column leaving a fading tail. It fills its area and sits behind whatever text you layer on top.",
+    "tagline": "Green characters stream down a black screen like falling code.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -25827,7 +26823,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ipad",
     "title": "iPad",
-    "description": "An SVG iPad mockup that frames any screenshot or image inside a rounded, bezelled screen.",
+    "description": "A tablet drawn in SVG: a pale rounded shell around a black bezel and a clipped screen that holds any image. Pass a picture and it sits inside the device, scaled to the width and height you give it.",
+    "tagline": "A screenshot framed inside a rounded tablet with a thick dark bezel.",
     "category": "devices",
     "categories": [
       "devices",
@@ -25851,7 +26848,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "macbook-pro",
     "title": "MacBook Pro",
-    "description": "An SVG MacBook Pro mockup with notch and base that frames any screenshot inside its display.",
+    "description": "A laptop drawn in SVG: a dark screen with a black notch at the top, a thin silver shell and a pale base with a shallow trackpad dip, plus a clipped display area that holds any image.",
+    "tagline": "A photo set inside a laptop screen with a notch and a silver base.",
     "category": "devices",
     "categories": [
       "devices",
@@ -25875,7 +26873,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "merging-bubbles",
     "title": "Merging Bubbles",
-    "description": "Two circular icon bubbles joined by a liquid neck with a plus badge, for 'X + Y' integration visuals.",
+    "description": "A small graphic of two circular bubbles fused into one peanut shape, each holding a supplied icon with a faint plus between them. It is used to show two tools or services connecting into a single integration.",
+    "tagline": "Two logo bubbles joined by a liquid waist, a plus floating between them.",
     "category": "effects",
     "categories": [
       "effects",
@@ -25899,7 +26898,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "mini-calendar",
     "title": "Mini Calendar",
-    "description": "A compact horizontal day picker that shows a sliding window of days with prev/next paging and a highlighted today.",
+    "description": "A compact horizontal strip of seven stacked month-and-day buttons between previous and next arrows. Clicking a day marks it and lists that day's events in a panel underneath.",
+    "tagline": "A week of day chips with arrows to page, and the chosen day's agenda below.",
     "category": "calendar",
     "categories": [
       "calendar",
@@ -25928,7 +26928,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "network",
     "title": "Network",
-    "description": "Two dashed rings of avatars around a hub, with a glowing connection line drawing between random people every few seconds and their names popping up.",
+    "description": "A circular diagram of two dashed rings packed with small portrait avatars around a larger central one. Every few seconds a glowing coloured line draws between two random people and their names appear as little labels.",
+    "tagline": "Rings of portraits circle a centre while a coloured line links two people.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -25955,7 +26956,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "not-found-page",
     "title": "Not Found Page",
-    "description": "A minimal 404 page with oversized, bottom-masked numerals and home/explore actions.",
+    "description": "A centred error page with huge 404 digits whose lower halves fade out, a two-line explanation and Go Home and Explore buttons. It sits on an empty-state layout with generous negative space.",
+    "tagline": "Oversized 404 numerals fade into black above a short apology and two buttons.",
     "category": "feedback",
     "categories": [
       "feedback",
@@ -25984,7 +26986,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pagination-animated",
     "title": "Pagination (animated)",
-    "description": "Pagination where the current-page outline slides from link to link as you change pages.",
+    "description": "A horizontal page switcher with Previous and Next arrows, numbered links and an ellipsis. The rounded highlight marking the current page slides to the link you choose instead of blinking across.",
+    "tagline": "The current-page outline glides along the row when you pick a new number.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -26010,7 +27013,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "power-off-slide",
     "title": "Power Off Slide",
-    "description": "An iOS 'slide to power off' control with a shimmering label and a draggable knob that triggers a shutdown state.",
+    "description": "An iOS-style power-off bar: a rounded pill with a dim shimmering label and a white knob holding a red power icon. Drag the knob past the end and the bar is replaced by a \"Shutting down...\" message.",
+    "tagline": "Slide the red power knob across the bar to shut the phone down.",
     "category": "sliders",
     "categories": [
       "sliders",
@@ -26037,7 +27041,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "presentation",
     "title": "Presentation",
-    "description": "A .pptx deck viewer with a thumbnail rail, a scalable slide viewport and in-slide selection, built on a PowerPoint parser.",
+    "description": "A .pptx viewer: a numbered thumbnail rail down the left, a large auto-fitted slide on the right, and in-slide selection with resize and rotate handles. Clicking a thumbnail flips the deck.",
+    "tagline": "A deck viewer with a thumbnail rail and one large, zoomable slide.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -26067,7 +27072,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "qr-code",
     "title": "QR Code",
-    "description": "Generates a QR code SVG from a string on the client, coloured from the theme's oklch foreground/background or custom oklch colours.",
+    "description": "A share card holding a large scannable code and a URL field, with three smaller sample codes in custom colours. Editing the link regenerates the pattern and the colours follow the page theme.",
+    "tagline": "Type a link and the scan pattern beside it redraws on the spot.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -26094,7 +27100,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ransom-note",
     "title": "Ransom Note",
-    "description": "Text rendered as mismatched cut-out paper letters that fly in to assemble or wobble idly.",
+    "description": "A line of text built from mismatched paper scraps, each with its own font, size, skew and pale tint, where the characters spring in from around the page or rock gently in place.",
+    "tagline": "Letters cut from magazines fly in and lock into a messy headline.",
     "category": "text",
     "categories": [
       "text",
@@ -26120,7 +27127,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "relative-time-card",
     "title": "Relative Time Card",
-    "description": "A live relative timestamp ('5 minutes ago') whose hover card shows the exact time across several time zones.",
+    "description": "Activity rows each end in a live relative time such as one hour ago. Hovering one opens a card with the precise date and time in New York, London, Tokyo and the local offset.",
+    "tagline": "Hover a timestamp to see the exact time in several zones.",
     "category": "data-display",
     "categories": [
       "data-display",
@@ -26149,7 +27157,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "resize-handle",
     "title": "Resize Handle",
-    "description": "Headline wrapped in a design-tool selection box with corner handles that springs to fit each new word as it flips in letter by letter.",
+    "description": "A large uppercase word cycles through a list, each new one arriving letter by letter, while a thin blue selection rectangle with four square corner handles springs to hug whatever word is showing.",
+    "tagline": "A headline flips word by word inside a design-tool selection box.",
     "category": "text",
     "categories": [
       "text",
@@ -26175,7 +27184,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "responsive-dialog",
     "title": "Responsive Dialog",
-    "description": "A dialog on desktop that becomes a bottom drawer on mobile, from one shared API.",
+    "description": "One dialog that changes shape with the screen: a centred modal with a short form and Save button on desktop, and a bottom drawer on narrow screens, driven by the same set of parts.",
+    "tagline": "A profile form opens as a centred dialog, and as a bottom sheet on phones.",
     "category": "modals",
     "categories": [
       "modals",
@@ -26208,7 +27218,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "sandbox",
     "title": "Sandbox",
-    "description": "A Sandpack-powered live code sandbox with Code, Preview and Console tabs, a file explorer and an editor.",
+    "description": "A full in-browser code playground: a file list beside an editor, plus Preview and Console tabs, so a snippet can be edited and run without leaving the page.",
+    "tagline": "Code, preview and console share one window with a file tree and editor.",
     "category": "code",
     "categories": [
       "code",
@@ -26234,7 +27245,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "screensaver",
     "title": "Screensaver",
-    "description": "Elements bounce around their container like the classic DVD screensaver.",
+    "description": "A set of square images floats around a container, each travelling in a straight line and reversing at the edges, while centred text stays still behind the motion.",
+    "tagline": "Small photos drift and bounce around a fixed headline like a DVD logo.",
     "category": "effects",
     "categories": [
       "effects",
@@ -26260,7 +27272,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "skeleton-reveal",
     "title": "Skeleton Reveal",
-    "description": "Placeholder that pulses while loading, then cross-fades and un-blurs into the real content in the same slot, snapping back when loading restarts.",
+    "description": "A loading wrapper that shows a pulsing skeleton in place of content, then cross-fades and un-blurs into the real rows without shifting the layout. Starting to load again snaps back to the skeleton.",
+    "tagline": "Grey placeholder bars pulse, then blur away into real rows in the same slot.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -26284,7 +27297,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "speech-input",
     "title": "Speech Input",
-    "description": "Mic button that dictates via the Web Speech API (MediaRecorder fallback), with pulsing rings while listening.",
+    "description": "A circular dictation button. Tapping it starts listening, turns it red with a stop square and sends out pulsing rings; tapping again ends the recording and hands the words to your text field.",
+    "tagline": "Round mic button goes red and ripples outward while it listens.",
     "category": "chat",
     "categories": [
       "chat",
@@ -26312,7 +27326,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stories",
     "title": "Stories",
-    "description": "A drag-scrollable row of story cards with image or hover-to-play video, gradient overlays and author avatars.",
+    "description": "A sideways strip of portrait story cards. Each holds a photo or a looping clip that plays on hover, with a dark gradient at the bottom behind the author's avatar and name.",
+    "tagline": "Row of tall photo cards with a small avatar and name at the foot.",
     "category": "media",
     "categories": [
       "media",
@@ -26336,7 +27351,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "transfer-funds-card",
     "title": "Transfer Funds Card",
-    "description": "A fintech transfer card with amount, from/to account selects whose chevrons wiggle on hover, a fee summary and a springy confirm button.",
+    "description": "A compact transfer form: an amount, From and To account rows with dropdown chevrons, a three-line summary of arrival, fee and total, and one confirm button. Rows and the button respond to hover.",
+    "tagline": "Money transfer sheet with an amount, two account rows and a fee summary.",
     "category": "payments",
     "categories": [
       "payments",
@@ -26364,7 +27380,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "truck-loader",
     "title": "Truck Loader",
-    "description": "An SVG delivery truck bouncing on its suspension while road dashes and lamp posts scroll past.",
+    "description": "A flat side-view delivery truck idles on a thin road line, dipping on its suspension while dashed markings and lamp posts slide behind it. It loops forever as a loading indicator.",
+    "tagline": "A little red delivery truck bounces along a road while street lamps roll past.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -26388,7 +27405,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "typewriter-loader",
     "title": "Typewriter Loader",
-    "description": "A CSS typewriter whose keys tap and carriage slides while a sheet of paper feeds out.",
+    "description": "A flat blue typewriter illustration bounces gently while a lined sheet of paper feeds upward out of its carriage, then drops back in. It repeats as an indeterminate writing or loading indicator.",
+    "tagline": "A blue typewriter taps its keys as a sheet of paper inches up from the roller.",
     "category": "loaders",
     "categories": [
       "loaders",
@@ -26412,7 +27430,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "video-gallery",
     "title": "Video Gallery",
-    "description": "Filmmaker portfolio grid with search, category filters, hover overlays and a lightbox modal that plays the project with details and specs.",
+    "description": "A dark portfolio section lists video projects as image cards with category tags, search and filters. Hovering reveals a title and play action; clicking opens a modal player with details and specs.",
+    "tagline": "Browse a filmmaker's project grid, filter it, and open any clip in a player.",
     "category": "media",
     "categories": [
       "media",
@@ -26440,7 +27459,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spotlight",
     "title": "Spotlight Background",
-    "description": "Mouse-tracked radial gradients rendered via SVG filter; CSS Filters for smooth positioning.",
+    "description": "A near-black backdrop with a faint square grid and one soft diagonal beam of light that fades in and widens over the text below it. It is there to pull the eye to a single block of copy.",
+    "tagline": "A cone of white light drifts down over a dark grid and settles on the headline.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -26464,7 +27484,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "moving-line",
     "title": "Scroll Progress Line",
-    "description": "Renders an SVG vertical line that retracts from the top as the user scrolls. Uses a gradient stroke with spring-based animation tracking scroll progress.",
+    "description": "A vertical rule sits left of a column of story chapters and retracts from the top as the page scrolls, its last drawn point following the reader. The chapters carry dates, headings, copy and paired photos.",
+    "tagline": "A hairline rule down the page shortens as the reader scrolls.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -26490,7 +27511,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-beams",
     "title": "Background Beams",
-    "description": "Renders absolute-positioned SVG with animated gradient paths flowing downward. Beams use motion/react for staggered animations and hardcoded cyan-purple-blue colors.",
+    "description": "A dark backdrop of long curved lines along which short cyan-to-violet gradient segments travel downward on staggered loops. It is meant to sit behind a headline, some copy and an email field.",
+    "tagline": "Faint cyan and violet threads drift down behind a dark waitlist panel.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -26516,7 +27538,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "svg-mask-effect",
     "title": "SVG Mask Reveal",
-    "description": "A two-layer reveal component using SVG masking with smooth motion animations. Spotlight mask follows cursor and expands on hover with background color transition.",
+    "description": "A white panel of bold statement text with a small black spotlight that tracks the pointer. Hovering opens the spotlight wide and darkens the panel to show a different sentence underneath.",
+    "tagline": "A black torch follows the mouse, uncovering a second message in the text.",
     "category": "effects",
     "categories": [
       "effects",
@@ -26542,7 +27565,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "parallax-hero-images",
     "title": "Parallax Hero Images",
-    "description": "Renders images positioned at different depths that move based on cursor position. Spring-based motion creates smooth parallax layers with configurable depth variants.",
+    "description": "Up to eight rounded photos pinned around the edges of a hero, each floating a little against the pointer at its own depth. It is a calm, blurred-in collage meant to sit behind headline copy.",
+    "tagline": "Photo cards pin to the screen edges and drift gently with the cursor.",
     "category": "effects",
     "categories": [
       "effects",
@@ -26569,7 +27593,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "google-gemini-effect",
     "title": "Google Gemini Effect",
-    "description": "Sticky section with animated SVG lines that draw based on motion values, typically driven by scroll events. Displays title, description, and button overlay.",
+    "description": "A full-width black hero with a large gradient headline, a short grey subtitle and a small white pill button, crossed by five thin curved lines in blue, cyan, pink and cream that draw outward from the centre on scroll.",
+    "tagline": "Five thin coloured lines sweep across a dark hero and stretch as you scroll.",
     "category": "scroll",
     "categories": [
       "scroll",
@@ -26596,7 +27621,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "label",
     "title": "Form Label",
-    "description": "A wrapper around Radix UI's label primitive with semantic font sizing, dark mode, and built-in peer-disabled opacity styling.",
+    "description": "A form label in small bold type sits above an email input and a line of helper text. Focusing the field swaps its faint border for a bright ring.",
+    "tagline": "Small bold caption above a dark field that rings when focused.",
     "category": "forms",
     "categories": [
       "forms"
@@ -26621,7 +27647,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "shooting-stars",
     "title": "Shooting Stars",
-    "description": "Animated SVG overlay with randomized shooting-star animations; CSS-based with no JS after mount.",
+    "description": "A transparent overlay that launches a single glowing streak from a random screen edge every few seconds. Each one races diagonally across and fades off-frame.",
+    "tagline": "Thin meteor streaks dart across a dark starry page now and then.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -26645,7 +27672,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-lines",
     "title": "Background Lines",
-    "description": "Container with light/dark theme support rendering 42 animated SVG paths. Uses strokeDasharray/strokeDashoffset for draw animation with staggered repeat delays. Accepts children for content overlay.",
+    "description": "A full-screen dark backdrop scattered with thin coloured curves that draw themselves, drift outward and fade, looping continuously behind whatever content you place on top.",
+    "tagline": "Colourful arcs radiate outward around a bold white headline.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -26670,7 +27698,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "notch",
     "title": "Notch",
-    "description": "Renders a floating notch UI (like dynamic island) with collapsible option groups that can be controlled or uncontrolled. Positioned fixed to top or bottom of viewport, with support for icons, selected value display, and smooth…",
+    "description": "A capsule pinned near the screen edge with grouped settings; each group opens into a short list of choices and the bar shows the current value for every group.",
+    "tagline": "A small floating pill holds theme, text and language pickers that pop open.",
     "category": "menus",
     "categories": [
       "menus",
@@ -26696,7 +27725,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "background-ripple-effect",
     "title": "Background Ripple Effect",
-    "description": "Absolute-positioned grid background with clickable cells. On click, triggers staggered ripple animation based on distance from click point using CSS custom properties for colors.",
+    "description": "A full-bleed near-black grid of small square cells. Clicking a cell sends a brightness ripple outward from it, fading with distance, while hovering lifts a single cell.",
+    "tagline": "A dark grid of thin cells that light up in a wave from the clicked cell.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -26722,7 +27752,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "text-flipping-board",
     "title": "Split Flap Board",
-    "description": "Emulates a mechanical split-flap display (like airport boards), where each character flips to reveal the next.",
+    "description": "Recreates a mechanical split-flap display as a grid of tiles. Each character flips through random letters before landing on its target, with a few tiles filled in solid colour as accents.",
+    "tagline": "Letter tiles scramble and flip into place like an airport departure board.",
     "category": "text",
     "categories": [
       "text"
@@ -26747,7 +27778,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "progressive-blur",
     "title": "Progressive Blur",
-    "description": "The Progressive Blur component adds a smooth blur gradient effect to scrollable content, indicating more content below or above.",
+    "description": "Adds a masked blur band to the top, bottom or both edges of a scroll area. Stacked blur layers fade from sharp to heavy, so photos or rows melt away instead of being cut off.",
+    "tagline": "The bottom of a photo grid dissolves into a soft blur band.",
     "category": "effects",
     "categories": [
       "effects",
@@ -26771,7 +27803,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "line-shadow-text",
     "title": "Line Shadow Text",
-    "description": "A text component with a moving line shadow.",
+    "description": "A line of large white text where one word is set in italic and carries a diagonal striped shadow behind it, slowly sweeping across on a loop.",
+    "tagline": "An italic word trails a hatched shadow that slides across it.",
     "category": "text",
     "categories": [
       "text"
@@ -26796,7 +27829,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dot-pattern",
     "title": "Dot Pattern",
-    "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "description": "A dotted backdrop for dark sections where each dot slowly breathes brighter and fades again on its own timing, and the whole field dissolves into black at the edges.",
+    "tagline": "Tiny white dots twinkle across a dark, edge-faded field.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -26819,7 +27853,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "flickering-grid",
     "title": "Flickering Grid",
-    "description": "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+    "description": "A canvas backdrop of small squares scattered on black where each square changes its opacity at random, so the field flickers like distant static.",
+    "tagline": "Small pale squares blink brighter and dimmer at random.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -26842,7 +27877,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "magic-ui-bento-grid",
     "title": "Bento Grid",
-    "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+    "description": "A bento-style feature grid where each dark tile pairs a title with a small live-looking preview of that feature; hovering lifts the text and reveals a link.",
+    "tagline": "Five dark feature tiles preview search, files, calendar and more.",
     "category": "cards",
     "categories": [
       "cards",
@@ -26870,7 +27906,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "particles",
     "title": "Particles",
-    "description": "Particles are a fun way to add some visual flair to your website. They can be used to create a sense of depth, movement, and interactivity.",
+    "description": "A canvas field of small white dots that drift slowly and push away from the pointer, fading in and out near the edges. A headline can sit on top.",
+    "tagline": "Tiny white specks drift on black and scatter from the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -26894,7 +27931,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "morphing-text",
     "title": "Morphing Text",
-    "description": "A dynamic text morphing component for Magic UI.",
+    "description": "A large centred word that dissolves through a heavy blur and re-forms as the next phrase in a list, cycling forever without the layout moving.",
+    "tagline": "One bold word blurs and melts into the next.",
     "category": "text",
     "categories": [
       "text"
@@ -26917,7 +27955,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "code-comparison",
     "title": "Code Comparison",
-    "description": "A component which compares two code snippets.",
+    "description": "A two-pane code viewer that shows an earlier snippet on the left and its rewrite on the right, with removed lines tinted red and added lines tinted green.",
+    "tagline": "Old and new code sit side by side with red and green lines.",
     "category": "code",
     "categories": [
       "code",
@@ -26943,7 +27982,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comic-text",
     "title": "Comic Text",
-    "description": "Comic text animation",
+    "description": "A single word rendered as a loud comic-book caption, in yellow halftone letters with a thick black outline, red and black drop shadows and a slight lean, popping in on a spring.",
+    "tagline": "A comic-book shout in dotted yellow with a heavy black outline.",
     "category": "text",
     "categories": [
       "text"
@@ -26968,7 +28008,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "pulsating-button",
     "title": "Pulsating Button",
-    "description": "An animated pulsating button useful for capturing attention of users.",
+    "description": "A pair of buttons that keep throwing a blurred halo outwards to pull the eye. One variant swells and shrinks the ring, the other sends it out and lets it fade.",
+    "tagline": "Buttons breathe a soft ring of light outward in a slow repeating pulse.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -26992,7 +28033,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "MetallicPaint-TS-TW",
     "title": "Metallic Paint Shader",
-    "description": "Liquid metallic paint shader which can be applied to SVG elements.",
+    "description": "A four-pointed sparkle silhouette filled with liquid chrome, its highlights, dark pools and rainbow edges sliding around inside the shape.",
+    "tagline": "A chrome star shape ripples like molten metal.",
     "category": "effects",
     "categories": [
       "effects",
@@ -27017,7 +28059,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Ribbons-TS-TW",
     "title": "Physics Ribbon Trail",
-    "description": "Flowing responsive ribbons/cursor trail driven by physics and pointer motion.",
+    "description": "A bundle of thin orange, green, yellow and violet ribbons chases the mouse with springy physics, trailing and curling behind it across a black panel.",
+    "tagline": "Coloured ribbons stream after the pointer like kite tails.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -27044,7 +28087,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "StickerPeel-TS-TW",
     "title": "Sticker Peel Effect",
-    "description": "Sticker corner lift + peel interaction using 3D transform and shadow depth.",
+    "description": "A black circular sticker with a white rim and a star mark sits on a dark stage; hovering lifts its top half into a curled white flap you can drag around.",
+    "tagline": "The top of a round sticker peels up and curls back like paper.",
     "category": "effects",
     "categories": [
       "effects",
@@ -27070,7 +28114,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "FallingText-TS-TW",
     "title": "Falling Text",
-    "description": "Characters fall with gravity + bounce creating a playful entrance.",
+    "description": "A sentence breaks into free-floating words the moment you click, then real physics pulls them down to bounce and settle. You can grab a word with the pointer and throw it around.",
+    "tagline": "Click and each word tumbles, bounces and piles up under gravity.",
     "category": "text",
     "categories": [
       "text",
@@ -27096,7 +28141,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Counter-TS-TW",
     "title": "Animated Number Counter",
-    "description": "Flexible animated counter supporting increments + easing.",
+    "description": "A large metric rolls its digits upward like slot reels, one place at a time, with the top and bottom of the row fading out. A smaller count beside plus and minus buttons steps by one when pressed.",
+    "tagline": "Big numbers roll like an odometer as they tick upward.",
     "category": "charts",
     "categories": [
       "charts",
@@ -27124,7 +28170,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Dock-TS-TW",
     "title": "Dock",
-    "description": "macOS style magnifying dock with proximity scaling of icons.",
+    "description": "A dark rounded bar holds six round icon buttons. Sliding the pointer along it grows the nearest icons and lifts a small name tag above the one under the cursor.",
+    "tagline": "Icons swell as the pointer passes and name tags float above.",
     "category": "menus",
     "categories": [
       "menus",
@@ -27150,7 +28197,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Particles-TS-TW",
     "title": "Particles",
-    "description": "Configurable particle system.",
+    "description": "A full-bleed WebGL starfield of small glowing dots that drift, slowly rotate in depth and sway under the pointer. It gives a dark page depth without images or video.",
+    "tagline": "Drifts a field of glowing dots across a dark stage.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -27176,7 +28224,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "ShapeGrid-TS-TW",
     "title": "Shape Grid",
-    "description": "Animated grid with shape variants (square, hexagon, circle, triangle) + direction customization.",
+    "description": "A canvas of thin violet squares covers the stage and slides on a diagonal. Moving the pointer fills the hovered cell and leaves a short trailing line of lit cells behind it.",
+    "tagline": "A violet grid scrolls diagonally and lights up under the cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -27200,7 +28249,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cosmic-button",
     "title": "Cosmic Button",
-    "description": "Animated button/link with cosmic gradient border effect, renders as anchor or button",
+    "description": "A dark rounded button wrapped in a thick lime-green border whose gradient slowly rotates. It grows slightly on hover, takes a green focus ring and keeps a plain white label.",
+    "tagline": "Dark rounded button inside a spinning lime-green rim.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -27226,7 +28276,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "side-panel",
     "title": "Side Panel",
-    "description": "Sliding side panel component with customizable positioning and animations",
+    "description": "A compact dark tab at the top left opens sideways into a broad rounded panel. Inside, a four-item nav list sits beside two recently viewed image cards, and it folds back to a tab on a second click.",
+    "tagline": "A small menu tab unfurls into a wide panel of links and cards.",
     "category": "navigation",
     "categories": [
       "navigation"
@@ -27249,7 +28300,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "tweet-grid",
     "title": "Tweet Grid",
-    "description": "Grid layout component for displaying tweet-like content cards",
+    "description": "A responsive masonry grid of tweet-style cards, each with author, handle, body, date and reply, repost and like counts.",
+    "tagline": "Three-column wall of tweet cards in a staggered masonry layout.",
     "category": "cards",
     "categories": [
       "cards",
@@ -27274,7 +28326,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "lightboard",
     "title": "Lightboard",
-    "description": "Interactive lightboard component with customizable grid and lighting effects",
+    "description": "A wide grid of small dots renders blocky amber text that scrolls sideways like an LED sign; drawing can be enabled to light individual dots by hand.",
+    "tagline": "Amber dot-matrix sign whose text scrolls sideways like a ticker.",
     "category": "text",
     "categories": [
       "text",
@@ -27298,7 +28351,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "cult-ui-dock",
     "title": "Dock",
-    "description": "macOS-style dock component with hover effects and smooth animations",
+    "description": "A macOS-style dock of round image icons that grow toward the pointer with a spring, with a draggable divider splitting the row.",
+    "tagline": "App icons in a dark dock swell as the cursor passes over them.",
     "category": "menus",
     "categories": [
       "menus",
@@ -27325,7 +28379,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dither-image",
     "title": "Dither Image",
-    "description": "Compound Next.js image figure with CSS Bayer dither via dither-plugin, partial reveal overlays, and typed tuning props",
+    "description": "A figure that renders an image as a black-and-white Bayer dither, plus a reveal variant where a clean copy is wiped across the dot pattern as the pointer moves.",
+    "tagline": "Photos turned into coarse dot patterns, wiped clean by the pointer.",
     "category": "media",
     "categories": [
       "media",
@@ -27349,7 +28404,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "loading-carousel",
     "title": "Loading Carousel",
-    "description": "Loading carousel component with smooth transitions and customizable content",
+    "description": "A wide image carousel that autoplays through tips, each with a photo, a caption line and a row of thin progress segments you can click.",
+    "tagline": "A photo carousel with captions and segmented progress underneath.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -27380,7 +28436,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "feature-carousel",
     "title": "Feature Carousel",
-    "description": "Feature carousel component with smooth transitions and customizable layouts",
+    "description": "A dark feature card that walks through four build steps. Each step lights its chip, slides in a heading and copy, and cross-fades to a new set of product screenshots every few seconds.",
+    "tagline": "Product steps advance on their own, swapping screenshots in a card.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -27407,7 +28464,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "stripe-bg-guides",
     "title": "Stripe Background Guides",
-    "description": "Stripe-style background guides component with animated patterns and effects",
+    "description": "A dark page backdrop of six evenly spaced vertical guide lines, drawn as fine white dashes, with pale glowing streaks sliding down some of them. Intended to sit behind marketing copy.",
+    "tagline": "Faint light pulses crawl down a field of dashed vertical guides.",
     "category": "backgrounds",
     "categories": [
       "backgrounds"
@@ -27432,7 +28490,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "grid-beam",
     "title": "Grid Beam",
-    "description": "Canvas grid beam animation with palette presets, SVG dividers, and composable headless pieces via useGridBeam",
+    "description": "A rounded near-black panel split by faint grid lines into rows and columns, with small glowing beams sliding along the lines and brightening where they cross. Meant to sit behind a headline or product card.",
+    "tagline": "Coloured light streaks drift along a dark technical grid.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -27456,7 +28515,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "terminal-animation",
     "title": "Terminal Animation",
-    "description": "Composable terminal animation primitives with typed command playback, tabbed scenarios, and customizable output rendering",
+    "description": "A fake terminal window with traffic-light dots and tabs for commands like new, dev, test and build. It retypes the command for the chosen tab, then prints its coloured output line by line behind a blinking cursor.",
+    "tagline": "A browser-window terminal types commands and streams coloured output.",
     "category": "code",
     "categories": [
       "code",
@@ -27484,7 +28544,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "btn-rotating-gradient",
     "title": "Rotating Gradient Button",
-    "description": "A button with a rotating conic-gradient border that continuously spins around its perimeter. The gradient cycles through the button's colour scheme.",
+    "description": "A rounded call-to-action button with white text and a thin two-tone conic gradient that circles its border, making the outline brighten and fade as it travels.",
+    "tagline": "Dark pill button with a thin gradient ring that spins around its edge.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -27512,7 +28573,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "code-tabs-mdx",
     "title": "Code Tabs MDX",
-    "description": "Async server component extracting code blocks from MDX pre/code children, highlighting with Shiki, and rendering in tabs. One block displays solo; two blocks show tabbed as ui-layouts and shadcn variants.",
+    "description": "A slim dark code card that shows a single install command under two tab labels, so a reader can switch between variants and copy the one they need.",
+    "tagline": "Two install commands in tabs, with a copy icon on each line.",
     "category": "code",
     "categories": [
       "code",
@@ -27538,7 +28600,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-border",
     "title": "Gradient Border",
-    "description": "Border using gradient background-clip and optionally animated colors.",
+    "description": "A single navy card on black, wrapped in a slim indigo gradient outline that keeps rotating. Inside sits a rounded hillside photo, a small white heading and two lines of grey copy.",
+    "tagline": "Thin blue light slowly circles the edge of a dark photo card.",
     "category": "borders",
     "categories": [
       "borders",
@@ -27562,7 +28625,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "nested-vaul-drawer",
     "title": "Nested Vaul Drawer",
-    "description": "Gesture-driven drawer system from Vaul that supports unlimited nesting. Each drawer slides up from the bottom with physics-based animation, and nested drawers layer on top. Handles swipe-to-close naturally.",
+    "description": "A black stage with a single Open Drawer button. Clicking it raises a dark bottom sheet with a drag handle, a title and text, and buttons inside open further sheets layered on top, each dismissed by swiping or tapping away.",
+    "tagline": "Bottom sheets that stack on top of each other as you go deeper.",
     "category": "modals",
     "categories": [
       "modals",
@@ -27586,7 +28650,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "multiselect",
     "title": "Multiselect",
-    "description": "Renders a styled multi-select dropdown with search, checkboxes, and keyboard navigation via a command palette.",
+    "description": "A multi-choice field for picking several values from a searchable list. Chosen items appear as small chips with x buttons inside the input, and an open dropdown lists the remaining choices with a dimmed disabled one.",
+    "tagline": "Type to filter a list and add picks as removable chips.",
     "category": "selects",
     "categories": [
       "selects",
@@ -27611,7 +28676,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-area",
     "title": "Scroll Area",
-    "description": "A wrapper around Radix UI's ScrollArea with themed scrollbars and support for both vertical and horizontal scrolling.",
+    "description": "A compact scroll panel holding a heading and a long list of version numbers. Content scrolls under the fixed frame, with a slim themed bar on the right instead of the browser's own scrollbar.",
+    "tagline": "Long release list scrolls inside a small bordered frame.",
     "category": "scroll",
     "categories": [
       "scroll"
@@ -27636,7 +28702,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "toggle-group",
     "title": "Toggle Group",
-    "description": "Toggle group built on Radix UI for managing multiple toggles with shared styling. Supports single or multiple selection via type prop. ToggleGroupItem respects parent size and variant.",
+    "description": "Two connected rows of icon buttons: bold, italic and underline in one, and left, centre and right alignment in the other. Picking a style or alignment immediately changes the sample text in the card below.",
+    "tagline": "Two joined strips of icon buttons restyle and realign a paragraph as you pick.",
     "category": "switches",
     "categories": [
       "switches",
@@ -27663,7 +28730,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-24",
     "title": "Clearable Text Input",
-    "description": "A text input with a conditionally rendered CircleXIcon button that clears the field and refocuses the input. State is managed with useState and useRef.",
+    "description": "A labelled text field whose right edge holds a small circled-x while it has content. Clicking the cross empties the field, brings back the placeholder and returns the cursor.",
+    "tagline": "A text box with a circled cross inside it that wipes the line clean.",
     "category": "inputs",
     "categories": [
       "inputs"
@@ -27686,7 +28754,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-98",
     "title": "Animated Plus Toggle",
-    "description": "A state-driven Button that rotates the Plus icon 135 degrees with a cubic-bezier ease when clicked, using aria-expanded to track state.",
+    "description": "A small circular outlined icon button holding a plus. Each click rotates the glyph about 135 degrees with a slight overshoot, so the plus becomes an X and back again.",
+    "tagline": "Spins a plus into a close cross on click, then unwinds it back.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -27710,7 +28779,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-103",
     "title": "Pill Vote Buttons",
-    "description": "A fully-rounded grouped control with chevron buttons and a centered count badge with primary theme. Negative margins tightly group the elements.",
+    "description": "A light fully-rounded pill split into three touching parts: a chevron-up button, a bold count and a chevron-down button. Hovering or pressing either end shades that section.",
+    "tagline": "Up and down arrows bracketing a score in one rounded voting strip.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -27735,7 +28805,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-118",
     "title": "Star Count Button",
-    "description": "A primary button with a star icon, 'Star' label, and count badge displayed inline with a gap.",
+    "description": "A light rounded button that invites a star rating. It groups a star icon, the label Star and a running count into one compact control.",
+    "tagline": "Shows a star outline, the word Star and a grey tally inside a white pill.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -27759,7 +28830,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-127",
     "title": "Directional Pan Controls",
-    "description": "A 3x3 grid of directional buttons with chevron icons for up, left, right, and down. Center shows a circle indicator. Used for navigation in 3D or map interfaces.",
+    "description": "A small cross-shaped pad of four outlined icon buttons, one per direction, arranged around a plain circle marker. Hovering an arrow lightens its tile; it is made for panning a camera or map.",
+    "tagline": "Four arrow tiles around a dot for nudging a view four ways.",
     "category": "buttons",
     "categories": [
       "buttons"
@@ -27782,7 +28854,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-131",
     "title": "Merge Strategy Split Button",
-    "description": "A stateful split button with selected merge strategy display and dropdown menu. Dropdown offers three options: Merge, Squash and merge, Rebase and merge with descriptions.",
+    "description": "A commit row pairs a title and meta line with a light split button. The wide half shows the chosen merge method; the chevron half drops a menu of three strategies, each explained in a sentence.",
+    "tagline": "Split button on a pull request row that opens a merge-method menu.",
     "category": "buttons",
     "categories": [
       "buttons",
@@ -27806,7 +28879,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-146",
     "title": "Logo Card Checkbox",
-    "description": "Bordered card checkbox with logo SVG icon (Supabase-style). Full card is clickable. Includes label, sublabel, and description paragraph.",
+    "description": "A bordered row with a green lightning logo, a service name with a grey category suffix and a two-line description; a small checkbox sits at the top right and the entire card clicks as one target.",
+    "tagline": "A whole integration card you tick by clicking anywhere on it.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -27831,7 +28905,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-149",
     "title": "Weekday Picker Checkboxes",
-    "description": "Fieldset with 7 circular checkbox buttons representing weekdays. M-F pre-checked, Sunday disabled. Uses sr-only labels with visible first-letter abbreviations.",
+    "description": "Seven circular toggles, one per weekday, each showing its first letter. Tapping a circle fills it solid white; the last circle is permanently dimmed and does not respond.",
+    "tagline": "Choose active weekdays with a row of round letter buttons.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -27856,7 +28931,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-168",
     "title": "NPS Score Radio Scale",
-    "description": "Net Promoter Score radio selector showing 0-5 scale with emoji indicators at the ends. Built on shadcn's RadioGroup.",
+    "description": "Eleven joined cells from 0 to 10 under the question How likely are you to recommend us?, with an angry face and Not likely at one end and Very likely with a heart-eyes face at the other. Clicking a cell keeps it lit white.",
+    "tagline": "A 0 to 10 strip of boxes asking how likely you would recommend.",
     "category": "checkboxes",
     "categories": [
       "checkboxes",
@@ -27880,7 +28956,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-179",
     "title": "Switch With Status Label",
-    "description": "Toggle switch with dynamic status label showing current state. Built on shadcn's Switch with state management.",
+    "description": "A switch paired with a live On or Off caption, shown three times in a card of integration rows. Flipping a switch slides its knob across and swaps the word beside it.",
+    "tagline": "A small switch with a word beside it that says on or off.",
     "category": "switches",
     "categories": [
       "switches",
@@ -27904,7 +28981,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-181",
     "title": "Switch With Icon Label",
-    "description": "Toggle switch with state-dependent icon labels using Sun and Moon icons from lucide-react.",
+    "description": "A switch with a small sun or crescent moon beside it that follows the switch state, shown three times in an Appearance card of theme rows. The knob slides and the icon swaps in the same motion.",
+    "tagline": "Switches swap a tiny sun for a moon as they turn on and off.",
     "category": "switches",
     "categories": [
       "switches",
@@ -27928,7 +29006,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-259",
     "title": "Slider With Buttons",
-    "description": "A slider with +/- buttons on each side for step-based value adjustment, plus a draggable track.",
+    "description": "A numeric setting with small outlined buttons at both ends of a slider. Buttons step the value up or down by five, the track can also be dragged, and the count above updates.",
+    "tagline": "Square minus and plus buttons nudge a value either side of a slider.",
     "category": "sliders",
     "categories": [
       "sliders"
@@ -27951,7 +29030,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-377",
     "title": "Avatar Account Menu",
-    "description": "A dropdown menu triggered by an Avatar component with optional fallback, showing user name/email and account actions.",
+    "description": "An avatar with a chevron in a site header opens an account menu. The menu shows the user's name and email, then Profile, Billing, Settings, Team, Documentation and Logout.",
+    "tagline": "A small avatar in the header drops a menu of account and team links.",
     "category": "menus",
     "categories": [
       "menus",
@@ -27976,7 +29056,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-394",
     "title": "Avatar Online Status",
-    "description": "Avatar with a small colored dot (e.g., emerald) in the corner showing 'Online'.",
+    "description": "A circular avatar with a small green status dot overlapping its lower-right edge. It marks a person as online; the name and Online caption beneath come from the demo.",
+    "tagline": "A round profile photo carries a tiny green dot for being online.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -28001,7 +29082,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-398",
     "title": "Avatar Notification Count",
-    "description": "Avatar with a small number badge (e.g., '3') showing notifications or message count.",
+    "description": "A circular profile photo with a small white badge counting unread messages on its upper right, centred above a name and a one-line message total.",
+    "tagline": "Round profile photo wearing a white count bubble on its top corner.",
     "category": "avatars",
     "categories": [
       "avatars",
@@ -28026,7 +29108,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-424",
     "title": "Removable Badge",
-    "description": "Badge component with integrated close button; typically stateful in parent.",
+    "description": "A white pill reading Removable next to a thin grey X; pressing the X removes the tag, leaving the stage empty.",
+    "tagline": "A pale rounded tag with a small X that makes it disappear.",
     "category": "badges",
     "categories": [
       "badges",
@@ -28050,7 +29133,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-440",
     "title": "Icon Tooltip Tabs",
-    "description": "Icon-only tabs with tooltip labels displayed on hover for accessibility and clarity.",
+    "description": "A small dark tab bar holding only a house, a panels glyph and a cube; hovering pops up the tab's name, and a 3 badge rides the middle icon.",
+    "tagline": "Three wordless icon tabs that name themselves in a bubble on hover.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -28075,7 +29159,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-444",
     "title": "Vertical Icon Sidebar Tabs",
-    "description": "Vertical sidebar navigation with icon-only buttons and hover tooltips. Compact vertical layout.",
+    "description": "A vertical tab list beside a content pane. Picking Overview, Projects or Packages moves the highlight and swaps the text shown in the panel.",
+    "tagline": "Three icon-labelled tabs switch a small panel of text beside them.",
     "category": "tabs",
     "categories": [
       "tabs",
@@ -28101,7 +29186,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-452",
     "title": "Breadcrumb Bordered",
-    "description": "Breadcrumb with borders around individual items, creating distinct segments.",
+    "description": "A bordered rounded strip holding a house icon, the link Components and the brighter current page Breadcrumb, spaced along one line over black.",
+    "tagline": "A breadcrumb trail boxed inside a thin rounded frame.",
     "category": "navigation",
     "categories": [
       "navigation"
@@ -28124,7 +29210,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-482",
     "title": "Expandable Rows Table",
-    "description": "Data table with expandable rows showing additional note content. First column has chevron toggle button. Only rows with notes are expandable. Includes row selection checkboxes.",
+    "description": "A dark account table where rows carrying a note show a chevron in the first column. Pressing it drops a full-width sub-row with an info icon and the note text; a checkbox column selects rows separately.",
+    "tagline": "Rows fold open to reveal a written note with an info icon.",
     "category": "tables",
     "categories": [
       "tables",
@@ -28150,7 +29237,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "comp-596",
     "title": "Nav Switch Header",
-    "description": "Header with nav tabs, online/uptime/latency badges, and animated power on/off toggle (motion-based state switch).",
+    "description": "A flat dark monitoring header with Overview, Graphs and Backups links, thin badges for online status, 99.9% and 45ms, and a two-tone power toggle at the far right.",
+    "tagline": "Tab links, status badges and a power switch share one slim header.",
     "category": "navigation",
     "categories": [
       "navigation",
@@ -28175,7 +29263,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-young-passion",
     "title": "Young Passion",
-    "description": "A \"Young Passion\" CSS gradient.",
+    "description": "A decorative horizontal gradient block that starts in warm coral pink and deepens to berry magenta, with soft rounded corners and no content of its own.",
+    "tagline": "A coral-to-magenta wash sweeps left to right across a rounded panel.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28198,7 +29287,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-morpheus-den",
     "title": "Morpheus Den",
-    "description": "A \"Morpheus Den\" CSS gradient.",
+    "description": "A decorative vertical gradient block that runs from bright turquoise along the bottom up through blue to a dark indigo top, with soft rounded corners.",
+    "tagline": "Deep indigo fades down into turquoise across a rounded panel.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28221,7 +29311,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-wide-matrix",
     "title": "Wide Matrix",
-    "description": "A \"Wide Matrix\" CSS gradient.",
+    "description": "A decorative vertical gradient block with many stops: pale pink and peach at the bottom, through coral, rose and violet, ending in deep navy blue at the top.",
+    "tagline": "Peach, coral and violet stack upward into deep navy across a rounded panel.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28244,7 +29335,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-phoenix-start",
     "title": "Phoenix Start",
-    "description": "A \"Phoenix Start\" CSS gradient.",
+    "description": "A decorative vertical gradient block that glows golden yellow at the top edge and warms through amber and orange to red-orange at the bottom, with soft rounded corners.",
+    "tagline": "Golden yellow at the top melts down into red-orange across a rounded panel.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28267,7 +29359,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-october-silenceiver",
     "title": "October Silenceiver",
-    "description": "A \"October Silenceiver\" CSS gradient.",
+    "description": "A decorative slightly diagonal gradient block that starts in bright cyan-blue, passes through periwinkle, and ends in vivid violet-magenta at the far edge.",
+    "tagline": "Cyan blue slides diagonally into vivid violet across a rounded panel.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28290,7 +29383,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-eternal-constance",
     "title": "Eternal Constance",
-    "description": "A \"Eternal Constance\" CSS gradient.",
+    "description": "A static two-stop gradient block: dark navy along the bottom rising to slate blue at the top, shaped as a full-width rounded panel that can sit behind content or fill a section.",
+    "tagline": "Deep navy fading up into muted slate blue, as a rounded panel.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28313,7 +29407,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-new-retrowave",
     "title": "New Retrowave",
-    "description": "A \"New Retrowave\" CSS gradient.",
+    "description": "A fixed three-stop gradient swatch: peach at the top, a mauve-pink band in the middle, and periwinkle blue along the bottom, delivered as a wide rounded rectangle.",
+    "tagline": "Peach melts through mauve into periwinkle, bottom to top.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28336,7 +29431,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-north-miracle",
     "title": "North Miracle",
-    "description": "A \"North Miracle\" CSS gradient.",
+    "description": "A loud two-colour gradient block: vivid magenta across the top sliding into bright cyan at the bottom, shaped as a wide rounded rectangle for use behind content.",
+    "tagline": "Neon magenta pouring down into electric cyan.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28359,7 +29455,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-space-shift",
     "title": "Space Shift",
-    "description": "A \"Space Shift\" CSS gradient.",
+    "description": "A static diagonal gradient: deep indigo in the lower-left corner travelling through mid blue and turquoise to a fresh mint green in the upper right, presented as a wide rounded block.",
+    "tagline": "Indigo sweeps diagonally through blue and cyan into mint green.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28382,7 +29479,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-magic-ray",
     "title": "Magic Ray",
-    "description": "A \"Magic Ray\" CSS gradient.",
+    "description": "A static multi-stop gradient laid on a shallow diagonal: strong hot pink on the left, a dark purple waist, and blue on the right, all inside a wide rounded panel.",
+    "tagline": "Hot pink sweeps into deep violet and then into blue.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28405,7 +29503,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-frozen-heat",
     "title": "Frozen Heat",
-    "description": "A \"Frozen Heat\" CSS gradient.",
+    "description": "A static gradient that reads as a heat-to-cold transition: rose-red on the left, periwinkle lavender through the middle, and light sky blue on the right, drawn across a wide rounded block.",
+    "tagline": "Crimson rose cools through periwinkle into a clear sky blue.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28428,7 +29527,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "gradient-fabled-sunset",
     "title": "Fabled Sunset",
-    "description": "A \"Fabled Sunset\" CSS gradient.",
+    "description": "A static gradient moving from a very dark indigo-violet on the left through deep royal purple and finishing in a strong hot pink on the right, carried in a wide rounded panel.",
+    "tagline": "Indigo darkness warms into a vivid pink glow on the right.",
     "category": "gradients",
     "categories": [
       "gradients"
@@ -28451,7 +29551,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "border-beam",
     "title": "Border Beam",
-    "description": "Animated glowing beam that travels along the border of its parent container, driven by CSS custom properties and a @keyframes animation.",
+    "description": "A glowing gradient segment travels around the rounded border of whatever container it is dropped into. Colour, width, speed and start delay are configurable.",
+    "tagline": "A thin coloured light keeps circling the edge of each card.",
     "category": "borders",
     "categories": [
       "borders",
@@ -28473,7 +29574,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "letter-pullup",
     "title": "Letter Pullup",
-    "description": "Each character of the input string animates up from y=100 with staggered delays using motion/react variants.",
+    "description": "Each character of a string rises up into position in sequence, starting transparent and low, so a headline assembles itself letter by letter.",
+    "tagline": "Letters rise into place one by one to spell two lines.",
     "category": "text",
     "categories": [
       "text"
@@ -28493,7 +29595,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "logo-cloud",
     "title": "Logo Cloud",
-    "description": "Three variants: AnimatedLogoCloud (CSS marquee scroll of logo images), IconLogoCloud (icon grid), and StaticLogoCloud (static grid). CSS @keyframes logo-cloud injected via style tag.",
+    "description": "A social-proof block: one row of company logos drifts sideways behind soft edge fades, with a second static row of the same marks underneath.",
+    "tagline": "A sliding band of brand logos sits above a still logo grid.",
     "category": "carousels",
     "categories": [
       "carousels",
@@ -28514,7 +29617,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "particle-image",
     "title": "Particle Image",
-    "description": "Renders an image as an interactive particle field using a canvas-based particle engine (2D or WebGL).",
+    "description": "An image is rebuilt out of thousands of small dots that hold the picture's own colours. Moving the pointer through it pushes the dots apart, opening a gap that slowly heals back into the shape.",
+    "tagline": "A logo drawn in tiny dots that scatter where the cursor sweeps.",
     "category": "media",
     "categories": [
       "media",
@@ -28536,7 +29640,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "scroll-island",
     "title": "Scroll Island",
-    "description": "Fixed dynamic island that tracks page scroll percentage with an animated circular progress bar and expandable content panel. Uses motion/react spring transitions. Written at registry/inspira-react/scroll-island.tsx.",
+    "description": "A slim dark island pinned to the top of a long article. A small ring fills as the reader scrolls and a percentage counts up; clicking it expands into a short list.",
+    "tagline": "Floating pill tracks how far down the page you have scrolled.",
     "category": "scroll",
     "categories": [
       "scroll"
@@ -28556,7 +29661,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "inspira-sparkles",
     "title": "Sparkles",
-    "description": "Canvas-based animated particle field. Particles float and pulsate with configurable color, density, size, and speed. Uses RAF loop + ResizeObserver instead of @vueuse/core.",
+    "description": "A canvas field of small white dots scattered over a black surface. They float gently and fade in and out, densest at the top and thinning downward, like slow falling snow or stars.",
+    "tagline": "White specks drift and twinkle over a dark backdrop.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -28577,7 +29683,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "spline",
     "title": "Spline",
-    "description": "Shows children slot as loading state. Requires @splinetool/runtime to be installed separately.",
+    "description": "A dark two-column banner with a headline and paragraph on the left and a real-time 3D robot on the right. The robot rotates and shifts its pose as the pointer moves across the canvas.",
+    "tagline": "A glossy 3D robot turns and leans to follow your pointer.",
     "category": "3d",
     "categories": [
       "3d",
@@ -28599,7 +29706,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "components-backgrounds-gravity-stars",
     "title": "Gravity Stars Background",
-    "description": "A background component featuring a subtle yet engaging animated gravity stars effect.",
+    "description": "Hundreds of small white stars float slowly across a black sky. When the pointer enters, nearby stars are pulled toward it, brighten and leave a glowing clump that disperses again.",
+    "tagline": "Stars drift across black and fall toward your cursor.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -28625,7 +29733,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-effects-highlight",
     "title": "Highlight",
-    "description": "A highlight effect that allows you to highlight elements on hover, click or with a controlled value.",
+    "description": "A dark header bar with a brand, five nav links and an avatar; a rounded highlight moves under the link the pointer is on and fades away when it leaves.",
+    "tagline": "A grey marker slides behind whichever nav link you hover.",
     "category": "effects",
     "categories": [
       "effects",
@@ -28652,7 +29761,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-effects-shine",
     "title": "Shine",
-    "description": "An animated light sweep effect with configurable timing, colors, and triggers (hover, tap, or continuous).",
+    "description": "A pricing card and two buttons get a soft diagonal streak of white that slides from one edge to the other, either on a loop or in response to hover and taps.",
+    "tagline": "A slanted band of light sweeps across a card or button.",
     "category": "effects",
     "categories": [
       "effects",
@@ -28679,7 +29789,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-texts-highlight",
     "title": "Highlight Text",
-    "description": "A highlight text animation.",
+    "description": "A three-line headline where two phrases get coloured highlight blocks that sweep in from the left, one after the other, over a couple of seconds.",
+    "tagline": "Two phrases in a headline fill with colour behind their words.",
     "category": "text",
     "categories": [
       "text"
@@ -28706,7 +29817,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "grid",
     "title": "Grid Background",
-    "description": "CSS-only grid background using a custom grid utility class with a radial gradient mask that fades edges. Includes sample heading text.",
+    "description": "A near-black backdrop ruled with fine squares, softened at the border by a radial fade, with one gradient heading floating in the centre.",
+    "tagline": "Thin grey lines fade into black toward the corners.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -28730,7 +29842,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "canvas-text",
     "title": "Canvas Text",
-    "description": "Renders text on canvas with horizontal wavy lines drawn inside the text boundaries. Lines animate with sine-wave motion and cycle through multiple colors. Responsive to theme changes.",
+    "description": "Fills part of a headline with a canvas pattern of thin horizontal lines in shifting blues. The lines bend in gentle sine waves and stay clipped inside the letters, animating on their own.",
+    "tagline": "A bold word filled with horizontal blue lines that ripple like a slow wave.",
     "category": "text",
     "categories": [
       "text",
@@ -28754,7 +29867,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "dotted-glow-background",
     "title": "Dotted Glow Background",
-    "description": "Canvas-based dotted background with per-dot phase and speed for organic shimmering. Each dot pulses between dim and bright, with a glow halo when bright. Pauses rendering when off-screen via IntersectionObserver.",
+    "description": "Covers its area with a staggered grid of tiny round dots on near-black. Each dot brightens and dims on its own rhythm, and the brightest gain a soft blue halo, so the whole field shimmers.",
+    "tagline": "A near-black field of tiny dots that twinkle and pick up a faint blue glow.",
     "category": "backgrounds",
     "categories": [
       "backgrounds",
@@ -28778,7 +29892,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "Crosshair-TS-TW",
     "title": "Crosshair Cursor",
-    "description": "Custom crosshair cursor with tracking, and link hover effects.",
+    "description": "Two hairline white guides follow the mouse across a dark editorial panel, and they shudder with a noise glitch whenever the pointer touches a link.",
+    "tagline": "Fine white crosshair lines track the pointer across the page.",
     "category": "cursors",
     "categories": [
       "cursors",
@@ -28804,7 +29919,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-effects-image-zoom",
     "title": "Image Zoom",
-    "description": "An effect that allows you to zoom in on an image on hover.",
+    "description": "A rounded photo that slides to a close-up centred on the cursor when you hover, follows the pointer to pan, and toggles the zoom on click.",
+    "tagline": "Mountain photo magnifies under the pointer and pans as you move.",
     "category": "effects",
     "categories": [
       "effects",
@@ -28832,7 +29948,8 @@ export const registry: RegistryEntry[] = [
   {
     "name": "primitives-texts-scrolling-number",
     "title": "Scrolling Number",
-    "description": "A scrolling number animation.",
+    "description": "Two statistics shown as rolling strips of numbers, one vertical and one horizontal, each with a highlight band marking the current value and a row of period buttons that swaps the data.",
+    "tagline": "A number strip scrolls behind a window until the chosen value lands centred.",
     "category": "charts",
     "categories": [
       "charts",

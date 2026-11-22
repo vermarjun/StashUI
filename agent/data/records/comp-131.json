@@ -1,0 +1,117 @@
+{
+ "name": "comp-131",
+ "frames": {
+  "code": "9499",
+  "best": 2,
+  "best_why": "The dropdown is fully open with all three strategies, their descriptions and a tick on the active one.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.4
+ },
+ "tagline": "Split button on a pull request row that opens a merge-method menu.",
+ "summary": "A commit row pairs a title and meta line with a light split button. The wide half shows the chosen merge method; the chevron half drops a menu of three strategies, each explained in a sentence.",
+ "title_fix": null,
+ "appearance": "A dark rounded card row holds a bold commit title and a grey meta line on the left. On the right sits a light split control: a wide label segment and a narrow chevron segment. Opening it reveals a grey dropdown where each of three options has a name, a small description and a tick on the active one.",
+ "behaviour": "Clicking the chevron opens the menu below the button; choosing one of the three radio options moves the tick, closes the menu and swaps the main button's label. The card behind does not move.",
+ "parts": [
+  "commit title",
+  "commit meta",
+  "main button",
+  "chevron button",
+  "dropdown menu",
+  "option row"
+ ],
+ "demo_content": "PR title \"feat: add usage-based billing\", meta \"#482 · 6 commits · checks passed\", and three strategy options.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "merge pull request split button",
+  "code hosting style merge options menu",
+  "button with dropdown arrow for choices",
+  "squash rebase merge selector",
+  "split action button with menu",
+  "pick a merge strategy",
+  "primary action plus more options",
+  "change merge method dropdown"
+ ],
+ "resembles": [
+  "GitHub merge button"
+ ],
+ "use_when": "A primary action has two or three variants a small menu should offer, like choosing how to merge a branch.",
+ "avoid_when": "The menu descriptions are fixed prose and the main button runs no merge action of its own.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "The three strategies come from an options array holding a label and a description; the selected label and menu width are set in the file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A split button and a small radio menu; nothing runs at rest.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The chevron is labelled Options and the menu behaves as a radio group, but the main button performs no action itself."
+ },
+ "props": [],
+ "issues": [
+  "The main Merge pull request button has no handler, so only the dropdown changes anything."
+ ],
+ "polish": 4,
+ "polish_why": "Realistic pull request row and a well described menu; the main action is inert.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Merge Strategy Split Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6ef89eaf503f8780",
+  "film_hash": "78a2ff42872d72d1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

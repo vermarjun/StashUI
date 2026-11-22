@@ -1,0 +1,163 @@
+{
+ "name": "book",
+ "frames": {
+  "code": "5650",
+  "best": 5,
+  "best_why": "Frame 5 shows all three covers with the hovered book part-tilted so its spine is visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.5
+ },
+ "tagline": "Three book covers stand in 3D and tip back on hover to show their spines.",
+ "summary": "A row of book-shaped cards with gradient covers, a pale page edge and a title block. Pointing at one rotates it about thirty degrees so its spine comes into view.",
+ "title_fix": null,
+ "appearance": "Three rectangular book covers stand upright on a black stage, in indigo, deep rose and green. Each has a solid gradient cover, a light page-edge stripe on the right, a small tag, a bold title and tiny body copy at the lower left.",
+ "behaviour": "At rest a cover faces straight ahead. Hovering tips it back about thirty degrees to reveal the white spine and page edge, easing slowly into place; one copy is pinned at that angle.",
+ "parts": [
+  "book cover",
+  "page edge",
+  "spine",
+  "tag",
+  "title",
+  "description"
+ ],
+ "demo_content": "Fiction / The Lost City, Design / UI Patterns, and Notes with short blurbs.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "3d",
+  "dark",
+  "gradient",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "3d book cover display",
+  "hover tilt card effect",
+  "hardcover mockup for novels",
+  "reading list shelf cards",
+  "css perspective cover",
+  "books standing on dark background",
+  "product cover that turns on hover",
+  "ebook mockup grid"
+ ],
+ "resembles": [],
+ "use_when": "A blog, library or bookstore wants cover art shown as physical objects rather than flat thumbnails.",
+ "avoid_when": "Its dark stage and white cover text assume a dark page; on a light background the shadow and spine lose contrast.",
+ "suits": [
+  "portfolio",
+  "ecommerce",
+  "blog"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "media",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Book takes color, size, radius, shadowSize, duration and isStatic; cover text comes from the child BookHeader, BookTitle and BookDescription.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Three DOM boxes and a single CSS transform transition; nothing runs at rest.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The tilt is hover-only, so keyboard and touch users never see the spine; cover text is plain but otherwise unlabelled."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"mt-3 mb-1 font-bold text-balance select-none\", classNam",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "BookColor",
+   "default": "\"zinc\"",
+   "required": false
+  },
+  {
+   "name": "isStatic",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "BookSize",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "BookRadius",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "shadowSize",
+   "type": "BookShadowSize",
+   "default": "\"lg\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The small description type on each cover is hard to read at this size."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing book form with a clean tilt; the smallest cover's copy is hard to read.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "3D Book Display",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9396c740832a32dd",
+  "film_hash": "64fccc87e80f7f20",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

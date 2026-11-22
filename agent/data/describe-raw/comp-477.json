@@ -1,0 +1,108 @@
+{
+  "name": "comp-477",
+  "frames": {
+    "code": "8048",
+    "best": 4,
+    "best_why": "Every row and the header ticked, so both the selection and the footer total are visible.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Checkbox table of accounts with flag emojis, status pills and a running total.",
+  "summary": "A dark table of five accounts, each row starting with a checkbox. Columns cover name, email, country flag and city, a status pill, and a right-aligned balance, with a total row underneath.",
+  "title_fix": null,
+  "appearance": "A thin white-lined table on near-black, led by a narrow checkbox column. Names are bold, locations begin with a small waving flag emoji, statuses sit in rounded pills (green for Active, grey for Inactive), and money lines up at the right. A divider separates a Total row.",
+  "behaviour": "Ticking a row's box marks that row selected; the header box selects or clears every row at once. The header box shows a dash while only some rows are chosen, and the footer total follows the loaded data.",
+  "parts": [
+    "header checkbox",
+    "row checkbox",
+    "name",
+    "email",
+    "country flag",
+    "status pill",
+    "balance",
+    "total row"
+  ],
+  "demo_content": "Five accounts with cities, flags and balances, captioned \"Basic data table made with TanStack Table\".",
+  "states": [
+    "selected",
+    "loading",
+    "empty"
+  ],
+  "kind": "data-table",
+  "look": [
+    "dark",
+    "flat",
+    "minimal",
+    "dense",
+    "outlined"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "table with checkboxes to select rows",
+    "select all rows in a data table",
+    "team accounts table with country flags",
+    "status badges inside a user table",
+    "table with running total row at bottom",
+    "choose several customers at once",
+    "admin list of people and balances",
+    "grid of rows with tick boxes and totals"
+  ],
+  "resembles": [],
+  "use_when": "People pick several rows to act on together and need a footer total for the loaded records.",
+  "avoid_when": "Rows come from a remote JSON, so the table stays empty until that request finishes.",
+  "suits": [
+    "dashboard",
+    "saas",
+    "fintech"
+  ],
+  "slot_hints": [
+    "data-table"
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "none",
+    "affects": [
+      "border",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Column definitions, the fetch URL and the five-row limit are written in the file; changing the data source, columns or currency means editing the source.",
+  "technique": [
+    "static"
+  ],
+  "weight": "moderate",
+  "weight_why": "A table library builds the grid over five remote rows; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Row and select-all checkboxes have aria labels and work from the keyboard; status is spelled out in the badge text."
+  },
+  "props": [],
+  "issues": [
+    "Rows are fetched from a remote URL, so offline the body reads \"No results.\"",
+    "The demo caption credits the table library instead of describing the example."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp flags, clear status pills and working totals, on otherwise default table styling.",
+  "unsure": [
+    "content_from",
+    "states"
+  ]
+}

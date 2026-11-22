@@ -1,0 +1,160 @@
+{
+ "name": "family-drawer",
+ "frames": {
+  "code": "9249",
+  "best": 2,
+  "best_why": "Frame 2 shows the open share sheet with both action rows, the description and Cancel in full.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.1
+ },
+ "tagline": "A rounded sheet rises from the bottom edge with share actions.",
+ "summary": "A bottom-anchored drawer that opens from a Share button with a title, description and large action rows. Choosing an action swaps the sheet to a second view, such as a copied-link confirmation, and resizes to fit.",
+ "title_fix": null,
+ "appearance": "A narrow dark sheet rises from the bottom of a dimmed page with large rounded corners. It holds a small icon, a bold title, a grey description, two full-width muted rows with icons, and a plain Cancel line; an X sits at the top right.",
+ "behaviour": "The Share button slides the sheet up from the bottom. Choosing Copy link or Send via email fades and scales the content into a new view while the sheet's height animates to fit; Cancel or the overlay closes it.",
+ "parts": [
+  "share button",
+  "sheet",
+  "close button",
+  "icon",
+  "title",
+  "description",
+  "action row",
+  "cancel link"
+ ],
+ "demo_content": "Share this item, with Copy link and Send via email; a copied view shows myapp.com/share/abc123.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "drawer",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "bottom sheet with share options",
+  "drawer that slides up from the bottom",
+  "multi step action sheet",
+  "share menu on mobile",
+  "small modal with copy link and email",
+  "sheet that changes size between views",
+  "ios style action sheet",
+  "bottom popup with big buttons"
+ ],
+ "resembles": [
+  "iOS share sheet"
+ ],
+ "use_when": "A few share or action choices should appear from the bottom edge without leaving the page.",
+ "avoid_when": "The drawer is capped at 361px wide and a few short views, so dense forms or wide tables do not fit.",
+ "suits": [
+  "mobile-app",
+  "saas"
+ ],
+ "slot_hints": [
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Root takes views, open, defaultView and change callbacks; each view is built from the exported header, button and wrapper parts. Colours follow theme tokens.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "A measured bottom sheet with view transitions; light, but it pulls several dependencies.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The icon-only close button has no aria-label, and the view swaps are not announced to screen readers."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultView",
+   "type": "string",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "onViewChange",
+   "type": "(view: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "views",
+   "type": "ViewsRegistry",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The icon-only close button has no accessible name beyond its inner SVG title.",
+  "The sheet is capped at 361px, so on wide screens it stays a narrow phone-style panel."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp iOS-like sheet and smooth view morph; the narrow fixed width and tiny close icon are limits.",
+ "unsure": [],
+ "title": "Family Drawer",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "eb078d037f68812a",
+  "film_hash": "1e49bff70f6e18ea",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

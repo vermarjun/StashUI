@@ -1,0 +1,71 @@
+{
+  "name": "markdown",
+  "frames": {
+    "code": "2095",
+    "best": 4,
+    "best_why": "Frame 4 has the whole answer: heading, steps, highlighted code and both table rows.",
+    "usable": [1, 2, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Streamed text fills in as formatted prose, code and a table.",
+  "summary": "A renderer that grows an answer in place as it arrives, turning hashes, dashes and backticks into a heading, numbered steps, syntax-highlighted code and a table. Content is split into blocks so parts already finished do not redraw.",
+  "title_fix": null,
+  "appearance": "A dark rounded card holding left-aligned prose: a bold heading, a paragraph, a numbered list, a bordered code box with coloured syntax, and a two-column table with thin row rules. Text is small and grey on near-black.",
+  "behaviour": "Text arrives a few characters at a time and each chunk is parsed, so the heading, list, code block and table fill in from top to bottom. When the answer finishes the card empties and the same stream starts again.",
+  "parts": ["card", "heading", "paragraph", "numbered list", "code block", "table"],
+  "demo_content": "An answer about debouncing a search input, with a code snippet and a delay table.",
+  "states": [],
+  "kind": "content-section",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "stream text into formatted prose",
+    "ai answer with code and table",
+    "syntax highlighted code inside article",
+    "turn plain text into rich content",
+    "chat response formatting as it types",
+    "live article body that types itself",
+    "headings lists and code from text",
+    "safe renderer for assistant replies"
+  ],
+  "resembles": ["ChatGPT streamed answer", "Claude response view"],
+  "use_when": "Content arrives in pieces over the network and should read as finished prose as soon as each piece lands.",
+  "avoid_when": "You only need plain text: it drags in marked, react-markdown, remark and shiki as dependencies.",
+  "suits": ["ai-chat", "docs", "blog"],
+  "slot_hints": ["body-text"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass the markdown string as children plus className for styling and optional react-markdown component overrides; the code-block theme and shiki languages need a source edit.",
+  "technique": ["static"],
+  "weight": "moderate",
+  "weight_why": "Re-lexes each streamed chunk with marked and highlights code through shiki.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Streamed updates have no live region, so screen readers are never told that new content arrived."
+  },
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "id", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "components", "type": "Partial<Components>", "default": "INITIAL_COMPONENTS", "required": false}
+  ],
+  "issues": [
+    "Code block theme is fixed to github-dark, so it stays dark even on a light page.",
+    "Code shows unhighlighted plain text until shiki loads, so it flashes on first paint."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy typography and clear hierarchy; the fixed dark code theme is the one blemish.",
+  "unsure": ["kind"]
+}

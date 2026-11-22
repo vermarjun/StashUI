@@ -1,0 +1,176 @@
+{
+ "name": "chart",
+ "frames": {
+  "code": "9482",
+  "best": 1,
+  "best_why": "Both cards show their full charts, legends and axes with no tooltip or cursor over the data.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Stacked revenue bars and two latency lines sit on paired dark cards.",
+ "summary": "A chart wrapper demo: a wide card of stacked monthly revenue bars with a two-item legend, and a narrow card of two smooth API latency lines across a week, both in grey on dark surfaces.",
+ "title_fix": null,
+ "appearance": "Two dark rounded cards side by side. The wider one holds eight stacked grey bars climbing left to right over Jan to Aug, faint horizontal grid lines, month labels below and a small legend of two dots. The narrow card holds two pale curved lines over Mon to Sun, with its own legend.",
+ "behaviour": "The charts hold still. Hovering a bar or line point opens a small dark tooltip listing each series and its value, and a faint vertical guide appears behind the hovered column.",
+ "parts": [
+  "card",
+  "title",
+  "bar chart",
+  "line chart",
+  "axis labels",
+  "legend",
+  "tooltip"
+ ],
+ "demo_content": "Title Monthly revenue with a Subscriptions and Services legend; a second card shows p50 and p95 API latency lines.",
+ "states": [
+  "hover"
+ ],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "monochrome"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "stacked bar chart with legend",
+  "two line graph dashboard cards",
+  "monthly revenue bars on dark card",
+  "api latency lines over a week",
+  "chart wrapper with hover tooltip",
+  "compare two series side by side",
+  "revenue and latency mini charts",
+  "data visualization card pair"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard needs revenue bars plus a latency trend without hand-building axes, tooltips and legends.",
+ "avoid_when": "You want one self-contained chart: this is a wrapper plus a two-card demo and expects CSS chart colour variables.",
+ "suits": [
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "chart",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "You pass your own chart as children with a config of series labels and colours; tooltip and legend read variants from props, while size and layout come from class names.",
+ "technique": [
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Two small SVG charts with no animation loop; they redraw only on hover or resize.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The accessibility layer lets keyboard users step through points, but the charts carry no text summary or table fallback."
+ },
+ "props": [
+  {
+   "name": "config",
+   "type": "ChartConfig",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initialDimension",
+   "type": "{ width: number; height: number }",
+   "default": "INITIAL_DIMENSION",
+   "required": false
+  },
+  {
+   "name": "indicator",
+   "type": "\"line\" | \"dot\" | \"dashed\"",
+   "default": "\"dot\"",
+   "required": false
+  },
+  {
+   "name": "hideLabel",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "hideIndicator",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "nameKey",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "labelKey",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hideIcon",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Both series use nearly the same grey, so the stacked split and the two lines are hard to tell apart."
+ ],
+ "polish": 3,
+ "polish_why": "Clean chart wrapper demo; monochrome series and a cramped second card hold it at ordinary.",
+ "unsure": [
+  "traits.theme",
+  "a11y.keyboard",
+  "a11y.labels"
+ ],
+ "title": "Chart",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8e605dfdcfa9c96a",
+  "film_hash": "44b0de1705f1d6a4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

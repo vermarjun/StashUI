@@ -1,0 +1,175 @@
+{
+ "name": "card-swipe-deck",
+ "frames": {
+  "code": "2664",
+  "best": 3,
+  "best_why": "Shows the top card tilted mid-swipe with its SAVE stamp and the next card stacked behind.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.6
+ },
+ "tagline": "Tinder-style deck of travel cards that fly off with a SAVE stamp.",
+ "summary": "A stack of photo cards you drag left or right; past a threshold the top card tilts away with a coloured wash and a Save or Skip stamp, and the next slides forward.",
+ "title_fix": null,
+ "appearance": "A portrait photo card with a place name and trip line sits atop a slightly offset stack on black. Three round buttons below offer a red X, a reset arrow and a green heart.",
+ "behaviour": "Dragging the top card tilts it around a low pivot and blooms a green SAVE stamp or red Skip stamp with a matching colour wash. Releasing past the threshold throws it off and slides the stack forward; below it the card springs back.",
+ "parts": [
+  "photo card",
+  "place name",
+  "trip line",
+  "stamp",
+  "card stack",
+  "action buttons"
+ ],
+ "demo_content": "Travel cards for Dolomites Italy, Lofoten Norway and Patagonia Chile with nights and price.",
+ "states": [
+  "hover",
+  "focus",
+  "dragging",
+  "disabled"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "swipe cards left or right",
+  "tinder style card deck",
+  "dating app card swiper",
+  "drag card to like or skip",
+  "travel destination card stack",
+  "photo cards that fly away",
+  "deck of cards you can throw",
+  "swipeable photo gallery"
+ ],
+ "resembles": [
+  "Tinder swipe cards"
+ ],
+ "use_when": "Users pick through items one at a time, liking or skipping, more playfully than a grid.",
+ "avoid_when": "A gesture deck hides everything but one card, and touch is the natural input; desktop relies on the buttons or keys.",
+ "suits": [
+  "ecommerce",
+  "social"
+ ],
+ "slot_hints": [
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an items array of content and ids plus labels, stack size, threshold and swipe callbacks; the card frame styling is in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Only a few cards are mounted with transform-driven stamps; no canvas or loop.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Arrow keys swipe and a live region counts cards, but the deck removes its focus outline and the stamps are decorative."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "CardSwipeDeckItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "labels",
+   "type": "CardSwipeDeckLabels",
+   "default": "{resolvedLabels}",
+   "required": false
+  },
+  {
+   "name": "onSwipe",
+   "type": "(id: string, direction: SwipeDirection) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onEmpty",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "DEFAULT_THRESHOLD",
+   "required": false
+  },
+  {
+   "name": "rotationFactor",
+   "type": "number",
+   "default": "DEFAULT_ROTATION_FACTOR",
+   "required": false
+  },
+  {
+   "name": "stackSize",
+   "type": "number",
+   "default": "DEFAULT_STACK_SIZE",
+   "required": false
+  },
+  {
+   "name": "stackOffset",
+   "type": "number",
+   "default": "DEFAULT_STACK_OFFSET",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute inset-0\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Polished Tinder-style stack with convincing stamps and a springy settle.",
+ "unsure": [],
+ "title": "Card Swipe Deck",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7054a4646ddf0aee",
+  "film_hash": "ae3acaaefb432991",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

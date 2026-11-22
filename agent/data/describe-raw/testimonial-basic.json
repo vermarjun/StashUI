@@ -1,0 +1,67 @@
+{
+  "name": "testimonial-basic",
+  "frames": {
+    "code": "6487",
+    "best": 2,
+    "best_why": "The heading, the full first video row with quote and five stars, and the start of the next row are visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "no"
+  },
+  "tagline": "Big video stills beside long five-star customer quotes.",
+  "summary": "A white editorial page stacked with review rows. Each row pairs a wide video thumbnail with a play badge and timecode next to a rounded avatar, bold name, monospaced role, an oversized quotation and five gold stars.",
+  "title_fix": "Video Testimonial Rows",
+  "appearance": "White page framed by thin grey rules, with a small spaced \"« TESTIMONIALS »\" label and a very large black uppercase title. Rows pair a landscape video still with a white play button and timecode against a rounded avatar, heavy name, mono role, large quote and five gold stars.",
+  "behaviour": "The rows stack down the page and scroll normally. Hovering a video still nudges the photo slightly larger and grows the play badge; nothing else moves and no video plays.",
+  "parts": ["label", "heading", "video thumbnail", "play button", "avatar", "name", "quote", "star rating"],
+  "demo_content": "Heading \"SOCIAL PROOF.\" with reviews from Beverley, Marcus Aurelius and Sarah Jenkins and fake clips.",
+  "states": ["hover"],
+  "kind": "testimonial-section",
+  "look": ["light", "editorial", "airy", "bold"],
+  "tone": "minimal",
+  "search_phrases": [
+    "video testimonials with star ratings",
+    "alternating rows of customer reviews",
+    "social proof page with clips",
+    "quote and video side by side",
+    "review list with play buttons",
+    "five star customer stories",
+    "case study quotes with thumbnails",
+    "testimonial wall with large type"
+  ],
+  "resembles": [],
+  "use_when": "A coaching, course or SaaS page wants rich proof rows that pair a video still with a long quote and a rating.",
+  "avoid_when": "The play buttons are decorative and start nothing, and all three reviews with their media are hardcoded.",
+  "suits": ["marketing", "saas"],
+  "slot_hints": ["testimonial", "body-text"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The three reviews, quotes, ratings, avatars and video stills are hardcoded; the stripe texture and column widths need source edits.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Static photos and text with CSS hover scales; nothing animates on its own.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Play badges are spans inside a clickable-looking row with no action or keyboard reach, and alt text for the stills is generic."
+  },
+  "props": [],
+  "issues": [
+    "Rows never alternate sides: the direction class does not reorder the grid, so every video stays left.",
+    "Play buttons and timecodes suggest playback that the component never provides.",
+    "The diagonal stripe texture is barely visible on the white panels."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp editorial type and consistent rows; dead play buttons and the broken alternation hurt it.",
+  "unsure": ["slot_hints"]
+}

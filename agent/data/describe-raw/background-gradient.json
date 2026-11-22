@@ -1,0 +1,72 @@
+{
+  "name": "background-gradient",
+  "frames": {
+    "code": "9197",
+    "best": 3,
+    "best_why": "The halo is at its brightest blue and teal while the whole product card is clearly visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark product card wrapped in a soft, slowly shifting coloured halo.",
+  "summary": "A product card on a black page surrounded by a blurred gradient glow in teal, blue, purple and gold. The halo drifts around the edge continuously and brightens when the card is hovered.",
+  "title_fix": null,
+  "appearance": "A dark rounded card glowing with a soft multi-coloured halo in teal, blue, purple and gold. Inside sits a photo of streaking light trails at night, a bold title, a few lines of grey copy and a small white Buy now pill.",
+  "behaviour": "The halo behind the card slowly slides its gradient around the edge, breathing between teal, blue, purple and gold. On hover it brightens from sixty to full opacity and blurs more, while the card content stays still.",
+  "parts": ["glow border", "photo", "title", "description", "buy button"],
+  "demo_content": "Studio Buds Pro card with a night light-trail photo, an earbud description and a $129 Buy now button.",
+  "states": ["hover"],
+  "kind": "border-effect",
+  "look": ["dark", "glow", "gradient", "rounded", "colorful"],
+  "tone": "decorative",
+  "search_phrases": [
+    "card with glowing gradient border",
+    "animated rainbow outline around card",
+    "soft neon halo behind product card",
+    "gradient glow effect for panels",
+    "product card with moving aura",
+    "colorful border that shifts colors",
+    "premium glow wrapper for content",
+    "blurred gradient frame around card"
+  ],
+  "resembles": [],
+  "use_when": "Making one product or plan card stand out with a moving coloured halo on a dark page.",
+  "avoid_when": "Light pages: the pastel glow washes out on white and loses its effect.",
+  "suits": ["ecommerce", "saas", "marketing"],
+  "slot_hints": ["feature-card", "media"],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["border", "shadow", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass card content as children and a className for the inner surface; the gradient colours, animation speed and glow blur are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Two full-size blurred layers animate forever, costing GPU on large cards.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The glow loops forever with no reduced-motion pause and is purely decorative."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "animate", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "The gradient shift is slow enough that all six frames look almost identical.",
+    "The card sits small in a large empty black frame.",
+    "The glow animates endlessly with no pause."
+  ],
+  "polish": 4,
+  "polish_why": "Premium glow and tidy card; the halo cycles slowly and the frame is mostly empty.",
+  "unsure": ["kind"]
+}

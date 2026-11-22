@@ -1,0 +1,188 @@
+{
+ "name": "video-ambient",
+ "frames": {
+  "code": "1641",
+  "best": 6,
+  "best_why": "The video sits centred with the full blue halo bleeding on every side and the glow toggle readable below.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.9
+ },
+ "tagline": "A video whose colours spill past its edges as a glowing halo.",
+ "summary": "A rounded video player samples its own frames into a soft halo that bleeds past its borders, with a small toggle that switches the ambient glow off to compare.",
+ "title_fix": null,
+ "appearance": "A rounded rectangular video of a green mossy stone floating on blue water, with a blue to teal glow spreading well past its edges. A small dark pill beneath reads Ambient glow: On.",
+ "behaviour": "The video plays on a loop and its dominant colours are resampled several times a second, so the halo shifts with the footage. The small button below toggles the glow on and off.",
+ "parts": [
+  "video player",
+  "ambient halo",
+  "glow toggle button"
+ ],
+ "demo_content": "Aerial footage of a green mossy stone on blue water; the button reads Ambient glow: On",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "glow",
+  "gradient",
+  "rounded"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "video with glow around the edges",
+  "ambilight style video player",
+  "colours bleed out of the video",
+  "tv backlight effect for video",
+  "cinematic video with coloured halo",
+  "glowing border around a video",
+  "reactive glow behind media",
+  "video player with light spill"
+ ],
+ "resembles": [
+  "Philips Ambilight",
+  "YouTube ambient mode"
+ ],
+ "use_when": "A hero or showcase wants a video to feel like a lit screen rather than a flat rectangle.",
+ "avoid_when": "When a fixed brand colour is required, since the halo takes its hue from the footage and shifts as it plays.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "media"
+ ],
+ "slot_hints": [
+  "media",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "src, alt, poster and playback flags are props, plus glow, intensity, scale, blur, saturation, gain and sample rate for the halo. Colours come from the footage itself.",
+ "technique": [
+  "canvas-2d",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Two tiny canvas grabs per sample plus heavy blur filters; it idles when paused.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Muted autoplay video is labelled and reduced motion stops it, but controls default off so keyboard users cannot pause it."
+ },
+ "props": [
+  {
+   "name": "alt",
+   "type": "string",
+   "default": "\"\"",
+   "required": true
+  },
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{poster}",
+   "required": true
+  },
+  {
+   "name": "glow",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "intensity",
+   "type": "number",
+   "default": "DEFAULT_INTENSITY",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "DEFAULT_SCALE",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "DEFAULT_BLUR_PX",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "DEFAULT_SATURATION",
+   "required": false
+  },
+  {
+   "name": "gain",
+   "type": "number",
+   "default": "DEFAULT_GAIN",
+   "required": false
+  },
+  {
+   "name": "sampleRate",
+   "type": "number",
+   "default": "DEFAULT_SAMPLE_RATE_FPS",
+   "required": false
+  },
+  {
+   "name": "rounded",
+   "type": "number",
+   "default": "DEFAULT_ROUNDED_PX",
+   "required": false
+  },
+  {
+   "name": "autoPlay",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "controls",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "With controls off by default there is no visible way to pause the looping footage."
+ ],
+ "polish": 4,
+ "polish_why": "The halo tracks the footage convincingly and the toggle proves it; no pause control holds it back.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Video Ambient",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2e2853ecdfdd4f7b",
+  "film_hash": "dfdbea77ec2ef005",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

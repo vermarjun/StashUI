@@ -1,0 +1,153 @@
+{
+ "name": "circling-elements",
+ "frames": {
+  "code": "1448",
+  "best": 2,
+  "best_why": "The six photos are spread evenly around the ring, making the orbit obvious at a glance.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.6
+ },
+ "tagline": "Six square photos drift around an empty centre, pausing under the cursor.",
+ "summary": "Small square images spaced evenly on an invisible ring orbit a blank middle at a steady speed; hovering the group freezes the motion and each tile enlarges.",
+ "title_fix": null,
+ "appearance": "Six small square photos of a pug, blossom, dune, flower, snowy peak and a dark figure float in a loose circle on a black stage. Their spacing is even, the middle is empty, and there are no frames or labels around them.",
+ "behaviour": "The set turns continuously around the centre at a constant rate. Resting the pointer anywhere on the group stops the orbit, and the hovered photo grows slightly; leaving resumes the spin.",
+ "parts": [
+  "photo tiles",
+  "orbit ring",
+  "centre gap"
+ ],
+ "demo_content": "Six small photos: a pug, cherry blossom, sand dune, red flower, snowy peak and a dark figure.",
+ "states": [
+  "hover"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "colorful",
+  "playful",
+  "sharp"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "photos orbiting in a circle",
+  "rotating image ring",
+  "circular gallery that spins",
+  "images moving around a center",
+  "orbit animation for thumbnails",
+  "hover to pause spinning photos",
+  "carousel shaped like a ring",
+  "rotating avatars around empty space"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio or gallery wants a playful, always-moving arrangement of thumbnails around a focal blank space.",
+ "avoid_when": "Many images or precise browsing: the constant orbit and fixed radius make individual tiles awkward to target.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Children are the orbiting items; radius, duration, easing, direction, pause-on-hover and class names are props, so each tile's size and hover style live in its own markup.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "Six small images each run one CSS keyframe; no JavaScript runs per frame.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The continuous orbit ignores prefers-reduced-motion, and the tiles are plain images with no controls."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "string",
+   "default": "\"linear\"",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"normal\" | \"reverse\"",
+   "default": "\"normal\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The orbit radius is fixed in pixels, so on narrow screens the outer tiles spill past the viewport."
+ ],
+ "polish": 3,
+ "polish_why": "Simple and clear orbit with real photos; fixed radius and uneven gaps keep it ordinary.",
+ "unsure": [
+  "traits.needs_sized_parent"
+ ],
+ "title": "Circling Elements",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e8d6339d4dbcff7e",
+  "film_hash": "939cb3923a4dea22",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

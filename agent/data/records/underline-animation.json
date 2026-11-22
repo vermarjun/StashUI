@@ -1,0 +1,160 @@
+{
+ "name": "underline-animation",
+ "frames": {
+  "code": "2389",
+  "best": 5,
+  "best_why": "Read.cv is fully flooded with a solid block and flipped text while the other links stay legible around it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "Hovering a link grows, sweeps or floods an underline beneath it.",
+ "summary": "A set of link hover effects: one line swells from the centre, others sweep in and out, and another rises into a solid block that flips the text colour. Meant for typographic link lists.",
+ "title_fix": null,
+ "appearance": "A short link list on black: a grey CONTACT label sits beside six blue uppercase links stacked in two groups, each link underlined by a thin blue line close beneath the text.",
+ "behaviour": "Hovering a link plays one of four underline motions: a line grows from the centre, slides in then back out, or expands upward into a filled block that darkens the text. Each effect settles back when the pointer leaves.",
+ "parts": [
+  "link text",
+  "underline",
+  "contact label",
+  "link list"
+ ],
+ "demo_content": "Contact label beside LinkedIn, Instagram, Dribbble, Read.cv and two @stashui.dev email links",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "link with line that grows on hover",
+  "animated underline for links",
+  "hover effect for social links",
+  "text link hover styles",
+  "line sweeping under text",
+  "portfolio contact links with hover",
+  "emails that highlight when hovered",
+  "blue links on a dark page"
+ ],
+ "resembles": [],
+ "use_when": "Portfolio or footer link lists need a restrained hover flourish that stays typographic and never shifts layout.",
+ "avoid_when": "Touch screens or designs that depend on focus states, because every effect is bound to hover only.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "footer",
+  "body-text",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Each variant takes children plus as, className, underline size ratios and a transition. UnderlineToBackground also needs targetTextColor; colours otherwise follow the surrounding currentColor.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Four tiny motion spans that animate only on hover and are idle otherwise.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Every effect fires on hover only, so keyboard focus shows no underline, and no reduced-motion check exists."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative inline-block cursor-pointer\", className)}",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "ValueAnimationTransition",
+   "default": "{ duration: 0.25, ease: \"easeInOut\" }",
+   "required": false
+  },
+  {
+   "name": "underlineHeightRatio",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "underlinePaddingRatio",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"left\" | \"right\"",
+   "default": "\"left\"",
+   "required": false
+  },
+  {
+   "name": "targetTextColor",
+   "type": "string",
+   "default": "\"#fef\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "All links sit permanently underlined in frame 1, though most variants draw the line only while hovered."
+ ],
+ "polish": 3,
+ "polish_why": "Clean and legible, but the plain black demo and barely changing frames make it feel ordinary.",
+ "unsure": [],
+ "title": "Underline Animation",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6d838f60ed331059",
+  "film_hash": "b5bebbc0ccdb166f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,191 @@
+{
+ "name": "arcade-pixel",
+ "frames": {
+  "code": "2069",
+  "best": 4,
+  "best_why": "Big GAME OV letters, scrolling score, INSERT COIN and the sprites are all readable together.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.3
+ },
+ "tagline": "Pixel-art arcade text and sprites scroll, type and blink with CRT glow.",
+ "summary": "A black arcade screen draws messages in a chunky 5x7 pixel font on canvas, with space-invader sprites, typing and marquee animations, phosphor glow, scanlines and a faint CRT flicker.",
+ "title_fix": null,
+ "appearance": "A black rounded panel holding pixel art: three small glowing sprites along the top, a green alien, a pink cat and a yellow heart, then large pink blocky letters, a line of cyan scrolling text and white INSERT COIN beneath.",
+ "behaviour": "The big message types itself out letter by letter with a white flash on each new glyph, the cyan score line slides sideways continuously, and INSERT COIN blinks on and off over scanlines and a soft flicker.",
+ "parts": [
+  "sprites",
+  "big pixel text",
+  "score marquee",
+  "insert coin text",
+  "scanlines",
+  "phosphor glow"
+ ],
+ "demo_content": "The words GAME OVER, a HIGH SCORE 098400 PLAYER 1 ticker and INSERT COIN, plus alien and heart sprites.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "retro",
+  "neon",
+  "glow"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "retro arcade text effect",
+  "pixel font typing animation",
+  "space invader sprites on canvas",
+  "crt scanline screen with glow",
+  "game over pixel text",
+  "8 bit marquee ticker",
+  "blinking insert coin text",
+  "old arcade machine screen for web"
+ ],
+ "resembles": [
+  "Space Invaders"
+ ],
+ "use_when": "A game, event or playful landing page wants the look of an old arcade screen with animated pixel text.",
+ "avoid_when": "Canvas text is not selectable or searchable, and everything is sized in pixel cells rather than CSS type.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "social"
+ ],
+ "slot_hints": [
+  "hero",
+  "headline",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "viewport"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Text or a sprite grid, palette, pixel size, gap, columns, animation, speed, loop, glow, scanlines and CRT are all props. The 5x7 font and built-in sprites are fixed in the source.",
+ "technique": [
+  "canvas-2d",
+  "motion-library",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A small 2D canvas repaints each frame for the marquee and blink, but pauses offscreen.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The message is exposed as hidden text and reduced motion freezes it, but the canvas art itself is aria-hidden."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "sprite",
+   "type": "number[][]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "ArcadePixelAnimate",
+   "default": "none",
+   "required": false
+  },
+  {
+   "name": "palette",
+   "type": "string[]",
+   "default": "DEFAULT_PALETTE",
+   "required": false
+  },
+  {
+   "name": "pixelSize",
+   "type": "number",
+   "default": "DEFAULT_PIXEL_SIZE",
+   "required": false
+  },
+  {
+   "name": "glow",
+   "type": "boolean | number",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "scanlines",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "crt",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "columns",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "DEFAULT_SPEED",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "DEFAULT_GAP",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Several effects run at once, so the big title competes with the score ticker and blinking line."
+ ],
+ "polish": 4,
+ "polish_why": "Authentic arcade look with a custom pixel font and CRT layers; several effects at once feel busy.",
+ "unsure": [
+  "weight",
+  "states"
+ ],
+ "title": "Arcade Pixel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9b8eefa34a40cdb5",
+  "film_hash": "f82b9c81c4d777f5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

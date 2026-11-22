@@ -1,0 +1,72 @@
+{
+  "name": "slot-picker",
+  "frames": {
+    "code": "5743",
+    "best": 6,
+    "best_why": "Slot and button are green with a tick, showing the confirmed booking after the pick.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A compact booking panel with a day rail; click a free gap to place a meeting.",
+  "summary": "A meeting scheduler with a five-day strip, duration choices and an hourly day rail. Click a free gap to drop a slot, drag it around busy blocks, then confirm.",
+  "title_fix": null,
+  "appearance": "A light rounded card shows an avatar, a meeting title and host, a segmented duration switch and five date buttons with free-hour notes. Below, a vertical day rail marks hours and hatched busy blocks, with a blue selected slot and a Confirm button underneath.",
+  "behaviour": "Clicking a free gap drops a blue slot on the rail; hovering elsewhere previews it, dragging hops it around busy blocks, and arrow keys step it. Confirm turns it green and marks the button Booked.",
+  "parts": ["host header", "duration toggle", "day strip", "hour labels", "busy blocks", "meeting slot", "confirm button"],
+  "demo_content": "Product walkthrough with Lena Ortiz, Lisbon; days Mon 2 to Fri 6 Nov; Eastern Time, New York.",
+  "states": ["hover", "selected", "dragging", "success", "disabled"],
+  "kind": "calendar",
+  "look": ["light", "rounded", "minimal", "flat", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "meeting scheduler with day rail",
+    "calendly style booking calendar",
+    "pick a time slot on a timeline",
+    "drag a meeting over busy blocks",
+    "day view time picker",
+    "schedule a call with free gaps",
+    "booking panel with duration options",
+    "vertical agenda date picker"
+  ],
+  "resembles": ["Calendly"],
+  "use_when": "A booking flow needs a compact day view where people can see free gaps and place a meeting.",
+  "avoid_when": "It shows only the five supplied days with a fixed rail scale, so it needs your own data and paging.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["click", "drag", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Host details, a days array of open and busy spans, duration options, timezone and a book callback are props; colours and rail scale are constants.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A small panel with layout animations; it idles between picks.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Every control is labelled and arrow keys move the slot; the rail also offers a keyboard fallback to place the first gap."
+  },
+  "props": [
+    {"name": "host", "type": "{ name: string; title?: string; city?: string; offset?: number }", "default": "{ name: \"Lena Ortiz\", title: \"Product walkthrough\", city: \"Lisbon\", offset: 300 }", "required": false},
+    {"name": "days", "type": "SlotDay[]", "default": "DEMO_DAYS", "required": false},
+    {"name": "durations", "type": "number[]", "default": "[30, 60, 90]", "required": false},
+    {"name": "timezone", "type": "string", "default": "\"Eastern Time, New York\"", "required": false},
+    {"name": "onBook", "type": "(slot: { date: string; start: number; minutes: number }) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Busy blocks are faint grey hatching on a light rail, so occupied hours are easy to miss."
+  ],
+  "polish": 4,
+  "polish_why": "A well-structured booking flow with a clear slot and tidy spacing; busy hatching is faint.",
+  "unsure": []
+}

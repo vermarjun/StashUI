@@ -1,0 +1,160 @@
+{
+ "name": "ShapeBlur-TS-TW",
+ "frames": {
+  "code": "7548",
+  "best": 2,
+  "best_why": "Frame 2 has the largest, clearest blur plume swelling from the top-right corner.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.5
+ },
+ "tagline": "A rounded square outline smears into a soft plume under the pointer.",
+ "summary": "A thin white rounded-square frame on black grows a smoky grey bloom wherever the pointer hovers, the glow sliding along the outline with a damped lag.",
+ "title_fix": null,
+ "appearance": "A single crisp rounded-square outline, one thin white stroke, centred on black. Near the pointer the line breaks into a broad soft grey plume that fades outward.",
+ "behaviour": "The pointer drags a blurred bulge along the square's edge, its brightness falling off with distance from the cursor. When the pointer leaves, the outline draws clean again.",
+ "parts": [
+  "outline",
+  "blur plume",
+  "black field"
+ ],
+ "demo_content": "",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "glow",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "blurred glow on a rounded square",
+  "border smears toward the cursor",
+  "soft smoke following the mouse",
+  "shader outline with a bloom",
+  "hover blur effect on a frame",
+  "abstract glowing box background",
+  "liquid blur on shape edges",
+  "spotlight bulge on a border"
+ ],
+ "resembles": [],
+ "use_when": "A minimal hero needs a quiet shape that still reacts to the pointer.",
+ "avoid_when": "It is a full-screen WebGL canvas, so it needs a sized parent and costs GPU time even at rest.",
+ "suits": [
+  "ai-chat",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Variation (rounded square, circle, ring or triangle), pixel ratio, shape size, roundness, border size and the hover circle's size and edge are props.",
+ "technique": [
+  "three-js",
+  "webgl-shader"
+ ],
+ "weight": "moderate",
+ "weight_why": "A single full-screen shader quad redrawn every frame, with a damped pointer position.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative with nothing to operate; it needs a pointer and does not check reduced-motion preferences."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "variation",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "pixelRatioProp",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "shapeSize",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "roundness",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "borderSize",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "circleSize",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "circleEdge",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo has no focal content, so the component is only a bare outline on black.",
+  "Pointer tracking listens on the whole document, so the plume moves even outside the canvas."
+ ],
+ "polish": 3,
+ "polish_why": "The blur is smooth and restrained; alone on black it reads as a thin demo.",
+ "unsure": [],
+ "title": "Shape Blur Effect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b9871edd9b66a564",
+  "film_hash": "303ddb7b1fbfcca1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

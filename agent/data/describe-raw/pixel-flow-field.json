@@ -1,0 +1,78 @@
+{
+  "name": "pixel-flow-field",
+  "frames": {
+    "code": "9173",
+    "best": 3,
+    "best_why": "The full word is settled and sharply readable, which the earlier loose-particle frames are not.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny squares swirl into a blocky word, then scatter away from the pointer.",
+  "summary": "A dark canvas tiled with thousands of small square cells that drift along a noise flow, gather into a heavy word, and get shoved aside in a fading wake wherever the pointer moves.",
+  "title_fix": null,
+  "appearance": "A near-black stage covered in a faint grid of tiny squares. Settled, the squares clump into a thick sans word, FLOW, drawn from visible dots, with a dim speckle of cells spread over the rest of the surface.",
+  "behaviour": "On arrival the dots float loose and scattered; within a couple of seconds they ease into the letterforms. Moving the pointer pushes nearby cells outward along the drag, leaving a temporary gap in the word that fills back in afterwards.",
+  "parts": ["dark canvas", "pixel cells", "sampled word", "pointer wake"],
+  "demo_content": "The single word \"FLOW\" in a very heavy weight.",
+  "states": ["hover"],
+  "kind": "text-effect",
+  "look": ["dark", "monochrome", "minimal", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "word made of tiny squares that scatter",
+    "dots that form text and run from the cursor",
+    "blocky lettering built from small cells",
+    "interactive particle text background",
+    "grid of dots rearranging into a word",
+    "mouse disturbs letters made of dots",
+    "canvas word that breaks apart and reforms",
+    "animated dotted logotype for a hero"
+  ],
+  "resembles": [],
+  "use_when": "A hero or section title should feel computational and react to the pointer while staying readable at rest.",
+  "avoid_when": "It samples one short word: longer text shrinks until letters stop reading, and the loop runs whenever it is on screen.",
+  "suits": ["devtool", "portfolio", "ai-chat"],
+  "slot_hints": ["hero", "headline", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Set the word with text, or point src at a CORS-readable image; cellSize, gap, shape, speed, pointer radius and strength, colors and scatter are props.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "Every visible frame draws up to 14,000 cells on a 2D canvas.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": true,
+    "note": "The canvas is hidden from assistive tech and there is nothing to operate; reduced motion freezes one resolved frame."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "smooth", "required": false},
+    {"name": "src", "type": "string", "default": null, "required": false},
+    {"name": "cellSize", "type": "number", "default": "8", "required": false},
+    {"name": "colors", "type": "string[]", "default": "DEFAULT_COLORS", "required": false},
+    {"name": "gap", "type": "number", "default": "3", "required": false},
+    {"name": "shape", "type": "PixelFlowFieldShape", "default": "square", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "pointerRadius", "type": "number", "default": "130", "required": false},
+    {"name": "pointerStrength", "type": "number", "default": "1", "required": false},
+    {"name": "scatter", "type": "number", "default": "0", "required": false},
+    {"name": "paused", "type": "boolean", "default": "false", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frame 1 is a loose starfield with no word, so the first impression does not show what it becomes."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp cell-built lettering and a convincing pointer wake; the resting canvas is sparse.",
+  "unsure": ["best"]
+}

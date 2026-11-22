@@ -1,0 +1,69 @@
+{
+  "name": "GlassIcons-TS-TW",
+  "frames": {
+    "code": "9782",
+    "best": 2,
+    "best_why": "The blue tile is lifted with its glass face forward and the 'Home' label showing, the clearest look at the hover state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Glossy gradient tiles lift and name themselves on hover.",
+  "summary": "Six rounded app-icon tiles in bright gradients sit tilted on a dark stage, each with a white line symbol behind a frosted glass pane. Hovering raises a tile and fades its name in below.",
+  "title_fix": null,
+  "appearance": "Six chunky rounded-square tiles in a three-by-two grid, each a saturated gradient with a white line icon behind a frosted glass pane. Every tile is tilted slightly and casts a soft dark shadow.",
+  "behaviour": "Hovering a tile pushes the glass pane forward and swings the coloured back panel out, so the icon floats above the surface. The tile's name fades in underneath, then disappears when the pointer leaves.",
+  "parts": ["icon tile", "coloured back panel", "glass face", "line icon", "hover label"],
+  "demo_content": "Six icons for Home, Favorites, Alerts, Messages, Search and Settings, in blue, orange, red, purple, indigo and green.",
+  "states": ["hover"],
+  "kind": "icon",
+  "look": ["colorful", "3d", "gradient", "rounded", "shadowed"],
+  "tone": "playful",
+  "search_phrases": [
+    "glossy app icons in a grid",
+    "frosted glass icon buttons",
+    "colorful squares that lift on hover",
+    "ios style icon tiles for a menu",
+    "3d icon grid with labels",
+    "app shortcut buttons with blur",
+    "bright rounded icon set",
+    "hover icons that reveal their names"
+  ],
+  "resembles": ["iOS app icons"],
+  "use_when": "A feature or app menu wants large, tactile shortcut icons with clear names.",
+  "avoid_when": "Each tile needs an inline SVG and a colour key, and the fixed tile size stays the same on every screen.",
+  "suits": ["saas", "dashboard", "mobile-app"],
+  "slot_hints": ["nav", "feature-card"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["shadow", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass items with an icon, a colour name or raw gradient, a label and an optional class; the tile size, tilt and hover movement live in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Six small buttons using CSS transforms and a backdrop blur; nothing moves until hover.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Buttons carry aria-labels, but outline-none removes the focus ring and the visible name appears only on hover."
+  },
+  "props": [
+    {"name": "items", "type": "GlassIconsItem[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Focusing a tile shows no visible ring, and its name stays hidden until hover.",
+    "Very wide gaps between tiles make six icons spread across a lot of empty stage."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp gradient tiles with a convincing glass lift; the hover labels are faint and spacing is wide.",
+  "unsure": ["kind"]
+}

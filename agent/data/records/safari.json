@@ -1,0 +1,142 @@
+{
+ "name": "safari",
+ "frames": {
+  "code": "1522",
+  "best": 1,
+  "best_why": "The full window frame and screen photo are clear, with no cursor crossing the mockup.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 0.5
+ },
+ "tagline": "A macOS browser window that frames any screenshot dropped inside it.",
+ "summary": "A browser window drawn in SVG, with traffic-light dots, back and forward arrows, a URL field and toolbar icons, sized to wrap a screenshot or a looping video as its page.",
+ "title_fix": null,
+ "appearance": "A wide window with rounded top corners sits on black. Its dark toolbar holds three grey dots at the left, two arrow glyphs, a rounded address pill with a small lock and URL, and share, add-tab and tab icons at the right. Below, a photo fills the screen area down to the rounded bottom.",
+ "behaviour": "Static in the frames: the window does nothing on its own. It stretches to the width it is given while keeping its aspect ratio, and if a video is supplied it plays that on a loop behind the chrome instead of a still.",
+ "parts": [
+  "window frame",
+  "toolbar dots",
+  "address bar",
+  "toolbar icons",
+  "screen photo"
+ ],
+ "demo_content": "An address bar reading example.com above a photo of a man holding a small workshop tool",
+ "states": [],
+ "kind": "device-mockup",
+ "look": [
+  "dark",
+  "rounded",
+  "flat",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "website screenshot inside a browser window",
+  "apple style window frame for a demo",
+  "mac browser chrome mockup",
+  "browser frame around a product shot",
+  "fake address bar with traffic lights",
+  "show an app screen in a window",
+  "browser window graphic for landing page",
+  "window chrome with dots and url field"
+ ],
+ "resembles": [
+  "Safari",
+  "macOS"
+ ],
+ "use_when": "A product shot or screenshot should look like it is running inside a real browser window.",
+ "avoid_when": "Small thumbnails, where the toolbar details blur into grey, or when a plain screenshot is enough.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "media",
+  "hero",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Swap the image or video and the URL text by props; the mode switches the full toolbar for a bare frame, while window colours and proportions live in the SVG.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One inline SVG plus a single image or video, with no scripted animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The screen image has empty alt and the toolbar glyphs are unlabelled SVG paths, so they are noise to a screen reader."
+ },
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "videoSrc",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "url",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mode",
+   "type": "\"default\" | \"simple\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`relative inline-block w-full align-middle leading-none ${c",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The toolbar icons and address text are very faint grey at this width and barely resolve."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing proportions and a tidy window; the tiny grey toolbar detail gets lost.",
+ "unsure": [],
+ "title": "Safari Browser Mockup",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2cb6ce69def86020",
+  "film_hash": "c3b4a24be269d7dc",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

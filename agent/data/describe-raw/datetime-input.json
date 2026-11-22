@@ -1,0 +1,74 @@
+{
+  "name": "datetime-input",
+  "frames": {
+    "code": "1879",
+    "best": 5,
+    "best_why": "Frame 5 shows a parsed date in the field with the confirmation line; earlier frames only show the placeholder.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Type a date in plain English; it fills in the exact date and time.",
+  "summary": "A single-line field that turns phrases like \"tomorrow at 5pm\" into a real date and time, with a calendar button for picking by hand. Options hide the calendar, the time list, or show both.",
+  "title_fix": null,
+  "appearance": "A slim dark rounded rectangle with a thin grey border, a small square calendar icon button on the left and a long text input filling the rest. Placeholder text is small and grey; a short helper line sits underneath.",
+  "behaviour": "Typing a phrase such as \"tomorrow at 5pm\" and pressing Enter or leaving the field rewrites it as a formatted date and fills the line below. The border brightens while the field has focus. The calendar button opens a date and time popover.",
+  "parts": ["calendar button", "text input", "field border", "helper line"],
+  "demo_content": "\"Schedule post\" label, placeholder with sample phrases, and a Publishes timestamp line",
+  "states": ["focus", "open", "disabled"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "natural language date input",
+    "type a date in plain english",
+    "date and time picker with popover",
+    "schedule post date field",
+    "calendar input with text parsing",
+    "smart date time textbox",
+    "pick a day and hour in one field",
+    "input that understands tomorrow at 5pm"
+  ],
+  "resembles": ["Dub smart datetime picker"],
+  "use_when": "Users should pick a date and time but you also want typing \"tomorrow 5pm\" to work.",
+  "avoid_when": "Pulls in a natural-language date parser; vague phrases can resolve to the wrong day.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "placeholder, disabled, showCalendar and showTimePicker are props; colours and layout need a source edit.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One input, a popover panel and a date library; idle when closed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Calendar button has a hidden 'calendar' label but the input relies on its placeholder; focus outline is stripped."
+  },
+  "props": [
+    {"name": "onValueChange", "type": "(date: Date) => void", "default": null, "required": true},
+    {"name": "value", "type": "Date", "default": null, "required": false},
+    {"name": "showCalendar", "type": "boolean", "default": "true", "required": false},
+    {"name": "showTimePicker", "type": "boolean", "default": "true", "required": false},
+    {"name": "placeholder", "type": "string", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "No frame shows the calendar or time popover open, so the main picker UI is unseen.",
+    "The field's own outline is stripped; only the container border hints at focus."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy standard field styling, but the frames never reveal the popover it is built around.",
+  "unsure": ["resembles"]
+}

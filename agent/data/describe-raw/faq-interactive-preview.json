@@ -1,0 +1,66 @@
+{
+  "name": "faq-interactive-preview",
+  "frames": {
+    "code": "3036",
+    "best": 5,
+    "best_why": "The active row is highlighted and the preview panel is fully filled with title, answer and a vivid swirl.",
+    "usable": [1, 2, 3, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A question list on the left swaps a big visual answer on the right.",
+  "summary": "A dark split FAQ: six questions sit as a plain list while a large rounded panel beside them shows the chosen question, its answer and an abstract swirl picture. Hovering or clicking a row changes the panel.",
+  "title_fix": null,
+  "appearance": "Very dark page with a small centred heading. The left column is six question rows, one filled in a slightly lighter rounded card with a right arrow; the right is a large rounded panel holding a tiny MAGIC PREVIEW label, a bold question, a grey paragraph and a wide abstract image.",
+  "behaviour": "Hovering or clicking a question highlights its row and slides a fresh panel in from the right, swapping the title, answer and swirl image. An arrow slides into the active row while the others stay plain.",
+  "parts": ["heading", "question row", "active arrow", "preview panel", "preview label", "preview title", "answer", "preview image"],
+  "demo_content": "Questions about the platform, getting started, mobile support, technology and payment methods.",
+  "states": ["hover", "selected"],
+  "kind": "faq-section",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "faq with a live preview panel",
+    "questions that change a picture",
+    "hover questions to preview answers",
+    "split faq list and detail card",
+    "interactive help section with images",
+    "accordion alternative with big preview",
+    "abstract image per question",
+    "support faq with visual answers"
+  ],
+  "resembles": [],
+  "use_when": "A product page wants FAQs where each question swaps a large visual answer instead of expanding inline.",
+  "avoid_when": "Only one answer shows at a time, and the tall fixed panel leaves dead space under short answers.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["body-text", "media"],
+  "traits": {
+    "trigger": ["hover", "click", "viewport"],
+    "motion": "subtle",
+    "affects": ["background", "text", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The six questions, answers and image URLs are in a hardcoded array; the active-row styling and panel height need source edits.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Six rows and one animated panel; nothing loops or runs while idle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Questions are real buttons that work from the keyboard, but the preview swap is not announced and motion ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [
+    "The tall fixed-height preview panel leaves a lot of empty space under short answers.",
+    "Frames 2 and 3 show the image area blank while the next picture is still loading."
+  ],
+  "polish": 4,
+  "polish_why": "Clean split layout and a slick preview swap; short answers leave the tall panel sparse.",
+  "unsure": ["slot_hints"]
+}

@@ -1,0 +1,140 @@
+{
+ "name": "container-text-flip",
+ "frames": {
+  "code": "7876",
+  "best": 6,
+  "best_why": "Longest word fully sharp and centred in its widened slab after the blur transition.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "A word swaps out letter by letter inside a slab that resizes to fit.",
+ "summary": "An animated headline that cycles through a list of words. Each word blurs in letter by letter while the slab behind it smoothly changes width.",
+ "title_fix": null,
+ "appearance": "A short white headline sits above a raised rounded slab on a dark stage. The slab has a subtle slate gradient, a thin inset edge and a soft shadow, and holds one large bold white word. Its width grows and shrinks with the word.",
+ "behaviour": "Every few seconds the word swaps for the next in the list: new letters blur in one after another, the slab eases out or in to the new width, and old letters blur away. It loops endlessly.",
+ "parts": [
+  "headline",
+  "rounded slab",
+  "word",
+  "letters"
+ ],
+ "demo_content": "Headline \"Build things that are\", cycling the words better, faster, beautiful, modern and awesome.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "gradient",
+  "shadowed"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that changes words automatically",
+  "rotating headline words",
+  "word carousel animation",
+  "cycling adjectives in a headline",
+  "blur in text effect",
+  "tagline that swaps words",
+  "hero headline with changing word",
+  "container that grows with the word"
+ ],
+ "resembles": [
+  "rotating word hero"
+ ],
+ "use_when": "A hero or section headline should cycle a few adjectives to keep an otherwise static page alive.",
+ "avoid_when": "It loops forever with no pause control, so it distracts on reading-heavy pages or where reduced motion is needed.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Words, interval and animation duration are props; the slab's gradient, inset edge and shadow are hardcoded classes you edit for a different skin.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of letter spans and one layout animation on a timer; little idle work.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The word changes on a timer with no pause and no reduced-motion check, which can bother readers; there are no controls."
+ },
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": "[\"better\", \"modern\", \"beautiful\", \"awesome\"]",
+   "required": false
+  },
+  {
+   "name": "interval",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "700",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "textClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Cycles on a timer with no way to pause or step through the words."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth width and blur choreography; the inset-shadow slab styling feels a little dated.",
+ "unsure": [],
+ "title": "Container Text Flip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e043473ed2e04d14",
+  "film_hash": "111c7d8eec6958eb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "focus-cards",
+  "frames": {
+    "code": "8385",
+    "best": 5,
+    "best_why": "Right-hand photo is sharp with its title while the other five blur behind.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo grid where hovering one picture blurs the rest and names it.",
+  "summary": "A three-by-two grid of landscape photo cards. Pointing at one keeps it sharp, darkens it with a white title, and blurs and shrinks the others.",
+  "title_fix": null,
+  "appearance": "A three-by-two grid of rounded landscape photo cards on black, each a different scene: mountains, a green valley, misty forest, desert rocks and coast. On hover the chosen card stays sharp while the rest blur and shrink slightly.",
+  "behaviour": "Pointing at one photo blurs and slightly shrinks the other five and darkens the chosen card with a white title at its bottom-left. Moving away restores the whole grid.",
+  "parts": ["photo grid", "photo card", "blur overlay", "dark overlay", "card title"],
+  "demo_content": "Six nature photos with titles like 'Above the clouds', 'Alpine valley' and 'Misty lake at dawn'.",
+  "states": ["hover"],
+  "kind": "gallery-section",
+  "look": ["rounded", "colorful", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "photo grid that blurs other images on hover",
+    "image gallery with focus effect",
+    "hover one picture and dim the rest",
+    "portfolio grid of landscape photos",
+    "card grid with title on hover",
+    "gallery where siblings go out of focus",
+    "photo tiles with captions appearing",
+    "case study image grid with blur"
+  ],
+  "resembles": [],
+  "use_when": "A set of six to nine images should let one stand out on hover without opening a lightbox.",
+  "avoid_when": "The effect is hover-only, so touch users see a plain grid, and it needs photos of matching shape.",
+  "suits": ["portfolio", "marketing", "ecommerce"],
+  "slot_hints": ["media", "list-item"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["children", "image", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a cards array of title and image src and drop it into any container. The three-column breakpoint, blur amount and title styling are fixed.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Six images with CSS blur and scale transitions; no script loop.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The focus effect and titles are hover-only, so keyboard users cannot reveal any title, and there is no reduced-motion check."
+  },
+  "props": [
+    {"name": "cards", "type": "Card[]", "default": null, "required": true}
+  ],
+  "issues": [
+    "Titles only appear on hover, so the grid is captionless at rest.",
+    "The first two hover frames show no title yet, only the blur change."
+  ],
+  "polish": 4,
+  "polish_why": "Clean photo grid and a strong focus effect; titles are hover-only and easy to miss.",
+  "unsure": ["kind"]
+}

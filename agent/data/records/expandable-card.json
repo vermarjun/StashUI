@@ -1,0 +1,140 @@
+{
+ "name": "expandable-card",
+ "frames": {
+  "code": "9728",
+  "best": 4,
+  "best_why": "Expanded modal card with the cover photo, title, green Play CTA and detail copy all visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.7
+ },
+ "tagline": "List rows morph into a full card with cover art and copy.",
+ "summary": "A compact list of titled items with thumbnails and a Play button. Clicking a row animates it into a large centred card with a big cover image, a green call to action and scrollable detail text, over a blurred backdrop.",
+ "title_fix": null,
+ "appearance": "A short dark list of four rows, each with a small square thumbnail, a title and a grey name line, and a rounded Play pill at the far right. Clicking one grows it into a centred dark card with a tall cover photo, a bold title and subtitle, a green Play pill and a block of small grey copy.",
+ "behaviour": "Clicking a row morphs it in place into the modal card while the other rows blur behind a dark overlay, the thumbnail growing into the cover image. Hovering a row highlights it and turns its Play pill green; Escape, an outside click or the close button returns to the list.",
+ "parts": [
+  "row thumbnail",
+  "row title",
+  "author line",
+  "play button",
+  "expanded cover image",
+  "card title",
+  "detail text",
+  "close button"
+ ],
+ "demo_content": "Songs: Northern Lights by Maya Lindqvist, Paper Satellites by The Slow Hours, Concrete Garden, Low Tide.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "expanded"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "list that expands into a card",
+  "click row to open detail card",
+  "music playlist with cover art",
+  "shared layout morph card",
+  "gallery item that grows into a modal",
+  "expandable track list",
+  "card popup with large image",
+  "smooth transition from row to panel"
+ ],
+ "resembles": [],
+ "use_when": "A compact list of media or products should reveal a richer image-and-copy card without leaving the page.",
+ "avoid_when": "The morph needs a tall viewport and locks page scroll; long detail text is clipped into a short scroll area.",
+ "suits": [
+  "portfolio",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "list-item",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Cards come as an array of title, description, image src, CTA text and link, plus a content node; a variant switches between compact list and two-column grid.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Four list rows and four images with one shared-layout animation on open.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Rows are clickable divs that cannot be focused, so keyboard users cannot open a card; the modal has no dialog role and no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "cards",
+   "type": "ExpandableCardItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "variant",
+   "type": "\"list\" | \"grid\"",
+   "default": "\"list\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"fixed inset-0 z-10 h-full w-full bg-black/50 backdrop-blur-",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Rows are clickable divs with no keyboard focus, so the card cannot be opened without a mouse.",
+  "The expanded card's detail text is clipped into a short scroll area under a fade."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth shared-layout morph and a clean card; keyboard access and the scroll fade are weak.",
+ "unsure": [
+  "a11y"
+ ],
+ "title": "Expandable Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "22bce5652db3b2f5",
+  "film_hash": "4433b06c0df16be9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

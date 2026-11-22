@@ -1,0 +1,67 @@
+{
+  "name": "scroll-animation-text",
+  "frames": {
+    "code": "4138",
+    "best": 5,
+    "best_why": "Two large sentences are on the dark page at once, showing how the statements stack as the reader scrolls.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Big white sentences drift in from the left and right as the page scrolls.",
+  "summary": "A tall black page with one huge centred sentence per screen. Each line waits until it is halfway into view, then fades in while sliding from the left, from the right, or up from below.",
+  "title_fix": null,
+  "appearance": "A black page with a white Scroll Down heading near the top and then isolated lines of very large white semi-bold text, left- or right-aligned, each with wide empty space above and below it.",
+  "behaviour": "A sentence only appears once it is halfway up the screen: it fades in while arriving from its named side, the second from the right, the last rising from below. Once shown, each stays put and the next arrives further down.",
+  "parts": ["heading", "left-aligned sentence", "right-aligned sentence", "centred sentence"],
+  "demo_content": "Scroll Down with a pointing emoji, plus lines about glancing left and shifting eyes right.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "minimal", "bold", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text slides in from the side on scroll",
+    "big sentences that reveal as you scroll",
+    "scroll driven headline animation",
+    "large type moving left and right",
+    "section with lines appearing in sequence",
+    "storytelling page with big words",
+    "words that fade in from the edge",
+    "vertical page with animated statements"
+  ],
+  "resembles": [],
+  "use_when": "A narrative or manifesto page wants each statement to land on its own as the reader scrolls.",
+  "avoid_when": "The copy, direction and padding are hard-coded per block, so adding a statement means copying the markup.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["headline", "body-text"],
+  "traits": {
+    "trigger": ["scroll", "viewport"],
+    "motion": "pronounced",
+    "affects": ["text", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the three sentences, their alignment and slide direction are set block by block in the file, with the viewport threshold passed inline.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three text blocks, each with one viewport observer and a short slide.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The sideways slides run regardless of reduced-motion, and the 44-unit padding turns the section into a very long scroll."
+  },
+  "props": [],
+  "issues": [
+    "The third sentence never appears in the frames, so its reveal is unverified.",
+    "Each block carries py-44, so the page is mostly empty space and extremely tall.",
+    "Copy is repeated per block with no shared list, so extending it means copying markup."
+  ],
+  "polish": 3,
+  "polish_why": "Confident large type on black; huge gaps and nothing beyond alignment makes it bare.",
+  "unsure": ["kind"]
+}

@@ -1,0 +1,188 @@
+{
+ "name": "tear-ticket",
+ "frames": {
+  "code": "8623",
+  "best": 4,
+  "best_why": "The stub is hinged away with a visible torn gap along the perforation, showing the tear itself.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.4
+ },
+ "tagline": "Event ticket tilts in 3D; grab the perforated stub and tear it free.",
+ "summary": "A boarding-pass style ticket with a photo header, trip details and a perforated stub. Moving the mouse tips it in perspective; dragging the stub pulls thin fibres until it rips away and tumbles off.",
+ "title_fix": null,
+ "appearance": "A wide rounded ticket in dark grey, a mountain photo across the top under the route line, three labelled details beneath and a dotted perforation separating a narrow stub that shows the seat.",
+ "behaviour": "The card leans toward the pointer in a soft 3D tilt, with the photo and text shifting at slightly different depths. Dragging the stub pulls thin fibres across the perforation until they snap and the stub falls away.",
+ "parts": [
+  "ticket body",
+  "photo header",
+  "route title",
+  "detail columns",
+  "perforation",
+  "seat stub"
+ ],
+ "demo_content": "Alpine Express day pass from Zermatt to Gornergrat, seat 14C, gate B7, passenger Maya Chen.",
+ "states": [
+  "hover",
+  "dragging"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "rounded",
+  "textured",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "event ticket with tear off stub",
+  "boarding pass you can rip",
+  "3d tilt card on hover",
+  "perforated coupon tear interaction",
+  "train ticket with seat stub",
+  "drag to tear paper coupon",
+  "ticket card with photo header",
+  "physical ticket style card"
+ ],
+ "resembles": [
+  "Apple Wallet boarding pass"
+ ],
+ "use_when": "A ticket, voucher or pass benefits from a tactile reveal that marks it used, not just a checkbox.",
+ "avoid_when": "Dragging is pointer-only, the tear needs motion to land, and it suits one-off tickets rather than long lists.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "drag",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Width, height, stub size, image, body children, stub slot, background, border, tilt strength and tear feel are props; the tear simulation is fixed.",
+ "technique": [
+  "motion-library",
+  "js-animation",
+  "svg"
+ ],
+ "weight": "moderate",
+ "weight_why": "Springs follow the pointer and a hand-written loop runs only while tearing.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The stub is a labelled button and Enter tears it, but there is no visible focus ring on it."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "stub",
+   "type": "ReactNode",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "image",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "imageAlt",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "460",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "stubSize",
+   "type": "number",
+   "default": "150",
+   "required": false
+  },
+  {
+   "name": "ariaLabel",
+   "type": "string",
+   "default": "'Tear off the stub'",
+   "required": false
+  },
+  {
+   "name": "torn",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "tilt",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "background",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Convincing paper ticket with a real tear; text over the photo is partly lost in the lighter sky.",
+ "unsure": [],
+ "title": "Tear Ticket",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "90c6f73a045cf66b",
+  "film_hash": "2b46579d627a64c1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

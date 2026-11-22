@@ -1,0 +1,137 @@
+{
+ "name": "inspira-animated-testimonials",
+ "frames": {
+  "code": "9351",
+  "best": 6,
+  "best_why": "Frame 6 has portrait, name, role and the complete quote settled, with the cursor clear of the panel.",
+  "usable": [
+   1,
+   2,
+   3,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.2
+ },
+ "tagline": "A tilted portrait deck beside a quote that sharpens in word by word.",
+ "summary": "One customer testimonial at a time: a stack of slightly rotated portrait photos on the left, and on the right a name, job title, quote and two round arrow buttons that cycle to the next person.",
+ "title_fix": null,
+ "appearance": "On a dark panel, a square portrait sits at a slight angle with two faint copies fanned behind it. To the right, a bold name, a small grey role line, a few lines of quote text, and two small circular arrow buttons at the lower left of that column.",
+ "behaviour": "Pressing an arrow swaps the photo with a small lift and settles the new portrait upright, while the quote disappears and its words blur back in one after another. With autoplay on it advances on a timer.",
+ "parts": [
+  "photo stack",
+  "portrait",
+  "name",
+  "role",
+  "quote",
+  "previous button",
+  "next button"
+ ],
+ "demo_content": "Portraits of Sarah Chen, Marcus Johnson and Priya Patel, each with a quote praising a component library.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "testimonial-card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "quote with a photo and next arrows",
+  "customer review slider with portraits",
+  "testimonial card that cycles automatically",
+  "stacked photos behind a quote",
+  "social proof with name and job title",
+  "review panel with arrow navigation",
+  "wall of love entry with a headshot",
+  "rotating customer quotes for a landing page"
+ ],
+ "resembles": [],
+ "use_when": "A landing page should show one strong customer quote with a portrait and simple forward and back arrows.",
+ "avoid_when": "Autoplay advances every four seconds, which is short for reading a full paragraph.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "testimonial",
+  "body-text",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Feed entries with quote, name, designation and image; autoplay and duration set the cycling, while the photo rotations and layout are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Three portrait images and one active slide with short blur and lift animations.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Both arrows are real buttons with aria-labels and photos carry alt text, but nothing checks reduced-motion."
+ },
+ "props": [
+  {
+   "name": "testimonials",
+   "type": "Testimonial[]",
+   "default": "[]",
+   "required": true
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frames 2 to 4 are caught mid-swap with the name and quote faded out, leaving an empty right column.",
+  "The quote and role text are mid grey on near-black, so they read weakly."
+ ],
+ "polish": 3,
+ "polish_why": "Photo deck and blur-in quote are considered; low-contrast text and blank frames pull it down.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Animated Testimonials",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4afcfde785bc3f0a",
+  "film_hash": "3d9938f61677b0db",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "name": "comp-220",
+ "frames": {
+  "code": "8836",
+  "best": 2,
+  "best_why": "The menu is open with all five coloured dots and their labels, and Completed carries the tick.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.2
+ },
+ "tagline": "A dropdown of statuses, each marked by a coloured dot.",
+ "summary": "A labelled dropdown whose trigger shows the current status as a coloured dot and a word. Opening it lists Completed, In Progress, Pending, Cancelled and Failed, each with its own dot and the chosen row ticked.",
+ "title_fix": null,
+ "appearance": "A small Status select caption sits above a rounded trigger holding a green dot, the word Completed and a chevron. Opened, a dark panel drops below with five rows, each a small coloured dot and a status word, the current one ending in a tick.",
+ "behaviour": "Clicking the trigger drops the list; hovering a row lifts it to a lighter grey, and clicking one sets the trigger's dot and word and closes the panel. The clip ends on Pending.",
+ "parts": [
+  "field label",
+  "trigger button",
+  "status dot",
+  "chevron",
+  "option row",
+  "check mark"
+ ],
+ "demo_content": "Status select label; Completed, In Progress, Pending, Cancelled, Failed options",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pick a status from a dropdown",
+  "status dropdown with coloured dots",
+  "task state selector menu",
+  "dropdown with green blue and red dots",
+  "change the status of a record",
+  "select with coloured status labels",
+  "jira style status picker",
+  "menu of states with colour markers"
+ ],
+ "resembles": [
+  "Jira status picker"
+ ],
+ "use_when": "Changing a record's state in a list or detail panel, where colour helps status read at a glance.",
+ "avoid_when": "The five states are fixed in the file, and the dots lean on colour alone, so a new workflow needs edits.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The five statuses, their dot colours and the default value are written in the file; edit them there. Trigger padding, dot size and menu spacing are classes in the same file.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One listbox popup with five short rows and a small open and close animation.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The label is tied to the trigger and the dots are hidden decoration, so options read by name; the open and close animation has no reduced-motion guard."
+ },
+ "props": [],
+ "issues": [
+  "A hovered row's coloured dot washes out to white, dropping the colour cue exactly when pointed at.",
+  "Completed and Cancelled dots sit close in hue on a dark panel."
+ ],
+ "polish": 4,
+ "polish_why": "Colour-coded rows and a tidy trigger; the hovered dot losing its colour is the one slip.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Status Select",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "84b16964217e0248",
+  "film_hash": "72e36fd846b22217",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "name": "thought-line",
+ "frames": {
+  "code": "3473",
+  "best": 4,
+  "best_why": "The trace is fully open with all four steps listed and the timer reading 3.7s.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Sparkle, live timer and a tick list of an agent's reasoning steps.",
+ "summary": "A small inline status line for an AI assistant's reasoning: a sparkle, a shimmering label, a running timer and an expandable list of steps. When the work ends it folds into one line reading \"Thought for 3.9s\".",
+ "title_fix": null,
+ "appearance": "A thin line of small white text on black: sparkle icon, \"Thinking…\", a seconds counter and a chevron, with a left-indented list of grey steps beneath, each marked by a tick or a small pulsing dot.",
+ "behaviour": "The timer climbs every tenth of a second while the label shimmers and steps drop in one by one. Finished steps become ticks, and when work ends the header swaps to \"Thought for\" and the list collapses.",
+ "parts": [
+  "sparkle icon",
+  "status label",
+  "elapsed timer",
+  "chevron",
+  "step list",
+  "tick markers"
+ ],
+ "demo_content": "The question \"Why did revenue dip in September?\" and four revenue-analysis steps.",
+ "states": [
+  "loading",
+  "open"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "ai thinking steps indicator",
+  "reasoning trace with timer",
+  "expanding list of agent steps",
+  "shimmering thinking label",
+  "chat assistant progress line",
+  "show what the model is doing",
+  "collapsible checklist under a prompt",
+  "elapsed time next to spinner"
+ ],
+ "resembles": [
+  "ChatGPT thinking indicator"
+ ],
+ "use_when": "An AI chat needs to show progress and intermediate reasoning without pushing the answer down the page.",
+ "avoid_when": "It only suits streaming agent work; with no steps the header is a plain timer with nothing to expand.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "list-item",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Steps array, working flag, labels, glyph, colours, font size, shimmer, collapse behaviour, timer visibility and a settle callback are props.",
+ "technique": [
+  "motion-library",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A tenth-second timer, a shimmer and small CSS transitions; no loop when settled.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "The header is a live status with a working toggle, but there is no visible focus ring and steps are plain text."
+ },
+ "props": [
+  {
+   "name": "label",
+   "type": "string",
+   "default": "'Thinking…'",
+   "required": false
+  },
+  {
+   "name": "doneLabel",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "steps",
+   "type": "string[]",
+   "default": "EMPTY_STEPS",
+   "required": false
+  },
+  {
+   "name": "working",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "collapsible",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "collapseOnSettle",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showTimer",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "glyph",
+   "type": "ThoughtLineGlyph",
+   "default": "'sparkle'",
+   "required": false
+  },
+  {
+   "name": "shimmer",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "elapsed",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "settleAfter",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Quiet, legible status line with a convincing collapse; the small text is faint on black.",
+ "unsure": [],
+ "title": "Thought Line",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f281754454e972db",
+  "film_hash": "a026f380d1841b78",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

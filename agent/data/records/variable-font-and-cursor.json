@@ -1,0 +1,136 @@
+{
+ "name": "variable-font-and-cursor",
+ "frames": {
+  "code": "2686",
+  "best": 2,
+  "best_why": "The word is bold and upright with both crosshair guides and the coordinate readout visible at once.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.3
+ },
+ "tagline": "Moving the cursor changes the word's weight and slant.",
+ "summary": "A single word whose thickness and slant follow the mouse across its container, with faint crosshair guides and a live x and y readout tracking the pointer.",
+ "title_fix": null,
+ "appearance": "An orange lowercase word sits centred on a black full-bleed stage. Faint grey crosshair lines and a tiny orange dot follow the pointer, with a small monospaced x and y readout at the lower left.",
+ "behaviour": "As the pointer moves, the word's weight and slant interpolate between set limits, sliding from hairline to heavy and upright to italic. The crosshair lines and coordinates travel with the cursor.",
+ "parts": [
+  "word",
+  "crosshair lines",
+  "pointer dot",
+  "coordinate readout"
+ ],
+ "demo_content": "The word stash! in orange, with live x and y coordinates beneath it",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "bold",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that changes weight with mouse",
+  "font follows your cursor",
+  "variable font hover playground",
+  "word gets bolder as you move",
+  "interactive typography with cursor",
+  "letters slant toward the pointer",
+  "mouse position changes letter thickness",
+  "kinetic type for a portfolio"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio or agency headline wants an interactive typographic moment that rewards moving the pointer.",
+ "avoid_when": "Essential copy, since it needs a pointer and thins the text until it nearly disappears at one end.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Children are the text; fontVariationMapping picks which axis each cursor direction drives and its range, and containerRef sets the tracking area. The variable font itself must be loaded elsewhere.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One text node restyled on each animation frame; no canvas or heavy node count.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Purely pointer-driven, so keyboard users get no equivalent, and no reduced-motion preference is checked."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fontVariationMapping",
+   "type": "FontVariationMapping",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerRef",
+   "type": "RefObject<HTMLDivElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": "\"span\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "At the lightest setting the word turns hairline and almost vanishes against the black stage."
+ ],
+ "polish": 4,
+ "polish_why": "Sharp variable type and a clear crosshair; the bare demo and near-invisible light end lower it.",
+ "unsure": [],
+ "title": "Variable Font and Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1b63c807e56365f2",
+  "film_hash": "c4f428e684154edb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

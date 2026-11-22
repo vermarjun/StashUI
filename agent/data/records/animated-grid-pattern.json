@@ -1,0 +1,167 @@
+{
+ "name": "animated-grid-pattern",
+ "frames": {
+  "code": "5384",
+  "best": 6,
+  "best_why": "Most squares are lit at once, showing the pattern at full density across the whole stage.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "Faint grid tiles blink in and out across a near-black panel.",
+ "summary": "A decorative background of thin grid lines dotted with pale grey squares that fade in, linger, then move to another cell, giving a canvas a slowly shifting technical texture.",
+ "title_fix": null,
+ "appearance": "A near-black rectangle ruled by a thin, dim grid of even squares. Scattered cells hold soft grey blocks of varying brightness, some almost invisible and some clearly lit. The squares cluster toward the middle with the frame edges staying darker.",
+ "behaviour": "Squares fade up to a set opacity one after another, then reverse and blink off before a square picks a new random cell. The motion is staggered and loops without end so the grid never becomes static.",
+ "parts": [
+  "grid lines",
+  "lit square",
+  "fading square",
+  "dark background"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "technical",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "faint square grid background",
+  "blinking pixels backdrop",
+  "dark tech texture for a page",
+  "cells that fade in and out",
+  "subtle animated grid wallpaper",
+  "background texture for a hero",
+  "scattered squares lighting up",
+  "decorative grid behind content"
+ ],
+ "resembles": [],
+ "use_when": "A dark page or hero needs quiet moving texture behind its content.",
+ "avoid_when": "The section is busy or light-themed; the faint grey squares would disappear or clash.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Grid size, number of squares, peak opacity, animation duration and repeat delay are all props; the grid colour comes from the class name you pass in.",
+ "technique": [
+  "svg",
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A single SVG of thin lines and a few dozen fading rectangles; no canvas or per-frame script.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Marked aria-hidden, so it is safely ignored, but the looping animation does not honour reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "numSquares",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "maxOpacity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "repeatDelay",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "strokeDasharray",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "x",
+   "type": "number",
+   "default": "-1",
+   "required": false
+  },
+  {
+   "name": "y",
+   "type": "number",
+   "default": "-1",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Clean and quiet, but the squares are so dim the effect barely registers on a small screen.",
+ "unsure": [],
+ "title": "Animated Grid Pattern",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "fda051f51f5b8059",
+  "film_hash": "55c8e18563d52dec",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

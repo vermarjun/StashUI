@@ -1,0 +1,132 @@
+{
+ "name": "comp-460",
+ "frames": {
+  "code": "4500",
+  "best": 1,
+  "best_why": "Full visible run of first and back chevrons, pages 1 to 4 with 3 active, and the ellipsis.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "partial",
+  "render_note": "Next and Last chevrons fall outside the crop; only First, Previous, the numbers and ellipsis show.",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "Numbered pages led by jump-to-first and step-back chevrons.",
+ "summary": "A flat numbered pager with first-page and previous chevrons before the page links, an ellipsis for skipped pages, and next and last chevrons after them in the code.",
+ "title_fix": null,
+ "appearance": "A flat row on black opens with a bar-and-chevron first glyph and a single back chevron, then pages 1 to 4 with 3 in a rounded grey box, then a three-dot ellipsis. The right-hand next and last glyphs sit outside the recorded crop.",
+ "behaviour": "Hovering a chevron or number lays a darker rounded fill behind it while the active page keeps its grey block. The demo's page never advances, so only the hover fills change.",
+ "parts": [
+  "first-page chevron",
+  "back chevron",
+  "page number",
+  "active page",
+  "ellipsis"
+ ],
+ "demo_content": "Page numbers 1 to 4 with page 3 active.",
+ "states": [
+  "hover",
+  "focus",
+  "selected",
+  "disabled"
+ ],
+ "kind": "pagination",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pagination with first and last buttons",
+  "jump to the first page arrow",
+  "numbered pages with double chevrons",
+  "skip to start or end of list",
+  "pager with vertical bar chevrons",
+  "go back to page one quickly",
+  "page numbers and arrow controls",
+  "last page shortcut in a pager"
+ ],
+ "resembles": [],
+ "use_when": "Long lists where people want to jump to the very start or end as well as step through pages.",
+ "avoid_when": "When the row must fit a narrow column: the icon-heavy pager needs a wide container.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "data-table",
+  "footer"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass currentPage, totalPages and the number of page slots; chevron icons, their order and styling are fixed in the file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A short row of page links and chevrons; only hover and active styling.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Every chevron has an aria-label including first and last, so names are clear; the hover fills have no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "currentPage",
+   "type": "number",
+   "default": "== totalPages",
+   "required": true
+  },
+  {
+   "name": "totalPages",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "paginationItemsToDisplay",
+   "type": "number",
+   "default": "5",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The recorded crop cuts off the Next and Last chevrons, showing only the left half of the pager."
+ ],
+ "polish": 3,
+ "polish_why": "Clean numbered pager with clear chevrons, but the cropped right side makes it look unfinished.",
+ "unsure": [],
+ "title": "Pagination First Last",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "25df575d7b19943d",
+  "film_hash": "acf01c893350d1f0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

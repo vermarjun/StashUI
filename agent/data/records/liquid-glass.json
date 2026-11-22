@@ -1,0 +1,193 @@
+{
+ "name": "liquid-glass",
+ "frames": {
+  "code": "2211",
+  "best": 5,
+  "best_why": "Frame 5 centres the frosted card with its edge glow visible and the cursor clear of the text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.5
+ },
+ "tagline": "A frosted pane floats on a purple gradient and blurs what is behind it.",
+ "summary": "A translucent rounded card sits on a coloured background and blurs whatever shows through it, with bright inner edges and a soft outer halo. It can be picked up and dragged, and it lifts a little on hover.",
+ "title_fix": null,
+ "appearance": "A rounded frosted rectangle, about a sixth of the frame, resting on an indigo-to-pink gradient. White text reads a big temperature, a condition and a city, with a faint hint line below. Its edges catch a thin white highlight and a soft glow spreads outside.",
+ "behaviour": "The pane can be grabbed and dragged; letting go lets it spring back with a slight bounce. Hovering enlarges it a fraction and pressing shrinks it briefly. Content inside stays sharp while the area behind is blurred.",
+ "parts": [
+  "frosted card",
+  "temperature",
+  "condition",
+  "location",
+  "hint text",
+  "outer glow"
+ ],
+ "demo_content": "A weather readout: 24°C, Partly Cloudy, San Francisco, CA, and the hint Drag me · Hover to glow.",
+ "states": [
+  "hover",
+  "active",
+  "dragging"
+ ],
+ "kind": "card",
+ "look": [
+  "glass",
+  "gradient",
+  "rounded",
+  "colorful"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "frosted glass card on a gradient",
+  "translucent panel that blurs background",
+  "ios glassmorphism panel for apps",
+  "draggable frosted card",
+  "glass panel with glowing edges",
+  "blur behind card effect",
+  "glass tile floating on colour",
+  "apple glassmorphism card style"
+ ],
+ "resembles": [
+  "Apple iOS 26 Liquid Glass"
+ ],
+ "use_when": "You want a translucent panel that keeps a vivid background visible behind the content it holds.",
+ "avoid_when": "Backdrop blur and the SVG distortion are costly on weak devices, and glass needs a colourful backdrop to read.",
+ "suits": [
+  "saas",
+  "mobile-app",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "cursor"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Blur, shadow, glow and radius each take a named size or value prop, plus draggable and expandable toggles and width props. The inner content is whatever children you pass.",
+ "technique": [
+  "motion-library",
+  "svg-filter"
+ ],
+ "weight": "moderate",
+ "weight_why": "Backdrop blur plus an SVG displacement filter run over a draggable animated node.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Drag is pointer-only with no keyboard path, and nothing announces the card's purpose to screen readers."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "draggable",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "expandable",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "blurIntensity",
+   "type": "'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'xl'",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "string",
+   "default": "'32px'",
+   "required": false
+  },
+  {
+   "name": "shadowIntensity",
+   "type": "'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "glowIntensity",
+   "type": "'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+   "default": "'sm'",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "expandedWidth",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "expandedHeight",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The bottom hint line at 60% white is barely readable against the bright gradient."
+ ],
+ "polish": 4,
+ "polish_why": "Layered glass edges and a believable glow; the inner hint text is very faint.",
+ "unsure": [
+  "responsive",
+  "resembles"
+ ],
+ "title": "Liquid Glass Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f00ef2b1ba544755",
+  "film_hash": "4b61c269a0139fd7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

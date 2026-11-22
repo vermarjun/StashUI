@@ -1,0 +1,71 @@
+{
+  "name": "inspira-sparkles",
+  "frames": {
+    "code": "9433",
+    "best": 1,
+    "best_why": "A dense drift of white dots across the top band is clearest here, with the heading above.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "White specks drift and twinkle over a dark backdrop.",
+  "summary": "A canvas field of small white dots scattered over a black surface. They float gently and fade in and out, densest at the top and thinning downward, like slow falling snow or stars.",
+  "title_fix": null,
+  "appearance": "Hundreds of tiny white dots are scattered across a near-black backdrop, each a slightly different size and brightness. They are heaviest in the upper band and thin out toward the bottom, giving a soft fade. A large white headline sits above them in the demo.",
+  "behaviour": "Each dot drifts on a slow diagonal velocity and wraps around the edges when it leaves, so the field never empties. A per-dot sine phase makes them pulse dimmer and brighter, producing a gentle twinkle.",
+  "parts": ["white dots", "dark backdrop", "radial fade"],
+  "demo_content": "A large white heading reading Inspira UI above two faint blue gradient lines and the particle field.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "minimal", "airy", "monochrome"],
+  "tone": "decorative",
+  "search_phrases": [
+    "drifting white dots background",
+    "snowy particle field for a hero",
+    "twinkling stars background",
+    "canvas particle backdrop",
+    "floating specks animation",
+    "starry night page background",
+    "gentle sparkle overlay",
+    "animated dots behind a headline"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or full-bleed section that needs quiet motion behind a headline without stealing attention.",
+  "avoid_when": "Runs a canvas loop forever with no reduced-motion pause, and the default background is a hardcoded blue.",
+  "suits": ["marketing", "saas"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Set the background colour, particle colour, count, size range and speed through props; the drift physics and twinkle are fixed in the source.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A requestAnimationFrame canvas redraws every dot each frame; the demo runs 900 particles.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative background with no prefers-reduced-motion check, so the endless drift keeps animating for motion-sensitive users."
+  },
+  "props": [
+    {"name": "background", "type": "string", "default": "#0d47a1", "required": false},
+    {"name": "particleColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "minSize", "type": "number", "default": "1", "required": false},
+    {"name": "maxSize", "type": "number", "default": "3", "required": false},
+    {"name": "speed", "type": "number", "default": "4", "required": false},
+    {"name": "particleDensity", "type": "number", "default": "120", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Tidy drifting field with soft fade; the effect is familiar and the dots very slight.",
+  "unsure": ["theme", "shows_interaction"]
+}

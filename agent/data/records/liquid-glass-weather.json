@@ -1,0 +1,120 @@
+{
+ "name": "liquid-glass-weather",
+ "frames": {
+  "code": "8689",
+  "best": 1,
+  "best_why": "Frame 1 shows every panel unobstructed, with no cursor over the forecast.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 0.6
+ },
+ "tagline": "White weather readouts sit on glass panes over a bright cloudscape.",
+ "summary": "A compact weather panel built from translucent glass cards: an hourly strip across the top, the current temperature and a clock beside it, and a five-day forecast below, all over a cloud photo.",
+ "title_fix": null,
+ "appearance": "Four white-tinted glass panels of differing widths float over a bright blue sky with white clouds. The top strip lists six hourly slots with small weather icons; below, one panel shows a big temperature, another a clock and a location pill, and a wide panel lists five days with high and low figures.",
+ "behaviour": "Static once drawn: the hourly, current and daily figures never change and no state is wired. Each glass panel can be dragged on its own and springs back, scaling slightly on hover and press.",
+ "parts": [
+  "hourly strip",
+  "temperature",
+  "clock",
+  "location pill",
+  "daily forecast row",
+  "weather icon"
+ ],
+ "demo_content": "A sky-and-clouds photo behind a forecast for Tbilisi: 16:00 to 21:00 hours, +18°C now, and days 7 to 11 Sep.",
+ "states": [
+  "hover",
+  "active",
+  "dragging"
+ ],
+ "kind": "dashboard",
+ "look": [
+  "glass",
+  "light",
+  "airy",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "glass weather widget over clouds",
+  "hourly and daily forecast panel",
+  "translucent weather dashboard",
+  "current temperature clock tile",
+  "frosted glass forecast cards",
+  "weather app overview screen",
+  "five day forecast glass panel",
+  "sky background weather widget"
+ ],
+ "resembles": [
+  "Apple Weather"
+ ],
+ "use_when": "You need a compact at-a-glance weather panel that layers on top of a photo or gradient.",
+ "avoid_when": "White text over white cloud areas drops to near-invisible, so it needs a darker or blurred backdrop.",
+ "suits": [
+  "mobile-app",
+  "saas"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "cursor"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "All temperatures, times, days and the city are typed into the JSX, as is the background photo URL. Panel corners, shadows and glow come from the glass card props.",
+ "technique": [
+  "motion-library",
+  "svg-filter"
+ ],
+ "weight": "moderate",
+ "weight_why": "Five blurred glass panels with a displacement filter each, over a full photo.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "White text over bright clouds is hard to read, and the draggable panels offer no keyboard route."
+ },
+ "props": [],
+ "issues": [
+  "Forecast text all but disappears where white clouds sit behind the glass.",
+  "The high and low figures on the right of the five-day list are nearly unreadable."
+ ],
+ "polish": 2,
+ "polish_why": "Tidy grid, but white text on bright clouds makes much of the forecast unreadable.",
+ "unsure": [
+  "theme",
+  "kind"
+ ],
+ "title": "Liquid Glass Weather",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bb6f20edfccc4e77",
+  "film_hash": "e07dc48886e561ac",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

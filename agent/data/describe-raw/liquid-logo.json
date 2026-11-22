@@ -1,0 +1,75 @@
+{
+  "name": "liquid-logo",
+  "frames": {
+    "code": "6314",
+    "best": 4,
+    "best_why": "Frame 4 shows the full mark with the strongest chrome sheen and a bright rainbow band.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A black logo mark shimmers like liquid chrome with rainbow edges.",
+  "summary": "A canvas that renders an image as a glossy, melting surface, bending its shape and adding thin iridescent highlights that drift over it.",
+  "title_fix": null,
+  "appearance": "Two interlocking rounded black tiles form an offset plus shape on a dark stage. Their surface looks like polished chrome, with a white sheen and a thin rainbow band running along the inner edges.",
+  "behaviour": "The chrome surface ripples continuously, sliding its bright highlights and rainbow fringes along the shape. The silhouette wobbles slightly but stays recognisable.",
+  "parts": ["logo mark", "chrome surface", "rainbow fringe", "highlight"],
+  "demo_content": "A neutral mark of two interlocking rounded squares.",
+  "states": ["loading"],
+  "kind": "image-effect",
+  "look": ["dark", "3d", "glow", "gradient", "luxurious"],
+  "tone": "decorative",
+  "search_phrases": [
+    "liquid chrome logo animation",
+    "melting metallic logo",
+    "iridescent brand mark",
+    "holographic logo shader",
+    "animated glossy icon",
+    "webgl logo distortion",
+    "rainbow edge logo",
+    "shiny liquid shape effect"
+  ],
+  "resembles": [],
+  "use_when": "A brand mark should feel premium and moving rather than a static SVG.",
+  "avoid_when": "It needs a square WebGL canvas and an image with a clean alpha shape to read well.",
+  "suits": ["portfolio", "marketing", "saas"],
+  "slot_hints": ["headline", "hero", "decoration", "media"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["image", "fill"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "imageUrl plus patternScale, refraction, edge, patternBlur, liquid, speed and showProcessing are props; the shaders are fixed.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A WebGL2 fragment shader redrawn every frame via requestAnimationFrame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "A decorative WebGL canvas with no label, no reduced-motion check and a looping render."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "imageUrl", "type": "string", "default": null, "required": true},
+    {"name": "patternScale", "type": "number", "default": "2", "required": false},
+    {"name": "refraction", "type": "number", "default": "0.015", "required": false},
+    {"name": "edge", "type": "number", "default": "0.4", "required": false},
+    {"name": "patternBlur", "type": "number", "default": "0.005", "required": false},
+    {"name": "liquid", "type": "number", "default": "0.07", "required": false},
+    {"name": "speed", "type": "number", "default": "0.3", "required": false},
+    {"name": "showProcessing", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "Frame 1 is blank while the logo processes and before the shader draws."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing liquid chrome and rainbow edges; the first frame is blank during load.",
+  "unsure": ["theme"]
+}

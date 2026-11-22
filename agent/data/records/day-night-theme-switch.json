@@ -1,0 +1,160 @@
+{
+ "name": "day-night-theme-switch",
+ "frames": {
+  "code": "7774",
+  "best": 1,
+  "best_why": "Full day state shows the yellow sun, blue sky and clouds together, with no disc caught mid-morph.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.6
+ },
+ "tagline": "Sun slides across a tiny sky and becomes a cratered moon.",
+ "summary": "A pill-shaped theme toggle drawn like a little landscape. Flipping it slides the sun away as it turns into a moon, clouds sink and stars appear; switching back brings daylight.",
+ "title_fix": null,
+ "appearance": "A wide rounded pill shown as a tiny sky: a pale blue surface with faint concentric arcs, a big yellow sun disc at the left and soft white clouds along the bottom. In night mode the surface turns deep navy, a grey cratered moon sits at the right and small white stars scatter on the left.",
+ "behaviour": "Clicking flips the pill: the sun disc slides right and is replaced by the moon, the background darkens from blue to navy, clouds drop out of view and stars fade in over about half a second. Hover nudges the disc sideways and the whole change reverses when toggled back.",
+ "parts": [
+  "pill track",
+  "sun",
+  "clouds",
+  "stars",
+  "moon"
+ ],
+ "demo_content": "Caption under the switch: 'Day mode · 09:15, sunny and 22°C' or 'Night mode · 21:40, quiet hours on'.",
+ "states": [
+  "checked",
+  "hover",
+  "focus",
+  "disabled"
+ ],
+ "kind": "switch",
+ "look": [
+  "colorful",
+  "rounded",
+  "pill",
+  "playful",
+  "3d"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "day night toggle switch",
+  "sun turning into moon",
+  "dark mode switch with clouds",
+  "animated weather theme toggle",
+  "cute sun and moon button",
+  "switch between light and dark",
+  "sky scene toggle control",
+  "is it day or night toggle"
+ ],
+ "resembles": [],
+ "use_when": "A theme toggle should feel playful and be the centrepiece rather than a tiny utility icon in a header.",
+ "avoid_when": "Decorative and sizable; it suits a showcase but is heavy for a cramped toolbar or a strict design system.",
+ "suits": [
+  "portfolio",
+  "blog"
+ ],
+ "slot_hints": [
+  "nav",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "fill",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "Size, checked/defaultChecked, disabled and aria-label come in as props; the sky, sun, moon and cloud colours are CSS variables inside the file and need editing.",
+ "technique": [
+  "css-transition",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A CSS-only pill of a few divs and one small SVG; transitions run only while toggling.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "A real checkbox with a switch role and a default aria-label, but the 0.5s morph keeps running under prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "checked",
+   "type": "boolean",
+   "default": "{isOn}",
+   "required": false
+  },
+  {
+   "name": "defaultChecked",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onCheckedChange",
+   "type": "(checked: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "{disabled}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"dnts inline-block\", className)}",
+   "required": false
+  },
+  {
+   "name": "aria-label",
+   "type": "string",
+   "default": "{ariaLabel}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp, characterful morph with careful shading; a touch large and busy for everyday UI.",
+ "unsure": [
+  "content_from",
+  "responsive"
+ ],
+ "title": "Day Night Theme Switch",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "dbd3b1a381f293da",
+  "film_hash": "ddd6ad7360078395",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

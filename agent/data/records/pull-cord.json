@@ -1,0 +1,154 @@
+{
+ "name": "pull-cord",
+ "frames": {
+  "code": "7414",
+  "best": 1,
+  "best_why": "The lamp is lit on a clean white card with the bead hanging straight at rest.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Tug the hanging bead and the pendant lamp clicks on or off.",
+ "summary": "A lamp switch shaped like a pendant light. Dragging the bead below the shade stretches a simulated cord until it clicks, lighting the bulb and inverting the card, and the cord swings back when released.",
+ "title_fix": null,
+ "appearance": "A tall rounded card, white when lit and near-black when off, holds a thin ceiling wire, a dark conical shade and a warm yellow bulb beneath it. A slim cord with a small rounded bead hangs to one side, and the label plus an On or Off line sit at the bottom.",
+ "behaviour": "Pulling the bead down stretches the cord with growing resistance; once it is pulled far enough the switch toggles at once, the card, shade and bulb swap colour, and an extra tug is needed for the next click. Released, the cord swings and settles on a short physics chain.",
+ "parts": [
+  "lamp card",
+  "ceiling wire",
+  "shade",
+  "bulb",
+  "cord",
+  "bead",
+  "label",
+  "status line"
+ ],
+ "demo_content": "Label Reading lamp with an On or Off status and the hint pull the cord.",
+ "states": [
+  "focus",
+  "active",
+  "checked",
+  "dragging"
+ ],
+ "kind": "switch",
+ "look": [
+  "minimal",
+  "rounded",
+  "monochrome",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "pull the cord to turn on a lamp",
+  "lamp switch you drag down",
+  "physically simulated cord toggle",
+  "hanging lamp light switch control",
+  "drag a bead to switch the light",
+  "playful on off switch for a lamp",
+  "light that toggles with a string",
+  "realistic pull string light control"
+ ],
+ "resembles": [],
+ "use_when": "A playful theme or product wants an on/off control that is a small moment in itself.",
+ "avoid_when": "Touch or precision-critical settings: the drag threshold and small bead make toggling fiddly.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The label, controlled checked state and change callback are props; the cord physics, lamp drawing and size are fixed in the source.",
+ "technique": [
+  "js-animation",
+  "svg",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "A twelve-link Verlet chain runs only while the cord is being pulled or swinging back.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "A hidden switch carries the label and checked state with a visible focus box on the bead; reduced motion drops the swing."
+ },
+ "props": [
+  {
+   "name": "checked",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultChecked",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "onCheckedChange",
+   "type": "(checked: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Desk lamp\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The cord is a hairline stroke and the bead only about ten pixels, easy to miss or mis-grab."
+ ],
+ "polish": 4,
+ "polish_why": "Charming physical lamp with a convincing springy cord; the small bead is fiddly to grab.",
+ "unsure": [
+  "theme",
+  "look"
+ ],
+ "title": "Pull Cord",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e41497166fbd3f63",
+  "film_hash": "8939148a6e030066",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "time-machine-stack",
+  "frames": {
+    "code": "3452",
+    "best": 1,
+    "best_why": "Front card fully readable with the receding panel edges above and controls below, no transition overlap.",
+    "usable": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Stack of saved versions, older ones peeking out above the front card.",
+  "summary": "A macOS-style stack of document snapshots. The front card shows one version while earlier ones recede above it, and scrolling, dragging or arrow keys walk through history as the leaving card flies past.",
+  "title_fix": null,
+  "appearance": "A dark rounded card with a title and timestamp, four grey placeholder bars and a footer note with a word count. Three narrower panel tops peek above it in a receding line, and Older, date and Newer pills sit below.",
+  "behaviour": "Scrolling, dragging vertically or pressing arrow keys moves one snapshot at a time: the front card flies outward while the next rises from behind and the visible depth shifts. The buttons step one version and disable at either end.",
+  "parts": [
+    "front card",
+    "title",
+    "timestamp",
+    "placeholder bars",
+    "footer note",
+    "stacked panel edges",
+    "older button",
+    "newer button"
+  ],
+  "demo_content": "Six drafts of \"Q3 Launch Plan\" with notes like \"Added pricing section and FAQ\" and word counts.",
+  "states": [
+    "hover",
+    "focus"
+  ],
+  "kind": "list",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "fanned cards of saved versions",
+    "mac time machine style stack",
+    "scroll through document history",
+    "version snapshots in a pile",
+    "card stack you flip with the wheel",
+    "old revisions peeking behind the current one",
+    "layered panels navigation",
+    "drag up to see earlier drafts"
+  ],
+  "resembles": [
+    "macOS Time Machine"
+  ],
+  "use_when": "A document app should let people flip through version history as a physical-feeling stack.",
+  "avoid_when": "Each panel must bring its own height and content, and a still of a mid-flight step shows two overlapping cards.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "list-item",
+    "body-text"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll",
+      "drag",
+      "keyboard"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "children"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Items arrive as an array of content and ids; index, change callback, depth, offset, scale step, perspective and visible count are props.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "At most four panels mounted at once and one spring transform per step.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Listbox roles, arrow keys and an announced position are present, though the panel contents are not described."
+  },
+  "props": [
+    {
+      "name": "items",
+      "type": "TimeMachineStackItem[]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "index",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onIndexChange",
+      "type": "(index: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "default": "50",
+      "required": false
+    },
+    {
+      "name": "offsetY",
+      "type": "number",
+      "default": "36",
+      "required": false
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "default": "1400",
+      "required": false
+    },
+    {
+      "name": "scaleStep",
+      "type": "number",
+      "default": "0.05",
+      "required": false
+    },
+    {
+      "name": "visibleCount",
+      "type": "number",
+      "default": "4",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "Mid-step frame 4 shows two cards overlapping, which reads like a glitch in a still.",
+    "Every version carries the same grey placeholder bars, so the snapshots look nearly identical."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing depth and a clean fly-past; identical placeholder content hides the differences.",
+  "unsure": []
+}

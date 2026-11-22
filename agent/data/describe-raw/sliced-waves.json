@@ -1,0 +1,78 @@
+{
+  "name": "sliced-waves",
+  "frames": {
+    "code": "1162",
+    "best": 3,
+    "best_why": "Ribbons fill the full width in layered blue, pink and cream with sharp near bars and soft far ones.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Bars of blue and pink light ripple in layered waves across a black stage.",
+  "summary": "A background of thin vertical bars in cream-to-pink-to-blue gradients, bent into rolling ribbons that drift and blur with depth. Focus follows the pointer.",
+  "title_fix": null,
+  "appearance": "On black, rows of narrow bright bars rise and fall in long horizontal ribbons, coloured from cream through pink to blue. Near bars are tall and crisp while distant ones shrink and blur, and the ribbons overlap in sweeping arcs.",
+  "behaviour": "The ribbons drift and reshape continuously on a slow loop, with an intro that sweeps them in from the left. Moving the pointer pulls focus toward the nearest bars, sharpening them and lifting the wave.",
+  "parts": ["light bars", "ribbon wave", "colour gradient", "depth blur"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "neon", "gradient", "glow", "futuristic"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "animated wave background with light bars",
+    "neon equaliser bars in waves",
+    "glowing ribbons of light background",
+    "webgl audio visualiser style backdrop",
+    "pink and blue light streaks",
+    "cursor focus depth effect",
+    "futuristic hero background animation",
+    "vertical glow bars rippling"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or section needs a moving light backdrop that adds depth without any content.",
+  "avoid_when": "It is a full-bleed WebGL canvas in constant motion, so it needs a sized container and can distract from text.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["page-background", "hero", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Three colours and ribbon count plus spacing, bar width, height, spread, amplitude, speed, perspective, blur, glow, slices, grain and light mode are props.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A WebGL2 render loop draws instanced bars and a full-screen composite every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "The canvas is decorative and hidden from assistive tech with no text alternative, which is fine for a background."
+  },
+  "props": [
+    {"name": "color1", "type": "string", "default": "\"#ffd9a8\"", "required": false},
+    {"name": "color2", "type": "string", "default": "\"#ff5fa2\"", "required": false},
+    {"name": "color3", "type": "string", "default": "\"#5b8cff\"", "required": false},
+    {"name": "ribbons", "type": "number", "default": "3", "required": false},
+    {"name": "spacing", "type": "number", "default": "28", "required": false},
+    {"name": "barWidth", "type": "number", "default": "0.5", "required": false},
+    {"name": "ribbonHeight", "type": "number", "default": "0.26", "required": false},
+    {"name": "amplitude", "type": "number", "default": "0.1", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "perspective", "type": "number", "default": "0.45", "required": false},
+    {"name": "glow", "type": "number", "default": "1", "required": false},
+    {"name": "lightMode", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "The intro sweep leaves half the canvas empty at first, which can look broken in an early screenshot."
+  ],
+  "polish": 4,
+  "polish_why": "Layered light ribbons have real depth and a convincing glow; the pattern is distinctive.",
+  "unsure": []
+}

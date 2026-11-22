@@ -1,0 +1,63 @@
+{
+  "name": "vertical-thumbnail-slider",
+  "frames": {
+    "code": "1051",
+    "best": 2,
+    "best_why": "Full landscape photo fills the stage with the matching thumbnail boxed in the side strip.",
+    "usable": [1, 2, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny photo strip on the left drags a big picture up and down.",
+  "title_fix": null,
+  "summary": "A photo gallery where a tall column of small previews sits to the left of one large image. Clicking or dragging through the column moves the main photo, which scrolls vertically instead of sideways.",
+  "appearance": "A wide photo fills most of a black stage. Down the left edge runs a thin column of seven small landscape thumbnails with rounded corners, separated by narrow gaps. The active thumbnail sits inside a light rounded outline that marks it out from the rest.",
+  "behaviour": "The thumbnail column and the large frame move together on a vertical axis: dragging the strip or the photo scrolls to the next image, and the outgoing picture slides away top or bottom. The outline hops to whichever thumbnail is current.",
+  "parts": ["main photo", "thumbnail column", "thumbnail image", "selection outline"],
+  "demo_content": "Seven Unsplash nature photos: a dark lake shore, a misty lake with bare trees, and a pink flower on a pale background.",
+  "states": ["selected", "dragging"],
+  "kind": "carousel",
+  "look": ["dark", "minimal", "rounded", "editorial"],
+  "tone": "minimal",
+  "search_phrases": [
+    "vertical image carousel with side thumbnails",
+    "thumbnail strip next to large photo",
+    "click small preview to change picture",
+    "photo gallery scrolling up and down",
+    "image viewer with thumbnail rail",
+    "portfolio slider with preview column",
+    "gallery where thumbnails sit on the left",
+    "picture switcher with one big frame"
+  ],
+  "resembles": [],
+  "use_when": "A handful of images must share a compact block and still show one large preview at a time.",
+  "avoid_when": "The demo caps the frame at 400px tall and hardcodes seven photo URLs inside the file.",
+  "suits": ["portfolio", "ecommerce", "media"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "pronounced",
+    "affects": ["image", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Photo URLs, order and count live in the component file; width and height are set by classes on the shared carousel wrappers, not by props.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Seven images in one drag carousel; nothing runs while the page is idle.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Every image is labelled simply 'image', and there is no visible focus treatment or reduced-motion handling."
+  },
+  "props": [],
+  "issues": ["Every photo in the source has the alt text 'image', so none is described."],
+  "polish": 4,
+  "polish_why": "Tidy dark gallery with a clear active thumbnail; only the cramped thumbnails and 400px cap date it.",
+  "unsure": ["traits.theme", "a11y.keyboard", "a11y.focus_visible"]
+}

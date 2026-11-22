@@ -1,0 +1,167 @@
+{
+ "name": "feature-voting",
+ "frames": {
+  "code": "1817",
+  "best": 3,
+  "best_why": "Frame 3 shows the first row in its voted state with the trigger filled white, plus the full list.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "Rows of feature requests with a clickable upvote counter.",
+ "summary": "A list of requested features, each with a small up-arrow button and a live vote count. Clicking the arrow adds your vote and highlights the button; clicking again takes it back.",
+ "title_fix": null,
+ "appearance": "A bold white heading, Vote for Features, above four stacked rows on a dark panel. Each rounded outlined bar holds a small square upvote button at left with a triangle and a number, then a white feature title and a faint grey description.",
+ "behaviour": "Clicking a row's upvote button adds one to its count, fills the button white and marks the vote pressed; clicking again lowers the count and clears the fill. An optional group can reorder rows by vote total.",
+ "parts": [
+  "heading",
+  "feature row",
+  "upvote button",
+  "vote count",
+  "feature title",
+  "description"
+ ],
+ "demo_content": "Vote for Features heading and rows for Dark Mode, API Integrations, Mobile App and PDF Export.",
+ "states": [
+  "hover",
+  "selected",
+  "disabled"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "feature request upvote list",
+  "click to vote on ideas",
+  "roadmap voting board",
+  "product feedback list with counts",
+  "upvote button and tally",
+  "sort features by popularity",
+  "suggestion box with votes",
+  "community ideas board"
+ ],
+ "resembles": [
+  "Product Hunt upvote list",
+  "Canny roadmap board"
+ ],
+ "use_when": "Users should prioritise a backlog or wishlist by casting one vote each on the ideas they want.",
+ "avoid_when": "There is no per-user persistence out of the box, and long descriptions make the rows tall on mobile.",
+ "suits": [
+  "saas",
+  "devtool",
+  "social"
+ ],
+ "slot_hints": [
+  "list-item",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Root takes value or defaultValue, votedFeatures or defaultVotedFeatures, onValueChange and disabled; Group sorts by votes-asc, votes-desc or none. Labels and layout come from your own child elements.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of list rows and a small React context; no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Triggers are real buttons with aria-pressed and a changing label, and the list itself is labelled; no reduced motion is needed."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "FeatureVotingValue",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "FeatureVotingValue",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: FeatureVotingValue) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "votedFeatures",
+   "type": "Set<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultVotedFeatures",
+   "type": "Set<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onVotedFeaturesChange",
+   "type": "(votedFeatures: Set<string>) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "sortBy",
+   "type": "'votes-asc' | 'votes-desc' | 'none'",
+   "default": "\"none\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Description text is very low contrast on the dark rows."
+ ],
+ "polish": 4,
+ "polish_why": "Clear hierarchy and tidy rows; descriptions sit low contrast against the dark panel.",
+ "unsure": [
+  "technique"
+ ],
+ "title": "Feature Voting",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "359f8443cdb6ab88",
+  "film_hash": "33c678887a5d77f2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

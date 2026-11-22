@@ -1,0 +1,68 @@
+{
+  "name": "3d-marquee",
+  "frames": {
+    "code": "2047",
+    "best": 1,
+    "best_why": "The tilted photo wall fills the frame with its widest mix of subjects and the clearest diagonal grid.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photos tile a tilted wall and drift up and down in columns.",
+  "summary": "A gallery of many photos arranged in four columns on a rotated 3D plane, so the grid runs diagonally while neighbouring columns slide slowly in opposite directions.",
+  "title_fix": null,
+  "appearance": "Dozens of small landscape photos fill the frame as tilted diamonds, separated by thin dotted lines, showing tulips, a white ship, waves, a face and grass. The whole wall leans in perspective, larger toward one corner.",
+  "behaviour": "Alternating columns creep vertically in opposite directions on long ten- and fifteen-second loops, so the wall drifts continuously. Hovering one photo lifts it a few pixels and adds a shadow.",
+  "parts": ["photo tile", "tilted grid", "dotted grid line", "column", "hover shadow"],
+  "demo_content": "Landscape stock photos of red tulips, a white ship, crashing waves, a portrait and grassy fields.",
+  "states": ["hover"],
+  "kind": "marquee",
+  "look": ["colorful", "dense", "3d"],
+  "tone": "decorative",
+  "search_phrases": [
+    "wall of photos sliding diagonally",
+    "photo grid that moves in 3d",
+    "infinite scrolling image wall",
+    "portfolio image ticker",
+    "tilted gallery background",
+    "many pictures drifting upward",
+    "hero made of vacation photos",
+    "3d perspective image grid"
+  ],
+  "resembles": [],
+  "use_when": "A landing section wants a rich image wall behind or beside copy without inventing a layout.",
+  "avoid_when": "The wall wants 32 images and moves forever, so it costs data and never stops for motion-sensitive visitors.",
+  "suits": ["portfolio", "marketing", "ecommerce"],
+  "slot_hints": ["hero", "media", "section-background"],
+  "traits": {
+    "trigger": ["always", "timer"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an array of image URLs and an optional className; column count, tilt, speeds and the 600px height are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Thirty-two images sit in four columns whose transforms animate non-stop.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Every photo has a bare 'Image 1' alt and the endless drift ignores reduced-motion."
+  },
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The rotated grid crops many photos into steep diamonds, so subjects are often cut off."
+  ],
+  "polish": 4,
+  "polish_why": "Rich, immersive photo wall; the steep tilt crops many images into odd diamonds.",
+  "unsure": []
+}

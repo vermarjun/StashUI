@@ -1,0 +1,155 @@
+{
+ "name": "logo-timeline",
+ "frames": {
+  "code": "5486",
+  "best": 6,
+  "best_why": "The most chips are spread across the rails and their labels are readable around the faint headline.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "Tool-logo chips glide along faint dashed rails behind a ghosted headline.",
+ "summary": "Several horizontal dotted rails carry rounded chips, each holding a brand icon and its name. The chips drift sideways at staggered speeds and offsets while a large, very low-contrast headline stays fixed in the middle.",
+ "title_fix": null,
+ "appearance": "A black panel crossed by several faint dotted horizontal lines. Small dark pill chips with a brand icon and a short name slide along them, and a very dim grey headline in large type sits centred behind the rows.",
+ "behaviour": "Every chip loops across the panel on its own duration and delay, so the rows never line up and labels pass each other continuously. The headline stays still and faint, leaving the drifting chips as the focus.",
+ "parts": [
+  "rail line",
+  "chip",
+  "brand icon",
+  "brand label",
+  "faded headline"
+ ],
+ "demo_content": "Headline \"Built with the best tools\" and brand chips such as Discord, GitHub, Figma and PayPal.",
+ "states": [],
+ "kind": "logo-cloud",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "flat",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "rows of logos sliding sideways",
+  "dashed timeline with brand chips",
+  "moving logo strip behind a heading",
+  "integration ticker on a dark page",
+  "logos drifting in horizontal lanes",
+  "endless scrolling brand row",
+  "tool names on dotted lines",
+  "logo cloud with a big background title"
+ ],
+ "resembles": [],
+ "use_when": "A dark landing section needs a calm, endless band of tool logos behind its heading.",
+ "avoid_when": "The same sixteen brands repeat forever and reduced-motion is ignored, so the motion never stops.",
+ "suits": [
+  "saas",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "logo-wall",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an items array of label, icon, row, delay and duration, plus a title, height, icon size and row separators; the chip styling itself is fixed.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "Sixteen chips moved by pure CSS transform keyframes, with no per-frame script.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The whole strip is aria-hidden as decoration, and its CSS animation ignores reduced-motion, so it never pauses."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "LogoItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "string",
+   "default": "\"h-[400px] sm:h-[800px]\"",
+   "required": false
+  },
+  {
+   "name": "iconSize",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "showRowSeparator",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "animateOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"shrink-0\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The brand chips are small at this scale and their labels are hard to read.",
+  "The ghosted headline is so faint it is easy to miss behind the moving chips."
+ ],
+ "polish": 3,
+ "polish_why": "Clean lanes and a faded title, but tiny chips and a familiar looping idea keep it ordinary.",
+ "unsure": [
+  "labels"
+ ],
+ "title": "Logo Timeline",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6c2bd30a85de0478",
+  "film_hash": "bb6b0c183f66f9eb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

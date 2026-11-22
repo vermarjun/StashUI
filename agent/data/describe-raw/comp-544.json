@@ -1,0 +1,67 @@
+{
+  "name": "comp-544",
+  "frames": {
+    "code": "8842",
+    "best": 1,
+    "best_why": "Empty dashed box with the icon and \"Drop your image here\", the clearest upload state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dashed box that takes a dropped image and fills with a preview.",
+  "summary": "A dashed rounded panel inviting you to drop an image or click to browse, with a 5MB note underneath. Once a file loads, the panel becomes the picture itself, with a round close button in the corner.",
+  "title_fix": null,
+  "appearance": "A wide rounded rectangle outlined by a fine dashed border on black. In the middle a small circle holds a photo-with-up-arrow glyph, followed by a bold white instruction and a dimmer size note. Loaded, it becomes a blue gradient image with a dark round X at the top right.",
+  "behaviour": "Dragging a file over the box lightens its fill; dropping or browsing swaps the whole area for the chosen picture and reveals the remove button. Files over 5MB instead raise a red error line.",
+  "parts": ["dashed drop area", "image-up icon", "instruction text", "size hint", "preview image", "remove button", "caption"],
+  "demo_content": "Empty dropzone reading Max size: 5MB, then a blue gradient test image; caption links to an API doc.",
+  "states": ["dragging", "hover", "focus", "error"],
+  "kind": "file-upload",
+  "look": ["dark", "flat", "rounded", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "drag and drop image upload box",
+    "upload a profile picture by dropping a file",
+    "dashed box that says drop your image here",
+    "image preview uploader with remove button",
+    "single photo upload with size limit",
+    "dropzone that fills with the chosen picture",
+    "click to browse for an image",
+    "upload area showing max size warning"
+  ],
+  "resembles": [],
+  "use_when": "One image must be chosen and previewed in place, such as a cover or avatar.",
+  "avoid_when": "It accepts a single image capped at 5MB and offers no crop, resize or multiple-file support.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field", "avatar", "media"],
+  "traits": {
+    "trigger": ["click", "drag", "hover"],
+    "motion": "none",
+    "affects": ["background", "border", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The 5MB ceiling, the image-only filter and all the copy are written in the file; colours and the dashed border follow theme tokens.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A hidden file input and one preview image; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The hidden file input is labelled and shows a focus ring, but the clickable wrapper is kept out of the tab order."
+  },
+  "props": [],
+  "issues": [
+    "The caption is developer copy ending in an API link, not a description.",
+    "The empty state names the size limit but never the accepted formats.",
+    "The whole box is clickable yet the wrapper is excluded from keyboard tabbing."
+  ],
+  "polish": 4,
+  "polish_why": "Clear empty state, tidy dragging highlight and a clean preview with remove button.",
+  "unsure": ["content_from"]
+}

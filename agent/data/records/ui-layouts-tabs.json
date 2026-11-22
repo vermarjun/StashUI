@@ -1,0 +1,151 @@
+{
+ "name": "ui-layouts-tabs",
+ "frames": {
+  "code": "7932",
+  "best": 1,
+  "best_why": "The tab under the pale chip and the paragraph below it match, with the bar fully settled and no ghost text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "A pale chip slides between three labels in a dark rounded bar.",
+ "summary": "A compact tab bar of grey labels on a rounded track, where a raised chip marks the active tab and the paragraph beneath swaps to match, sliding in from the side you moved.",
+ "title_fix": null,
+ "appearance": "A small dark rounded bar holds three short grey labels, the active one wrapped in a paler chip with a faint outline. Below the bar a block of small grey body text runs across the stage.",
+ "behaviour": "Clicking a label sends the pale chip onto it while two offset copies trail a beat behind, so the chip settles with a small wobble. The paragraph below fades away and the new text slides in from the direction of travel.",
+ "parts": [
+  "tab bar",
+  "tab label",
+  "active chip",
+  "content paragraph"
+ ],
+ "demo_content": "Tabs named Overview, Features and Pricing, each above a short paragraph about that topic.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "tabs",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "tabs that slide with a spring",
+  "segmented control with three options",
+  "rounded tab bar for switching text",
+  "wobbly indicator under the chosen tab",
+  "toggle between paragraphs of copy",
+  "ios style segmented tabs on dark",
+  "pill switcher with a moving highlight",
+  "tab menu with animated background chip"
+ ],
+ "resembles": [
+  "iOS segmented control"
+ ],
+ "use_when": "A few small panels of copy should switch in place without leaving the page.",
+ "avoid_when": "The labels are clickable divs without tab roles or tabIndex, so keyboard and screen-reader users cannot switch tabs.",
+ "suits": [
+  "saas",
+  "docs"
+ ],
+ "slot_hints": [
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "You supply tab buttons and matching panels as children with value keys; the provider takes defaultValue, wobbly and hover, but chip colours and the spring live in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Three labels, three shadow chips and one layout animation at a time.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Tabs are clickable divs with no tab role, tabIndex or aria-selected, and the focus handler only fires when the hover option is on."
+ },
+ "props": [
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "wobbly",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(`cursor-pointer 2xl:p-2 p-2 2xl:px-4 px-2 rounded-md rel",
+   "required": false
+  },
+  {
+   "name": "yValue",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "No tab roles, tabIndex or aria-selected, so the control is mouse only.",
+  "The panel arrives about half a second after the chip has moved.",
+  "Mid-switch the outgoing and incoming paragraphs overlap and both read."
+ ],
+ "polish": 3,
+ "polish_why": "Neat segmented tabs and a soft chip, but the content lags and ghosts during the switch.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Animated Wobbly Tabs",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "dbcdc461694e2091",
+  "film_hash": "ed28c9da017ed9af",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

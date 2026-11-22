@@ -1,0 +1,110 @@
+{
+ "name": "comp-331",
+ "frames": {
+  "code": "4490",
+  "best": 3,
+  "best_why": "Dialog is fully open and clean, showing the cover photo, avatar and every field at once.",
+  "usable": [
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "Photo banner and avatar sit above a profile form with a live character count.",
+ "summary": "A dialog for editing a profile: a wide cover photo and round avatar sit above first and last name, username, website and bio fields. Save or Cancel closes it and the bio shows how many characters remain.",
+ "title_fix": null,
+ "appearance": "A dark rounded dialog floats over a near-black page. Under the title and close cross is a wide landscape cover photo with a circular avatar overlapping its lower edge. Below are paired name fields, a username field with a green tick, a website field prefixed https://, a bio textarea, and two footer buttons.",
+ "behaviour": "A trigger button opens the dialog over the page. Typing in the fields updates the bio's remaining-character counter, and selecting text inside a field highlights it. Cancel or Save changes closes the dialog.",
+ "parts": [
+  "dialog title",
+  "cover image",
+  "avatar",
+  "name fields",
+  "username field",
+  "website field",
+  "bio field",
+  "footer buttons"
+ ],
+ "demo_content": "Edit profile trigger, sample user Margaret Villard, username margaret-villard-69, site www.margaret.com and a short bio.",
+ "states": [
+  "open",
+  "focus",
+  "hover"
+ ],
+ "kind": "modal",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "popup form to edit your profile",
+  "change avatar and cover photo",
+  "account details dialog with bio",
+  "modal with image upload and text fields",
+  "edit username website and description",
+  "profile settings popup",
+  "dialog with character counter for bio",
+  "form that opens over the page"
+ ],
+ "resembles": [],
+ "use_when": "Collecting a user's photo, name, website and bio in one short form without leaving the current page.",
+ "avoid_when": "The cover and avatar load from bundled demo image paths, so real deployments must point them at their own files.",
+ "suits": [
+  "saas",
+  "social"
+ ],
+ "slot_hints": [
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Copy, default names and the two demo image paths are written inside the file and need editing; width and field layout are set with utility classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small dialog of form fields and images; nothing animates except the opening transition.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Labels, aria-labels and a polite live character counter are present, and focus rings are visible; no reduced-motion handling."
+ },
+ "props": [],
+ "issues": [
+  "Cover and avatar default to demo image URLs that can break outside the origin setup.",
+  "Small helper and footer text is low contrast on the dark surface."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy standard dialog; demo image defaults and faint small text keep it ordinary.",
+ "unsure": [],
+ "title": "Edit Profile Dialog",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d65b270192f6a8f9",
+  "film_hash": "b863d8e1594061cf",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

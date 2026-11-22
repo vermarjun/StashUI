@@ -1,0 +1,146 @@
+{
+ "name": "ui-layouts-carousel",
+ "frames": {
+  "code": "8848",
+  "best": 1,
+  "best_why": "Frame 1 shows one slide fully framed with both arrows, the 1/4 counter and the dash dots.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A rounded photo slider with side arrows, a counter and dash dots.",
+ "summary": "A horizontal image carousel with translucent round arrow buttons, a current-slide counter and dash-style dots. Slides glide sideways and wrap around at the ends.",
+ "title_fix": null,
+ "appearance": "A wide rounded photo slide, a white hillside town, with translucent circular arrow buttons at mid-left and mid-right. Below it a small mono counter reads 1 / 4 on the left and four short dash dots sit at the right.",
+ "behaviour": "Clicking an arrow or dot slides the photo horizontally to the next frame with a short ease; the counter and the dark active dash update, and arrows dim at the ends. Arrow keys also page it.",
+ "parts": [
+  "photo slide",
+  "prev arrow",
+  "next arrow",
+  "counter",
+  "dot indicators"
+ ],
+ "demo_content": "Santorini rooftops, a wooden deck and a seaside telescope",
+ "states": [
+  "hover",
+  "disabled",
+  "active"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photo slider with arrow buttons",
+  "swipe through pictures horizontally",
+  "image slideshow with dots",
+  "carousel with a slide counter",
+  "gallery you can page through",
+  "next and previous image viewer",
+  "looping photo strip",
+  "pictures that slide left and right"
+ ],
+ "resembles": [],
+ "use_when": "A page needs to show a handful of photos one at a time with simple controls.",
+ "avoid_when": "Controls are fixed-size and the slide height is set in the demo, so tall art needs resizing.",
+ "suits": [
+  "portfolio",
+  "media"
+ ],
+ "slot_hints": [
+  "media",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "options and plugins drive the slider; slides, arrows, counter and dots are separate child components you compose and style.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Four images with embla drag plus small counter animation; no canvas or loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Arrow buttons have no accessible names and the root hides its focus outline."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "options",
+   "type": "EmblaOptionsType",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "plugins",
+   "type": "array",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "isScale",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('relative w-full focus:outline-hidden', className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Arrow buttons show only icons, with no labels for screen readers.",
+  "The slide counter is tiny mono text that is easy to miss."
+ ],
+ "polish": 3,
+ "polish_why": "Clean rounded slider with tidy controls; default arrows and a tiny counter keep it standard.",
+ "unsure": [
+  "resembles"
+ ],
+ "title": "Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8c7d3831c0ef5b61",
+  "film_hash": "a701359db43904f5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

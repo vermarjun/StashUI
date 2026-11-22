@@ -1,0 +1,77 @@
+{
+  "name": "dotted-map",
+  "frames": {
+    "code": "9703",
+    "best": 6,
+    "best_why": "The full map and all eight orange markers are drawn, with no cursor covering the map.",
+    "usable": [3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A world map of tiny dots with orange pulses over eight cities.",
+  "summary": "A dotted world map built from thousands of small circles, with pulsing orange markers placed at given latitudes and longitudes.",
+  "title_fix": null,
+  "appearance": "On black, a world map is formed by thousands of tiny grey dots packed in rows, continents legible through their density. Each marked city is a solid orange dot wrapped in one or two thin orange rings.",
+  "behaviour": "The dots hold still while every marker keeps sending out one or two rings that expand and fade on a loop. Nothing responds to the pointer, and the pulses never settle.",
+  "parts": ["dot map", "marker dot", "pulse rings"],
+  "demo_content": "Eight pulsing city markers spread across the Americas, Europe, Asia and Australia",
+  "states": [],
+  "kind": "map",
+  "look": ["dark", "minimal", "dense", "monochrome"],
+  "tone": "technical",
+  "search_phrases": [
+    "world map made of tiny dots",
+    "pulsing location pins on a globe",
+    "dotted earth with city markers",
+    "minimal world map for a landing page",
+    "show offices around the world",
+    "blinking radar rings on a map",
+    "global availability map graphic",
+    "lat long markers on a dotted planet"
+  ],
+  "resembles": [],
+  "use_when": "A page should show worldwide locations or coverage without pulling in a heavy interactive map.",
+  "avoid_when": "When people must pan, zoom or click a location; this is a still graphic with decorative pulses.",
+  "suits": ["saas", "fintech", "devtool"],
+  "slot_hints": ["section-background", "decoration", "media"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Markers come as an array of latitude, longitude, size and pulse; map size, dot count, dot radius, colours and a custom marker overlay are props.",
+  "technique": ["svg"],
+  "weight": "moderate",
+  "weight_why": "Thousands of SVG circles plus eight endlessly looping SMIL pulse rings.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The SVG has no title or description, so neither the map nor its markers reach a screen reader."
+  },
+  "props": [
+    {"name": "markers", "type": "Marker[]", "default": "[]", "required": false},
+    {"name": "pulse", "type": "boolean", "default": "false", "required": false},
+    {"name": "markerColor", "type": "string", "default": "#FF6900", "required": false},
+    {"name": "dotColor", "type": "string", "default": "\"currentColor\"", "required": false},
+    {"name": "mapSamples", "type": "number", "default": "5000", "required": false},
+    {"name": "width", "type": "number", "default": "150", "required": false},
+    {"name": "height", "type": "number", "default": "75", "required": false},
+    {"name": "dotRadius", "type": "number", "default": "0.2", "required": false},
+    {"name": "stagger", "type": "boolean", "default": "true", "required": false},
+    {"name": "renderMarkerOverlay", "type": "function", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 1 and 2 show a completely empty stage; the map only appears from the third frame."
+  ],
+  "polish": 4,
+  "polish_why": "The dots render evenly and the orange pulses sit well; the blank opening frames are a blemish.",
+  "unsure": ["content_from", "needs_sized_parent"]
+}

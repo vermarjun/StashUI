@@ -1,0 +1,107 @@
+{
+ "name": "comp-150",
+ "frames": {
+  "code": "3881",
+  "best": 6,
+  "best_why": "A clean crescent moon on the tile shows the switched-to dark state with no cursor over it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.9
+ },
+ "tagline": "One square tile where a sun swaps to a moon to flip the theme.",
+ "summary": "A compact icon tile that toggles light and dark appearance. It shows a sun while light and a crescent moon while dark, swapping the two with a quick scale and fade.",
+ "title_fix": null,
+ "appearance": "A small rounded square tile with a thin outline sits on a near-black stage beneath a bold legend line, holding a single white sun glyph. Once switched, the same tile shows a crescent moon.",
+ "behaviour": "Clicking the tile scales and fades the sun out as the moon scales in, and a second click reverses it. The tile lightens underneath on hover and draws a ring when focused from the keyboard.",
+ "parts": [
+  "legend",
+  "toggle tile",
+  "sun icon",
+  "moon icon"
+ ],
+ "demo_content": "The legend \"Dark mode toggle checkbox\".",
+ "states": [
+  "hover",
+  "focus",
+  "checked"
+ ],
+ "kind": "switch",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "dark mode switch with sun and moon",
+  "light and dark theme toggle",
+  "day night icon button",
+  "switch website to black theme",
+  "sun moon icon swap",
+  "theme preference control",
+  "toggle appearance of site",
+  "night mode on off"
+ ],
+ "resembles": [],
+ "use_when": "A site needs one compact control to switch between light and dark appearance.",
+ "avoid_when": "It only flips its own icon state and never applies or stores a theme, so you must wire that yourself.",
+ "suits": [
+  "any"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "No props: the legend, the sun and moon icons and the fixed tile size are in the file, and the toggle keeps only its own theme flag.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One hidden checkbox and two 16px icons with a short scale transition.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The label announces the mode it will switch to and focus rings clearly, but the icon transition ignores reduced-motion."
+ },
+ "props": [],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Small neat sun-to-moon swap; otherwise a plain outlined square button.",
+ "unsure": [],
+ "title": "Dark Mode Toggle",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "430d85500552488d",
+  "film_hash": "9ac072debddc001c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

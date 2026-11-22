@@ -1,0 +1,112 @@
+{
+  "name": "comp-551",
+  "frames": {
+    "code": "2229",
+    "best": 6,
+    "best_why": "Six rows fill the table and the cursor is away, showing every column and row action.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Table of uploaded files with type, size and per-row actions.",
+  "summary": "A files manager in table form: a count heading with Add files and Remove all, then a bordered table listing each attachment's icon and name, its type, size, and download and delete buttons.",
+  "title_fix": null,
+  "appearance": "A dark panel headed Files (6) with two small outlined buttons at the right. Below, a bordered table with a grey header row (Name, Type, Size, Actions) and six white rows where names carry a small file glyph and the last column holds two faint icons.",
+  "behaviour": "Add files opens the picker and Remove all empties the table; each row's download icon opens its file while the bin drops that row. Rows tint under the pointer, and the list grows from three to six files across the frames.",
+  "parts": [
+    "files heading",
+    "add files button",
+    "remove all button",
+    "table header",
+    "name cell",
+    "type cell",
+    "size cell",
+    "action icons"
+  ],
+  "demo_content": "document.pdf, intro.zip, conclusion.xlsx plus cover-1/2/3.png, with type and size columns; caption links to an API doc.",
+  "states": [
+    "hover",
+    "dragging",
+    "error"
+  ],
+  "kind": "file-upload",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "dense",
+    "minimal"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "table of uploaded files with sizes and types",
+    "manage attachments in a table",
+    "file manager list with download and delete",
+    "upload documents and see their type",
+    "bulk file list with remove all",
+    "download or trash each uploaded file",
+    "attachment table with actions column",
+    "upload area plus files table"
+  ],
+  "resembles": [],
+  "use_when": "Many attachments need managing after upload, with download and delete on every row.",
+  "avoid_when": "The table has no sorting or row selection, so Remove all is the only batch action.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field",
+    "data-table"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "drag",
+      "hover"
+    ],
+    "motion": "none",
+    "affects": [
+      "background",
+      "border",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The ten-file cap, the 10MB ceiling and three seed files are written in the file; the icon mapping and row actions are source edits too.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "A short table of seed files and a hidden input; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Every row action is a labelled button and the empty state offers a Select files button; the surrounding drop area is not focusable."
+  },
+  "props": [],
+  "issues": [
+    "The drop zone is hidden once files exist, so adding more by dragging stops working.",
+    "Rows omit the upload date and status the catalogue description promises.",
+    "The caption is developer copy ending in an API link."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy compact table with clear icons and row actions; developer caption and drag lost after upload.",
+  "unsure": [
+    "states",
+    "content_from"
+  ]
+}

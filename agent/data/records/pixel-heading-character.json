@@ -1,0 +1,186 @@
+{
+ "name": "pixel-heading-character",
+ "frames": {
+  "code": "7292",
+  "best": 2,
+  "best_why": "The whole heading is crisp, its letters read as clearly different dot fonts, and the mode label shows.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.3
+ },
+ "tagline": "Every letter sits in its own dotted, blocky typeface and keeps switching.",
+ "summary": "A large display heading where each character is set in a different pixel font, the mix stepping through its faces on a timer so the word ripples and re-forms in new lettering.",
+ "title_fix": null,
+ "appearance": "A wide white heading on near-black, its glyphs built from dots, tiny squares and thin strokes so neighbouring letters look like different typefaces. Underneath sits a small uppercase label naming the current mode.",
+ "behaviour": "Left alone in auto-play it keeps stepping each character to the next font on its own delay, so the change travels across the word like a ripple. Hovering or focusing restarts the cascade, and each letter is a separate span swapping a font class.",
+ "parts": [
+  "heading line",
+  "letter glyphs",
+  "mode label"
+ ],
+ "demo_content": "The words \"Ship Pixels\" above Wave, Multi, Random and Uniform pills.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "dark",
+  "technical",
+  "retro"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "every letter in a different dot matrix font",
+  "heading that cycles typefaces letter by letter",
+  "blocky bitmap style title that animates",
+  "retro computer font text effect",
+  "letters rippling through fonts on hover",
+  "dots and squares swapping in a headline",
+  "animated typographic headline for a landing page",
+  "how to give each character a different font"
+ ],
+ "resembles": [],
+ "use_when": "A short display headline should feel lo-fi and animated, with the type itself carrying the personality.",
+ "avoid_when": "It needs five pixel web fonts registered, and the lettering only works at display size; body copy becomes hard to read.",
+ "suits": [
+  "portfolio",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover",
+   "focus"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass the heading as children and choose mode, cycleInterval, staggerDelay, autoPlay and showLabel, plus a static prefix and an isolate map. The five faces are CSS classes.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A line of spans and one timer that only changes class names.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The heading exposes its full text while each letter span is hidden, and Enter or Space advances it; motion ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "mode",
+   "type": "PixelHeadingMode",
+   "default": "\"multi\"",
+   "required": false
+  },
+  {
+   "name": "autoPlay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "cycleInterval",
+   "type": "number",
+   "default": "150",
+   "required": false
+  },
+  {
+   "name": "staggerDelay",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "showLabel",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "prefix",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "prefixFont",
+   "type": "string",
+   "default": "\"none\"",
+   "required": false
+  },
+  {
+   "name": "isolate",
+   "type": "Record<string, string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultFontIndex",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "string",
+   "default": "h1",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"inline-flex flex-col items-start gap-2\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Everything depends on the five web fonts loading; without them the heading falls back to plain monospace."
+ ],
+ "polish": 4,
+ "polish_why": "Tight, readable mixed-font title with a tidy mode label; the demo's pill buttons are plain.",
+ "unsure": [
+  "best"
+ ],
+ "title": "Pixel Heading",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8d58f37fb24460ee",
+  "film_hash": "e722d724761c1d6b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

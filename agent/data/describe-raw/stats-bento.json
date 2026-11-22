@@ -1,0 +1,66 @@
+{
+  "name": "stats-bento",
+  "frames": {
+    "code": "8120",
+    "best": 6,
+    "best_why": "Every figure has settled at 64%, 240%, 12 and 4.9, with the whole grid and bar chart visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Bento of dark metric tiles led by a giant market share number.",
+  "summary": "A compact stats grid on black: one tall card holds a huge percentage, a growth card carries a small rising bar chart, and two smaller tiles show awards and a peer review score. Figures count up on first view.",
+  "title_fix": null,
+  "appearance": "A black page holding four charcoal rounded cards in a bento layout. The tall left card has diagonal hatch lines in one corner, a small uppercase pill, a very large white \"64%\" and a short grey caption; the right side stacks a wide growth tile, a narrow awards tile and a review tile with a gold star.",
+  "behaviour": "When the grid enters view the cards rise in staggered order, each number counts up from zero and the mini chart bars grow upward from the baseline. Hovering any tile nudges it up a few pixels.",
+  "parts": ["market share card", "category pill", "large percentage", "caption", "growth card", "bar chart", "awards card", "review card"],
+  "demo_content": "Label \"Market Share\" with 64%, Growth +240%, 12 Awards and a 4.9 / 5.0 G2 review score.",
+  "states": ["hover"],
+  "kind": "stats-section",
+  "look": ["dark", "minimal", "rounded", "technical"],
+  "tone": "minimal",
+  "search_phrases": [
+    "bento grid of company stats",
+    "market share number card",
+    "startup metrics tiles",
+    "growth percent with mini bar chart",
+    "awards and review score cards",
+    "dark dashboard style numbers",
+    "kpi bento layout",
+    "investor one pager metrics"
+  ],
+  "resembles": [],
+  "use_when": "A startup wants a compact, pitch-deck style metrics block mixing one headline figure with three proof points.",
+  "avoid_when": "All copy and figures are fixed, and the near-black tiles need a dark page around them to read well.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["stat", "body-text"],
+  "traits": {
+    "trigger": ["viewport", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Every figure, label and caption is written directly in the grid; the hatch overlay and card colours also need source edits.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "Four count-ups and a small bar chart that animate once on entry.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Figures are plain text swapped during the count with no live region, so the settled values are never announced; no reduced-motion check."
+  },
+  "props": [],
+  "issues": [
+    "The main caption is small grey text on black, low contrast.",
+    "The awards tile squeezes two lines of tiny text into a narrow card."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy dark bento with a strong type scale; captions and the tiny tile labels are faint.",
+  "unsure": ["slot_hints"]
+}

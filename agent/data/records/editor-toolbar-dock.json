@@ -1,0 +1,182 @@
+{
+ "name": "editor-toolbar-dock",
+ "frames": {
+  "code": "4174",
+  "best": 2,
+  "best_why": "The dock rests at the bottom with the shapes flyout open above it, showing icons, labels and shortcuts at once.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "A tiny icon toolbar hops between the edges of a dark canvas.",
+ "summary": "A compact design-tool dock on a dark canvas: a grip plus six line icons, the active one sitting on a white sliding plate. Tools show labels, grouped tools open flyouts, and the strip can be dragged to another edge.",
+ "title_fix": null,
+ "appearance": "A near-black bordered canvas holds a short white rounded strip near its bottom edge, made of a small grip and six dark line icons. The chosen tool sits on a white rounded plate, and a small white menu of tool names can open above it.",
+ "behaviour": "The white plate slides from icon to icon as tools are picked. Hovering shows a label with a shortcut, and pressing the corner of a grouped tool opens its flyout; dragging the grip carries the dock across the canvas and it snaps to the nearest edge, turning vertical on the sides.",
+ "parts": [
+  "grip handle",
+  "tool buttons",
+  "selection plate",
+  "tooltip",
+  "flyout menu"
+ ],
+ "demo_content": "Icons for select, hand, shapes, pen, text and comment; the Shapes menu lists Rectangle, Ellipse and Line.",
+ "states": [
+  "hover",
+  "focus",
+  "selected",
+  "open",
+  "dragging"
+ ],
+ "kind": "dock",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "figma style toolbar",
+  "floating tool palette",
+  "icon toolbar with flyout menus",
+  "design app tool dock",
+  "toolbar that snaps to screen edges",
+  "small editor toolbar on canvas",
+  "draggable tools panel",
+  "photoshop like tool strip"
+ ],
+ "resembles": [
+  "Figma toolbar",
+  "Photoshop tool bar"
+ ],
+ "use_when": "A canvas or editor app needs a compact tool switcher that can be thrown out of the way.",
+ "avoid_when": "It assumes a mouse-driven, sized canvas; edge throwing is awkward on touch and icon meaning needs a hover.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a tools array of ids, labels, icons, shortcuts and nested sub-tools. The starting edge, shortcut scope, label and class names are props; plate springs and tooltip timing live in the source.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "A few animated buttons plus a layout spring that settles to a stop when untouched.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Roving focus, single-key shortcuts and menu arrow keys are handled; every button carries a label and pressed state."
+ },
+ "props": [
+  {
+   "name": "tools",
+   "type": "DockTool[]",
+   "default": "DEFAULT_TOOLS",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(toolId: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultEdge",
+   "type": "'top' | 'right' | 'bottom' | 'left'",
+   "default": "\"bottom\"",
+   "required": false
+  },
+  {
+   "name": "onEdgeChange",
+   "type": "(edge: DockEdge) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "shortcuts",
+   "type": "'scoped' | 'global' | 'off'",
+   "default": "\"scoped\"",
+   "required": false
+  },
+  {
+   "name": "ariaLabel",
+   "type": "string",
+   "default": "\"Tools\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"w-44 rounded-xl border border-zinc-200 bg-white p-1 shadow-",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Inactive tool icons are dark grey on the near-black canvas and barely visible at rest.",
+  "The demo shows the dock very small inside a large empty canvas, so its scale is hard to judge."
+ ],
+ "polish": 4,
+ "polish_why": "Precise motion and a tidy dock; dim inactive icons hurt usability on the dark canvas.",
+ "unsure": [],
+ "title": "Editor Toolbar Dock",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0129b03de6cd889e",
+  "film_hash": "3ef99f3c75ff017a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

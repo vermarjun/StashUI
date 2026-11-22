@@ -1,0 +1,72 @@
+{
+  "name": "credit-usage-card",
+  "frames": {
+    "code": "4517",
+    "best": 1,
+    "best_why": "The whole card is visible at rest: meter, toggle, table and footer with no popover covering them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Billing card with a segmented credit meter and a usage table.",
+  "summary": "A monospace credit-usage card: a 56.4% headline, an auto-switch toggle, a long segmented orange meter, a period picker, a four-row usage table and small export and plan actions.",
+  "title_fix": null,
+  "appearance": "A tall dark monospace card. A small Credits Used label over a large 56.4% sits beside a two-line caption and a tiny green toggle. Seventy-five thin orange bars form a meter, then credit labels, a dashed divider, a Usage History heading with a 30 Days pill, a four-column table and a footer with a Manage plan pill.",
+  "behaviour": "The toggle springs its knob between green and grey, and the period pill opens a compact popover of durations with a tick on the chosen one. Usage rows brighten on hover, and the download icon flashes green for a moment after a CSV export.",
+  "parts": ["header", "credit percentage", "auto-switch toggle", "segmented meter", "credit labels", "period picker", "usage table", "footer actions"],
+  "demo_content": "Credits used 56.4%; 56.4M of 100M; rows for Nov 21 gpt-4.1 4.2M $12.60 and similar.",
+  "states": ["hover", "open", "selected", "checked", "success"],
+  "kind": "stat-card",
+  "look": ["dark", "rounded", "technical", "dense"],
+  "tone": "technical",
+  "search_phrases": [
+    "billing usage meter card",
+    "segmented progress bar with percentage",
+    "token spend history table",
+    "api quota dashboard tile",
+    "auto switch at limit toggle",
+    "usage report with export button",
+    "monthly credits consumed card",
+    "model cost breakdown table"
+  ],
+  "resembles": ["OpenAI usage dashboard"],
+  "use_when": "A SaaS or API product shows how much of a monthly quota is spent and which models drove it.",
+  "avoid_when": "Real-time metering: the figures are fixed props and there is no live refresh or error state.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["stat", "data-table"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["layout", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Percentage, the credit labels and the usage history array are props; auto-switch, view-all and plan callbacks are optional, while colours and the 75-segment meter are fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Seventy-five tiny meter bars and a small popover; nothing animates in a loop.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Controls are buttons with titles, but the usage table is built from divs and the toggle has no switch role or state."
+  },
+  "props": [
+    {"name": "usedCreditsPercent", "type": "number", "default": "56.4", "required": false},
+    {"name": "totalCreditsLabel", "type": "string", "default": "\"100M CREDITS\"", "required": false},
+    {"name": "creditsUsedLabel", "type": "string", "default": "\"56.4M\"", "required": false},
+    {"name": "creditsLeftLabel", "type": "string", "default": "\"43.6M\"", "required": false},
+    {"name": "usageHistory", "type": "UsageHistoryItem[]", "default": "[]", "required": false},
+    {"name": "onAutoSwitchChange", "type": "(enabled: boolean) => void", "default": null, "required": false},
+    {"name": "onManagePlan", "type": "() => void", "default": null, "required": false},
+    {"name": "onViewAll", "type": "() => void", "default": null, "required": false}
+  ],
+  "issues": ["The 75 thin meter bars blur into one strip instead of reading as separate segments.", "Table headers, rows and labels are extremely small and low contrast."],
+  "polish": 4,
+  "polish_why": "Dense but tidy billing card with a distinctive meter; tiny type and blurry segments are flaws.",
+  "unsure": ["a11y.focus_visible"]
+}

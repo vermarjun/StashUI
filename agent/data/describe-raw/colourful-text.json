@@ -1,0 +1,104 @@
+{
+  "name": "colourful-text",
+  "frames": {
+    "code": "9050",
+    "best": 6,
+    "best_why": "Every letter sits still and sharp in its own colour, with no blur from the animation cycle.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Each letter of a big heading pulses its own bright colour.",
+  "summary": "A short phrase drawn one letter at a time, each character in a vivid rotating colour that bounces, swells and briefly blurs, with the palette reshuffling every few seconds.",
+  "title_fix": null,
+  "appearance": "A single bold sans-serif phrase on black, about one line wide, every letter a different saturated colour running from green through blue, purple and magenta to orange.",
+  "behaviour": "Letters bounce up a few pixels, swell slightly and blur in and out on a staggered wave, then settle. Every five seconds the colours reshuffle and the whole word animates again.",
+  "parts": [
+    "phrase",
+    "letter",
+    "colour"
+  ],
+  "demo_content": "The words Hello World in large bold capitals.",
+  "states": [],
+  "kind": "text-effect",
+  "look": [
+    "colorful",
+    "bold",
+    "playful",
+    "minimal"
+  ],
+  "tone": "playful",
+  "search_phrases": [
+    "letters that change colour",
+    "rainbow heading animation",
+    "each letter a different bright colour",
+    "playful title for a kids site",
+    "text that bounces and blurs",
+    "colour cycling word animation",
+    "eye catching headline effect",
+    "animated greeting text"
+  ],
+  "resembles": [],
+  "use_when": "A short, playful headline should grab attention, such as a tagline or friendly greeting.",
+  "avoid_when": "Long copy or serious brands: constant colour shifts and blur hurt readability and distract from the message.",
+  "suits": [
+    "marketing",
+    "portfolio",
+    "social"
+  ],
+  "slot_hints": [
+    "headline",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "always",
+      "timer"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "text",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Only the phrase is a prop; the ten-colour palette, shuffle interval and per-letter motion are all fixed in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A span per letter with short transitions and a five-second timer.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Each letter is its own span, so screen readers may read it character by character, and the motion ignores reduced-motion."
+  },
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "default": null,
+      "required": true
+    }
+  ],
+  "issues": [
+    "Mid-cycle every letter blurs heavily and the word becomes briefly unreadable.",
+    "Splitting the phrase into one span per letter can break copying and screen-reader reading."
+  ],
+  "polish": 4,
+  "polish_why": "Vivid per-letter colour is fun and smooth; the blur phase briefly makes the word unreadable.",
+  "unsure": []
+}

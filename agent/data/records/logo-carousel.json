@@ -1,0 +1,113 @@
+{
+ "name": "logo-carousel",
+ "frames": {
+  "code": "1101",
+  "best": 4,
+  "best_why": "Frame 4 shows three bright, crisp logos at once; other frames have a mark mid-fade or almost invisible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "Three columns of customer logos swap in and out on a loop.",
+ "summary": "A slim trust strip: three evenly spaced columns each show one brand mark, cycling through a list so a new logo blurs and rises into place every couple of seconds.",
+ "title_fix": null,
+ "appearance": "On a near-black stage a small centred caption sits above three wide columns, each holding a single large logo, some white and some in brand colour. The columns are spaced apart with generous empty space around each mark.",
+ "behaviour": "Logos change on a timer, each column staggered so they do not swap together. The outgoing mark blurs and drifts up while the next fades into focus, and on first load the columns slide up into place.",
+ "parts": [
+  "caption",
+  "logo column",
+  "brand logo",
+  "logo row"
+ ],
+ "demo_content": "Caption \"Trusted by teams shipping at\" with Apple, Stripe, Vercel, BMW, Lowe's and Supabase marks.",
+ "states": [],
+ "kind": "logo-cloud",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "rotating customer logos under a heading",
+  "brand marks fading in and out",
+  "social proof logo wall",
+  "companies we work with strip",
+  "logos that swap every few seconds",
+  "animated trust badges row",
+  "client logo grid that cycles",
+  "who uses our product logos"
+ ],
+ "resembles": [],
+ "use_when": "You want a slow, always-moving band of customer logos to signal trust without a static grid.",
+ "avoid_when": "Logos must stay readable or clickable: they swap every two seconds and are not links.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "logo-wall"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Only columnCount can be set from outside; the brand list and its SVG marks live in the file, so swapping logos means editing the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of SVG nodes and one 100ms timer; no canvas or layout work.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Logos are decorative SVGs with no accessible names, and the endless cycling ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "columnCount",
+   "type": "number",
+   "default": "2",
+   "required": false
+  }
+ ],
+ "issues": [
+  "A dark logo on the near-black stage nearly vanishes in several frames.",
+  "The strip never pauses on hover, so a logo can change while being read."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth staggered blur transitions; a dark logo can disappear against the background.",
+ "unsure": [],
+ "title": "Logo Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c567b1f4a8015ca9",
+  "film_hash": "e1758d492db17631",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

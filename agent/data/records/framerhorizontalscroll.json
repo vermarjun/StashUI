@@ -1,0 +1,106 @@
+{
+ "name": "framerhorizontalscroll",
+ "frames": {
+  "code": "3720",
+  "best": 1,
+  "best_why": "A full row of square photos is spread across the frame with even gaps, clearly reading as one horizontal strip.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.2
+ },
+ "tagline": "A row of square photos slides sideways as you scroll the page down.",
+ "summary": "A tall page pins a single strip of square photos across its middle and moves the whole strip sideways as you scroll down, so vertical scrolling becomes horizontal travel through the pictures.",
+ "title_fix": null,
+ "appearance": "A horizontal band of square photo tiles with small even gaps, running past both edges of a black page that has wide empty space above and below. The crops range from glass buildings and flowers to mountains and a concert hall.",
+ "behaviour": "Scrolling inside the tall section holds the strip at the same height while shifting the row leftwards, so new photos enter from the right and old ones exit on the left. The travel is tied directly to scroll distance, so it stops the moment scrolling stops.",
+ "parts": [
+  "photo strip",
+  "photo tile",
+  "page section"
+ ],
+ "demo_content": "Square photos of a glass building, a rose, mountains, water lilies, a blue sculpture and a concert hall.",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "dark",
+  "editorial",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photos move sideways when scrolling down",
+  "horizontal image strip driven by scroll",
+  "sticky carousel that slides with the page",
+  "gallery that scrolls across the screen",
+  "scroll jacking photo reel",
+  "side scrolling image row on a landing page",
+  "pictures that pass like a film strip",
+  "vertical scroll turned into horizontal motion"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio wants a long cinematic image sequence instead of a normal clickable slider.",
+ "avoid_when": "The section is three screens tall and seizes the scroll, and sixteen large remote photos all load up front.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "No props: the photo list is a module-level array of image links, and the 300 px tiles, gap and three-screen section height are classes in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Sixteen large remote photos load at once and a scroll listener drives the row.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Every photo uses the placeholder alt text img, and the sideways drift ignores reduced-motion preferences."
+ },
+ "props": [],
+ "issues": [
+  "Every photo's alt text is literally img, so the strip says nothing to screen readers.",
+  "The strip is only 300 px tall, so most of the viewport stays empty black.",
+  "The fifth photo repeats the first, so the reel shows a duplicate."
+ ],
+ "polish": 3,
+ "polish_why": "Immersive strip with crisp photos; the page is mostly empty black and the scroll takeover is heavy.",
+ "unsure": [],
+ "title": "Framer Horizontal Scroll",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6b648539fe49c747",
+  "film_hash": "4576fc1c6b6a5cd6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

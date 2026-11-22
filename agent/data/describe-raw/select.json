@@ -1,0 +1,73 @@
+{
+  "name": "select",
+  "frames": {
+    "code": "1195",
+    "best": 2,
+    "best_why": "Framework menu is open with a tick on the current pick and every option readable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Thin bordered dropdowns that open a short ticked option list.",
+  "summary": "A form of single-choice dropdowns: a 'New project' card holds Framework and Region, with a Timezone control beside it. Each closed box shows its value and a chevron, and opens a dark panel of options.",
+  "title_fix": null,
+  "appearance": "Two dark outlines on black: a 'New project' card with Framework and Region fields, and a bare Timezone field to the right. Each closed control is a thin bordered box with the value on the left and a chevron on the right; the open one is a dark panel of short rows with a tick beside the current pick.",
+  "behaviour": "Clicking a dropdown fades and zooms open a panel of options; moving down highlights a row and choosing one closes the panel and swaps the trigger text. The current value keeps a tick beside it.",
+  "parts": ["card", "section title", "field label", "trigger box", "chevron", "option row", "check mark"],
+  "demo_content": "Frameworks Next.js, Remix, Astro and Vite; regions Washington, Frankfurt and Singapore; timezones grouped by continent.",
+  "states": ["hover", "focus", "open", "selected"],
+  "kind": "select",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "choose a framework from a dropdown",
+    "form field with a chevron list",
+    "pick a region from options",
+    "grouped timezone list with headers",
+    "menu with a tick on the current value",
+    "dropdown in a new project form",
+    "single choice dropdown control",
+    "box that lists options when clicked"
+  ],
+  "resembles": [],
+  "use_when": "A form needs one value picked from a short list that can be grouped under headings.",
+  "avoid_when": "The closed box holds one line only, so long option names are clipped with an ellipsis.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["background", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "You compose triggers, groups, headings, items and separators; trigger width and content positioning are props, and colours come from classes.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "A small portal panel with a few rows; nothing runs while it is closed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Type-ahead, arrows, Escape and linked labels come from the primitive, but the zoom and slide ignore reduced-motion settings."
+  },
+  "props": [
+    {"name": "defaultValue", "type": "string", "default": null, "required": false},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "position", "type": "string", "default": "popper", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The Timezone field sits outside the card with no panel around it, unlike the other fields",
+    "The open menu overlaps the Region field below it"
+  ],
+  "polish": 3,
+  "polish_why": "Ordered form with clear selected ticks; the stray Timezone field and overlap look unfinished.",
+  "unsure": []
+}

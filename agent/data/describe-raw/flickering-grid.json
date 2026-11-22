@@ -1,0 +1,72 @@
+{
+  "name": "flickering-grid",
+  "frames": {
+    "code": "3372",
+    "best": 4,
+    "best_why": "The square field is densest and brightest here, so the whole texture reads at once.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Small pale squares blink brighter and dimmer at random.",
+  "summary": "A canvas backdrop of small squares scattered on black where each square changes its opacity at random, so the field flickers like distant static.",
+  "title_fix": null,
+  "appearance": "A black stage filled with a loose grid of small pale squares at varying opacity, densest near the middle and fading toward the edges. A rounded dark card with a heading and caption sits in the centre.",
+  "behaviour": "Squares randomly switch their opacity many times a second, so patches of the grid blink brighter and dimmer while the overall field holds its place.",
+  "parts": ["square grid", "flickering squares", "edge fade", "captioned card"],
+  "demo_content": "The centre card reads \"Flickering Grid\" over the line \"Canvas squares that fade in and out at random.\"",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "monochrome", "dense", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "random flickering squares background",
+    "static noise grid texture",
+    "canvas cells blinking on black",
+    "twinkling pixel grid backdrop",
+    "subtle shimmering dot grid",
+    "animated matrix style background",
+    "faint moving squares for hero",
+    "digital static page texture"
+  ],
+  "resembles": [],
+  "use_when": "A dark section wants a living, faintly digital texture behind a short message.",
+  "avoid_when": "Dense text: the constant random blinking is distracting beside small type.",
+  "suits": ["saas", "devtool", "ai-chat"],
+  "slot_hints": ["page-background", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background", "fill"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Square size, gap, flicker chance, colour, max opacity and explicit width or height are props; the fade mask comes from a class.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A requestAnimationFrame loop redraws thousands of canvas squares every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The canvas is decorative with no text alternative, and the constant flicker ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "squareSize", "type": "number", "default": "4", "required": false},
+    {"name": "gridGap", "type": "number", "default": "6", "required": false},
+    {"name": "flickerChance", "type": "number", "default": "0.3", "required": false},
+    {"name": "color", "type": "string", "default": "\"rgb(0, 0, 0)\"", "required": false},
+    {"name": "maxOpacity", "type": "number", "default": "0.3", "required": false},
+    {"name": "width", "type": "number", "default": null, "required": false},
+    {"name": "height", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The flicker has no reduced-motion handling and can bother photosensitive users."],
+  "polish": 3,
+  "polish_why": "Even field and believable flicker, but it is a generic effect and the caption is faint.",
+  "unsure": []
+}

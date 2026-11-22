@@ -1,0 +1,162 @@
+{
+ "name": "GooeyNav-TS-TW",
+ "frames": {
+  "code": "1687",
+  "best": 4,
+  "best_why": "A large gooey white blob is merging toward the Contact pill, showing the splash transition at its peak.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "Gooey white blobs splash the active link into a pill.",
+ "title_fix": null,
+ "summary": "A short row of links keeps one item wrapped in a white pill. Clicking another link launches a cluster of soft white blobs that merge into a new pill around the chosen label.",
+ "appearance": "Four short white labels sit in a row on a near-black stage, spaced widely apart. The current item is wrapped in a white rounded pill with black text, and stray white dots can hover around it.",
+ "behaviour": "Clicking a link throws a spray of soft white particles across the row, which blob together into a white pill under that label while its text turns black.",
+ "parts": [
+  "nav links",
+  "active pill",
+  "flying particles",
+  "link text"
+ ],
+ "demo_content": "Four links labelled Home, About, Work and Contact.",
+ "states": [
+  "active",
+  "selected"
+ ],
+ "kind": "site-header",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "links with a blob that jumps between them",
+  "nav item highlighted by a moving pill",
+  "gooey particles on menu click",
+  "animated menu indicator for a website",
+  "white pill sliding under active link",
+  "black background navigation with white buttons",
+  "liquid blob tab selector",
+  "top nav with squishy active state"
+ ],
+ "resembles": [],
+ "use_when": "A short site menu should make switching sections feel playful and obvious.",
+ "avoid_when": "It is a minimal link row rather than a full header, and the particles add noise for frequent use.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Items with a label and href, plus animation time, particle count, distances, radius, time variance, colour indexes and start index are props.",
+ "technique": [
+  "css-keyframes",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A few links and about fifteen short-lived particle spans per click; idle otherwise.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Links fire on Enter and Space, but outline-none removes the focus ring and the particles ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "GooeyNavItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationTime",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "particleDistances",
+   "type": "[number, number]",
+   "default": "[90, 10]",
+   "required": false
+  },
+  {
+   "name": "particleR",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "timeVariance",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "number[]",
+   "default": "[1, 2, 3, 1, 2, 3, 1, 4]",
+   "required": false
+  },
+  {
+   "name": "initialActiveIndex",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Links have no visible focus ring, so the keyboard position is hidden."
+ ],
+ "polish": 4,
+ "polish_why": "A crisp gooey transition on a clean little menu; the effect is fun though the row feels bare.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "GooeyNav",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "eeacaeb519d7657e",
+  "film_hash": "8d584b54345c9335",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

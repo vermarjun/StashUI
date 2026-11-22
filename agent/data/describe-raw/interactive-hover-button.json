@@ -1,0 +1,68 @@
+{
+  "name": "interactive-hover-button",
+  "frames": {
+    "code": "6348",
+    "best": 3,
+    "best_why": "The dot has flooded the pill pale and the second label is in place, the hover state at rest.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dot swells to fill the pill on hover as the label slides out for an arrow.",
+  "summary": "A rounded button whose small dot grows to flood the whole pill when hovered. The resting label drifts away and a second copy with a right arrow slides in.",
+  "title_fix": null,
+  "appearance": "Inside a dark card sit a tiny outlined badge, a bold heading and a line of grey copy, with a pill button at the bottom. The button has a thin border, a small round dot at its left and white text; hovered, the pill turns pale and the text dark.",
+  "behaviour": "On hover the dot scales up to cover the button over a third of a second while the first label slides right and fades and a second label with a right arrow slides in. Leaving the button runs the same transition back.",
+  "parts": ["pill", "leading dot", "label", "arrow"],
+  "demo_content": "Badge \"New in v2.4\", heading \"Ship interfaces faster\", explanatory copy and a button labelled Get started",
+  "states": ["hover"],
+  "kind": "button",
+  "look": ["dark", "rounded", "pill", "minimal", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "dot grows to fill the button on hover",
+    "label slides away and an arrow appears",
+    "pill button with a sweeping fill",
+    "call to action that swaps text on hover",
+    "button with a growing circle behind text",
+    "hover animation for a get started button",
+    "text swap on hover with arrow",
+    "small dot expanding into a filled pill"
+  ],
+  "resembles": [],
+  "use_when": "A primary call to action wants a moment of motion without changing its size or the layout.",
+  "avoid_when": "Touch-first layouts, where hover never fires, and labels people need to keep reading while they aim.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["primary-cta", "hero", "feature-card"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label is children and is rendered twice, once at rest and once with the arrow on hover; colours follow theme tokens, while size and radius come from className.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Two short CSS transitions on a scale and a translate, idle when not hovered.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The arrow label only appears on hover, so keyboard and touch users never see the finished state."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The hovered label sits grey on a pale pill, noticeably weaker contrast than at rest."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp motion and clear hierarchy; the hovered label's contrast is the weak point.",
+  "unsure": []
+}

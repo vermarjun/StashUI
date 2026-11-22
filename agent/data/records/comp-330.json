@@ -1,0 +1,118 @@
+{
+ "name": "comp-330",
+ "frames": {
+  "code": "8321",
+  "best": 3,
+  "best_why": "Frame 3 shows all three plan rows with Standard selected and the full feature list.",
+  "usable": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.4
+ },
+ "tagline": "Plan chooser lists three tiers with radios and ticks what each gives.",
+ "summary": "A trigger opens a tall narrow dialog listing three plans as radio rows with prices, a checked feature list below, and Change plan and Cancel buttons.",
+ "title_fix": null,
+ "appearance": "Closed, an outlined Change plan button. Open, a tall narrow dark dialog with a refresh icon, a title and grey subtitle, three bordered rows each holding a name, price and radio, the picked row tinted, then a six-line ticked feature list, a white Change plan and a ghost Cancel.",
+ "behaviour": "Choosing a row moves the tint and fills its radio; Standard starts selected. Change plan does nothing, and Cancel, Escape or the X closes.",
+ "parts": [
+  "trigger button",
+  "refresh icon",
+  "title",
+  "plan rows",
+  "radio marks",
+  "feature checklist",
+  "change plan button",
+  "cancel button"
+ ],
+ "demo_content": "Plans Essential at $4, Standard at $19 and Enterprise at $32 per member/month, with six feature lines.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected"
+ ],
+ "kind": "modal",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "change subscription plan popup",
+  "upgrade plan dialog with prices",
+  "plan picker radio cards",
+  "switch membership tier modal",
+  "choose plan with feature list",
+  "pricing options in a dialog",
+  "upgrade or downgrade plan window",
+  "select a plan and confirm"
+ ],
+ "resembles": [],
+ "use_when": "An existing customer needs to switch tiers without leaving the app screen.",
+ "avoid_when": "Prices, plan names and feature lines are fixed, and Change plan has no submit action.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "background",
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Plan names, prices, feature list and the default selection are hardcoded; the component takes no props.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One dialog with a three-item radio group and a static list.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Plan rows are proper radios with descriptions, but each row removes its own outline and relies on the radio's focus ring."
+ },
+ "props": [],
+ "issues": [
+  "Change plan has no handler, so the selected plan is not applied.",
+  "Prices are fixed to monthly per-member billing with no interval switch."
+ ],
+ "polish": 4,
+ "polish_why": "Clear plan chooser with a real selected state; the inert confirm is the only gap.",
+ "unsure": [
+  "focus_visible",
+  "theme"
+ ],
+ "title": "Change Plan Dialog",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ca410653beb0553e",
+  "film_hash": "65ce84076739e381",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

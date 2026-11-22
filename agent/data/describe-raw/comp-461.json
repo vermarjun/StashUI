@@ -1,0 +1,67 @@
+{
+  "name": "comp-461",
+  "frames": {
+    "code": "8099",
+    "best": 1,
+    "best_why": "Shows the whole joined bar with all cells, page 3 shaded and the cursor away.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Page numbers joined into one segmented bar with arrow ends.",
+  "summary": "A single pill-shaped pager whose cells hold a back chevron, pages 1 to 4, an ellipsis and a forward chevron, split by thin borders with the current page shaded.",
+  "title_fix": null,
+  "appearance": "One long rounded bar on black is divided into bordered cells: a left chevron, pages 1 to 4, a three-dot ellipsis and a right chevron, with only the outer ends rounded. The active page cell is filled a shade lighter than the rest.",
+  "behaviour": "Hovering a cell fills it grey while the current page keeps its shading. The demo holds the page at 3, so the joined bar never changes width.",
+  "parts": ["segmented bar", "back chevron", "page cell", "active page", "ellipsis", "forward chevron"],
+  "demo_content": "Pages 1 to 4 with page 3 active and an ellipsis.",
+  "states": ["hover", "focus", "selected", "disabled"],
+  "kind": "pagination",
+  "look": ["dark", "minimal", "outlined", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "pagination as one joined bar",
+    "segmented page buttons with borders",
+    "connected pager cells",
+    "page numbers in a single pill",
+    "arrows at both ends of page list",
+    "toolbar style pagination",
+    "outlined page selector",
+    "row of page cells split by lines"
+  ],
+  "resembles": [],
+  "use_when": "A compact footer where the page controls should read as one unit, like a toolbar.",
+  "avoid_when": "When the row must wrap on a phone: it is a single non-wrapping bar of cells.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["data-table", "footer"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["background", "text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass currentPage, totalPages and the slot count; the joined outline cells, dividers and rounded outer ends are fixed classes.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A single row of outlined cells; only hover fills and active shading.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Chevrons are labelled and focus is visible on cells; the hover fills have no reduced-motion handling."
+  },
+  "props": [
+    {"name": "currentPage", "type": "number", "default": null, "required": true},
+    {"name": "totalPages", "type": "number", "default": null, "required": true},
+    {"name": "paginationItemsToDisplay", "type": "number", "default": "5", "required": false}
+  ],
+  "issues": ["The ellipsis is drawn as an outlined cell but is not clickable, so it looks like a button."],
+  "polish": 4,
+  "polish_why": "Crisp joined cells and even dividers; a genuinely different take on a pager.",
+  "unsure": []
+}

@@ -1,0 +1,66 @@
+{
+  "name": "feature-bento",
+  "frames": {
+    "code": "6800",
+    "best": 2,
+    "best_why": "The large mountain tile and the top of the second row are sharp, with no cursor over the cards.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The second row of tiles is cut off by the recording, showing only its top edge.",
+    "shows_interaction": "no"
+  },
+  "tagline": "Bento grid of blue cards around a mountain hero tile.",
+  "title_fix": null,
+  "summary": "A bento feature grid on a pale page: one large mountain photo card with a headline, plus smaller tiles for a statistic, a feature, a pass call to action and two more numbers.",
+  "appearance": "A pale page holding a rounded grid of tiles: a large mountain photo washed in blue with a Live Adventures pill, a tall blue stat tile reading 2,847, and a white Instant Routes card. Dark and blue tiles begin a second row below.",
+  "behaviour": "Static in the recording: the tiles do not move. In the code the mountain photo zooms slightly and the Join Now arrow circle rotates on hover, while a dot on the community stat keeps pulsing.",
+  "parts": ["hero tile", "live pill", "headline", "stat tile", "feature tile", "join now tile", "arrow circle"],
+  "demo_content": "'Explore Beyond Boundaries' headline, 2,847 Peaks Conquered, Instant Routes and a mountain photo.",
+  "states": ["hover"],
+  "kind": "feature-section",
+  "look": ["gradient", "colorful", "rounded", "airy"],
+  "tone": "decorative",
+  "search_phrases": [
+    "bento grid of feature tiles",
+    "mountain photo card in a grid",
+    "dashboard style stat tiles mixed sizes",
+    "blue gradient cards with rounded corners",
+    "feature section with big and small cards",
+    "outdoor app landing features",
+    "grid with numbers and a call to action",
+    "bento layout for saas features"
+  ],
+  "resembles": [],
+  "use_when": "Several messages, a hero, stats and a call to action, must share one compact grid.",
+  "avoid_when": "Rows are fixed at 280px and every tile is hardcoded to the hiking theme.",
+  "suits": ["marketing", "saas", "mobile-app"],
+  "slot_hints": ["feature-card", "stat"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["image", "children"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Copy, numbers, image URL and gradient stops are inline in the JSX; the 280px row height is set on the grid.",
+  "technique": ["css-transition", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "A static grid with CSS hover zooms and one pulsing dot.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The Join Now tile is a div with a pointer cursor, so it cannot be focused or reached by keyboard."
+  },
+  "props": [],
+  "issues": [
+    "The second row is cut off by the recording, so the bento is never seen whole.",
+    "The Join Now tile looks clickable but is a plain div with no keyboard access."
+  ],
+  "polish": 4,
+  "polish_why": "Rich blue gradients and a strong photo tile; the small stat labels are faint.",
+  "unsure": ["frames.shows_interaction", "frames.best"]
+}

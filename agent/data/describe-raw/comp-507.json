@@ -1,0 +1,111 @@
+{
+  "name": "comp-507",
+  "frames": {
+    "code": "3847",
+    "best": 4,
+    "best_why": "All of October is shaded from 1 to 31 with the Last month preset hovered.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Calendar with preset range buttons for common reporting periods.",
+  "summary": "A bordered panel pairing a column of range shortcuts (Today, Yesterday, Last 7 days, Last month and more) with a month calendar. Presets jump the month and shade their span while future days stay greyed out.",
+  "title_fix": null,
+  "appearance": "A black panel split by a divider: the left strip stacks eight small text buttons, the right holds \"November 2026\" between angle arrows, weekday initials and day numbers. Chosen ranges get white circular ends and a grey band, and days after today are dimmed.",
+  "behaviour": "Pressing a shortcut repaints the calendar for that period: Last month fills all of October and moves the month back. Picking days by hand sets new ends, and clicking elsewhere on the grid restarts the range.",
+  "parts": [
+    "preset button",
+    "month heading",
+    "nav arrows",
+    "weekday row",
+    "day grid",
+    "range band",
+    "range end circle",
+    "disabled day"
+  ],
+  "demo_content": "November 2026 set to the last seven days, then October 2026 with the whole month chosen.",
+  "states": [
+    "hover",
+    "selected",
+    "disabled",
+    "focus"
+  ],
+  "kind": "calendar",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "minimal",
+    "dense"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "date range picker with quick presets",
+    "last 7 days and last month shortcuts",
+    "calendar with common period buttons",
+    "analytics date filter with presets",
+    "choose a reporting period from a list",
+    "calendar range with future days disabled",
+    "quick date range menu beside calendar",
+    "pick this month or year to date"
+  ],
+  "resembles": [],
+  "use_when": "People mostly want standard reporting periods and only occasionally a made-up span.",
+  "avoid_when": "Only past dates can be chosen, so it cannot be reused for booking or scheduling ahead.",
+  "suits": [
+    "dashboard",
+    "saas",
+    "fintech"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "hover",
+      "keyboard"
+    ],
+    "motion": "none",
+    "affects": [
+      "background",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The eight preset labels and the last-seven-days default are written in the file; changing presets, the past-only rule or the caption is a source edit.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "A single month grid and eight text buttons; nothing animates.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Presets are plain text buttons with no pressed state, so a screen reader cannot tell which range is active."
+  },
+  "props": [],
+  "issues": [
+    "No preset shows which range is currently selected.",
+    "Future days are disabled but nothing states why they cannot be clicked.",
+    "The caption credits the calendar library instead of describing the filter."
+  ],
+  "polish": 4,
+  "polish_why": "Clear split of presets and calendar with a readable range band; presets lack an active state.",
+  "unsure": [
+    "states"
+  ]
+}

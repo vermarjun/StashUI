@@ -1,0 +1,74 @@
+{
+  "name": "blob-card",
+  "frames": {
+    "code": "9098",
+    "best": 6,
+    "best_why": "The pink blob header is at its brightest and the whole card with all features is visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Soft pink blobs drift across the header while a glow circles the card.",
+  "summary": "A dark pricing card for a Pro plan at $99, whose header is a pool of blurred pink blobs that drift and chase the cursor. A slow conic glow runs around the card edge, with a CTA and a feature list below.",
+  "title_fix": null,
+  "appearance": "A tall rounded card on black with a magenta-pink header of soft blurred blobs holding Pro, an early-supporter tag and a big $99 beside a struck $149. A white Get Instant Access button sits above five icon-and-text features and a small footer line.",
+  "behaviour": "The blobs drift on their own and lean toward the pointer when it enters the header, while a conic glow slowly rotates around the card border. Blob size and opacity keep pulsing; the text and button stay still.",
+  "parts": ["blob header", "plan label", "price", "struck price", "cta button", "feature list", "feature icon", "glow border"],
+  "demo_content": "Pro plan at $99 (was $149), one-time, with five features like all premium components and direct support.",
+  "states": ["hover"],
+  "kind": "pricing-card",
+  "look": ["dark", "glow", "gradient", "rounded"],
+  "tone": "decorative",
+  "search_phrases": [
+    "pricing card with glowing blob header",
+    "fluid gradient card border",
+    "smooth blob background card",
+    "premium plan card with pink glow",
+    "animated gradient border around a card",
+    "lifetime access pricing card",
+    "cursor following blob header",
+    "one time payment plan card"
+  ],
+  "resembles": [],
+  "use_when": "A pricing or product card should feel premium and alive without extra imagery or stock photos.",
+  "avoid_when": "The pink palette is hardcoded and large blurred layers are costly, so it fights a neutral brand and weak devices.",
+  "suits": ["saas", "marketing", "fintech"],
+  "slot_hints": ["pricing-card", "feature-card", "hero"],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "continuous",
+    "affects": ["background", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass header and children nodes, plus headerHeight, light, dark and glow colour arrays and className. The blob physics and glow timing are in the source.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Four blurred blobs and a rotating conic glow animate every frame; blur is the main cost.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The animated blob and glow layers are not marked aria-hidden and ignore reduced-motion, so they keep pulsing for everyone."
+  },
+  "props": [
+    {"name": "header", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "headerHeight", "type": "number", "default": "224", "required": false},
+    {"name": "lightColors", "type": "string[]", "default": "DEFAULT_LIGHT", "required": false},
+    {"name": "darkColors", "type": "string[]", "default": "DEFAULT_DARK", "required": false},
+    {"name": "glowColors", "type": "string[]", "default": "DEFAULT_GLOW", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The rotating glow border is so faint it is easy to miss against the dark stage.",
+    "Feature icons and light grey body text are low contrast on the dark card."
+  ],
+  "polish": 4,
+  "polish_why": "Premium bottled-blob header and a tidy feature list; faint body text and a barely visible glow.",
+  "unsure": ["content_from", "traits.theme"]
+}

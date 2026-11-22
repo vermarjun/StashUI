@@ -1,0 +1,149 @@
+{
+ "name": "cloud-shader",
+ "frames": {
+  "code": "4868",
+  "best": 4,
+  "best_why": "Several cloud layers at different depths are visible with the sun haze and a clear sky gradient.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Soft white clouds drift across a blue sky behind whatever sits on it.",
+ "summary": "A full-bleed animated sky with layered procedural clouds drifting past a sunlit haze, used as a backdrop that holds any centred content.",
+ "title_fix": null,
+ "appearance": "A pale blue sky deepens toward the top and turns hazy near the horizon, filled with soft white clouds of several sizes. Nearest clouds show bright sunlit tops and grey underbellies, with a faint warm glow high on the right and thin cirrus streaks above.",
+ "behaviour": "Clouds drift sideways at different speeds in parallax layers, wrapping around the edges and bobbing gently, while thin high streaks slide more slowly. The loop runs forever and ignores the pointer; overlaid content stays fixed.",
+ "parts": [
+  "sky",
+  "clouds",
+  "sun haze",
+  "headline",
+  "buttons"
+ ],
+ "demo_content": "Now in public beta; headline Ship to the cloud without thinking about it; buttons Start deploying and Read the docs.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "light",
+  "gradient",
+  "airy",
+  "organic"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "drifting clouds background animation",
+  "blue sky with moving clouds",
+  "procedural cloud backdrop",
+  "sky video loop for hero",
+  "soft clouds behind a headline",
+  "animated weather background",
+  "cloudy sky page background",
+  "parallax clouds landing page"
+ ],
+ "resembles": [],
+ "use_when": "A landing section or app shell needs a calm moving sky as a backdrop with content layered on top.",
+ "avoid_when": "Low-power or data-saver contexts: it runs a WebGL frame loop continuously and never pauses on scroll.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "light",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Speed, cloud count, cloud tint and the top and bottom sky colours are props; size and layout come from class names, while the cloud shapes themselves need a shader edit.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A raw WebGL shader redraws the full canvas every animation frame, forever.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The canvas is unlabelled but purely decorative; reduced motion freezes the clouds at their start position."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "count",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "cloudColor",
+   "type": "string",
+   "default": "\"#fbf8f2\"",
+   "required": false
+  },
+  {
+   "name": "skyTopColor",
+   "type": "string",
+   "default": "\"#3876ba\"",
+   "required": false
+  },
+  {
+   "name": "skyBottomColor",
+   "type": "string",
+   "default": "\"#8cbfe8\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo's small subcopy and secondary button fade into the bright cloud areas."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing soft cloud layers and a calm palette; the demo copy is faint in places.",
+ "unsure": [],
+ "title": "Cloud Shader",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4a0fd073ef2939b0",
+  "film_hash": "f1cff2a48f0928b3",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

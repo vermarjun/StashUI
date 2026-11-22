@@ -1,0 +1,67 @@
+{
+  "name": "image-hover-accordion",
+  "frames": {
+    "code": "4094",
+    "best": 1,
+    "best_why": "One photo is fully open with its title and full description over a dark gradient, while the four slivers stay legible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hovering a thin photo sliver widens it and slides in its caption.",
+  "summary": "Five landscape photos sit side by side as narrow vertical strips; the strip under the pointer grows into a large picture and fades in a title and short description over a bottom gradient.",
+  "title_fix": null,
+  "appearance": "A row of five upright photo panels on a dark stage, one much wider than the other four. The open panel is a rounded landscape shot with a soft dark fade along its lower edge, where a white title and a smaller grey paragraph sit.",
+  "behaviour": "Moving the pointer onto any strip makes it expand to several times the width of the rest while the others stay as thin slivers. Its caption fades and lifts in shortly after the width settles; pressing on a strip gives a small shrink.",
+  "parts": ["photo strip", "open photo", "gradient overlay", "caption title", "caption text"],
+  "demo_content": "Mountain, snow and building photos titled Misty Mountain Peaks and Autumn Mountain Retreat.",
+  "states": ["hover", "active"],
+  "kind": "image-effect",
+  "look": ["rounded", "colorful", "dark", "editorial"],
+  "tone": "minimal",
+  "search_phrases": [
+    "expanding image strip on hover",
+    "horizontal photo accordion gallery",
+    "photos that widen when you point at them",
+    "portfolio strip with captions",
+    "narrow images that open to full size",
+    "hover to reveal photo title and text",
+    "interactive image list for a studio site",
+    "sideways gallery with one big picture"
+  ],
+  "resembles": [],
+  "use_when": "A portfolio or travel page needs a compact row of images that opens one at a time with its story.",
+  "avoid_when": "The open panel is a hard 450 px wide, so the whole row does not shrink into a phone column.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "There are no props: titles, descriptions, image links and tags live in the items array in the file, and the open width and timing are classes in the source.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "Five image panels with one width transition; nothing runs while the pointer is still.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Panels are plain divs that only respond to hover and click, so no keyboard path exists, and the images carry no alt text."
+  },
+  "props": [],
+  "issues": [
+    "A white building photo is labelled Misty Mountain Majesty, so image and title disagree.",
+    "The row is fixed at roughly 650 px, so it overflows a narrow phone screen.",
+    "Captions fade out during a switch, leaving an open panel with no text for a moment."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth widening and a clean caption gradient; white titles wash out on bright photos.",
+  "unsure": ["content_from"]
+}

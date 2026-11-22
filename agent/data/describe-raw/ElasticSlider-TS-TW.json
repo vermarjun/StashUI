@@ -1,0 +1,72 @@
+{
+  "name": "ElasticSlider-TS-TW",
+  "frames": {
+    "code": "3479",
+    "best": 4,
+    "best_why": "The track is stretched past its right end and the speaker icon enlarged, the one frame that shows the elastic stretch.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A volume bar stretches past its end and snaps back.",
+  "summary": "A flat grey slider sets a value shown above it, with a muted speaker on the left and a loud one on the right. Dragging beyond an end stretches the track and grows that icon until it springs back.",
+  "title_fix": null,
+  "appearance": "Inside a dark rounded card, a thin grey track runs between a muted speaker icon and a louder one, its filled part a slightly darker grey. A small number sits centred above the bar, under a 'Volume' title and a line of helper text.",
+  "behaviour": "Dragging the bar moves the filled portion and updates the number above. Pulling past either end stretches the track outward and enlarges the end icon, both springing back on release.",
+  "parts": ["volume title", "helper text", "value label", "mute icon", "slider track", "speaker icon"],
+  "demo_content": "Card heading 'Volume', helper line 'Pull past either end to feel the stretch.', and values between 0 and 100.",
+  "states": ["hover", "dragging"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "flat", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "volume bar that stretches when pulled",
+    "slider with springy overscroll",
+    "audio level control with icons",
+    "range input that bounces at the ends",
+    "volume setting inside a settings card",
+    "rubber band slider effect",
+    "mute and speaker volume bar",
+    "drag control for music player"
+  ],
+  "resembles": [],
+  "use_when": "A volume or intensity control should feel playful and show its limits with a physical stretch.",
+  "avoid_when": "The track only responds to pointer drags and has no keyboard or screen-reader support.",
+  "suits": ["saas", "dashboard", "mobile-app"],
+  "slot_hints": ["form-field", "decoration"],
+  "traits": {
+    "trigger": ["drag", "hover"],
+    "motion": "pronounced",
+    "affects": ["fill", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Starting value, default value, maximum, step size, stepped mode and the two end icons are props; the surrounding card is demo markup.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One motion value drives a single track transform, springing only while dragged.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The bar is a plain div with pointer handlers: no role, no tab stop and no value announcement, so it cannot be used without a mouse."
+  },
+  "props": [
+    {"name": "defaultValue", "type": "number", "default": "50", "required": false},
+    {"name": "startingValue", "type": "number", "default": "0", "required": false},
+    {"name": "maxValue", "type": "number", "default": "100", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "isStepped", "type": "boolean", "default": "false", "required": false},
+    {"name": "stepSize", "type": "number", "default": "1", "required": false},
+    {"name": "leftIcon", "type": "React.ReactNode", "default": "-", "required": false},
+    {"name": "rightIcon", "type": "React.ReactNode", "default": "+", "required": false}
+  ],
+  "issues": ["The helper line and value label are faint grey on the dark card, low enough to be hard to read."],
+  "polish": 4,
+  "polish_why": "The stretch and snap is a nice touch and the card is tidy, though the track styling is plain grey.",
+  "unsure": []
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-259",
+  "frames": {
+    "code": "9997",
+    "best": 4,
+    "best_why": "The readout is at 115 with the fill longest and both square buttons in view, showing the control at work.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Square minus and plus buttons nudge a value either side of a slider.",
+  "summary": "A numeric setting with small outlined buttons at both ends of a slider. Buttons step the value up or down by five, the track can also be dragged, and the count above updates.",
+  "title_fix": null,
+  "appearance": "A line of figures sits at the top left. Below, a small rounded square with a minus sign, a long grey track with a white filled length and a round knob, and a matching square with a plus sign.",
+  "behaviour": "Each press of plus or minus moves the value by five and repaints the filled track, while dragging the knob sets it directly. The buttons grey out when the value reaches the bottom or top of the range.",
+  "parts": ["value label", "minus button", "track", "filled track", "knob", "plus button"],
+  "demo_content": "The label reads 100 credits/mo and steps through 105, 110 and 115 while the plus button is pressed.",
+  "states": ["hover", "focus", "active", "disabled"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "rounded", "outlined", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "minus and plus buttons around a slider",
+    "increment a value in small steps",
+    "range bar with two square buttons",
+    "adjust a number by clicking or dragging",
+    "quantity picker for a plan limit",
+    "value control with add and subtract",
+    "slider flanked by icon buttons",
+    "dial in a figure with fine steps"
+  ],
+  "resembles": [],
+  "use_when": "A figure should move in predictable small steps, with dragging for a bigger jump.",
+  "avoid_when": "Step size and range are fixed at five over 0 to 200, so another scale means a source edit.",
+  "suits": ["saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "drag", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Minimum, maximum, step and starting value sit in the source, and the label text is built from the value. Button icons and sizes need edits.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Two small buttons and one slider; no animation runs between presses.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Buttons are well named, but the slider's accessible name wrongly calls it a dual range slider."
+  },
+  "props": [],
+  "issues": ["The slider's screen-reader name describes a dual range control although it has a single handle."],
+  "polish": 3,
+  "polish_why": "Tidy and functional, but the pieces are standard outlined buttons and a stock track.",
+  "unsure": []
+}

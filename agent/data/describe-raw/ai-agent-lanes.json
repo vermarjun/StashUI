@@ -1,0 +1,69 @@
+{
+  "name": "ai-agent-lanes",
+  "frames": {
+    "code": "7463",
+    "best": 6,
+    "best_why": "Every lane is complete, a step tooltip is open and the final answer is typed out.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A playhead sweeps a gantt chart as one agent fans work out to three helpers.",
+  "summary": "A dark card that replays an AI run: a lead lane forks into parallel sub-agent lanes of tool-call bars on a timed track, with hover tooltips, a scrubber and a transcript that types out the final answer.",
+  "title_fix": null,
+  "appearance": "A rounded dark card holds a tiny status line and a white task question above four named lanes. Coloured horizontal bars (teal for search and read, grey for thinking, white for writing) sit on a dashed track with a vertical playhead, second ruler and a small tool legend; the transcript fills the bottom.",
+  "behaviour": "On first view a playhead moves left to right, bars grow under it, curved lines connect the lead to each sub-agent and finished lanes swap their dot for a teal tick. Hovering a bar opens a tooltip, the play button pauses or replays, and the answer types out as the last lead step runs.",
+  "parts": ["status line", "task question", "lane labels", "timeline bars", "connector lines", "playhead", "time ruler", "transcript"],
+  "demo_content": "Task about a 30-person May offsite; lanes Flights, Venues and Weather; answer recommends Lisbon.",
+  "states": ["hover", "selected", "loading", "success"],
+  "kind": "chart",
+  "look": ["dark", "minimal", "technical", "rounded"],
+  "tone": "technical",
+  "search_phrases": [
+    "gantt chart of ai agents working",
+    "watch sub agents run in parallel",
+    "timeline of tool calls per agent",
+    "agent orchestration progress view",
+    "multi agent activity visualization",
+    "scrub through an ai run",
+    "lead agent handing tasks to workers",
+    "parallel task lanes with a playhead"
+  ],
+  "resembles": [],
+  "use_when": "You want to show how a lead agent split work across sub-agents, step by step, with real timings.",
+  "avoid_when": "Small screens or dense pages: four lanes, a ruler and a transcript need width to stay legible.",
+  "suits": ["ai-chat", "devtool", "saas"],
+  "slot_hints": ["chart", "body-text"],
+  "traits": {
+    "trigger": ["viewport", "click", "hover"],
+    "motion": "pronounced",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Task, lanes, answer and an optional elapsed clock are props; the tool colours, bar shapes and pixel masks live in the source.",
+  "technique": ["motion-library", "js-animation", "svg"],
+  "weight": "moderate",
+  "weight_why": "A requestAnimationFrame loop redraws the bars while the run plays; it idles when paused or done.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Play, scrub and lane controls are labelled and keyboard reachable; reduced motion jumps straight to the finished run."
+  },
+  "props": [
+    {"name": "task", "type": "string", "default": "\"Where should our 30-person team meet for a May offsite?\"", "required": false},
+    {"name": "lanes", "type": "AgentLane[]", "default": "DEMO_LANES", "required": false},
+    {"name": "answer", "type": "string", "default": "DEMO_ANSWER", "required": false},
+    {"name": "elapsed", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Status, ruler ticks and legend text are tiny and faint on the dark card."],
+  "polish": 4,
+  "polish_why": "Dense but clear agent trace view with useful controls; the smallest labels are hard to read.",
+  "unsure": ["kind", "theme"]
+}

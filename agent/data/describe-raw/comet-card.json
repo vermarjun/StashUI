@@ -1,0 +1,127 @@
+{
+  "name": "comet-card",
+  "frames": {
+    "code": "9387",
+    "best": 5,
+    "best_why": "The card is tilted toward the viewer with the white glare bloom sitting mid-photo and the pointer visible.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A portrait card tips in 3D and a white glare follows the cursor.",
+  "summary": "A dark portrait card that leans and shifts in 3D under the pointer while a soft white spotlight trails across its surface and the frame lifts slightly.",
+  "title_fix": null,
+  "appearance": "A narrow dark card holds a portrait photo of a head against a blue backdrop, with a small mono footer reading 'Comet Invitation' and '#F7RA'. The card floats on black with a heavy soft shadow.",
+  "behaviour": "As the pointer moves over the card it tilts toward the cursor, slides a little the same way, scales up and lifts, while a white radial glare tracks the pointer. Leaving settles it flat.",
+  "parts": [
+    "card",
+    "portrait photo",
+    "footer label",
+    "invite code",
+    "glare",
+    "shadow"
+  ],
+  "demo_content": "A portrait photo, footer 'Comet Invitation' and code '#F7RA'.",
+  "states": [
+    "hover"
+  ],
+  "kind": "card",
+  "look": [
+    "dark",
+    "3d",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "card that tilts with the mouse",
+    "3d tilt card with a glare",
+    "shiny hover card effect",
+    "product card with light reflection",
+    "interactive photo card",
+    "card spotlight following the cursor",
+    "premium card hover for a portfolio",
+    "trading card style tilt"
+  ],
+  "resembles": [],
+  "use_when": "A single featured card such as a portrait, invite or product should feel physical under the pointer.",
+  "avoid_when": "Hover-only: touch and keyboard users never get the tilt, and the glare needs a darker card to read well.",
+  "suits": [
+    "portfolio",
+    "ecommerce",
+    "marketing"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "pointer-move"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "image",
+      "shadow",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap any card as children and set rotateDepth, translateDepth and className; the glare size, shadow and hover scale are fixed in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "One card with a handful of springs driven by pointer movement.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The tilt and glare are pointer-only, and the hover scale ignores reduced-motion."
+  },
+  "props": [
+    {
+      "name": "rotateDepth",
+      "type": "number",
+      "default": "17.5",
+      "required": false
+    },
+    {
+      "name": "translateDepth",
+      "type": "number",
+      "default": "20",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": null,
+      "required": true
+    }
+  ],
+  "issues": [
+    "The glare blows out to near-white, hiding the photo where the pointer sits."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp tilt and believable depth; the glare can bleach the photo under the cursor.",
+  "unsure": []
+}

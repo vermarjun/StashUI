@@ -1,0 +1,175 @@
+{
+  "name": "text-along-path",
+  "frames": {
+    "code": "4711",
+    "best": 6,
+    "best_why": "Words are spread around all four sides and the button shows its finished Done state.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Blue monospace words march around a rounded rectangle like a ticker.",
+  "summary": "A line of repeated text travels endlessly along a rounded rectangle outline, wrapping from one side to the next. It can loop on a timer or follow the reader's scroll, with room in the middle for a form.",
+  "title_fix": null,
+  "appearance": "Lowercase blue monospace words repeat in a continuous loop around a large rounded rectangle on black, running upside down and right to left along the bottom edge. In the middle sit a thin outlined email field and a solid blue Subscribe button.",
+  "behaviour": "The words slide clockwise around the track without a visible seam, since a second copy chases the first. Typing an address and submitting swaps the button label for a spinner, then a Done tick, and later returns to its resting state.",
+  "parts": [
+    "text loop",
+    "rounded path",
+    "email field",
+    "subscribe button",
+    "loading spinner"
+  ],
+  "demo_content": "Repeated \"join the waitlist ✉\" text around an email field and a Subscribe button that ends on Done.",
+  "states": [
+    "hover",
+    "focus",
+    "loading",
+    "success"
+  ],
+  "kind": "text-effect",
+  "look": [
+    "dark",
+    "neon",
+    "technical",
+    "minimal"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "text moving around a rectangle",
+    "words that travel along a border",
+    "marquee on a rounded path",
+    "waitlist signup with looping text",
+    "svg text along a path animation",
+    "infinite ticker around an outline",
+    "email capture with spinning words",
+    "text going round a rounded box"
+  ],
+  "resembles": [],
+  "use_when": "A launch or waitlist page wants its call to action framed by moving text that pulls the eye.",
+  "avoid_when": "The loop runs forever with no pause and ignores reduced motion, and words clip where the path meets the crop.",
+  "suits": [
+    "marketing",
+    "saas"
+  ],
+  "slot_hints": [
+    "hero",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "always"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "text"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Path data, the text, viewBox, font classes and animation mode are props, with duration, repeat count and easing for the loop and offsets for scroll mode.",
+  "technique": [
+    "svg",
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "Two duplicated text paths on an SVG timer; cheap, but it animates for as long as it is visible.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The moving words are decorative and unlabelled, and the loop never pauses for reduced-motion users."
+  },
+  "props": [
+    {
+      "name": "path",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "animationType",
+      "type": "\"auto\" | \"scroll\"",
+      "default": "auto",
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "4",
+      "required": false
+    },
+    {
+      "name": "repeatCount",
+      "type": "number | \"indefinite\"",
+      "default": "indefinite",
+      "required": false
+    },
+    {
+      "name": "viewBox",
+      "type": "string",
+      "default": "0 0 100 100",
+      "required": false
+    },
+    {
+      "name": "svgClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "textClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "preserveAspectRatio",
+      "type": "PreserveAspectRatio",
+      "default": "xMidYMid meet",
+      "required": false
+    },
+    {
+      "name": "showPath",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "scrollContainer",
+      "type": "RefObject<HTMLElement | null>",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "scrollOffset",
+      "type": "UseScrollOptions[\"offset\"]",
+      "default": "[\"start end\", \"end end\"]",
+      "required": false
+    }
+  ],
+  "issues": [
+    "Words are clipped mid-letter where the path runs past the crop edges.",
+    "On the bottom run the text is upside down, so it reads right to left and is hard to parse."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp seamless loop and a strong accent; clipping and the inverted bottom run let it down.",
+  "unsure": []
+}

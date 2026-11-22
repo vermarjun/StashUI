@@ -1,0 +1,66 @@
+{
+  "name": "hovercard3",
+  "frames": {
+    "code": "5211",
+    "best": 3,
+    "best_why": "The hover overlay is fully shown with the 'Who we are' heading, bio and Learn More button.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Portrait card turns into a red bio panel with a button on hover.",
+  "summary": "A tall portrait card shows a man's photo with his name and role along the bottom; hovering swaps the image for a flat red-orange bio panel with a short paragraph and Learn More button.",
+  "title_fix": null,
+  "appearance": "A tall rectangular card holds a portrait of a smiling man against a plain grey studio wall. A red-orange band at the bottom carries his name in bold white and 'CEO & Design Engineer' beneath it.",
+  "behaviour": "Hovering fades the photo out beneath a solid red-orange panel that slides its content up, swapping name and role for a 'Who we are' heading, a short paragraph and a black Learn More button; leaving restores the portrait.",
+  "parts": ["portrait photo", "name overlay", "red bio panel", "bio paragraph", "learn more button", "card edge"],
+  "demo_content": "Portrait of 'Naymur Rahman, CEO & Design Engineer'; hover panel reads 'Who we are'.",
+  "states": ["hover"],
+  "kind": "card",
+  "look": ["rounded", "bold", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "profile card with photo and name",
+    "portrait card reveals bio on hover",
+    "team member hover card",
+    "photo that turns into text panel",
+    "employee card with learn more button",
+    "people card with red overlay",
+    "headshot card with sliding bio",
+    "about us person tile"
+  ],
+  "resembles": [],
+  "use_when": "An about or team page wants compact people cards that give a short bio on hover.",
+  "avoid_when": "Touch and keyboard users never trigger the bio, since the reveal is hover-only on a plain div.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["feature-card", "testimonial"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["image", "background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The photo, name, role, bio paragraph and button are hardcoded, as are the red-orange palette and 400x450 size; all changes need a source edit.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One photo and CSS opacity transitions on two overlay panels.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Bio and button sit behind a hover-only overlay on a non-focusable div, so keyboard users cannot reach them; alt text says 'shoes' for a portrait."
+  },
+  "props": [],
+  "issues": [
+    "Alt text 'shoes' does not match the portrait photo.",
+    "The bio panel and Learn More button are unreachable without a mouse."
+  ],
+  "polish": 4,
+  "polish_why": "Bold colour block and clean type; the hover-only reveal and wrong alt text hold it back.",
+  "unsure": ["traits.theme"]
+}

@@ -1,0 +1,168 @@
+{
+ "name": "ai-instructions",
+ "frames": {
+  "code": "1687",
+  "best": 2,
+  "best_why": "Frame 2 shows the open popover with all four presets, the search, checkboxes and the new-instruction footer.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "A small button opens a searchable checklist of AI behaviour rules.",
+ "summary": "A settings popover for choosing how an assistant should reply. It lists instruction presets with checkboxes, filters them by typing, previews a rule on hover, and lets you create a new one.",
+ "title_fix": null,
+ "appearance": "A small ghost button with a gear icon, the word \"Instructions\" and a round count badge sits under a muted caption. Opened upward, a dark rounded popover shows a search field, a \"Presets\" label and four rows, each with a square checkbox, a bold title and a grey description; a footer row reads \"+ New Instruction\".",
+ "behaviour": "Clicking the button raises the popover above it. Typing filters the rows live, and hovering a row after a short delay opens a side card with the full instruction text. Clicking a row ticks its checkbox and updates the count badge.",
+ "parts": [
+  "trigger button",
+  "count badge",
+  "search field",
+  "group label",
+  "instruction row",
+  "checkbox",
+  "footer action",
+  "preview card"
+ ],
+ "demo_content": "Button labelled Instructions; presets Be Concise, Add Code Comments, Include Examples and Formal Tone.",
+ "states": [
+  "open",
+  "hover",
+  "focus",
+  "checked"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "menu to switch ai behaviour on",
+  "toggle preset rules for a chatbot",
+  "popover list with checkboxes and search",
+  "customize how the assistant replies",
+  "multi select menu with count badge",
+  "add and remove ai prompt presets",
+  "searchable settings popover",
+  "checklist of tone instructions"
+ ],
+ "resembles": [],
+ "use_when": "You want a compact popover to switch several AI behaviour presets on and off while typing.",
+ "avoid_when": "The choices must stay on screen: they hide behind a trigger and the popover closes on an outside click.",
+ "suits": [
+  "ai-chat",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an instructions array and controlled or default active ids; the search, rows, footer and create dialog are composed as child parts. Colours come from theme tokens.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "A popover tree with a command list, hover card and dialog, mounted on demand.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Toggled rows are visual divs with no aria-checked, so screen readers do not hear which presets are on."
+ },
+ "props": [
+  {
+   "name": "instructions",
+   "type": "Instruction[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string[]",
+   "default": "{instruction.title}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onInstructionsChange",
+   "type": "(instructions: Instruction[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": "{createDialogOpen}",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": "{handleOpenChange}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": "\"No instructions found.\"",
+   "required": true
+  }
+ ],
+ "issues": [
+  "The popover opens above the trigger, so it can clip at the top of a short viewport.",
+  "Search matches only row titles; the descriptions are not searched.",
+  "Row checkboxes are plain divs with no accessible checked state."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy popover with search and hover preview; the fixed 320px width and top anchoring limit it.",
+ "unsure": [],
+ "title": "AI Instructions Manager",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5c7c644cfd359050",
+  "film_hash": "8956a67c04638f58",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

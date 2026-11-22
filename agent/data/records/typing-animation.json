@@ -1,0 +1,178 @@
+{
+ "name": "typing-animation",
+ "frames": {
+  "code": "3738",
+  "best": 1,
+  "best_why": "A complete phrase is typed out with the cursor bar at the end, showing the settled state.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Words type out letter by letter behind a blinking bar.",
+ "summary": "A line of bold text that types itself out one character at a time with a small blinking cursor, pauses, deletes, and moves on to the next phrase in a loop.",
+ "title_fix": null,
+ "appearance": "Large, heavy white letters sit on a black field, ending in a thin vertical bar cursor. A half-typed line leaves a lot of empty space to its right, and the text starts from the left.",
+ "behaviour": "Characters appear one after another at a steady pace with the cursor blinking at the end, then the line is erased the same way and the next phrase begins. It replays forever.",
+ "parts": [
+  "typed text",
+  "cursor bar",
+  "dark background"
+ ],
+ "demo_content": "The phrases Build faster, Ship smarter and Design better typing in turn.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "bold",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that types itself out",
+  "typewriter effect with cursor",
+  "words typing and deleting",
+  "animated typing headline",
+  "blinking cursor text",
+  "text typing itself on a page",
+  "phrases typed letter by letter",
+  "hero text typewriter loop"
+ ],
+ "resembles": [],
+ "use_when": "A hero or heading should cycle through a few short phrases with a typewriter feel.",
+ "avoid_when": "Important copy; the text is repeatedly deleted and hard to catch while typing.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass words as an array or a single string child, and tune duration, typeSpeed, deleteSpeed, delay, pauseDelay, loop, cursorStyle and cursor visibility; the tag is chosen with as.",
+ "technique": [
+  "js-animation",
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A chain of timeouts updates a short string; there is no continuous frame loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The changing text has no live region, so screen readers may not announce it, and reduced-motion is never checked."
+ },
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pauseDelay",
+   "type": "number",
+   "default": "1000",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "MotionElementType",
+   "default": "\"span\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "startOnView",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "blinkCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "cursorStyle",
+   "type": "\"line\" | \"block\" | \"underscore\"",
+   "default": "\"line\"",
+   "required": false
+  },
+  {
+   "name": "typeSpeed",
+   "type": "number",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Clean typewriter with a tidy blinking cursor, but it is a very common effect with default styling.",
+ "unsure": [],
+ "title": "Typing Animation",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "70ce53aff9dd61cb",
+  "film_hash": "6b5f46b3fd90e695",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

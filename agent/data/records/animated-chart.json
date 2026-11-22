@@ -1,0 +1,133 @@
+{
+ "name": "animated-chart",
+ "frames": {
+  "code": "2977",
+  "best": 1,
+  "best_why": "Both cards are fully drawn: line complete and the blue area filled under it.",
+  "usable": [
+   1,
+   2,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Area chart whose line draws itself across a grid before the fill rises.",
+ "summary": "A small chart card with a metric in the corner and a jagged line chart over a square grid. On load the line traces itself left to right and the shaded area underneath fades in.",
+ "title_fix": null,
+ "appearance": "Two rounded chart cards on dark, each with a small label and a bold headline value top left over a fine square grid. A pale blue line traces a jagged upward trend, and a soft blue fill sits beneath it to the bottom edge.",
+ "behaviour": "The line starts as a stub at the bottom left and draws along its whole path in about half a second, then the filled area under it fades in from nothing to a soft blue wash. Each card replays on a loop.",
+ "parts": [
+  "label",
+  "headline value",
+  "grid",
+  "line",
+  "area fill",
+  "card"
+ ],
+ "demo_content": "Two cards: Revenue, this month at +300% and Active users at 48.2k.",
+ "states": [],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "gradient",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "line that draws itself in",
+  "animated area chart card",
+  "revenue chart with big percentage",
+  "chart that fills on load",
+  "sparkline style growth graph",
+  "smooth upward trend line chart",
+  "data viz card with grid background",
+  "metrics chart for a dashboard"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard or landing page wants a small chart with a headline number that animates once on reveal.",
+ "avoid_when": "The path and data are hardcoded, so it shows no real series and no axes; use a real chart when values must be accurate.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "fintech"
+ ],
+ "slot_hints": [
+  "chart",
+  "stat",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Label, headline value and width come from props; the line path and grid are fixed in the source, so changing the shape or colours means editing the file.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Two SVG paths animated once for under a second, then idle between replays.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The headline is real text, but the chart SVG has no name or description and the draw-in ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "label",
+   "type": "string",
+   "default": "'This Month:'",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": "'+300%'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Both cards use the same hardcoded path, so the two datasets look identical.",
+  "No axes, dates or values along the chart, so the line reads as decoration."
+ ],
+ "polish": 3,
+ "polish_why": "Clean card and a pleasant draw-in, but no axes and an identical hardcoded line on both cards.",
+ "unsure": [
+  "content_from",
+  "states"
+ ],
+ "title": "Animated Chart",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c6d0f4d0fd3a5253",
+  "film_hash": "126cdf4238b8c048",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

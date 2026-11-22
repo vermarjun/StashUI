@@ -1,0 +1,129 @@
+{
+ "name": "tetris",
+ "frames": {
+  "code": "2424",
+  "best": 4,
+  "best_why": "A vertical column of indigo cells is clearly falling through the grid, with one more at the bottom.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.2
+ },
+ "tagline": "A quiet grid where single blocks drift down and stack up.",
+ "summary": "A dark grid of thin-bordered cells covering the background. One indigo square drops a row at a time, one column at a time, and clicking a filled cell deletes it; full bottom rows clear.",
+ "title_fix": null,
+ "appearance": "A full-bleed grid of square cells drawn with thin slate-blue borders on a near-black base, evenly spaced across the whole stage. A few cells are filled with a translucent indigo square, and here and there these line up into short vertical columns. Faint white text sits centre.",
+ "behaviour": "Once a second a new block appears at a random column in the top row and every block falls one cell downward, so columns build and eventually reach the bottom. A completely filled bottom row empties, and clicking a filled cell clears it.",
+ "parts": [
+  "grid cells",
+  "cell borders",
+  "filled blocks",
+  "caption"
+ ],
+ "demo_content": "The words Tetris Background sit faintly in the middle of the grid.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "technical"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "falling blocks grid background",
+  "block puzzle game backdrop",
+  "blocks dropping down a grid",
+  "pixel grid animation for a hero",
+  "click to delete a square",
+  "retro falling blocks effect",
+  "animated cell grid background",
+  "arcade game wall animation"
+ ],
+ "resembles": [
+  "Tetris"
+ ],
+ "use_when": "A developer or gaming site that wants a quietly moving grid backdrop behind a headline, no gameplay.",
+ "avoid_when": "The cells are clickable only one by one, the whole grid is decorative, and it re-randomises on every resize.",
+ "suits": [
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Set the square colour and the number of columns through props; the fall speed (one second), cell borders and shade ramp are fixed in the source.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A grid of divs updated once a second by an interval; no per-frame render loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Falling cells are plain divs with onClick, so they cannot be reached or cleared from the keyboard, and the looping drop has no reduced-motion pause."
+ },
+ "props": [
+  {
+   "name": "squareColor",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "base",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative w-full\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Blocks fall one cell at a time rather than as tetromino shapes, despite the name."
+ ],
+ "polish": 3,
+ "polish_why": "Even grid and calm motion; single cells fall rather than real blocks, and the caption is very faint.",
+ "unsure": [
+  "theme",
+  "shows_interaction"
+ ],
+ "title": "Tetris Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "18a7e65359c1b2e2",
+  "film_hash": "cadfcdc1642b5fc9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

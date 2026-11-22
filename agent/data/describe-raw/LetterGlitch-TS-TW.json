@@ -1,0 +1,70 @@
+{
+  "name": "LetterGlitch-TS-TW",
+  "frames": {
+    "code": "4475",
+    "best": 2,
+    "best_why": "The glyph wall spreads evenly with a clear mix of green, teal and blue characters.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A dense wall of tiny letters flickers like a broken terminal.",
+  "summary": "Thousands of small monospace characters and symbols fill a black panel in rows. Scattered glyphs swap to new characters every moment and fade between green, teal and blue.",
+  "title_fix": null,
+  "appearance": "Even rows of short monospace characters, letters, digits and punctuation, packed across a black surface. Text runs in three muted tones, sage green, mint and steel blue, with a dark vignette pulling the corners down.",
+  "behaviour": "At a steady tick a small share of the characters change to random symbols and take on a new colour, easing across rather than snapping if smoothing is on. Everything else stays put, so the field shimmers instead of scrolling.",
+  "parts": ["glyph grid", "colour-tinted characters", "vignette"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "dense", "technical", "colorful", "flat"],
+  "tone": "technical",
+  "search_phrases": [
+    "matrix style letter background",
+    "glitchy text wall animation",
+    "random characters flickering on black",
+    "green code rain backdrop",
+    "digital noise typography background",
+    "terminal screen texture",
+    "scrambled symbol grid effect",
+    "hacker style page background"
+  ],
+  "resembles": [],
+  "use_when": "A dev or security themed hero needs a dense text texture behind the copy.",
+  "avoid_when": "Long-form reading or light themes: the small glyphs add visual noise and the surface is fixed black.",
+  "suits": ["devtool", "saas", "portfolio"],
+  "slot_hints": ["page-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["text", "fill"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "The three glitch colours, tick speed, character set, smoothing and either vignette can be set. Font size and the share of letters changed each tick are fixed in the source.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A canvas of hundreds of glyphs redraws about twenty times a second.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A decorative canvas with no text alternative and no reduced-motion check, so the flicker never stops."
+  },
+  "props": [
+    {"name": "glitchColors", "type": "string[]", "default": "['#2b4539', '#61dca3', '#61b3dc']", "required": false},
+    {"name": "glitchSpeed", "type": "number", "default": "50", "required": false},
+    {"name": "characters", "type": "string", "default": "'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789'", "required": false},
+    {"name": "outerVignette", "type": "boolean", "default": "true", "required": false},
+    {"name": "centerVignette", "type": "boolean", "default": "false", "required": false},
+    {"name": "smooth", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": ["At this density the glyphs read as texture rather than legible text, and the colours are low contrast."],
+  "polish": 3,
+  "polish_why": "A competent matrix-style texture; the effect is familiar and the palette is dim.",
+  "unsure": ["states", "shows_interaction", "weight"]
+}

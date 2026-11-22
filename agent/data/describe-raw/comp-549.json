@@ -1,0 +1,112 @@
+{
+  "name": "comp-549",
+  "frames": {
+    "code": "8452",
+    "best": 4,
+    "best_why": "Six file rows of several types plus the Remove all button make the list fullest here.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Narrow file list with an icon, name and size for each upload.",
+  "summary": "A tall uploader: a dashed drop box at the top and one bordered row per file below, each with a type icon, filename, size and an X, with a Remove all button under the list.",
+  "title_fix": null,
+  "appearance": "A narrow column on black. The top is a dashed rounded box with a small file-up circle, \"Upload files\", a browse line and a dim limits line. Below sit short bordered rows with a square icon tile, a name over its size, and a faint x, ending in an outlined Remove all files button.",
+  "behaviour": "Dropping or clicking fills the list row by row from three to six files; each x drops its own row and Remove all clears everything. Dragging over the drop box tints it, and oversize or extra files raise a red warning.",
+  "parts": [
+    "drop area",
+    "instruction text",
+    "file row",
+    "type icon",
+    "filename",
+    "file size",
+    "remove button",
+    "remove all button"
+  ],
+  "demo_content": "document.pdf, intro.zip, conclusion.xlsx, then cover-1/2/3.png; the caption links to an API doc.",
+  "states": [
+    "hover",
+    "dragging",
+    "error"
+  ],
+  "kind": "file-upload",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "rounded",
+    "dense"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "upload several files in a list",
+    "file list with names sizes and remove buttons",
+    "drag and drop attachments list",
+    "document uploader showing each file",
+    "remove all uploaded files button",
+    "bulk file upload with x per row",
+    "attachment list for a form",
+    "upload files and see their sizes"
+  ],
+  "resembles": [],
+  "use_when": "A form takes several documents of mixed types and each one must be removable on its own.",
+  "avoid_when": "Rows show only name and size with no progress bar, so a slow upload gives no feedback.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field",
+    "list-item"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "drag",
+      "hover"
+    ],
+    "motion": "none",
+    "affects": [
+      "background",
+      "border",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The ten-file cap, the 100MB ceiling and three seed files are written in the file; the file-type icons and row layout are source edits as well.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "A handful of seed rows and a hidden file input; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Remove buttons are labelled and focusable, but the dashed drop area sits outside the tab order."
+  },
+  "props": [],
+  "issues": [
+    "Rows never show upload progress, only the name and size.",
+    "The clickable drop area is left out of keyboard tabbing.",
+    "The caption is developer copy ending in an API link."
+  ],
+  "polish": 3,
+  "polish_why": "Neat compact list with clear type icons and remove controls, but plain and developer-captioned.",
+  "unsure": [
+    "render",
+    "states"
+  ]
+}

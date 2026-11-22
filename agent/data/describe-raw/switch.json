@@ -1,0 +1,65 @@
+{
+  "name": "switch",
+  "frames": {
+    "code": "2278",
+    "best": 1,
+    "best_why": "Shows switches in both on and off positions plus one disabled, with no cursor covering them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rounded tracks with sliding white thumbs flip settings on and off.",
+  "summary": "A preferences card lists four rows, each with a label, a short description and a pill-shaped toggle at the right. Flipping a toggle slides its thumb across and changes the track fill.",
+  "title_fix": null,
+  "appearance": "A dark rounded card titled Preferences sits on a near-black stage, holding four rows split by thin dividers. Each row has a bold label over a smaller grey line and a horizontal track at the right whose white thumb rests left when off and right when on; the last row is faded.",
+  "behaviour": "Clicking a track slides the thumb to the other end and swaps the track fill from grey to white. The clip shows Dark mode and Sounds being flipped while the muted Single sign-on row stays put.",
+  "parts": ["panel title", "row label", "row description", "toggle track", "toggle thumb", "row divider"],
+  "demo_content": "Preferences card with Dark mode, Sounds, Autosave and Single sign-on rows.",
+  "states": ["checked", "disabled", "focus"],
+  "kind": "switch",
+  "look": ["dark", "rounded", "minimal", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "toggle that slides on and off",
+    "settings rows with on off toggles",
+    "dark mode toggle in preferences",
+    "flip a setting with a sliding pill",
+    "turn features on and off",
+    "rounded toggle with a white knob",
+    "ios style settings toggles",
+    "account preference on off controls"
+  ],
+  "resembles": ["iOS Settings"],
+  "use_when": "A list of settings where each row is a clear on or off choice that applies immediately.",
+  "avoid_when": "A binary choice only; for more than two options use a select or radio group instead.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field", "list-item"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The root forwards layout props and className to the underlying primitive; track and thumb colours live in utility classes you edit in the file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A handful of DOM nodes and one short thumb transform; nothing runs while idle.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The primitive gives Space and arrow key control plus a focus ring, but nothing checks prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Tidy dark card and clear states, but the switches themselves are ordinary.",
+  "unsure": ["kind", "responsive"]
+}

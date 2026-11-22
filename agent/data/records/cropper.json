@@ -1,0 +1,127 @@
+{
+ "name": "cropper",
+ "frames": {
+  "code": "9569",
+  "best": 4,
+  "best_why": "Photo fills the rounded frame with the white crop square centred and the dimmed surround clearly visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.6
+ },
+ "tagline": "Drag and zoom a photo behind a fixed white square frame.",
+ "summary": "An image cropper: a photo sits in a rounded frame with a fixed square outline and everything outside it dimmed. Dragging moves the picture beneath the square and scrolling or pinching zooms it.",
+ "title_fix": null,
+ "appearance": "A photograph of mountains above clouds inside a rounded rectangle about 16 by 10. A thin white square outline sits centrally with everything outside it darkened, and a small grey instruction line runs underneath.",
+ "behaviour": "Dragging pans the photo beneath the stationary crop square, while scrolling or pinching zooms it between set limits. The white square never changes size; only the image moves and scales.",
+ "parts": [
+  "photo",
+  "crop square",
+  "dimmed surround",
+  "instruction caption"
+ ],
+ "demo_content": "A snow-capped mountain range over a sea of clouds at sunset, captioned 'Drag to reposition · Scroll to zoom'.",
+ "states": [
+  "dragging",
+  "focus"
+ ],
+ "kind": "file-upload",
+ "look": [
+  "minimal",
+  "rounded",
+  "dark"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "drag a square over a photo",
+  "zoom and reposition an image",
+  "profile picture crop tool",
+  "white frame to choose a picture area",
+  "pinch to zoom an upload preview",
+  "adjust photo before uploading",
+  "square selection over a landscape",
+  "crop area with darkened edges"
+ ],
+ "resembles": [],
+ "use_when": "A user must choose the visible part of a photo before it is saved or uploaded.",
+ "avoid_when": "The crop is always a square with no ratio control, and it needs a real image URL to show anything.",
+ "suits": [
+  "saas",
+  "social",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field",
+  "media",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "scroll"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The image URL and zoom limits are props; the crop square, dimmed overlay and frame styling are changed through classes on the four sub-parts.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "One large image with pointer-driven transforms; nothing loops until the user drags.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Dragging and scrolling are the only controls, so keyboard users cannot pan or zoom; a hidden description is supplied for screen readers."
+ },
+ "props": [
+  {
+   "name": "image",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The crop is always square; no aspect ratio is offered",
+  "The instruction caption below the image is very small and low contrast"
+ ],
+ "polish": 3,
+ "polish_why": "Clean photo and a clear white crop edge; no ratio control and the hint text is tiny.",
+ "unsure": [
+  "kind",
+  "technique"
+ ],
+ "title": "Image Cropper",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b538e96945c44136",
+  "film_hash": "a8dc61b347786f51",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

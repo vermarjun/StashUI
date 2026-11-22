@@ -1,0 +1,167 @@
+{
+  "name": "RotatingText-TS-TW",
+  "frames": {
+    "code": "1501",
+    "best": 1,
+    "best_why": "The complete sentence is settled with its longest keyword in blue.",
+    "usable": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "One word in a sentence swaps out for another every couple of seconds.",
+  "summary": "A fixed sentence keeps one slot open for a changing word: each phrase slides up from below as the last slides out. The swapping word sits in bright blue against the white rest.",
+  "title_fix": null,
+  "appearance": "A short sentence in bold white type sits centred on black, with one word picked out in bright blue. The line is compact and tightly spaced.",
+  "behaviour": "Every couple of seconds the blue word drops away and the next rises from below the baseline, leaving a short gap in the middle of the sentence. The words on either side never move.",
+  "parts": [
+    "lead-in words",
+    "blue word",
+    "closing word"
+  ],
+  "demo_content": "Reads \"We build beautiful apps.\", cycling beautiful, fast, accessible and modern.",
+  "states": [],
+  "kind": "text-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "bold",
+    "flat",
+    "editorial"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "word swaps in a sentence",
+    "cycling highlighted adjective",
+    "text flips to next phrase",
+    "animated word carousel inline",
+    "hero sentence with changing word",
+    "spinning tagline words",
+    "type effect on landing headline",
+    "keyword carousel animation"
+  ],
+  "resembles": [],
+  "use_when": "A headline should name several qualities, audiences or verbs in the same slot.",
+  "avoid_when": "Screens that need constant reading: the keyword vanishes during each swap, as frames 3 and 5 show.",
+  "suits": [
+    "saas",
+    "marketing",
+    "portfolio"
+  ],
+  "slot_hints": [
+    "headline",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "timer"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "text",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The phrase list, interval, split mode, stagger, spring transition, loop and autoplay are props; colours and spacing come from class overrides.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A few animated character spans swapped on a timer.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The current word is mirrored for screen readers, but swaps ignore reduced-motion and there are no visible controls."
+  },
+  "props": [
+    {
+      "name": "texts",
+      "type": "string[]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "rotationInterval",
+      "type": "number",
+      "default": "2000",
+      "required": false
+    },
+    {
+      "name": "transition",
+      "type": "Transition",
+      "default": "{ type: 'spring', damping: 25, stiffness: 300 }",
+      "required": false
+    },
+    {
+      "name": "splitBy",
+      "type": "string",
+      "default": "characters",
+      "required": false
+    },
+    {
+      "name": "staggerDuration",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "staggerFrom",
+      "type": "\"first\" | \"last\" | \"center\" | \"random\" | number",
+      "default": "first",
+      "required": false
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "auto",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "initial",
+      "type": "boolean | Target | VariantLabels",
+      "default": "{ y: '100%', opacity: 0 }",
+      "required": false
+    },
+    {
+      "name": "animate",
+      "type": "boolean | VariantLabels | TargetAndTransition",
+      "default": "{ y: 0, opacity: 1 }",
+      "required": false
+    },
+    {
+      "name": "exit",
+      "type": "Target | VariantLabels",
+      "default": "{ y: '-120%', opacity: 0 }",
+      "required": false
+    },
+    {
+      "name": "mainClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "Frames 3 and 5 show an empty gap where the keyword has left and the next has not arrived."
+  ],
+  "polish": 4,
+  "polish_why": "Clean inline type and a springy swap; the blank gap between words breaks the line oddly.",
+  "unsure": []
+}

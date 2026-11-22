@@ -1,0 +1,76 @@
+{
+  "name": "receipt-printer",
+  "frames": {
+    "code": "1957",
+    "best": 4,
+    "best_why": "Receipt hangs fully printed under the head with 'Pull down to tear', showing the whole object.",
+    "usable": [2, 3, 4, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A small printer feeds out a paper receipt that you pull until it tears free.",
+  "summary": "A dark card shaped like a receipt printer. It prints a coffee receipt line by line, then you drag the paper down to rip it off and watch it tumble away.",
+  "title_fix": null,
+  "appearance": "A tall dark rounded card with a grey printer head across the top showing a shop name and a status word. Below it a white receipt hangs with a serrated bottom edge, monospace text, dotted dividers and a barcode.",
+  "behaviour": "When it scrolls into view the receipt feeds out line by line while the head buzzes. Pulling the paper stretches it from the slot, and a sharp drag tears it so it falls and spins out of view; a button prints another.",
+  "parts": ["printer head", "status text", "receipt paper", "serrated edge", "barcode", "print button"],
+  "demo_content": "Northside Coffee receipt: flat white, almond croissant, oat milk, banana bread, total $18.58.",
+  "states": ["loading", "dragging", "empty"],
+  "kind": "card",
+  "look": ["dark", "monochrome", "rounded", "flat", "minimal"],
+  "tone": "playful",
+  "search_phrases": [
+    "receipt printing out animation",
+    "paper that tears off and falls",
+    "coffee shop order receipt widget",
+    "thermal printer demo for website",
+    "drag paper to rip it off",
+    "falling paper with physics",
+    "point of sale receipt preview",
+    "fun checkout confirmation animation"
+  ],
+  "resembles": [],
+  "use_when": "A playful order confirmation or checkout flourish, where the printed receipt itself is the reward.",
+  "avoid_when": "The card is a hard 288px wide and 480px tall, so it will not fit a narrow column or short panel.",
+  "suits": ["ecommerce", "fintech"],
+  "slot_hints": ["feature-card", "modal"],
+  "traits": {
+    "trigger": ["viewport", "drag", "click"],
+    "motion": "pronounced",
+    "affects": ["children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Merchant, order number, date, the item array, tax rate and currency symbol are props; the look, feed timing and physics constants live in the file.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "Fixed-step physics runs at 120 steps a second, but only while printing or falling.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "Print and tear have keyboard buttons, but the stretch-and-drag gesture has no keyboard equivalent."
+  },
+  "props": [
+    {"name": "merchant", "type": "string", "default": "\"Northside Coffee\"", "required": false},
+    {"name": "order", "type": "string", "default": "\"#4182\"", "required": false},
+    {"name": "date", "type": "string", "default": "\"14 Oct 2026 · 08:42\"", "required": false},
+    {"name": "items", "type": "ReceiptItem[]", "default": "DEFAULT_ITEMS", "required": false},
+    {"name": "tax", "type": "number", "default": "0.08", "required": false},
+    {"name": "currency", "type": "string", "default": "\"$\"", "required": false},
+    {"name": "autoPrint", "type": "boolean", "default": "true", "required": false},
+    {"name": "onPrint", "type": "() => void", "default": null, "required": false},
+    {"name": "onTear", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The card has a hardcoded 288px width and 480px height, so it cannot fit narrow columns."
+  ],
+  "polish": 4,
+  "polish_why": "Believable print feed, tear and fall; a convincing small object with fine edges.",
+  "unsure": ["kind"]
+}

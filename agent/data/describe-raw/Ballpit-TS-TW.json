@@ -1,0 +1,78 @@
+{
+  "name": "Ballpit-TS-TW",
+  "frames": {
+    "code": "3655",
+    "best": 2,
+    "best_why": "Spheres are scattered through the air over a settled pile with the heading still readable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Grey and white spheres tumble, bounce and pile up like a ball pit.",
+  "summary": "A 3D physics toy of dozens of glossy spheres in white, grey and graphite that fall, collide and settle into a heap on a black stage. Moving the cursor pushes them around.",
+  "title_fix": null,
+  "appearance": "A black stage holds a heap of glossy 3D spheres in white, light grey and dark graphite, of mixed sizes, piled along the bottom and drifting upward. A bright white glow forms in the middle of the pile, and a white 'Ballpit' heading with a small grey subtitle floats near the top.",
+  "behaviour": "Gravity pulls the spheres down so they bounce off the floor and walls and shove each other, then settle into a loose heap. Moving the cursor drags an invisible control sphere that knocks them around before they calm again.",
+  "parts": ["sphere", "pile", "glow", "heading", "subtitle"],
+  "demo_content": "A white heading 'Ballpit' with the line 'Move your cursor to push the spheres around.'",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "3d", "monochrome", "playful", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "3d balls bouncing in a container",
+    "physics ball pit background",
+    "white spheres that react to the mouse",
+    "floating glossy balls animation",
+    "playful interactive sphere simulation",
+    "balls pile up at the bottom of the screen",
+    "cursor pushes balls around",
+    "three dimensional marble pit"
+  ],
+  "resembles": [],
+  "use_when": "You want a playful, physics-driven 3D backdrop for a hero or landing page that responds to the pointer.",
+  "avoid_when": "It is a continuous simulation with hundreds of collision checks per frame, heavy on low-end phones.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["page-background", "hero", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Props pass count, colours, gravity, friction, wall bounce, sphere sizes, material and light settings, plus the follow-cursor toggle. The demo heading and subtitle are separate page markup.",
+  "technique": ["three-js"],
+  "weight": "heavy",
+  "weight_why": "140 spheres with pairwise collision checks and a Three.js render loop on every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The physics keeps moving forever and ignores reduced-motion; the canvas has no label or pause control."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": "''", "required": false},
+    {"name": "followCursor", "type": "boolean", "default": "true", "required": false},
+    {"name": "count", "type": "number", "default": null, "required": false},
+    {"name": "colors", "type": "number[]", "default": null, "required": false},
+    {"name": "gravity", "type": "number", "default": null, "required": false},
+    {"name": "friction", "type": "number", "default": null, "required": false},
+    {"name": "wallBounce", "type": "number", "default": null, "required": false},
+    {"name": "minSize", "type": "number", "default": null, "required": false},
+    {"name": "maxSize", "type": "number", "default": null, "required": false},
+    {"name": "size0", "type": "number", "default": null, "required": false}
+  ],
+  "issues": [
+    "The demo heading sits behind the spheres and gets hidden when they fly upward.",
+    "The simulation never pauses for reduced-motion and the demo offers no pause control.",
+    "Hundreds of pairwise sphere collisions per frame make it heavy on phones."
+  ],
+  "polish": 3,
+  "polish_why": "Convincing glossy spheres and lively physics, but the greys are flat and the heading collides.",
+  "unsure": ["traits.theme"]
+}

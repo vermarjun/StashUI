@@ -1,0 +1,63 @@
+{
+  "name": "comp-324",
+  "frames": {
+    "code": "4024",
+    "best": 3,
+    "best_why": "Frame 3 shows the four code slots filled with digits, the input state that defines it.",
+    "usable": [1, 2, 3, 4, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Popup asks for a four-digit code, then swaps to a verified message.",
+  "summary": "A trigger opens a dark dialog with four square code slots. Entering the right four digits turns the panel into a Code verified message with a Close button; a wrong code shows an error and a resend link.",
+  "title_fix": null,
+  "appearance": "Closed, an outlined OTP code button. Open, a dark rounded dialog with a ring icon, a bold Enter confirmation code heading, a grey hint ending in Try 6548, four square outlined slots in a row and an underlined Resend code link.",
+  "behaviour": "Typing four digits submits them at once. The right code replaces the slots with Code verified! and a white Close button; a wrong code clears the slots and shows an Invalid code line.",
+  "parts": ["trigger button", "ring icon", "title", "hint text", "code slots", "resend link", "close button"],
+  "demo_content": "Hint says Try 6548; the success state reads Code verified!",
+  "states": ["hover", "focus", "open", "success", "error"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "enter one time code popup",
+    "otp verification dialog",
+    "four digit code input boxes",
+    "email confirmation code modal",
+    "two factor code entry screen",
+    "verify code with resend link",
+    "one time password input",
+    "security code verification window"
+  ],
+  "resembles": [],
+  "use_when": "A short emailed code must be entered and checked before continuing.",
+  "avoid_when": "The expected code is hardcoded in the file, so the check is only a demo.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["children", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The correct code, hint and all labels are hardcoded; there are no props and no real verification hook.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Four plain slots and one comparison; no animation beyond a focus ring transition.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The error is announced and focus moves to Close on success, but the code field has no accessible name of its own."
+  },
+  "props": [],
+  "issues": ["The valid code 6548 is hardcoded, so the check is a demo only.", "The code slots have no label tying them to the dialog's question."],
+  "polish": 4,
+  "polish_why": "Tidy dialog with clear slots and a real success state; the exposed test code is a demo shortcut.",
+  "unsure": ["theme"]
+}

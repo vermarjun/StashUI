@@ -1,0 +1,71 @@
+{
+  "name": "code-block",
+  "frames": {
+    "code": "7031",
+    "best": 3,
+    "best_why": "The styles tab is selected with CSS shown, proving the tabs work while both panels stay fully visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two stacked code panels with a file tab row and a copy button.",
+  "summary": "A dark block that prints source code with numbered lines and colour highlighting, a filename row with a copy icon, and optional file tabs for switching between snippets.",
+  "title_fix": null,
+  "appearance": "Two rounded slate-black panels stack with a small gap, each holding numbered lines of code in soft yellow, blue and white monospace. The upper panel shows a filename and a small copy icon; the lower one shows two file tabs.",
+  "behaviour": "Clicking a file tab swaps the code in the panel, one tab turning white and the other grey. Clicking the copy icon copies the visible snippet and swaps it for a tick for two seconds.",
+  "parts": ["code panel", "line numbers", "filename", "copy button", "file tab", "highlighted line"],
+  "demo_content": "A React counter component and a stylesheet with .counter rules, under the filenames counter.tsx and styles.css.",
+  "states": ["hover", "selected"],
+  "kind": "code-block",
+  "look": ["dark", "minimal", "technical", "rounded"],
+  "tone": "technical",
+  "search_phrases": [
+    "code snippet with line numbers",
+    "copy button for source code",
+    "file tabs above a code sample",
+    "syntax highlighted code panel",
+    "show an example snippet on a docs page",
+    "dark terminal looking code box",
+    "switch between files in a code viewer",
+    "highlight certain lines of code"
+  ],
+  "resembles": ["GitHub Gist"],
+  "use_when": "Docs, changelogs or a portfolio need to show a short snippet with a copy button and file context.",
+  "avoid_when": "Very long files: the panel has no scroll cap, so tall code stretches the whole page.",
+  "suits": ["docs", "devtool", "portfolio"],
+  "slot_hints": ["body-text", "media"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Set language, filename, code and line highlights as props, or pass a tabs array for several files; colours and font come from a bundled theme and the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "The snippet is coloured once per tab switch and no animation loop runs.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The icon-only copy button has no label and tabs never announce which one is selected."
+  },
+  "props": [
+    {"name": "language", "type": "string", "default": null, "required": true},
+    {"name": "filename", "type": "string", "default": null, "required": true},
+    {"name": "code", "type": "string", "default": null, "required": false},
+    {"name": "tabs", "type": "Array<{ name; code; language?; highlightLines? }>", "default": "[]", "required": false},
+    {"name": "highlightLines", "type": "number[]", "default": "[]", "required": false}
+  ],
+  "issues": [
+    "The copy control is a tiny, faint icon that is easy to miss."
+  ],
+  "polish": 3,
+  "polish_why": "A competent, familiar code panel; copy control and line numbers are small and faint.",
+  "unsure": []
+}

@@ -1,0 +1,177 @@
+{
+ "name": "feature-carousel",
+ "frames": {
+  "code": "1752",
+  "best": 2,
+  "best_why": "Frame 2 shows the active Connect step with two crisp screenshots and all four step chips.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.5
+ },
+ "tagline": "Product steps advance on their own, swapping screenshots in a card.",
+ "summary": "A dark feature card that walks through four build steps. Each step lights its chip, slides in a heading and copy, and cross-fades to a new set of product screenshots every few seconds.",
+ "title_fix": null,
+ "appearance": "A large dark rounded card with a row of four small step chips across the top. On the left a bold white heading and two lines of grey copy; framed screenshots of a code editor, laptop and analytics dashboard sit to the right or below, each with a thin light border and heavy shadow.",
+ "behaviour": "Every three seconds the card advances: the current chip glows lime, the heading and copy rise in, and the old screenshots slide or fade out as the next set arrives. Clicking anywhere on the card jumps to the next step.",
+ "parts": [
+  "step chips",
+  "heading",
+  "description",
+  "screenshot",
+  "card frame"
+ ],
+ "demo_content": "Steps Connect, Configure, Monitor, Ship with GitHub mascot, code editor, laptop and dashboard screenshots.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "feature-section",
+ "look": [
+  "dark",
+  "rounded",
+  "gradient",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "product screenshots that cycle by step",
+  "how it works steps with pictures",
+  "feature walkthrough card",
+  "auto rotating feature showcase",
+  "steps that advance on their own",
+  "onboarding feature tour card",
+  "images sliding in as steps change",
+  "developer tool feature highlights"
+ ],
+ "resembles": [],
+ "use_when": "You want to walk through several product capabilities in one card without the visitor clicking.",
+ "avoid_when": "A visitor must study one screenshot: it moves on every three seconds and cannot be paused.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children",
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The image set, alt text and per-image classes are props; the four step names, headings and descriptions are hardcoded, so changing them means editing the file.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Several large screenshots cross-fade inside a spring-driven card with a timer.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Step chips are divs with click handlers and no tab stop, so the carousel cannot be advanced from the keyboard."
+ },
+ "props": [
+  {
+   "name": "image",
+   "type": "ImageSet",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "bgClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "step1img1Class",
+   "type": "string",
+   "default": "defaultClasses.step1img1",
+   "required": false
+  },
+  {
+   "name": "step1img2Class",
+   "type": "string",
+   "default": "defaultClasses.step1img2",
+   "required": false
+  },
+  {
+   "name": "step2img1Class",
+   "type": "string",
+   "default": "defaultClasses.step2img1",
+   "required": false
+  },
+  {
+   "name": "step2img2Class",
+   "type": "string",
+   "default": "defaultClasses.step2img2",
+   "required": false
+  },
+  {
+   "name": "step3imgClass",
+   "type": "string",
+   "default": "defaultClasses.step3img",
+   "required": false
+  },
+  {
+   "name": "step4imgClass",
+   "type": "string",
+   "default": "defaultClasses.step4img",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The title and description props are accepted but ignored; the card shows its own hardcoded step copy.",
+  "Frame 5 shows the Monitor step with the screenshot area still blank mid-transition.",
+  "Step chips look clickable but clicking the current or a future step does nothing."
+ ],
+ "polish": 4,
+ "polish_why": "Polished screenshots and smooth transitions; blank transition frames and dead chips cost a little.",
+ "unsure": [
+  "content_from"
+ ],
+ "title": "Feature Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d9a2c369be5f6ca0",
+  "film_hash": "cac51a4f5497fd88",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

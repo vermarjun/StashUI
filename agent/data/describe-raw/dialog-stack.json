@@ -1,0 +1,73 @@
+{
+  "name": "dialog-stack",
+  "frames": {
+    "code": "6243",
+    "best": 6,
+    "best_why": "Step 3 card with two earlier dialogs stacked behind it makes the nested-stack idea clearest.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Multi-step dialogs stack up, older steps peeking behind the top one.",
+  "summary": "A three-step flow where each new dialog appears in front of the last, leaving earlier steps stacked behind as narrow edges you can click to go back. Steps move with Back and Continue buttons.",
+  "title_fix": null,
+  "appearance": "A dimmed black backdrop holds a centered stack of dark bordered cards. Only the top card shows its content; earlier steps appear as thin rounded edges beneath it, each slightly narrower and lower. Cards hold a title, a small step note, fields or a list, and Back and Continue buttons at the bottom.",
+  "behaviour": "The Create workspace button opens step 1 over a fading overlay. Continue brings the next step to the front and pushes the current card into the stack, while Back reverses it; clicking a stacked edge behind the top card jumps back to that step. Each change is a short fade and slide.",
+  "parts": ["overlay", "dialog card", "title", "description", "step content", "footer buttons", "stacked edges"],
+  "demo_content": "Workspace setup: 'Northwind Design', teammates Maya Chen and Leo Park, and Starter, Team, Business plans.",
+  "states": ["open", "hover", "focus", "disabled"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "minimal", "flat", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "multi step dialog flow",
+    "stacked modal windows",
+    "wizard with cards behind each other",
+    "nested dialogs to go back",
+    "onboarding steps in popups",
+    "signup flow modal sequence",
+    "layered dialog wizard",
+    "click previous card to return"
+  ],
+  "resembles": [],
+  "use_when": "A short multi-step task such as workspace setup, checkout or invites should keep earlier steps visible and one tap away.",
+  "avoid_when": "The stack needs a large centred stage and is overkill for one confirm; long forms belong on separate pages.",
+  "suits": ["saas"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Each step is passed as DialogStackContent children; open state, defaultOpen and clickable come as props, while card colours and offsets are set in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A handful of stacked cards with CSS transitions; idle when closed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "No dialog role, aria-modal or labelledby is set, and jumping back by clicking a stacked card has no keyboard path; transitions ignore reduced motion."
+  },
+  "props": [
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultOpen", "type": "boolean", "default": "false", "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "clickable", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Dialogs have no dialog role, aria-modal or aria-labelledby, so screen readers do not treat them as modal.",
+    "Going back by clicking a card in the stack is mouse-only; there is no keyboard equivalent.",
+    "Earlier steps are only a thin edge behind the top card, so they are easy to miss."
+  ],
+  "polish": 4,
+  "polish_why": "Clean, consistent stack with smooth step changes; earlier cards read only as faint edges.",
+  "unsure": ["theme"]
+}

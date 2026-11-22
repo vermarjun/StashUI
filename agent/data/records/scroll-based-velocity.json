@@ -1,0 +1,137 @@
+{
+ "name": "scroll-based-velocity",
+ "frames": {
+  "code": "9660",
+  "best": 3,
+  "best_why": "Both rows are bright and fully visible, one running the opposite way to the other.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.9
+ },
+ "tagline": "Two big word rows slide sideways in opposite directions.",
+ "summary": "Stacked rows of large repeated text that scroll horizontally without end, one left and one right, speeding up, slowing and reversing in response to how the page is being scrolled.",
+ "title_fix": null,
+ "appearance": "Two stacked bands of big, heavy white text on black, each repeating the same short phrase with round dot separators. The left and right edges dissolve into black, so words slide in and out of a clear strip.",
+ "behaviour": "Each row drifts steadily, the top and bottom going opposite ways, and the speed rises or flips with the pace and direction of page scroll. The rows loop seamlessly and never settle.",
+ "parts": [
+  "text row",
+  "separator dot",
+  "fade edge"
+ ],
+ "demo_content": "The phrase Velocity Scroll repeated with dot separators across two rows.",
+ "states": [],
+ "kind": "marquee",
+ "look": [
+  "monochrome",
+  "bold",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that scrolls sideways",
+  "two rows moving opposite ways",
+  "scrolling banner of words",
+  "infinite text ticker",
+  "marquee that reacts to scroll",
+  "speed text tied to scrolling",
+  "repeating word strip",
+  "ticker headline that scrolls with page"
+ ],
+ "resembles": [],
+ "use_when": "A big statement should scroll sideways and respond to how fast the page moves.",
+ "avoid_when": "Reduced-motion users; the rows keep moving and can be distracting.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass the repeated phrase as children in ScrollVelocityRow and set baseVelocity, direction and scrollReactivity; the edge fades and type size are in the demo.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "A frame loop moves the rows continuously, though it pauses off-screen and on hidden tabs.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Reduced-motion drops the scroll boost but the rows still animate at base speed, so motion never stops."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "baseVelocity",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "1 | -1",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "scrollReactivity",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"w-full overflow-hidden whitespace-nowrap\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Under reduced-motion it still scrolls, only without the scroll-velocity boost."
+ ],
+ "polish": 4,
+ "polish_why": "Strong repeated type and clean fade edges; motion never fully stops for reduced-motion users.",
+ "unsure": [],
+ "title": "Scroll Based Velocity",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "17cebe769a233758",
+  "film_hash": "1f188f23a1ca763e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

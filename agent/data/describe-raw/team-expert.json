@@ -1,0 +1,66 @@
+{
+  "name": "team-expert",
+  "frames": {
+    "code": "9025",
+    "best": 6,
+    "best_why": "The heading, four expert cards with one hovered orange, and all four activity cards are visible.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four expert portrait cards that turn burnt orange on hover.",
+  "title_fix": null,
+  "summary": "A light team showcase: a four-across row of portrait cards with names and roles that fill with orange on hover, and four activity cards beneath.",
+  "appearance": "A warm off-white section under a centred heading and grey paragraph. Four portrait cards in pale peach hold a square photo, a bold name, a small role line and a READ MORE link; below sit four white cards with round orange icon tiles.",
+  "behaviour": "Hovering a portrait card floods it solid orange, turns its text white and nudges the READ MORE arrow sideways. The activity icons swell slightly on hover too.",
+  "parts": ["heading", "paragraph", "portrait card", "photo", "name", "role", "read more link", "activity card"],
+  "demo_content": "Experts Eskild Ebbesen, Henrik Duer, Rikke Hørlykke and Stig Severinsen, with activities Workout and Mindfulness.",
+  "states": ["hover"],
+  "kind": "team-section",
+  "look": ["light", "pastel", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "team section with four portrait cards",
+    "cards that turn orange on hover",
+    "expert profiles with read more links",
+    "athlete coaches team grid",
+    "people cards with photos and roles",
+    "team page with activity buttons below",
+    "warm pastel profile cards",
+    "meet the experts section"
+  ],
+  "resembles": [],
+  "use_when": "A team or expert lineup needs small profile cards plus a row of related activities.",
+  "avoid_when": "Four people are hardcoded, and hover-only colour changes are lost on touch.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["feature-card", "avatar"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "text", "image"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Names, roles, photos and activity titles come from the EXPERT_TEAM array and inline props; hover colours are classes.",
+  "technique": ["css-transition", "motion-library"],
+  "weight": "light",
+  "weight_why": "Eight static cards and CSS hover transitions, with a short reveal on scroll.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "READ MORE buttons have no focus styling and no click handler, and hover is the only card feedback."
+  },
+  "props": [],
+  "issues": [
+    "READ MORE buttons have no click handler, so they do nothing.",
+    "Photos and names are hardcoded, and colour feedback appears on hover only."
+  ],
+  "polish": 4,
+  "polish_why": "Warm card rhythm and a bold hover fill; the dead READ MORE buttons are the flaw.",
+  "unsure": ["a11y.keyboard"]
+}

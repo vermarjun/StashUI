@@ -1,0 +1,78 @@
+{
+  "name": "multi-selector",
+  "frames": {
+    "code": "2155",
+    "best": 2,
+    "best_why": "Frame 2 shows the full open list with checkboxes, disabled Nuxt and Clear/Close; later frames are filtered or closed.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pick several options from a searchable checklist that collects chips.",
+  "summary": "A dropdown for choosing more than one option at once. Selected items collect as removable chips in the closed field, and the open panel adds search, select-all and a Clear action.",
+  "title_fix": null,
+  "appearance": "A dark rounded field with a thin grey outline holding small rounded chips, then a clear X and a chevron. Opened, it drops a narrow dark panel with a search row, a checkbox list and Clear and Close at the foot.",
+  "behaviour": "Clicking the field opens a searchable checklist and typing narrows the options. Ticking a row adds a chip to the field, and picks beyond the limit fold into a plus count. The X clears everything.",
+  "parts": ["trigger field", "selected chip", "chevron", "search input", "option row", "checkbox", "clear button"],
+  "demo_content": "Label \"Select Frameworks\" with the options React, Vue, Angular, Svelte, Next.js and Nuxt",
+  "states": ["hover", "focus", "open", "selected", "disabled"],
+  "kind": "select",
+  "look": ["dark", "outlined", "minimal", "rounded", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "dropdown to pick several options",
+    "searchable checkbox list in a popover",
+    "choose multiple tags from a menu",
+    "select all from a list",
+    "combobox with removable chips",
+    "filter options as you type",
+    "multi pick dropdown for forms",
+    "pick multiple items in one field"
+  ],
+  "resembles": [],
+  "use_when": "A form needs several choices from a long list that users will want to search or clear.",
+  "avoid_when": "maxCount quietly hides extra picks behind a plus count unless showall is set.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "options, defaultValue, placeholder, maxCount, showall and animation are props; chip and popover colours sit in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A button, a popover and a filtered list; nothing runs when closed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Chip remove icons are bare SVGs with click handlers, so the keyboard cannot drop one pick; checkboxes have no roles."
+  },
+  "props": [
+    {"name": "options", "type": "Option[]", "default": null, "required": true},
+    {"name": "onValueChange", "type": "(value: string[]) => void", "default": null, "required": true},
+    {"name": "defaultValue", "type": "string[]", "default": "[]", "required": false},
+    {"name": "placeholder", "type": "string", "default": "Select options", "required": false},
+    {"name": "animation", "type": "number", "default": "0", "required": false},
+    {"name": "maxCount", "type": "number", "default": "3", "required": false},
+    {"name": "modalPopover", "type": "boolean", "default": "false", "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "showall", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "popoverClass", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Nuxt is greyed out but nothing on screen explains why it cannot be chosen.",
+    "Chip remove icons are not buttons, so they are mouse-only."
+  ],
+  "polish": 4,
+  "polish_why": "Full-featured and consistent; tiny remove icons and an unexplained disabled row hold it back.",
+  "unsure": ["resembles"]
+}

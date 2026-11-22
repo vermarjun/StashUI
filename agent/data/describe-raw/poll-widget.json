@@ -1,0 +1,80 @@
+{
+  "name": "poll-widget",
+  "frames": {
+    "code": "4306",
+    "best": 3,
+    "best_why": "Frame 3 shows an option selected with the submit button enabled, the clearest view of the poll.",
+    "usable": [1, 2, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Ask one question, take a vote, then thank the voter.",
+  "summary": "An inline poll card with a question and four radio options. Choosing one enables a submit button; submitting plays a spinner and flips the panel to a centred success message naming the chosen option.",
+  "title_fix": null,
+  "appearance": "A dark panel holds a bold question, a muted line beneath it, and four stacked rounded rows, each with a small circular radio marker and a label. Under them sit a small vote count and a full-width submit button.",
+  "behaviour": "Hovering lights a row's border. Clicking one fills its dot and turns the submit button from grey to white; submitting swaps the button for a spinner, then replaces the whole panel with a check and a short thank-you listing the option chosen.",
+  "parts": ["question", "description", "option row", "radio marker", "vote count", "submit button", "success card", "check icon"],
+  "demo_content": "Options Faster build times, Better DX tooling, AI-assisted coding and Team collaboration.",
+  "states": ["hover", "selected", "disabled", "loading", "success"],
+  "kind": "radio-group",
+  "look": ["dark", "outlined", "rounded", "minimal", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "quick poll to embed in a page",
+    "ask one question with radio buttons",
+    "vote and see a thank you message",
+    "inline survey with a submit button",
+    "single choice poll card",
+    "collect votes from visitors",
+    "workflow feedback poll",
+    "pick an option then confirm"
+  ],
+  "resembles": [],
+  "use_when": "You want a lightweight one-question vote embedded directly in the page rather than behind a click.",
+  "avoid_when": "You need to show live results: after voting this switches to a thank-you card instead of a bar chart.",
+  "suits": ["saas", "social"],
+  "slot_hints": ["form-field", "feature-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["border", "background", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The question, options, votes and callbacks are root props; the question, options, results and submit are assembled as child parts. Colours follow theme tokens.",
+  "technique": ["css-transition", "motion-library"],
+  "weight": "light",
+  "weight_why": "Four option rows, a couple of springs and short timers; no heavy rendering.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Option markers are aria-hidden and the success text replaces the form without a live region, so the result may go unannounced."
+  },
+  "props": [
+    {"name": "question", "type": "string", "default": null, "required": true},
+    {"name": "options", "type": "PollOption[]", "default": null, "required": true},
+    {"name": "votes", "type": "Record<string, number>", "default": "{}", "required": false},
+    {"name": "hasVoted", "type": "boolean", "default": "false", "required": false},
+    {"name": "onVote", "type": "(selectedIds: string[]) => void", "default": null, "required": false},
+    {"name": "description", "type": "string", "default": null, "required": false},
+    {"name": "mode", "type": "\"inline\" | \"popover\" | \"dialog\"", "default": "inline", "required": false},
+    {"name": "multiple", "type": "boolean", "default": "false", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "value", "type": "string | string[]", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string | string[]", "default": null, "required": false},
+    {"name": "autoCollapseDelay", "type": "number", "default": "2500", "required": false}
+  ],
+  "issues": [
+    "The success card hides the poll and results, so voters never see the final percentages.",
+    "Frame 5 catches the transition with only a check icon and no text.",
+    "The disabled submit is very low contrast against the dark panel."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp rows and a satisfying success flip; the faint submit and missing results cost a little.",
+  "unsure": ["keyboard"]
+}

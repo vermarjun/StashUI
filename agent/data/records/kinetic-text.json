@@ -1,0 +1,136 @@
+{
+ "name": "kinetic-text",
+ "frames": {
+  "code": "2863",
+  "best": 5,
+  "best_why": "Letters around the cursor are clearly heavier than the rest of the line, showing the hover effect.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.3
+ },
+ "tagline": "Letter weight swells under the cursor, a few glyphs at a time.",
+ "summary": "Three stacked lines of text whose individual letters thicken as the pointer passes over them, with the neighbours taking a smaller boost. It reads like type reacting to touch.",
+ "title_fix": null,
+ "appearance": "Three centred lines of white sans-serif text on black, in descending sizes: a large heading, a medium line and a small line. Most letters are light-weight, and a short run near the pointer turns noticeably heavier, giving the line an uneven ripple of thickness.",
+ "behaviour": "As the pointer crosses a line the letter under it thickens to a heavy weight and gains a faint outline and extra side padding, while the glyphs either side thicken slightly less. All of it eases back to light within half a second of leaving.",
+ "parts": [
+  "heading line",
+  "second line",
+  "third line",
+  "individual letters"
+ ],
+ "demo_content": "Lines reading \"Hover over me!\", \"Kinetic Typography\" and \"Each letter reacts independently\"",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "letters get bolder as you hover",
+  "text that reacts letter by letter",
+  "font weight changing on mouse move",
+  "interactive typography for a headline",
+  "words ripple under the cursor",
+  "variable weight hover text",
+  "playful type that thickens on touch",
+  "per character hover animation"
+ ],
+ "resembles": [],
+ "use_when": "A headline should invite the pointer and show off typography without colour or motion.",
+ "avoid_when": "Body copy or menus, where shifting weights hurt reading and the padding makes words jitter.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The words come from a text prop and the wrapper element from as; size and colour come from className, while weights and the neighbour response are fixed in the classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One span per letter with CSS weight, stroke and padding transitions, no script.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Each letter is hidden from assistive tech with a readable copy supplied, but the effect is hover-only and ignores reduced motion."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\" | \"span\"",
+   "default": "\"h1\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": "{mergedStyle}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Letters take side padding as they thicken, so words jitter sideways while the pointer moves."
+ ],
+ "polish": 4,
+ "polish_why": "Light, characterful type response; the padding-driven sideways jitter is the only wobble.",
+ "unsure": [],
+ "title": "Kinetic Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a02ab6c77ae37677",
+  "film_hash": "8912ad9b2d9af851",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "name": "comp-398",
+ "frames": {
+  "code": "2854",
+  "best": 1,
+  "best_why": "Shows the whole round photo and its white count bubble with no cursor crossing them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 0.5
+ },
+ "tagline": "Round profile photo wearing a white count bubble on its top corner.",
+ "summary": "A circular profile photo with a small white badge counting unread messages on its upper right, centred above a name and a one-line message total.",
+ "title_fix": null,
+ "appearance": "A circular portrait roughly 56px wide sits centred on a near-black stage, with a white pill bubble holding a dark 6 overlapping its top-right edge. Below it a bold white name and a dimmer grey message line are stacked and centred.",
+ "behaviour": "Static: the photo, badge and caption never move or respond. Only the recording cursor drifts across the empty space around them.",
+ "parts": [
+  "avatar photo",
+  "count bubble",
+  "name label",
+  "message count"
+ ],
+ "demo_content": "Kelly King and the line 6 unread messages, over a woman's portrait in the avatar.",
+ "states": [],
+ "kind": "avatar",
+ "look": [
+  "rounded",
+  "monochrome",
+  "minimal",
+  "dark",
+  "pill"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "profile picture with unread message count",
+  "number bubble on profile photo corner",
+  "notification badge on user picture",
+  "unread counter beside contact photo",
+  "small count chip on a face",
+  "messaging app unread badge",
+  "inbox number on account image",
+  "notification count attached to profile"
+ ],
+ "resembles": [
+  "Instagram inbox",
+  "WhatsApp chats"
+ ],
+ "use_when": "Showing who a message came from together with how much is waiting from them.",
+ "avoid_when": "A live count: the number and photo are fixed inside the file, so they need wiring to real data.",
+ "suits": [
+  "social",
+  "saas"
+ ],
+ "slot_hints": [
+  "avatar",
+  "badge",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The count, portrait URL and fallback initials are written inside the file, so adopting it means editing them. The bubble's offset and minimum width live in its class list.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "A single image and a text badge; no script, loop or animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The portrait carries alt text, but the number is bare text with nothing explaining it to screen readers."
+ },
+ "props": [],
+ "issues": [
+  "The unread count is fixed at 6 in the markup instead of coming from data."
+ ],
+ "polish": 3,
+ "polish_why": "Clean, ordinary avatar and badge with tidy overlap; nothing distinctive beyond placement.",
+ "unsure": [
+  "traits.affects"
+ ],
+ "title": "Avatar Notification Count",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "44f7a4f8495d16b0",
+  "film_hash": "cd6987e148ddabd1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

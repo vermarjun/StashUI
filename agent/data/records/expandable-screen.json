@@ -1,0 +1,164 @@
+{
+ "name": "expandable-screen",
+ "frames": {
+  "code": "7161",
+  "best": 3,
+  "best_why": "Frame 3 shows the expanded panel with the large photo, full heading, copy and button all crisp.",
+  "usable": [
+   1,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "A small photo card blooms into a full-screen panel.",
+ "summary": "A preview card with a photo, title and Tap to expand hint that morphs into a near full-screen panel with a bigger photo, heading, copy and a Get Started button. An X collapses it back to the card.",
+ "title_fix": null,
+ "appearance": "Collapsed, a rounded dark card holds a yellow-lit pug photo above a bold title, two grey lines and a small Tap to expand link. Expanded, a near full-screen dark panel centres the same photo much larger over a white heading, grey copy and a white pill button.",
+ "behaviour": "Clicking the card morphs its rounded frame out into the full panel while the small content fades away and the larger view fades in. The X in the corner collapses it back; the demo's copy also mentions Escape, but no key handler is wired.",
+ "parts": [
+  "preview card",
+  "photo",
+  "title",
+  "hint link",
+  "expanded panel",
+  "close button",
+  "cta button"
+ ],
+ "demo_content": "Pug photo; the card says Expand to Full Screen and the panel says Full Screen Experience with a Get Started button.",
+ "states": [
+  "hover",
+  "expanded"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "card that opens into a full screen page",
+  "click a card to expand it large",
+  "morphing modal from a preview tile",
+  "shared element card expansion",
+  "full screen overlay from a card",
+  "immersive view on card click",
+  "expandable preview panel",
+  "smooth zoom from thumbnail to page"
+ ],
+ "resembles": [],
+ "use_when": "A preview tile should open into an immersive detail view with a smooth shared-element morph.",
+ "avoid_when": "Keyboard users must open and exit easily: the preview is not focusable and the Escape hint is not implemented.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "defaultExpanded, onExpandChange, layoutId, triggerRadius, contentRadius, animationDuration and lockScroll are root props; the card and panel content are children.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A shared-layout motion transition between two small trees; no media loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The clickable preview is a div with no button role or tab stop, and the promised Escape key is never implemented."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultExpanded",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onExpandChange",
+   "type": "(expanded: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "layoutId",
+   "type": "string",
+   "default": "\"expandable-card\"",
+   "required": false
+  },
+  {
+   "name": "triggerRadius",
+   "type": "string",
+   "default": "\"100px\"",
+   "required": false
+  },
+  {
+   "name": "contentRadius",
+   "type": "string",
+   "default": "\"24px\"",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "lockScroll",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The panel copy promises Escape collapses it, but no key handler is implemented.",
+  "The close X uses the foreground colour on a dark panel, so it nearly disappears."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth shared-element morph; the invisible close X and the broken Escape hint are the flaws.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Expandable Screen",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "fcec7b6e55428f30",
+  "film_hash": "fefbdbb4a7685a35",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

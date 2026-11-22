@@ -1,0 +1,180 @@
+{
+ "name": "dither-image",
+ "frames": {
+  "code": "6259",
+  "best": 1,
+  "best_why": "Both photos are fully visible, showing the all-over dot screen and the mixed clean and dotted split.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Photos turned into coarse dot patterns, wiped clean by the pointer.",
+ "summary": "A figure that renders an image as a black-and-white Bayer dither, plus a reveal variant where a clean copy is wiped across the dot pattern as the pointer moves.",
+ "title_fix": null,
+ "appearance": "Two square photos sit side by side on black. The left pug is fully rendered as a coarse black-and-white dot screen; the right mountain photo mixes clean colour with a dotted patch, split along a soft vertical edge. Tiny grey captions sit below.",
+ "behaviour": "One photo stays fully dithered. Moving the pointer across the second wipes the boundary between the clean image and its dotted copy, and leaving resets it to the middle.",
+ "parts": [
+  "pug photo",
+  "mountain photo",
+  "dither dots",
+  "reveal mask",
+  "captions"
+ ],
+ "demo_content": "A pug on a white wall and mountains above clouds, captioned Fully dithered, 16px Bayer cell and Partial reveal.",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "textured",
+  "monochrome",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "photo with retro dot pattern effect",
+  "black and white dithered image",
+  "halftone style picture for a website",
+  "cursor wipes photo to reveal colour",
+  "bayer dither photo effect",
+  "pixelated image comparison",
+  "image with dot screen overlay",
+  "before and after photo effect"
+ ],
+ "resembles": [],
+ "use_when": "You want a printed, retro dot-screen look, or a playful wipe between colour and dithered versions.",
+ "avoid_when": "The dither is grayscale and loses detail, so portraits and small frames turn muddy.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "src and alt fill each image; cell size, aspect, grayscale, contrast, brightness, blur, opacity, rounding and mask direction and range are props.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Two images with CSS filters and one inline stylesheet; no script loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The partial reveal only responds to pointer movement, so keyboard users see just the default split."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "alt",
+   "type": "string",
+   "default": "{props.alt}",
+   "required": true
+  },
+  {
+   "name": "fill",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | \"2xl\"",
+   "default": "\"lg\"",
+   "required": false
+  },
+  {
+   "name": "aspectRatio",
+   "type": "DitherAspectRatio",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "grayscale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "contrast",
+   "type": "number",
+   "default": "120",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number | string",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "rounded",
+   "type": "boolean | string",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "DitherRevealDirection",
+   "default": "\"r\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The reveal is pointer-only, so keyboard users cannot move the wipe.",
+  "The dithered layer drops all colour, so the effect suits textures better than detailed subjects."
+ ],
+ "polish": 4,
+ "polish_why": "The dot screen is convincing and the wipe is playful; the pointer-only wipe is the one gap.",
+ "unsure": [],
+ "title": "Dither Image",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1d4f59a7e63495b6",
+  "film_hash": "348af108659b3bc9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

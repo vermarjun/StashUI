@@ -1,0 +1,133 @@
+{
+ "name": "gooey-svg-filter",
+ "frames": {
+  "code": "4510",
+  "best": 1,
+  "best_why": "The active tab sits merged into the card at rest and all four file rows are crisp, with no cursor covering them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "Tab labels sit on a white card and the active one melts into the panel below.",
+ "summary": "A white rounded card with four year tabs along the top. The selected tab rises into a bump that merges with the card body through a liquid blur, and the list of notes below fades and swaps as tabs change.",
+ "title_fix": null,
+ "appearance": "A large white rounded card floats on a dark stage, with four small grey tabs across its top: 2026, 2025, 2024 and 2023. The active tab swells into a rounded bump joined to the white body, and the lower area lists four markdown note names separated by thin rules.",
+ "behaviour": "Clicking a tab slides the white bump along the top, and the blur and colour-matrix filter makes the bump merge with the body like liquid as it travels. The note list blurs out, swaps and settles in the new tab, while the button at the top left turns the filter off and on.",
+ "parts": [
+  "white card",
+  "tab labels",
+  "active tab bump",
+  "note list",
+  "row dividers"
+ ],
+ "demo_content": "Four year tabs (2026 to 2023) each listing markdown notes such as learning-to-meditate.md.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "tabs",
+ "look": [
+  "light",
+  "rounded",
+  "minimal",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "tabs that melt into the panel",
+  "liquid tab switcher",
+  "year tabs with gooey animation",
+  "note archive tabs",
+  "rounded card with tabs on top",
+  "gooey blob tab transition",
+  "markdown files tabbed list",
+  "tab bar that stretches when switching"
+ ],
+ "resembles": [
+  "Framer tab transition"
+ ],
+ "use_when": "A content card needs a tab bar with a soft liquid transition instead of a hard sliding underline.",
+ "avoid_when": "The effect depends on an SVG filter, and the demo's white card assumes a light surface behind it.",
+ "suits": [
+  "portfolio",
+  "docs",
+  "blog"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "text"
+  ],
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Only the filter id and blur strength are props; the tab labels, file lists and transition timings are written into the demo and need a source edit.",
+ "technique": [
+  "svg-filter",
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One static SVG filter plus a spring on a single tab; no per-frame work.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Real buttons switch tabs, but there is no tablist role, no aria-selected and no visible focus ring, so state stays hidden."
+ },
+ "props": [
+  {
+   "name": "id",
+   "type": "string",
+   "default": "\"gooey-filter\"",
+   "required": false
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "10",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The tab buttons have no visible focus ring.",
+  "Frame 5 is a mid-transition blur, so its note list is unreadable."
+ ],
+ "polish": 4,
+ "polish_why": "The liquid bump and content swap are convincing; tiny tab labels and no focus ring hold it back.",
+ "unsure": [
+  "content_from"
+ ],
+ "title": "Gooey SVG Filter",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d06a3858bb66a153",
+  "film_hash": "31a7021c75f5f00d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

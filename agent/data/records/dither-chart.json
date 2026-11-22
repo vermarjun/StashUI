@@ -1,0 +1,181 @@
+{
+ "name": "dither-chart",
+ "frames": {
+  "code": "8378",
+  "best": 1,
+  "best_why": "Bar variant is fully drawn with both series and the variant tabs, and no chart is caught mid-redraw.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Charts drawn from coloured dither dots with tabbed variants.",
+ "summary": "A chart card that renders bar, line, donut or funnel views from packs of tiny coloured dots, giving each fill a pixelated halftone texture. Switching a tab redraws the chart in front of you.",
+ "title_fix": null,
+ "appearance": "A dark rounded card headed by a small grey revenue caption and a big white $742k figure, with a rounded tab bar of Bar, Line, Donut and Funnel at the top right. Beneath, the plot is made of tight grids of small coloured dots in magenta, cyan, yellow and green, arranged as bars, stacked bands or a ring.",
+ "behaviour": "Selecting another tab swaps the chart type and redraws it from nothing over about a second, the dots filling in across the plot. Bars rise from the baseline, area bands grow, and the donut sweeps its slices into place, all holding a dithered halftone texture.",
+ "parts": [
+  "caption",
+  "total figure",
+  "variant tabs",
+  "plot",
+  "dither dots"
+ ],
+ "demo_content": "Caption 'Revenue, 2025 (k$)', total $742k, months Jan to Aug, and channels Organic, Referral, Paid, Partners.",
+ "states": [
+  "hover",
+  "focus",
+  "selected"
+ ],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "colorful",
+  "technical",
+  "flat",
+  "dense"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "pixelated bar chart",
+  "dithered area graph",
+  "halftone dot chart",
+  "retro dot matrix chart",
+  "revenue chart with tabs",
+  "donut chart made of dots",
+  "8 bit style data viz",
+  "chart that draws itself in"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard wants a distinctive pixel-art chart style instead of a standard smooth line or solid bar chart.",
+ "avoid_when": "The dot texture hides small differences and exact values, and the canvas needs an explicit pixel size.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "chart"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Data, variant, palette, pixel size, matrix, dimensions, label and caption all come as props; the draw-in duration and tone ramp are constants in the file.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A canvas redrawn each frame during the 0.9s draw-in, then idle.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The canvas is aria-hidden with a full text summary for screen readers and the draw-in is skipped under reduced motion; values are not labelled on screen."
+ },
+ "props": [
+  {
+   "name": "data",
+   "type": "DitherChartSeries[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "variant",
+   "type": "DitherChartVariant",
+   "default": "DEFAULT_VARIANT",
+   "required": false
+  },
+  {
+   "name": "palette",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animate",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "DEFAULT_WIDTH",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "DEFAULT_HEIGHT",
+   "required": false
+  },
+  {
+   "name": "pixelSize",
+   "type": "number",
+   "default": "DEFAULT_PIXEL_SIZE",
+   "required": false
+  },
+  {
+   "name": "matrix",
+   "type": "2 | 4 | 8",
+   "default": "DEFAULT_MATRIX",
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "caption",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"inline-flex flex-col gap-2 text-foreground\", className)",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The plot has no axis labels or per-point values, so exact numbers cannot be read from the chart.",
+  "The dense dot texture makes small differences between values hard to compare."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive dithered look on a clean card; the plot lacks axes and precise values.",
+ "unsure": [
+  "slot_hints"
+ ],
+ "title": "Dither Chart",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e69514b0b604cc91",
+  "film_hash": "f8249c0f91622693",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

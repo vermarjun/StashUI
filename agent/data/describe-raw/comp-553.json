@@ -1,0 +1,63 @@
+{
+  "name": "comp-553",
+  "frames": {
+    "code": "6178",
+    "best": 3,
+    "best_why": "Six files are listed with progress bars and percentages mid-upload; frame 1 shows only three.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Lists chosen files with sizes and uploads each with its own progress bar.",
+  "summary": "A rounded upload panel collects up to six files and shows each as a row with a type icon, name, size and remove button, filling a thin progress bar while it uploads.",
+  "title_fix": null,
+  "appearance": "On a near-black page, a rounded bordered panel holds a Files (6) heading with Add files and Remove all buttons above stacked rows. Each row is a dark tile with a square file icon, a name and size, a thin progress bar, and an X at the right.",
+  "behaviour": "Adding files appends rows and starts each upload as a thin bar that fills beside a rising percentage. On completion the bar disappears, leaving the row; the X removes one file and Remove all clears the list.",
+  "parts": ["panel", "files heading", "add files button", "remove all button", "file row", "file icon", "file name", "progress bar"],
+  "demo_content": "Starts with intro.zip, image-01.jpg and audio.mp3; the clip adds three PNG cover images.",
+  "states": ["hover", "focus", "loading", "dragging", "error"],
+  "kind": "file-upload",
+  "look": ["dark", "outlined", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "drag and drop file uploader",
+    "multi file upload with progress",
+    "attachment list with remove buttons",
+    "show file name and size",
+    "dropzone for images and documents",
+    "per file upload progress bar",
+    "clear all uploaded files",
+    "google drive style upload list"
+  ],
+  "resembles": [],
+  "use_when": "Several files of mixed types must be chosen and watched while they upload.",
+  "avoid_when": "It caps the list at six files and 5MB each, so bulk or large uploads need edits.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "drag", "timer"],
+    "motion": "subtle",
+    "affects": ["fill", "layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The initial file list, limits (six files, 5MB) and upload simulation are written into the source; only the demo's own copy stays fixed.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A few rows and CSS width transitions; one timer per file while uploading.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Progress percentages are not announced, and the drop area has no role or label, though the input and buttons do."
+  },
+  "props": [],
+  "issues": ["Input and button copy say images only, but any file type is accepted."],
+  "polish": 3,
+  "polish_why": "Tidy rows and clear per-file progress, but the panel is small and visually plain.",
+  "unsure": ["theme"]
+}

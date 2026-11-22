@@ -1,0 +1,165 @@
+{
+ "name": "primitives-effects-image-zoom",
+ "frames": {
+  "code": "4254",
+  "best": 2,
+  "best_why": "The zoomed view is sharp on the snowy peaks, showing the close-up detail the effect produces.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.5
+ },
+ "tagline": "Mountain photo magnifies under the pointer and pans as you move.",
+ "summary": "A rounded photo that slides to a close-up centred on the cursor when you hover, follows the pointer to pan, and toggles the zoom on click.",
+ "title_fix": null,
+ "appearance": "A rounded landscape photograph of snow-tipped peaks above a flat sea of clouds at dusk, filling a rounded card on a black stage. A small caption sits just below it.",
+ "behaviour": "Hovering zooms the photo toward the pointer, and moving the mouse pans the enlarged view to the spot under the cursor; clicking toggles the zoom and leaving returns it to fit.",
+ "parts": [
+  "photo",
+  "rounded frame",
+  "zoom layer"
+ ],
+ "demo_content": "A sunset photo of snowy peaks above a sea of clouds, captioned Hover to zoom, move to pan, click to toggle.",
+ "states": [
+  "hover"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "rounded",
+  "colorful",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "image that zooms where you hover",
+  "magnify photo on mouse over",
+  "pan around a zoomed picture",
+  "product photo close up on hover",
+  "click to toggle zoom on an image",
+  "spotlight zoom for gallery images",
+  "photo viewer with pointer follow",
+  "enlarge picture without opening lightbox"
+ ],
+ "resembles": [],
+ "use_when": "A product or gallery photo should be inspectable up close without opening a lightbox.",
+ "avoid_when": "It needs a pointer that can hover; on touch the zoom is a tap and panning fights the page scroll.",
+ "suits": [
+  "ecommerce",
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass the image as children, and set zoom scale, transition, width, height and whether hover or click zoom; the pointer-to-origin maths is fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One image scaled by a transform; no loop or canvas.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Zoom is hover and click only on a non-focusable div, so keyboard users cannot zoom; the wrapper's img role has no name."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactElement",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "zoomScale",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ type: 'spring', stiffness: 200, damping: 28 }",
+   "required": false
+  },
+  {
+   "name": "zoomOnClick",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "zoomOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "CSSProperties['width']",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "CSSProperties['height']",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Zoomed frames look slightly soft, since the 2.5x scale stretches the photo.",
+  "Nothing signals the hover zoom except the cursor changing shape."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth pointer-anchored zoom on a strong photo; no affordance and no reduced-motion handling.",
+ "unsure": [],
+ "title": "Image Zoom",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "708f977eaa917411",
+  "film_hash": "8aaf3c150d2906a0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

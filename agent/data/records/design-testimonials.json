@@ -1,0 +1,139 @@
+{
+ "name": "design-testimonials",
+ "frames": {
+  "code": "1691",
+  "best": 1,
+  "best_why": "Frame 1 shows a complete quote, its ghosted index, badge, author and both arrows.",
+  "usable": [
+   1,
+   2,
+   3,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "A giant ghosted number backs an oversized quote that rotates.",
+ "summary": "An editorial testimonial rotator: one large quote at a time, a soft oversized index behind it, a company badge, author line and arrow buttons. Quotes swap on a timer and words fade in one by one.",
+ "title_fix": null,
+ "appearance": "A near-black panel holds a faint oversized numeral on the left, a vertical label and thin progress bar at the far left, and a large pale quote across the middle. Below sit a small pill badge, an author name and role, two round arrow buttons and a faint row of company names.",
+ "behaviour": "Every few seconds the quote, badge and author swap, with each word flipping up into place and the big numeral changing. Arrows step forward and back while a thin line fills as progress; the company ticker drifts endlessly.",
+ "parts": [
+  "index numeral",
+  "vertical title",
+  "progress bar",
+  "company badge",
+  "quote",
+  "author row",
+  "arrow buttons",
+  "ticker"
+ ],
+ "demo_content": "Quotes from Sarah Chen, Marcus Johnson and Priya Patel for Acme Corp, Vercel and Linear.",
+ "states": [],
+ "kind": "testimonial-section",
+ "look": [
+  "dark",
+  "editorial",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "rotating quote testimonial section",
+  "big number behind quote",
+  "editorial testimonials slider",
+  "auto rotating reviews",
+  "customer quotes with progress bar",
+  "fancy testimonial carousel",
+  "word by word quote animation",
+  "scrolling company names ticker"
+ ],
+ "resembles": [],
+ "use_when": "A marketing page wants social proof presented as a bold editorial moment rather than plain cards.",
+ "avoid_when": "Huge type and a full-height section need room; on small screens the quote and index crowd each other.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "testimonial",
+  "headline",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "testimonials (quote, author, role, company), title, duration and className are props; the layout and motion are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "A continuous ticker plus spring parallax and per-word motion on every slide.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Arrow buttons have no accessible names and auto-rotation cannot be paused; reduced-motion is ignored."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Testimonials\"",
+   "required": false
+  },
+  {
+   "name": "testimonials",
+   "type": "TestimonialItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "6000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"text-foreground/[0.06] pointer-events-none absolute top-1/2",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The ghosted index and bottom ticker are so faint they almost vanish."
+ ],
+ "polish": 4,
+ "polish_why": "Strong editorial composition and smooth word reveal; the ghosted extras are almost too faint.",
+ "unsure": [
+  "theme",
+  "a11y.focus_visible"
+ ],
+ "title": "Design Testimonials",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0919e37490c4b3ab",
+  "film_hash": "66d1adc6b1421642",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

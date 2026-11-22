@@ -1,0 +1,70 @@
+{
+  "name": "background-ripple-effect",
+  "frames": {
+    "code": "1121",
+    "best": 4,
+    "best_why": "Frame 4 has the widest lit ripple ring spreading across the grid around the cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark grid of thin cells that light up in a wave from the clicked cell.",
+  "summary": "A full-bleed near-black grid of small square cells. Clicking a cell sends a brightness ripple outward from it, fading with distance, while hovering lifts a single cell.",
+  "title_fix": null,
+  "appearance": "A near-black stage covered edge to edge by a faint grid of thin-bordered square cells. A white bold headline sits centred over a short grey instruction line; cells brighten in a widening diamond around the point that was clicked.",
+  "behaviour": "Clicking a cell sets off a one-shot opacity wave across the grid, each cell delayed and lengthened by its distance from the click. Hovering brightens one cell, and the wave fades back to the dim resting grid.",
+  "parts": ["grid cells", "ripple glow", "headline", "instruction line"],
+  "demo_content": "Headline \"Interactive Background Boxes Ripple Effect\" with a line telling you to click the grid.",
+  "states": ["hover", "active"],
+  "kind": "background",
+  "look": ["dark", "flat", "minimal", "monochrome", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "grid cells that light up on click",
+    "interactive dark background box effect",
+    "ripple animation across a grid",
+    "clickable grid background for a hero",
+    "wave of light spreading from click",
+    "hover grid tiles background",
+    "subtle interactive page background",
+    "square grid that reacts to the mouse"
+  ],
+  "resembles": [],
+  "use_when": "A landing page needs a quiet, interactive backdrop that reacts to clicks without stealing attention.",
+  "avoid_when": "On touch screens there is no hover, and the faint cell contrast disappears on a bright page.",
+  "suits": ["saas", "devtool", "marketing"],
+  "slot_hints": ["page-background", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["fill", "background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Rows, columns and cell size are props; cell colours, border tone and the shadow come from CSS variables or the source file.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "Several hundred grid cells mounted at once; only the ripple animates, and briefly.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Cells are plain divs with a click handler, so the effect cannot be triggered or read by keyboard or screen reader."
+  },
+  "props": [
+    {"name": "rows", "type": "number", "default": "8", "required": false},
+    {"name": "cols", "type": "number", "default": "27", "required": false},
+    {"name": "cellSize", "type": "number", "default": "56", "required": false}
+  ],
+  "issues": [
+    "The ripple is a faint brightness change on a near-black grid, so it is easy to miss.",
+    "The demo headline covers the centre of the grid where the effect reads best."
+  ],
+  "polish": 3,
+  "polish_why": "Neat geometry and a believable distance-based wave, but the effect is low contrast and shy.",
+  "unsure": []
+}

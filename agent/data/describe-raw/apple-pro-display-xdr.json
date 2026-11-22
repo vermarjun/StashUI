@@ -1,0 +1,69 @@
+{
+  "name": "apple-pro-display-xdr",
+  "frames": {
+    "code": "1516",
+    "best": 2,
+    "best_why": "Wallpaper screen with the dock magnified, a tooltip open and the display glow lit.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "An aluminium monitor mockup whose dock icons magnify and show tooltips.",
+  "summary": "A photorealistic studio display on a dark backdrop, with a camera dot, a slim stand and a macOS-style dock of app icons. The dock magnifies under the pointer with tooltips, and clicking the screen swaps the wallpaper for a dark app view.",
+  "title_fix": null,
+  "appearance": "A silver aluminium monitor with a thin black bezel and a slim stand centred on near-black. Its screen shows a mountain wallpaper above a translucent dock of colourful round-square app icons; the frame carries a soft tinted glow when active.",
+  "behaviour": "Pointing at the dock swells the icons and pops a small tooltip above them while a coloured glow rings the display. Clicking the screen advances to the next demo, swapping the wallpaper for a dark player window.",
+  "parts": ["display frame", "screen", "camera dot", "stand", "cable hole", "dock", "app icon", "tooltip"],
+  "demo_content": "A mountain-and-cloud wallpaper with a dock of app icons, then a dark window with a blue-orange gradient.",
+  "states": ["hover", "active"],
+  "kind": "device-mockup",
+  "look": ["3d", "skeuomorphic", "glass", "dark"],
+  "tone": "decorative",
+  "search_phrases": [
+    "apple studio display mockup",
+    "monitor frame with dock icons",
+    "macos desktop mockup for hero",
+    "photorealistic screen device frame",
+    "dock that magnifies on hover",
+    "monitor with app icon toolbar",
+    "product showcase screen frame",
+    "desktop monitor browser mockup"
+  ],
+  "resembles": ["Apple Studio Display"],
+  "use_when": "A portfolio or product page wants a realistic desktop screen to showcase an app or wallpaper in a hero.",
+  "avoid_when": "It is heavy with inline SVG art and hardcoded aluminium tones, so it suits a showcase rather than a themeable layout.",
+  "suits": ["portfolio", "marketing", "saas"],
+  "slot_hints": ["hero", "media", "feature-card"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["children", "image", "shadow"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "initialMode picks the first screen demo and screenContent swaps in your own screen; the aluminium tones, dock icons and glow colours are hardcoded in the source.",
+  "technique": ["motion-library", "svg"],
+  "weight": "moderate",
+  "weight_why": "Lots of inline SVG and gradient layers; springs run only on dock hover and mode change.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "Dock icons and the cable hole are labelled, but the clickable screen has no keyboard route to change modes."
+  },
+  "props": [
+    {"name": "initialMode", "type": "string", "default": null, "required": false},
+    {"name": "screenContent", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "Nothing signals that the screen is clickable to switch modes.",
+    "The dock icons and tooltip text are very small at this scale."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing aluminium display with a live dock; the screen is undiscoverable and controls are tiny.",
+  "unsure": ["props", "needs_sized_parent"]
+}

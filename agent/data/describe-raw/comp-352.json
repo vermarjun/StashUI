@@ -1,0 +1,63 @@
+{
+  "name": "comp-352",
+  "frames": {
+    "code": "8353",
+    "best": 1,
+    "best_why": "A top question is open with a nested question expanded and its answer visible, showing both levels.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Faq rows open to reveal a second layer of smaller collapsible questions.",
+  "summary": "A five-line FAQ accordion whose open answer holds two more collapsible questions. Opening one top row closes the others; nested rows show or hide their explanation.",
+  "title_fix": null,
+  "appearance": "Under a bold Multi-level heading, four bordered rows stack into a single panel on a dark page. Each row is a bold question with a chevron at the right; an open row reveals two lighter nested rows, each with its own small chevron and optional grey answer text.",
+  "behaviour": "Opening a top question animates its nested list into view, rotates its chevron and closes any other open top row. Each nested question toggles independently, showing a short muted answer; the third top row opens by default.",
+  "parts": ["heading", "top question row", "chevron", "nested question row", "nested chevron", "answer text", "panel border"],
+  "demo_content": "Heading 'Multi-level'; FAQ questions about coss ui features, customising, performance and accessibility.",
+  "states": ["open", "focus", "hover"],
+  "kind": "accordion",
+  "look": ["dark", "minimal", "outlined", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "faq with questions inside questions",
+    "two level collapsible list",
+    "nested accordion for categories and subcategories",
+    "expandable sections with sub items",
+    "click a question to reveal sub questions",
+    "multi level faq menu",
+    "settings panel with grouped collapsible rows",
+    "accordion inside accordion"
+  ],
+  "resembles": [],
+  "use_when": "When one answer naturally splits into deeper follow-up questions that should stay tucked away.",
+  "avoid_when": "Deep rows shrink the tap area and the faint nested text is low contrast on dark.",
+  "suits": ["saas", "docs"],
+  "slot_hints": ["list-item"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "All questions and answers sit in one nested array in the file; changing them means editing the source, while width and colours follow utility classes.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "A handful of rows and two short collapsible animations; no background loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Rows are buttons with visible focus rings and correct expanded state; nested answers animate with no reduced-motion fallback."
+  },
+  "props": [],
+  "issues": ["The heading 'Multi-level' is a developer label rather than user-facing copy.", "Nested answer text is very faint against the dark background."],
+  "polish": 3,
+  "polish_why": "Nesting reads clearly and borders align; demo headings and faint nested text hold it back.",
+  "unsure": []
+}

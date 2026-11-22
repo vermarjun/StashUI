@@ -1,0 +1,70 @@
+{
+  "name": "footer-blocks",
+  "frames": {
+    "code": "1151",
+    "best": 1,
+    "best_why": "The full sitemap footer is visible with tagline, newsletter, four link columns and bottom bar.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four footer layouts switchable: sitemap, link search, contact and minimal.",
+  "summary": "One footer component with four layouts. It can show a mega sitemap with region and language pickers, a searchable page index, a contact card with a live clock, or a slim link bar.",
+  "title_fix": null,
+  "appearance": "A dark, full-width footer with a brand wordmark and tagline at the top, a four-column sitemap of small headings and links, and a bottom bar of legal links, social marks and two pill selectors. Other variants swap the body for a search field or contact rows.",
+  "behaviour": "A variant pill changes the whole layout. The sitemap columns rise in as they scroll into view, the link-search footer filters every page as you type, and the contact footer copies rows beside a live clock.",
+  "parts": ["variant switcher", "brand wordmark", "link columns", "newsletter block", "bottom bar", "search field", "contact rows"],
+  "demo_content": "Brand Northwind; sections Product, Developers, Resources, Company; tabs Sitemap, Link search, Contact, Minimal.",
+  "states": ["hover", "focus", "open", "expanded", "active"],
+  "kind": "footer",
+  "look": ["dark", "minimal", "flat", "dense", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "four different footer layouts",
+    "mega sitemap site footer",
+    "footer with page search",
+    "contact footer with live clock",
+    "minimal footer with popover links",
+    "website footer variant switcher",
+    "region and language footer picker",
+    "site map footer with newsletter"
+  ],
+  "resembles": [],
+  "use_when": "A product site wants several footer styles for different page types, all from one import.",
+  "avoid_when": "You need a tiny single-row footer; the search and contact variants add behaviour and height.",
+  "suits": ["saas", "marketing", "docs"],
+  "slot_hints": ["footer"],
+  "traits": {
+    "trigger": ["click", "hover", "scroll"],
+    "motion": "subtle",
+    "affects": ["layout", "text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "FooterBlocks takes only variant, brand and className; link data comes from kit constants. Use the four exported sub-footers to pass your own columns, links and socials.",
+  "technique": ["css-transition", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "Static links with small CSS transitions; the search and clock add minor client work.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Strong: nav labels, aria-labelled select inputs and focus rings; the sitemap animation respects reduced motion."
+  },
+  "props": [
+    {"name": "variant", "type": "FooterBlocksVariant", "default": "sitemap", "required": false},
+    {"name": "brand", "type": "string", "default": "Northwind", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The demo adds its own variant switcher above the footer, which is not part of the component.",
+    "Each frame shows only one variant, so search and contact edge states stay unseen."
+  ],
+  "polish": 4,
+  "polish_why": "Careful type scale, real routes and tidy bars; the demo switcher sits outside the footer.",
+  "unsure": []
+}

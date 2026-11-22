@@ -1,0 +1,164 @@
+{
+  "name": "primitives-texts-scrolling-number",
+  "frames": {
+    "code": "6908",
+    "best": 4,
+    "best_why": "Both strips sit on Launch week values with the centre highlight clearly on 2,300 and 52.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A number strip scrolls behind a window until the chosen value lands centred.",
+  "summary": "Two statistics shown as rolling strips of numbers, one vertical and one horizontal, each with a highlight band marking the current value and a row of period buttons that swaps the data.",
+  "title_fix": null,
+  "appearance": "Two small grey captions, Downloads and Countries, head a vertical column of comma-grouped numbers and a horizontal row of two-digit numbers on black. A rounded grey band sits across the middle value of each strip, and three outlined pill buttons close the layout.",
+  "behaviour": "Picking a period springs the strips to a new number: the vertical list scrolls up and the horizontal row slides sideways, passing through blurry intermediate values until one settles under the highlight. On first view the strips animate in on their own.",
+  "parts": [
+    "downloads label",
+    "vertical number strip",
+    "highlight band",
+    "countries label",
+    "horizontal number strip",
+    "period buttons"
+  ],
+  "demo_content": "Downloads 1,400, 900, 2,300 and Countries 48, 45, 52, chosen via This week, Last week, Launch week.",
+  "states": [
+    "hover",
+    "selected"
+  ],
+  "kind": "counter",
+  "look": [
+    "dark",
+    "minimal",
+    "monochrome",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "numbers scroll vertically like a slot machine",
+    "weekly downloads counter with period switch",
+    "animated stats that slide between values",
+    "slot machine style number ticker",
+    "metric that blurs and rolls to a new value",
+    "dashboard stat selector with numbers",
+    "horizontal number carousel display",
+    "number strip that scrolls behind a window"
+  ],
+  "resembles": [],
+  "use_when": "A stat switches between periods and the change is worth showing as motion rather than a jump.",
+  "avoid_when": "Values update constantly or must be read mid-change; the strip blurs while it moves.",
+  "suits": [
+    "dashboard",
+    "saas",
+    "fintech"
+  ],
+  "slot_hints": [
+    "stat"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "viewport"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Number, step, strip size, direction and timing are props on the container; the highlight and number rows are child slots you style yourself.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A couple of dozen text rows moved by two springs; nothing keeps running once settled.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Value changes are not announced and the strips are plain divs; only the demo's period buttons are keyboard operable."
+  },
+  "props": [
+    {
+      "name": "number",
+      "type": "number",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "itemsSize",
+      "type": "number",
+      "default": "30",
+      "required": false
+    },
+    {
+      "name": "sideItemsCount",
+      "type": "number",
+      "default": "2",
+      "required": false
+    },
+    {
+      "name": "direction",
+      "type": "'ltr' | 'rtl' | 'ttb' | 'btt'",
+      "default": "'btt'",
+      "required": false
+    },
+    {
+      "name": "inView",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "inViewOnce",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "inViewMargin",
+      "type": "string",
+      "default": "'0px'",
+      "required": false
+    },
+    {
+      "name": "onNumberChange",
+      "type": "(value: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The captions and the fainter side numbers are very small and low contrast on black."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy stat blocks with a useful highlight band; captions and side values are very dim.",
+  "unsure": [
+    "responsive",
+    "theme"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "toolbar-expandable",
+  "frames": {
+    "code": "6203",
+    "best": 4,
+    "best_why": "Frame 4 shows the Dashboard tab open with its stats card above the numbered bar.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Numbered tabs rise open into a small panel of details.",
+  "summary": "A compact horizontal toolbar of numbered tabs with a small badge above it. Choosing a tab grows a card above the bar holding that section's title, description and content; choosing it again or clicking away folds it shut.",
+  "title_fix": null,
+  "appearance": "A small outlined Navigation badge sits above a rounded horizontal toolbar of four tabs. Each tab pairs a little numbered square with a label, and the active tab is tinted. An open tab shows a soft card above the bar with a title, grey description and body text.",
+  "behaviour": "Clicking a tab opens the card above the bar with that step's copy; clicking the same tab again or anywhere outside closes it. The card animates its height with a short spring, and the tab row scrolls sideways when the tabs overflow.",
+  "parts": ["badge", "toolbar", "tab", "step number", "active tab", "content card", "action button"],
+  "demo_content": "Tabs Profile, Dashboard, Notifications and Settings; the Dashboard card lists 12,430 visits and 340 active users.",
+  "states": ["hover", "selected", "open"],
+  "kind": "tabs",
+  "look": ["dark", "rounded", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "numbered tabs that open a panel",
+    "compact horizontal nav bar with sections",
+    "tabs with a card that drops down",
+    "settings tabs with inline content",
+    "step tabs across the top",
+    "expand a tab to see its details",
+    "scrollable segmented navigation",
+    "toolbar menu with numbered sections"
+  ],
+  "resembles": [],
+  "use_when": "A dense app header needs several sections as tabs, each with a short panel of details in place.",
+  "avoid_when": "The panel content is long: the inline card grows with it instead of scrolling.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a steps array with title, description, icon and content, plus a badgeText and controlled expanded or activeStep state. Styling is class-based.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A few buttons and one animated height panel; no canvas or heavy lists.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The bar is a row of plain buttons with no tablist roles or focus ring, so keyboard users get little feedback."
+  },
+  "props": [
+    {"name": "steps", "type": "DynamicStep[]", "default": null, "required": true},
+    {"name": "badgeText", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "expanded", "type": "boolean", "default": null, "required": false},
+    {"name": "onExpandedChange", "type": "(expanded: boolean) => void", "default": null, "required": false},
+    {"name": "activeStep", "type": "string | null", "default": null, "required": false},
+    {"name": "onActiveStepChange", "type": "(stepId: string | null) => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The active step's title shows twice, once above the card and again inside it.",
+    "Tabs have no focus-visible ring, so keyboard focus is hard to see."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy toolbar and smooth height change; the duplicated title and missing focus ring look rough.",
+  "unsure": []
+}

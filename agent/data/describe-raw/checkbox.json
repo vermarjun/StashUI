@@ -1,0 +1,73 @@
+{
+  "name": "checkbox",
+  "frames": {
+    "code": "4020",
+    "best": 1,
+    "best_why": "Shows ticked, empty, dashed and faded boxes together in one clean card with no cursor covering them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Light square ticks a preference on, with a dash for partly on.",
+  "summary": "A small square checkbox with a tick, a dash for the mixed state, a focus ring and a faded disabled look, shown inside a card of account preferences with a label and a second line per row.",
+  "title_fix": null,
+  "appearance": "A dark rounded card headed 'Account preferences' over four rows. Each row holds a small square box, a bold label and a dim second line. Checked boxes are filled light with a dark tick, the beta row shows a short dash, and the analytics row is faded.",
+  "behaviour": "Clicking a box or its label toggles the tick with a short colour transition; checked boxes turn light, the partly-on option shows a dash, and the disabled row ignores clicks. Focus draws a ring around the box.",
+  "parts": ["card", "heading", "checkbox", "label", "description line", "disabled row"],
+  "demo_content": "Four preference rows: accept terms, subscribe to the newsletter, join the beta program and share usage analytics.",
+  "states": ["hover", "focus", "checked", "disabled"],
+  "kind": "checkbox",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "tick box to agree to terms",
+    "square box you click to select",
+    "three state toggle with a dash",
+    "settings list with on off marks",
+    "small box with a checkmark",
+    "select several options in a list",
+    "disabled option greyed out",
+    "form row with a tick control"
+  ],
+  "resembles": [],
+  "use_when": "You need independent on and off choices, including one that is only partly selected across a group.",
+  "avoid_when": "The 16px box is a small tap target, so on touch the whole row label must be clickable too.",
+  "suits": ["any"],
+  "slot_hints": ["form-field", "list-item"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["fill", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Size, colour and the checked, defaultChecked and disabled states come from utility classes and normal control props; the tick and dash are two small inline drawings you would edit.",
+  "technique": ["css-transition", "svg"],
+  "weight": "light",
+  "weight_why": "One 16px box and a tiny inline drawing; no animation loop.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Space toggles it and a visible focus ring is built in; the demo connects each box to its label by id, so names are announced."
+  },
+  "props": [
+    {"name": "checked", "type": "boolean | 'indeterminate'", "default": null, "required": false},
+    {"name": "defaultChecked", "type": "boolean | 'indeterminate'", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "id", "type": "string", "default": null, "required": false},
+    {"name": "onCheckedChange", "type": "(checked: boolean | 'indeterminate') => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frame 3 shows every box unchecked, contradicting the demo's stated initial mix",
+    "The tick and dash glyphs are tiny inside the box and hard to read at a glance"
+  ],
+  "polish": 3,
+  "polish_why": "Tidy preference list with a clear state mix; the tick glyph is small and the card is plain.",
+  "unsure": []
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dock-TS-TW",
+  "frames": {
+    "code": "1574",
+    "best": 5,
+    "best_why": "One icon is fully magnified with its 'Inbox' name tag above, while its neighbour is also growing.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Icons swell as the pointer passes and name tags float above.",
+  "summary": "A dark rounded bar holds six round icon buttons. Sliding the pointer along it grows the nearest icons and lifts a small name tag above the one under the cursor.",
+  "title_fix": null,
+  "appearance": "A long dark bar with a grey outline sits low on the stage, holding six evenly spaced circular buttons, each with a white line icon. When active, a tiny rounded name tag floats above the bar.",
+  "behaviour": "Moving the pointer across the bar makes the closest icons swell and nudges their neighbours wider. The icon under the pointer shows a label overhead, and all return to even size when the pointer leaves.",
+  "parts": ["dock bar", "icon buttons", "icon glyphs", "name tag"],
+  "demo_content": "Six icons for home, archive, mail, music, user and settings, labelled Home, Archive, Inbox, Music, Profile and Settings.",
+  "states": ["hover", "focus"],
+  "kind": "dock",
+  "look": ["dark", "rounded", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "mac style magnifying icon bar",
+    "app launcher at the bottom of the screen",
+    "icons grow near the mouse",
+    "toolbar with hover name labels",
+    "macos style app icon strip",
+    "bottom nav with popping icons",
+    "floating icons that zoom on approach",
+    "proximity scaling button row"
+  ],
+  "resembles": ["macOS Dock"],
+  "use_when": "An app or desktop-like screen wants a compact launcher bar that stays out of the content.",
+  "avoid_when": "Magnification assumes a mouse; on touch screens icons never grow and labels need a tap.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["nav", "footer"],
+  "traits": {
+    "trigger": ["hover", "pointer-move", "focus"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass the items array of icon, label and click handler plus bar height, icon size, magnification, distance and spring as props; the dark colours are hardcoded.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Six icon springs that only move while the pointer is over the bar.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Icons are tabbable with a role and a hover label, but Enter and Space never fire the click and no focus ring is drawn."
+  },
+  "props": [
+    {"name": "items", "type": "DockItemData[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "spring", "type": "SpringOptions", "default": "{ mass: 0.1, stiffness: 150, damping: 12 }", "required": false},
+    {"name": "magnification", "type": "number", "default": "70", "required": false},
+    {"name": "distance", "type": "number", "default": "200", "required": false},
+    {"name": "panelHeight", "type": "number", "default": "64", "required": false},
+    {"name": "dockHeight", "type": "number", "default": "256", "required": false},
+    {"name": "baseItemSize", "type": "number", "default": "50", "required": false}
+  ],
+  "issues": ["The bar has no visible focus ring, and Enter or Space does not activate a focused icon."],
+  "polish": 4,
+  "polish_why": "Convincing magnification and tidy outlined icons; labels are tiny and the bar itself is plain.",
+  "unsure": ["responsive"]
+}

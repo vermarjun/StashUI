@@ -1,0 +1,75 @@
+{
+  "name": "figma-cursor",
+  "frames": {
+    "code": "2419",
+    "best": 2,
+    "best_why": "All three labelled cursors are spread apart and legible over both mock frames at once.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Coloured name tags with pointer arrows drift around a shared canvas.",
+  "summary": "Three labelled cursors in blue, pink and green move slowly along looping paths over a mock design. Each pill carries a name and an arrow, like collaborators in a shared editing tool.",
+  "title_fix": null,
+  "appearance": "Three rounded name pills in blue, pink and green, each paired with a small matching pointer arrow, floating over a dark canvas that holds two outlined mock frames.",
+  "behaviour": "Each pill and arrow drifts along its own short looping path, moving right and down then back again. The motion repeats forever on timers of roughly four to five seconds.",
+  "parts": ["name pill", "pointer arrow", "mock frame card", "canvas"],
+  "demo_content": "'Frame 12 · Pricing' and 'Frame 14 · Checkout' cards; names Maya Chen, Leo Park, Ana Ruiz.",
+  "states": [],
+  "kind": "cursor-effect",
+  "look": ["dark", "rounded", "colorful", "minimal"],
+  "tone": "playful",
+  "search_phrases": [
+    "multiplayer cursors on a canvas",
+    "figma style live cursors",
+    "colored name tag pointer",
+    "collaborative editing cursors",
+    "animated cursor with label",
+    "shared design pointer names",
+    "looping cursor movement effect",
+    "other people cursor markers"
+  ],
+  "resembles": ["Figma multiplayer cursor"],
+  "use_when": "A demo needs to suggest live collaborators or multiplayer presence on a shared canvas.",
+  "avoid_when": "It is decorative only; the cursors are fake and follow no real pointer or user.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass text plus optional colour, stroke, pixel offsets, duration and delay. Path shape and the endless loop are fixed in the source.",
+  "technique": ["motion-library", "svg"],
+  "weight": "light",
+  "weight_why": "Three small pills and arrows moved by transform on a repeat timer; cheap to run.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative motion with no control; it ignores reduced-motion and keeps looping for everyone."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "color", "type": "string", "default": null, "required": false},
+    {"name": "stroke", "type": "string", "default": null, "required": false},
+    {"name": "x", "type": "number", "default": "20", "required": false},
+    {"name": "y", "type": "number", "default": "40", "required": false},
+    {"name": "duration", "type": "number", "default": "4", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false}
+  ],
+  "issues": [
+    "The drift loop never pauses and does not respect reduced-motion settings.",
+    "The cursors are purely fake and never follow the real pointer."
+  ],
+  "polish": 3,
+  "polish_why": "Clean coloured pills and smooth drift, but it is a familiar idea implemented plainly.",
+  "unsure": ["responsive"]
+}

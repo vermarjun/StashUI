@@ -1,0 +1,187 @@
+{
+ "name": "micro-slats",
+ "frames": {
+  "code": "4678",
+  "best": 4,
+  "best_why": "The whole purple slat grid is visible with a strong white glint swell rising at its centre.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 5.0
+ },
+ "tagline": "A wall of tiny purple slats ripples with bright glints.",
+ "summary": "A full-screen field of small rounded purple slats whose heights rise and fall in slow swells, catching white glints. Moving the pointer stirs a fluid swirl through the field.",
+ "title_fix": null,
+ "appearance": "A dense grid of narrow vertical lozenges, deep purple on black, evenly spaced across the whole stage. Patches of the grid stretch taller and light up white, so bright bands sweep across like light on water.",
+ "behaviour": "The slat heights ride overlapping waves and the raised crests catch a white glint as the swell travels across the screen. Moving the cursor pushes a fluid vortex through the grid, and a click splashes it outward.",
+ "parts": [
+  "slat grid",
+  "purple slats",
+  "glint crest",
+  "dark background",
+  "cursor swirl"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "textured",
+  "dense",
+  "neon"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "wall of tiny purple slats",
+  "micro blinds wave animation",
+  "glinting grid background",
+  "interactive slat field",
+  "rippling tiles that catch light",
+  "liquid cursor trail on a grid",
+  "purple louvered background",
+  "shader wall of small tiles"
+ ],
+ "resembles": [],
+ "use_when": "A hero or section wants a tactile, moving wall texture that reacts to the cursor.",
+ "avoid_when": "It is a full-screen WebGL fluid simulation, so it is heavy on phones and needs a sized parent.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Preset, three colours, slat size, gap, roundness, wave scale, speed, direction, chop, stretch, glint, contrast, perspective, fog, cursor strength, swirl, trail, lean and paused are props.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A multi-pass WebGL fluid simulation and fragment shader run every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "Decorative and aria-hidden; reduced motion freezes the waves and disables the cursor swirl, so nothing is announced."
+ },
+ "props": [
+  {
+   "name": "preset",
+   "type": "string",
+   "default": "'swell'",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#A855F7'",
+   "required": false
+  },
+  {
+   "name": "glintColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  },
+  {
+   "name": "slatWidth",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "slatHeight",
+   "type": "number",
+   "default": "25",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "roundness",
+   "type": "number",
+   "default": "0.75",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "cursorStrength",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "cursorSize",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 1 catches the intro before the field builds and reads as a blank black stage."
+ ],
+ "polish": 4,
+ "polish_why": "Rich, tactile slat field with convincing glints; the first frame and dark gaps look plain.",
+ "unsure": [
+  "traits.theme"
+ ],
+ "title": "Micro Slats",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d1f5f95a8bdabb60",
+  "film_hash": "e9994647613c6277",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

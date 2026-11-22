@@ -1,0 +1,73 @@
+{
+  "name": "directional-drawer",
+  "frames": {
+    "code": "4016",
+    "best": 4,
+    "best_why": "Frame 4 shows the drawer fully open with title, nav links and Get Started; frame 3 catches it still sliding in.",
+    "usable": [4, 5, 6],
+    "render": "partial",
+    "render_note": "Crop clips the drawer's left edge, leaving only the last letters of the heading.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark settings drawer slides in from the left edge of the screen.",
+  "summary": "A left-side slide-in panel with a small nav list and one call-to-action button at its base. Opening it dims the page behind, and the X or an outside click closes it.",
+  "title_fix": null,
+  "appearance": "A dark panel fixed to the left of the frame, roughly 450px wide, with a white X at the top right, a bold heading, a line of grey helper text, four stacked nav links and a full-width light button pinned to the bottom.",
+  "behaviour": "Clicking Open Drawer slides the panel in from the left while the rest of the page dims and blurs; the X, a click outside or Escape slides it back out. On narrow screens a drag handle replaces the X.",
+  "parts": ["trigger button", "side panel", "heading", "helper text", "nav link", "close icon", "bottom button"],
+  "demo_content": "Heading \"Navigation\" with links Dashboard, Projects, Settings, Profile and a Get Started button",
+  "states": ["hover", "open"],
+  "kind": "drawer",
+  "look": ["dark", "minimal", "flat", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "panel slides in from the side",
+    "left side navigation drawer",
+    "off canvas menu on click",
+    "sliding settings panel",
+    "side sheet with nav links",
+    "menu that covers part of the page",
+    "pop out sidebar with close button",
+    "slide over panel for mobile nav"
+  ],
+  "resembles": [],
+  "use_when": "Secondary navigation should open over the page without shifting the layout.",
+  "avoid_when": "On desktop it cannot be dragged closed and the panel width is fixed at 450px.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["nav", "sidebar"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "direction, outsideClose, open and setOpen are props; the heading, links and button are your own children.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One slide-in panel with a backdrop blur; nothing loops.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The trigger is a plain div, so the drawer cannot be opened by keyboard; the X has no accessible name."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": false},
+    {"name": "setOpen", "type": "(open: boolean) => void", "default": null, "required": false},
+    {"name": "direction", "type": "\"left\" | \"right\" | \"top\" | \"bottom\"", "default": "left", "required": false},
+    {"name": "outsideClose", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The trigger is a div, so keyboard users cannot open the drawer.",
+    "The crop cuts the panel's left edge, hiding most of the heading."
+  ],
+  "polish": 3,
+  "polish_why": "Functional slide-over with a tidy nav list; clipped crop and plain styling keep it ordinary.",
+  "unsure": ["resembles"]
+}

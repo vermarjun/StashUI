@@ -1,0 +1,66 @@
+{
+  "name": "GridMotion-TS-TW",
+  "frames": {
+    "code": "7234",
+    "best": 2,
+    "best_why": "The tilted grid fills the frame with photos and word tiles all readable and evenly spread.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A tilted wall of photos slides sideways as the pointer crosses.",
+  "summary": "Four rows of photo and text tiles sit in a grid turned about fifteen degrees off level. Moving the pointer left or right shoves alternating rows in opposite directions with a soft lag.",
+  "title_fix": null,
+  "appearance": "A dark backdrop holds a large four-by-seven grid of rounded square tiles, tilted counter-clockwise so its rows run diagonally. Most tiles are cropped photographs in muted tones; every fourth one is a black tile with a single white word.",
+  "behaviour": "Rows glide horizontally in alternating directions, drifting further the further the pointer sits from the middle, each row lagging a little differently. The grid is oversized, so its edges always run past the frame.",
+  "parts": ["photo tiles", "word tiles", "tilted grid rows", "dark backdrop"],
+  "demo_content": "Camera bodies, forest windows, laptops, snowy peaks and black word tiles reading Depth, Flow and similar labels.",
+  "states": [],
+  "kind": "gallery-section",
+  "look": ["dark", "dense", "editorial", "colorful", "sharp"],
+  "tone": "decorative",
+  "search_phrases": [
+    "tilted photo wall that slides on mouse",
+    "parallax image grid hero",
+    "diagonal gallery rows moving sideways",
+    "photo mosaic that follows cursor",
+    "image wall for a portfolio landing",
+    "moving rows of pictures background",
+    "grid of photos with drift effect",
+    "angled masonry slideshow"
+  ],
+  "resembles": [],
+  "use_when": "A landing or portfolio section needs a wall of imagery that comes alive with the pointer.",
+  "avoid_when": "You need tiles that stay still or legible on touch: rows only respond to a mouse and are always cropped at the edges.",
+  "suits": ["portfolio", "marketing", "saas"],
+  "slot_hints": ["hero", "page-background", "feature-card"],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass up to 28 items as strings, image URLs or nodes, plus the radial gradient colour. Row count, tilt, gap and slide range are fixed in the source.",
+  "technique": ["gsap"],
+  "weight": "moderate",
+  "weight_why": "Twenty-eight tiles move with GSAP each tick, with no canvas or 3D scene.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Photos are CSS backgrounds with no alt text, and there is no reduced-motion path for the row drift."
+  },
+  "props": [
+    {"name": "items", "type": "(string | ReactNode)[]", "default": "[]", "required": false},
+    {"name": "gradientColor", "type": "string", "default": "'black'", "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Well paced drift and a coherent tilt; outer tiles are always half cut off.",
+  "unsure": ["states", "shows_interaction", "kind"]
+}

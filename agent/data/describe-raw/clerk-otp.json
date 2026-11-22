@@ -1,0 +1,68 @@
+{
+  "name": "clerk-otp",
+  "frames": {
+    "code": "5154",
+    "best": 3,
+    "best_why": "All six cells hold digits and every cell carries the cyan glow, showing the completed code.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Six code cells fill themselves one digit at a time with cyan glows.",
+  "summary": "A small dark verification card with six code boxes that type a random number into one cell after another, glow cyan on the current cell, flash together and repeat.",
+  "title_fix": null,
+  "appearance": "A rounded dark card with six square cells in a row near the top, each a subtle gradient tile holding a pale grey digit. The active cell has a cyan outline and inner glow. A small white title and two lines of grey copy sit at the lower left.",
+  "behaviour": "A random six-digit code types itself in, advancing about every 400ms; the current cell glows cyan, the whole row flashes once the last digit lands, then the digits fade and the loop starts again after a pause.",
+  "parts": ["card", "code cell", "digit", "active glow", "title", "description"],
+  "demo_content": "Title Multifactor Authentication with copy about self-serve multifactor settings enforced at sign-in.",
+  "states": ["loading", "success"],
+  "kind": "auth-form",
+  "look": ["dark", "rounded", "minimal", "glow"],
+  "tone": "minimal",
+  "search_phrases": [
+    "six digit verification code boxes",
+    "one time passcode animation",
+    "code cells filling automatically",
+    "two factor code entry screen",
+    "glowing digits typing in",
+    "security code input card",
+    "authentication code demo loop",
+    "pin code boxes with cyan glow"
+  ],
+  "resembles": [],
+  "use_when": "A sign-in or two-factor screen needs a lively placeholder or hero for the verification-code step.",
+  "avoid_when": "Real code entry: the digits are random and uneditable, so it cannot verify anything on its own.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "subtle",
+    "affects": ["text", "border", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Title, description, loop delay and hover-gating come through props; the six-cell layout, gradient tiles, cyan glow and timings are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Six animated spans on a timer; no canvas and no per-frame loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The digits are decorative motion with no input semantics, labels or live announcement of the code."
+  },
+  "props": [
+    {"name": "delay", "type": "number", "default": "3500", "required": false},
+    {"name": "cardTitle", "type": "string", "default": "\"Multifactor Authentication\"", "required": false},
+    {"name": "cardDescription", "type": "string", "default": "\"Each user's self-serve multifactor settings are enforced automatically during sign-in.\"", "required": false},
+    {"name": "whileHover", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": ["It looks like a real verification field but has no inputs, verify action or error state."],
+  "polish": 3,
+  "polish_why": "Tidy little card and a satisfying glow; it is a looping demo rather than a usable field.",
+  "unsure": ["states"]
+}

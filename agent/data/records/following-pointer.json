@@ -1,0 +1,134 @@
+{
+ "name": "following-pointer",
+ "frames": {
+  "code": "8784",
+  "best": 3,
+  "best_why": "Frame 3 catches the arrow and its green Read more label clean on the gradient, clear of any text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.1
+ },
+ "tagline": "A coloured tag reading Read more chases the cursor across a blog card.",
+ "summary": "A rounded article card with a bright gradient banner, a tag, a heading, body copy and an author line. On hover the normal pointer becomes a small arrow carrying a randomly coloured call-to-action label.",
+ "title_fix": null,
+ "appearance": "A rounded card with a vivid violet-to-green gradient panel across the top and a dark body below holding an outlined tag, a bold heading, two lines of grey copy and a small orange-pink avatar beside author text. On hover a tiny arrow cursor and a rounded coloured label hang at the pointer.",
+ "behaviour": "Entering the card hides the native cursor and spawns a small arrow with a coloured pill label that appears at the pointer and follows every move. Leaving shrinks both away and brings the normal cursor back.",
+ "parts": [
+  "card",
+  "gradient banner",
+  "tag",
+  "heading",
+  "paragraph",
+  "avatar",
+  "author line",
+  "pointer label"
+ ],
+ "demo_content": "Tag \"Design Systems\", heading \"Building with Motion\", and author \"Jane Doe · 3 min read\" with a Read more label.",
+ "states": [
+  "hover"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "gradient",
+  "colorful",
+  "dark",
+  "rounded"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "custom cursor with a label",
+  "arrow that trails the mouse",
+  "hover card with a read more tag",
+  "mouse follower bubble",
+  "replace the cursor with an icon",
+  "label that sticks to the pointer",
+  "interactive article card with cursor tag",
+  "pointer tooltip that says click here"
+ ],
+ "resembles": [],
+ "use_when": "A link card should feel alive and advertise its call to action right at the pointer.",
+ "avoid_when": "Touch or keyboard users need the card's action, or the label must always be legible.",
+ "suits": [
+  "portfolio",
+  "blog",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "children fill the card, title sets the label's text and className restyles the wrapper. The arrow icon, the random colour palette and the fade are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One card plus a single pointer element that exists only while hovered.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The follower and its label are pointer-only with no keyboard route, and the coloured pill can leave white text on pale grey."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string | React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The label is white text on a light pill, so legibility depends on the random colour chosen.",
+  "The card hides the native cursor, so on touch the Read more cue never appears."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy card and a fun follower, but the gradient banner is generic and the label contrast is uneven.",
+ "unsure": [],
+ "title": "Custom Cursor Follower",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ea4c418b3f3dbfc8",
+  "film_hash": "3c2e68a1e809cab6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "name": "distorted-glass",
+ "frames": {
+  "code": "7044",
+  "best": 4,
+  "best_why": "Frame 4 shows the warm sunset smeared through the glass strip at the bottom most clearly.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 7.8
+ },
+ "tagline": "A frosted, rippled glass band sits across the bottom edge.",
+ "summary": "A short strip of frosted glass with a rippled surface, pinned over the bottom of a scrolling image feed. It warps and blurs whatever passes underneath and lets scrolling pass through.",
+ "title_fix": null,
+ "appearance": "A narrow band along the bottom of a photo card looks like rippled frosted glass, smearing the image behind it into soft waves and glowing where the photo is warm. Above it, sharp stacked photos carry white captions.",
+ "behaviour": "Static: nothing moves on its own. Whatever scrolls behind the strip is bent by the glass, and the strip ignores the pointer so the feed keeps scrolling under it.",
+ "parts": [
+  "glass strip",
+  "rippled surface",
+  "thin border"
+ ],
+ "demo_content": "A scrolling set of travel photos: Above the clouds, Golden hour ridge, Facade study, Fire in the sky.",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "glass",
+  "gradient",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "frosted glass strip over photos",
+  "rippled glass edge on a scrolling feed",
+  "blurred distortion at the bottom of a card",
+  "ice like overlay on images",
+  "glassmorphism band across a gallery",
+  "water ripple effect over a photo",
+  "frosted bottom bar for a feed",
+  "rippled glass panel over a gallery"
+ ],
+ "resembles": [
+  "iOS frosted glass"
+ ],
+ "use_when": "A scrolling gallery needs a soft frosted fade at its bottom edge so images dissolve into the frame.",
+ "avoid_when": "Small copy must stay legible behind it: the glass blurs and warps whatever sits underneath.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "divider",
+  "footer"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "Only className is accepted; the ripple frequency, displacement scale and glass gradient are fixed in the SVG filter and style block.",
+ "technique": [
+  "svg-filter"
+ ],
+ "weight": "light",
+ "weight_why": "One static SVG turbulence filter and a repeating gradient; no animation loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The strip is decorative and lets the pointer through, but it stays hidden below the xl breakpoint, so smaller screens lose it."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The glass strip is hidden below the xl breakpoint, so it disappears on smaller screens.",
+  "The filtered SVG is not marked aria-hidden, so assistive tech may announce a stray Distorted Glass image."
+ ],
+ "polish": 3,
+ "polish_why": "Convincing frosted ripple over photos; it is tiny at the bottom and vanishes on small screens.",
+ "unsure": [],
+ "title": "Distorted Glass",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5ad72ff063934d1b",
+  "film_hash": "13b1e3c6407f2ad3",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

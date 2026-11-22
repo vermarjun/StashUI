@@ -1,0 +1,77 @@
+{
+  "name": "detent-dial",
+  "frames": {
+    "code": "6871",
+    "best": 1,
+    "best_why": "Dial at rest shows the full tick ring, the orange notch marker and a clean 21.0° readout.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark rotary knob clicks through degrees of temperature.",
+  "summary": "A circular temperature dial with a ring of ticks around a large knob. Turning it snaps from notch to notch, flicks coast and settle, and the big readout rolls its digits as the value changes.",
+  "title_fix": null,
+  "appearance": "On a black stage, a large dark circular knob with a thin rim and a short white indicator line sits inside a 270-degree ring of radial ticks, one glowing orange at the current value. Inside the knob Temperature sits above a big white readout, with 16.0° and 30.0° at the lower corners.",
+  "behaviour": "Dragging around the knob turns the value, snapping toward each notch and coasting briefly after a flick before settling. Scroll-wheel and arrow keys step it, double-click returns to the default, and the readout's digits roll over as the number changes.",
+  "parts": ["tick ring", "knob", "indicator line", "temperature label", "value readout", "end labels"],
+  "demo_content": "Reads 'Temperature' with values like 21.0° and 24.5°, and end labels 16.0° and 30.0°.",
+  "states": ["dragging", "focus", "disabled"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "technical", "monochrome", "rounded"],
+  "tone": "technical",
+  "search_phrases": [
+    "rotary temperature knob",
+    "circular dial slider",
+    "turn a knob to set a value",
+    "thermostat dial control",
+    "volume knob with tick marks",
+    "flick to spin the dial",
+    "round range selector",
+    "knob that clicks between notches"
+  ],
+  "resembles": ["Nest Thermostat"],
+  "use_when": "A single numeric setting such as temperature or volume deserves a precise, tactile dial instead of a plain range slider.",
+  "avoid_when": "It needs a wide square area and captures touch, so it is awkward in tight mobile layouts or long scrolling forms.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["form-field", "stat"],
+  "traits": {
+    "trigger": ["drag", "keyboard", "focus"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Label, min, max, step, value/defaultValue, size and a formatValue function all come from props; the tick colours and indicator styling need source edits.",
+  "technique": ["motion-library", "svg"],
+  "weight": "light",
+  "weight_why": "An SVG tick ring and motion transforms on a single knob; idle when untouched.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Slider role, keyboard steps, aria values and a reduced-motion path are all covered; only the tiny end labels are hidden from screen readers."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "min", "type": "number", "default": "16", "required": false},
+    {"name": "max", "type": "number", "default": "30", "required": false},
+    {"name": "step", "type": "number", "default": "0.5", "required": false},
+    {"name": "defaultValue", "type": "number", "default": "21", "required": false},
+    {"name": "label", "type": "string", "default": "\"Temperature\"", "required": false},
+    {"name": "formatValue", "type": "(value: number) => string", "default": "(v) => `${v.toFixed(1)}°`", "required": false},
+    {"name": "size", "type": "number", "default": "240", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The 16.0° and 30.0° end labels are small and low-contrast against the black stage."
+  ],
+  "polish": 4,
+  "polish_why": "Refined instrument feel with a travelling tick wave and rolling digits; end labels are faint.",
+  "unsure": ["slot_hints"]
+}

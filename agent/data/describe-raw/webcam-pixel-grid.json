@@ -1,0 +1,79 @@
+{
+  "name": "webcam-pixel-grid",
+  "frames": {
+    "code": "4739",
+    "best": 5,
+    "best_why": "Frame 5 shows the tallest, clearest cluster of raised blocks against the dark grid.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A webcam feed becomes a dark grid where motion lifts tiles into 3D blocks.",
+  "summary": "Samples a live camera into a coarse grid of square cells. Any cell that sees movement rises into a little 3D block and settles back, so a rough silhouette lifts out of the grid as you move.",
+  "title_fix": null,
+  "appearance": "A dark rounded panel filled with a fine grid of square cells. Part of the grid rises into pale grey 3D blocks that cast a shadow, forming a rough blob against the black, with a small white caption at the bottom left.",
+  "behaviour": "The camera feed is sampled into the grid each frame, and cells whose pixels change lift into raised blocks, then settle back once motion stops. The blocks cast side faces and shadows, so the silhouette shifts as the subject moves.",
+  "parts": ["cell grid", "raised blocks", "block shadows", "caption"],
+  "demo_content": "\"You, in pixels\" caption reading \"Every cell lifts when it detects motion. Wave at the camera.\"",
+  "states": ["error"],
+  "kind": "image-effect",
+  "look": ["dark", "monochrome", "technical", "dense", "3d"],
+  "tone": "technical",
+  "search_phrases": [
+    "webcam feed turned into blocks",
+    "camera motion makes tiles rise",
+    "interactive pixel grid mirror",
+    "blocks pop up as you move",
+    "live camera pixel art effect",
+    "3d tile grid follows movement",
+    "webcam wall of lifting cubes",
+    "motion detecting pixel display"
+  ],
+  "resembles": [],
+  "use_when": "An interactive hero or demo should let visitors see their own movement turn into a grid of blocks.",
+  "avoid_when": "It needs camera permission and is empty without a webcam, and the loop runs continuously while mounted.",
+  "suits": ["portfolio", "devtool", "marketing"],
+  "slot_hints": ["hero", "feature-card", "media", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Grid columns and rows, elevation, motion sensitivity and smoothing, colour mode and tone, mirror, gaps, invert and darken, plus callbacks, are props.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "Reads the camera and redraws a full 3D cell grid on every animation frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no accessible name or role, and camera access is requested on mount with no reduced-motion option."
+  },
+  "props": [
+    {"name": "gridCols", "type": "number", "default": "64", "required": false},
+    {"name": "gridRows", "type": "number", "default": "48", "required": false},
+    {"name": "maxElevation", "type": "number", "default": "15", "required": false},
+    {"name": "motionSensitivity", "type": "number", "default": "0.4", "required": false},
+    {"name": "elevationSmoothing", "type": "number", "default": "0.1", "required": false},
+    {"name": "colorMode", "type": "\"webcam\" | \"monochrome\"", "default": "\"webcam\"", "required": false},
+    {"name": "monochromeColor", "type": "string", "default": "\"#00ff88\"", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "\"#0a0a0a\"", "required": false},
+    {"name": "mirror", "type": "boolean", "default": "true", "required": false},
+    {"name": "gapRatio", "type": "number", "default": "0.1", "required": false},
+    {"name": "invertColors", "type": "boolean", "default": "false", "required": false},
+    {"name": "darken", "type": "number", "default": "0", "required": false}
+  ],
+  "issues": [
+    "The effect needs camera access and shows nothing relevant until permission is given.",
+    "At this grid size the subject reads as a vague blob rather than a recognisable image."
+  ],
+  "polish": 4,
+  "polish_why": "Strong 3D motion and a clean dark frame; the coarse grid hides what the camera sees.",
+  "unsure": []
+}

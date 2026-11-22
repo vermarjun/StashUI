@@ -1,0 +1,71 @@
+{
+  "name": "button",
+  "frames": {
+    "code": "6663",
+    "best": 1,
+    "best_why": "All six variants sit in one even row with every label readable and no cursor covering them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "Six clickable action styles in a row, from solid white to bare link.",
+  "summary": "A matching set of action controls in six looks: a light filled primary, a dark secondary, an outlined one, a ghost with no fill, a red destructive and a plain text link, all sharing one rounded rectangle and small medium text.",
+  "title_fix": null,
+  "appearance": "A single row of six short rounded controls on black. The first is filled light with dark text, the second dark grey, the third clear with a thin border, the fourth pure text, the fifth salmon red and the last a bare text link.",
+  "behaviour": "Static: no press or hover effect is caught in the frames. In the code each variant darkens its fill on hover, the link one underlines, and keyboard focus draws a soft ring.",
+  "parts": ["primary action", "secondary action", "outline action", "ghost action", "destructive action", "link action"],
+  "demo_content": "Six controls labelled Button, Secondary, Outline, Ghost, Destructive and Link.",
+  "states": ["hover", "focus", "disabled"],
+  "kind": "button",
+  "look": ["dark", "rounded", "flat", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "clickable action with a filled background",
+    "primary and secondary actions in a row",
+    "red delete action control",
+    "text link styled as an action",
+    "call to action blocks",
+    "ghost style action with no fill",
+    "rounded click target with a label",
+    "outlined action next to a solid one"
+  ],
+  "resembles": [],
+  "use_when": "You need a small set of matching action styles that share one shape and sizing scale.",
+  "avoid_when": "Colours come from theme tokens, so the exact look shifts with the host app's palette.",
+  "suits": ["any"],
+  "slot_hints": ["primary-cta", "secondary-cta", "form-submit"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label is children, variant picks one of six looks, size picks one of four heights, and asChild renders a link instead. Any native attribute passes through.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A styled native control with colour and shadow transitions only.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "It is a real native control with visible text and a focus ring; reduced motion is not handled, but only colour shifts animate."
+  },
+  "props": [
+    {"name": "variant", "type": "string", "default": null, "required": false},
+    {"name": "size", "type": "string", "default": null, "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "No frame shows a hover or pressed state, so the variants are only seen as static fills",
+    "Ghost and Link look almost the same on the black stage"
+  ],
+  "polish": 3,
+  "polish_why": "Even, consistent variants; ghost and link are hard to tell apart on the dark stage.",
+  "unsure": []
+}

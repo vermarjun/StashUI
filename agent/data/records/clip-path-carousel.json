@@ -1,0 +1,152 @@
+{
+ "name": "clip-path-carousel",
+ "frames": {
+  "code": "6366",
+  "best": 6,
+  "best_why": "The active slide sits at full height with its caption while neighbours stay clipped short, and the dots and arrows show.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "A photo strip where the centred slide unclips to full height with its caption.",
+ "summary": "A horizontal carousel of tall photographs on black. The centred slide opens to its full height and fades in a title, while the slides either side stay clipped shorter; arrows and dots move between them.",
+ "title_fix": null,
+ "appearance": "A row of portrait photographs with rounded corners on a black stage, each separated by wide gaps. The centred image is noticeably taller and carries a small grey caption beneath it, while its neighbours are cropped top and bottom; arrows and a row of dots sit below.",
+ "behaviour": "Switching slides animates a clip inset so the outgoing image shrinks back to a short band and the new one opens fully, its title fading up from a blur. Arrows, dots, dragging or autoplay move it along.",
+ "parts": [
+  "photo slides",
+  "caption",
+  "previous arrow",
+  "next arrow",
+  "pagination dots"
+ ],
+ "demo_content": "Mountain and landscape photos titled Silent Peaks, Golden Dusk, Azure Ridge and others.",
+ "states": [
+  "hover",
+  "active",
+  "selected"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photo carousel with active slide larger",
+  "images that unclip as you scroll",
+  "centered slide full height",
+  "horizontal photo strip",
+  "gallery with blurred caption",
+  "embla style image slider",
+  "carousel where middle image grows",
+  "landscape photos in a row"
+ ],
+ "resembles": [],
+ "use_when": "A gallery should keep a row of images in view while making the current one the clear focus.",
+ "avoid_when": "It loads remote photos and clips the neighbours, so it needs generous width and a reliable image source.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Props set the image list, autoplay, looping, arrows and dots; the 500px track height and the clip inset are fixed in the source.",
+ "technique": [
+  "motion-library",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A row of images with one clip animation per change; no per-frame loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Arrows and dots are labelled and images have alt text, but the buttons show no focus ring and the clip animation ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "images",
+   "type": "{ src: string; alt: string; title: string }[]",
+   "default": "DEFAULT_IMAGES",
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "{true}",
+   "required": false
+  },
+  {
+   "name": "showNavigation",
+   "type": "boolean",
+   "default": "{true}",
+   "required": false
+  },
+  {
+   "name": "showPagination",
+   "type": "boolean",
+   "default": "{true}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The neighbour slides are clipped so hard that only a sliver of each photo shows.",
+  "Captions are small, low contrast and sit outside the clipped slide."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp focus effect and a clean photo strip; tiny captions and no focus states.",
+ "unsure": [],
+ "title": "Clip Path Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c5f494bb76c16483",
+  "film_hash": "f6071842cedc3338",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

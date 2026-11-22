@@ -1,0 +1,115 @@
+{
+ "name": "customer-experience",
+ "frames": {
+  "code": "7917",
+  "best": 6,
+  "best_why": "A large photo floats over the list while the category rows and descriptions stay readable beside it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "partial",
+  "render_note": "Left edge is cropped: the title shows only \"XPERIENCE\" and the row arrows are cut.",
+  "shows_interaction": "yes",
+  "best_time": 8.8
+ },
+ "tagline": "A photo index where a picture springs along with the pointer.",
+ "summary": "A peach page with a giant orange EXPERIENCE title over a list of photo categories. Each row pairs an arrow and label with a right-aligned description, and hovering any row releases a floating photo that follows the cursor.",
+ "title_fix": "Hover Preview Photo List",
+ "appearance": "Warm peach background with a very large orange uppercase title above a stack of rows divided by thin orange rules. Each row has a diagonal orange arrow, a bold category name with a small grey subtitle on the left, and a grey paragraph on the right. A rounded photo drifts over the list.",
+ "behaviour": "Moving the pointer onto a row fades in that row's photograph and it springs after the cursor across the page. Leaving the row fades the photo out again, and the list itself never moves.",
+ "parts": [
+  "title",
+  "category row",
+  "arrow icon",
+  "category label",
+  "subtitle",
+  "description",
+  "floating preview"
+ ],
+ "demo_content": "Categories like Urban Landscapes, Nature Portraits, Abstract Art and Fashion Editorial with photo blurbs.",
+ "states": [
+  "hover"
+ ],
+ "kind": "list",
+ "look": [
+  "light",
+  "editorial",
+  "flat",
+  "bold"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "floating image that follows the cursor",
+  "hover list with photo preview",
+  "portfolio index with image peek",
+  "editorial link list with thumbnails",
+  "cursor tracking picture on hover",
+  "photo categories list",
+  "interactive contents with images",
+  "gallery links that show a photo"
+ ],
+ "resembles": [],
+ "use_when": "A photography or portfolio index wants a text list where hovering each entry previews its photo under the cursor.",
+ "avoid_when": "The preview needs a mouse, so touch and keyboard users only get the text, and every image URL is fixed.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Eight photo rows with labels, subtitles, paragraphs and image URLs are hardcoded; the peach palette and preview size need source edits.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Eight text rows and one spring-following image that idles when the pointer stops.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Rows are plain divs with mouse-only handlers, so the photo preview cannot be reached by keyboard or touch; no reduced-motion handling."
+ },
+ "props": [],
+ "issues": [
+  "The frames crop the left edge, cutting the title to \"XPERIENCE\" and partly hiding the row arrows.",
+  "While following the pointer the photo covers labels and descriptions underneath it."
+ ],
+ "polish": 4,
+ "polish_why": "Bold warm editorial index with a lively spring preview; the oversized title is clipped in frames.",
+ "unsure": [
+  "render",
+  "slot_hints"
+ ],
+ "title": "Customer Photo Gallery",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c87f7d01a5af3e19",
+  "film_hash": "4638b2afa6823839",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

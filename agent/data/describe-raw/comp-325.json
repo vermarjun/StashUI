@@ -1,0 +1,63 @@
+{
+  "name": "comp-325",
+  "frames": {
+    "code": "6940",
+    "best": 4,
+    "best_why": "Frame 4 shows the dialog filled in, with all three fields and both actions visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Sign-up dialog stacks name, email and password with a Google option.",
+  "summary": "A trigger opens a compact dark dialog with a ring icon, a welcome line, three labelled fields, a white Sign up button, an Or divider, Continue with Google and a terms note.",
+  "title_fix": null,
+  "appearance": "Closed, an outlined Sign up button. Open, a narrow dark rounded dialog: a small outlined ring icon above a bold Sign up coss.com title and grey subtitle, three stacked outlined fields, a full-width white Sign up button, a thin Or divider, an outlined Continue with Google button and a tiny terms line.",
+  "behaviour": "The trigger fades the dialog in over a dimmed page, and Escape or the X closes it. Typing fills the fields, but Sign up and Continue with Google have no action attached.",
+  "parts": ["trigger button", "ring icon", "title", "name field", "email field", "password field", "sign up button", "google button"],
+  "demo_content": "Placeholders Matt Welsh, hi@yourcompany.com and Enter your password; a filled Maya Chen example appears later.",
+  "states": ["hover", "focus", "open"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "sign up popup with google option",
+    "create account modal form",
+    "name email password dialog",
+    "registration dialog with google login",
+    "modal asking to sign up",
+    "account creation form in a popup",
+    "onboarding signup dialog",
+    "join with email or google"
+  ],
+  "resembles": [],
+  "use_when": "You want a compact sign-up form to open over the page without leaving its context.",
+  "avoid_when": "The form has no submit logic, so it needs wiring to a real auth service before use.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "All labels, placeholders and copy are fixed in the file, and the component accepts no props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with three plain inputs; no animation beyond the opening fade.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Every field has a bound label, but the password cannot be revealed and there is no error or success feedback."
+  },
+  "props": [],
+  "issues": ["Sign up and Continue with Google have no handlers, so neither does anything.", "The password field has no show or hide control."],
+  "polish": 4,
+  "polish_why": "Balanced compact form with clear hierarchy; inert submit and no password toggle.",
+  "unsure": ["theme"]
+}

@@ -1,0 +1,138 @@
+{
+ "name": "magic-ui-terminal",
+ "frames": {
+  "code": "7249",
+  "best": 6,
+  "best_why": "The whole sequence is on screen, ending with the second command and its green tick.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "A console window types its log out line by line in green and grey.",
+ "summary": "A small shell panel with three window dots that plays log lines in order: commands type themselves character by character and result lines fade in one after another.",
+ "title_fix": null,
+ "appearance": "A dark rounded panel on black, its thin header strip carrying small red, yellow and green dots at the left. Below, monospaced lines appear in green for confirmations and grey for commands and notes, each confirmation led by a green tick.",
+ "behaviour": "The first command types itself out a character at a time, then each result line drops into place in sequence with a short fade and pause. A second command then types and its final line appears, after which the panel stops.",
+ "parts": [
+  "panel",
+  "window dots",
+  "command line",
+  "status lines",
+  "check marks"
+ ],
+ "demo_content": "A package setup and add-component session with green check marks and grey informational notes",
+ "states": [],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "rounded",
+  "technical",
+  "minimal",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "command line window that types itself",
+  "fake console output animation",
+  "code panel with traffic light dots",
+  "show install steps as they happen",
+  "log lines appearing one after another",
+  "typewriter prompt for a website demo",
+  "cli demo card for docs",
+  "shell window with green check marks"
+ ],
+ "resembles": [
+  "macOS Terminal"
+ ],
+ "use_when": "A docs or landing page should show a command-line flow playing itself out without a real shell.",
+ "avoid_when": "Pages where the text must be copied or read at once; lines start empty and fill slowly.",
+ "suits": [
+  "devtool",
+  "docs"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose output lines as children using the typing and fading variants; typing speed, delay, order and start-on-view are props on each part.",
+ "technique": [
+  "motion-library",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A dozen lines with brief fades and one interval-driven typing loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "There is no live region or heading, so assistive tech meets partial lines as they type and no pause."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "sequence",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "startOnView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"grid text-sm font-normal tracking-tight\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Each new line grows the panel and shifts earlier lines upward while the sequence plays."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp type and believable pacing; the growing panel nudges earlier lines around.",
+ "unsure": [
+  "props"
+ ],
+ "title": "Terminal",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a0ece03773e1a178",
+  "film_hash": "1153bcf469e37a23",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,181 @@
+{
+ "name": "stripe-bg-guides",
+ "frames": {
+  "code": "4726",
+  "best": 1,
+  "best_why": "Frame 1 shows the grid plus a visible light pulse on the second column; all frames are near identical.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.8
+ },
+ "tagline": "Faint light pulses crawl down a field of dashed vertical guides.",
+ "summary": "A dark page backdrop of six evenly spaced vertical guide lines, drawn as fine white dashes, with pale glowing streaks sliding down some of them. Intended to sit behind marketing copy.",
+ "title_fix": null,
+ "appearance": "On black, six evenly spaced vertical lines run the full height, each made of short white dashes, with the outer two solid. A faint pale-blue glow slides along a line here and there. The demo layers a small outlined pill, a large white headline and a grey paragraph in the centre.",
+ "behaviour": "Glow strips travel down the columns at staggered times and loop forever, while every few seconds a random set of columns switches on or off. The guide lines themselves never move.",
+ "parts": [
+  "guide line",
+  "dashed grid",
+  "light pulse",
+  "backdrop"
+ ],
+ "demo_content": "Badge \"Payments infrastructure for the internet\", headline \"Accept payments and scale faster\" and a short paragraph.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "vertical grid lines with moving light",
+  "stripe style column background",
+  "thin dashed lines on a dark page",
+  "glowing lines travelling down the screen",
+  "marketing page grid backdrop",
+  "animated vertical guides behind a hero",
+  "subtle moving lines background",
+  "developer landing page background pattern"
+ ],
+ "resembles": [
+  "Stripe.com background grid"
+ ],
+ "use_when": "A dark marketing or product page needs a quiet, structured backdrop that moves without drawing attention.",
+ "avoid_when": "The page needs a bright theme or strong contrast: pale guide lines nearly vanish on light surfaces.",
+ "suits": [
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "columnCount, direction, easing, glow colour, size and opacity, the randomize interval, maxActiveColumns, darkMode and contained are all props; no source edit needed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Six columns of thin divs with animated gradient strips; no canvas or per-frame script.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Marked aria-hidden, which suits decoration, but the endless glow loop ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "columnCount",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"top-to-bottom\" | \"bottom-to-top\" | \"both\" | \"random\"",
+   "default": "\"both\"",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "\"var(--accent)\"",
+   "required": false
+  },
+  {
+   "name": "glowOpacity",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "glowSize",
+   "type": "string",
+   "default": "\"10vh\"",
+   "required": false
+  },
+  {
+   "name": "animated",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "\"linear\" | \"easeIn\" | \"easeOut\" | \"easeInOut\" | \"spring\"",
+   "default": "\"spring\"",
+   "required": false
+  },
+  {
+   "name": "randomize",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "randomInterval",
+   "type": "number",
+   "default": "9000",
+   "required": false
+  },
+  {
+   "name": "maxActiveColumns",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "darkMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "contained",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The travelling glows are so faint that the frames look almost static.",
+  "There is no reduced-motion check, so the pulses keep running for every visitor."
+ ],
+ "polish": 3,
+ "polish_why": "Disciplined grid and motion, but the glow is so faint it barely reads in stills.",
+ "unsure": [],
+ "title": "Stripe Background Guides",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "db6317ade63bc80f",
+  "film_hash": "d27ac3582b91ebf5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

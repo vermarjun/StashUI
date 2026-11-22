@@ -1,0 +1,184 @@
+{
+ "name": "tech-text",
+ "frames": {
+  "code": "4575",
+  "best": 1,
+  "best_why": "The B is fully dashed and boxed by measurement guides with a size label above it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.6
+ },
+ "tagline": "Plain white wordmark turns the letter under the cursor into a dashed blueprint.",
+ "summary": "A large single-word headline where the letter beneath the pointer switches from solid white to a dashed technical outline ringed by measuring lines and small size labels. Clicking or dragging a letter nudges it.",
+ "title_fix": null,
+ "appearance": "A large white sans-serif word sits alone on a dark stage. The letter the pointer touches becomes a hollow dashed outline, boxed by thin guide lines with small pixel measurements above it.",
+ "behaviour": "On hover the touched letter crossfades from solid to dashed vector strokes, gaining construction guides and a size label, and returns when the pointer leaves. A letter can be dragged aside and springs back.",
+ "parts": [
+  "wordmark",
+  "dashed letter outline",
+  "guide lines",
+  "size label"
+ ],
+ "demo_content": "The word \"Blueprint\" in a heavy sans font.",
+ "states": [
+  "hover",
+  "dragging"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "monochrome",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "letters turn into dashed outlines",
+  "blueprint style text effect",
+  "word with measurement guides on hover",
+  "technical drawing headline",
+  "animated wordmark on dark page",
+  "hover reveals letter construction lines",
+  "typography outline animation",
+  "engineer blueprint lettering"
+ ],
+ "resembles": [],
+ "use_when": "A technical or creative studio headline can trade a plain title for a letter that reveals its construction on hover.",
+ "avoid_when": "Only one letter at a time reacts, the effect is lost on touch, and the tiny labels cannot be read at a distance.",
+ "suits": [
+  "portfolio",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Text, font, size, colours, dash pattern, stroke width, reveal mode, specks, labels, dragging and intro style are props; the canvas drawing needs a source edit.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Canvas redraw runs only on hover or while settling, and glyph sprites are cached.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The word is a single labelled image, so keyboard and screen-reader users get no access to the hover effect."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "'React Bits'",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "150",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "accentColor",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "'left' | 'center' | 'right'",
+   "default": "'center'",
+   "required": false
+  },
+  {
+   "name": "reach",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "lineStyle",
+   "type": "'dashed' | 'solid'",
+   "default": "'dashed'",
+   "required": false
+  },
+  {
+   "name": "reveal",
+   "type": "'area' | 'letter' | 'off'",
+   "default": "'letter'",
+   "required": false
+  },
+  {
+   "name": "draggable",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "specks",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "guides",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Sharp type trick with tidy guides; the tiny measurement labels are illegible at normal size.",
+ "unsure": [],
+ "title": "Tech Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8fbadd861e8608b3",
+  "film_hash": "7a058d61dd4640c2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

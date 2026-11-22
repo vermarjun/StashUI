@@ -1,0 +1,112 @@
+{
+ "name": "comp-260",
+ "frames": {
+  "code": "1897",
+  "best": 1,
+  "best_why": "Both handles sit at the ends of the track with the full From $5 to $1,240+ readout and the Go button in clear view.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Two handles narrow a price band while the total range reads out above.",
+ "summary": "A two-handle slider for a price bracket, with the chosen minimum and maximum written in currency above it and a rounded Go button to the right.",
+ "title_fix": null,
+ "appearance": "A single line of large tabular text states the range. Below it a long track carries two round white handles with a solid white band between them, and an outlined rounded button labelled Go sits at the far right.",
+ "behaviour": "Dragging the upper handle lowers the top of the range and shortens the filled band, and the sentence above rewrites itself as the handle moves. The active handle wears a faint halo while it is held.",
+ "parts": [
+  "price readout",
+  "track",
+  "filled band",
+  "lower handle",
+  "upper handle",
+  "go button"
+ ],
+ "demo_content": "The readout spans From $5 to $1,240+ and is pulled down through $1,125, $1,072, $940 and $721.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pick a minimum and maximum price",
+  "shop filter for a cost range",
+  "two handled bar with a go button",
+  "filter products by how much they cost",
+  "price bracket selector for a store",
+  "range control with a currency readout",
+  "set a lower and upper budget",
+  "two knobs on one bar with totals above"
+ ],
+ "resembles": [],
+ "use_when": "A store or listing should let shoppers set a budget floor and ceiling in one gesture.",
+ "avoid_when": "The Go button has no behaviour and the upper limit adds a plus sign, so search must be wired by hand.",
+ "suits": [
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Price bounds, the currency formatter and the button wording are written in the source; the plus sign on the top limit also needs an edit.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One two-handle slider and a button; only the fill and readout change.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The slider has a name, but the changing price sentence is not linked to it and the Go button's name says nothing about what it does."
+ },
+ "props": [],
+ "issues": [
+  "The Go button is drawn but has no click handler, so pressing it does nothing."
+ ],
+ "polish": 4,
+ "polish_why": "Big readable range text and balanced spacing; the dead button is the one gap.",
+ "unsure": [],
+ "title": "Price Range Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5e96cbd5e2cef714",
+  "film_hash": "98af235d72f1a6db",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

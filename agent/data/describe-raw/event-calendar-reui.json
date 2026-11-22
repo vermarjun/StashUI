@@ -1,0 +1,79 @@
+{
+  "name": "event-calendar-reui",
+  "frames": {
+    "code": "6925",
+    "best": 1,
+    "best_why": "Month grid for November with events spread across the week rows, the clearest calendar overview.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark month and week calendar with draggable coloured events.",
+  "summary": "A full event calendar with a month grid and a week time grid, coloured event chips, an all-day row and a view dropdown. Events can be dragged and resized, and a New event button adds one.",
+  "title_fix": null,
+  "appearance": "A dark calendar panel with a toolbar of prev/next arrows, a date heading, a view dropdown and a New event button above a seven-column grid. Month cells hold small coloured event bars in violet, emerald, amber, rose and blue; week view adds an all-day strip over a time grid with tinted event blocks and a red now line.",
+  "behaviour": "The view dropdown switches between month, week, day, days, agenda and time grid, and the arrows page the period. Events drag to new days or times and resize at their edges, the all-day row spans multi-day items, and New event drops a one-hour event at noon.",
+  "parts": ["toolbar", "view dropdown", "month grid", "day cells", "event chips", "all-day row", "time grid", "now line"],
+  "demo_content": "Events like Team sync, Design review, Roadmap planning, Team offsite, Client call, Sprint planning and Quarterly review.",
+  "states": ["hover", "focus", "selected", "dragging", "open"],
+  "kind": "calendar",
+  "look": ["dark", "dense", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "month and week calendar view",
+    "google calendar style grid",
+    "schedule with colored events",
+    "drag events to new times",
+    "team calendar with all day events",
+    "week timetable with time slots",
+    "appointment calendar for a dashboard",
+    "resource calendar with staff columns"
+  ],
+  "resembles": ["Google Calendar"],
+  "use_when": "A product needs a full scheduling grid with month and week views, event drag and resize, and all-day items.",
+  "avoid_when": "It is a big stateful component with many dependencies; a single date picker is far lighter for choosing one day.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["data-table", "body-text"],
+  "traits": {
+    "trigger": ["click", "drag", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Events, resources, default view and date, time zone, locale, slot durations, interactions, views, callbacks and render overrides are all props; the chrome follows themed classes.",
+  "technique": ["css-transition"],
+  "weight": "heavy",
+  "weight_why": "A large stateful calendar with a drag engine and six views; substantial JS and DOM.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Navigation and view switching are keyboard-driven with an aria-live announcer, but dragging and resizing events remains pointer-only."
+  },
+  "props": [
+    {"name": "defaultEvents", "type": "CalendarEvent[]", "default": null, "required": false},
+    {"name": "events", "type": "CalendarEvent[]", "default": null, "required": false},
+    {"name": "defaultView", "type": "CalendarView", "default": "\"month\"", "required": false},
+    {"name": "view", "type": "CalendarView", "default": null, "required": false},
+    {"name": "resources", "type": "EventCalendarResource[]", "default": null, "required": false},
+    {"name": "onEventUpdate", "type": "(update) => EventCalendarUpdateResult", "default": null, "required": false},
+    {"name": "renderEvent", "type": "function", "default": null, "required": false},
+    {"name": "offDays", "type": "boolean | EventCalendarOffDaysConfig", "default": null, "required": false},
+    {"name": "weekStartsOn", "type": "WeekStartsOn", "default": null, "required": false},
+    {"name": "timeZone", "type": "string", "default": null, "required": false},
+    {"name": "apiRef", "type": "RefObject<EventCalendarApi | null>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Month cells are cramped, so event labels truncate to a few characters at this density.",
+    "The open view dropdown covers part of the calendar grid."
+  ],
+  "polish": 4,
+  "polish_why": "Dense, faithful scheduling UI with clear event colours; month cells feel cramped.",
+  "unsure": ["technique", "a11y", "needs_sized_parent"]
+}

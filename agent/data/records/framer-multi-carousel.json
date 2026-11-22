@@ -1,0 +1,123 @@
+{
+ "name": "framer-multi-carousel",
+ "frames": {
+  "code": "2820",
+  "best": 2,
+  "best_why": "Three complete photo cards with captions legible, before the row starts clipping at the edges.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.6
+ },
+ "tagline": "Three captioned photo cards step sideways under round arrows.",
+ "title_fix": null,
+ "summary": "A row of image cards with a caption strip along the bottom, advanced one card at a time by overlay arrows. The visible count follows the window: one card on phones, three on desktops.",
+ "appearance": "Three portrait photo cards stand shoulder to shoulder, each around 300px tall with softly rounded corners. A black fading band across the bottom of each card holds a small white caption. Two white chevron circles float over the middle of the left and right edges.",
+ "behaviour": "Clicking an arrow slides the row by exactly one card with a spring, and the arrow dims to grey at either end of the set. Resizing the window changes how many cards fit, snapping the row back into range.",
+ "parts": [
+  "photo card",
+  "photo",
+  "caption band",
+  "caption",
+  "previous arrow",
+  "next arrow"
+ ],
+ "demo_content": "Unsplash photos captioned MAXX PHAM and BOXIEN BAY: a sunglasses portrait, a sunlit green wall, blurred figures.",
+ "states": [
+  "hover",
+  "disabled"
+ ],
+ "kind": "carousel",
+ "look": [
+  "rounded",
+  "dark",
+  "minimal",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "carousel showing three cards at once",
+  "multi slide photo gallery with captions",
+  "arrows to step through image cards",
+  "responsive image row one two three",
+  "photo cards with title gradient footer",
+  "horizontal image strip with round arrows",
+  "gallery that shows more slides on wide screens",
+  "portfolio card slider with labels"
+ ],
+ "resembles": [],
+ "use_when": "Several images with short captions should sit side by side and the count should adapt to width.",
+ "avoid_when": "Cards cannot be dragged, the row is fixed at 300px tall and captions never truncate.",
+ "suits": [
+  "portfolio",
+  "ecommerce",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The breakpoints prop sets cards per width; photos, captions and the fixed card height are edited in the file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Eighteen images in a row, moved by a single spring transform on arrow clicks.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Arrows are icon-only with no accessible name, and alt text repeats the odd caption instead of describing the photo."
+ },
+ "props": [
+  {
+   "name": "breakpoints",
+   "type": "Record<number, { slidesToShow: number }>",
+   "default": "{0:{slidesToShow:1},768:{slidesToShow:2},1024:{slidesToShow:3}}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Both arrow buttons are icon-only, so screen readers announce nothing useful.",
+  "The only heading is visually hidden, leaving the visible carousel unlabelled on the page."
+ ],
+ "polish": 4,
+ "polish_why": "Even three-up layout with readable captions; the bare arrows are the only rough edge.",
+ "unsure": [
+  "traits.theme",
+  "a11y.focus_visible"
+ ],
+ "title": "Framer Multi Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "db81f278bea40be7",
+  "film_hash": "140b02edbaef61a9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

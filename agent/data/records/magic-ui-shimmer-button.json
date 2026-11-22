@@ -1,0 +1,158 @@
+{
+ "name": "magic-ui-shimmer-button",
+ "frames": {
+  "code": "7369",
+  "best": 3,
+  "best_why": "The travelling glint shows at both the top rim and the lower edge, so the shimmer is clearest.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.0
+ },
+ "tagline": "A band of light travels around the rim of a black pill button.",
+ "summary": "A black pill-shaped call-to-action with white text whose border is lit by a bright glint that circles the edge continuously; hovering deepens the inner bottom shadow.",
+ "title_fix": null,
+ "appearance": "A wide black pill-shaped button with fully rounded ends and a hairline white border, holding the words \"Get Started\" in plain white. A thin bright crescent of light runs along part of its edge.",
+ "behaviour": "A small highlight travels around the rim on a slow three-second loop, lighting different stretches of the border as it passes. Hover deepens the inner shadow and a press nudges the button down a pixel.",
+ "parts": [
+  "button",
+  "label",
+  "rim shimmer",
+  "inner highlight"
+ ],
+ "demo_content": "The button label reads \"Get Started\".",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "pill",
+  "minimal",
+  "glow"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "black pill button with moving light",
+  "shimmer around button border",
+  "glowing edge call to action",
+  "rotating spark on a button",
+  "get started button with shine",
+  "dark rounded cta with light sweep",
+  "button with animated border highlight",
+  "neon rim travelling around button"
+ ],
+ "resembles": [],
+ "use_when": "A single primary action should draw the eye on a dark landing page.",
+ "avoid_when": "Light pages: the black pill and faint white glow are built for dark surfaces.",
+ "suits": [
+  "saas",
+  "marketing",
+  "ai-chat"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "hero",
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "shadow",
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The label is children; shimmer colour, band width, duration, corner radius and background are props.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A couple of layered elements moved by two CSS keyframe animations; no script.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "A native button with readable white text, so it works by keyboard; the endless shimmer ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "shimmerColor",
+   "type": "string",
+   "default": "\"#ffffff\"",
+   "required": false
+  },
+  {
+   "name": "shimmerSize",
+   "type": "string",
+   "default": "\"0.05em\"",
+   "required": false
+  },
+  {
+   "name": "shimmerDuration",
+   "type": "string",
+   "default": "\"3s\"",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "string",
+   "default": "\"100px\"",
+   "required": false
+  },
+  {
+   "name": "background",
+   "type": "string",
+   "default": "\"rgba(0, 0, 0, 1)\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp pill and a smooth travelling glint; the effect stays subtle and the label readable.",
+ "unsure": [
+  "responsive",
+  "focus_visible"
+ ],
+ "title": "Shimmer Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c85ffda63ba086d2",
+  "film_hash": "13093d55b84f5964",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

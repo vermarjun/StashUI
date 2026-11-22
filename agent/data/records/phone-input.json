@@ -1,0 +1,148 @@
+{
+ "name": "phone-input",
+ "frames": {
+  "code": "3812",
+  "best": 4,
+  "best_why": "Frame 4 shows the country picker open over the field with flags, names and dialling codes.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.7
+ },
+ "tagline": "Pick a country flag, then type the number; the list searches as you type.",
+ "summary": "A phone number field with a country flag button on the left. Pressing it opens a searchable list of countries showing flags, names and dialling codes; chosen numbers carry the matching flag.",
+ "title_fix": null,
+ "appearance": "A slim bordered field on a dark page, split into a flag button with up-down chevrons and an input reading Enter phone number. The open picker is a rounded panel with a search box above rows of flag, country name and calling code.",
+ "behaviour": "Clicking the flag opens a scrollable country list that filters as you type in its search box. Choosing a country closes the list and swaps the flag and dialling code; typing the number then fills the field.",
+ "parts": [
+  "flag button",
+  "chevrons",
+  "phone field",
+  "search box",
+  "country row",
+  "calling code"
+ ],
+ "demo_content": "Countries such as Afghanistan, Albania and United Kingdom with codes +93, +355 and +44.",
+ "states": [
+  "open",
+  "focus",
+  "hover"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "phone number field with country flag",
+  "searchable country code dropdown",
+  "dial code picker with flags",
+  "international phone number entry",
+  "select country and type phone number",
+  "flag menu for phone formats",
+  "phone field with calling codes",
+  "country search while entering a number"
+ ],
+ "resembles": [],
+ "use_when": "You need international numbers where users pick a country and the right dialling code.",
+ "avoid_when": "It depends on a country-list package and a popup, so it is heavier than a plain tel field.",
+ "suits": [
+  "saas",
+  "fintech",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass value, onChange and defaultCountry plus any native input attributes. The flag set, country list and search come from the phone-number package, styled through classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Loads the phone-number library, every country flag and a command palette.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The phone field is named only by its placeholder, and the flag button is labelled just by the flag title."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value) => void",
+   "default": "{(value) => onChange?.(value || '')}",
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "{disabled}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('flex', className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The field is named only by placeholder text, with no visible label.",
+  "The flag button shows no country name, so it relies on recognising the flag."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy flag-and-search picker; tiny flags and muted codes are the weak spots.",
+ "unsure": [
+  "technique"
+ ],
+ "title": "Phone Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "86c84ab62895b469",
+  "film_hash": "b74a3660141ba94a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

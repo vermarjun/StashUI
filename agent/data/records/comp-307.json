@@ -1,0 +1,111 @@
+{
+ "name": "comp-307",
+ "frames": {
+  "code": "4377",
+  "best": 3,
+  "best_why": "Frame 3 shows the whole strip and all three controls with the cursor well below them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "partial",
+  "render_note": "The crop cuts the left edge, so the leading icon and the opening words are missing.",
+  "shows_interaction": "no",
+  "best_time": 2.6
+ },
+ "tagline": "Thin launch bar offers a Download button and a dismiss X.",
+ "summary": "A full-width dark strip announcing a launch, with a white Download button, a plain Learn more link and a close X that hides the bar.",
+ "title_fix": null,
+ "appearance": "A very thin, full-width dark band sits at the top, holding one small line of light text on the left. On the right are a white rounded Download button, a borderless Learn more label and a faint X.",
+ "behaviour": "Pressing the X removes the band. Learn more underlines and the X brightens on hover; the demo never presses Download.",
+ "parts": [
+  "message text",
+  "download button",
+  "learn more link",
+  "close button"
+ ],
+ "demo_content": "It's live and ready to use! Start exploring the latest addition to your toolkit.",
+ "states": [
+  "hover"
+ ],
+ "kind": "toast",
+ "look": [
+  "dark",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "launch announcement strip",
+  "new release banner with download",
+  "dismissible product news bar",
+  "full width update message with buttons",
+  "app launch notification bar",
+  "bar announcing something is live",
+  "promo strip with download and close",
+  "changelog banner across top"
+ ],
+ "resembles": [],
+ "use_when": "You want a slim launch announcement with a primary download action and a dismiss control.",
+ "avoid_when": "The message and buttons are fixed and dismissal is not stored, so the bar returns on reload.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "toast",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The message, button labels and targets are fixed in the file; only the visible flag is local state.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A single thin band with one state flag and a hover transition.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Close is labelled and icons are hidden, but the file adds no focus style of its own and ignores reduced motion."
+ },
+ "props": [],
+ "issues": [
+  "The clip crops the left edge, cutting the leading icon and opening words.",
+  "Download and Learn more have no handlers, so neither action does anything."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy, compact launch strip; cropped edge and inert buttons keep it ordinary.",
+ "unsure": [
+  "render",
+  "shows_interaction"
+ ],
+ "title": "Feature Launch Banner",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "43dc1ca0d99ae3c5",
+  "film_hash": "9ef87bdf9680e6bd",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

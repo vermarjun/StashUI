@@ -1,0 +1,163 @@
+{
+ "name": "bg-stractium",
+ "frames": {
+  "code": "8851",
+  "best": 5,
+  "best_why": "Frame 5 shows the full spiny form centred and evenly lit, with every shard visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "A glossy orb erupts into layered metal fins and folds back again.",
+ "summary": "A full-bleed animated 3D backdrop: a dark red and teal organic mass that continuously morphs between a smooth sphere and a burst of blade-like spines. The viewpoint drifts and follows the pointer.",
+ "title_fix": null,
+ "appearance": "A pale blue-white sky gradient fills the frame behind a large glossy form in dark red, teal and silver. In some frames it is a smooth sphere; in others it bursts into layered, feather-like fins and floating shards. White text reads Stractium over the middle.",
+ "behaviour": "Runs unattended: the form slowly unfurls from a sphere into spiny blades and back. Moving the pointer shifts the camera angle, and the drifting viewpoint makes the shards catch the light.",
+ "parts": [
+  "sky gradient",
+  "central form",
+  "blade fins",
+  "floating shards",
+  "glossy highlight"
+ ],
+ "demo_content": "White center label reading Stractium.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "organic",
+  "3d",
+  "gradient",
+  "light",
+  "glow"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "animated raymarched blob background",
+  "morphing organic sphere shader",
+  "full screen 3d backdrop for hero",
+  "abstract metal shards loop",
+  "webgl background animation",
+  "living background that changes shape",
+  "shadertoy style page background",
+  "colorful animated 3d object backdrop"
+ ],
+ "resembles": [],
+ "use_when": "A marketing hero or splash screen needs a moving 3D backdrop without shipping image assets.",
+ "avoid_when": "A costly per-pixel ray march never idles, and its fixed pale sky fights dark themes and white text.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Hue, saturation, brightness, speed, pointer sensitivity, damping and noise opacity/scale are props; the shader geometry itself needs a source edit.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "Ray-marches up to 250 steps per pixel every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Decorative canvas with no ARIA role or reduced-motion check, and the animation never stops."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "mouseSensitivity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "damping",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "noise",
+   "type": "{ opacity: number; scale: number }",
+   "default": "{noise}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo declares a black container, but the frames show a pale sky filling the stage.",
+  "The white Stractium label is nearly invisible against the bright background."
+ ],
+ "polish": 4,
+ "polish_why": "Striking raymarched form with believable shading; the white demo label fades into the sky.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Stractium Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7dd9d2a82b0f9b8b",
+  "film_hash": "00f9148024404310",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

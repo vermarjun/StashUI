@@ -1,0 +1,79 @@
+{
+  "name": "youtube-video-player",
+  "frames": {
+    "code": "8086",
+    "best": 1,
+    "best_why": "Frame 1 shows the cover, title, play button and expand control together before playback.",
+    "usable": [1, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Cover image with a play button opens the clip large.",
+  "summary": "A rounded 16:9 video card showing a poster, a centred play button and the title. Pressing play swaps in an autoplaying YouTube embed, and the corner expand button blows it up over a dimmed page.",
+  "title_fix": null,
+  "appearance": "A rounded 16:9 card filled with the Big Buck Bunny cover, a large circular play button with a dark triangle in the middle, the title just below it, and a small round expand icon at the top right. Once playing it becomes the YouTube embed with its own header and controls.",
+  "behaviour": "Clicking play replaces the poster with an autoplaying YouTube iframe. The expand button grows the card into a centred overlay over a blurred dark backdrop and its icon flips to minimise; Escape closes the overlay.",
+  "parts": ["video frame", "thumbnail", "play button", "title", "expand button", "embed player", "backdrop"],
+  "demo_content": "Big Buck Bunny cover and title; the embed plays Big Buck Bunny 60fps 4K.",
+  "states": ["hover", "expanded"],
+  "kind": "media-player",
+  "look": ["dark", "rounded", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "video card with a play button",
+    "youtube embed that opens in a lightbox",
+    "click to play video preview",
+    "expand video to full screen overlay",
+    "media player with cover image",
+    "watch a youtube clip in a modal",
+    "movie thumbnail with centered play icon",
+    "video lightbox with backdrop"
+  ],
+  "resembles": ["YouTube embed"],
+  "use_when": "You have a YouTube clip and want a poster card that opens it large, in-page, without leaving the layout.",
+  "avoid_when": "You need self-hosted or offline media: playback depends on YouTube and its iframe.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "image", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "videoId and customThumbnail set the clip and poster, title sets the caption, and about a dozen className props restyle each part. Behaviour is fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One image and a layout animation; the YouTube iframe only loads after play.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The dimmed backdrop is a clickable div with only an aria-label and no button role, so keyboard users can close it just with Escape."
+  },
+  "props": [
+    {"name": "videoId", "type": "string", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": null, "required": false},
+    {"name": "defaultExpanded", "type": "boolean", "default": "false", "required": false},
+    {"name": "customThumbnail", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "expandedClassName", "type": "string", "default": null, "required": false},
+    {"name": "thumbnailClassName", "type": "string", "default": null, "required": false},
+    {"name": "thumbnailImageClassName", "type": "string", "default": null, "required": false},
+    {"name": "playButtonClassName", "type": "string", "default": null, "required": false},
+    {"name": "playIconClassName", "type": "string", "default": null, "required": false},
+    {"name": "titleClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 2 and 3 show the card as a blank dark rectangle before the video loads.",
+    "The expand backdrop is a div with no button role, so keyboard users can only close it with Escape."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy cover card, but the playing state inherits YouTube's chrome and two frames render blank.",
+  "unsure": []
+}

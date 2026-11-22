@@ -1,0 +1,76 @@
+{
+  "name": "ransom-note",
+  "frames": {
+    "code": "5337",
+    "best": 2,
+    "best_why": "Both lines are fully assembled and nothing is mid-flight or hidden under the cursor.",
+    "usable": [2, 3, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Letters cut from magazines fly in and lock into a messy headline.",
+  "summary": "A line of text built from mismatched paper scraps, each with its own font, size, skew and pale tint, where the characters spring in from around the page or rock gently in place.",
+  "title_fix": null,
+  "appearance": "On black, two lines of cut-out letters. The big cream and white headline gives every character its own torn-paper square in a serif, slab or typewriter face; a smaller line below uses pastel scraps of yellow, pink, blue and green. A small outlined pill sits underneath.",
+  "behaviour": "In the assemble mode each scrap springs in from a random offset and slightly wrong angle, then settles into the line one after another. In the jitter mode the letters rock a couple of degrees back and forth forever, each on its own delay.",
+  "parts": ["paper scraps", "headline letters", "pastel second line", "cut out button"],
+  "demo_content": "The notes \"WE HAVE YOUR CAT\" and \"leave $5 in the treat jar\" above a Cut it out again button.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["playful", "retro", "textured", "bold"],
+  "tone": "playful",
+  "search_phrases": [
+    "letters cut from magazines and glued together",
+    "kidnapper style headline of paper scraps",
+    "text that assembles from mismatched letters",
+    "each character in a different cut out font",
+    "creepy collage lettering for a poster",
+    "wobbly paper letters that fly into place",
+    "punk zine style headline effect",
+    "how to make scattered letters form a word"
+  ],
+  "resembles": [],
+  "use_when": "A title should feel handmade and a little chaotic, for a playful or zine-like brand.",
+  "avoid_when": "It is display type only: every character is its own animated span, so long copy and careful reading suffer.",
+  "suits": ["marketing", "portfolio", "social"],
+  "slot_hints": ["headline", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass the text and choose assemble, jitter or none, then set intensity, seed, rotation limit, stagger, and your own font and palette arrays. Letters cannot be styled individually.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One spring per character, with an optional light jitter loop that repeats forever.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The full text is exposed once to screen readers while scraps are hidden, and reduced motion disables both the entrance and the jitter."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "animate", "type": "RansomNoteAnimate", "default": "assemble", "required": false},
+    {"name": "intensity", "type": "number", "default": "0.6", "required": false},
+    {"name": "seed", "type": "number", "default": "1", "required": false},
+    {"name": "rotation", "type": "number", "default": "8", "required": false},
+    {"name": "stagger", "type": "number", "default": "0.03", "required": false},
+    {"name": "fonts", "type": "string[]", "default": "DEFAULT_FONTS", "required": false},
+    {"name": "palette", "type": "string[]", "default": "DEFAULT_PALETTE", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The small pastel line packs letters tightly, so the five-dollar amount reads as one compact blob.",
+    "Early assemble frames show mostly empty black with a couple of letters, which looks broken if seen out of context."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing cut-paper collage with good font variety; the small pastel line is cramped.",
+  "unsure": ["best"]
+}

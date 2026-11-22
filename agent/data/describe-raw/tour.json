@@ -1,0 +1,178 @@
+{
+  "name": "tour",
+  "frames": {
+    "code": "1182",
+    "best": 4,
+    "best_why": "Step two is clearest: the Analytics card is cut out bright while the popover and counter sit beside it.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Page dims, one card lights up and a small popover explains it.",
+  "summary": "A guided product tour: the page is masked so a single element stays bright while a popover card beside it explains each step, with Previous, Next and a step count.",
+  "title_fix": null,
+  "appearance": "A dimmed dashboard with a welcome heading and three feature cards. One card sits in a bright cut-out while the rest of the page goes near black, and a small dark popover with a title, paragraph, counter and two buttons points at it.",
+  "behaviour": "Starting the tour lays a mask over the page with a hole around the current target and places a popover beside it, arrow aimed at the element. Next and Previous move the hole and card from step to step, the counter updates, and on the last step the button reads Finish.",
+  "parts": [
+    "page mask",
+    "spotlight cut-out",
+    "popover card",
+    "title",
+    "description",
+    "step counter",
+    "next button",
+    "close button"
+  ],
+  "demo_content": "Welcome dashboard with Analytics, Projects and Team cards and tour copy about KPIs and deadlines.",
+  "states": [
+    "open",
+    "hover",
+    "focus"
+  ],
+  "kind": "onboarding",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "guided product tour with spotlight",
+    "step by step walkthrough overlay",
+    "onboarding that dims the page",
+    "highlight one element and explain it",
+    "feature tour with next buttons",
+    "spotlight hole around a card",
+    "first run tutorial popover",
+    "coach marks across a dashboard"
+  ],
+  "resembles": [
+    "Appcues product tours"
+  ],
+  "use_when": "A new user must be shown a few key parts of a screen in order without a separate help page.",
+  "avoid_when": "Targets are found by selector, so renamed or moved elements break steps, and the mask blocks the page while it runs.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "modal",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "children"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Steps are children with a target selector, side and alignment; open state, step value, footer slot and placement, scroll and dismiss options are props.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A mask polygon and a floating card per step; no continuous animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Focus is trapped inside the tour and its buttons are labelled, though the mask itself carries no step context."
+  },
+  "props": [
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "defaultValue",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "onValueChange",
+      "type": "(step: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onComplete",
+      "type": "() => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onSkip",
+      "type": "() => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "modal",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "sideOffset",
+      "type": "number",
+      "default": "16",
+      "required": false
+    },
+    {
+      "name": "stepFooter",
+      "type": "React.ReactElement",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "On the first step the popover covers the headline it is meant to spotlight, as in frames 2 and 3."
+  ],
+  "polish": 4,
+  "polish_why": "Clean spotlight and a tidy card; the opening card sits on top of the very element it points at.",
+  "unsure": []
+}

@@ -1,0 +1,70 @@
+{
+  "name": "sticky-scroll-reveal",
+  "frames": {
+    "code": "3384",
+    "best": 1,
+    "best_why": "First frame shows the full active heading and paragraph with no top clipping.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Text list scrolls beside a sticky gradient tile that swaps with each item.",
+  "summary": "A scroll-driven feature section: paragraphs sit on the left while a sticky gradient tile on the right shows the matching visual. As you scroll, the active paragraph brightens and both the tile and the panel background change colour.",
+  "title_fix": null,
+  "appearance": "A dark panel split in two: a left column of bold white headings and small grey paragraphs, and a rounded square gradient tile on the right holding a centred label. The panel background is deep navy or near-black, and the tile shifts between green, purple and orange gradients.",
+  "behaviour": "Scrolling the inner panel moves the text column past a sticky tile. The item nearest the top fades up to full opacity while the others dim, and the tile gradient plus the panel background switch to the next colour.",
+  "parts": ["heading", "description paragraph", "gradient tile", "tile label", "panel background", "scroll panel"],
+  "demo_content": "Four items: Collaborative Editing, Real time changes, Version control, Running out of content.",
+  "states": ["active"],
+  "kind": "scroll-effect",
+  "look": ["dark", "gradient", "rounded", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text list beside sticky image on scroll",
+    "scroll through features with changing picture",
+    "section that switches picture as you scroll",
+    "two column scroll story layout",
+    "background colour changes while scrolling",
+    "highlight paragraph as user scrolls past",
+    "sticky panel that follows the text",
+    "product feature walkthrough on scroll"
+  ],
+  "resembles": [],
+  "use_when": "A feature walkthrough where each paragraph needs its own visual and a change of mood while scrolling.",
+  "avoid_when": "Fewer than four items: the fixed-height inner scroll leaves awkward empty space.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["body-text", "media", "section-background"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["background", "fill", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a content array of title, description and an optional visual node; colours, gradients and the inner panel height are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Text plus one sticky tile; work happens only while scrolling.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "No list semantics or aria; inactive text sits at 30% opacity and the inner scroll area is not keyboard focusable."
+  },
+  "props": [
+    {"name": "content", "type": "array", "default": null, "required": true},
+    {"name": "contentClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Inactive paragraphs render at 30% opacity on dark, hard to read.",
+    "The gradient tile is hidden below the lg breakpoint.",
+    "Later frames crop the top text mid-line."
+  ],
+  "polish": 4,
+  "polish_why": "Clean two-column rhythm and a smooth colour shift; faded inactive copy is hard to read.",
+  "unsure": ["kind"]
+}

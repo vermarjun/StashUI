@@ -1,0 +1,164 @@
+{
+ "name": "gravity",
+ "frames": {
+  "code": "8990",
+  "best": 4,
+  "best_why": "All eight tags have settled in a readable heap on the floor while the wordmark stays clear above them.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "Coloured tag pills drop, bounce and pile up on the floor of a dark stage.",
+ "summary": "A physics surface that turns whatever elements you put inside it into falling, colliding bodies you can grab and throw with the mouse. Here eight coloured technology tags tumble down and settle in a heap.",
+ "title_fix": null,
+ "appearance": "A near-black stage with a large white italic wordmark and a small grey caption above the action. Below sit eight fully rounded pills in flat, bright colours: blue, pink, olive, red, orange, yellow, purple and green, each holding a short white label.",
+ "behaviour": "When it loads the pill-shaped tags fall under gravity, bounce off the floor and side walls, and knock into each other until they settle. A pointer can grab any body and fling it; resizing the window clears the world and drops everything again.",
+ "parts": [
+  "wordmark",
+  "caption line",
+  "coloured pill",
+  "pill label",
+  "floor"
+ ],
+ "demo_content": "Italic \"stashui\" wordmark, caption \"components made with:\", eight tech tags such as react and tailwind.",
+ "states": [
+  "dragging"
+ ],
+ "kind": "other",
+ "look": [
+  "dark",
+  "colorful",
+  "rounded",
+  "pill",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "things that fall and pile up on the floor",
+  "draggable physics toys for a web page",
+  "tags dropping and bouncing on the floor",
+  "interactive matter js playground",
+  "fling elements around with the mouse",
+  "colliding chips physics animation",
+  "playful landing page physics effect",
+  "objects you can grab and throw"
+ ],
+ "resembles": [],
+ "use_when": "You want a playful, mouse-driven physics surface for tags, logos or chips on a promo page.",
+ "avoid_when": "Needs a sized parent, the falling pieces can cover nearby headings, and the physics loop runs without pause.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "section-background",
+  "decoration",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "cursor"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Pass your own markup as children, one MatterBody per object. Gravity direction, wall, cursor, auto-start and resize reset are props; colours and labels come from your child markup.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "Matter.js physics plus a requestAnimationFrame loop syncing every element.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Bodies are dragged with the mouse only; nothing is focusable or labelled and pref-reduced-motion is not checked."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "gravity",
+   "type": "{ x: number; y: number }",
+   "default": "{ x: 0, y: 1 }",
+   "required": false
+  },
+  {
+   "name": "autoStart",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "grabCursor",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "resetOnResize",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "addTopWall",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "debug",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "In frame 1 the falling pills pass over the headline and caption, obscuring both.",
+  "The drag interaction is never visible in the recorded frames, only the fall."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing physics and a lively, well-spaced heap; the unprotected heading is a small flaw.",
+ "unsure": [
+  "kind",
+  "theme"
+ ],
+ "title": "Gravity",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "acd351421390a069",
+  "film_hash": "cc99c4598c5cf974",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

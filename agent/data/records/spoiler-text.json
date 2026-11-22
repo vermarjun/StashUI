@@ -1,0 +1,159 @@
+{
+ "name": "spoiler-text",
+ "frames": {
+  "code": "7292",
+  "best": 5,
+  "best_why": "One spoiler is clearing into readable text while the second is still a speckled patch.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Hidden phrases sit under shimmering static that scatters away when clicked.",
+ "summary": "Inline hidden text covered by a drifting field of speckles, shown inside a small group chat. Clicking or focusing a patch throws the specks outward and fades the words into view, and Hide again restores them.",
+ "title_fix": null,
+ "appearance": "A dark chat panel headed # the-finale holds three messages, each with a round initial avatar, name, time and a short paragraph. Two phrases are replaced by dense rectangular patches of pale speckles; revealed phrases show normal text on a faint grey highlight, with a Hide again link at top right.",
+ "behaviour": "While hidden, the specks twinkle and drift inside each phrase's box. Clicking a patch, or focusing it and pressing Enter, sends a wave from that point that blows the specks outward as they fade, letting the blurred words sharpen, while Hide again re-covers both phrases.",
+ "parts": [
+  "chat panel",
+  "channel name",
+  "avatar",
+  "message text",
+  "speckled spoiler patch",
+  "hide again button"
+ ],
+ "demo_content": "A chat about a TV finale where Maya, Jun and You mention the lighthouse keeper and someone not making it off the island.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hide spoilers under static noise",
+  "click to reveal hidden text inline",
+  "spoiler tag for chat messages",
+  "speckled blur that clears on click",
+  "tv show spoiler cover in a chat",
+  "reveal text with a particle wave",
+  "inline hidden words for forums",
+  "scratch card style text reveal"
+ ],
+ "resembles": [
+  "Discord spoiler tag"
+ ],
+ "use_when": "A conversation or article must hide a plot point behind a deliberate click.",
+ "avoid_when": "Very long passages: the speck canvas follows every text box and each patch reveals on its own.",
+ "suits": [
+  "social",
+  "ai-chat",
+  "blog"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "click",
+   "keyboard"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The hidden words are children, with controlled or default revealed state, a screen-reader label and a change callback as props; speck density and wave timing are constants.",
+ "technique": [
+  "canvas-2d",
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Up to 2400 canvas specks animate continuously while any spoiler stays hidden.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "A hidden patch is a labelled button revealed by Enter or Space, hidden text is aria-hidden, and reduced motion stops the drift."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "revealed",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultRevealed",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onRevealedChange",
+   "type": "(revealed: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Hidden text. Activate to reveal.\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Mid-reveal the scattering specks sit over the words, briefly making them hard to read."
+ ],
+ "polish": 4,
+ "polish_why": "Neat speckle reveal with a satisfying particle wave; the patch does not look obviously clickable.",
+ "unsure": [
+  "kind",
+  "theme"
+ ],
+ "title": "Spoiler Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "757c6bb4f631f542",
+  "film_hash": "eed32a70e91ed8a7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

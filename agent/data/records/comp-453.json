@@ -1,0 +1,112 @@
+{
+ "name": "comp-453",
+ "frames": {
+  "code": "4662",
+  "best": 3,
+  "best_why": "Menu is open with Orion ticked and Sigma and Dorado listed under the Databases crumb.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.1
+ },
+ "tagline": "A breadcrumb crumb that opens into a list of databases to pick.",
+ "summary": "A path starting at Databases whose next crumb is a dropdown showing a database glyph and the chosen name; opening it lists Orion, Sigma and Dorado with a tick on the current one.",
+ "title_fix": null,
+ "appearance": "The grey word Databases and a chevron lead to a rounded outlined control holding a small database icon, a name and a down arrow. Opening it shows a dark rounded menu of three names with the active one ticked at the right.",
+ "behaviour": "Clicking the control drops the list beneath; hovering a name fills that row grey and choosing one updates the control's label. A check mark stays with the current choice.",
+ "parts": [
+  "breadcrumb label",
+  "separator",
+  "select trigger",
+  "database icon",
+  "dropdown menu",
+  "check mark"
+ ],
+ "demo_content": "Databases, with the options Orion, Sigma and Dorado.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected"
+ ],
+ "kind": "pagination",
+ "look": [
+  "dark",
+  "minimal",
+  "outlined",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "breadcrumb with a dropdown picker",
+  "choose a database from the path",
+  "navigation trail that opens a list",
+  "switch between items in a breadcrumb",
+  "path crumb with select menu",
+  "pick a record from a dropdown in nav",
+  "file path with a combobox",
+  "change current item from breadcrumb"
+ ],
+ "resembles": [],
+ "use_when": "Letting people jump between sibling records while keeping the parent path visible.",
+ "avoid_when": "When the choice is long: the menu holds only three hardcoded databases.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The parent crumb, icon, three options and default value are written inside; real data means editing the select items. Trigger padding and width are classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One small select and a short menu; only light open and hover transitions.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger has an aria-label and a proper option list, and focus is visible; no reduced-motion handling for the menu."
+ },
+ "props": [],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Neat crumb-to-select control with a clear menu and a tidy tick; small but well resolved.",
+ "unsure": [],
+ "title": "Breadcrumb Select Dropdown",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5576bfec46e078e7",
+  "film_hash": "e68993671c867166",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

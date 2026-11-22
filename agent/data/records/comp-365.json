@@ -1,0 +1,117 @@
+{
+ "name": "comp-365",
+ "frames": {
+  "code": "1720",
+  "best": 2,
+  "best_why": "Hover card is open under the thumbnail with title, summary, read time and its upward pointer.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "Hovering a thumbnail unfurls a note with article title, summary and read time.",
+ "summary": "A small rounded card holds an article thumbnail beside its title and a hover hint. Hovering the thumbnail opens a wider popup with the full headline, a summary, read time and last-updated date.",
+ "title_fix": null,
+ "appearance": "Inside a dark rounded card, a small photo thumbnail sits left of a bold 'Building a Design System' label and a faint caption. Hovering opens a dark popup below with an upward pointer, a bold two-line headline, grey summary text and a small '8 min read · Updated 2 days ago' line.",
+ "behaviour": "Hovering the thumbnail opens the popup with a short delay; moving the pointer onto the popup keeps it open, and leaving fades it out. The thumbnail is a link.",
+ "parts": [
+  "thumbnail",
+  "article title",
+  "caption",
+  "hover card",
+  "pointer",
+  "headline",
+  "summary",
+  "read time"
+ ],
+ "demo_content": "Thumbnail photo; card says 'Building a Design System'; popup has the full title, summary and 8 min read.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hover a thumbnail to preview an article",
+  "article link preview popup",
+  "small image that opens a summary card",
+  "read time and updated date on hover",
+  "blog post preview card",
+  "hover card with headline and excerpt",
+  "link preview with thumbnail",
+  "see article details without clicking"
+ ],
+ "resembles": [],
+ "use_when": "A linked thumbnail needs to preview the article before a reader commits to opening it.",
+ "avoid_when": "Hover-only previews are inaccessible on touch devices and the popup can be clipped near a screen edge.",
+ "suits": [
+  "blog",
+  "docs",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "media",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The image URL, headline, summary and meta line are fixed inside the file; real articles require editing them or replacing the markup.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One small popup with text and an image; nothing runs until hover.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The link opens the card on focus, but the image alt is only 'Content' and the popup text is not tied to the trigger as a description."
+ },
+ "props": [],
+ "issues": [
+  "The image alt text is only the word 'Content'.",
+  "The hover card is fixed at 320px and can overflow a narrow column.",
+  "In frame 4 the popup sits well below-left with no visible pointer."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy card and popup; the tiny thumbnail and offset popup keep it ordinary.",
+ "unsure": [],
+ "title": "Article Preview Hovercard",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e0b7c899974883e6",
+  "film_hash": "5cef4a41b0c1f851",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

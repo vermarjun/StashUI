@@ -1,0 +1,72 @@
+{
+  "name": "qr-code",
+  "frames": {
+    "code": "7374",
+    "best": 1,
+    "best_why": "The main code is crisp, the URL is complete in the field and the three colour samples are all legible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Type a link and the scan pattern beside it redraws on the spot.",
+  "summary": "A share card holding a large scannable code and a URL field, with three smaller sample codes in custom colours. Editing the link regenerates the pattern and the colours follow the page theme.",
+  "title_fix": null,
+  "appearance": "A dark bordered card on black. On the left a big square black-and-white code sits on a white rounded tile; on the right a small heading, two lines of grey copy, a wide input with the link, and a row of three small tinted codes on dark tiles.",
+  "behaviour": "The code is redrawn whenever the link text or a colour prop changes, so typing a new address produces a new pattern in place. The three thumbnails show the same data with violet, green and yellow foregrounds.",
+  "parts": ["main code", "heading", "description", "url input", "colour label", "colour thumbnails"],
+  "demo_content": "The link https://en.wikipedia.org/wiki/QR_code under the heading \"Share this page\".",
+  "states": ["focus"],
+  "kind": "other",
+  "look": ["dark", "outlined", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "scan me square barcode image",
+    "share a link with a square scan pattern",
+    "generate a scannable code from a url",
+    "black and white matrix barcode card",
+    "pattern that redraws when the link changes",
+    "custom coloured square scan codes",
+    "share page widget with a scan graphic",
+    "how to show a scannable link on a page"
+  ],
+  "resembles": [],
+  "use_when": "A page, ticket or share panel needs a scannable link that updates as the address is edited.",
+  "avoid_when": "It only encodes text into a square SVG and fails silently, so a bad input leaves an empty box with no message.",
+  "suits": ["saas", "marketing", "ecommerce"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass the data string and optional foreground and background oklch colours plus a robustness level. Size is not a prop; the SVG fills whatever container it is given.",
+  "technique": ["svg"],
+  "weight": "light",
+  "weight_why": "One encoder pass per data or colour change and a small injected SVG.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The generated SVG carries no title or label, so screen readers get no hint of what it encodes."
+  },
+  "props": [
+    {"name": "data", "type": "string", "default": null, "required": true},
+    {"name": "foreground", "type": "string", "default": null, "required": false},
+    {"name": "background", "type": "string", "default": null, "required": false},
+    {"name": "robustness", "type": "string", "default": "M", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The code is an unlabelled image of the data, so screen-reader users cannot tell what it points to.",
+    "If generation throws, the component returns nothing and only logs to the console, leaving an empty frame."
+  ],
+  "polish": 3,
+  "polish_why": "Clean share card with crisp codes and a nice colour row; the layout and input are plain.",
+  "unsure": ["best", "kind"]
+}

@@ -1,0 +1,156 @@
+{
+ "name": "scratch-to-reveal",
+ "frames": {
+  "code": "6124",
+  "best": 4,
+  "best_why": "Half-scratched card keeps the gradient edge while showing the green prize and You win text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.0
+ },
+ "tagline": "Scratch the gradient card with the cursor to uncover a prize.",
+ "summary": "A card covered by a purple-to-peach gradient. Dragging the pointer across it scrapes the layer away, and once enough is cleared the card shakes and reveals the hidden message underneath.",
+ "title_fix": null,
+ "appearance": "A wide rounded rectangle filled edge to edge with a smooth gradient that runs from lavender on the left through pink to peach on the right. Scraping it away exposes a pale mint-green surface underneath. The revealed layer holds bold green text, You win!, beside a small party-popper emoji.",
+ "behaviour": "Press and drag the pointer to erase discs of the gradient like a coin on a scratch card; the trail follows the cursor's path. When roughly half the surface is cleared, the overlay wipes away, the card tilts back and forth and snaps straight to show the prize.",
+ "parts": [
+  "gradient overlay",
+  "scratch trail",
+  "hidden prize",
+  "prize text"
+ ],
+ "demo_content": "The hidden prize reads You win! with a party-popper emoji on a mint-green panel.",
+ "states": [
+  "dragging",
+  "success"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "gradient",
+  "colorful",
+  "pastel",
+  "rounded",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "scratch card to win a prize",
+  "scratch off overlay with mouse",
+  "reveal hidden message by rubbing",
+  "interactive discount coupon card",
+  "drag to erase layer",
+  "loyalty scratch win widget",
+  "canvas scratch effect",
+  "peel back cover to see prize"
+ ],
+ "resembles": [],
+ "use_when": "A promo, coupon, giveaway or onboarding reward where the visitor earns the reveal by scratching it open.",
+ "avoid_when": "Needs dragging, so it is unusable by keyboard, and the fixed pixel width and height will not adapt to small screens.",
+ "suits": [
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Set width, height, the three gradient colours and the scratch threshold via props, plus an onComplete callback; the brush radius and completion shake are fixed in the source.",
+ "technique": [
+  "canvas-2d",
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Draws a canvas only while dragging; light otherwise, with a small motion animation on completion.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Scratching needs a pointer drag, so keyboard users cannot reveal the prize, and nothing announces completion to assistive tech."
+ },
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "{width}",
+   "required": true
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "{height}",
+   "required": true
+  },
+  {
+   "name": "minScratchPercentage",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "gradientColors",
+   "type": "[string, string, string]",
+   "default": "[\"#A97CF8\", \"#F38CB8\", \"#FDCC92\"]",
+   "required": false
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative select-none\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean gradient, satisfying scratch and shake; the instant full-clear at the end is a bit abrupt.",
+ "unsure": [
+  "theme",
+  "kind"
+ ],
+ "title": "Scratch To Reveal",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "05686f998db74453",
+  "film_hash": "8017169b76abf943",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

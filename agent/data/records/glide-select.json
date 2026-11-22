@@ -1,0 +1,190 @@
+{
+ "name": "glide-select",
+ "frames": {
+  "code": "7546",
+  "best": 3,
+  "best_why": "The menu is fully open with the highlight mid-list, the tick on the current row and every option readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.3
+ },
+ "tagline": "A small sort chip opens a menu whose highlight glides between rows.",
+ "summary": "A compact dropdown for choosing a sort order: the chosen value sits in a dark chip, and its menu opens below with a highlight that slides from option to option. A tick marks the current choice.",
+ "title_fix": null,
+ "appearance": "The grey words Sort issues by sit before a small dark rounded chip holding Last updated and a tiny down chevron. The open menu is a slightly rounded dark panel of five rows, each with a faint letter tag at the right and a tick on the active row.",
+ "behaviour": "Clicking the chip pops the menu out below and flips its chevron up. Moving across or arrowing through rows slides a lighter bar between them; picking a row closes the panel and swaps the chip label with a short blur.",
+ "parts": [
+  "label text",
+  "select chip",
+  "chevron",
+  "option rows",
+  "highlight bar",
+  "tick"
+ ],
+ "demo_content": "Sort issues by Last updated; options are Last updated, Newest first, Priority, Most discussed and Assignee.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "sort dropdown chip",
+  "select menu with sliding highlight",
+  "compact dropdown picker",
+  "list of sort options",
+  "custom select with ticks",
+  "menu that glides between items",
+  "sort order chooser",
+  "dark dropdown for a toolbar"
+ ],
+ "resembles": [],
+ "use_when": "A tight toolbar or filter row needs a sort or mode picker without a full-size select.",
+ "avoid_when": "It is built for dark surfaces, and the small rows only suit short option labels.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass options as strings or value, label and tag objects, plus an aria label. Size, radius, menu width, placement, align, colours, durations and disabled are props.",
+ "technique": [
+  "css-transition",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A short list of rows and one sliding span, with nothing running while it is closed.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Full keyboard support with combobox and listbox roles, but the chip and rows show no visible focus ring."
+ },
+ "props": [
+  {
+   "name": "options",
+   "type": "(string | GlideSelectOption)[]",
+   "default": "DEFAULT_OPTIONS",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value: string, option: GlideSelectOption) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": "'Select…'",
+   "required": false
+  },
+  {
+   "name": "showTags",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "'sm' | 'md' | 'lg'",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "menuWidth",
+   "type": "number",
+   "default": "176",
+   "required": false
+  },
+  {
+   "name": "placement",
+   "type": "'top' | 'bottom'",
+   "default": "'bottom'",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "'left' | 'right'",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The letter tags at the right of each row are very faint.",
+  "The chip and rows have no visible focus ring, so keyboard position is unclear."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp, well-proportioned menu with a satisfying glide; dim tags and no focus ring are small misses.",
+ "unsure": [],
+ "title": "Glide Select",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "10a52909351b1e72",
+  "film_hash": "0716d84e49131afb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

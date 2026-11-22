@@ -1,0 +1,167 @@
+{
+ "name": "ai-message-queue",
+ "frames": {
+  "code": "8695",
+  "best": 3,
+  "best_why": "Three queued follow-ups sit beside a running step and the composer, the fullest state.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.0
+ },
+ "tagline": "Follow-ups line up above the composer while the agent keeps working.",
+ "summary": "A compact agent chat that holds your next messages in a numbered queue above the input. Each queued prompt can be dragged, reordered, edited, sent immediately or removed, and runs start as the agent finishes.",
+ "title_fix": null,
+ "appearance": "A tall rounded dark panel with a title and a small status dot in its header, then a scroll area holding a right-aligned user bubble and a one-line agent step. Below a Queued heading with a Clear link, stacked rows show a grip, number and prompt, and a composer box with an up-arrow button ends the card.",
+ "behaviour": "While the agent runs, pressing Enter adds the draft to the queue instead of sending. Rows can be dragged by their grip or nudged with arrow keys, edited in place, sent now to interrupt the run, or deleted; finished runs automatically start the next queued message.",
+ "parts": [
+  "panel header",
+  "status dot",
+  "user bubble",
+  "agent step line",
+  "queue header",
+  "queue row",
+  "composer",
+  "hint line"
+ ],
+ "demo_content": "Auth refactor chat about moving sessions to a token store, adding an expired-token test and opening a PR.",
+ "states": [
+  "hover",
+  "focus",
+  "loading",
+  "success",
+  "dragging",
+  "disabled"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "dense",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "queue follow up messages while ai works",
+  "chat with a message queue above composer",
+  "reorder queued prompts before sending",
+  "ai agent chat with pending messages",
+  "send now or remove a queued message",
+  "drag to reorder message queue",
+  "assistant chat showing running steps",
+  "line up prompts during a long task"
+ ],
+ "resembles": [],
+ "use_when": "People want to line up several follow-ups while a long agent run is still going.",
+ "avoid_when": "Simple one-shot chat: the queue, drag handles and shortcuts add clutter for a single reply.",
+ "suits": [
+  "ai-chat",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "body-text",
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Title, first prompt, queued messages, the respond function and step timing are props; the panel colours and row layout are in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Animated chat rows and a per-second clock, plus a few timers while a run is active.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Drag handles also reorder with arrow keys, every action is labelled and queue changes are announced; reduced motion is honoured."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Auth refactor\"",
+   "required": false
+  },
+  {
+   "name": "initialPrompt",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "initialQueue",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "respond",
+   "type": "(text: string, signal: AbortSignal) => AgentResponse | AsyncIterable<AgentUpdate>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onQueueChange",
+   "type": "(queue: QueuedMessage[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "stepMs",
+   "type": "number",
+   "default": "1700",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Queue rows, status text and keyboard hints are tiny and low contrast on the dark card."
+ ],
+ "polish": 4,
+ "polish_why": "A well-detailed agent chat with a genuinely useful queue; the small type is hard to read.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "AI Message Queue",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4f05759fd860607a",
+  "film_hash": "d37eb99912f6d04a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

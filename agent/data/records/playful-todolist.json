@@ -1,0 +1,117 @@
+{
+ "name": "playful-todolist",
+ "frames": {
+  "code": "1165",
+  "best": 4,
+  "best_why": "Two rows carry the finished look at once: white ticked boxes with the wavy line drawn across the words.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.6
+ },
+ "tagline": "Ticking a task draws a wavy pen line through its label.",
+ "summary": "A small dark checklist of three rows, each with a rounded checkbox and a line of text. Checking one pops in a tick and writes a squiggly hand-drawn strike across the words.",
+ "title_fix": null,
+ "appearance": "A soft dark rounded panel holds three rows: a grey rounded checkbox, a short white label and an emoji, with thin dividers between them. Completed rows show a white box with a dark tick and a loose wavy stroke running through the text.",
+ "behaviour": "Clicking a checkbox springs it a little, fills the box with a tick and draws the wobbling stroke from left to right over the label. Unchecking first retracts the stroke, then the tick fades out.",
+ "parts": [
+  "panel",
+  "checkbox",
+  "task label",
+  "emoji",
+  "wavy strike",
+  "divider"
+ ],
+ "demo_content": "\"Code in Assembly\", \"Present a bug as a feature\" and \"Push to prod on a Friday\", each with an emoji.",
+ "states": [
+  "checked",
+  "hover",
+  "focus"
+ ],
+ "kind": "checkbox",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "todo list with a squiggly strike on done",
+  "hand drawn line crossing out a finished task",
+  "checklist with bouncy tick boxes",
+  "animated task list for a product page",
+  "wobbly pen strike through completed items",
+  "to do list card with emoji labels",
+  "checkbox that springs when clicked",
+  "how to animate a line through completed text"
+ ],
+ "resembles": [],
+ "use_when": "A small checklist in a demo or side panel wants a tactile, handwritten reward when an item is finished.",
+ "avoid_when": "The three tasks and their emoji are fixed in the file, and the strike is one SVG path sized for a single short line.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "list-item",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The tasks, emoji and starting checked flags live in the items array inside the file; the panel follows neutral theme tokens. New labels mean editing that array and checking the strike still fits.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Three static rows with a short path-draw animation and nothing looping at rest.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The ticks are real labelled checkboxes with a visible focus ring; the drawing animation never checks prefers-reduced-motion."
+ },
+ "props": [],
+ "issues": [
+  "The strike is a fixed 340px path, so it overshoots short labels and would clip on longer ones.",
+  "Tasks, emoji and starting states are hardcoded, so the list cannot take real data as it stands."
+ ],
+ "polish": 4,
+ "polish_why": "Charming hand-drawn strike and springy ticks; the fixed stroke muddles short labels.",
+ "unsure": [
+  "best"
+ ],
+ "title": "Playful Todolist",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "625111575bf0b63e",
+  "film_hash": "c4ea231025d6ab65",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

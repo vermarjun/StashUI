@@ -1,0 +1,80 @@
+{
+  "name": "hover-video-player",
+  "frames": {
+    "code": "7111",
+    "best": 6,
+    "best_why": "Frame 6 shows the full swirling clip with no cursor over it; frame 2 is blank.",
+    "usable": [1, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A still that comes alive with swirling video when pointed at.",
+  "summary": "A rounded video tile that holds on a thumbnail until the pointer arrives, then plays a muted looping clip inside the frame and fades back to the still when the pointer leaves.",
+  "title_fix": null,
+  "appearance": "A wide rounded rectangle near the top of a dark stage holds an abstract close-up of red and blue paint curling together. Below it a small grey caption reads \"Hover to play the video\".",
+  "behaviour": "Idle, the frame holds a still image. Hovering swaps it for moving footage and the paint churns; leaving the pointer pauses the clip and fades the still back. Optional controls slide up from the bottom while hovering.",
+  "parts": ["video frame", "thumbnail", "caption"],
+  "demo_content": "Caption \"Hover to play the video\" over a red and blue swirling paint clip.",
+  "states": ["hover", "loading"],
+  "kind": "media-player",
+  "look": ["dark", "rounded", "colorful", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "video that plays when you hover",
+    "moving picture thumbnail preview",
+    "video card preview on mouse over",
+    "in page video with hover playback",
+    "showreel teaser that starts on hover",
+    "media tile that plays silently",
+    "hover preview for a video link",
+    "silent looping clip inside a card"
+  ],
+  "resembles": ["Netflix hover preview"],
+  "use_when": "You want a quiet preview clip to play inside the page when a visitor points at it.",
+  "avoid_when": "Touch users get no automatic preview, because a tap only toggles the controls and playback.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "videoSrc and thumbnailSrc supply the media; muted, loop, preload, overlays and control flags are props. Colours and control styling need a source edit.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Decodes and draws a looping video while hovered, plus a few motion overlays.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Hover starts playback and the still is the only cue; keyboard users reach the controls but cannot trigger the preview."
+  },
+  "props": [
+    {"name": "videoSrc", "type": "string", "default": null, "required": true},
+    {"name": "thumbnailSrc", "type": "string", "default": null, "required": false},
+    {"name": "muted", "type": "boolean", "default": "false", "required": false},
+    {"name": "loop", "type": "boolean", "default": "true", "required": false},
+    {"name": "enableControls", "type": "boolean", "default": "false", "required": false},
+    {"name": "pausedOverlay", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "loadingOverlay", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "hoverOverlay", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "playbackStartDelay", "type": "number", "default": "0", "required": false},
+    {"name": "preload", "type": "\"auto\" | \"metadata\" | \"none\"", "default": "metadata", "required": false},
+    {"name": "restartOnPaused", "type": "boolean", "default": "false", "required": false},
+    {"name": "unloadVideoOnPaused", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "Frame 2 shows an empty black area, so no thumbnail appeared before hover.",
+    "The idle frame gives no play affordance except the demo's caption below it.",
+    "The source logs to the console on every hover and playback step."
+  ],
+  "polish": 3,
+  "polish_why": "Clean rounded video frame, but the resting state is a bare still with no obvious cue.",
+  "unsure": ["focus_visible"]
+}

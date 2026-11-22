@@ -1,0 +1,124 @@
+{
+ "name": "tracing-beam",
+ "frames": {
+  "code": "5397",
+  "best": 1,
+  "best_why": "Frame 1 shows the top of the beam with its marker beside a complete first post; later frames are scrolled deeper.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.8
+ },
+ "tagline": "A glowing gradient slides down a thin rail beside a scrolling article.",
+ "summary": "A long-form reading column of photo posts wrapped by a thin left-hand rule. As the page scrolls, a cyan-to-violet glow and a small dot travel down the rule to mark progress.",
+ "title_fix": null,
+ "appearance": "A narrow dark reading column of stacked posts, each with a small solid badge, a bold white heading, a wide rounded mountain photo and a paragraph of grey text. Down the far left runs a fine vertical rule with a zig-zag kink near the top and a small dot marker.",
+ "behaviour": "Scrolling sends a short cyan-to-violet gradient sliding down the left rule and drags a dot along with it, both eased through a stiff spring so they lag slightly. The top marker flips from green to white once scrolling begins.",
+ "parts": [
+  "tracing rule",
+  "scroll marker",
+  "post badge",
+  "heading",
+  "mountain photo",
+  "body text"
+ ],
+ "demo_content": "Four alpine posts headed Waking up above the clouds, Three days on the high path, and Coming back down.",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "editorial",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "line that follows you down an article",
+  "scroll progress beam beside blog posts",
+  "article with a glowing left rail",
+  "reading tracker down the side",
+  "gradient line that moves with scrolling",
+  "blog layout with progress spine",
+  "vertical scroll indicator on a post",
+  "light beam tracing the page"
+ ],
+ "resembles": [],
+ "use_when": "A long article or changelog wants a quiet progress cue running alongside the text.",
+ "avoid_when": "You need an obvious progress bar at the top, or content has no left margin to spare.",
+ "suits": [
+  "blog",
+  "docs",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "divider",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Articles go in as children and className pads the column. The zig-zag path, gradient stops and spring settings are fixed, while the beam height is measured from the content.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "One SVG path whose gradient and dot positions a scroll spring updates.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "The beam hides itself under reduced-motion and the SVG is aria-hidden, but the demo's photos all use empty alt text."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative mx-auto h-full w-full max-w-4xl\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The beam sits well outside the text column and is faint enough to miss as progress.",
+  "In the frames it reads as a stray hairline rather than a deliberate indicator."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy editorial posts and a graceful scroll cue, but the beam is too quiet to carry the layout.",
+ "unsure": [],
+ "title": "Tracing Beam",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f24fc041e98aa266",
+  "film_hash": "5c17cdf80150d2c9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

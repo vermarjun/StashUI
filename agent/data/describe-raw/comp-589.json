@@ -1,0 +1,63 @@
+{
+  "name": "comp-589",
+  "frames": {
+    "code": "2397",
+    "best": 2,
+    "best_why": "The account dropdown is open with three options and a tick on Personal.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Breadcrumb header whose account and project names open dropdowns to switch.",
+  "summary": "A slim dark header with a two-part breadcrumb for account type and project, each opening a small dropdown, followed by Dashboard, Docs, API reference links, a gear and an avatar.",
+  "title_fix": "Account And Project Breadcrumb Header",
+  "appearance": "A slim dark header starts with two ghost buttons, Personal and Main project, each with an up-down chevron and split by a slash, then Dashboard, Docs and API reference links, a gear icon and a round avatar.",
+  "behaviour": "Each breadcrumb button opens a small dropdown of account types or projects with a tick on the current choice. Picking one updates that label; the plain nav links only brighten on hover.",
+  "parts": ["account selector", "project selector", "separator slash", "nav links", "settings icon", "user avatar", "option list"],
+  "demo_content": "Accounts are Personal, Team, Business; projects Main and Origin; links Dashboard, Docs, API reference.",
+  "states": ["hover", "focus", "open", "selected"],
+  "kind": "site-header",
+  "look": ["dark", "flat", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "breadcrumb with account switcher",
+    "project selector in header",
+    "workspace header with two dropdowns",
+    "docs header with settings and avatar",
+    "switch account and project from top bar",
+    "top nav with breadcrumb path",
+    "app header with team selector",
+    "change workspace from header"
+  ],
+  "resembles": [],
+  "use_when": "A workspace header must show and switch the active account and project while keeping docs links handy.",
+  "avoid_when": "Both selectors are limited to a few fixed options each, and the nav links are static placeholders.",
+  "suits": ["saas", "dashboard", "docs"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["text", "layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Account and project options, defaults and nav labels are written in the file; the settings and user menus come from separate pieces.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Two small selects, three links and two icon buttons.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Both selects are labelled; naming for the gear and avatar depends on the separate components used."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Two working breadcrumb selects in a tidy bar; the option rows are small and tightly packed.",
+  "unsure": []
+}

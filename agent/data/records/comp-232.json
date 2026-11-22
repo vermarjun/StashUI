@@ -1,0 +1,117 @@
+{
+ "name": "comp-232",
+ "frames": {
+  "code": "4403",
+  "best": 3,
+  "best_why": "The panel is open with continent headings and their flag-led country rows, no cursor in the list.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.5
+ },
+ "tagline": "Countries grouped by continent, each row led by its flag.",
+ "summary": "A searchable country picker whose list is split into continent headings, with a flag before every name. Choosing a country closes the panel and fills the trigger with its flag and name.",
+ "title_fix": null,
+ "appearance": "A small label sits above a wide rounded trigger reading Select country with a chevron. Opened, a dark panel shows a search field, then small grey continent headings with rows of a flag emoji and a country name.",
+ "behaviour": "Clicking the trigger opens the panel; typing filters rows and their headings, and choosing one closes the panel and updates the trigger. The clip searches japan and ends on Japan.",
+ "parts": [
+  "field label",
+  "trigger button",
+  "search input",
+  "continent heading",
+  "country row",
+  "flag",
+  "check mark"
+ ],
+ "demo_content": "Select country; groups America, Africa, Asia, Europe and Oceania with rows such as United States, Canada and Japan",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "empty"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "choose a country with flags",
+  "country list grouped by continent",
+  "searchable country dropdown",
+  "flag emoji country picker",
+  "select your country in a form",
+  "type to find a country",
+  "grouped list with flag icons",
+  "country selector with a search box"
+ ],
+ "resembles": [],
+ "use_when": "In an address or signup form, when people must find one country quickly from a long list.",
+ "avoid_when": "Flags render differently on each platform, and only fourteen countries are included, so a real list needs new data.",
+ "suits": [
+  "ecommerce",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Countries are grouped in an array in the file, each with a flag and a name; add or edit entries there. The continent headings, placeholder and trigger width are set in the same file.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Fourteen short grouped rows in a popup with one brief open animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger is a labelled combobox and filtering works from the keyboard; each flag sits inside the option text, so its emoji name may be read as well."
+ },
+ "props": [],
+ "issues": [
+  "Only fourteen countries appear across five groups, so the list is far from a complete picker.",
+  "The field label is the demo phrase Options with flag and search, not a real field name."
+ ],
+ "polish": 4,
+ "polish_why": "Clear continent grouping and tidy flag rows; the data covers only a token set of countries.",
+ "unsure": [],
+ "title": "Flag Country Combobox",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6400e6c96c733e10",
+  "film_hash": "b79f309fe75f3b33",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

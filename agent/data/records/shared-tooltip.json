@@ -1,0 +1,177 @@
+{
+ "name": "shared-tooltip",
+ "frames": {
+  "code": "4764",
+  "best": 2,
+  "best_why": "Frame 2 shows a settled 'Bold ⌘B' tooltip with its arrow pointing at the highlighted B button.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.8
+ },
+ "tagline": "One tooltip glides between toolbar buttons, showing each name and shortcut.",
+ "summary": "A row of formatting icons where a single shared tooltip follows the pointer from button to button, sliding and reshaping to show each action's name and keyboard shortcut with an arrow.",
+ "title_fix": null,
+ "appearance": "A dark rounded toolbar holds five thin white icons: bold, italic, underline, strikethrough and a link. Above the hovered icon sits a white rounded bubble with dark text and a small downward arrow; the active icon gains a faint grey square behind it.",
+ "behaviour": "Hovering an icon opens the shared tooltip above it after a short delay. Moving to a neighbour makes the same bubble glide sideways, reshaping to the new text and sliding its arrow along, instead of closing and reopening.",
+ "parts": [
+  "toolbar",
+  "icon button",
+  "tooltip bubble",
+  "tooltip label",
+  "shortcut text",
+  "arrow"
+ ],
+ "demo_content": "Five formatting buttons with tooltips: Bold ⌘B, Italic ⌘I, Underline ⌘U, Strikethrough ⌘⇧X and Insert link ⌘K.",
+ "states": [
+  "hover",
+  "focus",
+  "open"
+ ],
+ "kind": "tooltip",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "tooltip that moves between buttons",
+  "icon button shortcut hints",
+  "hover label showing keyboard shortcut",
+  "shared popup for adjacent icons",
+  "formatting toolbar with tooltips",
+  "gliding hint bubble",
+  "keyboard shortcut cheat sheet on hover",
+  "small white bubble above icon"
+ ],
+ "resembles": [
+  "Figma toolbar tooltips"
+ ],
+ "use_when": "A dense icon toolbar needs labels on hover, and separate tooltips flickering in and out would feel noisy.",
+ "avoid_when": "One shared popup means only one hint shows at a time, so it suits adjacent triggers rather than distant ones.",
+ "suits": [
+  "saas",
+  "devtool",
+  "docs"
+ ],
+ "slot_hints": [
+  "tooltip",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Open and close delays and the spring transition are provider props; each tooltip sets its side, offsets and alignment, and the trigger and content are yours to compose.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One floating popup and a tiny layout animation; idle until a pointer enters.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Opens on focus as well as hover and links trigger to bubble with aria-describedby; the demo's icons also carry their own labels."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "openDelay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "closeDelay",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "side",
+   "type": "Side",
+   "default": "'top'",
+   "required": false
+  },
+  {
+   "name": "sideOffset",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "Align",
+   "default": "'center'",
+   "required": false
+  },
+  {
+   "name": "alignOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{withTransition ? transition : undefined}",
+   "required": false
+  },
+  {
+   "name": "withTransition",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "id",
+   "type": "string",
+   "default": "{contentIdOf(rendered.data.id)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The tooltip text is blurred for much of the glide, so the label is unreadable while it moves."
+ ],
+ "polish": 4,
+ "polish_why": "The glide is smooth and the shortcut hint is clear; the bubble stays blurred for most of the move.",
+ "unsure": [],
+ "title": "Shared Tooltip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "cc99c35da081d211",
+  "film_hash": "dd4ff1b7ce001753",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "name": "comp-328",
+ "frames": {
+  "code": "2376",
+  "best": 4,
+  "best_why": "Frame 4 shows every field filled, including the detected card brand icon.",
+  "usable": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 10.3
+ },
+ "tagline": "Card update modal takes number, expiry and CVC and shows the card brand.",
+ "summary": "A trigger opens a dark dialog to replace a saved card: name, card number with brand detection, expiry and CVC side by side, a default-payment checkbox and an Update card button.",
+ "title_fix": null,
+ "appearance": "Closed, an outlined Card details button. Open, a dark rounded dialog with a wallet icon, a bold Update your card title and grey line, a Name on card field, a Card Number field with a small card icon at the right, Expiry date and CVC side by side, a muted checkbox line and a white full-width Update card.",
+ "behaviour": "Opening focuses the first field. Typing a card number formats it and swaps the generic card glyph for the brand mark; the expiry also formats as you type. Update card does nothing, and the X or Escape closes.",
+ "parts": [
+  "trigger button",
+  "title",
+  "name field",
+  "card number field",
+  "expiry field",
+  "cvc field",
+  "default checkbox",
+  "update card button"
+ ],
+ "demo_content": "Filled example uses Maya Chen, card 4242 4242 4242 4242 and expiry 12 / 28.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "checked"
+ ],
+ "kind": "modal",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "update credit card popup",
+  "card number expiry cvc dialog",
+  "payment method modal form",
+  "change saved card details",
+  "billing card entry window",
+  "card form with brand detection",
+  "set default payment method dialog",
+  "checkout card details popup"
+ ],
+ "resembles": [],
+ "use_when": "A signed-in user needs to replace or update their saved card in a quick modal.",
+ "avoid_when": "It depends on a third-party card-input library and offers no submit or validation feedback.",
+ "suits": [
+  "fintech",
+  "ecommerce",
+  "saas"
+ ],
+ "slot_hints": [
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Labels, checkbox text and button label are fixed in the file; number and expiry formatting come from the card-input library.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One dialog and four inputs; the card library only formats entered values.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Card fields are labelled and the brand icon hidden, but Update card has no handler or validation feedback."
+ },
+ "props": [],
+ "issues": [
+  "Update card has no handler, so the card is never saved.",
+  "The card brand glyph is decorative but only the generic icon carries aria-hidden."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy payment form with automatic card branding; the inert submit is the only flaw.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Card Details Dialog",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "426f8870a90bd616",
+  "film_hash": "b101f98025b7a110",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

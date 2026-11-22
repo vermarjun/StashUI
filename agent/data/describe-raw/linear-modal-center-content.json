@@ -1,0 +1,66 @@
+{
+  "name": "linear-modal-center-content",
+  "frames": {
+    "code": "2424",
+    "best": 4,
+    "best_why": "Frame 4 shows the settled expanded card with photo, large title, description and close button.",
+    "usable": [1, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A photo tile springs open into a full centered article card.",
+  "summary": "Three photo cards that expand into one large centered reading panel when clicked. The backdrop blurs, the picture stays on top and the text fades in below it.",
+  "title_fix": "Expanding Photo Card Modal",
+  "appearance": "Three tall photo tiles in a row on a black page, each with a small title bottom-left and a round plus button bottom-right. Open, one becomes a tall rounded panel: a full-width photo above a heading, a paragraph of small text and an X at the top right.",
+  "behaviour": "Clicking a tile grows it with a spring into a centered tall card while the page behind blurs and dims. The image, title and text scale and fade in; the X closes it back to the row.",
+  "parts": ["photo tile", "title", "plus button", "expanded panel", "large heading", "description text", "close button", "dimmed backdrop"],
+  "demo_content": "Cards named Accordion, Globe Section and Image Mouse Trail over lattice, dune and plant photos",
+  "states": ["hover", "open"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "shadowed", "colorful"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "photo card that opens into an article",
+    "image gallery expanding modal",
+    "click a picture to read more",
+    "card morphs into full screen panel",
+    "blurred backdrop picture popup",
+    "portfolio item quick look modal",
+    "expandable image card with text",
+    "gallery tile opens a large view"
+  ],
+  "resembles": [],
+  "use_when": "A gallery of photos should open into readable detail without leaving the page.",
+  "avoid_when": "Each card carries a long hardcoded description and a remote image, so text and art need source edits.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["feature-card", "media"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The items array holds image URL, title, description and tags; spring, radii and panel size live in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three cards and one spring layout animation; the blur is CSS.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Cards open on click only; the trigger is a div with no keyboard handler, and photos use empty alt text."
+  },
+  "props": [],
+  "issues": [
+    "The trigger card is a div, so it cannot be opened from the keyboard.",
+    "Every photo has empty alt text, so the images are unnamed for screen readers."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing spring morph and a clean reading panel; keyboard access and alt text are missing.",
+  "unsure": ["resembles"]
+}

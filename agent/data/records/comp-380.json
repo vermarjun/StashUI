@@ -1,0 +1,114 @@
+{
+ "name": "comp-380",
+ "frames": {
+  "code": "3874",
+  "best": 3,
+  "best_why": "Dropdown is open showing Light, Dark and System rows beside the sun icon button.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "A sun icon opens a tiny menu for light, dark and system themes.",
+ "summary": "A square icon button shows the current appearance and opens a short menu with Light, Dark and System options. Picking one swaps the button's sun or moon icon.",
+ "title_fix": null,
+ "appearance": "A rounded dark settings card pairs 'Appearance' and a grey subtitle with a square outlined icon button at the right, holding a small sun. Clicking opens a compact dark menu directly below with sun, moon and monitor icons beside Light, Dark and System.",
+ "behaviour": "Clicking the icon opens the menu; hovering highlights a row, and choosing a theme closes the menu and swaps the trigger icon between sun and moon. Nothing else on the page changes.",
+ "parts": [
+  "settings card",
+  "card title",
+  "card subtitle",
+  "icon button",
+  "menu panel",
+  "menu icons",
+  "menu labels"
+ ],
+ "demo_content": "Card 'Appearance' with 'Choose how the interface looks'; menu options Light, Dark and System.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "switch between light and dark mode",
+  "little sun icon theme chooser",
+  "appearance menu with system option",
+  "button that toggles page theme",
+  "light dark system dropdown",
+  "theme picker in settings card",
+  "change colour scheme from a menu",
+  "choose app appearance"
+ ],
+ "resembles": [],
+ "use_when": "Users need to pick light, dark or system appearance from a compact control.",
+ "avoid_when": "It only changes its own icon here; no page theme is actually applied without extra wiring.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The three option labels, icons and the starting 'system' value are in the file; hooking a real theme provider means editing the click handlers.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One tiny menu and three icons; no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger has an aria-label and rows are menu items; the current theme shows only as an icon, not a checked state."
+ },
+ "props": [],
+ "issues": [
+  "The demo changes only the button icon; no page theme is applied.",
+  "The open menu does not mark which theme is currently selected."
+ ],
+ "polish": 3,
+ "polish_why": "Neat compact menu; its theme choice is cosmetic here and nothing marks the active option.",
+ "unsure": [],
+ "title": "Theme Switcher Dropdown",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e7696d518aef29b4",
+  "film_hash": "145e738a6a357a7e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

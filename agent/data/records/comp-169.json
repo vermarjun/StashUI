@@ -1,0 +1,111 @@
+{
+ "name": "comp-169",
+ "frames": {
+  "code": "2048",
+  "best": 4,
+  "best_why": "System is chosen with its tick and brighter edge, and its split light/dark thumbnail is the most telling preview.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.5
+ },
+ "tagline": "Thumbnail previews let you pick light, dark or system.",
+ "summary": "Three thumbnail radios show a white, a black and a diagonally split layout preview, captioned Light, Dark and System. The chosen one gains a brighter edge and a tick instead of a dash.",
+ "title_fix": null,
+ "appearance": "A small heading sits above three short rounded rectangles that mimic a web app with a side rail, header and content blocks: one all white, one all black, one cut corner to corner. Under each rectangle is a tick or a dash with a one-word caption.",
+ "behaviour": "Clicking a rectangle gives it a brighter outline, swaps its dash for a tick and lifts its caption to white. The clip moves Light, Dark, System, then back to Light.",
+ "parts": [
+  "theme thumbnail",
+  "tick icon",
+  "theme caption"
+ ],
+ "demo_content": "Choose a theme heading; Light, Dark and System previews of a tiny app screen",
+ "states": [
+  "focus",
+  "selected"
+ ],
+ "kind": "radio-group",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "choose light dark or system theme",
+  "theme switcher with previews",
+  "appearance setting radio cards",
+  "pick a colour scheme preview",
+  "light and dark mode thumbnails",
+  "settings theme selection tiles",
+  "system theme with split preview",
+  "app theme picker with pictures"
+ ],
+ "resembles": [
+  "iOS appearance settings"
+ ],
+ "use_when": "In settings, when people should see how light, dark and system modes look before they choose.",
+ "avoid_when": "Previews are hand-built mockups, so a custom palette or an extra theme means drawing new artwork.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Themes come from an items array; each preview is an inline SVG composed in the file, so its colours are edited there. Captions, values and the tick or dash marks also live in that file.",
+ "technique": [
+  "svg",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Three small inline SVG thumbnails over native radios with one border fade.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Radios stay focusable with a visible ring, but each option is announced twice: the preview image alt and the caption below repeat the same label."
+ },
+ "props": [],
+ "issues": [
+  "Each option is read out twice because the preview alt text and the caption carry the same word.",
+  "The white Light preview is much brighter than the other two, pulling the eye away from the choice."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp previews and a clear tick state; new themes demand hand-drawn SVG art.",
+ "unsure": [],
+ "title": "Theme Selector Radio",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bf708f77c72e357d",
+  "film_hash": "8fecf24faf4bf686",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "MagicRings-TS-TW",
+  "frames": {
+    "code": "1155",
+    "best": 4,
+    "best_why": "Widest, brightest ring spread fills both corners with white-hot magenta bloom.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pink and cyan light arcs sweep outward from both screen edges.",
+  "summary": "A full-bleed black canvas where glowing rings grow from the left and right edges, shifting between magenta and cyan. The arcs lean toward the pointer, widen on hover and flare out on click.",
+  "title_fix": null,
+  "appearance": "On a black field, curved light arcs grow outward from the left and right edges, five or six per side, going from magenta to violet and cyan. At their widest they bloom into white-pink glow at the corners, with faint grain over the dark centre.",
+  "behaviour": "Rings continually scale outward and fade, cycling through colour. Moving the pointer pulls the arcs slightly toward it, hovering scales them up and a click sends a short brightness burst that settles back.",
+  "parts": ["left ring arcs", "right ring arcs", "dark centre", "corner bloom", "film grain"],
+  "demo_content": "",
+  "states": ["hover", "active"],
+  "kind": "background",
+  "look": ["dark", "neon", "glow", "colorful", "gradient"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "glowing rings on black background",
+    "pink and cyan light arcs",
+    "neon circle background effect",
+    "webgl shader ring animation",
+    "animated hero background for landing page",
+    "cursor reactive glow rings",
+    "abstract light circles site backdrop",
+    "click to burst light rings"
+  ],
+  "resembles": [],
+  "use_when": "A dark landing hero or brand splash needs a living backdrop behind text.",
+  "avoid_when": "Bright or light pages: the arcs only read against a near-black field.",
+  "suits": ["marketing", "portfolio", "ai-chat"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move", "click"],
+    "motion": "continuous",
+    "affects": ["image", "background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Colours, ring count, thickness, radius, spacing, speed, noise and fade are props. The shader maths and the transparent canvas need a source edit.",
+  "technique": ["webgl-shader", "three-js"],
+  "weight": "heavy",
+  "weight_why": "A WebGL render loop runs every frame with a custom fragment shader.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no label or role and the animation never stops, with no reduced-motion fallback."
+  },
+  "props": [
+    {"name": "color", "type": "string", "default": "#fc42ff", "required": false},
+    {"name": "colorTwo", "type": "string", "default": "#42fcff", "required": false},
+    {"name": "ringCount", "type": "number", "default": "6", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "followMouse", "type": "boolean", "default": "false", "required": false},
+    {"name": "clickBurst", "type": "boolean", "default": "false", "required": false},
+    {"name": "lineThickness", "type": "number", "default": "2", "required": false},
+    {"name": "attenuation", "type": "number", "default": "10", "required": false},
+    {"name": "baseRadius", "type": "number", "default": "0.35", "required": false},
+    {"name": "opacity", "type": "number", "default": "1", "required": false},
+    {"name": "noiseAmount", "type": "number", "default": "0.1", "required": false},
+    {"name": "hoverScale", "type": "number", "default": "1.2", "required": false}
+  ],
+  "issues": [
+    "The wide crop cuts the ring arcs off at the left and right edges."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth shader arcs and balanced colour; edges blow out to flat white in the brightest frame.",
+  "unsure": ["shows_interaction"]
+}

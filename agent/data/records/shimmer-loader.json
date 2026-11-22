@@ -1,0 +1,172 @@
+{
+ "name": "shimmer-loader",
+ "frames": {
+  "code": "3427",
+  "best": 3,
+  "best_why": "Frame 3 shows all three bars at 83% with distinct cycling labels and token counts.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.9
+ },
+ "tagline": "Three purple terminal progress bars shimmer and tick up with percent and tokens.",
+ "summary": "A stack of monospace progress bars that a purple shimmer sweeps across while the labels cycle and the percentages and token counts climb, then restart from zero when finished.",
+ "title_fix": null,
+ "appearance": "On a black panel, three stacked strips of purple gradient cells each hold a centred monospace label and percentage. A bright violet shimmer band moves across each strip, a small purple glyph sits at the left and a dim '0.1k' style token count at the right.",
+ "behaviour": "Each bar counts up from zero to 100% over a few seconds while the shimmer sweeps and the label word changes in stages. When a bar completes it restarts from zero, so the three strips loop continuously.",
+ "parts": [
+  "icon glyph",
+  "cell strip",
+  "label text",
+  "percentage",
+  "shimmer band",
+  "token counter"
+ ],
+ "demo_content": "Three loaders labelled Analysing, Booting or Initializing, and Syncing or Onboarding, with token targets.",
+ "states": [
+  "loading"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "technical",
+  "colorful",
+  "gradient"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "terminal style progress bar",
+  "purple shimmer loading bar",
+  "monospace progress with percent",
+  "token counter while loading",
+  "ascii cell progress strip",
+  "fake cli progress indicator",
+  "three loading bars stacked",
+  "animated text loading widget"
+ ],
+ "resembles": [],
+ "use_when": "An AI or devtool screen wants a distinctive charging-up indicator with labels and token figures instead of a plain bar.",
+ "avoid_when": "It loops on its own and reports fake progress, so it must not stand in for a real measured task or a cancel control.",
+ "suits": [
+  "ai-chat",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "loading",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Labels, icon glyphs, duration, token target, whether percent shows, font size, cell padding and text colour are props; the purple gradient maths is fixed in the source.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame loop recolours every cell of three strips forty times a second.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "There is no progressbar role or live value, so screen readers get the label text but not the percentage, and the loop ignores reduced motion."
+ },
+ "props": [
+  {
+   "name": "labels",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "icons",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "tokenTarget",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showPercent",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "paddingY",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "cellPadding",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "textClassName",
+   "type": "string",
+   "default": "'text-purple-200/90'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The token counter at the right is a very dim purple and is barely readable."
+ ],
+ "polish": 4,
+ "polish_why": "A distinctive terminal look with a smooth shimmer; the token counter is too faint to read.",
+ "unsure": [],
+ "title": "Shimmer Loader",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8bd66e19af619e34",
+  "film_hash": "a786d835e6f98fcd",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

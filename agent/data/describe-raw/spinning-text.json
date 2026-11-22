@@ -1,0 +1,71 @@
+{
+  "name": "spinning-text",
+  "frames": {
+    "code": "3343",
+    "best": 1,
+    "best_why": "A complete ring of text is in view with phrases readable around the circle.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A circular caption of white letters turns steadily on black.",
+  "summary": "A string of small text laid out around a circle with dot separators, rotating continuously so the whole ring of words travels around the centre.",
+  "title_fix": null,
+  "appearance": "A thin ring of small white letters on black, each character angled to follow the circle. Round dots separate the phrases, and the letters are tightly and evenly spaced around the empty centre.",
+  "behaviour": "The entire ring rotates at a constant speed in one direction, so each word sweeps past the top and around again. It never stops or changes pace.",
+  "parts": ["letter", "separator dot", "text ring"],
+  "demo_content": "A ring of words separated by dots, naming a UI library and React.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["monochrome", "minimal", "airy", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "circular rotating text",
+    "text going round in a circle",
+    "spinning badge text",
+    "words orbiting in a ring",
+    "rotating circular label",
+    "round text that keeps turning",
+    "circular text logo",
+    "text ring turning forever"
+  ],
+  "resembles": [],
+  "use_when": "A badge, stamp or hero accent should show a rotating circular caption.",
+  "avoid_when": "Long sentences; small curved letters are hard to read while the ring spins.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["badge", "decoration", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the text as a string or array and set radius, duration, reverse, transition or custom variants; the letter spacing derives from the character count.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One rotating container with a span per character; no per-frame script.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "A screen-reader-only copy gives the full text, but the endless spin never checks reduced-motion."
+  },
+  "props": [
+    {"name": "children", "type": "string | string[]", "default": null, "required": true},
+    {"name": "duration", "type": "number", "default": "10", "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "radius", "type": "number", "default": "5", "required": false},
+    {"name": "transition", "type": "Transition", "default": null, "required": false},
+    {"name": "variants", "type": "object", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Even character spacing and a smooth constant spin; the small letters are faint at a distance.",
+  "unsure": []
+}

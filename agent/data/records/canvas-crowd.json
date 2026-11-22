@@ -1,0 +1,123 @@
+{
+ "name": "canvas-crowd",
+ "frames": {
+  "code": "6964",
+  "best": 2,
+  "best_why": "A full band of black-and-white hand-drawn people fills the lower stage with varied faces and postures.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "Hand-drawn black-and-white characters stroll back and forth across the bottom.",
+ "summary": "A canvas strip of sketchy black-and-white people walking across the bottom of the screen. Characters enter from both sides at different depths and leave, so the crowd keeps cycling, with a small label centred above.",
+ "title_fix": null,
+ "appearance": "A stark black background with a thick horizontal band of black-and-white line-drawn figures along the bottom edge. The people differ in hats, hair and posture, drawn at several depths so heads overlap, and a tiny grey label sits at the top centre.",
+ "behaviour": "Each figure walks across the strip at its own pace with a slight bob, then leaves and respawns from the opposite side or another depth. The crowd keeps cycling so the band stays full.",
+ "parts": [
+  "crowd figures",
+  "heads",
+  "label",
+  "rule"
+ ],
+ "demo_content": "A tiny label reading \"Join 40,000 makers\" over an illustrated character sheet.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "monochrome",
+  "dark",
+  "playful",
+  "editorial"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "hand drawn crowd animation",
+  "people walking across bottom of screen",
+  "black and white illustrated characters",
+  "sketchy people walking across screen",
+  "open peeps style figures",
+  "animated line art people",
+  "landing page crowd of makers",
+  "walking figures as decoration"
+ ],
+ "resembles": [],
+ "use_when": "A community or launch page wants a lively human crowd as decoration without photos.",
+ "avoid_when": "It loads a remote sprite sheet from an external bucket and draws continuously, which costs battery.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "decoration",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Props set the sprite sheet URL and the small label; the rows and columns, walk speed and crowd density are fixed in the source.",
+ "technique": [
+  "canvas-2d",
+  "gsap"
+ ],
+ "weight": "heavy",
+ "weight_why": "Paints up to 105 sprite figures to a canvas every frame from the GSAP ticker.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The canvas is decorative and silent, and the endless walk ignores reduced-motion, so it keeps moving for users who ask it not to."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "DEFAULT_PEEPS_SRC",
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Crowd Canvas\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The crowd relies on a remote sprite sheet that fails offline.",
+  "The top label is tiny, faint and easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "Charming, coherent illustration and a lively crowd; the label is almost illegible.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Canvas Crowd",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "70ffd1d9ee7a3a73",
+  "film_hash": "b0a6b5f803523e50",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "color-picker",
+  "frames": {
+    "code": "8326",
+    "best": 5,
+    "best_why": "The panel is fully open with a red hue, a ticked preset and the value field all visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A swatch button opens a hue slider, colour square and presets.",
+  "summary": "An outline button showing the current colour opens a panel with a saturation-lightness square, a rainbow hue slider, an editable colour value and twelve preset dots.",
+  "title_fix": null,
+  "appearance": "A small dark pill shows a round colour dot, an hsl value and a chevron. Opened, a dark card sits above with a bright gradient square, a slim rainbow strip, a value field and two rows of round preset colours.",
+  "behaviour": "Clicking the swatch opens the panel with a quick scale; dragging in the square or along the hue strip updates the chosen colour live, and any preset applies instantly with a tick.",
+  "parts": ["swatch button", "colour chip", "value label", "chevron", "colour square", "hue slider", "value field", "preset dots"],
+  "demo_content": "Blue starting colour, the value hsl(211, 100%, 50%) and a Selected readout below.",
+  "states": ["open", "hover", "focus"],
+  "kind": "popover",
+  "look": ["dark", "rounded", "colorful", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "colour picker with hue slider",
+    "choose a colour from swatches",
+    "hsl colour selector popup",
+    "button that opens color presets",
+    "pick a hex colour for a theme",
+    "colour picker with gradient square",
+    "square gradient to choose saturation",
+    "colour value input with preview"
+  ],
+  "resembles": ["Figma color picker"],
+  "use_when": "Users pick a brand or theme colour and need both presets and fine HSL control.",
+  "avoid_when": "It is a compact button-plus-panel and needs the separate popover, button, input and label parts installed.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "color and onChange are the only props; the presets, panel width and slider styling are hardcoded in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One popover and a handful of preset buttons; motion only while open or hovered.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The saturation-lightness square is a click-only div, so keyboard users cannot pick a colour there; presets have no group label."
+  },
+  "props": [
+    {"name": "color", "type": "string", "default": null, "required": true},
+    {"name": "onChange", "type": "(color: string) => void", "default": null, "required": true}
+  ],
+  "issues": [
+    "The colour square is a div with a click handler only, so it cannot be used from the keyboard.",
+    "Preset swatches have no accessible labels beyond their colour.",
+    "Long colour strings are cut with an ellipsis in the trigger, hiding the exact value."
+  ],
+  "polish": 4,
+  "polish_why": "Cohesive dark picker with live preview and presets; the mouse-only colour square is the weak spot.",
+  "unsure": []
+}

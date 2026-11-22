@@ -1,0 +1,69 @@
+{
+  "name": "Aurora-TS-TW",
+  "frames": {
+    "code": "3284",
+    "best": 1,
+    "best_why": "The full band shows a clear violet-to-green-to-teal sweep with one bright central crest.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A glowing green and violet ribbon ripples across the top of the screen.",
+  "summary": "A wide strip of soft light blends violet, green and cyan and undulates like a slow aurora. It fills its container edge to edge in a loop, sitting behind whatever you place on top.",
+  "title_fix": null,
+  "appearance": "A wide horizontal band hugs the top of a black stage, brightest near its upper edge and fading to black below. It runs from deep violet through acid green to pale cyan, with soft blurred crests and no hard edges.",
+  "behaviour": "The band drifts continuously: its coloured crests swell, slide sideways and subside in a slow loop with no pause. Nothing responds to the pointer; the motion is driven by time.",
+  "parts": ["light band", "violet edge", "green crest", "cyan edge", "dark falloff"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["gradient", "glow", "colorful", "organic"],
+  "tone": "decorative",
+  "search_phrases": [
+    "northern lights background",
+    "glowing gradient strip",
+    "animated color ribbon",
+    "soft neon light band",
+    "green and purple light wave",
+    "hero background with flowing colors",
+    "webgl glowing gradient",
+    "borealis effect for a website"
+  ],
+  "resembles": ["northern lights"],
+  "use_when": "A dark hero or section wants a soft moving wash of colour without images, video or heavy artwork.",
+  "avoid_when": "It needs a WebGL context and a sized parent, and its palette can clash with a brand's own colours.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["page-background", "section-background", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Set colorStops (three hex colours), amplitude, blend, speed and time through props. The shader shape and wave motion are fixed in the source.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A WebGL shader renders a new frame continuously.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A purely decorative canvas with no text or controls, and its loop never checks reduced-motion preferences."
+  },
+  "props": [
+    {"name": "colorStops", "type": "string[]", "default": "['#5227FF', '#7cff67', '#5227FF']", "required": false},
+    {"name": "amplitude", "type": "number", "default": "1.0", "required": false},
+    {"name": "blend", "type": "number", "default": "0.5", "required": false},
+    {"name": "speed", "type": "number", "default": null, "required": false},
+    {"name": "time", "type": "number", "default": null, "required": false}
+  ],
+  "issues": ["Default violet and green can clash with an existing brand palette."],
+  "polish": 4,
+  "polish_why": "Smooth, believable glow with little banding; the light is confined to a thin strip.",
+  "unsure": ["traits.theme"]
+}

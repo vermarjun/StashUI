@@ -1,0 +1,77 @@
+{
+  "name": "gauge",
+  "frames": {
+    "code": "3242",
+    "best": 4,
+    "best_why": "All three rings show well-filled coloured arcs with distinct values and no cursor overlap.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Three circular dials fill with colour and show live numeric values.",
+  "summary": "A set of radial gauges, each a full ring with a grey track and a coloured arc that fills to show its value. Large numbers sit in the middle with a small label below, and the values animate.",
+  "title_fix": null,
+  "appearance": "Three donut-shaped rings on a dark background, one blue, one violet and one green. Each has a dark grey track and a coloured arc starting at the top, a big white number centred inside and a small grey label underneath.",
+  "behaviour": "Each coloured arc grows clockwise from the top to match its number, easing over about a second when the value changes. The demo re-rolls the values every 1.4 seconds.",
+  "parts": ["gauge ring", "track arc", "range arc", "value text", "label"],
+  "demo_content": "CPU, Memory and Disk I/O gauges with changing values like 72, 73 and 50.",
+  "states": ["loading", "success"],
+  "kind": "chart",
+  "look": ["dark", "rounded", "colorful", "minimal", "flat"],
+  "tone": "technical",
+  "search_phrases": [
+    "circular progress gauge",
+    "radial meter with number",
+    "donut chart for cpu usage",
+    "ring gauge for a metric",
+    "animated percentage dial",
+    "circular stat indicator",
+    "system monitor gauges",
+    "round progress ring trio"
+  ],
+  "resembles": [],
+  "use_when": "A dashboard needs to show a few metrics as compact circular gauges with live values.",
+  "avoid_when": "You need precise comparison between many values; circles are harder to read than bars.",
+  "suits": ["dashboard", "saas", "devtool"],
+  "slot_hints": ["stat", "chart"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Set value, min, max, size, thickness and start/end angles, plus a getValueText formatter. Colours come from classes on the range and track.",
+  "technique": ["svg", "css-transition"],
+  "weight": "light",
+  "weight_why": "Three small SVG rings using a CSS stroke transition; no canvas or internal loop.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Each gauge exposes role meter with aria values and a label; the arc animation ignores reduced-motion."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "max", "type": "number", "default": "100", "required": false},
+    {"name": "min", "type": "number", "default": "0", "required": false},
+    {"name": "size", "type": "number", "default": "120", "required": false},
+    {"name": "thickness", "type": "number", "default": "8", "required": false},
+    {"name": "startAngle", "type": "number", "default": "0", "required": false},
+    {"name": "endAngle", "type": "number", "default": "360", "required": false},
+    {"name": "getValueText", "type": "function", "default": null, "required": false},
+    {"name": "asChild", "type": "boolean", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Values re-roll on a timer in the demo, so the circles never settle.",
+    "Arc animation ignores reduced-motion preferences."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp rings and clear numbers; unprompted re-rolling values can distract.",
+  "unsure": []
+}

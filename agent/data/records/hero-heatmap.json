@@ -1,0 +1,189 @@
+{
+ "name": "hero-heatmap",
+ "frames": {
+  "code": "9020",
+  "best": 3,
+  "best_why": "The bolt is at its brightest, a full rainbow from blue edge to hot pink core, and the whole shape is visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.6
+ },
+ "tagline": "A rainbow heatmap lightning bolt glows beside the headline.",
+ "summary": "A split landing hero with a two-line headline, short paragraph, pill button and two tech badges on the left, and a glowing lightning-bolt heatmap on the right. The bolt pulses through blue, green, yellow and magenta.",
+ "title_fix": null,
+ "appearance": "On black, a left column stacks a large white two-line heading, a dim paragraph, an outlined pill button and two bordered badges. The right visual is a lightning-bolt silhouette shown as a heat map, its edges glowing blue, green and yellow around a hot pink core.",
+ "behaviour": "The bolt's heat field breathes, going from a faint blue outline to a full rainbow flare and back within a few seconds. The text and buttons hold still; hover lifts the button and badges, and on small screens the glow becomes a band under the copy.",
+ "parts": [
+  "headline",
+  "paragraph",
+  "call-to-action button",
+  "tech badges",
+  "heatmap bolt"
+ ],
+ "demo_content": "Heading AI SDK Agents / Copy and Paste, copy about Vercel AI SDK, Next.js v16 and AI SDK v6 badges.",
+ "states": [
+  "hover"
+ ],
+ "kind": "hero",
+ "look": [
+  "dark",
+  "colorful",
+  "glow",
+  "neon",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "lightning bolt heatmap visual",
+  "rainbow glow behind hero headline",
+  "thermal heat map of a shape",
+  "neon bolt animation on black",
+  "ai product landing hero with glow",
+  "colorful energy burst hero graphic",
+  "split hero text and glowing icon",
+  "heat signature effect for website"
+ ],
+ "resembles": [],
+ "use_when": "A launch page wants one glowing symbol to carry the hero, with the headline and copy beside it.",
+ "avoid_when": "The glow loop never stops and needs WebGL, and the bolt is a data-URI image you have to replace.",
+ "suits": [
+  "saas",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Text, CTA and badges are props, and the heatmap accepts its image, colour ramp, contour, glow and speed. Layout and glow placement are class edits.",
+ "technique": [
+  "webgl-shader",
+  "css-transition"
+ ],
+ "weight": "heavy",
+ "weight_why": "A heatmap WebGL shader glows continuously across half the hero.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "A hidden h1 and a text link serve screen readers, but the pulsing shader has no reduced-motion stop."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "React.ReactNode",
+   "default": "Copy and Paste",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "ctaProps",
+   "type": "Partial<HeroHeatmapCTAProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "techStack",
+   "type": "HeroHeatmapTechItem[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showCta",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showBadges",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "image",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "desktopShaderProps",
+   "type": "Partial<HeatmapProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-full w-full overflow-hidden\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The bolt fades almost to black in frames 1 and 4, so its shape briefly disappears.",
+  "The description is small and dim against black, so it is easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "A striking rainbow glow and clean split layout, though the bolt vanishes in its dim phase.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Hero Heatmap",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1c95723157f95d0f",
+  "film_hash": "eacda18e31a6e45d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

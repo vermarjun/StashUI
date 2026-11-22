@@ -1,0 +1,63 @@
+{
+  "name": "comp-34",
+  "frames": {
+    "code": "1911",
+    "best": 6,
+    "best_why": "A long entry brings the counter to 46/50 while the field and count are both clear of the cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A text line with a running character count pinned inside its right edge.",
+  "summary": "A labelled single-line text field that shows a live character count such as 0/50 inside the right edge and stops accepting input once the limit is reached.",
+  "title_fix": null,
+  "appearance": "A label above a rounded dark field on a black stage, with a faint grey counter reading 0/50 pinned inside the right edge. Typed text fills the line from the left and slides under the counter as it grows.",
+  "behaviour": "Typing fills the line and the counter ticks upward one digit at a time toward 50, after which no more characters are accepted. The clip grows the entry from 0/50 to 46/50 while the line scrolls to keep the caret in view.",
+  "parts": ["label", "text field", "entered text", "character counter", "focus ring"],
+  "demo_content": "Label Input with character limit, with a draft ending look great — ship it Friday.",
+  "states": ["focus", "empty"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text box with a counter",
+    "see how many letters are left",
+    "limit how much can be typed",
+    "draft field with 0 of 50",
+    "remaining characters shown inside",
+    "short bio with a cap",
+    "count as you type",
+    "stop typing at the maximum"
+  ],
+  "resembles": ["X tweet character counter"],
+  "use_when": "Fields with a hard cap, such as a short bio or status line, where the limit must stay visible.",
+  "avoid_when": "A single line only; longer text needs a textarea, and the counter shares the same narrow strip.",
+  "suits": ["social", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label and the 50-character cap are fixed in the file, and the field and counter styling are classes there as well.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One field, one counter and a change handler; nothing animates at rest.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The label and live counter are tied to the field with aria-describedby, so the limit is announced as it changes."
+  },
+  "props": [],
+  "issues": ["The empty field has no placeholder, so nothing hints what the 50 characters are for."],
+  "polish": 3,
+  "polish_why": "Tidy field with a clear live counter, but the demo is a bare text line.",
+  "unsure": []
+}

@@ -1,0 +1,79 @@
+{
+  "name": "filters-reui",
+  "frames": {
+    "code": null,
+    "best": null,
+    "best_why": "",
+    "usable": [],
+    "render": "blank",
+    "render_note": "no image",
+    "shows_interaction": "no"
+  },
+  "tagline": "Stack addable condition chips that nest into AND/OR filter groups.",
+  "summary": "A filter bar where each condition is a chip built from a field, an operator and a value chosen in popovers. It also offers an advanced builder that groups rules with combinators, and reports the query tree.",
+  "title_fix": null,
+  "appearance": "A wrapping row of pill-shaped chips, each split into field, operator and value segments with a kebab at the end, followed by an Add filter button and an optional Clear button. The advanced variant stacks condition rows inside a popover panel.",
+  "behaviour": "Clicking Add filter opens a field picker, then operator and value popovers. Chips can be edited, removed with Delete and reordered with Alt+Arrow, while advanced mode nests rows into AND/OR groups and a live region announces the rule count.",
+  "parts": ["filter chip", "field label", "operator", "value", "kebab menu", "add filter button", "clear button"],
+  "demo_content": "Seeded query: assignee has any of Ada, Grace, Alan, Katherine; priority is urgent; a raw JSON readout.",
+  "states": ["hover", "focus", "active", "selected", "open", "disabled"],
+  "kind": "search",
+  "look": ["flat", "minimal", "dense", "rounded"],
+  "tone": "technical",
+  "search_phrases": [
+    "linear style filter bar",
+    "add filter chips with conditions",
+    "nested filter builder with and or",
+    "query builder for a data table",
+    "filter by field operator value",
+    "advanced filter panel popover",
+    "chips with kebab menu actions",
+    "combinable rule groups"
+  ],
+  "resembles": ["Linear filters"],
+  "use_when": "A data view needs many combinable conditions with field, operator and value picked from menus.",
+  "avoid_when": "You only need one search box or a couple of toggles; this is a large multi-file system to adopt.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["data-table"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "border", "fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass a field schema, the query tree and change handlers, plus labels, operators, editors, size, variant and read-only flags. Chip internals live in separate source files.",
+  "technique": ["css-transition"],
+  "weight": "moderate",
+  "weight_why": "A large multi-file state system with popovers and a virtualised list, but no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Strong keyboard handling with roving chip focus and live announcements; popover transitions ignore reduced-motion."
+  },
+  "props": [
+    {"name": "fields", "type": "FilterField[]", "default": null, "required": true},
+    {"name": "query", "type": "FilterQuery", "default": null, "required": false},
+    {"name": "defaultQuery", "type": "FilterQuery", "default": null, "required": false},
+    {"name": "onQueryChange", "type": "function", "default": null, "required": false},
+    {"name": "labels", "type": "Partial<FilterLabels>", "default": null, "required": false},
+    {"name": "variant", "type": "string", "default": "basic", "required": false},
+    {"name": "size", "type": "string", "default": "default", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "readOnly", "type": "boolean", "default": "false", "required": false},
+    {"name": "showClear", "type": "boolean", "default": "false", "required": false},
+    {"name": "trigger", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "No recorded frames exist, so its actual appearance is unverified.",
+    "Adoption spans more than thirty source files including a cascader and a virtual list."
+  ],
+  "polish": 3,
+  "polish_why": "No frames to judge; the code is thorough and accessible but very large to adopt.",
+  "unsure": ["appearance", "look", "tone", "polish", "polish_why"]
+}

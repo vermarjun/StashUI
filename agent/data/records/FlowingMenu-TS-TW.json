@@ -1,0 +1,153 @@
+{
+ "name": "FlowingMenu-TS-TW",
+ "frames": {
+  "code": "5439",
+  "best": 5,
+  "best_why": "The About row is fully covered by the white band with its repeated label and photo chips, other rows still intact.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.6
+ },
+ "tagline": "Rows fill with a scrolling ribbon of words and pictures on hover.",
+ "summary": "A full-screen stacked menu lists links in tall rows divided by thin lines. Hovering a row slides in a white band that endlessly scrolls its label alongside rounded photo chips.",
+ "title_fix": null,
+ "appearance": "Four tall dark rows stack edge to edge, each centred with a small uppercase white label and divided by thin white rules. On hover a white band covers the row, running large text and pill-shaped photos across it.",
+ "behaviour": "The white band slides in from whichever edge the pointer entered, then scrolls its repeated label and photos sideways without stopping. Leaving the row pushes the band back out the same way.",
+ "parts": [
+  "menu row",
+  "row label",
+  "divider line",
+  "hover band",
+  "scrolling text",
+  "image chips"
+ ],
+ "demo_content": "Four items labelled Home, Work, About and Contact, with stock interior and portrait photos in the hover bands.",
+ "states": [
+  "hover"
+ ],
+ "kind": "site-header",
+ "look": [
+  "dark",
+  "minimal",
+  "editorial",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "full screen vertical navigation menu",
+  "hover a row to see a scrolling band",
+  "menu links with image marquee",
+  "big type list navigation for a website",
+  "portfolio home page menu with photos",
+  "row of links that reveal pictures",
+  "animated site menu with moving text",
+  "full width stacked nav links"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio or studio site wants a dramatic full-screen menu where each link previews imagery.",
+ "avoid_when": "Every row needs an image URL, and on touch there is no hover to start the marquee band.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Items with link, label and image, plus scroll speed and the text, background, band, band-text and border colours are props; the band layout is fixed.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "moderate",
+ "weight_why": "Every row starts its own endless marquee tween on mount, even while hidden.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The links are real anchors with browser focus rings, but the marquee happens only on hover, so keyboard focus shows no preview."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "MenuItemData[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "bgColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "marqueeBgColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "marqueeTextColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "borderColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Every row runs its marquee animation from mount, so four hidden loops keep moving all the time."
+ ],
+ "polish": 4,
+ "polish_why": "Bold full-width menu with a slick moving band; the resting screen is only four small labels.",
+ "unsure": [],
+ "title": "FlowingMenu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5939f39c9f4ddbe4",
+  "film_hash": "b9988ea001371e6a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

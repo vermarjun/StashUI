@@ -1,0 +1,69 @@
+{
+  "name": "components-backgrounds-bubble",
+  "frames": {
+    "code": "9871",
+    "best": 1,
+    "best_why": "The orange blob blends into teal and purple here, giving the richest mix of colours.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Soft colour blobs drift and merge over a purple-blue field.",
+  "summary": "A full-bleed gradient of deep violet and blue with large, heavily blurred circles of orange, pink and cyan floating over it. The blobs slowly drift and overlap, blending like a lava lamp.",
+  "title_fix": null,
+  "appearance": "The whole frame is a soft gradient from violet to blue, filled with big out-of-focus shapes of rose, orange, teal and cyan. Their edges bleed into each other so no hard lines appear, and brighter cores sit inside paler halos. The effect is smooth like blurred stage lights.",
+  "behaviour": "Each coloured blob drifts slowly up and down or orbits the centre on loops of twenty to forty seconds, so they slide across one another and blend. With interactivity on, one extra blob chases the pointer through a spring.",
+  "parts": ["gradient field", "colour blobs", "soft halos"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["gradient", "colorful", "organic", "glow"],
+  "tone": "decorative",
+  "search_phrases": [
+    "blurred color blobs background",
+    "lava lamp gradient backdrop",
+    "soft gradient hero background",
+    "abstract mesh gradient",
+    "moving color bubbles",
+    "pastel blur background for a page",
+    "animated gradient blobs",
+    "colorful blurred shapes behind content"
+  ],
+  "resembles": ["Stripe gradient mesh"],
+  "use_when": "A hero, auth screen or app shell that needs a warm colourful backdrop without distracting detail.",
+  "avoid_when": "Heavy blur and saturated colour reduce text contrast, and five looping blobs keep the GPU busy with no motion pause.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Pass six colour values, an interactive flag, spring transition settings and className; the blob sizes, orbits and blend modes are fixed in the source.",
+  "technique": ["motion-library", "svg-filter"],
+  "weight": "heavy",
+  "weight_why": "Large blurred blobs under an SVG goo filter animate continuously, which is GPU-heavy full screen.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The blobs animate forever with no prefers-reduced-motion check, and the bright colours can wash out text placed on top."
+  },
+  "props": [
+    {"name": "interactive", "type": "boolean", "default": "false", "required": false},
+    {"name": "transition", "type": "SpringOptions", "default": "{ stiffness: 100, damping: 20 }", "required": false},
+    {"name": "colors", "type": "BubbleColors", "default": "{\"first\":\"18,113,255\",\"second\":\"221,74,255\",\"third\":\"0,220,255\",\"fourth\":\"200,50,50\",\"fifth\":\"180,180,50\",\"sixth\":\"140,100,255\"}", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Smooth, rich colour blend; the blur is so heavy the blobs lose any shape.",
+  "unsure": ["theme"]
+}

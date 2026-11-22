@@ -1,0 +1,158 @@
+{
+ "name": "halo-card",
+ "frames": {
+  "code": "5896",
+  "best": 1,
+  "best_why": "Cleanest still: the full card with its pink-and-cyan glow is visible and no cursor covers it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "no",
+  "best_time": 0.6
+ },
+ "tagline": "Dark card with a pink, purple and cyan glow shifting along its lower edge.",
+ "summary": "A rounded, frosted dark card with a hairline border and soft multicolour light bleeding from under its bottom edge. It stacks a heading, a short paragraph, an avatar list and two pill buttons, and lights its rim on hover.",
+ "title_fix": null,
+ "appearance": "A wide rounded rectangle in near-black with a translucent, slightly lighter surface and a one-pixel border. A blurred band of pink, magenta and cyan light glows behind the lower half, brightest beneath the footer buttons, and the whole panel sits on a black page.",
+ "behaviour": "The coloured glows drift slowly side to side all the time. Hovering the card or focusing something inside brightens the border and sweeps a moving streak of light around the rim; the primary button carries its own matching glow.",
+ "parts": [
+  "card surface",
+  "title",
+  "description",
+  "more button",
+  "avatar",
+  "person row",
+  "role label",
+  "footer button"
+ ],
+ "demo_content": "\"Invite your team\" card listing Priya Raman, Marcus Webb and Lena Fischer with roles and Cancel / Send invites buttons.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "disabled"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "glass",
+  "gradient",
+  "rounded",
+  "glow"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "dark card with colorful glow around the edge",
+  "invite teammates panel",
+  "frosted glass card with gradient border",
+  "animated neon rim card",
+  "team member list with avatar rows",
+  "card with pink and blue light underneath",
+  "share access settings card",
+  "glowing border container for a form"
+ ],
+ "resembles": [
+  "Vercel gradient border cards"
+ ],
+ "use_when": "A dark app needs a standout container for a short list or a settings block.",
+ "avoid_when": "The glow is heavy and decorative, so light themes and dense dashboard grids will look busy.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "modal",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "shadow",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Frosted surface, hover rim and padding are props; the header, title, description, list, footer and buttons are slots you compose from exported subcomponents.",
+ "technique": [
+  "motion-library",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Three blurred gradient blobs animate forever through motion, plus a frame-loop rim trail.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Focus inside the card triggers the same rim effect as hover, buttons show focus rings, and reduced-motion stops the looping glows."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "translucent",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "padding",
+   "type": "\"none\" | \"sm\" | \"md\" | \"lg\"",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "aria-label",
+   "type": "string",
+   "default": "{ariaLabel}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The frames barely move, so the signature hover rim and moving light are never shown."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp spacing and a convincing glassy glow; the recording does not demonstrate its animated rim.",
+ "unsure": [],
+ "title": "Halo Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1781f5824e3b81b9",
+  "film_hash": "440c45f06a425a64",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

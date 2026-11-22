@@ -1,0 +1,67 @@
+{
+  "name": "alert-dialog",
+  "frames": {
+    "code": "3862",
+    "best": 3,
+    "best_why": "Full dialog in view with title, warning paragraph and both buttons, the clearest read of the whole component.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Red delete button opens a centred confirm panel with two choices.",
+  "summary": "A confirmation dialog for destructive actions. A trigger button opens a dark rounded panel on a dimmed page, showing a bold question, a warning paragraph, and Cancel next to a red confirm button.",
+  "title_fix": null,
+  "appearance": "A soft red rounded button on a near-black page. Opening it shows a dark rounded panel with a thin border, holding a bold title, a short grey paragraph, and a right-aligned row of two buttons: an outlined Cancel and a pale red confirm.",
+  "behaviour": "Clicking the trigger fades a black overlay over the page and zooms the panel in slightly. Escape or Cancel dismisses it without acting; the red button confirms, closes and fires the action. Focus stays inside the panel while it is open.",
+  "parts": ["trigger button", "overlay", "dialog panel", "title", "warning text", "cancel button", "confirm button"],
+  "demo_content": "Asks 'Are you absolutely sure?' about deleting an account and warns the data cannot be recovered.",
+  "states": ["hover", "focus", "open"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "delete account confirmation popup",
+    "are you sure dialog with cancel",
+    "destructive action warning modal",
+    "popup asking to confirm before deleting",
+    "prompt before permanent removal",
+    "two button confirmation box",
+    "dark themed confirm dialog",
+    "dialog that dims the page behind"
+  ],
+  "resembles": [],
+  "use_when": "An irreversible action needs an explicit yes, with the consequence spelled out first.",
+  "avoid_when": "It depends on Radix and a separate button component, and its dark panel assumes a dark theme.",
+  "suits": ["saas", "dashboard", "fintech"],
+  "slot_hints": ["modal", "form-submit"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["background", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Each part is a separate composable piece, so you supply your own title, description and footer buttons and can override classes on the panel, overlay and header.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "A small portal panel with fade and zoom classes; nothing runs while it is idle.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Focus trapping, Escape and labelled title and description come from the dialog primitive, but the zoom and fade ignore reduced-motion settings."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The page is already near-black, so the dimming overlay is barely visible when the dialog opens"
+  ],
+  "polish": 3,
+  "polish_why": "Standard, tidy dialog; the overlay effect is almost invisible on the dark demo stage.",
+  "unsure": ["a11y.focus_visible"]
+}

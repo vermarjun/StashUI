@@ -1,0 +1,182 @@
+{
+ "name": "MetallicPaint-TS-TW",
+ "frames": {
+  "code": "8591",
+  "best": 1,
+  "best_why": "Frame 1 shows the largest liquid swirl with warm orange refraction near the tip.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "A chrome star shape ripples like molten metal.",
+ "summary": "A four-pointed sparkle silhouette filled with liquid chrome, its highlights, dark pools and rainbow edges sliding around inside the shape.",
+ "title_fix": null,
+ "appearance": "A sharp four-pointed star on black, its interior a mirror-bright silver with dark liquid patches and thin warm orange edges. Highlights pool near the middle and smeared streaks run out to the tips.",
+ "behaviour": "The metal pattern drifts inside the fixed silhouette, so highlights swell, dark blobs wander and faint rainbow fringes slide across the surface. The star outline itself never moves.",
+ "parts": [
+  "star silhouette",
+  "liquid highlight",
+  "dark pool",
+  "rainbow fringe"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "3d",
+  "gradient",
+  "sharp",
+  "luxurious"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "liquid chrome logo effect",
+  "metallic paint on an svg shape",
+  "molten metal star animation",
+  "shiny silver blob texture",
+  "iridescent liquid fill for a logo",
+  "chrome liquid distortion effect",
+  "flowing metal on a silhouette",
+  "glossy mercury surface animation"
+ ],
+ "resembles": [],
+ "use_when": "A logo or icon should look like polished liquid metal in a hero or brand moment.",
+ "avoid_when": "It reads only the alpha of a flat silhouette, so photos and detailed marks come out wrong.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "The shape is an image URL, with seed, scale, speed, brightness, liquid, refraction, blur, contrast, light and dark colours and a tint as props.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "moderate",
+ "weight_why": "A single shader quad is redrawn each frame, plus a one-off image depth pass of 200 iterations.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The canvas has no accessible name or text alternative, and the metal keeps moving regardless of motion preferences."
+ },
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "seed",
+   "type": "number",
+   "default": "42",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "brightness",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "liquid",
+   "type": "number",
+   "default": "0.75",
+   "required": false
+  },
+  {
+   "name": "refraction",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0.015",
+   "required": false
+  },
+  {
+   "name": "contrast",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "lightColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "darkColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  },
+  {
+   "name": "tintColor",
+   "type": "string",
+   "default": "'#feb3ff'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Inside the tall thin points the liquid texture is hard to read against the black.",
+  "There is no reduced-motion handling and no text alternative for the canvas."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing liquid chrome with warm edge tints; the fixed star shape limits the effect.",
+ "unsure": [],
+ "title": "Metallic Paint Shader",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "842a20c90a76a8ec",
+  "film_hash": "d5eb90613236e010",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

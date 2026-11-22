@@ -1,0 +1,122 @@
+{
+ "name": "family-button",
+ "frames": {
+  "code": "3412",
+  "best": 3,
+  "best_why": "The card is fully open with the avatar, all four menu rows and the close button visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.8
+ },
+ "tagline": "Small plus button unfolds into a profile menu of account actions.",
+ "summary": "A compact plus button that grows on click into a card holding an avatar, plan label and four account actions, with a round close button at the bottom.",
+ "title_fix": null,
+ "appearance": "Closed, a glossy dark rounded square holds one cyan circle with a black plus. Open, it becomes a tall dark card: avatar and name at top, four grey icon-and-label rows, and a round X at the bottom centre.",
+ "behaviour": "Clicking the plus springs the square open into the full card and fades the content in after a short delay; clicking the X rotates the plus back and shrinks it to its compact size.",
+ "parts": [
+  "plus button",
+  "rounded shell",
+  "avatar",
+  "name and plan",
+  "menu rows",
+  "close button"
+ ],
+ "demo_content": "Maya Chen on the Pro plan with Profile, Billing, Settings and Sign out rows.",
+ "states": [
+  "hover",
+  "open",
+  "expanded"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "rounded",
+  "gradient",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "plus button that opens a profile menu",
+  "expanding action menu from a small button",
+  "user account dropdown with sign out",
+  "fab that morphs into a menu card",
+  "profile menu for a web app",
+  "tiny corner button opens account options",
+  "animated user menu with avatar",
+  "compact account actions popup"
+ ],
+ "resembles": [],
+ "use_when": "Tuck account or action links behind one small corner control to save space in a dense app.",
+ "avoid_when": "Actions need to be visible at a glance, or the menu must be keyboard reachable.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "nav",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Menu rows are passed as children, so any links or buttons work. Size, spring and dark colours are fixed inside the file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A single layout morph and a fade, idle until clicked.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The toggle and every menu row are divs with click handlers, so nothing is focusable or announced; no roles or labels."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Menu labels sit in faint grey on near-black, hard to read.",
+  "Rows are divs, not links, so nothing in the menu is keyboard reachable."
+ ],
+ "polish": 4,
+ "polish_why": "Layered glossy frames and a smooth morph; faint labels and div rows cost it.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Family Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "59fe9a6c05c5ab45",
+  "film_hash": "f294c52c9b39356c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

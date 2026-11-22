@@ -1,0 +1,192 @@
+{
+ "name": "rubber-segment",
+ "frames": {
+  "code": "8128",
+  "best": 4,
+  "best_why": "Thumb is stretched long across the track mid-drag, showing the rubber behaviour at full reach.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "The selected tab stretches like elastic as it slides between segments.",
+ "summary": "A segmented control with a bright sliding thumb. Choosing a segment stretches the thumb toward its new home, and you can drag or flick it across the track.",
+ "title_fix": null,
+ "appearance": "A dark rounded track split into evenly spaced text segments, with a white rounded thumb behind the active one. A smaller three-item copy sits below; the active label is dark on white while the rest are pale on grey.",
+ "behaviour": "Clicking a segment stretches the thumb toward the click, then snaps it into place with a small squash. The thumb can also be grabbed and dragged along the track, and a fast flick throws it into the next slot.",
+ "parts": [
+  "track",
+  "thumb",
+  "segment label",
+  "icon"
+ ],
+ "demo_content": "Two controls: Day/Week/Month/Year with Week selected, and Overview/Analytics/Reports with Overview selected.",
+ "states": [
+  "selected",
+  "hover",
+  "active",
+  "focus",
+  "disabled"
+ ],
+ "kind": "tabs",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "monochrome"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "segmented control with sliding highlight",
+  "tabs that stretch like elastic",
+  "ios style segmented switch",
+  "draggable tab selector",
+  "pill tab bar with moving thumb",
+  "time period toggle day week month",
+  "swipeable toggle group",
+  "animated tab indicator that squishes"
+ ],
+ "resembles": [
+  "iOS segmented control"
+ ],
+ "use_when": "A short set of mutually exclusive options needs a compact control with a tactile, draggable indicator.",
+ "avoid_when": "Best with three to five short labels; equal slots squeeze long words and push the track past narrow parents.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "nav",
+  "form-field",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Items, value, default value, size, colours, radius, inset, stretch, squash, speed, glide and drag toggle are props; the spring curves live in the file.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of buttons and two animated motion values; it idles once the thumb lands.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Roving tabindex with arrow and Home/End keys mirrors a native radio group; the moving thumb is hidden from assistive tech."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "RubberSegmentItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value: string, index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "RubberSegmentSize",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "trackColor",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  },
+  {
+   "name": "thumbColor",
+   "type": "string",
+   "default": "'#fafafa'",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#fafafa'",
+   "required": false
+  },
+  {
+   "name": "activeTextColor",
+   "type": "string",
+   "default": "'#18181b'",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "draggable",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "The elastic stretch and squash feel physical and stay legible; the springs are well tuned.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Rubber Segment",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "673e8efd8f69f62e",
+  "film_hash": "3980366ffb98437d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

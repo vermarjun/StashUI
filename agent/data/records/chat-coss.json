@@ -1,0 +1,195 @@
+{
+ "name": "chat-coss",
+ "frames": {
+  "code": "9776",
+  "best": 3,
+  "best_why": "Header, reaction chips, a sent message and the quoted reply are all visible together in a full thread.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.5
+ },
+ "tagline": "Rounded chat thread with reactions, quoted replies and a typing indicator.",
+ "summary": "A dark group chat panel: an avatar stack header, a date pill and unread divider, incoming and outgoing bubbles with emoji reaction chips, quoted reply references, delivery ticks and a typing line above the composer.",
+ "title_fix": null,
+ "appearance": "A tall dark panel with a header of overlapping avatars and the group name. Inside, short rounded grey bubbles sit left with tiny avatars and names, and right in a slightly lighter fill, with emoji chips underneath and a quoted block above one message. A rounded composer with a circular send button closes the bottom.",
+ "behaviour": "Sending appends a right-aligned bubble whose small clock turns into a tick, and the thread scrolls to it. A New divider marks unseen messages, a Priya is typing line with dots sits before the composer, and reaction chips toggle on click.",
+ "parts": [
+  "header",
+  "avatar stack",
+  "date pill",
+  "message bubble",
+  "reaction chip",
+  "reply reference",
+  "delivery tick",
+  "composer"
+ ],
+ "demo_content": "Launch crew thread with Priya, Daniel and Sofia discussing release notes for 4.2 and a post going live.",
+ "states": [
+  "hover",
+  "focus",
+  "loading",
+  "selected"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "group message thread with reactions",
+  "team conversation with typing dots",
+  "quoted reply in a message bubble",
+  "read receipts under messages",
+  "incoming and outgoing chat bubbles",
+  "unread message divider",
+  "messenger style conversation panel",
+  "emoji reactions on messages"
+ ],
+ "resembles": [
+  "Slack message thread"
+ ],
+ "use_when": "You need a group conversation with replies, reactions and read state assembled from separate parts.",
+ "avoid_when": "A single support chatbot bubble: this is a full multi-person thread with composer, far heavier than needed.",
+ "suits": [
+  "saas",
+  "social"
+ ],
+ "slot_hints": [
+  "body-text",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Parts take content through props and children: bubble side and grouping, reaction chips, delivery status, replies and typing labels; layout and theme come from classes.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Several spring animations for bubbles and reactions plus a scrolling log; no continuous loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The log is labelled and live, controls have aria labels and reduced motion is honoured; reactions remain pointer first."
+ },
+ "props": [
+  {
+   "name": "side",
+   "type": "\"incoming\" | \"outgoing\"",
+   "default": "{side}",
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "author",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "avatar",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "grouped",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "lifted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "bubble",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "actions",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "reactions",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "footer",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animateEntrance",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "highlighted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Reaction counts and timestamps are very small and low contrast on the dark bubbles."
+ ],
+ "polish": 4,
+ "polish_why": "Polished group chat with believable details; tiny metadata text is the only weak point.",
+ "unsure": [
+  "traits.needs_sized_parent"
+ ],
+ "title": "Chat",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6012b096cfde11fa",
+  "film_hash": "c5e14912690e5d58",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

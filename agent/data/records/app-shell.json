@@ -1,0 +1,136 @@
+{
+ "name": "app-shell",
+ "frames": {
+  "code": "7667",
+  "best": 5,
+  "best_why": "Expanded sidebar with the Conversations sub-menu open, stat cards, queue and footer card all visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.4
+ },
+ "tagline": "Inset dashboard with a grouped sidebar, stat cards and a queue list.",
+ "summary": "An app shell with a dark grouped sidebar that collapses to icons, a sticky header with breadcrumb and user avatar, and a main area holding headline stats and a queue of conversations.",
+ "title_fix": null,
+ "appearance": "A full dashboard on near-black: a dark sidebar with a product mark, a highlighted New Conversation button and labelled nav groups, beside a main panel. Four stat cards sit above a Needs a reply list, under a thin header with breadcrumb and avatar.",
+ "behaviour": "The sidebar toggle collapses the rail to icons and widens the main panel, with a tooltip naming the shortcut. Nav groups expand their sub-items in place with a rotating chevron, and the header stays pinned while content scrolls.",
+ "parts": [
+  "sidebar",
+  "logo",
+  "nav group",
+  "sub menu",
+  "new conversation button",
+  "header breadcrumb",
+  "stat card",
+  "queue row"
+ ],
+ "demo_content": "A support inbox for Maya Chen: stats for 128 conversations, CSAT 94%, and a queue of four customer replies.",
+ "states": [
+  "hover",
+  "active",
+  "expanded",
+  "open",
+  "selected"
+ ],
+ "kind": "dashboard",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "admin dashboard with collapsible sidebar",
+  "sidebar with grouped navigation menus",
+  "app layout with breadcrumb header",
+  "customer support inbox dashboard",
+  "stats cards and conversation queue",
+  "inset sidebar that shrinks to icons",
+  "internal tool navigation layout",
+  "dashboard with user avatar menu"
+ ],
+ "resembles": [
+  "Intercom"
+ ],
+ "use_when": "You need a ready app frame with sidebar navigation, header, stat cards and a content area for a SaaS dashboard.",
+ "avoid_when": "It pulls in eight registry components and fixed demo nav data, so adopting it for a one-off page is heavy.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Main content is passed as children and pathname sets the active nav item. Nav groups, the user and footer links are hardcoded data in the source, so editing them means changing the file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "A full shell of sidebar, menus and tooltips; only CSS transitions, nothing runs per frame.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Good labels, focus rings and a sidebar shortcut, but the width and chevron transitions ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "pathname",
+   "type": "string",
+   "default": "{pathname}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 6 catches a stray browser link tooltip in the bottom-left corner.",
+  "The sidebar's nav and helper text are small and low contrast on the dark surface."
+ ],
+ "polish": 4,
+ "polish_why": "Coherent, realistic dashboard with tidy spacing; small muted labels and a stray tooltip.",
+ "unsure": [
+  "content_from",
+  "traits.theme"
+ ],
+ "title": "App Shell",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "819f4f82e0a01716",
+  "film_hash": "0128f90793420406",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

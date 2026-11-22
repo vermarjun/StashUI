@@ -1,0 +1,74 @@
+{
+  "name": "select-native",
+  "frames": {
+    "code": "5119",
+    "best": 1,
+    "best_why": "All three fields are populated and the card is fully in view with no cursor over a control.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Boxed dropdowns with a chevron, plus an always-open option list.",
+  "summary": "A shipping form of three plain dropdown controls: Country and Delivery speed are single-line boxes with a chevron, while Extras is an open list box of four selectable rows.",
+  "title_fix": null,
+  "appearance": "A dark rounded card titled 'Shipping details' with three stacked fields. Country and Delivery speed are single-line boxes ending in a small chevron, the second holding grey placeholder text; Extras is an open dark list of four option rows, the first highlighted.",
+  "behaviour": "Clicking a single-line box opens the browser's own option list and the chosen name replaces the text. The Extras box stays open as a list, where clicking a row toggles its highlight, and any focused box gets a brighter border.",
+  "parts": ["card", "section title", "field label", "select box", "chevron", "option list"],
+  "demo_content": "Countries US, Germany, India and Japan; standard or express delivery; extras like gift wrapping and insurance.",
+  "states": ["focus", "selected", "disabled"],
+  "kind": "select",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "country picker in a shipping form",
+    "dropdown with a chevron arrow",
+    "form field to choose a country",
+    "list of delivery speed options",
+    "multi choice list box",
+    "plain html dropdown styled to match",
+    "shipping details form with choices",
+    "grey placeholder in a dropdown"
+  ],
+  "resembles": [],
+  "use_when": "A simple form choice needs native keyboard and mobile behaviour without building a custom popup.",
+  "avoid_when": "Native lists render differently on each browser and platform, so the look is only partly controllable.",
+  "suits": ["ecommerce", "saas"],
+  "slot_hints": ["form-field", "form-submit"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Options are children; adding the multiple attribute switches to list-box layout, and everything else is a class override on the native control.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A native control with a decorative chevron; no script or animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Native semantics give full keyboard and screen-reader support; the only gap is that the popup's look varies by platform."
+  },
+  "props": [
+    {"name": "multiple", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string | string[]", "default": null, "required": false},
+    {"name": "value", "type": "string | string[]", "default": null, "required": false},
+    {"name": "onChange", "type": "function", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "id", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The open Extras list box takes four rows and dominates the otherwise compact card",
+    "The disabled first delivery option looks like a grey placeholder and could be read as a value"
+  ],
+  "polish": 3,
+  "polish_why": "Clean minimal form; the always-open multi-choice box takes over the card.",
+  "unsure": []
+}

@@ -1,0 +1,78 @@
+{
+  "name": "images-badge",
+  "frames": {
+    "code": "9977",
+    "best": 4,
+    "best_why": "Frame 4 shows all three photos fanned widest above the open folder.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A small amber folder that fans three photos out over itself on hover.",
+  "summary": "An inline folder icon with the label \"View Photos\". Hovering makes up to three little photos spring up and fan out above the folder, then fold away when the pointer leaves.",
+  "title_fix": null,
+  "appearance": "A small amber folder icon with a lighter tab, drawn at a tilt, sits beside the plain light grey label \"View Photos\" on a near-black stage. Hovered, three small rectangular photos rise out of the folder and fan out above it in a loose tilted spread.",
+  "behaviour": "Hovering springs up to three photos upward and outward into a fanned stack, each with a tiny stagger, while the folder flap tilts flat beneath them. Leaving folds the photos back down behind the flap and restores the closed folder.",
+  "parts": ["folder icon", "folder tab", "label", "photo cards"],
+  "demo_content": "\"View Photos\" beside shots of a blue sea, a grey street and a dusk skyline.",
+  "states": ["hover"],
+  "kind": "button",
+  "look": ["dark", "colorful", "playful", "3d", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "folder icon with photos popping out",
+    "hover to fan out image previews",
+    "view photos badge with pictures",
+    "folder that opens into a photo stack",
+    "image gallery teaser button",
+    "hover reveal stacked photos from folder",
+    "photo album shortcut link",
+    "badge with peeking pictures"
+  ],
+  "resembles": ["macOS folder icon"],
+  "use_when": "A compact link should hint at a photo collection and reward a hover with a quick preview.",
+  "avoid_when": "Only hover opens the photos, so touch and keyboard users just see a folder, and the images load from remote URLs.",
+  "suits": ["portfolio", "ecommerce", "marketing"],
+  "slot_hints": ["secondary-cta", "primary-cta", "feature-card"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["children", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Text and the image list are props, with optional link target plus folder, teaser and hover sizes, lift, spread and rotation values.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One small folder and up to three photo cards with a single hover spring.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The photo fan is hover-only, so keyboard and touch users never see it, and image alts are only \"Preview 1\" style labels."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "href", "type": "string", "default": null, "required": false},
+    {"name": "target", "type": "string", "default": null, "required": false},
+    {"name": "folderSize", "type": "{ width: number; height: number }", "default": "{ width: 32, height: 24 }", "required": false},
+    {"name": "teaserImageSize", "type": "{ width: number; height: number }", "default": "{ width: 20, height: 14 }", "required": false},
+    {"name": "hoverImageSize", "type": "{ width: number; height: number }", "default": "{ width: 48, height: 32 }", "required": false},
+    {"name": "hoverTranslateY", "type": "number", "default": "-35", "required": false},
+    {"name": "hoverSpread", "type": "number", "default": "20", "required": false},
+    {"name": "hoverRotation", "type": "number", "default": "15", "required": false}
+  ],
+  "issues": [
+    "The photo fan is hover-only, so it stays folded for touch and keyboard users.",
+    "At rest the photos peek out only as thin slivers, so the preview reads mainly as a folder."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp folder icon and a neat photo spread; hover-only reveal and tiny resting previews hold it back.",
+  "unsure": []
+}

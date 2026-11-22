@@ -1,0 +1,70 @@
+{
+  "name": "input",
+  "frames": {
+    "code": "6077",
+    "best": 5,
+    "best_why": "The email field is focused with a blue glow under the cursor and a visible caret.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark text fields with a blue glow that follows the mouse.",
+  "summary": "A dark sign-up card with two labelled text fields. Hovering a field lights a soft blue radial glow under the cursor that trails as it moves, and focusing adds a thin ring for typing.",
+  "title_fix": null,
+  "appearance": "A dark sign-up card with the bold title Welcome to StashUI, a grey subtitle and two labelled fields stacked vertically. Each field is a rounded slate bar with faint placeholder text, and the hovered one carries a small blue glow under the cursor.",
+  "behaviour": "Moving the pointer over a field lights a blue radial glow that follows the cursor and fades at the edges; leaving removes it. Focusing a field adds a thin grey ring and a caret for typing.",
+  "parts": ["card", "title", "label", "input field", "placeholder", "glow"],
+  "demo_content": "Heading Welcome to StashUI, fields Email and Full name with placeholders you@example.com and Maya Chen.",
+  "states": ["hover", "focus", "disabled"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat", "glow"],
+  "tone": "minimal",
+  "search_phrases": [
+    "input with a glow that follows the mouse",
+    "dark text field with blue spotlight",
+    "form field with cursor glow effect",
+    "email input for dark signup card",
+    "input that lights up on hover",
+    "minimal rounded text fields",
+    "login form with glowing focus",
+    "text box with radial hover highlight"
+  ],
+  "resembles": [],
+  "use_when": "A dark sign-up or login form where small feedback makes plain text fields feel responsive.",
+  "avoid_when": "Touch and keyboard use: the glow only follows a mouse pointer.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "subtle",
+    "affects": ["background", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Any native input attributes pass through alongside className; the glow radius, blue colour and ring styles are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One motion template glow on a single input; nothing loops.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The glow follows a mouse only and reduced-motion is not considered; labels and ids must be supplied by the caller."
+  },
+  "props": [
+    {"name": "type", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The glow is invisible on touch and to keyboard users.",
+    "The component ships no label or id, so accessible names depend on the caller.",
+    "The blue glow can wash out the placeholder text under the cursor."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp dark form and a subtle pointer glow; the effect does little for touch or keyboard.",
+  "unsure": []
+}

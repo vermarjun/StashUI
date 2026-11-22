@@ -1,0 +1,158 @@
+{
+ "name": "smooth-caret-input",
+ "frames": {
+  "code": "6050",
+  "best": 4,
+  "best_why": "The top field holds 'pricing table' with the white custom caret resting at the end, beside the native field.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Two text fields compare a gliding custom caret against a plain native one.",
+ "summary": "A pair of text inputs, one with a spring-animated caret that slides to each new spot and a plain input for comparison, so you can feel the difference while typing.",
+ "title_fix": null,
+ "appearance": "Two wide dark rounded fields stack under a small uppercase label. The top one is taller with large light text and a slim white caret bar; the lower one holds smaller grey placeholder text.",
+ "behaviour": "Focusing the top field reveals an outline, and typing makes the white caret glide to the new character instead of blinking at a jump. The native field below shows the ordinary caret for comparison.",
+ "parts": [
+  "label",
+  "smooth input",
+  "custom caret",
+  "native input"
+ ],
+ "demo_content": "Placeholders 'Search projects…' and 'Native caret'; typed text 'pricing table' and 'Ship it on Friday'.",
+ "states": [
+  "focus"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text input with smooth sliding caret",
+  "animated cursor in a search field",
+  "caret that glides when typing",
+  "custom text cursor animation",
+  "input with spring caret effect",
+  "compare custom and native cursor",
+  "polished search bar typing effect",
+  "framer motion text input caret"
+ ],
+ "resembles": [],
+ "use_when": "A search or command field is a focal point and a gliding caret adds a subtle polish.",
+ "avoid_when": "The caret is a custom bar measured from the text, so long strings or unusual fonts can drift out of alignment.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field",
+  "nav",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "focus",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor",
+   "border",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "All normal input props pass through plus type, font size, a wrapper class and caret spring tuning; the measuring and scroll logic stays internal.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One input plus a measured span and a spring value that runs only while the caret moves.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The native input keeps full keyboard and screen reader behaviour; the custom caret is decorative and snaps under reduced motion."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "string",
+   "default": "{inputValue}",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "ChangeEventHandler<HTMLInputElement>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "type",
+   "type": "\"text\" | \"password\"",
+   "default": "\"text\"",
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": "{displayPlaceholder}",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "24",
+   "required": false
+  },
+  {
+   "name": "spring",
+   "type": "{ stiffness: number; damping: number; mass: number }",
+   "default": "DEFAULT_SPRING",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative grid grid-cols-1 p-0\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "The gliding caret is convincing and the comparison layout is clear; it is a small effect.",
+ "unsure": [],
+ "title": "Smooth Caret Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ece5bc9808b3e699",
+  "film_hash": "ed15196d3173cf9a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

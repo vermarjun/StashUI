@@ -1,0 +1,72 @@
+{
+  "name": "parallax-floating",
+  "frames": {
+    "code": "7212",
+    "best": 3,
+    "best_why": "All eight photos, the wordmark and the Download pill are visible together, mid-drift.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Scattered photos drift at different speeds as the pointer crosses the page.",
+  "summary": "A set of small photographs scattered around a centred serif wordmark, each sitting at its own depth so the collage slides in layers when the pointer moves and the headline stays still.",
+  "title_fix": null,
+  "appearance": "On a black canvas, eight small photographs of mixed shapes and sizes are pinned around the edges and corners, each in a thin frame. In the middle sits a large cream serif italic wordmark with a small white rounded Download pill beneath it.",
+  "behaviour": "As the pointer moves, every photo eases toward it by an amount set by its depth, so the pictures drift at different speeds while the centre wordmark holds still. Photos fade in one after another on load and grow a little on hover.",
+  "parts": ["photo tiles", "centre wordmark", "download pill", "black backdrop"],
+  "demo_content": "Eight stock photos of mountains, flowers, a horse, dogs and a night sky around the word \"stash.\"",
+  "states": ["hover"],
+  "kind": "image-effect",
+  "look": ["dark", "minimal", "colorful", "airy"],
+  "tone": "playful",
+  "search_phrases": [
+    "photos around a headline that shift with the mouse",
+    "layered picture collage that drifts with the pointer",
+    "small floating images at different depths",
+    "whimsical photo collage landing section",
+    "pictures that move at different speeds on mouse move",
+    "scattered snapshots around a large centred logo",
+    "interactive photo layout for a creative studio",
+    "how to make images follow the cursor in layers"
+  ],
+  "resembles": [],
+  "use_when": "A creative hero or promo panel wants a playful photo collage that reacts to the pointer without needing scroll.",
+  "avoid_when": "Every photo's offset and size is hand-set in the demo, so changing the set means re-laying out the collage by hand.",
+  "suits": ["portfolio", "marketing", "social"],
+  "slot_hints": ["hero", "media"],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "continuous",
+    "affects": ["image", "layout"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "children",
+  "customise": "Wrap a block in Floating and each item in FloatingElement with a depth; sensitivity and easingFactor tune the drift. Photo placement and copy stay in your markup.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "A frame loop rewrites transforms on eight wrappers continuously, even while the pointer rests.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The drift is pointer and touch only and ignores prefers-reduced-motion; images keep moving for anyone sensitive to motion."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "sensitivity", "type": "number", "default": "1", "required": false},
+    {"name": "easingFactor", "type": "number", "default": "0.05", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "depth", "type": "number", "default": "1", "required": false}
+  ],
+  "issues": [
+    "Frame 1 catches the collage before the wordmark and two photos have faded in, so the hero looks half-built.",
+    "Photo positions and sizes are hardcoded per element in the demo, so the composition is not portable as is."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp photo collage with a warm wordmark; the layout is hand-placed and a bit arbitrary.",
+  "unsure": ["kind"]
+}

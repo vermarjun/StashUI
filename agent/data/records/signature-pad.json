@@ -1,0 +1,141 @@
+{
+ "name": "signature-pad",
+ "frames": {
+  "code": "6032",
+  "best": 6,
+  "best_why": "Completed wavy signature with the Signed status and the Submit button enabled.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.9
+ },
+ "tagline": "Draw a signature by hand on a pad, then undo, clear or submit it.",
+ "summary": "A canvas signature field. Strokes follow the pointer with springy, speed-tapered ink, and a signed state unlocks the Submit button after Undo or Clear.",
+ "title_fix": null,
+ "appearance": "A rounded card with a small uppercase lease label, a bold heading and a grey term line. Below, a pad holds a faint baseline and an x Sign here hint, with a pale wavy signature inked across it. A footer row shows status, Undo and Clear above a full-width Submit button.",
+ "behaviour": "Drawing on the pad lays down tapered ink that trails the pointer with a slight lag and thickens when slow. The status flips to Signed and Submit brightens; Undo peels back the last stroke and Clear wipes the whole signature with a fade.",
+ "parts": [
+  "lease label",
+  "heading",
+  "signature pad",
+  "sign here hint",
+  "signature ink",
+  "status text",
+  "undo button",
+  "submit button"
+ ],
+ "demo_content": "Lease agreement for Unit 4B, twelve months from March 1 2027 at $2,450 per month.",
+ "states": [
+  "hover",
+  "focus",
+  "empty",
+  "dragging",
+  "disabled"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "outlined",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "draw your signature with a mouse",
+  "sign here box for a contract",
+  "handwritten signature field",
+  "canvas you can write on",
+  "e sign a lease agreement",
+  "signature capture with undo",
+  "smooth ink drawing pad",
+  "sign a document online"
+ ],
+ "resembles": [
+  "DocuSign signature field"
+ ],
+ "use_when": "A contract or form needs a quick hand-drawn signature captured in the browser and exported as an image.",
+ "avoid_when": "Signing needs a pointer or finger; there is no typed, uploaded or keyboard-drawn fallback.",
+ "suits": [
+  "fintech",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Only a label and an onChange callback are exposed; ink colour, line weight, spring constants and pad size are set in the source.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "Canvas 2D paints only while a stroke or clear runs; the frame loop stops when idle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The pad focuses and shortcuts undo or clear, but a signature cannot be drawn from the keyboard; reduced motion is respected."
+ },
+ "props": [
+  {
+   "name": "onChange",
+   "type": "(svg: string | null) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Signature\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "No typed or uploaded signature fallback for people who cannot draw with a pointer."
+ ],
+ "polish": 5,
+ "polish_why": "Believable ink physics, clear status, tidy footer and sensible disabled states.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Signature Pad",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "361c6f35d6fb2b61",
+  "film_hash": "eb1dcefb583dcef6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

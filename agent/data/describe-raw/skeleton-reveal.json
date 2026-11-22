@@ -1,0 +1,71 @@
+{
+  "name": "skeleton-reveal",
+  "frames": {
+    "code": "1838",
+    "best": 6,
+    "best_why": "All three real rows are fully sharp, with names, roles and green status pills, and the cursor is clear of them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Grey placeholder bars pulse, then blur away into real rows in the same slot.",
+  "summary": "A loading wrapper that shows a pulsing skeleton in place of content, then cross-fades and un-blurs into the real rows without shifting the layout. Starting to load again snaps back to the skeleton.",
+  "title_fix": null,
+  "appearance": "Inside a dark rounded Team card, each row first shows a grey circle avatar, two grey bars and a grey pill. Once loaded the same row holds a photo avatar, a name and role, and a small green status pill at the right, under a Team heading and Reload button.",
+  "behaviour": "While loading, the skeleton blocks pulse a couple of times. When loading turns false the skeleton fades out and blurs while the real content fades and sharpens in the same slot. Pressing Reload snaps the skeleton back at once and the reveal repeats after a short delay.",
+  "parts": ["team card", "header", "reload button", "skeleton avatar", "skeleton bars", "skeleton pill", "photo avatar", "status pill"],
+  "demo_content": "A Team card listing Maya Lin, Daniel Okafor and Sofia Ramirez with roles and status pills.",
+  "states": ["hover", "focus", "loading", "success"],
+  "kind": "loader",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "skeleton loader that fades into content",
+    "placeholder rows while loading",
+    "content reveal after loading",
+    "pulsing grey blocks instead of text",
+    "team list loading placeholder",
+    "blur in content transition",
+    "no layout shift loading state",
+    "list skeleton with avatars and pills"
+  ],
+  "resembles": ["Linear loading skeleton"],
+  "use_when": "A list or card loads after mount or refresh and should show its shape instead of a spinner.",
+  "avoid_when": "You must supply a skeleton matching the content size, and the reveal follows a loading prop, not real data.",
+  "suits": ["saas", "dashboard", "social"],
+  "slot_hints": ["loading", "list-item", "feature-card"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass loading, the skeleton layer, the real children, pulse count and duration, reveal duration and className. The pulse minimum and blur amount are fixed in the embedded styles.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "Two layers and a short CSS fade; the pulse stops after its cycles.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "The root sets aria-busy while loading and hides the skeleton from assistive tech, but nothing announces when the content appears."
+  },
+  "props": [
+    {"name": "loading", "type": "boolean", "default": null, "required": true},
+    {"name": "skeleton", "type": "ReactNode", "default": null, "required": true},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "pulseCount", "type": "number", "default": "1", "required": false},
+    {"name": "pulseDuration", "type": "number", "default": "1000", "required": false},
+    {"name": "revealDuration", "type": "number", "default": "400", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "The reveal is smooth and the slot stays steady; skeleton bars do not match real text widths.",
+  "unsure": []
+}

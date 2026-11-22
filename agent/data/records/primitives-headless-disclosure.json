@@ -1,0 +1,148 @@
+{
+ "name": "primitives-headless-disclosure",
+ "frames": {
+  "code": "6746",
+  "best": 6,
+  "best_why": "All three answers are open and readable with the cursor off the card, so the whole list can be judged.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.4
+ },
+ "tagline": "FAQ rows slide open to reveal a paragraph of answer text.",
+ "summary": "Three bordered question rows with chevrons; clicking a row expands it to show a short answer, sliding the height open and fading the text in.",
+ "title_fix": null,
+ "appearance": "Three stacked rows on black, each a thin grey-bordered rounded rectangle with a bold question on the left and a small chevron on the right. An expanded row adds a grey answer paragraph beneath its question.",
+ "behaviour": "Clicking a question opens its panel: the height animates from zero to fit while the text rises and fades in through a soft mask. Several rows can stay open at once, and the chevron flips.",
+ "parts": [
+  "question row",
+  "chevron",
+  "answer panel",
+  "row border"
+ ],
+ "demo_content": "FAQ questions about headless UI, animation and accessibility, with answers that mention Framer Motion.",
+ "states": [
+  "open",
+  "hover"
+ ],
+ "kind": "accordion",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "faq rows that expand on click",
+  "collapsible question and answer list",
+  "accordion with several sections open",
+  "chevron that rotates when opened",
+  "show and hide help text",
+  "expandable faq panel animation",
+  "click a heading to reveal content",
+  "simple disclosure list for docs"
+ ],
+ "resembles": [],
+ "use_when": "A FAQ or help section needs several question rows that expand and can stay open together.",
+ "avoid_when": "It is renderless, so borders, padding, chevron and typography all need your own styling.",
+ "suits": [
+  "docs",
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose the question button and panel with your own content, and set transition, keepRendered and unmount; the height and mask animation is fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Three rows whose panels animate height and mask; idle when closed.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The demo removes the focus outline without adding a ring, so keyboard focus on the question rows is invisible."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode | ((bag) => React.ReactNode)",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "React.ElementType",
+   "default": "motion.div",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ duration: 0.35, ease: 'easeInOut' }",
+   "required": false
+  },
+  {
+   "name": "keepRendered",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "unmount",
+   "type": "boolean",
+   "default": "{unmount}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Answer text is small grey on near-black, which is hard to read.",
+  "Row borders are very faint, so collapsed rows blend into the stage."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy rows and a smooth masked reveal; faint borders and small grey answers are the weak points.",
+ "unsure": [],
+ "title": "Headless Disclosure",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8cd1198218ddf83f",
+  "film_hash": "801494d1518880bd",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

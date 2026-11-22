@@ -1,0 +1,71 @@
+{
+  "name": "calendar",
+  "frames": {
+    "code": "6393",
+    "best": 6,
+    "best_why": "A complete month grid with weekday headings and all date rows, and no cursor over the navigation controls.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Month grid with arrows that step through dates to pick one.",
+  "summary": "A single-month date picker: the month and year sit between two chevrons above a grid of weekday headings and date numbers. Arrows move between months and a click chooses a day.",
+  "title_fix": null,
+  "appearance": "A borderless dark grid about 300 pixels wide. A centred month and year in white sits between two grey chevrons, followed by a row of two-letter weekday headings and five or six rows of light grey date numbers, with days from adjacent months dimmed.",
+  "behaviour": "Clicking a chevron moves the grid one month back or forward and a faint round highlight appears under the pointer. Clicking a day selects it with a filled circle, and today keeps a small dot beneath its number.",
+  "parts": ["month label", "previous button", "next button", "weekday row", "date grid"],
+  "demo_content": "November 2026, paged forward to December 2026 with the next arrow.",
+  "states": ["hover", "focus", "selected"],
+  "kind": "calendar",
+  "look": ["dark", "minimal", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "month view date picker",
+    "arrows to change the month",
+    "pick a date from a grid",
+    "dark date selector for booking",
+    "monthly planner with clickable days",
+    "weekday headings and date numbers",
+    "date selector inside a form",
+    "simple mobile date chooser"
+  ],
+  "resembles": [],
+  "use_when": "A form needs one date chosen from a familiar month grid with quick month-by-month browsing.",
+  "avoid_when": "Only one month is on screen, so reaching a distant date takes repeated clicks.",
+  "suits": ["saas", "dashboard", "fintech"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Any date-picker prop can set the selection mode, chosen date, month limits and disabled days; per-part styling is overridable through the classNames map.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One month of plain buttons rendered by the date library; no timers or loops.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Grid arrow-key movement and labelled weekdays come from the date library, but selected and today rely on colour and a tiny dot alone."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "classNames", "type": "object", "default": null, "required": false},
+    {"name": "showOutsideDays", "type": "boolean", "default": "true", "required": false},
+    {"name": "components", "type": "object", "default": null, "required": false}
+  ],
+  "issues": [
+    "No frame selects a day, so the selected styling cannot be judged",
+    "The grid has no border or card behind it and floats on a large empty dark stage"
+  ],
+  "polish": 3,
+  "polish_why": "Clean, legible grid with familiar behaviour; no selected state shown and no frame around it.",
+  "unsure": []
+}

@@ -1,0 +1,71 @@
+{
+  "name": "confetti",
+  "frames": {
+    "code": "5425",
+    "best": 5,
+    "best_why": "A wide spray of coloured paper fills the stage while both trigger buttons stay readable.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Coloured paper erupts from the button you click and rains down the screen.",
+  "summary": "A full-screen canvas that shoots paper confetti from the middle of whichever button is pressed. Two presets fire different bursts: a broad multicoloured one and a narrower red, orange and yellow one.",
+  "title_fix": null,
+  "appearance": "A near-black stage holds a faint grey hint line and two small white rounded buttons, one reading a party emoji plus Confetti and one a fire emoji plus Fire. Once fired, tiny coloured rectangles and streamers scatter across the whole frame, densest at the button and thinning as they fall.",
+  "behaviour": "Nothing moves until a button is pressed, then paper bursts out of that button's centre with a spread and speed set per button, tumbles under gravity and fades. The two buttons differ in colour palette and spray width.",
+  "parts": ["hint line", "confetti button", "fire button", "canvas", "paper pieces"],
+  "demo_content": "\"Click to burst\" hint and buttons labelled with a party emoji plus Confetti and a fire emoji plus Fire",
+  "states": [],
+  "kind": "other",
+  "look": ["dark", "playful", "flat", "minimal"],
+  "tone": "playful",
+  "search_phrases": [
+    "colored paper pieces raining down",
+    "celebration burst when button clicked",
+    "party popper effect for success",
+    "shoot paper from the clicked button",
+    "reward animation after form submit",
+    "paper cannon blast effect",
+    "colorful scatter particles over screen",
+    "celebrate a signup with falling paper"
+  ],
+  "resembles": [],
+  "use_when": "A success moment such as a signup, payment or completed task deserves a short, non-blocking celebration.",
+  "avoid_when": "Busy dashboards or repeated triggers: full-screen flying paper pulls attention off the task.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["decoration", "toast"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Each burst takes an options object for colours, spread, starting speed and particle count; canvas size, manual start and global options are props too.",
+  "technique": ["canvas-2d"],
+  "weight": "moderate",
+  "weight_why": "A canvas particle burst for a few seconds while firing, idle the rest of the time.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Both triggers are real buttons, but the canvas has no aria-hidden and the burst is purely visual."
+  },
+  "props": [
+    {"name": "options", "type": "ConfettiOptions", "default": null, "required": false},
+    {"name": "manualstart", "type": "boolean", "default": "false", "required": false},
+    {"name": "globalOptions", "type": "ConfettiGlobalOptions", "default": "{ resize: true, useWorker: true }", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The \"Click to burst\" hint is tiny, low-contrast grey on black."
+  ],
+  "polish": 4,
+  "polish_why": "Bursts look convincing and distinct; the bare demo stage and faint hint hold it back.",
+  "unsure": ["kind"]
+}

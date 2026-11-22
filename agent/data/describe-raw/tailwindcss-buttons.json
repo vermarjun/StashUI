@@ -1,0 +1,71 @@
+{
+  "name": "tailwindcss-buttons",
+  "frames": {
+    "code": "2671",
+    "best": 1,
+    "best_why": "All six cards and their buttons are fully visible, with no cursor covering a label.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Six button styles laid out in a grid of black cards, each with a hover.",
+  "summary": "A showcase grid of tall black cards, each holding one button in a different style: solid white, outline, filled blue, outlined blue, purple gradient or grey. Hovering a card reveals a small copy icon.",
+  "title_fix": null,
+  "appearance": "A two-by-three grid of tall black rounded cards on a dark stage, each holding one horizontal pill or softly rounded button in white, blue, purple gradient or grey. A faint dot texture fills every card, and a tiny clipboard icon sits in the top-right corner on hover.",
+  "behaviour": "Hovering a card reveals a small clipboard icon in its corner. Hovering each button darkens, lightens or fills it depending on its style; nothing else moves.",
+  "parts": ["card", "button label", "copy icon", "dot background"],
+  "demo_content": "Labels: Get started, Sign up free, Learn more, Explore docs, Download, Contact sales.",
+  "states": ["hover"],
+  "kind": "button",
+  "look": ["dark", "flat", "rounded", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "row of different button styles",
+    "black button with white text",
+    "outline and filled button examples",
+    "copy button style to clipboard",
+    "rounded call to action buttons",
+    "button gallery for design system",
+    "gradient purple action button",
+    "blue outlined secondary button"
+  ],
+  "resembles": [],
+  "use_when": "Choosing a button style from a set of ready-made dark-theme variants for a new interface.",
+  "avoid_when": "You need a reusable button: the six looks are demo class strings, not part of the component.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["primary-cta", "secondary-cta"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Children render inside the card and className merges onto it; the six button styles and their colours live in the demo, not the component.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Six static cards with plain CSS hover transitions; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The card is a clickable div with no role or key handling, and the clipboard icon has no accessible label."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "onClick", "type": "function", "default": null, "required": false}
+  ],
+  "issues": [
+    "The Get started button is black on the black card, nearly invisible until hovered.",
+    "The clipboard icon suggests copying but the component never copies anything.",
+    "No focus styling on the clickable card."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy grid and consistent cards; one button vanishes into its card and the copy icon is decorative.",
+  "unsure": []
+}

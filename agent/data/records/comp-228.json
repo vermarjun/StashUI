@@ -1,0 +1,118 @@
+{
+ "name": "comp-228",
+ "frames": {
+  "code": "2723",
+  "best": 2,
+  "best_why": "The full list is open with all three portrait rows and the check on the current choice.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Pick a person from a list of portrait rows with names and handles.",
+ "summary": "A dropdown for choosing one person from a short team list. Each choice shows a large round photo, a name and a handle, and the closed trigger mirrors the chosen person.",
+ "title_fix": null,
+ "appearance": "A dark form field with a small label above it. The trigger shows a round avatar, a bold name, a grey handle and a chevron at the right. Opened, a rounded dark menu stacks three avatar rows with names and handles.",
+ "behaviour": "Clicking the trigger drops a list of people below it. Rows highlight under the cursor, the current choice carries a check at its right edge, and picking a row closes the menu and swaps the avatar and name on the trigger.",
+ "parts": [
+  "label",
+  "avatar",
+  "name",
+  "username",
+  "chevron",
+  "option list",
+  "check mark"
+ ],
+ "demo_content": "Jenny Hamilton, Paul Smith and Luna Wyen with handles such as @jennycodes.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "dropdown with photos and usernames",
+  "pick a team member from a list",
+  "assign someone to a task",
+  "select with profile pictures",
+  "choose a user from avatars",
+  "account picker with names",
+  "user dropdown with handle",
+  "people picker for a form"
+ ],
+ "resembles": [
+  "Slack user picker"
+ ],
+ "use_when": "A form needs one teammate picked and faces plus handles make recognition faster than a plain text list.",
+ "avoid_when": "It assumes a short fixed list; for a large directory you want a searchable combobox instead.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The people, photos and handles are written in the file, so swapping them means editing the source; the label and default choice are fixed there too.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A select with three short rows and three tiny images; nothing runs in the background.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The label is tied to the trigger and every portrait has alt text; the open animation ignores reduced-motion settings."
+ },
+ "props": [],
+ "issues": [
+  "Portrait photos are low-quality placeholders and look distorted at this size."
+ ],
+ "polish": 4,
+ "polish_why": "Clear hierarchy and an even row rhythm; the rough portrait images drag it down.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Portrait Avatar Select",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1e6e108c124287e5",
+  "film_hash": "3d433128c0f52d86",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

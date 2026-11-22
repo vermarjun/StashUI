@@ -1,0 +1,79 @@
+{
+  "name": "GhostCursor-TS-TW",
+  "frames": {
+    "code": "7906",
+    "best": 3,
+    "best_why": "Frame 3 has the largest, brightest glow cloud with its trail and the cursor both visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A smoky violet halo drifts after the pointer, then fades.",
+  "summary": "A soft cloud of lilac light chases the mouse across a dark panel, smearing into a blurry trail on fast moves and dimming out when the pointer stops.",
+  "title_fix": null,
+  "appearance": "A hazy lilac glow with a bright core and cloud-like edges floats over a near-black panel. It leaves faint smoke where the pointer has been, while the demo copy sits in the middle.",
+  "behaviour": "The glow springs toward the pointer and trails a chain of earlier positions behind it, so quick moves leave a curved smear. When the pointer rests or leaves, it coasts, fades over a couple of seconds and stops.",
+  "parts": ["glow blob", "bright core", "trail smear", "heading", "caption"],
+  "demo_content": "Heading \"Move your cursor\" and caption \"A ghostly trail follows your pointer\".",
+  "states": [],
+  "kind": "cursor-effect",
+  "look": ["dark", "glow", "organic", "airy"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "purple smoke that follows the mouse",
+    "glowing ghost trail behind cursor",
+    "soft light trail on pointer move",
+    "foggy orb chasing the pointer",
+    "neon haze cursor effect",
+    "blurry glow that follows you",
+    "ethereal trail for a dark landing page",
+    "shader smoke trail around the cursor"
+  ],
+  "resembles": [],
+  "use_when": "A dark, atmospheric page wants a luminescent cursor trail for drama.",
+  "avoid_when": "The glowing cloud hides text it passes over, and the WebGL layer costs real GPU time on every move.",
+  "suits": ["portfolio", "marketing", "ai-chat"],
+  "slot_hints": ["decoration", "page-background", "hero"],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Trail length, inertia, grain, bloom strength and radius, brightness, colour, blend mode, edge fade, resolution cap and z-index are props. There is no content.",
+  "technique": ["three-js", "webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A WebGL shader with bloom and film grain runs a full post-processing chain every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "No content or controls, but the WebGL glow and grain ignore reduced-motion and can strain low-power devices."
+  },
+  "props": [
+    {"name": "trailLength", "type": "number", "default": "50", "required": false},
+    {"name": "inertia", "type": "number", "default": "0.5", "required": false},
+    {"name": "color", "type": "string", "default": "#B497CF", "required": false},
+    {"name": "grainIntensity", "type": "number", "default": "0.05", "required": false},
+    {"name": "bloomStrength", "type": "number", "default": "0.1", "required": false},
+    {"name": "bloomRadius", "type": "number", "default": "1.0", "required": false},
+    {"name": "bloomThreshold", "type": "number", "default": "0.025", "required": false},
+    {"name": "brightness", "type": "number", "default": "1", "required": false},
+    {"name": "mixBlendMode", "type": "string", "default": "screen", "required": false},
+    {"name": "edgeIntensity", "type": "number", "default": "0", "required": false},
+    {"name": "maxDevicePixelRatio", "type": "number", "default": "0.5", "required": false},
+    {"name": "zIndex", "type": "number", "default": "10", "required": false}
+  ],
+  "issues": [
+    "The glow washes out the centre heading when the pointer crosses it.",
+    "There is no reduced-motion path and the full-screen WebGL pass can tax weaker devices."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing smoky light and a natural fade; the trail can bury nearby copy.",
+  "unsure": []
+}

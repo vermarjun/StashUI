@@ -1,0 +1,148 @@
+{
+  "name": "stack-trace",
+  "frames": {
+    "code": "9132",
+    "best": 1,
+    "best_why": "Expanded with the header, both icons and every stack frame visible and nothing overlapping.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Red error bar unfolds into dimmed monospace call frames.",
+  "summary": "A compact error panel showing the error type and message with copy and expand controls. Opening it lists each call frame and greys out library and runtime internals.",
+  "title_fix": null,
+  "appearance": "A wide dark rounded panel. Its header pairs a small warning triangle, a red error type, a white message and two icon buttons; expanded, a bordered body underneath lists monospace frames line by line.",
+  "behaviour": "Clicking the header or the chevron unfolds the frame list with a fade and flips the chevron. The copy button writes the raw trace to the clipboard and briefly shows a tick, while frames from node_modules and node internals sit dimmed.",
+  "parts": [
+    "panel",
+    "warning icon",
+    "error type",
+    "error message",
+    "copy button",
+    "chevron",
+    "stack frames"
+  ],
+  "demo_content": "Fake TypeError about reading 'lineItems' during checkout, with seven frames across app and node_modules files.",
+  "states": [
+    "open",
+    "hover",
+    "focus"
+  ],
+  "kind": "code-block",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "technical"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "collapsible error message panel",
+    "show a javascript error call list",
+    "exception details with a copy button",
+    "hide library frames in a stack",
+    "red error box that expands",
+    "debugging error card for developers",
+    "console crash report with file paths",
+    "runtime error banner with line numbers"
+  ],
+  "resembles": [
+    "Sentry error details"
+  ],
+  "use_when": "A developer tool or assistant answer needs to show a real runtime error without dumping raw text.",
+  "avoid_when": "It is dense monospace content for developers, the message truncates, and it wants a wide container.",
+  "suits": [
+    "devtool",
+    "saas",
+    "ai-chat"
+  ],
+  "slot_hints": [
+    "body-text",
+    "feature-card"
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "children",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The raw trace string, open state and a file-path click handler are props; the header, body and buttons are assembled from the exported sub-parts.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A parsed string and a short list of frame rows behind one fade and border transition.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The copy and chevron controls are icon-only with no accessible names, so screen readers hear bare buttons."
+  },
+  "props": [
+    {
+      "name": "trace",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onFilePathClick",
+      "type": "(filePath: string, line?: number, column?: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "showInternalFrames",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The message is cut with an ellipsis, so a long error can never be read in full from the header."
+  ],
+  "polish": 4,
+  "polish_why": "Clear hierarchy and dimmed internal frames; truncated message and unnamed icons hold it back.",
+  "unsure": []
+}

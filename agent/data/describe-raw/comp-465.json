@@ -1,0 +1,67 @@
+{
+  "name": "comp-465",
+  "frames": {
+    "code": "3527",
+    "best": 1,
+    "best_why": "Shows the full pager and the Go to page field side by side with the cursor away.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A small numbered pager beside a box for typing a page to jump to.",
+  "summary": "A slim pager with Previous and Next around pages 1 to 4 and an ellipsis, paired with a Go to page field for typing a number directly.",
+  "title_fix": null,
+  "appearance": "On black, a tiny arrow-led pager shows pages 1 to 4 with 3 in a rounded box and an ellipsis before the forward arrow. Across a wide gap at the right, a Go to page label sits beside a narrow outlined text box.",
+  "behaviour": "The page links follow hash links while the text box accepts typed digits, here changing from 3 to 7. Nothing animates and the active page stays on 3.",
+  "parts": ["previous arrow", "page number", "active page", "ellipsis", "next arrow", "go to page label", "page input"],
+  "demo_content": "Pages 1 to 4 with page 3 active, and a Go to page field holding 3 or 7.",
+  "states": ["hover", "focus", "selected", "disabled"],
+  "kind": "pagination",
+  "look": ["dark", "minimal", "outlined", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "pagination with a jump to page box",
+    "type a page number to go there",
+    "page links and a small input",
+    "numbered pager with go to field",
+    "enter page number navigation",
+    "table footer with page typing",
+    "jump to page ten directly",
+    "pager with ellipsis and page box"
+  ],
+  "resembles": [],
+  "use_when": "Long result sets where a numbered pager and a direct page box share one row.",
+  "avoid_when": "When the box must navigate: there is no button or Enter handler, so typing alone does nothing.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["data-table", "footer"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "currentPage and totalPages set the page links and the input's starting value; the input width and the row gap are classes.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A short pager and one text input; nothing loops or animates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The input is tied to its label and each arrow is named; the page field does not act on Enter, so its value is not submitted."
+  },
+  "props": [
+    {"name": "currentPage", "type": "number", "default": null, "required": true},
+    {"name": "totalPages", "type": "number", "default": null, "required": true},
+    {"name": "paginationItemsToDisplay", "type": "number", "default": "5", "required": false}
+  ],
+  "issues": ["The Go to page input has no submit handler, so typing a page does nothing on its own."],
+  "polish": 3,
+  "polish_why": "Tidy but very small controls with a wide empty gap between the pager and the page field.",
+  "unsure": []
+}

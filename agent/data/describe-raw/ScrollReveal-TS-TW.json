@@ -1,0 +1,158 @@
+{
+  "name": "ScrollReveal-TS-TW",
+  "frames": {
+    "code": "4682",
+    "best": 6,
+    "best_why": "Both paragraphs are fully sharp and the muted second line reads cleanly.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Paragraphs sharpen word by word as you scroll.",
+  "summary": "Two paragraphs of copy sit on a black stage and come into focus progressively: each word rises from near-transparent and blurred to full clarity as it enters view, driven by scroll position.",
+  "title_fix": null,
+  "appearance": "Two short paragraphs of semibold type are stacked on black, the first white and the second muted grey, both left aligned with generous line spacing. No other elements are on screen.",
+  "behaviour": "As the block travels up the page every word climbs from faint and blurred to sharp and fully opaque, and the first paragraph straightens out of a slight tilt. Scrolling back reverses the whole sequence.",
+  "parts": [
+    "first paragraph",
+    "second paragraph",
+    "words"
+  ],
+  "demo_content": "\"Good design is as little design as possible...\" plus a note about scrolling to watch words focus.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "editorial",
+    "flat",
+    "airy"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "text that focuses as you scroll",
+    "paragraph reveal on scroll",
+    "blurry words become sharp",
+    "fade words in sequentially",
+    "reading progress text animation",
+    "storytelling copy reveal",
+    "scroll driven text opacity",
+    "article intro with soft reveal"
+  ],
+  "resembles": [],
+  "use_when": "Long-form copy or a manifesto section should pull the eye along as the reader scrolls.",
+  "avoid_when": "Short pages or fast scrollers: the copy starts too faint to read until you scroll.",
+  "suits": [
+    "portfolio",
+    "blog",
+    "marketing"
+  ],
+  "slot_hints": [
+    "body-text",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll",
+      "viewport"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "text",
+      "image"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The copy is passed as children; blur switch, base opacity, tilt angle, blur amount, end positions and class names are props. Word splitting is fixed.",
+  "technique": [
+    "gsap"
+  ],
+  "weight": "light",
+  "weight_why": "Scroll-triggered tweens on a handful of word spans; nothing heavy runs per frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The copy is real text, but the scroll animation ignores reduced-motion and starts near-invisible."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "enableBlur",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "baseOpacity",
+      "type": "number",
+      "default": "0.1",
+      "required": false
+    },
+    {
+      "name": "baseRotation",
+      "type": "number",
+      "default": "3",
+      "required": false
+    },
+    {
+      "name": "blurStrength",
+      "type": "number",
+      "default": "4",
+      "required": false
+    },
+    {
+      "name": "containerClassName",
+      "type": "string",
+      "default": "",
+      "required": false
+    },
+    {
+      "name": "textClassName",
+      "type": "string",
+      "default": "",
+      "required": false
+    },
+    {
+      "name": "rotationEnd",
+      "type": "string",
+      "default": "bottom bottom",
+      "required": false
+    },
+    {
+      "name": "wordAnimationEnd",
+      "type": "string",
+      "default": "bottom bottom",
+      "required": false
+    },
+    {
+      "name": "scrollContainerRef",
+      "type": "RefObject<HTMLElement>",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Even editorial type and a restrained reveal; the demo shows little beyond two paragraphs.",
+  "unsure": [
+    "states"
+  ]
+}

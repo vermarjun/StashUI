@@ -1,0 +1,120 @@
+{
+ "name": "management-bar",
+ "frames": {
+  "code": "1578",
+  "best": 4,
+  "best_why": "The Reject button is fully widened with its word showing, alongside the counter and the teal move button.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "Compact action bar with a page counter, three icon buttons and a move button.",
+ "summary": "A small rounded toolbar for reviewing candidates: chevrons around a page count, three colour-coded icon actions, and a teal button that names the stage it moves the item to, with a keyboard shortcut keycap.",
+ "title_fix": null,
+ "appearance": "One rounded dark bar on a black page. It opens with a left chevron, a two-digit page counter and a right chevron, then a grey ban icon, a red cross and a green card icon, and ends with a wide teal button reading Move to: Interview, I with a small command-E keycap.",
+ "behaviour": "The chevrons step the page number, which rolls like a dial and disables at either end. Hovering an icon button widens it so its word slides in beside the icon, and the teal move button dips slightly when pressed.",
+ "parts": [
+  "bar",
+  "page chevron",
+  "page counter",
+  "action button",
+  "action label",
+  "move button",
+  "shortcut keycap"
+ ],
+ "demo_content": "Heading \"Senior Product Designer\" with \"Candidate review · Priya Raman · Applied 3 days ago\" and page 3 of 10.",
+ "states": [
+  "hover",
+  "active",
+  "disabled"
+ ],
+ "kind": "dock",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "toolbar with approve and reject buttons",
+  "candidate review action bar",
+  "buttons that expand with a label on hover",
+  "pagination next to action icons",
+  "move item to another stage",
+  "compact admin actions row",
+  "icon button reveals text when hovered",
+  "keyboard shortcut keycap in a button"
+ ],
+ "resembles": [],
+ "use_when": "Reviewers need quick approve, reject and move actions beside a paged list.",
+ "avoid_when": "Action words appear only on hover, so touch users see bare icons and must guess what they do.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "list-item",
+  "form-submit",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Nothing is exposed: the page total, the action labels, the destination stage and the shortcut are written in, so adapting it means editing the component.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A short row of buttons with spring width and digit-roll transitions that idle at rest.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Icon buttons have aria-labels and the chevrons disable at the ends, but words show on hover only, there is no focus style, and no reduced-motion check."
+ },
+ "props": [],
+ "issues": [
+  "At rest the three actions are bare icons, so the bar's options are unclear until hovered.",
+  "The page counter changes without any live-region announcement for screen readers."
+ ],
+ "polish": 4,
+ "polish_why": "Tight toolbar with an expanding-label flourish; hover-only wording and no focus cues cost it.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Management Bar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "32e3909633be1193",
+  "film_hash": "d5196cbe33f9280d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

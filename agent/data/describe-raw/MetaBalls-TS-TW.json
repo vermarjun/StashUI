@@ -1,0 +1,77 @@
+{
+  "name": "MetaBalls-TS-TW",
+  "frames": {
+    "code": "7123",
+    "best": 4,
+    "best_why": "Frame 4 shows the largest violet mass fused with white blobs in several places.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "White and violet blobs drift, merge and pull apart like mercury.",
+  "summary": "Soft white and purple liquid blobs float on black, joining into larger shapes when close and splitting apart as they drift, with one blob following the pointer.",
+  "title_fix": null,
+  "appearance": "A black field holding a dozen rounded white blobs of different sizes and one violet blob, all with smooth melted edges. Neighbouring blobs stretch and fuse into peanut shapes.",
+  "behaviour": "Each blob follows its own slow orbit, so the group constantly merges and separates. The violet blob trails the pointer while it is over the panel and otherwise circles near the centre.",
+  "parts": ["white blob", "violet blob", "merged shape"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "organic", "playful", "minimal", "gradient"],
+  "tone": "playful",
+  "search_phrases": [
+    "blobs that merge and split apart",
+    "liquid metaball animation",
+    "gooey white and purple shapes",
+    "lava lamp background effect",
+    "soft blobs floating on black",
+    "interactive fluid balls following mouse",
+    "melting circles background",
+    "webgl blob playground"
+  ],
+  "resembles": [],
+  "use_when": "A hero or product page wants an organic living backdrop that never repeats.",
+  "avoid_when": "It is a full-screen shader running every frame, and it offers text no quiet area to sit on.",
+  "suits": ["ai-chat", "devtool", "marketing"],
+  "slot_hints": ["page-background", "hero", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Blob colour, cursor blob colour and size, count, animation size, speed, clump factor, hover smoothing, mouse interaction and transparency are props. There is no content.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full-screen fragment shader evaluates up to fifty metaballs for every pixel each frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A decorative shader with nothing to operate; it loops constantly and ignores reduced-motion settings."
+  },
+  "props": [
+    {"name": "color", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "speed", "type": "number", "default": "0.3", "required": false},
+    {"name": "enableMouseInteraction", "type": "boolean", "default": "true", "required": false},
+    {"name": "hoverSmoothness", "type": "number", "default": "0.05", "required": false},
+    {"name": "animationSize", "type": "number", "default": "30", "required": false},
+    {"name": "ballCount", "type": "number", "default": "15", "required": false},
+    {"name": "clumpFactor", "type": "number", "default": "1", "required": false},
+    {"name": "cursorBallSize", "type": "number", "default": "3", "required": false},
+    {"name": "cursorBallColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "enableTransparency", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "Bright blobs can sit under headline text and wash it out.",
+    "There is no reduced-motion path and the shader runs flat out even when idle."
+  ],
+  "polish": 4,
+  "polish_why": "Liquid merging looks convincing and the violet ball stands out; flat white blobs are a little plain.",
+  "unsure": []
+}

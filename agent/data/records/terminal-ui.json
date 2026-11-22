@@ -1,0 +1,135 @@
+{
+ "name": "terminal-ui",
+ "frames": {
+  "code": "5120",
+  "best": 6,
+  "best_why": "The only frame with a finished bar, three typed lines and the next bar starting, so most of the sequence shows.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.6
+ },
+ "tagline": "Mac-style terminal types onboarding lines under glowing purple bars.",
+ "summary": "A scripted CLI onboarding inside a fake terminal window. Shimmering purple bars spell out scanning and profiling steps with percentages, then status lines type themselves out and further bars and rules follow.",
+ "title_fix": null,
+ "appearance": "A dark violet terminal inside window chrome with three traffic-light dots and a zsh path label. Rows of monospace characters glow purple as filled progress bars, each with a small star icon and token count, and dashed rules divide sections.",
+ "behaviour": "A bar crawls to full while its label and percentage change and a highlight sweeps across the letters, the icon pulsing in step. Status lines then type out character by character behind a blinking caret, and the next divider and bar begin before the sequence stops.",
+ "parts": [
+  "window chrome",
+  "traffic lights",
+  "path title",
+  "progress bar",
+  "label text",
+  "percent",
+  "typed line",
+  "divider"
+ ],
+ "demo_content": "Onboarding messages \"New Role Detected\", \"New Team Detected\", \"New Challenges\" and \"Let's build something great\".",
+ "states": [
+  "loading"
+ ],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "glow",
+  "technical",
+  "dense"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "fake terminal loading screen",
+  "cli onboarding animation",
+  "typing terminal window intro",
+  "progress bar made of characters",
+  "purple shimmer loading bar",
+  "scripted console boot sequence",
+  "mac terminal window with typed text",
+  "developer onboarding splash animation"
+ ],
+ "resembles": [
+  "macOS Terminal"
+ ],
+ "use_when": "A developer onboarding or wait screen wants a terminal aesthetic while the product pretends to get ready.",
+ "avoid_when": "Every label, line and timing is hardcoded, and the bar enforces a 520px minimum width that overflows narrow columns.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "loading",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Only a completion callback, a class name and inline styles are exposed; the phases, labels, icons and timings all live in a hardcoded sequence array.",
+ "technique": [
+  "js-animation",
+  "css-keyframes"
+ ],
+ "weight": "moderate",
+ "weight_why": "A forty-frame-per-second loop repaints every character cell of each bar while typing timers run.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The scripted text has no live region or role, so screen readers never hear progress or the messages."
+ },
+ "props": [
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Much of the tall panel stays empty for the whole run, so earlier frames look like an idle screen."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive character-cell bars in a convincing terminal frame, but the panel stays mostly dark.",
+ "unsure": [],
+ "title": "Terminal UI",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9cda573a32bdb6cf",
+  "film_hash": "4f2cbbd07e1026e6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "name": "dashboard-01",
+ "frames": {
+  "code": "3978",
+  "best": 1,
+  "best_why": "Sidebar, all four KPI cards and the area chart are visible together with the cursor clear of the content.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.3
+ },
+ "tagline": "Admin screen pairs KPI tiles and a grey area chart with a sortable table.",
+ "summary": "A complete dark admin screen: an inset sidebar with search and grouped links, four metric cards, a visitors area chart with range toggles, and a data table with tabs, editable cells and row controls.",
+ "title_fix": null,
+ "appearance": "A dark two-panel app shell: a rounded sidebar holds a logo, search box, grouped nav links and a user footer; the wider rounded main panel shows a Documents header, four metric cards in a 2x2 grid, a grey area chart with three range toggles and a many-column data table.",
+ "behaviour": "Switching a chart range redraws the shaded grey area. In the table, tabs swap datasets, headers sort rows, a grip drags rows to reorder, checkboxes select them, and the Target and Limit numbers can be edited inline, firing a saving toast.",
+ "parts": [
+  "sidebar",
+  "nav links",
+  "user footer",
+  "metric cards",
+  "area chart",
+  "range toggles",
+  "table tabs",
+  "data table"
+ ],
+ "demo_content": "Revenue $1,250, 1,234 new customers, 45,678 accounts, a Total Visitors chart and rows like Cover page.",
+ "states": [
+  "hover",
+  "focus",
+  "selected",
+  "checked",
+  "open",
+  "dragging",
+  "loading",
+  "success"
+ ],
+ "kind": "dashboard",
+ "look": [
+  "dark",
+  "monochrome",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "admin dashboard with sidebar",
+  "kpi cards and area chart",
+  "analytics overview screen",
+  "data table with sortable columns",
+  "visitor traffic line graph",
+  "metrics dashboard for saas",
+  "team workspace admin panel",
+  "dashboard with draggable table rows"
+ ],
+ "resembles": [],
+ "use_when": "You need a ready-made analytics app shell with navigation, KPIs, a traffic chart and a task table in one screen.",
+ "avoid_when": "It is heavy and pulls in many shared UI pieces; a single chart or a lone table is far lighter.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "chart",
+  "data-table",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "fill",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Nav items, chart data and table rows live in hardcoded arrays in the companion files; the sidebar variant is the main prop and nearly everything else needs a source edit.",
+ "technique": [
+  "svg",
+  "css-transition",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Whole app screen with sidebar, an SVG chart and a large table plus many shared UI dependencies.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Most controls are labelled and keyboard reachable, but the area chart has no text alternative, and nothing checks prefers-reduced-motion."
+ },
+ "props": [],
+ "issues": [
+  "The Reviewer column is cut off at the right edge of the table in the frames.",
+  "Editable Target and Limit cells look like plain numbers, so the inputs are easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "Polished, consistent app screen; minor table clipping and a very low-contrast chart.",
+ "unsure": [
+  "theme",
+  "weight"
+ ],
+ "title": "Dashboard 01",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "68941063db923b9b",
+  "film_hash": "3d6d9f95a9725b37",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

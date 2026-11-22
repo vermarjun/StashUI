@@ -1,0 +1,121 @@
+{
+ "name": "comp-480",
+ "frames": {
+  "code": "7770",
+  "best": 6,
+  "best_why": "Table scrolled to its last columns with Name still pinned at the left and no cursor over the header.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.8
+ },
+ "tagline": "Spreadsheet of staff rows where the first column stays pinned as you scroll.",
+ "summary": "A wide people table with ten columns and a pin menu on every header. Scrolling sideways keeps a pinned column in view so each row's identity never leaves the screen.",
+ "title_fix": null,
+ "appearance": "A dense dark data table with a muted header row of column names, each trailed by a tiny three-dot button. Five rows of staff data follow, holding flags, status words, currency amounts and dates between thin row rules. The Name column stays fixed at the left edge while the rest scrolls.",
+ "behaviour": "The table scrolls sideways while the pinned Name column holds its place, marked by a faint blurred backdrop. A header's three-dot menu sticks that column left or right, and a pinned header swaps to an unpin icon.",
+ "parts": [
+  "header row",
+  "column label",
+  "three dot button",
+  "data rows",
+  "flag",
+  "status",
+  "pinned column",
+  "footer note"
+ ],
+ "demo_content": "Five staff rows such as Alex Thompson and Sarah Chen, in cities like San Francisco and Singapore, paid $1,750.00.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "empty"
+ ],
+ "kind": "data-table",
+ "look": [
+  "dark",
+  "dense",
+  "minimal",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "table with frozen first column",
+  "spreadsheet with sticky columns",
+  "pin a column to the left",
+  "user directory table",
+  "wide table that scrolls sideways",
+  "admin table with many columns",
+  "column pinning menu",
+  "employee list with status and balance"
+ ],
+ "resembles": [
+  "Airtable grid"
+ ],
+ "use_when": "A wide table must keep its identifying column visible while people scroll across many attributes.",
+ "avoid_when": "It fetches five demo people from an external URL on mount, so it shows an empty No results until that request lands.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "fintech"
+ ],
+ "slot_hints": [
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "scroll",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Columns, cell formatting and the fetch URL are set in the file, so your own data means replacing the source and its column list; it takes no props.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Ten columns and five rows plus one fetch on mount; the table renders once and reacts to pinning.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Pin controls carry aria-labels and titles and headers are real table headers; a column becoming pinned is not announced."
+ },
+ "props": [],
+ "issues": [
+  "Data comes from a public URL, so the table reads No results until the fetch loads."
+ ],
+ "polish": 4,
+ "polish_why": "Dense but orderly rows and clear pin affordances; header type is small and pin edges are faint.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Pinnable Columns Table",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "cdfb53d7013dff0d",
+  "film_hash": "8cc2177c92af1ceb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "text-reveal",
+  "frames": {
+    "code": "8503",
+    "best": 5,
+    "best_why": "Most of the sentence has lit up while the closing words stay dim, showing the reveal mid-way.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Words in a paragraph light up one by one as you scroll.",
+  "summary": "A bold multi-line sentence that starts as faint grey text and brightens word by word as the reader scrolls through a tall section, leaving a trail of highlighted words.",
+  "title_fix": null,
+  "appearance": "A left-aligned block of bold sans-serif text on black, wrapped over four lines. At any moment some words are solid white while the rest sit at a low grey, so the paragraph looks partly illuminated.",
+  "behaviour": "Scrolling through the taller section advances a progress value that maps each word from faint to full white in reading order. The text is held in a sticky panel while the scroll continues underneath.",
+  "parts": ["revealed word", "dimmed word", "text block"],
+  "demo_content": "The sentence StashUI is a library of components you can browse, preview and install into any React app in seconds.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": ["monochrome", "bold", "minimal", "dark"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text that fades in as you scroll",
+    "words light up on scroll",
+    "paragraph reveal on scroll",
+    "scroll driven text opacity",
+    "reading text that highlights itself",
+    "progressive text fade effect",
+    "scroll reveal for a statement",
+    "words brighten as you go down"
+  ],
+  "resembles": [],
+  "use_when": "A short statement or intro paragraph should reveal itself gradually as the reader scrolls.",
+  "avoid_when": "Fast feeds or short pages; the tall scroll area adds a lot of blank space before it finishes.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["body-text"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the sentence as a plain string child; the type scale, spacing and sticky height are set in class names, and the per-word opacity fade is built in.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Only word opacities are mapped to scroll progress; nothing loops in the background.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Words start at very low contrast and the reveal never checks reduced-motion; screen readers still get the full text."
+  },
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Needs a 200vh scroll section, which adds a lot of blank scrolling on a short page."
+  ],
+  "polish": 4,
+  "polish_why": "A tight scroll reveal; the low starting contrast makes early words hard to read.",
+  "unsure": ["kind"]
+}

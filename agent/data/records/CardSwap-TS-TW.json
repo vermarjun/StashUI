@@ -1,0 +1,172 @@
+{
+ "name": "CardSwap-TS-TW",
+ "frames": {
+  "code": "4167",
+  "best": 5,
+  "best_why": "The front card is fully readable with the fanned stack clearly behind it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.7
+ },
+ "tagline": "A stack of dark cards cycles front to back on a timer.",
+ "summary": "Three near-black info cards sit in a fanned stack. Every few seconds the front card drops away and the one behind steps forward, so a new card and its copy reach the front.",
+ "title_fix": "Cycling Card Stack",
+ "appearance": "On a black stage a fanned stack of three near-black cards with thin borders tilts up and to the right, each offset from the last. Every card has a small icon and title bar above a paragraph and a few grey skeleton lines.",
+ "behaviour": "Every few seconds the front card sinks down out of the stack while the cards behind slide forward one slot, then it returns at the back. Hovering the stack pauses the cycle.",
+ "parts": [
+  "card stack",
+  "card header",
+  "body text",
+  "skeleton lines"
+ ],
+ "demo_content": "Cards titled \"Design systems\", \"Motion\" and \"Components\", each with a short blurb.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat",
+  "technical"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "stack of cards that cycles",
+  "cards rotate to the front on a timer",
+  "fanned card deck animation",
+  "info cards with skeleton lines",
+  "auto rotating panel carousel",
+  "hover to pause card cycle",
+  "layered cards sliding forward",
+  "feature cards stacked in 3d"
+ ],
+ "resembles": [],
+ "use_when": "A feature or testimonial area should cycle several cards without visible carousel controls.",
+ "avoid_when": "Content that must all be read at once: only the front card is legible.",
+ "suits": [
+  "saas",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Width, height, card offsets, delay, skew, easing, pause-on-hover and a card-click handler are props; card content comes from children.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "Three cards on a looping timeline, idle between swaps.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Cards are plain divs with no keyboard path or roles, and the automatic cycle ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "width",
+   "type": "number | string",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number | string",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "cardDistance",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "verticalDistance",
+   "type": "number",
+   "default": "70",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onCardClick",
+   "type": "(idx: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "skewAmount",
+   "type": "number",
+   "default": "6",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "\"linear\" | \"elastic\"",
+   "default": "'elastic'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Body copy sits at very low contrast against the near-black card."
+ ],
+ "polish": 4,
+ "polish_why": "Believable layered depth and smooth swaps; the card text is dim and hard to read.",
+ "unsure": [],
+ "title": "CardSwap",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2a907901cf39c9b7",
+  "film_hash": "ea89b3201ab2d654",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

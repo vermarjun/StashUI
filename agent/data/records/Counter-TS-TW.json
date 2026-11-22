@@ -1,0 +1,187 @@
+{
+ "name": "Counter-TS-TW",
+ "frames": {
+  "code": "5712",
+  "best": 1,
+  "best_why": "Both numbers sit settled and fully readable with their buttons, and the cursor is not covering any digit.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Big numbers roll like an odometer as they tick upward.",
+ "summary": "A large metric rolls its digits upward like slot reels, one place at a time, with the top and bottom of the row fading out. A smaller count beside plus and minus buttons steps by one when pressed.",
+ "title_fix": null,
+ "appearance": "A small grey caption sits above a wide row of very large white numerals. Below it, a round outlined minus and plus button bracket a smaller two-digit number, and the big digits fade slightly at their top and bottom edges.",
+ "behaviour": "Each digit spins vertically from the old value to the new one and settles. Pressing plus or minus steps the lower number by one, while the upper figure also climbs on its own in the demo.",
+ "parts": [
+  "caption",
+  "large number",
+  "minus button",
+  "small number",
+  "plus button",
+  "edge fade"
+ ],
+ "demo_content": "Caption 'Visitors today', a five-digit visitor figure near 48,000, and a two-digit count beside plus and minus buttons.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "counter",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "numbers rolling like an odometer",
+  "animated statistic counting up",
+  "big number that increments on its own",
+  "plus minus buttons for a number",
+  "kpi number ticker for dashboard",
+  "slot machine style digit spin",
+  "live visitor count widget",
+  "number that flips digits vertically"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard statistic should feel live and draw the eye without the weight of a chart.",
+ "avoid_when": "Every digit position is listed by hand, so decimals, currency signs and odd formats take extra setup.",
+ "suits": [
+  "dashboard",
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "stat",
+  "headline"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Value and place values, size, padding, gap, weight, colours, radius and the top and bottom fade are props; the spin itself is fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Roughly fifty small spans for five digits, each on a spring, idle between value changes.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The changing digits are plain text with no aria-live region, so assistive tech never hears the new value."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "padding",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "places",
+   "type": "PlaceValue[]",
+   "default": "auto",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "horizontalPadding",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'inherit'",
+   "required": false
+  },
+  {
+   "name": "fontWeight",
+   "type": "CSSProperties['fontWeight']",
+   "default": "'inherit'",
+   "required": false
+  },
+  {
+   "name": "gradientHeight",
+   "type": "number",
+   "default": "16",
+   "required": false
+  },
+  {
+   "name": "gradientFrom",
+   "type": "string",
+   "default": "'black'",
+   "required": false
+  },
+  {
+   "name": "gradientTo",
+   "type": "string",
+   "default": "'transparent'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The digit fade defaults to black, so it paints dark bars unless the page background colour is passed."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp big numerals and a convincing roll, though the two bare counters make a thin showcase.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Animated Number Counter",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "eefa92e679a0ed69",
+  "film_hash": "fcea85259fa98ea5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

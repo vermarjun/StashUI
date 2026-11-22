@@ -1,0 +1,111 @@
+{
+  "name": "video-gallery",
+  "frames": {
+    "code": "6408",
+    "best": 3,
+    "best_why": "Northern Passage is hovered open with its tag, title and View Project control, and a second row shows below.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Browse a filmmaker's project grid, filter it, and open any clip in a player.",
+  "summary": "A dark portfolio section lists video projects as image cards with category tags, search and filters. Hovering reveals a title and play action; clicking opens a modal player with details and specs.",
+  "title_fix": null,
+  "appearance": "A black page opens with a large white Featured Videos heading, a search button and five filter pills above a grid of video thumbnails carrying small uppercase tags. Cards are dark and rounded with white type.",
+  "behaviour": "Filter pills and search narrow the grid with an animated reflow, and cards lift and zoom on hover to reveal a dark gradient, title and View Project button. Clicking a card opens a full-screen player with arrows, share and fullscreen controls.",
+  "parts": [
+    "heading",
+    "search button",
+    "filter pills",
+    "video cards",
+    "category tag",
+    "hover overlay",
+    "lightbox player"
+  ],
+  "demo_content": "Featured Videos heading and projects such as Cinematic Journey, Northern Passage and Tuscany Wedding Trailer",
+  "states": [
+    "hover",
+    "open",
+    "selected",
+    "empty"
+  ],
+  "kind": "gallery-section",
+  "look": [
+    "dark",
+    "bold",
+    "minimal",
+    "editorial"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "filmmaker portfolio video grid",
+    "browse clips filtered by category",
+    "hover to preview video projects",
+    "film reel showcase page",
+    "open video in a lightbox with details",
+    "cinematic project gallery for a studio",
+    "search and filter video thumbnails",
+    "wedding videographer portfolio layout"
+  ],
+  "resembles": [
+    "Vimeo showcase"
+  ],
+  "use_when": "A filmmaker, studio or videographer needs a full portfolio section that leads from browsing to playback.",
+  "avoid_when": "Pages with no media to fill it, since the section depends on real footage and several large remote videos.",
+  "suits": [
+    "portfolio",
+    "media",
+    "marketing"
+  ],
+  "slot_hints": [
+    "media",
+    "feature-card"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll",
+      "hover",
+      "click"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "image",
+      "children"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Projects, categories and all their copy live in arrays inside the file, so changes mean editing source. There are no content props and the dark palette is fixed.",
+  "technique": [
+    "motion-library",
+    "css-transition"
+  ],
+  "weight": "moderate",
+  "weight_why": "A few dozen animated nodes and remote thumbnails; one video plays at a time.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Cards are mouse-only click targets and several icon buttons rely on title text, so the lightbox is hard to reach; no reduced-motion handling."
+  },
+  "props": [],
+  "issues": [
+    "Project cards are divs with no tab stop, so keyboard users cannot open the lightbox.",
+    "All five projects and their remote video URLs are hardcoded inside the file."
+  ],
+  "polish": 4,
+  "polish_why": "Cohesive dark portfolio with clean filters and a strong hover card; stock imagery holds it back.",
+  "unsure": []
+}

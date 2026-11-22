@@ -1,0 +1,156 @@
+{
+ "name": "elastic-line",
+ "frames": {
+  "code": "7594",
+  "best": 2,
+  "best_why": "The line is stretched into a tall upward arc by the cursor, the clearest view of the elastic pull.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Thin line bends toward the cursor and springs back.",
+ "summary": "A hairline drawn across a dark page that can be caught by the pointer. Moving near it drags the middle into a stretch, and letting go springs it back to a straight line.",
+ "title_fix": null,
+ "appearance": "On a black stage a single hairline runs horizontally across the full width, over dark demo copy. At rest it is perfectly straight and very thin; when pulled it bows into a smooth curve, up to a tall pointed arch, before settling flat again.",
+ "behaviour": "The line draws itself in from left to right on first load. When the pointer comes within a few pixels it grabs the midpoint and stretches it toward the cursor; moving past the release threshold or leaving the area springs it back with a light wobble.",
+ "parts": [
+  "hairline",
+  "stretched curve"
+ ],
+ "demo_content": "Heading 'STASH UI', an orange asterisk, and 'Grab the line and pull. Ready-to-use animated React components...'.",
+ "states": [
+  "dragging",
+  "hover"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "minimal",
+  "monochrome",
+  "flat",
+  "sharp"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "stretchable rubber band line",
+  "line you can pull with mouse",
+  "springy divider animation",
+  "interactive hairline on hover",
+  "cursor grabs and stretches line",
+  "playful underline interaction",
+  "line snaps back after dragging",
+  "bouncy string across the page"
+ ],
+ "resembles": [],
+ "use_when": "A sparse editorial page wants one playful interactive detail that rewards moving the cursor across it.",
+ "avoid_when": "It is a mouse-and-touch flourish with no keyboard path and needs a wide, tall area to be worth pulling.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "divider",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Vertical or horizontal, grab and release thresholds, stroke width and spring transitions are props; the line colour follows currentColor and the page supplies its own content.",
+ "technique": [
+  "motion-library",
+  "svg",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "One SVG path updated each frame while grabbed; otherwise a spring.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "A pointer-only flourish with no keyboard equivalent, and the spring always animates because prefers-reduced-motion is not checked."
+ },
+ "props": [
+  {
+   "name": "isVertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "grabThreshold",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "releaseThreshold",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "strokeWidth",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "ValueAnimationTransition",
+   "default": "{ type: \"spring\", stiffness: 300, damping: 5 }",
+   "required": false
+  },
+  {
+   "name": "animateInTransition",
+   "type": "ValueAnimationTransition",
+   "default": "{ duration: 0.3, ease: \"easeInOut\" }",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`w-full h-full ${className}`}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The hairline is so thin and dim that it nearly disappears at rest.",
+  "When it bows, the line crosses the paragraph and makes the text harder to read."
+ ],
+ "polish": 4,
+ "polish_why": "Subtle, satisfying elastic interaction; the hairline is very faint at rest.",
+ "unsure": [
+  "kind",
+  "needs_sized_parent"
+ ],
+ "title": "Elastic Line",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5059e5ebfb339bb1",
+  "film_hash": "85652341fd2fd3d3",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "name": "Orb-TS-TW",
+ "frames": {
+  "code": "9598",
+  "best": 2,
+  "best_why": "The ring is at its brightest and most rippled here, with a hot highlight on the upper rim.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "A thin glowing ring of red and green light pulses on black.",
+ "summary": "A fuzzy ring of coloured light hovers on black, its rim shading from yellow-green to magenta. The edge wobbles and swirls while it turns, brighter under the pointer.",
+ "title_fix": null,
+ "appearance": "A hollow circular ring of soft neon glow, roughly the size of a coin on a black stage. The rim runs from yellow-green through pink to red and fades into a blurry halo, with the centre left dark.",
+ "behaviour": "The rim ripples slowly and a bright bead of light travels around it. Hovering the middle makes the edge undulate and the whole ring rotates, settling when the pointer leaves.",
+ "parts": [
+  "glowing rim",
+  "halo",
+  "dark centre",
+  "travelling highlight"
+ ],
+ "demo_content": "",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "neon",
+  "minimal"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "glowing orb on black background",
+  "energy sphere animation",
+  "neon ring that reacts to hover",
+  "hollow circle of light",
+  "magic sphere shader",
+  "pulsing ring of coloured light",
+  "sci fi energy ball",
+  "orbiting light halo graphic"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero or loader area needs one small glowing focal object with colour.",
+ "avoid_when": "You want a solid sphere: the shader draws a ring with a dark, see-through middle.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "border",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Hue, hover distortion strength, whether it rotates on hover, a forced hover state and the background colour are props. Ring size and noise are fixed constants.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen shader evaluates 3D simplex noise for every pixel each frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative and hover-driven, with no keyboard equivalent and no reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "hue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "hoverIntensity",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "rotateOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "forceHoverState",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The orb reads as a hollow ring rather than a filled sphere, since the centre stays dark."
+ ],
+ "polish": 3,
+ "polish_why": "A clean neon glow, but simple and the empty middle weakens the orb idea.",
+ "unsure": [
+  "kind",
+  "shows_interaction",
+  "states"
+ ],
+ "title": "Orb",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0eb34b008d6770f3",
+  "film_hash": "3117eb0aace3f797",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

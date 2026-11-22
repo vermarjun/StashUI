@@ -1,0 +1,119 @@
+{
+  "name": "backlight",
+  "frames": {
+    "code": "1827",
+    "best": 6,
+    "best_why": "The bloom is at its widest and the card stays fully readable with no cursor on it.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark card whose colours spill out as a soft glow all around it.",
+  "summary": "Wraps content in a blurred, colour-boosted copy of itself, so a colourful card throws a soft backlight halo. In this demo the blur deepens on hover.",
+  "title_fix": null,
+  "appearance": "A thin-bordered dark card on black carries a large purple-to-pink gradient word and two lines of small grey text. Its own colours leak outward as a wide, soft halo of blue and magenta past every edge.",
+  "behaviour": "The halo is a blurred, saturation-boosted copy of the card sitting behind it, so it follows any colour inside. Hovering the demo card increases the blur and pushes the glow further out, easing back when the pointer leaves.",
+  "parts": [
+    "card",
+    "gradient title",
+    "body text",
+    "backlight halo"
+  ],
+  "demo_content": "The word \"Backlight\" above the line \"Hover to intensify the bloom filter\"",
+  "states": [
+    "hover"
+  ],
+  "kind": "border-effect",
+  "look": [
+    "dark",
+    "glow",
+    "gradient",
+    "rounded",
+    "colorful"
+  ],
+  "tone": "decorative",
+  "search_phrases": [
+    "glow spilling out from behind a card",
+    "blurred colourful halo around content",
+    "neon glow around a panel",
+    "soft light bloom behind a feature card",
+    "colored glow that grows on hover",
+    "backlit card effect for a landing page",
+    "vibrant aura around a rounded box",
+    "ambient light behind an image"
+  ],
+  "resembles": [],
+  "use_when": "A colourful card or image should feel lit from within and lift off a dark page.",
+  "avoid_when": "Light backgrounds, where the halo washes out, and content that needs crisp hard edges.",
+  "suits": [
+    "saas",
+    "marketing",
+    "portfolio"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "decoration",
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "hover"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "shadow",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap any element as children and set the blur radius; the colour boost is fixed at four times saturation, and the glow colours come from the content itself.",
+  "technique": [
+    "svg-filter"
+  ],
+  "weight": "moderate",
+  "weight_why": "A full-card blur and colour filter is recomputed whenever the blur radius changes.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The effect is decorative and hidden from assistive tech, but the hover transition ignores reduced motion."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactElement",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "blur",
+      "type": "number",
+      "default": "20",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The small grey caption is low contrast against the dark card."
+  ],
+  "polish": 4,
+  "polish_why": "The bloom is convincing and the gradient type pops; the dim caption is the weak spot.",
+  "unsure": []
+}

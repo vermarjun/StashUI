@@ -1,0 +1,138 @@
+{
+ "name": "text-reveal-card",
+ "frames": {
+  "code": "7837",
+  "best": 4,
+  "best_why": "Frame 4 uncovers the most of the bright line, with the divider bar mid-card and the dim text still behind.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.0
+ },
+ "tagline": "Sweep the cursor across the card to wipe one sentence over another.",
+ "summary": "A dark card shows a faint sentence that a second, brighter message replaces wherever your pointer has crossed. A thin divider bar rides the cursor edge, and the reveal snaps back when you leave.",
+ "title_fix": null,
+ "appearance": "A wide dark grey card with a thin border holds a small white heading and a grey hint line at the top. Across its lower half a large bold sentence sits dim grey among drifting white specks; up to the pointer the same line appears bright white behind a narrow vertical bar.",
+ "behaviour": "Sliding the pointer across the card uncovers a bright copy of the sentence from the left, tracking the cursor with no lag, while a thin divider bar tilts and follows. Leaving the card retracts the reveal to nothing and fades the bar out.",
+ "parts": [
+  "card",
+  "heading",
+  "hint line",
+  "dim sentence",
+  "revealed sentence",
+  "divider bar",
+  "star specks"
+ ],
+ "demo_content": "Heading \"Sometimes, you just need to see it.\" above the lines \"You know the business\" and \"I know the chemistry\".",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hover to uncover hidden text",
+  "card that wipes away to show a message",
+  "pointer reveal text effect",
+  "before and after sentence comparison card",
+  "scrub across to reveal another line",
+  "hidden message behind dry text",
+  "mouse controlled text mask",
+  "two sentences revealed on hover"
+ ],
+ "resembles": [],
+ "use_when": "You want a small surprising reward for moving the cursor over a card of copy.",
+ "avoid_when": "Touch or keyboard readers need the hidden line, or the card must fit a narrow column.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "text and revealText set the two sentences, and children fill the header. The fixed forty-rem width, colours and the star field need a source edit.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Eighty drifting star dots plus a pointer-tracked clip-path reveal.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The hidden line can only be uncovered by pointer or touch, with no keyboard route, and the star drift ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "revealText",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The resting sentence is dark grey on dark grey, so it is almost unreadable before the reveal.",
+  "Only a pointer or touch uncovers the hidden line; keyboard users cannot reach it."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth cursor reveal and tidy divider, but the resting line is nearly invisible and the header tiny.",
+ "unsure": [],
+ "title": "Text Reveal Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "70db36b2988130c5",
+  "film_hash": "8f9803eaace41b30",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

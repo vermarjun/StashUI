@@ -1,0 +1,78 @@
+{
+  "name": "slide-commit",
+  "frames": {
+    "code": "3088",
+    "best": 2,
+    "best_why": "Handle is partway along the track with white stretching behind it and the pay label still visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drag a pay slider across and it unfurls into a green Paid pill.",
+  "summary": "An invoice card with a slide-to-pay control. Dragging the round handle to the end starts the payment, spins a loader, then the whole bar turns green with a tick and Paid.",
+  "title_fix": null,
+  "appearance": "A dark rounded invoice card shows a payee, a large amount, an invoice tag and two summary rows. At the bottom a dark track holds a white round handle with an arrow and a muted Slide to pay label; on success the track becomes a solid green pill.",
+  "behaviour": "Dragging the handle across the track streaks white behind it. Reaching the end fires the payment, shows a brief spinner, then the bar swaps to green with a tick and Paid, and after a pause slides back to idle.",
+  "parts": ["invoice header", "amount", "summary rows", "track", "handle", "arrow", "label", "status pill"],
+  "demo_content": "Invoice card for Northwind Studio, $1,250.00, Invoice #2041, paid from Checking •• 4821, arriving today 3:40 PM.",
+  "states": ["hover", "dragging", "loading", "success", "error", "disabled"],
+  "kind": "button",
+  "look": ["dark", "rounded", "minimal", "pill", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "slide to confirm payment",
+    "swipe to pay button",
+    "drag handle to complete action",
+    "slide to unlock style control",
+    "unlock or delete confirmation slider",
+    "gesture button that confirms",
+    "payment card with slider to pay",
+    "slide to send money control"
+  ],
+  "resembles": ["iOS slide to unlock"],
+  "use_when": "A destructive or financial action needs a deliberate gesture so a stray tap cannot trigger it.",
+  "avoid_when": "It needs a wide track; at 280px it is tight for long labels and the gesture is awkward on tiny screens.",
+  "suits": ["fintech", "ecommerce", "saas"],
+  "slot_hints": ["form-submit", "primary-cta", "modal"],
+  "traits": {
+    "trigger": ["drag", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Labels, confirm, done and error callbacks, four colours, width, height, radius, speed and spring tuning are props, plus disabled, icon and hold time.",
+  "technique": ["motion-library", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "One bar and a handful of motion values; work happens only during a slide or status change.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Full slider keyboard semantics and a polite live status; the drag gesture itself has no text hint for screen readers."
+  },
+  "props": [
+    {"name": "label", "type": "ReactNode", "default": "\"Slide to pay\"", "required": false},
+    {"name": "doneLabel", "type": "ReactNode", "default": "\"Paid\"", "required": false},
+    {"name": "onConfirm", "type": "() => void | Promise<unknown>", "default": null, "required": false},
+    {"name": "width", "type": "number", "default": "280", "required": false},
+    {"name": "height", "type": "number", "default": "56", "required": false},
+    {"name": "trackColor", "type": "string", "default": "\"#262626\"", "required": false},
+    {"name": "handleColor", "type": "string", "default": "\"#f5f5f5\"", "required": false},
+    {"name": "successColor", "type": "string", "default": "\"#22c55e\"", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "holdMs", "type": "number", "default": "1500", "required": false},
+    {"name": "speed", "type": "number", "default": "50", "required": false},
+    {"name": "icon", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The Slide to pay hint is faint grey on the dark track and the handle covers it as you drag."
+  ],
+  "polish": 4,
+  "polish_why": "The slide, spinner and green payoff read clearly; the invoice card is tidy and restrained.",
+  "unsure": ["kind"]
+}

@@ -1,0 +1,157 @@
+{
+ "name": "sidebar-animated",
+ "frames": {
+  "code": "4702",
+  "best": 1,
+  "best_why": "Frame 1 shows the expanded sidebar with its full menu, the active highlight and the dashboard content.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.0
+ },
+ "tagline": "App sidebar with one highlight that glides between items and collapses to icons.",
+ "summary": "A shadcn-style application sidebar with grouped navigation, a project list and a user footer. A single rounded highlight slides from item to item, and the panel can collapse to a narrow icon rail.",
+ "title_fix": "Animated App Sidebar",
+ "appearance": "A tall dark panel on the left lists grouped navigation in small white and grey text with tiny icons, a project section, and a user row at the bottom. It sits beside a dark dashboard with a slim top bar, three stat cards and a large empty panel.",
+ "behaviour": "Moving between menu items slides one rounded grey highlight from the old row to the new one. Toggling the sidebar collapses it smoothly to a narrow icon-only rail and expands it back; the main content widens as it goes.",
+ "parts": [
+  "sidebar panel",
+  "menu group label",
+  "menu item",
+  "highlight",
+  "project list",
+  "user row",
+  "stat card",
+  "main content"
+ ],
+ "demo_content": "Workspace 'Acme Inc' with Playground, History, Starred, Models, Documentation, Projects and a Maya Chen user row.",
+ "states": [
+  "hover",
+  "selected",
+  "expanded",
+  "active"
+ ],
+ "kind": "sidebar",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "app sidebar with sliding highlight",
+  "dashboard navigation that collapses to icons",
+  "side navigation menu with groups",
+  "admin panel left menu",
+  "workspace sidebar with projects",
+  "collapsible nav rail for apps",
+  "highlight moves between menu items",
+  "saas app sidebar layout"
+ ],
+ "resembles": [
+  "Linear app sidebar"
+ ],
+ "use_when": "A dashboard or app shell needs persistent navigation that can collapse to icons to give content more room.",
+ "avoid_when": "It is built for a desktop app shell with grouped menus and a set width, so a marketing site or phone layout fits poorly.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Open state, default open and hover animation are provider props; the menu groups, projects and user row are composed by you as children, and widths are CSS variables.",
+ "technique": [
+  "motion-library",
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Tracks every menu item with a mutation observer and animates one highlight plus the collapse.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Reduced motion is respected and the collapse has a keyboard shortcut, but collapsed items rely on composed tooltips to keep their names."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animateOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "COLLAPSE_TRANSITION",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The workspace name at the top of the sidebar is clipped by the crop."
+ ],
+ "polish": 4,
+ "polish_why": "A convincing app shell with a smooth highlight and collapse; tiny type keeps it ordinary.",
+ "unsure": [],
+ "title": "Sidebar (animated)",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ca37c53df803f969",
+  "film_hash": "af5171f22968ef71",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

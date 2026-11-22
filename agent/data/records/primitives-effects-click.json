@@ -1,0 +1,157 @@
+{
+ "name": "primitives-effects-click",
+ "frames": {
+  "code": "5463",
+  "best": 2,
+  "best_why": "A thin ring is expanding around the Ring button while all five buttons and the caption stay fully visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Buttons that fire a ring, ripple or crosshair where you click.",
+ "summary": "A row of labelled demo buttons; pressing one draws a short white effect at the pointer, with variants for a ring, a ripple, a crosshair, a burst and particles.",
+ "title_fix": "Click Effect Buttons",
+ "appearance": "Five dark grey rounded buttons in a row on a black stage, the fifth centred below, each with a white capitalised label. A small grey caption under the row tells you to click.",
+ "behaviour": "Clicking anywhere on a button spawns the chosen effect at the pointer: an expanding circle, a filled ripple, four ticks pulling outward, a fan of strokes or a spray of dots. Each fades within a second.",
+ "parts": [
+  "button row",
+  "button label",
+  "click effect",
+  "caption"
+ ],
+ "demo_content": "Buttons reading Ring, Ripple, Crosshair, Burst and Particles, with the caption Click a button to see its effect.",
+ "states": [
+  "hover"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "flat",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "click effect at the pointer",
+  "ripple on button press",
+  "expanding ring when clicking",
+  "crosshair click feedback",
+  "particle burst on tap",
+  "pointer feedback for buttons",
+  "animated click confirmation",
+  "material style touch ripple"
+ ],
+ "resembles": [
+  "Material Design ripple"
+ ],
+ "use_when": "Buttons or icons need playful tap feedback that confirms where the pointer landed.",
+ "avoid_when": "Effects fire on pointer only, so keyboard activation shows nothing, and five variants add noise.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass children to wrap plus variant, colour, size, duration, scope and disabled; the five effect shapes and easing curves are fixed in source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Each click mounts a few SVG shapes for under a second; idle at rest.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The effect fires only on pointerup, so keyboard-triggered clicks give no feedback; reduced motion is respected."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "ClickVariant",
+   "default": "'ring'",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'currentColor'",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "scope",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Crosshair and burst marks are thin on the dark stage and easy to miss.",
+  "The caption is small grey text with weak contrast against black."
+ ],
+ "polish": 3,
+ "polish_why": "Clean dark buttons and varied effects; thin lines on black make two variants hard to see.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Click",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f40b1839a8ea85a8",
+  "film_hash": "3242e8a289c699a6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

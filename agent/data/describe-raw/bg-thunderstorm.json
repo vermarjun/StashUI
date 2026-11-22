@@ -1,0 +1,75 @@
+{
+  "name": "bg-thunderstorm",
+  "frames": {
+    "code": "5742",
+    "best": 1,
+    "best_why": "Frame 1 has the brightest fork of lightning and the most visible cloud detail.",
+    "usable": [1, 3, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Jagged lightning flickers through drifting smoke on a black sky.",
+  "summary": "A dark, full-bleed animated backdrop of storm clouds lit by flickering electric bolts. Branches of white, blue and amber light flare and fade at random spots while the haze slowly churns.",
+  "title_fix": null,
+  "appearance": "A near-black field crossed by soft smoky haze and branching electric filaments in white, pale blue and warm amber. The light glows brightest at the forks, with dim cloud texture around them.",
+  "behaviour": "Runs on its own: cloud noise drifts continuously while bolts ignite at different points, brighten and fade. The whole field pulses gently as the storm moves.",
+  "parts": ["dark field", "cloud haze", "lightning bolt", "glow halo"],
+  "demo_content": "White center label reading Thunderstorm.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "glow", "organic", "textured"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "stormy sky lightning background",
+    "dark animated thunder backdrop",
+    "electric bolts shader effect",
+    "moody clouds background loop",
+    "glowing lightning page background",
+    "webgl storm animation",
+    "dark hero background with flashes",
+    "procedural lightning wallpaper"
+  ],
+  "resembles": [],
+  "use_when": "A dark landing page, game menu or event splash wants a moody, self-animating storm backdrop.",
+  "avoid_when": "White text and light UI elements lose contrast on its near-black field, and it never rests.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["page-background", "section-background", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background", "image"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Hue, saturation, brightness, speed, pointer sensitivity, damping and noise are props; the lightning pattern itself needs a shader source edit.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "Full-screen WebGL shader with nine noise octaves per pixel every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Decorative canvas with no ARIA role or reduced-motion check, and the flashes never stop."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "hue", "type": "number", "default": "0", "required": false},
+    {"name": "saturation", "type": "number", "default": "1", "required": false},
+    {"name": "brightness", "type": "number", "default": "1", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "mouseSensitivity", "type": "number", "default": "0.5", "required": false},
+    {"name": "damping", "type": "number", "default": "1", "required": false},
+    {"name": "noise", "type": "{ opacity: number; scale: number }", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 2 and 4 are nearly black, so between flashes the backdrop looks blank.",
+    "The small white Thunderstorm label sits on a busy, shifting field and is easy to lose."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing storm light and haze; the demo caption is faint and two frames look empty.",
+  "unsure": []
+}

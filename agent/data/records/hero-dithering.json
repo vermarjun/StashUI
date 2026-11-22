@@ -1,0 +1,188 @@
+{
+ "name": "hero-dithering",
+ "frames": {
+  "code": "3945",
+  "best": 1,
+  "best_why": "The blue arms of the swirl are at their widest and the whole hero, text and badges included, sits inside the frame.",
+  "usable": [
+   1,
+   2,
+   3,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Headline and button beside a pixelated blue vortex that never stops turning.",
+ "summary": "A split landing hero: a big two-line headline, short paragraph, pill button and two tech badges on the left, and a circular dithering swirl on the right. The swirl keeps rotating behind a field of square dots.",
+ "title_fix": null,
+ "appearance": "On a black stage a left column stacks a large two-line white heading, a small grey paragraph, an outlined pill button and two bordered badges. The right half is a big circular vortex made of blue and black square dots, lighter along its curved arms and black at the core.",
+ "behaviour": "The dotted swirl slowly rotates and its blue arms ripple while the text and controls hold still. The button and badges lift a little on hover, and on narrow screens the swirl drops to the bottom as a dimmed backdrop.",
+ "parts": [
+  "headline",
+  "paragraph",
+  "call-to-action button",
+  "tech badges",
+  "dithering swirl"
+ ],
+ "demo_content": "Heading AI SDK Agents / Copy and Paste, copy about Vercel AI SDK patterns, Next.js v16 and AI SDK v6 badges.",
+ "states": [
+  "hover"
+ ],
+ "kind": "hero",
+ "look": [
+  "dark",
+  "colorful",
+  "technical",
+  "textured",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "dark hero with rotating dot swirl",
+  "blue vortex animation beside headline",
+  "dithered circle graphic on black",
+  "split layout hero text and visual",
+  "pixelated spiral background for landing page",
+  "halftone swirl hero graphic",
+  "developer tools landing page hero",
+  "retro dither pattern hero banner"
+ ],
+ "resembles": [],
+ "use_when": "A devtool or AI product landing page wants a dramatic moving visual without a video or a full 3D scene.",
+ "avoid_when": "The shader loop never stops and needs WebGL, so it drains battery, and its palette is fixed to blue on black.",
+ "suits": [
+  "devtool",
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Set title, subtitle, description, CTA label and link, badge list and shader options through props. Layout and palette are classes and shader settings; the pixel fonts come from CSS.",
+ "technique": [
+  "webgl-shader",
+  "css-transition"
+ ],
+ "weight": "heavy",
+ "weight_why": "A permanent WebGL dithering shader fills half the hero and redraws every frame.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "A hidden h1 names the section and links carry text, but the endless shader never pauses for reduced-motion users."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "React.ReactNode",
+   "default": "<span className=\"font-pixel-square\">AI SDK Agents</span>",
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "React.ReactNode",
+   "default": "\"Copy and Paste\"",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "React.ReactNode",
+   "default": "defaultDescription",
+   "required": false
+  },
+  {
+   "name": "ctaProps",
+   "type": "Partial<HeroDitheringCTAProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "techStack",
+   "type": "HeroDitheringTechItem[]",
+   "default": "defaultTechStack",
+   "required": false
+  },
+  {
+   "name": "showCta",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showBadges",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "srTitle",
+   "type": "string",
+   "default": "\"AI SDK Agents\"",
+   "required": false
+  },
+  {
+   "name": "desktopShaderProps",
+   "type": "Partial<DitheringProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "mobileShaderProps",
+   "type": "Partial<DitheringProps>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "renderCta",
+   "type": "(defaultCta: React.ReactNode) => React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-full w-full overflow-hidden\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 4 cuts the swirl off at the right edge of the crop.",
+  "The paragraph is small and dim against the black stage, so it is easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp split layout and a striking dithered swirl; body copy is small and low contrast.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Hero Dithering",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "cd2b373b4d41743a",
+  "film_hash": "5bf8b37a3e7250b2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "shader-lens-blur",
+  "frames": {
+    "code": "3665",
+    "best": 2,
+    "best_why": "The pointer is over the shape, so the lens blur and green colour shift are at their strongest.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A soft gradient triangle blurs and inverts around the cursor.",
+  "summary": "A WebGL shader that draws a large rounded triangle filled with drifting pastel colour, blurring and inverting near the pointer and following touch.",
+  "title_fix": null,
+  "appearance": "A big triangle with gently rounded corners glows in a mint-to-blue-to-pink gradient on a black panel. Its edges are soft, and small grey instructions sit at the bottom left.",
+  "behaviour": "The four-colour gradient drifts continuously; moving the pointer across the shape blurs and colour-inverts the area around it, and dragging on touch does the same.",
+  "parts": ["triangle shape", "gradient fill", "black panel", "instruction label"],
+  "demo_content": "Caption Inverted mouse interaction using mouse or touch at the bottom left.",
+  "states": ["hover", "active"],
+  "kind": "background",
+  "look": ["dark", "gradient", "neon", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "webgl triangle with blur around cursor",
+    "gradient blob that reacts to mouse",
+    "interactive shader shape for a hero",
+    "colored triangle with lens blur",
+    "cursor distorts a glowing shape",
+    "soft gradient geometry background",
+    "webgl hover invert effect",
+    "animated pastel shape on black"
+  ],
+  "resembles": [],
+  "use_when": "A hero or feature panel needs a single bold shape with an interactive, tactile surface.",
+  "avoid_when": "It is a fixed 400px-tall WebGL canvas and needs three and jotai, with no reduced-motion path.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["hero", "decoration"],
+  "traits": {
+    "trigger": ["pointer-move", "always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "All options live in an external jotai config atom (variation, four colours, hover, size); the component itself takes no props.",
+  "technique": ["webgl-shader", "three-js"],
+  "weight": "heavy",
+  "weight_why": "A three.js WebGL scene renders the shader every animation frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no accessible name or fallback text, and the interaction is pointer-only with no reduced-motion branch."
+  },
+  "props": [],
+  "issues": [
+    "No reduced-motion handling; the shader runs every frame regardless.",
+    "Interaction is pointer and touch only, so keyboard users cannot affect it.",
+    "The canvas gives screen readers nothing to describe."
+  ],
+  "polish": 4,
+  "polish_why": "Soft gradient and a convincing lens blur; limited to one shape and missing a11y.",
+  "unsure": []
+}

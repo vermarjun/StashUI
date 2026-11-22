@@ -1,0 +1,137 @@
+{
+ "name": "hacker-background",
+ "frames": {
+  "code": "3966",
+  "best": 4,
+  "best_why": "Green columns fill the whole panel top to bottom, showing the falling-code effect at full strength.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Green characters stream down a black screen like falling code.",
+ "summary": "A canvas of bright green letters raining down in narrow columns over black, each column leaving a fading tail. It fills its area and sits behind whatever text you layer on top.",
+ "title_fix": null,
+ "appearance": "A black surface covered in thin vertical columns of small monospaced green characters. The brightest letter sits at the head of each column and the characters above it dim into a greyer trail, so the rain looks denser near the top and sparse towards the bottom.",
+ "behaviour": "Random letters fall column by column at roughly thirty frames a second, each pass painting a faint dark wash that slowly wipes away the tails. When a column reaches the bottom it restarts at the top at a random moment, so the pattern never repeats.",
+ "parts": [
+  "green character",
+  "falling column",
+  "faded trail",
+  "black backdrop"
+ ],
+ "demo_content": "Centred mono caption \"Access granted\" above a white heading reading \"Wake up, Neo.\"",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "neon",
+  "dense",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "green letters falling like the matrix",
+  "falling code rain background",
+  "hacker screen full of characters",
+  "cyberpunk terminal backdrop",
+  "animated code rain behind a hero",
+  "matrix style scrolling text",
+  "digital rain canvas effect",
+  "sci fi code waterfall"
+ ],
+ "resembles": [
+  "The Matrix code rain"
+ ],
+ "use_when": "A page needs an instant hacker or cyberpunk mood behind a short headline.",
+ "avoid_when": "Green on black fights light themes, and the constant motion distracts from long text.",
+ "suits": [
+  "portfolio",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Colour, font size and fall speed are props; the character set and the fade strength are written into the canvas loop.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A full-canvas 2D text redraw about thirty times a second, constant but cheap per frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The canvas is purely decorative yet has no aria-hidden and no reduced-motion check, so the rain never stops."
+ },
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#0F0\"",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The canvas is measured from the window, not its container, so in a short box the rain can overflow or stop short."
+ ],
+ "polish": 3,
+ "polish_why": "A clean, familiar matrix-rain effect with correct trails; nothing beyond the well-known pattern.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Hacker Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "83b4755c6d0fe2f0",
+  "film_hash": "dc02228f87ef0ecb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

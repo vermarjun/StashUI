@@ -1,0 +1,194 @@
+{
+ "name": "jelly-radio",
+ "frames": {
+  "code": "7823",
+  "best": 1,
+  "best_why": "The chosen pill is lit white and swollen with its neighbours pushed aside, and no cursor covers the row.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "The chosen pill swells white and shoves its neighbours aside.",
+ "summary": "A single-choice row of rounded chips where the selected one grows, turns light and pushes the others outward with a springy wobble. Arrow keys move the choice.",
+ "title_fix": null,
+ "appearance": "A horizontal row of rounded dark-grey pill chips with white labels, one lit to a solid white fill with dark text and standing slightly taller and wider. The neighbours sit evenly spaced on a near-black stage, with a small prompt above and a large value below.",
+ "behaviour": "Clicking a chip springs the highlight to it: the chosen pill swells, flips to white and pushes the pills on either side outward while they shrink slightly. The group settles with a light jelly wobble, and arrow keys move the selection.",
+ "parts": [
+  "prompt label",
+  "chip row",
+  "chip",
+  "selected chip",
+  "value readout"
+ ],
+ "demo_content": "Plan names Hobby, Starter, Pro, Team and Enterprise with monthly prices $0, $9, $24, $59 and Custom.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "selected",
+  "disabled"
+ ],
+ "kind": "radio-group",
+ "look": [
+  "dark",
+  "pill",
+  "rounded",
+  "minimal",
+  "airy"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "pill shaped plan selector",
+  "radio chips that grow when selected",
+  "segmented control with springy selection",
+  "choose a plan toggle row",
+  "single choice buttons in a row",
+  "options that push each other away",
+  "pricing plan switcher",
+  "springy bounce selection control"
+ ],
+ "resembles": [],
+ "use_when": "A small, fixed set of options needs a single choice with a tactile, attention-drawing highlight.",
+ "avoid_when": "The swelling and pushing need horizontal room; many options or long labels overflow narrow screens.",
+ "suits": [
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field",
+  "pricing-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Items, value/defaultValue, onChange, chip and active colours, text colours, size, gap, radius, swell, barge, shrink, jelly, bounce, stagger, stiffness and disabled are props.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Only a handful of chips with spring transforms; it idles once settled.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Radio roles and arrow-key control are solid, but the focused chip shows no visible focus ring, only the selected fill."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "JellyRadioItem[]",
+   "default": "DEFAULT_ITEMS",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "chipColor",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  },
+  {
+   "name": "activeColor",
+   "type": "string",
+   "default": "'#f5f5f5'",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#f5f5f5'",
+   "required": false
+  },
+  {
+   "name": "activeTextColor",
+   "type": "string",
+   "default": "'#18181b'",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "string",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "18",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The focused chip has its outline removed with no visible focus ring to replace it."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp pills and a satisfying spring, with clean spacing between chips.",
+ "unsure": [
+  "responsive",
+  "traits.theme"
+ ],
+ "title": "Jelly Radio",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a231cde1bf6d69dc",
+  "film_hash": "790c47f3ed02cbf2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

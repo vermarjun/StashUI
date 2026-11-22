@@ -1,0 +1,159 @@
+{
+ "name": "glyph-matrix",
+ "frames": {
+  "code": "2855",
+  "best": 1,
+  "best_why": "The whole glyph grid is evenly lit with the bottom fade visible and nothing over it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "A faint grid of tiny symbols flickers and mutates across a dark field.",
+ "summary": "A canvas background tiles small characters in an even grid. Random cells swap glyphs and settle at different opacities on a timer, giving a quiet static-like texture with an optional fade toward the bottom.",
+ "title_fix": null,
+ "appearance": "A full-bleed near-black canvas covered edge to edge in a tight, even grid of tiny pale symbols. Their brightness varies slightly, and the bottom third fades into darkness.",
+ "behaviour": "On a short timer a few percent of cells choose a new character and opacity, so the field shimmers without any large movement. It sizes to its container and stops when unmounted.",
+ "parts": [
+  "glyph grid",
+  "canvas",
+  "bottom fade"
+ ],
+ "demo_content": "Monospace glyphs 0 1 · • + * / \\ < > = on a dark page.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "textured",
+  "dense",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "matrix style glyph grid",
+  "faint digital rain texture",
+  "tiny symbols background",
+  "monospace character field",
+  "subtle ascii background",
+  "mutating code glyph wallpaper",
+  "dark techy grid backdrop",
+  "small letters fading bottom"
+ ],
+ "resembles": [],
+ "use_when": "A developer or tech page wants a quiet code-like texture behind its content.",
+ "avoid_when": "You need a calm plain surface; the dense mutating grid can distract and reduce contrast.",
+ "suits": [
+  "devtool",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Set glyphs, cellSize, mutationRate, interval, fadeBottom and color; canvas props such as className and style pass through.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Canvas redraws thousands of glyphs every 90ms, skipping frames in between.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The canvas is aria-hidden and decorative, but the continuous mutation ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "glyphs",
+   "type": "string",
+   "default": "\"01·•+*/\\\\<>=\"",
+   "required": false
+  },
+  {
+   "name": "cellSize",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "mutationRate",
+   "type": "number",
+   "default": "0.04",
+   "required": false
+  },
+  {
+   "name": "interval",
+   "type": "number",
+   "default": "90",
+   "required": false
+  },
+  {
+   "name": "fadeBottom",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#6B7280\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"pointer-events-none\", className)}",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": "{{ width: \"100%\", height: \"100%\", display: \"block\", ...style",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The dense grid is very low contrast, reading as texture rather than characters.",
+  "The mutation loop never pauses and ignores reduced-motion."
+ ],
+ "polish": 3,
+ "polish_why": "Even, low-key texture that stays out of the way; very low contrast and no motion guard.",
+ "unsure": [],
+ "title": "Glyph Matrix",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1d604044991a2b8b",
+  "film_hash": "6ab0b5e0a2853909",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

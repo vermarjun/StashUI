@@ -1,0 +1,152 @@
+{
+ "name": "ScrambledText-TS-TW",
+ "frames": {
+  "code": "9493",
+  "best": 4,
+  "best_why": "The most characters are mid-scramble, right under and beside the cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.9
+ },
+ "tagline": "Letters near the cursor dissolve into dots and colons.",
+ "summary": "A short monospace paragraph sits still until the pointer passes over it, then the characters nearest the cursor flicker into a rolling mix of dots and colons before settling back to the real words.",
+ "title_fix": null,
+ "appearance": "Two lines of white monospace text sit left aligned on a black stage in a plain terminal-style face, with wide letter spacing and a lot of empty space below.",
+ "behaviour": "Moving the pointer over the text swaps nearby characters for dots and colons, most strongly under the cursor and fading with distance. The characters roll until the pointer leaves, then resolve back to the original letters.",
+ "parts": [
+  "two text lines",
+  "scrambled characters",
+  "cursor"
+ ],
+ "demo_content": "\"Move your cursor across the text to scramble it.\"",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "technical",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "text scrambles under the cursor",
+  "letters turn to dots on hover",
+  "glitch text on pointer move",
+  "matrix style decode effect",
+  "random characters replace words",
+  "interactive paragraph distortion",
+  "terminal text noise effect",
+  "playful hover text trick"
+ ],
+ "resembles": [],
+ "use_when": "An interactive paragraph or easter-egg headline should respond to the pointer.",
+ "avoid_when": "Touch screens or copy that must stay readable: no pointer means no effect, and scrambling hurts reading.",
+ "suits": [
+  "portfolio",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "headline",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The copy is passed as children; radius, duration, speed, scramble characters, className and inline style are props. The split and pointer listener are fixed.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "Short tweens on glyphs within a small radius, with nothing running while idle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The effect needs a pointer, and the scrambled state is neither announced nor skippable; no reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.2",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scrambleChars",
+   "type": "string",
+   "default": "'.:'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Tidy monospace setting and a clear local effect; otherwise plain.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Scrambled Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "66373a8bdb41b911",
+  "film_hash": "46603a4f1585145d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

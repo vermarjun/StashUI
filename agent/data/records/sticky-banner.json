@@ -1,0 +1,126 @@
+{
+ "name": "sticky-banner",
+ "frames": {
+  "code": "8547",
+  "best": 2,
+  "best_why": "The banner is fully in view with its message and close icon, above readable blog content.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "A bright blue announcement strip pinned across the top of the page.",
+ "summary": "A full-width announcement bar that slides down at the top of the page, stays pinned while scrolling, and disappears when its close icon is clicked.",
+ "title_fix": null,
+ "appearance": "A saturated blue band spans the top of the page with small white text and an underlined link, plus a small white X at the right end. Below it sits a dark blog page with photos and article text.",
+ "behaviour": "The bar drops in from above on load, stays sticky at the top as the page scrolls, and slides back out of view when the X is clicked. It can also hide itself on scroll when that option is on.",
+ "parts": [
+  "blue bar",
+  "announcement text",
+  "inline link",
+  "close icon"
+ ],
+ "demo_content": "The line 'Announcing our $12M Series A, led by Northzone. Read the announcement' above a Northwind blog.",
+ "states": [
+  "hover",
+  "open"
+ ],
+ "kind": "toast",
+ "look": [
+  "gradient",
+  "minimal",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "announcement bar at the top",
+  "funding announcement banner",
+  "blue strip above the page",
+  "dismissible notice bar",
+  "site wide promo bar",
+  "top bar that hides on scroll",
+  "small alert with a close button",
+  "top of page promo strip"
+ ],
+ "resembles": [],
+ "use_when": "A launch, funding or sale deserves a one-line note across the top of every page.",
+ "avoid_when": "The bright sticky band covers content and can nag on mobile unless hide-on-scroll is enabled.",
+ "suits": [
+  "saas",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "toast",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "scroll",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Content is children; className sets the colours and hideOnScroll adds scroll-away behaviour. Duration, offsets and the close icon live in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One scroll listener plus short translate and opacity transitions.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The close button is labelled and focusable, but the bar vanishes without notice and ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hideOnScroll",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Clean blue bar with a clear action; nothing distinctive beyond the sticky behaviour.",
+ "unsure": [],
+ "title": "Sticky Banner",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e5161ad060e9be86",
+  "film_hash": "b0caac83efa0117d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,133 @@
+{
+ "name": "popover",
+ "frames": {
+  "code": "4396",
+  "best": 4,
+  "best_why": "The panel is open with a typed note and the X and Submit controls both visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 8.0
+ },
+ "tagline": "A small button swells into a note panel you can type in.",
+ "summary": "A Leave a note button that morphs into a large rounded form with a placeholder, a textarea, and close and submit buttons in its footer.",
+ "title_fix": null,
+ "appearance": "A compact dark Leave a note pill sits on black. Clicked, it grows into a wide rounded dark panel with faint grey placeholder text top-left, a small X at the bottom-left and a bordered Submit button at the bottom-right.",
+ "behaviour": "The button expands into the panel with a light spring; typing hides the placeholder, and the X, an outside click or Escape closes it and clears the note while the panel shrinks back.",
+ "parts": [
+  "trigger button",
+  "panel",
+  "placeholder label",
+  "textarea",
+  "close icon",
+  "submit button"
+ ],
+ "demo_content": "Button reading Leave a note, placeholder Your note, and the typed line Invite Sam to the design review.",
+ "states": [
+  "open",
+  "focus"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "button that turns into a note form",
+  "quick note form with submit",
+  "inline message box after clicking",
+  "small text area popup for feedback",
+  "leave a comment panel",
+  "expand button into text input",
+  "composer for short notes",
+  "elegant note taking popup"
+ ],
+ "resembles": [],
+ "use_when": "You want a lightweight note or comment form that opens right where the trigger sits.",
+ "avoid_when": "It is fixed at 364px wide and only suits short notes; long text has no room to grow.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field",
+  "toast"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Trigger text, placeholder and footer buttons are composed from exported parts; the fixed 364x200 size and spring live in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One panel with a single layout morph; idle while closed.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The textarea has no label or placeholder attribute, and focus is not trapped or returned; the panel has no dialog role."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onSubmit",
+   "type": "(note: string) => void",
+   "default": "{handleSubmit}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The textarea has no label or placeholder attribute, so its purpose is only visual.",
+  "Focus is neither trapped in the panel nor returned to the trigger.",
+  "The panel behaves like a dialog but has no dialog role."
+ ],
+ "polish": 3,
+ "polish_why": "Clean morph and clear footer actions; it is a plain note form with basic a11y gaps.",
+ "unsure": [],
+ "title": "Popover",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7f55f9f7f6a8e14c",
+  "film_hash": "74da7d6755e5c7d8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

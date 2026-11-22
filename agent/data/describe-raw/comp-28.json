@@ -1,0 +1,63 @@
+{
+  "name": "comp-28",
+  "frames": {
+    "code": "9362",
+    "best": 1,
+    "best_why": "The whole stepper with both buttons, the default number and the credit line is clean and free of a cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A number held between a minus and a plus button on one thin bar.",
+  "summary": "A labelled number field with a square minus button on its left and a square plus button on its right. The value sits centred between them and steps up or down when the buttons are pressed.",
+  "title_fix": null,
+  "appearance": "A label sits above a single thin row on black: a square minus button, a wide centred number showing 2,048 inside a thin border, then a square plus button. A small grey credit line runs underneath.",
+  "behaviour": "Clicking plus or minus steps the number up or down, and the field can also be typed into directly. The clip nudges the value through 2,049 and 2,051 and settles at 2,050.",
+  "parts": ["label", "minus button", "number field", "plus button", "credit line"],
+  "demo_content": "Number input with plus/minus buttons, starting at 2,048, with a Built with React Aria line.",
+  "states": ["hover", "focus", "disabled"],
+  "kind": "input",
+  "look": ["dark", "minimal", "flat", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "quantity with minus and plus",
+    "counter for how many",
+    "add or remove one item",
+    "value box with arrow buttons",
+    "pick a number by clicking",
+    "ticket count with small buttons",
+    "amount that goes up and down",
+    "centered number between buttons"
+  ],
+  "resembles": [],
+  "use_when": "Choosing a small whole number where one-step nudges are more natural than typing.",
+  "avoid_when": "Large ranges make the buttons tedious, and there is no unit or range hint next to the number.",
+  "suits": ["ecommerce", "saas", "fintech"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label, starting value of 2048 and minimum of 0 are set in the file, along with the button and field classes.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "Three small controls in one row; only a focus transition runs.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The library wires the bound label, arrow keys and labelled step buttons; only the reduced-motion check is missing."
+  },
+  "props": [],
+  "issues": ["The component ships a visible Built with React Aria credit link beneath the field."],
+  "polish": 3,
+  "polish_why": "Neat symmetric control, though the documentation credit under it feels out of place.",
+  "unsure": []
+}

@@ -1,0 +1,142 @@
+{
+  "name": "TextCursor-TS-TW",
+  "frames": {
+    "code": "9274",
+    "best": 6,
+    "best_why": "The widest spread of glyphs arcs around the label, showing the trail best.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Small stars trail behind the pointer across a dark panel.",
+  "summary": "Moving the pointer inside a rounded dark panel scatters copies of a chosen glyph along its path, each drifting and twisting slightly before fading. Only the most recent handful of marks stay on screen.",
+  "title_fix": null,
+  "appearance": "A wide rounded panel, a shade lighter than the black stage, holds a centred white star glyph above the bold heading \"Text Cursor\" and a small muted hint line.",
+  "behaviour": "As the pointer moves, copies of the glyph appear at fixed gaps along its path, turned to face the direction of travel and wobbling gently. Older marks fade and shrink away so only the newest few remain.",
+  "parts": [
+    "rounded panel",
+    "centre glyph",
+    "heading",
+    "hint text",
+    "trail glyphs"
+  ],
+  "demo_content": "Heading \"Text Cursor\" with the hint \"Move your cursor here to leave a trail of floating glyphs\".",
+  "states": [],
+  "kind": "cursor-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "airy",
+    "flat",
+    "playful"
+  ],
+  "tone": "playful",
+  "search_phrases": [
+    "star trail following the mouse",
+    "cursor leaves floating symbols",
+    "glyphs spawn as you move",
+    "pointer sparkle trail effect",
+    "custom cursor with fading marks",
+    "magical mouse trail for landing page",
+    "stars appear behind the pointer",
+    "interactive decoration for hero panel"
+  ],
+  "resembles": [],
+  "use_when": "A playful hero or showcase panel should reward moving the pointer around.",
+  "avoid_when": "Touch devices: there is no pointer to leave a trail, so nothing appears.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "social"
+  ],
+  "slot_hints": [
+    "hero",
+    "page-background",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "children",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "The glyph, spacing, maximum marks, float wobble and exit duration are props. Colours and text sizes come from surrounding classes.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "At most a handful of looping glyph elements exist at once.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The trail is pointer-only and its glyph nodes are not hidden from screen readers; no reduced-motion handling."
+  },
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "default": "⚛️",
+      "required": false
+    },
+    {
+      "name": "spacing",
+      "type": "number",
+      "default": "100",
+      "required": false
+    },
+    {
+      "name": "followMouseDirection",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "randomFloat",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "exitDuration",
+      "type": "number",
+      "default": "0.5",
+      "required": false
+    },
+    {
+      "name": "removalInterval",
+      "type": "number",
+      "default": "30",
+      "required": false
+    },
+    {
+      "name": "maxPoints",
+      "type": "number",
+      "default": "5",
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Soft panel, tidy centring and a charming trail; the glyphs are quite small and sparse.",
+  "unsure": [
+    "states"
+  ]
+}

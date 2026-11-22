@@ -1,0 +1,69 @@
+{
+  "name": "contextual-ai-bar",
+  "frames": {
+    "code": "5468",
+    "best": 4,
+    "best_why": "The bar is expanded into a prompt field with the full phrase typed and the send arrow ready.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pill toolbar that morphs into an AI prompt box on a tap.",
+  "summary": "A narrow dark pill with a music and a sparkle button on the left; the sparkle expands it into a prompt field with a send arrow while four tool icons slide away, and the music button collapses it again.",
+  "title_fix": null,
+  "appearance": "A slim dark pill on black. Its left end holds a smaller pill with two round icon buttons, a music note and a sparkle, one on a grey active disc. Collapsed, four outline icons are spaced along the right; expanded, a prompt field fills the middle and a round arrow caps the right.",
+  "behaviour": "Clicking the sparkle grows the pill, fades the tool icons out and reveals a focused text input with the send arrow; clicking the music note reverses it. The grey active disc glides between the two leading buttons, and tool icons scale on hover.",
+  "parts": ["pill", "icon toggle", "active highlight", "tool icons", "prompt field", "send button"],
+  "demo_content": "Placeholder Make the chorus punchier; tools are scissors, sliders, speaker and loop icons.",
+  "states": ["hover", "focus", "active", "expanded"],
+  "kind": "chat",
+  "look": ["dark", "pill", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "pill that turns into a prompt",
+    "ai input with quick tools",
+    "music editing toolbar",
+    "expandable prompt bar",
+    "sparkle button opens input",
+    "compact ai assistant field",
+    "floating command bar with icons",
+    "tool icons beside a text box"
+  ],
+  "resembles": [],
+  "use_when": "A music or editing app needs a small always-available toolbar that doubles as an AI prompt entry.",
+  "avoid_when": "Many tools or long prompts: the pill hides the tools when expanded and only fits one short line.",
+  "suits": ["media", "mobile-app"],
+  "slot_hints": ["form-field", "body-text"],
+  "traits": {
+    "trigger": ["click", "focus", "hover"],
+    "motion": "subtle",
+    "affects": ["layout", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Placeholder text, the two leading icons, the tool icon array and the initial expanded state are props; colours, spring and the pill layout are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A few layout springs on one small pill; it is idle between taps.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The icon buttons have no labels and focus outlines are removed, so the two modes are hard to identify without sight."
+  },
+  "props": [
+    {"name": "defaultExpanded", "type": "boolean", "default": "false", "required": false},
+    {"name": "placeholder", "type": "string", "default": "\"Refine with AI\"", "required": false},
+    {"name": "tools", "type": "ReactNode[]", "default": "[]", "required": false},
+    {"name": "musicIcon", "type": "ReactNode", "default": null, "required": true},
+    {"name": "sparkleIcon", "type": "ReactNode", "default": null, "required": true}
+  ],
+  "issues": ["Focus outlines are removed from the icon buttons, leaving no visible keyboard focus."],
+  "polish": 4,
+  "polish_why": "Satisfying morph with a tight pill; unlabelled icon buttons and no focus ring are the flaws.",
+  "unsure": ["traits.theme"]
+}

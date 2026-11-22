@@ -1,0 +1,70 @@
+{
+  "name": "bento-grid-draggable",
+  "frames": {
+    "code": "5674",
+    "best": 5,
+    "best_why": "One widget is lifted and floating over the grid while the others dim, the clearest view of the drag.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Analytics widgets on a grid you can pick up, drag and resize.",
+  "summary": "A dashboard of small analytics widgets laid on a six-column grid. Each tile can be pressed and held to lift it, dragged to a new slot with a spring reflow, and resized by a corner handle; the grid folds to two columns when narrow.",
+  "title_fix": null,
+  "appearance": "A dark dashboard of six rounded rectangular widgets in a tight grid, each headed by a tiny icon and title. They show a revenue figure, an active-user count with bars, an activity list, a checklist, uptime ticks and a storage bar, with one blue accent in each.",
+  "behaviour": "Press and hold a widget to lift it with a shadow and a slight tilt, then drag; the others reflow around the gap on springs. Corner handles resize a tile, and keyboard users can lift, arrow between slots, drop or cancel.",
+  "parts": ["widget tile", "icon", "title", "metric", "chart", "resize handle", "grip handle"],
+  "demo_content": "Revenue $48,210, 2,841 active users, an activity feed, a notes checklist, 99.98% uptime and 342 GB storage.",
+  "states": ["hover", "focus", "active", "dragging", "selected"],
+  "kind": "dashboard",
+  "look": ["dark", "minimal", "dense", "rounded"],
+  "tone": "technical",
+  "search_phrases": [
+    "draggable dashboard widgets",
+    "resizable analytics tiles",
+    "bento grid you can rearrange",
+    "drag and drop admin cards",
+    "modular dashboard layout",
+    "grid of small metric cards",
+    "reorderable kpi widgets",
+    "movable tiles with spring animation"
+  ],
+  "resembles": [],
+  "use_when": "A user should rearrange and resize their own dashboard tiles to match what they watch.",
+  "avoid_when": "Every tile needs a fixed row height and lots of width, and hold-to-drag fights ordinary touch scrolling.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["feature-card", "stat"],
+  "traits": {
+    "trigger": ["drag", "keyboard", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass items with render functions plus a layout of ids and spans, an onLayoutChange callback, row height and classes; the spring physics and demo widgets live in the source.",
+  "technique": ["motion-library", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A custom spring engine writes transforms each frame, but only while tiles move.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Keyboard lift, arrow moves and live announcements are present; pointer dragging needs a long press, which is awkward on touch."
+  },
+  "props": [
+    {"name": "items", "type": "WidgetGridItem[]", "default": null, "required": false},
+    {"name": "layout", "type": "WidgetLayoutItem[]", "default": null, "required": false},
+    {"name": "defaultLayout", "type": "WidgetLayoutItem[]", "default": null, "required": false},
+    {"name": "onLayoutChange", "type": "(layout: WidgetLayoutItem[]) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "rowHeight", "type": "number", "default": null, "required": false}
+  ],
+  "issues": ["Press-and-hold dragging competes with ordinary touch scrolling."],
+  "polish": 4,
+  "polish_why": "Convincing dashboard with springy drag and tidy widgets; dense small type and a subtle lift.",
+  "unsure": ["a11y.reduced_motion"]
+}

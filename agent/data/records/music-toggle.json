@@ -1,0 +1,190 @@
+{
+ "name": "music-toggle",
+ "frames": {
+  "code": "7906",
+  "best": 5,
+  "best_why": "Frame 5 shows the record mid-spin with a long pink progress arc and a lively waveform.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.9
+ },
+ "tagline": "A spinning record with cover art, a pink progress ring and a live waveform.",
+ "summary": "A round record whose cover art turns while a track plays, ringed by a pink progress arc. A centre button toggles play and pause, and a small bar waveform pulses beside the title and artist.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holding a circular record of meadow cover art with a small dark hub and a thin pink arc around part of its rim. To the right sit a white title, a grey artist line and a short row of thin light bars.",
+ "behaviour": "While playing, the cover turns steadily and the bars bounce in a repeating ripple as the pink ring fills with progress. Pressing the centre swaps pause bars for a play triangle, halts the spin and flattens the waveform, and the ring can be moved with the arrow keys to seek.",
+ "parts": [
+  "card",
+  "record",
+  "cover art",
+  "progress ring",
+  "play button",
+  "title",
+  "artist",
+  "waveform"
+ ],
+ "demo_content": "Track \"Northern Lights, Slowly\" by Nils Halvorsen with a cow-in-a-meadow cover photo.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "media-player",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "spinning record play button",
+  "album art with progress ring",
+  "audio player with small waveform",
+  "vinyl disc music control",
+  "play pause circle with cover photo",
+  "now playing widget with bars",
+  "compact song player card",
+  "record player toggle for a track"
+ ],
+ "resembles": [],
+ "use_when": "A page needs a small, characterful now-playing control without a full transport bar.",
+ "avoid_when": "The progress ring ignores the pointer, so seeking works only from the keyboard.",
+ "suits": [
+  "portfolio",
+  "blog",
+  "media"
+ ],
+ "slot_hints": [
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "image",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass cover, title, artist, progress and playing, plus an optional audio src; the size, bar count and brand colour come from props or the --color-brand variable.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One rotating image, a progress ring and two dozen tiny animated bars.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The seek ring has pointer events disabled, so mouse users cannot scrub it even though it looks draggable."
+ },
+ "props": [
+  {
+   "name": "playing",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "progress",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "cover",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "artist",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "DEFAULT_SIZE",
+   "required": false
+  },
+  {
+   "name": "bars",
+   "type": "number",
+   "default": "DEFAULT_BARS",
+   "required": false
+  },
+  {
+   "name": "defaultPlaying",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onSeek",
+   "type": "(progress: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onPlayingChange",
+   "type": "(playing: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute inset-0 rounded-full focus-vis",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The seek ring has pointer events off, so it cannot be dragged or clicked despite looking interactive.",
+  "Progress shows only as a coloured arc with no time readout, so the listener cannot judge how far along it is."
+ ],
+ "polish": 4,
+ "polish_why": "Characterful spinning record with a clean ring and waveform; the unclickable seek ring is the flaw.",
+ "unsure": [],
+ "title": "Music Toggle",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1951adfffbb47370",
+  "film_hash": "f0f8e0199c094cfb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

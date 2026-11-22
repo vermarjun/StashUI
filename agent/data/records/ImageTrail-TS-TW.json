@@ -1,0 +1,121 @@
+{
+ "name": "ImageTrail-TS-TW",
+ "frames": {
+  "code": "9895",
+  "best": 4,
+  "best_why": "Frame 4 shows three stacked photo cards at once, the clearest view of the trail.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "Photos flick into view and peel away as the pointer sweeps.",
+ "summary": "A large heading sits on a dark card while snapshots of coastlines pop up along the pointer path, each one growing, drifting and shrinking away.",
+ "title_fix": null,
+ "appearance": "A wide dark panel with a huge tight white heading centred and a small caption beneath. Small rounded photo cards of piers, waves and hills appear near the pointer, stacked with soft shadows.",
+ "behaviour": "Every eighty pixels of pointer travel spawns the next photo at the pointer, which slides into place, then fades and shrinks to nothing. Photos cycle through the list and pile over the heading.",
+ "parts": [
+  "panel",
+  "heading",
+  "caption",
+  "photo card",
+  "photo stack"
+ ],
+ "demo_content": "Heading \"Image Trail\" with the caption \"Move your cursor across the canvas\".",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photos appear as you move the mouse",
+  "image trail that follows the pointer",
+  "photo cards popping up along cursor path",
+  "cursor effect with landscape pictures",
+  "stacked photos trailing the mouse",
+  "gallery of images on pointer movement",
+  "hover image peek effect",
+  "photographic trail for a portfolio page"
+ ],
+ "resembles": [],
+ "use_when": "A photography or design portfolio wants a memorable reveal on mouse movement.",
+ "avoid_when": "It needs pointer travel to show anything, and the images cycle through a fixed list with no captions.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "media"
+ ],
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "The photo list arrives as an array of URLs, and variant selects one of eight trail animations. Card size, distance threshold and timing are fixed in the source.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "moderate",
+ "weight_why": "An endless requestAnimationFrame loop drives a handful of GSAP-tweened photo cards.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Photos are background images with no alt text, and the trail only appears on pointer move, so keyboard and screen-reader users get nothing."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The trail vanishes when the pointer is still, so frame 1 is a bare heading.",
+  "Background-image photos carry no alt text or captions."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp photo cards and a lively stack; the heading behind them is crowded and easily covered.",
+ "unsure": [],
+ "title": "Image Cursor Trail",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "829a2c752bb4ea1e",
+  "film_hash": "c201d04580ca1325",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

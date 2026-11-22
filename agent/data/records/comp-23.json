@@ -1,0 +1,116 @@
+{
+ "name": "comp-23",
+ "frames": {
+  "code": "5869",
+  "best": 6,
+  "best_why": "The field is filled with masked dots and the eye button and full field are clear, with no cursor on them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 5.5
+ },
+ "tagline": "A password box with an eye button meant to swap the dots for text.",
+ "summary": "A labelled password field with a small eye button at its right edge. Typing hides the characters as dots, and the eye is meant to switch between masked and plain text.",
+ "title_fix": null,
+ "appearance": "A small label sits above a rounded dark field on a black stage, with a grey Password placeholder at the left and a faint eye outline inside the right edge. Once typing starts the placeholder gives way to a row of dots while the eye stays put.",
+ "behaviour": "Clicking the field draws a pale ring and typing replaces the placeholder with dots. The eye button is built to toggle between hidden and visible text, but every frame keeps the entry masked.",
+ "parts": [
+  "label",
+  "password field",
+  "placeholder text",
+  "masked dots",
+  "eye button",
+  "focus ring"
+ ],
+ "demo_content": "Label Show/hide password input with a Password placeholder and a masked entry.",
+ "states": [
+  "focus",
+  "empty",
+  "hover"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "eye icon to reveal a secret",
+  "hidden dots in a login field",
+  "show or hide what you typed",
+  "secret entry with a peek button",
+  "masked text that can be revealed",
+  "login field with eye toggle",
+  "hide characters while typing",
+  "reveal button inside a text box"
+ ],
+ "resembles": [],
+ "use_when": "A password or secret entry where letting the user peek at what they typed reduces mistakes.",
+ "avoid_when": "The eye is a small target inside the field, easy to miss on touch screens.",
+ "suits": [
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The label and Password placeholder are fixed in the file; field and eye styling are classes there, and the visible state lives in a small useState.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One field and one icon button with a single state flag; nothing runs at rest.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The eye is a labelled button with a pressed state, but its aria-controls points at an id the field never has."
+ },
+ "props": [],
+ "issues": [
+  "The eye's aria-controls names an id the input never receives, so the link is broken.",
+  "The clip never shows the password revealed, only masked dots in every frame."
+ ],
+ "polish": 3,
+ "polish_why": "Neat field with a clear eye button, but the demo never proves the reveal works.",
+ "unsure": [
+  "shows_interaction"
+ ],
+ "title": "Password Visibility Toggle",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b44c418cd9f52f21",
+  "film_hash": "8fb97c68ee2cff3b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

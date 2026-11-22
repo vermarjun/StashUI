@@ -1,0 +1,133 @@
+{
+ "name": "tooltip",
+ "frames": {
+  "code": "2722",
+  "best": 6,
+  "best_why": "The shortcut bubble is fully opaque and readable above the bar, though the cursor sits on the link icon.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.3
+ },
+ "tagline": "Hovering an icon lifts a small bubble showing its name and shortcut.",
+ "summary": "A four-button formatting bar whose icons reveal a compact bubble with the action name and its keyboard shortcut when hovered or focused.",
+ "title_fix": null,
+ "appearance": "A dark rounded toolbar of four light icon buttons floats on a black stage, with a faint border around the group. Over the hovered button sits a small rounded dark bubble holding a white label and a grey shortcut in the same line.",
+ "behaviour": "Hovering an icon opens the bubble just above it and the bubble jumps to whichever button the pointer enters. It fades and scales away on leave, and frame one shows the bar with no bubble.",
+ "parts": [
+  "toolbar",
+  "icon button",
+  "tooltip bubble",
+  "label",
+  "shortcut hint"
+ ],
+ "demo_content": "Bold, italic, underline and insert-link icons with command key shortcuts.",
+ "states": [
+  "hover",
+  "focus",
+  "open"
+ ],
+ "kind": "tooltip",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "bubble that explains an icon on hover",
+  "shortcut hint above a button",
+  "hover label with keyboard keys",
+  "little popup over toolbar icons",
+  "show what an icon means",
+  "hint box with command key",
+  "cursor hover helper text",
+  "tiny dark speech bubble"
+ ],
+ "resembles": [],
+ "use_when": "Icon-only controls whose meaning or shortcut is not obvious from the shape alone.",
+ "avoid_when": "Touch screens have no hover, and anyone who does not pause on the icon will never see it.",
+ "suits": [
+  "saas",
+  "docs",
+  "devtool"
+ ],
+ "slot_hints": [
+  "tooltip"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The trigger and content both take children, so any button and any copy fit; offset, arrow and delay are props, while bubble colours are classes.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A few buttons and one portal bubble; animation runs only while it opens.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The bubble opens on focus and closes with Escape, but the animation ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "delayDuration",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "sideOffset",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "showArrow",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp bubble with a clear label and shortcut, over a clean compact toolbar.",
+ "unsure": [],
+ "title": "Tooltip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7f83be77a8ad7e51",
+  "film_hash": "5898764f5eba33f0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

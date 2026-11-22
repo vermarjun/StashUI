@@ -1,0 +1,65 @@
+{
+  "name": "comp-167",
+  "frames": {
+    "code": "9353",
+    "best": 1,
+    "best_why": "Neutral is chosen with a light ring, all five faces are clear, and no cursor covers them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Five emoji faces in circles ask you to rate how it went.",
+  "summary": "A one-row sentiment picker: five round radio buttons, each wrapping an emoji from angry to laughing, under the question How did it go? The chosen face takes a brighter ring.",
+  "title_fix": null,
+  "appearance": "A white question sits left-aligned above five equal circles joined in one row on black. Each circle is a thin grey outline around a large emoji face, running from an angry frown to a wide grin.",
+  "behaviour": "Clicking a face selects it and lightens its ring; keyboard focus adds a second outer ring. The clip begins on Neutral and finishes on Sad.",
+  "parts": ["question heading", "face emoji", "option circle"],
+  "demo_content": "How did it go? heading with five faces from angry to laughing",
+  "states": ["focus", "selected"],
+  "kind": "radio-group",
+  "look": ["dark", "outlined", "minimal", "playful", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "rate how you feel with emojis",
+    "five face satisfaction scale",
+    "emoji feedback picker row",
+    "customer mood rating buttons",
+    "angry to happy face selector",
+    "quick survey emoji radios",
+    "how did it go feedback faces",
+    "one tap mood check"
+  ],
+  "resembles": [],
+  "use_when": "Asking for a fast one-tap mood or satisfaction score right after a task or a chat.",
+  "avoid_when": "No words name the faces on screen, so the scale rests on the emoji meaning the same to everyone.",
+  "suits": ["saas", "ai-chat"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["click", "focus"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Faces come from an items array inside the file; change the emoji or the stored labels there. Circle size, gap and ring colour are utility classes in the same file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Five small circles with emoji glyphs and a short ring colour fade.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The labels defined in the data are never rendered, so each face is named only by its emoji character; arrow keys and a visible focus ring still work."
+  },
+  "props": [],
+  "issues": [
+    "The written labels in the data are never shown, so a face is announced only as its emoji."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy row and a friendly, quick idea; nothing on screen gives the faces words.",
+  "unsure": []
+}

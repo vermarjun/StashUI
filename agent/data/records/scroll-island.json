@@ -1,0 +1,139 @@
+{
+ "name": "scroll-island",
+ "frames": {
+  "code": "7021",
+  "best": 6,
+  "best_why": "The ring is 88% filled and the island reads clearly against the article at the page end.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 12.6
+ },
+ "tagline": "Floating pill tracks how far down the page you have scrolled.",
+ "summary": "A slim dark island pinned to the top of a long article. A small ring fills as the reader scrolls and a percentage counts up; clicking it expands into a short list.",
+ "title_fix": "Scroll Progress Island",
+ "appearance": "A small dark rounded pill sits centred near the top of a black article page, floating over the text. Inside it a thin circular ring on the left, a short title in the middle and a percentage on the right. The page behind is dense grey-white body copy.",
+ "behaviour": "As the reader scrolls, the ring sweeps round and the percentage climbs from near zero toward a hundred. Clicking the pill springs it wider and taller to reveal the list passed in as children, then clicking again folds it back.",
+ "parts": [
+  "dark pill",
+  "progress ring",
+  "title",
+  "percentage",
+  "expand panel"
+ ],
+ "demo_content": "An engineering blog post titled How we rebuilt sync for real-time teams, with the island label Rewriting sync.",
+ "states": [
+  "expanded"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "glass"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "floating scroll progress indicator",
+  "circular progress ring pinned to top",
+  "dynamic island for reading progress",
+  "percentage that counts while scrolling",
+  "sticky pill showing how far you read",
+  "article progress tracker widget",
+  "expandable floating status pill",
+  "reading progress bar for a blog"
+ ],
+ "resembles": [
+  "iOS Dynamic Island"
+ ],
+ "use_when": "A long article, docs page or report where readers want to see how far through the page they are without a sidebar.",
+ "avoid_when": "Fixed top centre, so it can cover headings on small screens, and it only reads window scroll, not an inner box.",
+ "suits": [
+  "blog",
+  "docs"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Set the title, pill height and className as props; the child list appears under the header when clicked. Widths, colours and the spring are fixed in the source.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "One fixed pill with a spring layout animation and a small SVG ring; idle when not scrolling.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The pill is a clickable div with no button role or tabindex, so it cannot be opened by keyboard; the progress ring has no progressbar role."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Progress\"",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "44",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The island is tiny against a full page of text, so the progress is easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "Nice glass pill and spring; the demo makes it tiny against a wall of text.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Scroll Island",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "80a018447a8db5d0",
+  "film_hash": "197ef30d9a1834bb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

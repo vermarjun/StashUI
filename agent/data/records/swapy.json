@@ -1,0 +1,153 @@
+{
+ "name": "swapy",
+ "frames": {
+  "code": "5788",
+  "best": 1,
+  "best_why": "All five cards sit in their slots at rest, with the wide photo card and both stat tiles clearly readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Grab a dashboard tile by its dotted grip and drop it into another slot.",
+ "summary": "A grid of rounded cards, each with a small six-dot grip in the corner. Dragging one lifts it out of its slot and greys the other slots as targets; dropping swaps the cards' places with a spring.",
+ "title_fix": null,
+ "appearance": "A bento grid on black: a wide monochrome pier photo card across two columns, a dark Revenue tile beside it, then a dark Subscribers tile, a white Conversion tile and a blue cloud photo card. Every card is rounded, thinly bordered and carries a dotted grip at its top left.",
+ "behaviour": "Pressing a grip lifts the card off its slot, floats it over the grid and dims it while the other slots tint grey as drop targets. Releasing over a slot puts the card there, sends the card that was there into the vacated slot and settles the grid with a short spring.",
+ "parts": [
+  "slot",
+  "card",
+  "drag grip",
+  "stat label",
+  "stat value"
+ ],
+ "demo_content": "Revenue $48.2k, Subscribers 3,912, Conversion 4.7%, a Summer campaign photo and a cloud photo.",
+ "states": [
+  "dragging",
+  "hover",
+  "active"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "drag and drop dashboard tiles",
+  "reorder cards by dragging a handle",
+  "swap card positions in a grid",
+  "sortable bento layout",
+  "movable widgets on an analytics page",
+  "grab handle in the corner of a card",
+  "customisable dashboard card arrangement",
+  "drag tiles to change the layout"
+ ],
+ "resembles": [],
+ "use_when": "Users should be able to rearrange dashboard widgets or tiles into their own order.",
+ "avoid_when": "The grid is demo CSS; the parts only enable dragging, so they set no layout and do not save the new order.",
+ "suits": [
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "stat",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "You wrap slots and items and give each an id plus className; the layout takes an id, a config for animation, swap mode and auto-scroll, and an onSwap callback.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "Five static cards and a drag handler that only runs while a card is held.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Reordering is pointer drag only: the grip is an unfocusable div with no role or name, so keyboard users cannot move cards."
+ },
+ "props": [
+  {
+   "name": "id",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "config",
+   "type": "Partial<Config>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "onSwap",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "dragItemOpacity",
+   "type": "number",
+   "default": "100, // default to 100",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The lifted card floats over the slot it is aimed at, hiding the target underneath.",
+  "Cards can only be moved by pointer drag, with no keyboard path through the grips.",
+  "The swapped order lives only in the page state, so a reload resets the grid."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp card grid and a convincing lift and swap; the floating card hides its target.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Swapy Layout Primitives",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8f258f32313a9ac1",
+  "film_hash": "91c964e7d73acb26",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

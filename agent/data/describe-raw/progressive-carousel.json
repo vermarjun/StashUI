@@ -1,0 +1,74 @@
+{
+  "name": "progressive-carousel",
+  "frames": {
+    "code": "3546",
+    "best": 1,
+    "best_why": "A full photo slide with its caption and the progress bar row are both visible and cleanly framed.",
+    "usable": [1, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Full-width photo carousel that auto-advances with thin progress bars.",
+  "summary": "An auto-playing image carousel: one large 16:9 slide with a caption fades to the next every few seconds, while four thin bars below fill to show progress and double as slide buttons.",
+  "title_fix": null,
+  "appearance": "A large rounded photo slide fills the top with a dark gradient at its base carrying a bold white title and a smaller subtitle. Beneath it runs a row of four thin, evenly spaced progress bars, the active one brighter than the rest.",
+  "behaviour": "The slide auto-advances every few seconds: the current photo fades out and the next fades in while the active bar fills from left to right. Clicking a bar fast-forwards to that slide.",
+  "parts": ["photo slide", "caption title", "subtitle", "gradient overlay", "progress bars"],
+  "demo_content": "Slides 'Mountain Vista', 'Forest Path' and 'Desert Dunes' with nature subtitles.",
+  "states": ["active"],
+  "kind": "carousel",
+  "look": ["rounded", "minimal", "airy", "editorial"],
+  "tone": "minimal",
+  "search_phrases": [
+    "auto playing image carousel",
+    "photo slider with progress bars",
+    "hero slideshow with captions",
+    "carousel that fades between slides",
+    "timed image gallery banner",
+    "story style progress slider",
+    "rotating landscape photos",
+    "full width picture slider"
+  ],
+  "resembles": [],
+  "use_when": "A hero or gallery should cycle through a handful of images without visible arrows.",
+  "avoid_when": "Auto-advance cannot be paused and there is no reduced-motion handling, so some users lose control.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["hero", "media"],
+  "traits": {
+    "trigger": ["timer", "click"],
+    "motion": "subtle",
+    "affects": ["image", "fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Duration, initial slide and vertical mode are props on ProgressSlider; slide order and count come from the children you pass, while bar colours are className edits.",
+  "technique": ["motion-library", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A requestAnimationFrame loop updates progress every frame plus a fade animation per slide.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The four bar buttons have no accessible names, the carousel auto-advances with no pause, and it ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "duration", "type": "number", "default": "5000", "required": false},
+    {"name": "fastDuration", "type": "number", "default": "400", "required": false},
+    {"name": "vertical", "type": "boolean", "default": "false", "required": false},
+    {"name": "activeSlider", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 2 and 5 show a near-black slide while the next image loads, so the crossfade flashes empty.",
+    "The carousel auto-advances with no pause control.",
+    "The progress bar buttons have no accessible names."
+  ],
+  "polish": 4,
+  "polish_why": "Clean photo carousel and tidy progress bars; empty transition frames and no pause control are flaws.",
+  "unsure": []
+}

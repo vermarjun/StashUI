@@ -1,0 +1,67 @@
+{
+  "name": "css-image-stacking",
+  "frames": {
+    "code": "9062",
+    "best": 5,
+    "best_why": "Two photos are visibly pinned as a stack, the wide brick building above and the next picture arriving below it.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Building photos pin and pile up, each one a little wider than the last.",
+  "summary": "A dark page of architectural photographs that pin in place as you scroll, each new picture settling over the previous one at a slightly larger width until six images have gathered into a stack.",
+  "title_fix": null,
+  "appearance": "Full-height photos of buildings, centred on a near-black page with rounded corners, growing from about half the width to four fifths. Earlier pictures stay pinned behind the newest one with a thin dark gap along the top.",
+  "behaviour": "Scrolling pins each photo section at the top of the viewport so the next picture glides up over it while being a little wider. The pile builds with every section and then the last photo leaves with the page.",
+  "parts": ["hero heading", "building photo", "pinned section"],
+  "demo_content": "Photos of a red brick tower, a grey apartment block, a brown brick building and a glass high-rise.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": ["dark", "rounded", "editorial", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "photos stack on top of each other on scroll",
+    "sticky image cards building up",
+    "full screen pictures that pile up",
+    "architecture photos pinned while scrolling",
+    "sticky stacking effect for images",
+    "pictures growing wider as you scroll",
+    "photography sequence that layers",
+    "scroll page with overlapping picture cards"
+  ],
+  "resembles": [],
+  "use_when": "A photography page wants big images to gather into a stack as the reader scrolls.",
+  "avoid_when": "Six screens of scroll carry six pictures, all with empty alt text and fixed percentage widths.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "image"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the six photo links and their width classes are written section by section in the file, and the heading and footer copy are fixed too.",
+  "technique": ["css-transition", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "Six large remote photos load up front; the stacking itself is plain CSS sticky.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Every photo has empty alt text, so the stack conveys nothing to screen readers, and smooth scrolling ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [
+    "All six photos have empty alt text and no captions.",
+    "Fixed percentage widths crop the buildings hard in tall or narrow windows.",
+    "Six full screens of scrolling carry six pictures with no text or context."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp large photos and a rhythmic stack; no captions and a bare, text-free sequence.",
+  "unsure": []
+}

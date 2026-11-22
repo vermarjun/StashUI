@@ -1,0 +1,136 @@
+{
+ "name": "card-stack",
+ "frames": {
+  "code": "4411",
+  "best": 6,
+  "best_why": "Frame 6 shows a complete quote card in front with two smaller cards fanned neatly behind it.",
+  "usable": [
+   1,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.4
+ },
+ "tagline": "Quote cards fan into a pile and shuffle themselves every few seconds.",
+ "summary": "A small pile of dark quote cards with the front one at full size and the rest fanned behind, each slightly smaller and higher. On a timer the top card slips to the back so the deck keeps cycling.",
+ "title_fix": null,
+ "appearance": "A stack of dark rounded cards on black with one in front and the edges of two or three fanned behind it. The front card holds a short quote with phrases picked out in emerald green, and a name and role at the bottom.",
+ "behaviour": "Every two and a half seconds the front card drops to the back of the pile and the next rises to the front, growing back to full size, so the deck cycles through its quotes forever. There is no pause, drag or arrow.",
+ "parts": [
+  "front card",
+  "stacked cards",
+  "quote text",
+  "highlighted phrase",
+  "name",
+  "role"
+ ],
+ "demo_content": "Quotes from Manu Arora, Elon Musk, Tyler Durden and Priya Raman with roles and emerald highlighted phrases.",
+ "states": [],
+ "kind": "testimonial-card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "stack of testimonials that rotates",
+  "quotes flipping through a deck",
+  "fanned cards at the back",
+  "auto rotating review cards",
+  "deck of cards with hidden ones behind",
+  "testimonial carousel without arrows",
+  "cards that shuffle on a timer",
+  "layered quote cards stacked up"
+ ],
+ "resembles": [
+  "Apple Wallet"
+ ],
+ "use_when": "Customer quotes should rotate in a compact spot without arrows or dots taking space.",
+ "avoid_when": "Readers must control the pace, or quotes are long enough to need more than a few seconds.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "testimonial",
+  "feature-card",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "items supplies each card's content, name and designation; offset, scaleFactor and duration tune the fan and the timing. Card size and colours are fixed in the classes.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of stacked cards reordered on one interval.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The deck cycles on a timer with no pause or previous/next control and no reduced-motion check, so a quote can vanish mid-read."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "Card[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "offset",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "scaleFactor",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  }
+ ],
+ "issues": [
+  "There is no pause or navigation, so a card flips every 2.6 seconds even while being read.",
+  "Frames 2 and 3 show two cards' text overlapping for a moment mid-flip."
+ ],
+ "polish": 3,
+ "polish_why": "A tidy fanned deck with a smooth cycle, but the mid-flip overlap and missing controls hold it back.",
+ "unsure": [],
+ "title": "Card Stack",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c1a26b3d5388b35d",
+  "film_hash": "15ed535957cd45a7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

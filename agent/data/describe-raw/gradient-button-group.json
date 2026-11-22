@@ -1,0 +1,63 @@
+{
+  "name": "gradient-button-group",
+  "frames": {
+    "code": "7400",
+    "best": 6,
+    "best_why": "The third icon is settled in its recessed slot with the glowing cyan-to-lime ring, and nothing covers it.",
+    "usable": [1, 2, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four icon buttons in a dark tray; the chosen one wears a glowing green ring.",
+  "summary": "An icon toolbar for jumping between app sections, with a sun button that flips the theme. The selected section drops into a recessed slot inside a thin animated gradient ring.",
+  "title_fix": null,
+  "appearance": "A wide near-black rounded tray holds four large square icon buttons - a grid, a bar chart, stacked layers and a server - then a sun button on the right. Inactive icons are dim grey; the active one is bright white inside a darker recessed cell edged by a thin cyan-to-lime ring.",
+  "behaviour": "Clicking an icon springs the recessed well and glowing ring to that cell while its icon brightens and the old one fades to grey. The sun swaps the whole bar between dark and light palettes, and the ring's gradient keeps rotating.",
+  "parts": ["icon tray", "square icon button", "grid icon", "active well", "glowing ring", "theme toggle"],
+  "demo_content": "Four section icons (Dashboard, Analytics, Layers, Storage) and a sun button.",
+  "states": ["hover", "active", "selected"],
+  "kind": "dock",
+  "look": ["dark", "rounded", "glow", "gradient", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "icon bar with glowing green selected item",
+    "dark rounded navigation tray for app sections",
+    "segmented icon switcher with spring animation",
+    "neon gradient ring around active button",
+    "theme toggle sun icon beside nav buttons",
+    "recessed toolbar buttons with inset shadow",
+    "ios dock style icon bar",
+    "switch between pages with icon buttons"
+  ],
+  "resembles": ["iOS Dock"],
+  "use_when": "An app needs a compact, always-visible switcher between a handful of top-level sections.",
+  "avoid_when": "Only four fixed icon slots exist and the items are hardcoded, so adding or renaming a section means editing the source.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["nav", "sidebar"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["background", "border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the four nav items, their icons, labels and both theme palettes live in the source, so changing sections is a file edit.",
+  "technique": ["motion-library", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "Four SVG buttons, one spring layout animation and a CSS spin; idle otherwise.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Icon buttons carry aria-labels with aria-current on the active one, but there are no custom focus styles and the ring spin ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Layered recessed tray and a crisp glowing ring feel deliberate; icon-only labels stay clear.",
+  "unsure": ["kind"]
+}

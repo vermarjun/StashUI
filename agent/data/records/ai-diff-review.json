@@ -1,0 +1,143 @@
+{
+ "name": "ai-diff-review",
+ "frames": {
+  "code": "6888",
+  "best": 5,
+  "best_why": "All files are pending with counts, Accept all and Reject all, plus one expanded diff; later frames are already decided.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.8
+ },
+ "tagline": "Streams an agent's code changes file by file, each accepted or rejected.",
+ "summary": "A compact review panel where an agent's code edits appear file by file as coloured diffs with plus and minus counts. Each file can be accepted, rejected or undone, or all at once, and the header tallies how many were kept.",
+ "title_fix": null,
+ "appearance": "A rounded light panel inside a pale grey frame, its header reading Editing files with green and red line totals. Below sits a stack of white rows, each with a monospace path, a small new tag, change counts, a five-block colour bar and X and tick buttons, one row expanded into a tinted diff.",
+ "behaviour": "The demo writes the diff a line at a time, keeping the current file open. When it stops, each row can be accepted or rejected and becomes an Accepted or Reverted label with an undo arrow; Accept all or Reject all finishes in one go and offers Replay.",
+ "parts": [
+  "header title",
+  "line totals",
+  "file row",
+  "change counts",
+  "colour bar",
+  "accept and reject buttons",
+  "diff lines",
+  "replay button"
+ ],
+ "demo_content": "A postcode validator across lib/validate.ts, app/checkout/form.tsx and its test file.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "loading",
+  "success",
+  "empty"
+ ],
+ "kind": "code-block",
+ "look": [
+  "light",
+  "minimal",
+  "flat",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "review ai code changes file by file",
+  "accept or reject suggested edits",
+  "colored diff with apply buttons",
+  "agent patch approval panel",
+  "plus and minus line counts",
+  "accept all or reject all changes",
+  "undo an accepted code change",
+  "streaming diff review widget"
+ ],
+ "resembles": [
+  "Cursor",
+  "GitHub pull request diff"
+ ],
+ "use_when": "An AI agent edits files and a person should approve each change before it lands.",
+ "avoid_when": "It only shows the diff it is handed; long lines scroll sideways and there is no syntax highlighting.",
+ "suits": [
+  "devtool",
+  "saas",
+  "ai-chat"
+ ],
+ "slot_hints": [
+  "list-item",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a files array of paths and diff hunks plus an onDecision callback; the demo streaming, counts, colours and collapse animation are built in and need a source edit.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of rows and animated diff lines; the demo timer stops after about forty lines.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Buttons are named and expanded rows are wired, but diff line text is only shown visually and never announced."
+ },
+ "props": [
+  {
+   "name": "files",
+   "type": "FileChange[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onDecision",
+   "type": "(path: string, decision: FileDecision) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Long diff lines scroll horizontally with no wrapping."
+ ],
+ "polish": 4,
+ "polish_why": "Clear file-by-file review with tidy state swaps; no syntax highlighting on the diffs.",
+ "unsure": [],
+ "title": "AI Diff Review",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ff241916675c5227",
+  "film_hash": "758e308ebd0d0ef1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

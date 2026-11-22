@@ -1,0 +1,66 @@
+{
+  "name": "comp-584",
+  "frames": {
+    "code": "3561",
+    "best": 2,
+    "best_why": "The search holds a typed query while both header rows are fully visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two-row header with a command-K search box above a strip of section links.",
+  "summary": "A dark site header whose top row has a logo, a centered search field with a shortcut hint, a bell and an avatar, plus a second row of Home, Features, Pricing and About links.",
+  "title_fix": null,
+  "appearance": "A two-row dark header: the top row has a starburst logo, a centered rounded search field with a magnifier and a small ⌘K hint, then a bell and avatar; a divider separates a second row of four nav links.",
+  "behaviour": "Typing fills the search field with a query and a native clear button. Nav links brighten on hover, and the bell drops a notifications panel from the top right that overlaps the link row.",
+  "parts": ["logo", "search field", "shortcut hint", "nav strip", "nav links", "notification bell", "user avatar", "notifications panel"],
+  "demo_content": "The search example reads design system; links are Home, Features, Pricing and About; updates mention Chris Tompson.",
+  "states": ["hover", "focus", "open", "active"],
+  "kind": "site-header",
+  "look": ["dark", "flat", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "header with search and secondary nav",
+    "two row navigation bar",
+    "search field with command k hint",
+    "top bar with notifications and avatar",
+    "site header with links below",
+    "app search in header",
+    "navigation strip under header",
+    "header with keyboard shortcut in search"
+  ],
+  "resembles": [],
+  "use_when": "A site wants a prominent search plus a secondary row of section links.",
+  "avoid_when": "The nav strip hides on mobile, and the search shows a ⌘K hint that is never actually bound.",
+  "suits": ["saas", "docs", "marketing"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover", "click", "focus"],
+    "motion": "subtle",
+    "affects": ["background", "text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Search placeholder, nav labels, the active link and the ⌘K hint are written in the file; notification and user menus are separate pieces.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Two rows of links, one input and two small menus.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The search field has no label beyond its placeholder, the logo link is unnamed, and ⌘K is decorative only."
+  },
+  "props": [],
+  "issues": [
+    "The ⌘K hint is displayed but no keyboard shortcut is wired up.",
+    "The open notifications panel covers the section link row."
+  ],
+  "polish": 4,
+  "polish_why": "The two-tier header is well balanced; the shortcut hint is fake and the panel covers the nav.",
+  "unsure": []
+}

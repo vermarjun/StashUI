@@ -1,0 +1,148 @@
+{
+ "name": "ai-approval",
+ "frames": {
+  "code": "4544",
+  "best": 3,
+  "best_why": "The question, context and resolved choice row are all clear, with the alternatives fully collapsed.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.4
+ },
+ "tagline": "Agent approval card where the picked option swallows the others.",
+ "summary": "A human-in-the-loop card an AI agent shows before acting: a question, a context line and three choice buttons. Picking one collapses the rest and leaves the choice as a single checked row.",
+ "title_fix": null,
+ "appearance": "A rounded dark panel holds a question in bold white, a small grey context line and three stacked rounded option buttons, the last outlined in red. The chosen state replaces them with one pale filled row carrying a check.",
+ "behaviour": "Clicking an option makes the alternatives fade and shrink away while the choice becomes a filled row that expands into their space. The selection is final until the parent resets it.",
+ "parts": [
+  "question",
+  "context line",
+  "option buttons",
+  "chosen row",
+  "check icon"
+ ],
+ "demo_content": "Question \"How should I handle the orphaned rows?\" with archive, report and delete options for 2,418 rows.",
+ "states": [
+  "selected"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "ai agent asks for approval",
+  "human in the loop choice card",
+  "pick one option then others vanish",
+  "approve before deleting data",
+  "agent confirmation prompt with choices",
+  "destructive action confirmation",
+  "chat card with three options",
+  "let me choose before you act"
+ ],
+ "resembles": [
+  "ChatGPT tool approval"
+ ],
+ "use_when": "An AI agent needs explicit human sign-off before a risky or irreversible action.",
+ "avoid_when": "Choosing is final with no undo inside the card, and it assumes a parent resets or replays it.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "list-item",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Options with id, label, detail and a destructive flag, the question, extra context children, a decide callback and a resolved id are props.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Three buttons and one layout animation; idle until a choice is made.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Options are real buttons with text labels, but there is no group label tying the question to the choices."
+ },
+ "props": [
+  {
+   "name": "options",
+   "type": "AIApprovalOption[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "question",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onDecide",
+   "type": "(option: AIApprovalOption) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "resolvedId",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clear, decisive interaction with a satisfying collapse; the context line is low contrast.",
+ "unsure": [],
+ "title": "AI Approval",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9079d05a162f8a7d",
+  "film_hash": "2244e6b27cfd03d5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

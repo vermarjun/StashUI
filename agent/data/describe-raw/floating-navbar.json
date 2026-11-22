@@ -1,0 +1,70 @@
+{
+  "name": "floating-navbar",
+  "frames": {
+    "code": "3936",
+    "best": 4,
+    "best_why": "Navbar is fully visible and centred over dark content without covering the heading.",
+    "usable": [3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Menu bar that slides away as you read and floats back when you scroll up.",
+  "summary": "A fixed pill of four text links with a Login button. It sits at the top of the viewport and hides while the page scrolls down, sliding back into view the moment you scroll up.",
+  "title_fix": null,
+  "appearance": "One slim, fully rounded pill floating at the top centre of the page, holding four small text links separated by a thin divider from a filled Login button. It has a soft shadow and a translucent backdrop.",
+  "behaviour": "It is absent at the top and whenever the page scrolls down. Scrolling up brings it back with a quick slide and fade from above, and the links lighten under the pointer.",
+  "parts": ["nav pill", "nav link", "divider", "login button"],
+  "demo_content": "Hero headline The navbar hides while you read, then four numbered sections on design systems.",
+  "states": ["hover"],
+  "kind": "site-header",
+  "look": ["dark", "pill", "minimal", "rounded", "glass"],
+  "tone": "minimal",
+  "search_phrases": [
+    "menu that hides when scrolling down",
+    "floating pill navigation at top",
+    "header that appears on scroll up",
+    "sticky menu bar with login button",
+    "navigation that disappears while reading",
+    "smart navbar for landing page",
+    "top menu that slides away",
+    "translucent rounded nav with links"
+  ],
+  "resembles": [],
+  "use_when": "Long marketing pages where readers want the navigation out of the way until they need it.",
+  "avoid_when": "Hidden at the very top, so first-time visitors see no navigation until they scroll.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "navItems supplies a name, link and optional icon per entry; the Login label, colours and scroll thresholds are written in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One animated pill driven by scroll progress; nothing runs when idle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "On small screens links collapse to icons with no text label, and no focus-visible styling is added."
+  },
+  "props": [
+    {"name": "navItems", "type": "array", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "When it reappears it overlaps the section heading in frames 3 and 6.",
+    "No focus-visible styling beyond the browser default.",
+    "At the top of the page no navigation is visible at all."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy pill with a clear slide-in; it reappears over body text and relies on default focus rings.",
+  "unsure": ["appearance"]
+}

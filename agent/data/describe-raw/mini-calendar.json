@@ -1,0 +1,77 @@
+{
+  "name": "mini-calendar",
+  "frames": {
+    "code": "3501",
+    "best": 3,
+    "best_why": "Frame 3 shows a selected day in white, today's accent and a populated two-item agenda.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A week of day chips with arrows to page, and the chosen day's agenda below.",
+  "summary": "A compact horizontal strip of seven stacked month-and-day buttons between previous and next arrows. Clicking a day marks it and lists that day's events in a panel underneath.",
+  "title_fix": null,
+  "appearance": "A short rounded bordered strip holding a left chevron, seven narrow day cells with a tiny grey month above a bold number, and a right chevron on black. The selected day is a white pill, today a grey one; a bordered card below lists times and event titles.",
+  "behaviour": "The arrows shift the window a whole week at a time. Hovering a day tints it grey and clicking it fills it white, while the panel below swaps to that date's heading and its list of events.",
+  "parts": ["calendar strip", "previous arrow", "day cell", "month text", "day number", "next arrow", "agenda panel", "event row"],
+  "demo_content": "Late November days and an agenda with items like Design review, Lunch with Priya and Climbing session.",
+  "states": ["hover", "selected", "focus", "active"],
+  "kind": "calendar",
+  "look": ["dark", "outlined", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "week strip date picker",
+    "pick a day and see events",
+    "horizontal calendar with arrows",
+    "small date selector row",
+    "agenda picker for one week",
+    "day chips with month labels",
+    "compact date strip for scheduling",
+    "prev next arrow day selector"
+  ],
+  "resembles": [],
+  "use_when": "A page needs a narrow date selector with the selected day's schedule right beside it.",
+  "avoid_when": "It only pages through whole weeks and has no month grid, so reaching a distant date takes repeated clicks.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "hover", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Set the number of days, the starting date and the selected date through props, and compose the arrows, day cells and any agenda yourself; styling comes in as classes.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Seven plain buttons and two chevrons; date-fns only computes the day labels.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The chevron arrows are icon-only with no label, so screen readers announce them as unlabelled buttons."
+  },
+  "props": [
+    {"name": "days", "type": "number", "default": "5", "required": false},
+    {"name": "value", "type": "Date", "default": null, "required": false},
+    {"name": "defaultValue", "type": "Date", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(date: Date | undefined) => void", "default": null, "required": false},
+    {"name": "startDate", "type": "Date", "default": null, "required": false},
+    {"name": "defaultStartDate", "type": "Date", "default": "new Date()", "required": false},
+    {"name": "onStartDateChange", "type": "(date: Date | undefined) => void", "default": null, "required": false},
+    {"name": "direction", "type": "\"prev\" | \"next\"", "default": null, "required": true},
+    {"name": "date", "type": "Date", "default": null, "required": true},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "Every cell repeats the month, so the strip is cluttered when all seven days share one month.",
+    "In frame 6 paging moves past the selected day, leaving no selected chip visible in the strip."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy strip with clear selected and today states; repeated months and off-window selection add noise.",
+  "unsure": []
+}

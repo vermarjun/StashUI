@@ -1,0 +1,68 @@
+{
+  "name": "command-button",
+  "frames": {
+    "code": "8889",
+    "best": 6,
+    "best_why": "All three buttons are shown with the New issue caps sunk and its action reported below.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Its shortcut is drawn as real keycaps that sink when you press the keys.",
+  "summary": "A small action button with its keyboard shortcut shown as raised keycaps. Pressing the combination anywhere on the page pushes each cap down and fires the button, and a caption can report what happened.",
+  "title_fix": null,
+  "appearance": "Three light-grey rounded buttons sit in a row on black, each with a dark label and a cluster of tiny raised keycaps for its shortcut. A thin grey caption line runs underneath.",
+  "behaviour": "Each keycap stands a couple of pixels above the button and drops flush while its key is held, so the caps move in time with the real keyboard. When the whole combination matches, the button clicks and the caption below updates; hovering and pressing the button also darken it.",
+  "parts": ["button surface", "button label", "modifier keycap", "letter keycap", "caption"],
+  "demo_content": "Search docs, New issue and Share buttons with mod+K, mod+Shift+I and mod+S; a caption echoes the action.",
+  "states": ["hover", "focus", "active", "disabled"],
+  "kind": "button",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "button with keyboard shortcut keycaps",
+    "command k button for search",
+    "show shortcut keys on a clickable button",
+    "keycaps that press down with the keyboard",
+    "button fired from a keyboard shortcut",
+    "hotkey hint beside a button label",
+    "cmd k search trigger",
+    "keyboard shortcut drawn as keys"
+  ],
+  "resembles": [],
+  "use_when": "A primary action has a memorable shortcut and you want it discoverable on the button itself.",
+  "avoid_when": "Shortcuts that clash with browser or OS conventions; global capture can swallow keys.",
+  "suits": ["saas", "devtool", "docs"],
+  "slot_hints": ["primary-cta", "secondary-cta"],
+  "traits": {
+    "trigger": ["click", "keyboard", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "shadow", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label comes in as children and the shortcut and page-wide capture are props; keycap shape and colours are in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Three buttons and one global key listener; keycap motion is a CSS translate and shadow.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Native buttons carry aria-keyshortcuts and visible labels; the keycap motion has no reduced-motion fallback."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": "\"Search\"", "required": false},
+    {"name": "shortcut", "type": "string", "default": "\"mod+k\"", "required": false},
+    {"name": "global", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The keycap glyphs and the hint caption are tiny and faint on the dark buttons."],
+  "polish": 4,
+  "polish_why": "Tactile keycaps and a genuinely working shortcut; the caps and hint text are very small.",
+  "unsure": ["theme", "responsive"]
+}

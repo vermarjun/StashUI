@@ -1,0 +1,67 @@
+{
+  "name": "inspira-animated-tooltip",
+  "frames": {
+    "code": "8985",
+    "best": 3,
+    "best_why": "Frame 3 shows the full-size tilted tooltip with name and role while the whole avatar row stays in view.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Overlapping face row; hovering one pops a tilted name card.",
+  "summary": "A row of overlapping circular portraits with white rings. Hovering a face springs a black tooltip above it with the person's name and role, tilting and sliding as the pointer moves sideways.",
+  "title_fix": null,
+  "appearance": "Five small round portraits overlap left to right, each ringed in thick white, on a dark stage. A hovered face lifts a small black rounded card above it holding a bold white name, a dimmer role line and a thin green-to-blue gradient edge.",
+  "behaviour": "Entering a face hides the others' cards and springs its own up from below. Moving the cursor across the face rotates and shifts the card, and leaving drops it away again.",
+  "parts": ["avatar row", "portrait", "white ring", "tooltip", "name", "role", "gradient edge"],
+  "demo_content": "Prompt 'Hover over the avatars' with five portraits: Sarah Chen, Marcus Johnson, Priya Patel and two others.",
+  "states": ["hover"],
+  "kind": "avatar",
+  "look": ["dark", "rounded", "colorful", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "overlapping avatars with names on hover",
+    "team members row with name tooltip",
+    "profile picture stack that reveals details",
+    "tooltip that tilts with the cursor",
+    "meet the team avatars for about page",
+    "user avatars with hover cards",
+    "face pile with role labels",
+    "avatar group for a blog author list"
+  ],
+  "resembles": [],
+  "use_when": "A compact team or contributor row should reveal each person's name and role without leaving the page.",
+  "avoid_when": "Names appear on mouse hover only, so touch and keyboard users never see who anyone is.",
+  "suits": ["saas", "portfolio", "docs"],
+  "slot_hints": ["avatar", "badge", "testimonial"],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "image"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "items takes an id, name, designation and image per person; the tilt strength, spring and tooltip colours live in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Five images and a single spring tooltip; nothing runs until a pointer enters.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Each photo has alt text, but the hover target is a plain div with no tab stop, so keyboard users cannot open the tooltip."
+  },
+  "props": [
+    {"name": "items", "type": "TooltipItem[]", "default": null, "required": true}
+  ],
+  "issues": [
+    "Tooltips on the end avatars spill past the row, and in frames 2 and 4 they sit over the prompt text."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp avatar row and a playful cursor-tilted card; end tooltips overhang their neighbours.",
+  "unsure": ["responsive"]
+}

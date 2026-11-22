@@ -1,0 +1,80 @@
+{
+  "name": "FaultyTerminal-TS-TW",
+  "frames": {
+    "code": "1310",
+    "best": 3,
+    "best_why": "A dense green glyph cloud fills the upper half behind the title, showing the CRT grid clearly.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Green glyphs flicker into cloudy shapes on a black CRT grid.",
+  "summary": "A full-screen green terminal grid of tiny glyphs that clump into drifting cloud shapes, with scanlines, flicker and noise, plus a cursor that brightens a ripple near it.",
+  "title_fix": null,
+  "appearance": "Black filled with a fine grid of tiny pale-green glyphs and squares, clustering into soft clouds and bands so the surface reads like a malfunctioning terminal display. White text sits over the centre, and faint scanlines and curvature suggest a curved CRT screen.",
+  "behaviour": "The green glyph clusters drift and flicker, with sections cutting out and returning as the noise field moves. Moving the cursor adds a bright ripple around the pointer, and a load animation fades the grid in from the edges.",
+  "parts": ["glyph grid", "green cloud", "scanline", "heading", "subtitle"],
+  "demo_content": "A white heading 'System failure' with the line 'A glitching CRT grid that reacts to the cursor.'",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "textured", "retro", "technical", "glow"],
+  "tone": "technical",
+  "search_phrases": [
+    "green terminal grid background",
+    "crt screen glitch effect",
+    "matrix style green noise display",
+    "old monitor scanline animation",
+    "hacker terminal dots moving",
+    "green pixel clouds on black",
+    "retro computer screen overlay",
+    "glitchy green characters background"
+  ],
+  "resembles": ["The Matrix"],
+  "use_when": "You want a cyberpunk or error-state backdrop that suggests a broken screen behind an alert or 404.",
+  "avoid_when": "The busy green grid and flicker make body text hard to read, and the effect runs continuously.",
+  "suits": ["portfolio", "devtool"],
+  "slot_hints": ["page-background", "hero", "empty-state"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Props set scale, grid multiplier, digit size, time scale, pause, scanlines, glitch, flicker, noise, chromatic aberration, dither, curvature, tint, brightness, mouse reaction and its strength.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full-screen WebGL shader with layered noise, glyph, scanline and glitch passes every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The glitch and flicker run constantly and ignore reduced-motion, which can be uncomfortable; the canvas has no label."
+  },
+  "props": [
+    {"name": "scale", "type": "number", "default": "1", "required": false},
+    {"name": "gridMul", "type": "[number, number]", "default": "[2, 1]", "required": false},
+    {"name": "digitSize", "type": "number", "default": "1.5", "required": false},
+    {"name": "timeScale", "type": "number", "default": "0.3", "required": false},
+    {"name": "tint", "type": "string", "default": "'#ffffff'", "required": false},
+    {"name": "brightness", "type": "number", "default": "1", "required": false},
+    {"name": "glitchAmount", "type": "number", "default": "1", "required": false},
+    {"name": "flickerAmount", "type": "number", "default": "1", "required": false},
+    {"name": "scanlineIntensity", "type": "number", "default": "0.3", "required": false},
+    {"name": "noiseAmp", "type": "number", "default": "1", "required": false},
+    {"name": "curvature", "type": "number", "default": "0.2", "required": false},
+    {"name": "mouseReact", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "Constant flicker and glitch can be uncomfortable and ignore reduced-motion.",
+    "The dense green glyphs make the small overlaid tagline hard to read.",
+    "The busy grid would overwhelm any body text placed on top of it."
+  ],
+  "polish": 3,
+  "polish_why": "Convincing broken-CRT texture, but the dense flicker is busy and the subtitle is hard to read.",
+  "unsure": []
+}

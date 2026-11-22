@@ -1,0 +1,71 @@
+{
+  "name": "ShapeGrid-TS-TW",
+  "frames": {
+    "code": "5233",
+    "best": 5,
+    "best_why": "Longest run of filled violet cells trails the cursor across the grid.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A violet grid scrolls diagonally and lights up under the cursor.",
+  "summary": "A canvas of thin violet squares covers the stage and slides on a diagonal. Moving the pointer fills the hovered cell and leaves a short trailing line of lit cells behind it.",
+  "title_fix": null,
+  "appearance": "A near-black stage is covered edge to edge with a grid of thin violet squares, evenly spaced. A few cells fill solid violet, and a dark vignette fades the corners away.",
+  "behaviour": "The grid drifts on a diagonal and wraps round without a seam. Wherever the pointer goes, the cell under it lights up and a short trail of filled cells fades out behind.",
+  "parts": ["grid cells", "filled cells", "vignette"],
+  "demo_content": "A 44px square grid in violet on near-black with a six-cell hover trail.",
+  "states": ["hover"],
+  "kind": "background",
+  "look": ["dark", "outlined", "dense", "minimal"],
+  "tone": "technical",
+  "search_phrases": [
+    "purple grid background with cursor trail",
+    "scrolling square grid pattern",
+    "grid that lights up on hover",
+    "dark neon graph paper backdrop",
+    "moving line grid for a hero",
+    "interactive dot grid effect",
+    "blueprint grid behind content",
+    "hover trail on a square grid"
+  ],
+  "resembles": [],
+  "use_when": "A dark tech or product section wants a moving grid that answers the pointer.",
+  "avoid_when": "Hundreds of thin lines can look busy behind small copy and cost frames on weak phones.",
+  "suits": ["saas", "devtool", "portfolio"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Direction, speed, cell size, border and hover colours, shape and trail length are props; the vignette colour is hardcoded.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "Redraws roughly 300 stroked cells on a 2D canvas every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A canvas backdrop with no labels; the scroll and hover trail ignore reduced-motion settings."
+  },
+  "props": [
+    {"name": "direction", "type": "'diagonal' | 'up' | 'right' | 'down' | 'left'", "default": "'right'", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "borderColor", "type": "string", "default": "'#999'", "required": false},
+    {"name": "squareSize", "type": "number", "default": "40", "required": false},
+    {"name": "hoverFillColor", "type": "string", "default": "'#222'", "required": false},
+    {"name": "shape", "type": "'square' | 'hexagon' | 'circle' | 'triangle'", "default": "'square'", "required": false},
+    {"name": "hoverTrailAmount", "type": "number", "default": "0", "required": false}
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Clean, even grid and a readable hover trail; the lines are faint and only one shape is shown.",
+  "unsure": ["theme"]
+}

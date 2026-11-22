@@ -1,0 +1,66 @@
+{
+  "name": "thumbnail-slider",
+  "frames": {
+    "code": "4794",
+    "best": 1,
+    "best_why": "Frame 1 shows a fully loaded landscape slide with the thumbnail strip beneath and the first thumb highlighted.",
+    "usable": [1, 6],
+    "render": "partial",
+    "render_note": "Frames 2-5 show large blank areas where slide photos have not loaded.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A large photo above a dimmed strip of thumbnails, one lit.",
+  "summary": "A photo viewer with one large rounded frame on top and a row of small previews beneath. Picking a thumbnail swaps the main picture and lights that thumbnail.",
+  "title_fix": null,
+  "appearance": "A wide rounded photo slide above a row of seven small square thumbnails; the current thumbnail has a light border and the others are dimmed. The loaded main image is a lake scene with rocks and autumn trees.",
+  "behaviour": "Clicking a thumbnail jumps the large photo to that slide and moves the highlight; the strips stay in sync as they slide.",
+  "parts": ["main photo", "thumbnail strip", "thumbnail", "active border", "dimmed thumbnail"],
+  "demo_content": "A lake with autumn trees, a misty pond, flowers and a cherry blossom branch",
+  "states": ["hover", "active", "loading"],
+  "kind": "carousel",
+  "look": ["dark", "minimal", "colorful", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "large photo with thumbnail strip",
+    "click small pictures to change the big one",
+    "image gallery with preview row",
+    "product photos with thumbnails below",
+    "photo viewer with filmstrip",
+    "choose a picture from small previews",
+    "gallery with a highlighted thumbnail",
+    "property photos with thumb selector"
+  ],
+  "resembles": ["Amazon product photo gallery"],
+  "use_when": "A gallery has several photos and users want to jump to one quickly.",
+  "avoid_when": "Seven remote photos load at once, so blank slides appear on a slow connection.",
+  "suits": ["ecommerce", "portfolio"],
+  "slot_hints": ["media"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Seven image URLs are hardcoded; slide height and thumbnail size are classes in the file.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Seven full-size photos plus thumbnails load together; scrolling is light.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Thumbnails are clickable divs, not buttons, and every main photo's alt text is just \"image\"."
+  },
+  "props": [],
+  "issues": [
+    "Every main image uses the alt text \"image\".",
+    "Several frames show slide areas half blank while photos load."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy viewer with a clear active thumbnail; blank-loading slides and generic alts detract.",
+  "unsure": ["resembles"]
+}

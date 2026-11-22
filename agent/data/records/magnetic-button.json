@@ -1,0 +1,139 @@
+{
+ "name": "magnetic-button",
+ "frames": {
+  "code": "4691",
+  "best": 3,
+  "best_why": "The light button is visibly pulled down and right inside a lit blue dashed field, with the pointer beside it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "Two buttons tug toward your cursor inside a dashed blue field.",
+ "summary": "A pair of buttons with a padded hit area; when the pointer enters, the button drifts toward it and a dashed blue field lights up, springing back when the cursor leaves.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holds a bold white title, a short grey line and two buttons: a light filled one and a dark outlined one. A dashed blue rectangle with a faint blue wash surrounds whichever button is hovered.",
+ "behaviour": "Moving the pointer into a button's padded field pulls the button toward the cursor up to a set distance while the dashed outline and blue tint fade in. Leaving lets a spring carry it back to centre.",
+ "parts": [
+  "card",
+  "title",
+  "subtext",
+  "filled button",
+  "outlined button",
+  "dashed field"
+ ],
+ "demo_content": "Title 'Magnetic button', a hint about the dashed field, and Get started / Documentation buttons.",
+ "states": [
+  "hover"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "button that follows the cursor",
+  "magnetic hover effect",
+  "button pulled toward the mouse",
+  "playful cta for a landing page",
+  "dashed box that highlights on hover",
+  "springy button interaction",
+  "cursor aware call to action",
+  "interactive button that leans toward you"
+ ],
+ "resembles": [],
+ "use_when": "A hero or pricing call to action should feel tactile and invite a little play before the click.",
+ "avoid_when": "Touch and keyboard users get none of it, and an already small target shifts away as the pointer nears.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "border",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass any children and set strength, maxDistance and the hit-area className; the spring and the blue highlight colour are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One spring transform updated on pointer move, idle the rest of the time.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The pull happens only on pointer move, and no focus style or reduced-motion check is added to the wrapper."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "maxDistance",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Tactile pull and a clear hover field; the dashed outline is easy to miss at rest.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Magnetic Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "767fb0cee4f40dac",
+  "film_hash": "dd751932d5643120",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

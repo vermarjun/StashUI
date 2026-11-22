@@ -1,0 +1,72 @@
+{
+  "name": "components-community-share-button",
+  "frames": {
+    "code": "6249",
+    "best": 4,
+    "best_why": "The hover state shows the GitHub, X and Facebook icons fully risen inside the button.",
+    "usable": [1, 2, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hovering swaps the Share label for GitHub, X and Facebook icons.",
+  "summary": "A wide pale button showing a share glyph and the word Share; on hover the label slides away and three social icons pop up in its place, each lifting when pointed at.",
+  "title_fix": null,
+  "appearance": "A wide, rounded rectangle of pale grey on a near-black stage, with a black share glyph and the word Share centred inside. Swapped, the same surface holds three black icons spaced in a row.",
+  "behaviour": "On hover the label slides up and fades out while the three icons spring up from below; leaving reverses it. Each icon also jumps a little higher when the pointer reaches it.",
+  "parts": ["button", "share icon", "label", "social icons"],
+  "demo_content": "The word Share, with GitHub, X and Facebook icons.",
+  "states": ["hover"],
+  "kind": "button",
+  "look": ["light", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "button that reveals social icons on hover",
+    "sharing control with github and x",
+    "hover to show share destinations",
+    "one click social sharing control",
+    "button morphs into social links",
+    "share post to facebook and twitter",
+    "cta that opens platform choices",
+    "wide pill button with share arrow"
+  ],
+  "resembles": [],
+  "use_when": "A button should offer several share destinations without opening a menu or modal.",
+  "avoid_when": "Touch has no hover, so the platform icons stay hidden until a tap, which also counts as the share.",
+  "suits": ["marketing", "blog", "social"],
+  "slot_hints": ["secondary-cta", "primary-cta"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["children", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label comes in as children, and size, icon side and a per-platform callback are props; the three platforms and their icons are fixed in source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One button with a short slide and three icons; idle when not hovered.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The platform icons are clickable divs with no role or label that appear only on hover, so keyboard and screen-reader users cannot use them."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "size", "type": "sm | md | lg | default", "default": null, "required": false},
+    {"name": "icon", "type": "prefix | suffix", "default": null, "required": false},
+    {"name": "onIconClick", "type": "(platform: 'github' | 'x' | 'facebook') => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The platform icons are unlabeled clickable divs, so they are unreachable by keyboard.",
+    "The main button has no click action of its own, so clicking the Share label does nothing."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp swap and a springy icon reveal; unlabeled divs and a dead base click hold it back.",
+  "unsure": ["responsive"]
+}

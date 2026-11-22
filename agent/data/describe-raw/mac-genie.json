@@ -1,0 +1,66 @@
+{
+  "name": "mac-genie",
+  "frames": {
+    "code": "9583",
+    "best": 4,
+    "best_why": "Window sits fully open and centred with all three board columns readable, while the dock shows below it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Desktop dock whose app icons swell and fling open a window.",
+  "summary": "A miniature desktop with a translucent dock of app icons. Hovering makes the nearest icons grow, and clicking one sends a window up out of the dock through a triangular genie morph; closing it flies the window back down.",
+  "title_fix": null,
+  "appearance": "A near-black desktop with a faint menubar along the top and six rounded app icons in a translucent dock at the bottom centre. When opened, a blue window with a small toolbar and three task columns floats above the dock, with a dot under the active icon.",
+  "behaviour": "Moving the pointer along the dock magnifies the icon under it and its neighbours. Clicking an icon grows a window out of that icon in a triangular canvas morph; clicking again pulls the window back into the dock. The window stays still otherwise.",
+  "parts": ["desktop background", "menubar", "app icons", "active dot", "window", "task columns"],
+  "demo_content": "A Trello-style board with To Do, In Progress and Done columns holding cards like 'Setup repo' and 'Auth flow'.",
+  "states": ["hover", "active", "open"],
+  "kind": "dock",
+  "look": ["dark", "glass", "colorful", "rounded", "3d"],
+  "tone": "playful",
+  "search_phrases": [
+    "macos dock with zooming icons",
+    "genie effect window animation",
+    "app launcher bar at bottom of screen",
+    "icons that grow when you hover",
+    "desktop window opening effect",
+    "dock like an apple computer",
+    "click an icon to morph open a window",
+    "translucent icon bar for a landing page"
+  ],
+  "resembles": ["macOS Dock"],
+  "use_when": "You are recreating a desktop-style launcher and want windows to spring out of the icon that opened them.",
+  "avoid_when": "Needs a tall container and one-time html-to-image snapshots; the apps, window content and wallpaper are built in.",
+  "suits": ["portfolio", "marketing", "devtool"],
+  "slot_hints": ["hero", "nav", "decoration"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "image"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The app list, their icons, the window contents and the desktop image are written into the file, so any change means editing the source. Sizing and outer classes are the only easy knobs.",
+  "technique": ["motion-library", "canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "Six spring-driven icons, a canvas genie for the 500ms transition and one-time snapshots.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Magnification is pointer-only and neither the genie canvas nor the floating window has reduced-motion handling or a dialog role."
+  },
+  "props": [],
+  "issues": [
+    "Frame 1 shows only the dock, so the window half of the component is absent there",
+    "The menubar labels at the top are barely visible against the dark desktop"
+  ],
+  "polish": 4,
+  "polish_why": "Convincing dock and genie morph; the desktop is very dark and the menubar barely reads.",
+  "unsure": ["a11y.keyboard", "a11y.focus_visible"]
+}

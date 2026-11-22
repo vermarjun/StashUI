@@ -1,0 +1,109 @@
+{
+  "name": "comp-511",
+  "frames": {
+    "code": "8792",
+    "best": 4,
+    "best_why": "Calendar open with 19 circled and the button already reading November 19th, 2026.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Date button that drops open a single-month calendar.",
+  "summary": "A field labelled Date picker: a dark outlined button reading Pick a date beside a calendar icon. Pressing it opens a floating month calendar, and choosing a day rewrites the button with a full date.",
+  "title_fix": null,
+  "appearance": "A small label sits above a full-width outlined button with grey placeholder text on the left and a calendar glyph on the right. Opened, a rounded panel below shows a month name between arrows, weekday initials and six rows of day numbers.",
+  "behaviour": "Clicking the button fades the calendar in under it; hovering a day leaves a soft disc and clicking one circles it white while the button text becomes something like November 19th, 2026. The panel stays open after a pick.",
+  "parts": [
+    "field label",
+    "trigger button",
+    "placeholder date text",
+    "calendar icon",
+    "popover panel",
+    "month heading",
+    "day grid",
+    "selected day"
+  ],
+  "demo_content": "November 2026 with 19 chosen; caption reads \"Built with React DayPicker\".",
+  "states": [
+    "open",
+    "hover",
+    "focus",
+    "selected"
+  ],
+  "kind": "calendar",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "date picker button that opens a calendar",
+    "single date field with popup calendar",
+    "choose one day from a floating month",
+    "form input for picking a day",
+    "date field showing november 19th",
+    "popup calendar next to a button",
+    "dropdown month view for one date",
+    "click a button then choose a day"
+  ],
+  "resembles": [],
+  "use_when": "A form needs one date and the calendar should stay hidden until the field is pressed.",
+  "avoid_when": "Only one month is offered at a time, so a date far from the current month takes several arrow clicks.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "keyboard"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "border"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label, placeholder, caption and date format are written in the file; button width and popover alignment are fixed in the source as well.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "One button and a month calendar drawn only while the popover is open.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The trigger has a linked label and a visible focus outline; the chosen date is only carried as plain button text."
+  },
+  "props": [],
+  "issues": [
+    "The open popover covers its own caption line in the opening frames.",
+    "Only one month can be reached at a time.",
+    "The caption credits the calendar library instead of the control."
+  ],
+  "polish": 4,
+  "polish_why": "Clean labelled trigger and a tidy calendar; the panel overlapping its caption is the only blemish.",
+  "unsure": [
+    "states"
+  ]
+}

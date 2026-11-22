@@ -1,0 +1,63 @@
+{
+  "name": "comp-424",
+  "frames": {
+    "code": "4380",
+    "best": 1,
+    "best_why": "Shows the complete white tag and its X clearly, before the cursor arrives or the tag is dismissed.",
+    "usable": [1, 2],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A pale rounded tag with a small X that makes it disappear.",
+  "summary": "A white pill reading Removable next to a thin grey X; pressing the X removes the tag, leaving the stage empty.",
+  "title_fix": null,
+  "appearance": "A white capsule, roughly 300px wide on black, with dark grey sentence-case text and a slim grey X tucked at its right end. Ends are fully rounded and there is no border or shadow.",
+  "behaviour": "Hovering the X darkens it toward black; clicking it deletes the whole badge at once, and the stage goes blank with no fade or undo.",
+  "parts": ["pill", "label text", "close button", "x icon"],
+  "demo_content": "The single word Removable.",
+  "states": ["hover", "focus"],
+  "kind": "badge",
+  "look": ["rounded", "minimal", "light", "pill", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "tag with an x to remove it",
+    "dismissible filter chip",
+    "delete a label with small cross",
+    "keyword chip users can close",
+    "token field removable tag",
+    "close button inside a pill",
+    "get rid of a selected item tag",
+    "white pill with cross icon"
+  ],
+  "resembles": ["Gmail recipient chip"],
+  "use_when": "Letting people clear applied filters, tags or recipients one at a time.",
+  "avoid_when": "When removal must be reversible: the tag vanishes instantly with no undo or motion hint.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["badge", "form-field"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label word is hardcoded, so renaming it means editing the file; the pill look comes from the shared badge component and its class list.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One small button with a colour transition; no library or animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The X button carries no accessible name, so screen readers announce an unnamed button; there is no reduced-motion handling."
+  },
+  "props": [],
+  "issues": ["The close button has no aria-label, so assistive tech meets an unnamed button."],
+  "polish": 3,
+  "polish_why": "Crisp simple capsule with a tidy close affordance; otherwise a familiar default badge.",
+  "unsure": []
+}

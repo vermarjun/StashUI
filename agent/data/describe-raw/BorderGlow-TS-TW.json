@@ -1,0 +1,79 @@
+{
+  "name": "BorderGlow-TS-TW",
+  "frames": {
+    "code": "1640",
+    "best": 2,
+    "best_why": "A violet glow runs along most of the border at its brightest, showing the effect at full strength.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Violet light creeps along the border toward the cursor.",
+  "summary": "A dark, softly shadowed card whose border and a small outer halo brighten with a violet mesh gradient toward whichever edge the pointer approaches, then fade when it leaves.",
+  "title_fix": null,
+  "appearance": "A rounded dark card floating on a near-black stage, holding a small outlined 'Pro plan' pill, a bold white heading, a short grey paragraph, a large $24 price and a full-width white button. The card edge is a thin line that can light up violet and blue with a soft halo outside.",
+  "behaviour": "As the pointer moves toward an edge, a cone of gradient light grows along that part of the border and a soft glow blooms outside it; moving away fades both out. In the demo an automatic sweep also runs the light once around the card.",
+  "parts": ["card", "plan pill", "heading", "paragraph", "price", "button", "border light"],
+  "demo_content": "A pricing card reading 'Pro plan', the heading 'Border Glow', the price $24 per month and a 'Get started' button.",
+  "states": ["hover"],
+  "kind": "border-effect",
+  "look": ["dark", "rounded", "glow", "gradient", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "card border that glows near the cursor",
+    "purple light around a pricing card",
+    "cursor following border light effect",
+    "glowing outline on hover",
+    "mesh gradient edge on a card",
+    "spotlight border that tracks the pointer",
+    "subtle halo around a dark panel",
+    "animated sweep around card edge"
+  ],
+  "resembles": [],
+  "use_when": "You want a dark card to feel alive on pointer hover without adding heavy motion or an obvious gimmick.",
+  "avoid_when": "The glow is pointer-only, so it does nothing on touch or keyboard, and it assumes a dark backdrop.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["pricing-card", "feature-card"],
+  "traits": {
+    "trigger": ["hover", "pointer-move", "always"],
+    "motion": "subtle",
+    "affects": ["border", "shadow"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Props set the glow colour, intensity, radius, cone spread, edge sensitivity, border radius, background fill and three mesh colours, plus an automatic sweep. The content is whatever you pass in.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "light",
+  "weight_why": "One card, a few masked layers, and a short requestAnimationFrame sweep; idle otherwise.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The glow responds only to pointer movement and ignores reduced-motion, so touch and keyboard users never see it."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "''", "required": false},
+    {"name": "edgeSensitivity", "type": "number", "default": "30", "required": false},
+    {"name": "glowColor", "type": "string", "default": "'40 80 80'", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "'#120F17'", "required": false},
+    {"name": "borderRadius", "type": "number", "default": "28", "required": false},
+    {"name": "glowRadius", "type": "number", "default": "40", "required": false},
+    {"name": "glowIntensity", "type": "number", "default": "1.0", "required": false},
+    {"name": "coneSpread", "type": "number", "default": "25", "required": false},
+    {"name": "animated", "type": "boolean", "default": "false", "required": false},
+    {"name": "colors", "type": "string[]", "default": "['#c084fc', '#f472b6', '#38bdf8']", "required": false},
+    {"name": "fillOpacity", "type": "number", "default": "0.5", "required": false}
+  ],
+  "issues": [
+    "The muted body copy is low contrast against the dark card surface.",
+    "The effect stacks several CSS mask composites, which some browsers render inconsistently."
+  ],
+  "polish": 4,
+  "polish_why": "Restrained glow and a tidy pricing layout; the dim paragraph copy is the weak point.",
+  "unsure": ["a11y.keyboard", "responsive"]
+}

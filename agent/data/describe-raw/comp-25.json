@@ -1,0 +1,63 @@
+{
+  "name": "comp-25",
+  "frames": {
+    "code": "1774",
+    "best": 6,
+    "best_why": "A query fills the field while the shortcut badge stays visible, with no cursor over the box.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A search box with a tiny command-key badge tucked inside its right edge.",
+  "summary": "A labelled search field with a small bordered shortcut badge fixed inside the right edge. Typing shows a native clear cross beside the badge; the shortcut itself is only a visual hint.",
+  "title_fix": null,
+  "appearance": "A label sits above a rounded dark search field on a black stage. A grey Search... placeholder starts at the left, a tiny outlined ⌘K key badge hugs the right edge, and typing a query brings a small x cross before the badge.",
+  "behaviour": "Clicking the field draws a pale ring and typing replaces the placeholder with the query, which also produces a small clear cross next to the shortcut badge. The clip enters pricing table and the badge holds its place throughout.",
+  "parts": ["label", "search field", "placeholder text", "key badge", "clear icon", "focus ring"],
+  "demo_content": "Label Search input with <kbd>, Search... placeholder, typed query pricing table.",
+  "states": ["focus", "empty"],
+  "kind": "search",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "box with a command k hint",
+    "quick find field with a shortcut",
+    "search bar showing keyboard keys",
+    "type to find with cmd k",
+    "filter field with a key badge",
+    "site search with shortcut display",
+    "look up products with a hotkey",
+    "keyboard hint inside a search box"
+  ],
+  "resembles": [],
+  "use_when": "A page search that also advertises a command menu opening on the same shortcut.",
+  "avoid_when": "The badge is decorative only; nothing listens for the shortcut, so it can mislead users.",
+  "suits": ["saas", "docs", "devtool"],
+  "slot_hints": ["nav", "form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label, placeholder and shortcut badge text are written in the file; field and badge styling are classes there as well.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One field plus a static badge; nothing animates or listens in the background.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The label is bound to the field, but the shortcut badge is decorative and never fires the key it shows."
+  },
+  "props": [],
+  "issues": ["The badge promises a ⌘K shortcut that the code never binds to any action."],
+  "polish": 3,
+  "polish_why": "Crisp field and a neat key badge, but the shortcut hint is only decoration.",
+  "unsure": []
+}

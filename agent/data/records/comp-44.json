@@ -1,0 +1,114 @@
+{
+ "name": "comp-44",
+ "frames": {
+  "code": "3878",
+  "best": 6,
+  "best_why": "All four digits are filled and the active ring sits on the last slot, showing the completed group.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.8
+ },
+ "tagline": "Four connected digit boxes that fill up one number at a time.",
+ "summary": "A row of four connected single-digit slots with a shared border. The slot waiting for input carries a pale ring, and typing advances the focus until all four digits are filled.",
+ "title_fix": null,
+ "appearance": "A small label sits above four connected square slots sharing their borders, with rounded ends on the group. Each filled slot holds one white number, the waiting slot carries a pale ring, and a grey credit line runs below.",
+ "behaviour": "Typing moves the pale ring from slot to slot and drops one digit into each box, and backspace steps it the other way. The clip enters 4, 8, 2 and 9 until the group is full and the ring rests on the final slot.",
+ "parts": [
+  "label",
+  "digit slot",
+  "entered digit",
+  "active ring",
+  "credit line"
+ ],
+ "demo_content": "Label OTP input single with the digits 4 8 2 9 and a Built with Input OTP line.",
+ "states": [
+  "focus",
+  "empty"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "four boxes for a code",
+  "enter the text message code",
+  "one time passcode fields",
+  "verification digits split into boxes",
+  "type a code digit by digit",
+  "two factor code entry",
+  "four number slots that join",
+  "security code confirmation"
+ ],
+ "resembles": [
+  "Stripe verification code input"
+ ],
+ "use_when": "Collecting a short one-time code where splitting it into digits makes entry easier to follow.",
+ "avoid_when": "The component ships a visible third-party credit link that would need removing before production.",
+ "suits": [
+  "fintech",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The four-digit length, label and credit line are fixed in the file; slot size, ring colour and border styling are classes there.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One hidden input backed by four small slots; nothing animates or loops.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The label is bound and the code field takes keyboard input, but the visible slots are plain divs with no per-slot description."
+ },
+ "props": [],
+ "issues": [
+  "The on-screen label says OTP input single while the row actually holds four grouped slots.",
+  "A visible Built with Input OTP credit link ships inside the component."
+ ],
+ "polish": 3,
+ "polish_why": "Clean connected slots and a clear active ring, but the label and credit link feel unfinished.",
+ "unsure": [],
+ "title": "OTP Input Grouped",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c57efef6c0d5640e",
+  "film_hash": "c59f6cf0e89866db",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

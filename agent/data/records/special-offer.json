@@ -1,0 +1,112 @@
+{
+ "name": "special-offer",
+ "frames": {
+  "code": "5347",
+  "best": 1,
+  "best_why": "Whole banner in view: glowing headline, all four countdown tiles and the promo-code box; only the seconds differ.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "partial",
+  "render_note": "Promo code box is clipped by the right edge and the 'Limited Time Offer' label is cut off at the top.",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "Cyber sale strip with a glowing countdown and a boxed promo code.",
+ "summary": "A full-width bar for a limited-time sale: copy on the left, a countdown of days, hours, minutes and seconds in the middle, and a boxed discount code on the right. It ticks down each second, then swaps to an ended message.",
+ "title_fix": null,
+ "appearance": "A wide dark bar with a warm orange glow behind the left copy, fading to near-black on the right. The left column holds a small blue label, a white headline and a highlighted paragraph. Four square countdown tiles follow, the first orange and the rest blue, split by colons, ending in a bordered promo-code box.",
+ "behaviour": "The countdown drops once per second while the four tiles keep their values padded to two digits. Once the target date passes, the banner is replaced by a short 'Sale Ended!' message. Nothing responds to hover, click or keyboard.",
+ "parts": [
+  "sale label",
+  "headline",
+  "offer paragraph",
+  "countdown tiles",
+  "separators",
+  "promo code box"
+ ],
+ "demo_content": "Cyber sale copy advertising 30% off with the code CBRLAYOUT, counting down to 31 December 2026.",
+ "states": [],
+ "kind": "cta-section",
+ "look": [
+  "dark",
+  "gradient",
+  "glow",
+  "neon"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "cyber sale countdown banner",
+  "limited time offer strip with timer",
+  "promo code bar across the page",
+  "sale countdown with days hours minutes seconds",
+  "full width discount announcement bar",
+  "black friday banner with glowing numbers",
+  "countdown to end of sale",
+  "website banner showing percent off and coupon"
+ ],
+ "resembles": [],
+ "use_when": "You want a loud, self-contained sale banner that keeps the deadline visible while the page is open.",
+ "avoid_when": "The target date, copy and promo code are hardcoded, so every new campaign needs a source edit.",
+ "suits": [
+  "ecommerce",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "primary-cta"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "No props: the sale copy, promo code and countdown target date are written into the file, so changing them means editing the source. Colours come from utility classes.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "One interval per second updating four numbers; nothing heavy renders.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The ticking countdown is plain text and never announced to screen readers; the pulsing colons ignore reduced-motion settings."
+ },
+ "props": [],
+ "issues": [
+  "The promo code box runs off the right edge in every frame",
+  "The 'Limited Time Offer' label is clipped at the top",
+  "The left copy column is narrow, leaving a wide empty gap before the countdown"
+ ],
+ "polish": 3,
+ "polish_why": "Coherent glow and countdown, but cramped copy column and clipped edges keep it ordinary.",
+ "unsure": [
+  "render",
+  "issues"
+ ],
+ "title": "Special Offer Banner",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a34eda8f5fccb9e1",
+  "film_hash": "621b6d61a9dd2087",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

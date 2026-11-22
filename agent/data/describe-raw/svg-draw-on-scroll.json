@@ -1,0 +1,158 @@
+{
+  "name": "svg-draw-on-scroll",
+  "frames": {
+    "code": "9537",
+    "best": 5,
+    "best_why": "Route is nearly complete with all four stop labels and the pink tip marker in view.",
+    "usable": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Winding route draws itself as you scroll, a pink dot on its tip.",
+  "summary": "A single curvy line that draws itself from start to finish as its container scrolls, with a glowing dot riding the growing tip and small tags pinned beside the route.",
+  "title_fix": null,
+  "appearance": "On black, a thin white line snakes down through four broad curves to the bottom. Four small rounded tags label the stops, and a bright pink dot with a soft halo sits on the stroke's current end.",
+  "behaviour": "Scrolling longerens the stroke from the top while the dot tracks its tip and the stop tags hold their places. Scrolling back shortens the line again unless the run-once option freezes it fully drawn.",
+  "parts": [
+    "route line",
+    "tip marker",
+    "stop labels",
+    "heading",
+    "scroll hint"
+  ],
+  "demo_content": "Dolomites day-three hike with stops at Lake Sorapis and Forcella Marcuoira plus distance stats.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "monochrome",
+    "airy"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "line that draws itself on scroll",
+    "animated trail map for a journey",
+    "scroll linked path animation",
+    "dot following a drawing stroke",
+    "route illustration that reveals on scroll",
+    "story map with pinned stop labels",
+    "progressive line reveal on page scroll",
+    "path grows from top as you read"
+  ],
+  "resembles": [],
+  "use_when": "A trip, timeline or process page wants a route to unfold in step with the reader's scrolling.",
+  "avoid_when": "It needs a scrollable ancestor and a tall sized box, and the drawing is hidden from assistive tech.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "blog"
+  ],
+  "slot_hints": [
+    "body-text",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "children"
+    ],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Path data, an optional set of paths, viewBox, stroke colour and width, scroll offset, run-once, the marker node and the scroll container are all props.",
+  "technique": [
+    "motion-library",
+    "svg"
+  ],
+  "weight": "light",
+  "weight_why": "One stroke and one marker following a spring while scrolling; still when parked.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "The SVGs are aria-hidden, so the route and its stops have no accessible description beyond the text tags."
+  },
+  "props": [
+    {
+      "name": "path",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "paths",
+      "type": "string[]",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "viewBox",
+      "type": "string",
+      "default": "0 0 100 100",
+      "required": false
+    },
+    {
+      "name": "stroke",
+      "type": "string",
+      "default": "currentColor",
+      "required": false
+    },
+    {
+      "name": "strokeWidth",
+      "type": "number",
+      "default": "2",
+      "required": false
+    },
+    {
+      "name": "marker",
+      "type": "ReactNode",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "offset",
+      "type": "ScrollOffset",
+      "default": "[\"start 0.9\", \"end 0.6\"]",
+      "required": false
+    },
+    {
+      "name": "container",
+      "type": "RefObject<HTMLElement | null>",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "once",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The heading and scroll hint scroll out of view by frame 3, so later frames lose the intro copy.",
+    "The stop tags are placed by the demo with fixed percentages, so they can drift off the drawn line."
+  ],
+  "polish": 4,
+  "polish_why": "Tight scroll-linked draw with a marker on the stroke; hand-placed labels can slip.",
+  "unsure": []
+}

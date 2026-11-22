@@ -1,0 +1,192 @@
+{
+ "name": "line-sidebar",
+ "frames": {
+  "code": "8189",
+  "best": 1,
+  "best_why": "The full twelve-row list is visible, with the active row accented purple and no cursor over it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.8
+ },
+ "tagline": "Menu labels slide right and glow purple near the cursor.",
+ "summary": "A vertical menu where each numbered label and its short tick react to pointer proximity, shifting right and turning purple. Clicking a row sets a lasting accent and grows the marker beside it.",
+ "title_fix": null,
+ "appearance": "A narrow column of twelve small numbered labels, each preceded by a thin grey rule, evenly stacked on a black field. The active row is tinted purple and pushed right, and rows near it extend their ticks and brighten.",
+ "behaviour": "As the pointer moves down the list, rows within reach slide right, shift toward purple and stretch their tick marks like a fisheye. Clicking a row keeps it accented and lengthens the marker line beside it.",
+ "parts": [
+  "numbered label",
+  "tick mark",
+  "active marker",
+  "item row",
+  "list"
+ ],
+ "demo_content": "Twelve docs menu labels from Overview to Support, including Components, Showcase and Changelog.",
+ "states": [
+  "hover",
+  "active",
+  "selected"
+ ],
+ "kind": "sidebar",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "monochrome",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "vertical menu that reacts to cursor",
+  "sidebar with shifting text on hover",
+  "fisheye nav list",
+  "numbered docs navigation",
+  "menu items that slide when hovered",
+  "proximity highlight navigation",
+  "thin line markers beside menu",
+  "purple active menu indicator"
+ ],
+ "resembles": [],
+ "use_when": "A docs or app sidebar needs a compact, cursor-aware menu with a clear active page.",
+ "avoid_when": "The proximity effect is pointer-only, so touch and keyboard users get no feedback from it.",
+ "suits": [
+  "docs",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout",
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Items, accent, text and marker colours, index and marker visibility, proximity radius, max shift, falloff, marker length and gap, tick scale, item gap, font size and smoothing are props.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "One rAF loop eases CSS variables on twelve short rows and stops when settled.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Rows are plain list items with click handlers, so Tab never reaches them and there is no focus ring; aria-current marks the active row."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": "DEFAULT_ITEMS",
+   "required": false
+  },
+  {
+   "name": "accentColor",
+   "type": "string",
+   "default": "'#A855F7'",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#c4c4c4'",
+   "required": false
+  },
+  {
+   "name": "markerColor",
+   "type": "string",
+   "default": "'#6c6c6c'",
+   "required": false
+  },
+  {
+   "name": "showIndex",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "showMarker",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "proximityRadius",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "maxShift",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "falloff",
+   "type": "string",
+   "default": "'smooth'",
+   "required": false
+  },
+  {
+   "name": "markerLength",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "defaultActive",
+   "type": "number",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "onItemClick",
+   "type": "function",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The rows are clickable list items, so keyboard users cannot reach or activate any menu entry."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp typography and a restrained fisheye; the feedback is subtle enough to be missed.",
+ "unsure": [
+  "responsive",
+  "frames.shows_interaction"
+ ],
+ "title": "Line Sidebar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "474a35a6121e4f70",
+  "film_hash": "03f4823c9a8e8edf",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-389",
+  "frames": {
+    "code": "8922",
+    "best": 2,
+    "best_why": "Tour popover is open beside card 1 showing Heart, its text, 1/4 and the Next link.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A tour bubble hops between four numbered cards as you press Next.",
+  "summary": "A grid of four numbered cards sits above a Start tour button. Starting opens a popover beside the current card with a step title, description, a counter and a Next link that moves to the following card.",
+  "title_fix": null,
+  "appearance": "Four small numbered tiles in a two-by-two grid sit above an outlined Start tour button on a near-black page. The tour popover is a dark card with an arrow, a bold step name, a few lines of grey text, a '1/4' counter and a Next link.",
+  "behaviour": "Clicking Start tour opens the popover beside card one and resets to the first step. Next advances the highlight and the popover to the next card; on the last step the link becomes Start over.",
+  "parts": ["numbered card", "card grid", "start tour button", "tour popover", "arrow pointer", "step title", "step counter", "next link"],
+  "demo_content": "Cards numbered 1 to 4; tour steps Heart, Diamond, Club and Spade with placeholder workspace copy.",
+  "states": ["open", "hover", "focus"],
+  "kind": "onboarding",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "guided tour that points at cards",
+    "four step walkthrough with next",
+    "product tour attached to elements",
+    "tooltip hopping between numbered boxes",
+    "onboarding bubble beside each step",
+    "start a tour of the page",
+    "highlighted card with explanation popup",
+    "wizard style tip sequence"
+  ],
+  "resembles": [],
+  "use_when": "New users need a short guided walkthrough of a few areas on a screen.",
+  "avoid_when": "The four cards are plain numbered boxes, so the tour points at stand-ins rather than real UI.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["tooltip"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The four step titles, descriptions, icons and the numbered cards are fixed in the file; adapting the tour means editing those arrays.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Four static cards and one small popover; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Start tour and Next are real buttons, but the numbered cards are plain divs with no labels tying them to steps."
+  },
+  "props": [],
+  "issues": ["The tour points at plain numbered boxes instead of real interface elements.", "The active step is not announced to screen readers beyond the popover text."],
+  "polish": 3,
+  "polish_why": "Clear little tour; the stand-in numbered cards make it feel like a demo.",
+  "unsure": []
+}

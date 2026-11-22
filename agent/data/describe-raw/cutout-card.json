@@ -1,0 +1,73 @@
+{
+  "name": "cutout-card",
+  "frames": {
+    "code": "9402",
+    "best": 4,
+    "best_why": "Hover is active: the card is lifted with a deeper shadow and the whole layout is unobstructed.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rounded photo card lifts its shadow and zooms the image on hover.",
+  "summary": "A media card with a photo, cut-out corner labels, a title, description and footer, whose image scales and shadow deepens when the pointer enters.",
+  "title_fix": null,
+  "appearance": "A rounded dark card: a code photo fills the top half, with a New tag pinned to its top-right and a Featured label cut into its bottom-left edge. Below, a light title, two lines of grey copy and a small footer sit on the card surface.",
+  "behaviour": "On hover the whole card lifts with a deeper shadow and the photo scales up slightly; leaving settles it back. Labels and text stay fixed.",
+  "parts": ["photo", "new tag", "featured label", "title", "description", "footer", "view link"],
+  "demo_content": "Code on a screen, labels New and Featured, title Developer Toolkit, footer 12 components and View.",
+  "states": ["hover"],
+  "kind": "card",
+  "look": ["dark", "rounded", "shadowed", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "image card with corner labels",
+    "photo card that lifts on hover",
+    "product card with a new badge",
+    "card with cutout corners around a tag",
+    "media tile with image zoom on hover",
+    "portfolio card with featured ribbon",
+    "picture card with title and view link",
+    "card whose shadow grows when hovered"
+  ],
+  "resembles": [],
+  "use_when": "Show a photo or project thumbnail with a couple of status tags and a link, and reward hover.",
+  "avoid_when": "Hover is the only cue; touch screens get no zoom or lift, and the media area needs a fixed height.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["feature-card", "media"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["shadow", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Labels, actions and content are composed from exported parts and accept class names; the photo, shadow depth and hover timing need demo or source edits.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "One image and a few transforms that run only while hovered.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "Effects fire only on pointer hover and the card is not focusable, so keyboard users never see the lift or any hidden action."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "hovered", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultHovered", "type": "boolean", "default": "false", "required": false},
+    {"name": "onHoveredChange", "type": "(hovered: boolean) => void", "default": null, "required": false},
+    {"name": "trackPointerHover", "type": "boolean", "default": "true", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "Hover effects never trigger on touch devices.",
+    "The card shows a pointer cursor and lifts, but it has no link or click handler."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp cut-out tags and a smooth hover lift; the pointer cursor leads nowhere.",
+  "unsure": []
+}

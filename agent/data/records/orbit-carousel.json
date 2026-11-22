@@ -1,0 +1,124 @@
+{
+ "name": "orbit-carousel",
+ "frames": {
+  "code": "4028",
+  "best": 1,
+  "best_why": "Frame 1 shows the ring of eight avatars around a complete profile card with all its controls.",
+  "usable": [
+   1,
+   2,
+   3,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Profile photos orbit a ring while the chosen one fills a card in the centre.",
+ "summary": "A team carousel where eight round avatars sit on a circle around a centred profile card. Stepping with the arrows, or clicking an avatar, swings the ring around with a springy overshoot and swaps the card.",
+ "title_fix": null,
+ "appearance": "A faint circle on black ringed by eight circular portraits, one edged in indigo. In the middle a small rounded card shows a larger photo overlapping its top edge, a bold name, a role and email in grey, and two chevrons either side of a purple Connect pill.",
+ "behaviour": "Pressing an arrow or clicking a portrait rotates every avatar around the circle with a bouncy spring, and the card fades out and back in with the new person's details. The active portrait keeps its photo upright and carries an indigo ring.",
+ "parts": [
+  "orbit ring",
+  "avatar",
+  "profile card",
+  "profile photo",
+  "name",
+  "role and email",
+  "connect button",
+  "chevrons"
+ ],
+ "demo_content": "Eight teammates such as Maya Lin, Daniel Okafor and Priya Nair with roles like Product Designer and Staff Engineer.",
+ "states": [
+  "hover",
+  "active",
+  "selected",
+  "focus"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "team members arranged in a circle",
+  "avatars around a profile card",
+  "rotating ring of people",
+  "click an avatar to see their info",
+  "circular team selector",
+  "springy carousel of faces",
+  "meet the team wheel",
+  "profile photos on a circle"
+ ],
+ "resembles": [],
+ "use_when": "A team or community page wants a memorable way to browse several people one at a time.",
+ "avoid_when": "It uses fixed pixel sizes and a window-width check, so it does not really scale with its container.",
+ "suits": [
+  "portfolio",
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "avatar"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a people array of name, role, email and photo; the ring radius, profile size and spring are fixed, and the Connect button does nothing unless you wire it.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Eight avatars rotating with CSS transforms plus one card cross-fade.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Portraits are clickable images, not buttons, so they cannot be focused or opened from the keyboard; arrows work only globally."
+ },
+ "props": [
+  {
+   "name": "people",
+   "type": "OrbitPerson[]",
+   "default": "defaultPeople",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frames 4 and 5 catch the card mid-swap, leaving it nearly invisible over the moving ring.",
+  "The Connect button has no click handler, so it does nothing."
+ ],
+ "polish": 4,
+ "polish_why": "Springy orbit with a clear focus card; the dead Connect button and blurry swap frames are flaws.",
+ "unsure": [],
+ "title": "Orbit Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "31a2f97be705f72f",
+  "film_hash": "0cb7ea8a330cfaf2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

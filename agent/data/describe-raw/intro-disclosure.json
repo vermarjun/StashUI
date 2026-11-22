@@ -1,0 +1,75 @@
+{
+  "name": "intro-disclosure",
+  "frames": {
+    "code": "9490",
+    "best": 3,
+    "best_why": "Frame 3 shows a completed step, the active Dashboard step and a fully loaded preview photo.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A guided tour modal slides through app features with pictures.",
+  "summary": "A two-column feature tour. Step cards down the left list the stops with short lines and ticks; the right side shows a large photo with the step title and full description laid over it, advanced by Next, Previous or the step cards.",
+  "title_fix": null,
+  "appearance": "A wide dark modal titled Feature Tour with a thin progress bar under its header. The left column stacks three step cards, each a bold title and a grey line, the active one outlined and finished ones carrying a small green tick. The right half is a large rounded photo under a dark gradient with white title and copy.",
+  "behaviour": "Picking a step card or pressing Next slides the photo and copy sideways and moves the progress bar; visited steps get ticks. Arrow keys step back and forward, and Skip all or Done closes the modal.",
+  "parts": ["dialog header", "progress bar", "step card", "completion tick", "preview image", "step caption", "skip button", "next button"],
+  "demo_content": "Three steps: Welcome to the App, Explore the Dashboard, Collaborate with Your Team, over gradient and laptop photos.",
+  "states": ["selected", "hover", "focus"],
+  "kind": "onboarding",
+  "look": ["dark", "rounded", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "guided tour of a new app",
+    "multi step welcome dialog",
+    "feature walkthrough with photos",
+    "product onboarding popup",
+    "step by step intro modal",
+    "show users around on first visit",
+    "tabbed tour with next buttons",
+    "getting started slideshow"
+  ],
+  "resembles": ["Appcues product tour"],
+  "use_when": "First-time visitors need a short guided walk through a few features, with pictures and next buttons.",
+  "avoid_when": "It is a blocking modal that covers the app until skipped or finished, so it is wrong for repeat visits.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "keyboard", "drag"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a steps array with titles, short and full descriptions, optional action and media, plus featureId and open state. The header title Feature Tour is fixed.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "A dialog with large photos and slide transitions, one step mounted at a time.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Focus is trapped and arrow keys work, but nothing checks prefers-reduced-motion for the slide transitions."
+  },
+  "props": [
+    {"name": "steps", "type": "Step[]", "default": null, "required": true},
+    {"name": "open", "type": "boolean", "default": null, "required": true},
+    {"name": "setOpen", "type": "(open: boolean) => void", "default": null, "required": true},
+    {"name": "featureId", "type": "string", "default": null, "required": true},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "onSkip", "type": "() => void", "default": null, "required": false},
+    {"name": "showProgressBar", "type": "boolean", "default": "true", "required": false},
+    {"name": "forceVariant", "type": "\"mobile\" | \"desktop\"", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 2, 4 and 5 catch the photo mid-transition, leaving the right half blank or ghosted.",
+    "The progress bar has no accessible value or label beyond its visual fill."
+  ],
+  "polish": 4,
+  "polish_why": "Balanced two-column tour with clear step cards; blank transition frames read as loading.",
+  "unsure": []
+}

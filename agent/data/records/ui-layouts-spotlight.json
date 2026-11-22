@@ -1,0 +1,143 @@
+{
+ "name": "ui-layouts-spotlight",
+ "frames": {
+  "code": "3727",
+  "best": 3,
+  "best_why": "Frame 3 shows a bright radial spotlight sweeping across the top card; frames 1-2 show only a faint glow.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "A soft white glow follows the pointer across a stack of cards.",
+ "summary": "Three dark feature cards that light up with a radial glow wherever the cursor moves. The light falls off gently and nothing on the cards is interactive.",
+ "title_fix": null,
+ "appearance": "Three stacked dark cards with rounded corners and faint borders, each holding a small bold title and two lines of grey body text. A soft white radial glow sits on one card wherever the cursor is.",
+ "behaviour": "Moving the pointer lights a soft radial patch that tracks it across the cards, brightening the area under the cursor and fading to nothing toward the edges. Nothing is clickable.",
+ "parts": [
+  "card",
+  "title",
+  "body text",
+  "spotlight glow"
+ ],
+ "demo_content": "Three feature cards: Proximity Spotlight, Hover Focus, Cursor Flow Gradient",
+ "states": [
+  "hover"
+ ],
+ "kind": "border-effect",
+ "look": [
+  "dark",
+  "glow",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "glow follows the mouse across cards",
+  "spotlight that tracks the cursor",
+  "radial light under the pointer",
+  "cards lit by moving light",
+  "cursor tracking highlight effect",
+  "dark cards with a moving glow",
+  "mouse spotlight for feature grid",
+  "soft light that follows my mouse"
+ ],
+ "resembles": [],
+ "use_when": "A feature grid needs a subtle focal cue tied to where the pointer is.",
+ "avoid_when": "Pointer-driven only, so touch and keyboard users never see the glow.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "ProximitySpotlight, HoverFocusSpotlight, CursorFlowGradient and className are props on the wrapper; glow colour and size are fixed.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A mousemove listener updating gradients; no canvas or loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Pure pointer decoration: no focusable parts and no reduced-motion guard."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "ProximitySpotlight",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "HoverFocusSpotlight",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "CursorFlowGradient",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(className, ' relative  rounded-lg p-[2px] bg-[#ffffff15]",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The glow only reacts to a mouse, so touch devices see a static grid.",
+  "Body text under the brightest part of the glow loses contrast."
+ ],
+ "polish": 4,
+ "polish_why": "Restrained glow that follows the pointer well; touch and reduced-motion cases are unhandled.",
+ "unsure": [
+  "resembles"
+ ],
+ "title": "Spotlight Effect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c5827eefc75304e6",
+  "film_hash": "fe236ecb606b083b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,150 @@
+{
+  "name": "stories",
+  "frames": {
+    "code": "7222",
+    "best": 1,
+    "best_why": "Three full cards and part of a fourth read cleanly, with no cursor over the author rows.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Row of tall photo cards with a small avatar and name at the foot.",
+  "summary": "A sideways strip of portrait story cards. Each holds a photo or a looping clip that plays on hover, with a dark gradient at the bottom behind the author's avatar and name.",
+  "title_fix": "Story Cards Carousel",
+  "appearance": "A row of tall rounded cards in a three-to-four ratio, each filled edge to edge with a photograph and a soft dark gradient along the bottom. Within the gradient a small round avatar sits beside a white name.",
+  "behaviour": "The strip scrolls freely by dragging sideways and is cut off at the right edge. Hovering or focusing a card lifts it slightly and starts its video, which pauses and rewinds when the pointer or focus leaves.",
+  "parts": [
+    "card",
+    "photo",
+    "gradient overlay",
+    "avatar",
+    "author name"
+  ],
+  "demo_content": "Mountain, forest and flower photos credited to Maya Chen, Leo Park, Priya Nair and Tom Becker.",
+  "states": [
+    "hover",
+    "focus"
+  ],
+  "kind": "carousel",
+  "look": [
+    "rounded",
+    "colorful",
+    "dark",
+    "minimal"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "horizontal row of photo story cards",
+    "instagram style photo strips",
+    "hover to play video cards",
+    "draggable image gallery row",
+    "avatar and name on photo tiles",
+    "side scrolling card feed",
+    "portrait media cards in a line",
+    "browse short visual updates sideways"
+  ],
+  "resembles": [
+    "Instagram stories"
+  ],
+  "use_when": "A feed has many short visual updates that people should browse sideways without leaving the page.",
+  "avoid_when": "Videos only play on hover or focus, so on touch screens the clips stay as stills and nothing plays by itself.",
+  "suits": [
+    "social",
+    "ecommerce",
+    "marketing"
+  ],
+  "slot_hints": [
+    "list-item",
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "focus",
+      "drag"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "image",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Cards are composed from the exported parts, with image or video source, author name and avatar given as props; width and aspect come from class names you set.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "moderate",
+  "weight_why": "Several remote images plus hover-played videos, though nothing animates until a card is hovered.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Cards are only identified by their author text, and the playing videos have no captions or description."
+  },
+  "props": [
+    {
+      "name": "opts",
+      "type": "CarouselOptions",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "alt",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "side",
+      "type": "\"top\" | \"bottom\"",
+      "default": "bottom",
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "fallback",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "All six frames look almost the same, so the hover zoom and video playback never really appear.",
+    "The final card is clipped at the right edge, leaving its author cut off."
+  ],
+  "polish": 4,
+  "polish_why": "Strong photo treatment and a tidy author row, but the clip never shows the video idea in motion.",
+  "unsure": [
+    "shows_interaction"
+  ]
+}

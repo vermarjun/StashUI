@@ -1,0 +1,69 @@
+{
+  "name": "wheel-picker",
+  "frames": {
+    "code": "2217",
+    "best": 1,
+    "best_why": "The drums are settled on 9:41 AM with the selection band clear and no cursor over the numbers.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Three tiny drums of numbers spin under a highlight bar to set a time.",
+  "summary": "An iOS-style time picker with three vertical drums for hour, minute and AM/PM. Rows curve away in perspective above and below a grey selection band; drag or flick a drum and it coasts then snaps to a value.",
+  "title_fix": null,
+  "appearance": "A rounded dark card holds three narrow columns of numbers under a pill-shaped grey band that marks the chosen hour, minute and AM/PM. Numbers shrink and fade toward the top and bottom edges.",
+  "behaviour": "Each column turns like a drum as you drag it, with the rows above and below curving away. A flick keeps it coasting before it settles on a row, and keyboard arrows step it by one.",
+  "parts": ["selection band", "hour drum", "minute drum", "period drum", "fade edges"],
+  "demo_content": "Wake me up at, set to 9:41 am then 2:39 am.",
+  "states": ["focus", "selected", "dragging"],
+  "kind": "calendar",
+  "look": ["dark", "minimal", "rounded", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "ios style time picker",
+    "three wheel alarm selector",
+    "scroll drums for hour minute",
+    "flick to choose a number",
+    "spin the drum to set time",
+    "time selector with am pm",
+    "clock picker with rotating numbers",
+    "drum scroll picker component"
+  ],
+  "resembles": ["iOS alarm time picker"],
+  "use_when": "A settings form needs to set a time quickly on touch, with the familiar iOS drum feel.",
+  "avoid_when": "It is tall, needs room for three columns, and precise values are slower than typing into a field.",
+  "suits": ["mobile-app", "saas", "dashboard"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["drag", "scroll", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Columns with options and labels, controlled or default value, a change callback and the group label are props; row styling is in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three columns with one transform each; springs run only while spinning.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Each drum is a labelled spinbutton with keyboard steps and a visible focus ring; the 3D band is a visual cue only."
+  },
+  "props": [
+    {"name": "columns", "type": "WheelColumn[]", "default": "DEFAULT_COLUMNS", "required": false},
+    {"name": "value", "type": "Record<string, string>", "default": null, "required": false},
+    {"name": "defaultValue", "type": "Record<string, string>", "default": "DEFAULT_VALUE", "required": false},
+    {"name": "onValueChange", "type": "(value: Record<string, string>) => void", "default": null, "required": false},
+    {"name": "label", "type": "string", "default": "'Time'", "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Very close to the native picker with clean 3D rows; outer numbers nearly vanish on black.",
+  "unsure": []
+}

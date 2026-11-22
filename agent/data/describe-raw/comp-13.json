@@ -1,0 +1,63 @@
+{
+  "name": "comp-13",
+  "frames": {
+    "code": "9604",
+    "best": 6,
+    "best_why": "The field is filled with a full amount while both the euro sign and EUR add-on stay visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A money field keeping the euro sign inside its left edge and EUR on the right.",
+  "summary": "A single-line amount field with a label above it, a euro sign fixed inside the left edge and the letters EUR inside the right edge. Typing an amount pushes the placeholder out of the way.",
+  "title_fix": null,
+  "appearance": "A small label sits above a rounded dark text field on a black stage. Inside the field a grey euro sign hugs the left edge, a muted 0.00 placeholder starts after it, and the letters EUR sit at the right edge; focus draws a pale outline.",
+  "behaviour": "Clicking the field shows a focus ring and a caret right after the euro sign, and typing fills the space between the two add-ons. The clip enters 1,250.00 and the field settles with the value held between prefix and suffix.",
+  "parts": ["label", "input field", "currency prefix", "placeholder text", "currency suffix", "focus ring"],
+  "demo_content": "Field labelled Input with inline add-ons, placeholder 0.00, filled with 1,250.00.",
+  "states": ["focus", "empty", "disabled"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "amount field with euro sign",
+    "price box with a suffix",
+    "money entry with fixed prefix",
+    "type an amount in euros",
+    "form field with text inside both ends",
+    "inline add-on for a text box",
+    "payment amount typed by hand",
+    "euro amount entry on a dark form"
+  ],
+  "resembles": [],
+  "use_when": "Collecting a price or payment amount where the currency should stay visible as the user types.",
+  "avoid_when": "The euro sign and EUR text are fixed, so changing currency or locale means editing the file.",
+  "suits": ["fintech", "ecommerce", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The euro sign, EUR suffix and placeholder are written in the file; the field styling and disabled opacity are classes you can change there.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One styled input and two text spans; nothing runs in the background.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "A real label is bound to the field, but the add-on text sits outside the input so its meaning is not tied to the amount."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Neat aligned add-ons and a clear focus ring, but it is a conventional single field.",
+  "unsure": []
+}

@@ -1,0 +1,177 @@
+{
+ "name": "fold-text",
+ "frames": {
+  "code": "8694",
+  "best": 6,
+  "best_why": "Both lines are fully open and evenly lit, showing the finished state with no letter half-turned.",
+  "usable": [
+   1,
+   2,
+   3,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "Heavy white words fold open letter by letter like paper.",
+ "summary": "A short two-line phrase whose letters swing up from folded flat into place, then fold away again. Each character turns on a crease with a soft shadow, repeating in a loop.",
+ "title_fix": null,
+ "appearance": "Two lines of very heavy white sans-serif sit tightly stacked on black, reading \"Design that\" above \"unfolds\". Open letters are crisp and flat, while a folding letter picks up a grey crease shading across its face.",
+ "behaviour": "Letters hinge from their top edge, swinging from lying face-up and invisible into an upright line one after another. Once the phrase is complete it rests briefly, then all the letters fold back down and the cycle starts again.",
+ "parts": [
+  "title lines",
+  "letter pieces",
+  "crease shadows"
+ ],
+ "demo_content": "The phrase \"Design that unfolds\" across two lines.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "dark",
+  "bold",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that unfolds like paper",
+  "letters folding into place",
+  "animated headline reveal",
+  "paper crease text effect",
+  "words flipping open",
+  "loop animation for a hero title",
+  "folded type intro",
+  "unfolding letters on load"
+ ],
+ "resembles": [],
+ "use_when": "A short headline or title that should arrive with a crafted, paper-like reveal.",
+ "avoid_when": "Each letter hinges separately, so long copy becomes slow and restless; only a few words fit.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Set the text, split by character, word or line, and choose the hinge, fold style, angle, duration, stagger, easing, perspective and crease shading. Trigger, loop delay and hover refold are props.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "A GSAP timeline rotates a few dozen character spans and is cheap once they are open.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The phrase is exposed once as real text; under reduced motion the fold is shortened and flattened."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "'Design unfolds'",
+   "required": false
+  },
+  {
+   "name": "splitBy",
+   "type": "'char' | 'word' | 'line'",
+   "default": "'char'",
+   "required": false
+  },
+  {
+   "name": "hinge",
+   "type": "'top' | 'bottom' | 'left' | 'right'",
+   "default": "'top'",
+   "required": false
+  },
+  {
+   "name": "foldStyle",
+   "type": "'paper' | 'blinds' | 'flip'",
+   "default": "'paper'",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.65",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.045",
+   "required": false
+  },
+  {
+   "name": "foldAngle",
+   "type": "number",
+   "default": "92",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "perspective",
+   "type": "number",
+   "default": "700",
+   "required": false
+  },
+  {
+   "name": "trigger",
+   "type": "'mount' | 'hover' | 'scroll' | 'loop'",
+   "default": "'mount'",
+   "required": false
+  },
+  {
+   "name": "loopDelay",
+   "type": "number",
+   "default": "1.4",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "string | number",
+   "default": "80",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Half the loop is spent fully or partly folded, so the phrase is unreadable for much of the clip."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp type and a convincing crease; the loop leaves long stretches with words half open.",
+ "unsure": [],
+ "title": "Fold Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e6143afcb7d25073",
+  "film_hash": "35f051659d745a7d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

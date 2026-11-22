@@ -1,0 +1,73 @@
+{
+  "name": "particles",
+  "frames": {
+    "code": "7307",
+    "best": 6,
+    "best_why": "The speck field is spread evenly across the full stage with the brightest and most dots showing.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny white specks drift on black and scatter from the cursor.",
+  "summary": "A canvas field of small white dots that drift slowly and push away from the pointer, fading in and out near the edges. A headline can sit on top.",
+  "title_fix": null,
+  "appearance": "A black stage sparsely dusted with tiny white dots of varying brightness, densest across the middle. A large grey gradient word sits centred over the dots.",
+  "behaviour": "Dots drift in random directions and fade out near the canvas edges; the pointer gently pushes nearby dots aside as it moves across the field.",
+  "parts": ["dot field", "particles", "headline"],
+  "demo_content": "The centred word reads \"Particles\".",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "monochrome", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "floating dots that follow the mouse",
+    "starry particle background",
+    "drift away from cursor dots",
+    "sparse white speck field",
+    "interactive canvas particle field",
+    "tiny lights moving on black",
+    "drifting dust motes on black",
+    "cursor repel star backdrop"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero needs gentle motion and depth that reacts to the pointer.",
+  "avoid_when": "Low-power devices: a full-screen canvas animation runs every frame.",
+  "suits": ["saas", "ai-chat", "marketing"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background", "children"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Quantity, dot size, colour, magnetic strength, easing and drift velocity are props; the edge fade is fixed in the loop.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A full-screen canvas redrawn every animation frame in a requestAnimationFrame loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative and marked aria-hidden; the continuous drift ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "quantity", "type": "number", "default": "100", "required": false},
+    {"name": "staticity", "type": "number", "default": "50", "required": false},
+    {"name": "ease", "type": "number", "default": "50", "required": false},
+    {"name": "size", "type": "number", "default": "0.4", "required": false},
+    {"name": "refresh", "type": "boolean", "default": "false", "required": false},
+    {"name": "color", "type": "string", "default": "\"#ffffff\"", "required": false},
+    {"name": "vx", "type": "number", "default": "0", "required": false},
+    {"name": "vy", "type": "number", "default": "0", "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Gentle, convincing drift and a clean edge fade; the dots are faint and very small.",
+  "unsure": []
+}

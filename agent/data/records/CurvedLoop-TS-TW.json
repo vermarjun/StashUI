@@ -1,0 +1,146 @@
+{
+ "name": "CurvedLoop-TS-TW",
+ "frames": {
+  "code": "7919",
+  "best": 5,
+  "best_why": "The arc dips clearly while full words of the phrase read across the width.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "A line of heavy uppercase words slides along a shallow arc.",
+ "summary": "White uppercase words run continuously along a gently curved baseline and wrap around so the line never ends. The strip can be dragged to scrub the text, which then resumes in the direction you flick.",
+ "title_fix": null,
+ "appearance": "One long line of heavy white uppercase words, separated by small bullets, crosses a black stage along a shallow downward dip. The letters are large and tightly set and the line runs past both edges.",
+ "behaviour": "The line slides steadily to the left and loops seamlessly when it wraps. Dragging moves the text with the pointer and sets which way it carries on afterwards.",
+ "parts": [
+  "arc of text",
+  "bullet separators",
+  "black stage"
+ ],
+ "demo_content": "Repeats \"COMPONENTS • ANIMATIONS • DESIGN SYSTEM • OPEN SOURCE •\".",
+ "states": [
+  "dragging"
+ ],
+ "kind": "marquee",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "flat",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text scrolling along a curve",
+  "curved marquee banner",
+  "looping tagline strip",
+  "words moving on an arc",
+  "draggable scrolling text ribbon",
+  "big headline ticker on black",
+  "product feature list ticker",
+  "wavy text banner for portfolio"
+ ],
+ "resembles": [],
+ "use_when": "A section needs a wide moving strip of keywords or a looping brand statement.",
+ "avoid_when": "Places where quiet reading matters: the constant motion competes with nearby copy.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "headline",
+  "divider",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The text, speed, direction, curve depth and whether dragging is allowed are props. Font size and weight sit in hardcoded SVG classes.",
+ "technique": [
+  "js-animation",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A single SVG text path is nudged each frame; no canvas or heavy node count.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Scrubbing needs a pointer, the strip never pauses, and there is no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "marqueeText",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "curveAmount",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"left\" | \"right\"",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"min-h-screen flex items-center justify-center w-full\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Bold tight type and a smooth continuous arc; the curve is shallow enough to miss.",
+ "unsure": [],
+ "title": "Curved Loop",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7997b2aaa51ee037",
+  "film_hash": "f8370d4f1b4887a2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

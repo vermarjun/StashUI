@@ -1,0 +1,71 @@
+{
+  "name": "motion-number-input",
+  "frames": {
+    "code": "6177",
+    "best": 1,
+    "best_why": "All three rows are settled with clean digits and both stepper buttons visible, with no cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A booking card with minus and plus steppers whose numbers roll.",
+  "summary": "A stack of labelled rows for Adults, Children and Rooms, each with a minus and plus button around a large number. Pressing a button or typing changes the figure with a rolling digit animation.",
+  "title_fix": null,
+  "appearance": "A dark rounded card divided into three rows. Each row carries a bold label and a small grey hint on the left, and on the right a strip of minus sign, large white number and plus sign.",
+  "behaviour": "Pressing minus or plus steps the number within its bounds and the digits roll vertically to the new value; typing into the field does the same. A sign greys out once its limit is reached.",
+  "parts": ["card", "row label", "hint text", "minus button", "number", "plus button"],
+  "demo_content": "Rows Adults (Ages 13 or above), Children (Ages 2 to 12), Rooms (Up to 9 per booking), starting at 2, 1 and 1.",
+  "states": ["focus", "disabled", "active"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "number stepper with plus minus",
+    "quantity input booking form",
+    "animated digits input field",
+    "guest count selector",
+    "counter input with rolling numbers",
+    "rooms and guests picker",
+    "increment decrement number field",
+    "hotel booking quantity control"
+  ],
+  "resembles": [],
+  "use_when": "A booking or order form needs small bounded quantities like guests, rooms or tickets entered quickly.",
+  "avoid_when": "The plus and minus buttons are aria-hidden and skipped by tab, so only the unnamed number field is reachable.",
+  "suits": ["ecommerce", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Supply value, min, max and a change handler; size, colours and digit font come from classes, and the labelled rows are built around it.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "light",
+  "weight_why": "Three small steppers with animated digits; no canvas or loop.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The minus and plus buttons are aria-hidden and skipped by tab, the number field has no label, and its outline is suppressed."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": "0", "required": false},
+    {"name": "min", "type": "number", "default": "Number.NEGATIVE_INFINITY", "required": false},
+    {"name": "max", "type": "number", "default": "Number.POSITIVE_INFINITY", "required": false},
+    {"name": "onChange", "type": "(value: number) => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The minus and plus buttons are aria-hidden and not tabbable, so they cannot be used from the keyboard.",
+    "Frames 2 to 5 catch half-rolled digits that look broken as stills."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy rows and smooth digit rolls, but the controls themselves look like default steppers.",
+  "unsure": []
+}

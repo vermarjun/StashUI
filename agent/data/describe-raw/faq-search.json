@@ -1,0 +1,66 @@
+{
+  "name": "faq-search",
+  "frames": {
+    "code": "1171",
+    "best": 5,
+    "best_why": "Billing tab with 'plan' searched shows an open accordion answer, covering search, tabs and expansion together.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Searchable FAQ list with category tabs and expanding answers.",
+  "summary": "A help-centre FAQ page with a live search box, underlined category tabs and a list of question rows that expand to reveal answers. Searching or filtering leaves either matching questions or a no-results state with a clear button.",
+  "title_fix": null,
+  "appearance": "A dark help page with a large Frequently Asked Questions heading, a grey intro line and a small pill search field. A row of underlined category labels sits over a stack of rounded bordered question rows, each ending in a chevron; an open row reveals a muted paragraph, and a footer invites contact.",
+  "behaviour": "Typing in the search filters the questions live against titles and answers, and the category labels narrow the list to one topic with an underline on the active tab. Clicking a question expands its answer in place; when nothing matches, an empty state offers a Clear search button.",
+  "parts": ["heading", "intro copy", "search field", "category tabs", "question rows", "chevrons", "answer text", "contact footer"],
+  "demo_content": "Questions about creating a project, system requirements, collaboration, billing and bug reports.",
+  "states": ["hover", "focus", "open", "selected", "empty"],
+  "kind": "faq-section",
+  "look": ["dark", "minimal", "flat", "editorial", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "searchable faq page",
+    "help center with category tabs",
+    "accordion questions and answers",
+    "support faq with live search",
+    "filter faq by topic",
+    "collapsible help questions",
+    "no results faq state",
+    "knowledge base question list"
+  ],
+  "resembles": [],
+  "use_when": "A help centre needs a browsable, searchable list of questions that expand in place instead of separate pages.",
+  "avoid_when": "The questions and answers are hardcoded in the file, with no deep links or pagination for a large knowledge base.",
+  "suits": ["saas", "docs"],
+  "slot_hints": ["body-text"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "There are no props: the questions, answers and categories are arrays inside the file, so content changes mean editing the source; colours follow the theme.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A small list of questions with accordion transitions; no canvas or loops.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Accordion and tabs are keyboard reachable with good structure, but the search field relies on its placeholder for a name and reduced motion is not handled."
+  },
+  "props": [],
+  "issues": [
+    "The category tabs have no tab role or aria-selected, so the active tab is visual only.",
+    "The search field has a placeholder but no visible or aria label."
+  ],
+  "polish": 4,
+  "polish_why": "Clean, well-spaced FAQ layout with working search; tab and search semantics are thin.",
+  "unsure": []
+}

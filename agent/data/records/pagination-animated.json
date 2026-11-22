@@ -1,0 +1,135 @@
+{
+ "name": "pagination-animated",
+ "frames": {
+  "code": "2120",
+  "best": 6,
+  "best_why": "The row is complete with page 2 ringed by the highlight and Next lit under the cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.3
+ },
+ "tagline": "The current-page outline glides along the row when you pick a new number.",
+ "summary": "A horizontal page switcher with Previous and Next arrows, numbered links and an ellipsis. The rounded highlight marking the current page slides to the link you choose instead of blinking across.",
+ "title_fix": null,
+ "appearance": "On a black stage, one thin row: a Previous link with a left chevron, the numbers 1 to 5 spaced evenly, a three-dot ellipsis, then Next with a right chevron. The active number sits in a soft grey rounded rectangle slightly lighter than the bare links.",
+ "behaviour": "Clicking a number, Previous or Next moves the grey highlight to that link, easing it across the row with a short spring rather than hiding and reappearing. Hovering a link tints its background faintly; otherwise the row is still.",
+ "parts": [
+  "previous link",
+  "page number",
+  "current page outline",
+  "ellipsis",
+  "next link"
+ ],
+ "demo_content": "Pages 1 to 5 with Previous, Next and a more-pages ellipsis.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "pagination",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "page numbers with previous and next arrows",
+  "sliding highlight on the current page number",
+  "row of links to move between pages of results",
+  "numbered page switcher with more pages dots",
+  "browse long list one page at a time",
+  "outline that moves when you change page",
+  "bottom of table page controls",
+  "how do i jump between pages of a list"
+ ],
+ "resembles": [],
+ "use_when": "A long list or table is split into pages and the current page should stay obvious while you page through.",
+ "avoid_when": "The recorded demo fixes the row at five pages and an inert ellipsis, so real page counts need the markup rebuilt.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "docs"
+ ],
+ "slot_hints": [
+  "data-table",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose the row from Root, links, Previous, Next and Ellipsis, and pass a transition to Root. Page state and click handlers are yours; colours come from the button styles it wraps.",
+ "technique": [
+  "js-animation",
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of links plus one absolutely placed highlight that only animates on a page change.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Links are real anchors with aria-current and named Previous and Next; reduced motion swaps the slide for a crossfade."
+ },
+ "props": [
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "'none'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{copy ? visible.className : surface?.className}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The more-pages ellipsis is a plain span with no handler, so clicking it does nothing."
+ ],
+ "polish": 4,
+ "polish_why": "Even spacing and a tidy sliding highlight; the demo is only a five-page row.",
+ "unsure": [
+  "best"
+ ],
+ "title": "Pagination (animated)",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4ab1941513869269",
+  "film_hash": "71cae12686726826",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

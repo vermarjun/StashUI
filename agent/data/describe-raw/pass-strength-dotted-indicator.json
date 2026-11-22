@@ -1,0 +1,63 @@
+{
+  "name": "pass-strength-dotted-indicator",
+  "frames": {
+    "code": "7932",
+    "best": 5,
+    "best_why": "All five dots are filled and every requirement is ticked, while the password stays masked.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Password field fills five colour-coded dots as the rules pass.",
+  "summary": "A password field that fills a row of five dots and ticks off five rules as you type. A status line names the current strength and an eye button reveals what you entered.",
+  "title_fix": "Password Strength Meter",
+  "appearance": "A dark form column on black: a Password label, a rounded input with a placeholder and an eye icon, then five pale rounded bars in a row. Below sits a Must contain line with a strength word and a five-line checklist with tick or cross icons.",
+  "behaviour": "Typing fills the dots from left to right and recolours them green as more rules pass, while each checklist line flips from a cross to a green tick. The eye button switches the field between hidden and visible text.",
+  "parts": ["password label", "input field", "eye button", "strength dots", "status line", "requirement list"],
+  "demo_content": "The placeholder Password and, in the last frame, a revealed password reading \"stash#2026Ui\".",
+  "states": ["focus", "error", "success", "hover"],
+  "kind": "auth-form",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "password strength meter with dots",
+    "show password requirements as you type",
+    "password field with check marks",
+    "sign up password rule checklist",
+    "five bar password score",
+    "reveal password eye button",
+    "password policy indicator",
+    "strong password feedback form"
+  ],
+  "resembles": ["1Password strength meter"],
+  "use_when": "A sign-up or reset form must show, rule by rule, why a chosen password is accepted or rejected.",
+  "avoid_when": "It ships with a fixed 96-width column and five hardcoded rules, so other policies need source edits.",
+  "suits": ["saas", "fintech", "docs"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["keyboard", "click"],
+    "motion": "subtle",
+    "affects": ["fill", "border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Takes no props. The five rules, strength words, colours and the fixed column width all live in the source, so another policy or branding needs a file edit.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One input, five dots and five checklist rows; no animation loop.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The input is labelled and described by the strength text, and each rule has a screen-reader suffix; status still leans on colour."
+  },
+  "props": [],
+  "issues": ["Inactive requirement text is very faint on the black panel.", "The fixed 96-width column can overflow a narrow phone."],
+  "polish": 4,
+  "polish_why": "Clear feedback and tidy spacing; inactive rules are faint and the width never adapts.",
+  "unsure": []
+}

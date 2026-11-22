@@ -1,0 +1,146 @@
+{
+ "name": "ui-layouts-color-picker",
+ "frames": {
+  "code": "6170",
+  "best": 3,
+  "best_why": "The popover is fully open with the shade square, hue bar, hex value and copy button all visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.1
+ },
+ "tagline": "A colour swatch opens a panel with a shade square, hue bar and hex field.",
+ "summary": "A labelled colour field that shows the current colour as a small swatch. Clicking it opens a popover with a saturation square, a rainbow hue slider, a hex input and a copy button.",
+ "title_fix": null,
+ "appearance": "A small row pairs the word Color with a rounded rectangular swatch in the chosen colour. The open panel is a dark card holding a large gradient square, a thin rainbow hue bar, and a hex text field beside a copy button.",
+ "behaviour": "Clicking the swatch opens the panel; dragging the rings in the square and on the hue bar recolours the swatch live, and the hex field can be typed into. The copy button writes the hex to the clipboard, and clicking outside closes the panel.",
+ "parts": [
+  "label",
+  "colour swatch",
+  "popover panel",
+  "shade square",
+  "hue bar",
+  "hex field",
+  "copy button"
+ ],
+ "demo_content": "Label Color, starting at hex #6366f1 and later changed to #ae23a3.",
+ "states": [
+  "hover",
+  "focus",
+  "open"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "color picker with hex input",
+  "swatch opens color panel",
+  "pick a color from a square",
+  "hue slider and hex field",
+  "copy color code button",
+  "form color selector popover",
+  "colorful picker for theme settings",
+  "choose brand color in settings"
+ ],
+ "resembles": [],
+ "use_when": "A settings form needs users to choose a brand or accent colour and see its exact hex value.",
+ "avoid_when": "The popover needs room below the trigger, and clipboard copying depends on browser permissions.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the colour, its change handler and a label; an eyedropper toggle adds a pipette button. Panel size, swatch corners and copy styling are class edits.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A swatch, a popover and one gradient square; idle until opened.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger and copy button carry hidden labels and the picker is keyboard reachable, but panel motion and toasts ignore reduced-motion."
+ },
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(color: string) => void",
+   "default": "{(e) => onChange(e.target.value)}",
+   "required": true
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "isEyeDroppper",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "'h-8 w-12 border-2 p-0'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The hex value text is small and low contrast inside the dark panel."
+ ],
+ "polish": 3,
+ "polish_why": "A competent, familiar colour picker with a tidy panel; the hex text is faint.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Hex Color Picker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4c8e3ee87d915761",
+  "film_hash": "896ca1426b368d16",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

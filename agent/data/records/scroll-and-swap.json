@@ -1,0 +1,142 @@
+{
+ "name": "scroll-and-swap",
+ "frames": {
+  "code": "9949",
+  "best": 3,
+  "best_why": "Frame 3 shows the densest stack of names with two rows caught swapping over each other.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.1
+ },
+ "tagline": "Names roll upward and each line swaps to a copy of itself as it scrolls.",
+ "summary": "A tall column of bold text scrolls smoothly; as any line crosses the middle band it slides away and an identical copy slides in behind it, so the list appears to roll over itself.",
+ "title_fix": null,
+ "appearance": "A bright blue panel filled edge to edge with white, bold, uppercase names stacked tightly down the centre. Each line is centred and large; a small 'SCROLL SLOWLY' note sits in the top corner.",
+ "behaviour": "Scrolling glides the whole column upward. When a line enters the swap band it lifts away while a duplicate rises from below into its place, so briefly two copies overlap before one settles.",
+ "parts": [
+  "corner label",
+  "name line",
+  "scrolling text column"
+ ],
+ "demo_content": "A long list of invented full names from Alexandra Rodriguez to Zachary Brown, under the note 'SCROLL SLOWLY'.",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "colorful",
+  "bold",
+  "flat",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that rolls over as you scroll",
+  "names sliding upward on scroll",
+  "duplicate text swap animation",
+  "long list with rolling rows",
+  "membership list scrolling effect",
+  "text lines changing one at a time",
+  "smooth scroll text stack",
+  "bold names under a scroll prompt"
+ ],
+ "resembles": [],
+ "use_when": "A credits, member or name list should feel alive while the user scrolls through it, with each row renewing itself.",
+ "avoid_when": "Every line exists twice in the DOM, so very long lists cost more, and it needs a scroll container wired by ref.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Each line takes its text as children and accepts the tag, scroll offset pair, spring settings and container ref; the type, colour and column width are set by the parent.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Over a hundred text elements each track scroll progress, though only a screenful shows.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Reduced-motion is ignored, and the scroll container is not focusable, so keyboard users cannot scroll it without a pointer."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerRef",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": "\"span\"",
+   "required": false
+  },
+  {
+   "name": "offset",
+   "type": "[string, string]",
+   "default": "[\"0 0\", \"0 1\"]",
+   "required": false
+  },
+  {
+   "name": "springConfig",
+   "type": "{ stiffness?: number; damping?: number; mass?: number }",
+   "default": "{ stiffness: 200, damping: 30 }",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"flex overflow-hidden relative items-center justify-cent",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Bold type on saturated blue is striking and the swap reads clearly; the demo is only a name list.",
+ "unsure": [
+  "a11y"
+ ],
+ "title": "Scroll and Swap Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f73fcb2f154c8a67",
+  "film_hash": "4192645673bfd373",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

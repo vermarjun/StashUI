@@ -1,0 +1,70 @@
+{
+  "name": "apple-activity-card",
+  "frames": {
+    "code": "9661",
+    "best": 2,
+    "best_why": "All three rings are fully drawn at their real values, every number bright, no cursor or dimming.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Three nested activity rings that fill and count up, one highlighted on hover.",
+  "summary": "Three concentric progress rings in pink, green and cyan under the title Activity Rings, with Move, Exercise and Stand values beside them. The rings draw and their counts rise on view, and pointing at one dims the others.",
+  "title_fix": null,
+  "appearance": "Three nested rings on near-black: a thick pink outer arc, a lime green middle ring and a thin cyan inner ring, each over a faint circular track. To the right a three-row legend pairs a small label with a big coloured value like 479/800 CAL.",
+  "behaviour": "On view the rings draw in one after another and their numbers count up, the over-goal ones lapping past the start behind a shadowed end cap. Hovering a ring or its legend row brightens it and fades the other two.",
+  "parts": ["title", "outer ring", "middle ring", "inner ring", "end cap", "legend row", "value", "unit"],
+  "demo_content": "Move 479 of 800 cal, Exercise 42 of 30 min, Stand 6 of 12 hours.",
+  "states": ["hover", "focus", "loading"],
+  "kind": "chart",
+  "look": ["dark", "gradient", "neon", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "apple watch activity rings for web",
+    "three progress circles nested",
+    "fitness tracker ring gauge",
+    "daily move exercise stand rings",
+    "circular progress chart with legend",
+    "rings that count up on load",
+    "workout goal rings dashboard",
+    "activity tracker progress visual"
+  ],
+  "resembles": ["Apple Watch Activity rings"],
+  "use_when": "A wellness or fitness screen needs to show daily movement, exercise and stand goals at a glance.",
+  "avoid_when": "The sample's three fixed metrics need editing in the data array, and the neons are bright on light backgrounds.",
+  "suits": ["mobile-app", "dashboard", "saas"],
+  "slot_hints": ["chart", "stat", "feature-card"],
+  "traits": {
+    "trigger": ["viewport", "hover", "focus"],
+    "motion": "subtle",
+    "affects": ["image", "text", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an activities array of label, colour pair, size, current, target and unit, plus a title and heading level. The sample data and layout live in the source.",
+  "technique": ["motion-library", "svg", "js-animation"],
+  "weight": "light",
+  "weight_why": "Three SVG circles animated once by motion values; idle after the draw apart from hover dimming.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Rings are labelled and focusable, though tabbing through three rings that only dim each other adds stops with no real action."
+  },
+  "props": [
+    {"name": "title", "type": "string", "default": "Activity Rings", "required": false},
+    {"name": "titleAs", "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"", "default": "h2", "required": false},
+    {"name": "activities", "type": "ActivityData[]", "default": "SAMPLE_ACTIVITIES", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frame 3 dims the two non-hovered rings to 25% opacity, so their readings get hard to read."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing activity rings with a smooth count-up; hover dimming makes the other values faint.",
+  "unsure": ["states", "traits.motion"]
+}

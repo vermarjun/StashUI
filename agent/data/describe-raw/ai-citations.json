@@ -1,0 +1,129 @@
+{
+  "name": "ai-citations",
+  "frames": {
+    "code": "4478",
+    "best": 2,
+    "best_why": "The whole answer is shown with an open source preview and its backing sentence highlighted.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hover a tiny source chip and its sentence lights up as a card glides in.",
+  "summary": "An AI answer paragraph with small source chips after cited claims. Hovering or focusing a chip highlights that sentence in blue and floats a preview of the source's site, title and snippet.",
+  "title_fix": null,
+  "appearance": "A left-aligned block of light grey text on black, with faint underlined claims and pale rounded chips carrying a lettered badge and a site name. Overlapping circular badges sit below beside 4 sources and a chevron; a rounded card with source rows floats above the text.",
+  "behaviour": "Pointing at or focusing a chip tints the claim it supports blue and glides a preview card above or below it. Moving between chips slides the same card across, while leaving, pressing Escape or tapping elsewhere closes it; the sources row expands into a numbered link list.",
+  "parts": [
+    "answer paragraph",
+    "claim highlight",
+    "source chip",
+    "monogram badge",
+    "preview card",
+    "source row",
+    "sources toggle"
+  ],
+  "demo_content": "Advice on fast UI motion citing emilkowal.ski, web.dev and MDN; the footer reads 4 sources.",
+  "states": [
+    "hover",
+    "focus",
+    "open"
+  ],
+  "kind": "chat",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "technical"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "ai answer with source links",
+    "inline citation chips in a reply",
+    "hover footnote preview card",
+    "highlight sentence when source is hovered",
+    "perplexity style citations",
+    "footnote popover for web sources",
+    "cite sources inline in answer text",
+    "click a source to see its snippet"
+  ],
+  "resembles": [
+    "Perplexity"
+  ],
+  "use_when": "An AI answer draws on the web and each claim needs a visible, checkable source.",
+  "avoid_when": "Cramped reading areas: the floating preview covers the paragraph it is meant to explain.",
+  "suits": [
+    "ai-chat",
+    "docs",
+    "blog"
+  ],
+  "slot_hints": [
+    "body-text",
+    "tooltip"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "focus",
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "text",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The answer parts and the sources are arrays of props; citation order and badge tints are derived, while card width and delays are constants in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A paragraph, a handful of chips and one animated popover; nothing runs while it is closed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Chips are labelled buttons, focus opens the preview and Escape closes it; reduced motion is honoured."
+  },
+  "props": [
+    {
+      "name": "parts",
+      "type": "AnswerPart[]",
+      "default": "DEMO_PARTS",
+      "required": false
+    },
+    {
+      "name": "sources",
+      "type": "CitationSource[]",
+      "default": "DEMO_SOURCES",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The floating preview card hides the words of the paragraph behind it."
+  ],
+  "polish": 4,
+  "polish_why": "Citations read naturally in the prose and the preview glides well; the card covers nearby text.",
+  "unsure": [
+    "kind",
+    "theme"
+  ]
+}

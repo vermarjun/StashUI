@@ -1,0 +1,144 @@
+{
+ "name": "responsive-dialog",
+ "frames": {
+  "code": "7128",
+  "best": 3,
+  "best_why": "Frame 3 shows the open dialog centred with both fields, the close button and the Save button.",
+  "usable": [
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "A profile form opens as a centred dialog, and as a bottom sheet on phones.",
+ "summary": "One dialog that changes shape with the screen: a centred modal with a short form and Save button on desktop, and a bottom drawer on narrow screens, driven by the same set of parts.",
+ "title_fix": null,
+ "appearance": "On a near-black page a small outlined trigger button sits alone. Clicked, a rounded dark-grey panel appears in the middle with a title, a close X, two labelled text fields and a white Save changes button in a footer.",
+ "behaviour": "Clicking the trigger dims the page and pops the centred panel, with the cursor landing in the Name field. The X closes it and focus returns to the button; below the breakpoint the same parts render as a bottom drawer instead.",
+ "parts": [
+  "trigger button",
+  "overlay",
+  "dialog panel",
+  "title",
+  "close button",
+  "text field",
+  "save button"
+ ],
+ "demo_content": "Profile form with Name 'Pedro Duarte' and Username '@peduarte', opened from an 'Edit Profile' button.",
+ "states": [
+  "open",
+  "focus",
+  "hover"
+ ],
+ "kind": "modal",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "modal that turns into bottom sheet",
+  "edit profile form popup",
+  "popup form on desktop and mobile",
+  "slide up drawer on small screens",
+  "centered panel with close icon",
+  "account settings edit popup",
+  "one component for dialog and drawer",
+  "form panel with two inputs"
+ ],
+ "resembles": [],
+ "use_when": "The same form must be a dialog on desktop but a thumb-friendly bottom sheet on phones without writing two versions.",
+ "avoid_when": "Screen width alone decides the shell on the client, so server rendering or odd viewports can pick the wrong one.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "modal",
+  "form-field",
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Breakpoint width, open state and defaultOpen are props; colours and panel styling come from the dialog and drawer parts you import, and the form is yours to write.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Renders one dialog or drawer; the cost is the imported Radix and Vaul primitives.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Radix and Vaul give a focus trap, Escape to close and labelled fields, but the clip never shows the mobile drawer."
+ },
+ "props": [
+  {
+   "name": "breakpoint",
+   "type": "number",
+   "default": "768",
+   "required": false
+  },
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"px-2.5 pb-2.5\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The clip only shows the desktop dialog; the mobile drawer that distinguishes it is never recorded."
+ ],
+ "polish": 3,
+ "polish_why": "A clean, conventional dialog with coherent dark styling; nothing distinctive beyond the swap.",
+ "unsure": [
+  "technique"
+ ],
+ "title": "Responsive Dialog",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d26ed698b1ca1c14",
+  "film_hash": "71ac1fe827e5a0b9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

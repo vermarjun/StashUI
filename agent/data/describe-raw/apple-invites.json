@@ -1,0 +1,75 @@
+{
+  "name": "apple-invites",
+  "frames": {
+    "code": "4849",
+    "best": 1,
+    "best_why": "Centre card Sunrise Hike is fully framed with its photo, badge, avatars and details, neighbours fanned.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Event cards fan in a tilted stack and rotate to the next one on a timer.",
+  "summary": "A fanned stack of event invitation cards: one upright in the middle with a photo, crown badge, avatars, title, date and place, and two tilted neighbours peeking out. It advances to the next event on a timer.",
+  "title_fix": null,
+  "appearance": "A carousel of rounded photo cards on a dark stage, one centred and two tilted behind it to left and right, each with a frosted pill badge top left, a row of round avatars, and centred white title, date and location over a blurred footer.",
+  "behaviour": "Every couple of seconds the cards spring sideways to the next event: the centre card slides out, a neighbour swings in to centre and a new card appears at the side. Neighbours sit rotated twelve degrees, smaller and slightly faded.",
+  "parts": ["card stack", "card photo", "status badge", "crown icon", "avatar row", "title", "date", "location"],
+  "demo_content": "Five events: Sunrise Hike, Aurora Watch, Basecamp Brunch, Maya's 30th, Summer Screening, each with a place and date.",
+  "states": [],
+  "kind": "carousel",
+  "look": ["dark", "rounded", "gradient", "colorful"],
+  "tone": "decorative",
+  "search_phrases": [
+    "event invite cards that fan out",
+    "photo card carousel with neighbors",
+    "invitation card stack for events",
+    "tilted cards rotating automatically",
+    "party invitation card slider",
+    "cards peeking behind the center",
+    "auto rotating event gallery",
+    "rsvp event card stack"
+  ],
+  "resembles": ["Apple Invites"],
+  "use_when": "A landing or events page needs a lively preview of several upcoming events without a big grid.",
+  "avoid_when": "It rotates on a timer with no pause or manual controls, and cards are fixed to a 5:8 portrait ratio.",
+  "suits": ["social", "mobile-app", "marketing"],
+  "slot_hints": ["hero", "media", "feature-card"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["children", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "Pass an events array (image or gradient, badge, title, subtitle, location, participants) plus interval, card width, height, aspect ratio and an onChange callback. Styling hooks are class props.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Three stacked photo cards with five layered blur veils; springs only run on advance.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "Cards auto-rotate with no pause or manual controls, and the sequence cannot be stepped from the keyboard."
+  },
+  "props": [
+    {"name": "events", "type": "Event[]", "default": null, "required": true},
+    {"name": "interval", "type": "number", "default": "3000", "required": false},
+    {"name": "cardWidth", "type": "number | string | ResponsiveSize", "default": "240", "required": false},
+    {"name": "cardHeight", "type": "number | string | ResponsiveSize", "default": null, "required": false},
+    {"name": "aspectRatio", "type": "number", "default": "1.5625", "required": false},
+    {"name": "activeIndex", "type": "number", "default": null, "required": false},
+    {"name": "onChange", "type": "(index: number) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "cardClassName", "type": "string", "default": "", "required": false}
+  ],
+  "issues": [
+    "White title text over the pale Basecamp Brunch card is nearly unreadable."
+  ],
+  "polish": 3,
+  "polish_why": "Attractive fanned cards and a smooth spring, but white text on the pale card nearly vanishes.",
+  "unsure": ["traits.theme", "states"]
+}

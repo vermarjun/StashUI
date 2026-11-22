@@ -1,0 +1,162 @@
+{
+ "name": "highlighter",
+ "frames": {
+  "code": "8839",
+  "best": 6,
+  "best_why": "All three strokes are fully drawn: yellow wash, cyan underline and purple box, none cut off.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.4
+ },
+ "tagline": "Words get a hand-drawn marker wash, wavy underline or shaky box.",
+ "summary": "Wraps a phrase so a rough, hand-drawn stroke draws over it: a highlighter wash, an underline, a box and other styles, each in a colour you choose.",
+ "title_fix": null,
+ "appearance": "Two lines of white text on black. On the first, a pale yellow band with torn, uneven edges sits behind the words \"highlighted text\" and overhangs them slightly. On the second, \"underline mode\" carries a wavy cyan rule and \"box style\" is enclosed in a shaky purple rectangle.",
+ "behaviour": "Once the wrapped text is on screen, the chosen stroke draws itself on over less than a second in two passes, leaving a marker-like uneven edge. It redraws if the text changes size.",
+ "parts": [
+  "highlight wash",
+  "wavy underline",
+  "rough box",
+  "wrapped text"
+ ],
+ "demo_content": "Sentences reading \"The highlighted text draws across on view\" and \"Switch to underline mode or box style for variety\"",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "playful",
+  "flat",
+  "minimal"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "marker pen stroke behind words",
+  "hand drawn highlight over text",
+  "scribble underline for emphasis",
+  "rough sketch box around a phrase",
+  "animated annotation on words",
+  "yellow marker on important text",
+  "wavy line under key words",
+  "draw attention to a sentence"
+ ],
+ "resembles": [],
+ "use_when": "A few words in a headline need emphasis that looks drawn by hand rather than printed.",
+ "avoid_when": "Dense body text or many marked phrases, where repeated rough strokes become noisy and slow to read.",
+ "suits": [
+  "marketing",
+  "blog",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "body-text",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The phrase is children; the action (highlight, underline, box, circle, strike-through and more), colour, stroke width, draw time, passes, padding and multiline are props.",
+ "technique": [
+  "svg",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A few SVG paths per phrase that draw once, then sit idle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The strokes are decorative, but the draw animation ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "action",
+   "type": "AnnotationAction",
+   "default": "\"highlight\"",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#ffd1dc\"",
+   "required": false
+  },
+  {
+   "name": "strokeWidth",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "iterations",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "padding",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "multiline",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "isView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "The hand-drawn strokes read convincingly and stay legible; edge alignment varies slightly per pass.",
+ "unsure": [],
+ "title": "Highlighter",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "521c876ac04938ae",
+  "film_hash": "9fdf08a22a3cd29d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

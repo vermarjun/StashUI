@@ -1,0 +1,162 @@
+{
+ "name": "chromatic-image",
+ "frames": {
+  "code": "8808",
+  "best": 3,
+  "best_why": "The mountain ridges break into strong red, green and blue fringing, showing the distortion at full strength.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.6
+ },
+ "tagline": "Mountains tear into red, green and blue ghosts as the pointer moves.",
+ "summary": "A landscape photo on a rounded canvas that warps into horizontal bands and splits into shifted colour copies under the pointer, tilting in 3D and easing back when the pointer leaves.",
+ "title_fix": null,
+ "appearance": "A wide rounded photo of snowy peaks above a sea of cloud at dawn, with a dark gradient washing the lower edge. Small tracked capital letters and a white headline sit at the bottom left, a quiet hint at the bottom right, and the whole frame leans slightly.",
+ "behaviour": "Moving the pointer warps the picture in horizontal bands, offsets the red, green and blue channels and tilts it toward the cursor. Leaving the frame lets it settle back flat and sharp.",
+ "parts": [
+  "image",
+  "vignette gradient",
+  "eyebrow text",
+  "headline",
+  "distortion hint"
+ ],
+ "demo_content": "Issue 07 · Altitude; headline Above the weather; hint Move to distort; a mountain range above clouds at sunrise.",
+ "states": [
+  "hover"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "gradient",
+  "editorial"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "photo that glitches on hover",
+  "rgb split image effect",
+  "distorted landscape on pointer move",
+  "glitch photo with color fringes",
+  "3d tilt image card",
+  "interactive hero photo effect",
+  "hover distortion picture",
+  "red green blue offset image"
+ ],
+ "resembles": [],
+ "use_when": "A hero or feature image needs a tactile, pointer-reactive treatment that makes a still photo feel physical.",
+ "avoid_when": "Touch devices: the effect needs a pointer, and the canvas is hidden from screen readers.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Image source, alt text and overlay children come through props; zoom, displacement, chromatic shift, tilt and background colour are numeric props, while size comes from class names.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL shader redraws the full image while the pointer moves; it idles once settled.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "The effect is pointer-only and the canvas is hidden from assistive tech, though the fallback image keeps its alt text."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "{src}",
+   "required": true
+  },
+  {
+   "name": "alt",
+   "type": "string",
+   "default": "{alt}",
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "\"#111111\"",
+   "required": false
+  },
+  {
+   "name": "zoom",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "displacement",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "chromaticShift",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "tilt",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Distortion and tilt read clearly with a well-placed caption; the effect only exists under a mouse.",
+ "unsure": [],
+ "title": "Chromatic Image",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2e111364d8fa42b9",
+  "film_hash": "88aec27159eb8240",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

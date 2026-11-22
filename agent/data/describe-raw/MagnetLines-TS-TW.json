@@ -1,0 +1,76 @@
+{
+  "name": "MagnetLines-TS-TW",
+  "frames": {
+    "code": "3206",
+    "best": 1,
+    "best_why": "Frame 1 shows the full radial swirl of dashes around a pointer near the centre.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "White dashes across a grid swing to point at the cursor.",
+  "summary": "A square grid of short white line segments, all rotating toward the pointer, so the field bends into a radial pattern that follows it around the panel.",
+  "title_fix": null,
+  "appearance": "Nine rows of nine short white dashes on black, evenly spaced in a square. At rest each tilts a few degrees off vertical; near the pointer they fan into a circular pattern around it.",
+  "behaviour": "Every dash turns its long axis toward the pointer, so moving the mouse swivels the whole field at once and the angles ripple outward from the cursor. With no pointer it holds the base tilt.",
+  "parts": ["dash", "grid"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "minimal", "monochrome", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "lines that point at the cursor",
+    "magnetic grid of dashes",
+    "compass needles following the mouse",
+    "radial line field effect",
+    "white ticks rotating on hover",
+    "interactive dot grid background",
+    "short strokes aiming at the pointer",
+    "geometric cursor driven pattern"
+  ],
+  "resembles": [],
+  "use_when": "A technical or data product wants a restrained interactive backdrop behind its copy.",
+  "avoid_when": "The grid is monochrome and low contrast, and it needs a moving pointer to show its best angle.",
+  "suits": ["devtool", "saas", "fintech"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "Rows, columns, container size, line colour, width and height, base angle, className and style are props. The pointing maths and grid template are fixed.",
+  "technique": ["js-animation"],
+  "weight": "light",
+  "weight_why": "Eighty-one spans update on each pointer move; no canvas and no frame loop.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative lines with no controls; pointer movement drives them and reduced-motion is not checked."
+  },
+  "props": [
+    {"name": "rows", "type": "number", "default": "9", "required": false},
+    {"name": "columns", "type": "number", "default": "9", "required": false},
+    {"name": "containerSize", "type": "string", "default": "80vmin", "required": false},
+    {"name": "lineColor", "type": "string", "default": "#efefef", "required": false},
+    {"name": "lineWidth", "type": "string", "default": "1vmin", "required": false},
+    {"name": "lineHeight", "type": "string", "default": "6vmin", "required": false},
+    {"name": "baseAngle", "type": "number", "default": "-10", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "style", "type": "CSSProperties", "default": "{}", "required": false}
+  ],
+  "issues": [
+    "The dashes are all thin white, so they would vanish on a light background.",
+    "The field only reacts to a live pointer, so touch users see the static base tilt."
+  ],
+  "polish": 4,
+  "polish_why": "Precise, legible magnetic field with a calm base state; very plain in colour and shape.",
+  "unsure": ["responsive"]
+}

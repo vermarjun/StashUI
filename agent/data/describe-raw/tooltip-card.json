@@ -1,0 +1,70 @@
+{
+  "name": "tooltip-card",
+  "frames": {
+    "code": "9775",
+    "best": 2,
+    "best_why": "Frame 2 shows the full Quick tip panel open beside its button, clear of the cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Follows the cursor with a dark hint panel that springs open beside it.",
+  "summary": "Attaches a tooltip to any element. Hovering or tapping shows a small dark panel with a title and text near the pointer; it springs open, flips at screen edges and closes on leave.",
+  "title_fix": null,
+  "appearance": "Two small outlined buttons, \"Hover me\" and \"Or hover me\", sit on a near-black stage under a line of grey caption text. A hover reveals a dark rounded panel with a bold heading and a few lines of grey text floating next to the cursor, or a single short line in the string variant.",
+  "behaviour": "Entering a button springs the panel open from zero height close to the pointer, and it follows the cursor while open. Near a viewport edge it jumps to the other side, and it collapses when the pointer leaves or after a touch tap.",
+  "parts": ["trigger button", "tooltip panel", "tooltip heading", "tooltip text", "caption"],
+  "demo_content": "\"Hover me\" and \"Or hover me\" buttons; a \"Quick tip\" card and a one-line string tooltip.",
+  "states": ["hover", "open"],
+  "kind": "tooltip",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "tooltip that follows the cursor",
+    "hover card with rich content",
+    "floating hint beside the mouse",
+    "tooltip that flips near screen edge",
+    "dark rounded tooltip panel",
+    "hover popup with a title and text",
+    "cursor tracking help bubble",
+    "tooltip on both mouse and touch"
+  ],
+  "resembles": [],
+  "use_when": "A short hint, definition or preview should appear right at the pointer without shifting the page.",
+  "avoid_when": "The panel opens from pointer events only, so keyboard and screen-reader users never reach it.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["tooltip", "body-text", "badge"],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["children", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The panel body is a content prop, string or markup, and the trigger is passed as children; width, colours and padding live in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A single panel mounts on hover; no animation loop and no canvas.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The trigger has no focus or keyboard handlers and the panel is not tied to it with aria-describedby, so assistive tech misses it."
+  },
+  "props": [
+    {"name": "content", "type": "string | React.ReactNode", "default": null, "required": true},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Nothing links the tooltip to its trigger for keyboard or screen-reader users.",
+    "The panel assumes a 240px width, so wider content can run past the viewport edge."
+  ],
+  "polish": 4,
+  "polish_why": "Soft spring and tidy dark panel; the opening panel briefly overlaps its trigger.",
+  "unsure": []
+}

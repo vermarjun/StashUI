@@ -1,0 +1,164 @@
+{
+ "name": "undo-pill",
+ "frames": {
+  "code": "7241",
+  "best": 4,
+  "best_why": "The pill sits at full size with its ring visibly drained and the digit at 3 above the shortened inbox.",
+  "usable": [
+   3,
+   4,
+   5
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.6
+ },
+ "tagline": "A white undo bar slides up with a draining ring and a seconds count.",
+ "summary": "After a row is deleted, a compact undo bar appears near the bottom edge with a countdown ring, a message and an Undo button. It fades when time runs out or bounces away after a restore.",
+ "title_fix": null,
+ "appearance": "A small white rounded pill on a dark inbox: a tiny circular ring holding a digit at the left, a short label, a dot and an underlined Undo word. Above it the inbox card is dark grey with rounded rows and small trash icons.",
+ "behaviour": "The pill springs up from below when a message is deleted and drains its ring while the digit counts down. Hovering or focusing pauses the count; pressing Undo makes it bounce out, and running out of time fades it away.",
+ "parts": [
+  "countdown ring",
+  "seconds digit",
+  "message label",
+  "separator dot",
+  "undo button"
+ ],
+ "demo_content": "Inbox rows from Maya Lin, Daniel Okafor and Sofia Ramirez, labelled Message deleted",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "toast",
+ "look": [
+  "light",
+  "pill",
+  "rounded",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "undo bar after deleting an email",
+  "countdown to reverse a delete",
+  "snackbar with undo button",
+  "temporary delete confirmation",
+  "ring timer that pauses on hover",
+  "restore deleted item notification",
+  "gmail style undo send bar",
+  "white pill with seconds left"
+ ],
+ "resembles": [
+  "Gmail undo send snackbar"
+ ],
+ "use_when": "A destructive action needs a short, forgiving window to reverse it without opening a dialog.",
+ "avoid_when": "Bulk or permanent deletes, and simple pages that would rather not hold host state for the removed item.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "toast",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Label, duration, undo text, pause behaviour and className are props; open, onUndo and onExpire need host wiring. Colours are fixed in Tailwind classes.",
+ "technique": [
+  "motion-library",
+  "svg",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "One small pill and a single animation-frame timer that stops when it closes.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Undo is a real button and Escape works, but the ticking digit lives inside an aria-hidden ring so time left is never announced."
+ },
+ "props": [
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Deleted\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "onUndo",
+   "type": "() => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onExpire",
+   "type": "() => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "undoLabel",
+   "type": "string",
+   "default": "\"Undo\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The seconds digit inside the countdown ring is only nine pixels tall and hard to read at this scale."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp pill and solid countdown on a clean inbox; the tiny digit keeps it just short of top.",
+ "unsure": [],
+ "title": "Undo Pill",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0710e6ff802e1d15",
+  "film_hash": "79e7f904986dba28",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

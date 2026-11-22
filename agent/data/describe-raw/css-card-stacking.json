@@ -1,0 +1,65 @@
+{
+  "name": "css-card-stacking",
+  "frames": {
+    "code": "3562",
+    "best": 6,
+    "best_why": "Frame 6 shows two cards stacked, the green one peeking out behind the pink one, making the effect obvious.",
+    "usable": [3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Cards pin in place and slide over one another as you scroll.",
+  "summary": "A full-screen section where tilted coloured cards stay pinned to the viewport and pile up on top of each other while the page scrolls, with a fixed heading beside them.",
+  "title_fix": null,
+  "appearance": "A dark navy page with a faint grid. Large rounded cards in green, pink, orange and blue sit tilted a few degrees, each holding a bold title, a short paragraph and a small black button. A fixed heading sits to the right of the stack.",
+  "behaviour": "On scroll each card holds its place while the next rises and covers it, so earlier cards remain as a thin top edge. The side heading stays put throughout; scrolling back peels the cards away in reverse.",
+  "parts": ["stacked card", "card title", "description paragraph", "view button", "side heading", "grid backdrop"],
+  "demo_content": "Cards titled Image MouseTrail, Progressive Carousel, Responsive Drawer and Animated Globe with lorem-ipsum paragraphs.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": ["dark", "colorful", "rounded", "flat"],
+  "tone": "playful",
+  "search_phrases": [
+    "cards that stack while scrolling",
+    "sticky sections piling over each other",
+    "scroll pinned card panels",
+    "overlapping cards on page scroll",
+    "full screen cards that stay pinned",
+    "scrolling deck of feature cards",
+    "pile up effect for page sections",
+    "coloured cards sliding over each other"
+  ],
+  "resembles": [],
+  "use_when": "Several feature cards should be read one after another without losing the reader's place on the page.",
+  "avoid_when": "Each card needs a full screen height, so a short page or a busy dashboard wastes vertical space.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["section-background", "feature-card"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Card titles, copy, colours and links are written into the markup for each card; add or remove stacking blocks to change the pile. Scroll easing comes from the smooth-scroll wrapper.",
+  "technique": ["static", "js-animation"],
+  "weight": "light",
+  "weight_why": "Pure CSS sticky cards plus a smooth-scroll wrapper; little work happens per frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Smooth scrolling ignores prefers-reduced-motion, and the view buttons have no visible focus style."
+  },
+  "props": [],
+  "issues": [
+    "Frames 1 and 2 show only the heading, so the stacking effect appears late in the clip."
+  ],
+  "polish": 3,
+  "polish_why": "Clean layout and readable cards; the bright flat blocks and filler copy keep it ordinary.",
+  "unsure": ["technique"]
+}

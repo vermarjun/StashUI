@@ -1,0 +1,168 @@
+{
+ "name": "PixelTrail-TS-TW",
+ "frames": {
+  "code": "8506",
+  "best": 2,
+  "best_why": "Frame 2 has the largest, most legible blocky pixel mass around the cursor.",
+  "usable": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "Chunky white pixels bloom and fade along the pointer path.",
+ "summary": "The pointer paints stair-stepped white squares onto a black panel; each burst holds a moment then dissolves, leaving a blocky trail behind the cursor.",
+ "title_fix": null,
+ "appearance": "A black panel with faint grey \"Move your cursor\" text. The pointer leaves a cluster of hard-edged white squares snapped to a coarse grid, forming stepped blocky clouds.",
+ "behaviour": "Moving the pointer stamps pixels into a grid that widen into blocky clumps, then fade out over about a quarter of a second. Nothing moves unless the mouse moves.",
+ "parts": [
+  "pixel block",
+  "block cluster",
+  "hint text"
+ ],
+ "demo_content": "Faint hint text reading \"Move your cursor\".",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "retro",
+  "bold"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "blocky trail behind the cursor",
+  "pixelated mouse trail effect",
+  "retro squares following the pointer",
+  "white pixels painting on mouse move",
+  "8 bit cursor particle trail",
+  "grid snapped blocks fading",
+  "digital footprint mouse effect",
+  "square particles tracking movement"
+ ],
+ "resembles": [],
+ "use_when": "A game, devtool or retro page wants a blocky cursor trail with arcade energy.",
+ "avoid_when": "It only appears while the mouse moves, and the coarse white blocks can cover fine text.",
+ "suits": [
+  "devtool",
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "decoration",
+  "page-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Grid size, trail radius, pixel lifetime, interpolation, easing, pixel colour and an optional gooey blur filter are props. There is no content.",
+ "technique": [
+  "three-js",
+  "webgl-shader"
+ ],
+ "weight": "moderate",
+ "weight_why": "A small three.js canvas draws one shader plane and a 512-pixel trail texture.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative and pointer-only; nothing appears for keyboard users and reduced-motion is not checked."
+ },
+ "props": [
+  {
+   "name": "gridSize",
+   "type": "number",
+   "default": "{gridSize}",
+   "required": false
+  },
+  {
+   "name": "trailSize",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "maxAge",
+   "type": "number",
+   "default": "250",
+   "required": false
+  },
+  {
+   "name": "interpolate",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "easingFunction",
+   "type": "(x: number) => number",
+   "default": "identityEase",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "gooeyFilter",
+   "type": "{ id: string; strength: number }",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "canvasProps",
+   "type": "Partial<CanvasProps>",
+   "default": "{}",
+   "required": false
+  },
+  {
+   "name": "glProps",
+   "type": "WebGLContextAttributes",
+   "default": "{ antialias: false, powerPreference: 'high-performance', alpha: true }",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The trail only exists while the pointer moves, so two frames show a bare panel.",
+  "Large pixel clumps can sit over the faint hint text and hide it."
+ ],
+ "polish": 3,
+ "polish_why": "The blocky trail is clear and readable; the demo is bare black with a barely visible hint.",
+ "unsure": [],
+ "title": "Pixel Cursor Trail",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f66b727e3883e239",
+  "film_hash": "2ecbda856f9914f5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

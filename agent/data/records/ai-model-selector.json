@@ -1,0 +1,159 @@
+{
+ "name": "ai-model-selector",
+ "frames": {
+  "code": "4229",
+  "best": 5,
+  "best_why": "Picker is open above the field with all models, effort set to Max and its hint shown; other frames use lower stops.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Model picker that opens upward with an effort slider that reshapes per model.",
+ "summary": "A pill in an AI composer showing the current model and effort. Pressing it opens a panel above with a radio list of models and a segmented effort track whose stops change with the chosen model, plus a line explaining the trade-off.",
+ "title_fix": null,
+ "appearance": "A rounded composer card with a line of prompt text, a small pill showing the model name, a tiny signal-bar glyph and an effort word, and paperclip and send circles beside it. The open panel above is a white rounded card with model rows and a segmented effort track.",
+ "behaviour": "Clicking the pill opens the panel upward with a spring; picking a model checks it and reshapes the effort stops, keeping a similar relative height. The track can be dragged, clicked or arrowed, and the hint below swaps as the level changes.",
+ "parts": [
+  "model pill",
+  "model mark",
+  "effort glyph",
+  "chevron",
+  "model list",
+  "effort track",
+  "hint line"
+ ],
+ "demo_content": "A postcode refactor prompt with Atlas Pro 3, Atlas 3, Atlas Lite 3 and Nova Code 2.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "open",
+  "selected",
+  "dragging"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "choose an ai model from a menu",
+  "model picker in a chat composer",
+  "reasoning effort slider",
+  "popup that opens upward",
+  "select model and thinking level",
+  "segmented control with changing options",
+  "ai settings popover above input",
+  "low medium high effort toggle"
+ ],
+ "resembles": [
+  "ChatGPT model picker",
+  "Claude model selector"
+ ],
+ "use_when": "An AI composer needs one compact control for both the model and how hard it should think.",
+ "avoid_when": "The panel is 320px wide and opens upward, so it needs room above; models and effort levels come from you.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a models array with names, descriptions, icons and effort levels plus controlled value and onChange; the panel styling, spring and effort carry-over need a source edit.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small pill and a panel of a few rows; animation runs only while opening or dragging.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Everything works from the keyboard and is labelled; the track's stop labels are hidden from screen readers, so its value text carries the meaning."
+ },
+ "props": [
+  {
+   "name": "models",
+   "type": "ModelOption[]",
+   "default": "DEMO_MODELS",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "ModelSelection",
+   "default": "{level}",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "ModelSelection",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value: ModelSelection) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The effort labels inside the track are hidden from screen readers, leaving only the slider value."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy, well-labelled selector with a clever per-model effort track and a compact panel.",
+ "unsure": [],
+ "title": "AI Model Selector",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "3379c2589c40e964",
+  "film_hash": "c115322a468b780b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "ai-token-alternatives",
+  "frames": {
+    "code": "7024",
+    "best": 4,
+    "best_why": "Alternatives panel is open with the ticked word and three options, each with a probability bar.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dotted words in an AI reply open a list of the alternatives it weighed.",
+  "summary": "An AI answer marks words the model was unsure about with a dotted underline. Clicking one opens a small panel of the other words it considered, each with a probability bar; choosing one rewrites the reply from that word on.",
+  "title_fix": null,
+  "appearance": "A chat card on dark: a grey user bubble at top right, then the reply in body text where some words carry a dotted underline. The floating panel lists options in a column, each with a thin orange or grey bar and a percentage.",
+  "behaviour": "The answer streams in word by word with a blinking cursor. Clicking a dotted word opens a panel with the current word ticked; picking another swaps it, re-streams the rest and leaves a small edit chip in the footer. A Confidence switch tints words by uncertainty.",
+  "parts": ["user bubble", "answer text", "dotted word", "alternatives panel", "option row", "probability bar", "confidence switch", "edit chip"],
+  "demo_content": "A reply about scheduling a launch review for Thursday at 2pm, with swaps for Sure, Thursday, 2pm and 30 minutes.",
+  "states": ["hover", "open", "selected", "focus", "loading"],
+  "kind": "chat",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "ai answer with editable words",
+    "dotted underline word alternatives",
+    "click a word to swap it",
+    "model confidence per word",
+    "chat reply with probability bars",
+    "choose between words the ai considered",
+    "regenerate part of an answer",
+    "token likelihood popup under a word"
+  ],
+  "resembles": [],
+  "use_when": "An AI answer should show where it was uncertain and let the reader swap a word without retyping the prompt.",
+  "avoid_when": "It is built as a chat card with a prompt bubble and footer, and needs a compose function to regenerate after a pick.",
+  "suits": ["ai-chat", "saas", "docs"],
+  "slot_hints": ["body-text", "list-item"],
+  "traits": {
+    "trigger": ["click", "timer"],
+    "motion": "subtle",
+    "affects": ["text", "background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass a prompt, slot options with probabilities and a compose function that rebuilds the answer; className is the only style hook. The chat layout and demo copy live in the source.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "Plain text tokens, one small panel and short springs; the typing timer stops once the answer is out.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Word buttons carry probability labels, the listbox handles arrow keys and Escape, and a live region announces updates."
+  },
+  "props": [
+    {"name": "prompt", "type": "string", "default": null, "required": false},
+    {"name": "slots", "type": "TokenSlot[]", "default": null, "required": false},
+    {"name": "compose", "type": "(choice: Record<string, string>, signal: AbortSignal) => ComposedAnswer | Promise<ComposedAnswer>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The alternatives panel covers the sentence it opened from, hiding nearby words until it closes."
+  ],
+  "polish": 4,
+  "polish_why": "Coherent detail from dotted words to probability bars; the panel covers part of the reply.",
+  "unsure": ["kind", "traits.motion"]
+}

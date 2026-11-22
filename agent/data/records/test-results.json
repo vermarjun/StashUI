@@ -1,0 +1,166 @@
+{
+ "name": "test-results",
+ "frames": {
+  "code": "5324",
+  "best": 4,
+  "best_why": "An open failed suite with its error block plus an open passing suite, showing the most states at once.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.3
+ },
+ "tagline": "Test report where suites fold open to pass, fail and error rows.",
+ "summary": "A test run report card that sums the run in pass, fail and skip badges over a green progress bar. Suites expand to list each test, its duration and status, with a red error block for failures.",
+ "title_fix": null,
+ "appearance": "A bordered card headed by three coloured count badges and a duration on the right, over a green progress bar with a small red tail. Below, suites sit in bordered boxes; an open failed one shows test rows, tiny durations and a red error panel with monospace lines.",
+ "behaviour": "Clicking a suite header folds its tests open or shut and rotates a small chevron. Status icons colour each row, pulsing for a running test, while the badges and progress bar stay put at the top.",
+ "parts": [
+  "header badges",
+  "duration",
+  "progress bar",
+  "suite row",
+  "chevron",
+  "test row",
+  "status icon",
+  "error panel"
+ ],
+ "demo_content": "Checkout, auth and search suites; 21 passed and 2 failed, including a discount test expecting 79.20 but receiving 99.00.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "test run report card",
+  "pass fail summary with green bar",
+  "collapsible test suite results",
+  "ci results with an error stack",
+  "unit test list with durations",
+  "green and red progress bar for tests",
+  "show which tests broke",
+  "qa report panel for a deployment"
+ ],
+ "resembles": [
+  "GitHub Actions test summary"
+ ],
+ "use_when": "A dev tool or assistant answer needs to report a test run with per-suite detail and failure messages.",
+ "avoid_when": "It only displays what you pass in: there is no running, filtering or retry, and error blocks are plain static text.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Summary counts and duration go on the root; suites and tests are composed as children with name, status and duration props. Status colours live in Tailwind classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Static rows behind collapsible panels and one pulse on running icons.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Test rows show status only as a coloured icon with no text, so pass and fail depend on colour recognition."
+ },
+ "props": [
+  {
+   "name": "summary",
+   "type": "TestResultsSummary",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "name",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "status",
+   "type": "\"passed\" | \"failed\" | \"skipped\" | \"running\"",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "passed",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "failed",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "skipped",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The error stack is tiny dark red monospace on a dark red panel, so it is hard to read.",
+  "No single frame shows all three suites open, so the report's full depth never appears at once."
+ ],
+ "polish": 4,
+ "polish_why": "Clear hierarchy and honest status colouring; the error stack text is small and faint on its panel.",
+ "unsure": [],
+ "title": "Test Results",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1739ce52f8920326",
+  "film_hash": "12a42a3410789b65",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

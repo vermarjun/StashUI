@@ -1,0 +1,73 @@
+{
+  "name": "VariableProximity-TS-TW",
+  "frames": {
+    "code": "8978",
+    "best": 3,
+    "best_why": "The bold swell lands mid-line, showing the thin-to-heavy gradient clearly.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Letters swell to bold wherever the pointer touches them.",
+  "summary": "Two lines of a sentence sit on black, and each letter grows heavier and wider the closer the pointer comes, easing back to thin as it moves away.",
+  "title_fix": null,
+  "appearance": "Two centred lines of white type, one large and one smaller, sit on a black stage. Within each line some letters are broad and bold while their neighbours stay light and narrow.",
+  "behaviour": "Wherever the pointer goes, letters within a certain radius thicken and stretch, strongest right under the cursor and fading outward. Moving away lets them return to a thin width.",
+  "parts": ["large line", "small line", "letters"],
+  "demo_content": "\"Bring your cursor closer\" over \"and watch every letter respond\".",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "minimal", "editorial", "airy", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "letters get bold near the pointer",
+    "text reacts to cursor distance",
+    "variable font proximity effect",
+    "typography that follows the mouse",
+    "letters widen under your cursor",
+    "responsive headline for portfolio",
+    "cursor driven font weight",
+    "words morph as you hover"
+  ],
+  "resembles": [],
+  "use_when": "A display headline should feel alive and reward the pointer without moving from its place.",
+  "avoid_when": "Paragraph text or touch-only screens: it needs a pointer and a variable font.",
+  "suits": ["portfolio", "marketing", "devtool"],
+  "slot_hints": ["headline", "hero", "body-text"],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The label, from and to font settings, radius, falloff curve, class names and a click handler are props. The page must load the variable font.",
+  "technique": ["js-animation", "motion-library"],
+  "weight": "moderate",
+  "weight_why": "An animation-frame loop restyles every letter as the pointer moves.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "A hidden copy of the sentence serves screen readers, but there is no reduced-motion handling."
+  },
+  "props": [
+    {"name": "label", "type": "string", "default": null, "required": true},
+    {"name": "fromFontVariationSettings", "type": "string", "default": null, "required": true},
+    {"name": "toFontVariationSettings", "type": "string", "default": null, "required": true},
+    {"name": "containerRef", "type": "MutableRefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "radius", "type": "number", "default": "50", "required": false},
+    {"name": "falloff", "type": "\"linear\" | \"exponential\" | \"gaussian\"", "default": "linear", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "onClick", "type": "() => void", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Smooth weight changes and a clean two-line setting; the effect is subtle at a glance.",
+  "unsure": []
+}

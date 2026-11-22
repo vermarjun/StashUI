@@ -1,0 +1,69 @@
+{
+  "name": "ink-background",
+  "frames": {
+    "code": "5882",
+    "best": 2,
+    "best_why": "The headline stays readable while ink clearly bleeds off the W into a swirl.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A headline written on black water that smears into ink when you stir it.",
+  "summary": "A full-bleed hero backdrop where the headline is drawn in ink on a simulated fluid. Moving the pointer stirs the letters into smoky curls, clicks drop ink, and the words gather themselves back.",
+  "title_fix": null,
+  "appearance": "Near-black fills the frame with a large white signwritten headline, \"Write freely.\", above a short grey paragraph and two pill buttons, one white and one outlined. When disturbed, pale grey ink lifts off the letters in soft curling tendrils that drift across the black.",
+  "behaviour": "The letters live in a water simulation: pointer movement stirs them into filigree swirls, pressing drops a ring of fresh ink, and after a pause the ink is slowly pulled back into the letter shapes. The simulation sleeps when nothing has moved it for a few seconds.",
+  "parts": ["headline", "supporting paragraph", "primary button", "secondary button", "ink swirls"],
+  "demo_content": "Headline Write freely., copy about a quiet page for first drafts, and buttons Start writing and See how it works.",
+  "states": ["hover", "active"],
+  "kind": "background",
+  "look": ["dark", "minimal", "monochrome", "organic"],
+  "tone": "minimal",
+  "search_phrases": [
+    "ink dissolving in water text",
+    "webgl fluid background for hero",
+    "stir the letters and they bleed",
+    "smoke like ink swirl background",
+    "interactive fluid simulation page",
+    "headline that melts into ink",
+    "click to drop ink on black water",
+    "creative writing landing page effect"
+  ],
+  "resembles": [],
+  "use_when": "A quiet, memorable landing section where an interactive backdrop can carry the brand.",
+  "avoid_when": "Low-power devices or tight performance budgets: a WebGL fluid solver runs every frame while active.",
+  "suits": ["marketing", "portfolio", "blog"],
+  "slot_hints": ["page-background", "hero"],
+  "traits": {
+    "trigger": ["pointer-move", "click", "viewport"],
+    "motion": "pronounced",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Headline text, accent ink, overlaid children and an interactive flag are props; the solver constants and shaders live in the file.",
+  "technique": ["webgl-shader", "canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A WebGL2 stable-fluids solver runs several shader passes every frame while active.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The ink reacts to the pointer only, but the headline is exposed as heading text and reduced motion shows it still."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "\"Write freely.\"", "required": false},
+    {"name": "accent", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["While stirred, the headline nearly vanishes and the small copy sits over bright ink."],
+  "polish": 4,
+  "polish_why": "Convincing ink diffusion with a clean static fallback; copy can sit over busy bright ink.",
+  "unsure": ["kind", "needs_sized_parent", "theme"]
+}

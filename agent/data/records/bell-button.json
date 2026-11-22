@@ -1,0 +1,173 @@
+{
+ "name": "bell-button",
+ "frames": {
+  "code": "8541",
+  "best": 2,
+  "best_why": "Default Notify me pill is fully shown with the bell mid-sway over the hovered button.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.9
+ },
+ "tagline": "A subscribe pill whose bell swings and rings when you click or hover.",
+ "summary": "A pill-shaped subscribe button with a bell icon and a subscriber count. Hovering nudges the bell, and clicking toggles it between a muted bell and a filled one, swapping the label to Following and rolling the count.",
+ "title_fix": null,
+ "appearance": "Two rows of pill buttons on near-black: a dark outlined Notify me pill with a slashed bell and a grey 1,284 chip, then a white Following pill with a filled bell beside a round icon-only button.",
+ "behaviour": "Hovering makes the bell sway lightly; clicking swings it hard so the clapper strikes and small arcs flare at its side. Toggled on, the pill fills white, the bell loses its slash and the label crossfades to Following.",
+ "parts": [
+  "pill button",
+  "bell icon",
+  "mute slash",
+  "count chip",
+  "label",
+  "ring arcs",
+  "icon button"
+ ],
+ "demo_content": "Buttons labelled Notify me and Following with a count of 1,284, plus a round bell-only button.",
+ "states": [
+  "hover",
+  "active",
+  "selected",
+  "focus"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "minimal",
+  "pill",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "subscribe button with bell icon",
+  "notification bell that rings",
+  "follow button with subscriber count",
+  "toggle bell on and off",
+  "swinging bell on hover",
+  "email notify me pill",
+  "bell icon press state",
+  "subscribe with an animated clapper"
+ ],
+ "resembles": [
+  "YouTube subscribe bell"
+ ],
+ "use_when": "A page or feed needs an engaging subscribe or follow toggle that shows subscriber interest and state.",
+ "avoid_when": "It bakes in light and dark pill colours, which may clash with a fully custom theme without class overrides.",
+ "suits": [
+  "blog",
+  "social",
+  "marketing"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Variant, label, subscribedLabel, count, controlled subscribed state and onSubscribedChange are props; className is free. The bell geometry and physics constants live in the source.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small rAF pendulum that stops at rest, plus CSS colour and opacity transitions.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Strong: aria-pressed, hidden labels and a subscriber count for screen readers, and the swing stops under reduced motion while a static flare plays."
+ },
+ "props": [
+  {
+   "name": "variant",
+   "type": "\"default\" | \"compact\" | \"icon\"",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Notify me\"",
+   "required": false
+  },
+  {
+   "name": "subscribedLabel",
+   "type": "string",
+   "default": "\"Subscribed\"",
+   "required": false
+  },
+  {
+   "name": "count",
+   "type": "number",
+   "default": "1284",
+   "required": false
+  },
+  {
+   "name": "subscribed",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultSubscribed",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onSubscribedChange",
+   "type": "(subscribed: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"flex flex-col transition-transform duration-300 ease-[cubic",
+   "required": false
+  }
+ ],
+ "issues": [
+  "On touch devices there is no hover, so the light sway never shows before a tap."
+ ],
+ "polish": 4,
+ "polish_why": "Charming, believable bell physics with clean states; the tiny count text is a little faint.",
+ "unsure": [
+  "responsive",
+  "traits.motion"
+ ],
+ "title": "Bell Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4fc7ac9d8c60ada5",
+  "film_hash": "a2ea196ddd0a57d0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

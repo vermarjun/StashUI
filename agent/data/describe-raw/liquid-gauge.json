@@ -1,0 +1,73 @@
+{
+  "name": "liquid-gauge",
+  "frames": {
+    "code": "5200",
+    "best": 3,
+    "best_why": "Storage sits at 88% with a visibly tilted liquid surface and complete readouts on both gauges.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drag the liquid level up or down and the surface sloshes like water.",
+  "summary": "A tall usage gauge filled from the bottom with simulated liquid. Dragging sets the fill, the surface ripples and bubbles rise, and past a warning threshold the liquid turns red with an Almost full label.",
+  "title_fix": null,
+  "appearance": "Two tall dark rounded panels sit side by side on black. Each shows a small label, a huge percentage, a used-of-capacity subline and a status at the bottom; the lower part is a solid liquid fill with a gently wavy surface, and the readouts repeat in inverted colour inside it. The right gauge is almost entirely red.",
+  "behaviour": "Dragging vertically sets the fill, and the surface springs, overshoots and settles; sideways dragging rocks the whole body while hovering through the liquid stirs it. Small bubbles rise as the level climbs, and crossing the warning threshold turns the liquid red and changes the status.",
+  "parts": ["gauge card", "label", "percentage", "used subline", "liquid fill", "wavy surface", "bubble", "status line"],
+  "demo_content": "Two gauges: Storage at 64 of 256 GB and a read-only Monthly bandwidth at 1.9 of 2 TB.",
+  "states": ["hover", "focus", "active", "dragging"],
+  "kind": "chart",
+  "look": ["dark", "minimal", "rounded", "bold"],
+  "tone": "minimal",
+  "search_phrases": [
+    "storage meter filled with sloshing liquid",
+    "drag up and down to set a usage level",
+    "animated gauge that turns red when full",
+    "liquid fill progress meter",
+    "battery style gauge with waves",
+    "disk usage visual with bubbles",
+    "interactive capacity meter for a dashboard",
+    "quota meter with a wavy surface"
+  ],
+  "resembles": [],
+  "use_when": "A usage or quota number should feel tangible and let people scrub the value by hand.",
+  "avoid_when": "Read-only figures on a busy dashboard: the slosh and bubbles pull attention from a static number.",
+  "suits": ["dashboard", "saas", "devtool"],
+  "slot_hints": ["stat"],
+  "traits": {
+    "trigger": ["drag", "hover", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["fill", "text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Fill value, label, capacity, unit, warning threshold and read-only mode are props; the liquid colours and spring constants are in the source.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "A spring simulation over 28 columns runs at a fixed step only while the liquid is moving.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The gauge is a labelled slider with arrow, Home and End steps and a value text; reduced motion jumps the level with no slosh."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "defaultValue", "type": "number", "default": "72", "required": false},
+    {"name": "onValueChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "readOnly", "type": "boolean", "default": "false", "required": false},
+    {"name": "label", "type": "string", "default": "\"Storage\"", "required": false},
+    {"name": "total", "type": "number", "default": "128", "required": false},
+    {"name": "unit", "type": "string", "default": "\"GB\"", "required": false},
+    {"name": "warnAt", "type": "number", "default": "90", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The card is a fixed 18rem wide, so it leaves gaps in wide slots and can overflow narrow ones."],
+  "polish": 4,
+  "polish_why": "Delightful sloshing meter with clear readouts; the fixed width limits where it fits.",
+  "unsure": ["theme"]
+}

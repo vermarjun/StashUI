@@ -1,0 +1,67 @@
+{
+  "name": "work-experience",
+  "frames": {
+    "code": "7057",
+    "best": 1,
+    "best_why": "All three job cards show logos, dates, roles and skill chips with no cursor covering them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "Root has no background: the dark heading and timeline line are almost invisible on the black stage.",
+    "shows_interaction": "no"
+  },
+  "tagline": "Past jobs as white cards strung down a thin dotted timeline.",
+  "summary": "A vertical career timeline of three white cards, each with a company logo, role, period, location, a one-line summary and small skill pills, joined by a faint line with small badge nodes.",
+  "title_fix": null,
+  "appearance": "A nearly black page holding three white rounded cards in a centred stack. Each card starts with a round logo, a bold company name and a small external-link arrow, a grey role, a pin with a city, then a short paragraph and four pale rounded skill chips. A faint vertical line links small knot-shaped icons down the left.",
+  "behaviour": "On load the cards slide in from the left in sequence and their skill chips pop in one by one. Hovering a card lifts it a few pixels and hovering a chip darkens it slightly.",
+  "parts": ["heading", "company logo", "company name", "role", "location", "description", "skill chip", "timeline node"],
+  "demo_content": "Roles at OpenAI, Stripe and Airbnb with dates, cities and stacks like React, Go and Kubernetes.",
+  "states": ["hover"],
+  "kind": "timeline",
+  "look": ["light", "minimal", "rounded", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "work history as a timeline",
+    "resume cards with company logos",
+    "job history with skill tags",
+    "employment timeline for about page",
+    "career path with dates and roles",
+    "cv list with location and skills",
+    "linkedin style experience feed",
+    "past jobs stacked vertically"
+  ],
+  "resembles": ["LinkedIn"],
+  "use_when": "A portfolio or résumé page needs a vertical timeline of jobs with logos and skill tags.",
+  "avoid_when": "It assumes a light page: the root has no background, so its dark heading vanishes on a dark stage.",
+  "suits": ["portfolio", "saas"],
+  "slot_hints": ["body-text", "list-item"],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "subtle",
+    "affects": ["layout", "text"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The three jobs, descriptions, links, logo URLs and skill lists are hardcoded; the node icon and palette also need source edits.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three cards and their chips animate briefly on mount, then everything is idle.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Company links are reachable by tab, but the hover lift and chip colour have no keyboard equivalent; motion ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [
+    "With no background on the root, the heading and timeline line disappear on the dark stage.",
+    "The footer stat tiles sit below the frames and are never shown.",
+    "The OpenAI card links to Linear's site, so company links are mismatched."
+  ],
+  "polish": 3,
+  "polish_why": "White cards are tidy, but the missing page background makes the header vanish on black.",
+  "unsure": ["render", "slot_hints"]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "stay-picker",
+  "frames": {
+    "code": "4778",
+    "best": 5,
+    "best_why": "Stay 12 to 17 lit as one pill, with 5 nights, a $890 total and an active Reserve button.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pick check-in and check-out on a price-per-night calendar.",
+  "summary": "A booking calendar for choosing a stay. Each night shows its price, sold-out nights are hatched, and the chosen range becomes one pill with a running total and a Reserve button.",
+  "title_fix": null,
+  "appearance": "A dark rounded calendar card. A month heading with two chevrons sits above a Mo-Su grid where each day number carries a tiny nightly price, and sold-out days are hatched and struck through. Below the grid a status line sits over a Total figure and a Reserve pill.",
+  "behaviour": "Clicking a night starts a stay and a second click ends it, with the range drawn as one pill that wraps across week rows. Hovering previews the end night, sold-out nights are refused, and Reserve turns green once booked.",
+  "parts": ["month heading", "month arrows", "weekday row", "day cell", "nightly price", "stay pill", "status line", "reserve button"],
+  "demo_content": "November 2026 with nightly prices like 158 and 165, and a stay from Nov 12 to Nov 17 for $890.",
+  "states": ["hover", "focus", "selected", "disabled"],
+  "kind": "calendar",
+  "look": ["dark", "rounded", "minimal", "flat", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "date range picker with prices",
+    "booking calendar for a hotel",
+    "pick check in and check out dates",
+    "calendar that shows nightly rates",
+    "airbnb style stay selector",
+    "reserve a room with dates",
+    "sold out nights crossed out",
+    "calendar with total price"
+  ],
+  "resembles": ["Airbnb date picker"],
+  "use_when": "A booking flow needs guests to pick a stay while seeing nightly prices and unavailable nights.",
+  "avoid_when": "It shows one month at a time and has no text input, so far-off or flexible dates are slow to reach.",
+  "suits": ["ecommerce", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "drag", "keyboard"],
+    "motion": "subtle",
+    "affects": ["background", "text", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Month, a nightly price and availability function, minimum nights, currency and a reserve callback are props; colours and the row height are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A month grid of buttons with a few layout animations; nothing runs when idle.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Arrow keys move between days and Enter picks, with prices and pressed state announced; the range pill itself is decorative."
+  },
+  "props": [
+    {"name": "month", "type": "string", "default": "2026-11", "required": false},
+    {"name": "getNight", "type": "(date: string) => Night", "default": "demoNight", "required": false},
+    {"name": "minNights", "type": "number", "default": "2", "required": false},
+    {"name": "currency", "type": "string", "default": "$", "required": false},
+    {"name": "onReserve", "type": "(stay: { checkIn: string; checkOut: string; total: number }) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Nightly prices are very small and low contrast under each day number."],
+  "polish": 5,
+  "polish_why": "Clear range pill across weeks, meaningful sold-out hatching and a tidy total footer.",
+  "unsure": []
+}

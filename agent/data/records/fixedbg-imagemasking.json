@@ -1,0 +1,109 @@
+{
+ "name": "fixedbg-imagemasking",
+ "frames": {
+  "code": "5329",
+  "best": 1,
+  "best_why": "The heading and the splash-shaped mountain photo are both visible, showing the effect in context.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.2
+ },
+ "tagline": "Fixed photo of mountains seen through a paint-splash hole while you scroll.",
+ "summary": "A full-width band where a pinned mountain-and-cloud photo is revealed through a splash-shaped mask; as the page scrolls, new parts of the photo drift through the same cut-out.",
+ "title_fix": null,
+ "appearance": "A black full-width section with a large paint-splash silhouette cut into the middle, through which a bright teal mountain range and cloudy sky are visible. Rounded droplets of the same photo float around the splash; headings in white sit above and below.",
+ "behaviour": "The splash mask holds its position while the photo behind it is pinned to the viewport, so scrolling shifts which part of the mountains shows through the shape. The surrounding text scrolls normally.",
+ "parts": [
+  "splash mask",
+  "pinned mountain photo",
+  "droplets",
+  "heading",
+  "black section"
+ ],
+ "demo_content": "Heading 'The image stays put. The shape moves.' plus a 'Scroll down' prompt.",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "organic",
+  "airy",
+  "minimal"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "fixed background mask on scroll",
+  "parallax photo through splash shape",
+  "pinned image reveal effect",
+  "scrolling splash cutout hero",
+  "photo stays while shape scrolls",
+  "scroll reveal image mask",
+  "fixed mountain photo window",
+  "sticky background splash section"
+ ],
+ "resembles": [],
+ "use_when": "A landing page wants a memorable scroll moment where an image appears through a shaped window.",
+ "avoid_when": "Fixed backgrounds are janky on iOS and the splash mask needs /splash-center.svg shipped.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The photo URL and /splash-center.svg mask are hardcoded, as is the 70vh height; changing any of them needs a source or asset edit. No props.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One fixed background image and a CSS mask; the browser handles the scroll pinning.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The masked image is a background with no alt or description, and the fixed-background scroll effect cannot be disabled for reduced motion."
+ },
+ "props": [],
+ "issues": [
+  "The masked photo is a CSS background with no alt text or fallback.",
+  "Fixed backgrounds are unreliable on mobile browsers, where the pinning often breaks."
+ ],
+ "polish": 4,
+ "polish_why": "Striking splash reveal and clean type; no image alt text and fragile mobile scroll pinning.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Fixed Background Image Mask",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "56795577d166ada2",
+  "film_hash": "f7dad0c74b22c00c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

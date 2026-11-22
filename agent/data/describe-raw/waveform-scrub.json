@@ -1,0 +1,121 @@
+{
+  "name": "waveform-scrub",
+  "frames": {
+    "code": "7904",
+    "best": 5,
+    "best_why": "The playhead sits mid-waveform with the played bars darkened, and the name and 13 seconds remaining are clear.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "An audio waveform with a draggable pin that fills bars as it plays.",
+  "summary": "A compact audio card with a play button, file name and remaining time above a bar waveform. A white pin can be dragged to scrub, and the bars behind it darken as the track plays.",
+  "title_fix": null,
+  "appearance": "A dark rounded card holds a small play icon, the file name and a seconds count. Below sits a pale inner panel of thin grey vertical bars with a white pin on a long stem marking the position.",
+  "behaviour": "Pressing play advances the pin and darkens the bars it passes while the seconds count down. Dragging the pin pauses playback and scrubs to that point; at the end the button becomes a replay icon.",
+  "parts": [
+    "play button",
+    "file name",
+    "time remaining",
+    "waveform bars",
+    "playhead pin"
+  ],
+  "demo_content": "Standup notes with a 24 second recording and a dictated waveform",
+  "states": [
+    "active",
+    "dragging"
+  ],
+  "kind": "media-player",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "technical"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "audio waveform with draggable playhead",
+    "voice memo player card",
+    "scrub through a recording by hand",
+    "podcast clip progress bar",
+    "sound file player with bars",
+    "drag the pin to seek audio",
+    "compact audio player for notes",
+    "waveform that fills as it plays"
+  ],
+  "resembles": [],
+  "use_when": "A short recording such as a voice memo or clip needs visible progress and easy scrubbing in a small card.",
+  "avoid_when": "Long tracks or precise seeking, since the playhead steps in tenths of a second and the bars carry no timestamps.",
+  "suits": [
+    "saas",
+    "ai-chat",
+    "media"
+  ],
+  "slot_hints": [
+    "media",
+    "feature-card"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "drag"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Duration, file name and the bar height array are props; colours, the pin shape and the card radius are fixed in Tailwind classes.",
+  "technique": [
+    "motion-library",
+    "js-animation"
+  ],
+  "weight": "light",
+  "weight_why": "A few dozen bar divs and a 100ms interval that only runs while playing.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The icon play button has no accessible name or focus ring, and the playhead can only be dragged with a pointer; no reduced-motion check."
+  },
+  "props": [
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "30",
+      "required": false
+    },
+    {
+      "name": "fileName",
+      "type": "string",
+      "default": "'voice-memo.mp3'",
+      "required": false
+    },
+    {
+      "name": "waveformHeights",
+      "type": "number[]",
+      "default": "DEFAULT_WAVEFORM",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The play button is an unlabelled icon with no focus ring.",
+    "The bars carry no time labels, so seeking to an exact moment is guesswork."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy compact player with a clear playhead; the plain bars and unnamed icon keep it ordinary.",
+  "unsure": []
+}

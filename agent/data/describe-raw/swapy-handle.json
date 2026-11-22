@@ -1,0 +1,67 @@
+{
+  "name": "swapy-handle",
+  "frames": {
+    "code": "2286",
+    "best": 1,
+    "best_why": "All six tiles sit in a settled grid with every emoji, title and corner grip visible and no card floating.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Bright emoji feature cards that rearrange when dragged by a corner grip.",
+  "summary": "Six flat-colour feature tiles of different widths form a tight grid, each showing an emoji, a short claim and a dotted grip. Dragging a grip lifts the tile, and dropping it on another swaps their places.",
+  "title_fix": null,
+  "appearance": "Six saturated tiles in blue, pink, green, yellow, purple and cyan packed into a twelve-column grid, each with a faint dotted grip at its top left. A black emoji and a short bold title sit centred in each card.",
+  "behaviour": "Pulling a grip frees its tile and marks the slots it passes as drop targets; releasing on a slot swaps the two cards and every tile snaps back to the same fixed height. The reordered map is printed to the console and lasts only until reload.",
+  "parts": ["bento grid", "feature tile", "emoji", "title", "dotted grip"],
+  "demo_content": "Slogans such as Turbocharge Everything, Brainy Decisions and Save Big, Smile More, each with an emoji.",
+  "states": ["dragging", "hover"],
+  "kind": "feature-section",
+  "look": ["colorful", "flat", "rounded", "bold", "light"],
+  "tone": "playful",
+  "search_phrases": [
+    "colorful emoji bento grid",
+    "drag feature cards to rearrange",
+    "bright tiles with emoji headings",
+    "movable grid of marketing features",
+    "puzzle tiles you can swap around",
+    "six colored cards with icons",
+    "rearrangeable feature wall",
+    "playful mosaic of benefits"
+  ],
+  "resembles": [],
+  "use_when": "A features block should feel playful and let visitors shuffle the tiles for fun.",
+  "avoid_when": "Every colour, emoji and width is fixed in the file, and the new order is only logged, never saved.",
+  "suits": ["marketing", "saas"],
+  "slot_hints": ["feature-card"],
+  "traits": {
+    "trigger": ["drag"],
+    "motion": "pronounced",
+    "affects": ["layout", "background", "children"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the six slogans, emoji and colour classes sit in the items array in the file, and the drag config and grid gap are set in the source.",
+  "technique": ["js-animation"],
+  "weight": "light",
+  "weight_why": "Six static colour tiles and a drag handler that only runs during a move.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Dragging is pointer only, and the emoji titles are plain text with no role or keyboard alternative."
+  },
+  "props": [],
+  "issues": [
+    "Swaps are console-logged only, so the new order is lost on reload.",
+    "Each slot takes the item's id instead of its slot id, so the two id sets collide.",
+    "The dotted grip is faint grey on pastel and easy to miss."
+  ],
+  "polish": 3,
+  "polish_why": "Lively tidy grid with crisp type; the faint grip and clashing palette hold it back.",
+  "unsure": []
+}

@@ -1,0 +1,182 @@
+{
+ "name": "primitives-texts-sliding-number",
+ "frames": {
+  "code": "7058",
+  "best": 1,
+  "best_why": "The large counter is nearly legible and both smaller counters sit below it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.5
+ },
+ "tagline": "Each digit rolls upward like an odometer wheel to the next number.",
+ "summary": "A live number display whose digits spring vertically to their new value, with columns of numerals sliding past inside fixed slots. The demo runs three sizes, including a comma-grouped and a two-decimal version.",
+ "title_fix": null,
+ "appearance": "A large bold white number sits centred on a near-black stage with a small grey caption under it. Below are two smaller counters side by side, one with commas and one with decimals, each with its own tiny caption.",
+ "behaviour": "Every 1.8 seconds the number changes and each digit column springs upward or downward, showing a short stack of passing numerals before coming to rest on the new digit. Thousands and decimal points stay put while the digits move.",
+ "parts": [
+  "large counter",
+  "caption",
+  "thousand counter",
+  "decimal counter",
+  "digit wheels"
+ ],
+ "demo_content": "Counters labelled Sliding digits, with separator and decimal cycle through 1234, 5678, 9999, 42 and 3141.",
+ "states": [],
+ "kind": "counter",
+ "look": [
+  "dark",
+  "minimal",
+  "bold",
+  "monochrome",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "number rolls up like an odometer",
+  "digits spin to the next value",
+  "animated counter that ticks upward",
+  "rolling digit number display",
+  "live kpi number that changes",
+  "springy number transition for stats",
+  "count up numbers with stacked digits",
+  "animated metric counter"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard metric or KPI changes value and the change should read as motion rather than a jump.",
+ "avoid_when": "Very fast or constant updates: overlapping springs make the digits unreadable.",
+ "suits": [
+  "dashboard",
+  "fintech",
+  "saas"
+ ],
+ "slot_hints": [
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Number, starting value, decimal places and separators are props, as is the spring; restyling the digit wheels needs a source edit.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Ten absolutely positioned digit spans per column driven by one spring; idle between changes.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Digits are real text, but value changes are not announced and there is no reduced-motion fallback."
+ },
+ "props": [
+  {
+   "name": "number",
+   "type": "number",
+   "default": "{i}",
+   "required": true
+  },
+  {
+   "name": "fromNumber",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "decimalPlaces",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "thousandSeparator",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "decimalSeparator",
+   "type": "string",
+   "default": "'.'",
+   "required": false
+  },
+  {
+   "name": "padStart",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "initiallyStable",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "SpringOptions",
+   "default": "{transition}",
+   "required": false
+  },
+  {
+   "name": "onNumberChange",
+   "type": "(number: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "inView",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "inViewOnce",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "No frame catches the counters at rest; every one is sampled mid-roll."
+ ],
+ "polish": 3,
+ "polish_why": "Convincing odometer spring, but every sampled frame is mid-motion and captions are faint.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Sliding Number",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1a2e9f739fc0e65a",
+  "film_hash": "f5029efc3553ff60",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

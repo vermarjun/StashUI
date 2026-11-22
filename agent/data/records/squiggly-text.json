@@ -1,0 +1,162 @@
+{
+ "name": "squiggly-text",
+ "frames": {
+  "code": "7879",
+  "best": 6,
+  "best_why": "The word squiggly shows the clearest wavy, doubled outline while the rest of the line stays sharp.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "One word in a sentence jitters like a hand-drawn wave.",
+ "summary": "Wraps any run of text in a live filter that keeps warping it, so a single word quivers and ruffles in place while the rest of the sentence stays crisp.",
+ "title_fix": null,
+ "appearance": "A single line of bold white text on black. One word inside it has slightly ragged, doubled edges, while the words around it stay perfectly sharp.",
+ "behaviour": "The wrapped word is continuously displaced by a shifting noise filter that cycles through five shapes many times a second, so it shivers like a wobbly drawing. Nothing responds to input.",
+ "parts": [
+  "text line",
+  "wobbling word"
+ ],
+ "demo_content": "The sentence 'Make your text squiggly and fun', with the word squiggly animated.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "minimal",
+  "bold",
+  "playful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "word that wobbles in a sentence",
+  "hand drawn wavy text",
+  "jittery lettering effect",
+  "fun distortion on one word",
+  "shaky handwriting style headline",
+  "liquid text effect",
+  "make part of a sentence animate",
+  "wavy edges on letters"
+ ],
+ "resembles": [],
+ "use_when": "One playful word inside a headline should draw the eye without setting the whole sentence in motion.",
+ "avoid_when": "Body copy or long text: constant turbulence hurts legibility and the filter costs work every frame.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "social"
+ ],
+ "slot_hints": [
+  "headline",
+  "body-text",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Wrap the text as children and tune steps, stepDuration, scale, baseFrequency, numOctaves and the element type through props.",
+ "technique": [
+  "svg-filter",
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "An SVG displacement filter is reapplied to the word about twelve times a second.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The text stays real text and the filter SVG is hidden from assistive tech, but the wobble ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"inline-block\", className)}",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "React.CSSProperties",
+   "default": "{{ filter, ...style }}",
+   "required": false
+  },
+  {
+   "name": "steps",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "stepDuration",
+   "type": "number",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number | [number, number]",
+   "default": "[6, 8]",
+   "required": false
+  },
+  {
+   "name": "baseFrequency",
+   "type": "number",
+   "default": "0.02",
+   "required": false
+  },
+  {
+   "name": "numOctaves",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "\"span\" | \"div\"",
+   "default": "\"span\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The distortion is slight, so on a still the word reads almost like plain text."
+ ],
+ "polish": 3,
+ "polish_why": "A tight, tidy filter trick; the wobble is so slight it can be missed at a glance.",
+ "unsure": [],
+ "title": "Squiggly Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7e99133897d99709",
+  "film_hash": "70f561569962d109",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

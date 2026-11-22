@@ -1,0 +1,184 @@
+{
+ "name": "TiltedCard-TS-TW",
+ "frames": {
+  "code": "1769",
+  "best": 3,
+  "best_why": "Both tilted photos show clearly and a white caption tag floats beside the top one.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "Photos lean with the pointer while a small white caption follows it.",
+ "summary": "Two tall photos in rounded frames that tilt in 3D toward the cursor and lift slightly, with a small white caption tag that follows the pointer and a brief mobile warning.",
+ "title_fix": null,
+ "appearance": "Two tall, narrow photos with rounded corners stacked down the centre of a dark stage: a pastel mountain sunset above and a starry night sky below. Each image sits in its own frame with a faint mirrored reflection at its base, and a small white caption tag can float over the photo.",
+ "behaviour": "Moving the pointer over a photo rotates it in 3D toward the cursor and scales it up slightly; a white caption tag follows the pointer and rocks with its vertical speed. Leaving springs the card back flat and hides the tag.",
+ "parts": [
+  "photo",
+  "rounded frame",
+  "caption tag",
+  "mobile warning"
+ ],
+ "demo_content": "A mountain sunset captioned 'Mountains · Unsplash' and a starry night captioned 'Starry Night · Unsplash'.",
+ "states": [
+  "hover"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photo that tilts with the mouse",
+  "3d hover effect on a portrait image",
+  "image card with a caption that follows the cursor",
+  "tilted picture frame on hover",
+  "photo gallery card that leans toward you",
+  "cursor reactive image with tooltip label",
+  "slight perspective tilt on a photo",
+  "photo with a floating white caption"
+ ],
+ "resembles": [],
+ "use_when": "You want a photo, poster or album cover to feel physical and interactive on a portfolio or gallery page.",
+ "avoid_when": "It is built for desktop pointers and shows a warning on mobile; the tilt and caption do nothing on touch or keyboard.",
+ "suits": [
+  "portfolio",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Props set the image source, alt text, caption, container and image sizes, hover scale, tilt amount, whether the tooltip and mobile warning show, and overlay content. Styling is fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One or two images with spring-driven transforms; no loop runs while the pointer is idle.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Tilt and caption follow only the pointer; there is no keyboard equivalent and no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "altText",
+   "type": "string",
+   "default": "'Tilted card image'",
+   "required": false
+  },
+  {
+   "name": "captionText",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "imageWidth",
+   "type": "string",
+   "default": "'300px'",
+   "required": false
+  },
+  {
+   "name": "imageHeight",
+   "type": "string",
+   "default": "'300px'",
+   "required": false
+  },
+  {
+   "name": "containerWidth",
+   "type": "string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "containerHeight",
+   "type": "string",
+   "default": "'300px'",
+   "required": false
+  },
+  {
+   "name": "scaleOnHover",
+   "type": "number",
+   "default": "1.1",
+   "required": false
+  },
+  {
+   "name": "rotateAmplitude",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "showTooltip",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "overlayContent",
+   "type": "ReactNode",
+   "default": "null",
+   "required": false
+  },
+  {
+   "name": "displayOverlayContent",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Tilt and caption need a mouse; nothing happens on touch or keyboard.",
+  "On small screens the caption is hidden and a plain warning tells users to switch to desktop."
+ ],
+ "polish": 3,
+ "polish_why": "Two nice photos with a smooth tilt, but the effect is standard and mobile gets only a warning.",
+ "unsure": [
+  "traits.theme"
+ ],
+ "title": "Tilted Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "90b0b2de3d4781a0",
+  "film_hash": "a1a226f65c2e912a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

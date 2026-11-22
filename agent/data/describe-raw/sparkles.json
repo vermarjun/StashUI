@@ -1,0 +1,177 @@
+{
+  "name": "sparkles",
+  "frames": {
+    "code": "7511",
+    "best": 1,
+    "best_why": "Full starry field with the headline sitting cleanly on it; later frames only add a small cursor burst.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "White specks drift upward on black, twinkling and sparking under the pointer.",
+  "summary": "A full-bleed field of tiny white particles drifting upward while their brightness pulses. Moving the pointer pulls thin lines between nearby dots and a click adds a burst of new ones.",
+  "title_fix": null,
+  "appearance": "A black stage packed edge to edge with hundreds of small white dots of slightly varied size. Centred on top sits a faint uppercase eyebrow, a large white headline and a short two-line paragraph.",
+  "behaviour": "Dots rise continuously while each one fades in and out, so the field sparkles. Bringing the pointer close draws faint lines to nearby dots, and clicking pushes a burst of particles outward before they resume drifting.",
+  "parts": [
+    "particle field",
+    "dots",
+    "eyebrow label",
+    "headline",
+    "paragraph"
+  ],
+  "demo_content": "Dark beta hero: eyebrow \"Now in beta\", headline \"Ship something bright.\" and a two-line paragraph.",
+  "states": [
+    "hover"
+  ],
+  "kind": "background",
+  "look": [
+    "dark",
+    "minimal",
+    "monochrome",
+    "airy"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "floating white particles on black",
+    "starry night background animation",
+    "twinkling particle field for a hero",
+    "dots drifting upward behind text",
+    "interactive particles that follow the cursor",
+    "sparkle burst on click background",
+    "space dust website backdrop",
+    "animated particle canvas for landing page"
+  ],
+  "resembles": [],
+  "use_when": "A launch or beta hero needs a living backdrop that reacts to the pointer without competing with the headline.",
+  "avoid_when": "The loop never idles and ignores reduced-motion, costing battery; touch devices get no hover.",
+  "suits": [
+    "marketing",
+    "saas"
+  ],
+  "slot_hints": [
+    "page-background",
+    "hero",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "always",
+      "hover",
+      "click"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "background"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Density, dot size, speed, drift direction, colour, opacity and the hover and click modes are props; grab-line and burst tuning needs a source edit.",
+  "technique": [
+    "canvas-2d",
+    "js-animation"
+  ],
+  "weight": "heavy",
+  "weight_why": "A canvas loop redraws up to 1200 dots and their opacity every frame with no pause.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The decorative canvas has no role or text alternative and the animation ignores prefers-reduced-motion."
+  },
+  "props": [
+    {
+      "name": "density",
+      "type": "number",
+      "default": "800",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "default": "1.2",
+      "required": false
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": "1.5",
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "default": "#ffffff",
+      "required": false
+    },
+    {
+      "name": "direction",
+      "type": "string",
+      "default": "",
+      "required": false
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "default": "1",
+      "required": false
+    },
+    {
+      "name": "minSize",
+      "type": "number | null",
+      "default": "null",
+      "required": false
+    },
+    {
+      "name": "minSpeed",
+      "type": "number | null",
+      "default": "null",
+      "required": false
+    },
+    {
+      "name": "minOpacity",
+      "type": "number | null",
+      "default": "null",
+      "required": false
+    },
+    {
+      "name": "hover",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "mousemove",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "default": "transparent",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The recorded demo places its headline outside the component, so the shipped piece is only the backdrop.",
+    "The small paragraph at 60% white is faint against the moving dots."
+  ],
+  "polish": 3,
+  "polish_why": "Clean particle field, but the twinkling-dots-behind-a-headline pairing is a familiar template.",
+  "unsure": [
+    "resembles"
+  ]
+}

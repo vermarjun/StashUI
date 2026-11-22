@@ -1,0 +1,115 @@
+{
+ "name": "comp-312",
+ "frames": {
+  "code": "9900",
+  "best": 1,
+  "best_why": "Frame 1 shows the whole strip and the Update now button at rest, with the cursor below it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Thin bar offers a new version with an Update now button that spins.",
+ "summary": "A slim centred bar showing a version number and release line beside an outlined Update now button, which becomes a spinner and Updating label while it pretends to work.",
+ "title_fix": null,
+ "appearance": "A full-width muted grey band, a little lighter than the page, with its contents centred on one line. Small text reads v2.1.0, a dot, then a release note, followed by a small outlined Update now button with a download arrow.",
+ "behaviour": "Pressing Update now disables the button, swaps its label for Updating... and shows a spinning loader; after about two seconds it returns to normal.",
+ "parts": [
+  "version label",
+  "message text",
+  "update button",
+  "spinner"
+ ],
+ "demo_content": "v2.1.0 • New features and improvements available",
+ "states": [
+  "hover",
+  "focus",
+  "loading",
+  "disabled"
+ ],
+ "kind": "toast",
+ "look": [
+  "minimal",
+  "flat",
+  "outlined",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "app update available bar",
+  "new version notification strip",
+  "install update with spinner button",
+  "changelog notification at top",
+  "software update message bar",
+  "download update call to action",
+  "small bar showing version number",
+  "automatic update prompt strip"
+ ],
+ "resembles": [],
+ "use_when": "A new release is out and you want a low-key strip with one update action.",
+ "avoid_when": "The download is simulated, so it only changes the button for two seconds and installs nothing.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "toast",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Version, message and button labels are hardcoded, and the download is a fixed two-second timeout.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "One thin bar; the only script work is a short timeout and a spinning icon.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Button text names the action and both icons are hidden, but the spinner keeps turning with no reduced-motion check."
+ },
+ "props": [],
+ "issues": [
+  "Update is faked with a timeout and installs nothing."
+ ],
+ "polish": 3,
+ "polish_why": "Neat centred strip with a clear loading state; plain and stock otherwise.",
+ "unsure": [
+  "technique",
+  "theme"
+ ],
+ "title": "Version Update Banner",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f9873b1c64d9aff4",
+  "film_hash": "04d3aeab0f90ad17",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

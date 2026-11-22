@@ -1,0 +1,129 @@
+{
+ "name": "morphing-discovery-bar",
+ "frames": {
+  "code": "6766",
+  "best": 1,
+  "best_why": "Frame 1 shows the full pill bar at rest with the search circle and active Explore tab.",
+  "usable": [
+   1,
+   2,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.0
+ },
+ "tagline": "Category pills blur away as the search circle grows into a field.",
+ "summary": "A rounded row of category pills with a search button at one end. Clicking search widens it into a typing field while the category pills blur and slide off, and a close button brings them back.",
+ "title_fix": null,
+ "appearance": "A dark rounded capsule bar holding a small circular search button and four icon-and-label pills; the active pill gets a pale tinted background and a coloured label, while the others stay neutral grey.",
+ "behaviour": "Tapping the search circle springs it open into a wide input while the category pills blur, shrink and slide away, and a round X appears beside it. Pressing X clears the text and morphs the pills back into place.",
+ "parts": [
+  "search button",
+  "category pill",
+  "icon",
+  "label",
+  "search field",
+  "close button"
+ ],
+ "demo_content": "Explore, Trending, Music and Food with compass, flame, note and fork icons; a jazz brunch search query.",
+ "states": [
+  "hover",
+  "active",
+  "focus",
+  "open"
+ ],
+ "kind": "tabs",
+ "look": [
+  "dark",
+  "pill",
+  "rounded",
+  "minimal"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "category pills that turn into search",
+  "search icon expands into a field",
+  "tab bar that collapses for search",
+  "filter chips with expanding search",
+  "food and music category selector",
+  "pill tabs with a search button",
+  "search takeover animation in a toolbar",
+  "segmented bar that becomes an input"
+ ],
+ "resembles": [
+  "Airbnb category pills"
+ ],
+ "use_when": "A filter row should stay compact but still offer search without opening a separate overlay.",
+ "avoid_when": "The search field is visual only: typing filters nothing and no search callback fires.",
+ "suits": [
+  "ecommerce",
+  "social",
+  "media"
+ ],
+ "slot_hints": [
+  "nav",
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a categories array of id, label, icon and the two active colours; the spring timing and the morph sizes are constants inside the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of pills and one input running layout and blur springs.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The search and close buttons are icon-only with no label or clear focus style, so their purpose is unclear to keyboard and screen-reader users."
+ },
+ "props": [
+  {
+   "name": "categories",
+   "type": "Category[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The search field is decorative: typing filters nothing and no search callback fires.",
+  "Frames 3 and 5 catch the morph with the whole bar smeared into an unreadable blur."
+ ],
+ "polish": 4,
+ "polish_why": "Confident spring morph with tidy colour coding; the non-functional search lets it down.",
+ "unsure": [],
+ "title": "Morphing Discovery Bar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "65630a3453524338",
+  "film_hash": "c5c20fc09687a7fa",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

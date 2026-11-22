@@ -1,0 +1,183 @@
+{
+ "name": "primitives-effects-highlight",
+ "frames": {
+  "code": "3396",
+  "best": 5,
+  "best_why": "A crisp grey highlight sits behind Analytics with the cursor over that item and the whole header visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "A grey marker slides behind whichever nav link you hover.",
+ "summary": "A dark header bar with a brand, five nav links and an avatar; a rounded highlight moves under the link the pointer is on and fades away when it leaves.",
+ "title_fix": "Nav Hover Highlight",
+ "appearance": "A wide, rounded dark bar on black holds a white rounded-square logo with the name Northwind, five small grey nav links and a tiny round avatar at the far right.",
+ "behaviour": "Pointing at a link fades a lighter rounded rectangle in behind it, and moving between links slides the marker across with a spring. It disappears when the pointer leaves.",
+ "parts": [
+  "header bar",
+  "brand logo",
+  "nav links",
+  "moving highlight",
+  "avatar"
+ ],
+ "demo_content": "Northwind brand with Overview, Analytics, Customers, Billing and Settings links plus an avatar photo.",
+ "states": [
+  "hover"
+ ],
+ "kind": "transition",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "nav links with a sliding marker",
+  "hover background that follows the item",
+  "moving pill behind menu links",
+  "header menu hover indicator",
+  "animated selection marker for tabs",
+  "marker that jumps between items",
+  "dark toolbar with active item fill",
+  "smooth hover state for navigation"
+ ],
+ "resembles": [],
+ "use_when": "A row of nav or tab labels needs a clear moving marker for the hovered or active item.",
+ "avoid_when": "It is a bare wrapper with no look of its own, so you must supply highlight colours and adapt it to light themes.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "docs"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Each item is a child with a value, and mode, hover or click, transition, class names and a controlled value are props; the bounds measuring is fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One absolutely positioned rectangle measured and animated; idle when nothing hovers.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The marker only follows the mouse, never focus, and aria-selected is put on plain buttons without a tab role."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "mode",
+   "type": "children | parent",
+   "default": "'children'",
+   "required": false
+  },
+  {
+   "name": "hover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "click",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string | null",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string | null",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string | null) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ type: 'spring', stiffness: 350, damping: 35 }",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{(props as ParentModeHighlightProps)?.containerClassName}",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enabled",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The highlight grey is only slightly lighter than the header, so the hovered item is faint."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy dark header and a smooth slide; the faint highlight makes the hover state too subtle.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Highlight",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "08689129d3041b34",
+  "film_hash": "c2ae3bad8938073d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

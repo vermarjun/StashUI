@@ -1,0 +1,148 @@
+{
+ "name": "3d-pin",
+ "frames": {
+  "code": "1708",
+  "best": 2,
+  "best_why": "Frame 2 shows the full hover state: card tilted back, site pill above and cyan stem between them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.7
+ },
+ "tagline": "A dark card tips back in 3D, sprouting a site label and cyan beam on hover.",
+ "summary": "A dark link card holding an avatar, a name, a short paragraph and tag pills. Hovering tips it into perspective, fades in a site-name pill above and pulses blue rings behind a thin cyan stem.",
+ "title_fix": null,
+ "appearance": "A small near-black rounded card with a barely visible border, holding a violet-to-sky gradient circle, the bold name Aceternity UI, a grey paragraph and three thin outlined tags in a row along the bottom. Hovered, it tilts away under a small dark pill reading aceternity.com, joined by a fine cyan line.",
+ "behaviour": "At rest the card faces the viewer. On hover it tips back in perspective, shrinks slightly and darkens toward its top edge, a site-name pill fades in above, a cyan pin line and dot appear, and soft blue rings pulse out behind it on a six-second loop. Leaving restores the flat card.",
+ "parts": [
+  "card",
+  "gradient circle",
+  "name label",
+  "paragraph",
+  "tag pills",
+  "site pill",
+  "pin line"
+ ],
+ "demo_content": "Name Aceternity UI, a short paragraph, and tags UI, React and Next.js under an aceternity.com title.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "3d",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "card that tilts back when hovered",
+  "3d hover card with glowing rings",
+  "link card that reveals a site label",
+  "interactive tilted profile card",
+  "floating card with pulsing blue circles",
+  "hover effect for a product card",
+  "card that leans away from the cursor",
+  "dark card with cyan beam on hover"
+ ],
+ "resembles": [],
+ "use_when": "A project or profile card should feel interactive and reveal a destination link on hover.",
+ "avoid_when": "Touch devices or tight layouts: the effect needs hover and a wide overlay area.",
+ "suits": [
+  "portfolio",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children",
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "The card body comes in as children; title and href feed the hover pill and the link. className and containerClassName restyle it, while the tilt angle, rings and pin are fixed in the source.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One card, a single hover transform and three small rings looping.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "It is a real link, but the pill, rings and pin appear on hover only, so keyboard focus never reveals them and adds no focus ring."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "href",
+   "type": "string",
+   "default": "{href || \"/\"}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Hover-only: touch and keyboard users never see the site pill, rings or cyan beam.",
+  "The card border is almost invisible against the black stage until hovered."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp perspective tilt and pin detail, but the faint border and hover-only reveal are misses.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "3D Pin Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f4e22ca5ebb96251",
+  "film_hash": "0d83cc5d29238b06",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

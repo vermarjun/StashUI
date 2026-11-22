@@ -1,0 +1,71 @@
+{
+  "name": "presentation",
+  "frames": {
+    "code": "7881",
+    "best": 4,
+    "best_why": "The full cream slide, its three columns and the whole numbered thumbnail rail are visible together.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A deck viewer with a thumbnail rail and one large, zoomable slide.",
+  "summary": "A .pptx viewer: a numbered thumbnail rail down the left, a large auto-fitted slide on the right, and in-slide selection with resize and rotate handles. Clicking a thumbnail flips the deck.",
+  "title_fix": null,
+  "appearance": "A bordered app panel with a thin toolbar and a file picker. Down the left runs a column of small numbered slide previews; the rest is a large framed slide canvas showing cream pages with serif headlines and thin rules, or dark green cover slides.",
+  "behaviour": "Clicking a thumbnail swaps the big slide and the viewport refits it to the space. Inside a slide, objects can be marquee-selected, dragged, resized and rotated with handles; on narrow screens the rail slides out from behind a toggle button.",
+  "parts": ["toolbar", "file picker", "thumbnail rail", "thumbnail number", "slide canvas", "selection handles"],
+  "demo_content": "A listening-room deck: \"After the needle drops.\" plus a page on control, settle and quiet.",
+  "states": ["hover", "focus", "active", "open", "selected", "loading", "error"],
+  "kind": "other",
+  "look": ["editorial", "minimal", "light", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "powerpoint deck viewer in the browser",
+    "slide thumbnails beside a large page",
+    "browse a pptx file with a side rail",
+    "view and select items on a slide",
+    "deck preview with numbered pages",
+    "slide editor panel for a web app",
+    "open a pptx and flip through pages",
+    "how to render powerpoint slides on a website"
+  ],
+  "resembles": ["Google Slides", "Microsoft PowerPoint"],
+  "use_when": "Users need to open and page through a real .pptx deck inside the app, optionally editing slide objects.",
+  "avoid_when": "It leans on a separate .pptx parser, needs a container with real height, and shows nothing until a deck loads.",
+  "suits": ["saas", "docs"],
+  "slot_hints": ["body-text"],
+  "traits": {
+    "trigger": ["click", "drag", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "background", "children"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Give the provider a store loaded from a .pptx buffer, then compose the thumbnail list, content, viewport and slide. Every part takes a className and replacement children.",
+  "technique": ["css-transition"],
+  "weight": "heavy",
+  "weight_why": "Parses a .pptx file and renders every slide plus a thumbnail for each, so cost grows with deck size.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Thumbnails take focus and the mobile rail has labels, but slide object keyboard support comes from the underlying package and nothing checks reduced motion."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "autoFit", "type": "boolean", "default": "true", "required": false},
+    {"name": "autoFitPadding", "type": "number", "default": "10", "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 1 and 2 show the cover slide with body copy so dim against the green that it is barely readable.",
+    "The demo loads a deck from one fixed remote URL and swallows failures, leaving an empty panel if it changes."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp editorial slides and a tidy rail; the dim cover body text is hard to read.",
+  "unsure": ["kind", "content_from"]
+}

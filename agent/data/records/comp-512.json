@@ -1,0 +1,121 @@
+{
+ "name": "comp-512",
+ "frames": {
+  "code": "2083",
+  "best": 6,
+  "best_why": "Button reads Nov 07 - Nov 18 with the matching range shaded inside the open calendar.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.5
+ },
+ "tagline": "Labelled button that opens a calendar for picking two dates.",
+ "summary": "A form field labelled Date range picker: an outlined button showing Pick a date range and a small calendar glyph. Opening it reveals a month calendar where two clicks shade a span and rewrite the button text.",
+ "title_fix": null,
+ "appearance": "A small label sits above a full-width dark outlined button that holds grey placeholder text on the left and a calendar icon on the right. Below, a floating rounded panel shows a month with weekday initials, day numbers, and a grey band with white circular ends for the range.",
+ "behaviour": "Pressing the button drops the calendar open beneath it. A first click sets the start, a second sets the end and the button text becomes something like Nov 07, 2026 - Nov 18, 2026; the panel stays open until dismissed.",
+ "parts": [
+  "field label",
+  "trigger button",
+  "placeholder text",
+  "calendar icon",
+  "popover panel",
+  "month heading",
+  "day grid",
+  "range band"
+ ],
+ "demo_content": "November 2026 with a range from 7 to 18 chosen; caption reads \"Built with React DayPicker\".",
+ "states": [
+  "open",
+  "hover",
+  "focus",
+  "selected"
+ ],
+ "kind": "calendar",
+ "look": [
+  "dark",
+  "flat",
+  "outlined",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "date range button that opens a calendar",
+  "pick start and end dates in a popup",
+  "form field showing chosen date range",
+  "dropdown calendar for booking dates",
+  "date filter button with calendar icon",
+  "popup month calendar for two dates",
+  "field that shows one date to another",
+  "range selector in a floating panel"
+ ],
+ "resembles": [],
+ "use_when": "A form needs a compact date range field that stays collapsed until someone opens it.",
+ "avoid_when": "Only one month shows at a time and a long range label can be truncated inside a narrow field.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "border",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The label, placeholder and caption are written in the file; button width, popover alignment and date format are also fixed in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A button and one month calendar that only renders while the popover is open.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger has a linked label and a visible focus outline and days are buttons, but the range is only read as plain button text."
+ },
+ "props": [],
+ "issues": [
+  "The open popover sits on top of its own caption text in the frames.",
+  "Only one month is visible, so ranges over a month edge take extra clicks.",
+  "The caption credits the calendar library instead of the control."
+ ],
+ "polish": 4,
+ "polish_why": "Neat labelled trigger and clean calendar; the panel covering its own caption is a small flaw.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Date Range Popover Picker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f425279b1337ed52",
+  "film_hash": "aabd4313d02e1e32",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

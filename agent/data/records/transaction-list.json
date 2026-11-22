@@ -1,0 +1,121 @@
+{
+ "name": "transaction-list",
+ "frames": {
+  "code": "3697",
+  "best": 3,
+  "best_why": "Fully expanded receipt with the merchant, amount, close button and card details all readable at once.",
+  "usable": [
+   1,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "Compact payments that unfold one row into a full receipt.",
+ "summary": "A short list of recent payments. Tapping a row morphs the whole card into a receipt for that purchase, carrying its icon, name and amount across before closing back to the list.",
+ "title_fix": null,
+ "appearance": "A dark rounded card headed \"Transaction\" with four rows, each a small rounded icon, a merchant name over a category and an amount on the right. Expanded it becomes a receipt: icon and close button on top, merchant and amount, then dashed rules over id, date, time and card details.",
+ "behaviour": "Clicking a row grows the card into the receipt on a spring while the icon, name, category and amount slide to new positions. The close button collapses it back to the list, and the card's height animates to fit whichever view is shown.",
+ "parts": [
+  "card",
+  "heading",
+  "transaction row",
+  "merchant icon",
+  "merchant name",
+  "amount",
+  "receipt details",
+  "close button"
+ ],
+ "demo_content": "Blue Bottle Coffee, Music Premium, Everlane and a Lisbon Flight with amounts, dates and Visa or Mastercard digits.",
+ "states": [
+  "open",
+  "hover"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "list of recent payments",
+  "tap a row to see the receipt",
+  "card that morphs into transaction details",
+  "bank statement rows with icons",
+  "shared element expansion from a list row",
+  "spending history widget",
+  "merchant and amount list",
+  "receipt view with card last digits"
+ ],
+ "resembles": [
+  "Apple Wallet transactions"
+ ],
+ "use_when": "A finance app wants a compact payment history that opens into full receipt details on demand.",
+ "avoid_when": "It is fixed to a narrow sixteen-rem column and the receipt offers no actions, so it is for viewing only.",
+ "suits": [
+  "fintech",
+  "saas",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "list-item",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Only the transactions array is a prop, with icon, name, category, amount and extra receipt fields per item; the column width and spring are fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A few rows and one shared-layout morph, plus a height measurement.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Rows and the close control are click-only divs with no roles, focus or labels, so nothing here works from a keyboard."
+ },
+ "props": [
+  {
+   "name": "transactions",
+   "type": "Transaction[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Mid-morph frames 2 and 5 show both views stacked and unreadable."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy receipt layout and a smooth shared-element morph; the in-between frames read as a jumble.",
+ "unsure": [],
+ "title": "Transaction List",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a7b81f0486f51714",
+  "film_hash": "7fd8ce6d393fe0ac",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

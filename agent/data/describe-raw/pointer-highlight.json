@@ -1,0 +1,70 @@
+{
+  "name": "pointer-highlight",
+  "frames": {
+    "code": "4774",
+    "best": 4,
+    "best_why": "All three rectangles are fully drawn with their cursor arrows parked at the corners and no stray pointer.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Thin boxes draw around text and finish with a small cursor arrow.",
+  "summary": "Wraps a line of text in a thin rectangle that draws itself when it scrolls into view, with a little click cursor landing at the bottom-right corner in a colour you choose.",
+  "title_fix": null,
+  "appearance": "Three short lines of white text on black, each inside a thin rectangular outline with sharp corners. A small arrow cursor sits just outside each box's bottom-right corner, two blue and one green.",
+  "behaviour": "When the text scrolls into view the border grows out from the corner while a cursor fades in and slides to the bottom-right, then everything holds still.",
+  "parts": ["text line", "border rectangle", "cursor arrow"],
+  "demo_content": "Lines 'Ship faster than ever', 'Build beautiful interfaces with zero friction' and 'Open source · MIT license'.",
+  "states": [],
+  "kind": "border-effect",
+  "look": ["dark", "outlined", "minimal", "technical"],
+  "tone": "minimal",
+  "search_phrases": [
+    "box drawn around a sentence",
+    "outline that animates around text",
+    "cursor arrow pointing at a block",
+    "annotated callout box",
+    "thin rectangle around a headline",
+    "highlight text with a border",
+    "landing page line with a pointer",
+    "marketing text with a box around it"
+  ],
+  "resembles": [],
+  "use_when": "A short line in a hero should feel pointed at, as if someone circled it in a design review.",
+  "avoid_when": "It draws once and stays: there is no hover response despite the cursor glyph, so it cannot stay interactive.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["headline", "body-text", "decoration"],
+  "traits": {
+    "trigger": ["viewport", "scroll"],
+    "motion": "subtle",
+    "affects": ["border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap the content and recolour the box and arrow with rectangleClassName and pointerClassName; draw timing and cursor placement are in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Two short draw animations per wrapped block, fired once when it enters view.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The border and cursor are purely decorative, and the draw animation ignores reduced-motion."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "rectangleClassName", "type": "string", "default": null, "required": false},
+    {"name": "pointerClassName", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "While the border is drawing, the cursor arrow sits on top of the words and reads as an overlap."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp, well-timed box with a charming cursor; the arrow overlaps the text while drawing.",
+  "unsure": ["kind"]
+}

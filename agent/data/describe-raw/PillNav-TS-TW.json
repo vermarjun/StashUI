@@ -1,0 +1,80 @@
+{
+  "name": "PillNav-TS-TW",
+  "frames": {
+    "code": "1828",
+    "best": 1,
+    "best_why": "Shows the logo and the full pill row crisply, with no hover animation blurring the labels.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The left edge is cropped: the Home pill falls outside the frame in every shot.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rounded white pills sit in a bar; the hovered one fills with a dark circle.",
+  "summary": "A slim top navigation with a round logo and a row of small pill links. Hovering a pill grows a circle that fills it and flips the label to white, while the active link shows a dot beneath.",
+  "title_fix": null,
+  "appearance": "A thin dark band at the top holds a round photo logo on the left and a white capsule bar of small uppercase pill links split by thin gaps. Each pill has dark text, and the active link carries a small round dot just below its pill.",
+  "behaviour": "Hovering a pill expands a circle from its base that fills the pill and flips the label to the hover colour; leaving shrinks it back. The logo spins once on hover, and below a breakpoint the links fold behind a two-line hamburger that opens a stacked menu.",
+  "parts": ["logo", "pill bar", "pill links", "active dot", "hamburger button"],
+  "demo_content": "Links Home, About, Work, Blog and Contact beside a small photo logo.",
+  "states": ["hover", "active", "open"],
+  "kind": "site-header",
+  "look": ["dark", "pill", "minimal", "rounded", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "rounded navigation bar with pill links",
+    "top nav with sliding circle hover",
+    "minimal site menu with dot under active page",
+    "capsule shaped tab bar for a site",
+    "hover fills the menu item with a circle",
+    "small uppercase links in a white bar",
+    "responsive nav with hamburger on mobile",
+    "logo and menu links across the top"
+  ],
+  "resembles": [],
+  "use_when": "You want a compact, friendly primary menu that stays small but makes each link feel tactile on hover.",
+  "avoid_when": "It relies on hover for the circle effect, so touch users get plain pills, and the tiny uppercase text limits legibility.",
+  "suits": ["portfolio", "marketing", "saas"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "You pass the logo URL, alt text and an array of label/href items, plus the active href and five colour props for base, pill, text and hover text. Spacing, sizes and the mobile layout are fixed.",
+  "technique": ["gsap", "css-transition"],
+  "weight": "light",
+  "weight_why": "A handful of GSAP tweens on tiny pills; nothing animates until hover or a menu toggle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Hover and menu animations ignore reduced-motion, and menuitem roles on plain links promise arrow-key behaviour that is not there."
+  },
+  "props": [
+    {"name": "logo", "type": "string", "default": null, "required": true},
+    {"name": "items", "type": "PillNavItem[]", "default": null, "required": true},
+    {"name": "logoAlt", "type": "string", "default": "'Logo'", "required": false},
+    {"name": "activeHref", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "''", "required": false},
+    {"name": "ease", "type": "string", "default": "'power3.easeOut'", "required": false},
+    {"name": "baseColor", "type": "string", "default": "'#fff'", "required": false},
+    {"name": "pillColor", "type": "string", "default": "'#120F17'", "required": false},
+    {"name": "hoveredPillTextColor", "type": "string", "default": "'#120F17'", "required": false},
+    {"name": "pillTextColor", "type": "string", "default": null, "required": false},
+    {"name": "onMobileMenuClick", "type": "() => void", "default": null, "required": false},
+    {"name": "initialLoadAnimation", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "The nav overflows the stage crop, so the Home pill is clipped off the left edge in every frame.",
+    "Mid-hover frames show the label duplicated and overlapping while the circle grows.",
+    "role=menuitem sits on ordinary links without the arrow-key menu behaviour it implies."
+  ],
+  "polish": 3,
+  "polish_why": "Crisp compact pills and a tidy hover fill, but clipped at the left edge and plain at rest.",
+  "unsure": ["render", "traits.theme"]
+}

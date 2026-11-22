@@ -1,0 +1,75 @@
+{
+  "name": "images-slider",
+  "frames": {
+    "code": "8346",
+    "best": 6,
+    "best_why": "A clean full-bleed lake photo with the headline and button, no transition gap.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Full-bleed photos tip away every five seconds behind a fixed headline.",
+  "summary": "A full-screen photo carousel where each landscape image tips and slides out while the next scales up from a tilted card. A dark overlay holds a white headline and a small pill button still.",
+  "title_fix": null,
+  "appearance": "A full-bleed landscape photograph fills the panel under a dark overlay, with a white two-line headline and a small outlined pill button centred on top. In transition the next image appears as a tilted rectangle at an edge.",
+  "behaviour": "Every five seconds the current photo tips and slides out while the next scales in from a rotated card. The left and right arrow keys move back and forward, and the headline overlay stays fixed.",
+  "parts": ["photo", "dark overlay", "headline", "pill button"],
+  "demo_content": "Mountain, beach, tent and lake photos; headline Places worth the long flight.",
+  "states": ["loading"],
+  "kind": "carousel",
+  "look": ["dark", "colorful", "editorial", "airy"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "full screen photo slideshow with text",
+    "travel hero with changing images",
+    "automatic image carousel with caption",
+    "landing header that cycles photos",
+    "images that flip in from the edge",
+    "hero slider with overlay title",
+    "photo banner that changes every few seconds",
+    "arrow key image slideshow"
+  ],
+  "resembles": [],
+  "use_when": "A travel, venue or product hero where big photography should rotate behind one fixed message.",
+  "avoid_when": "Many large photos: every image is loaded up front, so bandwidth cost is high.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["hero", "media", "page-background"],
+  "traits": {
+    "trigger": ["timer", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["image"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "Pass an images array, overlay content as children, a direction and autoplay; the overlay darkness and slide motion are fixed.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Preloads every photo at full size and animates large scaled images.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Arrow keys work, but there are no visible controls, images have no alt text, and autoplay cannot be paused."
+  },
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "overlay", "type": "ReactNode", "default": "true", "required": false},
+    {"name": "overlayClassName", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "autoplay", "type": "boolean", "default": "true", "required": false},
+    {"name": "direction", "type": "string", "default": "up", "required": false}
+  ],
+  "issues": [
+    "No visible next or previous controls, so only arrow keys navigate.",
+    "Autoplay runs on a fixed five-second timer and cannot be paused.",
+    "Photos have no alt text for screen readers."
+  ],
+  "polish": 4,
+  "polish_why": "Rich photography and a smooth tilt transition; no visible controls or pause.",
+  "unsure": ["needs_sized_parent"]
+}

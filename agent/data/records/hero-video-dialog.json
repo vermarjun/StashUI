@@ -1,0 +1,144 @@
+{
+ "name": "hero-video-dialog",
+ "frames": {
+  "code": "3154",
+  "best": 1,
+  "best_why": "The only frame showing the whole clickable thumbnail with its frosted halo and white play button at rest.",
+  "usable": [
+   1,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "A thumbnail with a frosted play button opens a full-screen video.",
+ "summary": "A click-to-play video card: the round play button on the thumbnail opens a blurred full-screen dialog holding the embedded video, springing in from a chosen side.",
+ "title_fix": null,
+ "appearance": "A rounded video thumbnail on a black stage, a dark dashboard screenshot under a blue-to-purple gradient with a white headline. A white circular play button wrapped in a frosted halo sits centred on it.",
+ "behaviour": "Clicking the thumbnail opens a full-screen blurred backdrop with the video in a rounded white-bordered frame that springs in. The dialog closes on its X, the Escape key, or a click outside.",
+ "parts": [
+  "thumbnail",
+  "play button",
+  "modal backdrop",
+  "video frame",
+  "close button"
+ ],
+ "demo_content": "The thumbnail reads \"You Need This UI Library\" over a dashboard; the video is a Next.js build tutorial.",
+ "states": [
+  "hover",
+  "open"
+ ],
+ "kind": "modal",
+ "look": [
+  "dark",
+  "gradient",
+  "rounded",
+  "shadowed"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "click thumbnail to play a video",
+  "video lightbox with play button",
+  "hero video pops up on click",
+  "embedded youtube in a modal",
+  "fullscreen video player overlay",
+  "play button on a preview image",
+  "launch a video from a card",
+  "blurred backdrop video popup"
+ ],
+ "resembles": [],
+ "use_when": "A landing page wants a promo video kept one click away without leaving the page.",
+ "avoid_when": "Slow connections: the dialog opens onto a blank, unlabelled iframe while the video loads.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "hero",
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Video URL, thumbnail URL, alt text and one of eight entry animations are props; overlay tint and close-button styling live in the source.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One image, a button and an iframe that only mounts while the dialog is open.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Opens and closes by keyboard, but focus is not trapped in the dialog or returned to the thumbnail, and there is no reduced-motion guard."
+ },
+ "props": [
+  {
+   "name": "videoSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "thumbnailSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationStyle",
+   "type": "AnimationStyle",
+   "default": "\"from-center\"",
+   "required": false
+  },
+  {
+   "name": "thumbnailAlt",
+   "type": "string",
+   "default": "\"Video thumbnail\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"group relative cursor-pointer border-0 bg-transparent p-0\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The close button is an icon with no accessible label."
+ ],
+ "polish": 4,
+ "polish_why": "Clean thumbnail and smooth spring modal; the loading frame is plain and the close button unlabelled.",
+ "unsure": [],
+ "title": "Hero Video Dialog",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8a7a25227054b5b7",
+  "film_hash": "203c4114562c605e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

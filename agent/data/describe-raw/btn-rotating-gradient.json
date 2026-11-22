@@ -1,0 +1,66 @@
+{
+  "name": "btn-rotating-gradient",
+  "frames": {
+    "code": "9635",
+    "best": 6,
+    "best_why": "Bright gradient ring fully visible around the centred dark pill, with no cursor over the label.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark pill button with a thin gradient ring that spins around its edge.",
+  "summary": "A rounded call-to-action button with white text and a thin two-tone conic gradient that circles its border, making the outline brighten and fade as it travels.",
+  "title_fix": null,
+  "appearance": "A centred pill-shaped button on a near-black stage: dark navy interior with white 'Book a demo' text, enclosed by a thin ring that shifts between pale blue and white as it circles the button.",
+  "behaviour": "The conic gradient ring spins steadily around the button's outline, so the border brightens and dims as the colours travel. The button itself stays still; the source adds a focus ring on keyboard focus.",
+  "parts": ["gradient border ring", "pill button", "button label"],
+  "demo_content": "The button label reads 'Book a demo'.",
+  "states": ["focus"],
+  "kind": "button",
+  "look": ["dark", "pill", "gradient", "glow", "rounded"],
+  "tone": "decorative",
+  "search_phrases": [
+    "button with spinning gradient border",
+    "animated conic outline around cta",
+    "glowing rotating ring on button",
+    "call to action with moving border",
+    "dark pill button with light outline",
+    "continuous gradient edge effect",
+    "colour cycling border on button",
+    "moving light around a button"
+  ],
+  "resembles": [],
+  "use_when": "A primary action on a dark hero needs to draw the eye without loud colour or size.",
+  "avoid_when": "Busy pages or light themes: the dark pill and fixed purple-blue gradient may clash with brand colours.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["primary-cta", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the label as children and a className to extend the button; the gradient colours, spin speed and radius are fixed in the source and need editing.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "Two spans and a single CSS spin animation; no JavaScript or canvas.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The spinning border ignores prefers-reduced-motion, so motion-sensitive users get a perpetual animation; a native button keeps it keyboard-operable."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": "Click Me", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The pale ring is very faint in frames 1 and 2, so the effect is easy to miss."],
+  "polish": 4,
+  "polish_why": "Tidy pill with a smooth, even spin; the gradient ring is too faint to notice in some frames.",
+  "unsure": ["responsive"]
+}

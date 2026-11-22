@@ -1,0 +1,76 @@
+{
+  "name": "github-stars-wheel",
+  "frames": {
+    "code": "5048",
+    "best": 6,
+    "best_why": "Both wheels have landed on 4,200 and 12,800 with filled yellow stars in the highlight rows.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two number wheels spin up to a repo's star count with a filled star.",
+  "summary": "A vertical odometer of numbers races upward and lands on a GitHub repository's star total. A star in the highlighted row fills yellow, and small particles burst when it settles.",
+  "title_fix": null,
+  "appearance": "Two stacked number wheels on a dark background, each showing a column of grey figures with one bold highlighted row in a bordered pill that holds a star. The repo name sits in small grey text below.",
+  "behaviour": "On view, the numbers roll upward like an odometer and slow to a stop at the target. The star fills from the bottom as the count climbs and sparks a short particle burst when it finishes.",
+  "parts": ["number wheel", "highlight row", "star icon", "repo label", "particle"],
+  "demo_content": "Repos stashui/stashui counting to 4,200 and motiondivision/motion counting to 12,800.",
+  "states": ["loading", "success"],
+  "kind": "counter",
+  "look": ["dark", "minimal", "monochrome", "rounded", "flat"],
+  "tone": "playful",
+  "search_phrases": [
+    "spinning number counter to a star count",
+    "odometer number animation",
+    "github star count display",
+    "rolling number wheel",
+    "star bursts when count finishes",
+    "animated repository stars badge",
+    "count up number with particles",
+    "vertical number ticker"
+  ],
+  "resembles": [],
+  "use_when": "You want to show a repository star total with a bit of celebration on a landing page.",
+  "avoid_when": "The exact number matters before the animation ends, or users dislike motion; the wheel delays it.",
+  "suits": ["devtool", "portfolio", "marketing"],
+  "slot_hints": ["stat", "badge"],
+  "traits": {
+    "trigger": ["viewport", "timer"],
+    "motion": "pronounced",
+    "affects": ["text", "fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass value with step, direction, delay and item sizing; or give a username and repo to fetch the count live. Colours and particle geometry are in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A short list of number rows on a spring plus a handful of particles; it settles after the run.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Star icons are aria-hidden and the changing numbers are not announced; no reduced-motion handling."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "step", "type": "number", "default": "100", "required": false},
+    {"name": "direction", "type": "string", "default": "btt", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "itemsSize", "type": "number", "default": "35", "required": false},
+    {"name": "sideItemsCount", "type": "number", "default": "2", "required": false},
+    {"name": "username", "type": "string", "default": null, "required": false},
+    {"name": "repo", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The final number appears only after the spin, so it is unreadable at a glance.",
+    "There is no reduced-motion fallback for the odometer and particle burst."
+  ],
+  "polish": 4,
+  "polish_why": "Satisfying odometer and star fill; the target value is hidden until the spin ends.",
+  "unsure": []
+}

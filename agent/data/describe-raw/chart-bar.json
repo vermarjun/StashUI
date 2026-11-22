@@ -1,0 +1,63 @@
+{
+  "name": "chart-bar",
+  "frames": {
+    "code": "4418",
+    "best": 1,
+    "best_why": "Shows all three bar cards fully drawn so grouped, horizontal and negative bars are easy to compare.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A trio of bar charts: paired columns, horizontal bars and negatives.",
+  "summary": "Three dark analytics cards showing bar charts: grouped monthly columns, horizontal browser bars and a chart with values below the baseline. Hovering shows a small tooltip.",
+  "title_fix": null,
+  "appearance": "Three bordered dark cards sit side by side with grey bar charts. The first pairs narrow columns per month, the second runs long horizontal bars with browser names at left, the third has columns rising and falling around a zero line.",
+  "behaviour": "Hovering a bar dims the rest and shows a small tooltip with the series and value. The negative chart tints values below zero in a lighter grey and keeps month names above each bar.",
+  "parts": ["chart card", "title", "subtitle", "bar", "axis label", "tooltip", "footer stat"],
+  "demo_content": "Visitors for January to June 2024, browsers Chrome, Safari, Firefox, Edge and Other.",
+  "states": ["hover"],
+  "kind": "chart",
+  "look": ["dark", "monochrome", "minimal", "flat"],
+  "tone": "technical",
+  "search_phrases": [
+    "grouped bar chart",
+    "horizontal bar chart with labels",
+    "bar chart with negative values",
+    "monthly visitors bar chart",
+    "browser market share chart",
+    "side by side bar comparison",
+    "analytics bar chart card",
+    "bars above and below zero"
+  ],
+  "resembles": [],
+  "use_when": "A dashboard needs a few compact bar charts to compare categories or months.",
+  "avoid_when": "All three cards hardcode their datasets and copy, so each needs data and labels edited in source.",
+  "suits": ["dashboard", "saas"],
+  "slot_hints": ["chart"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Each variant hardcodes its data array, title and footer in the file; adapting it means replacing those values and the chart config.",
+  "technique": ["svg"],
+  "weight": "light",
+  "weight_why": "Three small SVG charts with six categories each; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The accessibility layer supplies chart names, but tooltip values stay pointer-only."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Clean standard bar cards, but grey and fairly interchangeable.",
+  "unsure": []
+}

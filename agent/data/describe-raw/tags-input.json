@@ -1,0 +1,71 @@
+{
+  "name": "tags-input",
+  "frames": {
+    "code": "7839",
+    "best": 5,
+    "best_why": "Frame 5 shows five tags plus the clear Add a tag field, the fullest state of the list.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Blue tag pills collect inside a box as you type and press Enter.",
+  "summary": "An input that keeps chosen skills as removable blue pills. You type in the field and press Enter or comma to add one; clicking a pill loads it back into the field to edit.",
+  "title_fix": null,
+  "appearance": "A bordered rounded box on a dark page holds a row of small blue pills with white text and a white cross on each. Below them, inside the same box, sits a dark text field reading Add a tag...; a muted Skills label and hint sit outside.",
+  "behaviour": "Typing and pressing Enter or comma adds the text as a new pill and clears the field, unless the tag already exists. Clicking a pill swaps it for an editable field, and blurring or pressing Enter saves the change; each cross removes its pill.",
+  "parts": ["label", "tag pill", "remove cross", "text field", "hint text", "container border"],
+  "demo_content": "Skills typed as React, TypeScript, Tailwind, Motion and Accessibility, with a press Enter hint.",
+  "states": ["focus", "hover"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "type tags into a box",
+    "add chips with enter or comma",
+    "removable skill pills",
+    "tag entry field with blue chips",
+    "click a tag to edit it",
+    "keyword input for forms",
+    "pill tags with delete crosses",
+    "multi value text input"
+  ],
+  "resembles": [],
+  "use_when": "People need to enter several short labels, such as skills or keywords, in one field.",
+  "avoid_when": "Duplicate tags are silently ignored and there is no autocomplete, so long lists get tedious.",
+  "suits": ["saas", "docs"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["keyboard", "click", "hover"],
+    "motion": "none",
+    "affects": ["border", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass tags and setTags to control the list, and editTag to allow inline editing. Colours and pill shapes come from classes in the source.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A few text pills and two inputs with no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Tags are clickable divs rather than buttons, so keyboard users cannot start editing, and the crosses lack names."
+  },
+  "props": [
+    {"name": "tags", "type": "string[]", "default": null, "required": true},
+    {"name": "setTags", "type": "React.Dispatch<React.SetStateAction<string[]>>", "default": null, "required": true},
+    {"name": "editTag", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Remove buttons are bare × marks with no accessible name.",
+    "Pills are clickable divs, so a keyboard user cannot start editing a tag."
+  ],
+  "polish": 3,
+  "polish_why": "Clean pill entry with clear hover and focus; the bright blue and bare crosses look plain.",
+  "unsure": []
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-321",
+  "frames": {
+    "code": "2129",
+    "best": 3,
+    "best_why": "Dialog fully open on its bright white Subscribe button, before the email field takes a typed value.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Click Newsletter and a dark dialog asks for an email to subscribe.",
+  "summary": "A compact newsletter signup. A trigger button opens a centred dialog with an email field, a full-width Subscribe button and a short privacy note.",
+  "title_fix": null,
+  "appearance": "A small outlined Newsletter button sits alone on a dark stage. Clicked, it opens a dark rounded dialog with a ring icon, a bold headline, a grey subtitle, an email field with a mail glyph, a wide light Subscribe button and a tiny underlined privacy line.",
+  "behaviour": "The trigger opens the dialog over a dimmed backdrop. The email field accepts typing, the close X dismisses the dialog, and the Subscribe button fills the panel width.",
+  "parts": ["newsletter button", "dialog panel", "ring icon", "headline", "email input", "subscribe button", "privacy note", "close icon"],
+  "demo_content": "Placeholder email hi@yourcompany.com; in one frame the field reads maya@northwind.dev.",
+  "states": ["hover", "focus", "open", "active"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "minimal", "outlined", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "email signup popup",
+    "subscribe to newsletter dialog",
+    "mailing list form in a modal",
+    "newsletter opt in window",
+    "ask for email with a subscribe button",
+    "popup with an email field",
+    "sign up for updates modal",
+    "button that opens a newsletter form"
+  ],
+  "resembles": ["newsletter signup modal"],
+  "use_when": "The newsletter signup should stay secondary, hidden behind a button until the visitor chooses to open it.",
+  "avoid_when": "A modal blocks the page; for a persistent signup use a footer form or an inline field instead.",
+  "suits": ["saas", "marketing", "blog"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Headline, subtitle, placeholder and privacy copy are hardcoded, so new wording means editing the file; the trigger label and button styling come from shared components.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with a single input and two buttons, animated only on open and close.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Dialog title, description and an email aria-label are set, but Subscribe is type button with no submit, success or error state."
+  },
+  "props": [],
+  "issues": ["Subscribe is type button, so the form never submits anything."],
+  "polish": 4,
+  "polish_why": "Centred layout, clear type scale and one strong action; the ring icon reads a little ambiguous.",
+  "unsure": ["responsive"]
+}

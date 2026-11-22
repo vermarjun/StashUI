@@ -1,0 +1,166 @@
+{
+ "name": "pixel-liquid-bg",
+ "frames": {
+  "code": "9282",
+  "best": 4,
+  "best_why": "Large pink fluid forms are at their fullest, with the blocky dithering clearly visible across the frame.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "partial",
+  "render_note": "The fluid fills the stage, but the demo headline is squeezed into a clipped strip at the right edge.",
+  "shows_interaction": "yes",
+  "best_time": 5.1
+ },
+ "tagline": "Pink liquid churns across black in chunky, dithered blocks.",
+ "summary": "A near-black backdrop where a pink fluid simulation is stirred by the pointer and then rendered as large dithered blocks with faint grain, so the motion reads as low-resolution liquid.",
+ "title_fix": null,
+ "appearance": "A black stage with blooms of hot pink and magenta, each visibly built from square blocks with soft dithered edges. A light noise grain covers the surface and the shapes fade out into the surrounding darkness.",
+ "behaviour": "The fluid never rests: the pointer pushes and folds it, and when the pointer is idle an auto-driver keeps it wandering. Blobs stretch, curl and dissolve while the block grid stays fixed over them.",
+ "parts": [
+  "black backdrop",
+  "pink fluid shapes",
+  "dither blocks",
+  "grain"
+ ],
+ "demo_content": "\"Liquid, one pixel at a time\" heading with a small Move your cursor caption.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "colorful",
+  "gradient",
+  "textured"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "pink fluid swirling on a black background",
+  "melty lava lamp backdrop for a hero",
+  "retro dithered cloud background",
+  "animated liquid smoke in magenta",
+  "low resolution blocky fluid effect",
+  "interactive goo that follows the mouse",
+  "dark page background with moving pink blobs",
+  "webgl fluid simulation as a page backdrop"
+ ],
+ "resembles": [],
+ "use_when": "A hero or page background should feel alive and tactile, and hot pink liquid suits a bold dark theme.",
+ "avoid_when": "It is a WebGL sim running every frame, the palettes are fixed pink, and it needs a container with real height.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Set darkPalette and lightPalette colour stops, pixelSize for the block grid, resolution, mouseForce and cursorSize, and turn off the idle driver with autoDemo. Children render above the canvas.",
+ "technique": [
+  "three-js",
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full WebGL fluid sim with eight pressure iterations and a fragment pass every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The constant motion ignores prefers-reduced-motion and the canvas offers no keyboard or screen-reader path."
+ },
+ "props": [
+  {
+   "name": "darkPalette",
+   "type": "string[]",
+   "default": "DEFAULT_DARK_PALETTE",
+   "required": false
+  },
+  {
+   "name": "lightPalette",
+   "type": "string[]",
+   "default": "DEFAULT_LIGHT_PALETTE",
+   "required": false
+  },
+  {
+   "name": "pixelSize",
+   "type": "number",
+   "default": "18",
+   "required": false
+  },
+  {
+   "name": "resolution",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "mouseForce",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "cursorSize",
+   "type": "number",
+   "default": "110",
+   "required": false
+  },
+  {
+   "name": "autoDemo",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo headline is crushed into a narrow strip and clipped at the right edge, making it unreadable.",
+  "Frames 1 and 3 are close to empty black, so the effect can sit nearly invisible between bursts."
+ ],
+ "polish": 4,
+ "polish_why": "Rich dithered fluid with a believable loop; overlay text is clipped and the palette fixed.",
+ "unsure": [
+  "best",
+  "render"
+ ],
+ "title": "Pixel Liquid Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f679ac55d224a20f",
+  "film_hash": "9a61c28881972377",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

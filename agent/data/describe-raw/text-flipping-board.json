@@ -1,0 +1,71 @@
+{
+  "name": "text-flipping-board",
+  "frames": {
+    "code": "5074",
+    "best": 4,
+    "best_why": "Frame 4 shows a legible \"NOW BOARDING\" line beside the row of colour accent tiles.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Letter tiles scramble and flip into place like an airport departure board.",
+  "summary": "Recreates a mechanical split-flap display as a grid of tiles. Each character flips through random letters before landing on its target, with a few tiles filled in solid colour as accents.",
+  "title_fix": null,
+  "appearance": "A dark rounded panel holds a grid of small square tiles, most near-black with a faint horizontal split line. A few tiles glow solid red, orange, yellow, green, blue or violet, and pale monospace characters sit on the others.",
+  "behaviour": "Each character tile cycles through random letters, then flips over to its target with delays spreading across rows and columns. The message settles among coloured accent tiles and holds until the text changes again.",
+  "parts": ["board panel", "letter tiles", "colour tiles", "split lines"],
+  "demo_content": "Messages including \"NOW BOARDING / GATE 12 - LISBON / DEPARTS 09:45\" and a delayed flight.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "technical", "colorful", "retro", "dense"],
+  "tone": "technical",
+  "search_phrases": [
+    "split flap airport display",
+    "letters flip like a departure board",
+    "mechanical letter board animation",
+    "scrambling characters that settle",
+    "train station board text effect",
+    "flip clock style text",
+    "tiles that rotate to show letters",
+    "departure board message display"
+  ],
+  "resembles": ["Vestaboard"],
+  "use_when": "A hero or event page wants a nostalgic mechanical board that cycles through messages.",
+  "avoid_when": "It is locked to a 22 by 6 character grid, so longer copy is clipped, and every change replays the whole flip.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["hero", "headline", "media"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Supply text or row strings, use {R}-style codes for colour tiles, and set a duration; the grid size and palette are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Up to 132 tiles each flip through dozens of characters with timers and 3D transforms.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The board has no aria-live or label, so assistive tech gets a stream of changing single characters."
+  },
+  "props": [
+    {"name": "rows", "type": "string[]", "default": null, "required": false},
+    {"name": "text", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": "BASE_TOTAL_S", "required": false}
+  ],
+  "issues": [
+    "Long messages are clipped at a fixed 22 by 6 grid without any warning.",
+    "The running scramble exposes random letters to screen readers."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing split-flap rhythm and colour accents; the fixed grid can swallow longer copy.",
+  "unsure": []
+}

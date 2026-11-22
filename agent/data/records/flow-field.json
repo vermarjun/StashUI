@@ -1,0 +1,144 @@
+{
+ "name": "flow-field",
+ "frames": {
+  "code": "3715",
+  "best": 4,
+  "best_why": "A clear circular vortex is visible around the cursor while the full headline stays readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.7
+ },
+ "tagline": "Fine white streamlines drift across a dark field and swirl around the cursor.",
+ "summary": "A full-bleed canvas of hundreds of particle trails that flow left to right like wind. Moving the pointer bends the streams around it and sheds small vortices, while a click sends a ripple outward.",
+ "title_fix": null,
+ "appearance": "A near-black full-bleed surface covered in fine, faint grey streaks all running roughly left to right. Over the centre sit a small pill, a large white headline and a muted paragraph.",
+ "behaviour": "The trails drift continuously and part around the cursor, shedding small swirling vortices as it moves; a click pushes a ring of air outward. Off screen or under reduced motion it draws a still field and stops the loop.",
+ "parts": [
+  "streamline trails",
+  "vortex swirl",
+  "small pill",
+  "headline",
+  "paragraph",
+  "canvas"
+ ],
+ "demo_content": "Pill 'Realtime pipelines', heading 'Data that moves the way you think.', subtext about routing events.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "minimal",
+  "organic"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "wind streamline background",
+  "particles that flow around cursor",
+  "interactive canvas wind effect",
+  "animated streamline background",
+  "cursor parts the particles",
+  "dark particle trail hero background",
+  "click makes a ripple in particles",
+  "moving streamlines web background"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero or section wants a calm animated field that reacts to the pointer without stealing focus.",
+ "avoid_when": "The page must stay cheap on mobile or low-power devices; it runs a full canvas loop of hundreds of particles.",
+ "suits": [
+  "saas",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Set density, speed and interactivity as props, and pass children to overlay copy on the wind. Colours follow the canvas text colour, so a theme class changes them.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "Up to 700 particle trails drawn to canvas every animation frame, with a reduced idle rate.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The canvas is aria-hidden and decorative; reduced motion is handled by drawing a still field instead of the loop."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "density",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Touch only stirs the wind while a finger is held down, so it is weaker on phones.",
+  "The trails are very faint behind large text, so the effect is easy to miss in a still."
+ ],
+ "polish": 4,
+ "polish_why": "Detailed flow simulation with a clear cursor response; trails stay deliberately faint.",
+ "unsure": [],
+ "title": "Flow Field",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b80fa13dcf9b8db7",
+  "film_hash": "e2ffae4fd2031ad6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

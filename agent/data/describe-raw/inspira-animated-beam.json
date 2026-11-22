@@ -1,0 +1,78 @@
+{
+  "name": "inspira-animated-beam",
+  "frames": {
+    "code": "2023",
+    "best": 3,
+    "best_why": "Frame 3 is the only one where the travelling glow is clearly lit, red-orange along the third beam.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hairline curves link four small icons to a hub, with a light sliding along them.",
+  "summary": "A connector graphic: four small circular nodes on the left feed through gently bowed hairlines into one larger circle on the right, while a coloured light runs along each path in turn.",
+  "title_fix": null,
+  "appearance": "On a near-black stage, four small round outlined buttons stack down the left, each holding a tiny coloured shape. Four faint grey curves bow rightward into a larger circle holding a purple atom, its ring picked out in indigo.",
+  "behaviour": "Each path carries a short colour gradient that slides from the source node to the hub on a loop, staggered per beam. The lines are recomputed when the container resizes.",
+  "parts": ["source node", "connector line", "hub node", "icon", "travelling light"],
+  "demo_content": "Four small circles (blue diamond, green dot, red dot, yellow dot) feed a larger purple atom circle.",
+  "states": [],
+  "kind": "other",
+  "look": ["dark", "minimal", "technical", "outlined"],
+  "tone": "technical",
+  "search_phrases": [
+    "lines connecting icons to a centre hub",
+    "animated beam between two elements",
+    "integration diagram with curved connectors",
+    "flow lines with a moving light",
+    "node connection graphic for a tech stack",
+    "svg path that pulses between elements",
+    "curved connector with travelling glow",
+    "diagram linking inputs to one service"
+  ],
+  "resembles": [],
+  "use_when": "A hub should read as connected to several inputs, with a slow moving light hinting at flow.",
+  "avoid_when": "It needs refs on a container plus two elements each and a positioned parent; alone it renders nothing.",
+  "suits": ["devtool", "saas", "ai-chat"],
+  "slot_hints": ["decoration", "feature-card", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Give it container, from and to refs; curvature, reverse, both gradient colours, path colour, width, opacity, delay and duration are all props.",
+  "technique": ["motion-library", "svg"],
+  "weight": "light",
+  "weight_why": "A single SVG path and one looping gradient animation per beam; the demo mounts four.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative SVG with no title or aria-hidden, and the endless beam loop never checks reduced-motion."
+  },
+  "props": [
+    {"name": "containerRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "fromRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "toRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": true},
+    {"name": "curvature", "type": "number", "default": "0", "required": false},
+    {"name": "reverse", "type": "boolean", "default": "false", "required": false},
+    {"name": "pathColor", "type": "string", "default": "gray", "required": false},
+    {"name": "pathWidth", "type": "number", "default": "2", "required": false},
+    {"name": "pathOpacity", "type": "number", "default": "0.2", "required": false},
+    {"name": "gradientStartColor", "type": "string", "default": "#FFAA40", "required": false},
+    {"name": "gradientStopColor", "type": "string", "default": "#9C40FF", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "duration", "type": "number", "default": "Math.random() * 3 + 4", "required": false}
+  ],
+  "issues": [
+    "The connector hairlines are very faint grey, so in most frames the moving light is almost invisible."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy, well-proportioned diagram; the very low line contrast holds it back.",
+  "unsure": ["kind", "traits.affects"]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "buyme-acoffee",
+  "frames": {
+    "code": "9566",
+    "best": 1,
+    "best_why": "The full coffee-script pattern and centred cup tile are both visible, cleanly framed with no cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Coffee cup badge that turns into a yellow 'Buy me a coffee' card on hover.",
+  "summary": "A tiled cream card covered in handwritten 'coffee' script with a yellow cup tile at centre; hovering clears the pattern to a yellow card reading 'Buy me a coffee' with a heart and bigger cup.",
+  "title_fix": null,
+  "appearance": "A square cream card filled edge to edge with black handwritten 'coffee' script in a loose repeating pattern. At its centre sits a white rounded tile holding a yellow square, inside which a black-outlined takeaway coffee cup stands upright.",
+  "behaviour": "Hovering wipes the script pattern away, shrinking it to reveal a yellow card with a small pink heart sticker, a larger coffee cup and hand-lettered 'Buy me a coffee' across the top. Moving away restores the patterned cover.",
+  "parts": ["coffee script pattern", "white tile", "yellow square", "coffee cup", "pink heart", "buy me a coffee lettering"],
+  "demo_content": "Text repeats 'coffee'; the hover card reads 'Buy me a coffee'.",
+  "states": ["hover"],
+  "kind": "button",
+  "look": ["playful", "colorful", "textured", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "coffee tip donation button",
+    "coffee cup badge for tipping",
+    "support my work link card",
+    "handwritten coffee pattern tile",
+    "ko fi style support button",
+    "yellow coffee card with heart",
+    "donate a coffee widget",
+    "creative sponsor link card"
+  ],
+  "resembles": ["Buy Me a Coffee", "Ko-fi"],
+  "use_when": "A creator or indie page wants a playful, obvious link for visitors to leave a tip.",
+  "avoid_when": "The large patterned card is bold and branded; it dominates a layout and clashes with muted palettes.",
+  "suits": ["portfolio", "blog"],
+  "slot_hints": ["secondary-cta", "footer"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Three className props let you restyle the card, icon and text layers; the SVG coffee artwork, link URL and palette live in the file and need editing.",
+  "technique": ["svg", "css-transition"],
+  "weight": "light",
+  "weight_why": "A large inline SVG and CSS transform transitions; no script loop.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The link's artwork is SVG with no accessible name or alt, so it announces as an unlabeled link; the hover swap ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "classname", "type": "string", "default": null, "required": false},
+    {"name": "iconClassName", "type": "string", "default": null, "required": false},
+    {"name": "textSvgClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The link has no text or aria-label, so its purpose is invisible to screen readers.",
+    "The hover-only swap means touch users only ever see the patterned cover."
+  ],
+  "polish": 4,
+  "polish_why": "Distinctive hand-drawn art and a fun reveal; hover-only second state and unlabeled link are flaws.",
+  "unsure": ["kind"]
+}

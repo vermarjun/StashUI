@@ -1,0 +1,68 @@
+{
+  "name": "aurora-text",
+  "frames": {
+    "code": "5434",
+    "best": 3,
+    "best_why": "The gradient word is clear and fully in view with the pointer kept away from it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "One word in a headline shimmers through pink, purple and blue.",
+  "summary": "A span of text filled with a sliding pink-to-blue gradient that keeps drifting sideways, so a single word in a headline keeps catching the light.",
+  "title_fix": null,
+  "appearance": "A bold sans-serif heading on black made of three words. The first and last words are plain white, while the middle word is filled edge to edge with a pink, purple and blue gradient.",
+  "behaviour": "The gradient slides slowly along the word and wraps around, so the pink, purple and blue bands keep travelling across the letters. It repeats without stopping.",
+  "parts": ["heading text", "gradient word", "dark background"],
+  "demo_content": "The heading Build beautiful apps. with the middle word in gradient.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["gradient", "colorful", "bold", "minimal", "dark"],
+  "tone": "minimal",
+  "search_phrases": [
+    "rainbow gradient text",
+    "shifting colour text",
+    "coloured shine across a word",
+    "gradient headline word",
+    "animated gradient letters",
+    "colorful word in a title",
+    "moving rainbow letters",
+    "pink to blue text shimmer"
+  ],
+  "resembles": [],
+  "use_when": "One word in a headline should stand out with a moving colour highlight.",
+  "avoid_when": "Body copy or long text; the cycling gradient distracts and hurts readability.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["headline", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the word as children and set colors or speed; the gradient angle and the keyframe animation live in the source.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "A single text span with a repeating CSS background gradient.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The visual copy is hidden from assistive tech with a screen-reader duplicate, but the loop ignores reduced-motion."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "colors", "type": "string[]", "default": "[\"#FF0080\",\"#7928CA\",\"#0070F3\",\"#38bdf8\"]", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Bright, clean gradient on crisp type; the drift is subtle enough to stay classy.",
+  "unsure": []
+}

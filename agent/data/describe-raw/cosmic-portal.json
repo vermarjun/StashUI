@@ -1,0 +1,79 @@
+{
+  "name": "cosmic-portal",
+  "frames": {
+    "code": "4524",
+    "best": 3,
+    "best_why": "Frame 3 shows the portal at full glow: a bright pink ring, white core and orbiting orbs.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A glowing ring portal pulses open over a starfield you can orbit.",
+  "summary": "A full 3D cosmic scene: a starry void with a luminous torus frame, circling rings and floating crystals around a bright core. A pulse and a recolour can be triggered from outside.",
+  "title_fix": null,
+  "appearance": "A tall dark panel is filled with a green-tinted starfield. A large thin ring frames a bright white core, circled by flatter pink and violet hoops, with small glowing orbs and a pale crystal near the middle. Two coloured buttons sit under the panel.",
+  "behaviour": "The camera drifts and orbits slowly around the core. The rings spin and the crystals float, while Activate sends a bright pulse outward and Shift Dimensions swaps the colour scheme.",
+  "parts": ["starfield", "portal ring", "bright core", "vortex rings", "crystals", "control buttons"],
+  "demo_content": "Buttons labelled Activate Portal and Shift Dimensions; violet, blue, red and green accent colours.",
+  "states": [],
+  "kind": "3d-scene",
+  "look": ["dark", "glow", "neon", "3d", "colorful"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "glowing space portal scene",
+    "animated starfield webgl background",
+    "glowing ring portal animation",
+    "floating crystals in space",
+    "sci fi vortex effect",
+    "orbitable 3d space scene",
+    "glowing torus gate",
+    "energy portal with particles"
+  ],
+  "resembles": ["Doctor Strange portal"],
+  "use_when": "A sci-fi landing page, game menu or product reveal wants a showy interactive 3D centerpiece.",
+  "avoid_when": "A heavy WebGL scene with bloom that needs a fixed-height parent and a capable GPU.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["hero", "decoration", "page-background"],
+  "traits": {
+    "trigger": ["always", "click"],
+    "motion": "continuous",
+    "affects": ["background", "image"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Colours, crystalCount, rotationSpeed, bloom strength/radius/threshold and dimensionShift are props; activate and shift are exposed through a ref.",
+  "technique": ["three-js", "webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "Full Three.js scene with bloom, FXAA, thousands of particles and a frame loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A decorative WebGL scene with no ARIA label, no keyboard orbit and no reduced-motion check."
+  },
+  "props": [
+    {"name": "portalComplexity", "type": "number", "default": "4", "required": false},
+    {"name": "crystalCount", "type": "number", "default": "12", "required": false},
+    {"name": "primaryColor", "type": "string", "default": "#9b59b6", "required": false},
+    {"name": "secondaryColor", "type": "string", "default": "#3498db", "required": false},
+    {"name": "accentColor", "type": "string", "default": "#e74c3c", "required": false},
+    {"name": "vortexColor", "type": "string", "default": "#2ecc71", "required": false},
+    {"name": "rotationSpeed", "type": "number", "default": "0.3", "required": false},
+    {"name": "bloomStrength", "type": "number", "default": "1.2", "required": false},
+    {"name": "bloomRadius", "type": "number", "default": "0.7", "required": false},
+    {"name": "bloomThreshold", "type": "number", "default": "0.2", "required": false},
+    {"name": "dimensionShift", "type": "number", "default": "4", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frame 1 is so dim the portal is barely visible.",
+    "Shift Dimensions picks random colours, so it can land on clashing palettes."
+  ],
+  "polish": 4,
+  "polish_why": "Lush bloom and a readable portal form; the narrow panel and random recolours feel demo-grade.",
+  "unsure": ["states", "a11y.keyboard"]
+}

@@ -1,0 +1,178 @@
+{
+ "name": "video-text",
+ "frames": {
+  "code": "2442",
+  "best": 2,
+  "best_why": "Undersea coral and light show clearly inside every letter, making the video fill obvious.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.7
+ },
+ "tagline": "A huge word cut out of a live underwater video.",
+ "summary": "Renders a short word as a mask over a looping video, so the footage appears only inside the letterforms while the space between them stays empty.",
+ "title_fix": null,
+ "appearance": "The single word OCEAN in very heavy, wide capitals spans a band across a black stage. The letters are not painted but act as windows onto moving teal water, with coral and light patches drifting inside the thick strokes.",
+ "behaviour": "The clip loops behind the word and shows only through the letters, so colour and texture inside each stroke keep changing while the gaps and the background stay black. The word scales with the viewport and stays centred.",
+ "parts": [
+  "word",
+  "video fill",
+  "letter shapes"
+ ],
+ "demo_content": "The word OCEAN over an underwater clip",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "bold",
+  "colorful"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "video playing inside big letters",
+  "text cut out of a moving clip",
+  "ocean footage masked by a word",
+  "video filled headline letters",
+  "movie playing through type",
+  "bold heading filled with footage",
+  "animated backdrop inside text",
+  "full screen word with footage"
+ ],
+ "resembles": [],
+ "use_when": "One short word should carry a video texture and dominate a hero without a separate image block.",
+ "avoid_when": "Long sentences or small type, where the mask turns muddy, and anywhere autoplay video is blocked.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "hero",
+  "headline",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Pass the word as children and the clip as src; font size, weight, family, anchor, autoplay, mute, loop and preload are props.",
+ "technique": [
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "One looping video element and a CSS SVG mask, with no scripted animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "A hidden text copy names the word for assistive tech, but the looping video has no pause and ignores reduced motion."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "fontSize",
+   "type": "string | number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "fontWeight",
+   "type": "string | number",
+   "default": "\"bold\"",
+   "required": false
+  },
+  {
+   "name": "fontFamily",
+   "type": "string",
+   "default": "\"sans-serif\"",
+   "required": false
+  },
+  {
+   "name": "autoPlay",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "muted",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "preload",
+   "type": "\"auto\" | \"metadata\" | \"none\"",
+   "default": "\"auto\"",
+   "required": false
+  },
+  {
+   "name": "textAnchor",
+   "type": "string",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "dominantBaseline",
+   "type": "string",
+   "default": "\"middle\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "At some moments the footage inside the letters turns so dark that parts of the word vanish."
+ ],
+ "polish": 4,
+ "polish_why": "The mask is crisp and the footage lively; dark video moments briefly hide parts of the word.",
+ "unsure": [],
+ "title": "Video Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7c627d89a89633b4",
+  "film_hash": "37d870c490f1e300",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

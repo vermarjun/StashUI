@@ -1,0 +1,184 @@
+{
+ "name": "LightRays-TS-TW",
+ "frames": {
+  "code": "5892",
+  "best": 4,
+  "best_why": "The light fan is widest and clearest here, with several distinct beams reaching the lower frame.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 5.1
+ },
+ "tagline": "Faint white spotlights fan down from the top edge.",
+ "summary": "Soft grey-white beams spread from a point above the frame and fade toward the bottom on near-black. The beams drift slowly and lean toward wherever the pointer moves.",
+ "title_fix": null,
+ "appearance": "A very dark panel with a bright patch along the top edge that opens into a fan of pale beams. The light is a cool grey-white, hazy at its source, and fades almost to black in the lower half.",
+ "behaviour": "The beams sway and shift in brightness on a slow loop, never fully still. With the pointer following on, the fan's direction eases toward the cursor and drifts back when it moves away.",
+ "parts": [
+  "light source",
+  "ray fan",
+  "fade to black"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "airy",
+  "gradient"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "spotlight beams from the top",
+  "faint god rays background",
+  "stage light haze behind text",
+  "volumetric light fan shader",
+  "cinematic light shafts on black",
+  "subtle white rays backdrop",
+  "searchlight beams for a hero",
+  "lights that follow the mouse"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero needs a quiet spotlight glow that keeps its text readable.",
+ "avoid_when": "The rays are dim: on a bright page or a small tile they are almost invisible.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Beam origin, colour, speed, spread, length, fade, pulse, pointer influence, noise and distortion are props. The two-beam blend is fixed.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen shader renders beams and pointer easing every frame while visible.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative and pointer-following, with no reduced-motion or keyboard option for the drift."
+ },
+ "props": [
+  {
+   "name": "raysOrigin",
+   "type": "RaysOrigin",
+   "default": "'top-center'",
+   "required": false
+  },
+  {
+   "name": "raysColor",
+   "type": "string",
+   "default": "DEFAULT_COLOR",
+   "required": false
+  },
+  {
+   "name": "raysSpeed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "lightSpread",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "rayLength",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "pulsating",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "fadeDistance",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "1.0",
+   "required": false
+  },
+  {
+   "name": "followMouse",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "mouseInfluence",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "noiseAmount",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "distortion",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Beams are so dim against the black stage that they read as a faint smudge."
+ ],
+ "polish": 3,
+ "polish_why": "Clean and even, but the contrast is so low the effect nearly disappears.",
+ "unsure": [
+  "states",
+  "shows_interaction"
+ ],
+ "title": "Light Rays",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a8425f3746cf9994",
+  "film_hash": "48af6f0a37d208d8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

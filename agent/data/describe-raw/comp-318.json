@@ -1,0 +1,63 @@
+{
+  "name": "comp-318",
+  "frames": {
+    "code": "1615",
+    "best": 2,
+    "best_why": "Frame 2 shows the FAQ title with the sticky Cancel and Okay footer still in view.",
+    "usable": [1, 2, 3, 4, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tall FAQ dialog keeps its Cancel and Okay buttons pinned while text scrolls.",
+  "summary": "A trigger opens a narrow, tall dialog full of FAQ paragraphs. The body scrolls on its own while an outlined Cancel and a white Okay stay fixed in a bordered footer.",
+  "title_fix": null,
+  "appearance": "Closed, a single outlined button. Open, a tall dark rounded dialog: a left-aligned FAQ heading, dense small paragraphs under bold subheads, and a divider over a footer with outlined Cancel and white Okay at the right.",
+  "behaviour": "The trigger opens the dialog over a dimmed page. Scrolling moves only the body text while the footer stays put; Cancel, Okay, Escape or an outside click closes it.",
+  "parts": ["trigger button", "dialog title", "scrollable text", "footer divider", "cancel button", "okay button"],
+  "demo_content": "FAQ sections on account management, password reset, pricing, support, data protection, compatibility and subscription.",
+  "states": ["hover", "focus", "open"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "dense", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "scrollable dialog with fixed buttons",
+    "long content modal with sticky footer",
+    "faq popup with cancel and okay",
+    "dialog where body scrolls separately",
+    "modal with pinned action bar",
+    "terms dialog with footer buttons",
+    "popup for long text with scrolling",
+    "sticky footer modal"
+  ],
+  "resembles": [],
+  "use_when": "A dialog holds long copy but its action buttons must stay reachable while the body scrolls.",
+  "avoid_when": "The body is a wall of placeholder FAQ text, so it needs replacing before it can ship.",
+  "suits": ["saas", "docs"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Title, FAQ copy and footer labels are written in the file; nothing is exposed as props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with native scrolling and no animation beyond its opening fade.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The dialog primitive traps focus and Escape closes it, but the file itself has no reduced-motion handling."
+  },
+  "props": [],
+  "issues": ["Ten blocks of placeholder FAQ copy fill the body and must be replaced."],
+  "polish": 3,
+  "polish_why": "Clean pinned footer and tidy spacing, but the shipped content is generic filler.",
+  "unsure": ["technique", "theme"]
+}

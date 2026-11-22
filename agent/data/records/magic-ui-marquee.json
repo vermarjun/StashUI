@@ -1,0 +1,147 @@
+{
+ "name": "magic-ui-marquee",
+ "frames": {
+  "code": "6418",
+  "best": 1,
+  "best_why": "Both rows are fully populated with three complete review cards visible and clearly spaced.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Two rows of review cards scroll past in opposite directions.",
+ "summary": "A horizontal ticker of testimonial cards, duplicated enough times to loop seamlessly; the two demo rows glide opposite ways and freeze when hovered.",
+ "title_fix": null,
+ "appearance": "Two stacked rows of small dark review cards with rounded corners and thin borders, each holding a round avatar, a name, a handle and a short quote. The rows run edge to edge on black and fade out at the sides.",
+ "behaviour": "Each row slides sideways on a loop, the two rows moving in opposite directions. Hovering a row freezes it until the pointer leaves.",
+ "parts": [
+  "review row",
+  "review card",
+  "avatar",
+  "name",
+  "handle",
+  "quote"
+ ],
+ "demo_content": "Six fake testimonials from names like Maya Patel and Aiko Tanaka praising a UI kit.",
+ "states": [
+  "hover"
+ ],
+ "kind": "marquee",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "reviews scrolling sideways endlessly",
+  "testimonial ticker two rows",
+  "logo and card loop strip",
+  "infinite horizontal marquee",
+  "pause on hover carousel row",
+  "customer quotes sliding across",
+  "opposite direction scrolling banner",
+  "scrolling strip of user reviews"
+ ],
+ "resembles": [],
+ "use_when": "A wall of social proof should keep moving to show volume without taking more height.",
+ "avoid_when": "Fewer than about six items: the loop repeats the same cards visibly.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "testimonial",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "children",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Direction, vertical mode, repeat count, pause-on-hover and duration are props or CSS variables; the card content is whatever you pass as children.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of duplicated card siblings moved by one CSS transform keyframe.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Pauses on hover only, so keyboard users cannot stop the motion, and it keeps moving with no reduced-motion guard."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "vertical",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Clean card rows and a seamless loop; the cards are small and the quote text is tiny.",
+ "unsure": [],
+ "title": "Marquee",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "779f360a107409bf",
+  "film_hash": "7c3d5dcf3caec168",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

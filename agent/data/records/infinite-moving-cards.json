@@ -1,0 +1,140 @@
+{
+ "name": "infinite-moving-cards",
+ "frames": {
+  "code": "2455",
+  "best": 1,
+  "best_why": "Frame 1 shows a complete quote card and its author cleanly; later frames blend two cards into one ghosted block.",
+  "usable": [
+   1,
+   2,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "A steady row of dark quote cards slides sideways and repeats.",
+ "summary": "A horizontal strip of dark rounded testimonial cards that scrolls sideways on a loop, the list duplicated so it never ends. Each card holds a quote, a name and a role.",
+ "title_fix": null,
+ "appearance": "A band of wide, dark rounded cards on black, each carrying two or three lines of pale grey quote text and, below, a name and job title in smaller grey type. Cards run off both edges and fade into the black through a soft gradient mask.",
+ "behaviour": "The cards slide steadily leftward and loop without a seam because the whole list is cloned. Hovering any card pauses the slide, and it picks up again when the pointer leaves.",
+ "parts": [
+  "card row",
+  "quote text",
+  "name",
+  "role",
+  "faded edges"
+ ],
+ "demo_content": "Five testimonials from Alice Johnson, Bob Martinez, Carol Chen, David Kim and Emma Wilson with job titles.",
+ "states": [
+  "hover"
+ ],
+ "kind": "marquee",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "scrolling row of testimonials",
+  "quotes that slide sideways forever",
+  "auto scrolling review strip",
+  "ticker of customer quotes",
+  "pausing marquee on hover",
+  "looping logos style testimonial carousel",
+  "endless row of review cards",
+  "motion strip of praise from customers"
+ ],
+ "resembles": [],
+ "use_when": "Several testimonials need to cycle through a narrow band without arrows or dots.",
+ "avoid_when": "Visitors need to read every quote at their own pace, or motion must stop for accessibility.",
+ "suits": [
+  "saas",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "testimonial",
+  "section-background",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "items supplies each quote, name and title, and direction, speed and pauseOnHover are props. Card width, colours and the edge fade live in the classes.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "One CSS keyframe moving a duplicated list of quote cards.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Continuous motion with no pause control except hover and no reduced-motion check, so touch users cannot stop it."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "{ quote: string; name: string; title: string }[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "direction",
+   "type": "\"left\" | \"right\"",
+   "default": "\"left\"",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "\"fast\" | \"normal\" | \"slow\"",
+   "default": "\"fast\"",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frames 3, 5 and 6 blend two cards together, so their quotes are unreadable.",
+  "The strip never stops for touch users, since pausing is hover-only."
+ ],
+ "polish": 3,
+ "polish_why": "Clean, legible testimonial strip with a soft fade, but a standard marquee with little character.",
+ "unsure": [],
+ "title": "Infinite Moving Cards",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e9e3cb7b3280aab8",
+  "film_hash": "eed001d8c62ede69",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

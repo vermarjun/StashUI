@@ -1,0 +1,194 @@
+{
+ "name": "particle-button",
+ "frames": {
+  "code": "4481",
+  "best": 3,
+  "best_why": "The drawn tick and Saved label sit beside two idle buttons, showing the finished state.",
+  "usable": [
+   1,
+   2,
+   3,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.3
+ },
+ "tagline": "It flips to a spinner, then a tick, or shakes red when the save fails.",
+ "summary": "A button for async actions. Returning a promise makes the label crossfade to a spinner and a pending word, then to a drawn tick and success word with a burst of particles, or to a red shaking error.",
+ "title_fix": null,
+ "appearance": "Three small pill buttons on black: a white filled Save changes, a dark outlined Publish post with a right arrow, and a grey Pay $49.00. While busy the icon becomes a spinner, success swaps in a drawn tick, and failure turns the whole button red with an alert circle.",
+ "behaviour": "A click shows the pending label while the promise runs and the button's width springs to fit each new word. On resolution the label blurs and slides to a tick and success word, with small chips bursting from the top edge, or the button shakes and stays red long enough to read.",
+ "parts": [
+  "button surface",
+  "button label",
+  "status icon",
+  "arrow icon",
+  "particle burst"
+ ],
+ "demo_content": "Save changes, Publish post and Pay $49.00 buttons that save, publish and decline a card.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "loading",
+  "success",
+  "error",
+  "disabled"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "minimal",
+  "pill",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "button that shows saving then saved",
+  "async button with spinner and check",
+  "submit button that shakes on error",
+  "button with a particle burst on success",
+  "payment button with loading and declined states",
+  "loading to success button animation",
+  "action button with status labels",
+  "form submit with an error shake"
+ ],
+ "resembles": [],
+ "use_when": "A click starts an async save, publish or payment and the button should report its outcome in place.",
+ "avoid_when": "Actions with no clear end: success and error states revert after a fixed time regardless.",
+ "suits": [
+  "saas",
+  "ecommerce",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-submit",
+  "primary-cta"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The idle label is children, with pending, success and error labels plus icons, durations and a particles flag as props; styling comes from the shared button variants.",
+ "technique": [
+  "motion-library",
+  "canvas-2d",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "At most one short canvas particle burst and a few spring transitions per click.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Status words are announced politely and aria-busy is set while pending; reduced motion removes the burst and shake."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": "\"Save changes\"",
+   "required": false
+  },
+  {
+   "name": "onClick",
+   "type": "(event: MouseEvent<HTMLButtonElement>) => unknown",
+   "default": "{handleClick}",
+   "required": false
+  },
+  {
+   "name": "status",
+   "type": "\"idle\" | \"pending\" | \"success\" | \"error\"",
+   "default": "== \"error\" &&",
+   "required": false
+  },
+  {
+   "name": "pendingLabel",
+   "type": "ReactNode",
+   "default": "\"Saving\"",
+   "required": false
+  },
+  {
+   "name": "successLabel",
+   "type": "ReactNode",
+   "default": "\"Saved\"",
+   "required": false
+  },
+  {
+   "name": "errorLabel",
+   "type": "ReactNode",
+   "default": "\"Try again\"",
+   "required": false
+  },
+  {
+   "name": "particles",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "successDuration",
+   "type": "number",
+   "default": "1600",
+   "required": false
+  },
+  {
+   "name": "errorDuration",
+   "type": "number",
+   "default": "3200",
+   "required": false
+  },
+  {
+   "name": "onSuccess",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onError",
+   "type": "(error: unknown) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "icon",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 4 catches the idle label mid-crossfade, clipped to 'ave change'.",
+  "No frame captures the particle burst that success is meant to show."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp crossfades and clear states; the burst is never captured and one frame shows a clipped label.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Particle Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7aa524b753840de2",
+  "film_hash": "4a5de264ce7ba33d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

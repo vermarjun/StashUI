@@ -1,0 +1,187 @@
+{
+ "name": "pattern-waves",
+ "frames": {
+  "code": "1317",
+  "best": 6,
+  "best_why": "Large halftone folds fill the frame with bright raised ridges and deep dark valleys.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 7.4
+ },
+ "tagline": "A halftone dot surface ripples and shines like draped silk.",
+ "summary": "A full-screen field of tiny dots that rises and folds like fabric, with bright specular bands sliding over the crests. Moving the pointer sends ripples across the surface.",
+ "title_fix": null,
+ "appearance": "Tiny white dots on black form a fine halftone screen that swells into diagonal folds, like cloth held up to a light. Bright ridges of denser dots catch the highlight while the valleys sink into darkness.",
+ "behaviour": "The folds drift and reshape continuously, sliding diagonal highlights across the dot field. Moving the pointer sends a ripple through the surface, and clicking bursts it outward.",
+ "parts": [
+  "dot grid",
+  "fold ridges",
+  "highlight bands",
+  "dark valleys",
+  "pointer ripple"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "textured",
+  "monochrome",
+  "dense",
+  "technical"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "halftone dots waving like silk",
+  "white dot pattern background",
+  "draped fabric dot texture",
+  "interactive ripple dot field",
+  "monochrome halftone animation",
+  "silk cloth wave shader",
+  "glittering dotted surface",
+  "cursor ripple on dot grid"
+ ],
+ "resembles": [],
+ "use_when": "A hero or section wants a monochrome, textured backdrop that reads as fabric and responds to the pointer.",
+ "avoid_when": "Dense dots and dark valleys are hard on low-resolution screens, and the WebGL loop needs a sized parent.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Preset, pattern, wave, spacing, mark size, depth, light, shine, contrast, speed, scale, direction, colours, opacity, fade, characters, cursor size and strength, intro and paused are props.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A multi-pass WebGL shader draws a full-screen dot field with ripples every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "Decorative and aria-hidden; reduced motion freezes the waves and disables the cursor ripples."
+ },
+ "props": [
+  {
+   "name": "preset",
+   "type": "string",
+   "default": "'silk'",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#000000'",
+   "required": false
+  },
+  {
+   "name": "opacity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "fade",
+   "type": "string",
+   "default": "1.0 - smoothstep(1.0 - uFadeSize, 1.18, length(c));",
+   "required": false
+  },
+  {
+   "name": "characters",
+   "type": "string",
+   "default": "DEFAULT_CHARACTERS",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "cursorSize",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "cursorStrength",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "intro",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 1 catches the intro while the dot field is still nearly flat and dim."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing silk-like dots and highlights; the intro frame is flat and the effect is subtle.",
+ "unsure": [
+  "traits.theme"
+ ],
+ "title": "Pattern Waves",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b299099aff374705",
+  "film_hash": "d4699f4f59931a17",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

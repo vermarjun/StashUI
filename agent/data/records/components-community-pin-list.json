@@ -1,0 +1,169 @@
+{
+ "name": "components-community-pin-list",
+ "frames": {
+  "code": "6499",
+  "best": 6,
+  "best_why": "Settled state with four pinned rows, the All Items divider and both remaining rows clearly visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.1
+ },
+ "tagline": "Click a row to pin it and watch it glide into the group above.",
+ "summary": "A two-part list of menu items: clicking a row pins it to the top section, clicking again sends it back below the All Items divider, and rows spring between groups.",
+ "title_fix": null,
+ "appearance": "Rounded grey rows on a black stage, each with a small square icon tile, a bold name, a grey caption and a circular pin badge on the right. A faded All Items label separates the pinned rows from the rest.",
+ "behaviour": "Clicking any row flips its pinned state and the row springs from one section to the other while its neighbours shift to make room. Unpinned rows reveal their pin button only under the cursor; pinned rows keep theirs filled.",
+ "parts": [
+  "row",
+  "icon tile",
+  "item name",
+  "description",
+  "pin badge",
+  "section label"
+ ],
+ "demo_content": "Home, Starred, Notifications, Settings, Bookmarks and Music with short captions like Go to homepage.",
+ "states": [
+  "hover",
+  "selected"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pin items to the top of a list",
+  "click row to move it between groups",
+  "sidebar menu with pinned shortcuts",
+  "reorder list by favouriting items",
+  "animated list reordering on click",
+  "star items into a pinned section",
+  "navigation list with protected top items",
+  "hover reveals a pin icon"
+ ],
+ "resembles": [],
+ "use_when": "Users should keep a few list or menu entries at the top while the rest stay in a general group.",
+ "avoid_when": "Pinning is a click on the whole row with no button, so touch users get no hint and keyboards cannot reach it.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "nav",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Items, group labels, spring transition and per-section class names are props; the row markup and pin badge styling need a source edit.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of rows with layout animations; idle at rest.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Rows are clickable divs with no role, tabindex or aria-pressed, so pinning is mouse-only and its state is never announced."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "PinListItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "labels",
+   "type": "{ pinned?: string; unpinned?: string }",
+   "default": "{ pinned: 'Pinned Items', unpinned: 'All Items' }",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ stiffness: 320, damping: 20, mass: 0.8, type: 'spring' }",
+   "required": false
+  },
+  {
+   "name": "zIndexResetDelay",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "labelClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "labelMotionProps",
+   "type": "HTMLMotionProps<'p'>",
+   "default": "{ initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }",
+   "required": false
+  },
+  {
+   "name": "pinnedSectionClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "unpinnedSectionClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The pinned label prop is never rendered, so the top group has no heading.",
+  "Pinned and unpinned rows look almost identical; only the small pin badge differs."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy rows and a convincing spring; the missing pinned heading and faint captions cost it a point.",
+ "unsure": [],
+ "title": "Pin List",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f0cbe952f7dc7892",
+  "film_hash": "5a3b258daa445f52",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

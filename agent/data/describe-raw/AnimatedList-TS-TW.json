@@ -1,0 +1,74 @@
+{
+  "name": "AnimatedList-TS-TW",
+  "frames": {
+    "code": "1040",
+    "best": 2,
+    "best_why": "Five rows read clearly, with one lit row and soft fades at both edges.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rounded rows scroll by, one lit under the pointer.",
+  "summary": "A tall column of short status messages in rounded dark rows scrolls inside a fixed panel, with rows fading at the top and bottom. Hovering a row brightens it and arrow keys walk the selection.",
+  "title_fix": "Scrollable Highlight List",
+  "appearance": "A narrow column of rounded charcoal rows, each holding one line of white text, sits centred on black. The first and last rows fade into the background and one row is a shade lighter than the rest.",
+  "behaviour": "The list scrolls vertically inside a fixed height while its top and bottom rows soften out. Moving the pointer or pressing arrow keys walks a highlight down the rows, and clicking one selects it.",
+  "parts": ["list row", "row text", "fade edges", "scroll track"],
+  "demo_content": "Status lines like \"Invoice #4021 paid by Northwind Labs\" and \"Production deploy succeeded in 42s\".",
+  "states": ["hover", "selected"],
+  "kind": "list",
+  "look": ["dark", "minimal", "rounded", "flat", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "scrolling notification feed",
+    "list with fade at the edges",
+    "highlight row on hover",
+    "keyboard navigable item list",
+    "activity feed with status messages",
+    "smooth list entrance animation",
+    "vertical menu with scroll shadows",
+    "todo or inbox list widget"
+  ],
+  "resembles": [],
+  "use_when": "A compact panel should show many short updates or options in a scrollable column.",
+  "avoid_when": "Long text or images per row: the 500px width and 400px height clip content.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["list-item", "sidebar", "feature-card"],
+  "traits": {
+    "trigger": ["hover", "keyboard", "scroll"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Items, a select handler, gradients, arrow-key navigation, scrollbar, class names and the initial selection are props. Row colours are hardcoded dark values.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A dozen text rows with simple in-view scale tweens.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Arrow keys and Enter work, but rows are plain divs with no roles and a global key hook, and motion ignores reduced-motion."
+  },
+  "props": [
+    {"name": "items", "type": "string[]", "default": "['Item 1', ... 'Item 15']", "required": false},
+    {"name": "onItemSelect", "type": "(item: string, index: number) => void", "default": null, "required": false},
+    {"name": "showGradients", "type": "boolean", "default": "true", "required": false},
+    {"name": "enableArrowNavigation", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "itemClassName", "type": "string", "default": "", "required": false},
+    {"name": "displayScrollbar", "type": "boolean", "default": "true", "required": false},
+    {"name": "initialSelectedIndex", "type": "number", "default": "-1", "required": false}
+  ],
+  "issues": [
+    "The top and bottom rows are heavily faded, so edge items are hard to read."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy dark rows and smooth fades; it is a standard list with little identity.",
+  "unsure": []
+}

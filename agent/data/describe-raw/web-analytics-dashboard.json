@@ -1,0 +1,69 @@
+{
+  "name": "web-analytics-dashboard",
+  "frames": {
+    "code": null,
+    "best": null,
+    "best_why": "",
+    "usable": [],
+    "render": "blank",
+    "render_note": "no image",
+    "shows_interaction": "static"
+  },
+  "tagline": "A web analytics board with traffic charts, live visitors and top-page tables.",
+  "summary": "A responsive dashboard grid with a twelve-month visitor area chart, a live visitor count split by device, ranked tables for pages, countries and referrers, share bars, and Core Web Vitals.",
+  "title_fix": null,
+  "appearance": "Laid out as a four column grid of bordered cards: a wide area chart with a large total, a live visitors card with three device share bars, then tables for top pages, countries and referrers, small share-bar cards, and a three-up Core Web Vitals row.",
+  "behaviour": "Mostly static: hovering chart points raises a tooltip, the live visitor dot pulses continuously, and View All links sit over faded table edges. Figures never update on their own.",
+  "parts": ["visitors area chart", "live visitors card", "device share bars", "top pages table", "top countries table", "referrers table", "web vitals row"],
+  "demo_content": "Data for northwind.dev across twelve months, with sample pages, countries, referrer hosts and vitals",
+  "states": ["hover", "open"],
+  "kind": "dashboard",
+  "look": ["flat", "minimal", "corporate"],
+  "tone": "technical",
+  "search_phrases": [
+    "website traffic dashboard with charts",
+    "analytics overview page for a website",
+    "visitors per month area chart",
+    "live visitors and top pages",
+    "google analytics style dashboard",
+    "referrer and country traffic tables",
+    "core web vitals report card",
+    "website performance metrics grid"
+  ],
+  "resembles": ["Google Analytics", "Plausible Analytics"],
+  "use_when": "A product or marketing site needs a ready-made overview of traffic, sources and page performance.",
+  "avoid_when": "Live or real data, since every figure and table row is sample data baked into the file.",
+  "suits": ["saas", "dashboard", "marketing"],
+  "slot_hints": ["chart", "data-table"],
+  "traits": {
+    "trigger": ["hover", "always"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Every figure, table row and chart point is a constant in the file, so real data means editing or lifting the subcomponents. Colours follow the chart theme variables.",
+  "technique": ["svg", "css-keyframes"],
+  "weight": "moderate",
+  "weight_why": "A Recharts area chart plus several tables; mostly static markup with one pulsing dot.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Tables carry screen-reader captions and the chart is keyboard reachable, but the pulsing live dot ignores reduced-motion."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "No screenshot was recorded, so the actual rendering is unverified.",
+    "The live visitor count is a fixed 94 and never updates.",
+    "All chart and table data is hardcoded sample content."
+  ],
+  "polish": 3,
+  "polish_why": "A standard analytics card grid from shared primitives; no frames exist to judge the real rendering.",
+  "unsure": ["appearance", "look", "polish", "shows_interaction"]
+}

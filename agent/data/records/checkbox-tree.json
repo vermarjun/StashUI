@@ -1,0 +1,128 @@
+{
+ "name": "checkbox-tree",
+ "frames": {
+  "code": "8099",
+  "best": 1,
+  "best_why": "All branches and leaves are visible at once showing ticked, unticked and partly ticked boxes, with no cursor over them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Nested categories where ticking a parent ticks all its children.",
+ "summary": "A tree of category labels, each with a small square box, nested under thin indent rules. Ticking a parent selects everything beneath it, and a parent with only some children ticked shows a dash.",
+ "title_fix": null,
+ "appearance": "A narrow dark list of light grey labels, each led by a small square box and stepped inward from its parent along a faint vertical rule. Ticked boxes are filled white with a dark mark; partly selected branches show a short dash.",
+ "behaviour": "Clicking a box ticks it and every child under it, and clicking a full branch clears them all. A branch whose children are only partly ticked switches its own box to a dash. Nothing animates.",
+ "parts": [
+  "root row",
+  "branch row",
+  "leaf row",
+  "checkbox",
+  "indent guide"
+ ],
+ "demo_content": "Tech-stack categories: Frontend (React, Vue, Svelte), Backend (Node.js, Python, Go), Database (PostgreSQL, MongoDB).",
+ "states": [
+  "hover",
+  "focus",
+  "checked"
+ ],
+ "kind": "checkbox",
+ "look": [
+  "dark",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "nested checklist for choosing categories",
+  "tree of tick boxes for filters",
+  "select all children at once",
+  "folder list with squares to tick",
+  "partly selected parent shows a dash",
+  "expandable category selector",
+  "multi level selection list",
+  "product filter with subcategories"
+ ],
+ "resembles": [],
+ "use_when": "Users pick categories across a hierarchy, and ticking a parent should select everything below it.",
+ "avoid_when": "The source calls itself a demo with no keyboard or tree semantics, so it is not production ready.",
+ "suits": [
+  "ecommerce",
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "form-field",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Hand it a tree of nodes plus a renderNode function that draws each row; the parent-child checking logic is internal and all visual styling is left to you.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of nested rows and recursive state checks; no animation, timers or canvas.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Each box is labelled and can be toggled by keyboard, but the tree has no tree role, so nesting is announced as a flat run of boxes."
+ },
+ "props": [
+  {
+   "name": "tree",
+   "type": "TreeNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderNode",
+   "type": "function",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Frame 1 shows the root ticked while some of its children are unticked",
+  "No frame shows a keyboard focus ring on any box"
+ ],
+ "polish": 3,
+ "polish_why": "Clear nesting and sensible state logic, but rows are cramped and the indent rules are faint.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Checkbox Tree",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "cef4aaaa05665d20",
+  "film_hash": "a16cc8eee0916b71",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

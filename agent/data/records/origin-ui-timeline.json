@@ -1,0 +1,152 @@
+{
+ "name": "origin-ui-timeline",
+ "frames": {
+  "code": "3557",
+  "best": 1,
+  "best_why": "All five steps with dates and descriptions are visible, the first three read as complete, and no cursor covers them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "Steps stack on a thin vertical rail, filled up to the current stage.",
+ "summary": "A vertical list of five numbered stages, each with a small date, a bold title, a description and a hollow circle on a connecting line. Steps up to the active one brighten, and clicking a title moves the marker.",
+ "title_fix": null,
+ "appearance": "A narrow column on a black stage holds a small uppercase label, a bold heading and five stacked entries. Each entry has a faint date, a title, a two-line grey description, and a small ring on a thin vertical line at the left; the first entries look brighter than the last two.",
+ "behaviour": "Clicking a step title makes it the active stage, so that entry and all above it turn bright while the rest stay dim. The recording shifts the active step a few times and the rail fills up to the chosen point; nothing scrolls or folds.",
+ "parts": [
+  "section label",
+  "heading",
+  "vertical rail",
+  "step circle",
+  "step date",
+  "step title",
+  "step description"
+ ],
+ "demo_content": "Order status for ORD-8821: Order placed, Payment confirmed, Shipped, Out for delivery and Delivered.",
+ "states": [
+  "active"
+ ],
+ "kind": "timeline",
+ "look": [
+  "dark",
+  "minimal",
+  "airy",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "order tracking steps down the page",
+  "vertical list of progress stages",
+  "package delivery status history",
+  "dots connected by a line with dates",
+  "order status stepper for a shop",
+  "checkout progress shown as a list",
+  "activity feed with dots and dates",
+  "shipment journey with completed steps"
+ ],
+ "resembles": [
+  "Amazon order tracking"
+ ],
+ "use_when": "You need a fixed sequence of stages with dates and a clear sense of how far along it is.",
+ "avoid_when": "Only a handful of stages read well, and the click targets are plain titles with no button styling.",
+ "suits": [
+  "ecommerce",
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass steps as item children and drive the active stage with value or defaultValue; headings, dates and copy are yours, while colours and rail sizing are classes in the file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A dozen styled divs and a few colour transitions; no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Step titles are clickable headings with no button role or tab stop, so keyboard and screen reader users cannot change the active stage."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": "{{ activeStep: currentStep, setActiveStep }}",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "orientation",
+   "type": "\"horizontal\" | \"vertical\"",
+   "default": "\"vertical\"",
+   "required": false
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Active and completed steps differ only slightly in brightness, so the current stage is hard to pick out."
+ ],
+ "polish": 3,
+ "polish_why": "Neat rail with good rhythm, but state changes are faint and supporting text is low contrast.",
+ "unsure": [
+  "shows_interaction"
+ ],
+ "title": "Timeline",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e0ac02bae0c4dbaa",
+  "film_hash": "92261315c7a8234c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

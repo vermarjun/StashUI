@@ -1,0 +1,163 @@
+{
+ "name": "sandbox",
+ "frames": {
+  "code": "9569",
+  "best": 1,
+  "best_why": "Frame 1 shows the full shell: tab bar, file tree and syntax-highlighted editor together.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Code, preview and console share one window with a file tree and editor.",
+ "summary": "A full in-browser code playground: a file list beside an editor, plus Preview and Console tabs, so a snippet can be edited and run without leaving the page.",
+ "title_fix": "Live Code Sandbox",
+ "appearance": "A near-full-width dark panel with a header of three small tabs (Code, Preview, Console) above a body. On Code, a narrow file list sits left of a syntax-highlighted editor; Preview shows a plain app page with a heading and three rows.",
+ "behaviour": "Tapping a tab swaps the body: Code shows the file tree and editor, Preview renders the running app, Console lists its logs. The active tab gets a lighter pill and the old pane fades out quickly.",
+ "parts": [
+  "tab bar",
+  "tab buttons",
+  "file tree",
+  "code editor",
+  "preview pane",
+  "console pane"
+ ],
+ "demo_content": "A task list app headed 'Today' with three tasks: Write release notes, Review PR #482, Book flights to Lisbon.",
+ "states": [
+  "selected",
+  "focus",
+  "hover"
+ ],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "dense",
+  "technical",
+  "flat",
+  "rounded"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "live code editor with preview",
+  "run react snippets in the browser",
+  "editor with preview and console tabs",
+  "embedded playground with file tree",
+  "code playground like stackblitz",
+  "edit and preview components side by side",
+  "in browser ide panel",
+  "typescript playground dark theme"
+ ],
+ "resembles": [
+  "CodeSandbox",
+  "StackBlitz"
+ ],
+ "use_when": "Documentation or a tutorial needs a runnable example that readers can edit and preview on the page itself.",
+ "avoid_when": "It loads a remote bundler and several panes, so it is heavy for a landing page and needs a network to run code.",
+ "suits": [
+  "docs",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "body-text",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Files, template and theme pass through to the sandbox provider; tab labels, panel chrome and which panes appear are set by composing the exported pieces.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "heavy",
+ "weight_why": "Loads the Sandpack bundler and runs the preview in an iframe, so startup and memory cost are real.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Tabs expose roles and aria-selected but are not linked to their panels with aria-controls, and the file tree is not described."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showTabs",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showOpenInCodeSandbox",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoHiddenFiles",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The console text is so dim against the dark panel that the log lines are hard to read."
+ ],
+ "polish": 3,
+ "polish_why": "The shell and editor look tidy, but the console is almost illegible and the preview page is plain.",
+ "unsure": [
+  "props"
+ ],
+ "title": "Sandbox",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4a9ee56553d1e179",
+  "film_hash": "31acabf4a5cc1859",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

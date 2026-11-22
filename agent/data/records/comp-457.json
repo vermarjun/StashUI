@@ -1,0 +1,123 @@
+{
+ "name": "comp-457",
+ "frames": {
+  "code": "7112",
+  "best": 1,
+  "best_why": "Shows the whole card and the centred page counter between both chevrons, cursor away.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.6
+ },
+ "tagline": "A centred page counter flanked by two chevrons in a card footer.",
+ "summary": "A small pagination footer that states the current page and total between left and right chevron links, with no numbered pages.",
+ "title_fix": null,
+ "appearance": "A dark rounded card carries four hairline-split invoice rows; beneath them a centred line reads Page 3 of 10 with the numbers brighter, flanked by small left and right chevrons.",
+ "behaviour": "Hovering a chevron shifts it a touch and the links point to the previous or next page. The caption is fed by currentPage and totalPages while the rows hold still.",
+ "parts": [
+  "card",
+  "invoice row",
+  "previous chevron",
+  "page caption",
+  "next chevron"
+ ],
+ "demo_content": "Invoice rows INV-2031 to INV-2034 for Acme, Globex, Initech and Umbrella; Page 3 of 10.",
+ "states": [
+  "hover",
+  "focus",
+  "disabled"
+ ],
+ "kind": "pagination",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "page three of ten pager",
+  "arrows around a page counter",
+  "simple pagination with current page text",
+  "go forward or back one page",
+  "compact footer page navigator",
+  "no page numbers just count",
+  "chevrons beside page total",
+  "move through a list page by page"
+ ],
+ "resembles": [],
+ "use_when": "A compact list or table footer where a full numbered pager would be too heavy.",
+ "avoid_when": "When people need to skip several pages: the control only steps one page at a time.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "data-table",
+  "footer"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "currentPage and totalPages drive the caption and the disabled ends; chevron size, spacing and link styling are fixed in the classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Two chevron links and a short caption; no loop or heavy script.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Each chevron has an aria-label and the counter is a live region; the hover shift has no reduced-motion guard."
+ },
+ "props": [
+  {
+   "name": "currentPage",
+   "type": "number",
+   "default": "== totalPages",
+   "required": true
+  },
+  {
+   "name": "totalPages",
+   "type": "number",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Compact centred counter with clear chevrons; tidy but unremarkable.",
+ "unsure": [],
+ "title": "Compact Page Pagination",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9437019f04fa7167",
+  "film_hash": "93ce7cfc7c87a4f6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

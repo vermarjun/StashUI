@@ -1,0 +1,75 @@
+{
+  "name": "streak-calendar",
+  "frames": {
+    "code": "9474",
+    "best": 1,
+    "best_why": "Shows all three views at once with the year heatmap, month grid and week row fully visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Year heatmap, month grid and week row mark days of a streak.",
+  "summary": "A streak tracker drawn three ways: a 365-day contribution heatmap, a month grid and a current-week row. Active days fill in, used freezes turn blue, today is ringed and future days dim.",
+  "title_fix": null,
+  "appearance": "Three bordered dark cards. A wide year heatmap of tiny rounded squares runs in week columns, below it a seven-column month grid with weekday letters, and beside that a row of seven circles captioned with weekday names. Filled days are pale, freeze days bright blue.",
+  "behaviour": "Each view paints the streak periods it is given: active days fill, freeze days tint blue, today gets a ring and future days fade out. Hovering a year cell opens a date tooltip, and every day is a button that can report a click and takes a focus ring.",
+  "parts": ["year heatmap", "month grid", "weekday labels", "day cells", "check mark", "snowflake icon", "today ring"],
+  "demo_content": "November 2026 and a 12-day streak, generated relative to the current date.",
+  "states": ["hover", "focus", "disabled"],
+  "kind": "calendar",
+  "look": ["dark", "rounded", "dense", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "github contribution graph for habits",
+    "365 day streak heatmap",
+    "habit tracker calendar with checks",
+    "year of activity squares",
+    "daily streak grid in three views",
+    "heatmap of days with freeze days",
+    "month and week streak views",
+    "track consecutive days of practice"
+  ],
+  "resembles": ["GitHub contribution graph"],
+  "use_when": "A habit or learning app needs a whole year of daily activity at a glance, with a close-up month and week.",
+  "avoid_when": "It only draws the periods you pass: it calculates no streak, has no month navigation and no data fetching.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["chart", "feature-card"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["fill", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Streak periods arrive as an array of date ranges; view, month, reference date, start of week, freeze visibility and a day-click handler are props. Cell sizing stays in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "About 365 small cells plus a tooltip each; nothing animates after the first render.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Cells expose full date labels and grid roles, but nothing explains that the blue squares are freezes."
+  },
+  "props": [
+    {"name": "streak", "type": "StreakPeriod[]", "default": null, "required": true},
+    {"name": "view", "type": "\"week\" | \"month\" | \"year\"", "default": "week", "required": false},
+    {"name": "month", "type": "Date", "default": "new Date()", "required": false},
+    {"name": "referenceDate", "type": "Date", "default": "new Date()", "required": false},
+    {"name": "showFreezes", "type": "boolean", "default": "true", "required": false},
+    {"name": "startOfWeek", "type": "0 | 1", "default": "0", "required": false},
+    {"name": "onDayClick", "type": "(date: Date, wasActive: boolean) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The month card's bottom row is clipped by the crop, leaving the last days half cut.",
+    "The year heatmap has no legend, so the blue freeze squares carry no explanation."
+  ],
+  "polish": 4,
+  "polish_why": "Coherent three-view system with clear active and freeze colours; no legend and a clipped month row.",
+  "unsure": ["kind"]
+}

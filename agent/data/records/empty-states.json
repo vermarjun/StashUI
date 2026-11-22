@@ -1,0 +1,132 @@
+{
+ "name": "empty-states",
+ "frames": {
+  "code": "3683",
+  "best": 1,
+  "best_why": "Search empty state shows the full anatomy: magnifier, no-results copy, suggestions and two actions.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Placeholder screens for empty search, chart, inbox and project views.",
+ "summary": "A set of empty-state panels sharing one framed product surface. Search shows did-you-mean terms and actions, the chart offers a Load sample data button, and other variants cover an inbox, uploads, a project board and activity.",
+ "title_fix": null,
+ "appearance": "A dark rounded panel with a small title and meta line in its header, a Clear control at the right, and a centred icon above a heading, a line of grey guidance and one or two pill buttons. A segmented pill bar of six labels sits above; the chart variant draws dashed axes and light grey bars after loading.",
+ "behaviour": "The pill bar swaps variants with a crossfade. Entrances spring in once as the panel scrolls into view; the chart grows its bars when Load sample data is clicked, and hover or keyboard focus lifts the action buttons and suggestion chips.",
+ "parts": [
+  "variant tabs",
+  "panel header",
+  "empty icon",
+  "heading",
+  "guidance text",
+  "action buttons",
+  "suggestion chips"
+ ],
+ "demo_content": "Search for 'invoices' with suggestions; a 'Weekly active users' chart with Mon-Sun bars and Load sample data.",
+ "states": [
+  "hover",
+  "focus",
+  "empty",
+  "loading",
+  "selected"
+ ],
+ "kind": "empty-state",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "no results empty state",
+  "blank state for a search",
+  "empty chart placeholder",
+  "no data yet screen",
+  "empty inbox illustration panel",
+  "get started placeholder with actions",
+  "zero state for a dashboard",
+  "no items found message"
+ ],
+ "resembles": [],
+ "use_when": "A list, chart or inbox can be empty and needs copy, suggestions or a starting action instead of a blank screen.",
+ "avoid_when": "It is an opinionated dark product panel with fixed internal layouts, so it is heavy for a one-line inline empty message.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "empty-state",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "viewport",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Only the variant and className are props; every heading, suggestion, button label and chart value is written inside the per-variant files.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Six static panels with one-shot spring entrances and no loops.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Entrances respect reduced motion and buttons have focus rings, but the variant switch is plain buttons without tab roles or aria-selected."
+ },
+ "props": [
+  {
+   "name": "variant",
+   "type": "EmptyStatesVariant",
+   "default": "\"ghost\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute inset-0 grid place-items-cente",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The variant pills look like tabs but expose no selected state beyond colour.",
+  "The chart's sample data reads as real data, and its 'sample data only' caveat is tiny grey text."
+ ],
+ "polish": 4,
+ "polish_why": "Polished, consistent empty-state kit; the variant tabs and chart caveat are weak points.",
+ "unsure": [],
+ "title": "Empty States",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "51138b40431db2ce",
+  "film_hash": "4fd3dce8ba585582",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "floating-panel",
+  "frames": {
+    "code": "8645",
+    "best": 4,
+    "best_why": "The panel is open with a typed note inside, showing the trigger turned into a working form.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The open panel clips its footer, so no Submit Note or close control is ever visible.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A note button unfurls into a small writing panel with a textarea.",
+  "summary": "A compact Add Note button that expands into a floating card holding a title, a labelled textarea and, in the code, close and submit actions.",
+  "title_fix": null,
+  "appearance": "A small dark rounded Add Note button sits alone on black. Clicked, it becomes a wider dark card below with a bold title, a Write your note label and a large empty text area; the original button stays as a blurred ghost.",
+  "behaviour": "The trigger button morphs into the panel with a spring while the backdrop blurs slightly; clicking outside or pressing Escape closes it and clears the note.",
+  "parts": ["trigger button", "panel", "title", "label", "textarea"],
+  "demo_content": "Button and panel titled Add Note with the label Write your note and the typed line Ship the pricing page on Friday.",
+  "states": ["hover", "open"],
+  "kind": "popover",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "button that opens a note form",
+    "small writing popup for quick notes",
+    "floating text box with submit",
+    "inline note composer popup",
+    "click to add a note panel",
+    "quick capture note widget",
+    "popover form with textarea",
+    "expandable button into a form"
+  ],
+  "resembles": ["macOS Quick Note"],
+  "use_when": "Users need to jot a short note from one button without leaving the page or opening a full form.",
+  "avoid_when": "The panel anchors below the trigger and the fixed-height demo clips its footer actions.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field", "toast"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Trigger label, title, textarea and footer actions are composed from exported parts; panel size and the spring are set in the demo and source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One panel and a blurred backdrop, animated only while opening or closing.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The dialog does not trap focus or restore it, and the trigger's aria-expanded stays false even while the panel is open."
+  },
+  "props": [
+    {"name": "title", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "htmlFor", "type": "string", "default": null, "required": true},
+    {"name": "onSubmit", "type": "(note: string) => void", "default": null, "required": false},
+    {"name": "id", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The fixed-height panel clips its footer, so Submit Note and the close arrow never show.",
+    "The trigger's aria-expanded stays false while the panel is open.",
+    "Focus is neither trapped in the dialog nor returned to the trigger.",
+    "The label fades to nothing as soon as text is typed, leaving the textarea unlabelled."
+  ],
+  "polish": 3,
+  "polish_why": "The morph and blurred backdrop are nice, but the clipped footer makes the panel look unfinished.",
+  "unsure": ["render"]
+}

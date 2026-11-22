@@ -1,0 +1,73 @@
+{
+  "name": "changeable-pricing-section",
+  "frames": {
+    "code": "8515",
+    "best": 1,
+    "best_why": "Shows the monthly prices with Team selected and its feature list unfolded, plus the billing switch.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Plan picker with a monthly/yearly switch and features that unfold when picked.",
+  "summary": "A compact pricing card listing three plans as radio rows. A Monthly/Yearly switch springs across, prices roll, and the chosen plan expands to show its feature list.",
+  "title_fix": null,
+  "appearance": "A dark rounded panel holds a Select a plan heading, a small segmented Monthly/Yearly switch and three stacked plan rows. Each row has a radio dot, plan name, description and a right-aligned price.",
+  "behaviour": "Clicking the switch slides an orange pill and rolls each price to the other billing period. Selecting a plan fills its radio, tints its border orange and unfolds a dashed-top list of features inside that row.",
+  "parts": ["panel", "heading", "billing toggle", "plan row", "radio dot", "price", "feature list", "continue button"],
+  "demo_content": "Plans Starter, Team and Enterprise priced $12, $29 and $79 monthly with a Popular badge on Team.",
+  "states": ["hover", "focus", "active", "selected", "expanded"],
+  "kind": "pricing-card",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "pricing plan picker with toggle",
+    "monthly yearly billing switch",
+    "select a plan card with features",
+    "subscription plan selector",
+    "expandable pricing rows",
+    "radio list of saas plans",
+    "pricing card with rolling prices",
+    "choose a plan and see features"
+  ],
+  "resembles": [],
+  "use_when": "A signup flow needs a compact plan chooser with billing period and inline feature detail.",
+  "avoid_when": "Prices are strings supplied per plan, so discounts and currency maths must be computed outside.",
+  "suits": ["saas"],
+  "slot_hints": ["pricing-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Plans arrive as an array with monthly and yearly price strings, features and badges; title, labels, footer and button text are props.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A few plan rows with layout and price animations; no animation loop.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Plan rows are clickable divs with no radio role or keyboard focus, and the toggle has no aria-pressed state."
+  },
+  "props": [
+    {"name": "plans", "type": "Plan[]", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": "Select a plan", "required": false},
+    {"name": "defaultPlanId", "type": "string", "default": null, "required": false},
+    {"name": "defaultBillingCycle", "type": "'monthly' | 'yearly'", "default": "monthly", "required": false},
+    {"name": "monthlyLabel", "type": "string", "default": "Monthly", "required": false},
+    {"name": "yearlyLabel", "type": "string", "default": "Yearly", "required": false},
+    {"name": "footerText", "type": "string", "default": "Cancel anytime. No long-term contract.", "required": false},
+    {"name": "buttonText", "type": "string", "default": "Continue", "required": false},
+    {"name": "onContinue", "type": "(planId, billingCycle) => void", "default": null, "required": false}
+  ],
+  "issues": ["Plan rows are clickable divs, so keyboard users cannot change the selected plan."],
+  "polish": 4,
+  "polish_why": "Neat dark plan picker with a springy toggle and a tidy feature reveal.",
+  "unsure": ["kind"]
+}

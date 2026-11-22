@@ -1,0 +1,148 @@
+{
+ "name": "carousel-3d",
+ "frames": {
+  "code": "6512",
+  "best": 1,
+  "best_why": "Frame 1 shows four evenly spaced cards on the ring, all fully in frame and clearly angled.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.6
+ },
+ "tagline": "A ring of photo cards rotates in 3D and follows a drag.",
+ "summary": "A draggable carousel that places image cards around an invisible circle in 3D space, tilts the ring and turns it slowly. Dragging spins it; releasing resumes the auto-spin.",
+ "title_fix": null,
+ "appearance": "Rectangular photo cards stand around an unseen circle on a black stage, each tilted and angled like a ring seen from slightly above. Cards near the middle face forward while edge cards turn away in perspective.",
+ "behaviour": "The whole ring turns slowly on its own. Pressing and dragging left or right spins it faster in that direction, and letting go restarts the steady rotation.",
+ "parts": [
+  "photo card",
+  "ring",
+  "caption",
+  "drag surface"
+ ],
+ "demo_content": "Mountain and landscape photos on the cards; heading Drag to rotate.",
+ "states": [
+  "dragging"
+ ],
+ "kind": "carousel",
+ "look": [
+  "3d",
+  "dark",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "3d photo carousel",
+  "rotating image ring",
+  "drag to spin gallery",
+  "coverflow style image viewer",
+  "circular photo carousel",
+  "3d spinning cards",
+  "interactive photo ring",
+  "three dimensional image slider"
+ ],
+ "resembles": [
+  "Apple Cover Flow"
+ ],
+ "use_when": "A portfolio or gallery wants to show many images as a browsable carousel with depth.",
+ "avoid_when": "It pulls in Three.js and sizes cards in fixed pixels, so the ring crowds or clips on narrow screens.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "media",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "items (image URLs), width, height, className and containerClassName are props; the ring radius and rotation speed are fixed in the source.",
+ "technique": [
+  "three-js",
+  "motion-library"
+ ],
+ "weight": "heavy",
+ "weight_why": "A Three.js CSS3D render plus a continuous motion animation every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Rotation is drag-only and endless, images have no alt text, and reduced-motion is not honoured."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-[60vh] w-full\", containerClassName)}",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "string[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "450",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "600",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Cards use fixed pixel sizes, so the ring can overflow a narrow container.",
+  "Images are painted as CSS backgrounds with no alt text."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing depth and smooth spin; images lack alt text and the ring can overflow.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Carousel 3D",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2c83ea2d8340b2f3",
+  "film_hash": "c02f35b72d175163",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

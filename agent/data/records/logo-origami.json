@@ -1,0 +1,135 @@
+{
+ "name": "logo-origami",
+ "frames": {
+  "code": "5287",
+  "best": 3,
+  "best_why": "Frame 3 shows one logo fully settled on the card with the divider running across it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "A little card folds over like origami to swap one logo for the next.",
+ "summary": "A tilted rounded card splits along its middle: the top half folds away while the next logo's lower half flips up, then it rests before cycling again.",
+ "title_fix": null,
+ "appearance": "A dark rounded card is tilted slightly back in 3D and crossed by a thin horizontal line at mid-height. A single white logo sits centred, and the halves take different colours as they overlap.",
+ "behaviour": "Every few seconds the top half flips away and the bottom half of the next logo folds up to meet it, briefly showing two logos split across the seam. The card then rests until the next cycle.",
+ "parts": [
+  "card",
+  "top half",
+  "bottom half",
+  "logo",
+  "divider line"
+ ],
+ "demo_content": "A white triangle, a TS monogram and a wave emoji on dark, blue and teal panels.",
+ "states": [],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "3d",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "flip card logo animation",
+  "origami fold effect",
+  "card that flips between logos",
+  "animated brand mark switcher",
+  "rotating logo card",
+  "half fold flip card",
+  "cycling logo showcase",
+  "3d card flip animation"
+ ],
+ "resembles": [],
+ "use_when": "A small set of client or tech logos should be shown one at a time with a playful swap.",
+ "avoid_when": "Only one logo shows at once, so it cannot serve as a full trust wall of brands.",
+ "suits": [
+  "portfolio",
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "logo-wall",
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "duration, delay, className and the children array are props; colours come from each LogoOrigamiItem's className.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of DOM halves animate on an interval; idle between flips.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The cycling cannot be paused, each logo is duplicated in two halves, and reduced-motion is ignored."
+ },
+ "props": [
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "2.5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode[]",
+   "default": "[]",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Each logo is duplicated in two clipped halves, so screen readers may hear it twice."
+ ],
+ "polish": 4,
+ "polish_why": "A convincing little fold with clear timing; the split halves duplicate content for assistive tech.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Logo Origami",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "3b373fb84ec5f285",
+  "film_hash": "07d508c93e6b0590",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

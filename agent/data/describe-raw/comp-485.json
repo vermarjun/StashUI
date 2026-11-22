@@ -1,0 +1,66 @@
+{
+  "name": "comp-485",
+  "frames": {
+    "code": "4453",
+    "best": 1,
+    "best_why": "Full ten-row table with every column, both filters, Add user and the pager in one clean frame.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Admin table you can search, filter, sort and page through.",
+  "summary": "A complete people-management table. It searches by name or email, filters by status, hides columns, sorts, selects rows for bulk delete and pages through results.",
+  "title_fix": null,
+  "appearance": "A dark admin table under a toolbar with a search field, Status and View buttons and a right-aligned Add user button. The header row holds a select-all checkbox plus Name, Email, Location, Status, Performance and Balance, and each row ends in a three-dot menu. Row count and pager sit below.",
+  "behaviour": "Typing in the search box narrows rows by name or email and adds a clear icon. Status opens a checklist of statuses with counts, View toggles columns, clicking a header sorts, and row checkboxes reveal a Delete button that confirms first.",
+  "parts": ["toolbar", "search input", "filter buttons", "add user button", "column headers", "selection checkbox", "status badge", "pagination"],
+  "demo_content": "Ten staff rows such as Alex Alan, Anna Vissotski and Fatima Al-Sayed, with cities, statuses and balances.",
+  "states": ["hover", "focus", "open", "selected", "checked", "empty"],
+  "kind": "data-table",
+  "look": ["dark", "dense", "minimal", "flat", "outlined"],
+  "tone": "technical",
+  "search_phrases": [
+    "datatable with search and filters",
+    "admin table for managing users",
+    "table with checkboxes and bulk delete",
+    "sort and filter rows",
+    "hide and show table columns",
+    "pagination under a data grid",
+    "employee database with status badges",
+    "search people by name or email"
+  ],
+  "resembles": ["Retool table"],
+  "use_when": "A back-office screen must let staff find, filter, sort and bulk-edit a list of people or records.",
+  "avoid_when": "It loads demo data from a public URL and exposes no props, so wiring real data means editing the component.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["data-table"],
+  "traits": {
+    "trigger": ["click", "focus", "hover"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Columns, cell rendering, the demo fetch URL and all toolbar copy live in the file; real data and extra props require source edits.",
+  "technique": ["static"],
+  "weight": "moderate",
+  "weight_why": "Ten visible rows plus sort, filter and pagination logic from TanStack; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Sortable headers are keyboard operable and the row count is announced, but the row menu is labelled Edit item although it holds many actions."
+  },
+  "props": [],
+  "issues": [
+    "Row action button is labelled Edit item though it opens a multi-action menu.",
+    "Data comes from a public URL, so the table shows No results until the fetch loads."
+  ],
+  "polish": 4,
+  "polish_why": "Complete and consistent admin table; tiny type and a crowded toolbar hold it back.",
+  "unsure": []
+}

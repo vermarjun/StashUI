@@ -1,0 +1,154 @@
+{
+ "name": "glitch-vault",
+ "frames": {
+  "code": "2776",
+  "best": 4,
+  "best_why": "Both cards are visible while cyan glyphs glow clearly around the cursor on the right card.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.0
+ },
+ "tagline": "Two glass cards with glowing matrix glyphs that trail the cursor.",
+ "summary": "A wrapper that paints a field of glowing monospace characters on a canvas behind its content. Moving the pointer over the card lights the nearby glyphs, which fade when it leaves.",
+ "title_fix": null,
+ "appearance": "Two rounded dark cards on a near-black page: a profile card with a round portrait, name and button, and a project card with a rocket tile, copy and two buttons. Faint cyan glyphs appear at the card edge near the cursor.",
+ "behaviour": "Moving the pointer over a card raises the opacity of grid characters within a set radius, making a glowing patch that follows the cursor; on leaving, the glyphs ease back to invisible.",
+ "parts": [
+  "profile card",
+  "avatar",
+  "project card",
+  "buttons",
+  "glyph canvas",
+  "glow"
+ ],
+ "demo_content": "Profile Maya Lin, UI/UX Designer & Developer; Project Launch card saying Ready to deploy and 214 tests passing.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "glass",
+  "glow",
+  "minimal",
+  "futuristic"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "matrix glyphs around cursor",
+  "glowing code characters on hover",
+  "hacker style card effect",
+  "cyberpunk hover glow cards",
+  "canvas letters follow pointer",
+  "digital rain on a card",
+  "profile card with green glyphs",
+  "react card with glowing symbols"
+ ],
+ "resembles": [],
+ "use_when": "A profile or feature card should react to the pointer with a subtle tech-flavoured glow.",
+ "avoid_when": "Content must stay perfectly clear; the glyph canvas adds visual noise near text and runs every frame.",
+ "suits": [
+  "portfolio",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass children as card content and set glitchColor, glitchRadius, performanceMode and disabled; corner radius and padding come from className.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A requestAnimationFrame canvas loop over a pool of 5,000 glyph particles.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The glyph canvas is decorative with no text role, and the always-running animation ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`relative rounded-2xl overflow-hidden ${className}`}",
+   "required": false
+  },
+  {
+   "name": "glitchColor",
+   "type": "string",
+   "default": "\"#00ffff\"",
+   "required": false
+  },
+  {
+   "name": "glitchRadius",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "performanceMode",
+   "type": "string",
+   "default": "\"balanced\"",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The canvas animation loop keeps running even when no pointer is over a card.",
+  "The glow only responds to a mouse, so touch users never see the effect."
+ ],
+ "polish": 3,
+ "polish_why": "Clean dark cards and a neat glyph glow; the demo's profile layout is generic.",
+ "unsure": [
+  "kind",
+  "traits.theme"
+ ],
+ "title": "Glitch Vault",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a7a7cca76d77589c",
+  "film_hash": "f4a35c9904951829",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

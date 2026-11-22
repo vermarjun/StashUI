@@ -1,0 +1,137 @@
+{
+ "name": "google-gemini-effect",
+ "frames": {
+  "code": "2988",
+  "best": 6,
+  "best_why": "The five coloured paths are drawn furthest across the stage, showing the effect at its peak.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 11.8
+ },
+ "tagline": "Five thin coloured lines sweep across a dark hero and stretch as you scroll.",
+ "summary": "A full-width black hero with a large gradient headline, a short grey subtitle and a small white pill button, crossed by five thin curved lines in blue, cyan, pink and cream that draw outward from the centre on scroll.",
+ "title_fix": null,
+ "appearance": "A black full-width stage with a large white-to-grey gradient headline, two lines of small grey copy and a small white pill button in the centre. Five thin curved lines in blue, cyan, pink and cream sweep across the middle from both sides and blur into a soft glow where they meet.",
+ "behaviour": "Scrolling draws the five curved lines outward from the centre and stretches them across the stage while the headline stays pinned. The copy and button do not move.",
+ "parts": [
+  "headline",
+  "subtitle",
+  "pill button",
+  "curved line",
+  "centre glow"
+ ],
+ "demo_content": "Headline Build with Aceternity UI, a line about five paths drawing themselves, and a ui.aceternity.com button.",
+ "states": [],
+ "kind": "hero",
+ "look": [
+  "dark",
+  "gradient",
+  "minimal",
+  "airy"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "five lines that draw on scroll",
+  "hero with animated curved lines",
+  "lines meeting in the middle",
+  "scroll driven line drawing background",
+  "dark landing page with glowing paths",
+  "gradient light trails behind headline",
+  "animated hero section with svg lines",
+  "lines that grow as you scroll"
+ ],
+ "resembles": [
+  "Google Gemini"
+ ],
+ "use_when": "A launch or product hero that should feel alive while the visitor scrolls deeper into the page.",
+ "avoid_when": "Placed without a tall sticky scroll area, it shows only static lines and empty space below.",
+ "suits": [
+  "marketing",
+  "saas",
+  "ai-chat"
+ ],
+ "slot_hints": [
+  "hero",
+  "headline"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass five motion values as pathLengths plus your own title and description; the button label, line colours and the path shapes are hardcoded.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Five SVG paths driven by scroll values; no continuous animation loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The pill button has no click handler and the scroll animation ignores reduced-motion preferences."
+ },
+ "props": [
+  {
+   "name": "pathLengths",
+   "type": "MotionValue[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\" absolute -top-60  md:-top-40 w-full\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The white button reads ui.aceternity.com but has no click handler.",
+  "The SVG is fixed at 1440 by 890, so the paths drift off-centre on narrow screens.",
+  "The drawing is subtle; frames 1 and 6 differ only slightly at the edges."
+ ],
+ "polish": 4,
+ "polish_why": "Striking dark hero with fine line work; the button is inert and the scroll change is faint.",
+ "unsure": [],
+ "title": "Google Gemini Effect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "168631363d80f7c7",
+  "film_hash": "59d0fa0576d74d89",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

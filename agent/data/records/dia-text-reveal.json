@@ -1,0 +1,175 @@
+{
+ "name": "dia-text-reveal",
+ "frames": {
+  "code": "7520",
+  "best": 3,
+  "best_why": "A bright blue-purple band is caught sweeping across the new word as it appears.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.4
+ },
+ "tagline": "A colour band wipes across a rotating word in a headline.",
+ "summary": "A heading whose trailing word changes between phrases while a multicoloured band sweeps across it, revealing each new word with a brief rainbow shine.",
+ "title_fix": null,
+ "appearance": "The words Crafted with in bold white, followed by a single word on the same line. While a word appears, its letters are painted by a travelling band of pink, red, amber, lilac and blue.",
+ "behaviour": "A gradient band slides left to right over the trailing word, uncovering it in colour; once past, the word rests in plain white, then fades out and the next phrase is revealed the same way.",
+ "parts": [
+  "heading text",
+  "changing word",
+  "colour band"
+ ],
+ "demo_content": "The heading Crafted with precision, then purpose, then passion.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "gradient",
+  "colorful",
+  "bold",
+  "minimal",
+  "dark"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "colour sweep across text",
+  "word that changes in a headline",
+  "gradient wipe text reveal",
+  "rotating tagline word",
+  "shimmer band over letters",
+  "animated headline replacement",
+  "rainbow highlight on a word",
+  "text reveal with a light bar"
+ ],
+ "resembles": [],
+ "use_when": "A rotating tagline word should get a flash of colour each time it appears.",
+ "avoid_when": "Quiet editorial pages; the repeated colour sweep is loud and draws the eye.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass text as a string or array and set colors, textColor, duration, delay, repeat and fixedWidth; the band width and sweep easing are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One animated span with a moving CSS gradient; only the word width is tweened.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Reduced-motion is honoured by skipping the sweep, but the changing word is not announced to screen readers."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string | string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "DEFAULT_COLORS",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "\"var(--foreground)\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "repeat",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "repeatDelay",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "startOnView",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "once",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "fixedWidth",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"align-bottom leading-[100%] text-inherit\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Between phrases the changing word disappears completely, leaving an empty gap beside the heading."
+ ],
+ "polish": 4,
+ "polish_why": "A lively, well-timed colour sweep; the blank gap between words is a little jarring.",
+ "unsure": [],
+ "title": "Dia Text Reveal",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "239650378a2165db",
+  "film_hash": "884553d8cfb4584c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

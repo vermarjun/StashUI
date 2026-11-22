@@ -1,0 +1,130 @@
+{
+ "name": "spring-calendar",
+ "frames": {
+  "code": "6377",
+  "best": 1,
+  "best_why": "Mon is shown with two event cards and the full day row, the most complete settled view.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Day name blurs and re-forms as you switch between upcoming dates.",
+ "summary": "A small dark card listing upcoming events for one day. Five dated buttons sit at the bottom; tapping one morphs the big weekday label with a blur, swaps in that day's events and springs the card to a new height.",
+ "title_fix": "Animated Event Calendar",
+ "appearance": "A tall rounded dark card on a black stage. A large bold weekday name sits top left, then a line reading Upcoming Events with a tiny calendar glyph, and one or two bordered event tiles beneath. A row of five small bordered buttons, each with month, date and weekday, runs along the bottom.",
+ "behaviour": "Clicking a dated button makes the big weekday label blur and morph into the new day while its event tiles fade and slide in. The card's height springs to fit the number of events and the chosen button stays subtly tinted.",
+ "parts": [
+  "weekday heading",
+  "events label",
+  "event tiles",
+  "day buttons",
+  "calendar icon"
+ ],
+ "demo_content": "Events Team Standup, Design Review and Demo Day across dates Jun 9 to Jun 13.",
+ "states": [
+  "hover",
+  "selected"
+ ],
+ "kind": "calendar",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "calendar card with upcoming events",
+  "day picker with animated label",
+  "date selector with event list",
+  "schedule widget for a dashboard",
+  "weekday buttons that switch events",
+  "blur text transition calendar",
+  "small event calendar component",
+  "agenda view for one day"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard, booking app or sidebar that shows a short agenda and lets people jump between upcoming days.",
+ "avoid_when": "Fixed to five supplied days in a max-w-lg card, so it is not a real month grid and needs hand-built data.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass the array of days with their events, a starting index and an onActiveIndexChange callback; all styling, spring and morph timing are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of buttons and cards with spring layout and a short text morph; no loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Day buttons are real buttons but expose no selected state, and the blur-and-scale motion has no reduced-motion fallback."
+ },
+ "props": [
+  {
+   "name": "calendarData",
+   "type": "CalendarDay[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "initialIndex",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "onActiveIndexChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean dark card and a nice blur morph; event tiles are small and low contrast.",
+ "unsure": [
+  "theme",
+  "focus_visible"
+ ],
+ "title": "Spring Calendar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "aed9a2b52863c3c4",
+  "film_hash": "2b89acf083159b75",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

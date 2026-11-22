@@ -1,0 +1,138 @@
+{
+  "name": "wispr-flow-text-animation",
+  "frames": {
+    "code": "6555",
+    "best": 4,
+    "best_why": "The loop has been reshaped with blue anchors and handles visible while the text still follows the new curve.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A paragraph streams endlessly along a looping curve you can reshape.",
+  "summary": "A block of spoken-style text marches continuously along a bezier curve across a dark screen. Edit path reveals draggable anchors and handles that bend the curve live while the text keeps flowing.",
+  "title_fix": null,
+  "appearance": "A black full-bleed field with a small grey paragraph wrapped along a thin winding line: a long sweep from the upper left, a tight loop near the centre, then a run to the lower right. A tiny pill at the top centre reads Edit path.",
+  "behaviour": "The paragraph scrolls steadily along the curve in an endless loop. Pressing Edit path shows a blue dashed outline, anchor dots and hollow control handles; dragging them reshapes the curve while the text follows, and Done editing returns to the plain view.",
+  "parts": [
+    "curved text path",
+    "flowing paragraph",
+    "edit button",
+    "path anchors",
+    "control handles",
+    "guide lines"
+  ],
+  "demo_content": "A long rambling quote about a project timeline, starting Umm, hope your week has started well",
+  "states": [
+    "dragging",
+    "hover"
+  ],
+  "kind": "text-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "technical",
+    "editorial"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "text flowing along a curved line",
+    "paragraph on a winding path",
+    "kinetic typography that loops",
+    "editable bezier text path",
+    "marquee text following a curve",
+    "voice transcript flowing across the screen",
+    "drag points to bend the text path",
+    "animated wall of small text"
+  ],
+  "resembles": [
+    "Wispr Flow"
+  ],
+  "use_when": "A launch or landing screen wants a wall of speech-like copy drifting on a curve that can be art-directed live.",
+  "avoid_when": "Anywhere the text must be read: it is small, faint and always moving, and it needs a wide screen.",
+  "suits": [
+    "marketing",
+    "portfolio",
+    "devtool"
+  ],
+  "slot_hints": [
+    "hero",
+    "page-background"
+  ],
+  "traits": {
+    "trigger": [
+      "always"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "children",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Speed, font size, text opacity and colours are props, but the paragraph is a constant. The curve can be reshaped in edit mode but that shape is not saved.",
+  "technique": [
+    "svg",
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "One SVG text path and a short SMIL marquee; only the edit buttons animate with motion.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "yes",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Path editing is pointer-only, the anchor dots cannot be focused, and the marquee runs regardless of reduced-motion."
+  },
+  "props": [
+    {
+      "name": "speed",
+      "type": "number",
+      "default": "25",
+      "required": false
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "default": "15",
+      "required": false
+    },
+    {
+      "name": "textOpacity",
+      "type": "number",
+      "default": "0.4",
+      "required": false
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "default": "\"var(--foreground)\"",
+      "required": false
+    },
+    {
+      "name": "strokeColor",
+      "type": "string",
+      "default": "\"transparent\"",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The moving text is tiny and very faint, so most of the paragraph cannot be read.",
+    "The path handles are small circles with no keyboard focus or labels."
+  ],
+  "polish": 4,
+  "polish_why": "Distinctive flowing type with a robust path editor; faint small text holds it back.",
+  "unsure": [
+    "kind"
+  ]
+}

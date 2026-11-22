@@ -1,0 +1,170 @@
+{
+  "name": "layered-progressive-disclosure",
+  "frames": {
+    "code": "8086",
+    "best": 6,
+    "best_why": "Every layer is open at once: switch, tab pair with Removal selected, and the reversed values.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Nested config panel that uncovers a switch, then tabs, as you switch it on.",
+  "summary": "A stack of inset rounded cards showing width and height readouts, a row whose label flips, and an asymmetric switch that reveals a two-tab selector and reverses the opacity and blur values. Each new layer springs in out of a blur.",
+  "title_fix": null,
+  "appearance": "A narrow dark panel titled Animation, built from rounded cards in shades of charcoal that sit one inside another. It holds two small stat chips, a wide label row with up-down chevrons, two value rows with an arrow between numbers, and a light Add Property button at the base.",
+  "behaviour": "Clicking the Visual Change row swaps its label to Transition and slides open an Asymmetric switch. Turning that switch on springs out a two-tab selector and flips the Opacity and Blur values, each layer appearing from above with a short blur.",
+  "parts": [
+    "panel",
+    "title",
+    "stat chip",
+    "feature row",
+    "chevron",
+    "asymmetric switch",
+    "tab selector",
+    "add button"
+  ],
+  "demo_content": "Width 320, Height 240, labels Visual Change and Transition, Asymmetric, and tabs Insertion and Removal.",
+  "states": [
+    "hover",
+    "focus",
+    "checked",
+    "open",
+    "selected"
+  ],
+  "kind": "settings-panel",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "flat",
+    "airy"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "settings panel that reveals more options",
+    "progressive disclosure form",
+    "nested options appear when toggled",
+    "config panel with switches and tabs",
+    "show advanced settings on demand",
+    "layered cards inside each other",
+    "toggle reveals extra controls",
+    "expandable preference rows"
+  ],
+  "resembles": [],
+  "use_when": "Settings have levels of detail and advanced controls should stay hidden until switched on.",
+  "avoid_when": "Reveals are click-only and the deep rounded nesting can read as busy in an already dense panel.",
+  "suits": [
+    "saas",
+    "dashboard",
+    "devtool"
+  ],
+  "slot_hints": [
+    "form-field",
+    "sidebar"
+  ],
+  "traits": {
+    "trigger": [
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "text",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The title, two config rows, the feature, asymmetric and tab labels, and change callbacks are props; the nesting and grey shades are fixed in the file.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A few nested panels with small layout and blur transitions that idle while closed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The feature row is a clickable div with no keyboard access, the switch has no aria-checked or label, and motion is never reduced."
+  },
+  "props": [
+    {
+      "name": "title",
+      "type": "string",
+      "default": "\"Configuration\"",
+      "required": false
+    },
+    {
+      "name": "configOptions",
+      "type": "{ label: string; value: string | number }[]",
+      "default": "Width/Height defaults",
+      "required": false
+    },
+    {
+      "name": "primaryFeatureName",
+      "type": "string",
+      "default": "\"Visual Change\"",
+      "required": false
+    },
+    {
+      "name": "secondaryFeatureName",
+      "type": "string",
+      "default": "\"Transition\"",
+      "required": false
+    },
+    {
+      "name": "asymmetricOptionsName",
+      "type": "string",
+      "default": "\"Asymmetric\"",
+      "required": false
+    },
+    {
+      "name": "tabs",
+      "type": "[string, string]",
+      "default": "[\"Insertion\", \"Removal\"]",
+      "required": false
+    },
+    {
+      "name": "onAddProperty",
+      "type": "() => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onFeatureToggle",
+      "type": "(isActive: boolean) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onAsymmetricToggle",
+      "type": "(isActive: boolean) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onTabChange",
+      "type": "(tab: string) => void",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The Visual Change row is a div, so keyboard users cannot open the next layer.",
+    "The Asymmetric switch is a button with no aria-checked, role or label."
+  ],
+  "polish": 4,
+  "polish_why": "Neat nesting and gentle blur springs; missing switch semantics and keyboard access are real gaps.",
+  "unsure": []
+}

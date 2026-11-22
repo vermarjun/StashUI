@@ -1,0 +1,76 @@
+{
+  "name": "canvas-text",
+  "frames": {
+    "code": "3781",
+    "best": 3,
+    "best_why": "Frame 3 catches the line bands at their most curved, showing the wave clearly inside the blue word.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A bold word filled with horizontal blue lines that ripple like a slow wave.",
+  "summary": "Fills part of a headline with a canvas pattern of thin horizontal lines in shifting blues. The lines bend in gentle sine waves and stay clipped inside the letters, animating on their own.",
+  "title_fix": "Wavy Line Text Effect",
+  "appearance": "The second half of a large bold headline, \"living visuals\", shown in blue and striped with closely spaced horizontal lines. The plain first line \"Turn rough ideas into\" sits above in white, and the striped bands bend in soft S-curves across the glyphs.",
+  "behaviour": "The line bands slide and bow on a slow loop of several seconds, cycling between a few blue tones. Motion stays clipped to the letter shapes and runs on its own with no input or pause.",
+  "parts": ["headline", "coloured word", "wavy line bands"],
+  "demo_content": "The phrase \"Turn rough ideas into living visuals\", with the last two words striped blue.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "bold", "colorful", "technical"],
+  "tone": "decorative",
+  "search_phrases": [
+    "text with wavy lines inside letters",
+    "animated blue striped heading",
+    "flowing line typography effect",
+    "headline that shimmers with waves",
+    "moving stripe fill on a word",
+    "liquid line text for a hero",
+    "sine wave letter animation",
+    "striped accent word in a title"
+  ],
+  "resembles": [],
+  "use_when": "One phrase of a hero headline should feel alive and carry the eye without a full hero rebuild.",
+  "avoid_when": "The motion is continuous with no pause or reduced-motion check, and canvas-drawn text cannot be selected.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["headline", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["text", "fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Text, colour list, loop duration, line width and gap, curve amount, background class and overlay placement are props.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "A small canvas redraws a few dozen bezier lines every animation frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The canvas exposes the words through an aria-label, but the continuous motion has no prefers-reduced-motion check."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false},
+    {"name": "backgroundClassName", "type": "string", "default": "\"bg-white dark:bg-neutral-950\"", "required": false},
+    {"name": "colors", "type": "string[]", "default": "[#ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dfe6e9]", "required": false},
+    {"name": "animationDuration", "type": "number", "default": "5", "required": false},
+    {"name": "lineWidth", "type": "number", "default": "1.5", "required": false},
+    {"name": "lineGap", "type": "number", "default": "10", "required": false},
+    {"name": "curveIntensity", "type": "number", "default": "60", "required": false},
+    {"name": "overlay", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "The visible word is drawn on a canvas, so users cannot select or copy it.",
+    "The animation is slow and subtle, so the line fill mostly reads as static."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp type and tidy clipping inside the letters; the motion is so gentle it barely registers.",
+  "unsure": []
+}

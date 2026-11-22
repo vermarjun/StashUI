@@ -1,0 +1,188 @@
+{
+ "name": "wizard-expandable",
+ "frames": {
+  "code": "8701",
+  "best": 2,
+  "best_why": "The Account panel is fully open with two filled fields and all five steps visible in the rail above.",
+  "usable": [
+   1,
+   2,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.4
+ },
+ "tagline": "A numbered step rail that opens a form panel beneath the active step.",
+ "summary": "A horizontal wizard rail of numbered steps; clicking one expands a panel under it with that step's fields, description and Back or Next buttons. The last step turns the action into Finish.",
+ "title_fix": null,
+ "appearance": "A dark page shows a small SIGN UP badge above a row of five numbered tabs joined by a rail, with the active tab raised. Beneath sits a dark panel card holding a step title, grey description, labelled input fields and two buttons.",
+ "behaviour": "Selecting a tab opens its panel with an animated height change and moves the highlight. Back, Next and Finish move between steps while the panel content fades, and clicking outside collapses it.",
+ "parts": [
+  "sign up badge",
+  "step rail",
+  "step tabs",
+  "step panel",
+  "form fields",
+  "back and next buttons"
+ ],
+ "demo_content": "Sign up steps Account, Profile, Organization, Plan and Review, filled with Maya Okafor's details",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "disabled"
+ ],
+ "kind": "stepper",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "multi step signup form with tabs",
+  "wizard that expands under each step",
+  "numbered steps with a form panel",
+  "onboarding flow with back and next",
+  "account setup wizard",
+  "horizontal stepper with collapsible panel",
+  "form steps that slide open",
+  "sign up process broken into steps"
+ ],
+ "resembles": [],
+ "use_when": "An account or checkout setup has several short steps and should stay on one page without losing context.",
+ "avoid_when": "Long forms per step, since the expanding panel grows with its content and can push the page far down.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field",
+  "form-submit"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Steps arrive as an array of id, title, description, icon and content, with labels, badge text, navigation flags and validation callbacks as props. Colours and the spring stay internal.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One panel and five tabs with spring height and content fades; idle when closed.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The tabs follow the ARIA tab pattern with arrow keys and Escape, and reduced motion is honoured."
+ },
+ "props": [
+  {
+   "name": "steps",
+   "type": "WizardStep[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "badgeText",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "activeStep",
+   "type": "string | null",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "expanded",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "canNavigateToStep",
+   "type": "(context: WizardNavigateContext) => boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "canGoNext",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onComplete",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "backLabel",
+   "type": "string",
+   "default": "\"Back\"",
+   "required": false
+  },
+  {
+   "name": "nextLabel",
+   "type": "string",
+   "default": "\"Next\"",
+   "required": false
+  },
+  {
+   "name": "completeLabel",
+   "type": "string",
+   "default": "\"Finish\"",
+   "required": false
+  },
+  {
+   "name": "showNavigation",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"space-y-4 pb-2\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The fifth step is clipped to Re at this width, so Review is not readable in the rail.",
+  "The panel sits blank for a moment between steps, making fast navigation look empty."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp ARIA wizard with smooth height changes; the clipped last tab and blank frames are flaws.",
+ "unsure": [],
+ "title": "Wizard Expandable",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "443f8c82a49330b3",
+  "film_hash": "8d6bc12db3c226f8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

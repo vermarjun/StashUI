@@ -1,0 +1,63 @@
+{
+  "name": "comp-326",
+  "frames": {
+    "code": "6432",
+    "best": 4,
+    "best_why": "Frame 4 shows the dialog with email and password filled and every control visible.",
+    "usable": [1, 2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Login dialog pairs email and password with a Google sign-in option.",
+  "summary": "A trigger opens a compact dark sign-in dialog with a ring icon, email and password fields, a Remember me checkbox, a Forgot password link, a white Sign in button and Login with Google.",
+  "title_fix": null,
+  "appearance": "Closed, an outlined Sign in button. Open, a narrow dark rounded dialog with a ring icon, a bold Welcome back title and grey subtitle, two labelled inputs, a Remember me checkbox with an underlined Forgot password? link, a white Sign in, an Or divider and an outlined Login with Google.",
+  "behaviour": "The trigger fades the dialog in, and Escape or the X closes it. Typing fills the fields and the checkbox ticks, but Sign in and Login with Google have no action.",
+  "parts": ["trigger button", "ring icon", "title", "email field", "password field", "remember checkbox", "sign in button", "google button"],
+  "demo_content": "The filled example uses maya@northwind.dev; placeholders are hi@yourcompany.com and Enter your password.",
+  "states": ["hover", "focus", "open", "checked"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "welcome back login popup",
+    "sign in modal with google",
+    "email and password dialog",
+    "remember me login form",
+    "forgot password link in modal",
+    "account login window",
+    "log in with google popup",
+    "returning user sign in box"
+  ],
+  "resembles": [],
+  "use_when": "Users should sign in without leaving the page they were on.",
+  "avoid_when": "The form has no submit logic, so Sign in and Google do nothing as shipped.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Labels, placeholders and both auth actions are fixed in the file; the component takes no props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with two inputs and a checkbox; no animation beyond the fade.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Fields and the checkbox have bound labels, but there is no show-password control and no error handling."
+  },
+  "props": [],
+  "issues": ["Sign in and Login with Google have no handlers.", "The password field cannot be revealed."],
+  "polish": 4,
+  "polish_why": "Clean, symmetrical login dialog with bound labels; submit actions are inert.",
+  "unsure": ["theme"]
+}

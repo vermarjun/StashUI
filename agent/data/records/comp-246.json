@@ -1,0 +1,110 @@
+{
+ "name": "comp-246",
+ "frames": {
+  "code": "2123",
+  "best": 3,
+  "best_why": "Handle is dragged to 10 with a focus ring around it, showing the slider in use with its ticks and labels.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.8
+ },
+ "tagline": "Drag the white knob along a track with numbered tick marks beneath.",
+ "summary": "A one-handle range slider on a dark surface. Its track fills to the left of the knob and a row of ticks with even numbers sits underneath as reference points.",
+ "title_fix": null,
+ "appearance": "A bold white label sits above a long grey track with a bright filled portion on the left and a round white knob. Under the track runs a fine row of tick marks, and beneath that the even numbers 0 through 12 in small grey type.",
+ "behaviour": "Dragging the knob moves the filled portion with it and shows a soft ring around the knob while held. The value slides smoothly between the twelve steps marked by the ticks.",
+ "parts": [
+  "label",
+  "track",
+  "filled track",
+  "knob",
+  "tick marks",
+  "value labels"
+ ],
+ "demo_content": "Label reads \"Slider with ticks\"; the scale runs 0 to 12 in steps of one, with only even numbers labelled.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "range slider with numbered steps",
+  "drag to pick a value between 0 and 12",
+  "volume style control with tick marks",
+  "slider with scale labels underneath",
+  "single handle value picker",
+  "form control for choosing a number",
+  "slider showing even numbers on the scale",
+  "round knob on a horizontal track"
+ ],
+ "resembles": [],
+ "use_when": "Users should pick a small integer from a visible scale and want the steps spelled out.",
+ "avoid_when": "Precise or free-form values are needed: the ticks suggest fixed steps only.",
+ "suits": [
+  "any"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The label text, maximum value and tick-skipping interval live in the source; the starting value is fixed. Slider colours follow the theme tokens.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One track, one handle and a row of static spans; nothing animates while idle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The slider carries an aria-label, but the tick scale and numbers are hidden from screen readers with aria-hidden."
+ },
+ "props": [],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean spacing and clear tick hierarchy; the interactive part is a stock slider.",
+ "unsure": [],
+ "title": "Slider With Ticks",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "83e7a67f971071f6",
+  "film_hash": "da09ee325ab5ce9b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

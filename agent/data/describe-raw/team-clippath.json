@@ -1,0 +1,63 @@
+{
+  "name": "team-clippath",
+  "frames": {
+    "code": "1425",
+    "best": 6,
+    "best_why": "One card is open at full width showing the name, role and tag pills, with the other portraits dimmed beside it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Arched team portraits that widen on hover to name the person.",
+  "summary": "A team row of four tall photo cards on a light page. Hovering one widens it and slides in the teammate's name, role and a row of small tags while the others shrink and blur.",
+  "title_fix": "Expanding Team Photo Cards",
+  "appearance": "A light grey page with a centred dark heading and a thin subtitle, above four equal photo cards with rounded, arched tops. Each card is a cut-out portrait over a coloured studio backdrop; the open card becomes a wide rectangle with a dark gradient at the bottom.",
+  "behaviour": "Hovering a card grows it to roughly three times its width, squeezes the others into narrow slots and blurs them. Name, job title and tag pills fade up in sequence inside the open card, then everything returns to four equal cards when the pointer leaves.",
+  "parts": ["heading", "subtitle", "portrait card", "name", "role line", "tag pill"],
+  "demo_content": "Heading \"Meet Our Team\", four portraits, and tags such as Floral, Highlands, Twilight and Creative.",
+  "states": ["hover", "expanded"],
+  "kind": "team-section",
+  "look": ["light", "rounded", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "team members with expanding photo cards",
+    "hover to reveal teammate names",
+    "meet the team section",
+    "photo cards that grow on hover",
+    "people section with arched portraits",
+    "staff profiles with role tags",
+    "about us team grid",
+    "portraits that slide open sideways"
+  ],
+  "resembles": [],
+  "use_when": "An about or careers page needs a team row where each portrait gives up role and personality tags on hover.",
+  "avoid_when": "Touch screens: names and tags appear only on mouse hover, so tapped cards can stay blank.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["body-text", "avatar"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "image"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The four people, their photos, roles and tags live in an array inside the file; the hover width and colours also need a source edit.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Four images and a handful of animated divs; nothing runs when the pointer is still.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Expansion is bound to mouse enter and leave only, so keyboard and touch users never see the names; motion ignores reduced-motion settings."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Smooth width spring and staged text reveal; the idle cards give no hint of who is inside.",
+  "unsure": ["slot_hints"]
+}

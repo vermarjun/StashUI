@@ -1,0 +1,78 @@
+{
+  "name": "pulse-heart",
+  "frames": {
+    "code": "4736",
+    "best": 6,
+    "best_why": "Thumb pill is filled blue at 88, showing the liked colour and the count after a click.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Like pills that fill with colour and tick their count up when clicked.",
+  "summary": "A row of dark like pills, each holding a line icon and a formatted number. Clicking one fills the icon with its accent colour, compresses the pill and rolls the count by one.",
+  "title_fix": null,
+  "appearance": "Three dark rounded pills sit in a row on a near-black stage, each with a thin outline glyph on the left and a bold white number on the right. The unhovered glyphs are pale grey outlines; a liked glyph is painted solid in red, yellow or blue.",
+  "behaviour": "Hovering tints an icon toward its accent colour, and the whole pill dips slightly on press. On release the glyph flips to solid and the last count digit rolls to the new number.",
+  "parts": ["pill", "heart glyph", "count", "star glyph", "thumb glyph"],
+  "demo_content": "Three pills: heart at 1,284, star at 326 and thumb at 87.",
+  "states": ["hover", "active", "selected", "focus"],
+  "kind": "button",
+  "look": ["dark", "pill", "minimal", "outlined", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "heart like button with rolling number",
+    "social media like counter button",
+    "click heart to add a like",
+    "pill shaped upvote button with count",
+    "star favourite button with count",
+    "thumbs up vote button",
+    "animated like button for posts",
+    "reaction button that pops on click"
+  ],
+  "resembles": [],
+  "use_when": "A post, comment or feed item needs a like or upvote with a visible running total.",
+  "avoid_when": "Pill and text colours are fixed hex values for dark surfaces, so a light theme needs source edits.",
+  "suits": ["social", "blog"],
+  "slot_hints": ["badge", "list-item", "media"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Icon, count, size, corner radius, four colours, label and six timing values are all props; no source edit is needed for ordinary use.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "light",
+  "weight_why": "Three small buttons; a short requestAnimationFrame burst runs only while a like animates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "It is a real button with aria-pressed and a hidden text label; the rolling digits are hidden from screen readers."
+  },
+  "props": [
+    {"name": "liked", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultLiked", "type": "boolean", "default": "false", "required": false},
+    {"name": "count", "type": "number", "default": "0", "required": false},
+    {"name": "onChange", "type": "(liked: boolean, count: number) => void", "default": null, "required": false},
+    {"name": "showCount", "type": "boolean", "default": "true", "required": false},
+    {"name": "icon", "type": "PulseHeartIcon | ReactNode", "default": "\"heart\"", "required": false},
+    {"name": "size", "type": "number", "default": "40", "required": false},
+    {"name": "likedColor", "type": "string", "default": "\"#ff4d6d\"", "required": false},
+    {"name": "label", "type": "string", "default": "\"Like\"", "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "idleOutline", "type": "boolean", "default": "true", "required": false},
+    {"name": "corner", "type": "number", "default": "32", "required": false}
+  ],
+  "issues": [
+    "All colours are fixed hex props, so a light theme still shows a dark pill by default."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp states and a tidy count roll; the effect is modest but carefully built.",
+  "unsure": []
+}

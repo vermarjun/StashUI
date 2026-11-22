@@ -1,0 +1,63 @@
+{
+  "name": "comp-32",
+  "frames": {
+    "code": "6865",
+    "best": 6,
+    "best_why": "The field is filled and the label sits raised on the top edge, showing the full floating-label idea.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A field label that slides up out of the box and shrinks onto its top edge.",
+  "summary": "An email field whose label starts centred inside the box like a placeholder, then shrinks and rises to sit across the top border when focused or filled.",
+  "title_fix": null,
+  "appearance": "A single rounded dark email field on a black stage. At rest its grey label sits centred inside the box; once focused or filled the label turns white, shrinks and rests over the top border with a darker patch behind it.",
+  "behaviour": "Focusing lifts the label from the middle of the field to its top edge while it shrinks and brightens, and it stays there once an address is typed. The clip shows the idle label, the jump, then maya@stashui.dev typed beneath the raised label.",
+  "parts": ["email field", "floating label", "label backdrop", "entered text", "focus ring"],
+  "demo_content": "Label reading Input with label animation, filled with maya@stashui.dev.",
+  "states": ["focus", "empty"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "label that moves when you click",
+    "text field with a label inside",
+    "label slides up on focus",
+    "email box with placeholder label",
+    "animated form label going up",
+    "label overlapping the border",
+    "type and the hint moves out",
+    "material style text field"
+  ],
+  "resembles": ["Material Design text field"],
+  "use_when": "Compact forms where a separate label line would add height and the hint should show when empty.",
+  "avoid_when": "The label is baked into the file, so reusing the field for another purpose means editing the copy.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label text and the email field type are fixed in the file; label colour, size and position are utility classes there.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One field and one label moved with a CSS transition; idle otherwise.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The label is properly bound and the field shows a focus ring, but the move has no reduced-motion fallback."
+  },
+  "props": [],
+  "issues": ["The label's background patch is a different shade from the field, leaving a dark block across the top edge."],
+  "polish": 3,
+  "polish_why": "Clean floating motion, but the label backdrop shows as a mismatched darker block.",
+  "unsure": []
+}

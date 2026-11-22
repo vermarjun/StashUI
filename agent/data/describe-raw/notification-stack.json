@@ -1,0 +1,70 @@
+{
+  "name": "notification-stack",
+  "frames": {
+    "code": "1850",
+    "best": 2,
+    "best_why": "Frame 2 fans all four notification cards out in full, with icons, times and the header.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A stack of notification cards that fans open on hover and swipes off to dismiss.",
+  "summary": "A short pile of notification cards showing app, message and time, with a count and a Show all toggle. Hovering fans them into a list, and swiping one or pressing its corner cross removes it.",
+  "title_fix": null,
+  "appearance": "A header row with Notifications, a count and a Show all link above stacked white rounded cards, each with a coloured app icon, a bold title, a grey body line and a time. Collapsed, the cards behind peek out as thin strips.",
+  "behaviour": "Hovering or focusing fans the pile into a full list and the header flips to Show less. Dragging the front card sideways follows the pointer and, past a short distance or a quick flick, throws it off the edge while the rest close the gap.",
+  "parts": ["header", "count", "show all toggle", "notification card", "app icon", "timestamp", "dismiss cross"],
+  "demo_content": "Four alerts: a message from Maya Chen, a design review, a paid invoice and a Blue Bottle card payment.",
+  "states": ["hover", "focus", "dragging", "expanded"],
+  "kind": "list",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "stack of alerts that fans out",
+    "swipe to dismiss cards",
+    "notification list with count",
+    "card pile that opens on hover",
+    "mobile style notification tray",
+    "dismissible alert cards",
+    "inbox alerts stacked on top",
+    "swipe away messages widget"
+  ],
+  "resembles": ["iOS notification stack"],
+  "use_when": "A dashboard or inbox should show a few recent alerts without taking up a full panel.",
+  "avoid_when": "Hover is the main way to expand it, so on touch the pile stays collapsed until you tap the header.",
+  "suits": ["saas", "social", "dashboard"],
+  "slot_hints": ["toast", "list-item"],
+  "traits": {
+    "trigger": ["hover", "drag", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a notifications array of app, title, body, time and icon, and handle removals with onDismiss; the peek, gap and swipe thresholds are constants in the source.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "light",
+  "weight_why": "A handful of cards with a per-card requestAnimationFrame only during a swipe.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Strong coverage: cards expand on focus, Delete removes them, and focus moves on to the next card."
+  },
+  "props": [
+    {"name": "notifications", "type": "StackNotification[]", "default": "DEFAULT_NOTIFICATIONS", "required": false},
+    {"name": "onDismiss", "type": "(id: string) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frame 5 catches the dismissed card as a faint red smear on the right that looks like a glitch.",
+    "Behind the front card the others show only a thin strip, so the pile's depth is easy to miss."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing fan and fling physics with clean cards; the collapsed pile hides its depth.",
+  "unsure": []
+}

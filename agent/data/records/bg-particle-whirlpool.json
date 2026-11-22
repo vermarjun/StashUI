@@ -1,0 +1,137 @@
+{
+ "name": "bg-particle-whirlpool",
+ "frames": {
+  "code": "2789",
+  "best": 4,
+  "best_why": "Frame 4 shows a loose multicolour vortex with long magenta trails, the swirl at its clearest.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.4
+ },
+ "tagline": "A swarm of neon sticks chases the cursor across black.",
+ "summary": "A glowing cloud of hundreds of tiny coloured bars that swirl and cluster on a black stage, drifting toward wherever the pointer moves, with white copy over the lower centre.",
+ "title_fix": null,
+ "appearance": "On black, several hundred short glowing rectangular dashes in pink, green, cyan, yellow and white gather in a loose ball, denser at the middle and scattering to single sparks at the edges. A white title and lighter subtitle sit low in the frame.",
+ "behaviour": "The dashes are pulled toward a moving target and settle into a rotating swarm, stretching along their travel direction. Moving the pointer relocates the attractor, and dragging the canvas swings the whole three-dimensional camera.",
+ "parts": [
+  "particle dash",
+  "glow",
+  "heading",
+  "subtitle"
+ ],
+ "demo_content": "The heading 'Particle Whirlpool' and the line 'Move your cursor and the swarm follows.'",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "colorful",
+  "neon",
+  "3d"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "swarm of glowing particles",
+  "confetti made of neon sticks",
+  "mouse following particle background",
+  "three js particle vortex",
+  "colorful sparks swirling on black",
+  "physics particles that chase the cursor",
+  "bloom particle field for a hero",
+  "glowing dust that reacts to mouse"
+ ],
+ "resembles": [],
+ "use_when": "A launch or product page wants a lively, interactive particle swarm behind a headline.",
+ "avoid_when": "Orbit controls stay active on the canvas, so a drag rotates the 3D camera instead of just moving the swarm.",
+ "suits": [
+  "marketing",
+  "ai-chat",
+  "devtool"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "particleCount and blur are props and children render on top; camera distance, colouring, attraction and the bloom pass are set inside the source.",
+ "technique": [
+  "three-js",
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "Thousands of instanced meshes plus a full-screen bloom pass, redrawn every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative WebGL scene with no reduced-motion check, and its canvas also swallows drags through OrbitControls."
+ },
+ "props": [
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative h-full w-full\", className)}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The heading sits inside the densest particle cluster, so the title is partly covered in several frames.",
+  "OrbitControls stay live, so dragging the background rotates the camera unexpectedly."
+ ],
+ "polish": 3,
+ "polish_why": "Bright, lively bloom swarm; the title is lost in the storm and drags rotate the camera.",
+ "unsure": [],
+ "title": "Particle Whirlpool Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ac8060eeb7b123db",
+  "film_hash": "7908b0cd79920df2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

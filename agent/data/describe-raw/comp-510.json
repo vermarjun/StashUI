@@ -1,0 +1,113 @@
+{
+  "name": "comp-510",
+  "frames": {
+    "code": "3190",
+    "best": 1,
+    "best_why": "Both months show prices, 14 November is circled and the green cheap nights stand out.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "partial",
+    "render_note": "Calendar is small and centred in a large empty stage, so the price text is barely legible.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two-month calendar printing nightly prices under each date.",
+  "summary": "A tall calendar showing November and December stacked, with a small dollar price beneath every available day. Nights under a hundred dollars are tinted green, days without a price are dimmed and unclickable, and a chosen day fills white.",
+  "title_fix": null,
+  "appearance": "Two month blocks share a bordered black panel, each with a centred name, weekday initials and large square day cells. Each available day carries the number above a tiny dollar figure, some in emerald green, and the selected day sits in a solid white circle.",
+  "behaviour": "Clicking an available day circles it white while hovering fades a light square behind a day. The arrows turn both months together, and days with no price data cannot be pressed at all.",
+  "parts": [
+    "month heading",
+    "weekday row",
+    "day cell",
+    "day number",
+    "price label",
+    "selected circle",
+    "disabled day",
+    "caption"
+  ],
+  "demo_content": "November and December 2026 with random nightly prices between $80 and $200; 14 November selected.",
+  "states": [
+    "hover",
+    "selected",
+    "disabled",
+    "focus"
+  ],
+  "kind": "calendar",
+  "look": [
+    "dark",
+    "flat",
+    "minimal",
+    "dense"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "calendar showing nightly prices on each day",
+    "cheap dates highlighted in green",
+    "booking calendar with price per night",
+    "two month calendar for travel dates",
+    "flight or hotel date price grid",
+    "pick a day and see the cost",
+    "calendar where low prices stand out",
+    "date grid with dollar amounts underneath"
+  ],
+  "resembles": [
+    "Airbnb calendar"
+  ],
+  "use_when": "Travellers compare nightly costs before choosing dates, so price needs to sit on the calendar.",
+  "avoid_when": "Prices are random mock figures created on load, so they are not real and differ on every visit.",
+  "suits": [
+    "ecommerce"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "hover",
+      "keyboard"
+    ],
+    "motion": "none",
+    "affects": [
+      "background",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The price generator, the 180-day window and the $100 green threshold live in the file; real prices or another highlight rule means editing the source.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "Two month grids and 180 generated prices; nothing animates.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Day buttons carry the date and price as text, but cheap nights are marked by green colour alone with no words."
+  },
+  "props": [],
+  "issues": [
+    "Prices are random mock values regenerated on every page load.",
+    "Cheap nights are signalled by colour alone, so colour-blind users miss the cue.",
+    "The calendar is small in a wide empty stage, making prices hard to read.",
+    "The caption credits the calendar library instead of describing the prices."
+  ],
+  "polish": 3,
+  "polish_why": "Prices on dates read well in concept, but tiny type and random mock figures hold it back.",
+  "unsure": [
+    "render",
+    "states",
+    "suits"
+  ]
+}

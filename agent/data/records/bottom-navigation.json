@@ -1,0 +1,160 @@
+{
+ "name": "bottom-navigation",
+ "frames": {
+  "code": "4861",
+  "best": 1,
+  "best_why": "Shows the full labelled tab bar with Home active over the payment list, with no cursor covering it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.3
+ },
+ "tagline": "Floating tab bar that shrinks to icons while its content scrolls.",
+ "summary": "A mobile bottom tab bar floating over a payment list. It highlights the active tab, shows labels under each icon, and collapses to bare icons as the list scrolls.",
+ "title_fix": null,
+ "appearance": "A dark rounded phone card holds a scrollable payment list above a floating pill-shaped bar of four tabs with labels, plus a round plus button beside it. The active tab sits in a lighter capsule.",
+ "behaviour": "Scrolling the list up minimises the bar to icon-sized circles and folds the labels away; scrolling back or tapping restores it. Choosing a tab slides the light capsule under it, and icons dip slightly when pressed.",
+ "parts": [
+  "payment list",
+  "tab bar",
+  "tab icon",
+  "tab label",
+  "active highlight",
+  "plus button"
+ ],
+ "demo_content": "Payment rows like Corner Bakery €4.60 and Hotel Lumen €256.73 with times.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "selected",
+  "expanded"
+ ],
+ "kind": "dock",
+ "look": [
+  "dark",
+  "rounded",
+  "pill",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "mobile bottom tab bar",
+  "floating app navigation at the bottom",
+  "tab bar that shrinks when scrolling",
+  "sliding highlight under selected tab",
+  "iphone style icon tabs",
+  "app menu pinned to the screen bottom",
+  "navigation that collapses to icons",
+  "payment app tab switcher"
+ ],
+ "resembles": [
+  "iOS tab bar"
+ ],
+ "use_when": "A mobile app screen needs primary destinations always within thumb reach while content scrolls.",
+ "avoid_when": "Scrolling changes the bar's size, so the tabs move while you scroll; it targets touch, not desktop pointers.",
+ "suits": [
+  "mobile-app",
+  "fintech"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Tabs, labels and icons are composed as children; value, scroll behaviour, label layout and the accessory are props, while springs live in a shared motion-token file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A few motion values and one scroll listener; no animation loop and no heavy rendering.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Buttons carry aria-labels, aria-current marks the active tab, and motion honours prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "string",
+   "default": "{activeValue ?? null}",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "scrollBehavior",
+   "type": "'none' | 'hide' | 'minimize'",
+   "default": "'none'",
+   "required": false
+  },
+  {
+   "name": "scrollContainer",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{reduce ? (transition ?? fade) : scrollTransition}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Polished floating bar with smooth label folding and a clear active capsule.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Bottom Navigation",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f70f39d38e36d4c8",
+  "film_hash": "d02aac8e5069763b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

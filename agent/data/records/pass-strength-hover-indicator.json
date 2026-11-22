@@ -1,0 +1,116 @@
+{
+ "name": "pass-strength-hover-indicator",
+ "frames": {
+  "code": "6205",
+  "best": 5,
+  "best_why": "Frame 5 shows the hover card with all five rules ticked alongside the filled strength bars.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "A password box fills five green bars and explains the rules on hover.",
+ "summary": "A password field with an eye toggle and five strength bars beneath it that fill as rules are met. An info icon beside the label opens a hover card listing each requirement with a tick or cross.",
+ "title_fix": null,
+ "appearance": "On a dark page, a labelled password input with an eye icon inside its right edge and a small coloured info dot at the top right. Below it run five short rounded segments that turn green as strength rises; an open hover card lists five green-ticked rules.",
+ "behaviour": "Typing fills the bars one by one and recolours the info icon from red through green. Pointing at the icon opens a card that checks each rule live, and the eye button switches the field between hidden dots and plain text.",
+ "parts": [
+  "label",
+  "info icon",
+  "password input",
+  "eye button",
+  "strength bar",
+  "requirements card",
+  "requirement row"
+ ],
+ "demo_content": "Rules listed as At least 8 characters, 1 number, 1 lowercase, 1 uppercase and 1 special character.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "password field with strength bars",
+  "show password requirements on hover",
+  "password strength meter with dots",
+  "checklist of password rules",
+  "signup password field with eye toggle",
+  "live password validation hints",
+  "info icon opens password tips",
+  "five bar password strength gauge"
+ ],
+ "resembles": [],
+ "use_when": "A sign-up or account form needs to guide people toward a stronger password as they type.",
+ "avoid_when": "Rules live in a hover card only, so touch and keyboard users may not see why a password fails.",
+ "suits": [
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The five rules and their patterns are a hardcoded array near the top, and the strength texts and colours sit in a config object. The field takes no props.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One controlled input, five span bars and a small hover card.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The requirements only appear on hover, and the eye button hides its focus outline."
+ },
+ "props": [],
+ "issues": [
+  "One rule reads 'At least 1 special characters', which is ungrammatical.",
+  "The rules are only reachable through the hover card, so they are easy to miss on touch.",
+  "Strength bars carry no text, so colour alone signals how strong the password is."
+ ],
+ "polish": 4,
+ "polish_why": "Clear strength feedback and tidy checks; small type and colour-only bars hold it back.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Password Strength Hover",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e82aace33b47155e",
+  "film_hash": "4d95cd9c0d87d3bd",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

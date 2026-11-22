@@ -1,0 +1,67 @@
+{
+  "name": "animated-list",
+  "frames": {
+    "code": "3529",
+    "best": 6,
+    "best_why": "All five notification cards are stacked and fully legible, showing the list at its fullest.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Notification cards spring in one by one and stack up.",
+  "summary": "A vertical feed of notification cards that appear one after another with a spring, newest on top, pushing the earlier cards down as the list grows.",
+  "title_fix": null,
+  "appearance": "A stack of dark notification cards centred on black, newest at the top. Each card has a small coloured rounded-square icon with an emoji, a bold title, a relative time and a one-line subtitle.",
+  "behaviour": "Cards spring in at the top one at a time and push earlier ones down; the list fills to five items and stops. Hovering a card scales it up slightly.",
+  "parts": ["notification card", "coloured icon", "emoji", "title", "time", "subtitle"],
+  "demo_content": "Notifications: Payment received, New follower, New message, Order shipped and Meeting reminder.",
+  "states": ["hover"],
+  "kind": "list",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "notifications appearing one by one",
+    "animated stack of alerts",
+    "feed of activity cards that pile up",
+    "cards slide in from the top",
+    "notification list for a landing page",
+    "recent events stacking animation",
+    "toast cards accumulating in a column",
+    "new item appears at top of list"
+  ],
+  "resembles": [],
+  "use_when": "A landing page wants to show recent activity building up in front of the visitor.",
+  "avoid_when": "Long feeds: the demo caps at five items, so older entries drop out of view.",
+  "suits": ["saas", "fintech", "social"],
+  "slot_hints": ["list-item", "toast"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the cards as children and set the per-item delay; the spring easing and stacking behaviour are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A handful of motion divs with one spring each; idle once the list is full.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Cards are clickable divs with no keyboard focus and the emoji icons have no labels; new items are not announced."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "delay", "type": "number", "default": "1000", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The cards are clickable divs rather than buttons, so they cannot be reached by keyboard."],
+  "polish": 4,
+  "polish_why": "Pleasant spring entrance and a tidy card design; the demo stops at five items.",
+  "unsure": []
+}

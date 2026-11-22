@@ -1,0 +1,179 @@
+{
+ "name": "Shuffle-TS-TW",
+ "frames": {
+  "code": "8083",
+  "best": 1,
+  "best_why": "The whole word is settled and readable, evenly spaced across the frame.",
+  "usable": [
+   1,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Wide letters roll into place one after another.",
+ "summary": "The letters of a single word are split into vertical strips and rolled upward into their final shapes, so the word clicks into place a character at a time. Hovering replays the roll.",
+ "title_fix": null,
+ "appearance": "The word \"SHUFFLE\" runs across a black stage in wide-tracked, thin white capitals. Letterforms are simple and evenly spaced with plenty of air around them.",
+ "behaviour": "On entering view each letter rolls vertically through a stack of copies before landing on the real glyph, staggered so the word assembles left to right. Hovering the word runs the roll again.",
+ "parts": [
+  "letters",
+  "vertical strips",
+  "black stage"
+ ],
+ "demo_content": "The word \"SHUFFLE\".",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "flat",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "letters roll into place one by one",
+  "text unscrambles on hover",
+  "slot machine letter effect",
+  "word assembles from strips",
+  "replay animated headline on hover",
+  "character roll reveal text",
+  "glitch free type animation",
+  "animated logo lettering"
+ ],
+ "resembles": [],
+ "use_when": "A single display word should arrive with a mechanical roll when seen or hovered.",
+ "avoid_when": "Long lines or body text: the per-letter roll needs a short word to read.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The text, tag, direction, duration, easing, stagger, roll count, hover trigger, loop and colour range are props.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "One short timeline on per-character strips; idle once it settles.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Replay is hover-only, so keyboard users cannot retrigger it; reduced motion is respected."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "tag",
+   "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\" | \"span\"",
+   "default": "'p'",
+   "required": false
+  },
+  {
+   "name": "shuffleDirection",
+   "type": "\"left\" | \"right\" | \"up\" | \"down\"",
+   "default": "'right'",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "shuffleTimes",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "triggerOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animationMode",
+   "type": "\"random\" | \"evenodd\"",
+   "default": "'evenodd'",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string | ((t: number) => number)",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "colorFrom",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colorTo",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Mid-roll frames show chopped glyph fragments that read as broken type out of context."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp wide tracking and a tidy roll; the split frames can look like broken type.",
+ "unsure": [],
+ "title": "Shuffle",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7e6cb6ded7a372ee",
+  "film_hash": "3d3eef85b791bcf4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

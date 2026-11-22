@@ -1,0 +1,63 @@
+{
+  "name": "comp-27",
+  "frames": {
+    "code": "3302",
+    "best": 4,
+    "best_why": "The only frame where the magnifier has become a spinner, showing the loading behaviour while a query is typed.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A search bar whose magnifier turns into a spinner while you type.",
+  "summary": "A labelled search field with a magnifier inside its left edge and a microphone inside the right. While a query is being entered the magnifier briefly becomes a spinning ring before settling back.",
+  "title_fix": null,
+  "appearance": "A label sits above a rounded dark search field on a black stage. A small magnifier sits inside the left edge, a microphone icon inside the right, and a grey Search... placeholder runs between them; typing adds a native clear cross before the mic.",
+  "behaviour": "Typing swaps the magnifier for a spinning ring for about half a second, then restores it, while the query fills the field and a clear cross appears. The clip catches the spinner at pri and later shows pricing table settled with the magnifier back.",
+  "parts": ["label", "search field", "search icon", "spinner", "placeholder text", "clear icon", "mic button"],
+  "demo_content": "Label Search input with loader, Search... placeholder, typed query pricing table.",
+  "states": ["focus", "empty", "loading"],
+  "kind": "search",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "box that shows a spinner while typing",
+    "search bar with a microphone",
+    "voice search field with loading",
+    "magnifier that turns into a spinner",
+    "type to look something up",
+    "find products by speaking or typing",
+    "loading indicator inside a search box",
+    "quick search with a mic button"
+  ],
+  "resembles": ["Google search bar"],
+  "use_when": "A search field that queries as you type and needs to show results are being fetched.",
+  "avoid_when": "The microphone is a plain submit button with no speech wiring, so it only looks like voice input.",
+  "suits": ["saas", "ecommerce", "docs"],
+  "slot_hints": ["nav", "form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "timer"],
+    "motion": "subtle",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label and placeholder are fixed in the file; the 500ms delay, spinner and icon colours are set there, and typing drives the value.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "One field, two icons and a timer; the spin runs only during the brief loading window.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The spinner has a status role and both icons are labelled, but the mic does nothing and the spin ignores reduced motion."
+  },
+  "props": [],
+  "issues": ["The microphone button has no click handler, so voice search is only an icon."],
+  "polish": 4,
+  "polish_why": "Crisp field and a neat spinner hand-off, though the mic is decorative only.",
+  "unsure": []
+}

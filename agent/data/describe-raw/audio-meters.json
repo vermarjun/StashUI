@@ -1,0 +1,79 @@
+{
+  "name": "audio-meters",
+  "frames": {
+    "code": "1379",
+    "best": 5,
+    "best_why": "Master meter is near full with red segments lit, the red clip count shows and the channel bars peak.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Broadcast-style LED level meters that bounce with the beat and flag clipping.",
+  "summary": "A two-channel master LED meter with a dB scale, a live readout and a clip light, above six vertical gradient meters for Kick, Snare, Bass, Keys, Vocal and FX that move with synthetic audio.",
+  "title_fix": null,
+  "appearance": "A dark panel titled Master bus holds two stacked rows of tiny square LED segments shifting from green through yellow to red, with a dB scale underneath. Below, six thin vertical bars in matching colours rise from the floor, each with a tiny peak tick.",
+  "behaviour": "Every bar jumps and settles with the beat, leaving a small peak-hold marker at its high point. The readout counts the level in decibels, and when a channel pushes past zero the segment row and a red clip light come on.",
+  "parts": ["master meter rows", "led segments", "db scale", "db readout", "clip light", "vertical meter", "peak tick", "channel label"],
+  "demo_content": "A master bus at 112 BPM plus six stems: Kick, Snare, Bass, Keys, Vocal and FX.",
+  "states": ["active"],
+  "kind": "media-player",
+  "look": ["dark", "neon", "technical", "minimal"],
+  "tone": "technical",
+  "search_phrases": [
+    "audio level meter with led segments",
+    "db meter with clip light",
+    "broadcast vu meter for web",
+    "vertical channel meters in a mixer",
+    "live audio visualizer bars",
+    "stereo peak hold meter",
+    "music studio level display",
+    "sound level gauge with decibels"
+  ],
+  "resembles": [],
+  "use_when": "An audio tool or player needs a realistic level display with channels, a decibel scale and clipping.",
+  "avoid_when": "It needs a frame source and real dB values, so on its own it renders flat silent tracks.",
+  "suits": ["devtool", "saas", "dashboard"],
+  "slot_hints": ["media", "chart", "stat"],
+  "traits": {
+    "trigger": ["timer", "viewport"],
+    "motion": "continuous",
+    "affects": ["fill", "text", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose tracks from Channel, Track, Bar and Hold parts and pass a source, or declarative peakDb, rmsDb or channels. Range, zones, ballistics, taper, size and variant are props.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "A per-frame painter writes CSS variables while levels move, then sleeps when settled or hidden.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "It uses role meter with live aria-valuenow and valuetext, and switches to instant, throttled updates under reduced motion."
+  },
+  "props": [
+    {"name": "source", "type": "FrameSource<MeterFrame> | null", "default": null, "required": false},
+    {"name": "peakDb", "type": "number", "default": null, "required": false},
+    {"name": "rmsDb", "type": "number", "default": null, "required": false},
+    {"name": "channels", "type": "ChannelLevel[]", "default": null, "required": false},
+    {"name": "variant", "type": "LevelMeterVariant", "default": "solid", "required": false},
+    {"name": "orientation", "type": "Orientation", "default": "horizontal", "required": false},
+    {"name": "minDb", "type": "number", "default": "-60", "required": false},
+    {"name": "maxDb", "type": "number", "default": "0", "required": false},
+    {"name": "segments", "type": "number", "default": "24", "required": false},
+    {"name": "ballistics", "type": "BallisticsInput", "default": "peak", "required": false},
+    {"name": "taper", "type": "TaperInput", "default": "linear", "required": false},
+    {"name": "channelCount", "type": "number", "default": null, "required": false}
+  ],
+  "issues": [
+    "The dB scale labels and clip counts are tiny grey text, hard to read.",
+    "The demo drives synthetic levels, so values do not correspond to real audio."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing broadcast meter with peak hold and clip light; the scale and counts are very small.",
+  "unsure": ["content_from", "states"]
+}

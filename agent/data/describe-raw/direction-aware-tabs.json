@@ -1,0 +1,69 @@
+{
+  "name": "direction-aware-tabs",
+  "frames": {
+    "code": "4039",
+    "best": 1,
+    "best_why": "First tab is selected with its pill marker, and its heading and copy are fully readable.",
+    "usable": [1, 2, 3, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A sliding pill marks the chosen tab and swaps the copy.",
+  "summary": "A dark pill-shaped bar holds three tabs, with a lighter cap that springs to whichever is chosen. The panel beneath swaps its heading and copy with a sideways slide and a soft blur.",
+  "title_fix": null,
+  "appearance": "A dark rounded panel holds a pill-shaped tab bar with three labels: Design, Develop and Deploy. The chosen tab wears a lighter rounded cap, and a centred heading with two lines of grey copy sits below.",
+  "behaviour": "Clicking a tab sends the lighter pill sliding to it and swaps the panel text, which flies in from the side and blurs into focus. The panel height settles to fit the new copy.",
+  "parts": ["tab bar", "active pill", "tab labels", "heading", "body copy", "panel"],
+  "demo_content": "Tabs labelled Design, Develop and Deploy, with headings about design systems, APIs and deployment.",
+  "states": ["selected", "hover", "focus"],
+  "kind": "tabs",
+  "look": ["dark", "rounded", "minimal", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "tabs with a sliding highlight",
+    "segmented control with a moving pill",
+    "tab switcher with a directional slide",
+    "three tab menu for features",
+    "content panels that slide sideways",
+    "ios style segmented tabs for the web",
+    "animated tab indicator",
+    "dark tab bar with pill background"
+  ],
+  "resembles": ["iOS segmented control"],
+  "use_when": "A compact section needs to switch between two to four short pieces of content.",
+  "avoid_when": "Content must be defined in code as React nodes, and the rail only holds a few short labels.",
+  "suits": ["saas", "docs", "portfolio"],
+  "slot_hints": ["nav", "feature-card", "body-text"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "children", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Tabs come as an array of id, label and content; outer and inner radius plus a change callback are props. Colours are fixed to neutral greys.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three buttons and one animated content panel; no canvas or endless loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Focus styles exist, but there are no tablist roles, no aria-selected and no arrow-key handling."
+  },
+  "props": [
+    {"name": "tabs", "type": "Tab[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "rounded", "type": "string", "default": null, "required": false},
+    {"name": "roundedInner", "type": "string", "default": null, "required": false},
+    {"name": "onChange", "type": "() => void", "default": null, "required": false}
+  ],
+  "issues": ["No tablist roles or aria-selected, so the active tab is only conveyed by colour."],
+  "polish": 4,
+  "polish_why": "Smooth, well-tuned spring on the pill and content; the fixed neutral greys limit theming.",
+  "unsure": []
+}

@@ -1,0 +1,189 @@
+{
+ "name": "Stepper-TS-TW",
+ "frames": {
+  "code": "7306",
+  "best": 4,
+  "best_why": "Shows a finished step, the active step and the upcoming one together, with readable content.",
+  "usable": [
+   1,
+   2,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "Numbered circles join by thin bars, and each finished step fills purple.",
+ "summary": "A small dark panel with three numbered circles linked by bars, a title and paragraph for the current step, and Back and Continue buttons. Completed steps turn purple with a tick and the content slides sideways to the next step.",
+ "title_fix": null,
+ "appearance": "A narrow dark panel centred on a black stage. Across its top sit three small circles joined by thin grey bars: the active circle is purple with a dot, finished ones purple with a tick, upcoming ones grey with a number. Below are a bold white title, a dim grey paragraph, a small Back link and a green Continue pill.",
+ "behaviour": "Clicking Continue fills the connector, turns the indicator purple and slides the current content out as the next slides in, while the panel height eases to fit. Back reverses it, and on the last step the button reads Complete.",
+ "parts": [
+  "step circle",
+  "connector bar",
+  "step heading",
+  "step paragraph",
+  "back link",
+  "continue button"
+ ],
+ "demo_content": "Steps titled Create account, Verify email and Set up profile, with body text about passwords and a 6-digit code.",
+ "states": [
+  "active",
+  "success",
+  "hover"
+ ],
+ "kind": "stepper",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "numbered progress circles for a multi step form",
+  "wizard steps with back and continue",
+  "onboarding step indicator with checkmarks",
+  "sign up flow split into three steps",
+  "horizontal step tracker with purple accent",
+  "form wizard that slides between pages",
+  "progress bar made of round dots",
+  "multi step checkout steps"
+ ],
+ "resembles": [],
+ "use_when": "You split a signup or checkout into a few short screens and want the user to see where they are and how far is left.",
+ "avoid_when": "Step circles are pointer-only and the dim helper text is hard to read on the dark panel.",
+ "suits": [
+  "saas",
+  "fintech"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children",
+   "layout"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass Step children and set the initial step, button labels, callbacks, and override class names or button props per part. Indicator colours, sizes and the slide motion are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A few motion elements and one spring height animation; nothing loops while idle.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Step circles are unfocusable divs, so keyboard users cannot jump steps, and step changes are not announced to screen readers."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "initialStep",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "onStepChange",
+   "type": "(step: number) => void",
+   "default": "() => {}",
+   "required": false
+  },
+  {
+   "name": "onFinalStepCompleted",
+   "type": "() => void",
+   "default": "() => {}",
+   "required": false
+  },
+  {
+   "name": "backButtonText",
+   "type": "string",
+   "default": "'Back'",
+   "required": false
+  },
+  {
+   "name": "nextButtonText",
+   "type": "string",
+   "default": "'Continue'",
+   "required": false
+  },
+  {
+   "name": "disableStepIndicators",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "renderStepIndicator",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "stepCircleContainerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "stepContainerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "contentClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "footerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Body copy in dim grey on the dark panel is low contrast and hard to read.",
+  "Step circles are clickable divs with no focus support, so they cannot be operated by keyboard.",
+  "The stepper sits small inside a large empty stage in the recording."
+ ],
+ "polish": 3,
+ "polish_why": "Clean step flow with a smooth slide, but dim text and a lot of empty surround.",
+ "unsure": [
+  "a11y.focus_visible"
+ ],
+ "title": "Stepper",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9252fe8ab77b5df0",
+  "film_hash": "fb85a430dceffad7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

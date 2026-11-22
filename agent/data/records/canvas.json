@@ -1,0 +1,144 @@
+{
+ "name": "canvas",
+ "frames": {
+  "code": "4252",
+  "best": 1,
+  "best_why": "Shows all five connected nodes laid out on the field with no cursor obscuring any of them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A dark node graph of an email workflow that pans as you scroll.",
+ "summary": "A zoomable workflow canvas showing trigger, agent and tool steps connected by thin lines. Scrolling pans the field and clicking a node selects it.",
+ "title_fix": null,
+ "appearance": "A near-black full-screen field holds five small bordered cards laid out left to right and branching. Each card has a tiny category, a title and a dim detail line, joined by faint curved connectors.",
+ "behaviour": "The whole graph pans when the user scrolls, and dragging across empty space draws a selection box. Clicking a node adds a highlight ring around it.",
+ "parts": [
+  "canvas",
+  "node card",
+  "node label",
+  "connector line",
+  "selection ring"
+ ],
+ "demo_content": "Workflow steps New support email, Classify intent, Search help center, Look up invoice and Draft reply.",
+ "states": [
+  "hover",
+  "focus",
+  "selected",
+  "dragging"
+ ],
+ "kind": "other",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "node graph workflow editor",
+  "automation flow diagram",
+  "agent pipeline builder",
+  "draggable nodes connected by lines",
+  "ai workflow editor",
+  "zoomable diagram of steps",
+  "flowchart of product steps",
+  "visual pipeline with triggers and tools"
+ ],
+ "resembles": [
+  "Zapier workflow canvas"
+ ],
+ "use_when": "You need to show or edit a pipeline of steps as connected nodes on a pannable field.",
+ "avoid_when": "Node text is tiny and low contrast on the dark field, and the canvas is mostly empty space.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "click",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Nodes, edges and node types arrive as arrays and components; panning, zoom and selection are passed through to the flow engine.",
+ "technique": [
+  "svg",
+  "css-keyframes"
+ ],
+ "weight": "moderate",
+ "weight_why": "A third-party flow engine renders a pannable canvas with five nodes and SVG edges.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The workflow is mouse-driven; node cards have no roles or names, and the animated edges ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "panOnScroll",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "selectionOnDrag",
+   "type": "boolean",
+   "default": "{true}",
+   "required": false
+  },
+  {
+   "name": "deleteKeyCode",
+   "type": "string | string[]",
+   "default": "{deleteKeyCode}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Node text is very small and low contrast against the dark canvas."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy but extremely dark canvas where node text is small and hard to read.",
+ "unsure": [
+  "kind",
+  "technique"
+ ],
+ "title": "Canvas",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0c8372f18147b03c",
+  "film_hash": "e0e86f0b3bc7b5c8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

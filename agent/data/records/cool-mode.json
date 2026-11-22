@@ -1,0 +1,128 @@
+{
+ "name": "cool-mode",
+ "frames": {
+  "code": "2126",
+  "best": 3,
+  "best_why": "The burst is at its widest here, with stars spread across the stage while both buttons stay visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.5
+ },
+ "tagline": "Holding a button sprays a burst of glowing stars across the page.",
+ "summary": "Wrap a button or link, press and hold, and particles fountain from the pointer, drifting, spinning and falling away. It adds a decorative celebration on top of your own control.",
+ "title_fix": "Click Particle Burst",
+ "appearance": "Two small rounded buttons sit centred on black: one pale filled button reading Cool Mode and one outlined button reading Stars. Once pressed, glossy yellow stars of mixed sizes spill out and scatter in every direction, some tilted.",
+ "behaviour": "Press and hold a button and particles stream from the cursor every few milliseconds, arcing upward then falling and spinning off screen. Releasing stops new ones while the rest finish drifting. The default particle is a coloured circle, but the demo swaps in stars.",
+ "parts": [
+  "filled button",
+  "outlined button",
+  "caption text",
+  "star particles"
+ ],
+ "demo_content": "Buttons reading \"Cool Mode\" and \"Stars\", a faint click-and-drag caption, and yellow star particles.",
+ "states": [
+  "active",
+  "dragging"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "colorful",
+  "glow",
+  "playful",
+  "dark"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "click and hold particle burst",
+  "stars fly out when you click",
+  "confetti button effect",
+  "sparkle trail on click",
+  "particle fountain from cursor",
+  "fun button press animation",
+  "emoji particles that spray out",
+  "celebration click effect"
+ ],
+ "resembles": [
+  "confetti burst on click"
+ ],
+ "use_when": "A playful call to action should reward a click with a small celebration, like a sign-up or like button.",
+ "avoid_when": "It runs an animation frame loop while particles live and adds a fixed full-screen layer; too much for calm pages.",
+ "suits": [
+  "marketing",
+  "social",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Put any element inside and it gains the effect. The options prop sets particle (emoji, image URL or circle), size, count and horizontal and upward speed; colours are random.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame loop and up to forty-five DOM particles while active; idle otherwise.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Particles only fire on mouse or touch hold; keyboard activation produces nothing and reduced motion is ignored."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "options",
+   "type": "CoolParticleOptions",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Star particles overlap and can hide the buttons mid-burst.",
+  "No reduced-motion option; the burst is always full strength."
+ ],
+ "polish": 4,
+ "polish_why": "The burst feels satisfying and reads clearly; particles can bury the controls.",
+ "unsure": [],
+ "title": "Cool Mode",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5c9284e754e508c7",
+  "film_hash": "2bc57ee7fecbe2d8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

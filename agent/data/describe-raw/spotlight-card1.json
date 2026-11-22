@@ -1,0 +1,66 @@
+{
+  "name": "spotlight-card1",
+  "frames": {
+    "code": "6781",
+    "best": 1,
+    "best_why": "Frame 1 shows the whole bento grid with all three tiles visible and no cursor over it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Photo tiles in a bento grid lit by a faint pointer glow.",
+  "summary": "A rounded black panel of photo tiles arranged in a bento grid, one large and two small. A faint light tracks the cursor, and one card can carry a heading and paragraph.",
+  "title_fix": null,
+  "appearance": "A dark bento grid of image tiles: a square photo of a brick hall sign, a wide sunlit field under a blue gradient sky, and a large pale tile with blue jellyfish-like forms and wisps scattered across it.",
+  "behaviour": "A faint radial highlight follows the pointer over the tiles and a soft gradient tracks it inside each card. The pictures themselves never move or animate.",
+  "parts": ["bento grid", "large tile", "small tile", "photo", "glow"],
+  "demo_content": "A brick hall sign, a sunlit field and blue jellyfish images",
+  "states": ["hover"],
+  "kind": "feature-section",
+  "look": ["dark", "colorful", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "bento grid of photo cards",
+    "dashboard tiles with a glow",
+    "asymmetric image grid layout",
+    "feature grid with different tile sizes",
+    "picture collage with hover light",
+    "stat tiles mixed with a big image",
+    "dark mosaic grid block",
+    "bento box layout for a landing page"
+  ],
+  "resembles": [],
+  "use_when": "A landing section needs varied tile sizes to show several features at once.",
+  "avoid_when": "Tiles load local webp files from /public, so the grid breaks without those assets.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["feature-card"],
+  "traits": {
+    "trigger": ["pointer-move", "hover"],
+    "motion": "subtle",
+    "affects": ["background", "fill"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The five tiles' image paths, titles and spans are a hardcoded array; swapping the webp files and editing that array is the way in.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Five static image tiles plus a pointer-tracked gradient.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "All images share the alt text \"grid\", so the tiles are not described."
+  },
+  "props": [],
+  "issues": [
+    "The heading and paragraph meant for the large card are not visible in any frame.",
+    "Every image repeats the same alt text, \"grid\"."
+  ],
+  "polish": 3,
+  "polish_why": "Balanced bento proportions and vivid photos, but the promised text block never appears.",
+  "unsure": ["resembles"]
+}

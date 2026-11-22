@@ -1,0 +1,184 @@
+{
+ "name": "terminal-animation",
+ "frames": {
+  "code": "9228",
+  "best": 2,
+  "best_why": "The new tab is full of coloured scaffolding output, showing the typed command and the result together.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "render": "partial",
+  "render_note": "The terminal window runs past the bottom edge of every frame, so its lower half is never shown.",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "A browser-window terminal types commands and streams coloured output.",
+ "summary": "A fake terminal window with traffic-light dots and tabs for commands like new, dev, test and build. It retypes the command for the chosen tab, then prints its coloured output line by line behind a blinking cursor.",
+ "title_fix": null,
+ "appearance": "A dark rounded terminal window with three coloured dots and a row of six text tabs at the top, filled with a large monospaced command line and output lines. It floats on a violet-to-indigo gradient backdrop that darkens toward the edges.",
+ "behaviour": "Picking a tab retypes that tab's command character by character, then reveals its output lines one after another with timed pauses; the cursor blinks while typing and disappears once output finishes. The whole window also slides up into place when it first scrolls into view.",
+ "parts": [
+  "window frame",
+  "traffic-light dots",
+  "tab bar",
+  "command line",
+  "output lines",
+  "blinking cursor",
+  "gradient backdrop"
+ ],
+ "demo_content": "Tabs new, dev, lint, fmt, test, build showing Vite scaffolding, server, lint and test output.",
+ "states": [
+  "hover",
+  "active",
+  "selected"
+ ],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "gradient",
+  "rounded",
+  "technical",
+  "colorful"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "fake terminal that types commands",
+  "tabbed command line demo window",
+  "animated console output for landing page",
+  "purple backdrop terminal window",
+  "macos terminal window with traffic light dots",
+  "typewriter terminal with blinking cursor",
+  "developer portfolio command window",
+  "code snippet playback with tabs"
+ ],
+ "resembles": [
+  "macOS Terminal"
+ ],
+ "use_when": "A landing page or portfolio wants to show a product or developer workflow inside a familiar terminal.",
+ "avoid_when": "The window forces a dark surface that clashes on light pages, and each tab's output text is written into the source.",
+ "suits": [
+  "devtool",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a tabs array of label, command and coloured lines; active tab, background image, forced dark and cursor hiding are props. Window styling and layout are file edits.",
+ "technique": [
+  "js-animation",
+  "css-transition",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A few dozen text lines revealed by timers; no canvas or heavy loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The tab list and output log are labelled for screen readers, but tabs are not tied to a panel and the slide-up ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "tabs",
+   "type": "TabContent[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultActiveTab",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "activeTab",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onActiveTabChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "backgroundImage",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "alwaysDark",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "hideCursorOnComplete",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "minHeight",
+   "type": "string",
+   "default": "\"28rem\"",
+   "required": false
+  },
+  {
+   "name": "animateOnVisible",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(alwaysDark && \"dark\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Every frame crops the terminal window at the bottom, so its full height and output are never seen.",
+  "Frame 5 catches the reset between tabs and shows an almost empty window."
+ ],
+ "polish": 4,
+ "polish_why": "Typed commands and coloured output sell the effect; the recording never shows the window whole.",
+ "unsure": [
+  "frames.render"
+ ],
+ "title": "Terminal Animation",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9c4b7e90dda25731",
+  "film_hash": "2dab3093abf3e995",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

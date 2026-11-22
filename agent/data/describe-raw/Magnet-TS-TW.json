@@ -1,0 +1,148 @@
+{
+  "name": "Magnet-TS-TW",
+  "frames": {
+    "code": "7879",
+    "best": 6,
+    "best_why": "The card is pulled furthest toward the cursor while all three pieces stay in view.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Elements drift toward the cursor, then settle back when it leaves.",
+  "summary": "Wraps anything so it leans toward the pointer when it comes within a set distance, scaled by a strength you choose, and eases back to rest once the pointer moves away.",
+  "title_fix": null,
+  "appearance": "Three items sit in a row on black: a white pill reading \"Hover me\", a square outlined tile holding a white sparkle, and a small outlined card with a title and hint line. When the pointer comes near, an item slides a little toward it.",
+  "behaviour": "A pointer listener measures each item against its centre plus a padding zone; while the pointer is inside that zone the item translates toward it in proportion to the distance, and once outside it eases back to its spot.",
+  "parts": [
+    "white button",
+    "sparkle tile",
+    "outlined card",
+    "title",
+    "hint line"
+  ],
+  "demo_content": "A button reading \"Hover me\", a sparkle tile and a card titled \"Magnetic card\" with \"Move your cursor near me\"",
+  "states": [
+    "hover"
+  ],
+  "kind": "cursor-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "outlined",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "elements lean toward the mouse",
+    "button that follows the pointer",
+    "cards drawn to the mouse pointer",
+    "nearby items pull toward the cursor",
+    "springy pull when the mouse comes close",
+    "playful cursor attraction on a hero",
+    "objects that drift to the pointer",
+    "pointer proximity movement"
+  ],
+  "resembles": [],
+  "use_when": "A hero or feature row should feel alive and invite the pointer without asking for a click.",
+  "avoid_when": "Touch devices, where there is no hover, and dense layouts where items shifting feels unstable.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "saas"
+  ],
+  "slot_hints": [
+    "hero",
+    "feature-card",
+    "primary-cta"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap any element as children; padding radius, magnet strength, disabled state, active and inactive transitions and wrapper class names are props.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A window pointer listener and one transform transition per wrapped item.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The pull is pointer-only with no reduced-motion fallback, and every instance listens to window pointer moves."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "padding",
+      "type": "number",
+      "default": "100",
+      "required": false
+    },
+    {
+      "name": "magnetStrength",
+      "type": "number",
+      "default": "2",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "activeTransition",
+      "type": "string",
+      "default": "\"transform 0.3s ease-out\"",
+      "required": false
+    },
+    {
+      "name": "inactiveTransition",
+      "type": "string",
+      "default": "\"transform 0.5s ease-in-out\"",
+      "required": false
+    },
+    {
+      "name": "wrapperClassName",
+      "type": "string",
+      "default": "\"\"",
+      "required": false
+    },
+    {
+      "name": "innerClassName",
+      "type": "string",
+      "default": "\"\"",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The gaps between items change as each one moves, so the row visibly loosens while the pointer is near."
+  ],
+  "polish": 4,
+  "polish_why": "Movement is smooth and restrained; the shifting gaps make the row feel loose.",
+  "unsure": []
+}

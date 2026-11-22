@@ -1,0 +1,67 @@
+{
+  "name": "toggle",
+  "frames": {
+    "code": "1017",
+    "best": 1,
+    "best_why": "The whole toolbar is visible with three buttons already pressed, showing both states clearly and no cursor in the way.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Icon buttons that stay lit while pressed, lined up in a formatting bar.",
+  "summary": "A compact row of icon buttons for bold, italic, underline, strikethrough and text alignment. Each button holds a light grey fill while it is on, and clicks flip one without touching the others.",
+  "title_fix": "Toggle Button",
+  "appearance": "A dark rounded card shows a thin toolbar of seven square icon buttons: four text-style icons, a small vertical divider, then three alignment icons. Pressed buttons sit in a light grey fill while the rest are transparent, and a sample paragraph fills the space below.",
+  "behaviour": "Clicking an icon button flips it between plain and a grey pressed state on its own, so several can be lit at once. The frames show italic, strikethrough and align-centre being switched on in turn while the defaults stay pressed.",
+  "parts": ["toolbar", "icon button", "pressed button", "divider", "sample heading", "sample paragraph"],
+  "demo_content": "Release notes v2.4 heading with a short paragraph about pressed states.",
+  "states": ["active", "hover", "focus", "disabled"],
+  "kind": "button",
+  "look": ["dark", "minimal", "flat", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "icons that stay highlighted when clicked",
+    "bold italic underline toolbar buttons",
+    "formatting bar above text",
+    "button that stays pressed on second click",
+    "inline text alignment controls",
+    "text editor icon strip",
+    "rich text toolbar with on off states",
+    "buttons with a pressed state"
+  ],
+  "resembles": ["Google Docs toolbar"],
+  "use_when": "A small group of independent formatting or view options that a user switches on and off.",
+  "avoid_when": "Not for mutually exclusive choices; independent toggles let every icon stay pressed at once.",
+  "suits": ["saas", "docs", "devtool"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["fill", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Size (sm, default, lg) and variant (default, outline) come as props; the button's icon is passed as children and pressed styling lives in the variant classes.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One small button per control, CSS transitions only, nothing running at rest.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Each control is a real button with a focus ring, but the demo supplies its aria-labels; the component itself provides none."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "variant", "type": "\"default\" | \"outline\"", "default": null, "required": false},
+    {"name": "size", "type": "\"sm\" | \"default\" | \"lg\"", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Tidy compact toolbar with even spacing, but the toggles are visually plain.",
+  "unsure": ["kind", "responsive", "title_fix"]
+}

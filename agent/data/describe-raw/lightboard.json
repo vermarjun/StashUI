@@ -1,0 +1,78 @@
+{
+  "name": "lightboard",
+  "frames": {
+    "code": "3069",
+    "best": 5,
+    "best_why": "The word SHOWING is fully lit and centred, with the whole dot grid visible and no cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Amber dot-matrix sign whose text scrolls sideways like a ticker.",
+  "summary": "A wide grid of small dots renders blocky amber text that scrolls sideways like an LED sign; drawing can be enabled to light individual dots by hand.",
+  "title_fix": null,
+  "appearance": "A long black rectangular panel filled with a fine grid of dim dots, with chunky amber letters lit out of them. The message sits centred vertically in the band, with dark margins around the sign.",
+  "behaviour": "The message crawls right to left on a fixed interval and wraps forever. Hovering pauses it; when drawing is enabled, dragging lights dots along the pointer path.",
+  "parts": ["dot grid", "lit letters", "dark panel", "canvas"],
+  "demo_content": "The message NOW SHOWING STASHUI DOORS 7PM in amber dot-matrix letters.",
+  "states": ["hover"],
+  "kind": "marquee",
+  "look": ["dark", "retro", "technical", "neon"],
+  "tone": "technical",
+  "search_phrases": [
+    "led dot matrix scrolling sign",
+    "amber ticker text going sideways",
+    "pixel text banner that scrolls",
+    "airport departure board style text",
+    "blocky letters made of dots",
+    "scrolling announcement strip for a site",
+    "dot grid sign with glowing letters",
+    "retro cinema showtime display"
+  ],
+  "resembles": [],
+  "use_when": "You want a retro LED sign effect or a scrolling announcement strip that draws the eye.",
+  "avoid_when": "The text scrolls forever and pauses only on hover; it is unreadable to screen readers and needs a wide container.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["decoration", "hero"],
+  "traits": {
+    "trigger": ["timer", "hover"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "text, rows, light size, gap, font, speed and dot colours are props; the glyph font and scroll direction are fixed in the source.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "The canvas is repainted on every animation frame, redrawing about 1,400 dots.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no accessible text or label and scrolls continuously, ignoring reduced-motion preferences."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "gap", "type": "number", "default": "1", "required": false},
+    {"name": "rows", "type": "number", "default": "5", "required": false},
+    {"name": "lightSize", "type": "number", "default": "4", "required": false},
+    {"name": "updateInterval", "type": "number", "default": "10", "required": false},
+    {"name": "font", "type": "\"default\" | \"7segment\"", "default": "default", "required": false},
+    {"name": "colors", "type": "Partial<LightBoardColors>", "default": "{}", "required": false},
+    {"name": "disableDrawing", "type": "boolean", "default": "true", "required": false},
+    {"name": "controlledDrawState", "type": "PatternCell", "default": null, "required": false},
+    {"name": "controlledHoverState", "type": "boolean", "default": null, "required": false},
+    {"name": "onHoverStateChange", "type": "(isHovered: boolean) => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The message is drawn into a canvas, so screen readers cannot read it.",
+    "The endless scroll ignores reduced-motion preferences."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing amber dot-matrix with even dot spacing; endless scroll and no a11y hold it back.",
+  "unsure": ["kind"]
+}

@@ -1,0 +1,175 @@
+{
+  "name": "ModelViewer-TS-TW",
+  "frames": {
+    "code": "7054",
+    "best": 1,
+    "best_why": "The astronaut faces forward and reads most clearly as a full model, with its helmet, backpack and red accents visible.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "An astronaut model turns slowly on a black stage.",
+  "title_fix": null,
+  "summary": "A 3D model floats in the middle of an empty dark viewport and rotates on its own. Visitors can drag to turn it and scroll to zoom.",
+  "appearance": "A small white astronaut figure with a backpack, dark visor and red and blue accents stands alone against black. It is lit softly from the front with a faint shadow beneath its feet.",
+  "behaviour": "The model spins slowly and continuously on a vertical axis. Dragging over the viewport turns it by hand with inertia, and scrolling or pinching zooms in and out.",
+  "parts": [
+    "3d model",
+    "dark backdrop",
+    "ground shadow"
+  ],
+  "demo_content": "A white astronaut model, about a third the height of the viewport, on a black background.",
+  "states": [
+    "dragging"
+  ],
+  "kind": "3d-scene",
+  "look": [
+    "dark",
+    "3d",
+    "minimal"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "3d model spinning in a viewer",
+    "astronaut object you can rotate",
+    "product turntable for a 3d file",
+    "drag to spin a 3d character",
+    "glb model viewer for a landing page",
+    "interactive 3d object on black",
+    "zoom and rotate a 3d asset",
+    "webgl model showcase block"
+  ],
+  "resembles": [
+    "Sketchfab"
+  ],
+  "use_when": "A product, character or asset needs a simple in-page 3D turntable.",
+  "avoid_when": "It loads a remote model file and needs WebGL, so it is heavy for a small decorative spot.",
+  "suits": [
+    "ecommerce",
+    "portfolio",
+    "saas"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "media",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "always",
+      "drag",
+      "scroll"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "image"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The model URL, size, light intensities, environment preset, default rotation and zoom, drag, hover and parallax options, auto-rotate and screenshot button are all props.",
+  "technique": [
+    "three-js"
+  ],
+  "weight": "heavy",
+  "weight_why": "A three.js scene with environment lighting and contact shadows redrawn every frame while it spins.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no keyboard control or text description of the model, and auto-rotation ignores reduced-motion."
+  },
+  "props": [
+    {
+      "name": "url",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "default": "400",
+      "required": false
+    },
+    {
+      "name": "height",
+      "type": "number | string",
+      "default": "400",
+      "required": false
+    },
+    {
+      "name": "environmentPreset",
+      "type": "string",
+      "default": "forest",
+      "required": false
+    },
+    {
+      "name": "autoRotate",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "autoRotateSpeed",
+      "type": "number",
+      "default": "0.35",
+      "required": false
+    },
+    {
+      "name": "enableManualRotation",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "enableHoverRotation",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "enableMouseParallax",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "enableManualZoom",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "fadeIn",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "defaultZoom",
+      "type": "number",
+      "default": "0.5",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The model floats small in a mostly empty black viewport with no framing hint."
+  ],
+  "polish": 4,
+  "polish_why": "A crisp turntable with good soft lighting; the empty frame around the model feels bare.",
+  "unsure": [
+    "theme"
+  ]
+}

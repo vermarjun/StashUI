@@ -1,0 +1,166 @@
+{
+ "name": "stepper",
+ "frames": {
+  "code": "8274",
+  "best": 4,
+  "best_why": "Shows two completed ticks, an active numbered step and both navigation buttons enabled.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "Numbered steps turn into ticks as you page through a short flow.",
+ "summary": "A four-step progress path: each step is a small numbered circle above a bold title and a muted description, with Back and Next buttons underneath. Reaching a step fills the previous circle into a tick.",
+ "title_fix": null,
+ "appearance": "Four evenly spaced steps across a black stage, each a small circle above a bold label and a dim line of text. Completed circles are white with a dark tick, the current one is white with its number, the rest stay grey; two small buttons sit centred beneath.",
+ "behaviour": "Clicking Next fills the current circle with a tick and lights the next step, Back reverses it, and clicking a circle jumps straight to that step. Both buttons dim when they reach either end.",
+ "parts": [
+  "step circle",
+  "step number",
+  "check mark",
+  "step title",
+  "step description",
+  "back button",
+  "next button"
+ ],
+ "demo_content": "Four steps: Account, Profile, Review and Done, with lines such as 'Create your account' and 'All set!'.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "disabled"
+ ],
+ "kind": "stepper",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "numbered steps for a signup flow",
+  "progress steps across a page",
+  "wizard with back and next",
+  "circles that turn into ticks",
+  "onboarding progress tracker",
+  "checkout stages with numbers",
+  "multi step form indicator",
+  "horizontal progress path with labels"
+ ],
+ "resembles": [],
+ "use_when": "A short linear flow needs its position and finished steps visible at a glance.",
+ "avoid_when": "Four titles with descriptions need width, so a narrow screen would crowd the row badly.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "form-field",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose items, triggers, indicators, titles, descriptions and separators; orientation, active value and per-step loading or disabled are props.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Four small circles and labels with short scale transitions.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Each step is a real button with text and a focus ring, but the current step is shown by numbering and colour only."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "orientation",
+   "type": "'horizontal' | 'vertical'",
+   "default": "\"horizontal\"",
+   "required": false
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "completed",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "loading",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The connector lines between circles vanish against the black background",
+  "On the first step the Back button is so faint it can hardly be seen"
+ ],
+ "polish": 3,
+ "polish_why": "Clear numbered progress with tidy ticks; the step connectors disappear on the black stage.",
+ "unsure": [],
+ "title": "Stepper",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "08f5e8a390e5ef23",
+  "film_hash": "15288f07a63f3d05",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

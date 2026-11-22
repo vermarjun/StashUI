@@ -1,0 +1,70 @@
+{
+  "name": "liquid-gradient",
+  "frames": {
+    "code": "4704",
+    "best": 1,
+    "best_why": "Frame 1 shows the full pill with a balanced rainbow and the label clear, with no cursor in view.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rainbow ribbons swirl inside a rounded banner behind white text.",
+  "summary": "Seven overlapping gradient sheets blend into a slow, liquid rainbow that keeps reshaping. In the demo it fills a rounded pill behind the words Get early access and slows down while hovered.",
+  "title_fix": null,
+  "appearance": "A wide pill-shaped banner on a black page, filled edge to edge with layered rainbow gradients — hot pink, orange, green, cyan and violet — that curve and fold like fabric. Centred white bold text sits on top.",
+  "behaviour": "The gradient morphs and reshapes on a continuous ten-second loop, never sitting still. Hovering stretches the same motion over a fifty-second cycle, so the colours drift much more slowly while the label stays fixed.",
+  "parts": ["pill banner", "gradient layers", "button label"],
+  "demo_content": "A white label reading Get early access on the gradient pill.",
+  "states": ["hover"],
+  "kind": "background",
+  "look": ["gradient", "colorful", "rounded", "pill"],
+  "tone": "playful",
+  "search_phrases": [
+    "animated rainbow gradient button",
+    "liquid colour flowing inside a pill",
+    "iridescent cta banner",
+    "swirling gradient call to action",
+    "holographic pill button",
+    "colour shifting gradient background",
+    "early access signup with gradient",
+    "psychedelic gradient pill"
+  ],
+  "resembles": ["Apple Intelligence"],
+  "use_when": "A signup or early-access CTA needs to feel animated and eye-catching without extra illustration.",
+  "avoid_when": "The motion cannot be paused, and the fixed rainbow palette may fight a restrained brand.",
+  "suits": ["saas", "marketing", "ai-chat"],
+  "slot_hints": ["primary-cta", "hero"],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Seventeen colour slots are passed as a colors object, and isHovered toggles the slow cycle. The pill size, label and layout live in the demo rather than the component.",
+  "technique": ["motion-library", "svg"],
+  "weight": "moderate",
+  "weight_why": "Seven layered SVG gradients animate dozens of stops every frame.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The gradient never stops and ignores reduced-motion, and the pill is a plain div without button semantics."
+  },
+  "props": [
+    {"name": "isHovered", "type": "boolean", "default": null, "required": true},
+    {"name": "colors", "type": "Colors", "default": null, "required": true},
+    {"name": "buttonType", "type": "boolean", "default": null, "required": false}
+  ],
+  "issues": [
+    "The pill looks like a button but is a plain div with no click action or keyboard focus.",
+    "White label loses contrast where the brightest yellow and green bands pass behind it."
+  ],
+  "polish": 4,
+  "polish_why": "Rich, smooth flowing colour; the white label dips in contrast over the brightest bands.",
+  "unsure": ["kind", "theme"]
+}

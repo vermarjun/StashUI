@@ -1,0 +1,67 @@
+{
+  "name": "drag-items",
+  "frames": {
+    "code": "6659",
+    "best": 1,
+    "best_why": "All three task cards sit neatly in their original order with every grip, date and button visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "White task cards slide up and down the list when pulled by their dot grip.",
+  "summary": "A narrow stack of white task cards, each with a title, a line of detail, a due date, a black Open task button and a nine-dot grip on the right. Dragging a grip lifts its card while the rest slide aside to make room.",
+  "title_fix": null,
+  "appearance": "Three white rounded task cards stacked with small gaps on a black page. Each shows a bold title, a faint subtitle, a small date row and a black Open task button, with a pale nine-dot grip at the right edge.",
+  "behaviour": "Pressing a grip lifts its card with a soft shadow and shrinks the grip slightly; the card follows the pointer while the rows below slide to close the gap. Releasing drops it into the new position and the list settles with a spring.",
+  "parts": ["task card", "title", "detail line", "due date", "open button", "drag grip"],
+  "demo_content": "Tasks about shipping a checklist, fixing a flaky test and writing release notes, dated late 2024.",
+  "states": ["dragging", "active"],
+  "kind": "list",
+  "look": ["light", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "drag task cards to reorder a list",
+    "sortable todo list with grip handle",
+    "vertical list that springs into place",
+    "reorder rows by pulling the dots",
+    "task list you can rearrange by hand",
+    "todo cards with due dates and buttons",
+    "draggable rows with a lift shadow",
+    "issue list for a project board"
+  ],
+  "resembles": [],
+  "use_when": "A short task or issue list needs manual reordering by dragging rather than by a sort menu.",
+  "avoid_when": "Only the small grip starts a drag, the order never persists, and the list is capped at a narrow column.",
+  "suits": ["devtool", "saas"],
+  "slot_hints": ["list-item"],
+  "traits": {
+    "trigger": ["drag"],
+    "motion": "pronounced",
+    "affects": ["layout", "shadow", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the three tasks, their dates and links are written into the state in the file, and the grip, shadow spring and max width live in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three DOM rows and a spring that only runs while a card is dragged.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The grip is a button labelled Reorder, but only pointer drag reorders, so there is no keyboard path and no reduced-motion handling."
+  },
+  "props": [],
+  "issues": [
+    "All task links point to # and the Open task buttons lead nowhere.",
+    "The new order lives in page state only, so a reload resets it.",
+    "Nothing tells the user that only the small grip starts a drag."
+  ],
+  "polish": 3,
+  "polish_why": "Clean white task rows and a convincing lift; plain styling and placeholder links.",
+  "unsure": []
+}

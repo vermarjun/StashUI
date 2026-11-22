@@ -1,0 +1,145 @@
+{
+ "name": "predictive-text",
+ "frames": {
+  "code": "7168",
+  "best": 4,
+  "best_why": "A partly typed message, two word suggestions in the pill and the send button are all visible at once.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.3
+ },
+ "tagline": "Word suggestions float above the message box as you type.",
+ "summary": "A rounded message composer that watches the word you are part-way through and floats a small pill of completions above it. Tab cycles the options, arrow-right accepts one and Enter sends.",
+ "title_fix": null,
+ "appearance": "A wide dark rounded message field with bold pale text and faint image and microphone icons at its right edge. Above its left end floats a small dark pill of bold suggested words divided by hairline rules, and a round light send button appears inside the field once there is text.",
+ "behaviour": "Typing the start of a word raises up to three matching completions in the pill, taken from the dictionary and words sent before. Tab moves the highlight along the list, arrow-right accepts the first, Enter takes the highlighted word or sends the message, and Escape clears it.",
+ "parts": [
+  "message field",
+  "placeholder",
+  "suggestion pill",
+  "suggestion word",
+  "send button",
+  "attach icons"
+ ],
+ "demo_content": "Placeholder \"Message Maya\"; the typed message builds to \"let's meet for dinner tomorrow\".",
+ "states": [
+  "hover",
+  "focus",
+  "empty",
+  "selected"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "message box that suggests the next word",
+  "autocomplete word pills above an input",
+  "type ahead suggestions for a chat composer",
+  "text field with tappable word completions",
+  "smart keyboard style next word hints",
+  "floating suggestion chips over a message box",
+  "input that finishes your sentence",
+  "how to add next word suggestions to a chat"
+ ],
+ "resembles": [
+  "iOS QuickType"
+ ],
+ "use_when": "A lightweight chat or comment field should speed up typing without a full autocomplete dropdown.",
+ "avoid_when": "It matches only the current word and needs a word list; with an empty dictionary it never suggests anything.",
+ "suits": [
+  "ai-chat",
+  "social",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Supply a dictionary array and a placeholder, and hook onSend to receive the finished message. The word matching, the three-item cap and the frequency learning are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One input, a short list of words and a spring on the suggestion pill; nothing loops.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Tab, arrows and Enter work, but the field is named only by its placeholder and the suggestion buttons have no focus ring."
+ },
+ "props": [
+  {
+   "name": "dictionary",
+   "type": "string[]",
+   "default": "DEFAULT_WORDS",
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": "\"Write a message\"",
+   "required": false
+  },
+  {
+   "name": "onSend",
+   "type": "(text: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The input has no name beyond its placeholder, and the suggestion buttons show no focus style.",
+  "Frames 1 and 2 show a large empty band above the field where the suggestions will appear."
+ ],
+ "polish": 3,
+ "polish_why": "Clean rounded field and tidy suggestion pill, but ordinary layout and a large empty gap above.",
+ "unsure": [
+  "best"
+ ],
+ "title": "Predictive Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "76c214455faf1b37",
+  "film_hash": "cf6550b7cd4d98d6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

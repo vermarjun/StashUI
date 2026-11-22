@@ -1,0 +1,104 @@
+{
+  "name": "timeline",
+  "frames": {
+    "code": "4700",
+    "best": 2,
+    "best_why": "Two dated blocks with paired photos hang off one vertical line, unlike the single-entry first frame.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Years stack down a vertical line that fills with colour as you scroll.",
+  "summary": "A changelog or journey laid out as dated entries: a bold year, a paragraph and paired photos, joined by a thin vertical line whose coloured section follows your scroll position.",
+  "title_fix": null,
+  "appearance": "A near-black page opens with a white heading and a short intro, then a column of dated entries. Each entry has a large grey year on the left, a small dot on a thin vertical rule, and text with two rounded photos on the right.",
+  "behaviour": "Scrolling grows a purple-to-blue segment down the vertical rule in step with how far the list has been read. Year labels stick near the top while their own content scrolls past.",
+  "parts": [
+    "heading",
+    "intro paragraph",
+    "vertical rule",
+    "year label",
+    "dot marker",
+    "entry paragraph",
+    "photo pair"
+  ],
+  "demo_content": "Heading 'Changelog from my journey'; years 2024 to 2020 with sunset, mountain, street and laptop photos.",
+  "states": [],
+  "kind": "timeline",
+  "look": [
+    "dark",
+    "minimal",
+    "editorial"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "vertical list with year markers",
+    "changelog of past milestones",
+    "scroll progress line down a list",
+    "career history sections with photos",
+    "company story told by date",
+    "animated line that fills as you scroll",
+    "release history page layout",
+    "big year labels next to paragraphs"
+  ],
+  "resembles": [],
+  "use_when": "A past history such as a changelog, career or roadmap needs dates and media in one readable scroll.",
+  "avoid_when": "Content must stay above the fold or the page cannot scroll, since the coloured line only draws on scroll.",
+  "suits": [
+    "portfolio",
+    "docs",
+    "marketing"
+  ],
+  "slot_hints": [
+    "body-text",
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll",
+      "viewport"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "border",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Entries arrive as a data array of year title plus content nodes; spacing, colours and the line gradient are set in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A handful of DOM nodes and two scroll-linked transforms, with no loops.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The scroll-linked line and sticky headings ignore reduced-motion, and the progress is decorative with no text alternative."
+  },
+  "props": [
+    {
+      "name": "data",
+      "type": "TimelineEntry[]",
+      "default": null,
+      "required": true
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Clear date hierarchy and a smoothly growing line; some photos look washed out in the capture.",
+  "unsure": []
+}

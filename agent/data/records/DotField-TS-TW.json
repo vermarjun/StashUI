@@ -1,0 +1,185 @@
+{
+ "name": "DotField-TS-TW",
+ "frames": {
+  "code": "4523",
+  "best": 3,
+  "best_why": "The purple glow sits centred with the dot grid clearly bent around it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.6
+ },
+ "tagline": "A purple glow bends a grid of tiny dots as the cursor moves.",
+ "summary": "A near-black background covered in a fine grid of small violet dots. A soft purple glow follows the pointer and pushes the nearby dots outward, then they settle back.",
+ "title_fix": null,
+ "appearance": "A dark field of evenly spaced tiny violet dots on near-black, brighter toward the top and fading at the edges. At rest it reads as a fine grid; where the pointer sits, a soft purple halo blooms and the dots around it swell apart.",
+ "behaviour": "Moving the cursor drags a purple glow and a bulge through the grid, pushing nearby dots outward while distant ones spring back; when the pointer stops, the glow fades. A gentle wave can also ripple the rows.",
+ "parts": [
+  "dot grid",
+  "glow halo",
+  "heading",
+  "subtitle"
+ ],
+ "demo_content": "A heading 'Dot Field' with the line 'Move your cursor to bend the grid.'",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "minimal",
+  "technical",
+  "dense"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "interactive dot grid background",
+  "cursor bends a field of dots",
+  "purple glow on a dotted backdrop",
+  "mouse reactive particle grid",
+  "subtle dot matrix background for a hero",
+  "dots push away from the pointer",
+  "repel effect on tiny dots",
+  "dark grid with a light following the mouse"
+ ],
+ "resembles": [],
+ "use_when": "You want a technical, understated background that reacts to the pointer behind a dark hero or product page.",
+ "avoid_when": "It only reacts to a mouse, so touch users see a static dot grid, and the effect never fully settles.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Props set dot radius and spacing, cursor radius and force, bulge-only mode and strength, glow radius and colour, sparkle, wave amplitude and the two gradient colours.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A 2D canvas redraws a grid of roughly two thousand dots every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The dot grid animates continuously and reacts only to a mouse; it ignores reduced-motion and has no label."
+ },
+ "props": [
+  {
+   "name": "dotRadius",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "dotSpacing",
+   "type": "number",
+   "default": "14",
+   "required": false
+  },
+  {
+   "name": "cursorRadius",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "cursorForce",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "bulgeOnly",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "bulgeStrength",
+   "type": "number",
+   "default": "67",
+   "required": false
+  },
+  {
+   "name": "glowRadius",
+   "type": "number",
+   "default": "160",
+   "required": false
+  },
+  {
+   "name": "sparkle",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "waveAmplitude",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "gradientFrom",
+   "type": "string",
+   "default": "'rgba(168, 85, 247, 0.35)'",
+   "required": false
+  },
+  {
+   "name": "gradientTo",
+   "type": "string",
+   "default": "'rgba(180, 151, 207, 0.25)'",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "It only reacts to a mouse; touch and keyboard users just see a static grid.",
+  "The animation loop runs forever, even when nothing is moving."
+ ],
+ "polish": 3,
+ "polish_why": "Crisp dot grid and a smooth purple glow, but it is a familiar effect and pointer-only.",
+ "unsure": [
+  "traits.motion"
+ ],
+ "title": "Dot Field",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bda1635d6dcdfa46",
+  "film_hash": "3f1da0e296288d86",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

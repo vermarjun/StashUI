@@ -1,0 +1,75 @@
+{
+  "name": "face-rating",
+  "frames": {
+    "code": "4064",
+    "best": 4,
+    "best_why": "A big green smiling face with 5 selected and the Amazing mood label, the rating at its warmest.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A cartoon face morphs from frown to grin as you rate.",
+  "summary": "A five-level feedback rating built around one large line-drawn face. Hovering a number previews that mood as the mouth, eyes, brows and colour spring to it, and clicking commits the rating with a small bounce.",
+  "title_fix": null,
+  "appearance": "A dark rounded card holds a question, a grey subtitle and a big circular line-art face with two dot eyes and a curved mouth. Under it sit five small round number buttons and a centred mood word; the face's outline and features change colour from grey to rose, orange, amber, lime or emerald with the level.",
+  "behaviour": "Hovering any of the five numbers previews that mood: the mouth curve, eye shape, eyebrows and stroke colour spring to the level and a mood label crossfades in. Clicking commits it with a quick bounce, arrow keys move through the group, and the footer confirms the saved score.",
+  "parts": ["question", "subtitle", "face outline", "eyes", "eyebrows", "mouth", "number buttons", "mood label"],
+  "demo_content": "Question 'How was your onboarding call?', a subtitle about Maya the success manager, and moods from Terrible to Amazing.",
+  "states": ["hover", "focus", "checked", "selected"],
+  "kind": "radio-group",
+  "look": ["dark", "minimal", "rounded", "flat", "colorful"],
+  "tone": "playful",
+  "search_phrases": [
+    "five mood faces to rate",
+    "rate your experience 1 to 5",
+    "smiley face feedback widget",
+    "customer satisfaction rating",
+    "mood face selector",
+    "review score with faces",
+    "hover to preview rating",
+    "customer mood score buttons"
+  ],
+  "resembles": [],
+  "use_when": "A product asks for a quick 1-5 satisfaction score and wants the mood to be visible, not just stars.",
+  "avoid_when": "Five coarse levels suit satisfaction, not a precise score, and the face needs a clear question beside it.",
+  "suits": ["saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["hover", "click", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Value or defaultValue, mood labels, the group label, showLabel and size are props; the five mood colours and the mouth geometry are constants in the file.",
+  "technique": ["motion-library", "svg"],
+  "weight": "light",
+  "weight_why": "One small SVG face and five buttons with spring morphs on hover.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "A labelled radio group with arrow-key movement, per-level aria labels and reduced-motion support; the face is aria-hidden."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "defaultValue", "type": "number", "default": "0", "required": false},
+    {"name": "onValueChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "labels", "type": "[string, string, string, string, string]", "default": "DEFAULT_LABELS", "required": false},
+    {"name": "showLabel", "type": "boolean", "default": "true", "required": false},
+    {"name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "\"md\"", "required": false},
+    {"name": "label", "type": "string", "default": "\"How was your experience?\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Mood is carried mostly by colour, which colour-blind users may not distinguish.",
+    "The five number buttons are much smaller than the face, so the control feels disconnected from its options."
+  ],
+  "polish": 4,
+  "polish_why": "Expressive, friendly face morph with solid radio semantics; colour does most of the mood work.",
+  "unsure": []
+}

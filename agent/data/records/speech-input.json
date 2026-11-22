@@ -1,0 +1,157 @@
+{
+ "name": "speech-input",
+ "frames": {
+  "code": "2565",
+  "best": 5,
+  "best_why": "Recording state at its clearest: red button, stop square and a wide pulse ring around it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.5
+ },
+ "tagline": "Round mic button goes red and ripples outward while it listens.",
+ "summary": "A circular dictation button. Tapping it starts listening, turns it red with a stop square and sends out pulsing rings; tapping again ends the recording and hands the words to your text field.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holding two lines of grey draft text, a small hint at the lower left and a round button at the lower right. The button is white with a dark microphone glyph, and red with a white square while recording.",
+ "behaviour": "Tapping starts listening: the button fills red, the glyph swaps to a stop square and three rings pulse outward on staggered delays. Tapping again returns it to white, and a spinner takes the glyph's place while the audio is being transcribed.",
+ "parts": [
+  "text field",
+  "draft text",
+  "hint text",
+  "mic button",
+  "stop icon",
+  "pulse rings"
+ ],
+ "demo_content": "Draft email to Jordan about Thursday at 3pm and venue parking, with a hint line under it.",
+ "states": [
+  "hover",
+  "active",
+  "loading",
+  "disabled"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "mic button that types what you say",
+  "voice dictation control for a textarea",
+  "speech to text input widget",
+  "record audio with pulsing red rings",
+  "press to talk microphone button",
+  "browser speech recognition interface",
+  "round mic icon that turns into a stop",
+  "dictate a message instead of typing"
+ ],
+ "resembles": [
+  "Google Docs voice typing"
+ ],
+ "use_when": "A composer or email box should let people speak their message instead of typing it.",
+ "avoid_when": "Needs browser speech support or a transcription callback; without either the button stays disabled and does nothing.",
+ "suits": [
+  "ai-chat",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "border",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "The language, transcript callback and optional audio-recording fallback are props, and all button props pass through; ring colour and timings need a source edit.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "One button plus three CSS rings; nothing animates until recording starts.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "A label can be passed in but there is no default one or pressed state, so the recording toggle is silent to screen readers."
+ },
+ "props": [
+  {
+   "name": "lang",
+   "type": "string",
+   "default": "\"en-US\"",
+   "required": false
+  },
+  {
+   "name": "onTranscriptionChange",
+   "type": "(text: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onAudioRecorded",
+   "type": "(audioBlob: Blob) => Promise<string>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"size-4 animate-spin\", className)}",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "{isDisabled}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "No frame shows dictated words arriving in the field, so the main payoff is unproven in the clip.",
+  "The pulse rings are faint at this scale and mostly lost against the dark card."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy standard icon button with a clear red listening state, but the demo shows little of the payoff.",
+ "unsure": [
+  "kind",
+  "a11y.focus_visible"
+ ],
+ "title": "Speech Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5c9df3d40b530e8c",
+  "film_hash": "1879ac3a8ade71ce",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

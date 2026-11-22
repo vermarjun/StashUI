@@ -1,0 +1,143 @@
+{
+ "name": "box-reveal",
+ "frames": {
+  "code": "9031",
+  "best": 6,
+  "best_why": "Frame 6 shows the finished reveal: headline, subtitle, paragraph and button all crisp.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.0
+ },
+ "tagline": "Colour bars sweep aside to uncover a headline block.",
+ "summary": "A wrapper that hides its content behind solid colour boxes, then slides them away so the text and button fade up in place. Each box can be recoloured and timed.",
+ "title_fix": null,
+ "appearance": "On a black stage, a stack of four solid bars in white, light grey, dark grey and white again sits where a headline, subtitle, paragraph and button belong. Once revealed, that text appears in white and grey, left aligned.",
+ "behaviour": "When it enters the viewport, each coloured box slides off to the right and the text beneath fades and lifts into place. The reveal plays once per mount; a Replay button re-triggers it.",
+ "parts": [
+  "reveal bars",
+  "headline",
+  "subtitle",
+  "paragraph",
+  "button",
+  "replay button"
+ ],
+ "demo_content": "Headline Northwind., subtitle Analytics for teams who ship weekly, a trial blurb and a Start free trial button.",
+ "states": [],
+ "kind": "transition",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text reveal animation on scroll",
+  "colour bars sweep away",
+  "content uncovered by sliding blocks",
+  "headline reveal effect",
+  "animated text entrance wrapper",
+  "block wipe reveal",
+  "fade and slide up text",
+  "scroll triggered content reveal"
+ ],
+ "resembles": [],
+ "use_when": "Hero or section copy should enter with a wipe rather than just fading in.",
+ "avoid_when": "It triggers only on scroll, so copy already on screen at load may sit covered until it is scrolled past.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "hero",
+  "headline",
+  "body-text",
+  "primary-cta"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "color, duration and delay control the sliding boxes; the revealed text, layout and button come from children.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Two motion elements animate once per view; nothing runs afterwards.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The reveal ignores reduced-motion preferences and runs once, so motion-sensitive users cannot opt out."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute inset-0 z-20\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#5046e6\"",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Mid-reveal frames show only solid bars, so the covered state reads as empty placeholders."
+ ],
+ "polish": 4,
+ "polish_why": "Clean wipe and fade with good type; the covered state briefly reads as placeholder bars.",
+ "unsure": [],
+ "title": "Box Reveal",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "17ea62126a6faae0",
+  "film_hash": "8bbb68f4fba8aed2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

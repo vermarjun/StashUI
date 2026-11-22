@@ -1,0 +1,140 @@
+{
+ "name": "faq-founder",
+ "frames": {
+  "code": "8693",
+  "best": 6,
+  "best_why": "Three questions are expanded with answers beside the founder card and the heading.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.6
+ },
+ "tagline": "Opens questions with a plus sign beside a founder's photo card.",
+ "summary": "A dark FAQ page with a small centred heading. On the left a card introduces the founder with a photo, quote and blue LinkedIn button; on the right a stack of dark panels opens and closes one question at a time.",
+ "title_fix": null,
+ "appearance": "Charcoal page with a small centred heading. The left card holds a small square portrait, a bold name, a grey role, a quoted line and a blue rounded button with a LinkedIn mark. Right of it sit six rounded near-black rows, each with a question and a pale square holding a plus or minus; open rows show a grey paragraph.",
+ "behaviour": "Entering the section reveals the heading, profile card and questions in a stagger. Clicking a question swaps its plus for a minus and slides the answer open with a short height animation; several rows can be open at once.",
+ "parts": [
+  "heading",
+  "profile card",
+  "avatar",
+  "name",
+  "role",
+  "question row",
+  "toggle icon",
+  "answer"
+ ],
+ "demo_content": "Founder \"Naymur Rahman\" with questions about what the product solves and who it suits.",
+ "states": [
+  "open"
+ ],
+ "kind": "faq-section",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "faq accordion beside a founder profile",
+  "questions that expand when clicked",
+  "about the founder with answers",
+  "plus minus question list",
+  "help section with contact card",
+  "product questions and answers",
+  "collapsible faq with profile",
+  "dark faq page with linkedin button"
+ ],
+ "resembles": [],
+ "use_when": "An about or pricing page wants FAQs next to a short founder bio and a contact link.",
+ "avoid_when": "Only six fixed questions and one profile photo, and the dark palette with the blue button is hardcoded.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The six questions, answers, founder name, quote and photo path are hardcoded; colours and the LinkedIn URL need source edits.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Six short height animations on click and a one-time entrance; otherwise idle.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Questions are real buttons with aria-expanded and a linked region, but the open animation ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "question",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "answer",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationNum",
+   "type": "number",
+   "default": "{animationNum}",
+   "required": true
+  },
+  {
+   "name": "timelineRef",
+   "type": "React.RefObject<HTMLDivElement>",
+   "default": "{timelineRef}",
+   "required": true
+  }
+ ],
+ "issues": [
+  "The accordion rows are almost the same charcoal as the page, so their edges are barely visible.",
+  "In the first frame the question column is empty until the entrance animation runs."
+ ],
+ "polish": 3,
+ "polish_why": "Clean accordion layout, but the dark cards barely separate from the page and answers are small.",
+ "unsure": [
+  "slot_hints"
+ ],
+ "title": "Founder FAQ",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5280a5b5cf063ea3",
+  "film_hash": "9ab3cd849205554b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

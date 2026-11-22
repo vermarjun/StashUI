@@ -1,0 +1,178 @@
+{
+ "name": "query-builder",
+ "frames": {
+  "code": "9246",
+  "best": 5,
+  "best_why": "The field dropdown is open over a full set of rule rows, showing both the structure and the picker.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.6
+ },
+ "tagline": "Stack rows of field, operator and value to build an AND/OR filter.",
+ "summary": "A visual filter composer where each row picks a field, an operator and a value, joined by And or Or. Add rule grows the list, Add group nests an indented subgroup, and each row can be removed.",
+ "title_fix": null,
+ "appearance": "A dark form on black: a small Where label followed by rows of rounded outlined dropdowns and an input, each row ending in a bin icon, with a thin And selector at the left of later rows. Below the rows sit quiet Add rule and Add group links.",
+ "behaviour": "Choosing a field swaps the operator list and the value control to match it, so a date field gets a date picker and Status gets a short list. Add rule appends a row and Add group nests an indented subgroup; the small And or Or select changes how rows combine.",
+ "parts": [
+  "where label",
+  "connector select",
+  "field select",
+  "operator select",
+  "value control",
+  "remove button",
+  "add rule link",
+  "add group link"
+ ],
+ "demo_content": "Rules for Status is Todo, Estimate is at least 5 and Title contains checkout, on a task tracker.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "disabled"
+ ],
+ "kind": "search",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "visual filter rules with and or",
+  "build a search with nested conditions",
+  "add rows of field operator value",
+  "filter panel for a data table",
+  "advanced search with condition groups",
+  "where clause editor for non coders",
+  "custom report filters with dropdowns",
+  "how to let users combine several filters"
+ ],
+ "resembles": [],
+ "use_when": "Users must combine several filters with AND/OR logic and see the rule structure while building it.",
+ "avoid_when": "It is a set of parts needing a fields schema and controlled query state, not a drop-in search box.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "data-table",
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass a fields schema and a controlled query value, then arrange the rows from the exported parts; labels, maxDepth and disabled are props. The order and layout of the controls are yours.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of dropdowns and popovers with nothing animating at rest.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Fields, operators and values carry labels and the rules expose list roles; no reduced-motion check exists, though little moves."
+ },
+ "props": [
+  {
+   "name": "fields",
+   "type": "QueryField[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "value",
+   "type": "QueryGroup",
+   "default": "{{ asChild, className, children, ...props }}",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "QueryGroup",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: QueryGroup) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "maxDepth",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "labels",
+   "type": "Partial<QueryBuilderLabels>",
+   "default": "new Map(items.map((item) => [item.value, item.label]));",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The dim grey selects and hairline borders on black make the rule structure hard to scan.",
+  "The demo shows no resulting query or run button, so it is unclear what the built filter is for."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy, consistent control rows with a clear nesting model; dim text is hard to scan.",
+ "unsure": [
+  "best"
+ ],
+ "title": "Query Builder",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0faf6a5f96126752",
+  "film_hash": "5b713919d63f7c63",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

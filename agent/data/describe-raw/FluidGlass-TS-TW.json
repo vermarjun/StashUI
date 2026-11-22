@@ -1,0 +1,124 @@
+{
+  "name": "FluidGlass-TS-TW",
+  "frames": {
+    "code": "3183",
+    "best": 4,
+    "best_why": "A faint circular glass edge is visible over the left photo with the image bending inside it, showing the lens at work.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A glass lens drifts with the pointer and bends the photos behind it.",
+  "title_fix": null,
+  "summary": "A violet full-screen scene shows two large photos and a bold wordmark. A round glass disc follows the cursor, refracting and warping whatever passes beneath it.",
+  "appearance": "A vivid violet backdrop holds a tall photo of dark rocks and surf on the left and a city skyline on the right, with large white lettering across the middle. A faint circular glass disc hovers over the scene.",
+  "behaviour": "The glass disc trails the pointer with a soft delay, bending and shifting the image under it with faint colour fringes at the rim. When the pointer stops, the scene settles back to flat.",
+  "parts": [
+    "violet backdrop",
+    "photo panels",
+    "wordmark",
+    "glass lens"
+  ],
+  "demo_content": "A wave-and-rock photo, a city skyline photo, and the wordmark 'React Bits' on a violet background.",
+  "states": [],
+  "kind": "image-effect",
+  "look": [
+    "colorful",
+    "glass",
+    "3d",
+    "bold"
+  ],
+  "tone": "dramatic",
+  "search_phrases": [
+    "glass lens that follows the cursor",
+    "magnifying bubble over a hero image",
+    "liquid distortion on mouse move",
+    "refractive bubble effect for webgl",
+    "purple hero with a floating lens",
+    "see through orb warping photos",
+    "interactive glass magnifier for a landing page",
+    "cursor lens with chromatic edges"
+  ],
+  "resembles": [],
+  "use_when": "A bold hero wants an eye-catching glass magnifier that tracks the pointer.",
+  "avoid_when": "It needs WebGL and a sized parent, and touch users never get the lens effect.",
+  "suits": [
+    "marketing",
+    "portfolio",
+    "saas"
+  ],
+  "slot_hints": [
+    "hero",
+    "page-background",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move",
+      "always"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "image"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "hardcoded",
+  "customise": "Mode (lens, bar or cube) and glass settings such as scale, refraction, thickness and chromatic aberration are props; the photos and wordmark are hardcoded.",
+  "technique": [
+    "three-js",
+    "webgl-shader"
+  ],
+  "weight": "heavy",
+  "weight_why": "A three.js canvas renders every frame with a transmission material and an offscreen buffer.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The scene lives entirely in a WebGL canvas with no text alternative, and the lens ignores reduced-motion settings."
+  },
+  "props": [
+    {
+      "name": "mode",
+      "type": "'lens' | 'bar' | 'cube'",
+      "default": "lens",
+      "required": false
+    },
+    {
+      "name": "lensProps",
+      "type": "ModeProps",
+      "default": "{}",
+      "required": false
+    },
+    {
+      "name": "barProps",
+      "type": "ModeProps",
+      "default": "{}",
+      "required": false
+    },
+    {
+      "name": "cubeProps",
+      "type": "ModeProps",
+      "default": "{}",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The lens is barely visible over the busy photos, reading as a faint dark ring.",
+    "The photos and the 'React Bits' wordmark are hardcoded, so every page shows the same scene."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing glass refraction on a bold violet scene; the lens edge is hard to spot on busy photos.",
+  "unsure": []
+}

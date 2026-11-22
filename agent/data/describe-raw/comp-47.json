@@ -1,0 +1,66 @@
+{
+  "name": "comp-47",
+  "frames": {
+    "code": "4729",
+    "best": 6,
+    "best_why": "A complete card number is grouped in fours with the card icon visible and the cursor off the field.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Card digits space out into blocks of four as you type.",
+  "summary": "A labelled card-number field with a credit-card icon inside its left edge. Typed digits are grouped into fours with spaces, and a grey placeholder sits there until the first keypress.",
+  "title_fix": null,
+  "appearance": "A label sits above a rounded dark field on black, with a small credit-card outline inside the left edge and a grey Card number placeholder. Typed digits run across the line in spaced groups of four, and a grey credit line sits below.",
+  "behaviour": "Focusing rings the field and typing auto-inserts spaces every four digits as the number grows. The clip enters 4242 4242 4242 4242 and the field holds the grouped spacing.",
+  "parts": ["label", "card field", "card icon", "placeholder text", "formatted digits", "credit line"],
+  "demo_content": "Label Card Number, placeholder Card number, typed 4242 4242 4242 4242, plus a library credit line.",
+  "states": ["focus", "empty"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "credit card digits split in fours",
+    "payment card entry with an icon",
+    "type a visa number",
+    "checkout field for the card",
+    "spaces added as you type",
+    "plastic number with grouping",
+    "pay with a bank card",
+    "card box with a small card icon"
+  ],
+  "resembles": ["Stripe card number field"],
+  "use_when": "Checkout forms where card digits should be grouped as they are typed.",
+  "avoid_when": "It handles only the number; expiry, security code and card type need separate fields.",
+  "suits": ["fintech", "ecommerce"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["text", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label and placeholder come from the payment library, while field and icon styling are classes in the file; the credit line is fixed.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One field and a formatting helper; no animation or background work.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The label is bound to the field and the icon is hidden from readers, but the credit link adds noise for assistive tech."
+  },
+  "props": [],
+  "issues": [
+    "A visible Built with React Payment Inputs credit link ships under the field.",
+    "The placeholder is spaced out so widely it reads more like a label than a hint."
+  ],
+  "polish": 3,
+  "polish_why": "Clean field and tidy digit grouping, but the credit link and spaced placeholder are rough.",
+  "unsure": []
+}

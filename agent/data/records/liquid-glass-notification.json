@@ -1,0 +1,119 @@
+{
+ "name": "liquid-glass-notification",
+ "frames": {
+  "code": "1354",
+  "best": 3,
+  "best_why": "Frame 3 shows the top notification expanded with its photo while the second card stays readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.1
+ },
+ "tagline": "A glass notification stack blooms open to reveal a photo.",
+ "summary": "Two stacked glass notifications sit at the bottom of a photo backdrop, each with an app icon, title, message and time. Hovering or clicking the top one expands it from a slim row into a card with a preview image.",
+ "title_fix": null,
+ "appearance": "Two slim dark glass cards stacked with a small gap, each showing a rounded gradient app icon, a bold title, one or two lines of white text and a time at the right. When open, the top card grows tall and reveals a mountain lake photo beneath its text.",
+ "behaviour": "At rest the notifications are slim rows. Pointing at or clicking the top card expands it downward with a spring to reveal the preview image, then it shrinks back. The lower card stays compact throughout.",
+ "parts": [
+  "notification card",
+  "app icon",
+  "title",
+  "message",
+  "timestamp",
+  "preview image"
+ ],
+ "demo_content": "Two alerts, one from UI-Layouts, both reading New components are available for you, with a mountain lake photo.",
+ "states": [
+  "hover",
+  "expanded"
+ ],
+ "kind": "toast",
+ "look": [
+  "glass",
+  "dark",
+  "rounded",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "glass notification that expands",
+  "app alert with image preview",
+  "ios style notification stack",
+  "frosted notification cards at bottom",
+  "message popup with app icon",
+  "hover to reveal notification image",
+  "push alerts on a photo background",
+  "translucent toast notification"
+ ],
+ "resembles": [
+  "iOS notification banner"
+ ],
+ "use_when": "You want a rich notification that can open to show an attachment or preview without leaving the page.",
+ "avoid_when": "The expanded card is a fixed 410px wide, and the preview is a hardcoded remote image.",
+ "suits": [
+  "mobile-app",
+  "saas"
+ ],
+ "slot_hints": [
+  "toast",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Titles, messages, timestamps, icon gradients and the preview image URL are hardcoded in the JSX. Size, blur, shadow, glow and the expandable flag come from the glass card props.",
+ "technique": [
+  "motion-library",
+  "svg-filter"
+ ],
+ "weight": "moderate",
+ "weight_why": "Two blurred glass cards with a displacement filter and a remote preview image.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Expanding relies on pointer hover or click on a div with no keyboard focus, so keyboard users cannot open it."
+ },
+ "props": [],
+ "issues": [
+  "The second app's title is an SVG wordmark that renders as an unreadable blob at this size.",
+  "The preview image loads from a remote URL, so the expanded card can show a gap offline."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing frosted rows and a smooth expand; the second title is illegible.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Liquid Glass Notification",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d9a28ab02ffcd002",
+  "film_hash": "dd282f3bb8f42932",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

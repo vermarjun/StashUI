@@ -1,0 +1,65 @@
+{
+  "name": "default-marquee",
+  "frames": {
+    "code": "3699",
+    "best": 3,
+    "best_why": "Frame 3 shows both rows with several complete cards and readable names, with the cursor clear of them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two rows of review cards drift in opposite directions, pausing on hover.",
+  "summary": "Two horizontal strips of testimonial cards loop endlessly, one drifting left and the other right. Each card carries a coloured avatar dot, a name, a handle and a short quote, and hover freezes the motion.",
+  "title_fix": "Testimonial Marquee",
+  "appearance": "On a near-black field, two rows of dark rounded review cards with a faint blue glow along their base. Each card has a small coloured circle avatar, a bold name, a grey handle and two lines of white quote text. Cards are clipped and faded at both screen edges.",
+  "behaviour": "Both rows scroll continuously in opposite directions and loop without a visible seam. Hovering any card freezes its strip so a quote can be read; moving away restarts the drift. Fade masks hide the cut ends at each side.",
+  "parts": ["review card", "avatar dot", "name", "handle", "quote text", "fade mask"],
+  "demo_content": "Six reviewers named Jack, Jill, John, Jane, Jenny and James with handles and one-line praise.",
+  "states": ["hover"],
+  "kind": "marquee",
+  "look": ["dark", "rounded", "minimal", "glow"],
+  "tone": "minimal",
+  "search_phrases": [
+    "testimonial cards scrolling sideways",
+    "two rows moving opposite directions",
+    "reviews ticker that pauses on hover",
+    "endless review strip",
+    "wall of praise cards drifting",
+    "customer quotes sliding across screen",
+    "social proof ticker",
+    "scrolling testimonials with avatars"
+  ],
+  "resembles": [],
+  "use_when": "You want a dense wall of short customer quotes to keep moving without a carousel control.",
+  "avoid_when": "Quotes come from six hardcoded reviews, and constant motion makes a quiet page harder to read.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["testimonial", "list-item"],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The review list, names, handles, quotes and avatar colours live in a local array, so edit it there. Strip speed, direction and fade colours are set through class names.",
+  "technique": ["css-keyframes", "svg"],
+  "weight": "light",
+  "weight_why": "A handful of cards on two CSS-driven strips plus one noise overlay.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Motion never stops except on hover and cannot be paused by keyboard; avatar dots have no text alternative."
+  },
+  "props": [],
+  "issues": [
+    "Handles are drawn at 40% white on dark cards, so the secondary text is hard to read."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy cards and smooth fades, but the pattern and repeated praise quotes feel standard.",
+  "unsure": ["technique"]
+}

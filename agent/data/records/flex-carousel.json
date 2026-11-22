@@ -1,0 +1,188 @@
+{
+ "name": "flex-carousel",
+ "frames": {
+  "code": "5430",
+  "best": 5,
+  "best_why": "A full row of photos is visible with the centre card sharp, neighbour cards bent by the lens, and a caption.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.0
+ },
+ "tagline": "Photos glide past in a row, bending as if behind rippling glass.",
+ "summary": "An endless horizontal strip of photo cards where the centre image is sharp and the ones either side stretch and warp like liquid glass. It drifts on its own and can be dragged, scrolled or stepped with keys.",
+ "title_fix": null,
+ "appearance": "A band of photographs runs across a black stage, the middle card at full size and clean while the next cards bow and stretch into curved slivers at the edges. A tiny title, place and counter sit under the centre image.",
+ "behaviour": "The strip slides sideways and settles on a card, the neighbours flexing and smearing with faint colour fringing as they pass. It also advances by itself, and dragging, scrolling, clicking a card or pressing the arrow keys moves it.",
+ "parts": [
+  "photo cards",
+  "bent edges",
+  "caption",
+  "counter"
+ ],
+ "demo_content": "Photos titled Alpine Dawn, Still Water, Good Boy, Quiet Room and Night Shift with place subtitles.",
+ "states": [
+  "hover",
+  "dragging",
+  "focus"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "glass",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photo carousel with curved edges",
+  "liquid glass image slider",
+  "infinite photo strip",
+  "images bending through glass",
+  "drag through gallery photos",
+  "distorted edge carousel",
+  "travel photo slideshow",
+  "warped cards moving sideways"
+ ],
+ "resembles": [],
+ "use_when": "A travel, fashion or portfolio gallery where photos should feel like a flowing film strip.",
+ "avoid_when": "It is a WebGL canvas with tiny captions, and it captures vertical wheel scrolling by default.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "image",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Pass items with image, alt, title and subtitle. Preset, intro, card height, gap, radius, fit, lens shape, bend, dispersion and autoplay interval are props.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "Each frame renders cards to a target, then runs a twelve-tap lens shader across the screen.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Arrow keys and Enter work with a visible focus ring; only a live caption names the current card."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "FlexCarouselItem[]",
+   "default": "DEFAULT_ITEMS",
+   "required": false
+  },
+  {
+   "name": "preset",
+   "type": "'liquid' | 'ribbon' | 'vortex' | 'arch'",
+   "default": "'liquid'",
+   "required": false
+  },
+  {
+   "name": "intro",
+   "type": "'rise' | 'bloom' | 'spin' | 'deal' | 'none'",
+   "default": "'rise'",
+   "required": false
+  },
+  {
+   "name": "cardHeight",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "fit",
+   "type": "'natural' | 'portrait' | 'square' | 'landscape'",
+   "default": "'natural'",
+   "required": false
+  },
+  {
+   "name": "squeeze",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "interval",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "captions",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "captureWheel",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The first frame is nearly empty, showing only a dim grey rectangle while images load.",
+  "Titles and the counter under the centre card are very small and faint."
+ ],
+ "polish": 4,
+ "polish_why": "The glass warp is distinctive and believable; faint captions and a blank first frame weaken it.",
+ "unsure": [],
+ "title": "Flex Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4bd3734d3ff75cd7",
+  "film_hash": "9c848b6b377f8bf2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

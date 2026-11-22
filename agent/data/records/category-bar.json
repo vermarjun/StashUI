@@ -1,0 +1,143 @@
+{
+ "name": "category-bar",
+ "frames": {
+  "code": "5204",
+  "best": 1,
+  "best_why": "Shows all three segmented bars with their markers and range labels cleanly at rest.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A stacked colour bar with a sliding marker that names the current score.",
+ "summary": "A single horizontal bar split into coloured ranges, with an optional marker and labels. It plots values like a credit score or storage usage against their bands.",
+ "title_fix": null,
+ "appearance": "Thin segmented bars in pink, amber, lime and green sit inside dark cards, with small Poor to Excellent labels beneath. A slim white-ringed tick marks the current value and pops a small tooltip on hover.",
+ "behaviour": "The marker glides to a new percentage when its value changes, and hovering it shows the exact figure in a small dark tooltip. Band colours are fixed per segment.",
+ "parts": [
+  "segmented bar",
+  "segment",
+  "marker",
+  "tooltip",
+  "range labels",
+  "legend"
+ ],
+ "demo_content": "Cards for Credit score 724, Storage used 74.2 GB and API latency 182 ms, with Poor to Excellent bands.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "colored segmented progress bar",
+  "credit score range bar",
+  "bar with marker and tooltip",
+  "stacked status bands chart",
+  "storage usage breakdown bar",
+  "threshold indicator bar",
+  "categorical range bar chart",
+  "single bar made of colored segments"
+ ],
+ "resembles": [],
+ "use_when": "A value needs context against labelled ranges rather than a plain progress bar.",
+ "avoid_when": "The bar is decorative for screen readers: it exposes no meter role or readable value text.",
+ "suits": [
+  "fintech",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "stat",
+  "chart"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Values, per-segment colours, an optional marker with tooltip and a labels toggle are props; heights and rounding are fixed classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few divs and one CSS position transition; no charting engine.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Exposes only an aria-label and aria-valuenow with no bar role, and the tooltip is hover-only with no keyboard path."
+ },
+ "props": [
+  {
+   "name": "values",
+   "type": "number[]",
+   "default": "[]",
+   "required": true
+  },
+  {
+   "name": "colors",
+   "type": "AvailableChartColorsKeys[]",
+   "default": "AvailableChartColors",
+   "required": false
+  },
+  {
+   "name": "marker",
+   "type": "{ value: number; tooltip?: string; showAnimation?: boolean }",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showLabels",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Bar has aria-valuenow but no role, so screen readers do not treat it as a meter."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp segmented bars with clear band labels and a neat marker tooltip.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "Category Bar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ab8ca12050459d9f",
+  "film_hash": "fa7b29bc67607ce4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

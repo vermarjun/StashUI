@@ -1,0 +1,72 @@
+{
+  "name": "auto-height",
+  "frames": {
+    "code": "3751",
+    "best": 4,
+    "best_why": "Card is fully expanded with all three paragraphs crisply readable at its tallest.",
+    "usable": [1, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Grows and shrinks its height smoothly as the content inside changes.",
+  "summary": "A bordered card holding a short release note. Clicking Show more swaps in a longer three-paragraph version while the card springs to the new height and the text crossfades.",
+  "title_fix": "Animated Height Container",
+  "appearance": "A dark rounded card with a thin border holding a paragraph of small grey text and a compact outlined Show more button below. Expanded, the same card grows taller to fit three paragraphs.",
+  "behaviour": "Clicking the button swaps the paragraph for a three-paragraph version; the card's height springs to fit while the old text blurs out and the new text blurs in. Clicking again returns to the short version.",
+  "parts": ["card", "paragraph text", "show more button", "height container"],
+  "demo_content": "A release note about version 4.2 adding offline mode, a faster editor and improved sharing.",
+  "states": ["expanded", "hover"],
+  "kind": "transition",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "container that animates its height",
+    "show more expands the card",
+    "smooth height transition on content change",
+    "expandable text block with show more",
+    "blur crossfade when text swaps",
+    "reveal more paragraphs with a button",
+    "animated disclosure height",
+    "resize wrapper for changing content"
+  ],
+  "resembles": [],
+  "use_when": "Text of unknown length must swap without the surrounding layout jumping or leaving a gap.",
+  "avoid_when": "It measures children on each dependency change, so very tall or frequently changing content can cause visible reflow.",
+  "suits": ["saas", "docs", "blog"],
+  "slot_hints": ["body-text", "feature-card", "list-item"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Children are the content; deps decide when to re-measure, and the animate and transition props override the spring. The Show more button and copy live in the demo.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One ResizeObserver and a single height spring; nothing runs between content changes.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": true,
+    "note": "It honours reduced motion by snapping the height, but the wrapper adds no roles or live announcement, so a content swap can go unnoticed."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "deps", "type": "React.DependencyList", "default": "[]", "required": false},
+    {"name": "animate", "type": "TargetAndTransition | LegacyAnimationControls", "default": null, "required": false},
+    {"name": "transition", "type": "Transition", "default": null, "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The button label swaps ahead of the height, so a tall card briefly sits behind Show more."
+  ],
+  "polish": 3,
+  "polish_why": "Clean, focused demo of a height spring; the button label briefly mismatches the expanded card.",
+  "unsure": ["kind", "title_fix"]
+}

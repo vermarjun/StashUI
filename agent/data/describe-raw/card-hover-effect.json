@@ -1,0 +1,71 @@
+{
+  "name": "card-hover-effect",
+  "frames": {
+    "code": "3692",
+    "best": 2,
+    "best_why": "Hover backing is clearly visible behind the Microsoft card while all six cards stay in view.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark card grid where a soft grey backing fades in behind the card you hover.",
+  "summary": "A three-by-two grid of near-black cards, each with a short title, a few lines of grey copy and a link. Pointing at a card slides a rounded grey backing in behind it.",
+  "title_fix": null,
+  "appearance": "A three-by-two grid of near-black rounded cards on a black stage, each holding a short bold title and a few lines of small grey text. Wide dark gaps separate the cards, which look flat until hovered.",
+  "behaviour": "Pointing at a card fades a soft slate-grey rounded block in behind it, leaving a wider ring around the card edge while the others stay flat. Moving away fades the backing out.",
+  "parts": ["card", "title", "description", "hover backdrop"],
+  "demo_content": "Six company cards: Stripe, Netflix, Google, Meta, Amazon and Microsoft, each with a one-line description.",
+  "states": ["hover"],
+  "kind": "feature-section",
+  "look": ["dark", "rounded", "minimal", "flat", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "grid of cards with glow on hover",
+    "company cards on dark background",
+    "card grid that lights up on hover",
+    "list of project links in cards",
+    "hover highlight behind card",
+    "dark feature board for websites",
+    "cards with title and short description",
+    "soft spotlight card grid"
+  ],
+  "resembles": [],
+  "use_when": "Linking out to partners, projects or services where each needs a title and a line of copy.",
+  "avoid_when": "You want a coloured glow: the hover adds only a flat grey backing block.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["feature-card", "body-text"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "border"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an items array of title, description and link; grid columns are set in classes and the hover backing colour is in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Six links sharing one opacity animation; nothing runs when not hovered.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The hover ring only appears for mouse users; there is no focus-visible style for keyboard focus."
+  },
+  "props": [
+    {"name": "items", "type": "array", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The hover treatment is a flat grey block, not the glowing border the catalogue claims.",
+    "No focus styling, so keyboard users get no matching highlight.",
+    "Cards have no visible affordance that they are links until hovered."
+  ],
+  "polish": 3,
+  "polish_why": "Clean spacing and a readable dark grid; the hover effect is just a plain grey block.",
+  "unsure": []
+}

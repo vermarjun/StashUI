@@ -1,0 +1,63 @@
+{
+  "name": "comp-266",
+  "frames": {
+    "code": "3187",
+    "best": 4,
+    "best_why": "All five faders are in view with the 1k knob pulled up and ringed, showing the tracks at different heights.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Five thin faders stand in a row, each setting one audio band.",
+  "summary": "A graphic equalizer: five vertical sliders spaced evenly under the heading Equalizer, each capped with a white pill handle and named by a frequency underneath.",
+  "title_fix": null,
+  "appearance": "The word Equalizer heads a row of five upright tracks. Each track has a white pill-shaped handle at a different height, with a bright white length beneath it, and a small grey frequency label sits under every track.",
+  "behaviour": "Each handle slides up or down its own track between minus five and five and carries a soft ring while held; a small value tip is set to appear during use. The other four faders stay put.",
+  "parts": ["heading", "fader track", "filled track", "fader knob", "frequency label"],
+  "demo_content": "Five bands labelled 60, 250, 1k, 4k and 16K, opening at raised, slight boost, flat and cut positions.",
+  "states": ["hover", "focus", "active"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "monochrome", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "five vertical sliders in a row",
+    "graphic equalizer for audio bands",
+    "adjust bass and treble levels",
+    "audio frequency faders",
+    "music player eq control",
+    "up and down bars for sound tuning",
+    "each slider sets one frequency band",
+    "sound mixer with upright knobs"
+  ],
+  "resembles": ["Winamp equalizer"],
+  "use_when": "A player or mixer needs a compact multi-band tone control with visible band names.",
+  "avoid_when": "Bands, their defaults and the minus five to five range are fixed in the source with no props.",
+  "suits": ["media"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Band labels, starting levels, the heading and the value range are all written in the source; adding a band means copying a block.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Five small vertical sliders; nothing animates unless a handle is moved.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Each fader has a frequency name and arrow keys work, but the heading uses a legend outside any fieldset so the group is loose."
+  },
+  "props": [],
+  "issues": ["No zero line or scale, so it is hard to tell a cut band from a boosted one.", "The heading is a legend element with no surrounding fieldset."],
+  "polish": 3,
+  "polish_why": "Even, quiet faders that read as an EQ, but with no scale marks for reference.",
+  "unsure": ["responsive"]
+}

@@ -1,0 +1,119 @@
+{
+ "name": "parallax-scroll",
+ "frames": {
+  "code": "4365",
+  "best": 6,
+  "best_why": "Frame 6 shows the most rows with the columns clearly out of step, the best reading of the parallax.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.9
+ },
+ "tagline": "Three columns of photos drift at different speeds as you scroll.",
+ "summary": "A scroll box holding three columns of photo tiles. As it scrolls, the outer columns rise while the middle one sinks, so the pictures slide past each other and the rows never stay level.",
+ "title_fix": null,
+ "appearance": "A three-column wall of rounded landscape photos on black, spaced with wide even gaps. Each column stacks warm, atmospheric shots: vintage cars before yellow garage doors, a backlit figure in golden light, a grey sea wall, a starry night and a patch of forest.",
+ "behaviour": "Scrolling the box moves the outer two columns upward and the middle one downward, each by a different amount, so photos cross and no row stays aligned. They settle at their offsets when scrolling stops.",
+ "parts": [
+  "photo grid",
+  "column",
+  "photo tile"
+ ],
+ "demo_content": "Nine Unsplash photos of vintage cars, a golden-hour figure, coastal structures, a night sky and a forest.",
+ "states": [],
+ "kind": "gallery-section",
+ "look": [
+  "colorful",
+  "rounded",
+  "dense",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "photo grid that shifts while scrolling",
+  "three columns of pictures at different speeds",
+  "image wall with depth on scroll",
+  "masonry gallery with staggered movement",
+  "portfolio photos sliding vertically",
+  "scrolling picture wall",
+  "photos drift apart as the page moves",
+  "pinterest style photo layout"
+ ],
+ "resembles": [],
+ "use_when": "A photo gallery should gain a sense of depth as visitors scroll past it.",
+ "avoid_when": "You need captions, keyboard scrolling, or tidy rows that stay aligned.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "media",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "images is a flat list of URLs split evenly into the three columns, and className restyles the scroll box. The forty-rem height, 200px travel and gaps are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Nine images whose vertical offsets a single scroll transform updates.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Every photo shares the alt text \"thumbnail\", and the parallax offsets ignore reduced-motion."
+ },
+ "props": [
+  {
+   "name": "images",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"h-[40rem] items-start overflow-y-auto w-full\", classNam",
+   "required": false
+  }
+ ],
+ "issues": [
+  "All nine photos use the same alt text, \"thumbnail\", so they carry no meaning for screen readers.",
+  "Uneven column speeds open large empty gaps at the top and bottom of the grid."
+ ],
+ "polish": 3,
+ "polish_why": "Clean spacing and good photos, but it is a plain grid whose only idea is the column offset.",
+ "unsure": [],
+ "title": "Parallax Scroll Grid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bb2239b61315bc14",
+  "film_hash": "ac2341d87845b0c5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

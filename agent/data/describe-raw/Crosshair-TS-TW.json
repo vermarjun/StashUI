@@ -1,0 +1,116 @@
+{
+  "name": "Crosshair-TS-TW",
+  "frames": {
+    "code": "5112",
+    "best": 3,
+    "best_why": "Frame 3 catches the glitch, with the horizontal guide rippling across the panel.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Fine white crosshair lines track the pointer across the page.",
+  "summary": "Two hairline white guides follow the mouse across a dark editorial panel, and they shudder with a noise glitch whenever the pointer touches a link.",
+  "title_fix": null,
+  "appearance": "A near-black panel with a small letterspaced kicker, a heavy white headline, a line of grey copy and two underlined links. A one-pixel white horizontal and vertical line intersect where the pointer is, spanning the panel.",
+  "behaviour": "The two guide lines trail the pointer with a slight lag and fade in once the mouse enters. Hovering either link shakes both lines with a turbulence filter for half a second, then lets them settle.",
+  "parts": [
+    "horizontal guide",
+    "vertical guide",
+    "kicker",
+    "headline",
+    "copy",
+    "links"
+  ],
+  "demo_content": "Kicker \"Field notes, vol. 04\", headline \"Aim small, miss small.\", two links.",
+  "states": [
+    "hover"
+  ],
+  "kind": "cursor-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "editorial",
+    "monochrome"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "two lines following the mouse",
+    "thin guide lines following the mouse pointer",
+    "custom pointer with thin lines",
+    "horizontal and vertical lines tracking cursor",
+    "glitchy hover effect on links",
+    "aiming reticle on a website",
+    "editorial page with cursor cross",
+    "noise jitter when hovering a link"
+  ],
+  "resembles": [],
+  "use_when": "An editorial or portfolio page wants a precise aiming reticle instead of a normal pointer.",
+  "avoid_when": "It needs a mouse to appear, and the page must hide the real cursor or the two will overlap.",
+  "suits": [
+    "portfolio",
+    "blog",
+    "media"
+  ],
+  "slot_hints": [
+    "decoration",
+    "page-background",
+    "body-text"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move",
+      "hover"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Line colour and the container to track are props; the glitch filter, the 0.15 follow lag and the line thickness are fixed in the source.",
+  "technique": [
+    "gsap",
+    "svg-filter"
+  ],
+  "weight": "light",
+  "weight_why": "Two one-pixel divs moved each frame, with a short SVG turbulence glitch on hover.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The guides only exist for a mouse; they vanish for keyboard users and there is no reduced-motion handling."
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string",
+      "default": "white",
+      "required": false
+    },
+    {
+      "name": "containerRef",
+      "type": "RefObject<HTMLElement>",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The crosshair does nothing for keyboard users and hides when the pointer leaves the container.",
+    "If the page does not hide the native cursor, both pointers show at once."
+  ],
+  "polish": 4,
+  "polish_why": "Sharp editorial composition and a restrained glitch; the guides can cross the headline awkwardly.",
+  "unsure": []
+}

@@ -1,0 +1,187 @@
+{
+ "name": "LaserFlow-TS-TW",
+ "frames": {
+  "code": "7337",
+  "best": 3,
+  "best_why": "Sharp full-height beam and a bright pool with no cursor sitting over the glow.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 3.6
+ },
+ "tagline": "A pink beam of light rises from a bright pool on black.",
+ "summary": "One thin shaft of pink light climbs from a soft horizontal pool at the bottom of a black stage, with faint streaks drifting along it. The beam leans a little as the pointer moves.",
+ "title_fix": null,
+ "appearance": "A near-black stage holds a single slender vertical shaft of hot pink light rising from a wide, soft elliptical pool near the bottom. The pool fades outward into darkness, with a faint haze around the base.",
+ "behaviour": "The shaft fades in on load and keeps a slow flicker while fine streaks drift down its length. Moving the pointer tilts the beam and haze slightly, then it eases back.",
+ "parts": [
+  "vertical beam",
+  "glow pool",
+  "haze",
+  "light streaks"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "neon",
+  "monochrome",
+  "minimal"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "pink laser beam on black background",
+  "light pillar rising from floor",
+  "neon spotlight cone background",
+  "conference stage light effect",
+  "vertical glow beam for hero section",
+  "dark scene with pink spotlight",
+  "animated searchlight backdrop",
+  "futuristic concert light column"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero, event page or album cover needs one dramatic shaft of light.",
+ "avoid_when": "Light themes or busy layouts: it needs black space to read and carries no content.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "social"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Beam colour, flow speed, wisp density, fog intensity, offsets and sizing are props. The shader body and its named constants need a source edit.",
+ "technique": [
+  "webgl-shader",
+  "three-js"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL fragment shader renders every frame with layered noise and fog.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Decorative canvas with no role or label; the motion never stops and ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#FF79C6'",
+   "required": false
+  },
+  {
+   "name": "wispDensity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "flowSpeed",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "fogIntensity",
+   "type": "number",
+   "default": "0.45",
+   "required": false
+  },
+  {
+   "name": "mouseTiltStrength",
+   "type": "number",
+   "default": "0.01",
+   "required": false
+  },
+  {
+   "name": "verticalSizing",
+   "type": "number",
+   "default": "2.0",
+   "required": false
+  },
+  {
+   "name": "horizontalSizing",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "mouseSmoothTime",
+   "type": "number",
+   "default": "0.0",
+   "required": false
+  },
+  {
+   "name": "fogScale",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "wispSpeed",
+   "type": "number",
+   "default": "15.0",
+   "required": false
+  },
+  {
+   "name": "decay",
+   "type": "number",
+   "default": "1.1",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "All six frames look nearly identical, so the drifts and tilt are hard to see."
+ ],
+ "polish": 4,
+ "polish_why": "Clean falloff and a believable glow; the clip shows almost no movement.",
+ "unsure": [
+  "shows_interaction"
+ ],
+ "title": "Laser Flow",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "351a37c2397dad03",
+  "film_hash": "103fffc959f98d34",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

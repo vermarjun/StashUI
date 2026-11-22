@@ -1,0 +1,110 @@
+{
+ "name": "comp-290",
+ "frames": {
+  "code": "8363",
+  "best": 6,
+  "best_why": "The card is shown largest, so the title, explanation, Learn more button and close cross are all clear.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 5.3
+ },
+ "tagline": "A small error card with a headline, an explanation and a Learn more button.",
+ "summary": "A rounded notification card for a failed action. A red alert circle sits beside a bold headline and grey explanation, with a light action button below and an X in the corner.",
+ "title_fix": null,
+ "appearance": "A bordered card with a soft shadow holds a red circled exclamation, a bold short sentence, two muted lines of explanation, and a small light-filled Learn more button. A grey close cross sits at the top right.",
+ "behaviour": "Hovering the Learn more button or the close cross shades them, but nothing else happens: the card has no dismiss or follow-up action wired up.",
+ "parts": [
+  "alert icon",
+  "title",
+  "body text",
+  "learn more button",
+  "close button"
+ ],
+ "demo_content": "Title \"We couldn't complete your request!\" with the line about an issue preventing the processing of the request.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "toast",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "shadowed"
+ ],
+ "tone": "minimal",
+ "resembles": [],
+ "use_when": "An error needs a short explanation plus a route to more detail without blocking the page.",
+ "avoid_when": "Nothing is wired: the close and action buttons are inert and the card cannot stack or reposition.",
+ "suits": [
+  "saas"
+ ],
+ "slot_hints": [
+  "toast"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The headline, explanation and button label are written into the file; width, padding and the red icon colour are fixed, and it takes no props.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A card with a couple of buttons and no animation beyond hover fades.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The close button is named and both controls take focus, but neither does anything and the card has no live-region role."
+ },
+ "props": [],
+ "issues": [
+  "The close cross has no handler, so the card can never be dismissed.",
+  "The Learn more button has no click handler and leads nowhere."
+ ],
+ "polish": 4,
+ "polish_why": "Calm, well-spaced card with a clear reading order; only the inert buttons let it down.",
+ "unsure": [],
+ "search_phrases": [
+  "card saying the request failed",
+  "error panel with a learn more button",
+  "red alert notification box",
+  "popup style message with a close x",
+  "something went wrong notice with details",
+  "toast card with title and explanation",
+  "notice that a task could not be completed",
+  "floating alert with a small action"
+ ],
+ "title": "Error Notification Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5c9ea8e24718c0fe",
+  "film_hash": "4df1c925faff0a4d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

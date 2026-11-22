@@ -1,0 +1,114 @@
+{
+  "name": "container-scroll-animation",
+  "frames": {
+    "code": "5484",
+    "best": 2,
+    "best_why": "Frame 2 catches the screen mid-tilt with the full headline above and the dashboard still readable.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dashboard screenshot leans back then flattens as the page scrolls.",
+  "summary": "A headline sits above a large framed product screen that starts tilted back in 3D. Scrolling straightens the screen to flat and grows it slightly while the headline drifts up, showing off the app.",
+  "title_fix": null,
+  "appearance": "A bold two-line white headline centred above a big dark screen in a thick grey rounded bezel. The screen shows a dashboard with a narrow sidebar, four small metric cards, a grey bar chart with one white bar, and a short list of deals; early on the screen leans back in perspective.",
+  "behaviour": "Scrolling straightens the screen from a 20-degree backward tilt to flat while it scales up a little, and the headline drifts upward. The heavy layered shadow under the screen deepens as it comes forward, holding at the flat state at the end of the section.",
+  "parts": [
+    "headline",
+    "screen frame",
+    "sidebar",
+    "metric cards",
+    "bar chart",
+    "deals list"
+  ],
+  "demo_content": "Headline Every number your team needs over a Northwind dashboard with Revenue $48,210 and deals like Acme Corp.",
+  "states": [],
+  "kind": "hero",
+  "look": [
+    "dark",
+    "3d",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "product screenshot that flattens on scroll",
+    "3d card that stands up as you scroll",
+    "dashboard hero with tilt animation",
+    "laptop screen straightening on scroll",
+    "scroll reveal for an app preview",
+    "headline with a big screenshot below",
+    "tilted card rotating flat on scroll",
+    "hero image that lifts into view"
+  ],
+  "resembles": [],
+  "use_when": "A SaaS landing hero should show off a product screen with a dramatic scroll-driven lift.",
+  "avoid_when": "The page must avoid tall scroll sections, or the product screen needs to be light.",
+  "suits": [
+    "saas",
+    "dashboard",
+    "fintech"
+  ],
+  "slot_hints": [
+    "hero",
+    "media",
+    "section-background"
+  ],
+  "traits": {
+    "trigger": [
+      "scroll"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "titleComponent sets the heading and children fill the framed screen. The sixty-rem section height, the tilt, the scale and the grey bezel colours are fixed in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "Two scroll transforms driving one framed card and its header.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The tilt has no reduced-motion fallback and only switches by viewport width; the heading and screen come from the demo."
+  },
+  "props": [
+    {
+      "name": "titleComponent",
+      "type": "string | React.ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": null,
+      "required": true
+    }
+  ],
+  "issues": [
+    "The dashboard is very dark on the black stage, so its panels and chart barely separate.",
+    "The grey bezel gives little contrast against the background until the screen is flat."
+  ],
+  "polish": 4,
+  "polish_why": "A smooth, confident scroll reveal of a clean dashboard; the dark-on-dark demo holds it back.",
+  "unsure": [
+    "kind"
+  ]
+}

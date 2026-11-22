@@ -1,0 +1,63 @@
+{
+  "name": "comp-118",
+  "frames": {
+    "code": "2911",
+    "best": 1,
+    "best_why": "Brightest, cleanest frame with no cursor over the icon, label or count.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Shows a star outline, the word Star and a grey tally inside a white pill.",
+  "summary": "A light rounded button that invites a star rating. It groups a star icon, the label Star and a running count into one compact control.",
+  "title_fix": null,
+  "appearance": "A pill-shaped light button on a dark stage. Inside, a thin outlined star, the bold word Star in near-black and a smaller grey count sit in one evenly spaced row.",
+  "behaviour": "The button stays still; only its surface reacts. Hovering shifts the light fill toward grey and pressing deepens it, then it settles back to off-white.",
+  "parts": ["button", "star icon", "label", "count"],
+  "demo_content": "",
+  "states": ["hover", "focus", "active"],
+  "kind": "button",
+  "look": ["light", "pill", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "button to star a repository",
+    "star with a number next to it",
+    "upvote button with count",
+    "github star button",
+    "like button showing total",
+    "favourite button with tally",
+    "white pill with star and number",
+    "one click save to favourites"
+  ],
+  "resembles": ["GitHub star button"],
+  "use_when": "A single tap should bookmark, favourite or upvote an item while showing how many others already did.",
+  "avoid_when": "It is a plain button with no pressed look or counting logic, so you must add that behaviour yourself.",
+  "suits": ["devtool", "saas"],
+  "slot_hints": ["secondary-cta"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label, count and icon are written in the file, so changing them means editing the source; button size and variant follow the shared Button defaults.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One button with an icon and two text spans; only a colour transition runs.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The star icon is hidden from screen readers and the count reads as plain text; no pressed state is announced."
+  },
+  "props": [],
+  "issues": ["The count 729 is fixed in the source, so the demo can never change it."],
+  "polish": 4,
+  "polish_why": "Even spacing and a clear split between label and muted count; otherwise flat and generic.",
+  "unsure": ["theme", "responsive"]
+}

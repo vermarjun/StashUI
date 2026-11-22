@@ -1,0 +1,183 @@
+{
+ "name": "spark-chart",
+ "frames": {
+  "code": "7901",
+  "best": 1,
+  "best_why": "Frame 1 shows all four watchlist rows with area, line and bar sparklines and price changes.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "A watchlist card where each stock has a tiny area, line or bar sparkline.",
+ "summary": "A compact watchlist where each entry pairs a ticker and name with a tiny sparkline — filled area, line or bars — and a live price with its percentage change, updating every moment.",
+ "title_fix": null,
+ "appearance": "A dark rounded card headed 'Watchlist' with a pulsing green Live dot. Four rows each show a ticker and company name, a small sparkline in the middle, and a price above a coloured percentage on the right; the charts are green area, pink line, blue bars and violet area.",
+ "behaviour": "Prices and percentages update continuously, and each sparkline redraws to the new series, sliding its oldest point off. Green marks a rise and pink a fall, while the Live dot pulses.",
+ "parts": [
+  "card header",
+  "live dot",
+  "ticker label",
+  "company name",
+  "sparkline",
+  "price",
+  "percent change"
+ ],
+ "demo_content": "Watchlist of NVDA Nvidia, AAPL Apple, MSFT Microsoft and AMZN Amazon with prices around $180-247.",
+ "states": [],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "minimal",
+  "colorful",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "stock watchlist with mini charts",
+  "tiny sparkline next to a price",
+  "kpi card trend line",
+  "small area chart in a table row",
+  "live stock ticker rows",
+  "mini bar chart for metrics",
+  "compact trend indicator list",
+  "finance dashboard sparklines"
+ ],
+ "resembles": [
+  "Robinhood watchlist"
+ ],
+ "use_when": "A dashboard row needs to show a value and its trend at a glance, without the space of a full chart.",
+ "avoid_when": "They have no axes or tooltips, so they show shape but not exact readings, suiting trends rather than analysis.",
+ "suits": [
+  "fintech",
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "stat",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass data, index key, category keys, colour names, Y-domain options, null handling and area fill style; bar gap and stack type are also props, while sizes are fixed classes.",
+ "technique": [
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Four small SVG sparklines; no chart animation, only cheap redraws on new data.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The sparklines are unlabelled SVGs with no role, title or data table, so a screen reader only gets the price text beside them."
+ },
+ "props": [
+  {
+   "name": "data",
+   "type": "Record<string, any>[]",
+   "default": "[]",
+   "required": true
+  },
+  {
+   "name": "index",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "categories",
+   "type": "string[]",
+   "default": "[]",
+   "required": true
+  },
+  {
+   "name": "colors",
+   "type": "AvailableChartColorsKeys[]",
+   "default": "AvailableChartColors",
+   "required": false
+  },
+  {
+   "name": "autoMinValue",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "minValue",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "maxValue",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "connectNulls",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "type",
+   "type": "'default' | 'stacked' | 'percent'",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "fill",
+   "type": "'gradient' | 'solid' | 'none'",
+   "default": "\"gradient\"",
+   "required": false
+  },
+  {
+   "name": "barCategoryGap",
+   "type": "string | number",
+   "default": "{barCategoryGap}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cx(\"h-12 w-28\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Clean, legible KPI rows with coherent colours; the sparklines are stock Tremor with no axis context.",
+ "unsure": [],
+ "title": "Spark Chart",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0832979980daed2a",
+  "film_hash": "538ca617552ca162",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

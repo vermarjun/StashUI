@@ -1,0 +1,146 @@
+{
+ "name": "security-checkpoint",
+ "frames": {
+  "code": "2006",
+  "best": 6,
+  "best_why": "Frame 6 shows the card fully settled with the blue and red traffic lines at full length.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.3
+ },
+ "tagline": "A verification card with blue and red lines streaming in from both sides.",
+ "summary": "A small rounded card explains that the browser is being checked while thin blue and red lines run in from the right and left toward its edges, as if traffic is being inspected before entry.",
+ "title_fix": null,
+ "appearance": "On a near-black stage a dark rounded card holds a blue vertical accent, a bold 'StashUI' with a grey 'Security Checkpoint' label, and three small dots at the top right. A grey message sits under a thin left rule, with faint blue and red lines running in from the right and left edges.",
+ "behaviour": "On mount the card fades and scales up while the thin lines grow from both sides toward it, blue from the right and red from the left, each ending in a small glow. The lines settle and the card then holds still.",
+ "parts": [
+  "card",
+  "accent bar",
+  "header text",
+  "status dots",
+  "message",
+  "traffic lines"
+ ],
+ "demo_content": "Header 'StashUI Security Checkpoint' above a note about verifying the browser before continuing.",
+ "states": [
+  "loading"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "browser verification card",
+  "checking your browser screen",
+  "cloudflare style security check",
+  "animated data lines into a card",
+  "bot check loading panel",
+  "session verification message",
+  "thin light streaks from both sides",
+  "please wait while we verify"
+ ],
+ "resembles": [
+  "Cloudflare browser check"
+ ],
+ "use_when": "An automated check runs before entry and you want a calm card with subtle motion instead of a bare spinner.",
+ "avoid_when": "It is a fixed 444 by 200 box with no real progress value, so a long wait gives no sense of how much is left.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "loading",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Title, subtitle and message are props, and the line list lets you choose how many blue and red lines appear; colours, sizes and timing are inline in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One card, a dozen thin divs and CSS transitions; no loop runs after the lines settle.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The card is plain text with no status role or live region, and the entrance and line animations ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Vercel\"",
+   "required": false
+  },
+  {
+   "name": "subtitle",
+   "type": "string",
+   "default": "\"Security Checkpoint\"",
+   "required": false
+  },
+  {
+   "name": "message",
+   "type": "string",
+   "default": "\"To ensure a smooth and safe experience, we're taking a few ",
+   "required": false
+  },
+  {
+   "name": "lines",
+   "type": "CheckpointLine[]",
+   "default": "CHECKPOINT_LINES",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "No check mark or success state ever appears; the card only shows the verifying message.",
+  "The message is small grey text on a dark card, so its contrast is low."
+ ],
+ "polish": 4,
+ "polish_why": "The streaming lines are a nice touch and the card is tidy; type is small and low contrast.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Security Checkpoint",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "da52c922ee562bce",
+  "film_hash": "c2cddda8ba12ee3d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

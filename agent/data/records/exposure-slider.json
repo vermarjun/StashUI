@@ -1,0 +1,164 @@
+{
+ "name": "exposure-slider",
+ "frames": {
+  "code": "5057",
+  "best": 3,
+  "best_why": "Ring shows a clear amber arc with the value 10 and the tick ruler visibly shifted.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.6
+ },
+ "tagline": "Tick ruler drives a ring readout that brightens a photo.",
+ "summary": "A camera-style exposure control: a horizontal ruler of fine ticks you drag to change exposure, with a small circular gauge and number above it. The demo photo brightens or darkens as the value moves.",
+ "title_fix": null,
+ "appearance": "Below a dawn mountain photo sits a small dark control: a thin circular ring with a number in the middle, above a horizontal ruler of evenly spaced hairline ticks that fade toward the edges. The centre tick glows amber; positive values brighten the photo and negative values dim it.",
+ "behaviour": "Dragging the ruler slides the ticks under a fixed centre mark; the ring fills an amber arc from the top and the number springs to the nearest step. Releasing snaps to the nearest tick, and the value also drives the demo photo's brightness.",
+ "parts": [
+  "tick ruler",
+  "center mark",
+  "progress ring",
+  "value number"
+ ],
+ "demo_content": "A dawn mountain photo above clouds, with an EV badge and values from -20 to 20.",
+ "states": [
+  "hover",
+  "active",
+  "dragging"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "technical",
+  "monochrome",
+  "rounded"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "camera exposure control slider",
+  "tick ruler slider",
+  "ios camera exposure dial",
+  "drag ruler to change brightness",
+  "photo brightness adjustment control",
+  "snap to notch slider",
+  "exposure compensation widget",
+  "fine tick scale with value readout"
+ ],
+ "resembles": [
+  "iOS Camera exposure control"
+ ],
+ "use_when": "A photo editor or camera UI needs a precise exposure dial with a ruler and a numeric readout.",
+ "avoid_when": "It is a horizontal drag-only control with no keyboard path, so a standard range input is more accessible.",
+ "suits": [
+  "portfolio"
+ ],
+ "slot_hints": [
+  "form-field",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Min, max, step, default value, accent colour, indicator visibility and an onChange callback are props; the ruler width and spring are constants.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A ruler of tick divs and one SVG ring driven by motion values.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": true,
+  "note": "The ruler is a pointer-only div with no slider role, value text or keyboard handling, though the spring is skipped under reduced motion."
+ },
+ "props": [
+  {
+   "name": "min",
+   "type": "number",
+   "default": "-20",
+   "required": false
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "step",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "showIndicator",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "accentColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The ruler has no numbers or labels, so it is unclear what values the ticks represent.",
+  "It is drag-only with no keyboard, slider role or screen-reader support.",
+  "The ring arc is very thin and faint against the dark card."
+ ],
+ "polish": 4,
+ "polish_why": "Tactile, precise-feeling control with a soft spring; the ruler is unlabelled and mouse-only.",
+ "unsure": [],
+ "title": "Exposure Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8253d7e1d5eda44f",
+  "film_hash": "c84aca9a866173db",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

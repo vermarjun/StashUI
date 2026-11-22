@@ -1,0 +1,127 @@
+{
+ "name": "bg-animated-gradient",
+ "frames": {
+  "code": "9903",
+  "best": 1,
+  "best_why": "The violet-to-magenta blend is at its most varied, with indigo and a warm orange patch showing.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A full-screen violet-to-pink gradient drifts and slowly changes hue.",
+ "summary": "A full-bleed animated gradient built from layered radial colour spots that smoothly cross-fade and drift, meant to sit behind page content.",
+ "title_fix": null,
+ "appearance": "The whole stage is a soft blurry blend of violet, indigo and magenta with hints of orange. There are no shapes or edges, only broad radial glows that fade into one another.",
+ "behaviour": "The colour spots drift and cross-fade on a linear loop that reverses at each end, so the whole field slides between violet, magenta and blue.",
+ "parts": [
+  "gradient field",
+  "violet glow",
+  "magenta glow",
+  "blue glow"
+ ],
+ "demo_content": "Centred white label reading Animated Gradient Background.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "gradient",
+  "colorful",
+  "airy",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "smooth moving gradient background",
+  "purple pink animated backdrop",
+  "colour shifting background for a hero",
+  "soft blurred gradient wall",
+  "mesh gradient that animates",
+  "full screen gradient behind text",
+  "calm colour transition background",
+  "vibrant gradient loop for a landing page"
+ ],
+ "resembles": [
+  "Stripe gradient mesh"
+ ],
+ "use_when": "A hero needs a calm, colourful backdrop that moves slowly enough to keep text readable.",
+ "avoid_when": "It loops forever and is purely decorative; the saturated purple fights dark or brand-coloured content.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "gradients takes colour stops with centre points and animationDuration sets the loop; anything else needs a new gradient array in the demo.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One div animating its background gradient; no canvas or extra nodes.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative with no content of its own; the infinite background animation has no reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "gradients",
+   "type": "GradientType[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "No reduced-motion handling for the endless gradient loop.",
+  "The saturated gradient can cut the contrast of white text placed on it."
+ ],
+ "polish": 3,
+ "polish_why": "Smooth, vivid blend with no banding; it is a familiar gradient backdrop with nothing more.",
+ "unsure": [],
+ "title": "Animated Gradient",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "760a27ef7214369d",
+  "film_hash": "575bf4ac825c6e01",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

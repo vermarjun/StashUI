@@ -1,0 +1,143 @@
+{
+ "name": "Lightning-TS-TW",
+ "frames": {
+  "code": "9456",
+  "best": 1,
+  "best_why": "The bolt is at its brightest with branching forks, the clearest read of the effect.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A blue-white lightning bolt cracks down the dark and flickers.",
+ "summary": "One thin electric-blue bolt runs from top to bottom of a black stage, kinking and branching as it goes. The shape keeps re-forming, brightening and thinning like a live strike.",
+ "title_fix": null,
+ "appearance": "A single jagged vertical line of cool blue-white light on a black field, thicker where it forks and hairline-thin elsewhere. A soft glow bleeds a few pixels around the core, with the rest of the frame empty.",
+ "behaviour": "The bolt writhes continuously, splitting into new forks and changing thickness, while its overall brightness pulses. The path stays roughly vertical and never leaves the frame.",
+ "parts": [
+  "bolt core",
+  "branches",
+  "glow halo"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "neon",
+  "glow",
+  "minimal",
+  "monochrome"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "jagged electric bolt graphic",
+  "electric arc effect",
+  "thunder strike background",
+  "blue energy glow backdrop",
+  "crackling energy line",
+  "storm electricity for a hero",
+  "procedural electric discharge",
+  "flickering spark column"
+ ],
+ "resembles": [],
+ "use_when": "A dark page wants a single dramatic electric accent behind sparse content.",
+ "avoid_when": "You need to fill a wide area: the bolt stays in a narrow vertical band.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Hue, horizontal offset, speed, intensity and scale are the only props. The fork logic and glow falloff are fixed in the shader.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen fragment shader with a ten-octave noise stack runs every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative and always flickering, with no reduced-motion check for users sensitive to flashes."
+ },
+ "props": [
+  {
+   "name": "hue",
+   "type": "number",
+   "default": "230",
+   "required": false
+  },
+  {
+   "name": "xOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "intensity",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The bolt is a narrow strip, so most of a wide stage stays empty black.",
+  "Edges of the bolt show stair-step aliasing."
+ ],
+ "polish": 3,
+ "polish_why": "A convincing electric shape, but thin, aliased and alone in a mostly empty frame.",
+ "unsure": [
+  "states",
+  "shows_interaction"
+ ],
+ "title": "Lightning",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "96a4616c5bb3dc1c",
+  "film_hash": "624fdae1b4ad4ec5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

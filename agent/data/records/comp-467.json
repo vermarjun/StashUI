@@ -1,0 +1,112 @@
+{
+ "name": "comp-467",
+ "frames": {
+  "code": "5246",
+  "best": 2,
+  "best_why": "Full table visible with one row lifted by a lighter hover background under the cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.7
+ },
+ "tagline": "Dark table rows pairing round profile photos with names, emails and balances.",
+ "summary": "A four-row account table whose first column holds a circular photo next to a name and handle, followed by email, location, status and a right-aligned balance.",
+ "title_fix": null,
+ "appearance": "On near-black, a five-column table with small grey uppercase headers runs edge to edge. Each name cell starts with a round 40px photo, then a bold name over a faint handle; the balance column sits right-aligned. A small grey caption sits under the table.",
+ "behaviour": "Almost still: as the pointer travels down the rows, whichever row it is over picks up a faint lighter background and the rest stay dark.",
+ "parts": [
+  "header row",
+  "avatar photo",
+  "name and handle",
+  "email cell",
+  "status cell",
+  "balance cell",
+  "caption"
+ ],
+ "demo_content": "Four people with emails, cities and balances, captioned \"Table with images\".",
+ "states": [
+  "hover"
+ ],
+ "kind": "data-table",
+ "look": [
+  "dark",
+  "flat",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "table with profile pictures in first column",
+  "user list with avatar and email",
+  "dark data table of team members",
+  "accounts table with status and balance",
+  "customer rows with round photo thumbnails",
+  "admin people directory table",
+  "table of names handles and locations",
+  "list showing who owes what balance"
+ ],
+ "resembles": [],
+ "use_when": "A user or team directory needs a photo beside each name inside an ordinary data table.",
+ "avoid_when": "The four rows and their remote avatar links are written in the file, so any real data means editing the source.",
+ "suits": [
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "none",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "People, columns and the caption live in an items array inside the file; changing them is a source edit. Row and header styling comes from the shared table primitives.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Four plain table rows and four remote images; no animation code runs.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Avatars carry the person's name as alt text and headers are real table header cells; there is nothing interactive to focus."
+ },
+ "props": [],
+ "issues": [
+  "Avatar photos are fetched from GitHub raw URLs, so they stay blank when offline.",
+  "The caption \"Table with images\" is filler text rather than real content."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy spacing and crisp avatars, but plain default table styling and a placeholder caption.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Table With Avatars",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f7393cc65751f215",
+  "film_hash": "b8a8e668d6de645a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,181 @@
+{
+ "name": "BlurText-TS-TW",
+ "frames": {
+  "code": "4514",
+  "best": 4,
+  "best_why": "Both lines sharp, evenly spaced and uncropped, with no cursor over the text.",
+  "usable": [
+   1,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "Words sharpen into focus one after another.",
+ "summary": "Two lines of type arrive out of a heavy blur, resolving word by word into crisp text with a short stagger. The reveal fires when the block scrolls into view.",
+ "title_fix": null,
+ "appearance": "A bold white headline sits above a smaller grey subtitle, both left aligned on a black stage. Type is tight and plain, and a tiny bordered Replay control rests in the lower right.",
+ "behaviour": "Each word fades up from a heavy blur with a short stagger, going from soft and faint to sharp. The smaller line follows with a quicker, opposite-direction drift and the whole thing restarts on replay.",
+ "parts": [
+  "headline",
+  "subheading",
+  "animated words"
+ ],
+ "demo_content": "Headline reads \"Design systems built to last\" over \"Composable. Accessible. Beautiful.\", with a Replay button.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "bold",
+  "editorial",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "text that fades in from blur",
+  "words sharpen as you scroll",
+  "blurry headline reveals on load",
+  "soft focus text animation",
+  "staggered word fade up effect",
+  "modern landing page headline reveal",
+  "hero text comes into focus",
+  "unblur text when scrolled into view"
+ ],
+ "resembles": [],
+ "use_when": "A hero headline should appear gently as the page loads or scrolls into view.",
+ "avoid_when": "Content that must be readable immediately: the first frame is blurred and dim.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Text, delay, step duration, word or letter mode, drift direction, easing and custom keyframes are props. Layout classes come through className.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of spans with filter and opacity keyframes that run once per view.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The copy stays real text for screen readers; the blur reveal has no reduced-motion path and starts invisible."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "animateBy",
+   "type": "\"words\" | \"letters\"",
+   "default": "'words'",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"top\" | \"bottom\"",
+   "default": "'top'",
+   "required": false
+  },
+  {
+   "name": "stepDuration",
+   "type": "number",
+   "default": "0.35",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "rootMargin",
+   "type": "string",
+   "default": "'0px'",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "Easing | Easing[]",
+   "default": "(t: number) => t",
+   "required": false
+  },
+  {
+   "name": "animationFrom",
+   "type": "Record<string, string | number>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "animationTo",
+   "type": "Array<Record<string, string | number>>",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onAnimationComplete",
+   "type": "() => void",
+   "default": "{index === elements.length - 1 ? onAnimationComplete : undef",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Some frames are almost blank because the text begins deeply blurred."
+ ],
+ "polish": 3,
+ "polish_why": "Crisp hierarchy and a smooth stagger; the stray Replay button adds demo clutter.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Blur Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "88138d3d673460fd",
+  "film_hash": "10b72c2432587bd2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

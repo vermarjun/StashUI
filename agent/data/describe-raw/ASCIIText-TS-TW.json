@@ -1,0 +1,70 @@
+{
+  "name": "ASCIIText-TS-TW",
+  "frames": {
+    "code": "6579",
+    "best": 2,
+    "best_why": "Full word on an even baseline with clean green and pink colour fringing.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Chunky pixel letters shimmer with red and green fringes.",
+  "summary": "A word is drawn as blocky pixel glyphs on a black field. It tilts in 3D toward the pointer, ripples in waves, and its tint slides through cream, green and purple as time passes.",
+  "title_fix": null,
+  "appearance": "The word sits centred in cream white on a black stage, built from small square pixel blocks with fine red and green fringes along each edge. Some frames show it leaning in perspective, as if viewed slightly from one side.",
+  "behaviour": "The word sways in perspective toward the pointer and ripples in soft waves. Its tint slides from cream through green and purple as time passes, easing when the pointer stops.",
+  "parts": ["pixel letters", "colour fringes", "dark stage"],
+  "demo_content": "The recorded demo spells the word \"stashui\".",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "retro", "colorful", "technical", "gradient"],
+  "tone": "technical",
+  "search_phrases": [
+    "pixelated text effect on black",
+    "glitchy chrome letters animation",
+    "retro computer font display",
+    "word that dissolves into characters",
+    "text made of tiny characters",
+    "3d wobbling letters for hero",
+    "chromatic aberration word effect",
+    "looping animated brand name"
+  ],
+  "resembles": [],
+  "use_when": "A bold single word on a dark landing page needs motion and a retro screen feel.",
+  "avoid_when": "Long copy or small sizes: the pixel glyphs and colour fringes make it hard to read.",
+  "suits": ["portfolio", "marketing", "devtool"],
+  "slot_hints": ["hero", "headline", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["text", "image"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Text, text colour, font sizes, plane height and waves are props. The character ramp, gradient and blend mode are fixed in the source.",
+  "technique": ["webgl-shader", "three-js", "canvas-2d"],
+  "weight": "heavy",
+  "weight_why": "It rebuilds the character texture and reads canvas pixels every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The word lives in a pre element, so assistive tech reads a stream of symbols; there is no reduced-motion handling."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "David!", "required": false},
+    {"name": "textColor", "type": "string", "default": "#fdf9f3", "required": false},
+    {"name": "textFontSize", "type": "number", "default": "200", "required": false},
+    {"name": "asciiFontSize", "type": "number", "default": "8", "required": false},
+    {"name": "planeBaseHeight", "type": "number", "default": "8", "required": false},
+    {"name": "enableWaves", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Readable pixel word with pleasing fringing; the wave wobble muddles letters at times.",
+  "unsure": ["theme"]
+}

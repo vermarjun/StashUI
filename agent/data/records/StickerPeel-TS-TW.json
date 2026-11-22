@@ -1,0 +1,190 @@
+{
+ "name": "StickerPeel-TS-TW",
+ "frames": {
+  "code": "6145",
+  "best": 2,
+  "best_why": "Frame 2 catches the sticker mid-peel with both the artwork and the curled flap visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.6
+ },
+ "tagline": "The top of a round sticker peels up and curls back like paper.",
+ "summary": "A black circular sticker with a white rim and a star mark sits on a dark stage; hovering lifts its top half into a curled white flap you can drag around.",
+ "title_fix": null,
+ "appearance": "A round black sticker with a thick white rim, a dotted inner ring, a four-point sparkle and the words SHIP IT in white. Peeling turns the upper half into a pale curled flap with a soft shadow.",
+ "behaviour": "Hovering peels the sticker back partway, showing a blank paper underside; pressing peels it further and dragging slides the whole sticker while it tilts, then it snaps flat.",
+ "parts": [
+  "sticker disc",
+  "sparkle mark",
+  "label",
+  "peeled flap",
+  "hint text"
+ ],
+ "demo_content": "Sticker text \"SHIP IT\" over \"FRIDAY CLUB\"; hint \"Hover to peel it back, drag to move it\".",
+ "states": [
+  "hover",
+  "active",
+  "dragging"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "monochrome",
+  "rounded",
+  "flat"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "sticker that peels on hover",
+  "corner curl paper effect",
+  "draggable sticker with a lift",
+  "badge peel animation",
+  "paper flap lifting off a circle",
+  "interactive sticker for a landing page",
+  "peeling decal effect",
+  "hover curl with shadow"
+ ],
+ "resembles": [],
+ "use_when": "A launch page wants a playful, draggable badge or sticker that rewards touch.",
+ "avoid_when": "It needs a square image with transparent edges, so ordinary photos peel badly, and width is set in pixels.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "hero",
+  "decoration",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "drag",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Image, rotation, peel amounts for hover and press, easing, width, shadow and lighting strength, start position, peel direction and className are props.",
+ "technique": [
+  "gsap",
+  "svg-filter"
+ ],
+ "weight": "light",
+ "weight_why": "A few image copies with SVG filters, a CSS clip-path peel and a GSAP Draggable.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The sticker is not focusable and its images have empty alt text, so keyboard and screen-reader users cannot peel or move it."
+ },
+ "props": [
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "rotate",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "peelBackHoverPct",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "peelBackActivePct",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "peelEasing",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "peelHoverEasing",
+   "type": "string",
+   "default": "'power2.out'",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "shadowIntensity",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "lightingIntensity",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "initialPosition",
+   "type": "\"center\" | \"random\" | { x: number; y: number }",
+   "default": "'center'",
+   "required": false
+  },
+  {
+   "name": "peelDirection",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The mid-peel frames show a large blank white flap with almost no sticker visible.",
+  "The component has no keyboard route or text alternative for the artwork."
+ ],
+ "polish": 4,
+ "polish_why": "The peel and its soft shadow feel physical; the blank paper flap looks empty at full peel.",
+ "unsure": [],
+ "title": "Sticker Peel Effect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4aad31513eb4bcdf",
+  "film_hash": "5b8a17586202b4bb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

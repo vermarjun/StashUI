@@ -1,0 +1,161 @@
+{
+ "name": "timezone-planner",
+ "frames": {
+  "code": "4432",
+  "best": 1,
+  "best_why": "Whole planner at rest: big centre time, striped wedge, orange now-hand and all five people rows.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Radial day clock with a ring per colleague and a draggable meeting wedge.",
+ "summary": "A 24-hour dial where each colleague gets a ring shaded for their working hours. Drag a wedge around the clock to choose a meeting and watch every person's local time and status change.",
+ "title_fix": null,
+ "appearance": "A dark card titled \"Find a time\" with a Find best time button. On the left, concentric green and grey rings make a day dial with hour marks, a large centre time, a striped meeting wedge and a thin orange now-hand. On the right, rows list cities, offsets and local ranges.",
+ "behaviour": "Dragging the wedge, or pressing elsewhere on the dial, shifts the meeting in fifteen-minute steps and can stretch it from its edges. Each row rolls to the new local range and flips between Working, Early, Late and Asleep while the footer counts who is inside working hours.",
+ "parts": [
+  "best time button",
+  "day dial",
+  "hour labels",
+  "meeting wedge",
+  "now hand",
+  "centre time",
+  "people list",
+  "duration stepper"
+ ],
+ "demo_content": "Five people in Paris, New York, San Francisco, Bengaluru and Tokyo, including Lucas Moreau and Aiko Tanaka.",
+ "states": [
+  "hover",
+  "focus",
+  "dragging",
+  "disabled"
+ ],
+ "kind": "calendar",
+ "look": [
+  "dark",
+  "rounded",
+  "technical",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "meeting planner across time zones",
+  "24 hour dial with working hours rings",
+  "find a time that suits everyone",
+  "drag a slice to pick a call time",
+  "team availability clock",
+  "concentric rings for each city",
+  "schedule across offices visually",
+  "world clock meeting picker"
+ ],
+ "resembles": [
+  "World Time Buddy"
+ ],
+ "use_when": "A distributed team needs a call slot that lands inside most people's working day.",
+ "avoid_when": "It is dense at small sizes: five rings, tiny hour labels and a side list all need width to stay readable.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "chart",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The people array, planned date, default start and duration, and a change callback are props; each person's own working hours sit inside their entry.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "moderate",
+ "weight_why": "Five rings of SVG slices with per-frame transforms while dragging and a spring glide afterwards.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Each row has hidden screen-reader text and the count is announced, but the dial asks for very precise pointer dragging."
+ },
+ "props": [
+  {
+   "name": "people",
+   "type": "PlannerPerson[]",
+   "default": "DEFAULT_PEOPLE",
+   "required": false
+  },
+  {
+   "name": "date",
+   "type": "Date",
+   "default": "today",
+   "required": false
+  },
+  {
+   "name": "defaultStart",
+   "type": "number",
+   "default": "16 * 60",
+   "required": false
+  },
+  {
+   "name": "defaultDuration",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(slot: PlannerSlot) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"inline-flex h-[1.25em] align-top tabular-nums leading-[1.25",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Working, off and night hours are told apart only by similar grey and green shades, which is hard to read.",
+  "The hour labels and five rings are dense at this card size, so the dial's detail is easy to miss."
+ ],
+ "polish": 4,
+ "polish_why": "Ambitious dial with live per-city status and a smooth drag; ring shading is too subtle.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "Timezone Planner",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e8df0c035685ea18",
+  "film_hash": "4512c6ac0b2768b8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

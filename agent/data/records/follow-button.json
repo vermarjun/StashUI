@@ -1,0 +1,177 @@
+{
+ "name": "follow-button",
+ "frames": {
+  "code": "6540",
+  "best": 1,
+  "best_why": "Both Follow and Following pills are visible at once, with no cursor covering the labels.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "A follow pill that morphs into a check and 'Following', then previews Unfollow.",
+ "summary": "A small social follow button that flips between a solid Follow pill and an outlined Following pill with a drawn check. Hovering the followed state previews a rose Unfollow before you click.",
+ "title_fix": null,
+ "appearance": "A rounded pill in a creator list. Unfollowed, it is near-black with a plus and 'Follow'; followed, it is white with a thin outline, a check and 'Following'; on hover the followed pill turns pale rose with 'Unfollow'.",
+ "behaviour": "Clicking springs the pill wider as the label rolls and the plus crossfades to a check. Hovering or keyboard-focusing a followed pill crossfades to a rose Unfollow preview, and clicking dips and morphs back.",
+ "parts": [
+  "follow pill",
+  "plus icon",
+  "check icon",
+  "label",
+  "creator row",
+  "avatar"
+ ],
+ "demo_content": "'Who to follow' list with Maya Lin, Daniel Okafor and Sofia Ramirez, plus handles and short bios.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "selected",
+  "disabled"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "pill",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "follow and unfollow toggle button",
+  "social follow pill with check",
+  "button that changes to following",
+  "creator follow control",
+  "hover shows unfollow",
+  "twitter style follow control",
+  "checkmark after following someone",
+  "compact follow action for a list"
+ ],
+ "resembles": [
+  "Twitter follow button"
+ ],
+ "use_when": "A creator, profile or people list needs one compact follow control with a clear state.",
+ "avoid_when": "The action needs a confirmation step; this toggles immediately on one click or tap.",
+ "suits": [
+  "social",
+  "saas"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "fill",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Set following, defaultFollowing, the three labels, size, disabled and change handler; colours and spring constants live in the source.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "One button with short spring, fade and stroke animations; idle when untouched.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Strong support: a real button, aria-pressed, a focus-visible ring and a reduced-motion path."
+ },
+ "props": [
+  {
+   "name": "following",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultFollowing",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onFollowingChange",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "followLabel",
+   "type": "string",
+   "default": "\"Follow\"",
+   "required": false
+  },
+  {
+   "name": "followingLabel",
+   "type": "string",
+   "default": "\"Following\"",
+   "required": false
+  },
+  {
+   "name": "unfollowLabel",
+   "type": "string",
+   "default": "\"Unfollow\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "string",
+   "default": "\"md\"",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "On a followed pill the Unfollow action appears only on hover or keyboard focus, which can surprise users."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp width spring and a drawn check; state changes read clearly at a small size.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Follow Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "db458116a1e82fef",
+  "film_hash": "170f36ebc89c783b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

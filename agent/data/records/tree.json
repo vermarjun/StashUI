@@ -1,0 +1,151 @@
+{
+ "name": "tree",
+ "frames": {
+  "code": "9199",
+  "best": 4,
+  "best_why": "Shows both folder levels, an expanded public folder and a selected file, with no cursor over the tree.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.7
+ },
+ "tagline": "Folders open and files highlight inside a narrow project sidebar.",
+ "summary": "A file tree in a small bordered card, with chevrons on folders and file icons on the leaves. Rows highlight on selection, and folders expand in place to reveal their contents.",
+ "title_fix": null,
+ "appearance": "A compact card on black holds a vertical list of folders and files, each a single line with a small grey icon, one-step indentation per level and a chevron on folders. The selected row is a grey rounded bar and expanded folders push their children below them.",
+ "behaviour": "Clicking a row selects it with a grey fill; clicking a folder's chevron flips the arrow and opens or closes its children, shifting the rows underneath. The clip opens public, moves the selection between files and collapses components again.",
+ "parts": [
+  "tree panel",
+  "folder row",
+  "file row",
+  "chevron",
+  "folder icon",
+  "file icon",
+  "selected row"
+ ],
+ "demo_content": "A small project tree with src, components, lib, public, Button.tsx, Card.tsx, logo.svg and package.json.",
+ "states": [
+  "selected",
+  "expanded",
+  "hover",
+  "focus"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "dense"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "folder structure you can expand",
+  "project explorer sidebar",
+  "nested folders and files list",
+  "click a folder to open it",
+  "code editor file browser",
+  "hierarchy of directories with icons",
+  "collapsible folder list",
+  "highlight a file in a sidebar"
+ ],
+ "resembles": [
+  "VS Code file explorer"
+ ],
+ "use_when": "You need to browse a shallow hierarchy of folders and files with selection and expand.",
+ "avoid_when": "It is a narrow column, and very deep nesting pushes indented rows past the right edge.",
+ "suits": [
+  "devtool",
+  "docs",
+  "saas"
+ ],
+ "slot_hints": [
+  "sidebar",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The tree takes an indent number and a tree instance from the headless library, while each row is an item wrapping a label; icons, names and selection styling are yours.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few dozen rows with colour transitions; state handling is in a small headless library.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Rows are real buttons with aria-expanded and arrow key hotkeys; selection is also exposed, so the main gap is the missing reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "tree",
+   "type": "TreeInstance",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "item",
+   "type": "ItemInstance",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "indent",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"flex flex-col\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Selected and hovered rows share the same accent fill, so the current file cannot be told apart from a hover."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy aligned rows and clear icons, but the flat grey selection is ordinary.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "File Tree",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "331a815f263246a2",
+  "film_hash": "5138bcd1fb4498ed",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

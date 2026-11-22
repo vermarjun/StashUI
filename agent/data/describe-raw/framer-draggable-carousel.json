@@ -1,0 +1,66 @@
+{
+  "name": "framer-draggable-carousel",
+  "frames": {
+    "code": "2674",
+    "best": 3,
+    "best_why": "A full portrait slide with both round arrows and the stretched active dot clearly visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pull the photo sideways and it snaps to the next one.",
+  "title_fix": null,
+  "summary": "A full-width photo slider that moves when you grab and drag it, then springs onto the nearest image. Round arrows and a row of dots offer the same navigation without dragging.",
+  "appearance": "One large photo at a time, about 400px tall, with softly rounded corners against a black page. A translucent white circle with a chevron floats at each side, and small white dots sit centred near the bottom, the current one stretched into a short bar.",
+  "behaviour": "Dragging the photo back gives a little elastic resistance; on release the strip springs to the closest slide, or skips ahead when the flick is fast. Arrows and dots jump straight to a slide, and the arrow at either end fades to a disabled state.",
+  "parts": ["photo", "previous arrow", "next arrow", "dot row", "active dot"],
+  "demo_content": "Twelve Unsplash photos: a bird over pale sky, cropped portraits of a woman, and blurred red-and-blue figures.",
+  "states": ["hover", "active", "disabled", "dragging"],
+  "kind": "carousel",
+  "look": ["rounded", "colorful", "minimal", "editorial"],
+  "tone": "minimal",
+  "search_phrases": [
+    "drag to swipe photo gallery",
+    "full width image slider with arrows",
+    "photo carousel with dot indicators",
+    "grab and pull pictures sideways",
+    "snap back image scroller",
+    "portfolio slideshow with round arrow buttons",
+    "one picture at a time banner slider",
+    "elastic drag carousel for photos"
+  ],
+  "resembles": [],
+  "use_when": "A wide image showcase should feel physical, with pulling as natural as clicking the arrows.",
+  "avoid_when": "Slides are locked to 400px tall, and twelve image URLs sit hardcoded in the component file.",
+  "suits": ["portfolio", "marketing", "media"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "pronounced",
+    "affects": ["image", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Photos and titles are the items array in the file; spring stiffness, drag threshold and the 400px height need source edits.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A strip of images moved by one transform, with a spring only after a drag.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Arrows and dots are real buttons but have no accessible names, and pictures are labelled with odd made-up titles."
+  },
+  "props": [],
+  "issues": [
+    "Dot buttons carry no label, so a screen reader cannot tell them apart.",
+    "Every slide is cropped to the same 400px height, cutting tall portraits."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp full-bleed photos and a convincing spring; unlabelled dots and odd titles hold it back.",
+  "unsure": ["a11y.focus_visible", "traits.theme"]
+}

@@ -1,0 +1,126 @@
+{
+ "name": "file-upload",
+ "frames": {
+  "code": "1549",
+  "best": 4,
+  "best_why": "File row is fully shown with name, size, type and modified date under the heading.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.7
+ },
+ "tagline": "A dark dropzone whose pale tile shifts aside to show your uploaded file.",
+ "summary": "A rounded upload panel with a faint grid, a heading and a small tile with an upload arrow. Hovering nudges the tile and draws a dashed outline, and a chosen file becomes a details row.",
+ "title_fix": null,
+ "appearance": "A dark rounded upload panel with a faint square grid behind the content, a white 'Upload file' heading and a grey instruction line. Below sits a small pale square with an upload arrow; once a file is added it becomes a wide dark row.",
+ "behaviour": "Hovering the pale square nudges it up and right while a dashed cyan outline appears. Choosing a file swaps the square for a full-width row showing the filename, size, type and modified date.",
+ "parts": [
+  "upload panel",
+  "grid background",
+  "heading",
+  "instruction",
+  "upload tile",
+  "upload icon",
+  "file row",
+  "file details"
+ ],
+ "demo_content": "Heading 'Upload file', a drag-or-click instruction, and a chosen cover-1.png of 0.84 MB.",
+ "states": [
+  "hover",
+  "dragging",
+  "empty"
+ ],
+ "kind": "file-upload",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "drag and drop attachment box",
+  "upload area with dashed drop outline",
+  "file picker with name and size list",
+  "attach a document by dropping it",
+  "dropzone with grid background",
+  "click or drag to add a file",
+  "single attachment slot for a form",
+  "uploader that shows file details"
+ ],
+ "resembles": [],
+ "use_when": "A form needs a forgiving single-file drop target that also works by click.",
+ "avoid_when": "It accepts one file at a time, and the list is local only, with no progress or remove control.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "docs"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "drag"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Only an onChange callback is exposed. All copy, the grid, the hover nudge and the file-row layout are written into the file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A dropzone, one animated tile and a small static grid of divs.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The hidden input has no label and the dropzone has no visible focus ring; a chosen file is not announced."
+ },
+ "props": [
+  {
+   "name": "onChange",
+   "type": "(files: File[]) => void",
+   "default": "{(e) => handleFileChange(Array.from(e.target.files || []))}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The file row has no remove, progress or error state once a file is chosen."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy dropzone and clear file row; the uploaded state has no remove or progress feedback.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "File Upload",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "04c24106950be495",
+  "film_hash": "5daa9382b6b397a9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

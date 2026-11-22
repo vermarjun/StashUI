@@ -1,0 +1,121 @@
+{
+  "name": "evervault-card",
+  "frames": {
+    "code": "6098",
+    "best": 3,
+    "best_why": "Frame 3 shows a wide blue-teal wash of scrambled characters all around the badge, the clearest full reveal.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A glass disc of scrambling code characters blooms out under the cursor.",
+  "summary": "A circular badge with a single word sits on black; moving the pointer over it unveils a green-to-blue radial glow and a dense scramble of tiny characters that follows the cursor.",
+  "title_fix": null,
+  "appearance": "A thin bordered card with small plus marks at its corners holds a black field and a dark round disc carrying the word hover in white. Around the disc a soft green-to-blue wash and columns of tiny monospaced characters spread outward; below sit two grey caption lines and a small outlined pill.",
+  "behaviour": "At rest only the black disc and its word are visible. Moving the pointer exposes a 250px radial spotlight of green-to-blue and randomised characters around the disc, following the cursor and reshuffling the text on every move; leaving fades it back to black.",
+  "parts": [
+    "card border",
+    "corner marks",
+    "badge",
+    "word",
+    "gradient wash",
+    "character grid",
+    "caption",
+    "pill"
+  ],
+  "demo_content": "Badge word \"hover\" with the caption \"Hover over this card to reveal an awesome effect\" and a Watch me hover pill.",
+  "states": [
+    "hover"
+  ],
+  "kind": "text-effect",
+  "look": [
+    "dark",
+    "gradient",
+    "glow",
+    "technical"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "circular badge with scrambling code",
+    "hover reveals matrix of random letters",
+    "text that scrambles under the cursor",
+    "green blue glow behind a round badge",
+    "code rain spotlight on hover",
+    "decoder text effect card",
+    "badge with cryptic characters around it",
+    "encrypted text reveal on mouse"
+  ],
+  "resembles": [],
+  "use_when": "A small hero badge or status disc needs a showy, techy hover reveal.",
+  "avoid_when": "The cue must work on touch, or the screen has to stay calm and readable.",
+  "suits": [
+    "fintech",
+    "saas",
+    "devtool"
+  ],
+  "slot_hints": [
+    "badge",
+    "feature-card",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "pointer-move"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "text sets the word inside the disc and className styles the wrapper. The 1500-character noise, the green-blue palette and the 250px spotlight radius are fixed in the source.",
+  "technique": [
+    "motion-library",
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A few layered divs plus 1500 characters of text regenerated on each pointer move.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The reveal is pointer-only with no keyboard route, and the character layer regenerates on every move with no reduced-motion check."
+  },
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The reveal is pointer-only, so touch and keyboard users never see the effect.",
+    "The caption and pill come from the demo, so the component alone is only the disc and word."
+  ],
+  "polish": 4,
+  "polish_why": "Striking character spotlight on a clean glass badge; pointer-only reveal keeps it short of five.",
+  "unsure": [
+    "kind"
+  ]
+}

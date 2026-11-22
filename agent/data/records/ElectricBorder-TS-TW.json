@@ -1,0 +1,155 @@
+{
+ "name": "ElectricBorder-TS-TW",
+ "frames": {
+  "code": "3027",
+  "best": 4,
+  "best_why": "The card sits centred with the full jagged outline visible on both sides.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.8
+ },
+ "tagline": "A turquoise border crackles with jagged electric arcs.",
+ "summary": "A content card outlined by a glowing turquoise frame, with a second loose ring of lightning-like lines that shifts and flickers around it.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holding a small pill label, a bold white heading and grey body text. Two turquoise outlines wrap it: a smooth blurred glow hugging the edge, and a ragged ring of thin lines that wanders away from the card.",
+ "behaviour": "The ragged ring keeps redrawing, its peaks surging and drifting around the edge like static electricity at a pace set by speed, while the card and its smooth glow stay still.",
+ "parts": [
+  "card",
+  "label badge",
+  "heading",
+  "body text",
+  "glow border",
+  "jagged outline"
+ ],
+ "demo_content": "Badge \"Featured\" above the heading \"Electric Border\" and a short paragraph about the outline.",
+ "states": [],
+ "kind": "border-effect",
+ "look": [
+  "dark",
+  "glow",
+  "neon",
+  "rounded"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "crackling electric border around a card",
+  "lightning outline animation",
+  "glowing neon frame for a panel",
+  "noisy arc border effect",
+  "animated energy ring around content",
+  "flickering teal outline",
+  "static electricity frame",
+  "jagged glowing box border"
+ ],
+ "resembles": [],
+ "use_when": "A featured card or hero panel needs to feel live and high-energy without a video.",
+ "avoid_when": "Its outline spills far outside the card and the loop never rests, so it fights tight layouts and busy pages.",
+ "suits": [
+  "saas",
+  "devtool",
+  "ai-chat"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Colour, animation speed, noise amount and corner radius are props, with className and style for the wrapper. The glow layers and noise sampling are fixed in the source.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A ten-octave noise canvas redraws every frame and several blurred layers sit behind it.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Pure decoration with nothing to operate, but the endless flashing outline ignores reduced-motion preferences."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "chaos",
+   "type": "number",
+   "default": "0.12",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "24",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{`relative overflow-visible isolate ${className ?? ''}`}",
+   "required": false
+  },
+  {
+   "name": "style",
+   "type": "CSSProperties",
+   "default": "{{ '--electric-border-color': color, borderRadius, ...style ",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The jagged outline spills well outside the card and can overlap nearby content.",
+  "The crackle never settles, so several of these on one page would compete for attention."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive glow with a believable crackle; the wandering outline is a little untidy at the corners.",
+ "unsure": [],
+ "title": "Electric Border",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9f4200c06fb9bac4",
+  "film_hash": "1b11b67751b4e51a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

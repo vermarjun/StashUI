@@ -1,0 +1,139 @@
+{
+ "name": "caustics-background",
+ "frames": {
+  "code": "5505",
+  "best": 1,
+  "best_why": "Shows the headline, copy and buttons over a full, evenly lit caustic web with no cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.0
+ },
+ "tagline": "Headline floating over a rippling pool of light that stirs at the cursor.",
+ "summary": "A full-width hero backdrop painting moving pool-floor caustics, with a headline and buttons above. Moving the cursor or clicking sends ripples through the light.",
+ "title_fix": null,
+ "appearance": "A deep teal field is covered by a bright, animated web of caustic lines. Centred white headline text, a small paragraph and two pill links sit above the water, softly shadowed.",
+ "behaviour": "The caustic web drifts continuously, and the cursor leaves wakes of small rings while a click drops a larger ripple that bends the light. The headline's shadow sways with the same water.",
+ "parts": [
+  "water background",
+  "caustic web",
+  "headline",
+  "paragraph",
+  "primary link",
+  "secondary link",
+  "ripples"
+ ],
+ "demo_content": "Headline Swim before work, copy about 40 city pools, a Book a lane button and Find a pool link.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "organic",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "animated water light ripples",
+  "pool light ripples under text",
+  "hero with moving water texture",
+  "interactive ripple background",
+  "aquarium light web effect",
+  "swimming pool floor light",
+  "shader water background",
+  "click to make ripples"
+ ],
+ "resembles": [],
+ "use_when": "A full-screen hero wants an atmospheric, interactive water surface behind its message.",
+ "avoid_when": "It runs a WebGL shader every frame, and low-power devices pay for the continuous motion.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Set the headline via title, pass custom content as children and toggle pointer interaction; the shader colours and water look need source edits.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen WebGL fragment shader redraws every frame while visible.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The canvas is aria-hidden and reduced-motion freezes the water; ripples are pointer-only."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Swim before work.\"",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Small paragraph is faint over the bright caustic lines and hard to read."
+ ],
+ "polish": 5,
+ "polish_why": "Striking, well-crafted water shader with a readable headline and a real interaction.",
+ "unsure": [
+  "kind",
+  "content_from"
+ ],
+ "title": "Caustics Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c505333454585918",
+  "film_hash": "40edc969876f650e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

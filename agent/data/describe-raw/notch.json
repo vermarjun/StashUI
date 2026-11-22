@@ -1,0 +1,78 @@
+{
+  "name": "notch",
+  "frames": {
+    "code": "7838",
+    "best": 2,
+    "best_why": "The Theme panel is fully open with Dark highlighted in blue, while the bar underneath still shows every value.",
+    "usable": [1, 2, 3, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A small floating pill holds theme, text and language pickers that pop open.",
+  "summary": "A capsule pinned near the screen edge with grouped settings; each group opens into a short list of choices and the bar shows the current value for every group.",
+  "title_fix": null,
+  "appearance": "A dark rounded capsule floats low on a near-black article page, split by dotted dividers into three items, each with a small icon plus a label and current value. Opening one raises a narrow panel of rounded option rows.",
+  "behaviour": "Tapping a group expands the pill upward into a list with a spring and blur, the active row filled indigo with a dot. Choosing closes it and updates the bar; clicking outside or pressing Escape dismisses it.",
+  "parts": ["floating pill", "group trigger", "dotted divider", "icon", "selected value", "option panel", "option row"],
+  "demo_content": "An article titled 'Designing calm interfaces for people who read on the train' with Theme, Text and Language settings.",
+  "states": ["hover", "open", "selected"],
+  "kind": "dock",
+  "look": ["dark", "glass", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "floating settings bar at the bottom",
+    "dynamic island style control",
+    "quick preferences pill on screen",
+    "theme and language switcher",
+    "small menu that drops from a pill",
+    "always visible settings shortcut",
+    "capsule toolbar with grouped options",
+    "reader settings for font size and theme"
+  ],
+  "resembles": ["iOS Dynamic Island"],
+  "use_when": "A reading app or dashboard needs a few global settings always reachable without a full menu.",
+  "avoid_when": "It pins over page content, so on small screens it can cover text unless you leave room at the edge.",
+  "suits": ["blog", "saas", "mobile-app"],
+  "slot_hints": ["toast", "nav"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Feed an items array of groups and options, and set position, align, offset, accentColor, showSelectedValue, showDividers and closeOnSelect; styling is in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A small fixed bar with one layout spring and short option animations.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Triggers always report aria-expanded false even when open, and there is no focus ring or arrow-key handling."
+  },
+  "props": [
+    {"name": "items", "type": "NotchItem[]", "default": null, "required": true},
+    {"name": "position", "type": "\"top\" | \"bottom\"", "default": "bottom", "required": false},
+    {"name": "align", "type": "\"start\" | \"center\" | \"end\"", "default": "center", "required": false},
+    {"name": "offset", "type": "number", "default": "16", "required": false},
+    {"name": "accentColor", "type": "string", "default": "var(--color-blue-500, #3b82f6)", "required": false},
+    {"name": "showSelectedValue", "type": "boolean", "default": "true", "required": false},
+    {"name": "showDividers", "type": "boolean", "default": "true", "required": false},
+    {"name": "closeOnSelect", "type": "boolean", "default": "true", "required": false},
+    {"name": "onItemChange", "type": "function", "default": null, "required": false},
+    {"name": "reveal", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "panelClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The trigger hardcodes aria-expanded to false, so screen readers never hear that a panel opened."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy glass capsule with a confident spring; the blur transition looks rough mid-flight.",
+  "unsure": []
+}

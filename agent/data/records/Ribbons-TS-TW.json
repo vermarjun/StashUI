@@ -1,0 +1,177 @@
+{
+ "name": "Ribbons-TS-TW",
+ "frames": {
+  "code": "6579",
+  "best": 5,
+  "best_why": "Frame 5 shows the most ribbon, with yellow, green and violet streaks all in view.",
+  "usable": [
+   2,
+   5
+  ],
+  "render": "partial",
+  "render_note": "The ribbons shrink to a few short slivers near the top edge; most frames are empty black.",
+  "shows_interaction": "partly",
+  "best_time": 7.3
+ },
+ "tagline": "Coloured ribbons stream after the pointer like kite tails.",
+ "summary": "A bundle of thin orange, green, yellow and violet ribbons chases the mouse with springy physics, trailing and curling behind it across a black panel.",
+ "title_fix": null,
+ "appearance": "A black panel with faint letterspaced \"MOVE YOUR CURSOR\" in the middle. Near the pointer sit short, vivid orange, green, yellow and violet ribbons, thick in the middle and tapering at the ends.",
+ "behaviour": "The ribbons spring toward the pointer with friction, and the trailing points lag further behind, so fast moves stretch them into long curved tails. When the pointer stops they gather back into short bands.",
+ "parts": [
+  "ribbon",
+  "ribbon tail",
+  "hint text"
+ ],
+ "demo_content": "Faint letterspaced hint \"MOVE YOUR CURSOR\".",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "colorful",
+  "minimal",
+  "organic"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "coloured streamers following the mouse",
+  "springy cursor trail with tails",
+  "rainbow streamers on pointer move",
+  "physics based ribbon effect",
+  "flowing lines behind the cursor",
+  "kite tail mouse effect",
+  "silk streamers trailing the pointer",
+  "playful line trail for a dark page"
+ ],
+ "resembles": [],
+ "use_when": "A playful brand page wants a colourful, springy pointer trail with visible physics.",
+ "avoid_when": "It only draws near the pointer, so a still page shows almost nothing and touch control is coarse.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "social"
+ ],
+ "slot_hints": [
+  "decoration",
+  "page-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Colours, spring, friction, thickness, offset, max age, point count, speed, fade, shader wobble, amplitude and background colour are props. There is no content.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Four polylines of fifty points are rebuilt and redrawn every animation frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative and pointer-driven; keyboard and reduced-motion users get the same empty black panel."
+ },
+ "props": [
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#ff9346', '#7cff67', '#ffee51', '#5227FF']",
+   "required": false
+  },
+  {
+   "name": "baseSpring",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "baseFriction",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "baseThickness",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "offsetFactor",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "maxAge",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "pointCount",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "speedMultiplier",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "enableFade",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enableShaderEffect",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "effectAmplitude",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "number[]",
+   "default": "[0, 0, 0, 0]",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The recorded frames barely show the ribbons: only a few slivers at the top edge.",
+  "The effect depends on pointer movement, so a still page is almost entirely black."
+ ],
+ "polish": 2,
+ "polish_why": "The few visible ribbon slivers are vivid, but the demo is almost entirely empty black.",
+ "unsure": [],
+ "title": "Physics Ribbon Trail",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1c075b0e82544a93",
+  "film_hash": "d2a0c6c13723b882",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

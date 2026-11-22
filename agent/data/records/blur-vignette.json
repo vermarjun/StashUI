@@ -1,0 +1,149 @@
+{
+ "name": "blur-vignette",
+ "frames": {
+  "code": "4236",
+  "best": 1,
+  "best_why": "Frame 1 shows both vignette panels cleanly, with the photo and text edges fully visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 0.7
+ },
+ "tagline": "Edges melt into a soft blur while the centre of a panel stays sharp.",
+ "summary": "A square container whose outer edges blur and fade into the background, leaving the middle crisp. The demo pairs a dark text panel with a mountain photo to show the effect on copy and imagery.",
+ "title_fix": null,
+ "appearance": "Two rounded squares side by side on a near-black page: one a dark grey panel of small white text, the other a photo of snowy mountains above a sea of cloud at dusk. On both, a band around the border softens and dissolves into the page while the centre stays clear.",
+ "behaviour": "Static: the blur mask is painted once and neither animates nor responds to the pointer. The blur amount, inset and fade length are fixed by props rather than interaction.",
+ "parts": [
+  "rounded container",
+  "blurred edge band",
+  "text panel",
+  "headline",
+  "body copy",
+  "photo"
+ ],
+ "demo_content": "A dark text panel headed Blur Vignette beside a photo of snowy mountains above clouds.",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "blurred edges around a photo",
+  "progressive blur mask around edges",
+  "soft fade border on a card",
+  "frosted edge effect for images",
+  "photo with blurry corners",
+  "edge dissolve container",
+  "blurred frame around text panel",
+  "soft focus border keeping centre sharp"
+ ],
+ "resembles": [],
+ "use_when": "You want to soften where a photo or card meets the page without a hard border or heavy shadow.",
+ "avoid_when": "Backdrop blur costs GPU, and the fade hides edge content such as captions or buttons.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "border",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Radius, inset, transition length and blur are props on the wrapper, while classname sets size and background. Children sit beneath a separate article layer that carries the mask.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One backdrop-blur layer with a CSS mask and no script beyond React.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Purely visual effect with nothing to operate; it has no motion but also no accessibility hooks."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "classname",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "string",
+   "default": "'24px'",
+   "required": false
+  },
+  {
+   "name": "inset",
+   "type": "string",
+   "default": "'20px'",
+   "required": false
+  },
+  {
+   "name": "transitionLength",
+   "type": "string",
+   "default": "'44px'",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "string",
+   "default": "'6px'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The wrapper forces a square aspect ratio, so wide photos or text blocks cannot use their natural shape.",
+  "The demo's small parameter line is very low contrast against the grey panel."
+ ],
+ "polish": 4,
+ "polish_why": "Subtle, even edge blur on both text and photo; the tiny parameter line is hard to read.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Blur Vignette",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "85c6aee1195d5363",
+  "film_hash": "08d82beea539977a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

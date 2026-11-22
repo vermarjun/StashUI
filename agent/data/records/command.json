@@ -1,0 +1,148 @@
+{
+ "name": "command",
+ "frames": {
+  "code": "3057",
+  "best": 2,
+  "best_why": "Frame 2 shows the palette open with both groups, all six commands and the search field.",
+  "usable": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.4
+ },
+ "tagline": "A dark command palette with grouped shortcuts and a search field.",
+ "summary": "A modal command menu with a search box, grouped actions and a shortcut key at the right of each row. Typing filters the list down and the first match is highlighted.",
+ "title_fix": null,
+ "appearance": "A dark grey rounded panel on black, topped by a search icon and a placeholder line. Below, two small grey group labels, Suggestions and Settings, separate six white rows, each ending in a tiny outlined shortcut key; the active row is slightly lighter.",
+ "behaviour": "Typing in the search field filters the rows live; one frame shows a single Billing result under Settings. The first match is selected by default, arrow keys move the highlight, and choosing an item or pressing escape closes the dialog.",
+ "parts": [
+  "search field",
+  "group heading",
+  "command row",
+  "shortcut key",
+  "panel surface",
+  "dialog backdrop"
+ ],
+ "demo_content": "Suggestions Calendar, Search Emoji, Calculator; Settings Profile, Billing, Appearance, with command-key shortcuts.",
+ "states": [
+  "open",
+  "focus",
+  "selected",
+  "empty"
+ ],
+ "kind": "command-menu",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "quick launcher with search",
+  "cmd k menu",
+  "quick actions popup",
+  "spotlight style launcher",
+  "searchable keyboard shortcuts list",
+  "app action menu dialog",
+  "filter actions as you type",
+  "keyboard shortcut cheat sheet popup"
+ ],
+ "resembles": [
+  "macOS Spotlight",
+  "VS Code command palette"
+ ],
+ "use_when": "A keyboard-first app wants one searchable menu for navigation, actions and shortcuts.",
+ "avoid_when": "It is a modal dialog that needs the Dialog component, and on touch it offers no gesture to open itself.",
+ "suits": [
+  "saas",
+  "devtool",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "modal",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose your own items, groups, separators and shortcuts as children, pass a placeholder to CommandInput, and set the dialog title and description. Styling comes through className.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "A small dialog with a search input and six rows; filtering is local.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The dialog has a hidden title and description and full keyboard control; focus rings are dropped in favour of a row highlight."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Command Palette\"",
+   "required": false
+  },
+  {
+   "name": "description",
+   "type": "string",
+   "default": "\"Search for a command to run...\"",
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "heading",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Shortcut keys are only labels; no global hotkey actually opens the palette.",
+  "Nothing on screen tells users the palette exists besides the demo button."
+ ],
+ "polish": 4,
+ "polish_why": "Clean rows and tidy shortcut keys; the advertised hotkeys are cosmetic.",
+ "unsure": [],
+ "title": "Command Palette",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e47b94cb7aed494f",
+  "film_hash": "eee7386522e7e1a0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

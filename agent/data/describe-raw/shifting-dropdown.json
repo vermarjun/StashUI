@@ -1,0 +1,65 @@
+{
+  "name": "shifting-dropdown",
+  "frames": {
+    "code": "1244",
+    "best": 2,
+    "best_why": "Frame 2 shows the Products menu open with its three columns, the active tab pill and the nub.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hover a nav tab and a wide menu drops below with a nub tracking the tab.",
+  "summary": "A compact top navigation where hovering or clicking a tab opens a wide dropdown panel beneath it. The panel stays open while you move between tabs, sliding new content in sideways, and a small pointer follows the active tab.",
+  "title_fix": "Nav Mega Dropdown",
+  "appearance": "Three short grey tab labels with tiny chevrons sit in a row on near-black. The active tab gains a dark rounded pill and an upturned chevron, and a wide bordered panel drops beneath with columns of links, or icon cells, and a small diamond nub pointing up.",
+  "behaviour": "Hovering a tab opens the panel below with a fade and lift. Moving to another tab keeps the panel open while the new section slides in from the side and the nub glides under the chosen tab; leaving the row closes it.",
+  "parts": ["tab row", "tab label", "chevron", "dropdown panel", "link column", "nub", "view more link"],
+  "demo_content": "Tabs Products, Pricing and Blog; Products lists Startup, Scaleup and Enterprise links, Blog shows two posts.",
+  "states": ["hover", "open", "selected", "focus"],
+  "kind": "site-header",
+  "look": ["dark", "minimal", "rounded", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "nav bar with mega menu dropdown",
+    "hover tabs to open a wide menu",
+    "dropdown that stays open between tabs",
+    "navigation menu with pointer arrow",
+    "website header with product categories",
+    "sliding menu content on tab change",
+    "three column dropdown under nav",
+    "pricing and blog nav dropdown"
+  ],
+  "resembles": ["Stripe navigation menu"],
+  "use_when": "A marketing header has few top-level links but each needs a rich panel of sub-links, categories or posts.",
+  "avoid_when": "It needs hover and a wide fixed panel, so narrow screens overflow and touch users cannot preview items.",
+  "suits": ["marketing", "saas"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["background", "text", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Tabs, their titles and panel contents are hardcoded arrays and components in the file; there are no props, so adding a tab or link means editing the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three buttons and one small panel; animation only runs while a menu is open.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Tabs are real buttons, but they lack aria-expanded and there is no Escape or arrow-key handling, so the panel is awkward from the keyboard."
+  },
+  "props": [],
+  "issues": [
+    "The blog card images load late, leaving an empty picture frame in one frame."
+  ],
+  "polish": 3,
+  "polish_why": "A tidy mega-menu with smooth slides; the panel is fixed width and blog images load late.",
+  "unsure": []
+}

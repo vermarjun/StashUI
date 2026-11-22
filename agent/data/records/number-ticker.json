@@ -1,0 +1,143 @@
+{
+ "name": "number-ticker",
+ "frames": {
+  "code": "3931",
+  "best": 6,
+  "best_why": "The numbers have nearly reached their targets, showing the finished values clearly.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "Numbers spring upward from zero to their target values.",
+ "summary": "An animated figure that counts up or down to a target with a spring easing the first time it scrolls into view, formatted with commas and optional decimals.",
+ "title_fix": null,
+ "appearance": "Three large white numbers stacked on black, each above a small grey label: a user count, a percentage and a dollar figure. The digits are tight, bold and tabular.",
+ "behaviour": "Each number rises from zero toward its target once it enters the viewport, decelerating into place and then staying fixed.",
+ "parts": [
+  "user count",
+  "users label",
+  "uptime percentage",
+  "percentage label",
+  "revenue figure",
+  "revenue label"
+ ],
+ "demo_content": "Three stats labelled Active Users, Uptime and Revenue with values like 12,500, 99.0% and $4,820,000.",
+ "states": [],
+ "kind": "counter",
+ "look": [
+  "dark",
+  "monochrome",
+  "bold",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "number counting up on scroll",
+  "animated statistic counter",
+  "kpi number that ticks upward",
+  "odometer style figure animation",
+  "percentage counting to target",
+  "revenue number rolling up",
+  "big number with spring effect",
+  "count up on first view"
+ ],
+ "resembles": [],
+ "use_when": "A stats section should make its numbers feel alive when it comes into view.",
+ "avoid_when": "The value changes live: it animates only once on first view and ignores later updates.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "marketing"
+ ],
+ "slot_hints": [
+  "stat",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The target value, start value, direction, delay and decimal places are props; formatting is fixed to en-US with commas.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One span whose text is updated by a single spring value.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Plain text that rewrites many times a second can make screen readers repeat values; no reduced-motion guard."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "startValue",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"up\" | \"down\"",
+   "default": "\"up\"",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "decimalPlaces",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean, readable numbers with a smooth spring; the three-stat demo is plain but effective.",
+ "unsure": [],
+ "title": "Number Ticker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0f7dcbc6a1962615",
+  "film_hash": "06c81d5e25f1d3ee",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

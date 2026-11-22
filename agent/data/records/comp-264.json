@@ -1,0 +1,114 @@
+{
+ "name": "comp-264",
+ "frames": {
+  "code": "6748",
+  "best": 3,
+  "best_why": "All three axis rows are visible with X dragged to 3 and ringed, so the slider-plus-field pairing is obvious.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Three stacked rows nudge an object on the X, Y and Z axes.",
+ "summary": "A position panel with one slider and one small number box per axis. X, Y and Z can be dragged or typed, and a Reset button puts all three back to zero.",
+ "title_fix": null,
+ "appearance": "The heading Object position sits over three rows, each starting with a small grey letter, then a grey track with a white fill and round knob, then a narrow rounded box holding a number. A full-width outlined Reset button with a circular arrow closes the group.",
+ "behaviour": "Dragging a knob shifts that axis and rewrites its box, while typing a number and confirming jumps the knob to match. Reset snaps X, Y and Z back to zero together.",
+ "parts": [
+  "heading",
+  "axis label",
+  "track",
+  "filled track",
+  "knob",
+  "number field",
+  "reset button"
+ ],
+ "demo_content": "Axes labelled X, Y and Z opening at -2, 4 and 2, then both moved and reset to 0.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "three sliders for x y and z",
+  "move an object along three axes",
+  "position control with typed numbers",
+  "set coordinates in a design tool",
+  "rows of sliders with a reset button",
+  "adjust horizontal vertical and depth",
+  "align an element with numeric sliders",
+  "transform panel for a 3d object"
+ ],
+ "resembles": [],
+ "use_when": "An editor needs to nudge an object on three axes and also type exact coordinates.",
+ "avoid_when": "A single free 2D drag area is wanted; here each axis is its own separate row.",
+ "suits": [
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Axis names, the minus ten to ten range, starting values and the reset target are written in the source; adding an axis means another block.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Three small sliders, three inputs and a button; idle until touched.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The sliders are named X, Y and Z, but every number box is called Enter value, so they cannot be told apart."
+ },
+ "props": [],
+ "issues": [
+  "All three number fields share the same accessible name, so screen readers cannot distinguish the axes.",
+  "The heading uses a legend outside any fieldset."
+ ],
+ "polish": 4,
+ "polish_why": "Even rows, consistent controls and a clear reset; small text stays legible.",
+ "unsure": [],
+ "title": "Object Position Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f4ca801abe96a98e",
+  "film_hash": "638d9c7ca0e91c56",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

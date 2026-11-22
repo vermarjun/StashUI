@@ -1,0 +1,184 @@
+{
+ "name": "Particles-TS-TW",
+ "frames": {
+  "code": "1994",
+  "best": 4,
+  "best_why": "Dense spread of dots across the whole stage with a large cyan particle near the bottom edge.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 5.0
+ },
+ "tagline": "Drifts a field of glowing dots across a dark stage.",
+ "summary": "A full-bleed WebGL starfield of small glowing dots that drift, slowly rotate in depth and sway under the pointer. It gives a dark page depth without images or video.",
+ "title_fix": null,
+ "appearance": "A black rectangular stage scattered with tiny glowing dots in white, pale lilac and cyan. Most are pinpricks, a few burn larger, and the density is uneven, thicker toward the left and centre.",
+ "behaviour": "The dots drift and rotate slowly in depth, each wobbling on its own path, so the field never settles. Moving the pointer nudges the whole cloud away from the cursor.",
+ "parts": [
+  "particle field",
+  "dots",
+  "large dots"
+ ],
+ "demo_content": "Full-bleed black panel with a 320-particle field in white, lilac and cyan.",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "glow",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "drifting stars background for a hero",
+  "floating dots animated backdrop",
+  "starfield effect behind a landing page",
+  "subtle moving particle background",
+  "space dust effect on black",
+  "glowing points that follow the mouse",
+  "ambient particle field for website header",
+  "parallax star field web background"
+ ],
+ "resembles": [],
+ "use_when": "You want a quiet moving backdrop behind dark hero copy without images or video.",
+ "avoid_when": "The loop renders every frame on the GPU, so it drains battery and struggles on low-end devices.",
+ "suits": [
+  "saas",
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Particle count, colours, spread, size, speed and camera distance are props; hover response can be toggled. There is no markup to edit.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL point cloud redrawn on every animation frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The WebGL loop ignores reduced-motion settings and the canvas carries no text or labels."
+ },
+ "props": [
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "particleColors",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "particleSpread",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "moveParticlesOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "particleHoverFactor",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "alphaParticles",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "particleBaseSize",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "sizeRandomness",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "cameraDistance",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "disableRotation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "pixelRatio",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Even, believable drift and clean dots; the field is sparse and the look is a familiar one.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Particles",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "24091e0483807d4e",
+  "film_hash": "22b977e6e87a844c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "cards-demo-1",
+  "frames": {
+    "code": "6673",
+    "best": 4,
+    "best_why": "Frame 4 shows the hovered card with the moving clip, dark scrim and readable text.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A photo card whose background turns into a moving clip when hovered.",
+  "summary": "A tall photo card with a bold title and short paragraph pinned to the bottom. Hovering swaps the still fern backdrop for a muted moving clip and adds a dark scrim behind the words.",
+  "title_fix": null,
+  "appearance": "A tall portrait card with rounded corners and a dark full-bleed photo, white bold heading \"Background Overlays\" and a small white paragraph pinned to the bottom left. At rest the photo is a close-up of fern fronds.",
+  "behaviour": "Hovering replaces the still fern image with a looping clip of a person by a window and lays a dark scrim over it, while the text stays fixed. Leaving returns the fern photo and lifts the scrim.",
+  "parts": ["card", "background media", "heading", "paragraph"],
+  "demo_content": "Heading \"Background Overlays\" and a paragraph about background gifs, over fern and window scenes.",
+  "states": ["hover"],
+  "kind": "card",
+  "look": ["dark", "rounded", "editorial", "organic"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "card that plays a video on hover",
+    "image card with changing background",
+    "hover reveals a gif behind text",
+    "photo card with overlay text",
+    "background video card for a feature",
+    "hover media swap tile",
+    "fern photo turning into video",
+    "dark card with caption at bottom"
+  ],
+  "resembles": [],
+  "use_when": "A feature tile should hint at motion only on hover while keeping its copy readable.",
+  "avoid_when": "Both media files are hardcoded remote URLs, and touch devices never see the hover swap.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["feature-card", "media", "hero"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Nothing is exposed; the heading, paragraph and both media URLs must be edited directly in the file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One card with a background swap and an overlay scrim; the clip only loads on hover.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Background media is CSS-only with no alt, and the hover swap is unreachable by keyboard or touch."
+  },
+  "props": [],
+  "issues": [
+    "The hovered clip shows a person, a subject unrelated to the ferns at rest.",
+    "The swap happens only on hover, so touch and keyboard users see just the fern.",
+    "Background images carry no alt text and the clip ignores reduced-motion."
+  ],
+  "polish": 3,
+  "polish_why": "Clean type and a smooth scrim; the unrelated hover clip and plain layout hold it back.",
+  "unsure": []
+}

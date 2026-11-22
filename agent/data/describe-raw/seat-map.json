@@ -1,0 +1,78 @@
+{
+  "name": "seat-map",
+  "frames": {
+    "code": "2315",
+    "best": 3,
+    "best_why": "Frame 3 shows eight painted seats, the chip row, an orange warning and the $120 total together.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drag along a row to paint cinema seats, with total and stray-seat warning.",
+  "summary": "A cinema seat picker split into front, standard and premium price bands. Dragging across a row selects a run of seats, chips show the picks with a running total, and a note warns when a lone seat would be stranded.",
+  "title_fix": null,
+  "appearance": "A tall rounded card opens with a film title, showtime line and a 'left' count, then a curved SCREEN arc over rows of small rounded seat squares grouped by price tier. Selected seats turn light, sold ones show diagonal stripes, and picked-seat chips and a wide Continue bar sit below.",
+  "behaviour": "Pressing a free seat and dragging across its row paints every seat between, or removes them if the first was already picked. Picked chips and a total update, and an orange line names any lone seats the booking would strand; beyond the seat limit it refuses more.",
+  "parts": ["film title", "screen arc", "tier heading", "seat", "row label", "legend", "selected chips", "continue bar"],
+  "demo_content": "The Last Lighthouse, Tonight · 20:15 · Screen 2, with front, standard and premium seats and picks F3 and F4.",
+  "states": ["selected", "hover", "focus", "disabled"],
+  "kind": "other",
+  "look": ["dark", "dense", "minimal", "monochrome", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "cinema seat booking picker",
+    "drag across seats to select several",
+    "movie ticket seat grid",
+    "choose seats with price tiers",
+    "seat selection with running total",
+    "theater seating chart selector",
+    "pick adjacent seats in a row",
+    "reserve seats and see the price"
+  ],
+  "resembles": ["AMC Theatres seat picker", "Fandango seat selection"],
+  "use_when": "A ticketing flow needs customers to choose several adjacent seats with clear prices before paying.",
+  "avoid_when": "It assumes a cinema layout of rows and blocks, so a different venue shape needs new tier and block props.",
+  "suits": ["ecommerce", "mobile-app"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Title, subtitle, price tiers, block sizes, sold and wheelchair seats, preselected seats, maximum seats and currency are props, plus change and continue callbacks.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "About a hundred seat buttons plus animated chips and a live stranded-seat recalculation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Strong keyboard and screen-reader support; the stranded-seat warning is announced through a live region."
+  },
+  "props": [
+    {"name": "title", "type": "string", "default": "\"Dune: Part Three\"", "required": false},
+    {"name": "subtitle", "type": "string", "default": "\"Today · 19:30 · Screen 4\"", "required": false},
+    {"name": "tiers", "type": "SeatTier[]", "default": "DEFAULT_TIERS", "required": false},
+    {"name": "blocks", "type": "number[]", "default": "[3, 6, 3]", "required": false},
+    {"name": "taken", "type": "string[]", "default": "DEFAULT_TAKEN", "required": false},
+    {"name": "accessible", "type": "string[]", "default": "[\"A1\", \"A12\"]", "required": false},
+    {"name": "defaultSelected", "type": "string[]", "default": "[]", "required": false},
+    {"name": "maxSeats", "type": "number", "default": "8", "required": false},
+    {"name": "currency", "type": "string", "default": "\"$\"", "required": false},
+    {"name": "onChange", "type": "(seats: string[]) => void", "default": null, "required": false},
+    {"name": "onContinue", "type": "(seats: string[], total: number) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Seats are tiny and only show their number once picked, so it is hard to read the grid before choosing."
+  ],
+  "polish": 4,
+  "polish_why": "Thoughtful picker with clear tiers, chips and warnings; the dense grid is very small to read.",
+  "unsure": []
+}

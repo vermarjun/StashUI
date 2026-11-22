@@ -1,0 +1,74 @@
+{
+  "name": "encrypted-text",
+  "frames": {
+    "code": "9244",
+    "best": 2,
+    "best_why": "Frame 2 shows the decode in progress, real white letters beside a grey scrambled tail.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Letters lock into place one by one while the rest churn through random symbols.",
+  "summary": "A line of type that decrypts itself when it scrolls into view. Characters settle from left to right into the real words while the unfinished tail keeps flipping through random symbols.",
+  "title_fix": null,
+  "appearance": "One line of bold monospace text sits centred on a near-black stage. Letters already decoded show in white, while the rest hold their place as grey random symbols of the same width, so the line looks like it is being decoded in place.",
+  "behaviour": "When the line enters the viewport, letters lock in from left to right at a steady tick while the remaining characters reshuffle through random symbols on a fast interval. It stops once the whole line is real and does not replay.",
+  "parts": ["text line", "revealed letters", "scrambled letters"],
+  "demo_content": "\"Decrypting the future\", set in bold monospace.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "monochrome", "technical", "minimal"],
+  "tone": "technical",
+  "search_phrases": [
+    "text that decodes itself on scroll",
+    "scrambled letters resolving into words",
+    "hacker style reveal animation",
+    "gibberish text that turns readable",
+    "matrix decoding text effect",
+    "letters shuffle then settle",
+    "typewriter with random symbols",
+    "secret message that unlocks"
+  ],
+  "resembles": [],
+  "use_when": "A headline should feel like it is decrypting as it enters the view, for a tech or product reveal.",
+  "avoid_when": "It fires once on scroll and cannot replay, and the scrambling makes the line unreadable while active.",
+  "suits": ["devtool", "saas", "portfolio"],
+  "slot_hints": ["headline", "hero", "body-text"],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Supply the text, reveal and flip speeds, a custom character set, and separate classes for revealed and scrambled letters.",
+  "technique": ["motion-library", "js-animation"],
+  "weight": "light",
+  "weight_why": "One text line with a short animation loop that stops once fully revealed.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The real words are exposed through an aria-label, but the scramble ignores reduced-motion and per-letter spans are noisy to select."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "revealDelayMs", "type": "number", "default": "50", "required": false},
+    {"name": "charset", "type": "string", "default": "DEFAULT_CHARSET", "required": false},
+    {"name": "flipDelayMs", "type": "number", "default": "50", "required": false},
+    {"name": "encryptedClassName", "type": "string", "default": null, "required": false},
+    {"name": "revealedClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The reveal fires only once, so scrolling past and back shows a finished line.",
+    "Scrambled symbols sit at full contrast, which makes the tail as loud as the real words."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing decode rhythm and crisp mono type; it is a one-shot trick with a thin demo.",
+  "unsure": []
+}

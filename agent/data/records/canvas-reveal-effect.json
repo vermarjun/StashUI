@@ -1,0 +1,149 @@
+{
+ "name": "canvas-reveal-effect",
+ "frames": {
+  "code": "3956",
+  "best": 3,
+  "best_why": "The left card is fully filled with green dots and its title, while the other two stay plain.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.6
+ },
+ "tagline": "Hovering fills a panel with a burst of tiny glowing dots.",
+ "summary": "A shader effect that floods its container with a fine grid of dots spreading out from the middle. It appears on hover over a tinted wash and fades away when the pointer leaves.",
+ "title_fix": null,
+ "appearance": "Invisible until revealed: then a square fills with a fine grid of tiny glowing dots that gather into a soft cloud near the centre and thin out toward the corners, tinted emerald, pink or blue over a dark wash.",
+ "behaviour": "Pointing at the card makes the dots pop in from the middle outward in a quick burst, with a title fading in over them. Leaving the card fades the whole field back to an empty panel.",
+ "parts": [
+  "dot grid",
+  "centre glow",
+  "tint wash",
+  "title text"
+ ],
+ "demo_content": "Three bordered cards labelled 'Sheetal is Nisha', 'Nisha is Munni' and 'Munni is Aditi', each with a chevron icon.",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "neon",
+  "dense",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "dots that appear from the center",
+  "hover card with particle reveal",
+  "glowing dot matrix background",
+  "speckled glow fill on hover",
+  "shader dots filling a panel",
+  "animated halftone dot effect",
+  "interactive particle grid reveal",
+  "card that lights up with tiny dots"
+ ],
+ "resembles": [],
+ "use_when": "A card or panel should reveal a rich particle texture only when the user points at it.",
+ "avoid_when": "It is a WebGL canvas, so it needs a sized parent and a real GPU for smooth dots.",
+ "suits": [
+  "saas",
+  "portfolio",
+  "devtool"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Set animationSpeed, dotSize, colours and opacities through props, plus a container background class; the intro shader and gradient fade are fixed in the file.",
+ "technique": [
+  "webgl-shader",
+  "three-js"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL canvas runs a per-pixel shader at up to 60fps while it is visible.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The reveal is hover-only, so keyboard and touch users never trigger it, and there is no reduced-motion path."
+ },
+ "props": [
+  {
+   "name": "animationSpeed",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "number[][]",
+   "default": "[[0, 255, 255]]",
+   "required": false
+  },
+  {
+   "name": "dotSize",
+   "type": "number",
+   "default": "{dotSize ?? 3}",
+   "required": false
+  },
+  {
+   "name": "opacities",
+   "type": "number[]",
+   "default": "[0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1]",
+   "required": false
+  },
+  {
+   "name": "showGradient",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 4 shows the magenta reveal almost invisible against black.",
+  "Hover-only reveal leaves touch and keyboard users with a plain empty card."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp dot burst and a clear hover reveal; the magenta variant is too dark to read.",
+ "unsure": [
+  "traits.theme"
+ ],
+ "title": "Canvas Reveal Effect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7d49ce5826dc2b9a",
+  "film_hash": "4e70c33c66eaa1ab",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

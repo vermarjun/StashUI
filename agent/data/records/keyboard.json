@@ -1,0 +1,139 @@
+{
+ "name": "keyboard",
+ "frames": {
+  "code": "4657",
+  "best": 1,
+  "best_why": "Frame 1 shows the whole board flat-on, fully lit and unobstructed by the recording cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "A miniature Mac keyboard whose keys press under your fingers.",
+ "summary": "A light 75% keyboard drawn as tiny square keys, from the function row down to the arrow cluster. Clicking a key, or typing on the real keyboard while it is in view, squeezes that key.",
+ "title_fix": null,
+ "appearance": "A pale grey keyboard about 900px wide on a black stage, wrapped in a rounded shell. Five rows of small keys carry tiny labels, with a wide space bar and a compact arrow cluster at the lower right.",
+ "behaviour": "Each key dips slightly on press, from a mouse click or from a real key press while the board is on screen. An optional line above can echo the last key, and optional per-key sounds play if enabled.",
+ "parts": [
+  "function row",
+  "number row",
+  "letter rows",
+  "shift row",
+  "modifier keys",
+  "arrow keys"
+ ],
+ "demo_content": "",
+ "states": [
+  "active"
+ ],
+ "kind": "other",
+ "look": [
+  "light",
+  "rounded",
+  "minimal",
+  "skeuomorphic"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "on screen keys you can type on",
+  "mac style key layout drawing",
+  "mini key grid with clickable caps",
+  "keys that press when you type",
+  "virtual keypad for a shortcut demo",
+  "tiny laptop keys illustration",
+  "typing sound key widget",
+  "interactive keypad for a website"
+ ],
+ "resembles": [
+  "Apple Magic Keyboard"
+ ],
+ "use_when": "A page teaches keyboard shortcuts and needs a recognisable keyboard that reacts to real presses.",
+ "avoid_when": "It is a display, not a text field; on phones the tiny keys are hard to read and tap.",
+ "suits": [
+  "docs",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "shadow"
+  ],
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Only className, enableSound and showPreview are exposed. Key layout, labels and colours are fixed in the source, so changing the board means editing the file.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "About eighty key buttons plus an intersection observer and an optional audio sprite.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Real key presses are caught, but tabbing to a key and pressing Enter does not fire it; icon-only keys lack labels."
+ },
+ "props": [
+  {
+   "name": "enableSound",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "showPreview",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"absolute flex items-center justify-center rounded-lg px-4 p",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Keys show no focus outline, so keyboard focus is hard to see.",
+  "Arrow and volume keys are icon-only with no accessible label."
+ ],
+ "polish": 4,
+ "polish_why": "Detailed, convincing key shapes and shadows; focus styles and labels are missing.",
+ "unsure": [
+  "shows_interaction",
+  "responsive"
+ ],
+ "title": "Interactive Keyboard",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "11f251f2c7cd7804",
+  "film_hash": "7675ea79a4f4a687",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

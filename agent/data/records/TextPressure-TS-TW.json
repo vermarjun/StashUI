@@ -1,0 +1,179 @@
+{
+ "name": "TextPressure-TS-TW",
+ "frames": {
+  "code": "6249",
+  "best": 5,
+  "best_why": "A clear heavy-to-thin gradient runs across the word, showing the effect best.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.0
+ },
+ "tagline": "Letters swell heavier and wider near the pointer.",
+ "summary": "One large word spans the stage and each letter's weight, width and slant follow the pointer: characters close to the cursor fatten and widen while distant ones stay thin.",
+ "title_fix": null,
+ "appearance": "The word \"PRESSURE\" runs in large uppercase white letters across a black stage, stretched edge to edge. Letters vary in thickness and width along the line, some hairline thin and others heavy and broad.",
+ "behaviour": "Whichever letters are nearest the pointer swell into a bold, wide style while the far letters thin out, easing toward the new shape each frame. Sliding across the word carries the heavy zone with the cursor.",
+ "parts": [
+  "letters",
+  "varying weights",
+  "black stage"
+ ],
+ "demo_content": "The word \"Pressure\", set in uppercase.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "editorial",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "letters get bolder near the mouse",
+  "text that warps under the cursor",
+  "variable font hover effect",
+  "headline responds to pointer position",
+  "thin and thick letter animation",
+  "interactive typography for hero",
+  "letters breathe as you move",
+  "font weight follows the cursor"
+ ],
+ "resembles": [],
+ "use_when": "A single big word should react to the pointer through typographic weight rather than motion.",
+ "avoid_when": "Small type or paragraph copy: the effect only reads at display size.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "The word, font family and URL, width/weight/italic toggles, colour, stroke, scale and minimum size are props. The pointer maths runs in a fixed loop.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame loop measures and restyles every letter each frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Letters are real text, but the pointer-follow loop always runs and ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "'Compressa'",
+   "required": false
+  },
+  {
+   "name": "fontFamily",
+   "type": "string",
+   "default": "'Roboto Flex Pressure'",
+   "required": false
+  },
+  {
+   "name": "fontUrl",
+   "type": "string",
+   "default": "'https://cdn.jsdelivr.net/npm/@fontsource-variable/roboto-fl",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "weight",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "italic",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "alpha",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "flex",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "stroke",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#FFFFFF'",
+   "required": false
+  },
+  {
+   "name": "minFontSize",
+   "type": "number",
+   "default": "24",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Strong variable-weight typography; one plain word keeps the demo narrow.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Text Pressure",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "05b3b929a4c4a9f2",
+  "film_hash": "5f4940977c22a23a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

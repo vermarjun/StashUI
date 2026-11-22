@@ -1,0 +1,174 @@
+{
+ "name": "wallet-card",
+ "frames": {
+  "code": "4994",
+  "best": 1,
+  "best_why": "The full card is clear with no pointer over its details, and the stack edges and member row show below.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "A purple bank card stacked over others, with balance and member avatars.",
+ "summary": "A stack of payment cards fans back in 3D while the front card shows its holder, masked number, expiry and balance. A button hides the balance and an avatar row lists members.",
+ "title_fix": null,
+ "appearance": "A glossy purple gradient card with a gold chip, contactless glyph and VISA mark, showing a dollar balance, masked digits and holder details. Thin coloured edges of two cards peek from beneath, with overlapping avatars and a small Hide balance pill below.",
+ "behaviour": "Moving the pointer across the card slides a soft white sheen toward it. Clicking a stacked edge or using arrow keys brings another card forward, and Hide balance blurs the digits.",
+ "parts": [
+  "card surface",
+  "chip",
+  "balance",
+  "masked number",
+  "holder details",
+  "member avatars",
+  "hide balance button"
+ ],
+ "demo_content": "Everyday card for Maya Chen, balance $12,480.52, ending 4821; avatars for Maya, Leo, Ana, Sam, Ivy and Ola",
+ "states": [
+  "hover",
+  "focus",
+  "selected"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "gradient",
+  "rounded",
+  "3d"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "stacked credit cards with balance",
+  "apple wallet style card stack",
+  "payment card with hide balance",
+  "masked card number display",
+  "bank card with member avatars",
+  "virtual card list for a banking app",
+  "3d card stack you can switch",
+  "card with moving shine on hover"
+ ],
+ "resembles": [
+  "Apple Wallet"
+ ],
+ "use_when": "A banking or fintech screen wants to show several payment cards as a tactile stack with balances.",
+ "avoid_when": "Light or themed surfaces, since the white type and grain are tuned for dark card gradients.",
+ "suits": [
+  "fintech",
+  "saas",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Accounts and members arrive as typed arrays with gradient classes, holder, last4, network and avatars; active and hidden state can be controlled. Stack depth and springs are constants.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Three card buttons, a few avatars and spring animations; the sheen only moves on hover.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "A labelled listbox supports arrow-key switching, balances carry aria-labels and motion is reduced on request."
+ },
+ "props": [
+  {
+   "name": "accounts",
+   "type": "WalletAccount[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "members",
+   "type": "WalletMember[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "actions",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "activeId",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hidden",
+   "type": "boolean",
+   "default": "{hidden}",
+   "required": false
+  },
+  {
+   "name": "onActiveChange",
+   "type": "(id: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onHiddenChange",
+   "type": "(hidden: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "stackOffset",
+   "type": "number",
+   "default": "STACK_OFFSET_DEFAULT",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"h-[26px] w-[34px] shrink-0\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The cards behind the front one are almost hidden, so the stack reads as a single card at this angle."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing card surface with grain and chip detail; the hidden stack edges are easy to miss.",
+ "unsure": [],
+ "title": "Wallet Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c189e1600a4b9dc4",
+  "film_hash": "f7df2cccda4b3b77",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

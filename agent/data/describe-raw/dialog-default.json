@@ -1,0 +1,66 @@
+{
+  "name": "dialog-default",
+  "frames": {
+    "code": "6873",
+    "best": 4,
+    "best_why": "Frame 4 shows the settled dialog with both filled fields and the wide action button; frame 3 is still fading in.",
+    "usable": [1, 2, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A small profile-edit card fades in over the page when you click.",
+  "summary": "A modal with a short edit-profile form: two labelled text fields and one wide save button, plus a close X. It fades up over a blurred backdrop.",
+  "title_fix": null,
+  "appearance": "A pill-shaped light button labelled Open Dialog on black. Opened, a dark rounded card holds the heading Edit profile, a grey help line, two right-aligned labels with wide dark input fields, and a full-width pale button at the foot, plus an X.",
+  "behaviour": "Clicking the trigger fades and slides the card in over a dim blurred page; the wide bottom button, the X, a backdrop click or Escape dismisses it. The name field shows an edited value in one frame.",
+  "parts": ["trigger button", "dialog card", "heading", "help text", "name field", "username field", "save button", "close icon"],
+  "demo_content": "Profiles \"Pedro Duarte\" and \"@peduarte\" plus \"Maya Chen\", button \"Got it, thanks!\"",
+  "states": ["hover", "focus", "open"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "edit profile popup with two fields",
+    "small form inside a modal",
+    "open a dialog to change details",
+    "name and username editor card",
+    "save changes in a popup",
+    "centered form dialog over a page",
+    "simple modal with text inputs",
+    "quick edit window with one save button"
+  ],
+  "resembles": [],
+  "use_when": "A short two-field edit should happen in place without a full settings page.",
+  "avoid_when": "The fields come prefilled with demo names and nothing is wired to save them.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the heading, help text, field defaults and button label are fixed; colours come from theme tokens.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One overlay, one card and two inputs with a short fade and slide.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Escape closes and inputs show focus rings, but labels are not tied to their fields and the card has no dialog role."
+  },
+  "props": [],
+  "issues": [
+    "Field labels have no htmlFor, so they are not linked to their inputs.",
+    "The demo names are hardcoded and the save button only closes the dialog."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy neutral modal, but it is a plain form card with prefilled demo values and no save logic.",
+  "unsure": ["resembles"]
+}

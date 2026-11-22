@@ -1,0 +1,153 @@
+{
+ "name": "primitives-effects-theme-toggler",
+ "frames": {
+  "code": "1664",
+  "best": 1,
+  "best_why": "The control is settled with Dark clearly selected and no cursor overlapping a label.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "Three-way Light, Dark and System switch with a page-wide wipe.",
+ "summary": "A small settings card with a segmented control for Light, Dark and System; picking one flips the whole page's theme with a gradual sweep instead of an instant snap.",
+ "title_fix": null,
+ "appearance": "A dark rounded card titled Appearance with two lines of grey copy above a three-part control. Each third holds a small icon and a label; the active one gets a lighter background, white text and a soft shadow.",
+ "behaviour": "Clicking a segment marks it active and reveals the new theme across the page with a wipe that grows from one edge. Light and Dark resolve directly, while System follows the operating system setting.",
+ "parts": [
+  "settings card",
+  "heading",
+  "description",
+  "segmented control",
+  "segment icon",
+  "active segment"
+ ],
+ "demo_content": "Heading Appearance, a line about the view transition wipe, and options Light, Dark and System.",
+ "states": [
+  "selected"
+ ],
+ "kind": "switch",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "light dark system theme switch",
+  "appearance settings with three options",
+  "segmented control for color scheme",
+  "toggle between day and night mode",
+  "page wide theme wipe animation",
+  "theme picker with sun moon icons",
+  "site setting to follow the system",
+  "smooth color mode change effect"
+ ],
+ "resembles": [
+  "macOS appearance settings"
+ ],
+ "use_when": "A site offers light, dark and system themes and wants the switch to feel deliberate.",
+ "avoid_when": "The wipe needs the browser's View Transitions API, so older browsers just snap with no sweep.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "docs"
+ ],
+ "slot_hints": [
+  "form-field",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "It renders whatever the children function returns and calls your setTheme, with theme, resolved theme and wipe direction as props; the wipe timing is fixed.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "One view transition and an empty style tag; no loop or canvas.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The chosen option is marked only by a data attribute, so screen readers are not told which theme is active, and there is no focus ring."
+ },
+ "props": [
+  {
+   "name": "theme",
+   "type": "ThemeSelection",
+   "default": "== preview.effective &&",
+   "required": true
+  },
+  {
+   "name": "resolvedTheme",
+   "type": "Resolved",
+   "default": "== preview.resolved",
+   "required": true
+  },
+  {
+   "name": "setTheme",
+   "type": "(theme: ThemeSelection) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "direction",
+   "type": "btt | ttb | ltr | rtl",
+   "default": "'ltr'",
+   "required": false
+  },
+  {
+   "name": "onImmediateChange",
+   "type": "(theme: ThemeSelection) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode | ((state) => React.ReactNode)",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The active segment is shown only by colour and shadow, with no tick or check.",
+  "The wipe itself is hard to see in these frames; most look like a plain theme swap."
+ ],
+ "polish": 3,
+ "polish_why": "Neat card and tidy segmented control, but it is a standard-looking theme picker.",
+ "unsure": [
+  "frames.shows_interaction"
+ ],
+ "title": "Theme Toggler",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "79d1f3588be07f89",
+  "film_hash": "9416932b4b69586e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

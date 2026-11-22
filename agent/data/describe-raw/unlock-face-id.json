@@ -1,0 +1,73 @@
+{
+  "name": "unlock-face-id",
+  "frames": {
+    "code": "5104",
+    "best": 2,
+    "best_why": "A blue scan band crosses the face glyph between its brackets while the locked content stays blurred below.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A face outline draws itself, scans, then a green tick unblurs the page behind.",
+  "summary": "A Face ID style glyph with corner brackets draws in, a blue band sweeps over it, and on success a green tick replaces the face while the content below sharpens from a blur.",
+  "title_fix": null,
+  "appearance": "On a dark rounded card, four white corner brackets surround a minimal line face, with a short status line beneath and a blurred block of text underneath. On success a bold green tick replaces the face.",
+  "behaviour": "Clicking the glyph draws the brackets, then the face, and a blue band sweeps up and down across it. When the scan completes the face swaps for a green tick and the blurred content sharpens.",
+  "parts": ["corner brackets", "face glyph", "scan band", "status text", "green tick", "blurred content"],
+  "demo_content": "Scan to view recovery codes, revealing six codes such as 7KQ2-9FXM and H4TZ-1LPA",
+  "states": ["loading", "success", "error"],
+  "kind": "auth-form",
+  "look": ["dark", "minimal", "rounded", "monochrome"],
+  "tone": "technical",
+  "search_phrases": [
+    "face id scan to unlock content",
+    "biometric unlock animation",
+    "blurred text revealed after verification",
+    "face recognition scanning graphic",
+    "security check with green tick",
+    "scan line over a face icon",
+    "protected codes unlock screen",
+    "apple face id style prompt"
+  ],
+  "resembles": ["Apple Face ID"],
+  "use_when": "Sensitive content, recovery codes or account settings need a quick simulated biometric check before showing.",
+  "avoid_when": "Anything relying on real security, because the scan is only a timed animation that verifies nothing.",
+  "suits": ["saas", "fintech", "dashboard"],
+  "slot_hints": ["modal", "form-field"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["children", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Size, label, scan duration, error message and controlled status are props; children are the gated content. Colours follow the brand and green CSS variables.",
+  "technique": ["motion-library", "svg"],
+  "weight": "light",
+  "weight_why": "One SVG glyph animated with motion plus a single timeout while scanning.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "A labelled button with live status text and reduced-motion handling; the glyph itself is hidden from screen readers."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "label", "type": "string", "default": "\"Scan to unlock\"", "required": false},
+    {"name": "size", "type": "number", "default": "128", "required": false},
+    {"name": "status", "type": "UnlockStatus", "default": null, "required": false},
+    {"name": "scanDuration", "type": "number", "default": "1800", "required": false},
+    {"name": "errorMessage", "type": "string", "default": "\"Face not recognized. Try again.\"", "required": false},
+    {"name": "onScan", "type": "() => void", "default": null, "required": false},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The revealed recovery codes are small and low contrast against the dark card."],
+  "polish": 4,
+  "polish_why": "Convincing draw-in and scan sweep with a crisp success tick; the layout around it stays plain.",
+  "unsure": []
+}

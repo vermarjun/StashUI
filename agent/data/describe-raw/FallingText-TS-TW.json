@@ -1,0 +1,72 @@
+{
+  "name": "FallingText-TS-TW",
+  "frames": {
+    "code": "4615",
+    "best": 3,
+    "best_why": "Words are mid-fall across the stage and still legible, with the cyan phrases clearly picked out.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Click and each word tumbles, bounces and piles up under gravity.",
+  "summary": "A sentence breaks into free-floating words the moment you click, then real physics pulls them down to bounce and settle. You can grab a word with the pointer and throw it around.",
+  "title_fix": null,
+  "appearance": "A short white sans-serif paragraph sits centred on black, with three phrases picked out in bold cyan. Once triggered the words detach, each keeping its size, and turn at random angles as they scatter; the cyan phrases stay recognisable in the debris.",
+  "behaviour": "Clicking the area drops every word: each gets a random sideways push, falls under gravity, bounces off the walls and floor and slowly comes to rest. Hovering a word and dragging flings it across the stage.",
+  "parts": ["word tokens", "cyan phrases", "canvas layer"],
+  "demo_content": "\"Click anywhere and every word drops...\" plus grab-and-fling instructions.",
+  "states": ["dragging", "active"],
+  "kind": "text-effect",
+  "look": ["dark", "playful", "minimal", "technical"],
+  "tone": "playful",
+  "search_phrases": [
+    "words fall with gravity when clicked",
+    "physics text that tumbles",
+    "drag and throw letters around",
+    "sentence shatters into falling words",
+    "matter js text playground",
+    "interactive word physics effect",
+    "click to drop all the text",
+    "playful headline that collapses"
+  ],
+  "resembles": ["physics sandbox of words"],
+  "use_when": "A playful hero or announcement should invite touch and let visitors scatter and throw its headline words.",
+  "avoid_when": "The copy becomes unreadable once it falls, and the canvas physics loop costs CPU; poor for key text.",
+  "suits": ["marketing", "portfolio", "devtool"],
+  "slot_hints": ["hero", "headline"],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Pass text, highlightWords, a trigger (auto, scroll, click, hover), gravity, fontSize, background colour, wireframe mode and mouse stiffness; other physics constants live in the source.",
+  "technique": ["js-animation", "canvas-2d"],
+  "weight": "heavy",
+  "weight_why": "A Matter.js engine and a canvas render loop run every frame once started.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The words are real DOM text, but the click trigger is unreachable from the keyboard and motion is never reduced."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "\"\"", "required": false},
+    {"name": "highlightWords", "type": "string[]", "default": "[]", "required": false},
+    {"name": "trigger", "type": "'auto' | 'scroll' | 'click' | 'hover'", "default": "\"auto\"", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "\"transparent\"", "required": false},
+    {"name": "wireframes", "type": "boolean", "default": "false", "required": false},
+    {"name": "gravity", "type": "number", "default": "1", "required": false},
+    {"name": "mouseConstraintStiffness", "type": "number", "default": "0.2", "required": false},
+    {"name": "fontSize", "type": "string", "default": "\"1rem\"", "required": false}
+  ],
+  "issues": ["Once the words fall the sentence can no longer be read.", "Words end piled at the bottom and overlap into a messy heap."],
+  "polish": 4,
+  "polish_why": "The fall reads well and cyan highlights survive; the final heap is messy.",
+  "unsure": ["needs_sized_parent"]
+}

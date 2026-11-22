@@ -1,0 +1,63 @@
+{
+  "name": "circuit-board",
+  "frames": {
+    "code": "6752",
+    "best": 3,
+    "best_why": "All three tech cards are fully faded in below the traces and the Powered By chip.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Glowing circuit traces feed a Powered By chip above three tech cards.",
+  "summary": "A dark band of hairline circuit traces with coloured pulses converging on a raised Powered By chip, over three rounded cards that fade in with icons and short descriptions.",
+  "title_fix": null,
+  "appearance": "Fine right-angled circuit traces spread across the top half of a black stage, a few of them tinted orange, blue and pink. They meet at a small raised grey chip lettered Powered By. Below sit three dark rounded cards, each with a coloured icon, a title and an arrow, then two or three lines of grey copy.",
+  "behaviour": "Bright dots and gradient pulses run along the traces toward and away from the chip on endless loops. The cards rise and sharpen into place in sequence, and each card carries a slow pulsing border glow that lifts on hover.",
+  "parts": ["circuit traces", "colour pulses", "Powered By chip", "tech cards", "icon", "title", "description"],
+  "demo_content": "Cards for React, Turbopack and Speedy Web Compiler; the chip reads Powered By.",
+  "states": ["hover"],
+  "kind": "feature-section",
+  "look": ["dark", "technical", "glow", "minimal"],
+  "tone": "technical",
+  "search_phrases": [
+    "animated circuit traces with pulses",
+    "component powered by chip graphic",
+    "tech stack cards with glow",
+    "electronics schematic background",
+    "cpu chip connected by lines",
+    "developer tools feature row",
+    "glowing wires behind three cards",
+    "motherboard style section"
+  ],
+  "resembles": [],
+  "use_when": "A developer product wants a technology or integration section with a schematic feel and named cards below.",
+  "avoid_when": "Small screens or print: the hairline traces and coloured pulses largely vanish at low resolution.",
+  "suits": ["devtool", "saas"],
+  "slot_hints": ["section-background", "feature-card"],
+  "traits": {
+    "trigger": ["always", "viewport", "hover"],
+    "motion": "continuous",
+    "affects": ["background", "shadow", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Card names, copy, links, icons and glow colours are written inside the component, so changing them means editing the file; the trace layout and pulse gradients are also in the source.",
+  "technique": ["svg", "css-keyframes", "motion-library"],
+  "weight": "moderate",
+  "weight_why": "Continuous SVG and CSS animation on a handful of traces plus three card springs.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The circuit graphic has a descriptive label and cards are real links, but the looping pulses ignore reduced-motion preferences."
+  },
+  "props": [],
+  "issues": ["The idle traces are extremely faint, so most of the upper half reads as empty black."],
+  "polish": 4,
+  "polish_why": "Distinctive technical scene with tidy cards and a readable chip; faint traces are easy to miss.",
+  "unsure": ["traits.theme", "a11y.focus_visible"]
+}

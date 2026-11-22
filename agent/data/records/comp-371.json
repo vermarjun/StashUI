@@ -1,0 +1,120 @@
+{
+ "name": "comp-371",
+ "frames": {
+  "code": "7653",
+  "best": 5,
+  "best_why": "Menu open with three rows ticked and Remix still greyed out and disabled.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.3
+ },
+ "tagline": "A menu of framework names where each row can be ticked on or off.",
+ "summary": "A dropdown of checkbox options. Opening it reveals four named rows, any that are on show a tick at the right, and one row is disabled.",
+ "title_fix": null,
+ "appearance": "A dark outlined button reading Checkbox items with a small chevron. Opened, a rounded dark menu lists Next.js, SvelteKit, Remix and Astro, each with a tick at its right when selected; Remix is dimmed.",
+ "behaviour": "Clicking the trigger opens a menu of four rows. Each row toggles a tick when picked, the menu stays open for more choices, and the disabled Remix row never responds.",
+ "parts": [
+  "trigger button",
+  "label",
+  "chevron",
+  "menu",
+  "option rows",
+  "check marks"
+ ],
+ "demo_content": "Framework names Next.js, SvelteKit, Remix and Astro.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "checked",
+  "disabled"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "outlined",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "menu with checkboxes inside",
+  "pick several options from a list",
+  "dropdown for multiple filters",
+  "toggle items on and off in a menu",
+  "framework filter dropdown",
+  "multi select menu with ticks",
+  "checklist that opens from a button",
+  "choose more than one from a dropdown"
+ ],
+ "resembles": [
+  "filter dropdown menu"
+ ],
+ "use_when": "Several independent options must be toggled at once without leaving the menu, as with tag or column filters.",
+ "avoid_when": "The trigger shows no summary of what is checked, so people must reopen it to see the current filters.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Option names and their starting ticks are fixed in the file, so changing the list means editing the source; the trigger label and button style come from shared pieces.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small menu with four rows and CSS state changes; no animation loop.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Real menu semantics and a properly disabled item are present, but the trigger never says which options are on."
+ },
+ "props": [],
+ "issues": [
+  "The trigger never shows which frameworks are currently checked."
+ ],
+ "polish": 4,
+ "polish_why": "Even row heights and a clear tick column; the disabled row's contrast is borderline.",
+ "unsure": [
+  "responsive"
+ ],
+ "title": "Checkbox Dropdown Menu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1264951f8f060b11",
+  "film_hash": "45bd96da5d713662",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

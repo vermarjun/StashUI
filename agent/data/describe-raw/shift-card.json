@@ -1,0 +1,73 @@
+{
+  "name": "shift-card",
+  "frames": {
+    "code": "6108",
+    "best": 3,
+    "best_why": "Hover is complete: the portrait has shrunk to a corner avatar and the full bio, stats and Follow button are open.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Portrait card shrinks its photo and unfolds profile details on hover.",
+  "summary": "A profile card that shows a large portrait at rest and, on hover, moves the photo into a small avatar while the name, bio, follower counts and Follow button slide up.",
+  "title_fix": null,
+  "appearance": "A tall dark rounded card. Its top strip pairs a green dot and Open to work with Design Engineer; a large rounded portrait sits centred above the name and an arrow. Hovered, the photo becomes a small corner avatar and dense text fills the lower half.",
+  "behaviour": "Hovering shrinks the portrait into the top-left corner and expands a bottom panel to reveal bio, location, counts and a Follow button; leaving reverses it after a short delay.",
+  "parts": ["top status bar", "status dot", "portrait", "name", "arrow icon", "avatar", "bio", "follow button"],
+  "demo_content": "Sofia Marquez, Design Engineer, Lisbon, ex-Figma and ex-Linear, 4.2k followers, 318 following.",
+  "states": ["hover"],
+  "kind": "card",
+  "look": ["dark", "rounded", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "profile card that reveals details on hover",
+    "user card with photo and follower count",
+    "team member card with follow button",
+    "card that morphs portrait into avatar",
+    "hover card with bio and social stats",
+    "designer profile tile for a landing page",
+    "card that expands with contact details",
+    "people card with open to work badge"
+  ],
+  "resembles": ["LinkedIn profile card"],
+  "use_when": "Introduce a person with a portrait and let their bio and stats appear without leaving the page.",
+  "avoid_when": "Hover is required to read the bio, so touch and keyboard users only get the portrait and name.",
+  "suits": ["portfolio", "social"],
+  "slot_hints": ["feature-card", "testimonial"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Four node props fill the top strip, portrait, hover avatar and bottom panel; card width, height and hover timing are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One portrait image and a few layout and height animations on hover.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Bio and stats open only on pointer hover; the card has no focus handling, so keyboard users cannot reach the details or Follow button."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "topContent", "type": "ReactNode", "default": null, "required": false},
+    {"name": "topAnimateContent", "type": "ReactNode", "default": null, "required": false},
+    {"name": "middleContent", "type": "ReactNode", "default": null, "required": false},
+    {"name": "bottomContent", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "Bio, stats and Follow button are unreachable by keyboard; they exist only on hover.",
+    "On touch, a tap opens the panel and immediately closes it, so the details flash.",
+    "The card shows a pointer cursor and arrow but is not a link."
+  ],
+  "polish": 4,
+  "polish_why": "The portrait-to-avatar morph is convincing; hover-only details and a dead arrow keep it from 5.",
+  "unsure": []
+}

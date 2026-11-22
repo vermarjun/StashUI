@@ -1,0 +1,150 @@
+{
+ "name": "synced-transcript",
+ "frames": {
+  "code": "4833",
+  "best": 1,
+  "best_why": "Whole player in view: header, highlighted word, both speakers and the footer bar, with no cursor covering anything.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Podcast transcript lights each spoken word inside a sliding highlight.",
+ "summary": "A transcript player for dialogue: paragraphs dim ahead of the audio and brighten word by word while one grey highlight slides along the current word. A play button and thin scrub bar track the recording.",
+ "title_fix": null,
+ "appearance": "A dark rounded panel headed \"Transcript\" with an episode name and a small speed chip. Below, initials, speaker names and timestamps sit above grey paragraphs, one word sitting on a light grey highlight. The footer holds a round play button, a time, a thin bar and a total.",
+ "behaviour": "Playing walks the highlight forward word by word, brightening spoken text and dimming what is still ahead, while the transcript scrolls itself to keep the line a third down. Clicking a word seeks there, the bar drags or steps with arrow keys, and scrolling away reveals a Back to now pill.",
+ "parts": [
+  "panel",
+  "episode title",
+  "speed chip",
+  "speaker row",
+  "transcript text",
+  "word highlight",
+  "play button",
+  "scrub bar"
+ ],
+ "demo_content": "Fictional podcast \"Frame Rate · Episode 48\" with hosts Maya and Theo talking about interface timing.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "media-player",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "podcast transcript that follows the audio",
+  "words light up as they are spoken",
+  "karaoke style read along text",
+  "audio player with clickable transcript",
+  "seek by clicking a word",
+  "interview transcript with playback bar",
+  "subtitles that scroll with the voice",
+  "read along player with speed control"
+ ],
+ "resembles": [
+  "Spotify podcast transcripts"
+ ],
+ "use_when": "A podcast or interview page should let listeners read along and jump to a moment by clicking a line.",
+ "avoid_when": "Playback is simulated only, so you must drive real audio through the time callback; the default script is filler text.",
+ "suits": [
+  "blog",
+  "social"
+ ],
+ "slot_hints": [
+  "media",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Title, an array of speaker segments with start and end times, a duration and a time-change callback are props; speeds, word timing and colours stay in the source.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A request-animation-frame clock while playing and a few CSS transitions; idle when paused.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Transport and scrubber are labelled and keyboard ready, but transcript words cannot be focused or announced as they play."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"Frame Rate · Episode 48\"",
+   "required": false
+  },
+  {
+   "name": "segments",
+   "type": "TranscriptSegment[]",
+   "default": "DEFAULT_SEGMENTS",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "end of last segment + 0.6",
+   "required": false
+  },
+  {
+   "name": "onTimeChange",
+   "type": "(seconds: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "A mask fades the top and bottom of the transcript, so the edge lines look washed out.",
+  "Unspoken text is a mid grey on near black, faint for long reading."
+ ],
+ "polish": 4,
+ "polish_why": "Careful word-level sync and tidy player chrome; faint future text and faded edges cost it a little.",
+ "unsure": [],
+ "title": "Synced Transcript",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "838e002ef4b6f711",
+  "film_hash": "566f32feed7cf491",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

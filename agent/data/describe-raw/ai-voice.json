@@ -1,0 +1,155 @@
+{
+  "name": "ai-voice",
+  "frames": {
+    "code": "1311",
+    "best": 3,
+    "best_why": "The fullest live waveform, red halo and running timer show the recording state at its peak.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tap the mic and a live waveform scrolls while the voice timer runs.",
+  "summary": "A voice capture control: a round microphone button starts recording, a scrolling level waveform and timer track the take, then play, discard and send appear for review.",
+  "title_fix": null,
+  "appearance": "Centred on black, a circular button holds a microphone, red stop square or play and pause icon inside a soft red halo. Below it a monospace timer with a small red dot sits over a row of thin vertical level bars, and a short caption or Discard and Send buttons close the stack.",
+  "behaviour": "Starting a recording swaps the mic for a red stop square, makes the halo swell with the voice and slides new waveform bars in from the right while the timer counts. Stopping freezes the take into a full waveform, shows playback controls and review actions, and playing sweeps a darker copy across the bars.",
+  "parts": [
+    "mic button",
+    "record halo",
+    "timer",
+    "waveform",
+    "caption",
+    "discard button",
+    "send button"
+  ],
+  "demo_content": "A simulated two-second take with a 00:02 timer; the loop records, plays and sends with no real audio.",
+  "states": [
+    "hover",
+    "focus",
+    "active"
+  ],
+  "kind": "media-player",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "monochrome"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "voice input with live waveform",
+    "tap to record a voice message",
+    "audio recorder with play and send",
+    "voice memo button for ai chat",
+    "waveform scrolls while speaking",
+    "record a message then discard or send",
+    "mic button with a recording timer",
+    "siri style voice capture"
+  ],
+  "resembles": [
+    "WhatsApp voice note"
+  ],
+  "use_when": "Users should speak a prompt instead of typing, with a visible level and a chance to review it.",
+  "avoid_when": "You need real audio: the component shows a level and a playhead but plays nothing itself.",
+  "suits": [
+    "ai-chat",
+    "mobile-app",
+    "saas"
+  ],
+  "slot_hints": [
+    "form-submit",
+    "body-text"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "timer"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "layout",
+      "text",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The demo flag, live level and callbacks are props; captions, bar count, colours and sample timing are written in the file.",
+  "technique": [
+    "js-animation",
+    "css-transition",
+    "motion-library"
+  ],
+  "weight": "moderate",
+  "weight_why": "A requestAnimationFrame loop drives about fifty bars while recording; it stops once in review.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The main button is labelled and announces its state, and reduced motion freezes the waveform; the bars themselves are hidden from assistive tech."
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "demo",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "level",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onListeningChange",
+      "type": "(listening: boolean) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onStop",
+      "type": "(duration: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onSend",
+      "type": "(duration: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onDiscard",
+      "type": "() => void",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "Playback is only a sweeping bar; the component never produces or plays audio."
+  ],
+  "polish": 4,
+  "polish_why": "A clear voice capture loop with a convincing level display; the demo makes no sound.",
+  "unsure": [
+    "theme",
+    "content_from"
+  ]
+}

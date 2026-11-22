@@ -1,0 +1,133 @@
+{
+  "name": "stack-panel",
+  "frames": {
+    "code": "5204",
+    "best": 3,
+    "best_why": "A settled Notifications page with a back label, three toggles and the Quiet hours row.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tap a settings row: its page slides in and the label flies up into the title.",
+  "summary": "A phone-style settings panel that drills down through levels. Choosing a row pushes its page in from the right as the row's label becomes the header, and a swipe, Back or Escape pops it again.",
+  "title_fix": null,
+  "appearance": "A rounded dark panel with a centred header title, and a back label when a page is nested. Rows sit in grouped rounded lists with a label on the left and a grey value, chevron, check or pill toggle on the right, separated by captions and small footnote lines.",
+  "behaviour": "Tapping a row slides its page in from the right while the tapped label grows from the row up into the header, and the page underneath shifts a third as far. Swiping the page right, pressing Back or hitting Escape pops it and returns focus to the row that opened it, with the panel's height springing to each page.",
+  "parts": [
+    "panel header",
+    "back label",
+    "title",
+    "settings row",
+    "value text",
+    "toggle switch",
+    "chevron",
+    "footnote"
+  ],
+  "demo_content": "Workspace settings: Account, Appearance, Notifications, Billing and Keyboard shortcuts, with themes and quiet hours.",
+  "states": [
+    "hover",
+    "focus",
+    "active",
+    "checked",
+    "selected",
+    "dragging"
+  ],
+  "kind": "settings-panel",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "dense"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "phone settings panel that drills in",
+    "tap a row to slide in a subpage",
+    "ios style settings list",
+    "nested settings with back titles",
+    "swipe right to go back a page",
+    "settings menu with toggles and checks",
+    "drill down preferences panel",
+    "mobile settings screen component"
+  ],
+  "resembles": [
+    "iOS Settings"
+  ],
+  "use_when": "An app needs several levels of preferences without leaving the panel or routing to new pages.",
+  "avoid_when": "Deep or wide trees: every page is hand-built in a record and the panel stays phone-width.",
+  "suits": [
+    "saas",
+    "mobile-app",
+    "devtool"
+  ],
+  "slot_hints": [
+    "modal",
+    "body-text"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "drag",
+      "keyboard"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "text",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pages are a record of titled sections and rows keyed by a root id; rows carry labels, values, sub-pages, toggles and checks, while transitions and width are fixed.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "Renders the current page and the one beneath it with motion springs; idle at rest.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Rows are buttons with pressed or switch state, Back and Escape pop a page, and reduced motion removes the slide."
+  },
+  "props": [
+    {
+      "name": "pages",
+      "type": "Record<string, StackPage>",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "root",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Crisp iOS-like push and pop with tidy grouped rows; motion is the only flourish.",
+  "unsure": [
+    "theme",
+    "content_from",
+    "slot_hints"
+  ]
+}

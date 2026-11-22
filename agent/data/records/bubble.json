@@ -1,0 +1,148 @@
+{
+ "name": "bubble",
+ "frames": {
+  "code": "8811",
+  "best": 4,
+  "best_why": "Shows the full thread plus the party reaction badge that appears only after the long message is clicked.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "Chat thread whose long message pops a party reaction when clicked.",
+ "summary": "A small chat window with a contact header and message bubbles in several tones and alignments. Clicking the long reply adds a party-popper reaction badge with a count.",
+ "title_fix": null,
+ "appearance": "A dark rounded card starts with a tiny avatar and contact header, then a stack of message bubbles: grey on the left, white on the right, a pale green tint and a red error bubble. Bubbles are rounded rectangles of varied widths.",
+ "behaviour": "The long right-hand message is a button; clicking it toggles a small party-popper badge with a count that overlaps its lower edge. Bubble colour and side follow the chosen variant and alignment.",
+ "parts": [
+  "chat card",
+  "contact header",
+  "avatar",
+  "message bubble",
+  "reaction badge"
+ ],
+ "demo_content": "Contact Maya Patel shown as Active now, with lines about a shipped onboarding flow and a dashboard link.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "error",
+  "selected"
+ ],
+ "kind": "chat",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "chat thread message rows",
+  "conversation thread in a card",
+  "message with reaction emoji badge",
+  "apple messages style thread",
+  "support chat conversation panel",
+  "messages aligned left and right",
+  "chat with failed message warning",
+  "team chat conversation preview"
+ ],
+ "resembles": [
+  "iMessage"
+ ],
+ "use_when": "A page needs to preview or mock a conversation with clear sender sides and message tones.",
+ "avoid_when": "It is a presentational shell: sending, typing and live updates must be wired up yourself.",
+ "suits": [
+  "ai-chat",
+  "saas"
+ ],
+ "slot_hints": [
+  "list-item",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Message text is passed as children; variant, alignment and reaction side/alignment are props, while colours come from theme tokens.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Plain DOM bubbles with a conditional badge; nothing animates on its own.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The clickable bubble has a focus ring, but the reaction badge and emoji carry no accessible label or live announcement."
+ },
+ "props": [
+  {
+   "name": "variant",
+   "type": "string",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "'start' | 'end'",
+   "default": "\"start\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"flex min-w-0 flex-col gap-2\", className)}",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "side",
+   "type": "'top' | 'bottom'",
+   "default": "\"bottom\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean chat card with convincing variants and a neat reaction badge.",
+ "unsure": [
+  "responsive",
+  "theme"
+ ],
+ "title": "Bubble",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "64bcd36ae5bef0c9",
+  "film_hash": "b99a17b018a97049",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

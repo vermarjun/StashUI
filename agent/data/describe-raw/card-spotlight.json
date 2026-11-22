@@ -1,0 +1,131 @@
+{
+  "name": "card-spotlight",
+  "frames": {
+    "code": "4074",
+    "best": 4,
+    "best_why": "Dense violet speckle field over the whole card with all text still readable.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Violet speckles and a soft spotlight bloom on a dark card under the cursor.",
+  "summary": "A rounded black information card whose surface lights up on hover. A soft radial light follows the pointer while a fine canvas of blue and purple dots spreads across the face.",
+  "title_fix": null,
+  "appearance": "A rounded near-black card with a thin grey border, holding a bold white heading, a grey paragraph and three bullet lines marked by small indigo dots. On hover a field of tiny violet and blue speckles covers the surface.",
+  "behaviour": "Moving the pointer lights the card with a soft spotlight that follows it, and a fine particle field appears across the face while hovered. Leaving fades the effect back to the plain dark card.",
+  "parts": [
+    "card surface",
+    "border",
+    "heading",
+    "body copy",
+    "bullet list",
+    "spotlight",
+    "particle dots"
+  ],
+  "demo_content": "Heading 'Authentication Steps' with three steps: enter credentials, verify two-factor, access granted.",
+  "states": [
+    "hover"
+  ],
+  "kind": "card",
+  "look": [
+    "dark",
+    "rounded",
+    "textured",
+    "minimal"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "card with a spotlight that follows the mouse",
+    "dark card with glowing speckles",
+    "particle reveal on a content card",
+    "cursor spotlight over a black panel",
+    "card with a starry hover effect",
+    "mouse tracking light on a feature tile",
+    "blue dots appear when hovering a card",
+    "spotlight panel for auth steps"
+  ],
+  "resembles": [],
+  "use_when": "A feature or information card should feel interactive when explored with the pointer.",
+  "avoid_when": "The particle canvas only appears on hover, so touch users see a plain card, and it forces a black surface.",
+  "suits": [
+    "saas",
+    "dashboard",
+    "devtool"
+  ],
+  "slot_hints": [
+    "feature-card"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "pointer-move"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "background",
+      "children"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass the card content as children and tune the spotlight radius and colour through props. The particle dot colours, size and speed are fixed in the shared effect.",
+  "technique": [
+    "webgl-shader",
+    "motion-library"
+  ],
+  "weight": "heavy",
+  "weight_why": "Mounts a WebGL dot-matrix canvas on hover and tears it down on leave.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The spotlight and particle field are hover-only, so keyboard and touch users never see them, and there is no reduced-motion guard."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "default": "350",
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "default": "\"#262626\"",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The canvas particle layer only appears on hover, leaving touch users with a flat card.",
+    "In the frames the spotlight is hard to separate from the speckle texture."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy card and a rich hover texture; the spotlight is hard to distinguish from the particles.",
+  "unsure": [
+    "kind",
+    "weight"
+  ]
+}

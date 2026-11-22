@@ -1,0 +1,67 @@
+{
+  "name": "tailwind-image-accordion",
+  "frames": {
+    "code": "1145",
+    "best": 4,
+    "best_why": "One photo is fully open with its name and role lifted into view, while the other two are shrunk and veiled.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Portrait cards widen under the pointer while the rest dim and blur.",
+  "summary": "Three tall portrait photos share a row on a dark page; the card under the pointer grows to most of the width and the others shrink behind a pale blur. The open card lifts its name and job title into view.",
+  "title_fix": null,
+  "appearance": "Three rounded portrait photos in a row: a pug on a yellow backdrop, a man against black and a man against pale blue. Neighbours of the hovered card become narrow strips washed by a soft white veil.",
+  "behaviour": "Hovering or keyboard-focusing a card takes it to about four fifths of the row and squeezes the other two into blurred slivers. The name rises into the open card first, then the role, and both ease back out when the pointer leaves.",
+  "parts": ["photo card", "name", "job title", "blur veil"],
+  "demo_content": "A pug on yellow and two men's portraits, named Adrian Paul, Flualy Cual and Naymur Rahman.",
+  "states": ["hover", "focus"],
+  "kind": "image-effect",
+  "look": ["rounded", "colorful", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "portrait cards that expand on hover",
+    "team photos in a collapsing row",
+    "hover one image and blur the rest",
+    "contact cards with names on hover",
+    "shrinking photo strip effect",
+    "profile pictures that grow when pointed at",
+    "meet the team image accordion",
+    "photo row with blurred neighbours"
+  ],
+  "resembles": [],
+  "use_when": "A team or people section wants large portraits that open under the cursor without a separate page.",
+  "avoid_when": "The expanding row is desktop only; below the md breakpoint the cards just stack and the effect is gone.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "pronounced",
+    "affects": ["layout", "image", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the three people, their roles and photo links are fixed in the items array in the file, and the open width and timings are utility classes.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Three photos and pure CSS width and opacity transitions.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Focus expands a card like hover does and adds an indigo ring, but motion ignores reduced-motion and each card links to a dead #."
+  },
+  "props": [],
+  "issues": [
+    "Cards link to #, so clicking a person goes nowhere.",
+    "The blur veil washes the shrunk portraits almost to grey, so neighbours are barely identifiable.",
+    "On narrow screens the width trick is off and the hover effect is unavailable."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy photo row with a good focus ring and staggered captions; dead links and washed neighbours.",
+  "unsure": []
+}

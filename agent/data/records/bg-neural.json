@@ -1,0 +1,136 @@
+{
+ "name": "bg-neural",
+ "frames": {
+  "code": "9144",
+  "best": 5,
+  "best_why": "Frame 5 has the brightest glowing knot with long branching filaments spread across the frame.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.8
+ },
+ "tagline": "Electric blue filaments fork and drift across a black field.",
+ "summary": "A full-bleed shader backdrop that draws thin luminous blue tendrils, brightening where they cross, over pure black. The pattern moves on its own and shifts toward the pointer.",
+ "title_fix": null,
+ "appearance": "A black field holds a few delicate blue filaments that branch like veins or lightning, with small white-hot knots where strands converge. Everything fades to black at the edges, and a small white caption sits off-centre.",
+ "behaviour": "The strands crawl and re-form on a slow loop. Moving the pointer or scrolling pulls the glowing shape toward the cursor and alters its hue slightly.",
+ "parts": [
+  "glowing filament",
+  "bright node",
+  "black field",
+  "caption"
+ ],
+ "demo_content": "The caption 'Neural Background'.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "glow",
+  "minimal",
+  "technical",
+  "organic"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "blue lightning background",
+  "glowing neural network animation",
+  "abstract electric filaments on black",
+  "shader background that follows the mouse",
+  "energy tendrils for a tech hero",
+  "dark blue glowing veins effect",
+  "interactive webgl background for a startup",
+  "neuron like glowing lines"
+ ],
+ "resembles": [],
+ "use_when": "A dark tech or AI page needs a living, glowing backdrop that reacts to the cursor.",
+ "avoid_when": "It runs a WebGL loop every frame and reads the window pointer and scroll, so it reacts outside its own box.",
+ "suits": [
+  "ai-chat",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "hue, saturation and chroma tune the colour and glow and className adds styles; the pattern itself and the pointer reaction are baked into the shader.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen fragment shader with a fifteen-step loop, redrawn every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative shader canvas with no reduced-motion check, and it listens on the window for pointer and scroll."
+ },
+ "props": [
+  {
+   "name": "hue",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "saturation",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "chroma",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"pointer-events-none absolute inset-0 size-full opacity-",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 2 is nearly all black, so the effect disappears for stretches of the animation.",
+  "The caption sits over moving bright strands without a backing, so contrast varies."
+ ],
+ "polish": 4,
+ "polish_why": "Delicate glowing filaments with real depth; some frames go almost entirely black.",
+ "unsure": [],
+ "title": "Neural Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b07cb66583e4c66b",
+  "film_hash": "50700c5545d0a95c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

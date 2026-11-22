@@ -1,0 +1,70 @@
+{
+  "name": "pricing-frequency-toggle",
+  "frames": {
+    "code": "9639",
+    "best": 3,
+    "best_why": "The yearly view is settled: all three prices rolled, discount badges showing and the full grid aligned.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The bottom edge of all three cards is clipped by the crop, so the action buttons are only half visible.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Three plan cards with a monthly-yearly switch that rolls the prices.",
+  "summary": "A three-tier pricing block: a centred heading, a small sliding monthly or yearly switch, and three plan cards whose prices animate to the new figure while percentage-off badges pop in for yearly billing.",
+  "title_fix": null,
+  "appearance": "A centred heading and a line of grey subtext sit above a small two-option pill switch. Under them are three thin-bordered dark cards, the middle one slightly larger with a Popular badge, each holding a plan name, a big price, a billed label and a list of ticked features.",
+  "behaviour": "Clicking monthly or yearly slides a small light highlight between the two labels. The prices roll digit by digit to the new amount, and in the yearly view a discount percentage fades in at the top-right of each card, then out again when you switch back.",
+  "parts": ["heading", "subtitle", "frequency switch", "plan card", "price", "feature list", "popular badge", "discount badge"],
+  "demo_content": "Basic, Pro and Business plans at $7, $17 and $49 a month with blog-post and transcription features.",
+  "states": ["hover", "focus", "active", "selected"],
+  "kind": "pricing-section",
+  "look": ["dark", "outlined", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "three plan cards with a monthly yearly switch",
+    "price numbers roll when billing changes",
+    "saas pricing table with discount badges",
+    "monthly versus annual billing selector",
+    "plan comparison cards with feature ticks",
+    "toggle that animates the price per month",
+    "subscription tiers side by side",
+    "how to add a billing period switcher"
+  ],
+  "resembles": [],
+  "use_when": "A SaaS marketing page needs three tiers and a clear monthly versus yearly comparison.",
+  "avoid_when": "Plan names, prices and features are hardcoded in the file, so real plans mean editing the source array.",
+  "suits": ["saas", "marketing", "fintech"],
+  "slot_hints": ["section-background", "pricing-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The three plans, their monthly and yearly prices, features and button labels live in the plans array. Currency is fixed to USD, so other markets need a source edit.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three static cards plus a sliding highlight and digit transitions only when billing changes.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "The switch is labelled and exposes its pressed state, but the feature ticks are bare icons and the switch buttons use default focus styling."
+  },
+  "props": [
+    {"name": "plan", "type": "Plan", "default": null, "required": true},
+    {"name": "frequency", "type": "FREQUENCY", "default": "monthly", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The bottom of the cards is clipped by the crop, so the call-to-action buttons are only half visible.",
+    "Prices are formatted as USD in the source, with no prop to change the currency."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy standard pricing grid with a smooth rolling price; conventional styling.",
+  "unsure": ["best"]
+}

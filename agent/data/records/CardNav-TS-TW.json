@@ -1,0 +1,173 @@
+{
+ "name": "CardNav-TS-TW",
+ "frames": {
+  "code": "1141",
+  "best": 4,
+  "best_why": "All three cards are open with every nested link readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "The navbar unfolds into three link cards beneath it.",
+ "summary": "A slim dark navbar holds a centred logo, a hamburger and a light Get Started button. Tapping the menu drops the bar open into three tinted cards, each listing nested links with small arrows.",
+ "title_fix": "Expanding Card Navigation",
+ "appearance": "A narrow dark rounded bar sits at the top centre of a black page, with a white logo centred, a small light Get Started button on the right and a two-line hamburger on the left. Open, three deep violet cards fill the bar with tinted labels and arrowed links.",
+ "behaviour": "Tapping the hamburger unfolds the bar downward while three cards fade and rise into place one after another. Tapping again folds the bar back to its slim resting height.",
+ "parts": [
+  "nav bar",
+  "logo",
+  "menu toggle",
+  "cta button",
+  "link cards",
+  "card links"
+ ],
+ "demo_content": "Logo \"Northwind\"; page headline \"Design studio for ambitious products\"; cards About, Projects and Contact.",
+ "states": [
+  "open",
+  "hover"
+ ],
+ "kind": "site-header",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat",
+  "corporate"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "navbar that expands into cards",
+  "menu with nested link cards",
+  "hamburger opens a panel of columns",
+  "dark rounded header with logo",
+  "navigation with get started button",
+  "mega menu card dropdown",
+  "studio site header with menu",
+  "compact nav that grows on click"
+ ],
+ "resembles": [],
+ "use_when": "A premium studio site needs a compact header that reveals grouped links on demand.",
+ "avoid_when": "Sites with many link groups: only the first three item sets are ever rendered.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "nav",
+  "hero",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Logo, item groups with their own colours and links, ease, base colour, menu colour and button colours are props. Card count is capped at three in the source.",
+ "technique": [
+  "gsap",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One height tween and three card fades; nothing loops.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The toggle is a div with role button and no key handler, so the menu cannot be opened from the keyboard; no focus styles."
+ },
+ "props": [
+  {
+   "name": "logo",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "items",
+   "type": "CardNavItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "logoAlt",
+   "type": "string",
+   "default": "'Logo'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "menuColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "buttonBgColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "buttonTextColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Item groups past the first three are dropped, because the source slices the list to three."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy dark bar and clean cards; the demo subline sits very close under the heading.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "CardNav",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "57e325532ce31f56",
+  "film_hash": "c50d7c93667f9e2b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

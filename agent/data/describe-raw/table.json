@@ -1,0 +1,65 @@
+{
+  "name": "table",
+  "frames": {
+    "code": "7443",
+    "best": 1,
+    "best_why": "Whole invoice table is visible with every row, the total footer and the caption, and no cursor in the way.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Invoice rows on a dark panel light up as the pointer sweeps down.",
+  "summary": "A five-column invoice table with a small header row, five customer records, a shaded total footer and a caption underneath. Each row tints grey when hovered.",
+  "title_fix": null,
+  "appearance": "A dark rounded panel on a near-black stage holds a five-column invoice layout: Invoice, Customer, Status, Method and a right-aligned Amount. Header labels are small grey caps, rows are split by faint lines, the Total footer sits in a slightly lighter band and a centred caption closes the bottom.",
+  "behaviour": "Hovering a body row fills its full width with a lighter grey, and as the pointer moves down the records each one highlights in turn. The footer keeps its own shade and nothing opens or expands.",
+  "parts": ["table panel", "header row", "column label", "body row", "total row", "caption"],
+  "demo_content": "Five invoices for Alex Thompson, Sarah Chen, James Wilson, Maria Garcia and David Kim.",
+  "states": ["hover", "selected"],
+  "kind": "data-table",
+  "look": ["dark", "minimal", "flat", "corporate"],
+  "tone": "technical",
+  "search_phrases": [
+    "invoice list with columns and a total",
+    "dark admin grid of customers",
+    "rows that highlight when hovered",
+    "billing history spreadsheet panel",
+    "simple data grid with header row",
+    "grid with footer total and caption",
+    "list of payments and their status",
+    "spreadsheet style panel for orders"
+  ],
+  "resembles": [],
+  "use_when": "You need to show many comparable records across several columns with a summary total.",
+  "avoid_when": "On narrow screens the five columns squeeze; sorting, filtering and paging are not built in.",
+  "suits": ["saas", "dashboard", "fintech"],
+  "slot_hints": ["data-table"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Each export is a thin wrapper over an HTML element, so rows and cells arrive as children; colours and the row highlight come from theme classes you can override with className.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Plain table elements styled with utility classes; no script runs.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Semantic table markup includes a caption, but header cells have no scope attribute and the hover highlight has no keyboard path."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Clean dark styling and tidy alignment, but it is a plainly dressed table.",
+  "unsure": []
+}

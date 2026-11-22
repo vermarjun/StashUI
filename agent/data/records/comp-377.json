@@ -1,0 +1,111 @@
+{
+ "name": "comp-377",
+ "frames": {
+  "code": "9540",
+  "best": 4,
+  "best_why": "Account menu is fully open with the profile header and Settings row highlighted.",
+  "usable": [
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "A small avatar in the header drops a menu of account and team links.",
+ "summary": "An avatar with a chevron in a site header opens an account menu. The menu shows the user's name and email, then Profile, Billing, Settings, Team, Documentation and Logout.",
+ "title_fix": null,
+ "appearance": "A rounded dark header bar holds the word Acme, three grey nav labels and, at the right, a small round photo with a chevron. Clicking it opens a dark menu aligned to the right edge: a bold name over a grey email, then two groups of icon rows and a Logout row, split by thin rules.",
+ "behaviour": "Clicking the avatar opens the menu; hovering a row highlights it and choosing one closes the menu. Clicking outside or pressing Escape dismisses it.",
+ "parts": [
+  "header bar",
+  "nav labels",
+  "avatar",
+  "chevron",
+  "menu panel",
+  "name and email",
+  "icon rows",
+  "separator"
+ ],
+ "demo_content": "'Acme' header with Dashboard, Projects, Reports; menu shows Keith Kennedy and Profile, Billing, Settings, Team, Logout.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "avatar menu in the page header",
+  "account dropdown with profile and logout",
+  "user menu with name and email",
+  "click your photo to open account options",
+  "profile menu with billing and settings",
+  "header avatar with chevron menu",
+  "account switcher dropdown",
+  "navigation bar user menu"
+ ],
+ "resembles": [],
+ "use_when": "A signed-in header needs quick access to profile, billing and logout without a sidebar.",
+ "avoid_when": "The avatar trigger is small and the menu is fixed narrow, so long names or emails get truncated.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "nav",
+  "avatar"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The user name, email, avatar URL and every menu label are fixed in the file; the trigger and menu alignment are set in code.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small menu with one avatar image; nothing runs until opened.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger has an aria-label and the menu follows standard menu roles with arrow keys; no reduced-motion handling."
+ },
+ "props": [],
+ "issues": [
+  "The menu is a fixed 240px wide, so long names and emails are truncated.",
+  "Menu items have no actions wired; choosing one only closes the menu."
+ ],
+ "polish": 3,
+ "polish_why": "Clean header and tidy menu; it is a conventional account dropdown.",
+ "unsure": [],
+ "title": "Avatar Account Menu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d5211d67c1b4eb4b",
+  "film_hash": "9ee977891ddb3b10",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

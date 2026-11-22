@@ -1,0 +1,78 @@
+{
+  "name": "folder-float",
+  "frames": {
+    "code": "6484",
+    "best": 4,
+    "best_why": "All four notes are fully out, spread and readable above the open folder with its paper sheet showing.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Notes float out of a folder and drift like paper on hover.",
+  "summary": "A folder card that opens on hover, releasing its notes as small white pills that scatter, wobble and can be dragged. The folder label and note count stay on the front panel.",
+  "title_fix": null,
+  "appearance": "A dark grey folder with a small tab and a lighter front panel sits on black, its white label and grey note count on the lower half. When open, a pale sheet rises inside and four white rounded notes hover above in two tilted rows.",
+  "behaviour": "Hovering tips the folder front down, lifts a paper sheet and pops the notes out one after another. The notes then drift and bump under light physics and can be dragged; leaving or clicking closes the folder, and picking a note closes it too.",
+  "parts": ["folder back", "folder front", "paper sheet", "note pills", "label"],
+  "demo_content": "\"Design feedback\" with four notes including Try a warmer palette and Logo feels small.",
+  "states": ["hover", "open", "dragging"],
+  "kind": "card",
+  "look": ["dark", "minimal", "rounded", "playful"],
+  "tone": "playful",
+  "search_phrases": [
+    "folder that opens on hover",
+    "notes flying out of a folder",
+    "draggable paper notes",
+    "feedback folder widget",
+    "open folder with sticky notes",
+    "physics paper tags",
+    "folders with floating cards",
+    "review notes popup"
+  ],
+  "resembles": [],
+  "use_when": "A playful way to show a small collection of notes, comments or saved items from one folder.",
+  "avoid_when": "Notes are small and physics-driven, so drags can steal clicks, and it needs clear space above.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["feature-card", "list-item"],
+  "traits": {
+    "trigger": ["hover", "click", "drag"],
+    "motion": "continuous",
+    "affects": ["children", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass notes as an items array of strings or label and value objects, with label and sublabel. Trigger, default open, close on select, physics, drift, size, colours and spread are props.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "A Matter.js engine steps up to four note bodies and their drift while the folder is open.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The folder toggles and notes are tabbable buttons, but focus is invisible and opening relies on hover."
+  },
+  "props": [
+    {"name": "items", "type": "FolderFloatItem[]", "default": "DEFAULT_ITEMS", "required": false},
+    {"name": "label", "type": "string", "default": "Design feedback", "required": false},
+    {"name": "sublabel", "type": "string", "default": "", "required": false},
+    {"name": "trigger", "type": "'hover' | 'click'", "default": "hover", "required": false},
+    {"name": "defaultOpen", "type": "boolean", "default": "false", "required": false},
+    {"name": "closeOnSelect", "type": "boolean", "default": "true", "required": false},
+    {"name": "physics", "type": "boolean", "default": "true", "required": false},
+    {"name": "drift", "type": "number", "default": "0.5", "required": false},
+    {"name": "folderColor", "type": "string", "default": "#3f3f46", "required": false},
+    {"name": "width", "type": "number", "default": "200", "required": false},
+    {"name": "height", "type": "number", "default": "148", "required": false},
+    {"name": "spread", "type": "number", "default": "180", "required": false}
+  ],
+  "issues": [
+    "Notes overlap one another as they leave, briefly hiding their text."
+  ],
+  "polish": 4,
+  "polish_why": "Tactile folder and playful physics; notes briefly collide and cover each other on the way out.",
+  "unsure": []
+}

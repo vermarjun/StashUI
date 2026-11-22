@@ -1,0 +1,132 @@
+{
+ "name": "text-generate-effect",
+ "frames": {
+  "code": "3525",
+  "best": 6,
+  "best_why": "Frame 6 is the only one where every word is sharp; the others leave a blurred tail on the sentence.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "A bold sentence sharpens into focus one word at a time.",
+ "summary": "Takes a sentence and splits it into words that fade in from a blur one after another, so the line assembles itself on load. It plays once and settles as plain bold text.",
+ "title_fix": null,
+ "appearance": "A single bold white sentence across a black stage, set in two centred lines. In early frames the tail of the sentence is soft and blurred while the opening words are already crisp.",
+ "behaviour": "On mount the words reveal left to right, each one lifting from blurred and transparent to sharp white with a short stagger, until the whole line is legible. It runs once and never repeats.",
+ "parts": [
+  "sentence",
+  "word",
+  "line break"
+ ],
+ "demo_content": "The sentence \"Build beautiful animated interfaces with ease using Aceternity UI components.\"",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "bold",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "words appearing one by one",
+  "text that fades in from blur",
+  "sentence typing itself out",
+  "staggered word reveal animation",
+  "headline that materialises",
+  "progressive text load effect",
+  "words unblur in sequence",
+  "animated paragraph entrance"
+ ],
+ "resembles": [],
+ "use_when": "A short statement should draw the eye as it assembles the first time it is seen.",
+ "avoid_when": "The copy is critical and must be readable at once, or it sits far below the fold.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "body-text",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "words is the sentence; className, filter and duration control styling, whether words blur, and length. The 0.2s stagger and 10px blur are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One sentence split into spans that animate a single time.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The blur-in reveal runs even under reduced-motion; the text is plain and readable once it finishes."
+ },
+ "props": [
+  {
+   "name": "words",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"dark:text-white text-black opacity-0\"",
+   "required": false
+  },
+  {
+   "name": "filter",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The reveal only fires once on mount, so anyone arriving after it finishes sees plain text.",
+  "Words still blurred at the start are unreadable for a moment."
+ ],
+ "polish": 3,
+ "polish_why": "A clean, well-timed word reveal, but it is visually just a bold sentence with one trick.",
+ "unsure": [],
+ "title": "Text Generate Effect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f2a73f7adcb16395",
+  "film_hash": "03ea836eae997f9e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

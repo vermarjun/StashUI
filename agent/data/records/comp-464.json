@@ -1,0 +1,129 @@
+{
+ "name": "comp-464",
+ "frames": {
+  "code": "7093",
+  "best": 1,
+  "best_why": "Shows the full arrow row with the Page 2 selector centred and every control clear of the cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Page arrows with a page-number dropdown in the middle.",
+ "summary": "A compact pager of first, previous, next and last arrows wrapped around a centred dropdown listing every page, ticking the current one.",
+ "title_fix": null,
+ "appearance": "Five controls sit in a flat row on black: a first-page and a back chevron, an outlined Page 2 selector with a down arrow, then next and last chevrons. The selector opens a tall dark menu of Page 1 through Page 8 with a tick.",
+ "behaviour": "Clicking the selector drops a list of every page; hovering a row fills it grey and picking one updates the trigger label, here from Page 2 to Page 6. The arrows stay still.",
+ "parts": [
+  "first chevron",
+  "previous chevron",
+  "page selector",
+  "next chevron",
+  "last chevron",
+  "page menu"
+ ],
+ "demo_content": "Page 2 selected out of eight, with menu rows Page 1 to Page 8.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "disabled"
+ ],
+ "kind": "pagination",
+ "look": [
+  "dark",
+  "minimal",
+  "outlined",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pagination with a page dropdown",
+  "jump to a page from a list",
+  "choose page number from a menu",
+  "page arrows around a selector",
+  "go directly to page six",
+  "table pager with page picker",
+  "first last and page choice",
+  "dropdown listing every page"
+ ],
+ "resembles": [],
+ "use_when": "Lists with a handful of pages where people want to jump straight to a page number.",
+ "avoid_when": "With very many pages: the menu lists every page, so it grows long instead of paging.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "data-table",
+  "footer"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "currentPage and totalPages set the default selection and menu length; the four arrow icons and selector styling are fixed in the file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One small select and four arrow links; nothing runs in the background.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The page select has an aria-label and each arrow is named; menu transitions have no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "currentPage",
+   "type": "number",
+   "default": "== totalPages",
+   "required": true
+  },
+  {
+   "name": "totalPages",
+   "type": "number",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "The page select only sets its default value, so it will not follow currentPage when the arrows change it."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy centred selector between arrows; a practical but plain pager.",
+ "unsure": [],
+ "title": "Pagination Page Select",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d48d86372f46652b",
+  "film_hash": "c6be5fe1094f4c29",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

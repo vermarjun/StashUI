@@ -1,0 +1,134 @@
+{
+ "name": "interface-craft-cards",
+ "frames": {
+  "code": "6381",
+  "best": 3,
+  "best_why": "The blue card is enlarged and centred with its description shown, while the others fall behind.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.5
+ },
+ "tagline": "Fanned stack of tilted colour cards that springs one forward when clicked.",
+ "summary": "Five coloured cards lie in a loose tilted fan. Clicking one straightens it, scales it up and brings it to the middle with a short description, while the others shrink and drop away; a click outside restores the fan.",
+ "title_fix": null,
+ "appearance": "Five tall rounded cards in orange, off-white, blue, purple and near-black, spread in a shallow overlapping fan on black. Each has a soft gradient block across the top and a white title near its lower edge; the chosen card sits upright and larger with a paragraph beneath its title.",
+ "behaviour": "At rest the cards lean at small angles with staggered heights. Clicking a card rotates it upright, enlarges it and slides it to centre while the rest scale down and fall behind; clicking anywhere outside springs everything back to the fan.",
+ "parts": [
+  "card",
+  "gradient block",
+  "title",
+  "description",
+  "fan stack"
+ ],
+ "demo_content": "Five competency cards: Working Knowledge, Practical Demonstration, Collaborate with AI, Means & Methods, Interface Kit.",
+ "states": [
+  "hover",
+  "active",
+  "selected"
+ ],
+ "kind": "card",
+ "look": [
+  "colorful",
+  "gradient",
+  "rounded",
+  "playful",
+  "bold"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "fan of cards you can click",
+  "expanding card stack",
+  "pick a card and it comes forward",
+  "tilted cards spread out on screen",
+  "colourful cards that enlarge on click",
+  "card fan selector",
+  "interactive stack of panels",
+  "show details when a card is chosen"
+ ],
+ "resembles": [],
+ "use_when": "A few peer options or topics should be browsable as a playful stack instead of a plain list.",
+ "avoid_when": "Overlapping cards cut off their own titles, and the wide fan needs a large centred area to sit in.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "decoration",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "hardcoded",
+ "customise": "Spring feel, active scale and card spacing are props; the five cards, their titles, descriptions and colours are written into the array.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Five cards using spring and layout transforms that only run during a change.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Cards are buttons and can be tabbed to, but there is no focus ring, no Escape to close, and reduced-motion is never checked."
+ },
+ "props": [
+  {
+   "name": "spring",
+   "type": "SpringConfig",
+   "default": "defaultSpring",
+   "required": false
+  },
+  {
+   "name": "activeScale",
+   "type": "number",
+   "default": "1.15",
+   "required": false
+  },
+  {
+   "name": "cardSpacing",
+   "type": "number",
+   "default": "180",
+   "required": false
+  }
+ ],
+ "issues": [
+  "In the fanned state the overlapping cards clip each other's titles.",
+  "There is no visible focus ring and no Escape key to dismiss the open card."
+ ],
+ "polish": 4,
+ "polish_why": "Bold colours and a satisfying springy reveal; clipped titles and missing focus cues cost it.",
+ "unsure": [],
+ "title": "Interface Craft Cards",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "43505ac5c4c93434",
+  "film_hash": "2d163227ff8e32b9",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

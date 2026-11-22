@@ -1,0 +1,175 @@
+{
+ "name": "metal-button",
+ "frames": {
+  "code": "2186",
+  "best": 2,
+  "best_why": "Frame 2 shows the light button at its most metallic, with a clear silver gradient and dark ring.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 1.1
+ },
+ "tagline": "Pill buttons wrapped in a slow liquid-metal sheen.",
+ "summary": "A pair of pill buttons, one near-white and one dark, each ringed by an animated metallic edge and a faint glow. The shader drifts around the rim while the label, size and fill behave like normal buttons.",
+ "title_fix": null,
+ "appearance": "Two rounded pill buttons sit side by side on black: a near-white Get Started with dark text and a dark Learn More with light text. Each has a thin metallic rim and a soft halo, and the light one carries a silver gradient across its face.",
+ "behaviour": "A shader ring travels around each button's edge and its glow slowly breathes; the labels and fills stay in place. Hovering brightens the button surface through its normal colour transition.",
+ "parts": [
+  "pill button",
+  "label",
+  "metal ring",
+  "glow"
+ ],
+ "demo_content": "Buttons labelled Get Started and Learn More.",
+ "states": [
+  "hover"
+ ],
+ "kind": "button",
+ "look": [
+  "skeuomorphic",
+  "rounded",
+  "pill",
+  "glow"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "button with a liquid metal edge",
+  "shiny chrome ring around a button",
+  "animated metallic border button",
+  "glowing metal pill cta",
+  "futuristic button with moving sheen",
+  "get started button with a chrome outline",
+  "silver ring button for a hero",
+  "chrome effect call to action"
+ ],
+ "resembles": [],
+ "use_when": "A hero call to action should feel physical and premium without changing the button's layout.",
+ "avoid_when": "The page must stay lightweight or calm: it pulls a shader dependency and the ring never stops.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "shadow",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "preset, theme, strength, paused, borderRadius, disableGlow and metalVariant tune the shader; variant, size and className style the button. Labels are children.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "moderate",
+ "weight_why": "A small fragment shader animates continuously behind two buttons.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The continuously moving ring and glow ignore prefers-reduced-motion, though the button works fine from the keyboard."
+ },
+ "props": [
+  {
+   "name": "metalVariant",
+   "type": "MetalFxVariant",
+   "default": "\"button\"",
+   "required": false
+  },
+  {
+   "name": "preset",
+   "type": "MetalFxProps[\"preset\"]",
+   "default": "\"chromatic\"",
+   "required": false
+  },
+  {
+   "name": "theme",
+   "type": "MetalFxProps[\"theme\"]",
+   "default": "\"auto\"",
+   "required": false
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "paused",
+   "type": "boolean",
+   "default": "{paused}",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number | string",
+   "default": "{borderRadius}",
+   "required": false
+  },
+  {
+   "name": "disableGlow",
+   "type": "boolean",
+   "default": "{disableGlow}",
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "string",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "string",
+   "default": "{size}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The metal ring is subtle; in the frames the two buttons look almost plain.",
+  "The shader runs continuously and never pauses for reduced motion."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing metallic sheen on clean pill buttons; the effect is subtle and the demo very sparse.",
+ "unsure": [
+  "technique",
+  "weight"
+ ],
+ "title": "Metal Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ddcc01cba79e8323",
+  "film_hash": "f00705e7e1f07eae",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

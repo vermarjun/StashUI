@@ -1,0 +1,161 @@
+{
+  "name": "glowing-effect",
+  "frames": {
+    "code": "2524",
+    "best": 3,
+    "best_why": "A bright arc runs along the top-right card's outline while the other cards stay dark.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A bright arc of light runs along the card border nearest your cursor.",
+  "summary": "A border glow that tracks the pointer: a card outline lights up with a short arc on the side facing the cursor and fades when the pointer moves away.",
+  "title_fix": null,
+  "appearance": "Five near-black cards in an uneven grid, each with a small icon in a bordered square, a bold white heading and grey supporting text. The hovered card's thin border shows a bright segment that fades into the rest of the outline.",
+  "behaviour": "As the pointer moves, a bright wedge of gradient travels around the border of the nearby card to face it, easing into place; leaving fades it back to a plain outline. The card itself never moves.",
+  "parts": [
+    "card",
+    "icon chip",
+    "title",
+    "description",
+    "glowing border arc"
+  ],
+  "demo_content": "Cards headed 'Do things the right way', 'The best AI code editor ever.' and similar placeholder lines about the product.",
+  "states": [
+    "hover"
+  ],
+  "kind": "border-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "glow"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "glowing border that follows the mouse",
+    "card outline lights up on hover",
+    "spotlight border effect",
+    "neon edge on a feature card",
+    "pointer aware card highlight",
+    "moving light around a border",
+    "premium hover effect for cards",
+    "gradient outline that tracks the cursor"
+  ],
+  "resembles": [],
+  "use_when": "A grid of feature or pricing cards needs a subtle hover cue without changing the card layout.",
+  "avoid_when": "The effect is decorative and pointer-only, so touch and keyboard users never see it.",
+  "suits": [
+    "saas",
+    "devtool",
+    "marketing"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "pricing-card"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "pointer-move"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "border"
+    ],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Tune blur, proximity, spread, inactiveZone, border width, movement duration, variant and a disabled flag; the gradient palette itself is fixed in the source.",
+  "technique": [
+    "js-animation",
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "One CSS mask with a short animation per pointer move, idle otherwise.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The glow is pointer-only, so keyboard and touch users get no equivalent cue from this component."
+  },
+  "props": [
+    {
+      "name": "blur",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "inactiveZone",
+      "type": "number",
+      "default": "0.7",
+      "required": false
+    },
+    {
+      "name": "proximity",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "default": "20",
+      "required": false
+    },
+    {
+      "name": "variant",
+      "type": "\"default\" | \"white\"",
+      "default": "default",
+      "required": false
+    },
+    {
+      "name": "glow",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "movementDuration",
+      "type": "number",
+      "default": "2",
+      "required": false
+    },
+    {
+      "name": "borderWidth",
+      "type": "number",
+      "default": "1",
+      "required": false
+    }
+  ],
+  "issues": [
+    "The demo copy is obvious filler, which weakens how the effect reads in a gallery.",
+    "At rest every card is a plain flat outline, so the effect can look like nothing at all."
+  ],
+  "polish": 3,
+  "polish_why": "The border light is tasteful and smooth; placeholder copy and a faint rest state let it down.",
+  "unsure": []
+}

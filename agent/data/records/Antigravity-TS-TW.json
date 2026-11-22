@@ -1,0 +1,184 @@
+{
+ "name": "Antigravity-TS-TW",
+ "frames": {
+  "code": "5222",
+  "best": 4,
+  "best_why": "Frame 4 has the fullest ring of particles evenly around the hollow centre.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.7
+ },
+ "tagline": "Tiny pink capsules orbit a hollow ring, repelled by the pointer.",
+ "summary": "Hundreds of small pink particles gather into a loose ring around the pointer and shove outward as it moves, drifting across a black field.",
+ "title_fix": null,
+ "appearance": "A black field scattered with hundreds of short pink-white capsules, most gathered in a rough circle that leaves a dark hole in the middle. Outside the ring a few stray particles float.",
+ "behaviour": "Particles near the pointer swing into a ring around it, pointing outward, and part as it moves; the ring breathes with a slow pulse. Left alone, the ring drifts along its own path.",
+ "parts": [
+  "particle",
+  "ring",
+  "empty centre"
+ ],
+ "demo_content": "",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "glow",
+  "airy"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "particles that flee from the cursor",
+  "ring of dots around the mouse",
+  "floating specks in a dark field",
+  "pink specks pushed away by pointer",
+  "floating particle circle background",
+  "interactive particle halo",
+  "small capsules orbiting the pointer",
+  "dark particle field for a hero"
+ ],
+ "resembles": [],
+ "use_when": "A product page wants a light particle halo that reacts to the pointer without a heavy scene.",
+ "avoid_when": "The particles are sparse and low contrast, so the ring is faint on anything but pure black.",
+ "suits": [
+  "ai-chat",
+  "devtool",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "decoration",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Particle count, magnet and ring radius, wave speed and amplitude, size, lerp, colour, auto animation, variance, rotation, depth, pulse, shape and field strength are props.",
+ "technique": [
+  "three-js"
+ ],
+ "weight": "moderate",
+ "weight_why": "Three hundred instanced capsules are recomputed and re-uploaded every frame on one draw call.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative particles with no controls; the field keeps animating and ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "count",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "magnetRadius",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "ringRadius",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "waveSpeed",
+   "type": "number",
+   "default": "0.4",
+   "required": false
+  },
+  {
+   "name": "waveAmplitude",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "particleSize",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "lerpSpeed",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#FF9FFC'",
+   "required": false
+  },
+  {
+   "name": "autoAnimate",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "particleShape",
+   "type": "\"capsule\" | \"sphere\" | \"box\" | \"tetrahedron\"",
+   "default": "'capsule'",
+   "required": false
+  },
+  {
+   "name": "fieldStrength",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "rotationSpeed",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The particles are faint and sparse, leaving large areas of pure black.",
+  "The ring follows pointer motion only, so the field is nearly still when the mouse is idle."
+ ],
+ "polish": 3,
+ "polish_why": "The ring of particles is tidy and calm; it is sparse and reads as a simple dot field.",
+ "unsure": [],
+ "title": "Antigravity Particle Field",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "17d00cf5bfa54e3d",
+  "film_hash": "7c8c921a4dd58b39",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-300",
+  "frames": {
+    "code": "5540",
+    "best": 3,
+    "best_why": "Frame 3 shows the full toast with message, View, Undo and close, with the cursor well clear.",
+    "usable": [2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Clicking spawns a bottom toast confirming a send, with view, undo and close.",
+  "summary": "A small outline button that opens a custom notification at the bottom of the screen. The toast shows a green tick, a short confirmation, then View and Undo links and a close icon.",
+  "title_fix": null,
+  "appearance": "A dark, rounded toast strip sits low on the stage: a green circled tick, the words Message sent, then View and Undo links split by a dot, and an X at the right edge. A small outlined button labelled Custom sonner floats at the top left.",
+  "behaviour": "Clicking the trigger raises the toast from the bottom. It fades away on its own after a short pause, or at once when Undo or the X is pressed; the action links underline on hover.",
+  "parts": ["trigger button", "success icon", "message text", "view link", "undo link", "close icon"],
+  "demo_content": "Trigger reads Custom sonner; the toast says Message sent with View and Undo.",
+  "states": ["open", "success", "hover"],
+  "kind": "toast",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "message sent confirmation popup",
+    "undo toast after sending",
+    "notification with action links",
+    "snackbar that offers view or undo",
+    "small success alert at screen bottom",
+    "custom notification with close button",
+    "email sent confirmation with undo",
+    "non blocking status message"
+  ],
+  "resembles": ["Gmail undo send"],
+  "use_when": "You need to confirm an action and offer a quick undo or detail link without blocking the page.",
+  "avoid_when": "It needs a toast host and a third-party toast library mounted, so it does not work as a lone file.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["toast"],
+  "traits": {
+    "trigger": ["click", "timer"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The trigger label and the toast text, icon and actions are written in the file; the toast width comes from a CSS variable on the host.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A small button and one notification; the toast library handles showing and hiding it.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Close carries an aria-label and icons are hidden from screen readers, but the code does not account for reduced motion."
+  },
+  "props": [],
+  "issues": ["View has no click handler, so it does nothing when pressed."],
+  "polish": 4,
+  "polish_why": "Well-spaced toast with clear actions and close; the trigger is an unremarkable outline button.",
+  "unsure": ["technique", "focus_visible", "theme"]
+}

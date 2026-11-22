@@ -1,0 +1,116 @@
+{
+ "name": "multi-layout-accordion",
+ "frames": {
+  "code": "5747",
+  "best": 6,
+  "best_why": "Frame 6 shows all three answers expanded together, which is the behaviour this variant exists for.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.3
+ },
+ "tagline": "A question list where several answers can stay open together.",
+ "summary": "A single column of FAQ rows that can all be expanded at once. Each question opens its answer in place and stays open while others are opened, without collapsing the rest.",
+ "title_fix": null,
+ "appearance": "A single column of dark rounded question bars under a small heading, each row ending in a chevron. Open rows show a pale header and a block of grey answer text below, with up to three answers visible at the same time.",
+ "behaviour": "Clicking a question toggles its answer open or shut with a short height animation. Because the list allows multiple open at once, opening one leaves the others expanded, so all three answers can be shown together.",
+ "parts": [
+  "section heading",
+  "question row",
+  "chevron",
+  "answer text"
+ ],
+ "demo_content": "Three questions about UI components: What is a UI component?, Why are UI components important? and Key characteristics.",
+ "states": [
+  "hover",
+  "open"
+ ],
+ "kind": "accordion",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "faq with many answers open",
+  "all questions expanded at once",
+  "single column question list",
+  "expand multiple answers together",
+  "collapsible faq rows",
+  "click questions to show answers",
+  "stacked questions with chevrons",
+  "open several sections at once"
+ ],
+ "resembles": [],
+ "use_when": "You want a compact FAQ where readers can compare several answers without reopening each one.",
+ "avoid_when": "With everything expanded the page gets long, and the demo shows only three short answers.",
+ "suits": [
+  "saas",
+  "docs",
+  "marketing"
+ ],
+ "slot_hints": [
+  "list-item",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The three questions and answers are typed into the JSX, and the initially open item is set by a default value. Row styling comes from the shared accordion pieces.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Three text rows with a height transition when toggled.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Rows rely on the pale header to show open, and the header markup is not shown, so focus is unverified."
+ },
+ "props": [],
+ "issues": [
+  "The chevron does not visibly change on open, so the pale header is the only state cue.",
+  "Answers use small muted text on dark panels, which is hard to read at this size."
+ ],
+ "polish": 3,
+ "polish_why": "Neat single-column FAQ; the flat rows and static chevrons keep it ordinary.",
+ "unsure": [
+  "kind",
+  "technique",
+  "keyboard",
+  "focus_visible"
+ ],
+ "title": "Multi Open Accordion",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "706e70343a47f647",
+  "film_hash": "190cc3e1f7f6d87c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

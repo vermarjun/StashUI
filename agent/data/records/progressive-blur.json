@@ -1,0 +1,137 @@
+{
+ "name": "progressive-blur",
+ "frames": {
+  "code": "9897",
+  "best": 5,
+  "best_why": "Frame 5 shows the fullest grid with the bottom row dissolving into the blur band.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 10.6
+ },
+ "tagline": "The bottom of a photo grid dissolves into a soft blur band.",
+ "summary": "Adds a masked blur band to the top, bottom or both edges of a scroll area. Stacked blur layers fade from sharp to heavy, so photos or rows melt away instead of being cut off.",
+ "title_fix": null,
+ "appearance": "A rounded photo panel headed \"Camera roll\" over a three-column grid of square shots. Near the bottom edge the photos soften into a heavy blur that melts into the panel background, hiding the last row.",
+ "behaviour": "The blur band stays fixed while the photo grid scrolls beneath it, fading lower content out rather than cutting it. There is no animation of its own and it never reacts to the pointer.",
+ "parts": [
+  "photo grid",
+  "panel header",
+  "blur band",
+  "photos"
+ ],
+ "demo_content": "Header \"Camera roll\", \"1,284 photos, synced 2 min ago\" and a grid of varied square photos.",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "glass",
+  "rounded",
+  "colorful",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "blur fade at the bottom of a list",
+  "edge fade for scrollable content",
+  "gradient blur overlay",
+  "photos fading out at the edge",
+  "soft blur band across the bottom",
+  "vignette at the end of a feed",
+  "backdrop blur gradient",
+  "fade out content under a header"
+ ],
+ "resembles": [],
+ "use_when": "Scrollable galleries or lists need a soft edge so the content seems to continue.",
+ "avoid_when": "It blurs real content under the band, so controls or text at that edge become hard to read.",
+ "suits": [
+  "any"
+ ],
+ "slot_hints": [
+  "media",
+  "list-item",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Position (top, bottom or both), band height, blur levels and a class name are props; the band itself holds no content.",
+ "technique": [
+  "static"
+ ],
+ "weight": "moderate",
+ "weight_why": "Eight stacked backdrop-blur layers over the band; static but costly to composite.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The band is decorative and pointer-transparent, but it fades real content with no contrast or reduced-motion consideration."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "string",
+   "default": "\"30%\"",
+   "required": false
+  },
+  {
+   "name": "position",
+   "type": "\"top\" | \"bottom\" | \"both\"",
+   "default": "\"bottom\"",
+   "required": false
+  },
+  {
+   "name": "blurLevels",
+   "type": "number[]",
+   "default": "[0.5, 1, 2, 4, 8, 16, 32, 64]",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The band blurs content under it, so anything at the bottom edge becomes unreadable.",
+  "The children prop is accepted but never rendered, so it has no effect."
+ ],
+ "polish": 4,
+ "polish_why": "The fade is smooth and reads as a scroll cue; blurring live content hides it.",
+ "unsure": [],
+ "title": "Progressive Blur",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2d1a95b26a66b707",
+  "film_hash": "ea7a0dc286639d87",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

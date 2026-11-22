@@ -1,0 +1,153 @@
+{
+ "name": "DarkVeil-TS-TW",
+ "frames": {
+  "code": "5424",
+  "best": 1,
+  "best_why": "The blue wave crest and its soft glow read most clearly against the near-black field.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "Deep blue light creeps in slow folds over a near-black field.",
+ "summary": "A very dark animated backdrop of deep blue light that slowly folds and drifts like a veil across black, with faint horizontal scanlines and a soft glow.",
+ "title_fix": null,
+ "appearance": "An almost black field broken by wide, soft bands of deep blue that curve diagonally like folds in fabric, brightest along a glowing crest. Faint horizontal scanlines texture the lit areas, and the rest fades into darkness.",
+ "behaviour": "The blue folds drift and breathe very slowly, so the surface seems to shift rather than move. Scanlines and a slight noise texture stay put, and the motion never stops.",
+ "parts": [
+  "blue bands",
+  "glow crest",
+  "scanlines",
+  "dark field"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "gradient",
+  "glow",
+  "minimal",
+  "organic"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "very dark blue animated background",
+  "slow moving blue light waves",
+  "subtle black gradient backdrop for a hero",
+  "blue glow that drifts like a veil",
+  "dark cinematic background with scanlines",
+  "minimal animated background for a landing page",
+  "soft blue waves on black",
+  "dim blue abstract motion background"
+ ],
+ "resembles": [],
+ "use_when": "You need a dark, low-contrast animated backdrop that lets white text and product visuals stay the focus.",
+ "avoid_when": "It is so dark and low-contrast that on a poor screen it can read as plain black.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Props shift the hue, add noise, set scanline strength and frequency, and change warp, speed and resolution scale. The colours come from the shader, not from props.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen fragment shader recomputes a large layered function on every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The shader animates forever and ignores reduced-motion, with no pause; it also needs a sized parent to fill."
+ },
+ "props": [
+  {
+   "name": "hueShift",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "noiseIntensity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "scanlineIntensity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "scanlineFrequency",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "warpAmount",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "resolutionScale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The animation is barely perceptible between frames, so it can look like a static black image.",
+  "It ignores reduced-motion and never stops or pauses."
+ ],
+ "polish": 3,
+ "polish_why": "Quiet, well-judged gradient, but so dark and slow it barely registers as animated.",
+ "unsure": [
+  "frames.shows_interaction"
+ ],
+ "title": "Dark Veil",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "314c0f69ba9cf55a",
+  "film_hash": "450d316e173cb7c6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

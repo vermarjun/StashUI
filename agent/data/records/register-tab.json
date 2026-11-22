@@ -1,0 +1,113 @@
+{
+ "name": "register-tab",
+ "frames": {
+  "code": "2821",
+  "best": 1,
+  "best_why": "The sign-in panel is fully drawn: logo tile, heading, three social buttons, two fields and a white submit, all settled.",
+  "usable": [
+   1,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "A dark sign-in card with social buttons and a Login/Register switch on top.",
+ "summary": "A centred dark auth card with a small two-pill mode switch above it. Login offers Google, Apple and Facebook buttons, email and password fields and a white submit; Register adds a username and phone number.",
+ "title_fix": null,
+ "appearance": "A tall rounded near-black card on a black stage, topped by a pale rounded logo tile, a bold Welcome Back heading and a muted line under it. Three bordered social buttons run across, then an OR rule, two dark input fields and a white Sign in button.",
+ "behaviour": "Pressing Login or Register swaps the panel below the switch: the old card fades out while the new one fades in, so both are briefly visible. Social buttons lighten on hover, and the fields lose any focus outline.",
+ "parts": [
+  "mode switch",
+  "brand tile",
+  "heading",
+  "social buttons",
+  "OR divider",
+  "input fields",
+  "submit button"
+ ],
+ "demo_content": "Welcome Back and Register Account headings, with Google, Apple and Facebook sign-in buttons.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "auth-form",
+ "look": [
+  "dark",
+  "rounded",
+  "flat",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "dark sign in form with social login",
+  "login and register switch card",
+  "email password form with google button",
+  "create account panel with phone field",
+  "centered auth card for an app",
+  "toggle between sign in and sign up",
+  "signup form with apple and facebook",
+  "small logo above a login box"
+ ],
+ "resembles": [],
+ "use_when": "A small product needs a self-contained sign-in panel with social options and a register mode.",
+ "avoid_when": "The form is a shell: no submit handler, validation or state, and every field and colour is hard-coded.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "No props: headings, placeholder text, panel copy and social icons are written in the file, and the widths and colours are hard-coded classes.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One card, a few inputs and inline icon graphics; only the panel switch animates.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Fields rely on placeholders instead of labels, the icon-only social buttons have no name, and focus outlines are removed."
+ },
+ "props": [],
+ "issues": [
+  "Frames 2 and 5 catch both panels mid-fade, so two headings and two forms overlap.",
+  "Icon-only social buttons carry no accessible name and fields have no labels.",
+  "The white Sign in button has no hover state, unlike the social buttons."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy dark card with clear modes; the cross-fade doubles the forms and controls look stock.",
+ "unsure": [],
+ "title": "Login Register Tab",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f80e3a5953710a67",
+  "film_hash": "43646f0e3f06156b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

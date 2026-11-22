@@ -1,0 +1,139 @@
+{
+  "name": "transcription",
+  "frames": {
+    "code": "8741",
+    "best": 4,
+    "best_why": "The current word sits in a clear grey highlight with playback part way and the progress bar advanced.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Read-along transcript where the spoken word is boxed as playback runs.",
+  "summary": "A podcast transcript tied to a running clock. The word being spoken is highlighted, words already spoken dim, and clicking any word jumps the playback to that moment.",
+  "title_fix": null,
+  "appearance": "A dark card with a round play button, an episode title and byline, a timecode and a hairline progress bar. Below, a paragraph of small grey words wraps over four lines, with the current word set in a grey box and past words dimmer than upcoming ones.",
+  "behaviour": "The clock walks a highlight through the words, dimming those already spoken and paling those still ahead. Clicking a word seeks there, and the bar and timecode follow the same clock until the end.",
+  "parts": [
+    "play button",
+    "episode title",
+    "byline",
+    "timecode",
+    "progress bar",
+    "transcript words",
+    "active word"
+  ],
+  "demo_content": "Product Notes, Ep. 42 with Priya Raman discussing a shortened onboarding screen.",
+  "states": [
+    "hover",
+    "focus",
+    "active"
+  ],
+  "kind": "media-player",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "transcript that highlights the spoken word",
+    "read along audio transcript",
+    "click a word to jump the audio",
+    "podcast player with word sync",
+    "karaoke highlight on a paragraph",
+    "interview transcript with progress bar",
+    "words light up as they play",
+    "text follows the recording time"
+  ],
+  "resembles": [
+    "Spotify podcast transcripts"
+  ],
+  "use_when": "A podcast or interview page should let people read along and click any word to replay it.",
+  "avoid_when": "The demo lets words crowd together with almost no spacing, so long passages are hard to scan.",
+  "suits": [
+    "blog",
+    "social"
+  ],
+  "slot_hints": [
+    "body-text",
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "timer",
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "text",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Segments with text and start and end seconds come in as an array, plus a current time, a seek callback and your own per-word render function.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "A few dozen word buttons coloured by the current time; no timers inside it.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Every word is a button so seeking works from the keyboard, but the active word is never announced and there is no progress role."
+  },
+  "props": [
+    {
+      "name": "segments",
+      "type": "TranscriptionSegment[]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "children",
+      "type": "(segment, index) => ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "currentTime",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "onSeek",
+      "type": "(time: number) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "Several opening words sit jammed together with no space, so the first lines read as one string.",
+    "The current word's highlight box can spill across two words when one wraps, as in frame 4."
+  ],
+  "polish": 3,
+  "polish_why": "Competent synced transcript, but the collapsed word spacing makes the paragraph read badly.",
+  "unsure": [
+    "technique"
+  ]
+}

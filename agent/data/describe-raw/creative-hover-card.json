@@ -1,0 +1,66 @@
+{
+  "name": "creative-hover-card",
+  "frames": {
+    "code": "5845",
+    "best": 2,
+    "best_why": "The first card is mid-hover, showing its switched badge, new title and bowl photo beside two resting cards.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Three dark cards swap badges, titles and photos when hovered.",
+  "summary": "A row of three dark feature cards, each with a coloured tag, a heading, a short line of copy and a photo that fades to a second image on hover while the title and tag change.",
+  "title_fix": null,
+  "appearance": "Three dark, rounded cards sit side by side on black. Each opens with a small coloured pill tag, then a bold pale heading, a line or two of grey copy and a wide photo filling the lower half, all softly bordered.",
+  "behaviour": "Hovering a card flips its tag to a new colour, swaps the heading for alternate wording and cross-fades the photo to a different image while nudging it up a few pixels. Each card changes on its own.",
+  "parts": ["card panel", "coloured tag", "heading", "body text", "photo", "border"],
+  "demo_content": "Cards tagged Statistic, Password and Alert show subscriber, password and chat themes.",
+  "states": ["hover"],
+  "kind": "card",
+  "look": ["dark", "rounded", "minimal", "gradient"],
+  "tone": "minimal",
+  "search_phrases": [
+    "three cards with image swap on hover",
+    "dark feature cards with tags",
+    "card grid with changing text",
+    "hover gallery cards with photos",
+    "tabbed looking marketing cards",
+    "report card that flips content",
+    "image crossfade on card hover",
+    "simple three column card row"
+  ],
+  "resembles": [],
+  "use_when": "A features row should feel alive and show more depth on hover without opening a modal.",
+  "avoid_when": "Every meaningful change happens on hover, so touch and keyboard users only ever see the resting cards.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["feature-card"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["image", "text", "fill"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The three cards, their copy, images and colours are all written inline; adapting them means editing each card's markup. No props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Six images and CSS opacity and transform transitions; nothing runs until hover.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "All changes require hover on non-focusable divs, so keyboard users get none of it, and alt text repeats 'Card image 01'."
+  },
+  "props": [],
+  "issues": [
+    "Hover-only changes are unreachable by keyboard or touch.",
+    "Every image shares the alt text 'Card image 01'."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy three-card row with snappy swaps; cramped body copy and unrelated stock photos weaken it.",
+  "unsure": ["kind"]
+}

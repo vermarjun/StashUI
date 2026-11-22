@@ -1,0 +1,151 @@
+{
+ "name": "text-cursor-proximity",
+ "frames": {
+  "code": "4791",
+  "best": 2,
+  "best_why": "Blur is strongest over DIGITAL while the smaller detail lines stay sharp, so the effect reads clearly.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Bold blue poster whose letters blur wherever the cursor passes.",
+ "summary": "Display text that restyles letter by letter according to how near the pointer is. In the demo the closest letters turn soft and blurred while the rest of the words stay crisp.",
+ "title_fix": null,
+ "appearance": "A tall electric blue panel on black, with white bold \"DIGITAL WORKSHOP\" at the top left and five lines of small contact details across the bottom. Letters near the pointer look smeared while the others remain sharp.",
+ "behaviour": "As the pointer moves each letter measures its distance to it and is restyled every frame, so a soft blur travels across the words and fades with distance. Any CSS property pair can drive it, using linear, exponential or gaussian falloff.",
+ "parts": [
+  "poster card",
+  "headline text",
+  "blurred letters",
+  "detail lines"
+ ],
+ "demo_content": "Fictional Digital Workshop poster with a London address, phone, email and an RSVP line.",
+ "states": [
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "colorful",
+  "bold",
+  "flat",
+  "minimal"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "letters blur near the mouse",
+  "text that reacts to cursor distance",
+  "hover effect on individual letters",
+  "interactive type for a poster page",
+  "blur follows the pointer across text",
+  "proximity based text styling",
+  "headline that responds to how close you are",
+  "fancy hover text for a landing page"
+ ],
+ "resembles": [],
+ "use_when": "A bold display headline should respond as the pointer sweeps across it, giving the type a tactile feel.",
+ "avoid_when": "It measures every letter on each frame and only answers a pointer, so touch users see plain static text.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "headline",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The letters are your children; the style pairs to animate, the radius, the falloff curve and the container ref that defines the pointer space are props.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Every letter's position is measured on each animation frame and fed its own motion value.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The full text is repeated once for screen readers, but the effect ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "styles",
+   "type": "Partial<Record<CSSProperty, {from, to}>>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerRef",
+   "type": "RefObject<HTMLDivElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "falloff",
+   "type": "\"linear\" | \"exponential\" | \"gaussian\"",
+   "default": "\"linear\"",
+   "required": false
+  },
+  {
+   "name": "as",
+   "type": "ElementType",
+   "default": "span",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "With the pointer resting over a word, that word becomes unreadable, as in frame 2.",
+  "The small detail lines sit flush against the card's bottom edge with almost no padding."
+ ],
+ "polish": 4,
+ "polish_why": "Bold confident poster and a smooth distance effect; heavy blur and tight spacing are the flaws.",
+ "unsure": [],
+ "title": "Text Cursor Proximity",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a95a1a358801cd00",
+  "film_hash": "5692833aecf33f5d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "name": "comp-505",
+ "frames": {
+  "code": "8022",
+  "best": 6,
+  "best_why": "Both halves used: day 26 circled and 10:30 filled white in the slot list.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.7
+ },
+ "tagline": "Day calendar beside a scrolling column of bookable time slots.",
+ "summary": "A bordered panel splits a month calendar from a narrow slot list. The right side names the chosen weekday and date above a scrollable stack of half-hour times, some greyed out, which fill white when picked.",
+ "title_fix": null,
+ "appearance": "A small black panel divided in two: on the left a month grid with weekday initials and white day numbers, on the right a column headed by a weekday and date, then six visible small outlined buttons stacked tight with a few dimmed.",
+ "behaviour": "Pressing a day circles it white, updates the weekday heading and clears any chosen time. Clicking an enabled slot fills it solid white while disabled slots stay dim and unclickable; the slot list itself scrolls.",
+ "parts": [
+  "month heading",
+  "day grid",
+  "weekday heading",
+  "slot list",
+  "time slot button",
+  "disabled slot",
+  "caption"
+ ],
+ "demo_content": "November 2026 with day 26 and 10:30 picked; half-hour slots from 09:00, several greyed out.",
+ "states": [
+  "selected",
+  "hover",
+  "focus",
+  "disabled"
+ ],
+ "kind": "calendar",
+ "look": [
+  "dark",
+  "flat",
+  "outlined",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pick an appointment date and time slot",
+  "calendar beside a list of times",
+  "booking picker with available slots",
+  "choose a day then an hour",
+  "time slots greyed out when taken",
+  "scheduler for appointments on one day",
+  "date and slot selector side by side",
+  "book a meeting from a calendar list"
+ ],
+ "resembles": [],
+ "use_when": "Someone books a slot on a chosen day and taken times must look clearly unavailable.",
+ "avoid_when": "The slot list is mock data that never changes with the day, so real availability means replacing the source.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "background",
+   "border",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The eighteen time slots, their availability flags and the caption link are written in the file; real availability or a different date format means editing the source.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One month grid and a short list of time buttons; nothing animates.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Days and slots are keyboard buttons with visible text, but disabled slots only dim and never say why they cannot be booked."
+ },
+ "props": [],
+ "issues": [
+  "Every date shows the same slots, so picking a new day leaves availability unchanged.",
+  "Only about six of the eighteen slots fit before the list must scroll.",
+  "The caption credits the calendar library instead of the picker."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp two-pane picker with clear slot states; a fixed slot list and cramped scrolling.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Calendar Time Slot Picker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7b8697cd07971a99",
+  "film_hash": "54f892718b102d9f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

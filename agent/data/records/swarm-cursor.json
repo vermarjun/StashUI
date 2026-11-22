@@ -1,0 +1,180 @@
+{
+ "name": "swarm-cursor",
+ "frames": {
+  "code": "4686",
+  "best": 5,
+  "best_why": "The swarm is a large, clearly swirling cloud wrapped around the pointer near the buttons.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.3
+ },
+ "tagline": "Tiny white dots swarm after the pointer and swirl into a dense wake.",
+ "summary": "Hundreds of white specks drift over a dark area and gather into a liquid, spinning cloud that follows the mouse. Clicking throws the particles outward before they settle again.",
+ "title_fix": null,
+ "appearance": "A black stage scattered with very small white dots that bunch into a bright, swirling cloud around the pointer. Elsewhere the specks are sparse and faint, so the effect reads as a trail rather than a filled shape.",
+ "behaviour": "The swarm flows and curls continuously on its own while the pointer moves; the cloud thickens and stretches with cursor speed. Hovering a button rings it with circulating particles, and a click bursts them outward.",
+ "parts": [
+  "particle dots",
+  "swarm cloud",
+  "pointer trail"
+ ],
+ "demo_content": "Headline \"Ship the interface tonight\", subline and two pill buttons on black.",
+ "states": [
+  "hover"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "monochrome",
+  "minimal",
+  "dense"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "white dots follow the mouse",
+  "dots bunched around the cursor",
+  "swirling specks around pointer",
+  "liquid cursor trail for dark hero",
+  "canvas particles reacting to movement",
+  "tiny dots chase the pointer",
+  "interactive particle cloud mouse follower",
+  "cursor effect for landing page"
+ ],
+ "resembles": [],
+ "use_when": "A dark landing page or hero wants a cursor that feels alive and reacts as people move and click.",
+ "avoid_when": "WebGL runs continuously, it needs a sized parent, and touch screens have no pointer to follow.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "hero",
+  "page-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Count, size, shape, colours, spread, speed, swirl, trail, idle behaviour and click effect are props; the fluid simulation itself needs a source edit.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "WebGL frame loop with a fluid simulation and up to 800 particles every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "Decorative canvas is aria-hidden and there is nothing to operate; motion stops under prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "count",
+   "type": "number",
+   "default": "800",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "2.6",
+   "required": false
+  },
+  {
+   "name": "shape",
+   "type": "SwarmShape",
+   "default": "'dot'",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "spread",
+   "type": "number",
+   "default": "90",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "swirl",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "idle",
+   "type": "SwarmIdle",
+   "default": "'roam'",
+   "required": false
+  },
+  {
+   "name": "clickEffect",
+   "type": "SwarmClickEffect",
+   "default": "'burst'",
+   "required": false
+  },
+  {
+   "name": "lightMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Dense, believable motion; the idle specks are faint enough to look like leftover noise.",
+ "unsure": [],
+ "title": "Swarm Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6ba8322e200125a4",
+  "film_hash": "da374dbbf340a867",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

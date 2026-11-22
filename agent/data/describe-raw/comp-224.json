@@ -1,0 +1,66 @@
+{
+  "name": "comp-224",
+  "frames": {
+    "code": "4316",
+    "best": 2,
+    "best_why": "The list is open with all three plans, each paired with its grey description, and Pro Plan ticked.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A plan dropdown that shows a one-line reason under each name.",
+  "summary": "A labelled dropdown of plans whose open rows pair each plan name with a short grey description, while the closed trigger keeps only the name. The chosen plan ends in a tick.",
+  "title_fix": null,
+  "appearance": "A long white field label sits above a compact rounded trigger reading Pro Plan with a chevron. Opened, a dark panel shows three rows, each a plan name followed by a small grey blurb, the selected one ticked at its right edge.",
+  "behaviour": "Clicking the trigger drops the list over the label; hovering a row highlights it, and choosing one closes the panel, leaving just the plan name in the trigger. The clip settles on Enterprise Plan.",
+  "parts": ["field label", "trigger button", "chevron", "plan name", "plan description", "check mark"],
+  "demo_content": "Standard Plan / Ideal for individuals; Pro Plan / For professional users; Enterprise Plan / Built for large teams",
+  "states": ["hover", "focus", "open", "selected"],
+  "kind": "select",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "dropdown with a description under each option",
+    "pick a plan from a list with details",
+    "select menu with subtitles",
+    "plan chooser with helper text",
+    "two line options inside a dropdown",
+    "subscription plan dropdown",
+    "choose a plan with a short blurb",
+    "select showing name and description"
+  ],
+  "resembles": [],
+  "use_when": "When each choice needs a one-line explanation, such as plans or tiers, and the closed field must stay short.",
+  "avoid_when": "The open list sits over the field label and hides most of it, so the label must be short or repeated elsewhere.",
+  "suits": ["saas"],
+  "slot_hints": ["form-field", "pricing-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The three plans and their blurbs are written in the file; edit the text or add rows there. The trigger drops descriptions through a class, and the menu spacing is set in the same file.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "Three text rows in a popup with one short open animation.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The label is tied to the trigger and each option keeps its description in the text, so both are read aloud; the open animation ignores reduced-motion settings."
+  },
+  "props": [],
+  "issues": [
+    "The open list covers the field label, leaving only its first and last letters showing.",
+    "The on-screen label is a demo phrase, Select with description and right indicator, not a real field name."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy two-line options, but the open list lands over the label and hides it.",
+  "unsure": ["responsive"]
+}

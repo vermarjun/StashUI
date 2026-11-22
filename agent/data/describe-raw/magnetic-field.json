@@ -1,0 +1,162 @@
+{
+  "name": "magnetic-field",
+  "frames": {
+    "code": "6333",
+    "best": 6,
+    "best_why": "The panel, mode switch and dashes all read clearly while a visible ring of them leans toward the cursor.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dashes twist toward the cursor like iron filings in a magnetic field.",
+  "summary": "A grid of short dashes that lean, swing or swirl as the pointer passes near, standing in for iron filings. A small switch changes the behaviour between attract, repel and orbit.",
+  "title_fix": null,
+  "appearance": "A wide rounded dark panel packed with neat rows of short horizontal dashes, mostly grey with a scattering of pink ones. A small light segmented control sits beneath it, and around the pointer the dashes bend out of their rows.",
+  "behaviour": "Moving the pointer over the panel pulls nearby dashes toward it, pushes them off or sends them circling, with each dash springing back to its place when the cursor goes. The switch changes the field, and the dashes tilt to follow the pointer's angle.",
+  "parts": [
+    "panel",
+    "dash",
+    "mode switch",
+    "cursor ring"
+  ],
+  "demo_content": "A grid of dashes with Attract, Repel and Orbit mode buttons below.",
+  "states": [
+    "hover",
+    "selected"
+  ],
+  "kind": "cursor-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "monochrome",
+    "technical",
+    "dense"
+  ],
+  "tone": "technical",
+  "search_phrases": [
+    "iron filings that follow the mouse",
+    "dots that bend toward the pointer",
+    "lines that react to the pointer",
+    "grid of lines reacting to hover",
+    "things repelled by the cursor",
+    "elements orbiting the mouse",
+    "interactive science background",
+    "dashes that swirl around a pointer"
+  ],
+  "resembles": [],
+  "use_when": "A page wants a physical, interactive field that reacts to the cursor without needing a click.",
+  "avoid_when": "It requires a fine pointer, so touch shows only the still grid, and many dashes animate every frame.",
+  "suits": [
+    "portfolio",
+    "devtool",
+    "marketing"
+  ],
+  "slot_hints": [
+    "section-background",
+    "decoration",
+    "hero"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "children"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an items array of elements and ids, and tune mode, radius, strength, stiffness, damping, rotation and a paused flag; each dash is markup you supply.",
+  "technique": [
+    "js-animation",
+    "motion-library"
+  ],
+  "weight": "moderate",
+  "weight_why": "A requestAnimationFrame spring integrator over roughly a hundred dashes on every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "The whole effect switches off for reduced-motion or coarse pointers, but the moving dashes have no text alternative."
+  },
+  "props": [
+    {
+      "name": "items",
+      "type": "MagneticFieldItem[]",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"attract\" | \"repel\" | \"orbit\"",
+      "default": "\"attract\"",
+      "required": false
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "default": "160",
+      "required": false
+    },
+    {
+      "name": "strength",
+      "type": "number",
+      "default": "0.35",
+      "required": false
+    },
+    {
+      "name": "stiffness",
+      "type": "number",
+      "default": "180",
+      "required": false
+    },
+    {
+      "name": "damping",
+      "type": "number",
+      "default": "18",
+      "required": false
+    },
+    {
+      "name": "rotate",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The dashes are small, so the field distortion is subtle unless the cursor is close."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp iron-filing look and smooth springs; the subtle distortion and unclear modes cost it.",
+  "unsure": []
+}

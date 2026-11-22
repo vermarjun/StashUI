@@ -1,0 +1,192 @@
+{
+ "name": "key-value",
+ "frames": {
+  "code": "4471",
+  "best": 3,
+  "best_why": "Three filled pairs plus a fresh empty row and the Add button are all visible without a cursor in the way.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.1
+ },
+ "tagline": "Rows of key and value fields with remove crosses and an add button.",
+ "summary": "An editor for key/value pairs where each row has a monospaced key field, a value field and a remove button, plus an add button that appends an empty row. Pasting a .env listing fills several rows at once.",
+ "title_fix": null,
+ "appearance": "A dark form under a small heading and a grey hint line. Each row pairs a narrow outlined key box with a wider outlined value box, both with grey borders, followed by a square cross button; a full-width outlined Add button sits under the rows.",
+ "behaviour": "Typing in a key or value updates the pair immediately and checks for duplicate keys, showing a red message under the field. Add appends a new empty row and focuses it, the cross deletes a row, and pasting several KEY=value lines expands them into separate rows.",
+ "parts": [
+  "heading",
+  "hint text",
+  "key field",
+  "value field",
+  "remove button",
+  "add button",
+  "error message"
+ ],
+ "demo_content": "Environment variables DATABASE_URL, AWS_REGION and SENTRY_DSN holding a postgres URL, eu-west-1 and a DSN.",
+ "states": [
+  "focus",
+  "hover",
+  "disabled",
+  "error"
+ ],
+ "kind": "form",
+ "look": [
+  "dark",
+  "minimal",
+  "outlined",
+  "flat",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "edit environment variables in a list",
+  "editor for pairs of names and values",
+  "add and remove rows of fields",
+  "paste a dotenv file into a form",
+  "headers editor with key and value",
+  "duplicate key validation",
+  "settings form with repeatable fields",
+  "two column text inputs with remove"
+ ],
+ "resembles": [],
+ "use_when": "A settings or deploy form must edit a variable number of key/value pairs.",
+ "avoid_when": "Every row pairs a text field with a growing textarea, so long values make rows tall in a narrow panel.",
+ "suits": [
+  "dashboard",
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field",
+  "modal"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a default or controlled array of pairs and a change handler; placeholders, row limits, duplicate rules, paste, trimming, disabled state and validation callbacks are props.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Plain inputs with local state and no animation, canvas or polling.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Fields rely on placeholders rather than labels, though the list uses roles and errors are linked with aria-describedby and role alert."
+ },
+ "props": [
+  {
+   "name": "defaultValue",
+   "type": "KeyValueItemData[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "KeyValueItemData[]",
+   "default": "{value}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: KeyValueItemData[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "keyPlaceholder",
+   "type": "string",
+   "default": "\"Key\"",
+   "required": false
+  },
+  {
+   "name": "valuePlaceholder",
+   "type": "string",
+   "default": "\"Value\"",
+   "required": false
+  },
+  {
+   "name": "maxItems",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "minItems",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "allowDuplicateKeys",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enablePaste",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "readOnly",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"flex flex-col gap-1.5\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Fields have placeholders but no visible labels, so their meaning disappears once filled."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy and functional with clear validation; placeholder-only labels keep it ordinary.",
+ "unsure": [
+  "content_from"
+ ],
+ "title": "Key Value",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b4edd9f2e1b17e2b",
+  "film_hash": "e0b60b719817bc94",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "typewriter-effect",
+  "frames": {
+    "code": "8906",
+    "best": 6,
+    "best_why": "The full headline is typed out with the blue final word and blinking cursor visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A bold headline types itself out letter by letter behind a blue caret.",
+  "summary": "A small grey eyebrow line above a large bold headline that fills in one character at a time when it enters view. A thin blue cursor bar blinks after the text and the last word is blue.",
+  "title_fix": null,
+  "appearance": "A black stage with a small grey sentence above a large bold white headline. The headline types out left to right with a thin blue vertical caret after it, and the final word is blue and wraps onto a second line.",
+  "behaviour": "When it scrolls into view the characters pop in one after another with a stagger, revealing each word. The blue caret blinks continuously and the last word stays blue once printed.",
+  "parts": ["eyebrow line", "headline word", "character", "blue cursor"],
+  "demo_content": "The line The road to freedom starts from here and the headline Build awesome apps with Aceternity.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "bold", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text that types itself out",
+    "headline with blinking cursor",
+    "letters appearing one by one",
+    "typewriter animation for hero text",
+    "animated heading with blue caret",
+    "text reveal when scrolled into view",
+    "words typing in sequence",
+    "blinking cursor after headline"
+  ],
+  "resembles": [],
+  "use_when": "A short headline or slogan that should feel typed in as the page loads.",
+  "avoid_when": "Long or essential copy: characters begin hidden, and the caret blinks without pause.",
+  "suits": ["marketing", "portfolio", "ai-chat"],
+  "slot_hints": ["headline", "hero", "body-text"],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "continuous",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a words array of text plus optional per-word className; the caret colour and size come from cursorClassName and styles, while timing is fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Words are split into character spans with one stagger; the caret loop is trivial.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Each letter is its own span, so screen readers may spell the headline out, and reduced-motion is not handled."
+  },
+  "props": [
+    {"name": "words", "type": "array", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "cursorClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The final word wraps mid-animation, jumping the headline to two lines in frames 4 and 5.",
+    "Characters start hidden, so nothing is visible until the block scrolls into view.",
+    "The blue caret blinks forever with no reduced-motion pause."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp type and a tidy stagger; the late wrap makes the headline jump between rows.",
+  "unsure": []
+}

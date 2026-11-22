@@ -1,0 +1,140 @@
+{
+ "name": "ai-sources",
+ "frames": {
+  "code": "9210",
+  "best": 4,
+  "best_why": "Fully expanded with all five source rows, icons and snippets readable, card at its tallest.",
+  "usable": [
+   1,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.8
+ },
+ "tagline": "A tidy favicon stack under an answer opens into a list of cited sources.",
+ "summary": "Three overlapping source icons and an overflow count sit under an AI answer. Clicking opens a list where each source's icon slides into its own row with a title and a short snippet.",
+ "title_fix": null,
+ "appearance": "A small inline control: three overlapping circular favicon chips, a +2 count, the word Sources and a chevron. Expanded, it becomes a column of rows, each with a round icon, a bold title and a grey snippet line, on a dark card.",
+ "behaviour": "Hovering fans the stacked icons slightly apart; clicking expands the control into a list, the chevron turning to point down while each icon travels into its row and rows fade in one after another. A second click collapses it.",
+ "parts": [
+  "source icons",
+  "overflow count",
+  "sources label",
+  "chevron",
+  "source row",
+  "row title",
+  "row snippet"
+ ],
+ "demo_content": "A passage on dark oxygen at the seafloor and five citations about manganese nodules.",
+ "states": [
+  "hover",
+  "open",
+  "focus"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "ai answer citation sources list",
+  "favicon stack that expands",
+  "citations under chatbot response",
+  "sources toggle with website icons",
+  "expandable list of references",
+  "small overlapping website icons with count",
+  "click to see cited pages",
+  "research sources footnotes for ai reply"
+ ],
+ "resembles": [
+  "Perplexity AI"
+ ],
+ "use_when": "An AI answer or research summary must show its citations inline without pushing the prose off screen.",
+ "avoid_when": "Only three icons show when collapsed, and long titles and snippets truncate, so a wide citation panel may fit better.",
+ "suits": [
+  "ai-chat",
+  "docs",
+  "saas"
+ ],
+ "slot_hints": [
+  "body-text",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a sources array of id, title, url, snippet and an optional favicon node; label text and the default-open state are props. Row markup and timing need a source edit.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of spans and a height and opacity animation that runs only while opening.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Uses aria-expanded and real links, but the collapsed stack's letter tiles and +2 are read out before the label."
+ },
+ "props": [
+  {
+   "name": "sources",
+   "type": "AISource[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Sources\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"flex items-center justify-center overflow-hidden rounded-fu",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Icon travel from stack to row is well staged; mid-open frames are briefly hard to read.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "AI Sources",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c547442e638f46c8",
+  "film_hash": "779582dfb348a860",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

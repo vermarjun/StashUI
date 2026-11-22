@@ -1,0 +1,78 @@
+{
+  "name": "motion-drawer",
+  "frames": {
+    "code": "4055",
+    "best": 4,
+    "best_why": "Frame 4 shows the drawer open with all four Menu links and Upgrade Plan; frame 3 catches it mid-slide.",
+    "usable": [4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A springy mobile-style menu slides in from the left edge.",
+  "summary": "An off-canvas navigation drawer that springs in from the left with a link list and one upgrade button. It closes from its X, the dimmed overlay, or a sideways drag.",
+  "title_fix": null,
+  "appearance": "A dark panel slides over the page from the left, about 280px wide, with a small Menu heading, four stacked link rows and a white Upgrade Plan button at the bottom. Behind it the page title Motion Drawer and its hint stay visible on black.",
+  "behaviour": "A menu icon at the top left opens a spring-driven dark panel from the left while a light overlay dims the page; the X, an overlay click or a sideways drag closes it. Links tint on hover.",
+  "parts": ["menu icon", "overlay", "drawer panel", "menu heading", "nav links", "upgrade button", "close icon"],
+  "demo_content": "Page title \"Motion Drawer\", hint \"Click the menu icon to open\", links Dashboard, Projects, Analytics, Settings",
+  "states": ["hover", "active", "open", "dragging"],
+  "kind": "drawer",
+  "look": ["dark", "minimal", "flat", "sharp"],
+  "tone": "minimal",
+  "search_phrases": [
+    "menu that springs open from the side",
+    "off canvas nav with drag to close",
+    "hamburger icon opens a side menu",
+    "dark slide out navigation panel",
+    "swipe to dismiss side menu",
+    "left nav that slides over content",
+    "drawer with upgrade button",
+    "mobile menu with spring animation"
+  ],
+  "resembles": [],
+  "use_when": "A compact nav or filter panel should slide over the page with a physical feel.",
+  "avoid_when": "Panel width is a fixed pixel value and the 60px top padding cannot be changed by prop.",
+  "suits": ["saas", "mobile-app"],
+  "slot_hints": ["nav", "sidebar"],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "pronounced",
+    "affects": ["children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "width, direction, colours, overlay, spring config, drag and toggle behaviour are props; the links and Upgrade Plan are your children.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One drawer, one overlay and a small menu; nothing loops.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The icon-only open and close buttons have no accessible names, and Escape is not handled."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "width", "type": "number", "default": "250", "required": false},
+    {"name": "direction", "type": "\"left\" | \"right\"", "default": "left", "required": false},
+    {"name": "backgroundColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "overlayColor", "type": "string", "default": "rgba(0, 0, 0, 0.3)", "required": false},
+    {"name": "isOpen", "type": "boolean", "default": null, "required": false},
+    {"name": "onToggle", "type": "(isOpen: boolean) => void", "default": null, "required": false},
+    {"name": "showToggleButton", "type": "boolean", "default": "true", "required": false},
+    {"name": "enableDrag", "type": "boolean", "default": "true", "required": false},
+    {"name": "dragThreshold", "type": "number", "default": "0.3", "required": false},
+    {"name": "buttonOpeningVariants", "type": "\"push\" | \"merge\" | \"stay\"", "default": "merge", "required": false}
+  ],
+  "issues": [
+    "Open and close icons have no text or aria labels.",
+    "Escape does not close the drawer; only the X, overlay or a drag do."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth spring slide and drag-dismiss with a clear hierarchy; icon buttons lack names.",
+  "unsure": ["resembles"]
+}

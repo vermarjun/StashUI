@@ -1,0 +1,63 @@
+{
+  "name": "comp-386",
+  "frames": {
+    "code": "7214",
+    "best": 3,
+    "best_why": "Popover is open on step 1 of 5 with title, description, counter and both arrow buttons visible.",
+    "usable": [3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A popover walks through tips with a step count and previous/next arrows.",
+  "summary": "A button opens a tour popover that pages through five short tips. Each page shows a heading, a sentence, a step counter and left/right arrows; the left arrow is disabled on the first step.",
+  "title_fix": null,
+  "appearance": "A rounded dark popover floats above an outlined 'Tooltip-like with nav' button. Inside are a bold tip title, two or three lines of grey description, a small '1/5' counter at the lower left and two minimal arrow buttons at the lower right, the left one faded when disabled.",
+  "behaviour": "Clicking the trigger opens the popover on the first tip. The arrows move forward and back through five tips, updating the title, text and counter; the left arrow is disabled at the start and the right at the end.",
+  "parts": ["trigger button", "popover", "tip title", "description", "step counter", "previous arrow", "next arrow"],
+  "demo_content": "Trigger 'Tooltip-like with nav'; tips Welcome, Quick Actions, Need Help?, Keyboard Shortcuts, Stay Updated.",
+  "states": ["open", "disabled", "hover", "focus"],
+  "kind": "popover",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "walkthrough popup with next and back",
+    "step counter in a tour bubble",
+    "paged tips attached to a button",
+    "onboarding popover with arrows",
+    "previous next tour card",
+    "small popup that cycles through hints",
+    "guided tour tooltip with page numbers",
+    "carousel of help tips in a popover"
+  ],
+  "resembles": [],
+  "use_when": "A few short tips need to be shown next to a control without leaving the page.",
+  "avoid_when": "It is a click-through popover with no anchor highlighting, so it does not point at the UI it describes.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["tooltip"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The five tip titles and descriptions live in an array in the file; changing the tour means editing that array, while arrows and counter are fixed.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One small popover swapping text; no images or animation loop.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Arrows have aria-labels and disabled states are real; the popover body is not tied to the trigger for screen readers."
+  },
+  "props": [],
+  "issues": ["The popover has no arrow, so it floats unanchored above the trigger.", "The left arrow is dimmed only by disabled styling, which is easy to miss."],
+  "polish": 3,
+  "polish_why": "Clear, compact tour popover; plain styling and no anchor arrow keep it ordinary.",
+  "unsure": []
+}

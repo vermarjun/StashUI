@@ -1,0 +1,108 @@
+{
+  "name": "truck-loader",
+  "frames": {
+    "code": "7487",
+    "best": 5,
+    "best_why": "Truck is fully clear with a lamp standing to its right; frame 1 has no passing lamp at all.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A little red delivery truck bounces along a road while street lamps roll past.",
+  "summary": "A flat side-view delivery truck idles on a thin road line, dipping on its suspension while dashed markings and lamp posts slide behind it. It loops forever as a loading indicator.",
+  "title_fix": null,
+  "appearance": "A pale grey box trailer with a red cab, dark wheels and a small yellow headlight sits on a thin horizontal road line. Grey lamp posts slide across a near-black stage behind it.",
+  "behaviour": "The truck body dips and rises on its suspension while the road dashes and lamp posts travel right to left on a loop. Motion runs continuously and never settles.",
+  "parts": [
+    "box trailer",
+    "red cab",
+    "wheels",
+    "road line",
+    "street lamp"
+  ],
+  "demo_content": "Out for delivery heading, with order #48213 and a 2:00 to 4:00 pm delivery window",
+  "states": [
+    "loading"
+  ],
+  "kind": "loader",
+  "look": [
+    "flat",
+    "minimal",
+    "dark",
+    "playful"
+  ],
+  "tone": "playful",
+  "search_phrases": [
+    "delivery truck driving across the screen",
+    "animated van with scrolling street lamps",
+    "order on its way indicator",
+    "cute loading animation for shipping",
+    "package out for delivery status",
+    "road scene progress animation",
+    "little red truck moving on a road",
+    "shipping status animation for checkout"
+  ],
+  "resembles": [],
+  "use_when": "A delivery, shipping or checkout screen needs a friendly loading graphic that says the order is on its way.",
+  "avoid_when": "Light themes, since the truck's dark outlines and fixed red and grey fills need source edits to restyle.",
+  "suits": [
+    "ecommerce",
+    "saas",
+    "mobile-app"
+  ],
+  "slot_hints": [
+    "loading",
+    "empty-state"
+  ],
+  "traits": {
+    "trigger": [
+      "always"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "Only className is exposed. Truck colours, the 200x100 box, speeds and the road colour variable must be changed in the source CSS.",
+  "technique": [
+    "css-keyframes",
+    "svg"
+  ],
+  "weight": "light",
+  "weight_why": "A handful of SVG shapes moved by three short CSS keyframe loops.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Has a status role and a Loading label, but the endless loop ignores reduced-motion preferences."
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "A lamp post passes in front of the truck in frame 4, breaking the depth illusion."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy flat illustration with smooth looping motion; the lamp overlap is a small flaw.",
+  "unsure": [
+    "theme"
+  ]
+}

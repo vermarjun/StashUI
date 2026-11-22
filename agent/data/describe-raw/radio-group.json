@@ -1,0 +1,72 @@
+{
+  "name": "radio-group",
+  "frames": {
+    "code": "4463",
+    "best": 1,
+    "best_why": "All four rows and prices are readable with the chosen row shown and no cursor covering them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Stacked pricing rows where one circle marks the chosen plan.",
+  "summary": "A plan chooser: a card lists four subscription rows, each with a small circle, a name, a short description and a price. Clicking a row moves the single selection and highlights that row.",
+  "title_fix": null,
+  "appearance": "A dark rounded card with a bold 'Choose a plan' heading and one muted line, then four stacked rows. Each row holds a small circle, a bold plan name over a dim description, and a price at the right; the chosen row gets a lighter border and fill.",
+  "behaviour": "Clicking a row fills its circle with a dot and moves the lighter border to it, so only one stays chosen. The change is instant, and keyboard focus draws a ring around the circle.",
+  "parts": ["card", "heading", "helper line", "plan row", "selection circle", "price"],
+  "demo_content": "Four plans: Hobby free, Pro at $20 per month, Team at $49 per month and Enterprise priced custom.",
+  "states": ["hover", "focus", "checked"],
+  "kind": "radio-group",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "choose one plan from a list",
+    "pricing options with a single choice",
+    "circle markers that select one row",
+    "pick one option from stacked cards",
+    "subscription tier picker",
+    "single selection list in a form",
+    "mutually exclusive choices",
+    "highlighted row for the chosen option"
+  ],
+  "resembles": [],
+  "use_when": "Exactly one of a few clearly labelled options must be chosen and easy comparison matters.",
+  "avoid_when": "Rows show only two short lines, so plans needing feature lists are better built as cards.",
+  "suits": ["saas", "dashboard", "fintech"],
+  "slot_hints": ["form-field", "pricing-card", "modal"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["border", "fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "You supply the rows and circles as children; value or defaultValue controls the choice, and colours, gap and row styling come from classes.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Four small circles and labels with colour transitions only.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Arrow keys move the choice and labels are linked by id, but the chosen row is communicated mostly by colour and a 6px dot."
+  },
+  "props": [
+    {"name": "defaultValue", "type": "string", "default": null, "required": false},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The chosen row differs only by a faint border and slight fill, easy to miss on a dark page",
+    "The 6px dot inside a 16px circle is a weak selection mark",
+    "No submit action follows the choice, so the demo shows no result"
+  ],
+  "polish": 3,
+  "polish_why": "Ordered plan list with clear prices; the chosen row barely stands out on the dark stage.",
+  "unsure": []
+}

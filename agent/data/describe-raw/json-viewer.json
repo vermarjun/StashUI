@@ -1,0 +1,72 @@
+{
+  "name": "json-viewer",
+  "frames": {
+    "code": "3514",
+    "best": null,
+    "best_why": "",
+    "usable": [],
+    "render": "broken",
+    "render_note": "All six frames show a \"Preview unavailable\" warning instead of the JSON tree.",
+    "shows_interaction": "no"
+  },
+  "tagline": "Folds a raw JSON payload into a colour-coded tree with line numbers and copy.",
+  "summary": "A bordered code panel that renders a JSON object as an indented tree. Keys and values are colour-coded by type, branches fold open, long arrays truncate, dates get a relative hint, and the header offers Expand All, Collapse All and Copy.",
+  "title_fix": null,
+  "appearance": "Every recorded frame is a near-black stage holding only a grey warning triangle above the words \"Preview unavailable\", centred in large grey type. The viewer itself, its border, title row and tree never appear.",
+  "behaviour": "From the code, each object or array folds and unfolds on click, its chevron rotating as it opens; the header expands or collapses every branch and copies the payload, and arrays over five items hide behind a Show more button. The frames show none of this.",
+  "parts": ["warning icon", "error message"],
+  "demo_content": "",
+  "states": ["hover", "open"],
+  "kind": "code-block",
+  "look": ["dark", "minimal", "flat", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "json tree with collapsible nodes",
+    "view raw api response",
+    "json pretty printer with colours",
+    "debug payload inspector",
+    "expand and collapse json keys",
+    "copy json to clipboard",
+    "line numbered json block",
+    "api response viewer for dashboard"
+  ],
+  "resembles": ["Chrome DevTools JSON preview", "Postman response viewer"],
+  "use_when": "A dashboard or API tool must show a raw JSON response that people can fold, read and copy.",
+  "avoid_when": "The recorded frames render as an error, so its real look is unverified; deep payloads mean a lot of nested rows.",
+  "suits": ["devtool", "dashboard", "saas"],
+  "slot_hints": ["body-text", "data-table", "modal"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The data object, header title, default expansion depth, line numbers, colour indent, click or double-click collapse and array truncation are props. Colours and row styling are in the source.",
+  "technique": ["static", "css-transition"],
+  "weight": "light",
+  "weight_why": "Renders only the open branches of the tree; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Expand and collapse sits on a clickable div, so only the chevron button is keyboard reachable, and it has no label or aria-expanded state."
+  },
+  "props": [
+    {"name": "data", "type": "Record<string, any>", "default": null, "required": true},
+    {"name": "title", "type": "string", "default": null, "required": false},
+    {"name": "defaultExpanded", "type": "boolean | number", "default": "false", "required": false},
+    {"name": "showLineNumbers", "type": "boolean", "default": "true", "required": false},
+    {"name": "showColorIndent", "type": "boolean", "default": "false", "required": false},
+    {"name": "collapseOn", "type": "\"click\" | \"doubleClick\"", "default": "\"click\"", "required": false},
+    {"name": "truncation", "type": "Partial<TruncationSettings>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["All six frames show a Preview unavailable error instead of the viewer.", "The Expand All, Collapse All and Copy controls never appear in the frames."],
+  "polish": 1,
+  "polish_why": "The recording is a broken preview, so the component itself cannot be judged from it.",
+  "unsure": ["appearance", "behaviour", "parts", "demo_content", "states", "look", "tone", "polish"]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "logos-marquee",
+  "frames": {
+    "code": "8555",
+    "best": 2,
+    "best_why": "Frame 2 shows six logo marks at near-full brightness, with Apple and Google clearly centred.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Brand logos glide sideways on a dark strip and fade at both ends.",
+  "summary": "A single row of well-known company logos drifts sideways on a dark rounded panel and loops endlessly. Soft fades at each end hide the cut edges so the row appears to run on without a join.",
+  "title_fix": null,
+  "appearance": "A dark charcoal rounded panel holds one evenly spaced row of white and grey logo marks — Facebook, OpenAI, X, Apple and Google repeating — on a near-black field. The left and right edges dissolve into the background.",
+  "behaviour": "The row of logos glides steadily in one direction and loops without a visible gap; there is no pause control. Edge gradients dim each icon as it reaches either side.",
+  "parts": ["rounded panel", "logo strip", "brand icon", "edge fade"],
+  "demo_content": "White logo marks for Apple, Google, Facebook, OpenAI and X.",
+  "states": [],
+  "kind": "marquee",
+  "look": ["dark", "monochrome", "minimal", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "row of company logos scrolling",
+    "brand logos moving sideways",
+    "client logo strip",
+    "trusted by logos ticker",
+    "logos fading at both edges",
+    "infinite brand carousel",
+    "partner logos drifting across",
+    "social proof logo row"
+  ],
+  "resembles": [],
+  "use_when": "You want a steady strip of client or partner logos to signal trust without taking much height.",
+  "avoid_when": "Only five hardcoded brands are included, and a moving strip is slower to scan than a static grid.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["logo-wall"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Replace the local logos array to choose which brands appear; each entry needs a name for the alt text and an image URL. Gap and fade colours are class name settings.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "Five repeated logo images on one CSS-animated strip.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The strip never stops and ignores prefers-reduced-motion; each logo does carry alt text."
+  },
+  "props": [],
+  "issues": [
+    "Logos load from remote SVG URLs, so the strip shows gaps if those hosts are blocked.",
+    "The strip cannot be paused, so a visitor cannot hold a logo still to read it."
+  ],
+  "polish": 3,
+  "polish_why": "Even spacing and clean fades; the plain icon row and permanent motion keep it standard.",
+  "unsure": ["technique"]
+}

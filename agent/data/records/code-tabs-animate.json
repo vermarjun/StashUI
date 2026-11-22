@@ -1,0 +1,171 @@
+{
+ "name": "code-tabs-animate",
+ "frames": {
+  "code": "8479",
+  "best": 1,
+  "best_why": "The active pnpm tab, all four labels and the full highlighted command block are cleanly visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Package-manager tabs swap install commands inside a dark code panel.",
+ "summary": "A compact code block with pnpm, npm, yarn and bun tabs; picking one moves the active underline and fades in that manager's install commands, with a copy button on the right.",
+ "title_fix": null,
+ "appearance": "A slim dark rounded panel. Four lowercase tab labels sit across the top with a thin white underline under the active one and a small copy icon at the far right. Below, five short lines of small monospace commands, some words tinted blue or purple.",
+ "behaviour": "Clicking a tab fades and blurs the old snippet out and the new one in while the underline moves to the chosen label. The copy button briefly swaps to a tick after copying.",
+ "parts": [
+  "tab bar",
+  "tab label",
+  "active underline",
+  "copy button",
+  "code lines"
+ ],
+ "demo_content": "Install commands for pnpm, npm, yarn and bun scaffolding a Vite React app and adding motion and lucide-react.",
+ "states": [
+  "hover",
+  "focus",
+  "selected",
+  "success"
+ ],
+ "kind": "code-block",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "install command switcher",
+  "package manager tabs",
+  "syntax highlighted command box",
+  "copy to clipboard code block",
+  "tabbed terminal snippet",
+  "npm yarn pnpm switcher",
+  "docs install instructions widget",
+  "switch between shell commands"
+ ],
+ "resembles": [],
+ "use_when": "Documentation shows one install step for several package managers and readers need to copy the right one.",
+ "avoid_when": "A single fixed command: the tab bar and copy machinery add height and motion for no gain.",
+ "suits": [
+  "docs",
+  "devtool"
+ ],
+ "slot_hints": [
+  "body-text",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass a codes object keyed by tab name plus language and theme names; the tab labels come from those keys, while bar styling and the copy button are internal.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Shiki highlights every snippet in the browser on mount, then motion runs a small swap.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Tabs are keyboard operable and focus rings show, but the copy button is icon-only and the animation ignores reduced motion."
+ },
+ "props": [
+  {
+   "name": "codes",
+   "type": "Record<string, string>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "lang",
+   "type": "string",
+   "default": "'bash'",
+   "required": false
+  },
+  {
+   "name": "themes",
+   "type": "{ light: string; dark: string }",
+   "default": "{ light: 'github-light', dark: 'github-dark' }",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": "{selectedCode}",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(value: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "copyButton",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "onCopiedChange",
+   "type": "(copied: boolean, content?: string) => void",
+   "default": "{onCopiedChange}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The copy control is an unlabelled icon, so its purpose is not announced."
+ ],
+ "polish": 4,
+ "polish_why": "Tight code panel with a pleasant blur swap; the icon-only copy control is the weak spot.",
+ "unsure": [
+  "a11y.labels"
+ ],
+ "title": "Code Tabs",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a4ce485ab874737e",
+  "film_hash": "6b58eda47f3c695e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

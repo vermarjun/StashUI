@@ -1,0 +1,134 @@
+{
+ "name": "chart-kit",
+ "frames": {
+  "code": "5626",
+  "best": 1,
+  "best_why": "Shows both charts fully drawn with their blue and hatched bars and teal area, with no tooltip covering them.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Bar and area charts with hatched columns and a glassy hover tooltip.",
+ "summary": "Two dark chart cards: monthly visitor bars pairing a blue gradient series with orange hatching, and a teal price area. Hovering shows a frosted tooltip with values.",
+ "title_fix": null,
+ "appearance": "Two dark cards hold a twelve-month bar chart and a rising area chart. The bars alternate solid blue and diagonal orange hatching, while the area has a teal outline and fading teal fill over dotted gridlines.",
+ "behaviour": "Bars grow in staggered from the baseline on load, and hovering a month dims the other columns and raises a frosted tooltip. The area chart draws a dashed cursor with a highlighted dot at the pointer.",
+ "parts": [
+  "chart card",
+  "metric header",
+  "legend",
+  "bar",
+  "area line",
+  "area fill",
+  "gridlines",
+  "tooltip"
+ ],
+ "demo_content": "Visitor bars for Jan to Dec with Desktop and Mobile series, and a SOL/USD 24-day price area at $150.40.",
+ "states": [
+  "hover",
+  "loading"
+ ],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "colorful",
+  "minimal",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "bar chart with hatched bars",
+  "price area chart with tooltip",
+  "visitor analytics chart pair",
+  "crypto price chart card",
+  "gradient bars and area graph",
+  "chart with glass tooltip",
+  "monthly traffic comparison chart",
+  "animated bars that grow in"
+ ],
+ "resembles": [],
+ "use_when": "A dashboard wants a richer chart presentation than default bars, with texture and hover detail.",
+ "avoid_when": "The kit expects fixed arrays and colour tokens; swapping data or palette means editing the source.",
+ "suits": [
+  "dashboard",
+  "fintech"
+ ],
+ "slot_hints": [
+  "chart"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Data arrays, series labels and chart colours are exported constants; the demo charts compose them, so changes happen in source or by swapping constants.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Two SVG charts with a one-shot grow and hover dimming; no continuous loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": true,
+  "note": "Charts skip the Recharts accessibility layer, so they expose no names or keyboard access; motion respects reduced-motion."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute inset-0 opacity-[0.22] [backgr",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "{ label: string; color: string }[]",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Distinctive filled charts with thoughtful hatching and a frosted tooltip.",
+ "unsure": [
+  "content_from",
+  "props"
+ ],
+ "title": "Chart Kit",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c72d7c72d802d963",
+  "film_hash": "b9ed4a17639e63d3",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,188 @@
+{
+ "name": "fuse-button",
+ "frames": {
+  "code": "2766",
+  "best": 4,
+  "best_why": "The Undo state is fully lit with a complete orange ring around the pill, showing the fuse before it burns down.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.7
+ },
+ "tagline": "An orange fuse burns around a button to hold a short undo window.",
+ "summary": "A compact action button that becomes Undo once pressed, while a thin orange fuse burns around its edge. When the fuse runs out the action commits; pressing Undo cancels it first.",
+ "title_fix": null,
+ "appearance": "A rounded dark panel holds a small white heading, a grey line of body text and a charcoal pill button at the lower right with a small archive icon. In its undo state the pill shows a white Undo label inside a delicate orange ring.",
+ "behaviour": "Pressing the button swaps the label to Undo and lights a fuse that traces the pill's outline. The line shortens steadily until it disappears, then the original label returns; hovering pauses the burn and clicking Undo ends it at once.",
+ "parts": [
+  "panel",
+  "heading",
+  "body text",
+  "action pill",
+  "fuse ring"
+ ],
+ "demo_content": "\"Newsletter cleanup\" with the line \"12 promotional emails from the last 30 days, 4.3 MB in total.\"",
+ "states": [
+  "hover",
+  "active",
+  "disabled"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "button with undo timer",
+  "undo window countdown button",
+  "archive action with undo",
+  "burning fuse progress ring",
+  "confirm before undo expires",
+  "delete with temporary undo",
+  "pill button with countdown outline",
+  "gmail style undo button"
+ ],
+ "resembles": [
+  "Gmail undo"
+ ],
+ "use_when": "A destructive or bulk action where people need a few seconds to take it back.",
+ "avoid_when": "The fuse adds a wait before commit, so it is wrong for instant or high-frequency actions.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-submit",
+  "primary-cta"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Set label, doneLabel and undoLabel, plus icon, size, radius and colours. Undo window, fuse position and thickness, commit timing, hover pause, settle mode and callbacks are props.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One short Web Animations tween on a single outline, with nothing running while idle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Focus is visible and Escape undoes, but the fuse keeps burning and the undo state is announced only as text."
+ },
+ "props": [
+  {
+   "name": "label",
+   "type": "string",
+   "default": "'Archive'",
+   "required": false
+  },
+  {
+   "name": "undoLabel",
+   "type": "string",
+   "default": "'Undo'",
+   "required": false
+  },
+  {
+   "name": "doneLabel",
+   "type": "string",
+   "default": "'Archived'",
+   "required": false
+  },
+  {
+   "name": "icon",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "'#f5f5f5'",
+   "required": false
+  },
+  {
+   "name": "background",
+   "type": "string",
+   "default": "'#27272a'",
+   "required": false
+  },
+  {
+   "name": "fuseColor",
+   "type": "string",
+   "default": "'#f5a524'",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "'sm' | 'md' | 'lg'",
+   "default": "'md'",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "22",
+   "required": false
+  },
+  {
+   "name": "undoWindow",
+   "type": "number",
+   "default": "4000",
+   "required": false
+  },
+  {
+   "name": "fuse",
+   "type": "'outline' | 'bottom' | 'top'",
+   "default": "'outline'",
+   "required": false
+  },
+  {
+   "name": "commitOn",
+   "type": "'press' | 'fuseEnd'",
+   "default": "'press'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The charcoal pill blends into the card, so its edge is hard to see until the fuse lights."
+ ],
+ "polish": 4,
+ "polish_why": "Tidy and purposeful with a clear fuse cue; the low-contrast pill and small copy hold it back.",
+ "unsure": [],
+ "title": "Fuse Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "712022fb189006b2",
+  "film_hash": "8c70f38657151563",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

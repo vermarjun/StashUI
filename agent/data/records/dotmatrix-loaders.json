@@ -1,0 +1,188 @@
+{
+ "name": "dotmatrix-loaders",
+ "frames": {
+  "code": "8494",
+  "best": 1,
+  "best_why": "Every loader tile is lit at once, showing the full family of dot grids, shapes and colours.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "A grid of glowing dot-matrix loaders in many shapes and hues.",
+ "summary": "A collection of nineteen small loading indicators, each a grid of glowing dots arranged as a square, circle, triangle, hexagon or 3x3 block. They animate with sweeps, ripples, spirals and gradient blooms.",
+ "title_fix": null,
+ "appearance": "A dark grid of small rounded-square cards, each holding a tiny matrix of dots and a short uppercase caption underneath. Dots glow in white, blue, mint, red, orange and purple, some with a soft bloom; the last cell instead shows a big 19 above the word loaders.",
+ "behaviour": "Each loader runs its own loop: dots brighten in sweeps, ripples, spirals, comets or glyph morphs, with the lit pattern shifting every second or so. Some cycles use gradient colours and a glow; the set holds a still pattern when reduced motion is requested.",
+ "parts": [
+  "loader card",
+  "dot matrix",
+  "label",
+  "bloom glow"
+ ],
+ "demo_content": "Uppercase labels like Diagonal sweep, Square 02, Circular 09, Triangle 08, Hex 04 and 3x3 14, plus a 19 loaders cell.",
+ "states": [
+  "loading",
+  "hover"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "colorful",
+  "technical",
+  "glow",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "dot matrix loading spinner",
+  "led grid loader",
+  "pixel dot loading animation",
+  "small animated loading icon",
+  "dots that light up in sequence",
+  "retro led progress indicator",
+  "circular dots loading symbol",
+  "loading states for a dashboard"
+ ],
+ "resembles": [],
+ "use_when": "A product wants a set of coordinated loading indicators that share a dot-matrix look across several colours.",
+ "avoid_when": "Each loader is tiny and decorative, so it needs a label for meaning, and importing all nineteen adds weight.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "loading",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "Size, dot size, colour or colour preset, speed, pattern, dot shape, bloom, halo and animated/hoverAnimated are shared props; the per-loader motion is fixed in each file.",
+ "technique": [
+  "css-keyframes",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "Many tiny dot grids, but only opacity and colour change; idle when reduced motion is on.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Each loader takes an ariaLabel, but there is no status role or live region to announce loading, and reduced motion holds a still pattern."
+ },
+ "props": [
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1.15",
+   "required": false
+  },
+  {
+   "name": "pattern",
+   "type": "MatrixPattern",
+   "default": "\"full\"",
+   "required": false
+  },
+  {
+   "name": "dotShape",
+   "type": "DotShape",
+   "default": "\"circle\"",
+   "required": false
+  },
+  {
+   "name": "animated",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hoverAnimated",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "{rest.size ?? 24}",
+   "required": false
+  },
+  {
+   "name": "dotSize",
+   "type": "number",
+   "default": "{rest.dotSize ?? 6}",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"currentColor\"",
+   "required": false
+  },
+  {
+   "name": "colorPreset",
+   "type": "DotMatrixColorPreset",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "bloom",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "halo",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "ariaLabel",
+   "type": "string",
+   "default": "\"Loading\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Triangle 08's dots are almost invisible against its dark tile.",
+  "Some loaders are so small and dim that the dot pattern is hard to read."
+ ],
+ "polish": 4,
+ "polish_why": "Charming coordinated set with varied motion and colour; several tiles are too dim to read.",
+ "unsure": [
+  "props",
+  "content_from"
+ ],
+ "title": "Dotmatrix Loaders",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "60faacbacf535dfe",
+  "film_hash": "56affa470512365a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

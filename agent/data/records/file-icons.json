@@ -1,0 +1,118 @@
+{
+ "name": "file-icons",
+ "frames": {
+  "code": "2343",
+  "best": 4,
+  "best_why": "Full icon grid and source tree are shown together with a file row highlighted on hover.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 3.8
+ },
+ "tagline": "A grid of file-type and brand icons above a matching file tree.",
+ "summary": "A collection of monochrome icons for file types, languages and developer tools, with a helper that picks the right glyph from a file extension. The demo shows them in a labelled grid and a small source tree.",
+ "title_fix": null,
+ "appearance": "A grid of dark bordered tiles, each holding a white monochrome glyph and a small grey label. Below it a bordered panel lists src files under a folder heading, each row with a tiny icon and a monospace filename.",
+ "behaviour": "The glyphs themselves are static; hovering a tile or a file row tints its background grey. A helper swaps the icon according to the supplied file extension.",
+ "parts": [
+  "icon tile",
+  "icon glyph",
+  "tile label",
+  "folder heading",
+  "file row",
+  "file name"
+ ],
+ "demo_content": "Labels like logo, twitter, react, tailwind, json, ts, css; files package.json, globals.css, button.tsx, utils.ts.",
+ "states": [
+  "hover"
+ ],
+ "kind": "icon",
+ "look": [
+  "dark",
+  "monochrome",
+  "minimal",
+  "outlined",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "file type icons for a code editor",
+  "language and framework logos",
+  "monochrome file extension icons",
+  "icon set for a file tree",
+  "json css typescript icon",
+  "brand logo icon collection",
+  "small glyphs beside filenames",
+  "code editor file glyph set"
+ ],
+ "resembles": [],
+ "use_when": "A file tree, editor tab bar or docs list needs a matching glyph for each file type.",
+ "avoid_when": "You need colourful brand logos or types beyond the included extensions; others fall back to a generic file.",
+ "suits": [
+  "devtool",
+  "docs"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Pick an icon by key or call the extension helper; colour follows currentColor and classes. Adding a new file type means editing the source.",
+ "technique": [
+  "static",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Inline SVG paths with CSS-only hover colours; no animation or runtime loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Icons are decorative and marked aria-hidden in the demo, and the SVGs carry no titles of their own."
+ },
+ "props": [
+  {
+   "name": "language",
+   "type": "string",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Only json, css and js/ts family extensions map to icons; everything else gets a generic file glyph.",
+  "The file rows are static list items, not real links or selectable files."
+ ],
+ "polish": 4,
+ "polish_why": "A wide, consistent monochrome set with tidy labels and a clear file-tree example.",
+ "unsure": [],
+ "title": "File Icons",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "7346ad90d14d351f",
+  "film_hash": "71c770d1d850e1ae",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

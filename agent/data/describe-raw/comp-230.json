@@ -1,0 +1,106 @@
+{
+  "name": "comp-230",
+  "frames": {
+    "code": "4999",
+    "best": 3,
+    "best_why": "The panel is open with the search field, both organisations, a tick and the New organization row.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A searchable organisation picker with a create-new row at its foot.",
+  "summary": "A labelled picker over a couple of organisations, with a search field, a tick on the current one and a New organization action below a divider. Choosing a row closes the panel and fills the trigger.",
+  "title_fix": null,
+  "appearance": "A small label sits above a wide rounded trigger reading coss.com with a chevron. Opened, a dark popover holds a search field, two short organisation rows with a tick on the first, a thin divider and a full-width New organization row with a plus.",
+  "behaviour": "Clicking the trigger opens the panel; typing filters the rows on each keystroke, and choosing one closes it and writes the name into the trigger. The clip types cr and ends on Cruip.",
+  "parts": [
+    "field label",
+    "trigger button",
+    "chevron",
+    "search input",
+    "organisation row",
+    "check mark",
+    "action row"
+  ],
+  "demo_content": "coss.com and Cruip organisations with a New organization action; search typed cr",
+  "states": [
+    "hover",
+    "focus",
+    "open",
+    "selected",
+    "empty"
+  ],
+  "kind": "select",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "search organisations and add a new one",
+    "picker with a create new option",
+    "dropdown with an add row at the bottom",
+    "searchable select plus a new item",
+    "choose an organization from a list",
+    "combobox with a footer action",
+    "filter a list and create a record",
+    "type to find then add new"
+  ],
+  "resembles": [],
+  "use_when": "When a picker needs a short list and a quick way out to create the item that is missing.",
+  "avoid_when": "Typing hides the New organization row while filtering, so the create action vanishes exactly when it may be needed.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "keyboard"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The two organisations sit in an array in the file; swap them for your own names and values. The action row, its plus icon and the search placeholder are written there too.",
+  "technique": [
+    "css-keyframes",
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "Two text rows plus one action in a popup with a short open animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The trigger is a labelled combobox and filtering works from the keyboard; the New organization row is a plain button, so its keyboard order is unclear."
+  },
+  "props": [],
+  "issues": [
+    "Typing in the search hides the New organization row, so the create action disappears while filtering.",
+    "The field label is the demo phrase Select with search and button, not a real field name."
+  ],
+  "polish": 3,
+  "polish_why": "Neat grouped popover with a clear action row; the action vanishing on search is a real snag.",
+  "unsure": []
+}

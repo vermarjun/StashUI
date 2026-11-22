@@ -1,0 +1,149 @@
+{
+ "name": "toggle-group",
+ "frames": {
+  "code": "3827",
+  "best": 6,
+  "best_why": "Both button strips and the right-aligned sample text are fully visible, and no cursor covers the controls.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.7
+ },
+ "tagline": "Two joined strips of icon buttons restyle and realign a paragraph as you pick.",
+ "summary": "Two connected rows of icon buttons: bold, italic and underline in one, and left, centre and right alignment in the other. Picking a style or alignment immediately changes the sample text in the card below.",
+ "title_fix": null,
+ "appearance": "A dark card holds one toolbar row of two joined icon-button strips split by a thin divider: bold, italic and underline, then three alignment icons. Chosen buttons sit in a grey fill, and below them a bold heading and a paragraph react to the choices.",
+ "behaviour": "Clicking a style button adds or removes that mark from the sample heading, while an alignment button moves the whole text block left, centre or right. The frames show italic being turned on and the text swinging from left to centre and then right.",
+ "parts": [
+  "toolbar",
+  "style strip",
+  "alignment strip",
+  "icon button",
+  "selected button",
+  "sample heading",
+  "paragraph"
+ ],
+ "demo_content": "Release notes, v2.4 heading with a note about offline drafts syncing on reconnect.",
+ "states": [
+  "active",
+  "hover",
+  "focus"
+ ],
+ "kind": "tabs",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "bold italic underline buttons that join",
+  "segmented icon buttons for text styling",
+  "alignment picker with three icons",
+  "formatting controls above a paragraph",
+  "text align left center right switcher",
+  "connected buttons that push one choice",
+  "word processor style ribbon",
+  "single choice made of icon buttons"
+ ],
+ "resembles": [
+  "Google Docs toolbar"
+ ],
+ "use_when": "Formatting or view options where several can apply at once while one alignment stays chosen.",
+ "avoid_when": "The joined pills read as one control, so keep each strip short; the items are icons with no visible labels.",
+ "suits": [
+  "saas",
+  "docs",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Groups take type single or multiple plus size and variant props, while each item carries a value and its icon as children; item styling lives in the classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few small buttons and simple class swaps; nothing animates at rest.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Arrow key navigation and a focus ring come from the primitive, but the icon-only items need aria-label props for a name."
+ },
+ "props": [
+  {
+   "name": "type",
+   "type": "\"single\" | \"multiple\"",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "value",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "\"default\" | \"outline\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "\"sm\" | \"default\" | \"lg\"",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean toolbar and a convincing live text reflow; icon-only items rely on labels.",
+ "unsure": [
+  "kind",
+  "responsive"
+ ],
+ "title": "Toggle Group",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "76b776b58816e71c",
+  "film_hash": "530d22cd534525d5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

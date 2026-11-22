@@ -1,0 +1,77 @@
+{
+  "name": "mock-browser-window",
+  "frames": {
+    "code": "9796",
+    "best": 1,
+    "best_why": "All frames are nearly identical; frame 1 shows the full window, sidebar and dashboard without a cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "A dark browser window frames a small analytics dashboard.",
+  "summary": "A rounded mock app window with three macOS dots, a URL bar and a left sidebar, holding a demo dashboard of three stat cards and a bar chart. It is a frame; the sidebar and content come from props and children.",
+  "title_fix": null,
+  "appearance": "A dark rounded window with a thin border. The top row has three small traffic-light dots on the left and a pill-shaped URL bar in the centre. A narrow left sidebar lists five items, the first tinted as active, beside three small stat cards and a row of grey bars.",
+  "behaviour": "Static: nothing moves or responds. The URL, sidebar items and inner content are supplied by props and children, but the frame itself has no interaction.",
+  "parts": ["window frame", "traffic light dots", "address bar", "sidebar", "sidebar item", "stat card", "bar chart"],
+  "demo_content": "Sidebar Overview, Analytics, Customers, Billing, Settings; stat cards over a bar chart.",
+  "states": ["selected", "hover"],
+  "kind": "device-mockup",
+  "look": ["dark", "rounded", "minimal", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "browser window screenshot frame",
+    "app mockup with a url bar",
+    "mac window with traffic lights",
+    "dashboard inside a fake browser",
+    "website preview in a window",
+    "saas product screenshot frame",
+    "chrome style window mockup",
+    "frame for a landing page screenshot"
+  ],
+  "resembles": ["macOS window"],
+  "use_when": "You want to frame a dashboard screenshot as a believable app window on a marketing page.",
+  "avoid_when": "Real navigation is needed: this is a static frame whose dots and links do nothing.",
+  "suits": ["saas", "portfolio"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "size, variant, headerStyle, url, showSidebar, sidebarPosition, sidebarItems and theme are props; the window content is children. The theme prop currently has no effect.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A few nested divs and one inline SVG; no images, scripts or motion.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Traffic dots and sidebar rows look clickable but are plain divs with no handlers or keyboard access."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "size", "type": "\"sm\" | \"md\" | \"lg\" | \"xl\"", "default": "md", "required": false},
+    {"name": "showSidebar", "type": "boolean", "default": "false", "required": false},
+    {"name": "sidebarPosition", "type": "\"left\" | \"right\" | \"top\" | \"bottom\"", "default": "left", "required": false},
+    {"name": "headerStyle", "type": "\"minimal\" | \"full\"", "default": "minimal", "required": false},
+    {"name": "variant", "type": "\"chrome\" | \"safari\" | \"generic\"", "default": "generic", "required": false},
+    {"name": "theme", "type": "\"light\" | \"dark\" | \"auto\"", "default": "auto", "required": false},
+    {"name": "url", "type": "string", "default": null, "required": false},
+    {"name": "sidebarItems", "type": "Array<{ icon?: React.ReactNode; label: string; active?: boolean; badge?: string | number }>", "default": null, "required": false}
+  ],
+  "issues": [
+    "The theme prop is accepted but all three values resolve to the same classes, so it does nothing.",
+    "The traffic lights and sidebar rows look clickable but have no behaviour."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp window chrome and tidy dashboard demo; the dead theme prop and fake controls are small flaws.",
+  "unsure": []
+}

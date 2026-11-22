@@ -1,0 +1,72 @@
+{
+  "name": "bending-gallery",
+  "frames": {
+    "code": "4480",
+    "best": 2,
+    "best_why": "Frame 2 shows four captioned photo cards laid along the clearest visible arc.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo cards ride a curved arc and slide sideways as you drag.",
+  "summary": "A band of rounded photo cards with short captions, arranged on a shallow arc where outer cards dip and lean away. Dragging or swiping slides them endlessly while the pictures ripple gently.",
+  "title_fix": null,
+  "appearance": "A wide strip of portrait photo cards runs across a black stage, each with a small white caption underneath. The row bows so cards near the middle sit higher and cards at the edges drop and tilt, with cards running off both sides.",
+  "behaviour": "Dragging or swiping shifts the whole row, easing to a stop on a card boundary and looping cards that leave one edge back in at the other. Each photo also sways a little in place, and the strip re-fits when the window resizes.",
+  "parts": ["photo card", "caption", "curved strip"],
+  "demo_content": "Nature photos captioned Single Leaf, Alpine Sunrise, Rice Terraces, Icelandic Horses, Autumn Canopy and Blue Lotus.",
+  "states": ["dragging"],
+  "kind": "gallery-section",
+  "look": ["dark", "rounded", "colorful", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "photos curving along an arc",
+    "drag to scroll image gallery",
+    "infinite horizontal photo strip",
+    "3d curved photo carousel",
+    "webgl image gallery you can drag",
+    "showcase of nature photos with captions",
+    "smooth scrolling picture wall",
+    "bent row of photograph cards"
+  ],
+  "resembles": [],
+  "use_when": "A portfolio or product page needs an immersive drag-through gallery of captioned photos.",
+  "avoid_when": "It draws in WebGL only, so without WebGL the box stays empty, and images must allow cross-origin loading.",
+  "suits": ["portfolio", "marketing", "ecommerce"],
+  "slot_hints": ["media", "hero", "feature-card"],
+  "traits": {
+    "trigger": ["drag", "scroll"],
+    "motion": "continuous",
+    "affects": ["image", "layout"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "items supplies image and caption pairs; bend, textColor, borderRadius and font are props, while camera, easing and shader sway are in the source.",
+  "technique": ["webgl-shader", "canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A WebGL draw call every frame for every card, plus a Canvas2D label texture for each.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Everything including captions is painted into a canvas, with no alt text or keyboard control and no reduced-motion check."
+  },
+  "props": [
+    {"name": "items", "type": "GalleryItem[]", "default": null, "required": false},
+    {"name": "bend", "type": "number", "default": "3", "required": false},
+    {"name": "textColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "borderRadius", "type": "number", "default": "0.05", "required": false},
+    {"name": "font", "type": "string", "default": "bold 30px DM Sans", "required": false}
+  ],
+  "issues": [
+    "Wheel, mousedown and touch listeners sit on the whole window, so the gallery hijacks page scrolling.",
+    "Captions are baked into textures, so they cannot be selected, translated or read by assistive tech."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth curved scroll with crisp photos and neat captions; edge cards clip awkwardly.",
+  "unsure": ["kind"]
+}

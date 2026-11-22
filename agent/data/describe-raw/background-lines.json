@@ -1,0 +1,67 @@
+{
+  "name": "background-lines",
+  "frames": {
+    "code": "6180",
+    "best": 6,
+    "best_why": "Arcs fill every side of the heading with the widest spread of colours, more than any earlier frame.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Colourful arcs radiate outward around a bold white headline.",
+  "summary": "A full-screen dark backdrop scattered with thin coloured curves that draw themselves, drift outward and fade, looping continuously behind whatever content you place on top.",
+  "title_fix": null,
+  "appearance": "A near-black panel holds a centred two-line white heading with a small grey paragraph beneath it. Around the text, dozens of fine curved strokes in blue, red, teal, purple and yellow sweep outward like orbits.",
+  "behaviour": "Each stroke draws along its curve, fades and repeats on its own random delay, so arcs forever sprout, travel and dissolve around the still text. Nothing responds to input.",
+  "parts": ["dark backdrop", "curved strokes", "headline", "subtext"],
+  "demo_content": "Heading 'Sanjana Airlines, Sajana Textiles.' plus a line about advice from experts, artists and marathon enthusiasts.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "colorful", "minimal"],
+  "tone": "decorative",
+  "search_phrases": [
+    "animated lines in the background",
+    "thin coloured arcs behind a heading",
+    "dark hero backdrop with moving curves",
+    "particles that look like scribbles",
+    "decorative background for a landing page",
+    "looping line animation full screen",
+    "colourful streaks behind text",
+    "animated svg background"
+  ],
+  "resembles": [],
+  "use_when": "A landing hero or quote needs a moving backdrop with nothing to click, especially on a dark theme.",
+  "avoid_when": "Continuous random loops cost CPU and never idle, and faint lines wash out on light backgrounds.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["page-background", "section-background", "hero"],
+  "traits": {
+    "trigger": ["always", "timer"],
+    "motion": "continuous",
+    "affects": ["border", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Content is passed as children; a className and an svgOptions.duration prop change the wrapper and stroke speed, while the 42 paths and colours are fixed in the source.",
+  "technique": ["svg", "motion-library"],
+  "weight": "moderate",
+  "weight_why": "Eighty-four infinitely looping stroke paths animate every frame, though each is cheap.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The looping backdrop ignores reduced-motion and is not hidden from assistive tech, so motion cannot be paused."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "svgOptions", "type": "{ duration?: number }", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Arcs build a convincing sense of depth behind the text; the thinnest lines nearly disappear.",
+  "unsure": []
+}

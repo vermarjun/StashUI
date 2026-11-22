@@ -1,0 +1,123 @@
+{
+  "name": "dialog",
+  "frames": {
+    "code": "6547",
+    "best": 3,
+    "best_why": "Frame 3 shows the settled dialog sharp and centred with title, body text, Confirm and Cancel; frame 2 is mid-fade.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark confirm card fades over the page with two 50/50 buttons.",
+  "summary": "A compact confirmation dialog with a heading, a warning paragraph and a bright primary button paired with an outlined cancel. It fades and slides in over a blurred dark page.",
+  "title_fix": null,
+  "appearance": "A small dark button labelled Delete project on a near-black page; opened, a rounded dark card floats over a black wash holding a heading, two lines of grey body text, a bright Confirm button and an outlined Cancel, with a small X at the top right.",
+  "behaviour": "Clicking the button fades the backdrop and slides the card up a little; the X, Cancel, a backdrop click or Escape closes it with the same fade.",
+  "parts": [
+    "trigger button",
+    "dimmed backdrop",
+    "dialog card",
+    "heading",
+    "body text",
+    "close icon",
+    "confirm button",
+    "cancel button"
+  ],
+  "demo_content": "Heading \"Confirm Action\" with a delete warning and Confirm and Cancel buttons",
+  "states": [
+    "hover",
+    "open"
+  ],
+  "kind": "modal",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "glass"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "confirm before deleting something",
+    "yes or no popup card",
+    "small centered confirmation card",
+    "irreversible action warning box",
+    "destructive action double check",
+    "modal with two choice buttons",
+    "popup asking to proceed",
+    "blurred backdrop decision card"
+  ],
+  "resembles": [],
+  "use_when": "An action is destructive or costly and needs one clear stop before it runs.",
+  "avoid_when": "Only two actions and a short body fit comfortably; the card has no internal scroll.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "modal"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "keyboard"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "children"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "ModalContent wraps your own markup and open plus setOpen switch it between controlled and self-managed; width and blur are in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "One overlay and one card with simple opacity and slide tweens.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "No dialog role, no focus trap or initial focus, and the X button has no accessible name."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "setOpen",
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The close X has no label and the panel lacks a dialog role.",
+    "No focus is moved into the dialog, so keyboard users stay on the page behind."
+  ],
+  "polish": 3,
+  "polish_why": "Clean, restrained confirmation card; default borders and missing dialog semantics keep it ordinary.",
+  "unsure": [
+    "resembles"
+  ]
+}

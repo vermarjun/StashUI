@@ -1,0 +1,69 @@
+{
+  "name": "avatar-circles",
+  "frames": {
+    "code": "9015",
+    "best": 6,
+    "best_why": "The whole row is crisp and unobstructed, from the first avatar through the +99 disc.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "A row of circular photos overlaps into a white +99 disc.",
+  "summary": "A compact avatar group where round photos overlap shoulder to shoulder and end in a light disc showing how many more people there are.",
+  "title_fix": null,
+  "appearance": "Five round photos lined up on black, each cropped to a circle and ringed with a thin white border. They overlap by about a third, and a solid white circle holding +99 in black caps the row.",
+  "behaviour": "Static: the row does not move or respond in the frames. The trailing count is a link whose background darkens on hover.",
+  "parts": ["avatar photo", "avatar ring", "count disc"],
+  "demo_content": "Five soft landscape photos followed by a white +99 disc.",
+  "states": ["hover"],
+  "kind": "avatar",
+  "look": ["rounded", "minimal", "airy", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "overlapping profile pictures",
+    "avatar group with count",
+    "stacked user photos",
+    "circle faces in a row",
+    "social proof avatars",
+    "reader count avatars",
+    "people who joined avatar stack",
+    "profile icons plus more"
+  ],
+  "resembles": [],
+  "use_when": "A compact group of users plus a count is needed as social proof or a member preview.",
+  "avoid_when": "The trailing count disc ships with an empty link, so it goes nowhere until you wire it up.",
+  "suits": ["saas", "social", "marketing"],
+  "slot_hints": ["avatar", "list-item"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "none",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass avatarUrls as an array of imageUrl and profileUrl pairs plus numPeople for the trailing count; ring colour, size and overlap are fixed classes.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A short row of small images and one text label; nothing animates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Photos get generic alt text like Avatar 1, the count disc has no accessible name, and the links have no visible focus style."
+  },
+  "props": [
+    {"name": "avatarUrls", "type": "Avatar[]", "default": null, "required": true},
+    {"name": "numPeople", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The +99 disc is an anchor with an empty href, so clicking it goes nowhere."
+  ],
+  "polish": 3,
+  "polish_why": "Clean overlap and rings, but the demo's landscape photos do not read as people.",
+  "unsure": []
+}

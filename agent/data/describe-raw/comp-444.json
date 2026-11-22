@@ -1,0 +1,63 @@
+{
+  "name": "comp-444",
+  "frames": {
+    "code": "3309",
+    "best": 6,
+    "best_why": "Packages tab is selected with its matching panel text and the cursor is clear of the control.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Three icon-labelled tabs switch a small panel of text beside them.",
+  "summary": "A vertical tab list beside a content pane. Picking Overview, Projects or Packages moves the highlight and swaps the text shown in the panel.",
+  "title_fix": null,
+  "appearance": "A small vertical list of three tabs, Overview, Projects and Packages, each with a thin line icon, sits at the top left of a dark stage. A slim bordered panel beside it holds one grey line of text, and the active tab carries a short accent bar on its left edge.",
+  "behaviour": "Clicking a tab moves the accent bar to that row and swaps the panel text for the matching section. Rows pick up a faint filled background under the cursor.",
+  "parts": ["tab list", "tab icon", "tab label", "active bar", "content panel", "content text"],
+  "demo_content": "Tab labels Overview, Projects and Packages, with placeholder text \"Content for Tab 1\" to \"Content for Tab 3\".",
+  "states": ["hover", "focus", "active", "selected"],
+  "kind": "tabs",
+  "look": ["dark", "minimal", "flat", "outlined", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "vertical tabs with icons",
+    "side navigation with three sections",
+    "switch between panels with a tab list",
+    "icon and text tab menu",
+    "dashboard section switcher",
+    "left side tabs beside content",
+    "tabs for overview projects and packages",
+    "small vertical menu with labels"
+  ],
+  "resembles": [],
+  "use_when": "A few peer sections share one pane and a vertical list uses the space better than a top tab bar.",
+  "avoid_when": "The panels are empty placeholders, so you must build the real content for each tab yourself.",
+  "suits": ["saas", "dashboard", "docs"],
+  "slot_hints": ["sidebar"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Tab labels, their icons and the placeholder panel text are written in the file, so changing sections means editing the source; no props are exposed.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Three short tab rows and a one-line panel; switching is an instant DOM swap.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Icons are hidden from screen readers and each tab is labelled by text; panel changes are not announced as a live region."
+  },
+  "props": [],
+  "issues": ["Not icon-only as described: every tab also shows a text label.", "Panel is an almost empty strip, so most of the demo stage is blank."],
+  "polish": 3,
+  "polish_why": "Clean active bar and hover state, but the nearly empty pane makes it read unfinished.",
+  "unsure": []
+}

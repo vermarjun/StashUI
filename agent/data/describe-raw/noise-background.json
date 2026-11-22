@@ -1,0 +1,75 @@
+{
+  "name": "noise-background",
+  "frames": {
+    "code": "7968",
+    "best": 3,
+    "best_why": "Frame 3 spreads the pink and orange blobs widest, showing the full colour range.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Slow pink, blue and orange blobs drift behind a fine grain wash.",
+  "summary": "A soft full-bleed panel of drifting colour: violet-pink and warm orange blobs move slowly over deep blue-green, with a fine grain texture and a thin rainbow strip along the top edge.",
+  "title_fix": null,
+  "appearance": "A full-bleed, soft-focus wash of colour with deep blue-green at the edges, a violet-pink area through the middle and a warm orange patch toward the right. A fine grain sits over the whole panel and a tiny grey label marks the centre.",
+  "behaviour": "Three radial colour blobs drift slowly in random directions, easing along and changing course every couple of seconds while staying inside the frame. A thin multicolour strip along the top edge slides in step with them.",
+  "parts": ["gradient blobs", "noise grain", "top colour strip", "label"],
+  "demo_content": "The label \"Noise Background\" centred over the gradient.",
+  "states": [],
+  "kind": "background",
+  "look": ["gradient", "dark", "colorful", "airy", "textured"],
+  "tone": "decorative",
+  "search_phrases": [
+    "moving colour gradient background",
+    "soft blurry colourful backdrop",
+    "grainy mesh gradient animation",
+    "pink and blue drifting blobs",
+    "aurora style background for a section",
+    "organic gradient that slowly moves",
+    "textured gradient panel behind content",
+    "coloured light leaking background"
+  ],
+  "resembles": ["Stripe gradient mesh"],
+  "use_when": "A hero or call-to-action panel needs a warm moving colour wash without images or a shader.",
+  "avoid_when": "The grain is loaded from a remote image, and the drift never pauses for reduced-motion users.",
+  "suits": ["marketing", "saas", "portfolio"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Gradient colours, grain intensity, drift speed, backdrop blur and the animating toggle are props; the layout is set through class names.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Three radial gradient layers drift through motion values; no canvas or shader.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The grain image is correctly marked decorative with empty alt, but the endless drift has no prefers-reduced-motion check."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "gradientColors", "type": "string[]", "default": "[\"rgb(255, 100, 150)\", \"rgb(100, 150, 255)\", \"rgb(255, 200, 100)\"]", "required": false},
+    {"name": "noiseIntensity", "type": "number", "default": "0.2", "required": false},
+    {"name": "speed", "type": "number", "default": "0.1", "required": false},
+    {"name": "backdropBlur", "type": "boolean", "default": "false", "required": false},
+    {"name": "animating", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "The grain texture is a remote image, so the surface loses its texture if that URL fails.",
+    "The demo label is very faint against the moving colour."
+  ],
+  "polish": 4,
+  "polish_why": "Soft, well-blended colour and a light grain; the demo label is too faint to read.",
+  "unsure": []
+}

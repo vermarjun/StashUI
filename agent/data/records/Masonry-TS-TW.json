@@ -1,0 +1,169 @@
+{
+ "name": "Masonry-TS-TW",
+ "frames": {
+  "code": "5340",
+  "best": 1,
+  "best_why": "The full grid of mixed-height photos is packed edge to edge with every column filled, the clearest view of the layout.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "no",
+  "best_time": 0.8
+ },
+ "tagline": "A staggered wall of photos in uneven columns.",
+ "summary": "Photos of different heights pack into tight columns with small even gaps. Images fade and drift into place on load, and each one shrinks slightly under the cursor.",
+ "title_fix": null,
+ "appearance": "A dense wall of portrait and landscape photos in four uneven columns, each image rounded and tightly packed with small gaps. Subjects run from offices and portraits to jungle, waterfalls and flowers.",
+ "behaviour": "On load the photos slide in from a chosen direction while a blur clears. Hovering shrinks an image slightly, and clicking it opens its link in a new tab.",
+ "parts": [
+  "photo tile",
+  "masonry columns",
+  "gaps",
+  "rounded corners"
+ ],
+ "demo_content": "Twenty stock photos of offices, portraits, jungle, waterfalls, a flower and money, plus one plain blue tile.",
+ "states": [
+  "hover"
+ ],
+ "kind": "gallery-section",
+ "look": [
+  "colorful",
+  "flat",
+  "rounded",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pinterest style photo wall",
+  "uneven image grid with mixed heights",
+  "photo gallery that packs tightly",
+  "staggered grid of pictures",
+  "portfolio image wall with hover shrink",
+  "pictures fading in on page load",
+  "pinterest layout for a gallery page",
+  "tightly packed photo collage"
+ ],
+ "resembles": [
+  "Pinterest"
+ ],
+ "use_when": "A gallery needs many photos of mixed shapes to sit together without fixed rows.",
+ "avoid_when": "Only image tiles are supported, and every tile opens a new tab on any click.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "blog"
+ ],
+ "slot_hints": [
+  "media",
+  "section-background",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Items (id, image, link and height), easing, duration, stagger, entry direction, hover scaling, hover scale, blur-in and colour shift are props.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "moderate",
+ "weight_why": "Twenty photo tiles moved by GSAP, plus an image preloader and a resize observer.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Tiles are clickable divs with no roles or tab stops, and the background photos have no text alternatives."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "Item[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "animateFrom",
+   "type": "string",
+   "default": "'bottom'",
+   "required": false
+  },
+  {
+   "name": "scaleOnHover",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "hoverScale",
+   "type": "number",
+   "default": "0.95",
+   "required": false
+  },
+  {
+   "name": "blurToFocus",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "colorShiftOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "One tile stays a flat blue gradient in every frame, reading as a failed image.",
+  "All six frames look the same, so the clip never shows the entrance or hover animation."
+ ],
+ "polish": 4,
+ "polish_why": "A dense, well balanced photo wall; one flat blue tile looks like a failed image.",
+ "unsure": [],
+ "title": "Masonry Gallery",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "70ef27f5be8a6629",
+  "film_hash": "863abb281eaf542d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "timer",
+  "frames": {
+    "code": "2564",
+    "best": 4,
+    "best_why": "Timer reads 03.46 mid-run with the clock icon and no cursor over the readout.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A small pill counts elapsed time beside start and reset controls.",
+  "summary": "A dark pill shows a clock icon and a monospaced stopwatch counting in hundredths of a second. Start, Pause and Reset buttons below drive it, and the clock spins while it runs.",
+  "title_fix": null,
+  "appearance": "A compact dark pill with a thin light border holds a small clock glyph and a monospaced time such as 03.46. Under it the demo places three rounded buttons: Start, Pause and Reset.",
+  "behaviour": "Pressing Start sends the digits counting in hundredths of a second while the clock icon turns. Pause freezes the value and Reset returns it to zero, while the pill itself keeps its shape.",
+  "parts": ["pill", "clock icon", "time readout", "start button", "pause button", "reset button"],
+  "demo_content": "Start, Pause and Reset buttons under a timer counting up from zero.",
+  "states": ["loading", "disabled"],
+  "kind": "counter",
+  "look": ["dark", "rounded", "minimal", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "stopwatch with start pause reset",
+    "running timer display with milliseconds",
+    "count up timer for a page",
+    "elapsed time pill with a clock icon",
+    "simple seconds counter widget",
+    "timer to measure how long a task takes",
+    "monospace timer readout",
+    "loading timer with a spinning clock"
+  ],
+  "resembles": [],
+  "use_when": "You need to show elapsed time next to start, pause and reset controls in a toolbar.",
+  "avoid_when": "It only counts up, has no countdown or alarm, and zeroes whenever the loading prop flips.",
+  "suits": ["saas", "devtool", "dashboard"],
+  "slot_hints": ["stat", "badge", "tooltip"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "Variant, size, time format and reset-on-change behaviour are props; the clock icon can be swapped and the label and readout have their own subcomponents.",
+  "technique": ["css-keyframes", "js-animation"],
+  "weight": "light",
+  "weight_why": "One animation frame loop only while running; the spin is pure CSS.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "It carries role timer with a polite live region, but the display grabs no focus and ignores reduced motion."
+  },
+  "props": [
+    {"name": "loading", "type": "boolean", "default": "false", "required": false},
+    {"name": "format", "type": "'SS.MS' | 'MM:SS' | 'HH:MM:SS'", "default": "'SS.MS'", "required": false},
+    {"name": "onTick", "type": "(seconds: number, milliseconds: number) => void", "default": null, "required": false},
+    {"name": "resetOnLoadingChange", "type": "boolean", "default": "true", "required": false},
+    {"name": "variant", "type": "'default' | 'outline' | 'ghost' | 'destructive'", "default": null, "required": false},
+    {"name": "size", "type": "'sm' | 'md' | 'lg'", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "time", "type": "string", "default": null, "required": true},
+    {"name": "label", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The live region fires on every frame, so screen readers hear constant time updates."],
+  "polish": 3,
+  "polish_why": "Neat, restrained pill with tabular digits; the live region fires far too often.",
+  "unsure": []
+}

@@ -1,0 +1,113 @@
+{
+ "name": "comp-342",
+ "frames": {
+  "code": "1777",
+  "best": 1,
+  "best_why": "Third row is expanded showing its body text, with all four icon rows and chevrons visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Rows with round icons and a second line of grey text fold open one at a time.",
+ "summary": "A four-row accordion for account settings. Each row has a circular icon, a bold title and a grey subtitle; clicking a row opens its paragraph and closes the one before.",
+ "title_fix": null,
+ "appearance": "A four-row list under a bold heading. Each row starts with a small grey icon inside a thin circular outline, then a bold title with a grey subtitle beneath, and a downward chevron at the right edge. Thin dividers separate rows, and the open row shows an indented paragraph of muted text.",
+ "behaviour": "Clicking a row expands its paragraph with a short height animation, rotates its chevron upward and closes any other open row. The third row starts open; clicking it again collapses it.",
+ "parts": [
+  "heading",
+  "icon circle",
+  "row title",
+  "row subtitle",
+  "chevron",
+  "expanded paragraph",
+  "divider"
+ ],
+ "demo_content": "Heading 'W/ icon, sub-header, and chevron'; rows about accounts, notifications, 2-step verification and support.",
+ "states": [
+  "open",
+  "focus",
+  "hover"
+ ],
+ "kind": "accordion",
+ "look": [
+  "dark",
+  "minimal",
+  "outlined",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "list rows that expand one at a time",
+  "settings sections with icons and subtitles",
+  "collapsible faq style rows",
+  "click a row to reveal hidden text",
+  "accordion menu with chevron arrows",
+  "account settings expandable list",
+  "fold out rows with secondary labels",
+  "show and hide paragraphs in a list"
+ ],
+ "resembles": [],
+ "use_when": "Grouping related settings or FAQ answers so only one explanation is open at a time.",
+ "avoid_when": "Rows are text-height with muted body copy, which can be hard to read and tap on small screens.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Rows, icons, titles, subtitles and paragraph copy all live in one array in the file, so editing them means editing the source; styling comes from utility classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Four short rows and a height and chevron transition; nothing runs in the background.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Triggers are real buttons with visible focus rings and icon decoration hidden from screen readers; there is no reduced-motion check."
+ },
+ "props": [],
+ "issues": [
+  "The demo heading 'W/ icon, sub-header, and chevron' reads like a build note, not user copy.",
+  "Muted body text is low contrast on the dark background."
+ ],
+ "polish": 3,
+ "polish_why": "Clean, consistent rows; the developer-style heading and faint body text weaken it.",
+ "unsure": [],
+ "title": "Accordion Icon Subheader Chevron",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4c33dbe9649760c6",
+  "film_hash": "3caeea02e21dd3e8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

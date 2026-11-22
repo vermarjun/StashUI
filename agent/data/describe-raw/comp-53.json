@@ -1,0 +1,100 @@
+{
+  "name": "comp-53",
+  "frames": {
+    "code": "8551",
+    "best": 3,
+    "best_why": "The copy button has swapped to a check inside a focus ring, showing the copied confirmation.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Read-only command field whose copy icon turns into a check when clicked.",
+  "summary": "A single-line read-only text field holding a value to reuse, with a copy button on the right. Hovering shows a small tooltip; clicking copies the text and briefly swaps the icon for a check.",
+  "title_fix": null,
+  "appearance": "A dark rounded field with a subtle outline sits under a small label, the value left-aligned in grey-white and a faint copy glyph at the right end. A grey rounded speech bubble floats just above the field while it is hovered.",
+  "behaviour": "Hovering the icon pops a small tooltip above the field. A click writes the field's value to the clipboard, the copy glyph shrinks away as a green check fades in, the button goes dead to further clicks, and after about a second and a half the icon returns.",
+  "parts": [
+    "label",
+    "text field",
+    "copy icon",
+    "tooltip"
+  ],
+  "demo_content": "Label \"Copy to clipboard\", the value \"pnpm install origin-ui\" and the tooltip \"Copy to clipboard\".",
+  "states": [
+    "hover",
+    "focus",
+    "success",
+    "disabled"
+  ],
+  "kind": "input",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "copy command to clipboard field",
+    "npm install snippet with copy button",
+    "click to copy text box",
+    "read only input with copy icon",
+    "one click copy install command",
+    "copy button that shows a check",
+    "shareable link field with copy tap",
+    "hover tooltip copy to clipboard"
+  ],
+  "resembles": [
+    "GitHub code copy button"
+  ],
+  "use_when": "A value people must reuse elsewhere, like an install command, invite link or ID, where copying is the main action.",
+  "avoid_when": "The value is a hardcoded default and the button needs the Clipboard API, so it fails outside a secure context.",
+  "suits": [
+    "devtool",
+    "docs"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "children",
+      "border"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Nothing is exposed as a prop: the label, the command string and the tooltip copy are literals, so putting in your own value means editing the file.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A field, one button and an occasional tooltip; one short scale transition.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The button's aria-label changes to Copied and it disables itself; the scale transitions ignore reduced-motion."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Neat tooltip and a clean icon swap; the field itself is otherwise stock.",
+  "unsure": []
+}

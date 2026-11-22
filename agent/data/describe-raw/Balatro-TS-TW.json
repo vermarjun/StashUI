@@ -1,0 +1,79 @@
+{
+  "name": "Balatro-TS-TW",
+  "frames": {
+    "code": "3546",
+    "best": 2,
+    "best_why": "A full swirling red-and-blue marble fills the frame with clear pale-blue highlights.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Red and blue paint swirl into marbled eddies across the whole screen.",
+  "summary": "A full-screen animated shader that churns deep blue and crimson into a marbled, liquid-like pattern with pale highlights, slowly rotating and drifting as it runs.",
+  "title_fix": null,
+  "appearance": "The whole area fills with a swirling, marbled pattern of deep navy blue and blood red, shot through with thin pale-blue and white streaks and glossy highlights. Dark near-black pools sit between glossy colour bands, giving the look of oil paint or polished stone in motion.",
+  "behaviour": "The pattern rotates and churns continuously, its eddies drifting and re-forming as it runs. Moving the pointer nudges the swirl slightly, and colours, speed and contrast can be changed.",
+  "parts": ["swirl", "colour bands", "highlights", "dark pools"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["colorful", "dark", "organic", "glow", "bold"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "swirling paint background animation",
+    "red and blue marble shader",
+    "liquid paint background for a hero",
+    "psychedelic swirling background",
+    "animated abstract marbling backdrop",
+    "oil slick pattern behind a headline",
+    "webgl fluid swirl background",
+    "glossy marbled motion background"
+  ],
+  "resembles": ["Balatro"],
+  "use_when": "You want a bold animated backdrop that fills a hero or section and needs no images, just colour and motion.",
+  "avoid_when": "It is a heavy WebGL canvas that never idles, and its dark vibrant colours may fight a light page.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["page-background", "hero", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Three hex colours, spin rotation and speed, offset, contrast, lighting, spin amount, pixel filter, spin ease, a rotation toggle and mouse interaction are props. Nothing else changes without editing.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full-screen WebGL fragment shader runs a five-iteration loop on every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A continuously running shader that ignores reduced-motion, with no way to pause it, and it needs a sized parent to fill."
+  },
+  "props": [
+    {"name": "color1", "type": "string", "default": "'#DE443B'", "required": false},
+    {"name": "color2", "type": "string", "default": "'#006BB4'", "required": false},
+    {"name": "color3", "type": "string", "default": "'#162325'", "required": false},
+    {"name": "spinSpeed", "type": "number", "default": "7.0", "required": false},
+    {"name": "spinAmount", "type": "number", "default": "0.25", "required": false},
+    {"name": "contrast", "type": "number", "default": "3.5", "required": false},
+    {"name": "lighting", "type": "number", "default": "0.4", "required": false},
+    {"name": "pixelFilter", "type": "number", "default": "745.0", "required": false},
+    {"name": "spinRotation", "type": "number", "default": "-2.0", "required": false},
+    {"name": "isRotate", "type": "boolean", "default": "false", "required": false},
+    {"name": "mouseInteraction", "type": "boolean", "default": "true", "required": false},
+    {"name": "offset", "type": "[number, number]", "default": "[0.0, 0.0]", "required": false}
+  ],
+  "issues": [
+    "The shader never pauses and ignores reduced-motion, which can bother motion-sensitive users.",
+    "It needs a sized parent; as a bare canvas with h-full it collapses to zero height."
+  ],
+  "polish": 4,
+  "polish_why": "Rich marbled motion with strong colour contrast; it is heavy and never rests.",
+  "unsure": ["traits.theme"]
+}

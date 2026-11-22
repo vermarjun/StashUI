@@ -1,0 +1,139 @@
+{
+ "name": "scroll-text-marquee",
+ "frames": {
+  "code": "3146",
+  "best": 4,
+  "best_why": "Both oversized lines are visible at once, with legible chunks of the white top line and grey bottom line in contrast.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.3
+ },
+ "tagline": "Two giant lines of text scroll past in opposite directions.",
+ "summary": "A full-width ticker of two oversized text lines moving sideways in opposite directions, the top white and the bottom grey. An option ties their speed to page scrolling.",
+ "title_fix": null,
+ "appearance": "Two full-bleed lines of very large, tightly tracked sans-serif text, the upper white and the lower grey, packed edge to edge so words slice off at both sides. Both lines sit on black with nothing else around them.",
+ "behaviour": "Each line slides continuously, the top one way and the bottom the other, with copies repeating so there is never a gap. If the scroll-linked option is on, page scrolling speeds the motion up or flips its direction.",
+ "parts": [
+  "top text line",
+  "bottom text line",
+  "repeated copies"
+ ],
+ "demo_content": "Lines read \"Velocity-driven marquee\" and \"Scroll to change speed\".",
+ "states": [],
+ "kind": "marquee",
+ "look": [
+  "bold",
+  "monochrome",
+  "minimal",
+  "flat",
+  "editorial"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "infinite scrolling text banner",
+  "marquee headline loop",
+  "two lines scrolling opposite ways",
+  "giant moving text strip",
+  "news ticker text effect",
+  "velocity scrolling text",
+  "full width text marquee",
+  "scroll driven text speed"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio or landing page wants a bold moving typographic band without images or cards.",
+ "avoid_when": "The motion never stops and the text is always cropped, so a short exact message can never be read in full.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "section-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "scroll"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass the text as children and set base velocity; a misspelled clasname prop applies the type styles, and scrollDependent plus delay tune the motion.",
+ "technique": [
+  "motion-library",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A few duplicated text spans driven by a frame loop; no heavy rendering.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Nothing is interactive, but the loop never pauses and each line is repeated four times, so screen readers hear the phrase over and over."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "baseVelocity",
+   "type": "number",
+   "default": "-5",
+   "required": false
+  },
+  {
+   "name": "clasname",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "scrollDependent",
+   "type": "boolean",
+   "default": "false, // Default to false",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0, // Default delay is 0 (no delay)",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Each line is repeated four times in the DOM, so screen readers and text selection hit duplicates.",
+  "The demo copy says scroll changes the speed, but scrollDependent is left off, so scrolling does nothing."
+ ],
+ "polish": 3,
+ "polish_why": "Bold, clean type and a smooth loop, but it is a single-purpose text ticker.",
+ "unsure": [],
+ "title": "Scroll Text Marquee",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "703c426d18ef6e45",
+  "film_hash": "dcb06710a399b7fb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

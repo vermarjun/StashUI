@@ -1,0 +1,68 @@
+{
+  "name": "halo-search",
+  "frames": {
+    "code": "6125",
+    "best": 6,
+    "best_why": "Frame 6 shows the field filled and the halo at its brightest, brightest pink ring around the bar.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dark search box ringed by a soft pink aurora that brightens on focus.",
+  "summary": "A rounded search field with a magnifier on the right, wrapped in layered blurred gradients. The halo shifts on hover and glows harder while the field has focus.",
+  "title_fix": null,
+  "appearance": "A wide, rounded dark input sits on near-black, with pale Search... text on the left and a rounded magnifier tile on the right. A soft pink and violet glow leaks out around its border.",
+  "behaviour": "The glow drifts slowly at rest, swivels when the pointer enters, and flares to a brighter pink ring once the field is focused. Typing fills the bar while the halo keeps shifting.",
+  "parts": ["search field", "placeholder text", "magnifier tile", "halo glow"],
+  "demo_content": "Placeholder Search... and the typed query aurora gradients.",
+  "states": ["hover", "focus"],
+  "kind": "search",
+  "look": ["dark", "glow", "rounded", "gradient", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "search bar with glowing border",
+    "aurora glow input field",
+    "dark search box with pink light",
+    "search input focus glow",
+    "neon halo text field",
+    "glowing magnifier search bar",
+    "search field with ambient light",
+    "purple glow search input"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or command area wants a search field that feels alive without extra UI.",
+  "avoid_when": "The field width is fixed near 300px, and the glow is very dim on light backgrounds.",
+  "suits": ["saas", "devtool", "ai-chat"],
+  "slot_hints": ["form-field", "nav", "hero"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "subtle",
+    "affects": ["border", "shadow"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Only className is exposed; the placeholder, field size, colours and glow layers are written into the component's style block.",
+  "technique": ["css-transition", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "Several blurred gradient layers with CSS transitions; no script.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The input is focusable but labelled only by its placeholder, and the magnifier tile is a span that cannot be clicked."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The magnifier is a non-interactive span, so it cannot be clicked or reached by keyboard.",
+    "The placeholder is the only label on the input."
+  ],
+  "polish": 4,
+  "polish_why": "Lovely aura and a clean field, but the magnifier is fake and the width is fixed.",
+  "unsure": ["a11y.keyboard"]
+}

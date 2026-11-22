@@ -1,0 +1,187 @@
+{
+ "name": "image-generation-loader",
+ "frames": {
+  "code": "8340",
+  "best": 2,
+  "best_why": "The pixel band sits mid-image on all three tiles, showing the sweep and its coloured cells clearly.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "Pixel-grid band sweeps down a photo like the image is being rendered.",
+ "summary": "A transparent layer for pictures: a strip of small coloured squares travels down the frame, tinting the image and revealing it as it passes. It can also spell a short word in blocky pixels.",
+ "title_fix": null,
+ "appearance": "Photo tiles with a horizontal strip of tiny square cells laid across them, in blue-green or pink tones. The cells pulse in two shades, a soft glow fades above and below the strip, and a thin caption row sits under each tile.",
+ "behaviour": "The band moves from above the image to below it on a repeating cycle, squares flickering between the two accent colours while the picture shows through. Setting the effect to wave bends the band, scale-wave swells the cells, and text makes the band draw pixel letters.",
+ "parts": [
+  "photo",
+  "pixel band",
+  "cell square",
+  "tinted glow",
+  "caption row"
+ ],
+ "demo_content": "Three photos: an alpine ridge, white horses in a field, and a smiling woman in a red top, each captioned with a prompt.",
+ "states": [
+  "loading"
+ ],
+ "kind": "loader",
+ "look": [
+  "colorful",
+  "gradient",
+  "dense",
+  "glow",
+  "rounded"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "pixel scan line over an image",
+  "ai image rendering animation",
+  "placeholder while a picture loads",
+  "glowing bar sweeping down a photo",
+  "image reveal made of squares",
+  "generating image effect",
+  "pixelated text mask on a photo",
+  "loading overlay for image cards"
+ ],
+ "resembles": [],
+ "use_when": "An image is being generated or fetched and the wait should feel like part of the reveal.",
+ "avoid_when": "The band loops for as long as it is mounted, so it must be removed when loading actually finishes.",
+ "suits": [
+  "ai-chat",
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "loading",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Effect variant, the two accent colours, optional pixel text, cell size, band height, speed and overlay opacity are props; the pixel font and easing maths live in the file.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame canvas redraw of a few hundred cells, paused while off-screen.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": true,
+  "note": "Both layers are aria-hidden and purely decorative; reduced-motion freezes the band instead of sweeping it."
+ },
+ "props": [
+  {
+   "name": "effect",
+   "type": "\"shimmer\" | \"wave\" | \"scale-wave\" | \"none\"",
+   "default": "\"shimmer\"",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "readonly [string, string]",
+   "default": "DEFAULT_COLORS",
+   "required": false
+  },
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "4000",
+   "required": false
+  },
+  {
+   "name": "cellSize",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "bandHeight",
+   "type": "number",
+   "default": "48",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "overlayOpacity",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "waveAmplitude",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "scaleAmplitude",
+   "type": "number",
+   "default": "0.75",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "string | [number, number, number, number] | ((p: number) => number)",
+   "default": "\"ease-in-out\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"pointer-events-none absolute inset-0 bg-(--loader-overlay-c",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The caption text is very small and faint against the dark caption strip.",
+  "The pixel word \"Generating\" set on the first tile is not legible in any frame."
+ ],
+ "polish": 4,
+ "polish_why": "Lively per-cell animation and a convincing reveal; tiny captions and a faint pixel word cost it.",
+ "unsure": [],
+ "title": "Image Generation Loader",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4b22af88a23992c5",
+  "film_hash": "646958aa669d454e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

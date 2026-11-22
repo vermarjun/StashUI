@@ -1,0 +1,63 @@
+{
+  "name": "comp-103",
+  "frames": {
+    "code": "1932",
+    "best": 1,
+    "best_why": "The clean light pill shows both chevrons flanking the count with no cursor over it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Up and down arrows bracketing a score in one rounded voting strip.",
+  "summary": "A light fully-rounded pill split into three touching parts: a chevron-up button, a bold count and a chevron-down button. Hovering or pressing either end shades that section.",
+  "title_fix": null,
+  "appearance": "A wide white pill sits on a near-black stage, its three sections divided by faint seams and the outer ends fully round. A dark chevron points up on the left, the score \"235\" sits in bold in the centre, and a matching chevron points down on the right.",
+  "behaviour": "Hovering either chevron darkens its section of the pill and pressing darkens it further, giving vote feedback; the count itself stays fixed. Once the pointer leaves, the pill returns to flat white.",
+  "parts": ["upvote section", "count label", "downvote section"],
+  "demo_content": "The single count \"235\".",
+  "states": ["hover", "focus", "active"],
+  "kind": "button",
+  "look": ["light", "pill", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "upvote and downvote counter button",
+    "forum style voting pill",
+    "number with up down arrows",
+    "like and dislike tally control",
+    "reddit vote buttons",
+    "increase decrease number group",
+    "score with two chevron buttons",
+    "karma counter widget"
+  ],
+  "resembles": ["Stack Overflow vote buttons", "Reddit vote buttons"],
+  "use_when": "Readers should push a visible score up or down with one tap, as on a forum post or comment.",
+  "avoid_when": "The count is a fixed literal and the buttons have no click handler, so a vote never changes the number.",
+  "suits": ["social", "blog"],
+  "slot_hints": ["list-item"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Nothing is exposed as a prop: the score is a literal and neither button has an action, so wiring real votes needs a source edit.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Three small static elements with only hover and press colour feedback.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Both ends are labelled Upvote and Downvote with focus rings, but nothing changes the score, so the control stays decorative."
+  },
+  "props": [],
+  "issues": ["The count sits on the same white as the buttons, so it reads as a label rather than a badge."],
+  "polish": 3,
+  "polish_why": "Clean grouped pill with clear press feedback; the count blends in and never changes.",
+  "unsure": ["responsive"]
+}

@@ -1,0 +1,175 @@
+{
+ "name": "cursor-attractor-and-gravity",
+ "frames": {
+  "code": "2030",
+  "best": 5,
+  "best_why": "Avatars form a ring with a clear empty pocket around the cursor, showing the push-away field.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.4
+ },
+ "tagline": "Crowd of avatar discs drifts toward a point and parts around the cursor.",
+ "summary": "Dozens of small circular profile photos behave like a physics playground: pulled toward an invisible attractor on the left, shoved aside by the pointer, and bouncing off the stage edges.",
+ "title_fix": null,
+ "appearance": "A black stage scattered with dozens of small round profile photos of mixed sizes, loosely gathered on the left. Some stay sharp and others streak with motion, and the words join the community in white, with community in italic serif, sit at the right.",
+ "behaviour": "Each face is a physics body drifting toward an invisible attractor, with no downward gravity. Moving the pointer pushes nearby faces away within a fixed radius, carving a gap or a ring through the crowd, and they settle against the stage edges and floor.",
+ "parts": [
+  "avatar discs",
+  "attractor point",
+  "cursor field",
+  "edge walls",
+  "tagline"
+ ],
+ "demo_content": "About seventy small round pravatar photos; the line join the community with community in italic serif.",
+ "states": [
+  "hover"
+ ],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "colorful",
+  "playful",
+  "organic"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "avatars pulled toward a point",
+  "particles react to the pointer",
+  "physics playground with photos",
+  "profile pictures floating and bouncing",
+  "mouse pushes objects away",
+  "community faces in motion",
+  "draggable physics avatar field",
+  "magnetic cursor repel effect"
+ ],
+ "resembles": [],
+ "use_when": "A community or team page wants dozens of faces as a living, physical crowd that responds to the pointer.",
+ "avoid_when": "Low-power or motion-sensitive users: dozens of bodies animate every frame with no pause or reduced-motion path.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Children become physics bodies with position, angle, body type, drag and Matter options; the attractor point and strength, cursor strength and field radius are props.",
+ "technique": [
+  "js-animation",
+  "canvas-2d"
+ ],
+ "weight": "heavy",
+ "weight_why": "Seventy Matter.js bodies with per-frame force and transform updates, forever.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Physics runs continuously with no reduced-motion path and the pointer field cannot be operated by keyboard."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "debug",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "attractorPoint",
+   "type": "{ x: number | string; y: number | string }",
+   "default": "{ x: 0.5, y: 0.5 }",
+   "required": false
+  },
+  {
+   "name": "attractorStrength",
+   "type": "number",
+   "default": "0.001",
+   "required": false
+  },
+  {
+   "name": "cursorStrength",
+   "type": "number",
+   "default": "0.0005",
+   "required": false
+  },
+  {
+   "name": "cursorFieldRadius",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "resetOnResize",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "addTopWall",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "autoStart",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Faces pile up and overlap at the attractor, so most become hard to recognise."
+ ],
+ "polish": 4,
+ "polish_why": "Lively, tactile crowd simulation; overlapping faces and constant motion make it hard to read.",
+ "unsure": [
+  "a11y.labels"
+ ],
+ "title": "Cursor Attractor & Gravity",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d9433a73058920bf",
+  "film_hash": "6f9dc89451638ceb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

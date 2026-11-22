@@ -1,0 +1,70 @@
+{
+  "name": "shadow-text",
+  "frames": {
+    "code": "5198",
+    "best": 6,
+    "best_why": "Long shadows stretch left from every letter while the full headline, subtitle and button stay visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Big headline letters cast long shadows that swing away from the pointer.",
+  "summary": "A hero heading whose letters throw long, soft shadows angled by the time of day or by the pointer acting as a lamp. A subtitle and call-to-action button sit beneath.",
+  "title_fix": null,
+  "appearance": "A large white sans-serif headline sits centred in a dark rounded panel above a muted subtitle and a small white pill button. Each letter carries a long soft black shadow stretching away, and a tiny mono line at the bottom-left records the time.",
+  "behaviour": "The shadows rest at an angle set from the clock and tick forward every half minute. Moving the pointer near the text turns it into a lamp, so every letter's shadow swings and stretches away from the cursor.",
+  "parts": ["headline", "letter shadow", "subtitle", "button", "time note"],
+  "demo_content": "Headline 'Golden hour, every day.', a Lumen photo-time subtitle, a Get Lumen button and a 'Shadows set for' note.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "bold", "minimal", "flat", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "headline with long letter shadows",
+    "text that casts a shadow from the cursor",
+    "sundial style letter shadows",
+    "big type with moving shadow",
+    "light and shadow hero title",
+    "letters shadow follows the mouse",
+    "cinematic headline for landing page",
+    "clock based shadow typography"
+  ],
+  "resembles": [],
+  "use_when": "A landing hero needs a large headline that reacts to the pointer without images or extra weight.",
+  "avoid_when": "Long shadows only read on a plain contrasting surface; on busy backgrounds they dissolve into noise.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["hero", "headline", "section-background"],
+  "traits": {
+    "trigger": ["pointer-move", "timer"],
+    "motion": "subtle",
+    "affects": ["text", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The headline is passed as children; the element tag, clock-driven lighting, pointer takeover and shadow reach are props, while the shadow formula is fixed.",
+  "technique": ["js-animation"],
+  "weight": "light",
+  "weight_why": "A few dozen letter spans and a short rAF that runs only while the shadows settle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The visual letters are hidden from assistive tech with a plain copy provided; reduced motion snaps shadows instead of animating."
+  },
+  "props": [
+    {"name": "children", "type": "string", "default": null, "required": true},
+    {"name": "as", "type": "ElementType", "default": "\"p\"", "required": false},
+    {"name": "clock", "type": "boolean", "default": "true", "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "reach", "type": "number", "default": "1.1", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Long shadows read cleanly and the pointer lamp feels physical; the surrounding copy is plain.",
+  "unsure": ["kind", "responsive"]
+}

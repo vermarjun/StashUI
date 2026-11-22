@@ -1,0 +1,67 @@
+{
+  "name": "comp-481",
+  "frames": {
+    "code": "3727",
+    "best": 6,
+    "best_why": "Email now sits ahead of Name after the drag, showing the completed reorder on full rows.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Table whose columns you can drag sideways into a new order.",
+  "summary": "A dark five-column account table. Every header holds a small grip for dragging that column to a new place and an arrow button for sorting, and the rows move with the column mid-drag.",
+  "title_fix": null,
+  "appearance": "On black, a slightly lighter header band holds five labels, each preceded by a faint dotted grip and followed by a chevron. Rows show bold names, emails, a flag emoji with a city, plain status words, and right-aligned balances.",
+  "behaviour": "Pressing a header's grip and sliding it sideways carries that column and its cells with it; Email is pulled in front of Name across the frames. Sorting arrows sit beside each label, and column order is kept only while the page stays open.",
+  "parts": ["header band", "drag grip", "column label", "sort chevron", "row", "country flag", "balance cell", "caption"],
+  "demo_content": "Five employees with emails, country flags, status and balances; the caption credits two libraries.",
+  "states": ["hover", "dragging"],
+  "kind": "data-table",
+  "look": ["dark", "flat", "minimal", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "table with columns you can drag around",
+    "reorder table columns by dragging headers",
+    "data table with grip handles in headers",
+    "move columns left or right in a table",
+    "sortable and rearrangeable account table",
+    "custom column order table for admins",
+    "table headers with drag dots and arrows",
+    "let users arrange table columns"
+  ],
+  "resembles": [],
+  "use_when": "People want to arrange a table's columns to their own taste and reorder them in place.",
+  "avoid_when": "The chosen order lives only in memory, so a page reload snaps every column back to its starting place.",
+  "suits": ["dashboard", "saas"],
+  "slot_hints": ["data-table"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Columns, labels and the fetch URL are written in the file; adding fields or saving the chosen column order needs a source edit.",
+  "technique": ["css-transition"],
+  "weight": "moderate",
+  "weight_why": "Two drag libraries plus remote rows, with only the moving column animating.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The drag grip has a label and keyboard sorting works, but the sort arrow buttons are icon-only with no accessible name."
+  },
+  "props": [],
+  "issues": [
+    "Sort buttons have no accessible name, only a hidden icon.",
+    "Column order resets on reload because nothing is persisted.",
+    "The caption credits two libraries instead of describing the example."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy dark table and a smooth column swap, but the header controls are tiny and unexplained.",
+  "unsure": ["theme", "states"]
+}

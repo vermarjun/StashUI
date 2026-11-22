@@ -1,0 +1,154 @@
+{
+  "name": "expandable",
+  "frames": {
+    "code": "8125",
+    "best": 3,
+    "best_why": "The card is fully expanded with the title, description and all three status rows in view.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A Quick Actions card springs open to show three status rows.",
+  "summary": "A compact card that expands on click to reveal a list of status checks, with a chevron that flips and a Show more or Show less link at the bottom.",
+  "title_fix": null,
+  "appearance": "A dark rounded card holds a small zap icon, the title Quick Actions, a grey subtitle and a downward chevron, with one line of copy and a Show more link. Expanded, the same card is taller and wider with three dot-marked status rows.",
+  "behaviour": "Clicking the chevron or the Show more link springs the card to its larger size and slides the status rows up into view; clicking again collapses it back.",
+  "parts": [
+    "card shell",
+    "zap icon",
+    "title",
+    "subtitle",
+    "chevron",
+    "description",
+    "status rows",
+    "show link"
+  ],
+  "demo_content": "Quick Actions card with status lines Feature enabled and running, 3 integrations connected, 1 pending review.",
+  "states": [
+    "expanded",
+    "hover"
+  ],
+  "kind": "card",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "card that expands to show more details",
+    "quick actions panel with show more",
+    "info card with hidden status rows",
+    "click chevron to reveal content",
+    "collapsible card with hidden list",
+    "toggle card open for extra options",
+    "small dashboard card that grows",
+    "show more show less card"
+  ],
+  "resembles": [],
+  "use_when": "A small summary card hides a short list of details that only some users need to open.",
+  "avoid_when": "It reflows layout when opened and has a fixed collapsed width, so it is awkward inside tight grids.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "list-item"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "keyboard"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "children",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Collapsed and expanded sizes, hover-to-expand, delays and animation presets are props or subcomponent options; card copy is passed as children.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "One card and a few status rows animated with springs, only on toggle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The trigger works from the keyboard but never exposes aria-expanded, and both triggers share the same Toggle expand label."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode | ((props: { isExpanded: boolean }) => ReactNode)",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onToggle",
+      "type": "() => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "transitionDuration",
+      "type": "number",
+      "default": "0.3",
+      "required": false
+    },
+    {
+      "name": "easeType",
+      "type": "\"easeInOut\" | \"easeIn\" | \"easeOut\" | \"linear\" | [number, number, number, number]",
+      "default": "easeInOut",
+      "required": false
+    },
+    {
+      "name": "expandDirection",
+      "type": "\"vertical\" | \"horizontal\" | \"both\"",
+      "default": "vertical",
+      "required": false
+    },
+    {
+      "name": "expandBehavior",
+      "type": "\"replace\" | \"push\"",
+      "default": "replace",
+      "required": false
+    },
+    {
+      "name": "initialDelay",
+      "type": "number",
+      "default": "0",
+      "required": false
+    }
+  ],
+  "issues": [
+    "Neither trigger reports aria-expanded, so screen readers cannot tell the state.",
+    "The chevron and the Show more link share the same Toggle expand label."
+  ],
+  "polish": 3,
+  "polish_why": "Spring and chevron flip read well; otherwise a plain card with a hidden list.",
+  "unsure": []
+}

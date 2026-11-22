@@ -1,0 +1,70 @@
+{
+  "name": "layout-text-flip",
+  "frames": {
+    "code": "3975",
+    "best": 3,
+    "best_why": "Frame 3 shows a settled badge with a crisp new word, free of blur and cropping.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A headline word that blurs out and swaps for the next phrase on a timer.",
+  "summary": "A fixed line of heading text with a rounded badge beside it that holds one word at a time. Every few seconds the word blurs out and a new one drops in, the badge resizing to fit each phrase.",
+  "title_fix": "Rotating Word Headline",
+  "appearance": "White bold heading text, \"Build Amazing\", sits on a near-black stage beside a dark rounded rectangle badge. The badge holds a lighter phrase such as \"Landing Pages\", hugging the word with even padding and sitting level with the heading.",
+  "behaviour": "On a fixed interval the badge swaps phrases: the current word slides down and blurs away while the next drops in from above, out of blur. The chip grows or shrinks to the new word's width, then holds still until the next swap.",
+  "parts": ["static heading", "word badge", "rotating word"],
+  "demo_content": "\"Build Amazing\" followed by rotating words: Landing Pages, Component Blocks, Page Sections, 3D Shaders.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "rounded", "minimal", "bold"],
+  "tone": "minimal",
+  "search_phrases": [
+    "rotating word next to a heading",
+    "text badge that swaps phrases",
+    "blurred word flip animation",
+    "headline with a changing noun",
+    "cycle through keywords in a chip",
+    "animated word carousel inline",
+    "changing text inside a pill",
+    "hero phrase that loops words"
+  ],
+  "resembles": [],
+  "use_when": "A headline must cover several products or benefits without adding more lines or vertical space.",
+  "avoid_when": "The word changes on a timer with no pause, and the badge width jumps whenever phrase lengths differ.",
+  "suits": ["saas", "marketing", "devtool"],
+  "slot_hints": ["headline", "hero"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "pronounced",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The leading label, the list of words and the interval are props; colours, border and type styles come from the source classes.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One chip and a small timer; only the inner word animates briefly.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The timed swap cannot be paused and ignores reduced-motion, so assistive readers catch whichever word is on screen."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "\"Build Amazing\"", "required": false},
+    {"name": "words", "type": "string[]", "default": "[\"Landing Pages\", \"Component Blocks\", \"Page Sections\", \"3D Shaders\"]", "required": false},
+    {"name": "duration", "type": "number", "default": "3000", "required": false}
+  ],
+  "issues": [
+    "The catalogue calls it a 3D card flip, but the frames show a blurred slide-and-swap.",
+    "The badge changes width as phrase length changes, nudging the text beside it."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy chip and a smooth blurred swap; the width jump on longer words is distracting.",
+  "unsure": []
+}

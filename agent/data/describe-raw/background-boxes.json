@@ -1,0 +1,69 @@
+{
+  "name": "background-boxes",
+  "frames": {
+    "code": "2026",
+    "best": 3,
+    "best_why": "Two coloured cells are lit up beside the heading, showing the hover effect and grid together.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A faint skewed grid whose cells glow pastel when the pointer crosses them.",
+  "summary": "A deep navy backdrop built from a huge diagonal grid of thin cells, with small plus marks at some corners. Pointing at a cell fills it with a random pastel colour that later fades away.",
+  "title_fix": null,
+  "appearance": "A deep navy stage covered by a faint, perspective-skewed grid of thin lines with small plus signs where some lines cross. A few cells fill with pale pink, blue, yellow or green, and white centred text sits above the grid.",
+  "behaviour": "At rest the grid is barely visible. Moving the pointer over a cell instantly fills it with a random pastel colour; the fill fades back to navy over a couple of seconds as the pointer moves on.",
+  "parts": ["grid cell", "grid line", "plus mark", "hovered box", "overlay text"],
+  "demo_content": "Heading Tailwind is Awesome with the line Framer motion is the best animation library ngl.",
+  "states": ["hover"],
+  "kind": "background",
+  "look": ["dark", "technical", "minimal", "flat"],
+  "tone": "technical",
+  "search_phrases": [
+    "grid background that lights up on hover",
+    "boxes that change color under the cursor",
+    "thin skewed line grid backdrop",
+    "3d perspective grid pattern",
+    "interactive cell background for hero",
+    "plus signs on a dark grid",
+    "wireframe grid with colored squares",
+    "mouse responsive background grid"
+  ],
+  "resembles": [],
+  "use_when": "A hero or section backdrop that should react to the pointer without holding content.",
+  "avoid_when": "Low-end or touch devices: it mounts 15,000 cells and hover never fires on tap.",
+  "suits": ["devtool", "saas", "ai-chat"],
+  "slot_hints": ["page-background", "section-background", "hero"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill", "background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Grid size, skew transform and the pastel palette are hardcoded; only className and other div attributes pass through.",
+  "technique": ["motion-library"],
+  "weight": "heavy",
+  "weight_why": "Mounts a 15,000-cell grid of motion divs, heavy to render.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The decorative grid is not marked aria-hidden, and the colour effect is mouse-only."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The grid is so faint that frames 1 and 6 read as an empty dark panel.",
+    "No hover on touch, so mobile visitors only ever see the plain grid.",
+    "15,000 DOM cells make first paint expensive."
+  ],
+  "polish": 3,
+  "polish_why": "Strong grid concept and subtle texture; the lines are so faint the effect nearly disappears.",
+  "unsure": []
+}

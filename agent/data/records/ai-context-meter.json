@@ -1,0 +1,165 @@
+{
+ "name": "ai-context-meter",
+ "frames": {
+  "code": "1412",
+  "best": 4,
+  "best_why": "The breakdown panel is fully open over the footer, showing the segmented bar, every row and the button.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "A token gauge in a chat footer opens into a stacked context breakdown.",
+ "summary": "A slim prompt-footer bar shows how full the model's context window is, as a small ring and a percentage beside the model name. Clicking it opens a panel that breaks the used tokens down by source and offers to compact the conversation.",
+ "title_fix": null,
+ "appearance": "At rest a dark rounded footer bar holds a model name on the left and a tiny circular gauge with a percentage on the right. Open, a dark rounded panel floats above: a Context heading with a token total, a thin stacked colour bar ticked at the compact point, rows of swatches with token counts, and a Compact now button.",
+ "behaviour": "The ring fills and the number rolls as tokens arrive, and the percentage shifts to amber then red near the threshold. Clicking the percentage opens the breakdown above the bar; hovering a bar segment dims the others. Escape or an outside click closes it.",
+ "parts": [
+  "footer bar",
+  "model name",
+  "circular gauge",
+  "percentage",
+  "breakdown panel",
+  "segmented bar",
+  "segment rows",
+  "compact button"
+ ],
+ "demo_content": "Three chat bubbles about refactoring a CSV exporter, above an \"Atlas Pro\" footer at 58%.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "active",
+  "disabled"
+ ],
+ "kind": "stat-card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "context window usage meter for chat",
+  "token count gauge in prompt bar",
+  "ai chat memory indicator",
+  "how full is the context window",
+  "token breakdown popover",
+  "compact conversation button",
+  "llm usage ring next to model name",
+  "chatgpt style context meter"
+ ],
+ "resembles": [
+  "ChatGPT token indicator"
+ ],
+ "use_when": "An AI chat composer needs to show how much context is left and let people inspect or shrink it.",
+ "avoid_when": "The panel is a fixed 288px wide and opens upward, so it needs room above the composer on short screens.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass segments with labels, token counts and colour classes, plus limit, compactAt, model name, defaultOpen and onCompact. Custom segments without a colour fall back to a fixed grey ramp.",
+ "technique": [
+  "motion-library",
+  "svg",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A few tweened numbers and one small SVG ring; the demo's growth timer pauses offscreen.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The trigger is labelled with its percentage and opens as a button; Escape returns focus. Hover-only row highlighting has no keyboard equivalent."
+ },
+ "props": [
+  {
+   "name": "segments",
+   "type": "ContextSegment[]",
+   "default": "{segments}",
+   "required": false
+  },
+  {
+   "name": "limit",
+   "type": "number",
+   "default": "200_000",
+   "required": false
+  },
+  {
+   "name": "compactAt",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "onCompact",
+   "type": "() => void",
+   "default": "{handleCompact}",
+   "required": false
+  },
+  {
+   "name": "model",
+   "type": "string",
+   "default": "\"Atlas Pro\"",
+   "required": false
+  },
+  {
+   "name": "defaultOpen",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"size-4 shrink-0 -rotate-90\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Tidy footer and legible breakdown; the panel covers chat text and the smallest labels are faint.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "AI Context Meter",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "da5920af9c5a01ea",
+  "film_hash": "354ec76efb7038c2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

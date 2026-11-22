@@ -1,0 +1,153 @@
+{
+ "name": "background-paths",
+ "frames": {
+  "code": "3739",
+  "best": 4,
+  "best_why": "The whole ribbon is drawn across the full width with no cursor sitting over the copy.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 4.1
+ },
+ "tagline": "Thin curved lines drift across a dark hero and ease apart around the cursor.",
+ "summary": "A full-bleed dark backdrop of dozens of fine curves that draw themselves in left to right, then keep flowing. The lines bend away from the mouse pointer while any headline placed on top stays centred.",
+ "title_fix": null,
+ "appearance": "A near-black stage is filled edge to edge with dozens of thin pale curves. They run mostly side to side in a loose ribbon that arcs upward and fans out, brightest in the middle band and fading toward the top and bottom edges. Centred on top sit a small badge, a large heading, a short paragraph and a white pill button.",
+ "behaviour": "On load the curves draw in from left to right, each line a step behind the last. They then keep sliding and twisting slowly and never settle. Moving the mouse over the area eases nearby lines apart around the pointer, and they close again when it leaves.",
+ "parts": [
+  "line ribbon",
+  "badge",
+  "heading",
+  "paragraph",
+  "pill button"
+ ],
+ "demo_content": "\"Ship in the flow\" heading, \"New · Workflows 2.0\" badge, a short paragraph, and a \"Start for free\" button.",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "airy",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "flowing lines background for hero",
+  "dark canvas background with curves",
+  "lines that move away from the mouse",
+  "animated wave lines behind headline",
+  "interactive particle style backdrop",
+  "thin line ribbon background",
+  "hero background that reacts to cursor",
+  "monochrome curved stripe pattern"
+ ],
+ "resembles": [],
+ "use_when": "A hero or landing section needs a moving backdrop that stays quiet behind a headline and reacts to the pointer.",
+ "avoid_when": "It redraws a canvas whenever it is on screen, and the pale lines need a dark surface to keep their contrast.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass your own badge, headline and copy as children. Line count, spread, angle, speed and pointer interactivity are props; the layer widths, opacities and fade mask live in the source.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A lightweight canvas redraw of 42 curves each frame; it pauses when scrolled off screen.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The canvas is decorative and aria-hidden, and reacts only to the mouse. Reduced motion skips the draw-in and the pointer parting."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "count",
+   "type": "number",
+   "default": "42",
+   "required": false
+  },
+  {
+   "name": "spread",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "angle",
+   "type": "number",
+   "default": "-8",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Smooth entrance and believable flow; the faint lines read only at full size.",
+ "unsure": [],
+ "title": "Background Paths",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b93e31522e996582",
+  "film_hash": "7303855f0a29cf58",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

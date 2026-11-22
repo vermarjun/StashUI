@@ -1,0 +1,72 @@
+{
+  "name": "ai-autocomplete",
+  "frames": {
+    "code": "3332",
+    "best": 2,
+    "best_why": "Grey completion \"launch timeline.\" trails the typed line with a Tab hint, showing the defining suggestion state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A text box that finishes your sentence in grey, one Tab away.",
+  "summary": "An email-style text box that asks for a completion when typing pauses and shows the next words as grey ghost text after the caret. Tab accepts it all, the right arrow takes one word, and Escape dismisses it.",
+  "title_fix": null,
+  "appearance": "A plain dark compose box with To and Subject lines above, then a borderless multi-line text area. The typed text is white, the suggested continuation trails it in grey and ends in a small outlined Tab key hint, with Accept, Word and Dismiss shortcuts below.",
+  "behaviour": "When typing pauses at the end of the text, a suggestion fades in word by word in grey. Tab takes the whole thing, the right arrow takes one word, Escape clears it, and typing matching letters leaves the rest in place.",
+  "parts": ["to row", "subject row", "text box", "ghost suggestion", "Tab hint", "accept shortcuts"],
+  "demo_content": "A reply draft to Maya Chen, subject Re: Launch review, beginning \"Hi Maya, Thanks for the update on the\".",
+  "states": ["focus", "hover"],
+  "kind": "editor",
+  "look": ["dark", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "grey ghost text completion",
+    "ai writing assistant in a textarea",
+    "tab to accept suggestion",
+    "inline autocomplete while typing",
+    "email reply that finishes sentences",
+    "predictive text box for web",
+    "copilot style inline suggestion",
+    "press arrow right for next word"
+  ],
+  "resembles": ["Gmail Smart Compose", "GitHub Copilot"],
+  "use_when": "A writing or reply field should help people finish sentences while leaving them fully in control.",
+  "avoid_when": "It leans on Tab and arrow keys, the touch accept buttons are small, and you must plug in a real suggester.",
+  "suits": ["saas", "ai-chat"],
+  "slot_hints": ["form-field", "body-text"],
+  "traits": {
+    "trigger": ["keyboard", "timer"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Props set the current and default text, a change handler, the suggest function, pause delay, placeholder and accessible label; ghost styling and key handling are fixed.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "One textarea plus a mirrored text layer; it wakes only after a typing pause.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Tab, arrow and Escape all work and suggestions are announced live, but the text box has no visible focus ring."
+  },
+  "props": [
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string", "default": "\"\"", "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "suggest", "type": "(text: string) => string | null | Promise<string | null>", "default": "demoSuggest", "required": false},
+    {"name": "delay", "type": "number", "default": "400", "required": false},
+    {"name": "placeholder", "type": "string", "default": "Start writing…", "required": false},
+    {"name": "label", "type": "string", "default": "Message", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The editable text box has no visible focus ring."],
+  "polish": 4,
+  "polish_why": "Clever ghost-text flow with clear shortcuts; the focus state is invisible and the demo is sparse.",
+  "unsure": []
+}

@@ -1,0 +1,68 @@
+{
+  "name": "number-flow-trading",
+  "frames": {
+    "code": "7196",
+    "best": 4,
+    "best_why": "The price is settled at $2,125.95 with a clean green change badge and the Shuffle button, and no cursor covers it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A share price that rolls to new numbers, with a green or red change badge.",
+  "summary": "A stock-style price display for NVDA showing a large dollar figure and a rounded badge with an arrow and percent change. A Shuffle button cycles sample prices, rolling the digits and turning the arrow for losses.",
+  "title_fix": null,
+  "appearance": "A large white dollar amount sits on black beneath a small NVDA · Nasdaq caption. Beside the price is a small rounded pill in green or red holding a tiny arrow and a percentage, with a dark Shuffle pill centred below.",
+  "behaviour": "Pressing Shuffle swaps to another sample price: the dollar digits roll vertically to the new value, the percent badge updates colour, and its arrow spins to point down when the change is negative.",
+  "parts": ["ticker caption", "price", "change badge", "arrow", "shuffle button"],
+  "demo_content": "Caption NVDA · Nasdaq; prices $124.23, $41.75 and $2,125.95 with matching percent changes.",
+  "states": ["hover", "active"],
+  "kind": "counter",
+  "look": ["dark", "minimal", "bold", "flat", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "stock price ticker animation",
+    "animated price with percent change",
+    "crypto price display widget",
+    "number rolling finance card",
+    "green red change badge",
+    "live price counter",
+    "trading dashboard price ticker",
+    "shuffle price demo button"
+  ],
+  "resembles": ["Robinhood price display"],
+  "use_when": "A dashboard or marketing page wants a compact animated price readout with a direction indicator.",
+  "avoid_when": "The shuffle samples are three hardcoded prices, so a real feed needs rewiring and the Shuffle control removed.",
+  "suits": ["fintech", "dashboard"],
+  "slot_hints": ["stat", "feature-card"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "PriceWithDiff takes a value and diff as props, while the shuffle demo's three sample prices and the ticker caption live in the source.",
+  "technique": ["motion-library", "js-animation"],
+  "weight": "light",
+  "weight_why": "One price, one badge and a small shuffle button with short animations.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Shuffle is a real button with visible text, but price changes are visual only and the arrow direction has no text alternative."
+  },
+  "props": [
+    {"name": "value", "type": "number", "default": null, "required": true},
+    {"name": "diff", "type": "number", "default": null, "required": true}
+  ],
+  "issues": [
+    "Frames 2, 3 and 5 catch the digits mid-roll, scattered and unreadable as stills."
+  ],
+  "polish": 4,
+  "polish_why": "Confident big numerals and a clean change badge; the Shuffle control is a plain demo button.",
+  "unsure": ["content_from"]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "grid-beam",
+  "frames": {
+    "code": "5601",
+    "best": 5,
+    "best_why": "Frame 5 shows several coloured beams and their intersection glows most clearly.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Coloured light streaks drift along a dark technical grid.",
+  "summary": "A rounded near-black panel split by faint grid lines into rows and columns, with small glowing beams sliding along the lines and brightening where they cross. Meant to sit behind a headline or product card.",
+  "title_fix": null,
+  "appearance": "A rounded near-black panel is divided by thin grey lines into four rows and six columns. Short teal, orange, magenta and purple light streaks appear on the lines, brightest at crossings. A small outlined badge, a white headline and two grey lines of copy sit in the middle.",
+  "behaviour": "Small glows travel along the horizontal and vertical lines at slightly different speeds and pulse gently; where two beams meet at an intersection the spot glows brighter. The grid lines and the copy never move.",
+  "parts": ["grid panel", "horizontal divider", "vertical divider", "light beam", "intersection glow", "content card", "badge"],
+  "demo_content": "Badge Realtime sync, headline Every edit, everywhere, instantly, plus a short paragraph about syncing.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "technical", "minimal", "neon"],
+  "tone": "technical",
+  "search_phrases": [
+    "grid of lines with glowing dots",
+    "animated grid background with light",
+    "dashboard panel with travelling beams",
+    "subtle glowing grid behind text",
+    "canvas grid with moving light streaks",
+    "tech background with faint colored lines",
+    "grid lines that light up at crossings",
+    "dark panel with pulse lights on a grid"
+  ],
+  "resembles": [],
+  "use_when": "A dark product panel needs a technical grid that quietly pulses behind a headline.",
+  "avoid_when": "It needs a sized parent: the canvas fills an absolute box and is invisible without height.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "children",
+  "customise": "rows, cols, colorVariant (colorful, mono, ocean or sunset), theme, active, duration, strength, breathe and borderRadius are props; palette colours live in the source.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "Draws dozens of gradient blurs on a 2D canvas on every animation frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Canvas and dividers are aria-hidden, but the beam loop runs continuously with no reduced-motion option."
+  },
+  "props": [
+    {"name": "rows", "type": "number", "default": "3", "required": false},
+    {"name": "cols", "type": "number", "default": "4", "required": false},
+    {"name": "colorVariant", "type": "\"colorful\" | \"mono\" | \"ocean\" | \"sunset\"", "default": "colorful", "required": false},
+    {"name": "theme", "type": "\"dark\" | \"light\" | \"auto\"", "default": "dark", "required": false},
+    {"name": "active", "type": "boolean", "default": "true", "required": false},
+    {"name": "duration", "type": "number", "default": "3", "required": false},
+    {"name": "strength", "type": "number", "default": "1", "required": false},
+    {"name": "breathe", "type": "boolean", "default": "true", "required": false},
+    {"name": "borderRadius", "type": "number", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The beam glows are very faint, so the grid reads as almost static in the frames.",
+    "The canvas keeps animating even when the panel is scrolled out of view."
+  ],
+  "polish": 4,
+  "polish_why": "Refined dark grid with softly coloured beams; the glow is too faint to notice at a glance.",
+  "unsure": []
+}

@@ -1,0 +1,68 @@
+{
+  "name": "status-island",
+  "frames": {
+    "code": "2070",
+    "best": 6,
+    "best_why": "The panel is expanded with two finished jobs, each showing a green tick and a real action button.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Dark pill tracks running jobs and opens into their full progress list.",
+  "summary": "A floating pill appears when a background task starts, showing its spinner and percentage. Hovering, focusing or clicking it expands into a list of every task, where finished ones get a green tick and an action button.",
+  "title_fix": null,
+  "appearance": "A dark rounded pill sits low on the stage, holding a small ring icon, a job label with a dim detail and a percentage or action chip. Expanded, it becomes a taller rounded panel with one row per task, each with its icon, label and percentage or small button; thin stacked layers peek behind the closed pill.",
+  "behaviour": "The pill fades and blurs in when a task starts and swaps its text as the newest task changes. Hover, focus or click opens the list with a spring; leaving or pressing Escape closes it. Rows swap the ring for a green tick when done, and finished tasks leave on their own.",
+  "parts": ["pill", "progress ring", "job label", "detail text", "percentage", "expanded list", "task row", "action button"],
+  "demo_content": "Four trigger buttons (Upload photos, Export report, Archive thread, Sync calendar) start fake jobs.",
+  "states": ["hover", "focus", "loading", "success", "open", "error"],
+  "kind": "toast",
+  "look": ["dark", "rounded", "minimal", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "floating job status pill",
+    "background task progress list",
+    "dynamic island style notification",
+    "upload progress at bottom of screen",
+    "list of running jobs with percentages",
+    "non blocking progress toast",
+    "hover to see all downloads",
+    "ios activity pill for web app"
+  ],
+  "resembles": ["iOS Dynamic Island"],
+  "use_when": "Long uploads, exports or syncs should stay visible and inspectable without blocking the page.",
+  "avoid_when": "The list is 320px wide and driven by a tasks prop, so it needs task state plus hover or focus to read more than one job.",
+  "suits": ["saas", "dashboard", "mobile-app"],
+  "slot_hints": ["toast", "loading", "nav"],
+  "traits": {
+    "trigger": ["hover", "focus", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "text", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Tasks come in as an array with label, detail, status, progress and an optional action. Dismiss delay and className are props; the spring, colours and 320px list width are in the source.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A few DOM rows and one layout spring; the progress ring animates only while a task runs.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Focus opens the list and Escape closes it, with a polite live region for changes. The pill removes its focus outline, so keyboard focus is hard to see."
+  },
+  "props": [
+    {"name": "tasks", "type": "IslandTask[]", "default": null, "required": true},
+    {"name": "onDismiss", "type": "(id: string) => void", "default": null, "required": false},
+    {"name": "dismissAfter", "type": "number", "default": "4000", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The pill's focus outline is removed with no replacement."],
+  "polish": 4,
+  "polish_why": "The morph and task rows read clearly; the missing focus ring and dim detail text are blemishes.",
+  "unsure": []
+}

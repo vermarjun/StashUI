@@ -1,0 +1,131 @@
+{
+ "name": "emoji-spree-choice-chips",
+ "frames": {
+  "code": "8776",
+  "best": 4,
+  "best_why": "Coffee chip selected with the big floating emoji burst and the 1 Interests pill all visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.0
+ },
+ "tagline": "Interest chips that launch giant emoji and count your picks.",
+ "summary": "Three draggable rows of rounded interest chips, each with an emoji and a label. Picking one lights it up, floats a huge copy of its emoji upward, and a pill at the bottom counts how many you have chosen.",
+ "title_fix": "Emoji Interest Chips",
+ "appearance": "A dark stage headed Interests holds three rows of rounded chips, each with a small emoji and a label on a dark pill with a thin border; selected chips turn lighter. A big emoji floats up the centre when picked, and a rounded counter pill sits at the bottom edge.",
+ "behaviour": "Clicking a chip toggles it and, on a new pick, spawns three large copies of its emoji that rise, grow and fade over a second. The rows can be dragged sideways, selected chips stay highlighted, and the bottom pill updates to the number chosen.",
+ "parts": [
+  "heading",
+  "chip rows",
+  "chips",
+  "floating emoji",
+  "selection counter"
+ ],
+ "demo_content": "Interest chips for Coffee, Hiking, Live music, Cooking, Gaming, Plants, Photography, Space and more.",
+ "states": [
+  "hover",
+  "focus",
+  "selected",
+  "dragging"
+ ],
+ "kind": "badge",
+ "look": [
+  "dark",
+  "rounded",
+  "pill",
+  "colorful",
+  "minimal"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "interest chips that float emoji",
+  "multi select tag chips",
+  "pick your interests selector",
+  "emoji burst when selecting a chip",
+  "draggable row of category chips",
+  "onboarding interest picker",
+  "chips with emoji and count",
+  "tap tags to build a selection"
+ ],
+ "resembles": [],
+ "use_when": "An onboarding or profile step asks people to pick several interests and wants the choice to feel fun and tactile.",
+ "avoid_when": "The giant emoji burst and draggable rows are playful and heavy for a serious form or a tight mobile card.",
+ "suits": [
+  "social",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass interests as an array of id, label and emoji, and an onChange callback reports the selected ids. Colours, drag behaviour and particle size are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A grid of chips with a few motion particles spawned per pick.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Chips are buttons with their emoji and label, but selection is shown only by colour with no aria-pressed, and there is no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "interests",
+   "type": "InterestItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(selectedIds: string[]) => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Selection is shown only by a slight lightness change, which is easy to miss on the dark stage.",
+  "With a single pick the counter pill reads '1 Interests', which is ungrammatical.",
+  "The large floating emoji covers several chips while it rises."
+ ],
+ "polish": 3,
+ "polish_why": "Playful emoji burst, but the singular count reads '1 Interests' and selection is easy to miss.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Emoji Spree Choice Chips",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c3e6d914f90b0c3b",
+  "film_hash": "bf024620cadc4057",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

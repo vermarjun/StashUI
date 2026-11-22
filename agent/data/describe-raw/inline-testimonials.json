@@ -1,0 +1,144 @@
+{
+  "name": "inline-testimonials",
+  "frames": {
+    "code": "3447",
+    "best": 3,
+    "best_why": "Sofia's quote card is fully open above her name, showing avatar, role, quote and stars.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Names in a sentence carry avatars, and hovering one opens its quote card.",
+  "summary": "A paragraph of plain text where chosen names sit with tiny round photos and a fine underline. Hovering or focusing a name opens a small card with the person's role, quote and star rating, placed above or below the line.",
+  "title_fix": null,
+  "appearance": "Two lines of soft grey prose on a black stage, interrupted by three brighter names, each with a small round photo and a thin underline. An open quote is a compact dark card holding a larger avatar, a name, a role, a short paragraph of pale text and five tiny stars.",
+  "behaviour": "On a pointer device a name opens its card on hover, and keyboard focus opens it too. The card springs out from the trigger's centre with a small padded gap, waits briefly as the pointer crosses over, and shuts a moment after leaving; Escape closes it and returns focus.",
+  "parts": [
+    "paragraph",
+    "name button",
+    "small avatar",
+    "underline",
+    "quote card",
+    "large avatar",
+    "star rating"
+  ],
+  "demo_content": "Names Sofia Alvarez, Daniel Okafor and Hana Sato with quotes about cutting support queues and shipping integrations.",
+  "states": [
+    "hover",
+    "focus",
+    "open",
+    "active"
+  ],
+  "kind": "testimonial-section",
+  "look": [
+    "dark",
+    "minimal",
+    "flat",
+    "airy"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "customer names inside a sentence",
+    "hover a name to see their review",
+    "testimonials woven into copy",
+    "inline quote popup",
+    "avatar next to a name in text",
+    "social proof without a grid",
+    "click a name to read a testimonial",
+    "review card that pops up on hover"
+  ],
+  "resembles": [],
+  "use_when": "Testimonials should sit inside a sentence and appear only when a reader shows interest.",
+  "avoid_when": "The open card overlays neighbouring lines and there is no hover on touch, so it needs room around the text.",
+  "suits": [
+    "marketing",
+    "saas"
+  ],
+  "slot_hints": [
+    "testimonial",
+    "body-text"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "focus",
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Give it a text string with {{id}} tokens and an array of testimonials with avatar, name, role, quote and rating; avatar size, open state and a change callback are props too.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "Two lines of text and one card that only animates on open, with measurement on demand.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Names are buttons with aria-expanded and aria-controls, Escape closes and restores focus, ratings are labelled, and motion is skipped when reduced."
+  },
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "testimonials",
+      "type": "Testimonial[]",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "avatarSize",
+      "type": "number",
+      "default": "22",
+      "required": false
+    },
+    {
+      "name": "openId",
+      "type": "string | null",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(id: string | null) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "An open quote card covers the lines of the paragraph around the name that opened it."
+  ],
+  "polish": 4,
+  "polish_why": "Quiet, well-crafted inline treatment; the open card covering neighbouring copy is the flaw.",
+  "unsure": [
+    "kind"
+  ]
+}

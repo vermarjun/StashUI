@@ -1,0 +1,121 @@
+{
+ "name": "components-community-flip-card",
+ "frames": {
+  "code": "3242",
+  "best": 4,
+  "best_why": "The back face is square-on with bio, all three stats, the icon row and the Follow button; no cursor covers it.",
+  "usable": [
+   1,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.8
+ },
+ "tagline": "Flips over on hover to show the bio, follower counts and a Follow button.",
+ "summary": "A dark profile card shows an avatar, a name and a handle; turning it over reveals a short bio, three follower counts, social icons and a follow button.",
+ "title_fix": null,
+ "appearance": "A tall, rounded card with a thin translucent border on a near-black stage. The front is centred on a round avatar, a bold name and a grey handle. The back stacks a small bio paragraph, three large numbers with captions, a row of three icons and a small white button.",
+ "behaviour": "Hovering the card turns it 180 degrees around its vertical axis, and it turns back when the pointer leaves; on a touch screen a tap toggles it. The half-second flip swaps the profile face for the detail face.",
+ "parts": [
+  "front card",
+  "avatar",
+  "name and handle",
+  "bio text",
+  "stat numbers",
+  "social icons",
+  "follow button"
+ ],
+ "demo_content": "Alex Rivera, @alexrivera, an avatar, a short bio, 312 following, 4800 followers and 127 posts.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "profile card that flips on hover",
+  "3d card flip reveal",
+  "user bio card with follower counts",
+  "hover to see more about a person",
+  "social profile card with follow button",
+  "card turns over to show details",
+  "team member card hover reveal",
+  "contact card with social links"
+ ],
+ "resembles": [],
+ "use_when": "A small profile or team card needs a second layer of details without opening a dialog.",
+ "avoid_when": "Hover-triggered flip is awkward on touch, and the back is unreachable by keyboard or screen reader.",
+ "suits": [
+  "portfolio",
+  "social",
+  "saas"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "list-item",
+  "avatar"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "All copy, avatar, stats and social links come from one data object; the fixed size, colours and half-second flip need a source edit.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Two card faces and one transform animation; nothing runs at rest.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The flip is hover-only on desktop and the card is not focusable, so keyboard and screen-reader users never reach the back."
+ },
+ "props": [
+  {
+   "name": "data",
+   "type": "FlipCardData",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Frame 3 catches the card squashed mid-flip, so it is not usable as a still.",
+  "Bio and captions are small grey text with low contrast on the dark card."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp card faces and a smooth flip; small grey text sits low contrast on near-black.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Flip Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "de8df6b4ca9bc873",
+  "film_hash": "6d5072be2cea6b3f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

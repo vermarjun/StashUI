@@ -1,0 +1,187 @@
+{
+ "name": "ripple-distortion",
+ "frames": {
+  "code": "8147",
+  "best": 3,
+  "best_why": "A large violet ripple bulges the photo while the mountain range stays readable behind it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "Moving the pointer across a photo leaves a swelling, water-like warp.",
+ "summary": "A full-bleed grayscale landscape where the pointer pushes water-like ripples that distort the image and slowly fade, tinted faintly violet.",
+ "title_fix": null,
+ "appearance": "A full-bleed grayscale photograph of snowy mountains over a sea of cloud, cropped to fill the stage. Where the pointer passes, round blobs bulge with a pale violet sheen and smeared, stretched detail; a faint caption sits near the bottom edge.",
+ "behaviour": "Moving the pointer spawns ripples that grow and swirl the picture beneath them, each fading over a few seconds. Clicking pushes a stronger pulse, and the effect stills itself if reduced motion is requested.",
+ "parts": [
+  "mountain photo",
+  "ripple blob",
+  "ripple highlight",
+  "caption text"
+ ],
+ "demo_content": "Grayscale mountain-and-cloud photo with caption 'Move to disturb the water'.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "monochrome",
+  "dark",
+  "glow",
+  "organic"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "water ripple effect on an image",
+  "pointer distortion over a photo",
+  "interactive liquid warp background",
+  "mouse trail that ripples the picture",
+  "webgl image displacement effect",
+  "hover to make waves on a photo",
+  "purple glow ripple over mountains",
+  "photograph that bends under the cursor"
+ ],
+ "resembles": [],
+ "use_when": "A landing or hero image needs a tactile, pointer-reactive surface that invites play.",
+ "avoid_when": "It needs WebGL and a sized parent, and the hover effect is inert on touch devices.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Image source, brush size, strength, swirl, rings, spread, fade, dispersion, glint, tint and quality are props; trigger, click strength and enable toggle too.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL render loop draws a displacement pass and a composite pass every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": true,
+  "note": "The canvas has no label or description, so the photograph and the effect stay invisible to screen readers."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "'https://images.unsplash.com/photo-1782977389500-dd7adad33eb",
+   "required": false
+  },
+  {
+   "name": "trigger",
+   "type": "RippleTrigger",
+   "default": "'hover'",
+   "required": false
+  },
+  {
+   "name": "strength",
+   "type": "number",
+   "default": "0.2",
+   "required": false
+  },
+  {
+   "name": "brushSize",
+   "type": "number",
+   "default": "150",
+   "required": false
+  },
+  {
+   "name": "swirl",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "rings",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "spread",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "fade",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "tint",
+   "type": "string",
+   "default": "'#a855f7'",
+   "required": false
+  },
+  {
+   "name": "tintAmount",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "grayscale",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "quality",
+   "type": "RippleQuality",
+   "default": "'low'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The default grayscale setting flattens the source photo to grey unless you turn it off."
+ ],
+ "polish": 4,
+ "polish_why": "Rich, smooth water warp that reads instantly; the violet tint is subtle and well judged.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Ripple Distortion",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "275e996aaa632706",
+  "film_hash": "19b19721acd443fb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

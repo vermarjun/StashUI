@@ -1,0 +1,136 @@
+{
+ "name": "magnified-doc",
+ "frames": {
+  "code": "5736",
+  "best": 2,
+  "best_why": "The search icon is clearly enlarged and its small labelled tooltip sits above it, showing both behaviours at once.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "Hovering an icon swells it and lifts a small bordered label above.",
+ "summary": "A tooltip wrapper for icon controls: pointing at or focusing a trigger opens a compact dark label with a hairline border and blurred backing, while the demo dock grows the icon under the cursor.",
+ "title_fix": null,
+ "appearance": "A long rounded dark bar holds seven thin line icons spaced evenly across it. Above whichever icon is active, a small rounded dark label with a faint border and light text floats a short gap away.",
+ "behaviour": "The pointed-at icon enlarges while its neighbours stay small, and a label fades and zooms in directly above it. Moving off shrinks the icon back and the label fades away; the label also opens on keyboard focus.",
+ "parts": [
+  "dock bar",
+  "icon button",
+  "tooltip label"
+ ],
+ "demo_content": "Seven icons named Home, Search, Files, Mail, Calendar, Music and Settings, plus a Hover the dock hint.",
+ "states": [
+  "hover",
+  "focus",
+  "open"
+ ],
+ "kind": "tooltip",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "glass"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "label that appears above an icon",
+  "dark tooltip with blur behind it",
+  "mac style dock that grows icons",
+  "floating name for a toolbar icon",
+  "hover hint for icon only buttons",
+  "small bordered popup on focus",
+  "magnifying icon bar with captions",
+  "accessible tooltip for navigation icons"
+ ],
+ "resembles": [
+  "macOS Dock"
+ ],
+ "use_when": "Icon-only controls need a short name on hover or focus without taking up layout space.",
+ "avoid_when": "Adopting it gives you only the label; the growing dock and springs belong to the demo, not the exported parts.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "tooltip",
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Wrap your own trigger and label in the compound parts; className passes to the label, and side, sideOffset and the provider delay control placement and timing.",
+ "technique": [
+  "motion-library",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A few buttons and springs that only move while the pointer is over the bar.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Each icon has an aria-label and the tooltip opens on focus, but the buttons remove the focus outline with no replacement."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "sideOffset",
+   "type": "number",
+   "default": "{sideOffset}",
+   "required": false
+  },
+  {
+   "name": "side",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The growing dock is demo code; the component exports only the tooltip parts.",
+  "Icon buttons set focus:outline-none, so keyboard focus has no visible ring.",
+  "The label overlaps the Hover the dock hint when a middle icon is pointed at."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp icons and tidy label styling; the label collides with the hint text.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Magnified Doc Tooltip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b4b2f93863ce63e3",
+  "film_hash": "54f763ff4cca5260",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "GridDistortion-TS-TW",
+  "frames": {
+    "code": "1736",
+    "best": 4,
+    "best_why": "A wide patch of the mountain photo is pushed out of place in clear square steps beside the cursor.",
+    "usable": [1, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Glides a photo into square ripples wherever the cursor passes.",
+  "summary": "A photograph sits full-bleed, and moving the pointer drags nearby patches of it aside in a blocky grid. The displaced tiles ease back to their places once the cursor moves on.",
+  "title_fix": null,
+  "appearance": "One landscape photo fills the frame edge to edge, rounded at the corners, against a black surround. Over it sits a coarse invisible mesh, so warped areas show as offset rectangular tiles rather than smooth curves.",
+  "behaviour": "Pointer movement shoves a cluster of square patches of the image sideways, strongest right under the cursor. When the pointer stops or leaves, the offsets decay and the picture settles back into place.",
+  "parts": ["photo", "square tile mesh", "displaced patches", "rounded frame"],
+  "demo_content": "Snowy mountain range above a sea of clouds at sunset, shot from a ridge.",
+  "states": [],
+  "kind": "image-effect",
+  "look": ["colorful", "gradient", "airy", "organic"],
+  "tone": "decorative",
+  "search_phrases": [
+    "photo that ripples under the cursor",
+    "image distortion on mouse move",
+    "warped picture grid hover effect",
+    "glitch tiles following pointer",
+    "interactive image with mesh warp",
+    "hero photo that bends when touched",
+    "liquid distortion image effect",
+    "displaced squares over a photo"
+  ],
+  "resembles": [],
+  "use_when": "A single strong photo needs a playful hover effect, as in a hero or a case study banner.",
+  "avoid_when": "You want a smooth liquid warp: the mesh is coarse and the result reads as square tiles.",
+  "suits": ["portfolio", "marketing", "ecommerce"],
+  "slot_hints": ["hero", "media", "page-background"],
+  "traits": {
+    "trigger": ["pointer-move"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "The image comes in as a required URL prop; mesh density, pointer radius, warp strength and how fast it settles are props too. The shader offset is fixed.",
+  "technique": ["three-js"],
+  "weight": "heavy",
+  "weight_why": "A THREE renderer draws a displaced plane every frame for a live WebGL scene.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The effect is mouse-only and the photo has no alt text, so keyboard and screen-reader users get nothing."
+  },
+  "props": [
+    {"name": "imageSrc", "type": "string", "default": null, "required": true},
+    {"name": "grid", "type": "number", "default": "15", "required": false},
+    {"name": "mouse", "type": "number", "default": "0.1", "required": false},
+    {"name": "strength", "type": "number", "default": "0.15", "required": false},
+    {"name": "relaxation", "type": "number", "default": "0.9", "required": false},
+    {"name": "className", "type": "string", "default": "''", "required": false}
+  ],
+  "issues": ["The warp breaks into hard square tiles, so it reads as a glitch grid rather than a smooth bend."],
+  "polish": 3,
+  "polish_why": "The effect answers the cursor well, but the coarse blocks give away the low-res mesh.",
+  "unsure": ["theme", "states", "tone"]
+}

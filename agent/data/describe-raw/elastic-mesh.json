@@ -1,0 +1,78 @@
+{
+  "name": "elastic-mesh",
+  "frames": {
+    "code": "7374",
+    "best": 6,
+    "best_why": "The whole word is inflated and glossy with clean highlights, centred with even space and no cursor over a letter.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Glossy blue letters inflate like balloons and wobble when poked.",
+  "summary": "A word turned into a puffy, shiny blue solid that looks like inflated rubber. The letters spring in on load, lean toward the pointer, and dent and stretch when pressed or dragged.",
+  "title_fix": null,
+  "appearance": "A fat rounded word in deep royal blue sits centred on pure black, each letter shaped like a filled balloon with bright white streaks across the top. Soft shading rounds the tubes and a faint dark shadow grounds them.",
+  "behaviour": "Letters arrive one after another with a bouncy overshoot, then rest. The surface tips gently toward the pointer; holding presses a dent into the rubber and dragging stretches the shape around the grab point before it springs back.",
+  "parts": ["inflated letters", "specular highlights", "floor shadow"],
+  "demo_content": "The word \"Boing\" with the caption \"Press, poke and stretch\".",
+  "states": ["hover", "active", "dragging"],
+  "kind": "text-effect",
+  "look": ["3d", "colorful", "dark", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "inflated balloon letters",
+    "jelly text you can squish",
+    "3d puffy logo maker",
+    "glossy blue word balloon",
+    "interactive squishy typography",
+    "push and stretch letters",
+    "rubber logo animation",
+    "bouncy 3d text for a hero"
+  ],
+  "resembles": [],
+  "use_when": "A playful logo or short word as the centrepiece of a promo, game or brand page.",
+  "avoid_when": "Only a word or two fits, it needs a sized parent, and the WebGL simulation costs GPU time.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["hero", "headline"],
+  "traits": {
+    "trigger": ["always", "pointer-move", "drag"],
+    "motion": "subtle",
+    "affects": ["children", "text"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Set the word with text or an image with src, then choose colour, material, inflate, stiffness, wobble, stretch, press and shadow. Font family, weight, theme and intro are also props.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A springy node mesh solved in 480 Hz substeps plus full-screen shaders every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The canvas is exposed as an image labelled with the word; reduced motion skips the intro and pointer tilt."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": "Squish", "required": false},
+    {"name": "src", "type": "string", "default": "", "required": false},
+    {"name": "fontFamily", "type": "string", "default": "system-ui, sans-serif", "required": false},
+    {"name": "fontWeight", "type": "number | string", "default": "900", "required": false},
+    {"name": "color", "type": "string", "default": "#3b5bff", "required": false},
+    {"name": "material", "type": "'balloon' | 'chrome' | 'jelly' | 'clay'", "default": "balloon", "required": false},
+    {"name": "inflate", "type": "number", "default": "1", "required": false},
+    {"name": "stiffness", "type": "number", "default": "0.5", "required": false},
+    {"name": "wobble", "type": "number", "default": "0.6", "required": false},
+    {"name": "grabRadius", "type": "number", "default": "70", "required": false},
+    {"name": "stretch", "type": "number", "default": "0.5", "required": false},
+    {"name": "press", "type": "number", "default": "0.5", "required": false}
+  ],
+  "issues": [
+    "The word spans nearly the full width, leaving the last letter tight against the frame edge."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing inflated material and highlights; the layout leaves almost no margin around the word.",
+  "unsure": []
+}

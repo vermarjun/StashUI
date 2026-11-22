@@ -1,0 +1,79 @@
+{
+  "name": "morph-surface",
+  "frames": {
+    "code": "9967",
+    "best": 4,
+    "best_why": "Frame 4 shows the open card with the message actually typed in, the fullest form state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A tiny pill grows into a small message box.",
+  "summary": "A collapsed pill with a dot, a label and a Send Feedback prompt springs open into a rounded card holding a textarea and a cmd-Enter shortcut. Submitting folds it back and briefly flashes a tick.",
+  "title_fix": null,
+  "appearance": "At rest a wide rounded pill shows a white dot, the words Morph Surface and a muted Send Feedback prompt. Opened it becomes a taller rounded card, keeping the label at the top left, cmd and Enter keys at the top right, and a large text area below.",
+  "behaviour": "Clicking the pill springs it open into the card and focuses the textarea. Escape or an outside click folds it back; cmd-Enter submits, after which the card closes and the dot shows a check for a moment.",
+  "parts": ["pill", "status dot", "label", "trigger prompt", "shortcut keys", "message box"],
+  "demo_content": "Prompt Send Feedback, placeholder \"What's on your mind? We read every message.\", plus a typed note.",
+  "states": ["open", "focus", "success"],
+  "kind": "form",
+  "look": ["dark", "rounded", "minimal", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "feedback box that expands from a pill",
+    "small message form at the bottom",
+    "quick feedback textarea popup",
+    "send feedback widget",
+    "collapsed bar that opens a text box",
+    "inline comment box with a shortcut",
+    "compact note form for a website",
+    "floating feedback prompt"
+  ],
+  "resembles": [],
+  "use_when": "You want a lightweight feedback or note box that stays a small pill until someone writes.",
+  "avoid_when": "The message needs a subject or attachments: there is one textarea and no extra fields.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["form-field", "footer"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "triggerLabel, placeholder, submitLabel, the collapsed and expanded sizes, spring speed, callbacks and render functions for trigger, content and indicator are props.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One spring-animated card and a textarea; no media or heavy rendering.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The textarea relies on its placeholder instead of a label, and the morph ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "triggerLabel", "type": "string", "default": "Feedback", "required": false},
+    {"name": "placeholder", "type": "string", "default": "What's on your mind?", "required": false},
+    {"name": "submitLabel", "type": "string", "default": null, "required": false},
+    {"name": "expandedWidth", "type": "number", "default": "360", "required": false},
+    {"name": "expandedHeight", "type": "number", "default": "200", "required": false},
+    {"name": "collapsedWidth", "type": "number | \"auto\"", "default": "360", "required": false},
+    {"name": "collapsedHeight", "type": "number", "default": "44", "required": false},
+    {"name": "animationSpeed", "type": "number", "default": "1", "required": false},
+    {"name": "onSubmit", "type": "(data: FormData) => void | Promise<void>", "default": null, "required": false},
+    {"name": "onSuccess", "type": "() => void", "default": null, "required": false},
+    {"name": "isOpen", "type": "boolean", "default": null, "required": false},
+    {"name": "onOpenChange", "type": "(open: boolean) => void", "default": null, "required": false}
+  ],
+  "issues": [
+    "The pill always shows the hardcoded words Morph Surface in front of your trigger label.",
+    "The textarea is labelled only by its placeholder, so its purpose is not announced."
+  ],
+  "polish": 4,
+  "polish_why": "Satisfying pill-to-card spring; the stray Morph Surface label and unlabeled field cost a little.",
+  "unsure": []
+}

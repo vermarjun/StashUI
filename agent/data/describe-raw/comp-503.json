@@ -1,0 +1,111 @@
+{
+  "name": "comp-503",
+  "frames": {
+    "code": "8146",
+    "best": 6,
+    "best_why": "Day 18 is picked and the time reads 12:14:30 PM, showing both halves in use.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Month calendar with a clock field for entering an exact time.",
+  "summary": "A single month calendar in a bordered panel, with a divider below and a label reading Enter time. The time field shows hours, minutes and seconds beside a clock icon, and days circle in white when pressed.",
+  "title_fix": null,
+  "appearance": "A tall black panel holds \"November 2026\" between two angle arrows, weekday initials and five weeks of numbers, then a hairline divider and a small \"Enter time\" caption. A wide rounded field with a clock glyph on its left holds a 12-hour time with AM/PM.",
+  "behaviour": "Pressing a day fills it with a white circle and clears the previous one; hovering leaves a softer ring. The time field accepts typed hours, minutes and seconds in place, each segment highlighting blue while it is edited. Nothing submits.",
+  "parts": [
+    "month heading",
+    "nav arrows",
+    "weekday row",
+    "day grid",
+    "divider",
+    "time label",
+    "time input",
+    "clock icon"
+  ],
+  "demo_content": "November 2026 with day 18 chosen and the time set to 12:14:30 PM; the caption credits the calendar library.",
+  "states": [
+    "selected",
+    "hover",
+    "focus",
+    "active"
+  ],
+  "kind": "calendar",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "calendar with a time field underneath",
+    "pick a day and set the clock time",
+    "date and time picker in one box",
+    "schedule an appointment with hour and minute",
+    "month calendar plus time entry",
+    "choose a date then type the time",
+    "booking picker with time input",
+    "calendar and clock combined"
+  ],
+  "resembles": [],
+  "use_when": "An event needs both a day and a clock time and you want them in one compact panel.",
+  "avoid_when": "The time field is not tied to the calendar, so the picked day and typed time are never combined or saved.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "keyboard",
+      "focus"
+    ],
+    "motion": "none",
+    "affects": [
+      "background",
+      "text",
+      "border"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The default time of 12:00:00 and the caption link are written in the file; day selection, month limits and field styling come from the shared calendar and input.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "One month grid and a native time field; nothing animates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The time field has a linked label and native keyboard entry, and days are real buttons; the chosen date is not announced outside the grid."
+  },
+  "props": [],
+  "issues": [
+    "The time field is never combined with the selected day.",
+    "No summary shows the chosen date and time together.",
+    "The caption credits the calendar library instead of the control."
+  ],
+  "polish": 3,
+  "polish_why": "Neat calendar and tidy time row, but the two halves never talk and the styling is standard.",
+  "unsure": [
+    "a11y"
+  ]
+}

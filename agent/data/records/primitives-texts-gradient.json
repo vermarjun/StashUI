@@ -1,0 +1,133 @@
+{
+ "name": "primitives-texts-gradient",
+ "frames": {
+  "code": "2336",
+  "best": 4,
+  "best_why": "The gradient peaks in vivid pink across both lines and the neon halo on the lower line is strongest.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.5
+ },
+ "tagline": "Headline text shaded in a slowly drifting blue-to-pink gradient.",
+ "summary": "Two lines of bold display text with a looping blue, purple and pink gradient; the second line repeats itself as a soft blurred glow.",
+ "title_fix": null,
+ "appearance": "Two lines of large sans-serif text on black: a bold headline across the top and a slightly smaller line below. The letters carry a blue, purple and pink gradient, and the lower line has a soft glowing halo.",
+ "behaviour": "The gradient scrolls sideways through the letters in an endless slow loop, so the colours drift from blue to pink and back. The lower line's blurred copy brightens in step.",
+ "parts": [
+  "headline text",
+  "subline text",
+  "gradient fill",
+  "neon glow"
+ ],
+ "demo_content": "The lines Beautiful animations and made effortless.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "gradient",
+  "neon",
+  "glow"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "text with a moving color gradient",
+  "animated gradient headline",
+  "glowing rainbow text",
+  "blue to pink text effect",
+  "neon lettering with soft glow",
+  "hero title that shimmers colors",
+  "gradient words for a landing page",
+  "color shifting typography"
+ ],
+ "resembles": [],
+ "use_when": "A hero or section headline should feel alive without a moving background.",
+ "avoid_when": "The gradient is hardcoded, and the pale blues and glows would lose contrast on a light page.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the text string, choose a gradient string and turn the neon glow on or off; the scroll distance and looping transition are props too.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Two text spans with a looping background position; no layout cost.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "It animates forever and never checks prefers-reduced-motion, so the gradient keeps drifting for motion-sensitive readers."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "gradient",
+   "type": "string",
+   "default": "'linear-gradient(90deg, #3b82f6 0%, #a855f7 20%, #ec4899 50%",
+   "required": false
+  },
+  {
+   "name": "neon",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ duration: 50, repeat: Infinity, ease: 'linear' }",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The glow under the second line turns yellowish, which clashes with the blue and pink.",
+  "The headline's gradient barely changes across the first few frames, so movement is slow to notice."
+ ],
+ "polish": 4,
+ "polish_why": "Bold type and a smooth drifting gradient; the yellowish glow fringe is the only blemish.",
+ "unsure": [],
+ "title": "Gradient Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "63b514eb58d99129",
+  "film_hash": "eb6dc09885911347",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

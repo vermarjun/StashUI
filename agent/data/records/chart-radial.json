@@ -1,0 +1,114 @@
+{
+ "name": "chart-radial",
+ "frames": {
+  "code": "6306",
+  "best": 1,
+  "best_why": "All three cards are fully drawn with no tooltip or cursor hiding a ring or gauge.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Hollow rings and half gauges hold visitor totals at their centre.",
+ "summary": "Three radial cards: a near-full ring, a half-circle gauge and a set of concentric browser bands, each with a large total in the middle and a footer trend line.",
+ "title_fix": null,
+ "appearance": "Three dark rounded cards in a row. The left holds a hollow ring around a bold 200 and the word Visitors; the middle holds a half-circle gauge around 1,830 Visitors; the right packs several thin concentric rings with small browser names. Each card ends in a footer trend line and a caption.",
+ "behaviour": "The arcs hold still. Hovering a ring or gauge raises a small dark tooltip naming the series and its visitor count, which is the only change across the frames.",
+ "parts": [
+  "card",
+  "ring",
+  "centre total",
+  "half gauge",
+  "browser labels",
+  "footer trend",
+  "tooltip"
+ ],
+ "demo_content": "Titles Text, Stacked and Label; centre figures 200 and 1,830 with Visitors; footer reads Trending up by 5.2% this month.",
+ "states": [
+  "hover"
+ ],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "half circle gauge with total",
+  "donut chart with big number",
+  "concentric rings showing progress",
+  "circular progress with center label",
+  "browser share rings",
+  "gauge that shows visitors",
+  "ring chart with value inside",
+  "multi ring dashboard widget"
+ ],
+ "resembles": [],
+ "use_when": "A single headline figure on a dashboard where a ring or gauge shows proportion instantly.",
+ "avoid_when": "Comparing many categories precisely: thin rings and tiny inner labels read worse than bars or a table.",
+ "suits": [
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "chart",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Each variant writes its data, centre total and footer copy into the file, so changes need a source edit; colours come from the shared chart CSS variables.",
+ "technique": [
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A few SVG arcs and labels per card; only a hover triggers a redraw.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Tooltips need a mouse; keyboard users cannot inspect the values and no text alternative lists the numbers."
+ },
+ "props": [],
+ "issues": [
+  "Browser names inside the thin rings are very small and low contrast on the dark card."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy default chart cards; the dense label ring and small grey text are unremarkable.",
+ "unsure": [
+  "traits.theme",
+  "a11y.labels"
+ ],
+ "title": "Radial Chart",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e749234f3c03f28d",
+  "film_hash": "80ee962e6346b6d1",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

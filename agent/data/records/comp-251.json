@@ -1,0 +1,111 @@
+{
+ "name": "comp-251",
+ "frames": {
+  "code": "1837",
+  "best": 3,
+  "best_why": "Both handles are visible with the left one ringed and dragged to 44, and the output reads 44 - 75.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Two white knobs set a range while the chosen pair of numbers updates above.",
+ "summary": "A dual-handle range slider. A label sits on the left and a live pair of values on the right, with the selected span drawn as a bright band between the two knobs.",
+ "title_fix": null,
+ "appearance": "A bold label on the left and a pair of numbers on the right, both on one line. Below runs a thin grey track with two round white knobs and a solid white bar filling the space between them.",
+ "behaviour": "Dragging either knob shifts that end of the range and repaints the filled band, and the two numbers beside the label change as the knobs move. The active knob picks up a soft halo while held.",
+ "parts": [
+  "label",
+  "output numbers",
+  "track",
+  "filled band",
+  "left knob",
+  "right knob"
+ ],
+ "demo_content": "Label reads \"Dual range slider with output\"; the pair starts at 25 - 75 and is dragged around on a 0 to 100 scale.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "set a minimum and maximum with two handles",
+  "range picker for prices or ages",
+  "slider showing the chosen numbers beside it",
+  "drag two knobs to select a span",
+  "filter control for a lower and upper bound",
+  "two ended slider with live readout",
+  "select a start and end value on one track",
+  "paired handles on a horizontal bar"
+ ],
+ "resembles": [],
+ "use_when": "A filter or setting needs a lower and an upper bound, and the numbers should stay visible.",
+ "avoid_when": "Typing an exact figure matters: there are no number inputs here, only drag handles.",
+ "suits": [
+  "any"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The label text and the starting pair of numbers are written in the source. The output format and the drag behaviour need a code edit to change.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Two handles, one track and a text readout; no animation runs until it is dragged.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The slider has an aria-label, but the numeric output is separate text and is not announced when the handles move."
+ },
+ "props": [],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "Tidy and readable, but a bare standard slider with no extra refinement.",
+ "unsure": [],
+ "title": "Dual Range With Output",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8f3431c8ef540cb3",
+  "film_hash": "8c47d9066a07aee6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,167 @@
+{
+ "name": "link-preview",
+ "frames": {
+  "code": "4764",
+  "best": 3,
+  "best_why": "Fully settled Next.js screenshot card floating above its underlined link.",
+  "usable": [
+   2,
+   3,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.9
+ },
+ "tagline": "Hovering an underlined link floats up a small screenshot of its page.",
+ "summary": "A word inside body copy opens a rounded card showing a screenshot of the page it points to. The card springs up above the link and drifts sideways as the pointer moves.",
+ "title_fix": null,
+ "appearance": "A white rounded card floats above an underlined link, holding a small screenshot of the linked page with a thin light border and soft shadow. It sits over a dark stage with a bold sentence beneath.",
+ "behaviour": "Hovering a link for a moment pops the preview up from below with a spring, and it slides slightly sideways as the pointer crosses the word. It closes after a short delay when the pointer leaves.",
+ "parts": [
+  "trigger link",
+  "preview card",
+  "page screenshot",
+  "caption sentence"
+ ],
+ "demo_content": "Sentence 'Built with Next.js and deployed on Vercel.' with previews of the Next.js and Vercel homepages.",
+ "states": [
+  "hover",
+  "open"
+ ],
+ "kind": "popover",
+ "look": [
+  "light",
+  "rounded",
+  "shadowed",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hover link to show website screenshot",
+  "rich card preview on hover",
+  "tooltip with a site image",
+  "popup preview of a link",
+  "see page before clicking a link",
+  "hover card with page thumbnail",
+  "link that opens a mini screenshot",
+  "wikipedia style page preview"
+ ],
+ "resembles": [
+  "Wikipedia page preview"
+ ],
+ "use_when": "Body copy contains links and a screenshot would help readers decide whether to click.",
+ "avoid_when": "Live screenshots depend on an external API per URL, and the preview is only wired to hover.",
+ "suits": [
+  "blog",
+  "docs",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "tooltip"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the target url, the visible label as children, and a width and height; use isStatic with your own imageSrc or leave it to the live screenshot service. Styling comes through className.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A small hover card with one image and a spring slide.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The preview pops with a spring and no reduced-motion check; both images use generic alt text."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "url",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "isStatic",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "imageSrc",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "125",
+   "required": false
+  },
+  {
+   "name": "quality",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "layout",
+   "type": "string",
+   "default": "\"fixed\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"text-black dark:text-white\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The floating card covers the hint text above the sentence when it opens."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp card and smooth spring entrance; the card can overlap nearby copy.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "Link Preview",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c140609b59685342",
+  "film_hash": "430f63d17629e464",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

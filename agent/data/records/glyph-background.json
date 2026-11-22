@@ -1,0 +1,151 @@
+{
+ "name": "glyph-background",
+ "frames": {
+  "code": "9015",
+  "best": 3,
+  "best_why": "A large ring of glowing glyphs and the full centred headline are both clearly visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.9
+ },
+ "tagline": "A field of tiny characters glows and ripples under the cursor.",
+ "summary": "A WebGL background of monospace letters that gather into drifting clouds of light. Moving the pointer leaves a glowing trail, and clicking sends a rounded ring of characters outward.",
+ "title_fix": null,
+ "appearance": "A near-black surface packed with tiny white monospace characters, brighter in soft cloud shapes and in large rings. A centred white headline and a dim paragraph sit over the field.",
+ "behaviour": "Glowing clouds drift slowly and characters cycle randomly. Pointer movement brightens a trail of nearby glyphs, while a click spawns an expanding ring pulse that fades out.",
+ "parts": [
+  "glyph field",
+  "glow cloud",
+  "ring pulse",
+  "cursor trail",
+  "headline",
+  "paragraph"
+ ],
+ "demo_content": "Heading 'Every character, alive' and hint 'Move to leave a trail of light. Click to send a pulse through the field.'",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "textured",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "matrix style letter background",
+  "glyph cloud background",
+  "characters ripple on click",
+  "webgl text particle background",
+  "cursor trail of glowing letters",
+  "monospace letter field",
+  "digital rain hero background",
+  "interactive character wave effect"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero or section wants an ambient field of text that responds to pointer and click.",
+ "avoid_when": "The copy must be perfectly legible; busy glyph clouds sit directly behind the headline.",
+ "suits": [
+  "devtool",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Set glowColor, shapeColor, fontSize and interactive, and pass children for overlaid copy. The glyph set, drift, wave shapes and timings are fixed in the source.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen WebGL fragment shader redrawn every frame over a glyph atlas.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The decorative canvas is aria-hidden; reduced motion stops the loop and the pointer effects."
+ },
+ "props": [
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "shapeColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('relative size-full overflow-hidden', className)}",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The glyph clouds sit behind the headline and reduce its contrast.",
+  "The effect needs WebGL and shows no visible fallback when it is unavailable."
+ ],
+ "polish": 4,
+ "polish_why": "Layered glyph clouds and satisfying ring pulses; busy texture fights the centred copy.",
+ "unsure": [],
+ "title": "Glyph Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "63aa47bbcff7098b",
+  "film_hash": "048146e473f69cfd",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

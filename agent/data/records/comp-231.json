@@ -1,0 +1,119 @@
+{
+ "name": "comp-231",
+ "frames": {
+  "code": "4636",
+  "best": 4,
+  "best_why": "The panel is open with the search box and a long offset-sorted list of timezones in view.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.7
+ },
+ "tagline": "A timezone dropdown with a search box over a long offset list.",
+ "summary": "A dropdown that lists timezones by GMT offset and place, with a search field on top to narrow it. Choosing a row closes the panel and puts that zone into the trigger.",
+ "title_fix": null,
+ "appearance": "A small label sits above a wide rounded trigger reading a GMT offset plus a city, with a chevron at the right. Opened below is a dark panel whose top row is a search field, followed by tightly spaced rows of offset and place names.",
+ "behaviour": "Clicking the trigger opens the panel; typing in the search field filters the rows as you type, and picking one closes the panel and updates the trigger. The clip searches tok and ends on Asia/Tokyo.",
+ "parts": [
+  "field label",
+  "trigger button",
+  "chevron",
+  "search input",
+  "timezone row",
+  "check mark"
+ ],
+ "demo_content": "Timezone select with search; rows like (GMT-11) Pacific/Midway; typed tok narrows to (GMT+9) Asia/Tokyo",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "empty"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pick a timezone from a searchable list",
+  "timezone dropdown with gmt offsets",
+  "search for a city time zone",
+  "select your local time zone",
+  "combobox with a search field",
+  "long list you can type to filter",
+  "world time zone picker",
+  "choose a zone for scheduling"
+ ],
+ "resembles": [
+  "Google Calendar timezone picker"
+ ],
+ "use_when": "When a settings form needs one timezone from the hundreds available and scrolling alone is too slow.",
+ "avoid_when": "Labels are built from today's offset, so a zone's text shifts with daylight saving and cannot be fixed copy.",
+ "suits": [
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The starting zone and the field label are set in the file, while the rows are built from the browser's own timezone list at runtime. The search matching and offset formatting also live there.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "Builds, formats and sorts a label for every timezone in the browser list on mount.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger is a labelled combobox and typing filters the rows; the popover's open and close animation has no reduced-motion guard."
+ },
+ "props": [],
+ "issues": [
+  "Each zone is labelled with today's offset, so the same place can change label across daylight saving.",
+  "The panel is narrow and tall, showing only about eight zones before a long scroll."
+ ],
+ "polish": 3,
+ "polish_why": "A solid searchable list with real data; plain styling and a very long scroll.",
+ "unsure": [
+  "content_from"
+ ],
+ "title": "Searchable Timezone Select",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5c254d14da1a2f9e",
+  "film_hash": "33e1e480588efa60",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

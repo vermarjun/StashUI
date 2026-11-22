@@ -1,0 +1,68 @@
+{
+  "name": "scroll-images-reveal-003",
+  "frames": {
+    "code": null,
+    "best": null,
+    "best_why": "",
+    "usable": [],
+    "render": "blank",
+    "render_note": "no image",
+    "shows_interaction": "no"
+  },
+  "tagline": "Full-height photo cards pile up as you scroll, then shrink and spin away.",
+  "summary": "A scrolling stack of sticky, nearly full-height image cards. Each card pins near the top, and as you scroll past it rotates, shrinks and fades out while the next one takes over.",
+  "title_fix": null,
+  "appearance": "A column of wide rounded rectangles, each almost a full screen tall and filled edge to edge with a photo cropped to cover. They sit down the page with large gaps, and a small uppercase hint for scrolling sits near the top.",
+  "behaviour": "Each card sticks below the top edge once it reaches it. Scrolling further rotates and scales it toward nothing while the photo inside counter-rotates, and the following card comes up underneath.",
+  "parts": ["image card", "photo", "scroll hint"],
+  "demo_content": "Seven Unsplash landscape photos and the hint 'scroll down to see effect'.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": ["rounded", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "sticky image cards that stack on scroll",
+    "photos that shrink and rotate away",
+    "scroll driven gallery section",
+    "full screen images pile up",
+    "lenis smooth scroll showcase",
+    "parallax image stack",
+    "cards that pin while scrolling",
+    "spinning photo cards transition"
+  ],
+  "resembles": [],
+  "use_when": "A long visual story or portfolio needs full-height photos that hold attention as the page scrolls.",
+  "avoid_when": "Each card is about 80vh tall and the stack runs for many screens, so it is unsuited to short pages.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["hero", "media"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Only the images array is a prop; card height, scroll distance, margin and the spin and shrink mapping are constants in the file.",
+  "technique": ["motion-library"],
+  "weight": "moderate",
+  "weight_why": "Seven sticky cards track scroll with motion values under a smooth-scroll wrapper.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "There is no reduced-motion handling, and each image's alt text is its raw URL, so photos have no useful description."
+  },
+  "props": [
+    {"name": "images", "type": "string[]", "default": "DEFAULT_IMAGES", "required": false}
+  ],
+  "issues": [
+    "No reduced-motion path: the shrink-and-spin scroll effect runs regardless of the user preference.",
+    "Image alt text is the raw URL, which tells screen reader users nothing about the photo."
+  ],
+  "polish": 3,
+  "polish_why": "No frames to judge; the code is a tidy, conventional sticky-stack effect.",
+  "unsure": ["appearance", "look", "polish", "best_why"]
+}

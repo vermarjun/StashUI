@@ -1,0 +1,126 @@
+{
+ "name": "comp-455",
+ "frames": {
+  "code": "1631",
+  "best": 1,
+  "best_why": "Both ghost buttons and all four invoice rows are fully visible with the cursor away.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.7
+ },
+ "tagline": "Bare Previous and Next links at a card footer, their arrows nudging on hover.",
+ "summary": "A minimum pagination footer with a ghost Previous on the left and Next on the right; hovering slides the small arrow a touch outward and no button gains a fill.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holds four thin invoice rows split by hairlines; beneath them a footer row sets a background-free Previous with a left arrow at the left edge and Next with a right arrow at the right edge.",
+ "behaviour": "Hovering Previous nudges its left arrow slightly left and hovering Next nudges its right arrow slightly right, while the rows and card stay still. The buttons never take a filled background.",
+ "parts": [
+  "card",
+  "invoice row",
+  "previous button",
+  "left arrow",
+  "next button",
+  "right arrow"
+ ],
+ "demo_content": "Invoice rows INV-2031 to INV-2034 for Acme Corp, Globex, Initech and Umbrella with amounts and statuses.",
+ "states": [
+  "hover",
+  "focus",
+  "disabled"
+ ],
+ "kind": "pagination",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "monochrome"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "previous and next page links",
+  "minimal pager with arrows",
+  "next button on the right of a table",
+  "go to the next page of invoices",
+  "borderless pagination controls",
+  "arrow buttons without a background",
+  "page back and forward at the bottom",
+  "simple footer navigation for a list"
+ ],
+ "resembles": [],
+ "use_when": "A light pagination footer under a table where numbered pages would add clutter.",
+ "avoid_when": "When people need to jump far: only back and forward exist, with no page numbers.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "data-table",
+  "footer"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass currentPage and totalPages to drive the labels and disabled state; the arrow nudge, ghost styling and spacing are fixed in the classes.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Two ghost buttons with a tiny transform; nothing loops or runs heavy work.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Buttons have clear text and an aria-disabled state, but the arrow nudge has no reduced-motion alternative."
+ },
+ "props": [
+  {
+   "name": "currentPage",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "totalPages",
+   "type": "number",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Neither button has an onClick handler, so the demo cannot actually change page."
+ ],
+ "polish": 3,
+ "polish_why": "Restrained ghost pagination with a neat arrow nudge; a very familiar pattern.",
+ "unsure": [],
+ "title": "Ghost Arrow Pagination",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "dd1b4dca4c8bb0b8",
+  "film_hash": "87647ace6f996c1a",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

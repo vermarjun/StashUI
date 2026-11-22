@@ -1,0 +1,180 @@
+{
+ "name": "components-backgrounds-gravity-stars",
+ "frames": {
+  "code": "6321",
+  "best": 5,
+  "best_why": "Stars bunch densely around the cursor under the clear heading, showing the gravity pull.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "Stars drift across black and fall toward your cursor.",
+ "summary": "Hundreds of small white stars float slowly across a black sky. When the pointer enters, nearby stars are pulled toward it, brighten and leave a glowing clump that disperses again.",
+ "title_fix": null,
+ "appearance": "A black field scattered with tiny white dots of slightly different sizes, a few with a soft glow. They are spread evenly except where the pointer is, where they bunch into a loose bright clump. A big white heading and one line of grey subtext sit centred.",
+ "behaviour": "The stars wander slowly in random directions and wrap around the edges. Near the pointer they are drawn inward and brighten, trailing the cursor, then spread back out and dim once it moves on.",
+ "parts": [
+  "white stars",
+  "glow",
+  "star cluster",
+  "heading"
+ ],
+ "demo_content": "A heading reading Gravity Stars and the line Move your cursor and the stars fall toward it.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "glow"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "stars that follow the mouse",
+  "particle starfield background",
+  "dots attracted to cursor",
+  "space stars hero backdrop",
+  "interactive gravity particles",
+  "twinkling starry background animation",
+  "white dots on black background",
+  "mouse gravity particle effect"
+ ],
+ "resembles": [],
+ "use_when": "A space, AI or product hero that wants a starry backdrop with a small pointer-driven surprise.",
+ "avoid_when": "Runs a full-frame canvas loop and needs a sized parent; the pointer gravity gives keyboard users nothing.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Set the star count, size, opacity, glow, movement speed, pointer influence, attract or repel and collision mode through props; the physics constants sit in the source.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A requestAnimationFrame canvas moves and redraws every star each frame with glow shadows.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The canvas has no accessible label and the pointer gravity never runs for keyboard users; the loop has no reduced-motion pause."
+ },
+ "props": [
+  {
+   "name": "starsCount",
+   "type": "number",
+   "default": "75",
+   "required": false
+  },
+  {
+   "name": "starsSize",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "starsOpacity",
+   "type": "number",
+   "default": "0.75",
+   "required": false
+  },
+  {
+   "name": "glowIntensity",
+   "type": "number",
+   "default": "15",
+   "required": false
+  },
+  {
+   "name": "glowAnimation",
+   "type": "\"instant\" | \"ease\" | \"spring\"",
+   "default": "'ease'",
+   "required": false
+  },
+  {
+   "name": "movementSpeed",
+   "type": "number",
+   "default": "0.3",
+   "required": false
+  },
+  {
+   "name": "mouseInfluence",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "mouseGravity",
+   "type": "\"attract\" | \"repel\"",
+   "default": "'attract'",
+   "required": false
+  },
+  {
+   "name": "gravityStrength",
+   "type": "number",
+   "default": "75",
+   "required": false
+  },
+  {
+   "name": "starsInteraction",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "starsInteractionType",
+   "type": "\"bounce\" | \"merge\"",
+   "default": "'bounce'",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn('relative size-full overflow-hidden', className)}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Clean starfield with a satisfying pull toward the cursor; the stars are small and low contrast.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Gravity Stars Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "85f2cd4d6c4ce40b",
+  "film_hash": "008f7119c5537b24",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

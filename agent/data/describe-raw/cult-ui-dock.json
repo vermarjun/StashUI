@@ -1,0 +1,72 @@
+{
+  "name": "cult-ui-dock",
+  "frames": {
+    "code": "1320",
+    "best": 2,
+    "best_why": "The hovered mountain icon is magnified and lifted above the bar while the rest sit back.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "App icons in a dark dock swell as the cursor passes over them.",
+  "summary": "A macOS-style dock of round image icons that grow toward the pointer with a spring, with a draggable divider splitting the row.",
+  "title_fix": null,
+  "appearance": "A slim dark translucent bar with softly rounded corners floats over black, holding six small circular photo icons and a thin vertical divider. The hovered icon swells to twice its neighbours' size and lifts above the bar.",
+  "behaviour": "Moving the pointer across the bar enlarges the nearest icon with a spring while the others settle back; clicking an icon makes it bob and shows a small dot beneath it.",
+  "parts": ["dock bar", "round app icons", "divider", "indicator dot"],
+  "demo_content": "Six round Unsplash photos: mountains, a pug, palms, a waterfall, a campus and a rose.",
+  "states": ["hover", "active"],
+  "kind": "dock",
+  "look": ["dark", "rounded", "glass", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "mac style app dock with zoom",
+    "icons that grow when the mouse passes",
+    "bottom dock with magnifying hover",
+    "app launcher bar with round icons",
+    "dock that enlarges icons near cursor",
+    "desktop style shortcut bar for a website",
+    "hover magnification toolbar",
+    "photo icons in a floating tray"
+  ],
+  "resembles": ["macOS Dock"],
+  "use_when": "You want a playful app launcher or shortcut tray that magnifies the item under the pointer.",
+  "avoid_when": "The bar sits fixed at three-quarters width and resting icons are small targets on touch.",
+  "suits": ["portfolio", "saas"],
+  "slot_hints": ["nav", "decoration"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "image"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "children",
+  "customise": "Compose DockCard and DockCardInner children with an image source and id; width, spring constants and the dock position are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Six small images and pointer-driven springs; idle when the pointer is away.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Icon buttons use empty alt text and no labels, so screen readers cannot tell the apps apart; magnification is pointer-only."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "id", "type": "string", "default": null, "required": true},
+    {"name": "src", "type": "string", "default": null, "required": true}
+  ],
+  "issues": [
+    "Icons have empty alt text and the buttons have no labels, so their names are lost.",
+    "Magnification responds only to the mouse, not to keyboard focus.",
+    "Resting icons are small touch targets."
+  ],
+  "polish": 4,
+  "polish_why": "Magnification feels right and the bar is tidy; unlabeled icons and tiny touch targets are gaps.",
+  "unsure": []
+}

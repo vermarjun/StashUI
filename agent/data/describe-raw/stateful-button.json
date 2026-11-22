@@ -1,0 +1,69 @@
+{
+  "name": "stateful-button",
+  "frames": {
+    "code": "7030",
+    "best": 3,
+    "best_why": "The button shows a white spinner beside Submit inside its hover ring, capturing the busy state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A green pill that swaps in a spinner, then a tick, after a click.",
+  "summary": "A rounded green submit button that spins up a loader while its click handler runs, then flashes a circled tick before settling back to its normal label.",
+  "title_fix": null,
+  "appearance": "A wide bright-green pill with bold white 'Submit' centred on near-black. On hover a second green ring appears around it; while busy a white spinner sits just before the words.",
+  "behaviour": "Clicking grows a small spinning arc beside the label, holds the button in place during the async work, then swaps the arc for a circled tick for two seconds before returning to the plain state.",
+  "parts": ["pill button", "label", "hover ring", "spinner", "check icon"],
+  "demo_content": "The button is labelled 'Submit' and fakes a one and a half second save.",
+  "states": ["hover", "loading", "success"],
+  "kind": "button",
+  "look": ["colorful", "rounded", "minimal", "bold"],
+  "tone": "minimal",
+  "search_phrases": [
+    "submit button with a loading spinner",
+    "button that shows a tick when done",
+    "form button with progress state",
+    "green rounded action button",
+    "async button with success check",
+    "save button that spins then confirms",
+    "button feedback after clicking",
+    "one click submit with loading"
+  ],
+  "resembles": [],
+  "use_when": "A form submit or save action needs to show progress and confirm success in the same spot.",
+  "avoid_when": "The green fill and two-second tick are fixed, so it takes a source edit to match another palette.",
+  "suits": ["saas", "fintech", "devtool"],
+  "slot_hints": ["form-submit", "primary-cta"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "The label comes as children and button attributes pass through, with className for size and colour; loader timing and the two-second success hold are in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One button with short icon animations and a spinner only while busy.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The busy and success states are not announced; only the icons change, with no aria-busy or live region."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "onClick", "type": "function", "default": null, "required": false}
+  ],
+  "issues": [
+    "The success tick is faint white-on-green and easy to miss without watching the click."
+  ],
+  "polish": 3,
+  "polish_why": "Clean, obvious states; the success tick is low contrast and the demo is one lonely button.",
+  "unsure": ["responsive"]
+}

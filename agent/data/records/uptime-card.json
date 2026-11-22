@@ -1,0 +1,154 @@
+{
+ "name": "uptime-card",
+ "frames": {
+  "code": "3332",
+  "best": 6,
+  "best_why": "A day is pinned and its full incident log is open below the bars, naming the outage and all its updates.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "Rows of green day bars swell under the pointer and open a day's incidents.",
+ "summary": "A status-page card listing services, each with ninety days of coloured uptime bars and a percentage. Hovering swells the bars around the cursor and names the day, and clicking pins that day to slide open its incident timeline.",
+ "title_fix": null,
+ "appearance": "A rounded dark card with a small title and a green tick line reading all systems operational. Below, four labelled rows of thin vertical bars, mostly green with a few amber and red ones, each row ending in an uptime percentage.",
+ "behaviour": "Moving across the bars widens the days under the pointer and dims the rest while the line above names the date and any incident. Clicking pins that day and slides open a log of each incident update; Escape or the close button clears it.",
+ "parts": [
+  "title",
+  "status line",
+  "date summary",
+  "service label",
+  "uptime bars",
+  "percentage",
+  "incident log",
+  "close button"
+ ],
+ "demo_content": "Services API, Dashboard, Webhooks and Database with dated incidents; the card title reads Platform status.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "selected",
+  "expanded"
+ ],
+ "kind": "stat-card",
+ "look": [
+  "dark",
+  "minimal",
+  "colorful",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "status page uptime bars",
+  "ninety day service health history",
+  "green and red day squares",
+  "incident log for each service",
+  "saas reliability dashboard card",
+  "bars that expand on hover",
+  "website status widget for homepage",
+  "downtime history timeline"
+ ],
+ "resembles": [
+  "GitHub status page",
+  "Atlassian status page"
+ ],
+ "use_when": "A product page or dashboard should show recent reliability and let people inspect specific bad days.",
+ "avoid_when": "Ninety tiny bars per row need width and are hard to hit on touch; all incident data must be supplied by you.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass a services array with per-day incidents and missing days, plus title, day count and end date; bar colours and the swell constants need a source edit.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Animates flex-grow on a grid of small bars only while swelling, then idles.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Arrow keys, focus ring and live date text are all handled; individual bars carry no labels beyond the day summary."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"System status\"",
+   "required": false
+  },
+  {
+   "name": "services",
+   "type": "UptimeService[]",
+   "default": "DEFAULT_SERVICES",
+   "required": false
+  },
+  {
+   "name": "days",
+   "type": "number",
+   "default": "90",
+   "required": false
+  },
+  {
+   "name": "endDate",
+   "type": "string",
+   "default": "\"2026-10-14\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The day bars are only a few pixels wide, so touch users cannot reliably pick one."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing status widget with a satisfying swell and a tidy incident log; dense small text.",
+ "unsure": [],
+ "title": "Uptime Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "81480eb4cd8a92c8",
+  "film_hash": "31ce9d5393c8f4e7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

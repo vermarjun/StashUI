@@ -1,0 +1,78 @@
+{
+  "name": "status-mark",
+  "frames": {
+    "code": "1496",
+    "best": 6,
+    "best_why": "Four rows carry green ticks and the last shows a running arc, covering every status at once.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Task rows whose status icons go from dashed ring to progress arc to green tick.",
+  "summary": "A compact agent-run checklist where each task row carries a small status glyph: a dashed ring while pending, a filling arc while running, and a green tick when done.",
+  "title_fix": null,
+  "appearance": "A dark rounded card headed AGENT RUN stacks five task rows. Each row starts with a small circular glyph and grey text; completed rows show a solid green circle with a tick and lighter text.",
+  "behaviour": "As each task moves from pending to running its dashed ring thickens into a rotating progress arc, then closes into a filled green circle whose tick is drawn on.",
+  "parts": ["card heading", "status glyph", "progress arc", "check mark", "task label"],
+  "demo_content": "Agent run tasks: Read the repository, Plan the migration, Update 14 call sites, Run the test suite, Open a pull request.",
+  "states": ["loading", "success", "error"],
+  "kind": "loader",
+  "look": ["dark", "minimal", "monochrome", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "task status icon that morphs to a check",
+    "agent progress checklist",
+    "ring that fills into a tick",
+    "ai task list with status dots",
+    "animated todo status indicators",
+    "spinner that becomes a checkmark",
+    "run log with progress rings",
+    "small status glyph for rows"
+  ],
+  "resembles": [],
+  "use_when": "A task list or agent run log needs a tiny, legible status per row that changes over time.",
+  "avoid_when": "The glyph is only 20px, so it needs a text label beside it; alone its meaning is not obvious.",
+  "suits": ["ai-chat", "devtool", "saas"],
+  "slot_hints": ["list-item", "loading", "badge"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Status, progress, label, four colours, size, stroke width, dash count, spin speed, arc length and draw time are props.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A tiny SVG with motion values; the spin runs only while a task is running.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Each glyph exposes a spoken status through an image role or a hidden prefix, and the spin falls back under reduced motion."
+  },
+  "props": [
+    {"name": "status", "type": "StatusMarkStatus", "default": "\"pending\"", "required": false},
+    {"name": "progress", "type": "number", "default": null, "required": false},
+    {"name": "label", "type": "ReactNode", "default": null, "required": false},
+    {"name": "color", "type": "string", "default": "\"currentColor\"", "required": false},
+    {"name": "doneColor", "type": "string", "default": "\"#22c55e\"", "required": false},
+    {"name": "size", "type": "number", "default": "20", "required": false},
+    {"name": "strokeWidth", "type": "number", "default": "2", "required": false},
+    {"name": "spinDuration", "type": "number", "default": "1100", "required": false},
+    {"name": "dashes", "type": "number", "default": "8", "required": false},
+    {"name": "strike", "type": "boolean", "default": "true", "required": false},
+    {"name": "fontSize", "type": "number", "default": "14", "required": false},
+    {"name": "errorColor", "type": "string", "default": "\"#ef4444\"", "required": false}
+  ],
+  "issues": [
+    "The pending dashed ring and running arc look similar at 20px, so the difference is easy to miss."
+  ],
+  "polish": 4,
+  "polish_why": "The morph from dashed ring to arc to tick is precise and reads well in a dense list.",
+  "unsure": []
+}

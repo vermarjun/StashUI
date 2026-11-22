@@ -1,0 +1,117 @@
+{
+ "name": "comp-233",
+ "frames": {
+  "code": "9602",
+  "best": 3,
+  "best_why": "The panel is open with the search field and nine icon-and-count rows, no cursor inside the list.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.5
+ },
+ "tagline": "A service picker whose rows pair a small icon with a running count.",
+ "summary": "A searchable category picker where every row shows an icon, a service name and a right-aligned total. Choosing a row puts its icon and name into the closed trigger.",
+ "title_fix": null,
+ "appearance": "A small label sits above a wide rounded trigger reading Select service category with a chevron. Opened, a compact dark panel holds a search field and tight rows of a tiny grey icon, a category name and a far-right number.",
+ "behaviour": "Clicking the trigger opens the panel; typing filters the rows by name, and picking one closes it and shows that icon plus label in the trigger. The clip filters to datab and settles on Database Systems.",
+ "parts": [
+  "field label",
+  "trigger button",
+  "chevron",
+  "search input",
+  "category icon",
+  "category name",
+  "count"
+ ],
+ "demo_content": "Analytics Platform 2,451; AI Services 1,832; Database Systems 1,654; Compute Resources 943 and similar categories",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "empty"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pick a service category from a list",
+  "dropdown with icons and counts",
+  "searchable list showing totals",
+  "choose a resource type with numbers",
+  "combobox with icons beside names",
+  "filter categories by typing",
+  "service catalogue picker",
+  "list of categories with item counts"
+ ],
+ "resembles": [],
+ "use_when": "When categories are many and each carries a count that helps people choose by volume.",
+ "avoid_when": "The counts are fixed numbers in the file, so they drift from any real total unless wired to data.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "The ten categories, their icons and counts form an array in the file; edit or replace it. The field label, search placeholder and trigger width are written in the same file.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Ten short rows with inline icons in a popup and one brief open animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger is a labelled combobox and filtering works from the keyboard; each count is plain text in the row, read after the category name."
+ },
+ "props": [],
+ "issues": [
+  "The counts look like live totals but are fixed numbers written in the file.",
+  "The field label is the demo phrase Options with icon and number, not a real field name."
+ ],
+ "polish": 3,
+ "polish_why": "Even rows and useful counts; plain styling and nothing marks the numbers as static.",
+ "unsure": [],
+ "title": "Icon Count Combobox",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "3649e7665297e2fe",
+  "film_hash": "54aad9bb0c2bc4eb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

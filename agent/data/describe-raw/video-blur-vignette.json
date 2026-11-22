@@ -1,0 +1,67 @@
+{
+  "name": "video-blur-vignette",
+  "frames": {
+    "code": "1597",
+    "best": 1,
+    "best_why": "Frame 1 shows the forest clip clearly framed with the soft edges visible and no cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A looping forest clip plays inside a frame with softly blurred edges.",
+  "summary": "An autoplaying, muted forest video fills a rounded frame whose edges blur and fade into the page. The centre stays sharp, and the footage zooms slightly when hovered.",
+  "title_fix": null,
+  "appearance": "A wide rounded rectangle showing sunlit tall trees, a mossy trunk at the left and green ferns below, spanning nearly the full width on a black page. The outer band of the footage is soft and slightly dimmed, so the frame melts into the background.",
+  "behaviour": "The muted forest clip loops on its own from the moment it loads. Hovering zooms the footage in a little; otherwise the only change is the drifting sunlight and foliage as the video plays.",
+  "parts": ["video frame", "video image", "blurred edge band", "rounded corner"],
+  "demo_content": "A sunlit pine forest with a mossy foreground trunk and ferns on a bright day.",
+  "states": ["hover"],
+  "kind": "image-effect",
+  "look": ["dark", "rounded", "organic", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "video with blurred edges",
+    "soft frame around a playing clip",
+    "autoplay video with faded border",
+    "rounded video that fades at borders",
+    "looping background clip with soft border",
+    "video card with zoom on hover",
+    "edge dissolve around video",
+    "framed motion footage for a hero"
+  ],
+  "resembles": [],
+  "use_when": "You want looping footage to blend into a dark page instead of sitting in a hard-edged box.",
+  "avoid_when": "It relies on a remote MP4, so the frame stays empty if that host is blocked or offline.",
+  "suits": ["portfolio", "marketing", "saas"],
+  "slot_hints": ["media", "hero"],
+  "traits": {
+    "trigger": ["always", "hover"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The video source URL and its classes are written into the component, so swap the MP4 there. Radius, inset, fade length and blur come from the vignette wrapper props.",
+  "technique": ["css-transition", "static"],
+  "weight": "moderate",
+  "weight_why": "Backdrop blur is recomputed over a looping video on every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The clip loops with no pause control and no captions, and it ignores reduced-motion settings."
+  },
+  "props": [],
+  "issues": [
+    "The clip autoplays and loops with no pause control for the viewer.",
+    "The video loads from a remote URL, so the frame stays empty if that host is blocked.",
+    "The frames never show the hover zoom that the code adds."
+  ],
+  "polish": 3,
+  "polish_why": "Pleasant soft-edged footage; it is a plain framed video with little beyond the blur.",
+  "unsure": []
+}

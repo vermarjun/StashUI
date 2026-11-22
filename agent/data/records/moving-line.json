@@ -1,0 +1,118 @@
+{
+ "name": "moving-line",
+ "frames": {
+  "code": "9577",
+  "best": 1,
+  "best_why": "Frame 1 shows the rule at its longest beside the opening chapter; later frames catch it mid-retraction.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.7
+ },
+ "tagline": "A hairline rule down the page shortens as the reader scrolls.",
+ "summary": "A vertical rule sits left of a column of story chapters and retracts from the top as the page scrolls, its last drawn point following the reader. The chapters carry dates, headings, copy and paired photos.",
+ "title_fix": null,
+ "appearance": "A dark page column of travel chapters, each with a small grey date, a bold heading, a paragraph and two wide landscape photos side by side. A pale hairline rule runs down the left edge of the column, faint at the top and a little brighter toward the bottom.",
+ "behaviour": "As the reader scrolls, the vertical line shortens from its top end, the remaining length tracking page progress and settling with a spring when scrolling stops. The chapter content scrolls past as normal.",
+ "parts": [
+  "vertical rule",
+  "chapter",
+  "date label",
+  "heading",
+  "paragraph",
+  "photo pair"
+ ],
+ "demo_content": "Three chapters headed Into the clouds, Ridge walking and The way down, labelled Day 1 to Day 3 with alpine photos.",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "editorial",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "vertical line that shrinks as you scroll",
+  "scroll progress indicator on the left",
+  "timeline rule tied to page position",
+  "story chapter layout with a progress bar",
+  "line that follows scrolling down a page",
+  "reading progress marker for long articles",
+  "thin rule shrinking between photo sections",
+  "animated reading guide beside content"
+ ],
+ "resembles": [],
+ "use_when": "A long photo story or article wants a quiet marker of how far the reader has travelled.",
+ "avoid_when": "Content is not roughly 1567px tall, or you need progress that reads at a glance.",
+ "suits": [
+  "portfolio",
+  "blog",
+  "marketing"
+ ],
+ "slot_hints": [
+  "body-text",
+  "divider",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Chapters go in as children. The rule's height, the spring stiffness and the two-stop gradient are fixed in the source and need editing.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A single SVG path whose length one scroll-linked spring updates.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative rule with no reduced-motion check; the demo's photos all use empty alt text."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The rule is hard-wired to 1567px, so it drifts out of step with content of any other length.",
+  "The rule is so faint against the dark page that progress is easy to miss."
+ ],
+ "polish": 3,
+ "polish_why": "Clean editorial layout and photos, but the progress rule is barely visible and tied to one height.",
+ "unsure": [],
+ "title": "Scroll Progress Line",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9e27f4d54d627a9f",
+  "film_hash": "d6b6d49a3ee055fe",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

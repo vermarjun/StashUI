@@ -1,0 +1,102 @@
+{
+  "name": "comp-57",
+  "frames": {
+    "code": "7190",
+    "best": 5,
+    "best_why": "Three tag chips fill the focused strip beside the Add a tag placeholder, showing the full pattern.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Type a word, press enter, and it becomes a removable chip inside the field.",
+  "summary": "A wide single-line field that holds several small outlined labels, each with its own cross, alongside a muted placeholder for adding another. Typing and confirming grows the row of chips.",
+  "title_fix": null,
+  "appearance": "A long rounded strip with a thin border sits on a dark stage, filled left to right by small rounded chips carrying short words and a tiny cross, ending in faint \"Add a tag\" placeholder text. A small label floats above and a dim credit line sits below.",
+  "behaviour": "Typing a word and confirming turns it into a chip that pushes the placeholder to the right; the whole strip gains a ring while focused. Hovering a chip and clicking its cross removes it, and the row reflows.",
+  "parts": [
+    "label",
+    "tag chip",
+    "remove cross",
+    "text entry",
+    "credit line"
+  ],
+  "demo_content": "Label \"Input with inner tags\", tags Red, Design and Motion, placeholder \"Add a tag\", credit \"Built with emblor\".",
+  "states": [
+    "focus",
+    "hover",
+    "active"
+  ],
+  "kind": "input",
+  "look": [
+    "dark",
+    "outlined",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "add multiple tags in one field",
+    "tag chips inside text input",
+    "type and press enter to add tag",
+    "removable keyword chips",
+    "label entry with close buttons",
+    "multi value field for categories",
+    "recipient chips style text box",
+    "filter by adding topics"
+  ],
+  "resembles": [
+    "Gmail recipient chips"
+  ],
+  "use_when": "People need to attach several short labels, keywords or recipients to one record while keeping them all visible.",
+  "avoid_when": "It pulls in the emblor library, and the starting tag and vendor credit line are baked into the demo file.",
+  "suits": [
+    "saas",
+    "docs"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "keyboard",
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "border"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The wrapper exposes no props; starting tags, placeholder and chip styling are set through TagInput inside the file, so new content means editing it.",
+  "technique": [
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A few chips and one input, with transitions only on hover and focus.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Label and focus ring are wired up, but chip remove buttons depend on the library for names and no reduced-motion check exists."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "A competent stock tag field; plain chips and a vendor credit line keep it ordinary.",
+  "unsure": [
+    "a11y.labels"
+  ]
+}

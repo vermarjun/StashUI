@@ -1,0 +1,73 @@
+{
+  "name": "inspira-lens",
+  "frames": {
+    "code": "6189",
+    "best": 5,
+    "best_why": "Frame 5 shows the circular lens clearly enlarging the peaks against the normal-scale photo.",
+    "usable": [2, 4, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A round magnifier follows the pointer and enlarges part of the photo.",
+  "summary": "A wrapper that adds a circular magnifying lens over its child. Moving the pointer drags the zoomed circle around; leaving the image makes it fade away.",
+  "title_fix": null,
+  "appearance": "A wide mountain landscape sits inside a rounded rectangle. Under the cursor a circular patch shows the same scene at twice the size, with a soft translucent rim, while the rest stays at normal scale.",
+  "behaviour": "Moving the pointer across the image carries the magnified circle with it. It fades and shrinks in on entry, then fades out when the pointer leaves the frame.",
+  "parts": ["photo", "lens circle", "zoomed image", "translucent rim"],
+  "demo_content": "A mountain range above a sea of clouds at sunrise.",
+  "states": ["hover"],
+  "kind": "image-effect",
+  "look": ["rounded", "colorful", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "magnifying glass over image",
+    "zoom lens on hover",
+    "photo loupe effect",
+    "cursor magnifier for pictures",
+    "circle that enlarges image detail",
+    "product image zoom lens",
+    "hover to magnify photo",
+    "interactive image loupe"
+  ],
+  "resembles": [],
+  "use_when": "Product, map or artwork detail needs a closer look without opening a lightbox.",
+  "avoid_when": "It duplicates the child content for the zoom, so it suits one image, not heavy interactive children.",
+  "suits": ["ecommerce", "portfolio", "marketing"],
+  "slot_hints": ["media", "feature-card", "hero"],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "zoomFactor, lensSize and position are props, plus isStatic, hovering and onHoverUpdate to drive it externally; children supply the content.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One extra scaled copy of the children and a short enter animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The magnifier is pointer-only, so keyboard users get no zoom, and the lens ignores reduced-motion."
+  },
+  "props": [
+    {"name": "zoomFactor", "type": "number", "default": "1.5", "required": false},
+    {"name": "lensSize", "type": "number", "default": "170", "required": false},
+    {"name": "position", "type": "{ x: number; y: number }", "default": "{ x: 200, y: 150 }", "required": false},
+    {"name": "isStatic", "type": "boolean", "default": "false", "required": false},
+    {"name": "hovering", "type": "boolean", "default": null, "required": false},
+    {"name": "onHoverUpdate", "type": "(hovering: boolean) => void", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true}
+  ],
+  "issues": [
+    "Frames 1, 3 and 6 show no lens at all, so the effect appears in only half the clip."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing loupe with a smooth fade; the effect is absent in half the frames.",
+  "unsure": ["responsive", "a11y.keyboard"]
+}

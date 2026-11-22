@@ -1,0 +1,138 @@
+{
+ "name": "ai-task-list",
+ "frames": {
+  "code": "2801",
+  "best": 5,
+  "best_why": "Shows a mix of green-checked steps, the moving running underline and pending rows at 5/7.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.5
+ },
+ "tagline": "A live plan checklist that ticks off steps as an agent works through them.",
+ "summary": "A bordered panel headed Plan lists nested task rows with square checkboxes, and a count of finished steps sits at the top right. A green check draws in as each step completes while a moving underline marks the one still running.",
+ "title_fix": null,
+ "appearance": "A dark rounded panel headed Plan with a small done count on the right, listing nested rows of a 14px square checkbox, a task label and an optional right-aligned note such as 3 jobs. Completed rows carry a green box and check and sit slightly dimmed.",
+ "behaviour": "As a step finishes its box fills and a green check draws in, the row dims and nudges down a pixel, and the header count rises. The active row carries a thin glowing underline sweeping left to right on a loop; with every step done nothing is running.",
+ "parts": [
+  "plan heading",
+  "done count",
+  "checkbox",
+  "task label",
+  "note",
+  "nested row",
+  "running underline"
+ ],
+ "demo_content": "An agent fixing a flaky checkout test: read CI logs, reproduce, patch a race, run the suite 20x.",
+ "states": [
+  "loading",
+  "success",
+  "error"
+ ],
+ "kind": "list",
+ "look": [
+  "flat",
+  "minimal",
+  "dark",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "agent task checklist with progress",
+  "steps that tick off as they finish",
+  "ai plan list with running step",
+  "todo list with animated checkmarks",
+  "nested task list with live underline",
+  "show agent working through steps",
+  "checklist with a done count header",
+  "task progress list for coding assistant"
+ ],
+ "resembles": [],
+ "use_when": "An assistant runs a multi-step job and the user needs to see what is done, what is running and what comes next.",
+ "avoid_when": "Finished rows drop to 65% opacity, so a long fully completed plan becomes faint to read.",
+ "suits": [
+  "devtool",
+  "ai-chat",
+  "saas"
+ ],
+ "slot_hints": [
+  "list-item",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "border",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a tasks array of id, label, status, an optional note and one level of children; the heading label is a prop. Colours, check marks and timing need a source edit.",
+ "technique": [
+  "motion-library",
+  "css-keyframes",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A short list, one CSS-drawn checkmark and a single looping underline; idle once all steps finish.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Status lives only in colour and a drawn check, and the box SVG is aria-hidden, so a screen reader hears labels without pending, running or done."
+ },
+ "props": [
+  {
+   "name": "tasks",
+   "type": "AITask[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "Plan",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"size-3.5\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Finished rows fade to 65% opacity, making a fully completed plan low contrast."
+ ],
+ "polish": 4,
+ "polish_why": "Drawn checks and one travelling underline tell the story clearly; done rows get faint.",
+ "unsure": [
+  "traits.trigger"
+ ],
+ "title": "AI Task List",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "265e39d347c3905e",
+  "film_hash": "78e580278d5306e5",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

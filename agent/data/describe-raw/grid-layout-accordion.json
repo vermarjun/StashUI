@@ -1,0 +1,66 @@
+{
+  "name": "grid-layout-accordion",
+  "frames": {
+    "code": "3968",
+    "best": 3,
+    "best_why": "Frame 3 shows one answer open in each column with the rest closed, so the two-column behaviour reads clearly.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two columns of questions, each opening one answer at a time.",
+  "summary": "An FAQ built as two side-by-side columns of collapsible question rows. Opening a row reveals its answer and closes the other open row in that column, so each side keeps one answer visible.",
+  "title_fix": null,
+  "appearance": "Two narrow columns of dark rounded question bars on a near-black page, each row ending in a small chevron. The open row turns pale grey and its answer text unfolds beneath it; closed rows stay dark with muted white labels.",
+  "behaviour": "Clicking a question expands its answer with a quick height animation and turns the row pale. Only one row stays open per column, so opening another closes the previous one, and the two columns work independently.",
+  "parts": ["section heading", "question row", "chevron", "answer text", "column"],
+  "demo_content": "Six questions about UI components, such as What is a UI component? and UI Component Traits.",
+  "states": ["hover", "open"],
+  "kind": "accordion",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "two column faq layout",
+    "questions that expand side by side",
+    "grid of collapsible answers",
+    "faq list with chevrons",
+    "expand one answer per column",
+    "click a question to reveal answer",
+    "compact faq section",
+    "two columns of questions"
+  ],
+  "resembles": [],
+  "use_when": "You have many short FAQ questions and want them all visible at once without a long single-column scroll.",
+  "avoid_when": "Only one answer stays open per column, so two answers in the same column cannot be compared.",
+  "suits": ["saas", "docs", "marketing"],
+  "slot_hints": ["list-item", "body-text"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Questions, answers and which item starts open are written into the JSX per column; the two-column split is a grid class. Styling comes from the shared accordion pieces.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A dozen text rows with one height transition when a row opens.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Questions look clickable, but the header markup is not shown and no focus styling is visible."
+  },
+  "props": [],
+  "issues": [
+    "The chevron keeps pointing down when a row opens, so the state shows only through the pale fill.",
+    "Frame 5 catches two left-column answers open during a transition, which reads as a glitch."
+  ],
+  "polish": 3,
+  "polish_why": "Clean two-column layout; the flat dark rows and static chevrons keep it plain.",
+  "unsure": ["kind", "technique", "keyboard", "focus_visible"]
+}

@@ -1,0 +1,187 @@
+{
+ "name": "box-carousel",
+ "frames": {
+  "code": "1550",
+  "best": 3,
+  "best_why": "Mid-turn it shows three photo faces at once, making the cube shape unmistakable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.7
+ },
+ "tagline": "A cube of photos spins face by face as you drag or tap.",
+ "summary": "A 3D cube whose faces are photos; buttons, arrow keys or a drag rotate it a quarter turn to reveal the next image.",
+ "title_fix": null,
+ "appearance": "A rectangular photo floats in a dark stage, briefly showing the side faces of a cube as it turns. Two small pill buttons, Prev and Next, sit centred beneath it.",
+ "behaviour": "Pressing Next or Prev, dragging the photo, or using the arrow keys rotates the cube ninety degrees on its vertical axis and snaps to the next picture; a drag springs back to its nearest face.",
+ "parts": [
+  "photo face",
+  "cube edge",
+  "prev button",
+  "next button"
+ ],
+ "demo_content": "Mountain sunrise, a red flower on a blue sky, horses in a field and other stock photos.",
+ "states": [
+  "hover",
+  "active",
+  "dragging",
+  "focus"
+ ],
+ "kind": "carousel",
+ "look": [
+  "dark",
+  "3d",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "3d cube photo carousel",
+  "rotating cube image gallery",
+  "carousel you can drag to spin",
+  "photo slideshow with cube effect",
+  "three dimensional image flipper",
+  "gallery that turns like a box",
+  "drag to rotate image slideshow",
+  "next and previous photo cube"
+ ],
+ "resembles": [],
+ "use_when": "Photos deserve a playful, tactile reveal and the page can spare a square stage.",
+ "avoid_when": "Fixed pixel width and height props mean it will not scale with its container.",
+ "suits": [
+  "portfolio",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "drag",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an items array of image or video sources plus width, height, rotation direction, drag and autoplay settings; the faces' styling needs a source edit.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Only four media faces and motion values; no per-frame canvas or large scene.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Arrow keys rotate it and a live region announces the item, but the focus ring is removed and the describedby target is missing."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "CarouselItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'top' | 'bottom' | 'left' | 'right'",
+   "default": "\"left\"",
+   "required": false
+  },
+  {
+   "name": "perspective",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "autoPlay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoPlayInterval",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "enableDrag",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "dragSensitivity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "onIndexChange",
+   "type": "(index: number) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "ValueAnimationOptions",
+   "default": "{ duration: 1.25, ease: [0.953, 0.001, 0.019, 0.995] }",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Carousel points aria-describedby at an id that is never rendered."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp cube rotation and clean controls; the demo is a bare photo box with plain pills.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Box Carousel",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "867b49eb62583d35",
+  "film_hash": "669f22a2b3f4f398",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-323",
+  "frames": {
+    "code": "8020",
+    "best": 3,
+    "best_why": "Frame 3 shows the whole dialog from title bar to Send feedback with no cursor over it.",
+    "usable": [1, 2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Popup rates setup with nine joined cells from 0 to 8, plus a comment box.",
+  "summary": "A trigger opens a compact dialog with a title strip, a rating question, nine numbered cells from easy to difficult, a free-text box and a full-width Send feedback button.",
+  "title_fix": null,
+  "appearance": "Closed, an outlined Rating button. Open, a dark rounded dialog with a bordered title strip reading Help us improve, a bold two-line question, nine joined square cells numbered 0 to 8, Very easy and Very dificult under the ends, then a labelled textarea and a white full-width Send feedback button.",
+  "behaviour": "Opening fades the dialog over a dimmed page. Hovering lights the border of a rating cell; the clip never commits a choice or text, and Send feedback has no action.",
+  "parts": ["trigger button", "title bar", "question", "rating scale", "scale captions", "feedback textarea", "send button"],
+  "demo_content": "Question asks how hard it was to set up your account; the textarea placeholder asks how coss.com can improve.",
+  "states": ["hover", "focus", "open", "selected"],
+  "kind": "modal",
+  "look": ["dark", "minimal", "rounded", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "rating scale from 0 to 8",
+    "feedback dialog with number scale",
+    "how easy was it survey popup",
+    "customer satisfaction rating modal",
+    "nps style rating input",
+    "score picker with text box",
+    "product feedback form with rating",
+    "nine point rating selector"
+  ],
+  "resembles": [],
+  "use_when": "You want a quick numeric satisfaction score plus a written reason in one dialog.",
+  "avoid_when": "The question and the 0-8 range are fixed, so a different survey needs a source edit.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "background", "border"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The question, scale range, captions and placeholder are hardcoded; the component exposes no props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One dialog with a radio row and a textarea; no animation beyond transitions.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The scale is a real radio group with a legend, but the textarea's label is not bound to it and reduced motion is ignored."
+  },
+  "props": [],
+  "issues": ["The right caption reads Very dificult, which is misspelled.", "Send feedback has no handler, so nothing is submitted."],
+  "polish": 3,
+  "polish_why": "Clear segmented scale and tidy form; a visible caption typo and inert send lower it.",
+  "unsure": ["responsive", "theme"]
+}

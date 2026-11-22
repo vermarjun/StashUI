@@ -1,0 +1,79 @@
+{
+  "name": "primitives-animate-code-block",
+  "frames": {
+    "code": "8534",
+    "best": 6,
+    "best_why": "The whole snippet is written out, showing the finished highlighted code with every line visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Code types itself out inside a dark editor window.",
+  "summary": "A dark code panel with a filename bar where syntax-highlighted code is written out character by character when it scrolls into view, scrolling down as it grows.",
+  "title_fix": null,
+  "appearance": "A dark, rounded editor panel with a header of three grey dots and a small counter.tsx filename. Below it, monospace code appears in syntax colours: purple imports, teal punctuation and olive strings on near-black.",
+  "behaviour": "When the panel enters the viewport the code is typed one character at a time over a few seconds, the viewport scrolling down to follow the newest line. It stops when the whole snippet has been written.",
+  "parts": ["editor window", "title bar", "three dots", "filename", "code area"],
+  "demo_content": "A counter.tsx React example importing useState and rendering a button that counts clicks.",
+  "states": ["loading"],
+  "kind": "code-block",
+  "look": ["dark", "rounded", "minimal", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "code that types itself out",
+    "animated syntax highlighted snippet",
+    "editor window with filename bar",
+    "terminal style code reveal on scroll",
+    "typewriter effect for code",
+    "show code being written character by character",
+    "dark code panel with traffic light dots",
+    "live coding animation for landing page"
+  ],
+  "resembles": [],
+  "use_when": "A docs or marketing page should present a code sample with motion that draws the eye.",
+  "avoid_when": "Typing hides the full snippet for seconds, and the effect needs shiki plus a scroll container to read.",
+  "suits": ["docs", "devtool", "marketing"],
+  "slot_hints": ["body-text", "feature-card"],
+  "traits": {
+    "trigger": ["viewport", "timer"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass code and lang, pick light or dark themes, and set writing, duration, delay and in-view options; the character interval and auto-scroll are built in.",
+  "technique": ["js-animation"],
+  "weight": "moderate",
+  "weight_why": "Shiki re-highlights the snippet on every character while typing, then settles once done.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The changing highlighted markup is noisy for screen readers and no reduced-motion check skips the typing."
+  },
+  "props": [
+    {"name": "code", "type": "string", "default": null, "required": true},
+    {"name": "lang", "type": "string", "default": null, "required": true},
+    {"name": "writing", "type": "boolean", "default": "false", "required": false},
+    {"name": "duration", "type": "number", "default": "5000", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "theme", "type": "light | dark", "default": "light", "required": false},
+    {"name": "themes", "type": "{ light: string; dark: string }", "default": "{ light: 'github-light', dark: 'github-dark' }", "required": false},
+    {"name": "inView", "type": "boolean", "default": "false", "required": false},
+    {"name": "inViewOnce", "type": "boolean", "default": "true", "required": false},
+    {"name": "onDone", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "scrollContainerRef", "type": "RefObject<HTMLElement | null>", "default": null, "required": false}
+  ],
+  "issues": [
+    "Early frames show a mostly empty panel with one line, which looks sparse.",
+    "There is no blinking caret, so it is hard to see where typing is at a glance."
+  ],
+  "polish": 4,
+  "polish_why": "Believable editor chrome and clean syntax colours; long empty stretches while typing.",
+  "unsure": ["states"]
+}

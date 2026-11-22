@@ -1,0 +1,76 @@
+{
+  "name": "scrubber",
+  "frames": {
+    "code": "7803",
+    "best": 3,
+    "best_why": "Frame 3 shows the Radius track filled with its tick marks and 55 readout as the shape rounds.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four labelled tracks you drag to scrub values, with ticks and a live number.",
+  "summary": "A compact stack of horizontal sliders where each label sits inside its track. Dragging along the bar changes the value in steps, with tick marks and a readout, and a preview shape reacts.",
+  "title_fix": "Design Value Scrubber",
+  "appearance": "On a near-black stage a small grey panel titled 'LAYER · HERO SHAPE' stacks four rounded tracks labelled Opacity, Radius, Rotation and Blur. Each track has its label at the left, faint ticks across the middle, a slim vertical thumb and a monospaced number at the right.",
+  "behaviour": "Pressing and dragging along a track moves the thumb and updates the number, snapping to the step, while a gradient square on the left changes corner radius, tilt or blur. Hovering or dragging swells and brightens the thumb.",
+  "parts": ["value track", "track label", "tick marks", "thumb", "value readout", "preview shape", "panel heading"],
+  "demo_content": "Panel 'LAYER · HERO SHAPE' with Opacity, Radius, Rotation and Blur controls, beside a purple-to-orange gradient square.",
+  "states": ["hover", "focus", "active", "dragging"],
+  "kind": "slider",
+  "look": ["dark", "minimal", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "design tool value slider with label inside",
+    "drag a bar to change a number",
+    "slider with tick marks and readout",
+    "figma style scrub input",
+    "adjust opacity and radius controls",
+    "horizontal drag control for settings",
+    "compact panel of sliders",
+    "scrub a value by dragging"
+  ],
+  "resembles": ["Figma property scrubber"],
+  "use_when": "A settings panel needs several numeric values adjusted quickly by dragging, the way design tools treat opacity.",
+  "avoid_when": "Fine control is limited to the step and there is no text entry, so exact values are easiest set with arrow keys.",
+  "suits": ["devtool", "saas", "dashboard"],
+  "slot_hints": ["form-field", "sidebar"],
+  "traits": {
+    "trigger": ["drag", "click", "hover"],
+    "motion": "subtle",
+    "affects": ["fill", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Label, min, max, step, decimals, tick count, controlled value and change callback are props; track height, colours and the thumb spring are fixed in the source.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A few divs and one motion thumb per control; no loop runs at rest.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Keyboard and aria values are handled, but there is no aria-valuetext, so the formatted number is only visible on screen."
+  },
+  "props": [
+    {"name": "label", "type": "string", "default": "\"Value\"", "required": false},
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "defaultValue", "type": "number", "default": "0", "required": false},
+    {"name": "onValueChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "min", "type": "number", "default": "0", "required": false},
+    {"name": "max", "type": "number", "default": "1", "required": false},
+    {"name": "step", "type": "number", "default": "0.01", "required": false},
+    {"name": "decimals", "type": "number", "default": "2", "required": false},
+    {"name": "ticks", "type": "number", "default": "9", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The values sit in small monospaced text on a compact panel, so they are hard to read at a glance."
+  ],
+  "polish": 4,
+  "polish_why": "Coherent design-tool styling and smooth drag feedback; the text is small and the preview is generic.",
+  "unsure": []
+}

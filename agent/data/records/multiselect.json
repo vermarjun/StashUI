@@ -1,0 +1,164 @@
+{
+ "name": "multiselect",
+ "frames": {
+  "code": "2194",
+  "best": 3,
+  "best_why": "Two chips plus a fully open list with the disabled row visible and no cursor over the options.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.4
+ },
+ "tagline": "Type to filter a list and add picks as removable chips.",
+ "summary": "A multi-choice field for picking several values from a searchable list. Chosen items appear as small chips with x buttons inside the input, and an open dropdown lists the remaining choices with a dimmed disabled one.",
+ "title_fix": null,
+ "appearance": "A dark rounded input under a bold label and above a tiny hint, holding small outlined chips with x buttons, a text caret and a clear-all x at the right. An open bordered dropdown beneath lists framework names in light grey, one of them dimmed.",
+ "behaviour": "Focusing the box opens the dropdown; typing filters the list in place, and clicking a name turns it into a removable chip and drops it from the list. A chip's x or Backspace removes it, and the clear-all x empties the field.",
+ "parts": [
+  "label",
+  "input box",
+  "selected chip",
+  "remove button",
+  "clear-all button",
+  "dropdown row"
+ ],
+ "demo_content": "Framework names Next.js, Astro, React, Remix, SvelteKit, Nuxt.js, Vite, Angular and Gatsby.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "disabled",
+  "empty"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "choose several frameworks from a list",
+  "dropdown that adds chips as you pick",
+  "search inside a picker",
+  "tag input with removable items",
+  "type to filter options in a box",
+  "pick more than one option",
+  "combo box with selected tags",
+  "form field that collects multiple values"
+ ],
+ "resembles": [],
+ "use_when": "A field needs several values from a known list, with chips showing what is already chosen.",
+ "avoid_when": "Chips stay inside the field, so many picks wrap and push the open dropdown further down.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an options array, a controlled value and an onChange; flags cover search, pick limits, creatable entries and the clear button, while field and chip classes take styling.",
+ "technique": [
+  "css-transition",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A filtered option list and chips; nothing runs while the field is closed.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Remove and clear buttons carry labels and focus rings show, but the chips and open list have no single announced multi-select name."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "Option[]",
+   "default": "{inputValue}",
+   "required": false
+  },
+  {
+   "name": "onChange",
+   "type": "(options: Option[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultOptions",
+   "type": "Option[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hideClearAllButton",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "hidePlaceholderWhenSelected",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "emptyIndicator",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The dropdown overlaps the helper line that sits directly under the field",
+  "The disabled Angular row is dimmed but otherwise looks the same as a live row",
+  "No frame shows the 'No results found' empty state"
+ ],
+ "polish": 3,
+ "polish_why": "Clear chip workflow, but the dropdown covers the helper line and the rows are tightly packed.",
+ "unsure": [],
+ "title": "Multiselect",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "257d77b8a1c4c72a",
+  "film_hash": "8c34a91794ee92a7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

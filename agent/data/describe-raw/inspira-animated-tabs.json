@@ -1,0 +1,75 @@
+{
+  "name": "inspira-animated-tabs",
+  "frames": {
+    "code": "6820",
+    "best": 5,
+    "best_why": "Frame 5 shows the Home pill seated in the bar with the widest, fully readable Home panel below.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pill highlight slides between tabs while a colour card swaps underneath.",
+  "summary": "A rounded tab bar whose highlight springs from label to label, above a large gradient card that changes colour with the chosen tab. Inactive cards sit stacked behind at reduced size.",
+  "title_fix": null,
+  "appearance": "A pill-shaped dark bar holds three short text labels, one sitting on a white capsule. Below a wide gap, a big rounded gradient card carries an emoji, a bold title and a small subtitle; its colour follows the tab.",
+  "behaviour": "Clicking a label springs the capsule to it and brings that card forward while the others shrink and tuck behind. On pointer enter the stacked cards fan upward by fifty pixels each.",
+  "parts": ["tab bar", "tab label", "active pill", "content card", "icon", "heading"],
+  "demo_content": "Tabs Home, About and Work; panels hold a house, wave or briefcase emoji with a matching heading and sentence.",
+  "states": ["hover", "selected"],
+  "kind": "tabs",
+  "look": ["dark", "rounded", "colorful", "gradient", "pill"],
+  "tone": "playful",
+  "search_phrases": [
+    "tabs where the highlight slides across",
+    "stacked cards behind the selected tab",
+    "pill tab bar with animated indicator",
+    "tab switcher with colorful panels",
+    "content cards peeking behind on hover",
+    "smooth tab menu for a portfolio",
+    "spring animated tab selector",
+    "tab bar with panels fanning out"
+  ],
+  "resembles": [],
+  "use_when": "A few content panels share one spot and the switch between them should feel physical.",
+  "avoid_when": "Panels are absolutely stacked, so the wrapper needs an explicit height or the cards collapse.",
+  "suits": ["portfolio", "saas", "marketing"],
+  "slot_hints": ["body-text", "feature-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["background", "layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "tabs supplies a title, value and content node per tab; value, defaultValue and onValueChange drive selection, and three className props restyle bar, pill and panel.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One shared-layout pill and at most three spring-animated panels mounted at once.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Labels are real buttons, but they carry no tab role or aria-selected and the panels never use aria-hidden."
+  },
+  "props": [
+    {"name": "tabs", "type": "AnimatedTab[]", "default": null, "required": true},
+    {"name": "value", "type": "string", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string", "default": null, "required": false},
+    {"name": "onValueChange", "type": "(value: string) => void", "default": null, "required": false},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "activeTabClassName", "type": "string", "default": null, "required": false},
+    {"name": "tabClassName", "type": "string", "default": null, "required": false},
+    {"name": "contentClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Inactive panels stay in the page behind the active card, so hidden text is still exposed to screen readers.",
+    "In frames 1 and 3 the emoji sits on top of the panel heading instead of above it."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp sliding pill and tidy stacked cards; the emoji and heading collide in some frames.",
+  "unsure": ["traits.needs_sized_parent"]
+}

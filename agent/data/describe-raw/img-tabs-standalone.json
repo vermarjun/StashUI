@@ -1,0 +1,67 @@
+{
+  "name": "img-tabs-standalone",
+  "frames": {
+    "code": "3152",
+    "best": 1,
+    "best_why": "The first question is open with its full answer in a white block and the large photo beside it, all settled.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Picking a question on the left opens its answer beside a photo.",
+  "summary": "Three bold questions stack down the left of a dark stage; choosing one outlines it in blue, drops a short answer underneath and shows a large rounded photo on the right.",
+  "title_fix": null,
+  "appearance": "A narrow left column of three heavy white question rows on near-black, the active one ringed in cobalt blue and filled deeper navy, with a white answer block hanging under it. The right half is one large rounded photo.",
+  "behaviour": "Clicking a row opens its answer with a quick height fade and swaps the right-hand picture to that row's image, fading the old photo out. The blue outline stays on the chosen row until another is clicked.",
+  "parts": ["question row", "answer panel", "photo", "blue outline"],
+  "demo_content": "Three questions about UI and UX, illustrated with a building, a rose and mountains.",
+  "states": ["hover", "active"],
+  "kind": "tabs",
+  "look": ["dark", "flat", "bold", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "questions that open an answer and photo",
+    "tab list beside a large image",
+    "faq style switcher with pictures",
+    "click a heading to expand its text",
+    "product info tabs with photos",
+    "questions on the left picture on the right",
+    "accordion and image split panel",
+    "content switcher for help topics"
+  ],
+  "resembles": [],
+  "use_when": "A handful of detailed questions each need a short answer and an illustration next to it.",
+  "avoid_when": "The rows only answer mouse clicks, and the photo box is a fixed 400 px tall, so wide images get cropped.",
+  "suits": ["docs", "marketing"],
+  "slot_hints": ["body-text", "media"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "text", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "There are no props: questions, answers and photo links sit in the tabs array in the file, and the blue outline and fixed heights are hard-coded classes.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "One photo and one expanding panel at a time, with short fades.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Rows are clickable divs with no tab role or tabIndex, so the switcher is mouse only; the photos do carry alt text."
+  },
+  "props": [],
+  "issues": [
+    "Rows are divs with no tabIndex or tab role, so the switcher is mouse only.",
+    "In frames 2 and 4 answer text overlaps the next row during the height change.",
+    "The second and third answers are much longer, so the left column jumps height on each switch."
+  ],
+  "polish": 3,
+  "polish_why": "Legible split layout with a clear active outline; answers jump height and overlap mid-switch.",
+  "unsure": []
+}

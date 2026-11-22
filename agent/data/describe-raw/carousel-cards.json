@@ -1,0 +1,74 @@
+{
+  "name": "carousel-cards",
+  "frames": {
+    "code": "6294",
+    "best": 2,
+    "best_why": "The saved Dolomites card is centred with its rating, dates and price readable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Flick a rail of trip cards; it glides, tilts and snaps one card to centre.",
+  "summary": "A horizontal rail of travel listing cards with drawn landscape covers. The centred card shows its rating, dates and price, hearts save favourites, and the rail snaps between cards with momentum.",
+  "title_fix": null,
+  "appearance": "A dark section header pairs a small eyebrow and the heading Weekend escapes with a 02/08 counter and two round arrow buttons. Tall 4:5 cards show flat mountain, dune or lake scenes in greys, each with a small white nights badge, a white heart and a title and location underneath.",
+  "behaviour": "Dragging or flicking the rail carries momentum and springs to the nearest card, while edges rubber-band. As cards move they tilt in depth, the scene layers parallax and the centre card's rating, dates and price fade in; hearts fill red, arrows and keyboard step one card.",
+  "parts": ["rail header", "card counter", "arrow buttons", "travel card", "scene artwork", "badge", "heart button", "card details"],
+  "demo_content": "Eight trips such as Weekend in Lisbon, Slow days in the Dolomites and Two nights in the dunes, priced in euros.",
+  "states": ["hover", "focus", "active", "selected", "dragging"],
+  "kind": "carousel",
+  "look": ["dark", "minimal", "monochrome", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "travel card rail you can flick",
+    "horizontally scrolling trip cards",
+    "cover flow carousel of listings",
+    "momentum scroll gallery with snap",
+    "saved heart on travel cards",
+    "hotel listing carousel with prices",
+    "cards tilt and zoom toward the centre",
+    "draggable image carousel for trips"
+  ],
+  "resembles": ["Airbnb listing rail"],
+  "use_when": "A page should browse a set of destination or product cards without leaving the section.",
+  "avoid_when": "Browsers without scroll-driven animations lose the tilt and parallax; details only show on the centre card.",
+  "suits": ["ecommerce", "marketing"],
+  "slot_hints": ["media", "list-item"],
+  "traits": {
+    "trigger": ["drag", "scroll", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "image", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Items, title, eyebrow, initial favourites and callbacks are props; the drawn scenes, tilt timing and rail styling live in the file.",
+  "technique": ["js-animation", "css-keyframes", "css-transition"],
+  "weight": "moderate",
+  "weight_why": "A hand-rolled momentum spring plus eight cards with scroll-driven depth; idle when not scrolling.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The rail takes arrow, Home and End keys, hearts are labelled buttons, and reduced motion drops tilt and parallax."
+  },
+  "props": [
+    {"name": "items", "type": "RailItem[]", "default": "DEFAULT_ITEMS", "required": false},
+    {"name": "title", "type": "string", "default": "\"Weekend escapes\"", "required": false},
+    {"name": "eyebrow", "type": "string", "default": "\"Picked for this autumn\"", "required": false},
+    {"name": "defaultFavorites", "type": "string[]", "default": "[]", "required": false},
+    {"name": "onToggleFavorite", "type": "(id: string, favorite: boolean) => void", "default": null, "required": false},
+    {"name": "onSelect", "type": "(item: RailItem) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Card titles and supporting text are tiny and very dim against the black stage.",
+    "Uncentred cards hide rating, dates and price, so they read as unlabelled pictures."
+  ],
+  "polish": 3,
+  "polish_why": "Clever momentum rail, but dark scenes and faint off-centre text make it hard to read.",
+  "unsure": ["theme"]
+}

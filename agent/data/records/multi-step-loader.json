@@ -1,0 +1,140 @@
+{
+ "name": "multi-step-loader",
+ "frames": {
+  "code": "6720",
+  "best": 5,
+  "best_why": "List is mid-progress with two finished steps, a green active step and all rows visible.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "Dark veil blurs the page while a checklist ticks through setup steps.",
+ "summary": "A full-screen loading overlay that lists the stages of a task and advances through them. Finished stages get filled check marks, the current one turns green, and later ones wait greyed out.",
+ "title_fix": null,
+ "appearance": "A full-screen dark overlay washes the page into blur and holds a centered vertical list of short steps. Each row opens with a circular check icon; the running step is lime green and the finished rows above it show solid white checks.",
+ "behaviour": "Starting the loader fades the overlay in and moves the highlight one stage down every set interval. Passed stages lock to white filled checks, the current line glows green, and stages ahead stay faint until reached.",
+ "parts": [
+  "overlay",
+  "step list",
+  "check icon",
+  "current step text",
+  "dismiss link",
+  "start button"
+ ],
+ "demo_content": "Seven steps from 'Connecting to server' to 'Welcome back!', with Start Loading, Stop Loading and Dismiss buttons.",
+ "states": [
+  "loading",
+  "success",
+  "active"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "minimal",
+  "airy",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "full screen loading steps overlay",
+  "checklist that shows setup progress",
+  "multi step progress with green ticks",
+  "blurred overlay while data loads",
+  "onboarding steps finishing one by one",
+  "loading screen with checked off tasks",
+  "sequential task loader with tick icons",
+  "wait screen listing what is happening"
+ ],
+ "resembles": [],
+ "use_when": "A multi-second setup or fetch needs to show which stages are done and which one is running.",
+ "avoid_when": "The overlay is fixed and blocks the page, and with looping on it never settles on its own.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "loading"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass loadingStates as an array of text strings, set duration in milliseconds, and choose loop or a single pass. Colours, blur and the fade mask are written into the file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Six animated rows, one timeout and a blur layer; it sits idle while closed.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Step changes are shown by colour alone, the overlay traps no focus, and nothing handles Escape to close it."
+ },
+ "props": [
+  {
+   "name": "loadingStates",
+   "type": "LoadingState[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "loading",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "2000",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Later steps fade almost completely at the bottom, hard to read in frames 5 and 6."
+ ],
+ "polish": 4,
+ "polish_why": "Clean centred list with a clear current-step highlight, though later rows fade almost away.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "Multi Step Loader",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "12abf9ff2c8b8893",
+  "film_hash": "9675e75aee43a34d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

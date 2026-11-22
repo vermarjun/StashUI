@@ -1,0 +1,111 @@
+{
+ "name": "opacity-swapy",
+ "frames": {
+  "code": "9072",
+  "best": 1,
+  "best_why": "All six pastel rows sit in their original order with icons and labels fully readable and nothing floating.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Pastel icon rows in a narrow list that turns half see-through while dragged.",
+ "summary": "Six pale tinted rows, each with a coloured line icon and a short benefit title, stacked in a narrow column. Dragging a row drops it to half opacity while the others slide apart to show where it will land.",
+ "title_fix": null,
+ "appearance": "A narrow centred column of six rounded rows in pale blue, pink, green, yellow, purple and cyan on black, each with a thin dashed outline, a small coloured icon at the left and a dark medium-weight label.",
+ "behaviour": "Dragging a row anywhere on its surface lifts it out of the stack at half opacity, and the rows above and below slide apart to open a gap. Releasing settles it into that gap, and the list holds the new order until the page reloads.",
+ "parts": [
+  "row",
+  "icon",
+  "label"
+ ],
+ "demo_content": "Benefit labels such as Streamline Operations, Decision Making, Reduce Costs and Future-Proof.",
+ "states": [
+  "dragging",
+  "hover"
+ ],
+ "kind": "list",
+ "look": [
+  "light",
+  "pastel",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pastel rows you can drag to sort",
+  "reorder a vertical list of benefits",
+  "draggable list with a faded item",
+  "simple sortable feature list",
+  "rows that slide apart when dragged",
+  "pastel list with small icons",
+  "rearrange order by dragging a row",
+  "light list on a dark page"
+ ],
+ "resembles": [],
+ "use_when": "A short list of items should be reordered by dragging the row itself with clear feedback.",
+ "avoid_when": "Rows are a fixed 384 px wide and the order lives only in page state, so it resets on reload.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "drag"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "text"
+  ],
+  "theme": "light",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "No props: the six titles, icons and pastel classes sit in the items array in the file, and the 50 percent drag opacity and fixed width live in the source.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "Six static rows with a drag handler that only runs while a row is held.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Rows drag only by pointer, with no keyboard route or focus handling, and nothing announces the new order."
+ },
+ "props": [],
+ "issues": [
+  "The new order is only logged to the console and is lost on reload.",
+  "Slots reuse the item id, so slot and item keys collide.",
+  "The floating row covers two labels at once while it passes over the stack."
+ ],
+ "polish": 3,
+ "polish_why": "Soft pastel rows and clear drag feedback; the dashed outlines barely show and the page is bare.",
+ "unsure": [],
+ "title": "Opacity Swapy Layout",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e6562713a39da651",
+  "film_hash": "eca4dfc36f4c376e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

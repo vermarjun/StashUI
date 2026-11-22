@@ -1,0 +1,114 @@
+{
+ "name": "comp-46",
+ "frames": {
+  "code": "3212",
+  "best": 6,
+  "best_why": "The US flag has appeared in the country selector and the number is fully formatted, showing the whole idea.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.9
+ },
+ "tagline": "A phone field that spots the country and adds its flag as you type.",
+ "summary": "A labelled phone field joined to a country selector. Typing an international number spaces the digits into a readable phone number and makes the selector detect the country and show its flag.",
+ "title_fix": null,
+ "appearance": "A label sits above a joined control on black: a country selector holding a small handset icon and a chevron, then a long rounded input. Once a code is typed a US flag replaces the handset, and the digits run across in spaced groups.",
+ "behaviour": "Typing formats the number with spaces and the selector watches the country code, swapping in the matching flag. The clip enters +1 415 555 0132, the flag changes to the United States and the caret stays in the field.",
+ "parts": [
+  "label",
+  "country selector",
+  "phone icon",
+  "flag",
+  "phone field",
+  "formatted digits",
+  "credit line"
+ ],
+ "demo_content": "Label Phone number, placeholder Enter phone number, typed +1 415 555 0132, plus a library credit line.",
+ "states": [
+  "focus",
+  "empty"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "dialing code with a flag",
+  "international call field",
+  "country picker next to a number",
+  "mobile number entry with flag",
+  "type a number and space it",
+  "contact field for a telephone",
+  "select a country then type",
+  "flag appears when typing a number"
+ ],
+ "resembles": [],
+ "use_when": "Sign-up or contact forms that accept phone numbers from more than one country.",
+ "avoid_when": "It ships a visible third-party credit link and pulls in a sizeable phone-number library.",
+ "suits": [
+  "saas",
+  "fintech",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The label and placeholder are fixed in the file and the country list comes from the phone library; field and selector styling are classes there.",
+ "technique": [
+  "static"
+ ],
+ "weight": "moderate",
+ "weight_why": "Phone metadata plus parsing on each keystroke is heavier than a plain text field.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The label and country select are named properly, but a country detected from typing is not announced to screen readers."
+ },
+ "props": [],
+ "issues": [
+  "A visible react-phone-number-input credit line ships under the field."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy joined field with a nice flag reveal, though the credit line and plain styling hold it back.",
+ "unsure": [],
+ "title": "Phone Number Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9062d4543c5d233d",
+  "film_hash": "4dd9972574e629da",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

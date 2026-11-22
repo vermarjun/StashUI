@@ -1,0 +1,73 @@
+{
+  "name": "card-flip-physics",
+  "frames": {
+    "code": "9867",
+    "best": 1,
+    "best_why": "Shows the full ticket front, title and detail rows flat and unobstructed.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "An event ticket you flick to spin, revealing a QR entry code on the back.",
+  "summary": "A two-sided ticket card that turns over on a drag, a flick or the keyboard, with visible thickness and a moving band of light. The front lists event details; the back carries a QR code.",
+  "title_fix": null,
+  "appearance": "A tall, dark ticket card with orange accents sits on black. The front shows Admit one, a GA badge, the event name in bold and small date, venue and holder details; the back shows a white QR code with gate, row and seat fields.",
+  "behaviour": "Dragging the card spins it on its vertical axis and releasing lets a spring settle it flat on the nearer face. A highlight sweeps across the surface as it turns, and the floor shadow narrows edge-on.",
+  "parts": ["ticket face", "orange badge", "event title", "detail grid", "qr code", "thick edge", "floor shadow"],
+  "demo_content": "Ticket for Fieldwork Sessions, Vol. 04, holder Jordan Vale, seat 14, ticket no. 004182.",
+  "states": ["hover", "focus", "active", "dragging"],
+  "kind": "card",
+  "look": ["dark", "rounded", "minimal", "editorial"],
+  "tone": "minimal",
+  "search_phrases": [
+    "flip card with front and back",
+    "event ticket with qr code",
+    "card you drag to spin around",
+    "two sided card with physics",
+    "draggable ticket that flips over",
+    "3d card with moving light",
+    "concert ticket component",
+    "flick card to reveal back"
+  ],
+  "resembles": [],
+  "use_when": "A ticket, pass or membership card should feel physical and reveal a code on its back.",
+  "avoid_when": "Front and back are fixed ticket templates; real content needs front and back nodes swapped in.",
+  "suits": ["marketing", "ecommerce"],
+  "slot_hints": ["feature-card", "media"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["background", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass front and back nodes plus axis, label and controlled flipped state; the default ticket layout and colour palette live in the source.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "light",
+  "weight_why": "A single card; a hand-written spring runs only while it turns.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Focus ring, keyboard flip and a spoken hint are present; reduced-motion lands it on a face without spinning."
+  },
+  "props": [
+    {"name": "front", "type": "ReactNode", "default": null, "required": false},
+    {"name": "back", "type": "ReactNode", "default": null, "required": false},
+    {"name": "flipped", "type": "boolean", "default": null, "required": false},
+    {"name": "defaultFlipped", "type": "boolean", "default": "false", "required": false},
+    {"name": "onFlippedChange", "type": "(flipped: boolean) => void", "default": null, "required": false},
+    {"name": "axis", "type": "'x' | 'y'", "default": "y", "required": false},
+    {"name": "label", "type": "string", "default": "Event ticket", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "faceClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Convincing thickness, light sweep and sprung settle; ticket text is small but tidy.",
+  "unsure": []
+}

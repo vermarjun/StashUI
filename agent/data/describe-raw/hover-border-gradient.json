@@ -1,0 +1,142 @@
+{
+  "name": "hover-border-gradient",
+  "frames": {
+    "code": "8092",
+    "best": 5,
+    "best_why": "Blue hover highlight wraps most of the rim while the label stays fully readable.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Soft glow travels around the rim of a black pill CTA.",
+  "summary": "A rounded call-to-action button wrapped in a blurred gradient border. The glow creeps around the edge on a timer and washes blue when hovered.",
+  "title_fix": null,
+  "appearance": "A black pill button holding a small white chevron and the label, wrapped in a soft glowing rim. The rim is brightest at one segment and fades around the rest, and turns blue across most of its length on hover.",
+  "behaviour": "At rest the brightest part of the rim steps from side to side every second, chasing around the pill. Hovering blends the whole rim into a blue highlight, then the slow white sweep resumes when the pointer leaves.",
+  "parts": [
+    "pill button",
+    "label text",
+    "chevron icon",
+    "glowing border",
+    "blue highlight"
+  ],
+  "demo_content": "The words 'Aceternity UI' beside a small chevron logo.",
+  "states": [
+    "hover"
+  ],
+  "kind": "button",
+  "look": [
+    "dark",
+    "glow",
+    "rounded",
+    "pill",
+    "minimal"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "pill button with glowing outline",
+    "border light that circles on hover",
+    "black cta with moving edge light",
+    "blue glow button on hover",
+    "animated gradient outline button",
+    "button with light chasing around it",
+    "premium dark call to action",
+    "rotating spotlight border"
+  ],
+  "resembles": [],
+  "use_when": "A dark page needs one hero call to action that draws the eye with a moving rim of light.",
+  "avoid_when": "The glow is faint against black and the body is hardcoded black, so it does not suit light themes.",
+  "suits": [
+    "saas",
+    "marketing",
+    "portfolio"
+  ],
+  "slot_hints": [
+    "primary-cta"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "timer"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "border",
+      "shadow",
+      "fill"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pick the rendered element with as, set sweep speed with duration and its direction with clockwise, and restyle inside and rim with className and containerClassName. The highlight blue is fixed.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "One animated gradient layer with a blur; negligible DOM.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The travelling glow is decorative but runs on a timer and ignores reduced-motion; focusing the button does not light the rim."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "as",
+      "type": "ElementType",
+      "default": "\"button\"",
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "1",
+      "required": false
+    },
+    {
+      "name": "clockwise",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "containerClassName",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The rim glow is faint against black and the body is always black.",
+    "Focusing the button does not trigger the border light."
+  ],
+  "polish": 4,
+  "polish_why": "Neat travelling rim and clean pill shape; the glow is faint and the interior is always black.",
+  "unsure": [
+    "responsive",
+    "a11y.focus_visible"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "chat-form-dropzone",
+  "frames": {
+    "code": "8144",
+    "best": 6,
+    "best_why": "Frame 6 shows the paperclip, two attached thumbnails and the message line; frames 1-2 show the empty one-line state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Attach photos beside a paperclip and write a message underneath.",
+  "summary": "A chat-style composer bar: a paperclip opens the picker, chosen images line up as thumbnails and a message box sits alongside. Four images of 1MB are the cap.",
+  "title_fix": null,
+  "appearance": "A rounded dark bar with a thin border holding a paperclip button in a light square and a placeholder message line. Once images attach, small square thumbnails join the paperclip and the message field drops to a full-width second row.",
+  "behaviour": "Picking or dropping images adds small square previews beside the paperclip, each with a remove X, and pushes the text field onto its own row. Clicking the paperclip opens the file picker.",
+  "parts": ["paperclip button", "thumbnail", "remove icon", "message input", "container border"],
+  "demo_content": "Placeholder \"Your message here...\" with two blue and orange gradient sample images",
+  "states": ["hover", "focus", "empty", "error"],
+  "kind": "chat",
+  "look": ["dark", "rounded", "minimal", "outlined", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "message box with attachment button",
+    "type a message and attach images",
+    "chat input that accepts pictures",
+    "paperclip upload in a message bar",
+    "comment field with photo thumbnails",
+    "send images with a short note",
+    "file attach next to a text box",
+    "chat composer with image previews"
+  ],
+  "resembles": [],
+  "use_when": "A message composer should let the sender attach a few pictures without leaving the bar.",
+  "avoid_when": "Fixed 384px width and hardcoded limits; the attachment row has no explanatory copy.",
+  "suits": ["social", "ai-chat", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the limits, accepted types, placeholder and both layouts sit inside the file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A paperclip picker, an input and up to four thumbnails; no loops.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The file picker has a hidden label, but the message box relies on its placeholder alone."
+  },
+  "props": [],
+  "issues": [
+    "The message input is not connected to state, so typed text goes nowhere."
+  ],
+  "polish": 3,
+  "polish_why": "Neat two-row layout that adapts to attachments; a dead input and fixed width hold it back.",
+  "unsure": ["resembles"]
+}

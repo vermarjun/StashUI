@@ -1,0 +1,182 @@
+{
+ "name": "crt-warp",
+ "frames": {
+  "code": "6054",
+  "best": 5,
+  "best_why": "Fills the screen with the blocky violet plasma in a balanced tangle of bright patches and black gaps.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.9
+ },
+ "tagline": "Blocky purple plasma churns behind scanlines like a glowing old monitor.",
+ "summary": "A full-bleed animated background of coarse violet pixels on black, seen through a curved CRT screen with scanlines, glow and grain. It powers on, then flows and bends toward the pointer.",
+ "title_fix": null,
+ "appearance": "The entire stage is a stepped grid of bright violet shapes on black, each edge a square pixel rather than a smooth curve. Fine horizontal scanlines and a soft bloom sit over the blob pattern, with darkened rounded screen edges.",
+ "behaviour": "The picture starts nearly black and brightens as the grid reveals itself, then the plasma shapes keep merging and drifting. Moving the pointer warps the field near the cursor, and a click rolls the screen and switches to a new pattern.",
+ "parts": [
+  "pixel grid",
+  "plasma shapes",
+  "scanlines",
+  "screen edge"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "colorful",
+  "dark",
+  "neon",
+  "textured"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "retro tv static background",
+  "purple plasma shader",
+  "pixelated glowing wallpaper",
+  "crt monitor effect backdrop",
+  "animated old computer screen",
+  "blocky lava lamp loop",
+  "full screen neon backdrop",
+  "phosphor glow website background"
+ ],
+ "resembles": [],
+ "use_when": "A full-bleed backdrop for a retro, synthwave or gaming landing page that wants strong atmosphere.",
+ "avoid_when": "The busy high-contrast motion fights any text placed over it, and the always-on shader costs GPU time.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Props set ink and paper colours, speed, variation, level and column counts, curvature, scanlines, mask, bloom and pointer response. Changing the plasma shape needs a shader edit.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "Several full-screen WebGL passes, including a two-direction glow blur, redrawn every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "Reduced motion stops the drift and intro, but the click-to-change pattern has no focusable or keyboard path."
+ },
+ "props": [
+  {
+   "name": "color",
+   "type": "string",
+   "default": "uBackground + light * (1.0 - uBackground);",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "'#120f17'",
+   "required": false
+  },
+  {
+   "name": "lightMode",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "variation",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "levels",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "columns",
+   "type": "number",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "curvature",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "scanlineStrength",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "mask",
+   "type": "'aperture' | 'shadow' | 'slot' | 'none'",
+   "default": "'aperture'",
+   "required": false
+  },
+  {
+   "name": "bloom",
+   "type": "number",
+   "default": "1.5",
+   "required": false
+  },
+  {
+   "name": "mouseReact",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The opening frame is almost pure black, so the effect takes a moment to become visible."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing CRT look with coherent glow, grain and scanlines; coarse pixel steps are intended.",
+ "unsure": [
+  "traits.theme"
+ ],
+ "title": "CRT Warp",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5d10afbbab872f82",
+  "film_hash": "c2f7ccc8c8299f52",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

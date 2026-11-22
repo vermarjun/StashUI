@@ -1,0 +1,63 @@
+{
+  "name": "comp-362",
+  "frames": {
+    "code": "5009",
+    "best": 5,
+    "best_why": "Tooltip is open with date plus three labelled value rows, all fully readable above the button.",
+    "usable": [4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A hover popup breaks a day into coloured dots, labels and dollar amounts.",
+  "summary": "A small outlined Chart button opens a compact tooltip on hover. The tooltip shows a date heading and three rows, each pairing a coloured dot and a metric name with a right-aligned value.",
+  "title_fix": null,
+  "appearance": "At rest a small outlined Chart button sits centred in a bordered card with a caption beneath. Hovering opens a light tooltip above it: a bold date heading, then three rows each with a coloured dot, a label and a right-aligned dollar value.",
+  "behaviour": "Hovering or focusing the Chart button opens the tooltip immediately, and moving away dismisses it. The tooltip only appears and disappears; its values never change.",
+  "parts": ["chart button", "tooltip", "date heading", "colour dot", "metric label", "metric value"],
+  "demo_content": "Chart button in a card captioned 'Hover for a chart-style breakdown.' with tooltip Sales $40, Revenue $74, Costs $410.",
+  "states": ["hover", "focus"],
+  "kind": "tooltip",
+  "look": ["dark", "outlined", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "hover popup with a breakdown of numbers",
+    "tooltip showing chart values for a day",
+    "small popup with coloured dots and amounts",
+    "hover over a button to see sales revenue costs",
+    "date and metric breakdown on hover",
+    "chart legend tooltip",
+    "popup with three data rows",
+    "tooltip with key and value pairs"
+  ],
+  "resembles": [],
+  "use_when": "A compact control needs to reveal a small dated breakdown of figures without opening a full chart.",
+  "avoid_when": "The values and date are fixed inside the tooltip, so real data needs code changes.",
+  "suits": ["saas", "dashboard", "fintech"],
+  "slot_hints": ["tooltip", "chart"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "subtle",
+    "affects": ["background", "text", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The date, metric labels, values and dot colours are written directly in the tooltip, so real data means editing the source; the trigger label is fixed too.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One button and a small popup with three rows; no chart engine or loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The tooltip opens on focus and is linked by the tooltip primitive, but each dot carries meaning only through colour."
+  },
+  "props": [],
+  "issues": ["Data is hardcoded to one date and three metrics; it does not follow a real dataset.", "Colour is the only cue tying each dot to a series."],
+  "polish": 3,
+  "polish_why": "Neat compact tooltip; the plain demo card and fixed data make it ordinary.",
+  "unsure": []
+}

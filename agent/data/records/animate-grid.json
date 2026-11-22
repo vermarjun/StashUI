@@ -1,0 +1,165 @@
+{
+ "name": "animate-grid",
+ "frames": {
+  "code": "4832",
+  "best": 5,
+  "best_why": "Frame 5 shows one tile lifted high and brightly glowing while all sixteen tiles stay in view.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.4
+ },
+ "tagline": "Tilted icon tiles lift and glow as the cursor crosses them.",
+ "summary": "A four-by-four grid of dark emoji tiles shown at a 3D angle. Hovering a tile pops it forward on a white fill with a green glow, and its four neighbours rise a little too.",
+ "title_fix": null,
+ "appearance": "A tall narrow block holding sixteen small square tiles in a four-column grid, tilted in perspective so the left edge recedes. Each tile carries a coloured emoji, a thin pale border and a soft pale shadow on a black stage.",
+ "behaviour": "On pointer enter, the hovered tile scales up, shifts toward the viewer, turns white and pulses a green drop-shadow glow; the tiles directly above, below and beside it lift slightly. Leaving eases everything back after a short delay.",
+ "parts": [
+  "card grid",
+  "emoji tile",
+  "tile border",
+  "hover glow"
+ ],
+ "demo_content": "Sixteen emoji icons including atom, diamond, butterfly, flame, rocket, star, rainbow and masks.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "3d",
+  "minimal",
+  "glow"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "grid of icons that lift on hover",
+  "3d perspective card grid",
+  "emoji logo wall effect",
+  "neighbouring cards pop up when hovered",
+  "interactive tile grid for tech stack",
+  "tilted grid with glow on hover",
+  "icon grid for integrations section",
+  "hover effect on a grid of logos"
+ ],
+ "resembles": [],
+ "use_when": "A small set of icons or logos should feel tactile and react together as the cursor moves.",
+ "avoid_when": "Hover is the only trigger, so on touch devices nothing lifts and the grid stays inert.",
+ "suits": [
+  "devtool",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "logo-wall",
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Feed items through the cards array and draw each with renderCard; perspective, the two rotations and the glow colours are props, while the lift and white fill are in the source.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Sixteen divs with CSS transitions and two keyframe glows; idle until a pointer enters.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Tiles are plain divs with mouse listeners only: no tab stop, no keyboard path, and the emoji have no labels."
+ },
+ "props": [
+  {
+   "name": "cards",
+   "type": "CardItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "renderCard",
+   "type": "(logo: string, index: number) => React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "perspective",
+   "type": "number",
+   "default": "600",
+   "required": false
+  },
+  {
+   "name": "rotateX",
+   "type": "number",
+   "default": "-1",
+   "required": false
+  },
+  {
+   "name": "rotateY",
+   "type": "number",
+   "default": "-15",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative w-full max-w-full items-center justify-center\"",
+   "required": false
+  },
+  {
+   "name": "textGlowStartColor",
+   "type": "string",
+   "default": "\"#38ef7d80\"",
+   "required": false
+  },
+  {
+   "name": "textGlowEndColor",
+   "type": "string",
+   "default": "\"#38ef7d\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The hovered tile turns solid white, leaving the emoji barely visible against it.",
+  "Neighbour lookup uses index plus or minus four, so any grid that is not four columns lifts the wrong tiles."
+ ],
+ "polish": 3,
+ "polish_why": "Distinctive lift-and-glow hover, but idle tiles are dim and the white hover fill hides the icon.",
+ "unsure": [
+  "kind",
+  "traits.theme"
+ ],
+ "title": "3D Hover Grid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1c84e4d965731a8b",
+  "film_hash": "683d43f5607fa31d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

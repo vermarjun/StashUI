@@ -1,0 +1,186 @@
+{
+ "name": "magic-card",
+ "frames": {
+  "code": "7497",
+  "best": 4,
+  "best_why": "Frame 4 shows the gradient card's spotlight brightest, clearly following the cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.5
+ },
+ "tagline": "A dark card whose border glow follows the pointer as it moves.",
+ "summary": "A rounded card wrapper that tracks the pointer. A soft spotlight glides along its border and surface, or in orb mode a blurred purple-orange bloom drifts behind the content, fading when the cursor leaves.",
+ "title_fix": null,
+ "appearance": "Two small dark rounded cards side by side on a near-black stage, each holding a tiny line icon, a bold white label and a dim hint line. The borders are barely visible until a pale or coloured glow gathers at the pointer.",
+ "behaviour": "Moving the pointer across a card drags a soft radial glow along its border and across the surface. The orb card shows a blurred purple-orange bloom instead, and both fade away when the pointer leaves.",
+ "parts": [
+  "card",
+  "icon",
+  "label",
+  "hint",
+  "cursor glow"
+ ],
+ "demo_content": "\"Gradient mode\" and \"Orb mode\" cards with hints to hover for a gradient or glowing orb.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "glow",
+  "gradient"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "card with a glow that follows the mouse",
+  "spotlight border card effect",
+  "hover highlight around card edge",
+  "dark card with cursor spotlight",
+  "glowing orb behind a card",
+  "pointer tracking card border",
+  "subtle hover glow on tiles",
+  "magnetic spotlight card"
+ ],
+ "resembles": [],
+ "use_when": "A small card grid should feel responsive to the pointer without a loud hover animation.",
+ "avoid_when": "The glow is pointer-only, so touch and keyboard users never see it, and it needs a theme provider.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "pricing-card",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Gradient size and colours, or orb glow colours, angle, size, blur and opacity are props; the card body is whatever children you pass.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Two motion values drive a CSS gradient; no canvas and no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The glow responds to pointer movement only, so keyboard and touch users get no visual feedback, and reduced-motion is ignored."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "gradientSize",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "gradientFrom",
+   "type": "string",
+   "default": "\"#9E7AFF\"",
+   "required": false
+  },
+  {
+   "name": "gradientTo",
+   "type": "string",
+   "default": "\"#FE8BBB\"",
+   "required": false
+  },
+  {
+   "name": "mode",
+   "type": "\"gradient\" | \"orb\"",
+   "default": "\"gradient\"",
+   "required": false
+  },
+  {
+   "name": "gradientColor",
+   "type": "string",
+   "default": "\"#262626\"",
+   "required": false
+  },
+  {
+   "name": "gradientOpacity",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "glowFrom",
+   "type": "string",
+   "default": "\"#ee4f27\"",
+   "required": false
+  },
+  {
+   "name": "glowTo",
+   "type": "string",
+   "default": "\"#6b21ef\"",
+   "required": false
+  },
+  {
+   "name": "glowAngle",
+   "type": "number",
+   "default": "90",
+   "required": false
+  },
+  {
+   "name": "glowSize",
+   "type": "number",
+   "default": "420",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The glow responds only to a pointer, so keyboard and touch users see plain cards.",
+  "The demo cards hold only placeholder text and icons passed in by the demo."
+ ],
+ "polish": 4,
+ "polish_why": "Restrained dark cards and a smooth spotlight; the effect is subtle and pointer-only.",
+ "unsure": [],
+ "title": "Magic Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6139e78ed228ebca",
+  "film_hash": "1d8319ad950d0b1b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

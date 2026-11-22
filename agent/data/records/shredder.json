@@ -1,0 +1,191 @@
+{
+ "name": "shredder",
+ "frames": {
+  "code": "9458",
+  "best": 2,
+  "best_why": "A row is entering the slit while the rest of the file list stays visible above it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.5
+ },
+ "tagline": "File rows drop into a slit and come out as curling paper strips.",
+ "summary": "A vertical list of files sits above a thin shredder slot. Drag a row into the slot, or press Delete, and it is shredded into coloured curls that fall below.",
+ "title_fix": null,
+ "appearance": "A stack of dark rounded file rows, each with a small coloured type badge, a truncated filename and a size, ends just above a thin grey horizontal slit. Below the slit coloured paper strips curl and hang down.",
+ "behaviour": "Rows can be dragged down into the slit, where the card is sliced into narrow strips that curl and fall while the list closes the gap. The demo also cycles through shredding each row on its own.",
+ "parts": [
+  "file row",
+  "type badge",
+  "filename",
+  "file size",
+  "shredder slit",
+  "paper strips"
+ ],
+ "demo_content": "Five files including Invoice_March_2024.pdf, old-logo-final-v7.png and Offsite agenda (draft).docx.",
+ "states": [
+  "dragging",
+  "hover",
+  "disabled"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "drag a file to destroy it",
+  "paper shredding animation for lists",
+  "delete rows with a fun effect",
+  "file list that destroys items",
+  "strips of paper falling out",
+  "drag to delete todo rows",
+  "satisfying shred interaction",
+  "reorderable list with delete slot"
+ ],
+ "resembles": [],
+ "use_when": "A playful app wants deletion to feel deliberate and satisfying instead of a silent bin icon.",
+ "avoid_when": "Shredding is pointer-led with a Delete key fallback, and the falling strips need a tall area below the list.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "list-item",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "keyboard",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Items, a render function, shred and reorder callbacks plus width, height, feed speed, strip width, curl, loop and colours are props.",
+ "technique": [
+  "js-animation",
+  "canvas-2d"
+ ],
+ "weight": "moderate",
+ "weight_why": "A rAF loop paints curled canvas strips while shredding, then stops when the list is empty.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Focused rows can be shredded with Delete, but drag-to-reorder has no keyboard route and rows show no focus ring."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "T[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "renderItem",
+   "type": "(item: T, index: number) => ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onShred",
+   "type": "(item: T) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onReorder",
+   "type": "(items: T[]) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "340",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "460",
+   "required": false
+  },
+  {
+   "name": "autoAnimate",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "stripWidth",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "curl",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "slitColor",
+   "type": "string",
+   "default": "'#3f3f46'",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "When few files remain the list floats low, leaving a large empty area above it."
+ ],
+ "polish": 4,
+ "polish_why": "The shredding strips are convincing and the list is tidy; the empty space when short is awkward.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Shredder",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "72b97275255babd4",
+  "film_hash": "00dc10b664e68142",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

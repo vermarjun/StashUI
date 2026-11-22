@@ -1,0 +1,74 @@
+{
+  "name": "bento-grid",
+  "frames": {
+    "code": "4529",
+    "best": 1,
+    "best_why": "All four cards and their preview visuals are fully visible with no cursor in the way.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four black feature tiles with tiny terminals, code and UI previews inside.",
+  "summary": "An asymmetric grid of black feature cards, each pairing a small visual with an icon, title and description. Two wide cards and two narrow ones form a bento layout that reacts to hover.",
+  "title_fix": null,
+  "appearance": "A four-cell bento of black rounded cards: a wide top-left card with a tiny terminal and purple glow, a narrow top-right with a code snippet, a bottom-left card with coloured tiles, and a wide bottom card showing two small light and dark UI panels on a grey gradient.",
+  "behaviour": "Static at rest. Hovering a card slides its icon and text right, adds a shadow and runs small changes inside: the purple glow brightens, the coloured tiles resize, and the two panels tilt apart.",
+  "parts": ["grid card", "header visual", "icon", "title", "description"],
+  "demo_content": "Four cards: Ship at the speed of thought, Type-safe by default, Composable primitives, Dark mode included.",
+  "states": ["hover"],
+  "kind": "feature-section",
+  "look": ["dark", "rounded", "minimal", "gradient"],
+  "tone": "minimal",
+  "search_phrases": [
+    "grid of feature cards with previews",
+    "bento box layout for features",
+    "asymmetric feature grid",
+    "dark dashboard feature tiles",
+    "landing page feature blocks",
+    "cards with little screenshots inside",
+    "four panel feature showcase",
+    "modular grid of product highlights"
+  ],
+  "resembles": [],
+  "use_when": "Presenting four different product strengths side by side with a small visual for each.",
+  "avoid_when": "A uniform grid: each card needs a span class, so equal sizing takes source edits.",
+  "suits": ["saas", "devtool", "marketing"],
+  "slot_hints": ["feature-card", "body-text"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["layout", "shadow", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Each cell takes a title, description, header node, icon node and className for its span; grid columns and row height are set on the container.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Four CSS grid cells with hover transitions only; no scripted animation.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Nothing here is operable, so keyboard and focus do not apply; the preview visuals are plain divs."
+  },
+  "props": [
+    {"name": "title", "type": "ReactNode", "default": null, "required": false},
+    {"name": "description", "type": "ReactNode", "default": null, "required": false},
+    {"name": "header", "type": "ReactNode", "default": null, "required": false},
+    {"name": "icon", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "Preview text inside the cards is 11px, hard to read at a glance.",
+    "In frame 4 the bottom-left card's title wraps while its neighbours stay on one line.",
+    "Hover changes are subtle; frames 1 and 6 look nearly identical."
+  ],
+  "polish": 4,
+  "polish_why": "Neat bento composition with believable previews; the tiny monospace text is hard to read.",
+  "unsure": []
+}

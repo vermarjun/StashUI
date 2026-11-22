@@ -1,0 +1,73 @@
+{
+  "name": "Plasma-TS-TW",
+  "frames": {
+    "code": "2979",
+    "best": 1,
+    "best_why": "The largest bright mass fills the upper frame with clearly readable lobes and shadows.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "Renders greyscale, not coloured plasma.",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Soft white blobs swell and fold out of black like smoke.",
+  "summary": "A raymarched mass of white and grey folds against black, like dense smoke or melting wax. The form kneads and re-forms continuously, and dragging the pointer nudges its shape.",
+  "title_fix": null,
+  "appearance": "Smooth, rounded volumes of white and mid-grey emerging from a black field, with soft shading that hints at depth. Edges are blurry and slightly stepped, and the composition sits mostly in the upper half.",
+  "behaviour": "The mass bulges and contracts at a slow, even rate, with brighter highlights swelling and fading. Pointer movement shifts the field so the shape responds to the cursor, then eases back.",
+  "parts": ["white volumes", "grey shadows", "black field", "soft highlights"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "monochrome", "organic", "3d", "airy"],
+  "tone": "decorative",
+  "search_phrases": [
+    "black and white gooey animation",
+    "soft volumetric blobs",
+    "gooey white shapes on black",
+    "organic morphing gradient",
+    "liquid smoke 3d effect",
+    "dense fog shapes on black",
+    "smooth cloudy abstract backdrop",
+    "melting wax shader"
+  ],
+  "resembles": [],
+  "use_when": "A dark abstract hero needs slow, heavy organic movement with no content of its own.",
+  "avoid_when": "You want colour: unless a tint is passed the surface renders white and grey.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["page-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["fill", "background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Tint colour, speed, direction (including ping-pong), scale, opacity and pointer interaction are props. The raymarch shape itself is fixed.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A per-pixel raymarch loop of sixty steps runs every animation frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative and always morphing, with no reduced-motion check despite the constant movement."
+  },
+  "props": [
+    {"name": "color", "type": "string", "default": "'#ffffff'", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "direction", "type": "'forward' | 'reverse' | 'pingpong'", "default": "'forward'", "required": false},
+    {"name": "scale", "type": "number", "default": "1", "required": false},
+    {"name": "opacity", "type": "number", "default": "1", "required": false},
+    {"name": "mouseInteractive", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "The default colour makes the plasma render white and grey, not the colourful swirl the description suggests.",
+    "Blob edges show stair-stepping and stay soft out of focus."
+  ],
+  "polish": 3,
+  "polish_why": "A pleasant organic mass, but it is mushy, aliased and colourless as recorded.",
+  "unsure": ["states", "shows_interaction", "tone"]
+}

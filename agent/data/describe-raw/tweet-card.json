@@ -1,0 +1,66 @@
+{
+  "name": "tweet-card",
+  "frames": {
+    "code": "9105",
+    "best": 1,
+    "best_why": "The whole card is in frame with no cursor over it, showing header, text and photo together.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "static"
+  },
+  "tagline": "A dark card lays out one social post with avatar, handle and photo.",
+  "summary": "A social-post card showing a single post: the author's picture and name with a verified tick, the handle, the message text and any attached photo, linking out to the original.",
+  "title_fix": null,
+  "appearance": "A rounded dark card with a thin border, topped by a small round avatar, the name \"Kelly King\" beside a blue check and the handle beneath. Two lines of white text sit above a large red-and-blue abstract image.",
+  "behaviour": "Static: nothing moves or responds. The author name, handle and bird icon are links that open the profile or post in a new tab.",
+  "parts": ["avatar", "name", "verified tick", "handle", "bird icon", "post text", "attached photo"],
+  "demo_content": "A sample post by Kelly King about shipping 1,500 components, with a red-and-blue abstract photo.",
+  "states": ["hover", "loading", "error"],
+  "kind": "testimonial-card",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "single social post embedded on page",
+    "status update card for social proof",
+    "x post with profile picture",
+    "one post with photo and handle",
+    "customer quote styled as a post",
+    "embedded social media message",
+    "card showing an author and their post",
+    "share a post on your site"
+  ],
+  "resembles": ["X post embed"],
+  "use_when": "A page wants social proof from a real public post shown without an iframe.",
+  "avoid_when": "No server access: the full card fetches the post from X and needs a server or API route.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["testimonial", "feature-card"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "none",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass a post object with its text, author, counts and media; layout and colours come from classes and design tokens.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "One card of text and a single image; no animation or chart loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Links are keyboard reachable, images carry alt text and the outbound link has a screen-reader label."
+  },
+  "props": [
+    {"name": "tweet", "type": "Tweet", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Faithful, tidy post layout; the swirling demo image clashes with the neutral card.",
+  "unsure": []
+}

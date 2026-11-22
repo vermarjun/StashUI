@@ -1,0 +1,67 @@
+{
+  "name": "sonner",
+  "frames": {
+    "code": "6091",
+    "best": 6,
+    "best_why": "The error toast is fully settled and brightest here, with its icon, title and description all readable.",
+    "usable": [4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A small dark card rises near the bottom edge to report a failure.",
+  "summary": "A notification card that appears near the bottom of the screen with a status icon, a short title and a line of detail. Trigger buttons in the demo fire plain, success, error and loading versions.",
+  "title_fix": "Toast Notifications",
+  "appearance": "A rounded dark card floats near the bottom of an empty black stage, showing a small red-ringed exclamation icon at the left, a bold Upload failed line and a dimmer sentence underneath. The card has a thin border and soft shadow.",
+  "behaviour": "Firing the error action fades a toast in at the bottom; frames four to six catch it part-way and then fully settled. It holds in place over the empty stage and leaves on its own timer.",
+  "parts": ["toast card", "status icon", "title", "description"],
+  "demo_content": "Buttons labelled Show Toast, Success, Error and Promise; the toast reads Upload failed.",
+  "states": ["success", "error", "loading"],
+  "kind": "toast",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "message that slides up from the bottom",
+    "error notification card",
+    "success alert after saving",
+    "upload failed popup at bottom",
+    "non blocking status message",
+    "save confirmation snackbar",
+    "small dark alert with an icon",
+    "loading then success message"
+  ],
+  "resembles": [],
+  "use_when": "A short-lived confirmation or failure notice that should not interrupt what the user is doing.",
+  "avoid_when": "Notifications disappear on a timer, so anything the user must act on needs a different pattern.",
+  "suits": ["saas", "dashboard", "ecommerce"],
+  "slot_hints": ["toast"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The wrapper forwards its props to the notification engine and colours come from CSS variables; each message's title and description are passed when you fire it.",
+  "technique": ["css-transition", "js-animation"],
+  "weight": "light",
+  "weight_why": "A thin wrapper around a notification engine, idle whenever no message is showing.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The engine marks messages as status updates, but they auto-dismiss and cannot be reached or closed from the keyboard."
+  },
+  "props": [
+    {"name": "theme", "type": "\"light\" | \"dark\" | \"system\"", "default": null, "required": false},
+    {"name": "toastOptions", "type": "ToastOptions", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The first three frames show only the demo buttons, so the notification itself is missing for most of the clip."],
+  "polish": 3,
+  "polish_why": "Clean rounded toast with clear icon and text hierarchy, but it is the standard notification look.",
+  "unsure": ["technique", "content_from"]
+}

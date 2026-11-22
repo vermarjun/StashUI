@@ -1,0 +1,79 @@
+{
+  "name": "onboarding",
+  "frames": {
+    "code": "4870",
+    "best": 2,
+    "best_why": "Frame 2 shows step two with its title, the three choices, the dots and both navigation buttons.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A short setup card steps through dots, choices and Next.",
+  "summary": "A bordered setup card that walks through a few steps: dot progress at the top, a serif title and description, step content, then Back and Next buttons, with Start Creating on the last step.",
+  "title_fix": null,
+  "appearance": "A rounded bordered card on dark holds a centred row of three small dots, a serif heading in white and a grey description. Step content sits below, with two pill buttons at the bottom: a muted Back and a white Next.",
+  "behaviour": "Clicking Next advances the dots and swaps the step content; Back returns and sits disabled on the first step. On the final step Next turns into Start Creating. Choice rows lighten on hover.",
+  "parts": ["step dots", "title", "description", "step content", "back button", "next button"],
+  "demo_content": "Steps Welcome to StashUI, Pick your style, You're all set; options Minimal, Vibrant and System default.",
+  "states": ["hover", "selected", "disabled"],
+  "kind": "onboarding",
+  "look": ["dark", "rounded", "minimal", "editorial"],
+  "tone": "minimal",
+  "search_phrases": [
+    "multi step setup card",
+    "welcome flow with next buttons",
+    "getting started wizard",
+    "step dots and radio choices",
+    "first run tour card",
+    "install wizard steps with back and next",
+    "choose a theme during setup",
+    "guided setup for a new user"
+  ],
+  "resembles": [],
+  "use_when": "A product needs a short, self-contained first-run setup with a few steps and choices.",
+  "avoid_when": "The flow needs many steps or saved progress: it is a small card with no persistence.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["modal", "form-field"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Root takes totalSteps, value, defaultValue, onValueChange, maxStepValue, onComplete and canGoNext; steps, header, indicator and navigation are composed as child parts.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A small card with conditional steps and CSS dot transitions; no animation library.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The step indicator is a labelled progressbar and the choice group is a labelled radiogroup, so this has a solid baseline."
+  },
+  "props": [
+    {"name": "totalSteps", "type": "number", "default": null, "required": true},
+    {"name": "value", "type": "number", "default": null, "required": false},
+    {"name": "defaultValue", "type": "number", "default": "1", "required": false},
+    {"name": "onValueChange", "type": "(step: number) => void", "default": null, "required": false},
+    {"name": "stepValue", "type": "number", "default": null, "required": false},
+    {"name": "defaultStepValue", "type": "number", "default": "0", "required": false},
+    {"name": "onStepValueChange", "type": "(value: number) => void", "default": null, "required": false},
+    {"name": "maxStepValue", "type": "number", "default": "0", "required": false},
+    {"name": "onComplete", "type": "() => void", "default": null, "required": false},
+    {"name": "canGoNext", "type": "(step: number, stepValue: number) => boolean", "default": null, "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The options in the demo are plain divs, so clicking Minimal, Vibrant or System default changes nothing.",
+    "The disabled Back button on step one is so faint it nearly disappears."
+  ],
+  "polish": 4,
+  "polish_why": "Clean serif type and clear dot progress; the unwired option rows and faint Back button are rough.",
+  "unsure": []
+}

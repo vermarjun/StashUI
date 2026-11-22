@@ -1,0 +1,182 @@
+{
+ "name": "AnimatedContent-TS-TW",
+ "frames": {
+  "code": "5431",
+  "best": 6,
+  "best_why": "Three changelog cards sit fully in frame, showing the stacked result of the scroll effect.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 10.6
+ },
+ "tagline": "Cards slide and fade into place as the page scrolls past them.",
+ "summary": "A wrapper that slides its child in from the side or from below, fading and optionally scaling, once the child scrolls into view. The demo applies it to a stack of changelog cards.",
+ "title_fix": null,
+ "appearance": "A dark changelog page: a small outlined badge, a bold white heading and a line of grey copy at the top, then a narrow column of rounded dark cards. Each card carries a version tag, a white title and two lines of grey text.",
+ "behaviour": "Each card begins shifted off its resting spot and invisible, then slides, fades and scales into place when it reaches a set point in the viewport. The move fires once per card and scrolling carries on normally.",
+ "parts": [
+  "badge",
+  "heading",
+  "intro copy",
+  "changelog card",
+  "version tag"
+ ],
+ "demo_content": "A spring changelog with cards for offline drafts, shared workspaces, command palette and faster search",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "cards slide in as you scroll",
+  "content fades up on entering view",
+  "scroll reveal wrapper for sections",
+  "elements animate in from the side",
+  "reveal cards while scrolling a page",
+  "entrance animation triggered by scrolling",
+  "staggered slide in for a list",
+  "make sections appear on scroll"
+ ],
+ "resembles": [],
+ "use_when": "Sections or cards should arrive as the visitor scrolls, giving a long page a sense of pace.",
+ "avoid_when": "Above-the-fold content, which starts hidden, and long lists where repeated reveals slow reading.",
+ "suits": [
+  "marketing",
+  "blog",
+  "saas"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "body-text",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport",
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Wrap anything as children and set distance, direction, reverse, duration, easing, scale, threshold, delay, starting opacity and a fade-out after a delay.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "moderate",
+ "weight_why": "One GSAP ScrollTrigger and timeline per wrapped element, killed on unmount.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Wrapped content is kept invisible until it scrolls in, and there is no reduced-motion fallback."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "distance",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"vertical\" | \"horizontal\"",
+   "default": "'vertical'",
+   "required": false
+  },
+  {
+   "name": "reverse",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "0.8",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "scale",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "threshold",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "initialOpacity",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "animateOpacity",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "disappearAfter",
+   "type": "number",
+   "default": "0",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Body text inside the cards is dim grey on near-black and hard to read."
+ ],
+ "polish": 4,
+ "polish_why": "The slide-ins are smooth and the changelog reads well; the dim card copy is the weak point.",
+ "unsure": [],
+ "title": "Animated Content",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bf56bb84fad5c61f",
+  "film_hash": "4a28c766252dceac",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

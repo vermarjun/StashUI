@@ -1,0 +1,72 @@
+{
+  "name": "infinite-grid",
+  "frames": {
+    "code": "5116",
+    "best": 6,
+    "best_why": "Frame 6 shows several cards with readable titles, badges, dates and tags at once.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo cards scroll endlessly on a tilted, curving grid.",
+  "summary": "A full-screen grid of image cards that drifts continuously and wraps around as it goes. A slight barrel distortion bends the edges, and each card holds a title, badge, date and tags.",
+  "title_fix": null,
+  "appearance": "A dark stage is tiled with small photo cards, each showing a landscape picture, a title, a badge, a date and a row of tags. The grid curves and tilts toward the edges, packed edge to edge with no background gaps.",
+  "behaviour": "The whole grid glides on its own in an endless loop, pulling new cards in from one side. Cards can be clicked, and the pack never settles while the scene is running.",
+  "parts": ["photo card", "title", "badge", "tags", "date", "grid"],
+  "demo_content": "Photos titled Snowy Peaks, Tropical Beach, Autumn Leaves and Desert Dunes, tagged with seasons and places.",
+  "states": [],
+  "kind": "gallery-section",
+  "look": ["dark", "dense", "colorful", "3d"],
+  "tone": "decorative",
+  "search_phrases": [
+    "infinite scrolling photo grid",
+    "endless tile gallery background",
+    "webgl card grid loop",
+    "full screen image wall",
+    "scrolling gallery with cards",
+    "curved grid of photos",
+    "animated portfolio grid",
+    "3d image grid background"
+  ],
+  "resembles": [],
+  "use_when": "A hero or showcase wants a dense wall of images that keeps moving without user input.",
+  "avoid_when": "It runs a WebGL loop every frame and needs a sized parent, and the card text is tiny.",
+  "suits": ["portfolio", "marketing", "saas"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background", "image"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "cardData (title, badge, description, tags, date, image) and options (grid size, gap, tile size, camera, post-processing) plus callbacks are props; the scroll logic lives in helper files.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A WebGL scene with post-processing redrawn every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The WebGL grid exposes no text to assistive tech, has no keyboard path and ignores reduced-motion."
+  },
+  "props": [
+    {"name": "cardData", "type": "CardData[]", "default": null, "required": true},
+    {"name": "options", "type": "Partial<InfiniteGridOptions>", "default": null, "required": false},
+    {"name": "onTilesLoaded", "type": "() => void", "default": null, "required": false},
+    {"name": "onTileClicked", "type": "(detail: unknown) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frame 1 is a completely blank stage while the grid loads.",
+    "Card titles, tags and dates are extremely small and hard to read at full-bleed size."
+  ],
+  "polish": 4,
+  "polish_why": "Smooth endless motion and a convincing wall, but card text is too small and loading is blank.",
+  "unsure": ["a11y.keyboard", "responsive"]
+}

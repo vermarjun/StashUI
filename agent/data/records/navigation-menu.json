@@ -1,0 +1,129 @@
+{
+ "name": "navigation-menu",
+ "frames": {
+  "code": "2624",
+  "best": 3,
+  "best_why": "Products panel is open with all three two-line links visible and no cursor blocking the text.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.4
+ },
+ "tagline": "Header links whose chevrons drop a panel of sub-pages.",
+ "summary": "A short horizontal menu of top-level links where Products and Docs carry chevrons and open a bordered panel of two-line destinations. Hovering a trigger highlights it and flips its chevron while the panel slides in.",
+ "title_fix": null,
+ "appearance": "Three light grey links in a row on black, with small chevrons after Products and Docs. An open trigger gets a soft grey rounded background, and a dark bordered panel drops below holding bold titles stacked over muted description lines.",
+ "behaviour": "Hovering or clicking a trigger opens its panel with a short slide and fade while the chevron turns upward; moving to another trigger swaps the panel in place. Clicking outside closes it.",
+ "parts": [
+  "menu row",
+  "trigger",
+  "chevron",
+  "dropdown panel",
+  "link title",
+  "link description"
+ ],
+ "demo_content": "Products lists Overview, Analytics and Integrations; Docs lists Getting Started and API Reference; Pricing is plain.",
+ "states": [
+  "hover",
+  "focus",
+  "open"
+ ],
+ "kind": "site-header",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "top bar with dropdown links",
+  "menu bar for a website header",
+  "hover to reveal a list of pages",
+  "products and docs tabs with chevrons",
+  "multi level page links",
+  "header links that open panels",
+  "website navbar with submenus",
+  "pricing link beside two menus"
+ ],
+ "resembles": [],
+ "use_when": "A header needs a few top-level destinations whose contents are worth previewing in a panel.",
+ "avoid_when": "Panels open on hover, so touch users must tap and the panel then covers page content.",
+ "suits": [
+  "saas",
+  "marketing",
+  "docs"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "You build the row from items, triggers, panels and links, each taking classes; turning viewport off anchors each panel to its own trigger instead of a shared box.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few links and one floating panel; nothing runs while the menu is closed.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Triggers open by hover, click or keyboard and roles come from the primitive, but the slide and zoom ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "viewport",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo omits the small indicator arrow that the source exports",
+  "The menu floats alone on a black page, so it is not shown in a real header"
+ ],
+ "polish": 3,
+ "polish_why": "Clean, legible menu with a smooth panel swap; plain styling and no header context around it.",
+ "unsure": [],
+ "title": "Navigation Menu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "88c45026ed8eb523",
+  "film_hash": "ebde1de80e0b8738",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

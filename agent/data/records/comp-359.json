@@ -1,0 +1,112 @@
+{
+ "name": "comp-359",
+ "frames": {
+  "code": "7000",
+  "best": 3,
+  "best_why": "Only frame showing the tooltip's lit lower edge and pointer above the trigger, though its body is cropped.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "render": "partial",
+  "render_note": "The tooltip opens above the button but the crop cuts it off, leaving only its bottom strip and arrow visible.",
+  "shows_interaction": "partly",
+  "best_time": 1.1
+ },
+ "tagline": "Hovering a small labelled button starts to open a light popup above it.",
+ "summary": "An outlined button opens a rich tooltip that holds a wide image above a short title and paragraph. In the recording the popup is cropped, so only its lower edge and pointer are actually seen.",
+ "title_fix": null,
+ "appearance": "A single outlined button reading 'W/ image' sits on a near-black page. On hover a light rounded tooltip begins to open above it, but the frame cuts it off so only its bottom strip and a downward pointer show.",
+ "behaviour": "Hovering or focusing the button opens the tooltip above it at once and moving away dismisses it. The recorded crop never reveals the popup's full body, only its lower edge.",
+ "parts": [
+  "trigger button",
+  "tooltip panel",
+  "pointer arrow"
+ ],
+ "demo_content": "Trigger button labelled 'W/ image'.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "tooltip",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hover card with a picture and caption",
+  "tooltip that shows an image preview",
+  "rich popup with photo and text",
+  "hover over button to preview image",
+  "popup card with picture title and description",
+  "image preview on hover",
+  "tooltip with media inside",
+  "hover card with a thumbnail"
+ ],
+ "resembles": [],
+ "use_when": "A small button should preview a picture and its caption on hover instead of linking away.",
+ "avoid_when": "The popup is wide and can be clipped by a tight container or viewport edge, as in this recording.",
+ "suits": [
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "tooltip",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The image path, title and paragraph are written inside the tooltip and must be edited in the file; only the trigger label is separate.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One button and a small popup; the image just loads, with no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The popup opens on focus and the image has alt text, but that text is only the generic word 'Content'."
+ },
+ "props": [],
+ "issues": [
+  "The recorded crop cuts the tooltip off, so its image and text are never visible.",
+  "The image alt text is only the word 'Content'."
+ ],
+ "polish": 2,
+ "polish_why": "The popup is cropped out of every frame, so only the plain trigger button is really visible.",
+ "unsure": [
+  "frames.best",
+  "frames.usable"
+ ],
+ "title": "Image Tooltip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b6ac15075202f4e8",
+  "film_hash": "19d91964d6015dd4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

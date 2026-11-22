@@ -1,0 +1,176 @@
+{
+  "name": "halo-dropzone",
+  "frames": {
+    "code": "1858",
+    "best": 2,
+    "best_why": "Shows the glowing drop panel plus one finished upload and one bar still filling at 55%.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drop area with a glowing gradient rim above rows of files uploading.",
+  "summary": "A frosted dark panel with a dashed edge and a wash of pink, blue and green light inside it, asking you to drop or browse for files. Underneath, each queued file shows a thumbnail, name, size, progress bar and remove cross.",
+  "title_fix": null,
+  "appearance": "A wide rounded dropzone with a faint dashed border and a pink, blue and green glow inside. A small circular upload arrow sits over white instruction text and a grey hint line. Below are two near-black rows, each with a white page thumbnail, a thin progress bar and a cross.",
+  "behaviour": "Files can be dropped onto the panel or chosen through the browser picker, which also opens from Enter or Space. Rows slide in, their thin bars fill with a pink-to-blue gradient, then turn green with a tick at completion; clicking a cross removes that row.",
+  "parts": [
+    "dropzone panel",
+    "upload icon",
+    "instruction text",
+    "format hint",
+    "file row",
+    "page thumbnail",
+    "progress bar",
+    "remove cross"
+  ],
+  "demo_content": "Two seeded uploads, q3-board-deck.pdf at 2.3 MB and launch-hero@2x.png at 1.4 MB.",
+  "states": [
+    "hover",
+    "focus",
+    "dragging",
+    "loading",
+    "success",
+    "disabled"
+  ],
+  "kind": "file-upload",
+  "look": [
+    "dark",
+    "glass",
+    "gradient",
+    "rounded",
+    "glow"
+  ],
+  "tone": "decorative",
+  "search_phrases": [
+    "drag and drop file upload box",
+    "upload files with progress bars",
+    "glowing dashed drop area",
+    "attach documents to a form",
+    "show file upload percent complete",
+    "image and pdf uploader",
+    "dark uploader with gradient border",
+    "remove a queued upload"
+  ],
+  "resembles": [],
+  "use_when": "Users need to attach several files at once and watch each one finish in place.",
+  "avoid_when": "The dark frosted fill and coloured glow rely on a dark backdrop and will wash out on white pages.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field",
+    "modal"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "drag",
+      "keyboard"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "border",
+      "background",
+      "layout"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Labels, icon, format hint, multiple, accept, disabled, translucent and success timing are props. The upload rows and their progress are separate components you feed with items.",
+  "technique": [
+    "motion-library",
+    "js-animation"
+  ],
+  "weight": "moderate",
+  "weight_why": "Several blurred gradient blobs animate forever, plus a frame-loop rim trail on interaction.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "The zone is a focusable label with an aria-label, Enter and Space open the picker, progress bars carry roles, and motion is reduced when asked."
+  },
+  "props": [
+    {
+      "name": "onFiles",
+      "type": "(files: File[]) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "accept",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "formatHint",
+      "type": "string | null",
+      "default": "\"PNG, JPG, PDF up to 10MB\"",
+      "required": false
+    },
+    {
+      "name": "emptyLabel",
+      "type": "string",
+      "default": "\"Drop files here or browse\"",
+      "required": false
+    },
+    {
+      "name": "successLabel",
+      "type": "string",
+      "default": "\"Upload complete\"",
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "showSuccessThumbnails",
+      "type": "boolean",
+      "default": "true",
+      "required": false
+    },
+    {
+      "name": "successResetMs",
+      "type": "number",
+      "default": "2400",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Tidy rows and a rich but readable glow; the demo's progress is simulated rather than real.",
+  "unsure": []
+}

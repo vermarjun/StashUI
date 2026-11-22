@@ -1,0 +1,110 @@
+{
+ "name": "comp-164",
+ "frames": {
+  "code": "1443",
+  "best": 6,
+  "best_why": "The 4 CPU tile shows the lighter selected border, with the faded disabled tile still in view.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.3
+ },
+ "tagline": "Core-count tiles in a grid; the chosen one brightens.",
+ "summary": "A labelled grid of tile radios offering 2 to 16 CPU, three across and two deep, with the selected size outlined lighter. The 16 CPU tile is disabled and faded.",
+ "title_fix": null,
+ "appearance": "A small white heading sits above six rounded tiles with thin grey outlines on black, arranged in three columns and two rows. Each tile holds a centred white caption such as 2 CPU; the bottom-right one uses faded grey text.",
+ "behaviour": "Clicking a tile swaps a lighter outline onto it. The recording opens with 2 CPU marked and moves to 4 CPU. The 16 CPU tile is disabled, so it never highlights or takes the selection.",
+ "parts": [
+  "group heading",
+  "option tile",
+  "option text"
+ ],
+ "demo_content": "CPU Cores heading; 2 CPU, 4 CPU, 6 CPU, 8 CPU, 12 CPU, 16 CPU",
+ "states": [
+  "focus",
+  "disabled",
+  "selected"
+ ],
+ "kind": "radio-group",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "pick how many cpu cores to use",
+  "server size selector tiles",
+  "grid of plan options with one disabled",
+  "choose a machine size in a grid",
+  "radio tiles showing cpu counts",
+  "vps plan picker grid",
+  "disabled option inside a tile group",
+  "hardware tier selection cards"
+ ],
+ "resembles": [
+  "DigitalOcean droplet size picker"
+ ],
+ "use_when": "When a machine or plan must be picked from a short list of fixed sizes on one screen.",
+ "avoid_when": "One tile is hardcoded disabled, and the three-column grid grows tall once many sizes are listed.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Sizes come from an items array inside the file; add, rename or disable entries there. Column count, gaps and the disabled fade are utility classes in the same file.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Six plain tiles over a native radio group, with one short border fade.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Each tile is a label wrapping a hidden radio, so arrow keys select and a ring marks focus; the border fade ignores reduced-motion settings."
+ },
+ "props": [],
+ "issues": [
+  "The 16 CPU option is disabled for good, so the largest size can never be picked."
+ ],
+ "polish": 3,
+ "polish_why": "Even grid with clear selected and disabled looks, but otherwise plain default styling.",
+ "unsure": [],
+ "title": "CPU Core Selector",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b0515ed45fd39f38",
+  "film_hash": "16abf9092577c257",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

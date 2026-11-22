@@ -1,0 +1,109 @@
+{
+ "name": "comp-361",
+ "frames": {
+  "code": "1953",
+  "best": 5,
+  "best_why": "Tooltip is fully open above the Stats button with all four label and value pairs readable.",
+  "usable": [
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.4
+ },
+ "tagline": "A light popup of build metrics opens above a small Stats button.",
+ "summary": "An outlined Stats button reveals a compact tooltip listing four build metrics. Each row puts a muted label above a bold value, from status to coverage and performance score.",
+ "title_fix": null,
+ "appearance": "At rest a small outlined Stats button sits centred in a bordered card with a caption. On hover a light tooltip opens above it, stacking four short metric blocks: a grey label on one line and a bold value below, spaced generously apart.",
+ "behaviour": "Hovering or focusing Stats opens the tooltip immediately and moving away closes it. The values are fixed; nothing else changes.",
+ "parts": [
+  "stats button",
+  "tooltip",
+  "metric label",
+  "metric value",
+  "tooltip pointer"
+ ],
+ "demo_content": "Caption 'Hover for build stats.'; tooltip shows status Completed, coverage 94.3%, last deploy today 15:42, score 98/100.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "tooltip",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hover popup listing build metrics",
+  "tooltip with labels and values stacked",
+  "see deploy status on hover",
+  "small popup with code coverage and score",
+  "metrics breakdown beside a button",
+  "tooltip with four stat rows",
+  "hover card with key numbers",
+  "build stats preview popup"
+ ],
+ "resembles": [],
+ "use_when": "A tight space needs to show a few labelled figures on demand without a full dashboard.",
+ "avoid_when": "Values are hardcoded in the tooltip, so live stats require rewriting the source.",
+ "suits": [
+  "devtool",
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "tooltip",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The four metric labels and values are fixed in the tooltip's list, so changing them means editing the source; the trigger text is fixed too.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A button and a four-row popup; no charts or animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Focus opens the tooltip and the rows use a real list with readable text; there is no reduced-motion handling."
+ },
+ "props": [],
+ "issues": [
+  "Metrics are hardcoded, so the tooltip cannot show live build data without code changes."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy, legible stat list; a plain standard tooltip demo with fixed data.",
+ "unsure": [],
+ "title": "Stats Tooltip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6f66aaab65cd8894",
+  "film_hash": "36c60eb66f4b03d4",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

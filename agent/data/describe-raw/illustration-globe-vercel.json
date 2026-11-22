@@ -1,0 +1,73 @@
+{
+  "name": "illustration-globe-vercel",
+  "frames": {
+    "code": "3665",
+    "best": 6,
+    "best_why": "The most accent paths and node rings are lit at once, with the deployed badge showing underneath.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Wireframe hemisphere with glowing deploy paths arcing down to node dots.",
+  "summary": "A half-globe drawn in thin lines, with coloured paths that travel from the north pole down to small circular nodes and ring out as they land. A small badge underneath reports whether the deploy is running, done or failed.",
+  "title_fix": null,
+  "appearance": "A faint grey hemisphere on a near-black stage, made of one round outline, several vertical meridians and nine latitude lines. Six small circles sit at path endpoints, and a compact light pill with a status word and replay icon is centred below the globe.",
+  "behaviour": "Accent-coloured paths draw themselves from the pole down to each node in turn, and a circle at each landing point swells into a fading ring. The status pill can read deploying, deployed or failed, and its replay icon restarts the whole sequence.",
+  "parts": ["globe outline", "meridian line", "latitude line", "deploy path", "node marker", "status badge", "replay icon"],
+  "demo_content": "Status pills Deploying, Deployed and Failed, four accent dots, and a badge reading deployed or deploying…",
+  "states": ["hover", "active", "loading", "success", "error"],
+  "kind": "3d-scene",
+  "look": ["dark", "monochrome", "technical", "minimal", "outlined"],
+  "tone": "technical",
+  "search_phrases": [
+    "globe made of wireframe lines",
+    "deployment status visualization",
+    "animated lines radiating from a point",
+    "network map with connection paths",
+    "dark diagram of a half sphere",
+    "show build failing or succeeding",
+    "svg globe with glowing routes",
+    "tech illustration for a deploy section"
+  ],
+  "resembles": ["Vercel deployment globe"],
+  "use_when": "A deploy or infrastructure section needs a compact visual of routes reaching nodes with a pass or fail state.",
+  "avoid_when": "It is decoration, not data: paths are fixed trajectories and the wireframe density is hardcoded.",
+  "suits": ["devtool", "saas"],
+  "slot_hints": ["feature-card", "decoration", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Status, accent colour, duration, the node list and a replay callback are props; the globe geometry and wireframe density are fixed constants.",
+  "technique": ["svg"],
+  "weight": "light",
+  "weight_why": "A few dozen SVG lines animated by SMIL opacity and radius; no canvas, WebGL or JS frame loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The drawing is aria-hidden and the replay button has a label, but nothing checks reduced-motion and the button has no visible focus style."
+  },
+  "props": [
+    {"name": "status", "type": "\"deploying\" | \"deployed\" | \"error\"", "default": "\"deployed\"", "required": false},
+    {"name": "nodes", "type": "DeployNode[]", "default": "DEFAULT_NODES", "required": false},
+    {"name": "accentColor", "type": "string", "default": null, "required": false},
+    {"name": "duration", "type": "number", "default": "4.5", "required": false},
+    {"name": "onReplay", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "\"\"", "required": false}
+  ],
+  "issues": [
+    "The grey wireframe is very faint against the dark stage, so the latitude lines nearly vanish.",
+    "The status badge and control text are tiny at the recorded size."
+  ],
+  "polish": 4,
+  "polish_why": "Precise geometry and smooth path draws; faint lines and small badge text hold it back.",
+  "unsure": ["kind"]
+}

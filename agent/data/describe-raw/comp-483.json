@@ -1,0 +1,67 @@
+{
+  "name": "comp-483",
+  "frames": {
+    "code": "8919",
+    "best": 1,
+    "best_why": "Table and full pagination bar together: size picker, 1-5 of 60 count and four page buttons.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Account table paged five at a time with a rows-per-page picker.",
+  "summary": "A dark account table inside a rounded border, with sortable headers, row checkboxes and a footer bar. That bar holds a rows-per-page menu, a live count like 1-5 of 60, and first, previous, next and last buttons.",
+  "title_fix": null,
+  "appearance": "A black table in a thin rounded frame: a checkbox column, bold names, emails, flag emojis with cities, rounded status pills and right-aligned balances. Under it, a grey control row pairs a small dropdown, a page counter and four outlined square chevron buttons.",
+  "behaviour": "Clicking a header sorts and shows an up or down arrow. The page buttons step through the rows and grey out at the ends; the size menu swaps the table between 5, 10, 25 and 50 rows, and the counter follows.",
+  "parts": ["table frame", "header label", "sort chevron", "row checkbox", "status pill", "rows-per-page select", "page counter", "page buttons"],
+  "demo_content": "Duplicate employee records with flags, status pills and balances; sixty rows in all.",
+  "states": ["open", "selected", "hover", "loading", "empty"],
+  "kind": "data-table",
+  "look": ["dark", "flat", "outlined", "minimal", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "table with page numbers and arrows",
+    "change how many rows show per page",
+    "paginated list of customer accounts",
+    "sortable table with next and last buttons",
+    "table footer showing 1 to 5 of 60",
+    "rows per page dropdown under a table",
+    "employee table split into pages",
+    "table with first previous next last controls"
+  ],
+  "resembles": [],
+  "use_when": "A long account list needs paging with a visible count and a choice of rows per page.",
+  "avoid_when": "The demo loads the fetched users twice, so every person appears in duplicate until you supply real data.",
+  "suits": ["dashboard", "saas"],
+  "slot_hints": ["data-table"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "none",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Page sizes, column widths and the fetch URL are written in the file; supplying different records or another default sort means editing the source.",
+  "technique": ["static"],
+  "weight": "moderate",
+  "weight_why": "A table library paginates and sorts sixty remote rows; no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Page buttons carry labels, the counter is announced politely and the size menu has a real label, but sorted headers never set aria-sort."
+  },
+  "props": [],
+  "issues": [
+    "The demo appends the same user list to itself, so every person appears twice.",
+    "In the larger-page frames the pagination bar is pushed below the crop.",
+    "Sortable headers show a chevron but expose no aria-sort attribute."
+  ],
+  "polish": 4,
+  "polish_why": "Complete pagination bar with labels, counts and sizing; duplicated demo data is the one blemish.",
+  "unsure": ["states"]
+}

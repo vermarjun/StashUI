@@ -1,0 +1,132 @@
+{
+  "name": "svg-mask-effect",
+  "frames": {
+    "code": "1341",
+    "best": 2,
+    "best_why": "Frame 2 puts the black spotlight dot right on the sentence, the clearest view of it tracking the pointer.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A black torch follows the mouse, uncovering a second message in the text.",
+  "summary": "A white panel of bold statement text with a small black spotlight that tracks the pointer. Hovering opens the spotlight wide and darkens the panel to show a different sentence underneath.",
+  "title_fix": null,
+  "appearance": "A wide white panel holding one block of large bold near-black text, a two-sentence rule with DO NOT in capitals, centred in the space. A tiny solid black dot, the spotlight mask, sits somewhere on the text, and in one frame the whole panel has shifted to pale grey.",
+  "behaviour": "A black circular mask follows the pointer across the copy, a small dot by default that only hints at a white-on-black layer beneath. Moving the pointer onto the text grows the circle very wide as the panel darkens to navy, uncovering that second sentence, and leaving shrinks it again.",
+  "parts": [
+    "panel",
+    "bold sentence",
+    "spotlight dot"
+  ],
+  "demo_content": "A two-sentence joke about the first and second rules of MRR Club, ending DO NOT talk about MRR Club.",
+  "states": [
+    "hover"
+  ],
+  "kind": "text-effect",
+  "look": [
+    "light",
+    "minimal",
+    "bold",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "spotlight that reveals hidden text",
+    "black circle following the mouse over text",
+    "flashlight over a sentence to uncover words",
+    "masked text reveal on hover",
+    "second message under the first",
+    "cursor spotlight text effect",
+    "reveal a secret line with a torch",
+    "two layer headline swap"
+  ],
+  "resembles": [],
+  "use_when": "A short statement should hide a second message that only appears under the cursor.",
+  "avoid_when": "The hidden message must be readable on touch or keyboard, or the copy has to be discoverable.",
+  "suits": [
+    "marketing",
+    "portfolio",
+    "saas"
+  ],
+  "slot_hints": [
+    "headline",
+    "hero",
+    "body-text"
+  ],
+  "traits": {
+    "trigger": [
+      "pointer-move",
+      "hover"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "children is the hidden layer inside the mask and revealText is what shows at rest; size and revealSize set the dot and expanded diameter. The white, navy and black colours are hardcoded.",
+  "technique": [
+    "motion-library",
+    "svg"
+  ],
+  "weight": "light",
+  "weight_why": "Two text layers and one masked div whose position and size motion updates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The reveal is pointer-only with no keyboard or focus route, and the mask ignores reduced-motion."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode | string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "revealText",
+      "type": "React.ReactNode | string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "default": "10",
+      "required": false
+    },
+    {
+      "name": "revealSize",
+      "type": "number",
+      "default": "600",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The recording never shows the payoff: the wide spotlight and the second message stay hidden.",
+    "At rest the only cue is a ten-pixel black dot, so the hidden layer is easy to miss entirely."
+  ],
+  "polish": 3,
+  "polish_why": "Clean, confident type on white, but it shows only a tiny dot, not the reveal it exists for.",
+  "unsure": []
+}

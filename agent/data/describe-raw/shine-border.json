@@ -1,0 +1,69 @@
+{
+  "name": "shine-border",
+  "frames": {
+    "code": "3371",
+    "best": 3,
+    "best_why": "The coloured glow is at its most even, wrapping all four edges and corners of the card.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A purple-pink glow travels around the edge of a dark card.",
+  "summary": "A thin animated border of gradient light that sweeps around a card's outline, here wrapping a login form in shifting lilac, pink and peach.",
+  "title_fix": null,
+  "appearance": "A dark rounded login card with a heading, two outlined inputs and a light Sign in button. Around its perimeter runs a soft line of purple, pink and warm orange light, brightest near the corners and fading along the edges.",
+  "behaviour": "The light band travels steadily around the border, gliding through the corners and completing laps without a pause. The card content itself stays still.",
+  "parts": ["glowing border", "login card", "email field", "password field", "sign-in button"],
+  "demo_content": "A login card with Email and Password fields and a Sign in button.",
+  "states": [],
+  "kind": "border-effect",
+  "look": ["dark", "rounded", "gradient", "glow", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "glowing border around a card",
+    "animated gradient outline",
+    "moving light along the edge",
+    "rainbow border effect",
+    "shimmering card border",
+    "neon outline animation",
+    "colorful border that loops",
+    "light travelling around a box"
+  ],
+  "resembles": [],
+  "use_when": "A card needs to stand out with a moving coloured edge without recolouring its contents.",
+  "avoid_when": "Light backgrounds or many cards; the glow is subtle and the loop repeats forever.",
+  "suits": ["saas", "fintech", "marketing"],
+  "slot_hints": ["feature-card", "pricing-card", "modal"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Set borderWidth, duration and shineColor (one colour or an array); it is an overlay, so content and rounded corners come from the parent card.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "A single absolutely positioned gradient layer animated by one CSS keyframe.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": true,
+    "note": "It is a decorative overlay that already stops animating when reduced-motion is requested."
+  },
+  "props": [
+    {"name": "borderWidth", "type": "number", "default": "1", "required": false},
+    {"name": "duration", "type": "number", "default": "14", "required": false},
+    {"name": "shineColor", "type": "string | string[]", "default": "\"#000000\"", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "A smooth, restrained gradient glow; it relies on a dark card to read well.",
+  "unsure": []
+}

@@ -1,0 +1,185 @@
+{
+ "name": "StaggeredMenu-TS-TW",
+ "frames": {
+  "code": "9893",
+  "best": 4,
+  "best_why": "The panel is fully open with all four numbered links and the social names readable.",
+  "usable": [
+   1,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.3
+ },
+ "tagline": "A white side panel slides in with big links that rise in one after another.",
+ "summary": "A slim header with a logo and a Menu toggle that opens a tall white panel from the right, layered over coloured strips. Huge uppercase links rise in one by one, each numbered, with social links at the bottom.",
+ "title_fix": null,
+ "appearance": "A dark full-bleed stage with a small white logo at top-left and a 'Menu +' toggle at top-right. Opening reveals a tall white panel on the right, fronted by thin lavender and purple stripes, holding four very large black uppercase links with small numbers and a 'Socials' row beneath.",
+ "behaviour": "Clicking Menu slides coloured prelayers in from the right, then the white panel, and the links rise into place with a stagger; the toggle becomes Close and its icon turns to an X. Clicking Close, the toggle, or outside the panel slides everything back out.",
+ "parts": [
+  "logo",
+  "menu toggle",
+  "coloured stripes",
+  "menu panel",
+  "menu links",
+  "item numbers",
+  "socials row"
+ ],
+ "demo_content": "Menu links Home, Work, About and Contact, plus GitHub, Twitter and Dribbble under a 'myui' logo.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "site-header",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "colorful"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "full screen side menu that slides in",
+  "huge letters rise into a navigation panel",
+  "hamburger opens a white menu drawer",
+  "navigation with numbered menu items",
+  "bold typographic menu overlay",
+  "menu button that turns into close",
+  "links that pop in one after another",
+  "side panel with social links at the bottom"
+ ],
+ "resembles": [],
+ "use_when": "You want a bold, editorial site menu that takes over the screen briefly instead of crowding a thin top bar.",
+ "avoid_when": "Below tablet width the panel goes full width and hides the whole page while it is open.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Pass menu and social items as arrays, plus side, panel colours, accent, logo, toggle colours, numbering, fixed mode and open or close callbacks. Type sizes, panel width and timings are fixed.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of links and three prelayers; GSAP timelines run only while opening or closing.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Animations ignore reduced-motion, and focus is not trapped or moved into the panel when it opens."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "StaggeredMenuItem[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "socialItems",
+   "type": "StaggeredMenuSocialItem[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "position",
+   "type": "'left' | 'right'",
+   "default": "'right'",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "['#B497CF', '#5227FF']",
+   "required": false
+  },
+  {
+   "name": "accentColor",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "logoUrl",
+   "type": "string",
+   "default": "'/src/assets/logos/reactbits-gh-white.svg'",
+   "required": false
+  },
+  {
+   "name": "menuButtonColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "openMenuButtonColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "displaySocials",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "displayItemNumbering",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "closeOnClickAway",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "onMenuOpen",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Below 1024px the panel expands to full width and hides the entire page behind it.",
+  "Opening the menu takes over half a second of staggered motion with no reduced-motion fallback."
+ ],
+ "polish": 4,
+ "polish_why": "Big type and layered colour stripes feel crafted; the full-width mobile panel is heavy.",
+ "unsure": [
+  "traits.theme"
+ ],
+ "title": "Staggered Menu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f98e5d3ce1a8435d",
+  "film_hash": "858c3306147254e6",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

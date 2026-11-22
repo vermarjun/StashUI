@@ -1,0 +1,114 @@
+{
+ "name": "comp-383",
+ "frames": {
+  "code": "8275",
+  "best": 3,
+  "best_why": "Notification popover is fully open with six avatar rows, two unread dots and Mark all as read.",
+  "usable": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "A bell with an unread count opens a list of avatar notifications.",
+ "summary": "A bell button with a red unread badge opens a popover feed. Each row pairs a user photo with a sentence about what they did, a timestamp and a dot for unread items; Mark all as read clears them.",
+ "title_fix": null,
+ "appearance": "A rounded dark card shows 'Activity', a grey '2 unread notifications' subtitle and a square bell button with a red count badge. The popover is a dark panel titled Notifications with a 'Mark all as read' link, a rule, and six rows of square avatars with two-line messages, grey timestamps and small unread dots.",
+ "behaviour": "Clicking the bell opens the feed. Clicking a row marks it read and removes its dot; Mark all as read clears every dot and removes the badge from the bell.",
+ "parts": [
+  "bell button",
+  "unread badge",
+  "popover header",
+  "mark all as read",
+  "notification row",
+  "avatar",
+  "timestamp",
+  "unread dot"
+ ],
+ "demo_content": "Two unread; rows about a PR review, a shared library, an API task, auth flow and a dashboard.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "bell icon with unread notification count",
+  "dropdown feed of recent activity",
+  "mark all notifications as read",
+  "avatar list of what teammates did",
+  "notification inbox popup",
+  "click the bell to see alerts",
+  "activity feed with timestamps",
+  "unread dot next to new alerts"
+ ],
+ "resembles": [],
+ "use_when": "A header needs a compact inbox of recent activity with clear unread markers.",
+ "avoid_when": "The feed shows six fixed items with no scroll area, so a longer history crowds the popover.",
+ "suits": [
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "nav",
+  "avatar"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The six notifications, avatar URLs, names, actions and timestamps are fixed in an array in the file; real data means replacing that array.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small popover with six image rows; no animation loop.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The bell has an aria-label and avatars use names as alt, but unread status is shown only by a colour dot."
+ },
+ "props": [],
+ "issues": [
+  "The popover is a fixed 320px wide and lists six items with no scroll area.",
+  "Unread state is conveyed only by a small dot, not to screen readers."
+ ],
+ "polish": 3,
+ "polish_why": "Tidy, scannable feed; a conventional popover with fixed width and no scrolling.",
+ "unsure": [],
+ "title": "Avatar Notification Feed",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2798e02c9cf0ce1b",
+  "film_hash": "54217468e412133f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-309",
+  "frames": {
+    "code": "6591",
+    "best": 6,
+    "best_why": "Frame 6 shows both text lines and all controls with the cursor well away from them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The left edge is cropped, so the circular rocket badge is cut off.",
+    "shows_interaction": "no"
+  },
+  "tagline": "Two-line launch strip pairs a headline with a Try now pill.",
+  "summary": "A full-width dark banner with a bold headline over a muted one-line description, a white Try now button and a close X that removes it.",
+  "title_fix": null,
+  "appearance": "A full-width dark strip holds a bold white headline above a smaller grey line on the left. At the right sit a white rounded Try now button and a faint X; a circular rocket badge is cut off at the left edge.",
+  "behaviour": "Pressing the X hides the strip, and the X brightens on hover. Try now has no action wired, so the clip only shows the resting banner.",
+  "parts": ["headline", "description text", "try now button", "close button"],
+  "demo_content": "Boost your experience with coss.com; The new feature is live! Try it out and let us know what you think.",
+  "states": ["hover"],
+  "kind": "toast",
+  "look": ["dark", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "feature launch bar with try now",
+    "two line announcement strip",
+    "dismissible product update banner",
+    "bar with headline and short description",
+    "new feature notification with button",
+    "full width promo bar with close",
+    "app update message at top",
+    "release announcement with try button"
+  ],
+  "resembles": [],
+  "use_when": "You want a short launch message with a headline, supporting line and one action button.",
+  "avoid_when": "Two lines of fixed copy with no persistence, so the strip returns on every reload.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["toast", "nav"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Headline, description and button label are fixed in the file; visibility is a local flag with no props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Two short lines, one button and a single state flag.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Close is labelled and the rocket badge is hidden from screen readers, but the file adds no focus styling or reduced-motion handling."
+  },
+  "props": [],
+  "issues": ["The crop hides the circular rocket badge at the left edge.", "Try now has no handler, so the call to action is inert."],
+  "polish": 3,
+  "polish_why": "Clear type hierarchy and tidy spacing; the hidden badge and inert button keep it ordinary.",
+  "unsure": ["render"]
+}

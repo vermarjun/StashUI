@@ -1,0 +1,70 @@
+{
+  "name": "components-community-radial-intro",
+  "frames": {
+    "code": "9634",
+    "best": 1,
+    "best_why": "All five circular photos sit evenly around the ring, making the orbit shape easiest to read.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Round photos glide into a ring and orbit the empty centre.",
+  "summary": "A ring of circular photos spins slowly around an empty middle, each picture staying upright as the ring turns.",
+  "title_fix": null,
+  "appearance": "Five small circular photos, each a different scene, sit evenly spaced on a ring on a black background, with nothing in the middle. All circles are the same size and stay upright as they move.",
+  "behaviour": "Photos fade and lift into their ring positions shortly after mount, then the whole ring rotates continuously while each photo counter-rotates so it never tips over. The linear spin never stops.",
+  "parts": ["circular photo", "orbit ring", "empty centre"],
+  "demo_content": "Five circular Unsplash photos standing in for React, TypeScript, Tailwind, Vite and Node.js.",
+  "states": [],
+  "kind": "image-effect",
+  "look": ["dark", "rounded", "minimal", "airy"],
+  "tone": "decorative",
+  "search_phrases": [
+    "photos orbiting in a circle",
+    "spinning ring of avatars",
+    "circular image carousel animation",
+    "tech stack logos floating in orbit",
+    "rotating hero visual for landing page",
+    "images circle around the centre",
+    "continuous orbit animation",
+    "photo ring that never stops spinning"
+  ],
+  "resembles": [],
+  "use_when": "A landing page or section needs a decorative orbiting visual to fill space beside copy.",
+  "avoid_when": "The motion never stops and the centre is empty, so it cannot carry text and may distract from reading.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["hero", "decoration", "media"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an array of items with id, name and src plus the stage and image sizes; the ring spacing, spring and 30-second spin are fixed in source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Five small images on one infinite transform spin; no canvas or WebGL.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The orbit never stops and there is no prefers-reduced-motion check, so motion-sensitive users cannot pause it."
+  },
+  "props": [
+    {"name": "orbitItems", "type": "OrbitItem[]", "default": null, "required": true},
+    {"name": "stageSize", "type": "number", "default": "320", "required": false},
+    {"name": "imageSize", "type": "number", "default": "60", "required": false}
+  ],
+  "issues": [
+    "The demo's photos do not match their React and TypeScript names, so it reads as random scenery.",
+    "The empty centre gives the ring nothing to orbit around, so its purpose is unclear."
+  ],
+  "polish": 4,
+  "polish_why": "Even spacing and a smooth, upright orbit; random photos and an empty centre weaken the story.",
+  "unsure": ["kind"]
+}

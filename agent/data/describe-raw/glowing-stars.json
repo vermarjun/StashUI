@@ -1,0 +1,114 @@
+{
+  "name": "glowing-stars",
+  "frames": {
+    "code": "3317",
+    "best": 6,
+    "best_why": "Frame 6 has nearly every star lit white from the hover, more than the few scattered flashes in the others.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny stars dot a dark card and flare white when the cursor crosses it.",
+  "summary": "A dark rounded card with a grid of one-pixel stars over its top half and a title and description beneath. Random stars flicker on a timer, and hovering lights the whole field.",
+  "title_fix": null,
+  "appearance": "A tall rounded card in a soft dark grey-brown gradient, its upper two thirds a wide grid of tiny grey dots. Near the bottom a bold white title sits over two lines of pale grey copy, and lit dots gain a small blue halo.",
+  "behaviour": "Every three seconds five random dots swell and flash white-blue before fading. Hovering the card lights all of them at once with a staggered cascade, and they drop back to random flicker when the pointer leaves.",
+  "parts": [
+    "card",
+    "star grid",
+    "title",
+    "description",
+    "glow halos"
+  ],
+  "demo_content": "Title \"Component Library\" with a description about Radix UI and Tailwind CSS and a note to hover for the glow.",
+  "states": [
+    "hover"
+  ],
+  "kind": "card",
+  "look": [
+    "dark",
+    "gradient",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "card with twinkling dots",
+    "night sky dot grid background",
+    "stars that light up on hover",
+    "space themed feature card",
+    "pixel starfield animation",
+    "tiny lights blinking in a grid",
+    "card with random sparkles on loop",
+    "dot matrix background that glows"
+  ],
+  "resembles": [],
+  "use_when": "A feature or product card needs a quiet space theme and a small hover payoff.",
+  "avoid_when": "You need the star field read at a glance on touch, or strong contrast in the body copy.",
+  "suits": [
+    "saas",
+    "portfolio",
+    "marketing"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "timer"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "background",
+      "children"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Title and description are passed as children, and each subcomponent takes a className. The 108 dots, 18-column grid, blue glow and three-second interval are fixed in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "moderate",
+  "weight_why": "108 dot nodes each with their own motion and blue glow layers.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The full-grid glow happens on hover only with no focus or keyboard route, and the flicker ignores reduced-motion."
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "Before they glow the 1px dots are nearly invisible, so the card looks almost blank at rest.",
+    "Hover is the only way to light the whole grid, so touch users only ever see random flicker."
+  ],
+  "polish": 3,
+  "polish_why": "Muted card and believable flicker, but the unlit grid looks empty and the payoff is hover-only.",
+  "unsure": []
+}

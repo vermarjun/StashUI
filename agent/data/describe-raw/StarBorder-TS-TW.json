@@ -1,0 +1,73 @@
+{
+  "name": "StarBorder-TS-TW",
+  "frames": {
+    "code": "7595",
+    "best": 3,
+    "best_why": "Frame 3 shows both glows clearly, teal on the button and pink along the card edge.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Glowing sparks sweep around the edge of dark rounded buttons.",
+  "summary": "Two dark rounded panels on black, one teal and one pink, with a soft coloured glow that slides along their top and bottom edges in a loop.",
+  "title_fix": null,
+  "appearance": "Two pill-shaped dark panels with near-black gradient faces, a short button label on one and a bold heading with grey paragraph on the other. A soft tinted bloom hugs part of each edge, teal on the small one and pink on the wide one.",
+  "behaviour": "A blurred coloured spot travels back and forth along the top and bottom borders, fading as it goes, so each panel seems to have a spark circling it. The content itself never moves.",
+  "parts": ["panel", "label", "heading", "glow streak"],
+  "demo_content": "Button \"Get early access\"; card heading \"Launch week is live\" with a line about five new components.",
+  "states": [],
+  "kind": "border-effect",
+  "look": ["dark", "glow", "neon", "rounded"],
+  "tone": "decorative",
+  "search_phrases": [
+    "glowing border that moves around",
+    "star sparkle along a button edge",
+    "neon gradient border on buttons",
+    "shimmering outline for a card",
+    "teal and pink glow edges",
+    "animated border light for cta",
+    "soft light running around a panel",
+    "sparkles orbiting a button"
+  ],
+  "resembles": [],
+  "use_when": "A call-to-action or small promo card needs to glow without a heavy animation.",
+  "avoid_when": "It hardcodes a near-black face and white text, so it cannot sit on a light theme.",
+  "suits": ["saas", "marketing", "fintech"],
+  "slot_hints": ["primary-cta", "feature-card", "pricing-card"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "subtle",
+    "affects": ["border", "shadow"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Colour, animation duration and border thickness are props, plus the rendered element via as and any native props. The face gradient and text colours are fixed.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "Two blurred gradient divs animated by CSS keyframes; nothing runs in JavaScript.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The component renders a real button by default, but there is no focus styling and the looping glow ignores reduced-motion."
+  },
+  "props": [
+    {"name": "as", "type": "React.ElementType", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "color", "type": "string", "default": "white", "required": false},
+    {"name": "speed", "type": "string", "default": "6s", "required": false},
+    {"name": "thickness", "type": "number", "default": "1", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The dark face and black-to-grey gradient are hardcoded, so it fights light themes.",
+    "In frame 1 the glows are barely visible and the border reads as plain."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy dark buttons with a gentle glow; the effect is subtle enough to look almost static.",
+  "unsure": []
+}

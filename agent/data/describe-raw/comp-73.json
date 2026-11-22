@@ -1,0 +1,63 @@
+{
+  "name": "comp-73",
+  "frames": {
+    "code": "2324",
+    "best": 6,
+    "best_why": "A full sentence fills three lines beneath the inset label, making the textarea obvious.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Room to write with the field name tucked inside the top border.",
+  "summary": "A multi-line text box whose label sits permanently inside the top of the bordered panel, so the field name and the writing area read as one unit. Focus rings the whole frame.",
+  "title_fix": null,
+  "appearance": "A wide dark rounded panel with a hairline border holds a small bold label near its top left, then several lines of empty space, all on a near-black stage. Typed text is light grey and sits under the label.",
+  "behaviour": "Clicking the panel places a caret under the label and wraps the whole box in a ring; typing fills line after line and the border brightens as the box holds focus. The label does not move.",
+  "parts": ["field border", "inset label", "text entry"],
+  "demo_content": "Label \"Textarea with inset label\" and the typed sentence \"Love the new dashboard, the charts load so much faster now.\"",
+  "states": ["focus", "disabled", "error"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "text area with label inside border",
+    "multi line comment box",
+    "feedback field with built in label",
+    "write a longer message form",
+    "textarea that shows error state",
+    "note field with name inside frame",
+    "expandable text box for reviews",
+    "input with caption at top"
+  ],
+  "resembles": [],
+  "use_when": "A form needs a roomy free-text field where the field name stays visible while typing, without a separate label row.",
+  "avoid_when": "It is a bare textarea: no character count, resize hint, placeholder or validation message comes with it.",
+  "suits": ["any"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The label is the only copy and it is fixed in the file; with no props, width, height and placeholder all need source edits.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One bordered box and a textarea; the only motion is the focus ring colour.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The label is wired with htmlFor and focus rings the panel, but the colour transition ignores reduced-motion."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Neat inset label on a plain bordered field; nothing beyond the default input look.",
+  "unsure": []
+}

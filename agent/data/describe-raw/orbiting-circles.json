@@ -1,0 +1,73 @@
+{
+  "name": "orbiting-circles",
+  "frames": {
+    "code": "7653",
+    "best": 1,
+    "best_why": "All seven coloured circles are spread around both rings with the Hub readable at the centre.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Coloured lettered dots circle a small hub on two faint rings.",
+  "summary": "Small coloured discs marked with letters travel along two circular orbits around a central Hub circle, the inner ring spinning faster and the opposite way from the outer.",
+  "title_fix": null,
+  "appearance": "A dark panel with a tiny circle labelled Hub at the centre and two thin faint ring outlines around it. On the rings sit small round chips, three on the inner and four on the outer, each in a different bright colour with a white letter.",
+  "behaviour": "The chips glide smoothly around the rings without pause, the inner ones clockwise and quicker, the outer ones the other way and slower. Nothing is clickable; the motion runs on its own.",
+  "parts": ["hub", "orbit ring", "orbiting circle", "letter"],
+  "demo_content": "Seven coloured circles labelled A to G orbiting a centre circle marked Hub.",
+  "states": [],
+  "kind": "chart",
+  "look": ["colorful", "dark", "minimal", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "circles orbiting a center",
+    "planets around a hub",
+    "rotating icons in rings",
+    "orbital diagram animation",
+    "satellites circling a logo",
+    "circular motion graphic",
+    "integration orbit visual",
+    "spinning badges around a point"
+  ],
+  "resembles": [],
+  "use_when": "A product wants a looping diagram of tools or steps circling a central hub.",
+  "avoid_when": "Content must stay still or readable; the markers are small and never stop moving.",
+  "suits": ["saas", "devtool", "marketing"],
+  "slot_hints": ["decoration", "feature-card"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["children"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "children",
+  "customise": "Drop the markers in as children and set radius, duration, speed, reverse, iconSize and whether the orbit path draws; the keyframes are injected by the component.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "A few small absolutely positioned discs moved by one shared CSS keyframe animation.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The orbit spins forever with no reduced-motion check, and there is no label explaining what the diagram shows."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "radius", "type": "number", "default": "160", "required": false},
+    {"name": "duration", "type": "number", "default": "20", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "reverse", "type": "boolean", "default": null, "required": false},
+    {"name": "iconSize", "type": "number", "default": "30", "required": false},
+    {"name": "path", "type": "boolean", "default": "true", "required": false},
+    {"name": "delay", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Even spacing and crisp coloured markers; the rings and letters are small on a dark stage.",
+  "unsure": ["kind"]
+}

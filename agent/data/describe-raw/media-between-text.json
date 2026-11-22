@@ -1,0 +1,79 @@
+{
+  "name": "media-between-text",
+  "frames": {
+    "code": "5884",
+    "best": 6,
+    "best_why": "Frame 6 has the sentence with the sunrise photo fully open between the brackets.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hover the sentence and a photo grows out between two brackets.",
+  "summary": "A headline-sized sentence whose middle brackets widen on hover to slide in a photo or video, then close again when the pointer leaves. It can also open on scroll into view or on a ref call.",
+  "title_fix": null,
+  "appearance": "One line of large, light-weight coral text with a bare pair of brackets mid-sentence, on a black stage above a tiny grey hint. Opened, a small landscape photo fills the space the brackets frame and the words spread to either side.",
+  "behaviour": "On hover the gap between the brackets widens over about half a second on a spring to reveal the media, and leaving shrinks it back to nothing. A configured scroll-into-view or a ref call can play the same opening without a pointer.",
+  "parts": ["sentence", "open bracket", "closing bracket", "revealed media", "hint text"],
+  "demo_content": "The line \"that's a nice ( ) view!\" with a mountain photo at sunrise.",
+  "states": ["hover"],
+  "kind": "text-effect",
+  "look": ["dark", "minimal", "colorful", "airy"],
+  "tone": "playful",
+  "search_phrases": [
+    "image appears inside a sentence on hover",
+    "headline with photo in the middle",
+    "text splits to show a picture",
+    "reveal video between words",
+    "inline expanding image in copy",
+    "sentence with a gap that opens",
+    "hover text that parts for media",
+    "editorial headline inline photo"
+  ],
+  "resembles": [],
+  "use_when": "A single striking headline on a landing page should carry a photo or clip inside the copy itself.",
+  "avoid_when": "The hidden media gives no hint it is there, so on touch screens the effect never triggers.",
+  "suits": ["marketing", "portfolio", "blog"],
+  "slot_hints": ["headline", "hero"],
+  "traits": {
+    "trigger": ["hover", "viewport"],
+    "motion": "pronounced",
+    "affects": ["layout", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Set the two text halves, the media URL and type, and the trigger through props; the reveal width, duration and spring live in the variants, and the media box size comes from a class.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Two text nodes and one image or video that only animates while hovered.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Hover is the only default trigger and the sentence is not focusable, so keyboard users cannot open the media."
+  },
+  "props": [
+    {"name": "firstText", "type": "string", "default": null, "required": true},
+    {"name": "secondText", "type": "string", "default": null, "required": true},
+    {"name": "mediaUrl", "type": "string", "default": null, "required": true},
+    {"name": "mediaType", "type": "\"image\" | \"video\"", "default": null, "required": true},
+    {"name": "triggerType", "type": "\"hover\" | \"ref\" | \"inView\"", "default": "hover", "required": false},
+    {"name": "mediaContainerClassName", "type": "string", "default": null, "required": false},
+    {"name": "alt", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "autoPlay", "type": "boolean", "default": "true", "required": false},
+    {"name": "loop", "type": "boolean", "default": "true", "required": false},
+    {"name": "muted", "type": "boolean", "default": "true", "required": false},
+    {"name": "playsInline", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "The media box has no intrinsic size, so without a width and height class the picture never shows.",
+    "Closed, the empty brackets read like a typo unless the tiny hint line explains the hover."
+  ],
+  "polish": 4,
+  "polish_why": "Striking inline reveal with a smooth spring; the bare brackets look odd until hovered.",
+  "unsure": ["kind"]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "GradientBlinds-TS-TW",
+  "frames": {
+    "code": "9293",
+    "best": 1,
+    "best_why": "The full diagonal blind pattern and its bright spotlight are both clearly visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Diagonal stripes of pink, violet and blue glow like lit venetian blinds.",
+  "summary": "A full-screen field of soft diagonal gradient stripes in pink, violet and blue, with a bright spotlight that follows the pointer and a fine film-grain noise over the top.",
+  "title_fix": null,
+  "appearance": "Parallel diagonal stripes on black, each a soft-edged band that fades from dark to bright, running pink through violet to cyan-blue across the group. A round white spotlight brightens one area, and a fine grain textures the surface.",
+  "behaviour": "The spotlight glides toward the pointer with a little damping, brightening whichever stripes it covers. A gentle noise flickers over the surface, and the gradient can be angled, mirrored or distorted.",
+  "parts": ["gradient stripe", "spotlight", "grain", "dark gaps"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "gradient", "glow", "colorful", "bold"],
+  "tone": "decorative",
+  "search_phrases": [
+    "diagonal gradient stripes background",
+    "colorful blinds effect for a hero",
+    "venetian blind light stripes",
+    "moving spotlight across colored bands",
+    "pink and blue gradient panels",
+    "soft light bands background animation",
+    "gradient bars with a glow spot",
+    "abstract striped backdrop with noise"
+  ],
+  "resembles": [],
+  "use_when": "You want a colourful, graphic backdrop that still reads as abstract light, for a hero or event page.",
+  "avoid_when": "The bright stripes are high-contrast and busy, so text needs a scrim, and it never stops animating.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["page-background", "hero", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Props set gradient colours, angle, noise, blind count and minimum width, mouse dampening, mirroring, spotlight radius, softness and opacity, distortion, shine direction and blend mode.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full-screen WebGL shader with grain noise redraws on every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The grain and spotlight animate forever and ignore reduced-motion; the canvas has no label."
+  },
+  "props": [
+    {"name": "gradientColors", "type": "string[]", "default": null, "required": false},
+    {"name": "angle", "type": "number", "default": "0", "required": false},
+    {"name": "noise", "type": "number", "default": "0.3", "required": false},
+    {"name": "blindCount", "type": "number", "default": "16", "required": false},
+    {"name": "spotlightRadius", "type": "number", "default": "0.5", "required": false},
+    {"name": "spotlightOpacity", "type": "number", "default": "1", "required": false},
+    {"name": "spotlightSoftness", "type": "number", "default": "1", "required": false},
+    {"name": "mouseDampening", "type": "number", "default": "0.15", "required": false},
+    {"name": "mirrorGradient", "type": "boolean", "default": "false", "required": false},
+    {"name": "distortAmount", "type": "number", "default": "0", "required": false},
+    {"name": "shineDirection", "type": "'left' | 'right'", "default": "'left'", "required": false},
+    {"name": "paused", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "The bright high-contrast stripes fight any text placed directly over them.",
+    "It ignores reduced-motion, and the grain flickers continuously."
+  ],
+  "polish": 4,
+  "polish_why": "Bold, clean gradient stripes with a smooth spotlight; busy enough to need a text scrim.",
+  "unsure": []
+}

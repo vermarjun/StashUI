@@ -1,0 +1,66 @@
+{
+  "name": "date-picker",
+  "frames": {
+    "code": "3818",
+    "best": 6,
+    "best_why": "Frame 6 shows the field resolved to a concrete date; the other frames show only placeholder or half-typed text.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Type \"next friday\" and it becomes a real dated calendar entry.",
+  "summary": "A dark input that understands plain-language dates and resolves them to a calendar date. A calendar button is there for picking a day visually; no time is asked for.",
+  "title_fix": null,
+  "appearance": "A wide, thin dark bar with rounded corners and a light grey border. A small square calendar icon button sits at the left, followed by grey placeholder text across a long input.",
+  "behaviour": "Typing a phrase like \"next friday\" and pressing Enter or clicking away replaces it with a formatted date. The border lightens while the field has focus. The calendar button opens a day-picker popover, though the clip never shows it.",
+  "parts": ["calendar button", "input field", "border", "placeholder text"],
+  "demo_content": "Placeholder reading \"Enter a date and time\"",
+  "states": ["focus", "open", "disabled"],
+  "kind": "calendar",
+  "look": ["dark", "rounded", "minimal", "outlined"],
+  "tone": "minimal",
+  "search_phrases": [
+    "choose a calendar date quickly",
+    "choose a day without a time",
+    "calendar popup date field",
+    "enter a date phrase in a form",
+    "pick a publish date for a post",
+    "one line calendar date selector",
+    "date field that reads next friday",
+    "minimal dark day selector field"
+  ],
+  "resembles": [],
+  "use_when": "A form needs one calendar date and you want typing a phrase to work as well.",
+  "avoid_when": "Placeholder still says date and time although the time picker is switched off here.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "subtle",
+    "affects": ["border", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "No props: the placeholder text, calendar-only mode and width are set in the file and need a source edit.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A single input plus a calendar library; idle until opened.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The input has a placeholder but no linked label; the calendar button's text is screen-reader only."
+  },
+  "props": [],
+  "issues": [
+    "The calendar popover is never shown, so the picker panel itself is unverified.",
+    "Placeholder still promises a time even though this version hides the time picker."
+  ],
+  "polish": 3,
+  "polish_why": "Standard dark field styling; no frame shows the calendar it is named for.",
+  "unsure": ["resembles"]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "code-tabs-mdx",
+  "frames": {
+    "code": "9081",
+    "best": 6,
+    "best_why": "Both tab labels and the full install command are crisp and the cursor is out of the way.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two install commands in tabs, with a copy icon on each line.",
+  "title_fix": null,
+  "summary": "A slim dark code card that shows a single install command under two tab labels, so a reader can switch between variants and copy the one they need.",
+  "appearance": "A small dark grey rounded card with two tiny tab labels sitting along its top edge, one ringed by a thin outline. Below is one line of monospace text led by a faint dollar sign, with a small copy icon at the far right.",
+  "behaviour": "Choosing a tab name changes the outlined label and replaces the command line underneath. The copy icon writes the command to the clipboard and turns into a tick for about a second.",
+  "parts": ["tab label", "tab strip", "command line", "dollar sign", "copy icon"],
+  "demo_content": "Two install snippets: npx ui-layouts add code-tabs-mdx and npx shadcn@latest add code-tabs-mdx.",
+  "states": ["hover", "active", "success"],
+  "kind": "code-block",
+  "look": ["dark", "minimal", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "install command with tabs for cli",
+    "copy code snippet button",
+    "terminal style command box",
+    "switch between two package commands",
+    "code block with copy to clipboard",
+    "one line command panel dark",
+    "package manager install command switcher",
+    "docs snippet with tabbed variants"
+  ],
+  "resembles": [],
+  "use_when": "A setup step differs between tools and the reader needs to copy the matching command fast.",
+  "avoid_when": "It expects exactly two code blocks; a single block falls back to a plain panel with no tabs.",
+  "suits": ["docs", "devtool"],
+  "slot_hints": ["body-text", "feature-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Commands come from the code blocks you nest inside; the two tab names and highlight colours are fixed in the source.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "Two short commands of pre-highlighted HTML and nothing that animates.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Tabs use the shared tabs primitive, so arrow keys work; the copy tick is visual only and is never announced."
+  },
+  "props": [
+    {"name": "children", "type": "any", "default": null, "required": true}
+  ],
+  "issues": [
+    "The recorded preview is a hand-written stand-in, not the real server-rendered component.",
+    "Copy confirmation is a silent icon swap with no live-region message."
+  ],
+  "polish": 3,
+  "polish_why": "Clean but plain tabbed command card; tiny text floats in a lot of empty space.",
+  "unsure": ["a11y.focus_visible"]
+}

@@ -1,0 +1,175 @@
+{
+ "name": "Stack-TS-TW",
+ "frames": {
+  "code": "8279",
+  "best": 3,
+  "best_why": "The top photo sits flat and fully visible with the fanned deck clearly poking out behind it.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "A deck of square photos fans out, and the top card swipes away.",
+ "summary": "A small deck of square photo cards stacked with a slight fan. Drag the top card off to throw it to the back of the pile, or click it to shuffle it under while a spring settles the rest.",
+ "title_fix": null,
+ "appearance": "A stack of square photos with rounded corners: the front card flat and full-size while the ones behind poke out at the top-right, each nudged a few degrees and slightly smaller. On a near-black stage a line of grey helper text sits below the pile.",
+ "behaviour": "Dragging the front card tilts it in 3D and, past a set distance, throws it to the back of the deck; a spring fans the remaining cards into place. Clicking also sends the card back, and an optional autoplay cycles them on a timer.",
+ "parts": [
+  "photo card",
+  "card edges",
+  "helper caption"
+ ],
+ "demo_content": "Square nature photos: a wave, a glass terrarium of plants, and an ageing car beside a stone building.",
+ "states": [
+  "dragging"
+ ],
+ "kind": "carousel",
+ "look": [
+  "colorful",
+  "rounded",
+  "flat",
+  "shadowed"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "swipeable photo card deck",
+  "tinder style card swiping",
+  "drag cards to the back of the pile",
+  "stacked photos you can throw away",
+  "3d photo deck on a dark stage",
+  "click a card to shuffle it behind",
+  "fanned deck of pictures with spring",
+  "interactive polaroid stack"
+ ],
+ "resembles": [
+  "Tinder swipe cards"
+ ],
+ "use_when": "You want a tactile little gallery or testimonial deck a visitor can flip through by dragging the top card away.",
+ "avoid_when": "It needs a sized square-ish container, and the drag or click has no keyboard equivalent.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "You pass an array of cards (any nodes, usually images) plus sensitivity, autoplay timing, click-to-send-back, random rotation, spring stiffness and a mobile breakpoint. Card styling is your own.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of motion-driven cards that only animate when swiped or on the optional autoplay timer.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Cards are plain divs with no keyboard focus or arrow-key support, and the spring swipe ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "cards",
+   "type": "React.ReactNode[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "sensitivity",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "sendToBackOnClick",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoplay",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoplayDelay",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "randomRotation",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animationConfig",
+   "type": "{ stiffness: number; damping: number }",
+   "default": "{ stiffness: 260, damping: 20 }",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "mobileClickOnly",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "mobileBreakpoint",
+   "type": "number",
+   "default": "768",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The cards are not focusable or operable from the keyboard, so the deck is pointer-only.",
+  "The stack is h-full, so it collapses to nothing if its wrapper has no set height."
+ ],
+ "polish": 3,
+ "polish_why": "Clean photo deck with a satisfying spring swipe, but plain image cards and a thin demo.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Swipeable Card Stack",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d963bea3ed3faf1a",
+  "film_hash": "b0afa9b5e996aa8d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "svg-path-morphing",
+  "frames": {
+    "code": "7212",
+    "best": 4,
+    "best_why": "The icon is fully settled in the play state, showing the alternate shape clearly with no cursor over it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two pause bars spring into a play triangle when tapped, and back again.",
+  "summary": "A single icon button that toggles between pause bars and a play triangle. Both states are drawn from matching SVG paths, so the change is a springy morph rather than a straight swap.",
+  "title_fix": null,
+  "appearance": "Inside a dark rounded music card with a mountain album cover and the track \"Summit Light\", a large white icon sits at the right. At rest it is two thick vertical bars with rounded corners; tapped, the bars bend into a wide right-pointing triangle split down the middle.",
+  "behaviour": "Tapping the button toggles the play state and the two path shapes spring from bars into triangle halves, overshooting slightly before settling. Tapping again springs them back. The icon takes the surrounding text colour, and the demo caption below explains the tap.",
+  "parts": ["icon button", "left bar", "right bar", "album cover", "track title", "artist line"],
+  "demo_content": "A music card with a mountain cover, the title \"Summit Light\" and \"Nils Aurora · 3:42\".",
+  "states": ["active"],
+  "kind": "button",
+  "look": ["dark", "minimal", "rounded", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "play pause icon that morphs",
+    "music player toggle button",
+    "svg icon shape transition",
+    "animated play button",
+    "pause bars turn into triangle",
+    "audio toggle with spring animation",
+    "track card play control",
+    "icon button that changes shape"
+  ],
+  "resembles": ["Apple Music play button", "Spotify play icon"],
+  "use_when": "A player or track card needs a distinctive play control whose state change is part of the feel.",
+  "avoid_when": "The button has no hover or focus styling and no pressed state beyond the icon, so it needs surrounding context.",
+  "suits": ["social", "saas", "portfolio"],
+  "slot_hints": ["media", "primary-cta", "list-item"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "pronounced",
+    "affects": ["fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Size, stroke width, whether it starts playing and the spring config are props. The two path shapes, their colours and the aria labels are written in the source.",
+  "technique": ["svg", "motion-library"],
+  "weight": "light",
+  "weight_why": "Two SVG paths driven by one spring; nothing runs once it settles.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "A native button whose aria-label switches between Play and Pause. It has no visible focus style and ignores reduced-motion, so the spring always plays."
+  },
+  "props": [
+    {"name": "size", "type": "number", "default": "100", "required": false},
+    {"name": "strokeWidth", "type": "number", "default": "1.5", "required": false},
+    {"name": "startPlaying", "type": "boolean", "default": "false", "required": false},
+    {"name": "spring", "type": "SpringConfig", "default": "DEFAULT_SPRING", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["No visible focus ring on the button.", "A thin seam shows where the two play-triangle halves meet."],
+  "polish": 4,
+  "polish_why": "The morph is smooth and the icon stays crisp; a seam shows in the triangle and focus is unseen.",
+  "unsure": []
+}

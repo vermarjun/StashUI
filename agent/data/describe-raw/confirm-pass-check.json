@@ -1,0 +1,66 @@
+{
+  "name": "confirm-pass-check",
+  "frames": {
+    "code": "3264",
+    "best": 6,
+    "best_why": "Frame 6 shows both fields green with the requirement checklist open, covering match and strength.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two password fields turn green together only when they match.",
+  "summary": "A password and confirm-password pair with an eye toggle and a matching check. The confirmation border turns red with a do-not-match note or green when it matches, and an info icon shows the rules.",
+  "title_fix": null,
+  "appearance": "Two labelled password fields stacked on a dark page, each with a rounded border and an eye icon in the first. Borders colour live: grey when empty, green when valid, red for a mismatch, with red helper text under the confirmation field.",
+  "behaviour": "As the password is typed its border shifts through red, orange and green, and the confirmation field compares on each keystroke. A mismatch shows a red outline and message; a match turns both borders green. The eye reveals both fields at once.",
+  "parts": ["label", "password input", "eye button", "confirm input", "border", "error message", "info icon"],
+  "demo_content": "Placeholders Password and Confirm Password, with the error Passwords do not match.",
+  "states": ["hover", "error", "success"],
+  "kind": "auth-form",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "password and confirm password fields",
+    "check that both passwords match",
+    "signup form with match validation",
+    "red border when passwords differ",
+    "green outline on matching password",
+    "show password requirements checklist",
+    "two field password form with eye toggle",
+    "live password match feedback"
+  ],
+  "resembles": [],
+  "use_when": "A sign-up form needs to catch typos by making people enter the same password twice.",
+  "avoid_when": "It only compares the two strings; it never checks the password against a server or breach list.",
+  "suits": ["saas", "fintech"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["keyboard", "hover"],
+    "motion": "subtle",
+    "affects": ["border", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The rules, strength colours and messages are hardcoded arrays and config objects near the top; the two inputs and their labels are written in the JSX.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Two controlled inputs with border transitions and a small hover card.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Inputs remove their focus outline, and the rules are only reachable from the hover card."
+  },
+  "props": [],
+  "issues": [
+    "The password input is given a pointer cursor, which reads as a click target rather than a typing field.",
+    "Requirements appear only in a hover card, and the info icon is not a labelled button."
+  ],
+  "polish": 4,
+  "polish_why": "Clear live borders and a tidy match message; the info trigger lacks button semantics.",
+  "unsure": ["kind"]
+}

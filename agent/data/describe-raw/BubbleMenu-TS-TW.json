@@ -1,0 +1,179 @@
+{
+  "name": "BubbleMenu-TS-TW",
+  "frames": {
+    "code": "4991",
+    "best": 5,
+    "best_why": "All five pills are open, evenly placed and settled, with the toggle in its X state.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Menu of white pill buttons bursts open beneath a logo.",
+  "summary": "A white pill logo and a round menu button sit at the top of a pale page. Pressing the button blooms five oversized white pill links across the centre in a staggered fan, each with its own hover colour.",
+  "title_fix": "Expanding Bubble Menu",
+  "appearance": "On a pale grey canvas a white pill with a small logo sits top left and a round white button with two dark lines sits top right. Opened, five large white pill links with big dark labels fill the centre, each tilted a few degrees.",
+  "behaviour": "Tapping the round button turns its two lines into an X and pops the pill links in one at a time with a slight rotation. Hovering a link tints it with its own colour and scales it up, and tapping the X collapses them.",
+  "parts": [
+    "logo pill",
+    "menu button",
+    "pill links",
+    "link labels"
+  ],
+  "demo_content": "Logo reads \"StashUI\"; links read Home, About, Work, Blog and Contact.",
+  "states": [
+    "open",
+    "hover",
+    "active"
+  ],
+  "kind": "site-header",
+  "look": [
+    "light",
+    "rounded",
+    "minimal",
+    "airy",
+    "playful"
+  ],
+  "tone": "playful",
+  "search_phrases": [
+    "round menu that expands into pills",
+    "fullscreen nav with big buttons",
+    "hamburger turns into x overlay",
+    "floating circle menu navigation",
+    "big rounded links in a fan",
+    "playful site menu for portfolio",
+    "staggered menu items pop in",
+    "logo and menu bubble header"
+  ],
+  "resembles": [],
+  "use_when": "A playful site wants a bold full-screen navigation instead of a plain bar.",
+  "avoid_when": "Information-dense sites: five giant pills fill the screen and hide page content.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "social"
+  ],
+  "slot_hints": [
+    "nav",
+    "hero",
+    "page-background"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "hover"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "children",
+      "layout"
+    ],
+    "theme": "light",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Logo, items with per-link rotation and hover colours, menu background and content colour, fixed positioning, easing, duration and stagger are props.",
+  "technique": [
+    "gsap",
+    "css-transition"
+  ],
+  "weight": "light",
+  "weight_why": "A dozen nodes and short entrance tweens, idle while the menu is shut.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Roles and labels are present, but focus rings are missing and the overlay is a mouse-first experience."
+  },
+  "props": [
+    {
+      "name": "logo",
+      "type": "ReactNode | string",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "items",
+      "type": "MenuItem[]",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "menuBg",
+      "type": "string",
+      "default": "#fff",
+      "required": false
+    },
+    {
+      "name": "menuContentColor",
+      "type": "string",
+      "default": "#111",
+      "required": false
+    },
+    {
+      "name": "menuAriaLabel",
+      "type": "string",
+      "default": "Toggle menu",
+      "required": false
+    },
+    {
+      "name": "onMenuClick",
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "useFixedPosition",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "animationEase",
+      "type": "string",
+      "default": "back.out(1.5)",
+      "required": false
+    },
+    {
+      "name": "animationDuration",
+      "type": "number",
+      "default": "0.5",
+      "required": false
+    },
+    {
+      "name": "staggerDelay",
+      "type": "number",
+      "default": "0.12",
+      "required": false
+    }
+  ],
+  "issues": [
+    "Open, the five pills take nearly the whole canvas and leave no page content visible."
+  ],
+  "polish": 4,
+  "polish_why": "Soft shadows, tidy pills and a lively staggered open; the pills float a little loosely.",
+  "unsure": [
+    "kind"
+  ]
+}

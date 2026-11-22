@@ -1,0 +1,185 @@
+{
+ "name": "LogoLoop-TS-TW",
+ "frames": {
+  "code": "4785",
+  "best": 2,
+  "best_why": "Frame 2 shows the most complete run of logos with none clipped by the edges.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.7
+ },
+ "tagline": "Brand logos glide sideways in an endless fading strip.",
+ "summary": "A single row of white brand marks scrolls steadily past under a small \"Trusted by teams at\" label, dissolving at both edges and pausing for the pointer.",
+ "title_fix": null,
+ "appearance": "A strip of white monochrome brand logos, all the same height, evenly spaced on black, with a small centred label above. Both ends fade out into the background.",
+ "behaviour": "The row slides left in a continuous loop that wraps around itself without a jump. Hovering slows it to a stop and each logo grows slightly under the pointer.",
+ "parts": [
+  "logo row",
+  "logo",
+  "label",
+  "edge fade"
+ ],
+ "demo_content": "Label \"Trusted by teams at\" above logos for Apple, Google, Meta, Netflix, Spotify, Stripe, Vercel and Airbnb.",
+ "states": [
+  "hover"
+ ],
+ "kind": "marquee",
+ "look": [
+  "dark",
+  "monochrome",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "scrolling row of company logos",
+  "infinite logo strip that loops",
+  "trusted by logos marquee",
+  "brand logos moving sideways",
+  "logo carousel with pause on hover",
+  "fading logo ticker on black",
+  "customer logos banner",
+  "endless brand ticker"
+ ],
+ "resembles": [],
+ "use_when": "A landing page needs to show a set of customer or partner logos in a narrow band.",
+ "avoid_when": "It never stops unless hovered, and the built-in edge fade needs a matching background colour.",
+ "suits": [
+  "saas",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "logo-wall",
+  "section-background",
+  "footer"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a logos array of icon nodes or image sources with optional links. Speed, direction, width, logo height, gap, hover behaviour, fades, scale and aria label are props.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A single requestAnimationFrame loop transforms one track; no per-logo animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Duplicate logo copies are aria-hidden and the strip has a region label; reduced-motion stops the scroll entirely."
+ },
+ "props": [
+  {
+   "name": "logos",
+   "type": "LogoItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "120",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "\"left\" | \"right\" | \"up\" | \"down\"",
+   "default": "'left'",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number | string",
+   "default": "'100%'",
+   "required": false
+  },
+  {
+   "name": "logoHeight",
+   "type": "number",
+   "default": "28",
+   "required": false
+  },
+  {
+   "name": "gap",
+   "type": "number",
+   "default": "32",
+   "required": false
+  },
+  {
+   "name": "pauseOnHover",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "hoverSpeed",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fadeOut",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "fadeOutColor",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "scaleOnHover",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "ariaLabel",
+   "type": "string",
+   "default": "'Partner logos'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The demo logos have no links, so none of them can be clicked or focused.",
+  "The edge fade only matches a dark background unless fadeOutColor is set."
+ ],
+ "polish": 3,
+ "polish_why": "Clean seamless loop and tidy spacing; it is the standard logo marquee with little character.",
+ "unsure": [],
+ "title": "Logo Marquee Loop",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ea1b025bac7380b9",
+  "film_hash": "0792ede56d2fd36f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-596",
+  "frames": {
+    "code": "7543",
+    "best": 1,
+    "best_why": "The full bar is at rest with all three nav links and all three status badges visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Tab links, status badges and a power switch share one slim header.",
+  "summary": "A flat dark monitoring header with Overview, Graphs and Backups links, thin badges for online status, 99.9% and 45ms, and a two-tone power toggle at the far right.",
+  "title_fix": null,
+  "appearance": "A flat dark header with Overview, Graphs and Backups links, the first underlined in white, then three thin outline badges: Online with a green dot, 99.9% with a lightning bolt and 45ms with a clock. At the far right a two-tone pill holds power icons.",
+  "behaviour": "Hovering a nav link draws an underline along its bottom edge and hover tints the badges. Clicking the pill slides its white half from one power icon to the other to switch the state.",
+  "parts": ["nav links", "active underline", "online badge", "percentage badge", "latency badge", "power switch"],
+  "demo_content": "Links are Overview, Graphs and Backups; badges read Online, 99.9% and 45ms.",
+  "states": ["hover", "focus", "active", "checked"],
+  "kind": "site-header",
+  "look": ["dark", "flat", "minimal", "outlined"],
+  "tone": "technical",
+  "search_phrases": [
+    "server status header",
+    "uptime and latency badges",
+    "power toggle in navigation",
+    "dashboard header with status",
+    "online indicator and metrics",
+    "nav bar with service health",
+    "on off switch in header",
+    "monitoring top bar"
+  ],
+  "resembles": [],
+  "use_when": "A service dashboard needs health metrics and a power toggle pinned to the top.",
+  "avoid_when": "The switch only flips local state, and the online and latency figures are fixed text.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["border", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Nav labels, badge values and the default switch state are written in the file; the online badge colour is hardcoded green.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Three links, three badges and one switch.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The power switch has screen-reader text, but nothing explains what turning power off does and there is no reduced-motion handling."
+  },
+  "props": [],
+  "issues": ["The power switch shows two tiny icons with no visible label, so its current state is hard to read."],
+  "polish": 3,
+  "polish_why": "Restrained monitoring header; the status badges and switch icons are very small.",
+  "unsure": ["shows_interaction"]
+}

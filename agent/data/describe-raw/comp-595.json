@@ -1,0 +1,63 @@
+{
+  "name": "comp-595",
+  "frames": {
+    "code": "1224",
+    "best": 1,
+    "best_why": "The whole bar is visible at rest: back, title, three actions, three avatars with dots and +3.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Editor toolbar with a back arrow, page title and a row of online collaborators.",
+  "summary": "A slim dark header for a shared document, holding a back chevron, the title Basic UI, three round icon actions for history, comments and adding people, and an avatar stack with presence dots.",
+  "title_fix": null,
+  "appearance": "A slim dark header with a back chevron, the title Basic UI, three round ghost icons (clock, comment, add person), then an avatar stack of three small photos with presence dots and a +3 circle.",
+  "behaviour": "Hovering any icon, avatar or the +3 circle lightens its background; nothing else opens in the clip. The small dots under the photos mark which collaborators are online.",
+  "parts": ["back button", "page title", "history button", "comment button", "add user button", "avatar", "online dot", "overflow count"],
+  "demo_content": "The title reads Basic UI; avatars stand for Kelly King, Martha Johnson and Linda Green, with +3 more.",
+  "states": ["hover", "focus"],
+  "kind": "site-header",
+  "look": ["dark", "flat", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "collaboration header with avatars",
+    "page header with online users",
+    "who is editing indicator",
+    "avatar stack in top bar",
+    "back button and page title header",
+    "document editor header",
+    "add collaborator button",
+    "show online teammates"
+  ],
+  "resembles": ["Figma collaborator bar"],
+  "use_when": "A collaborative editor needs presence avatars and quick comment or history actions in one bar.",
+  "avoid_when": "The avatar photos are hardcoded files, and the action buttons do nothing beyond a hover tint.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Title, three avatar images, names and the +3 count are hardcoded; the icon buttons have no handlers, so actions need wiring.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A title, four small buttons and three small avatars.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Buttons and avatars carry names, but the avatar group is not announced as a unit and the actions are inert."
+  },
+  "props": [],
+  "issues": ["The comment icon button is labelled Save, so assistive tech announces the wrong action."],
+  "polish": 4,
+  "polish_why": "Tidy collaboration bar with clear presence dots; the action buttons are only decorative here.",
+  "unsure": []
+}

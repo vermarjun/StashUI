@@ -1,0 +1,121 @@
+{
+ "name": "scroll-area",
+ "frames": {
+  "code": "7152",
+  "best": 1,
+  "best_why": "Top of the list with the Releases heading and the first rows visible inside the frame.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.2
+ },
+ "tagline": "Long release list scrolls inside a small bordered frame.",
+ "summary": "A compact scroll panel holding a heading and a long list of version numbers. Content scrolls under the fixed frame, with a slim themed bar on the right instead of the browser's own scrollbar.",
+ "title_fix": null,
+ "appearance": "A narrow bordered dark panel with a small heading and a list of grey version strings separated by faint rules, plus a thin lighter bar sitting just inside its right edge.",
+ "behaviour": "Wheel scrolling or dragging the slim bar moves the rows under the frame; the heading travels up with the content and disappears, and the rows pass out of sight at top and bottom.",
+ "parts": [
+  "frame",
+  "heading",
+  "release row",
+  "divider",
+  "scrollbar thumb"
+ ],
+ "demo_content": "A Releases list of thirty version tags from v1.2.0-beta.30 down to beta.16.",
+ "states": [
+  "hover",
+  "dragging"
+ ],
+ "kind": "list",
+ "look": [
+  "dark",
+  "minimal",
+  "flat",
+  "outlined"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "long list in a small box",
+  "panel with a custom scrollbar",
+  "release notes you scroll through",
+  "box that scrolls inside the page",
+  "thin bar to drag down a list",
+  "version history in a fixed frame",
+  "styled scrollbar instead of the browser one",
+  "small window onto a longer list"
+ ],
+ "resembles": [],
+ "use_when": "A list is longer than its frame and you want a slim, themed bar instead of the browser scrollbar.",
+ "avoid_when": "The thumb is only about ten pixels wide, so it is hard to grab and drag on a touch screen.",
+ "suits": [
+  "dashboard",
+  "saas",
+  "docs"
+ ],
+ "slot_hints": [
+  "list-item",
+  "sidebar",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "drag"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Any content goes in as children and the wrapper takes a height and width through className; bar width, thumb colour and corner are class overrides.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "One scrollable viewport with a styled thumb; no animation loop.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The list carries no label and the viewport has no visible focus style, so keyboard scrolling is not signposted."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The Releases heading scrolls out of view with the rows, so the panel loses its title",
+  "The scroll thumb is very thin and almost the same tone as the border"
+ ],
+ "polish": 3,
+ "polish_why": "Neat compact release list; the heading scrolls away and the thumb is barely visible.",
+ "unsure": [],
+ "title": "Scroll Area",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9405a757c87e7fd7",
+  "film_hash": "7c7e2fa277bb7930",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

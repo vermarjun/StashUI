@@ -1,0 +1,66 @@
+{
+  "name": "custom-kanban",
+  "frames": {
+    "code": "3974",
+    "best": 1,
+    "best_why": "Full four-column board at rest with every card and count visible and no dragged card over the columns.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drag task cards between four dark columns onto a drop line.",
+  "summary": "A dark task board with Backlog, TODO, In progress and Complete columns. Cards are dragged from one column to another, counts update, and dropping on the trash zone deletes a card.",
+  "title_fix": null,
+  "appearance": "A charcoal full-screen board holding four narrow columns, each headed by a small coloured label and a number. Under each heading sit short dark cards with pale text, a faint outline and an 'Add card' line, with a square trash drop zone at the far right.",
+  "behaviour": "Dragging a card lifts it out of its column and shows a thin violet drop line between cards. Dropping drops it into the nearest gap and the column counts change; hovering a column tints its background and dragging onto the trash zone swaps the bin for a bouncing flame.",
+  "parts": ["column heading", "count", "task card", "drop line", "add card button", "trash drop zone"],
+  "demo_content": "Task cards like 'Refactor context providers to a store', 'SOX compliance checklist' and 'Postmortem for outage'.",
+  "states": ["dragging", "hover", "focus"],
+  "kind": "list",
+  "look": ["dark", "minimal", "flat", "rounded", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "drag and drop task board",
+    "trello style kanban columns",
+    "move cards between lists",
+    "project backlog and todo board",
+    "inline add task card",
+    "drag card to trash to delete",
+    "team sprint task tracker",
+    "columns with task cards and counts"
+  ],
+  "resembles": ["Trello"],
+  "use_when": "Tasks move through stages such as backlog, todo, doing and done by dragging cards between columns.",
+  "avoid_when": "Drag only works with a mouse and the board scrolls sideways, so narrow screens and keyboard users are poorly served.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["data-table", "list-item"],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "subtle",
+    "affects": ["layout", "background", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Card titles and columns are fixed in a DEFAULT_CARDS array inside the file; colours, widths and headings all need source edits.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A few dozen DOM nodes with one layout animation per drag; idle otherwise.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Cards move only by mouse drag and are not focusable, so the board cannot be operated from the keyboard, and the icons have no labels."
+  },
+  "props": [],
+  "issues": [
+    "The left Backlog column and the right trash zone are clipped by the frame edges.",
+    "Moving a card has no keyboard equivalent; it relies entirely on mouse drag."
+  ],
+  "polish": 3,
+  "polish_why": "Working drag and drop with clean spacing, but the columns are clipped and the styling is plain.",
+  "unsure": ["kind", "slot_hints"]
+}

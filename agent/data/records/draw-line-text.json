@@ -1,0 +1,155 @@
+{
+ "name": "draw-line-text",
+ "frames": {
+  "code": "7060",
+  "best": 2,
+  "best_why": "The whole word is legible as serif outline strokes mid-draw, showing the handwriting effect.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "Serif word traced in outline, then filled solid white.",
+ "summary": "A single word of serif italic text that draws itself in outline letter by letter like handwriting, then fills in solid. It replays and can stagger each letter.",
+ "title_fix": null,
+ "appearance": "On a black stage, a large white italic serif word sits centred above a small grey caption. Mid-animation the letters read as thin hairline outlines with serif flourishes; once complete they are solid white letterforms with faint shadows.",
+ "behaviour": "On mount the strokes are traced from nothing over a few seconds, letter by letter, then the fill fades in. The demo restarts it every eight and a half seconds, so the word alternates between outline strokes and solid white.",
+ "parts": [
+  "word",
+  "outline strokes",
+  "filled letters"
+ ],
+ "demo_content": "The word 'Hello' and the caption 'Drawn stroke by stroke, then filled in.'",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "editorial",
+  "minimal",
+  "sharp"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "handwriting text animation",
+  "text that draws itself in",
+  "outline to fill text effect",
+  "letter by letter writing animation",
+  "serif word traced then filled",
+  "animated signature style text",
+  "headline that writes on screen",
+  "stroke by stroke title effect"
+ ],
+ "resembles": [],
+ "use_when": "A short hero word or brand name should feel handwritten and reveal itself once when the page loads.",
+ "avoid_when": "It suits one or two words only; long lines would crawl slowly, and it needs GSAP and a fixed font size.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Text, colour, font size, stroke width, letter and word spacing, whether letters draw one by one, and whether to fill after drawing are all props; timing is fixed in the GSAP timeline.",
+ "technique": [
+  "gsap",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of SVG text nodes animated once by a single GSAP timeline.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The word is plain SVG text, but nothing marks it as a heading or labels the graphic, and the drawing always runs because there is no reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "oneByOne",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "afterFill",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"black\"",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "strokeWidth",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "letterSpacing",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "wordSpacing",
+   "type": "number",
+   "default": "10",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frame 1 shows only a fragment of one letter, so the word is unreadable until the draw completes.",
+  "The thin outline stage is faint against the black stage.",
+  "There is no reduced-motion handling, so the draw always replays."
+ ],
+ "polish": 4,
+ "polish_why": "Elegant serif draw-and-fill; the outline stage is faint and reduced motion is ignored.",
+ "unsure": [],
+ "title": "Draw Line Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "49404da41dff6a8a",
+  "film_hash": "9799b230ba8fa582",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,168 @@
+{
+ "name": "wavy-background",
+ "frames": {
+  "code": "6363",
+  "best": 2,
+  "best_why": "The blue, teal and pink ribbons overlap most, showing the wave texture at its richest.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.0
+ },
+ "tagline": "Soft blurred ribbons of blue, teal and pink drift across a black backdrop.",
+ "summary": "A full-screen dark backdrop crossed by five thick, heavily blurred waves that weave over each other in blue, teal, purple and pink. The ribbons drift and reshape continuously with no pointer input.",
+ "title_fix": null,
+ "appearance": "A black stage with five soft, blurred ribbons in blue, teal, purple and pink stretching horizontally across the upper middle. They weave over and under each other like thick brush strokes, leaving most of the screen plain black.",
+ "behaviour": "The ribbons drift and undulate continuously, slowly changing their curves and never settling. Nothing responds to the pointer, and the motion runs as long as the page is open.",
+ "parts": [
+  "black background",
+  "blue wave",
+  "teal wave",
+  "purple wave",
+  "pink wave"
+ ],
+ "demo_content": "",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "colorful",
+  "gradient",
+  "organic"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "animated wavy lines background",
+  "colorful waves on black",
+  "soft ribbons moving in background",
+  "noise wave canvas backdrop",
+  "aurora like flowing lines",
+  "blurred neon waves behind content",
+  "full screen motion background",
+  "liquid wave animation for hero"
+ ],
+ "resembles": [],
+ "use_when": "A hero or section backdrop that needs gentle motion with content layered over it.",
+ "avoid_when": "Smaller containers: the canvas sizes to the whole window and never stops animating.",
+ "suits": [
+  "ai-chat",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Pass children to layer content on the waves; colours, wave width, blur, speed and opacity are props, while the canvas still spans the window.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-window canvas redraws five blurred waves on every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "A canvas loop with no reduced-motion check and no text alternative; it runs indefinitely."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "waveWidth",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "backgroundFill",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "string",
+   "default": "\"fast\"",
+   "required": false
+  },
+  {
+   "name": "waveOpacity",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The canvas sizes to the whole window, not its container, so it overruns nested layouts.",
+  "The wave loop keeps running even when scrolled off screen.",
+  "Heavy blur confines the colour to a thin band, leaving most of the screen empty black."
+ ],
+ "polish": 3,
+ "polish_why": "Smooth colourful waves; the thin band leaves most of the screen plain black.",
+ "unsure": [
+  "content_from"
+ ],
+ "title": "Wavy Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "76b9dcfa2143c9d8",
+  "film_hash": "8baa6d861dd06513",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

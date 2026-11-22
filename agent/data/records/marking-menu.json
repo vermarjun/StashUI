@@ -1,0 +1,148 @@
+{
+ "name": "marking-menu",
+ "frames": {
+  "code": "7811",
+  "best": 3,
+  "best_why": "Frame 3 shows the full radial disc with all eight icons and a highlighted slice.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "Hold and flick in a direction to pick from a ring of icons.",
+ "summary": "A gesture surface that opens a circular menu of eight destinations around the pointer. Hold still to see the ring, flick a direction to pick blind, or use the Menu button and the arrow keys.",
+ "title_fix": null,
+ "appearance": "A dark rounded panel with a small icon and Home label at the top left and a Menu button at the top right, with centred prose inviting a press. Opened, a pale circular disc appears with eight outlined icons spaced evenly around the rim and a small hub in the middle.",
+ "behaviour": "Pressing and holding for a moment opens the disc at the cursor; moving past a short distance without waiting turns the stroke into a direction-only pick. The slice nearest the pointer highlights and its name appears in the hub; releasing commits the choice and updates the top-left label.",
+ "parts": [
+  "destination label",
+  "menu button",
+  "instruction text",
+  "radial disc",
+  "destination icons",
+  "highlight slice",
+  "hub label"
+ ],
+ "demo_content": "Hint asking to press or flick; eight default destinations from Home to Settings.",
+ "states": [
+  "open",
+  "selected",
+  "focus"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "minimal",
+  "outlined",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hold and flick radial menu",
+  "circular menu around the cursor",
+  "eight options in a ring",
+  "right click wheel navigation",
+  "press and hold quick picker",
+  "directional gesture menu for shortcuts",
+  "pie menu with icon slices",
+  "game style radial selection"
+ ],
+ "resembles": [
+  "Autodesk Maya marking menu",
+  "Blender pie menu"
+ ],
+ "use_when": "Power users repeat the same eight destinations and want one gesture instead of a list to scan.",
+ "avoid_when": "Discoverability is low: nothing hints at the hold-and-flick gesture, and the Menu button is the obvious path.",
+ "suits": [
+  "devtool",
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "pointer-move",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass up to eight items as an array of id, label and icon, choose the surface through children, and handle picks with onSelect; timing and disc size are constants in the source.",
+ "technique": [
+  "motion-library",
+  "svg",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Motion springs plus a requestAnimationFrame stroke trail, only while a gesture runs.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The press-and-flick surface is a gesture-only path with no role, so keyboard users must find the small Menu button first."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "MarkingMenuItem[]",
+   "default": "DEFAULT_ITEMS",
+   "required": false
+  },
+  {
+   "name": "onSelect",
+   "type": "(item: MarkingMenuItem) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The hub destination name is low-contrast grey and hard to read against the pale slice.",
+  "The demo's closed surface looks near-empty, so the still gives little sense of the gesture."
+ ],
+ "polish": 4,
+ "polish_why": "Custom gesture menu with a considered trail and spring; the faint hub label is the flaw.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Marking Menu",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6ff52f7b2700dd01",
+  "film_hash": "b8c945bc5e3f225f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

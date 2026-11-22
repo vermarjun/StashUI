@@ -1,0 +1,125 @@
+{
+ "name": "flip-words",
+ "frames": {
+  "code": "1636",
+  "best": 5,
+  "best_why": "Crisp 'modern' in bold white between the grey words, fully readable and settled.",
+  "usable": [
+   1,
+   2,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "One bold word in a headline blurs away and is replaced by the next.",
+ "summary": "A line of headline text where a single bold white word cycles through a list. Each word sharpens in letter by letter, rests a moment, then swells and blurs out.",
+ "title_fix": null,
+ "appearance": "One line of large text on a black stage: the words 'Build' and 'interfaces' in grey, with a bold white word sitting between them. The white word briefly swells, blurs and lifts away before the next one sharpens in.",
+ "behaviour": "On a fixed timer the centre word scales up, blurs and rises while a new word fades and resolves letter by letter. The grey words around it never move on their own.",
+ "parts": [
+  "prefix word",
+  "changing word",
+  "suffix word",
+  "blur halo"
+ ],
+ "demo_content": "The line 'Build beautiful interfaces', cycling through words like beautiful, modern and powerful.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "minimal",
+  "bold",
+  "dark"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "word that changes in a headline",
+  "rotating words in a sentence",
+  "text that blurs between words",
+  "cycling adjective in a hero title",
+  "animated word swap with blur",
+  "headline with one changing word",
+  "kinetic typography word cycle",
+  "letters sharpen in one by one"
+ ],
+ "resembles": [],
+ "use_when": "A headline needs one rotating word to add motion without a video or heavy animation.",
+ "avoid_when": "It runs on an endless timer, so it never settles, and long words shift the line width.",
+ "suits": [
+  "marketing",
+  "saas",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the words array, a duration in milliseconds and a className for type styling. The spring, per-letter stagger and blur are fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "A single line of split spans animated with springs; a few dozen nodes.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The word changes on a timer with no live region and no reduced-motion check, so screen readers miss each swap."
+ },
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "3000",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The line jitters sideways because each word has a different width."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth staggered blur and clean type; the line shifts as word widths change.",
+ "unsure": [],
+ "title": "Flip Words",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "5fccf682bd6e9991",
+  "film_hash": "8664e632e383ab50",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "name": "resizable",
+ "frames": {
+  "code": "9596",
+  "best": 4,
+  "best_why": "The explorer has been widened and all three panes, their seams and the terminal text are visible at once.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.3
+ },
+ "tagline": "Drag the seams to resize a file tree, code pane and terminal.",
+ "summary": "A three-pane editor workspace: a file explorer, a syntax-highlighted code area and a terminal, split by draggable handles that also respond to the keyboard and keep each pane above a minimum size.",
+ "title_fix": null,
+ "appearance": "A bordered dark IDE panel. On the left a narrow file tree sits under an Explorer label with small folder and file icons; the middle holds line-numbered code in violet, sky and green; the bottom is a terminal strip with green Next.js output. Thin seams with small grip dots divide the panes.",
+ "behaviour": "Dragging a vertical or horizontal seam shifts the split and the panes reflow, with the code and terminal clipping to fit. The handles take focus and move with the arrow keys, and minimum panel sizes stop either side from being crushed.",
+ "parts": [
+  "panel frame",
+  "explorer tree",
+  "file icons",
+  "code pane",
+  "line numbers",
+  "terminal pane",
+  "resize handle"
+ ],
+ "demo_content": "A fake app/page.tsx importing Card and Chart, a small file list and a Next.js dev server log.",
+ "states": [
+  "focus",
+  "dragging"
+ ],
+ "kind": "other",
+ "look": [
+  "dark",
+  "outlined",
+  "technical",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "split pane layout you can drag",
+  "draggable divider between two panels",
+  "code editor with file tree and terminal",
+  "adjustable columns in a workspace",
+  "drag the handle to change pane size",
+  "ide style layout for a web app",
+  "keyboard adjustable sidebar and main area",
+  "how to build draggable panels with a splitter"
+ ],
+ "resembles": [
+  "VS Code"
+ ],
+ "use_when": "An app screen needs two or three panes whose sizes the user can change, like an editor or inspector.",
+ "avoid_when": "It is only the split primitive; the explorer, code and terminal content in the frames are demo markup you must build.",
+ "suits": [
+  "devtool",
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "body-text",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "keyboard",
+   "hover"
+  ],
+  "motion": "none",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Compose panes with PanelGroup, Panel and Handle, setting orientation, defaultSize, minSize, maxSize and collapsible per panel; withHandle shows the grip. All pane content is children.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "A flex layout driven by pointer drag, with no animation loop at rest.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Seams expose separator roles and move with arrow keys under a focus ring, but they have no accessible name and motion preferences are ignored."
+ },
+ "props": [
+  {
+   "name": "orientation",
+   "type": "string",
+   "default": "horizontal",
+   "required": false
+  },
+  {
+   "name": "withHandle",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The resize seams are a hairline with a tiny grip, so it is hard to tell they can be dragged.",
+  "The frames change so little between shots that the resizing is easy to miss."
+ ],
+ "polish": 3,
+ "polish_why": "Familiar IDE layout with clean seams; the drag affordance is a faint hairline.",
+ "unsure": [
+  "kind",
+  "best"
+ ],
+ "title": "Resizable",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "2de0b3a71b18e27a",
+  "film_hash": "a4acb22bd600f132",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-360",
+  "frames": {
+    "code": "4579",
+    "best": 2,
+    "best_why": "Tooltip 'Pan top Cmd T' is open above the up arrow while the whole four-button pad is visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four arrow buttons around a dot show shortcut hints when hovered.",
+  "summary": "A small cluster of four outlined arrow buttons around a centre dot, laid out like a directional pad. Hovering any arrow opens a tooltip naming the pan direction and its keyboard shortcut.",
+  "title_fix": null,
+  "appearance": "Five tiny round-cornered outlined squares on a near-black page: one up arrow on top, left and right arrows on either side of a small outlined circle, and a down arrow at the bottom. A light tooltip with a dark key badge appears beside the hovered arrow.",
+  "behaviour": "Hovering an arrow fades in a tooltip next to it with a direction label and a shortcut such as Cmd T; moving away fades it out again. The arrows are plain buttons.",
+  "parts": ["up arrow button", "left arrow button", "centre dot", "right arrow button", "down arrow button", "tooltip", "shortcut badge"],
+  "demo_content": "Tooltips read Pan top, Pan left, Pan right and Pan bottom with Cmd T, L, R and B shortcuts.",
+  "states": ["hover", "focus"],
+  "kind": "tooltip",
+  "look": ["dark", "outlined", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "small arrow buttons with hover hints",
+    "tooltip showing keyboard shortcut",
+    "directional pad of icon buttons",
+    "hover label beside arrow control",
+    "four way pan buttons",
+    "shortcut key hint on hover",
+    "icon button cluster with popup labels",
+    "tooltip on all four sides"
+  ],
+  "resembles": [],
+  "use_when": "Icon-only navigation buttons need discoverable labels and shortcut hints on hover.",
+  "avoid_when": "Tooltips only appear on hover or focus, so touch users get no explanation of the arrows.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["tooltip"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "subtle",
+    "affects": ["fill", "text", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Button icons, aria labels, tooltip text and shortcut keys are written inline, so changes require editing the source; each tooltip's side is set per button.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Four small buttons and a tooltip; nothing animates until hover.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Each arrow has an aria-label and focus opens its tooltip, but the printed key hints are not announced as actual shortcuts."
+  },
+  "props": [],
+  "issues": ["Buttons are visual only in this demo; no pan action is wired up.", "The displayed shortcut keys are not bound to any handler in the code."],
+  "polish": 3,
+  "polish_why": "Crisp, tidy icon buttons; it is a standard tooltip demo with no wired actions.",
+  "unsure": []
+}

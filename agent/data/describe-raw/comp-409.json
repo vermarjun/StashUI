@@ -1,0 +1,63 @@
+{
+  "name": "comp-409",
+  "frames": {
+    "code": "1934",
+    "best": 1,
+    "best_why": "All four portraits and the +3 circle are fully in view with no cursor over them.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Four faces overlap in a line and end in a dark +3 circle.",
+  "summary": "A row of four circular portraits overlapping with dark rims, finished by a round grey button reading +3 for the people left out.",
+  "title_fix": null,
+  "appearance": "Four square portraits cropped to circles about 40px across overlap by a quarter of their width, each ringed in dark so the edges read. They end in a slightly larger charcoal circle holding a muted +3 that brightens to white on hover.",
+  "behaviour": "Hovering the +3 circle lifts its text from grey to near white while the faces stay still; nothing opens or moves. The rest is static.",
+  "parts": ["portrait", "overlap ring", "overflow button", "plus label"],
+  "demo_content": "Four stock portraits of women and the label +3.",
+  "states": ["hover"],
+  "kind": "avatar",
+  "look": ["rounded", "dark", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "row of overlapping profile pictures",
+    "people stack with more count",
+    "face pile showing hidden members",
+    "who is in this group indicator",
+    "extra participants plus three button",
+    "overlapping circles of user photos",
+    "team members shown in a line",
+    "collaborators facepile with remainder"
+  ],
+  "resembles": ["Figma collaborators", "Google Docs presence"],
+  "use_when": "Showing a handful of people on a project or thread when the full list runs longer.",
+  "avoid_when": "When every person must be reachable: the +3 control has no click action to reveal the rest.",
+  "suits": ["saas", "social"],
+  "slot_hints": ["avatar", "list-item", "data-table"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Portrait sources, their alt text and the +3 label are fixed in the file; showing real people means editing the image list and the button text.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "Four small images and one button; no script, no animation loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Portraits carry alt text, but the +3 button's label does not tell screen readers what the count stands for."
+  },
+  "props": [],
+  "issues": ["The +3 button has no click handler, so it hints at more people but opens nothing."],
+  "polish": 3,
+  "polish_why": "Even overlap and spacing, but the +3 control is a plain grey circle that leads nowhere.",
+  "unsure": ["a11y.focus_visible"]
+}

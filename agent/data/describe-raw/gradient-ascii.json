@@ -1,0 +1,79 @@
+{
+  "name": "gradient-ascii",
+  "frames": {
+    "code": "4876",
+    "best": 6,
+    "best_why": "The arc is fully lit with a white crest and deep blue body, and the character texture is clearest across it.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A glowing blue horizon drawn entirely from tiny characters.",
+  "summary": "A soft blue aurora arc on black, rendered completely in monospaced ASCII glyphs that shimmer and re-sort. The pointer scrambles characters as it passes, and a click throws a wave of them across the glow.",
+  "title_fix": null,
+  "appearance": "A broad luminous arc spans the frame, white-hot along its crown and sinking into deep navy below, built from closely packed monospaced characters. Outside the arc the stage falls to solid black, leaving the glow as a band of text-like light.",
+  "behaviour": "The arc brightens up from black while its light drifts and flickers, the glyphs twinkling and changing. Moving the cursor over it scrambles nearby characters into random signs, and a click sends a ring of them outward before it settles.",
+  "parts": ["ascii glow", "bright crest", "dark sky", "scramble trail"],
+  "demo_content": "",
+  "states": ["hover", "active"],
+  "kind": "background",
+  "look": ["dark", "glow", "gradient", "technical"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "ascii art gradient background",
+    "glowing text horizon",
+    "blue aurora in characters",
+    "matrix style glow",
+    "typographic light arc",
+    "hacker terminal background",
+    "ascii shader animation",
+    "retro monitor sun arc"
+  ],
+  "resembles": [],
+  "use_when": "A techy atmospheric backdrop for a developer tool, launch page or terminal-themed hero.",
+  "avoid_when": "The bright arc fights any text laid over it, and the shader is heavy for a purely decorative layer.",
+  "suits": ["devtool", "saas"],
+  "slot_hints": ["page-background", "hero", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move", "click"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Choose a shape, colour palette, character set, cell size, density, glyph opacity, glow, softness, flow, speed and grain. Scramble radius, click effect, intro and light mode are props.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "Full-screen field and glyph passes plus a multi-step halo blur run every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "The canvas is hidden as decoration and the wrapper is unnamed; the scramble reaction is pointer only."
+  },
+  "props": [
+    {"name": "colors", "type": "string[]", "default": "DEFAULT_COLORS", "required": false},
+    {"name": "shape", "type": "'horizon' | 'pinch' | 'rise' | 'eclipse'", "default": "horizon", "required": false},
+    {"name": "characters", "type": "string", "default": "DEFAULT_CHARACTERS", "required": false},
+    {"name": "cellSize", "type": "number", "default": "18", "required": false},
+    {"name": "density", "type": "number", "default": "0.8", "required": false},
+    {"name": "glyphOpacity", "type": "number", "default": "0.85", "required": false},
+    {"name": "glow", "type": "number", "default": "0.2", "required": false},
+    {"name": "softness", "type": "number", "default": "0.5", "required": false},
+    {"name": "flow", "type": "number", "default": "0.5", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "gradientOpacity", "type": "number", "default": "0.9", "required": false},
+    {"name": "scrambleRadius", "type": "number", "default": "0.1", "required": false}
+  ],
+  "issues": [
+    "The first frame is almost black, so the arc only shows up partway through the clip.",
+    "The brightest crest blows out to white, losing the character texture there."
+  ],
+  "polish": 4,
+  "polish_why": "Distinctive ASCII glow with a rich palette; the blown-out crest loses the character detail.",
+  "unsure": []
+}

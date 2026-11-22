@@ -1,0 +1,120 @@
+{
+ "name": "spotlight",
+ "frames": {
+  "code": "4823",
+  "best": 6,
+  "best_why": "Frame 6 has the beam at its widest and brightest over the copy; earlier frames catch only its edge.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "A cone of white light drifts down over a dark grid and settles on the headline.",
+ "summary": "A near-black backdrop with a faint square grid and one soft diagonal beam of light that fades in and widens over the text below it. It is there to pull the eye to a single block of copy.",
+ "title_fix": null,
+ "appearance": "A near-black stage crossed by a faint square grid. A wide, soft white cone of light enters from the top-left and falls diagonally across the middle, brightest and broadest over the centred white headline and the small grey paragraph under it.",
+ "behaviour": "On load an oversized blurred ellipse fades in and slides down-left for about two seconds, growing into the beam, then holds still. It does not follow the pointer; the sweep happens once.",
+ "parts": [
+  "grid lines",
+  "light beam",
+  "headline",
+  "paragraph"
+ ],
+ "demo_content": "Headline \"Spotlight is the new trend.\" with a short paragraph about drawing attention to text.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "gradient",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "beam of light behind a headline",
+  "dark hero with glowing cone",
+  "radial glow that draws the eye",
+  "subtle light sweep across a banner",
+  "animated backdrop for landing page text",
+  "white glow on black background",
+  "draw attention to a headline",
+  "stage light effect for website header"
+ ],
+ "resembles": [],
+ "use_when": "A dark page needs to hint at a focal line of copy without adding a heavy or looping animation.",
+ "avoid_when": "You need the glow to track the cursor, or a light theme: it is fixed white on black.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Only className and fill are exposed. Size, position, opacity and the one-shot sweep live in the source and its inline keyframes.",
+ "technique": [
+  "svg",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "One static SVG ellipse under a blur filter and a single CSS fade on load.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The decorative SVG is not marked aria-hidden and the load sweep ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "fill",
+   "type": "string",
+   "default": "\"none\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Catalogue calls it mouse-tracked, but the code plays one fixed CSS keyframe and ignores the pointer."
+ ],
+ "polish": 3,
+ "polish_why": "Clean beam and grid, but the single white glow does nothing after its load sweep.",
+ "unsure": [],
+ "title": "Spotlight Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "44b070301dcf9c4e",
+  "film_hash": "dfaa6e6f56bd9ea0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

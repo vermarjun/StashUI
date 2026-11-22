@@ -1,0 +1,70 @@
+{
+  "name": "spline",
+  "frames": {
+    "code": "9372",
+    "best": 5,
+    "best_why": "Full humanoid robot is visible head to waist with arms spread, clearer than the close-ups.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A glossy 3D robot turns and leans to follow your pointer.",
+  "summary": "A dark two-column banner with a headline and paragraph on the left and a real-time 3D robot on the right. The robot rotates and shifts its pose as the pointer moves across the canvas.",
+  "title_fix": "3D Scene Embed",
+  "appearance": "A wide black banner split in two: white headline and grey paragraph on the left, a glossy black-and-white humanoid robot on the right. The robot has a smooth rounded helmet head, a chest with fine mesh texture and articulated arms, lit from above against the dark.",
+  "behaviour": "The 3D robot turns, tilts and shifts nearer or farther as the pointer moves across the canvas, giving the impression it is watching the cursor. While the scene downloads, a loading message sits in its place.",
+  "parts": ["3D robot", "canvas", "headline", "paragraph"],
+  "demo_content": "The heading Interactive 3D with a three-line paragraph about dropping a Spline scene into a page.",
+  "states": ["loading"],
+  "kind": "3d-scene",
+  "look": ["3d", "dark", "monochrome", "minimal"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "3d robot that follows the mouse",
+    "interactive 3d scene embed",
+    "glossy robot hero model",
+    "3d character tracking the cursor",
+    "webgl model that reacts to pointer",
+    "animated 3d mascot on a website",
+    "rotating 3d product model",
+    "canvas 3d scene in a banner"
+  ],
+  "resembles": [],
+  "use_when": "A landing hero or feature banner where a 3D mascot or product model should react to the visitor's pointer.",
+  "avoid_when": "Needs a separate 3D runtime plus a remote scene URL, so it is heavy to load and breaks offline.",
+  "suits": ["saas", "marketing"],
+  "slot_hints": ["hero", "feature-card"],
+  "traits": {
+    "trigger": ["pointer-move", "viewport"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Pass a scene URL, an onLoad callback, renderOnDemand and className/style; the loading placeholder is whatever children you give it. The 3D content itself lives in the scene file.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "Runs a full WebGL 3D scene through a separate runtime loaded from a remote file.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The canvas has no accessible name or fallback text, and the pointer tracking has no keyboard or reduced-motion alternative."
+  },
+  "props": [
+    {"name": "scene", "type": "string", "default": null, "required": true},
+    {"name": "onLoad", "type": "(app: unknown) => void", "default": null, "required": false},
+    {"name": "renderOnDemand", "type": "boolean", "default": "true", "required": false},
+    {"name": "style", "type": "CSSProperties", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": ["If the scene fails to load it clears the loading text and shows an empty canvas with no message."],
+  "polish": 4,
+  "polish_why": "Strong 3D robot and clean split layout; the demo paragraph is small and dim.",
+  "unsure": ["theme"]
+}

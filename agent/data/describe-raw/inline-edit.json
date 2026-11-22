@@ -1,0 +1,129 @@
+{
+  "name": "inline-edit",
+  "frames": {
+    "code": "2653",
+    "best": 3,
+    "best_why": "The Event row is open as a text field with the round tick and cross buttons beside it.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Detail rows turn into text fields with round tick and cross buttons.",
+  "summary": "A compact dark card listing event details as labelled rows. Hovering a row shows a pencil, and clicking it swaps the value for a text field with springy save and cancel buttons that write the change back.",
+  "title_fix": null,
+  "appearance": "A tall rounded card in near-black with a small uppercase header strip and five rows. Each row starts with a thin grey line icon and a grey label, with a lighter value to its right and a faint square pencil button at the row's end.",
+  "behaviour": "Hovering a row fades in its pencil button; clicking it animates a text field into place along with a dark tick button and a cross button. The tick saves the value back to the card, Enter also saves a single-line row, and the cross abandons the edit.",
+  "parts": [
+    "card panel",
+    "header label",
+    "row icon",
+    "row label",
+    "value text",
+    "edit button",
+    "save button",
+    "cancel button"
+  ],
+  "demo_content": "Event \"Design Systems Meetup\", Thursday 12 March, 6:30 to 9:00 PM, stashui.dev/meetup, plus a description.",
+  "states": [
+    "hover",
+    "focus",
+    "active",
+    "open"
+  ],
+  "kind": "form",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "flat",
+    "airy"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "click to edit a field in place",
+    "edit event details card",
+    "inline text editing rows",
+    "pencil icon turns a row into an input",
+    "save and cancel buttons appear while editing",
+    "editable profile details panel",
+    "type directly into a list of values",
+    "quick edit form without a modal"
+  ],
+  "resembles": [
+    "Notion inline editing"
+  ],
+  "use_when": "A compact details panel needs quick field edits without opening a separate form or modal.",
+  "avoid_when": "The edit trigger only shows on hover and is not focusable, so touch and keyboard users may not find it.",
+  "suits": [
+    "saas",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "click"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "layout",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "The details object, a change callback and the header title are props; the labels, icons and which fields exist are fixed in the file.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A handful of rows with layout springs that only animate when a row is edited.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The pencil trigger is a non-focusable div, the icon buttons have no labels, and no reduced-motion check exists."
+  },
+  "props": [
+    {
+      "name": "data",
+      "type": "EventData",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "onDataChange",
+      "type": "(data: EventData) => void",
+      "default": null,
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "default": "\"Update Details\"",
+      "required": false
+    }
+  ],
+  "issues": [
+    "Save and cancel are icon-only buttons with no accessible label.",
+    "The edit button is invisible until hover, so touch users see no way to start editing."
+  ],
+  "polish": 4,
+  "polish_why": "Calm, well-spaced rows and satisfying springs; hover-only editing and unlabelled icons are gaps.",
+  "unsure": [
+    "kind"
+  ]
+}

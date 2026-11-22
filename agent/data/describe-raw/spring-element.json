@@ -1,0 +1,71 @@
+{
+  "name": "spring-element",
+  "frames": {
+    "code": "1044",
+    "best": 2,
+    "best_why": "The coil is fully stretched and the whole chip is still in frame, showing the tether clearly.",
+    "usable": [1, 2, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tag you can drag away on a coiled spring that snaps it home.",
+  "summary": "A small round label that can be dragged anywhere; a drawn coil stretches between it and its resting spot, and letting go lets the spring pull it back with a wobble.",
+  "title_fix": "Spring-Tethered Drag Chip",
+  "appearance": "A pale circular chip reading \"Drag\" sits on a black stage. Pulled away, it trails a thin grey wire of even loops back to an otherwise empty anchor point, the coil lengthening as the gap grows.",
+  "behaviour": "Dragging moves the chip with the pointer and redraws the coil every frame, thinning it as it stretches. Releasing sends the chip back to its anchor on a spring that overshoots once before settling, and with reduced motion it jumps straight home.",
+  "parts": ["drag chip", "label text", "spring coil", "anchor point"],
+  "demo_content": "One circular chip labelled \"Drag\".",
+  "states": ["dragging"],
+  "kind": "cursor-effect",
+  "look": ["dark", "minimal", "monochrome", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "draggable element on a spring",
+    "circle that snaps back when released",
+    "elastic drag with a coiled wire",
+    "thing tied by a spring to its spot",
+    "pull it away and let it bounce back",
+    "draggable badge with spring physics",
+    "playful drag and release interaction",
+    "item on a stretchy tether"
+  ],
+  "resembles": [],
+  "use_when": "A playful page wants one draggable token that visibly remembers where it belongs.",
+  "avoid_when": "Drag needs a pointer, so there is no keyboard way to move the chip, and a long pull can run it off a small container.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["decoration", "hero"],
+  "traits": {
+    "trigger": ["drag"],
+    "motion": "pronounced",
+    "affects": ["layout", "cursor"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Spring stiffness and damping, coil count, amplitude and curve ratios go on the provider; the dragged chip and its text are children you supply.",
+  "technique": ["motion-library", "svg"],
+  "weight": "moderate",
+  "weight_why": "Spring values rebuild the SVG coil path on every frame while dragging; idle afterwards.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": true,
+    "note": "Only pointer drag moves the chip and it is not focusable, so keyboard users cannot use it at all."
+  },
+  "props": [
+    {"name": "transition", "type": "SpringOptions", "default": "{ stiffness: 200, damping: 16 }", "required": false},
+    {"name": "pathConfig", "type": "SpringPathConfig", "default": "{}", "required": false},
+    {"name": "asChild", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Frames 3 and 4 pull the chip to the crop edge and clip it, so the scene's extremes are cut off.",
+    "The spring is drawn in a fixed full-viewport layer, so it will paint over the rest of the page."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing coil geometry and a lively snap-back, though the demo runs the chip out of the crop.",
+  "unsure": ["kind"]
+}

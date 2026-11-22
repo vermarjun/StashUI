@@ -1,0 +1,76 @@
+{
+  "name": "primitives-headless-checkbox",
+  "frames": {
+    "code": "9737",
+    "best": 1,
+    "best_why": "Two boxes are checked and two empty, showing both states cleanly with no cursor over the card.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Checklist squares fill white and draw a tick when clicked.",
+  "summary": "A launch checklist card with four task rows; clicking a square toggles it, filling the box and drawing the tick in with a short animation.",
+  "title_fix": null,
+  "appearance": "A dark rounded card with the heading Launch checklist, a grey subtitle and four rows. Each row has a small rounded square checkbox and a white task label; checked boxes are solid white with a dark tick.",
+  "behaviour": "Clicking a square toggles it: the box fills white and the tick draws itself in over a fifth of a second, and unchecking reverses it. The whole label row is clickable, and the box grows slightly on hover.",
+  "parts": ["checklist card", "heading", "task row", "checkbox square", "tick", "task label"],
+  "demo_content": "A Launch checklist with tasks about release notes, recording a demo, reviewing pull requests and shipping v2.4.",
+  "states": ["hover", "checked"],
+  "kind": "checkbox",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "task list with square checkboxes",
+    "animated tick when checked",
+    "todo checklist for launch planning",
+    "custom styled checkbox that draws a check",
+    "click a row to mark it done",
+    "light checkbox with self drawing tick",
+    "clean to do list in a card",
+    "unstyled checkbox you can theme yourself"
+  ],
+  "resembles": [],
+  "use_when": "A checklist or settings list needs custom square checkboxes with a drawn tick.",
+  "avoid_when": "It ships unstyled on purpose, so you must supply the box borders, colours and focus ring.",
+  "suits": ["any"],
+  "slot_hints": ["form-field", "list-item"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["fill", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Wrap your own box and indicator as children, set defaultChecked or a controlled checked value, and style the square with classes; the tick path and timings are fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Four tiny buttons with SVG ticks; nothing runs at rest.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The tick is drawn with motion and no reduced-motion check is made; focus styling and the accessible name are left to you."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode | ((bag) => React.ReactNode)", "default": null, "required": false},
+    {"name": "as", "type": "React.ElementType", "default": "motion.button", "required": false},
+    {"name": "defaultChecked", "type": "boolean", "default": null, "required": false},
+    {"name": "checked", "type": "boolean", "default": null, "required": false},
+    {"name": "onChange", "type": "(checked: boolean) => void", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "indeterminate", "type": "boolean", "default": null, "required": false},
+    {"name": "name", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Unchecked boxes are a dark outline on a dark card, so they are easy to miss.",
+    "Frame 4 catches the tick mid-draw and it looks like a stray slash."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp card and a satisfying drawn tick; unchecked boxes and focus states are faint.",
+  "unsure": []
+}

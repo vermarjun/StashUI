@@ -1,0 +1,171 @@
+{
+  "name": "OrbitImages-TS-TW",
+  "frames": {
+    "code": "9782",
+    "best": 1,
+    "best_why": "Every thumbnail sits on the full ellipse and the centre title is unobstructed; later frames have a cursor over the text.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photos glide around a tilted ellipse that frames a centred headline.",
+  "summary": "Eight small photos travel continuously around a slanted ellipse, passing behind a two-line title in the middle. The path can also be a circle, square, star, heart, wave or a custom curve.",
+  "title_fix": "Orbiting Images",
+  "appearance": "A wide dark stage holds a thin grey ellipse drawn at a slight tilt, with eight square photo thumbnails spaced along it. Two lines of white type sit in the middle: a bold title above a smaller muted subtitle.",
+  "behaviour": "The photos slide steadily around the fixed ellipse and never stop. Each thumbnail stays upright as it travels, while the central text stays still.",
+  "parts": [
+    "orbit path",
+    "photo thumbnails",
+    "centre title",
+    "subtitle"
+  ],
+  "demo_content": "Eight Unsplash nature and portrait photos; heading 'Orbit Images' with a one-line subtitle underneath.",
+  "states": [],
+  "kind": "image-effect",
+  "look": [
+    "dark",
+    "minimal",
+    "flat",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "photos circling around text in a loop",
+    "images moving along an elliptical path",
+    "endless looping photo animation",
+    "hero section with images around a headline",
+    "gallery of thumbnails on a dark background",
+    "photographs travelling around a curved track",
+    "rotating image ring for landing page",
+    "animated image carousel around center text"
+  ],
+  "resembles": [],
+  "use_when": "A marketing hero needs motion and imagery around a headline without covering the copy.",
+  "avoid_when": "On narrow screens the ellipse squeezes the thumbnails small, and the whole block is hidden from assistive tech.",
+  "suits": [
+    "marketing",
+    "portfolio"
+  ],
+  "slot_hints": [
+    "hero",
+    "media",
+    "decoration"
+  ],
+  "traits": {
+    "trigger": [
+      "always"
+    ],
+    "motion": "continuous",
+    "affects": [
+      "layout",
+      "children"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Images, orbit shape, radii, rotation, speed, item size, direction and path styling are props; the centre text is passed as a React node.",
+  "technique": [
+    "motion-library",
+    "svg"
+  ],
+  "weight": "light",
+  "weight_why": "Eight image nodes drift along offset paths in one infinite tween; no canvas or per-frame code.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The whole block is aria-hidden, so the photo alt text is never announced, and the endless loop ignores reduced-motion settings."
+  },
+  "props": [
+    {
+      "name": "images",
+      "type": "string[]",
+      "default": "[]",
+      "required": false
+    },
+    {
+      "name": "shape",
+      "type": "OrbitShape",
+      "default": "ellipse",
+      "required": false
+    },
+    {
+      "name": "centerContent",
+      "type": "ReactNode",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "40",
+      "required": false
+    },
+    {
+      "name": "itemSize",
+      "type": "number",
+      "default": "64",
+      "required": false
+    },
+    {
+      "name": "radiusX",
+      "type": "number",
+      "default": "700",
+      "required": false
+    },
+    {
+      "name": "radiusY",
+      "type": "number",
+      "default": "170",
+      "required": false
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "default": "-8",
+      "required": false
+    },
+    {
+      "name": "direction",
+      "type": "'normal' | 'reverse'",
+      "default": "normal",
+      "required": false
+    },
+    {
+      "name": "showPath",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "pathColor",
+      "type": "string",
+      "default": "rgba(0,0,0,0.1)",
+      "required": false
+    },
+    {
+      "name": "width",
+      "type": "number | '100%'",
+      "default": "100",
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Smooth steady motion and clean type; the thumbnails read very small on a wide empty stage.",
+  "unsure": [
+    "responsive",
+    "theme"
+  ]
+}

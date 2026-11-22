@@ -1,0 +1,77 @@
+{
+  "name": "choice-poll",
+  "frames": {
+    "code": "4359",
+    "best": 6,
+    "best_why": "Frame 6 shows the finished results: full bars, percentages, the voted tick and the footer, with no cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pick one answer, then the rows fill to show the vote split.",
+  "summary": "A one-question poll: a heading and description over four radio rows. Choosing one locks the vote and turns every row into a bar with its share, a percentage and the total count.",
+  "title_fix": null,
+  "appearance": "A dark card holds a bold question, a small muted sentence, and four stacked rounded rows with thin outlines. Each row starts with a circular marker and a label; after voting a soft fill grows from the left of each row and a percentage sits at the right.",
+  "behaviour": "Hovering lights a row's border and background. Clicking one fills its marker with a tick, disables the rows, and reveals results: each bar grows to its share, percentages count up, and a footer shows the total votes and a \"You voted\" mark.",
+  "parts": ["question heading", "description", "option row", "radio marker", "result bar", "percentage", "vote total"],
+  "demo_content": "Question \"What is your favorite frontend framework?\" with React, Vue, Angular and Svelte, showing 650 votes.",
+  "states": ["hover", "selected", "disabled"],
+  "kind": "radio-group",
+  "look": ["dark", "outlined", "rounded", "minimal", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "vote for one option in a poll",
+    "single question poll with results",
+    "radio choices that show percentages",
+    "audience poll widget",
+    "survey question with vote bars",
+    "choose one answer then see totals",
+    "community vote card",
+    "live poll results after clicking"
+  ],
+  "resembles": ["Twitter poll"],
+  "use_when": "You want a one-question vote on the page and to show the split once the visitor answers.",
+  "avoid_when": "There is no backend: votes and hasVoted must be wired up yourself or the poll shows nothing real.",
+  "suits": ["social", "saas"],
+  "slot_hints": ["form-field", "feature-card"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "subtle",
+    "affects": ["border", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Root takes value, multiple, disabled, showResults, votes and hasVoted; the heading, description and option rows are passed as child components. Styling is class-based.",
+  "technique": ["css-transition", "js-animation"],
+  "weight": "light",
+  "weight_why": "Four rows of DOM with short CSS transitions and a one-shot frame counter per bar.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Arrow keys, Home and End move between options, but the listbox has no accessible name and percentage changes are not announced."
+  },
+  "props": [
+    {"name": "votes", "type": "Record<string, number>", "default": "{}", "required": false},
+    {"name": "hasVoted", "type": "boolean", "default": "false", "required": false},
+    {"name": "showResults", "type": "boolean", "default": "false", "required": false},
+    {"name": "onValueChange", "type": "(value: string | string[]) => void", "default": null, "required": false},
+    {"name": "multiple", "type": "boolean", "default": "false", "required": false},
+    {"name": "value", "type": "string | string[]", "default": null, "required": false},
+    {"name": "defaultValue", "type": "string | string[]", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": "false", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Before voting the right side of each row is empty, leaving an awkward gap.",
+    "After voting every row is disabled, so a visitor cannot change their answer."
+  ],
+  "polish": 4,
+  "polish_why": "Clear rows and smooth result bars; the unused right side before voting is a small gap.",
+  "unsure": []
+}

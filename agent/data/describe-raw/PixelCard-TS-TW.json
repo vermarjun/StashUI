@@ -1,0 +1,146 @@
+{
+  "name": "PixelCard-TS-TW",
+  "frames": {
+    "code": "2882",
+    "best": 3,
+    "best_why": "The Default card is fully covered by the dense pale pixel grid, the clearest view of the effect at full bloom.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny pixels bloom across a card when the pointer enters.",
+  "title_fix": null,
+  "summary": "Three dark rounded cards sit side by side, each with a title and a hint to hover. On hover a field of small squares swells across the card and shimmers until the pointer leaves.",
+  "appearance": "Three near-black rounded cards in a row, each centred with a small title, a muted subtitle and a pill reading 'Hover me'. A hovered card fills with a dense grid of tiny pale squares.",
+  "behaviour": "Hovering a card sprouts a field of small pixels from the centre outward, which keep pulsing in size while the pointer stays. Leaving makes them shrink away and leaves the plain card.",
+  "parts": [
+    "card",
+    "title",
+    "subtitle",
+    "hover hint",
+    "pixel field"
+  ],
+  "demo_content": "Three cards titled Default, Blue and Pink with subtitles 'Neutral pixels', 'Cool tones' and 'Warm glow'.",
+  "states": [
+    "hover",
+    "focus"
+  ],
+  "kind": "card",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "textured"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "card that fills with tiny squares on hover",
+    "pixel burst hover effect",
+    "digital dust across a card",
+    "canvas particle card for a feature",
+    "dots that shimmer over a panel",
+    "interactive pixel reveal tile",
+    "hover card with sparkly grid",
+    "retro pixel animation on a card"
+  ],
+  "resembles": [],
+  "use_when": "A feature or teaser card should reward hover with a tactile pixel flourish.",
+  "avoid_when": "The pixels are decorative only, and the whole effect needs a pointer or keyboard focus to appear.",
+  "suits": [
+    "saas",
+    "portfolio",
+    "marketing"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "pricing-card",
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "hover",
+      "focus"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "background"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Variant (default, blue, yellow, pink), pixel gap, speed, colour list and whether the card is focusable are props; size and border come from classes.",
+  "technique": [
+    "canvas-2d"
+  ],
+  "weight": "moderate",
+  "weight_why": "Thousands of tiny canvas squares are redrawn every frame while a card is hovered.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "It honours reduced-motion, but the card has no role or instructions, so the focus-triggered animation is unexplained."
+  },
+  "props": [
+    {
+      "name": "variant",
+      "type": "'default' | 'blue' | 'yellow' | 'pink'",
+      "default": "default",
+      "required": false
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "colors",
+      "type": "string",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "noFocus",
+      "type": "boolean",
+      "default": null,
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": null,
+      "required": true
+    }
+  ],
+  "issues": [
+    "At full bloom the pixel field crowds the card's title and subtitle, making them harder to read."
+  ],
+  "polish": 4,
+  "polish_why": "A neat pixel bloom with three colour variants; the dot field crowds the text at full coverage.",
+  "unsure": [
+    "kind"
+  ]
+}

@@ -1,0 +1,188 @@
+{
+ "name": "pixelated-canvas",
+ "frames": {
+  "code": "8043",
+  "best": 4,
+  "best_why": "Frame 4 shows the strongest swirl, with a clear circular warp of dots around the cursor.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.1
+ },
+ "tagline": "A photo rebuilt from tiny dots that swirl away from the cursor.",
+ "summary": "Turns a photograph into a dotted, halftone-like picture on a dark canvas. Moving the pointer swirls the dots near it while the rest keeps still, then the image settles back.",
+ "title_fix": null,
+ "appearance": "A rectangular canvas filled with thousands of small coloured dots that together form a mountain and sky photo: teal-blue slopes below, warm orange horizon above. Dots thin out in low-contrast areas, leaving dark gaps, and a small grey caption sits under the canvas.",
+ "behaviour": "Pointer movement pushes the dots near the cursor into a swirl that fades with distance. When the pointer leaves, the motion eases out and the dots drift back to their original positions, leaving a still dotted image.",
+ "parts": [
+  "canvas",
+  "dot field",
+  "photograph",
+  "caption"
+ ],
+ "demo_content": "A dotted mountain-at-dusk photo captioned \"Move cursor over the canvas to distort\".",
+ "states": [
+  "hover"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "textured",
+  "dense",
+  "dark",
+  "retro",
+  "colorful"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "photo made of tiny dots",
+  "pixelated image with mouse distortion",
+  "halftone dot portrait effect",
+  "image that ripples under the cursor",
+  "dot matrix picture animation",
+  "stippled photo effect for a hero",
+  "canvas image that warps around pointer",
+  "retro dot art image reveal"
+ ],
+ "resembles": [],
+ "use_when": "A hero or portfolio image should feel tactile and respond to the visitor without any click.",
+ "avoid_when": "The canvas keeps a fixed pixel size, so it will not stretch to a fluid column, and very dark photos look full of holes.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "media",
+  "hero",
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "The image source, canvas size, dot size and shape, distortion mode and strength, tint and grayscale are all props; sampling logic needs a source edit.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full canvas redraws every dot on each animation frame, continuously while mounted.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The canvas has an aria-label and image role, but the distortion is pointer-only and there is no reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "400",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "cellSize",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "dotScale",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "shape",
+   "type": "\"circle\" | \"square\"",
+   "default": "\"square\"",
+   "required": false
+  },
+  {
+   "name": "distortionMode",
+   "type": "\"repel\" | \"attract\" | \"swirl\"",
+   "default": "\"swirl\"",
+   "required": false
+  },
+  {
+   "name": "distortionStrength",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "distortionRadius",
+   "type": "number",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "\"#000000\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{className}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Dots disappear in dark, low-contrast regions, leaving visible holes in the picture.",
+  "The canvas uses a fixed pixel width and height, so it will not refill a resized column."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive dot rendering and a convincing swirl; the dropout gaps and fixed size hold it back.",
+ "unsure": [],
+ "title": "Pixelated Canvas",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "3fb1d9ae52acfc02",
+  "film_hash": "3f4c02a62aa29468",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

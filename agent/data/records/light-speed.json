@@ -1,0 +1,123 @@
+{
+ "name": "light-speed",
+ "frames": {
+  "code": "4350",
+  "best": 3,
+  "best_why": "Frame 3 shows both colour bundles sweeping wide with the road curve clearly readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.7
+ },
+ "tagline": "Streaks of pink and teal light rush down a dark highway.",
+ "summary": "A night drive rendered in 3D: glowing car lights and lane markers stream toward the viewer and bend with the road. Holding the pointer speeds them up.",
+ "title_fix": null,
+ "appearance": "A black sky tops a dark road where dozens of neon streaks converge to a vanishing point. The left lanes glow magenta and purple, the right lanes teal and blue, and a white instruction line floats over the middle.",
+ "behaviour": "The light trails stream toward the camera continuously, sweeping as the road bends. Pressing and holding the pointer accelerates the rush, then it eases back on release.",
+ "parts": [
+  "dark road",
+  "light trails",
+  "lane dashes",
+  "instruction text"
+ ],
+ "demo_content": "The overlay line Click & hold to speed up.",
+ "states": [
+  "active"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "neon",
+  "glow",
+  "3d",
+  "colorful"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "neon highway night background",
+  "fast car light trails",
+  "glowing road streaks",
+  "cyberpunk driving scene",
+  "speed up on hold effect",
+  "3d highway animation",
+  "pink and teal light streaks",
+  "night drive webgl background"
+ ],
+ "resembles": [],
+ "use_when": "A hero or splash wants a fast, atmospheric night-drive mood that reacts to a press.",
+ "avoid_when": "A heavy 3D scene with bloom that needs a set height and a reasonably capable GPU.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "A single effectOptions object sets road width, lanes, length, field of view, speed-up and light counts; the shaders and layout are fixed.",
+ "technique": [
+  "three-js",
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A Three.js highway with instanced lights and bloom rendered every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Speed-up is hold-only and the WebGL scene has no label or keyboard path; reduced-motion is ignored."
+ },
+ "props": [
+  {
+   "name": "effectOptions",
+   "type": "LightSpeedOptions",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The road surface and lane markings are almost invisible; only the light streaks read.",
+  "The white instruction text competes with the brightest trails."
+ ],
+ "polish": 4,
+ "polish_why": "Striking neon streaks and smooth motion; the road itself nearly disappears into black.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "Light Speed",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "61a00005d31d0327",
+  "film_hash": "429ca5587c20363b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

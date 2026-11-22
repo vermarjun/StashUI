@@ -1,0 +1,148 @@
+{
+ "name": "animated-circular-progress-bar",
+ "frames": {
+  "code": "6729",
+  "best": 5,
+  "best_why": "Number 40 with a clean, matching arc drawn about two fifths of the way round.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.8
+ },
+ "tagline": "A ring fills clockwise with colour as the number in the middle counts up.",
+ "summary": "A circular gauge made of a dim track and a coloured arc that grows clockwise as the value rises. The current percentage sits in the middle and swaps in as the value steps up.",
+ "title_fix": null,
+ "appearance": "A thick grey ring on black, with rounded stroke ends, sits fully drawn as a track. Over it a bright indigo arc starts at twelve o'clock and sweeps clockwise. A large bold white number is centred inside the ring.",
+ "behaviour": "As the value increases the coloured arc lengthens clockwise in an eased one-second step while the grey track stays put and the centred number changes to the new figure. In this demo the value climbs by ten every two seconds and restarts after a hundred.",
+ "parts": [
+  "grey track",
+  "progress arc",
+  "percentage number"
+ ],
+ "demo_content": "A percentage counting up in tens, 10, 20, 30, 40",
+ "states": [
+  "loading"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "percentage ring that fills with color",
+  "donut gauge with number inside",
+  "circle that shows how much is done",
+  "download percent indicator",
+  "loading circle with count in middle",
+  "ring shaped progress meter",
+  "animated gauge for task completion",
+  "dial showing a single percentage"
+ ],
+ "resembles": [],
+ "use_when": "One number needs a sense of scale, such as storage used or a quota, in a compact square.",
+ "avoid_when": "Comparing several measures at once, or reading exact values; a bar or the bare number scans faster.",
+ "suits": [
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "loading",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Value, minimum, maximum and the two gauge colours are props; stroke width, gap, easing and size are set through classes and CSS variables in the source.",
+ "technique": [
+  "css-transition",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Two stroked circles and one CSS transition; nothing loops while the value holds.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "No progressbar role or aria-valuenow, so assistive tech gets no value. Reduced motion is not handled."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "gaugePrimaryColor",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "gaugeSecondaryColor",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative size-40 text-2xl font-semibold\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "In frames 3 and 6 the arc runs ahead of the centred number, since the number changes before the arc finishes easing."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp ring and readable numeral; the arc briefly outruns its label during each step.",
+ "unsure": [
+  "states"
+ ],
+ "title": "Circular Progress Bar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c7f9742838046074",
+  "film_hash": "5a677ac660904287",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

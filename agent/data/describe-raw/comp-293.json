@@ -1,0 +1,63 @@
+{
+  "name": "comp-293",
+  "frames": {
+    "code": "9178",
+    "best": 1,
+    "best_why": "Clean card at rest with headline, copy, both buttons and the close icon unmasked by the cursor.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Small dark card with a cookie headline, two short buttons and a close X.",
+  "summary": "A non-blocking cookie notice. It explains how cookies are used, offers Accept and Decline, and carries a close icon in the corner.",
+  "title_fix": null,
+  "appearance": "A dark rounded card with a thin border and soft shadow. A bold headline with a cookie emoji sits above two grey lines of copy, with a white Accept button and an outlined Decline button at the lower left and a small X at the top right.",
+  "behaviour": "The card holds still. Accept, Decline and the close icon react to hover and press with fill and opacity changes; in the clip the card never actually closes.",
+  "parts": ["card", "headline", "cookie emoji", "body copy", "accept button", "decline button", "close icon"],
+  "demo_content": "Headline \"We Value Your Privacy\" with a cookie emoji above a line about cookies and personalized content.",
+  "states": ["hover", "focus", "active"],
+  "kind": "toast",
+  "look": ["dark", "rounded", "minimal", "shadowed"],
+  "tone": "minimal",
+  "search_phrases": [
+    "ask visitors to accept cookies",
+    "gdpr consent banner",
+    "cookie notification with accept and decline",
+    "privacy popup at bottom of page",
+    "small card asking to allow cookies",
+    "consent prompt for website tracking",
+    "accept all cookies button",
+    "dismissible privacy notice"
+  ],
+  "resembles": ["GDPR cookie banner"],
+  "use_when": "A site must collect cookie consent without blocking the page, as a corner card rather than a full dialog.",
+  "avoid_when": "Nothing is wired: the buttons and close X have no handlers, so saving a choice and dismissing are on you.",
+  "suits": ["saas", "marketing", "ecommerce"],
+  "slot_hints": ["toast"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "subtle",
+    "affects": ["fill", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Headline, copy and button labels are fixed in the file, so reuse means editing the source; it takes no props and the controls carry no handlers.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A static card with three buttons and one small close icon; no runtime loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Keyboard reachable with a labelled close button, but the card has no live-region or landmark role for screen readers."
+  },
+  "props": [],
+  "issues": ["Buttons and the close X have no handlers, so the card cannot be dismissed."],
+  "polish": 4,
+  "polish_why": "Tidy spacing and clear hierarchy; flat apart from the single emoji.",
+  "unsure": ["theme", "responsive"]
+}

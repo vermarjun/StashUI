@@ -1,0 +1,73 @@
+{
+  "name": "tabs",
+  "frames": {
+    "code": "6620",
+    "best": 3,
+    "best_why": "Analytics is selected with its green panel large and centred and the cursor off the labels.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Pill tabs switch a stack of bright gradient panels with a spring.",
+  "summary": "A row of four small pill labels, one filled to mark the active tab, above a large rounded gradient card. Clicking a label springs the highlight across and brings that card to the front of a shallow stack.",
+  "title_fix": null,
+  "appearance": "A row of four small pill labels on a black page, one filled grey to mark the active tab, with a wide rounded gradient panel below it holding a bold heading and one line of pale copy. Other panels sit behind the front card, slightly smaller and dimmer.",
+  "behaviour": "Clicking a label springs the grey pill across to it and lifts that card to the front; hovering the row fans the stacked cards upward for a moment. The cards behind scale down and fade.",
+  "parts": ["tab button", "active pill", "content card", "card heading", "card text"],
+  "demo_content": "Tabs Design, Development, Analytics and Settings, each showing a coloured card such as Analytics Tab.",
+  "states": ["active", "hover"],
+  "kind": "tabs",
+  "look": ["dark", "rounded", "colorful", "pill", "gradient"],
+  "tone": "playful",
+  "search_phrases": [
+    "tabs with a sliding pill highlight",
+    "stacked cards that change with tabs",
+    "pill tab bar with gradient panels",
+    "click tabs to swap colored card",
+    "animated tab switcher for features",
+    "segmented tabs with spring motion",
+    "tabs where panels are stacked",
+    "product feature tabs with big cards"
+  ],
+  "resembles": [],
+  "use_when": "A short set of product areas where each tab deserves a large illustrated panel.",
+  "avoid_when": "Content needs a set height: the absolutely stacked panels collapse without one.",
+  "suits": ["saas", "marketing", "dashboard"],
+  "slot_hints": ["feature-card", "body-text"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass a tabs array of title, value and content node; four className props tune the container, active pill, tab and content, while stacking offsets stay fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Four buttons and a few stacked cards driven by a single layout spring.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Tabs are plain buttons without tablist or aria-selected roles, and no focus-visible style is added."
+  },
+  "props": [
+    {"name": "tabs", "type": "Tab[]", "default": null, "required": true},
+    {"name": "containerClassName", "type": "string", "default": null, "required": false},
+    {"name": "activeTabClassName", "type": "string", "default": null, "required": false},
+    {"name": "tabClassName", "type": "string", "default": null, "required": false},
+    {"name": "contentClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Stacked cards are so faint in frames 2 and 4 that they read as a smudged shadow.",
+    "No tablist or aria-selected roles for assistive tech.",
+    "Each tab's panel is a different bright gradient, so the component changes look entirely."
+  ],
+  "polish": 4,
+  "polish_why": "Springy pill and layered panels are distinctive; the stacked cards read as faint shadows.",
+  "unsure": []
+}

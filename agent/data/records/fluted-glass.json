@@ -1,0 +1,182 @@
+{
+ "name": "fluted-glass",
+ "frames": {
+  "code": "4271",
+  "best": 3,
+  "best_why": "The ribbed glass, snow peak, warm sky and both caption lines are all clear in one frame.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 2.5
+ },
+ "tagline": "A mountain photo seen through shifting vertical ribbed glass.",
+ "summary": "A scenic photograph is covered by a vertical fluted-glass shader that splits it into fine ribbed streaks. Moving the pointer slides and warps the ribs over the image, adding soft shadows and highlights.",
+ "title_fix": null,
+ "appearance": "A full-bleed mountain lake photo at sunset, broken into thin vertical ribs like reeded glass. Pale peaks, pink sky and grey clouds show through the stripes, with small white text at the bottom left.",
+ "behaviour": "The flutes stay fixed while the pointer moves, shifting the stripes and increasing distortion so the scene warps under the glass. It eases back to centre when the pointer leaves.",
+ "parts": [
+  "mountain photo",
+  "vertical ribs",
+  "shadow bands",
+  "location label",
+  "heading"
+ ],
+ "demo_content": "Photo of the Dolomites at sunset; label 'Dolomites, Italy' and heading 'Seen through glass'.",
+ "states": [],
+ "kind": "image-effect",
+ "look": [
+  "glass",
+  "textured",
+  "pastel",
+  "light",
+  "sharp"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "ribbed glass photo effect",
+  "grooved glass image distortion",
+  "reeded glass texture over photo",
+  "vertical stripes warp picture",
+  "glass panel hero image",
+  "frosted ribbed overlay",
+  "photo seen through textured glass",
+  "mouse moves glass distortion"
+ ],
+ "resembles": [],
+ "use_when": "A hero or gallery image needs a tactile glass texture that responds to the pointer.",
+ "avoid_when": "The image holds content users must read clearly; ribbing and warp hide fine detail.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "media",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Pass any shader prop: image, size, shadows, highlights, distortion, shift, angle, blur, grain and fit. The wrapper only fills in defaults for the rest.",
+ "technique": [
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full-screen fragment shader repaints the photograph every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The shader image has no text alternative, and its pointer-driven warping runs regardless of reduced-motion."
+ },
+ "props": [
+  {
+   "name": "image",
+   "type": "string",
+   "default": "https://paper.design/flowers.webp",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "shadows",
+   "type": "number",
+   "default": "0.25",
+   "required": false
+  },
+  {
+   "name": "highlights",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "distortion",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "shift",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "angle",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "shape",
+   "type": "string",
+   "default": "lines",
+   "required": false
+  },
+  {
+   "name": "fit",
+   "type": "string",
+   "default": "cover",
+   "required": false
+  },
+  {
+   "name": "width",
+   "type": "number",
+   "default": "1280",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "720",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Fine ribbing and distortion soften the photo, so it cannot show sharp detail.",
+  "Pointer warping ignores reduced-motion settings and runs on every device."
+ ],
+ "polish": 4,
+ "polish_why": "Ribbed glass reads convincingly with soft shadow bands; captions sit cleanly on the image.",
+ "unsure": [],
+ "title": "Fluted Glass",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f936edd562efe169",
+  "film_hash": "e414cc4291c88f9e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "primitives-texts-rolling",
+  "frames": {
+    "code": "1961",
+    "best": 6,
+    "best_why": "Both lines are fully settled and legible; earlier frames catch characters mid-flip.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Every letter tips up on a hinge and lands in place, one after another.",
+  "summary": "Two lines of text that arrive as individual characters flipping around a horizontal axis, sweeping left to right, the subtitle starting after a short pause.",
+  "title_fix": null,
+  "appearance": "A large bold white headline and a smaller grey subtitle, both centred on a near-black stage. During the effect a character is briefly edge-on or missing, leaving a gap in the line until it drops back into place.",
+  "behaviour": "On entering the viewport each character rotates ninety degrees up into its slot, staggered along the sentence; the second line waits a little longer. Everything settles into still, normally spaced text.",
+  "parts": ["headline line", "subtitle line", "characters", "dark stage"],
+  "demo_content": "\"Welcome to Animate UI\" over \"Beautiful animations made easy\"",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "minimal", "bold", "monochrome"],
+  "tone": "minimal",
+  "search_phrases": [
+    "letters flip into place one by one",
+    "text rolls in character by character",
+    "3d rotating text entrance animation",
+    "headline flips up on scroll into view",
+    "animated text reveal for hero",
+    "each letter spins into view",
+    "staggered letter flip animation",
+    "text that tumbles into place"
+  ],
+  "resembles": [],
+  "use_when": "A hero headline should arrive with a rewarding reveal once it scrolls into view.",
+  "avoid_when": "Body copy or long paragraphs: per-character delays slow reading and the motion distracts.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["hero", "headline"],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Text, an extra delay and the transition timing come in as props; changing the flip axis or the per-character stagger needs a source edit.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A few spans per character driven by two transforms each, with no running loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The visible characters are hidden from assistive tech and the full text is exposed, but there is no reduced-motion fallback."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "transition", "type": "Transition", "default": "{ duration: 0.5, delay: 0.1, ease: 'easeOut' }", "required": false},
+    {"name": "inView", "type": "boolean", "default": "false", "required": false},
+    {"name": "inViewMargin", "type": "string", "default": "'0px'", "required": false},
+    {"name": "inViewOnce", "type": "boolean", "default": "true", "required": false},
+    {"name": "ref", "type": "React.Ref<HTMLElement>", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Crisp staggered flip with sensible timing; the grey subtitle sits low in contrast on black.",
+  "unsure": ["theme"]
+}

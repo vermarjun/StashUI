@@ -1,0 +1,152 @@
+{
+ "name": "shader-reveal-transition",
+ "frames": {
+  "code": "3351",
+  "best": 2,
+  "best_why": "Frame 2 catches the pink and green noise shader at full strength during a scene change.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.1
+ },
+ "tagline": "Photos wipe into each other under a colourful noise or stripe shader.",
+ "summary": "A framed image card that swaps scenes behind a full-cover WebGL shader. Each change plays one of eight effects — noise, wipe, circle, stripes, zoom, luma, planetary or push — chosen from pills beneath the frame.",
+ "title_fix": null,
+ "appearance": "A wide 16:9 photo sits in a rounded frame with a place name and white title in the lower left. Under it, a row of small round outline pills names eight effects, with Next scene at the right; mid-change the frame fills with pink, green and cyan shader patterns.",
+ "behaviour": "Pressing Next scene starts a shader wipe: a bright noise, blade or stripe pattern sweeps across the frame, the photo swaps at the midpoint, and the pattern fades to reveal the new one. Choosing a pill sets the effect for the next wipe.",
+ "parts": [
+  "photo frame",
+  "place label",
+  "photo title",
+  "variant pill",
+  "next button",
+  "shader overlay"
+ ],
+ "demo_content": "Mountain, horse and plant photos labelled Dolomites, Lofoten and Patagonia with titles like 'Above the cloud line'.",
+ "states": [
+  "selected",
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "transition",
+ "look": [
+  "colorful",
+  "dark",
+  "rounded",
+  "gradient"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "image slideshow with shader transition",
+  "webgl wipe between photos",
+  "glitch style scene change effect",
+  "colorful noise reveal animation",
+  "photo carousel with fancy transition",
+  "shader mask page transition",
+  "wipe effect between two images",
+  "creative scene switcher"
+ ],
+ "resembles": [],
+ "use_when": "A gallery or hero needs a memorable scene change between images, and a plain crossfade feels too ordinary.",
+ "avoid_when": "It runs a WebGL loop per wipe and needs a sized frame, so low-end or reduced-motion users get a plain swap.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Children are the current scene, transitionKey triggers a wipe, variant picks one of eight effects, and duration and onRest are props; colours live in the shader source.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL shader and requestAnimationFrame loop run for every reveal.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Reduced motion swaps scenes instantly and the controls are real buttons, but the shader canvas has no accessible description."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "transitionKey",
+   "type": "string | number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "variant",
+   "type": "ShaderRevealVariant",
+   "default": "nextVariant;",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "DEFAULT_DURATION_MS",
+   "required": false
+  },
+  {
+   "name": "onRest",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The variant pills are tiny outlined text with low contrast against the dark stage."
+ ],
+ "polish": 4,
+ "polish_why": "The shader wipes are vivid and varied; the pill controls are small and plain by comparison.",
+ "unsure": [],
+ "title": "Shader Reveal Transition",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "05f3e455ae88e488",
+  "film_hash": "04a2a20aa45b357e",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

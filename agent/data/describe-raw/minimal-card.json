@@ -1,0 +1,68 @@
+{
+  "name": "minimal-card",
+  "frames": {
+    "code": "7471",
+    "best": 1,
+    "best_why": "Card is whole against black with the photo and all three description lines unobstructed.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A soft dark card holding a photo, title and short copy.",
+  "summary": "A rounded dark card with a photo filling its top and a title plus three lines of muted text beneath. Its only change is a slight lightening of the surface when hovered.",
+  "title_fix": null,
+  "appearance": "A tall dark card with generously rounded corners sits on black. A wide photo of snowy peaks above a sea of cloud fills the top, with a white title and three lines of grey body text below.",
+  "behaviour": "Almost still: the only change is a faint lightening of the card surface while the pointer rests on it. Nothing moves on its own.",
+  "parts": ["card surface", "photo", "title", "description text"],
+  "demo_content": "Photo of snowy peaks above clouds, titled Mountain Escape, with copy about an alpine retreat.",
+  "states": ["hover"],
+  "kind": "card",
+  "look": ["dark", "rounded", "minimal", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "simple card with image and text",
+    "dark rounded content card",
+    "blog post preview tile",
+    "photo card with a description",
+    "minimal product teaser card",
+    "tile for a grid of articles",
+    "soft shadow card for a landing page",
+    "image and caption panel"
+  ],
+  "resembles": [],
+  "use_when": "A grid of articles or places needs a calm, low-chrome tile people can scan.",
+  "avoid_when": "The image is fixed at 190px tall and there are no slots for prices or actions.",
+  "suits": ["blog", "portfolio", "marketing"],
+  "slot_hints": ["feature-card", "list-item", "media"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "shadow"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Card, image, title, description, content and footer are separate exports; className tunes each part, the image takes src and alt, and copy goes in as children.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A small div tree with CSS shadows and a colour transition; no script.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The image alt is a required prop, but the card is a plain div so nothing here is focusable."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "src", "type": "string", "default": null, "required": true},
+    {"name": "alt", "type": "string", "default": null, "required": true}
+  ],
+  "issues": ["The grey description text is low contrast against the dark card surface."],
+  "polish": 3,
+  "polish_why": "Even rounding and a soft shadow; image and copy are well spaced but the styling is standard.",
+  "unsure": []
+}

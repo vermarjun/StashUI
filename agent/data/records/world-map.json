@@ -1,0 +1,121 @@
+{
+ "name": "world-map",
+ "frames": {
+  "code": "3446",
+  "best": 6,
+  "best_why": "All five routes are fully drawn and every city dot pulses, with the heading still readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.0
+ },
+ "tagline": "Blue arcs link cities across a dotted globe as it loads.",
+ "summary": "A dotted map of the world with glowing location dots and curved blue routes drawn between cities, each line animating into place while every dot pulses.",
+ "title_fix": null,
+ "appearance": "A wide map of the continents built from tiny pale-blue dots on near-black. Faint blue curves lift between paired dots, each of which glows with a soft pulsing ring.",
+ "behaviour": "On load the routes draw from city to city one after another while every endpoint emits a slow pulsing halo. After that nothing moves and the map does not react to the pointer.",
+ "parts": [
+  "heading",
+  "subtext",
+  "dotted map",
+  "location dot",
+  "pulsing ring",
+  "curved route"
+ ],
+ "demo_content": "Heading 'Remote Connectivity' with copy about working anywhere; routes between New York, London, Tokyo and Paris.",
+ "states": [],
+ "kind": "map",
+ "look": [
+  "dark",
+  "minimal",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "dotted map of the globe with routes",
+  "cities connected by curved lines",
+  "global network map animation",
+  "office locations shown on a map",
+  "pulsing dots on continents",
+  "remote team spread across the world",
+  "arc lines between countries",
+  "airline route style map"
+ ],
+ "resembles": [],
+ "use_when": "You need to show a distributed team, offices or shipping routes and want it to feel global and alive.",
+ "avoid_when": "The map is decorative only: no zoom, labels or click targets, and tiny dots fade on low-contrast screens.",
+ "suits": [
+  "saas",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "media",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "timer"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a dots array of start and end coordinates plus a line colour; dot size, map radius and per-theme colours are set in the source.",
+ "technique": [
+  "svg",
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One generated SVG image plus a few path and circle elements, with no canvas loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The image has alt text but the routes carry no city labels, so the connections are invisible to screen readers."
+ },
+ "props": [
+  {
+   "name": "dots",
+   "type": "Array<{ start; end }>",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "lineColor",
+   "type": "string",
+   "default": "\"#0ea5e9\"",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp dots and clean arcs; the faint continents make the geography hard to read.",
+ "unsure": [],
+ "title": "World Map",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "878b1468972f8798",
+  "film_hash": "82b398dc03156dd3",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

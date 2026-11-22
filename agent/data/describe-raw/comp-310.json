@@ -1,0 +1,63 @@
+{
+  "name": "comp-310",
+  "frames": {
+    "code": "2869",
+    "best": 1,
+    "best_why": "Frame 1 shows the full strip with the countdown at 22s and the cursor below it.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "The left edge is cropped, so the circular ticket badge is cut off.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Sale strip counts down hours, minutes and seconds beside a Buy now button.",
+  "summary": "A full-width dark promo bar with a Black Friday headline, a live countdown in divided cells, a white Buy now button and a close X. It removes itself when the timer runs out.",
+  "title_fix": null,
+  "appearance": "A full-width dark strip: a bold sale headline over one muted line on the left, then a tinted rounded box split into hour, minute and second cells, a white Buy now pill and a faint X. A ticket badge is cut off at the left edge.",
+  "behaviour": "The countdown drops by one second on each tick; when it reaches zero the whole bar removes itself. The X hides it early, and the X brightens on hover.",
+  "parts": ["headline", "description text", "countdown", "buy now button", "close button"],
+  "demo_content": "Black Friday Sale! It kicks off today and is available for just 24 hours—don't miss out!",
+  "states": ["hover", "active"],
+  "kind": "toast",
+  "look": ["dark", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "flash sale countdown bar",
+    "black friday timer banner",
+    "countdown clock with buy button",
+    "limited time offer strip",
+    "sale ends in hours minutes seconds",
+    "promo bar with countdown and close",
+    "ecommerce discount countdown",
+    "urgency timer at top of page"
+  ],
+  "resembles": [],
+  "use_when": "A time-limited sale needs a visible countdown next to a buy action.",
+  "avoid_when": "It hides itself when the timer ends and the end date lives in code, so a new sale needs a rebuild.",
+  "suits": ["ecommerce", "marketing"],
+  "slot_hints": ["toast", "nav"],
+  "traits": {
+    "trigger": ["timer", "click", "hover"],
+    "motion": "subtle",
+    "affects": ["text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Headline, description and button label are hardcoded, and the sale end date is a module-level constant.",
+  "technique": ["js-animation"],
+  "weight": "light",
+  "weight_why": "One strip and a once-per-second state update that stops when it is dismissed.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Close is labelled and the ticket badge hidden, but the changing seconds are not announced to screen readers."
+  },
+  "props": [],
+  "issues": ["The crop hides the ticket badge at the left edge.", "Buy now has no handler, so it leads nowhere."],
+  "polish": 3,
+  "polish_why": "Organised promo strip with a clear countdown; stock styling and a cropped badge.",
+  "unsure": ["shows_interaction", "render"]
+}

@@ -1,0 +1,183 @@
+{
+ "name": "echo-text",
+ "frames": {
+  "code": "2477",
+  "best": 1,
+  "best_why": "A long fan of faded copies stretches out to the right, showing the echo effect at full stretch.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Ghost copies of a word trail behind it and lean with the cursor.",
+ "summary": "A heavy white word with a train of faded, softly blurred copies behind it. The copies lag and stretch as the pointer moves, flare outward on a click, then gather back into one word.",
+ "title_fix": null,
+ "appearance": "One crisp white word dominates a pure black stage, with a row of paler duplicates stepping away behind it and dissolving into the dark. The copies grow steadily softer until only a faint smear of light remains.",
+ "behaviour": "Moving the pointer toward a side pulls the copies that way while the front word leads, so the tail stretches and springs back. Clicking throws a few copies outward to fade, and the train vanishes when the pointer leaves.",
+ "parts": [
+  "front word",
+  "echo copies",
+  "click burst"
+ ],
+ "demo_content": "The word \"Afterglow\".",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "dark",
+  "bold",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "word with ghost trail",
+  "text that follows the cursor",
+  "blurred echo typography",
+  "letters leave copies behind",
+  "click to burst text",
+  "motion trail heading",
+  "animated hero word with afterimage",
+  "long exposure text effect"
+ ],
+ "resembles": [],
+ "use_when": "A bold hero or section word where movement adds drama without changing the copy.",
+ "avoid_when": "The copies smear into an unreadable fan on wide type, and the main effect needs a precise pointer.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Set the word with text; echoes, lag, offset, direction, fade, blur, tint and outline style shape the trail. Mode, trail source, click burst, duration, easing and font size are props too.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Up to twenty-four absolutely positioned text copies are moved each frame while the trail is awake.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Echo copies are hidden from assistive tech and removed under reduced motion; the trigger is pointer only."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "'Motion Echo'",
+   "required": false
+  },
+  {
+   "name": "echoes",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "lag",
+   "type": "number",
+   "default": "0.24",
+   "required": false
+  },
+  {
+   "name": "offset",
+   "type": "number",
+   "default": "36",
+   "required": false
+  },
+  {
+   "name": "direction",
+   "type": "'right' | 'left' | 'up' | 'down' | 'diagonal'",
+   "default": "'right'",
+   "required": false
+  },
+  {
+   "name": "fade",
+   "type": "number",
+   "default": "0.72",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "tint",
+   "type": "string | false",
+   "default": "'#7dd3fc'",
+   "required": false
+  },
+  {
+   "name": "echoStyle",
+   "type": "'solid' | 'outline'",
+   "default": "'solid'",
+   "required": false
+  },
+  {
+   "name": "mode",
+   "type": "'entrance' | 'pointer' | 'both'",
+   "default": "'both'",
+   "required": false
+  },
+  {
+   "name": "trail",
+   "type": "'pointer' | 'auto' | 'scroll'",
+   "default": "'pointer'",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "string | number",
+   "default": "'clamp(3rem, 9vw, 7rem)'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The copies are nearly the same white as the word, so the trail reads as plain blur rather than coloured ghosts."
+ ],
+ "polish": 3,
+ "polish_why": "The trail moves cleanly, but identical white copies make it look like ordinary motion blur.",
+ "unsure": [],
+ "title": "Echo Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "6c1b0ccc4e5dc099",
+  "film_hash": "7fa26e0237e8b377",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "comp-100",
+  "frames": {
+    "code": "8828",
+    "best": 1,
+    "best_why": "Clean closed hamburger at full size; frames 3-5 are mid-morph with the cursor over the icon.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Three stacked lines fold into an X when clicked.",
+  "summary": "An icon button holding a hamburger menu symbol. Clicking it swings the three bars into an X and back again, while announcing whether the menu is open.",
+  "title_fix": null,
+  "appearance": "A square icon button with rounded corners and a thin light outline sits on a near-black stage. Three short white horizontal bars are centred inside, evenly spaced. The button keeps the same size while the icon inside changes.",
+  "behaviour": "At rest the button shows three stacked bars. A click rotates and slides them into an X over about a third of a second with a slight overshoot; a second click returns them to bars.",
+  "parts": ["icon button", "top bar", "middle bar", "bottom bar"],
+  "demo_content": "Caption below the button reading \"Menu toggle: the hamburger morphs into an X\".",
+  "states": ["hover", "focus", "active", "expanded"],
+  "kind": "button",
+  "look": ["dark", "rounded", "minimal", "outlined", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "three lines that turn into an x",
+    "toggle for mobile navigation menu",
+    "hamburger icon morph animation",
+    "open and close menu icon",
+    "animated close button for slide out nav",
+    "square outlined icon button",
+    "menu state toggle icon",
+    "button to show and hide navigation"
+  ],
+  "resembles": ["hamburger-to-X morph"],
+  "use_when": "A compact nav toggle is needed in a top bar where an icon button fits better than a text label.",
+  "avoid_when": "It only flips its own icon; you must build and wire the menu panel it is meant to control.",
+  "suits": ["any"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "No props are exposed; icon size, stroke and timing live in the file, so changing them means editing the source or the shared Button variant.",
+  "technique": ["svg", "css-transition"],
+  "weight": "light",
+  "weight_why": "One small SVG with three paths animated by CSS transitions.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "aria-label and aria-expanded are set, but the morph ignores prefers-reduced-motion."
+  },
+  "props": [],
+  "issues": ["No clean open frame: frames 3-5 are mid-morph with the cursor over the icon."],
+  "polish": 4,
+  "polish_why": "Crisp, well-proportioned icon and a springy timing curve; the morph overshoots a touch.",
+  "unsure": ["theme"]
+}

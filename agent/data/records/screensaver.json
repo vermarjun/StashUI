@@ -1,0 +1,143 @@
+{
+ "name": "screensaver",
+ "frames": {
+  "code": "3143",
+  "best": 3,
+  "best_why": "Frame 3 shows the widest spread of drifting photos with the headline fully clear.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.1
+ },
+ "tagline": "Small photos drift and bounce around a fixed headline like a DVD logo.",
+ "summary": "A set of square images floats around a container, each travelling in a straight line and reversing at the edges, while centred text stays still behind the motion.",
+ "title_fix": null,
+ "appearance": "A near-black stage with a white 'page not found' headline at its centre. Around and behind it, about a dozen small square photos in mixed colours drift in a loose diagonal band, some clipped at the top edge.",
+ "behaviour": "Every photo moves at a steady speed along a straight diagonal and reverses when it reaches a container edge, so each one keeps bouncing. The headline stays fixed while photos pass behind it.",
+ "parts": [
+  "photo squares",
+  "headline",
+  "dark backdrop"
+ ],
+ "demo_content": "Eight Unsplash photos, doubled, behind the heading 'page not found'.",
+ "states": [],
+ "kind": "background",
+ "look": [
+  "dark",
+  "colorful",
+  "minimal",
+  "flat"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "photos bouncing around the screen",
+  "dvd logo style moving images",
+  "floating image background effect",
+  "404 page with drifting pictures",
+  "elements that bounce off container edges",
+  "animated photo collage background",
+  "moving squares behind hero text",
+  "idle animation with moving photos"
+ ],
+ "resembles": [],
+ "use_when": "A 404 or empty page needs gentle ambient movement so it does not feel dead, without pulling focus from the message.",
+ "avoid_when": "It never idles, so it can drain battery and distract on a long page, and it needs a sized overflow-hidden parent.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "empty-state"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "layout",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "children",
+ "customise": "Each instance takes its content as children plus speed, start angle, start position as percentages and the container ref; colours and image sources are whatever you pass in.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Sixteen photos each update their position every frame through motion values.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "The nonstop motion never pauses or checks reduced-motion preferences, and it is purely decorative with no controls."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "containerRef",
+   "type": "RefObject<HTMLElement | null>",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "startPosition",
+   "type": "{ x: number; y: number }",
+   "default": "{ x: 0, y: 0 }",
+   "required": false
+  },
+  {
+   "name": "startAngle",
+   "type": "number",
+   "default": "45",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"transform will-change-transform\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "The bounce and layering work cleanly, but the effect is a stock idea with plain square photos.",
+ "unsure": [
+  "a11y"
+ ],
+ "title": "Screensaver",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "3067bd0eca3fa2de",
+  "film_hash": "80f884d3e5008b39",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

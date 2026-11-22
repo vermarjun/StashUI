@@ -1,0 +1,114 @@
+{
+ "name": "comp-364",
+ "frames": {
+  "code": "6213",
+  "best": 5,
+  "best_why": "Hover card is fully open below the name, showing portrait, bio and the mutual-friend row.",
+  "usable": [
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.2
+ },
+ "tagline": "Hovering a name opens a small profile card with bio and mutual friends.",
+ "summary": "A name with avatar and handle reveals a profile card on hover. The card repeats the person's photo, name and handle, adds a short bio, and shows overlapping friend avatars with a mutual-friend count.",
+ "title_fix": null,
+ "appearance": "A small row on a dark page: a round portrait, a bold name link, and a grey handle beneath. Hovering opens a dark rounded card below with the same portrait and name, a short bio, and three overlapping small avatars beside '3 mutual friends'.",
+ "behaviour": "Hovering the name fades in the card below it; moving the pointer into the card keeps it open, and leaving dismisses it.",
+ "parts": [
+  "avatar",
+  "name link",
+  "handle",
+  "hover card",
+  "bio text",
+  "friend avatars",
+  "mutual friends count"
+ ],
+ "demo_content": "Person Keith Kennedy, handle @k.kennedy, designer bio at @coss.com, and '3 mutual friends'.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "hover a name to see profile details",
+  "user card with bio and mutual friends",
+  "social profile preview on hover",
+  "avatar name and handle popup",
+  "mini profile card that appears on hover",
+  "see someone's bio without leaving the page",
+  "hover card with friend avatars",
+  "twitter style profile hover card"
+ ],
+ "resembles": [
+  "Twitter profile hover card"
+ ],
+ "use_when": "Names in a feed or comment should reveal who someone is without a page load.",
+ "avoid_when": "Hover cards need a pointer; touch users cannot open this and must tap through instead.",
+ "suits": [
+  "social",
+  "saas"
+ ],
+ "slot_hints": [
+  "avatar"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The name, handle, bio, photo paths and mutual-friend count are all fixed in the file; swapping in real people means editing the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few images and a small popup; it only appears on hover.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The trigger is a paragraph wrapping a link, so keyboard focus may not open the card; avatar alt text is generic."
+ },
+ "props": [],
+ "issues": [
+  "The card opens on hover only; the trigger element itself is not focusable.",
+  "Avatar alt text is generic ('Avatar', 'Friend 01') rather than naming the people."
+ ],
+ "polish": 3,
+ "polish_why": "Well spaced and legible; otherwise a conventional profile hover card.",
+ "unsure": [
+  "a11y.keyboard"
+ ],
+ "title": "User Profile Hovercard",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "99968289457d2c55",
+  "film_hash": "1e152e60dd148725",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

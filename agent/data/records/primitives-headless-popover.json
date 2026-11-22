@@ -1,0 +1,129 @@
+{
+ "name": "primitives-headless-popover",
+ "frames": {
+  "code": "9529",
+  "best": 4,
+  "best_why": "The panel is fully open below the closed trigger, with all copy and the Save changes button at full size.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "A small button drops down a settings card with a save action.",
+ "summary": "A Quick settings button opens a small floating card with a short explanation and a Save changes button; the card scales up from the trigger and shrinks away on close.",
+ "title_fix": null,
+ "appearance": "A compact outlined button on black labelled Quick settings. Below it sits a floating dark card with the same heading, two lines of grey copy and a full-width white Save changes button.",
+ "behaviour": "Clicking the button pops the card open beneath it, growing from half scale with a spring while it fades in. Clicking again, or outside, shrinks it back toward the button.",
+ "parts": [
+  "trigger button",
+  "popover card",
+  "heading",
+  "description",
+  "save button"
+ ],
+ "demo_content": "A Quick settings button and a panel saying Adjust preferences from here, with a Save changes button.",
+ "states": [
+  "open",
+  "hover"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "small panel that pops open below a button",
+  "quick settings flyout card",
+  "click button to show a floating card",
+  "inline preferences popup",
+  "hover card with a save button",
+  "dropdown panel with explanation text",
+  "lightweight settings menu in place",
+  "popup that grows from the trigger"
+ ],
+ "resembles": [],
+ "use_when": "A few settings or a short note should open in place without leaving the page.",
+ "avoid_when": "The panel is narrow and its content is fixed, so longer forms or lists will not fit.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "nav",
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Compose the trigger, panel and optional backdrop with your own markup, and set the transition or placement; the scale-and-fade animation is fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One small panel scaling in; nothing runs while closed.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "no",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Escape closes and focus is managed, but the demo removes the focus outline without a ring, so keyboard focus is invisible."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "as",
+   "type": "React.ElementType",
+   "default": "motion.div",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": "{ type: 'spring', stiffness: 300, damping: 25 }",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The description is small grey text with low contrast on the dark card.",
+  "The trigger looks depressed while open, with nothing else signalling the open state."
+ ],
+ "polish": 4,
+ "polish_why": "Clean card and a neat scale-in; the small grey description is the main weak point.",
+ "unsure": [],
+ "title": "Headless Popover",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e473783b4ec3aad3",
+  "film_hash": "dd619591b0229e17",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

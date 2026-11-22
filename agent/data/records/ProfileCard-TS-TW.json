@@ -1,0 +1,195 @@
+{
+ "name": "ProfileCard-TS-TW",
+ "frames": {
+  "code": "2064",
+  "best": 5,
+  "best_why": "Whole card is visible with a blue-to-violet sheen across the portrait and the footer bar readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 5.8
+ },
+ "tagline": "Portrait card tilts and slides a holographic sheen under the cursor.",
+ "summary": "A tall portrait card with a tinted headshot, a large name and a glassy footer bar holding a handle, status and contact button. Moving the pointer tilts it and drags a colourful glare across the surface.",
+ "title_fix": null,
+ "appearance": "A tall portrait card with rounded corners holding a colour-tinted headshot that fills it. A big white-to-violet name sits over the photo with a faint job title beneath, and a translucent bar across the bottom holds a round avatar, handle, status and an outlined button. A blue-purple gradient covers the surface.",
+ "behaviour": "Moving the pointer across the card tilts it in 3D and carries a glossy glare and rainbow sheen along with it; on leave it eases back flat. A short settle animation plays as it mounts, and a slow sheen loop runs continuously.",
+ "parts": [
+  "portrait image",
+  "name",
+  "job title",
+  "glass info bar",
+  "mini avatar",
+  "handle",
+  "status text",
+  "contact button"
+ ],
+ "demo_content": "Name Daniel Okafor, title Design Engineer, handle @danokafor, status Online, and the button reads Contact Me.",
+ "states": [
+  "hover"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "gradient",
+  "rounded",
+  "glass",
+  "glow"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "holographic profile card with 3d tilt",
+  "portrait card that follows the mouse",
+  "team member card with contact button",
+  "shiny trading card hover effect",
+  "profile photo card with gradient sheen",
+  "pointer tilt card with glare",
+  "user card with handle and online status",
+  "pokemon card style hologram tilt"
+ ],
+ "resembles": [
+  "Pokémon trading cards"
+ ],
+ "use_when": "You want a memorable team or profile card whose tilt and sheen invite the pointer on a landing page.",
+ "avoid_when": "Tilt needs a pointing device, so touch gets a flat card, and a missing avatar leaves only the gradient shell.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "avatar"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "background",
+   "shadow"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the name, title, handle, status, contact text and avatar images as props; tilt, mobile tilt, the behind glow and inner gradient are toggles. Colours, radius and layout are fixed in the source.",
+ "technique": [
+  "js-animation",
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One card and one pointer-tracking RAF loop that stops when settled, plus a slow CSS sheen keyframe.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The 3D tilt and sheen loop ignore reduced-motion, and the job title is drawn over the portrait where it is hard to read."
+ },
+ "props": [
+  {
+   "name": "name",
+   "type": "string",
+   "default": "'Javi A. Torres'",
+   "required": false
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "default": "'Software Engineer'",
+   "required": false
+  },
+  {
+   "name": "handle",
+   "type": "string",
+   "default": "'javicodes'",
+   "required": false
+  },
+  {
+   "name": "status",
+   "type": "string",
+   "default": "'Online'",
+   "required": false
+  },
+  {
+   "name": "avatarUrl",
+   "type": "string",
+   "default": "'<Placeholder for avatar URL>'",
+   "required": false
+  },
+  {
+   "name": "miniAvatarUrl",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "contactText",
+   "type": "string",
+   "default": "'Contact'",
+   "required": false
+  },
+  {
+   "name": "showUserInfo",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableTilt",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableMobileTilt",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "onContactClick",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The job title overlaps the name and portrait, so it is barely legible.",
+  "The shine and glare layers animate in a continuous loop, so the card never fully rests."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing holographic glare and tilt, but the job title collides with the name and photo.",
+ "unsure": [
+  "shows_interaction"
+ ],
+ "title": "Profile Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c295c9a522779a1d",
+  "film_hash": "e5b7ced9feaacabb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "shooting-stars",
+  "frames": {
+    "code": "4973",
+    "best": 5,
+    "best_why": "Long bright streak cuts diagonally across the middle with its fading tail.",
+    "usable": [1, 2, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Thin meteor streaks dart across a dark starry page now and then.",
+  "summary": "A transparent overlay that launches a single glowing streak from a random screen edge every few seconds. Each one races diagonally across and fades off-frame.",
+  "title_fix": null,
+  "appearance": "A near-black field dusted with faint stars. Now and then a thin bright streak, white or tinted blue, cuts diagonally across the frame with a soft fading tail.",
+  "behaviour": "On a randomised delay a new streak starts at a random screen edge and races across at a random speed, growing slightly as it goes before vanishing off-frame. Nothing responds to the pointer.",
+  "parts": ["dark field", "star dust", "shooting streak", "fading tail"],
+  "demo_content": "Heading 'Shooting Star × Star Background' over a faint starfield; the demo mounts a separate star background too.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "minimal", "airy", "monochrome"],
+  "tone": "decorative",
+  "search_phrases": [
+    "falling star streaks in the night sky",
+    "meteor shower animated background",
+    "occasional bright line across a dark page",
+    "night sky with moving meteors",
+    "space backdrop with darting light trails",
+    "diagonal streak that crosses the screen",
+    "starry black page with rare flashes",
+    "comet effect behind a product launch"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero needs a sparse sense of motion and depth without distracting from the copy.",
+  "avoid_when": "Streaks appear at random, so the effect can look empty for long stretches, and it never stops.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["page-background", "hero"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Tune minSpeed, maxSpeed, minDelay, maxDelay, star width and height, and the two gradient colours. Screen-edge starts and the growth rate are fixed.",
+  "technique": ["svg", "js-animation"],
+  "weight": "light",
+  "weight_why": "One SVG rect moved with requestAnimationFrame, plus a timer for the next star.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "A purely decorative loop with no reduced-motion guard, and the streaks are invisible to assistive tech by design."
+  },
+  "props": [
+    {"name": "minSpeed", "type": "number", "default": "10", "required": false},
+    {"name": "maxSpeed", "type": "number", "default": "30", "required": false},
+    {"name": "minDelay", "type": "number", "default": "1200", "required": false},
+    {"name": "maxDelay", "type": "number", "default": "4200", "required": false},
+    {"name": "starColor", "type": "string", "default": "\"#9E00FF\"", "required": false},
+    {"name": "trailColor", "type": "string", "default": "\"#2EB9DF\"", "required": false},
+    {"name": "starWidth", "type": "number", "default": "10", "required": false},
+    {"name": "starHeight", "type": "number", "default": "1", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The star dust in the frames comes from another component mounted by the demo.",
+    "Streaks are so rare that frames 3 and 4 show almost no motion at all."
+  ],
+  "polish": 3,
+  "polish_why": "Clean tapered streaks over a star field; the effect is too sparse to notice most of the time.",
+  "unsure": ["traits.theme"]
+}

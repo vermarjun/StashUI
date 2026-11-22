@@ -1,0 +1,66 @@
+{
+  "name": "conditionGrid",
+  "frames": {
+    "code": "4875",
+    "best": 6,
+    "best_why": "All four tiles show their photo, title pill and arrow at once, with the cursor clear of the labels.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A lopsided grid of four product photos with black name pills and arrow buttons.",
+  "summary": "A responsive twelve-column project grid: two wide photos on top and two staggered below, each with a rounded image, a black title pill and a circular arrow link.",
+  "title_fix": null,
+  "appearance": "Four photographs sit in a tight, offset grid on a white page: a tall black-shoe shot and a wide blue-lit sneaker shot above, a wide blue-toned shot and a narrower tan-boot shot below, each with rounded corners. Every tile carries a black rounded name pill at lower left and a black circular arrow at lower right.",
+  "behaviour": "Tiles slide up and fade in as they enter the viewport, revealing the photo and then its black overlay labels; the layout reflows from four uneven columns on desktop to stacked full-width tiles on small screens.",
+  "parts": ["photo tile", "title pill", "arrow button", "grid gap"],
+  "demo_content": "Sneaker and boot product photos titled Distrokings, Profitables, Topserve-copiers and Labramart.",
+  "states": [],
+  "kind": "gallery-section",
+  "look": ["minimal", "rounded", "airy", "light"],
+  "tone": "minimal",
+  "search_phrases": [
+    "responsive photo grid layout",
+    "portfolio project image grid",
+    "staggered picture gallery section",
+    "image tiles with name labels",
+    "product photo grid with arrow links",
+    "four image offset gallery",
+    "photos that slide up on scroll",
+    "case study thumbnail grid"
+  ],
+  "resembles": [],
+  "use_when": "A portfolio or agency page needs a compact, editorial grid of project images.",
+  "avoid_when": "The demo hardcodes four Unsplash photos and their titles, so real projects need a source edit.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["viewport", "scroll"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Projects are a hardcoded array inside the file (image URL, title, description); add or edit entries there, and change column spans by editing the index rules in the code.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Four images and a simple fade-slide animation; idle once they settle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Every image has the same generic alt text 'image' and the arrow is a decorative div, so screen readers get little meaning; no reduced-motion handling."
+  },
+  "props": [],
+  "issues": [
+    "All four images share the alt text 'image', which describes nothing.",
+    "The description field in each project is never displayed."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp staggered grid and tidy labels; generic alt text and unused descriptions are misses.",
+  "unsure": ["traits.theme"]
+}

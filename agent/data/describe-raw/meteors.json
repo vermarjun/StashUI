@@ -1,0 +1,68 @@
+{
+  "name": "meteors",
+  "frames": {
+    "code": "6933",
+    "best": 6,
+    "best_why": "Frame 6 catches the most streaks spread across the card; frame 1 shows only one near the top edge.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Faint shooting stars streak diagonally across a dark, softly glowing card.",
+  "summary": "A looping shower of thin diagonal light streaks that fall across whatever container it sits in, usually a dark card. It adds slow night-sky motion behind the text.",
+  "title_fix": null,
+  "appearance": "A dark, softly rounded card on black with a blurred blue-teal halo leaking out behind its lower edge. Inside sit a small ring icon, a bold white heading, two grey lines of copy and a thin outlined Explore button, crossed by a few pale diagonal streaks.",
+  "behaviour": "Around twenty thin streaks enter from the top of the card at randomised delays and speeds, drift down-left and fade out near the bottom, looping forever. The whole layer fades in once when it mounts.",
+  "parts": ["card", "halo", "ring icon", "heading", "paragraph", "streaks", "explore button"],
+  "demo_content": "Card headed \"Meteors because they're cool\" with two sentences about shooting stars and an Explore button.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "glow", "gradient", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "shooting stars falling across a card",
+    "night sky animation behind content",
+    "diagonal streaks of light on loop",
+    "space themed card background",
+    "falling star particle effect",
+    "subtle moving lines background",
+    "decorative backdrop for a call to action",
+    "glowing card with light trails"
+  ],
+  "resembles": [],
+  "use_when": "A dark card or panel needs quiet continuous motion to feel alive without competing with its text.",
+  "avoid_when": "Light or busy backgrounds: the pale grey streaks disappear and the night-sky mood is lost.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["decoration", "section-background", "feature-card"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "number sets how many streaks run and className adds utility classes. Streak colour, thickness, angle and the five-second loop are fixed in the source.",
+  "technique": ["motion-library", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "Up to twenty one-pixel spans on a CSS loop inside a single fading wrapper.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The streaks are decorative but not marked aria-hidden, and the loop keeps running under reduced-motion."
+  },
+  "props": [
+    {"name": "number", "type": "number", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Streaks are so thin and pale that they can read as scratches on the dark card."
+  ],
+  "polish": 3,
+  "polish_why": "The halo and rounded card are tidy, but the shower itself is too faint to carry the card.",
+  "unsure": []
+}

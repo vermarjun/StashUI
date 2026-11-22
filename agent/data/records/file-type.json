@@ -1,0 +1,162 @@
+{
+ "name": "file-type",
+ "frames": {
+  "code": "3955",
+  "best": 1,
+  "best_why": "Clean view of the full icon grid and the recent-files list with no cursor covering anything.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "static",
+  "best_time": 0.6
+ },
+ "tagline": "Colour-coded file icons for document formats, with a recent-files list.",
+ "summary": "A set of file-type icons in brand colours and several variants, picked by extension, file name or MIME type. The demo shows ten large icons above a recent-files list with names, editors and sizes.",
+ "title_fix": null,
+ "appearance": "A dark rounded card. Its top half is a five-by-two grid of small coloured document icons, each a folded page with a white extension label. A thin divider separates four file rows with a tiny matching icon, bold filename, grey edit line and right-aligned size.",
+ "behaviour": "Static: nothing moves. Developers choose size, variant, label and glyph per icon, and a helper resolves a type from a filename, path or MIME string.",
+ "parts": [
+  "file icon",
+  "extension label",
+  "icon grid",
+  "divider",
+  "file row",
+  "file name",
+  "file size"
+ ],
+ "demo_content": "Formats pdf, docx, xlsx, pptx, jpg, mp4, mp3, zip, fig, html; recent files like Q3 board deck.pptx.",
+ "states": [],
+ "kind": "icon",
+ "look": [
+  "dark",
+  "colorful",
+  "rounded",
+  "flat",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "document format icon set",
+  "pdf docx xlsx icon set",
+  "file extension badge icons",
+  "icons for a document list",
+  "mime type to icon",
+  "small coloured file glyphs",
+  "recent files list with icons",
+  "spreadsheet and pdf file symbols"
+ ],
+ "resembles": [],
+ "use_when": "A file list, upload tray or document picker needs a recognisable coloured icon per format.",
+ "avoid_when": "You need thumbnail previews or obscure formats; unknown types show a neutral page with a text label.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "docs"
+ ],
+ "slot_hints": [
+  "list-item",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass type, variant (outline, solid, light, mono), size, a custom label or glyph, and extra classes. The extension table is fixed in the source.",
+ "technique": [
+  "static",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "Inline SVG pages with CSS-driven labels; no animation or continuous work.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Each icon has role img and a generated aria-label; being static, it has no keyboard or motion concern."
+ },
+ "props": [
+  {
+   "name": "type",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "variant",
+   "type": "string",
+   "default": "\"outline\"",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "string",
+   "default": "\"default\"",
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "glyph",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "icon",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "labelClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Fully neutral types such as ZIP read as a plain pale page beside the coloured icons."
+ ],
+ "polish": 4,
+ "polish_why": "Consistent folded-page shapes and clear labels; neutral types sit apart from the coloured set.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "File Type",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "1ed5db43661ae9de",
+  "film_hash": "133101993e240e24",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

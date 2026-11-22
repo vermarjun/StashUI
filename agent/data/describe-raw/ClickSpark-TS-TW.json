@@ -1,0 +1,75 @@
+{
+  "name": "ClickSpark-TS-TW",
+  "frames": {
+    "code": "9080",
+    "best": 5,
+    "best_why": "Only frame 5 catches the spark burst, a fan of white streaks around the pointer.",
+    "usable": [5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Sparks shoot out from the pointer when you click.",
+  "summary": "A full-panel click catcher. Each click sends a ring of short straight streaks outward from the pointer, which shrink and fade while the text underneath stays put.",
+  "title_fix": null,
+  "appearance": "A near-black, full-bleed panel with a thin rounded border and two centred lines of white text, a bold heading over a smaller caption. Clicks add a burst of white line segments radiating from the pointer; there is no other chrome.",
+  "behaviour": "Clicking anywhere on the panel spawns twelve short white streaks that fly outward from the pointer, shrinking and fading over about 700 milliseconds before they vanish. Nothing else reacts, and the panel is still between clicks.",
+  "parts": ["panel", "heading", "caption", "spark burst"],
+  "demo_content": "Heading \"Click anywhere\" above the line \"Sparks fly from every click\".",
+  "states": [],
+  "kind": "other",
+  "look": ["dark", "minimal", "monochrome", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "sparks fly when you click",
+    "click particle burst effect",
+    "short lines shooting from the pointer",
+    "playful click feedback for buttons",
+    "canvas spark animation on tap",
+    "reward effect for mouse clicks",
+    "little white streaks at the cursor",
+    "sparkle burst on pressing a button"
+  ],
+  "resembles": [],
+  "use_when": "A playful acknowledgement that a click landed on a hero or an interactive surface.",
+  "avoid_when": "The canvas redraws every frame even when idle, and the effect is pointer-only with no touch or keyboard path.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["hero", "feature-card", "decoration"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "children",
+  "customise": "Spark colour, size, radius, count, duration, easing curve and spread scale are props; the panel content is whatever children you pass. Nothing else changes without editing.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "light",
+  "weight_why": "One canvas and a handful of line strokes per click; its requestAnimationFrame loop never stops.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The clickable div has no role or tab stop, so keyboard users cannot fire sparks, and nothing honours reduced-motion settings."
+  },
+  "props": [
+    {"name": "sparkColor", "type": "string", "default": "#fff", "required": false},
+    {"name": "sparkSize", "type": "number", "default": "10", "required": false},
+    {"name": "sparkRadius", "type": "number", "default": "15", "required": false},
+    {"name": "sparkCount", "type": "number", "default": "8", "required": false},
+    {"name": "duration", "type": "number", "default": "400", "required": false},
+    {"name": "easing", "type": "string", "default": "ease-out", "required": false},
+    {"name": "extraScale", "type": "number", "default": "1.0", "required": false},
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The spark appears in only one of six frames, so the demo looks almost static.",
+    "The animation loop redraws the canvas every frame even when no spark exists."
+  ],
+  "polish": 3,
+  "polish_why": "The burst reads cleanly in frame 5, but five frames are an empty dark panel with tiny copy.",
+  "unsure": ["kind", "states"]
+}

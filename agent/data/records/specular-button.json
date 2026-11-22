@@ -1,0 +1,193 @@
+{
+ "name": "specular-button",
+ "frames": {
+  "code": "7724",
+  "best": 5,
+  "best_why": "The sheen is at its brightest, wrapping the tinted button's rim while both labels stay readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.8
+ },
+ "tagline": "Dark glass buttons with a bright sheen that follows the cursor around the rim.",
+ "summary": "A pair of rounded glass buttons on black. A specular highlight and faint glow travel along the button's edge toward the pointer, brightening as it approaches and easing back to a dim idle shine.",
+ "title_fix": null,
+ "appearance": "Two rounded rectangles sit side by side on a black field. The left is near-black glass with a thin grey rim and a white \"Get started\" label; the right is tinted deep indigo with a violet rim and a lighter \"Book a demo\" label. Both carry soft outer shadows and a faint light streak along part of the border.",
+ "behaviour": "The rim sheen slides around the edge to face the cursor and the button brightens as the pointer nears, from about 250px away. Pressing adds a stronger shine that then fades, and when the pointer leaves the light eases to a dim idle spot.",
+ "parts": [
+  "button",
+  "glass fill",
+  "rounded rim",
+  "label",
+  "specular sheen"
+ ],
+ "demo_content": "Two buttons labelled \"Get started\" (dark) and \"Book a demo\" (indigo tint).",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "disabled"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "glass",
+  "glow",
+  "rounded",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "glass button with light on the edge",
+  "button glow that follows mouse",
+  "frosted glass call to action button",
+  "dark button with specular highlight",
+  "shiny border button on hover",
+  "premium black button with rim light",
+  "liquid glass cta button",
+  "button with travelling light border"
+ ],
+ "resembles": [
+  "Apple liquid glass button",
+  "Vercel glass button"
+ ],
+ "use_when": "A dark or premium landing page needs a call to action that reacts to the cursor without leaving the page.",
+ "avoid_when": "The glow is a WebGL canvas, and the fixed pale text needs a dark surrounding surface to stay legible.",
+ "suits": [
+  "saas",
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "primary-cta",
+  "secondary-cta",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "shadow"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The label is children. Size, radius, tint, tint opacity, blur, text, line and base colours, sheen size, thickness, glow, speed and mouse following are props; the shader itself is fixed.",
+ "technique": [
+  "webgl-shader",
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "moderate",
+ "weight_why": "A WebGL fragment shader that only redraws while the sheen moves or the pointer is near.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "A native button with a visible focus ring and real label text. Reduced motion stops auto-animate, but the pointer sheen still moves."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": "'Get Started'",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "SpecularButtonSize",
+   "default": "'lg'",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "18",
+   "required": false
+  },
+  {
+   "name": "tint",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "tintOpacity",
+   "type": "number",
+   "default": "0.04",
+   "required": false
+  },
+  {
+   "name": "textColor",
+   "type": "string",
+   "default": "'#f5f5f5'",
+   "required": false
+  },
+  {
+   "name": "lineColor",
+   "type": "string",
+   "default": "'#ffffff'",
+   "required": false
+  },
+  {
+   "name": "baseColor",
+   "type": "string",
+   "default": "'#525252'",
+   "required": false
+  },
+  {
+   "name": "followMouse",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "autoAnimate",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "''",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "The rim light reads convincingly under the cursor; at rest the two buttons are very faint on black.",
+ "unsure": [],
+ "title": "Specular Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0db309b002d3434c",
+  "film_hash": "85fd2521f74d11b8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

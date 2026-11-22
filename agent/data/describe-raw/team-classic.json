@@ -1,0 +1,66 @@
+{
+  "name": "team-classic",
+  "frames": {
+    "code": "6855",
+    "best": 6,
+    "best_why": "All four member cards are sharp, with the hovered card's green ring and emoji badge shown.",
+    "usable": [2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four portrait cards on pink, each with a coloured ring on hover.",
+  "title_fix": null,
+  "summary": "A pink team page with a script-like heading and four member cards: square photos, names, green role labels and three small social icons each.",
+  "appearance": "A pale pink page with a centred heading and two lines of tiny grey copy. Four cards show a rounded square portrait with a soft shadow, a bold name, a small green uppercase role and three grey social icons in a row.",
+  "behaviour": "Hovering a card adds a coloured ring around the photo and pops a small emoji badge into the top corner. The social icons darken on hover.",
+  "parts": ["heading", "paragraph", "photo frame", "name", "role label", "social icons", "emoji badge"],
+  "demo_content": "Candice Wu, Demi Wilkinson, Drew Cano and Natali Craig with their roles.",
+  "states": ["hover"],
+  "kind": "team-section",
+  "look": ["light", "pastel", "playful", "rounded"],
+  "tone": "playful",
+  "search_phrases": [
+    "team page on a pink background",
+    "four member cards with photos and socials",
+    "colour ring around portrait on hover",
+    "script heading for meet the team",
+    "profile cards with emoji badge",
+    "influencer team showcase",
+    "small social icons under each name",
+    "soft pink team section for a startup"
+  ],
+  "resembles": [],
+  "use_when": "A small startup team page wants a soft, friendly roster with social links.",
+  "avoid_when": "Each photo needs a square crop, and the four members are hardcoded in the JSX.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["avatar", "feature-card"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["border", "children"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Names, roles, photos, ring colours and emojis are literal objects in the file; spacing and the pink background are classes.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "Four small portraits and a scroll reveal; hover effects are CSS.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Social icon links have no text or aria-label, so they read as unnamed links."
+  },
+  "props": [],
+  "issues": [
+    "Social icon links carry no accessible names.",
+    "The intro paragraph is filler copy that says nothing about the team."
+  ],
+  "polish": 3,
+  "polish_why": "Pleasant pink palette and clean portraits; filler copy and bare social icons hold it back.",
+  "unsure": ["a11y.focus_visible"]
+}

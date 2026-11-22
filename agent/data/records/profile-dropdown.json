@@ -1,0 +1,194 @@
+{
+ "name": "profile-dropdown",
+ "frames": {
+  "code": "4448",
+  "best": 3,
+  "best_why": "The full menu is open with identity header, status, theme and every row visible, cursor clear of the rows.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.1
+ },
+ "tagline": "Avatar chip springs open into an account menu with status, theme and sign-out.",
+ "summary": "A compact account chip that grows into a tall menu: the avatar, name and email slide up into a header, and rows for status, theme, profile links, account switching and a hold-to-confirm sign-out appear below.",
+ "title_fix": null,
+ "appearance": "Closed, a small dark rounded pill holds an initials avatar with a green dot, a name and email, and a chevron. Open, it becomes a tall dark rounded panel: stacked avatar and identity with a plan label on top, Status and Theme rows of small dots and icons, three menu rows, Switch account, and a Sign out row marked Hold.",
+ "behaviour": "Clicking the chip grows it into the menu while the avatar, name and email travel into the panel header. Status and theme choices update in place, Switch account slides sideways to a second page, and Sign out fires only after a press and hold; releasing early flips the row back with a Keep holding nudge.",
+ "parts": [
+  "account chip",
+  "initials avatar",
+  "name and email",
+  "status row",
+  "theme row",
+  "menu rows",
+  "sign out row"
+ ],
+ "demo_content": "Three sample accounts (Maya Ortega, Fieldwork Studio, Night Shift) with Profile, Settings and Billing menu rows.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "checked",
+  "selected",
+  "active"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "account menu with avatar and name",
+  "user account avatar menu",
+  "menu that opens from avatar chip",
+  "status and theme switcher in profile",
+  "hold to sign out button",
+  "switch between multiple accounts menu",
+  "sign out confirm press and hold",
+  "account popover with online status"
+ ],
+ "resembles": [
+  "GitHub profile menu",
+  "Linear account menu"
+ ],
+ "use_when": "An app header needs one account control for theme, status, account switching, settings and sign-out.",
+ "avoid_when": "The panel is a fixed 288px wide, so a cramped mobile header leaves it short of room to sit.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "nav",
+  "sidebar"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass accounts, menu items, status, theme and hold duration as props, with callbacks for each change. The panel width, spring and row styling live in the source.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of DOM rows and two spring-driven clip values; idle when closed.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Roving arrow-key menu with role and aria-checked radios. Sign out needs a press-and-hold, which also works from the keyboard."
+ },
+ "props": [
+  {
+   "name": "accounts",
+   "type": "Account[]",
+   "default": "SAMPLE_ACCOUNTS",
+   "required": false
+  },
+  {
+   "name": "items",
+   "type": "ProfileMenuItem[]",
+   "default": "SAMPLE_ITEMS",
+   "required": false
+  },
+  {
+   "name": "defaultAccountId",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onAccountChange",
+   "type": "(account: Account) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onAddAccount",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onSignOut",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "status",
+   "type": "AccountStatus",
+   "default": "{status}",
+   "required": false
+  },
+  {
+   "name": "defaultStatus",
+   "type": "AccountStatus",
+   "default": "\"online\"",
+   "required": false
+  },
+  {
+   "name": "theme",
+   "type": "AccountTheme",
+   "default": "{theme}",
+   "required": false
+  },
+  {
+   "name": "defaultTheme",
+   "type": "AccountTheme",
+   "default": "\"system\"",
+   "required": false
+  },
+  {
+   "name": "holdDuration",
+   "type": "number",
+   "default": "1200",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp type and a convincing morph; tiny status dots and 7px avatar text are hard to read.",
+ "unsure": [],
+ "title": "Profile Dropdown",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "309d418eaae38398",
+  "film_hash": "22ce35165c188d66",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

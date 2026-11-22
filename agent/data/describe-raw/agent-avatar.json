@@ -1,0 +1,67 @@
+{
+  "name": "agent-avatar",
+  "frames": {
+    "code": "5388",
+    "best": 1,
+    "best_why": "The large avatar shows its six-by-six pixel pattern most clearly, with the six agent cards all visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Round pixel-grid avatars generated from a name, each a different colour.",
+  "summary": "Generative avatars drawn on canvas: a circular six-by-six grid of coloured squares derived from a string seed. Each cell slowly pulses, sweeps and occasionally sparkles, so no two agents look alike.",
+  "title_fix": null,
+  "appearance": "Perfectly round avatars made of six-by-six blocks in one tight hue, from lime green to magenta and blue. Each has a dark backing and a faint glow; the small ones sit in bordered cards beside names and roles.",
+  "behaviour": "Cells brighten and dim at different rates, a diagonal wave crosses the grid, and a few cells flash brighter. The whole disc also breathes very slightly in size.",
+  "parts": ["round avatar", "pixel grid", "glow ring", "agent card", "name", "status"],
+  "demo_content": "Six agents: Atlas, Juniper, Orion, Wren, Sable and Kestrel with roles and status lines.",
+  "states": [],
+  "kind": "avatar",
+  "look": ["colorful", "rounded", "glow", "dark"],
+  "tone": "playful",
+  "search_phrases": [
+    "generated avatar from a name",
+    "pixel art profile picture",
+    "colorful square grid portrait",
+    "unique bot avatar for users",
+    "animated identity icon",
+    "procedural avatar seed",
+    "round mosaic profile badge",
+    "agent picture made of blocks"
+  ],
+  "resembles": ["GitHub identicon"],
+  "use_when": "Multiple agents or users need distinct avatars without photos, derived reliably from their name.",
+  "avoid_when": "It is canvas-only and decorative, and tiny sizes lose the six-by-six pattern to blur.",
+  "suits": ["ai-chat", "saas", "social"],
+  "slot_hints": ["avatar"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["image"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Seed string, pixel size and an animated flag are props; the palette, grid and animation constants are fixed in the source.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "Each avatar runs its own canvas loop, drawing 36 cells with a blur shadow per frame.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Each canvas is labelled and stops animating under reduced motion; there is nothing to operate."
+  },
+  "props": [
+    {"name": "seed", "type": "string", "default": null, "required": true},
+    {"name": "size", "type": "number", "default": "64", "required": false},
+    {"name": "animated", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": ["Small avatars read as fuzzy blobs; the six-by-six grid only resolves at the large size."],
+  "polish": 4,
+  "polish_why": "Distinctive generated avatars with a nice glow; the smallest size blurs the pixel pattern away.",
+  "unsure": []
+}

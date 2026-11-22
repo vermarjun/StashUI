@@ -1,0 +1,76 @@
+{
+  "name": "relative-time-card",
+  "frames": {
+    "code": "7971",
+    "best": 4,
+    "best_why": "The hover card is fully open with all four timezone rows readable over the activity list.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hover a timestamp to see the exact time in several zones.",
+  "summary": "Activity rows each end in a live relative time such as one hour ago. Hovering one opens a card with the precise date and time in New York, London, Tokyo and the local offset.",
+  "title_fix": null,
+  "appearance": "A bordered dark list of four activity rows, each pairing a name and action on the left with a muted absolute timestamp on the right, above a View time details button. On hover a dark card floats over the list showing a relative line and four timezone rows tagged with small grey chips.",
+  "behaviour": "Hovering or focusing a timestamp opens the card after a short delay with the relative age and the exact time in each configured zone; moving away closes it. The ago label refreshes on a timer while the page is mounted.",
+  "parts": ["activity list", "person name", "action text", "timestamp trigger", "hover card", "relative label", "timezone row", "timezone chip"],
+  "demo_content": "Team activity from Maya Chen, Leo Park, Ana Ruiz and Release bot with November 2026 timestamps.",
+  "states": ["hover", "focus", "open"],
+  "kind": "popover",
+  "look": ["dark", "outlined", "minimal", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "hover a timestamp to see the exact time",
+    "how long ago was this posted",
+    "time in multiple timezones on hover",
+    "live updated ago label",
+    "date tooltip for activity feed rows",
+    "world clock popover for a timestamp",
+    "exact time with offset for remote teams",
+    "tooltip showing the date in other cities"
+  ],
+  "resembles": [],
+  "use_when": "An activity feed for a distributed team needs exact times and several zones without leaving the page.",
+  "avoid_when": "It opens on hover with a delay, and the narrow card crowds long zone names and timestamps together.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["list-item", "tooltip", "data-table"],
+  "traits": {
+    "trigger": ["hover", "focus"],
+    "motion": "subtle",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass date and a timezones array, pick a variant, and pass children to replace the trigger label. openDelay, closeDelay, updateInterval and the hover-card side and alignment are props too.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One timestamp plus an interval that recomputes the relative label every second.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The trigger is a real button with a focus ring and each zone row is labelled, but the card never checks reduced-motion settings."
+  },
+  "props": [
+    {"name": "date", "type": "Date | string | number", "default": null, "required": true},
+    {"name": "timezones", "type": "string[]", "default": "[\"UTC\"]", "required": false},
+    {"name": "updateInterval", "type": "number", "default": "1000", "required": false},
+    {"name": "variant", "type": "string", "default": null, "required": false},
+    {"name": "openDelay", "type": "number", "default": "500", "required": false},
+    {"name": "closeDelay", "type": "number", "default": "300", "required": false},
+    {"name": "side", "type": "string", "default": null, "required": false},
+    {"name": "align", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The hover card covers the activity rows it belongs to, hiding the action text and other timestamps while open.",
+    "The timezone rows are cramped, and the last zone chip is so dim on the dark card that it is barely readable."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy activity list and a useful zone card; the popover covers the list and its rows are cramped.",
+  "unsure": ["kind", "best"]
+}

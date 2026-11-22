@@ -1,0 +1,73 @@
+{
+  "name": "currency-transfer",
+  "frames": {
+    "code": "9797",
+    "best": 6,
+    "best_why": "All four steps are ticked, the pill reads Arrived and the converted euro amount is shown.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Transfer card that rolls dollars into euros and ticks through its steps.",
+  "summary": "A compact money-transfer tracker: recipient header and status pill, a large amount that rolls from dollars to euros, a four-step rail that fills with ticks, and a copyable reference in the footer.",
+  "title_fix": null,
+  "appearance": "A small dark card. A round LF avatar with Lena Fischer and a masked bank line sits beside a status pill. A large euro amount dominates above a grey sent and received line. A vertical rail of four step nodes with short details follows, above a footer with the reference and a Rate locked time.",
+  "behaviour": "On load the large amount rolls digit by digit from $500.00 to €460.00 while the rail fills step by step; each finished node draws a tick and the connecting line grows. The status pill crossfades from In progress to Arrived, and the reference copies with a tick.",
+  "parts": ["avatar", "recipient name", "status pill", "amount", "conversion line", "step rail", "step node", "transaction reference"],
+  "demo_content": "Lena Fischer at Deutsche Bank ••7823; 500.00 USD sent, 460.00 EUR received; reference TXN-DAB3UL494.",
+  "states": ["loading", "success", "error", "hover", "focus"],
+  "kind": "card",
+  "look": ["dark", "rounded", "minimal", "technical"],
+  "tone": "minimal",
+  "search_phrases": [
+    "money transfer progress card",
+    "send money step tracker",
+    "dollar to euro conversion",
+    "payment status timeline",
+    "amount rolling number animation",
+    "bank transfer receipt",
+    "transaction steps with ticks",
+    "international payment tracker"
+  ],
+  "resembles": ["Wise transfer tracker"],
+  "use_when": "A fintech app shows a single cross-currency transfer moving from paid to arrived.",
+  "avoid_when": "Multiple simultaneous transfers: one card tracks one recipient and one amount at a time.",
+  "suits": ["fintech", "saas"],
+  "slot_hints": ["stat", "list-item"],
+  "traits": {
+    "trigger": ["timer", "click", "hover"],
+    "motion": "subtle",
+    "affects": ["text", "layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "From and to accounts, rate, reference, timestamp, locale, controlled status and a retry callback are props; timings and colours are fixed in the source.",
+  "technique": ["css-transition", "css-keyframes"],
+  "weight": "light",
+  "weight_why": "A handful of CSS transitions and keyframes on four steps; no loop beyond the demo run.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Strong: a live region announces progress, amounts have text fallbacks and reduced motion is handled."
+  },
+  "props": [
+    {"name": "from", "type": "TransferAccount", "default": "DEFAULT_FROM", "required": false},
+    {"name": "to", "type": "TransferAccount", "default": "DEFAULT_TO", "required": false},
+    {"name": "rate", "type": "number", "default": "0.92", "required": false},
+    {"name": "txnId", "type": "string", "default": "\"TXN-DAB3UL494\"", "required": false},
+    {"name": "timestamp", "type": "string", "default": "\"10:45 AM\"", "required": false},
+    {"name": "status", "type": "TransferStatus", "default": null, "required": false},
+    {"name": "locale", "type": "string", "default": "\"en-US\"", "required": false},
+    {"name": "onRetry", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Careful motion and accessible detail sell the transfer; only the tiny detail text is weak.",
+  "unsure": []
+}

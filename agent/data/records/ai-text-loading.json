@@ -1,0 +1,144 @@
+{
+ "name": "ai-text-loading",
+ "frames": {
+  "code": "1797",
+  "best": 1,
+  "best_why": "Both loaders read at full brightness: the large \"Thinking...\" word and the timed status line; later frames blur or dim.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Words cycle with a soft wave of dimming letters while an AI thinks.",
+ "summary": "A large loading word from a rotating set of thinking phrases, with a faint brightness wave running through its letters. An optional second style adds a changing status phrase and a seconds counter.",
+ "title_fix": null,
+ "appearance": "Large bold white words centred on a dark stage, with a smaller grey status phrase and a seconds number below. The letters are evenly spaced, and some frames catch them mid-fade so parts of a word look blurred and dim.",
+ "behaviour": "Every interval the phrase swaps and its letters rise and unblur in a stagger. A soft opacity wave sweeps across the letters continuously, and with the counter on the seconds tick up beside the status phrase.",
+ "parts": [
+  "large word",
+  "letters",
+  "status phrase",
+  "seconds counter"
+ ],
+ "demo_content": "Thinking, Processing, Analyzing, Computing and Almost, plus status lines such as Reading 14 files.",
+ "states": [
+  "loading"
+ ],
+ "kind": "loader",
+ "look": [
+  "dark",
+  "minimal",
+  "bold"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "ai thinking indicator text",
+  "words that change while loading",
+  "animated loading phrases",
+  "subtle wave through letters",
+  "assistant is thinking message",
+  "loading text with elapsed seconds",
+  "cycling status message",
+  "shimmer text spinner"
+ ],
+ "resembles": [
+  "ChatGPT"
+ ],
+ "use_when": "An AI action runs for a while and a plain spinner feels too anonymous for the wait.",
+ "avoid_when": "The endless wave never settles and the bold oversized words overpower a small chat bubble.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "devtool"
+ ],
+ "slot_hints": [
+  "loading",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "timer"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Props set the phrase list, swap interval, an accessible label and whether a seconds counter shows; the type size and wave timing live in the source.",
+ "technique": [
+  "motion-library",
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of animated letter spans; the wave runs in CSS off the main thread.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Live status is announced and reduced-motion stops the wave, but the rotating phrase is hidden so only the fixed label is read."
+ },
+ "props": [
+  {
+   "name": "texts",
+   "type": "string[]",
+   "default": "[Thinking..., Processing..., Analyzing..., Computing..., Almost...]",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "interval",
+   "type": "number",
+   "default": "1500",
+   "required": false
+  },
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Loading\"",
+   "required": false
+  },
+  {
+   "name": "showElapsed",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Words are split into individual letter spans, so the text is awkward to select or translate."
+ ],
+ "polish": 4,
+ "polish_why": "Soft, well-timed thinking indicator; bold type may overpower tight spaces.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "AI Text Loading",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "cb7d45e671cb4fd8",
+  "film_hash": "2b2b4b1d7c834a55",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

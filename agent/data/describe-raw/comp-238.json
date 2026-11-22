@@ -1,0 +1,66 @@
+{
+  "name": "comp-238",
+  "frames": {
+    "code": "5229",
+    "best": 1,
+    "best_why": "React and Vue are both lit while Angular and Svelte stay plain, with no cursor over the box.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A short list where several framework names can stay lit at once.",
+  "summary": "A bordered multi-select list of four frameworks that keeps every chosen row filled in. React and Vue start selected, and clicking a row adds it to or takes it out of the set.",
+  "title_fix": null,
+  "appearance": "A small label sits above a thin grey outline holding four stacked rounded rows: React, Vue, Angular and Svelte. The first two carry a lighter grey fill and the rest are plain, with a faint credit line under the panel.",
+  "behaviour": "Clicking a row toggles its lighter fill so several can be lit together, and a ring appears around the row under the pointer. The clip keeps React and Vue lit throughout while the pointer visits the other two rows.",
+  "parts": ["field label", "list box", "option row", "credit note"],
+  "demo_content": "Listbox with multiple options; rows React, Vue, Angular and Svelte; one small credit line beneath",
+  "states": ["hover", "focus", "selected"],
+  "kind": "select",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "select more than one option from a list",
+    "multi select listbox with rows",
+    "choose several frameworks at once",
+    "list where multiple items stay highlighted",
+    "checkbox list without checkboxes",
+    "pick multiple tags from a panel",
+    "hold ctrl to select many",
+    "multiple choice list in a form"
+  ],
+  "resembles": [],
+  "use_when": "When a small fixed set of options allows more than one answer and space is tight.",
+  "avoid_when": "Selection is shown by fill alone with no tick, so a lit row is easy to confuse with a pointed-at one.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["background", "border"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The four rows, their ids and which two start selected are written in the file; replace them there. The height cap, padding and selected fill are classes in the same file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Four short rows in a small scroll box with no animation beyond a focus ring.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The list is labelled and arrow keys move with modifier keys toggling rows; a live region below re-reads a credit line whenever the selection changes."
+  },
+  "props": [],
+  "issues": [
+    "The chosen state is fill only, with no tick or other mark to set it apart.",
+    "A live region under the list repeats a credit line on every selection change."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy rows and clear fills, but chosen and pointed-at rows look almost the same.",
+  "unsure": ["frames.shows_interaction"]
+}

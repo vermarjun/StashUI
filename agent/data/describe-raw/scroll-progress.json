@@ -1,0 +1,68 @@
+{
+  "name": "scroll-progress",
+  "frames": {
+    "code": "4534",
+    "best": 2,
+    "best_why": "The gradient bar runs full width along the very top while the article is visibly scrolled.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A thin coloured line along the top edge grows as the page is read.",
+  "summary": "A reading progress bar pinned to the top of the viewport, shaded from purple through pink to peach, that fills further the more of the page you scroll.",
+  "title_fix": null,
+  "appearance": "A slim gradient strip of purple, pink and peach glued to the very top edge of a dark article page. The strip is only a few pixels tall and spans from the left either partway or all the way across, depending on how far the page has been scrolled.",
+  "behaviour": "The bar starts as a short stub at the left and stretches to the right in step with vertical scroll, reaching the full width at the bottom of the page. It stays fixed while the article moves underneath.",
+  "parts": ["progress bar", "gradient fill", "top edge"],
+  "demo_content": "An article titled Building StashUI with six short sections and three photos.",
+  "states": [],
+  "kind": "scroll-effect",
+  "look": ["gradient", "colorful", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "reading progress bar at top",
+    "thin line that fills as you scroll",
+    "how far down the page indicator",
+    "article reading position bar",
+    "gradient progress line for a blog",
+    "progress bar pinned to top edge",
+    "scroll tracker for long posts",
+    "show reading progress on documentation"
+  ],
+  "resembles": [],
+  "use_when": "A long article or docs page should show at a glance how much is left to read.",
+  "avoid_when": "Short pages, where the strip never moves and just adds a coloured line.",
+  "suits": ["blog", "docs", "marketing"],
+  "slot_hints": ["decoration", "divider"],
+  "traits": {
+    "trigger": ["scroll"],
+    "motion": "subtle",
+    "affects": ["fill"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "none",
+  "customise": "Height and position are set through the class name; the three gradient colours are hardcoded hex values in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A single fixed element whose horizontal scale reads the scroll position; no loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The bar has no role or aria value, so screen readers are given no sense of reading position."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "ref", "type": "React.Ref<HTMLDivElement>", "default": null, "required": false}
+  ],
+  "issues": [
+    "The strip is only a few pixels tall and easy to miss against the dark page."
+  ],
+  "polish": 3,
+  "polish_why": "A tidy gradient bar, but it is a thin basic element and the demo is a plain article.",
+  "unsure": []
+}

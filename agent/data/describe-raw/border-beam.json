@@ -1,0 +1,74 @@
+{
+  "name": "border-beam",
+  "frames": {
+    "code": "9333",
+    "best": 5,
+    "best_why": "Frame 5 shows a bright beam segment on the edge of all three cards at once.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A thin coloured light keeps circling the edge of each card.",
+  "summary": "A glowing gradient segment travels around the rounded border of whatever container it is dropped into. Colour, width, speed and start delay are configurable.",
+  "title_fix": null,
+  "appearance": "Three dark rounded cards sit on a black stage. Along their thin grey borders a short bright segment glows, amber-to-purple on one card and cyan-to-pink on another, each with a small text label and hex caption.",
+  "behaviour": "A small gradient light runs continuously around each border, looping every few seconds without stopping. The cards themselves stay still.",
+  "parts": ["card", "border", "light segment", "label", "colour caption"],
+  "demo_content": "Labels Default beam, Custom beam and Delayed, with colour hex captions.",
+  "states": [],
+  "kind": "border-effect",
+  "look": ["dark", "glow", "minimal", "gradient"],
+  "tone": "minimal",
+  "search_phrases": [
+    "glowing border animation",
+    "light running around card edge",
+    "animated outline for cards",
+    "loading edge light animation",
+    "neon line circling a box",
+    "subtle card border glow",
+    "moving highlight along panel edge",
+    "cyberpunk border light"
+  ],
+  "resembles": [],
+  "use_when": "A card needs to look active or loading without adding a spinner or changing its layout.",
+  "avoid_when": "The beam is faint on light cards and needs a relative, rounded parent to clip it properly.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["feature-card", "pricing-card", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["border"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Size, duration, borderWidth, anchor, colorFrom, colorTo and delay are props; the parent must be relative and rounded for the mask to fit.",
+  "technique": ["css-keyframes"],
+  "weight": "light",
+  "weight_why": "One pseudo-element running a CSS keyframe on offset-distance; no script.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative light with no reduced-motion check, and it relies on modern offset-path support."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "size", "type": "number", "default": "200", "required": false},
+    {"name": "duration", "type": "number", "default": "15000", "required": false},
+    {"name": "borderWidth", "type": "number", "default": "1.5", "required": false},
+    {"name": "anchor", "type": "number", "default": "90", "required": false},
+    {"name": "colorFrom", "type": "string", "default": "#ffaa40", "required": false},
+    {"name": "colorTo", "type": "string", "default": "#9c40ff", "required": false},
+    {"name": "delay", "type": "number", "default": "0", "required": false}
+  ],
+  "issues": [
+    "The beam is thin and faint, so the motion is easy to miss at a glance."
+  ],
+  "polish": 3,
+  "polish_why": "Tasteful and smooth, but the thin beam is easy to miss against the dark cards.",
+  "unsure": []
+}

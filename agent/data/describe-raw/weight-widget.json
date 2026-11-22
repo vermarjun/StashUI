@@ -1,0 +1,127 @@
+{
+  "name": "weight-widget",
+  "frames": {
+    "code": "6867",
+    "best": 1,
+    "best_why": "The settled value 64 sits sharp in the centre with both neighbours and the full tick arc visible.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Swipe a curved row of numbers until one springs under the pointer.",
+  "summary": "A pocket-sized dial shows a weight value on a curved scale; dragging left or right slides neighbouring numbers past a fixed pointer and springs to the next whole number.",
+  "title_fix": null,
+  "appearance": "A dark rounded square card labelled Weight holds one large white number centred in an arc of smaller faded numbers, with short tick marks curving beneath and a small white pointer triangle at the bottom.",
+  "behaviour": "Dragging sideways moves the number row along its curve, dimming and shrinking numbers with distance, then releases it to spring to the next whole value. The selected number stays sharp under the fixed pointer.",
+  "parts": [
+    "weight label",
+    "number dial",
+    "neighbour numbers",
+    "tick marks",
+    "pointer"
+  ],
+  "demo_content": "Weight values around 64 to 66, set between 30 and 150",
+  "states": [
+    "active",
+    "dragging"
+  ],
+  "kind": "slider",
+  "look": [
+    "dark",
+    "rounded",
+    "minimal",
+    "3d"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "swipe wheel to pick a number",
+    "weight picker dial",
+    "curved number scale selector",
+    "drag to change weight value",
+    "ios style picker wheel",
+    "number dial with fading edges",
+    "health app weight input",
+    "spring loaded value scroller"
+  ],
+  "resembles": [
+    "iOS Wheel Picker"
+  ],
+  "use_when": "A single numeric health value needs a tactile picker that feels like a physical dial rather than a slider.",
+  "avoid_when": "Precise large ranges, since a swipe moves one step and only about ten numbers are visible.",
+  "suits": [
+    "mobile-app",
+    "saas"
+  ],
+  "slot_hints": [
+    "form-field",
+    "stat"
+  ],
+  "traits": {
+    "trigger": [
+      "drag"
+    ],
+    "motion": "subtle",
+    "affects": [
+      "children",
+      "text"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Initial value, minimum and maximum are props plus an onChange callback; the pixel spacing, spring bounce and all colours are fixed in the file.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "About twenty number nodes sharing one spring; nothing runs when idle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The dial has no role, label or keyboard controls, so it is unusable without a pointer, and no reduced-motion check exists."
+  },
+  "props": [
+    {
+      "name": "initialValue",
+      "type": "number",
+      "default": "25",
+      "required": false
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "default": "0",
+      "required": false
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "default": "100",
+      "required": false
+    },
+    {
+      "name": "onChange",
+      "type": "(value: number) => void",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "The dial exposes no role or announced value, so assistive tech cannot read it.",
+    "Numbers blur and overlap mid-drag, making the current value unreadable while moving."
+  ],
+  "polish": 4,
+  "polish_why": "A convincing spring dial with real arc depth; the unreadable mid-drag state holds it back.",
+  "unsure": []
+}

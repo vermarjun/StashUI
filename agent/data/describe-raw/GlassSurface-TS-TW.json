@@ -1,0 +1,79 @@
+{
+  "name": "GlassSurface-TS-TW",
+  "frames": {
+    "code": "5619",
+    "best": 2,
+    "best_why": "The glass pane sits fully on the photo wall with its label readable and the bent image clearly visible inside.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A rounded glass pane drags across photos and bends them.",
+  "summary": "A wall of eight photos fills the stage under huge white words. A frosted glass rectangle can be dragged around, magnifying and warping the pictures beneath it with faint colour fringes.",
+  "title_fix": null,
+  "appearance": "Eight photos sit in two rows on a dark stage with giant white words across the middle. A rounded rectangular glass pane, lightly frosted, holds two lines of white text and shows a bent, colour-edged copy of whatever sits behind it.",
+  "behaviour": "Pressing and dragging the pane moves it over the photo wall, where the image inside shifts and magnifies with a slight rainbow edge. Releasing leaves it resting wherever it was dropped.",
+  "parts": ["photo wall", "overlay words", "glass pane", "pane text"],
+  "demo_content": "Eight stock photos, the words 'Through the glass', and pane text 'Drag me around'.",
+  "states": ["dragging"],
+  "kind": "image-effect",
+  "look": ["glass", "rounded", "colorful", "3d"],
+  "tone": "technical",
+  "search_phrases": [
+    "frosted glass panel you can drag",
+    "apple liquid glass effect for web",
+    "rounded magnifier over a photo wall",
+    "see through pane with blurred edges",
+    "glass card with rainbow refraction",
+    "draggable window that warps images",
+    "frosted rectangle over a gallery",
+    "liquid glass overlay for content"
+  ],
+  "resembles": ["Apple Liquid Glass"],
+  "use_when": "A card or panel should sit over imagery with a frosted, refracting finish instead of a flat fill.",
+  "avoid_when": "Safari and Firefox skip the refraction filter, so those browsers get only a plain blur.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["feature-card", "decoration"],
+  "traits": {
+    "trigger": ["drag"],
+    "motion": "subtle",
+    "affects": ["image", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Width, height, radius, border width, brightness, opacity, blur, displacement, background tint, saturation, distortion strength and blend mode are props.",
+  "technique": ["svg-filter"],
+  "weight": "moderate",
+  "weight_why": "Per-channel SVG displacement plus backdrop filters on a small pane; still when not dragged.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The pane has focus styling but no tab stop, so it cannot be moved without a mouse, and it has no reduced-motion handling."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "width", "type": "number | string", "default": "200", "required": false},
+    {"name": "height", "type": "number | string", "default": "80", "required": false},
+    {"name": "borderRadius", "type": "number", "default": "20", "required": false},
+    {"name": "brightness", "type": "number", "default": "50", "required": false},
+    {"name": "opacity", "type": "number", "default": "0.93", "required": false},
+    {"name": "blur", "type": "number", "default": "11", "required": false},
+    {"name": "displace", "type": "number", "default": "0", "required": false},
+    {"name": "backgroundOpacity", "type": "number", "default": "0", "required": false},
+    {"name": "saturation", "type": "number", "default": "1", "required": false},
+    {"name": "distortionScale", "type": "number", "default": "-180", "required": false},
+    {"name": "mixBlendMode", "type": "string", "default": "difference", "required": false}
+  ],
+  "issues": [
+    "The small pane text is hard to read whenever the glass passes over a bright photo.",
+    "Safari and Firefox skip the refraction filter, so the glass falls back to a plain blur there."
+  ],
+  "polish": 4,
+  "polish_why": "A convincing liquid-glass pane over a rich photo wall; the tiny pane text fights bright photos.",
+  "unsure": []
+}

@@ -1,0 +1,71 @@
+{
+  "name": "save-button",
+  "frames": {
+    "code": "6259",
+    "best": 3,
+    "best_why": "The collection picker is open below a Saved button, showing swatches, counts and the current choice.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Saves a card and shows a strip for picking its collection.",
+  "summary": "A bookmark button for a content card. Saving turns it dark and drops a strip naming the collection; from there you can move the item or create a new collection.",
+  "title_fix": null,
+  "appearance": "A white card holds a mountain photo above a title and location, with a small rounded Save pill on the right. Saved, the pill darkens; beneath it a narrow white strip and then a taller picker panel list collections with coloured squares and counts.",
+  "behaviour": "Clicking Save fills the bookmark, flips the label to Saved and reveals a strip naming the collection. Change opens a taller list where a click moves the item, and the strip returns showing the new collection before timing out.",
+  "parts": ["bookmark icon", "save label", "status strip", "collection swatch", "collection row", "new collection input"],
+  "demo_content": "Mountain photo card 'Cabane du Mont Fort, Verbier · 2,457 m' with four collection names.",
+  "states": ["hover", "selected", "open", "focus"],
+  "kind": "button",
+  "look": ["light", "rounded", "minimal", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "bookmark button with collection picker",
+    "save to list dropdown",
+    "pinterest style bookmark control",
+    "add item to a folder menu",
+    "little save pill on a card",
+    "bookmark that shows where it was saved",
+    "create new collection inline",
+    "favourite button with folder choices"
+  ],
+  "resembles": ["Pinterest save button"],
+  "use_when": "A card or article can be saved into several named collections and the chosen one should stay visible.",
+  "avoid_when": "The panel is absolutely positioned below the button, so an overflow-hidden card will cut it off.",
+  "suits": ["social", "ecommerce", "portfolio"],
+  "slot_hints": ["badge", "list-item", "media"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["text", "fill", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Collections, default collection, default saved state and save/move/remove callbacks are props; the swatch palette and strip timeout live in the file.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "One button and a small panel; motion runs only while the strip opens or swaps.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Focus moves into the picker and back, Escape closes it, and status changes are announced live."
+  },
+  "props": [
+    {"name": "collections", "type": "SaveCollection[]", "default": "DEFAULT_COLLECTIONS", "required": false},
+    {"name": "defaultCollection", "type": "string", "default": null, "required": false},
+    {"name": "defaultSaved", "type": "boolean", "default": "false", "required": false},
+    {"name": "onSave", "type": "(collectionId: string) => void", "default": null, "required": false},
+    {"name": "onMove", "type": "(collectionId: string) => void", "default": null, "required": false},
+    {"name": "onRemove", "type": "() => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Neat layered states and tidy spacing; the panel is compact and readable.",
+  "unsure": ["kind", "responsive"]
+}

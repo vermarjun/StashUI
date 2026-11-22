@@ -1,0 +1,156 @@
+{
+ "name": "accordion",
+ "frames": {
+  "code": "6226",
+  "best": 1,
+  "best_why": "Frame 1 shows the first answer fully open with its rotated chevron, and the rest of the list closed.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.8
+ },
+ "tagline": "Rows of questions that push open to show their answer.",
+ "summary": "A single column of collapsible question rows; clicking one rotates its chevron and slides the answer open while closing any other. The rest of the list stays compact.",
+ "title_fix": null,
+ "appearance": "Four dark rounded rows stacked with thin gaps on a near-black page, each with a left-aligned question and a chevron at its right. The open row is pale grey with a block of dark answer text beneath it; closed rows are darker with muted labels.",
+ "behaviour": "Clicking a row expands its answer with a spring height and a clip reveal, and the chevron flips to point up. Only one row is open at a time, so opening another closes the previous; hovering brightens a closed row.",
+ "parts": [
+  "question row",
+  "chevron",
+  "open panel",
+  "answer text"
+ ],
+ "demo_content": "Four questions about UI components, including What is a UI component? and How do components improve UX?",
+ "states": [
+  "hover",
+  "open"
+ ],
+ "kind": "accordion",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "single column collapsible questions",
+  "click a row to reveal the answer",
+  "faq list with rotating chevrons",
+  "one answer open at a time",
+  "expandable question stack",
+  "compact disclosure list",
+  "questions that slide open",
+  "dark faq rows with answers"
+ ],
+ "resembles": [],
+ "use_when": "You need a tidy FAQ or disclosure list where only one answer is relevant at a time.",
+ "avoid_when": "Only one answer can stay open, so readers cannot compare several answers at once.",
+ "suits": [
+  "saas",
+  "docs",
+  "marketing"
+ ],
+ "slot_hints": [
+  "list-item",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Questions and answers are written into the JSX per item; multiple and defaultValue on the root control whether one or many can open. Colours come from the shared row classes.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Four rows and one spring height animation driven by a motion library.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Headers are buttons with aria-expanded and labelled panels, but the spring motion ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "multiple",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string | string[]",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "customIcon",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "articleClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Closed question labels sit in mid-grey on dark rows, so they are low contrast until hovered."
+ ],
+ "polish": 4,
+ "polish_why": "Clean rows and a smooth spring reveal; the muted closed labels are low contrast.",
+ "unsure": [],
+ "title": "Accordion",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "3aec86bc64432b9d",
+  "film_hash": "c897e0db2d852e19",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

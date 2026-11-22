@@ -1,0 +1,123 @@
+{
+  "name": "lightbox-grid",
+  "frames": {
+    "code": "6220",
+    "best": 2,
+    "best_why": "The whole grid is visible with the large lake tile and five smaller nature photos.",
+    "usable": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Click a photo tile and it grows out of its slot into a full-screen view.",
+  "summary": "A compact grid of rounded nature photos where the first tile spans four cells. Any thumbnail opens into a full-window viewer with arrows, a counter and a caption, and can be swiped or dragged back into place.",
+  "title_fix": null,
+  "appearance": "Six rounded photo tiles pack tightly on black, with one large landscape image filling a two-by-two square on the left and five smaller portrait and landscape photos beside it. The open view centres one photo on a dark backdrop, with a counter and close at top right, round arrows at the sides and a small caption below.",
+  "behaviour": "Tapping a tile sends that same photo flying from its slot to the middle of the screen, growing and uncropping as it goes. Inside, a sideways swipe steps to the next photo, pulling down shrinks the image and flies it home, and Escape, arrows or the buttons close it.",
+  "parts": [
+    "photo grid",
+    "large tile",
+    "thumbnail",
+    "lightbox photo",
+    "caption",
+    "counter",
+    "arrow buttons",
+    "close button"
+  ],
+  "demo_content": "Six nature photos: a turquoise lake, peaks above clouds, misty hills, forest light, a sunset valley and a waterfall.",
+  "states": [
+    "hover",
+    "focus",
+    "open",
+    "dragging"
+  ],
+  "kind": "gallery-section",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "colorful"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "photo grid that opens a fullscreen viewer",
+    "click a thumbnail to zoom it",
+    "image gallery with swipe between photos",
+    "drag down to close a lightbox",
+    "shared element image transition",
+    "portfolio photo grid with captions",
+    "masonry style photo gallery",
+    "full screen picture viewer with arrows"
+  ],
+  "resembles": [
+    "Airbnb photo gallery"
+  ],
+  "use_when": "A page shows a handful of photos and each should open large without losing its place.",
+  "avoid_when": "Large galleries: every photo mounts in the grid at once, so dozens of tiles mean dozens of image loads.",
+  "suits": [
+    "portfolio",
+    "marketing",
+    "blog"
+  ],
+  "slot_hints": [
+    "media"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "drag",
+      "keyboard"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "image",
+      "background"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The images array is the content prop; spacing, margins, spring timings and the grid shape are fixed in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "Six photos plus motion springs during open and close; nothing runs while the grid is idle.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Tiles are labelled buttons, focus is trapped in the viewer, Escape and arrows work, and reduced motion skips the flight."
+  },
+  "props": [
+    {
+      "name": "images",
+      "type": "LightboxImage[]",
+      "default": "DEFAULT_IMAGES",
+      "required": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": null,
+      "required": false
+    }
+  ],
+  "issues": [
+    "Frame 1 opens on an empty stage before any tile has appeared."
+  ],
+  "polish": 4,
+  "polish_why": "Clean grid with a convincing flight in and out; one sampled frame is completely blank.",
+  "unsure": [
+    "theme"
+  ]
+}

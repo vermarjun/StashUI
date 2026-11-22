@@ -1,0 +1,181 @@
+{
+ "name": "MagicBento-TS-TW",
+ "frames": {
+  "code": "3666",
+  "best": 5,
+  "best_why": "The purple spotlight washes across several tiles and lights their borders, the strongest view of the glow effect.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "partial",
+  "render_note": "The grid sits hard against the left edge, so the first column's labels are clipped by the crop.",
+  "shows_interaction": "yes",
+  "best_time": 5.0
+ },
+ "tagline": "A bento grid of dark cards lights up purple under the cursor.",
+ "title_fix": null,
+ "summary": "Six dark feature tiles of different sizes form a bento grid with labels, titles and one-line descriptions. A purple spotlight and glowing borders follow the pointer across the cards.",
+ "appearance": "Six near-black rounded tiles fill a wide grid in varied sizes, each with a small label at the top and a title plus a line of muted text at the bottom. A violet glow picks out the borders of whichever tiles sit near the pointer.",
+ "behaviour": "Moving the pointer across the grid sends a soft purple spotlight after it and brightens the borders of nearby cards. Clicking a card sends out a quick radial ripple.",
+ "parts": [
+  "bento grid",
+  "feature tiles",
+  "tile label",
+  "tile title",
+  "description line",
+  "purple spotlight"
+ ],
+ "demo_content": "Six tiles labelled Insights, Overview, Teamwork, Efficiency, Connectivity and Protection, with titles like Analytics.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "feature-section",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "glow"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "bento grid of dark feature cards",
+  "cards with a purple glow following the mouse",
+  "dashboard feature tiles with labels",
+  "spotlight border effect on cards",
+  "asymmetric grid of product features",
+  "click a tile for a ripple effect",
+  "saas features section with glowing cards",
+  "dark tiles that light up on hover"
+ ],
+ "resembles": [],
+ "use_when": "A product page needs a bento-style feature grid with a little interactive polish.",
+ "avoid_when": "Card copy is fixed inside the file, and the purple glow is hardcoded so it fights another brand colour.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click",
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "border",
+   "shadow"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "Stars, spotlight, border glow, tilt, magnetism, click ripple, spotlight radius, particle count and glow colour are props; the six cards' copy is hardcoded.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "moderate",
+ "weight_why": "A fixed spotlight plus up to twelve looping particles per hovered card while the pointer moves.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Cards are plain divs with no roles or tab stops, and the glow and particles ignore reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "textAutoHide",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableStars",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableSpotlight",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "enableBorderGlow",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "disableAnimations",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "spotlightRadius",
+   "type": "number",
+   "default": "DEFAULT_SPOTLIGHT_RADIUS",
+   "required": false
+  },
+  {
+   "name": "particleCount",
+   "type": "number",
+   "default": "DEFAULT_PARTICLE_COUNT",
+   "required": false
+  },
+  {
+   "name": "enableTilt",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "glowColor",
+   "type": "string",
+   "default": "DEFAULT_GLOW_COLOR",
+   "required": false
+  },
+  {
+   "name": "clickEffect",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enableMagnetism",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The six cards' labels and copy are hardcoded, so every page shows the same features.",
+  "Tile descriptions are tiny and dim against the dark cards, hard to read at a glance."
+ ],
+ "polish": 3,
+ "polish_why": "A tidy dark bento with a smooth purple glow, but the tiles stay very plain and the copy is small.",
+ "unsure": [],
+ "title": "Magic Bento Grid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8224bc673b7430c4",
+  "film_hash": "9b473a6a7e67a87d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "name": "mouse-wave-text",
+  "frames": {
+    "code": "5989",
+    "best": 3,
+    "best_why": "Frame 3 shows the word at the peak of its ripple, letters at clearly uneven heights.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Bold letters ride a rolling wave that follows the cursor across the page.",
+  "summary": "A giant word cut into thin vertical strips, each bobbing up and down with a moving delay so the letters ripple in a wave. Moving the cursor steers the wave and pressing the mouse squashes the whole word.",
+  "title_fix": null,
+  "appearance": "The word Wavelength set in very heavy white capitals across a black stage, with a soft grey duplicate sitting just behind and below it. The tops of the letters stand at uneven heights, giving a rippled silhouette.",
+  "behaviour": "A wave runs across the word, lifting and dropping each narrow slice in turn while the cursor's horizontal position shifts its phase. Holding the mouse presses the word down as the grey shadow blurs and shrinks, and releasing springs it back.",
+  "parts": ["word", "letter strips", "drop shadow", "hint text"],
+  "demo_content": "The word Wavelength in bold capitals with the hint to move the cursor and press to squash it.",
+  "states": ["active"],
+  "kind": "text-effect",
+  "look": ["dark", "bold", "minimal", "monochrome"],
+  "tone": "playful",
+  "search_phrases": [
+    "text that ripples like water",
+    "letters bob up and down on hover",
+    "cursor controls wavy headline",
+    "big word with wave animation",
+    "press to squash the letters",
+    "jelly text that follows pointer",
+    "animated headline with sine wave",
+    "kinetic type that moves with mouse"
+  ],
+  "resembles": [],
+  "use_when": "A hero word should feel alive and respond to the pointer without shipping a video.",
+  "avoid_when": "It listens on the whole window, so the wave shifts even when the pointer is far from the words.",
+  "suits": ["portfolio", "marketing", "blog"],
+  "slot_hints": ["headline", "hero"],
+  "traits": {
+    "trigger": ["always", "pointer-move", "click"],
+    "motion": "pronounced",
+    "affects": ["text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Pass any short string as children; colours for the text, shadow and wrapper come from three class props, while the wave timing is fixed in constants.",
+  "technique": ["motion-library"],
+  "weight": "heavy",
+  "weight_why": "Roughly one strip per two pixels, so hundreds of motion values react to the cursor.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Each strip keeps the full text and none are hidden from assistive tech, so the word may be read hundreds of times."
+  },
+  "props": [
+    {"name": "children", "type": "ReactNode", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "shadowClassName", "type": "string", "default": null, "required": false},
+    {"name": "textClassName", "type": "string", "default": null, "required": false},
+    {"name": "wrapperTweenVars", "type": "Target", "default": null, "required": false}
+  ],
+  "issues": [
+    "The word is duplicated hundreds of times for screen readers because every strip keeps the full text.",
+    "Slice count is measured only when the text changes, so resizing the window leaves the strips misaligned."
+  ],
+  "polish": 4,
+  "polish_why": "Bold, tactile ripple with a convincing shadow; the duplicated text and fixed slices are rough edges.",
+  "unsure": ["motion", "weight"]
+}

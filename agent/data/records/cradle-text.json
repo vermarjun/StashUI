@@ -1,0 +1,137 @@
+{
+ "name": "cradle-text",
+ "frames": {
+  "code": "1533",
+  "best": 2,
+  "best_why": "The first letter is pulled clear of the row while the rest are mid-knock, showing the pendulum action.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.2
+ },
+ "tagline": "Letters hang from threads on a rail and knock each other like swinging balls.",
+ "summary": "A word whose letters dangle from thin threads under a horizontal rail. Drag one letter sideways or brush it with the cursor and a knock runs along the row, then the letters swing down and settle.",
+ "title_fix": null,
+ "appearance": "One large bold white word sits on a near-black stage, each letter suspended by a hairline thread from a thin horizontal rail above it. The letters are tightly tracked and level at rest, with a small grey caption centred underneath.",
+ "behaviour": "Letters behave as pendulums hung from the rail: pull one to the side and it swings back, clipping its neighbour and passing the knock along until the far letter kicks out. Energy drains away and the row returns to a still line.",
+ "parts": [
+  "rail",
+  "threads",
+  "letters",
+  "caption"
+ ],
+ "demo_content": "The word \"Momentum\" with the caption \"Pull the first letter out and let it go.\"",
+ "states": [
+  "dragging",
+  "hover"
+ ],
+ "kind": "text-effect",
+ "look": [
+  "monochrome",
+  "dark",
+  "minimal",
+  "bold"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "letters hanging from strings",
+  "newtons cradle for a headline",
+  "draggable swinging word",
+  "physics pendulum typography",
+  "letters that knock into each other",
+  "playful interactive hero title",
+  "pull a letter and watch it swing",
+  "string hung alphabet animation"
+ ],
+ "resembles": [],
+ "use_when": "A short decorative headline where one playful drag makes the page memorable.",
+ "avoid_when": "The letters overlap and blur while swinging, so it should not carry essential reading text.",
+ "suits": [
+  "marketing",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "pointer-move",
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "children",
+   "cursor"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the word through the text prop, turn the automatic first pull off with intro, and set bounce for the energy each collision keeps. Threads, font size and motion constants need a source edit.",
+ "technique": [
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "A requestAnimationFrame loop over a handful of letter spans that stops once the row settles.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Pointer drag and cursor sweep have no keyboard equivalent; the word is exposed once as screen-reader-only text."
+ },
+ "props": [
+  {
+   "name": "text",
+   "type": "string",
+   "default": "\"Momentum\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"relative cursor-grab touch-pan-y select-none px-[0.9em] pt-",
+   "required": false
+  },
+  {
+   "name": "intro",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "bounce",
+   "type": "number",
+   "default": "0.97",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The caption is tiny and very low contrast against the black stage.",
+  "Swung letters rotate out of the row, so the word is hard to read mid-motion."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp type and a believable pendulum feel; only the faint caption looks unfinished.",
+ "unsure": [],
+ "title": "Cradle Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "79ed4e5a3051a3b5",
+  "film_hash": "71dc54579e879cee",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

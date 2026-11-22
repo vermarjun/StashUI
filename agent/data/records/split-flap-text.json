@@ -1,0 +1,186 @@
+{
+ "name": "split-flap-text",
+ "frames": {
+  "code": "1100",
+  "best": 6,
+  "best_why": "The board has settled on 'BERLIN 10:20' with every tile crisp and both captions in place.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.5
+ },
+ "tagline": "A departure board of dark letter tiles that clacks through to each new phrase.",
+ "summary": "A split-flap board that scrambles its letter tiles and settles on a new line each cycle, styled like an airport departures sign. Words, timing and tile styling are configurable.",
+ "title_fix": null,
+ "appearance": "Rows of small dark rounded tiles each hold one pale monospace capital, split by a faint hinge line across the middle. Sparse uppercase captions sit above and below the board on a black surface.",
+ "behaviour": "Every character cycles through random glyphs before settling on its target, cascading left to right, then the board holds and moves to the next phrase on a loop.",
+ "parts": [
+  "tile",
+  "character",
+  "hinge line",
+  "top caption",
+  "bottom caption"
+ ],
+ "demo_content": "Departure phrases LISBON 09:45, BERLIN 10:20, TOKYO 11:05 and NEW YORK 12:30 under 'Departures, Terminal 2'.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "monochrome",
+  "technical",
+  "flat",
+  "retro"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "split flap departure board text",
+  "airport flip board animation",
+  "mechanical letter tiles that flip",
+  "scrambling letters settle into words",
+  "flip clock style text effect",
+  "rotating character display",
+  "retro airport sign animation",
+  "letters clack into place"
+ ],
+ "resembles": [
+  "Solari board",
+  "Vestaboard"
+ ],
+ "use_when": "A headline or status line should feel mechanical and retro, cycling through several short messages.",
+ "avoid_when": "Every tile runs its own flip loop, which is busy and hard to read for anyone sensitive to motion.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "hero",
+  "headline",
+  "stat"
+ ],
+ "traits": {
+  "trigger": [
+   "timer"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Words or a text string, flip duration, stagger, cycle delay, charset, flips per char, tile and text colours, sizes, alignment and tile style are props.",
+ "technique": [
+  "css-keyframes",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "A rAF loop drives up to a dozen tiles through several flips every cycle.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The current phrase is exposed as one text label while the scrambling tiles are hidden from assistive tech."
+ },
+ "props": [
+  {
+   "name": "words",
+   "type": "string[]",
+   "default": "['LAUNCH READY', 'SYNC ONLINE', 'SIGNAL LIVE']",
+   "required": false
+  },
+  {
+   "name": "text",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "flipDuration",
+   "type": "number",
+   "default": "0.12",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.06",
+   "required": false
+  },
+  {
+   "name": "cycleDelay",
+   "type": "number",
+   "default": "2400",
+   "required": false
+  },
+  {
+   "name": "charset",
+   "type": "\"alpha\" | \"alphanumeric\" | \"numeric\" | (string & {})",
+   "default": "'alphanumeric'",
+   "required": false
+  },
+  {
+   "name": "flipsPerChar",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "fontSize",
+   "type": "number | string",
+   "default": "52",
+   "required": false
+  },
+  {
+   "name": "padTo",
+   "type": "number",
+   "default": "12",
+   "required": false
+  },
+  {
+   "name": "loop",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "tileStyle",
+   "type": "SplitFlapTileStyle",
+   "default": "'board'",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "SplitFlapAlign",
+   "default": "'left'",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The tiles spend most of each cycle showing random letters, so a quick screenshot can look like gibberish."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing flap shading and a crisp monospace board; the scramble only reads at rest.",
+ "unsure": [],
+ "title": "Split Flap Text",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "0c17df0e7bf0384c",
+  "film_hash": "d0e4bff7a2dc8a62",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

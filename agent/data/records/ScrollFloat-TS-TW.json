@@ -1,0 +1,164 @@
+{
+ "name": "ScrollFloat-TS-TW",
+ "frames": {
+  "code": "4719",
+  "best": 6,
+  "best_why": "Title and caption are both settled and complete, with the scroll hint well out of the way.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 10.0
+ },
+ "tagline": "Oversized characters stretch and drop into place on scroll.",
+ "summary": "A huge word and a smaller caption assemble letter by letter as the block scrolls into view, each character dropping from below, stretched tall, then snapping to its final shape.",
+ "title_fix": null,
+ "appearance": "A very large black-weight white word holds the centre of a black stage, with a smaller muted grey caption beneath it. Characters are tightly tracked in a clean geometric sans.",
+ "behaviour": "Scrolling brings each character up in turn from below, tall and faint, then snaps it to normal width and full opacity so the words settle into a line. Scrolling back lifts the letters away again.",
+ "parts": [
+  "large word",
+  "caption",
+  "characters"
+ ],
+ "demo_content": "\"StashUI\" over \"every character floats into place\", with a SCROLL DOWN hint above.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "editorial",
+  "flat"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "letters float into place on scroll",
+  "big title animates as page scrolls",
+  "character by character heading reveal",
+  "hero word stretches and drops in",
+  "scroll triggered kinetic typography",
+  "smooth text entrance for landing page",
+  "oversized headline animation",
+  "staggered letter drop effect"
+ ],
+ "resembles": [],
+ "use_when": "A landing page manifesto or big brand headline should assemble as the reader scrolls.",
+ "avoid_when": "Content above the fold: it only animates once the block scrolls into view.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll",
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "The text is passed as children; duration, easing, start and end scroll points, stagger and class names are props. Character splitting is fixed.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "light",
+ "weight_why": "A scroll timeline over one line of character spans; nothing renders per frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The copy is real text, but characters start invisible and there is no reduced-motion fallback."
+ },
+ "props": [
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "ease",
+   "type": "string",
+   "default": "'back.inOut(2)'",
+   "required": false
+  },
+  {
+   "name": "stagger",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "scrollStart",
+   "type": "string",
+   "default": "'center bottom+=50%'",
+   "required": false
+  },
+  {
+   "name": "scrollEnd",
+   "type": "string",
+   "default": "'bottom bottom-=40%'",
+   "required": false
+  },
+  {
+   "name": "containerClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "textClassName",
+   "type": "string",
+   "default": "''",
+   "required": false
+  },
+  {
+   "name": "scrollContainerRef",
+   "type": "RefObject<HTMLElement>",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The caption is cut off at the bottom edge in frames 3 and 4."
+ ],
+ "polish": 4,
+ "polish_why": "Strong scale and a springy settle; the giant word crowds a tight crop.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Scroll Float",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "8adf0c44e65e18a0",
+  "film_hash": "6fe3e738478a6341",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

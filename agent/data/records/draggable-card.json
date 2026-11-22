@@ -1,0 +1,131 @@
+{
+ "name": "draggable-card",
+ "frames": {
+  "code": "7986",
+  "best": 4,
+  "best_why": "Five tilted photo cards spread across the stage with the most labels readable and none cut at the edges.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.4
+ },
+ "tagline": "Scattered polaroid-style photo cards you can drag and tilt.",
+ "summary": "A set of tilted photo cards strewn across a dark stage; each tilts in 3D under the pointer, lifts on hover, and can be dragged around with momentum before settling.",
+ "title_fix": null,
+ "appearance": "Six dark cards with square landscape photos and a country name below sit at different angles across a black stage, showing mountains, coast, snow and forest. Their corners overlap and shadows separate them.",
+ "behaviour": "Moving over a card tilts it toward the pointer and adds a faint white glare; dragging throws it in the direction of motion until a spring brings it to a stop and flattens the tilt.",
+ "parts": [
+  "photo card",
+  "photo",
+  "country label",
+  "glare",
+  "shadow"
+ ],
+ "demo_content": "Photo cards labelled Canada, Namibia, Norway, Greece, Switzerland and a faint Fight Club quote.",
+ "states": [
+  "hover",
+  "dragging"
+ ],
+ "kind": "card",
+ "look": [
+  "dark",
+  "3d",
+  "playful",
+  "colorful"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "photo cards you can drag around",
+  "tilted picture collage",
+  "polaroid style photos on a board",
+  "cards you can fling with momentum",
+  "scattered images for a hero",
+  "card stack that tilts with the mouse",
+  "playable photo wall",
+  "interactive travel photos"
+ ],
+ "resembles": [],
+ "use_when": "A hero or gallery wants a tactile, messy photo spread people can rearrange themselves.",
+ "avoid_when": "Cards sit absolutely and overlap, so on small screens they collide and several labels are clipped.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "ecommerce"
+ ],
+ "slot_hints": [
+  "hero",
+  "media",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "hover",
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image",
+   "shadow",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Wrap any children in a draggable body and position it with className; drag constraints, tilt range, spring and glare are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "Six cards with springs and drag handlers; nothing animates while idle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Cards can only be dragged with a pointer, with no keyboard movement and no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "React.ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The Fight Club quote is dark grey on black and effectively invisible in every frame.",
+  "Several country names are clipped by neighbouring cards, reading Norw, Gree or just ia."
+ ],
+ "polish": 3,
+ "polish_why": "Tactile drag and tilt; clipped labels and an invisible headline make the demo look unfinished.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Draggable Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a248f4cc3f94a08a",
+  "film_hash": "5a8b618bafc33b20",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

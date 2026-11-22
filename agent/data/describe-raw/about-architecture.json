@@ -1,0 +1,66 @@
+{
+  "name": "about-architecture",
+  "frames": {
+    "code": "2725",
+    "best": 2,
+    "best_why": "The full headline, the right-hand paragraph and both building photos are visible at once.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "no"
+  },
+  "tagline": "Oversized architecture headline over two grayscale tower photos.",
+  "title_fix": null,
+  "summary": "A white studio about block with a giant 'Building Modernity.' headline, a short positioning note and two tall greyscale building photos set at different heights.",
+  "appearance": "A white page with a tiny spaced eyebrow above an enormous black headline, its second word set in italic. A narrow grey paragraph aligns right, above two tall greyscale skyscraper photos that sit at offset heights.",
+  "behaviour": "The eyebrow and headline slide in from the left as they enter view. Each photo stays greyscale until hovered, then slowly returns to full colour.",
+  "parts": ["eyebrow row", "headline", "italic word", "paragraph", "left photo", "right photo", "photo captions"],
+  "demo_content": "Headline 'Building Modernity.', 'Established 1984' and two greyscale skyscraper photos.",
+  "states": ["hover"],
+  "kind": "content-section",
+  "look": ["monochrome", "editorial", "minimal", "sharp"],
+  "tone": "minimal",
+  "search_phrases": [
+    "architecture studio about page",
+    "giant type over grayscale building photos",
+    "two tall photos offset on white",
+    "minimal editorial about section",
+    "grayscale photos that colour on hover",
+    "established since label above big heading",
+    "design agency brand statement block",
+    "black and white architecture portfolio"
+  ],
+  "resembles": [],
+  "use_when": "An architecture or design studio wants a restrained editorial about block led by type and photos.",
+  "avoid_when": "Photos are hardcoded and the colour-on-hover reveal never happens on touch.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["body-text", "feature-card"],
+  "traits": {
+    "trigger": ["viewport", "hover"],
+    "motion": "subtle",
+    "affects": ["image", "children"],
+    "theme": "light",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Headline, paragraph, photo URLs and captions live in the JSX; grayscale timing and spacing are classes.",
+  "technique": ["css-transition", "motion-library"],
+  "weight": "light",
+  "weight_why": "Two photos and a couple of fade-ins once; no loop.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The colour-on-hover reveal is desktop only, and reduced motion is not honoured."
+  },
+  "props": [],
+  "issues": [
+    "Photo captions use mix-blend-difference over pale skies, so they can disappear.",
+    "The photos only gain colour on hover, which touch users never trigger."
+  ],
+  "polish": 4,
+  "polish_why": "Bold type-led layout with a strong photo rhythm; the captions are faint.",
+  "unsure": ["frames.shows_interaction"]
+}

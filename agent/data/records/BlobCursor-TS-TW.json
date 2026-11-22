@@ -1,0 +1,185 @@
+{
+ "name": "BlobCursor-TS-TW",
+ "frames": {
+  "code": "2139",
+  "best": 5,
+  "best_why": "The purple blob is near the pointer and fully in frame, showing its stretched shape.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.3
+ },
+ "tagline": "A soft purple blob trails the pointer and stretches to catch up.",
+ "summary": "A round violet shape chases the mouse across a dark panel, flexing into a teardrop as it moves, with fainter copies lagging behind it.",
+ "title_fix": null,
+ "appearance": "A violet disc with a small white dot at its centre glides over a near-black panel, its edges blurred into a soft cloud. When it moves it stretches into an egg shape, and dimmer copies trail it.",
+ "behaviour": "Each pointer move tweens three discs toward the cursor at different speeds, so the largest lags and the smallest leads. When the pointer stops they settle back into round blobs.",
+ "parts": [
+  "blob",
+  "white centre dot",
+  "trailing blobs",
+  "heading",
+  "caption"
+ ],
+ "demo_content": "Heading \"Move your cursor\" with the caption \"The blob follows your mouse\".",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "dark",
+  "colorful",
+  "organic",
+  "rounded"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "purple blob that follows the mouse",
+  "gooey cursor trail effect",
+  "blob cursor with lag",
+  "melting dot behind the pointer",
+  "custom pointer for a landing page",
+  "elastic shape that chases the cursor",
+  "soft purple orb following mouse",
+  "playful blob mouse follower"
+ ],
+ "resembles": [],
+ "use_when": "A playful portfolio or marketing page wants a custom pointer with personality.",
+ "avoid_when": "The blob slides over nearby text, and being pointer-only it does nothing for keyboard or reduced-motion users.",
+ "suits": [
+  "portfolio",
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "decoration",
+  "hero",
+  "page-background"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Blob shape, fill, inner dot colour and size, trail count, sizes, opacities, shadow and blur filter are all props. There is no content to pass in.",
+ "technique": [
+  "gsap",
+  "svg-filter"
+ ],
+ "weight": "light",
+ "weight_why": "Three plain divs tweened by GSAP, with one SVG blur filter laid over them.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Purely decorative pointer movement; the trail cannot be reached from the keyboard and ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "blobType",
+   "type": "\"circle\" | \"square\"",
+   "default": "'circle'",
+   "required": false
+  },
+  {
+   "name": "fillColor",
+   "type": "string",
+   "default": "'#5227FF'",
+   "required": false
+  },
+  {
+   "name": "trailCount",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "sizes",
+   "type": "number[]",
+   "default": "[60, 125, 75]",
+   "required": false
+  },
+  {
+   "name": "innerSizes",
+   "type": "number[]",
+   "default": "[20, 35, 25]",
+   "required": false
+  },
+  {
+   "name": "innerColor",
+   "type": "string",
+   "default": "'rgba(255,255,255,0.8)'",
+   "required": false
+  },
+  {
+   "name": "opacities",
+   "type": "number[]",
+   "default": "[0.6, 0.6, 0.6]",
+   "required": false
+  },
+  {
+   "name": "useFilter",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "filterStdDeviation",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "fastDuration",
+   "type": "number",
+   "default": "0.1",
+   "required": false
+  },
+  {
+   "name": "slowDuration",
+   "type": "number",
+   "default": "0.5",
+   "required": false
+  },
+  {
+   "name": "zIndex",
+   "type": "number",
+   "default": "100",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The blob passes over the centre heading and hides it in frame 3.",
+  "There is no reduced-motion path; the follower keeps chasing for users who asked it not to."
+ ],
+ "polish": 4,
+ "polish_why": "Smooth tactile lag and a soft edge; the blob sitting on top of copy is the weak spot.",
+ "unsure": [
+  "frames.code"
+ ],
+ "title": "Blob Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bfee01fd73c4d66f",
+  "film_hash": "c1252e33d04c379f",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

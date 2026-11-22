@@ -1,0 +1,70 @@
+{
+  "name": "floating-dock",
+  "frames": {
+    "code": "6301",
+    "best": 4,
+    "best_why": "Bell icon is swelled with its label shown and the next icon partly enlarged.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Bottom icon bar where the circle nearest the cursor swells and names itself.",
+  "summary": "A rounded dark dock of five circular icon links that magnify like a desktop dock. The nearest icon grows on a spring, its neighbours swell a little, and a small label appears above.",
+  "title_fix": null,
+  "appearance": "A rounded dark bar near the bottom of the stage holding five grey circular icon buttons: home, magnifier, bell, person and gear. Hovering one swells it and shows a small label above.",
+  "behaviour": "As the pointer nears, the closest circle grows on a spring and its neighbours swell slightly; hovering also reveals a small tooltip with the item name. Everything shrinks back when the pointer leaves.",
+  "parts": ["dock bar", "icon buttons", "icon glyphs", "tooltip label"],
+  "demo_content": "Five icons labelled Home, Search, Notifications, Profile and Settings.",
+  "states": ["hover"],
+  "kind": "dock",
+  "look": ["dark", "rounded", "pill", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "bottom bar with icons that grow",
+    "mac style magnifying app dock",
+    "floating navigation with hover tooltips",
+    "icon bar that enlarges near the cursor",
+    "app launcher across the bottom",
+    "small menu with popping icons",
+    "desktop style dock for a website",
+    "tooltip above each icon on hover"
+  ],
+  "resembles": ["macOS Dock"],
+  "use_when": "A compact set of top-level destinations should stay reachable at the edge of the screen.",
+  "avoid_when": "It relies on hover magnification, so touch users only get the plain icon row and no labels.",
+  "suits": ["saas", "dashboard", "devtool"],
+  "slot_hints": ["nav", "footer"],
+  "traits": {
+    "trigger": ["hover", "pointer-move"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an items array of title, icon and href plus desktop and mobile class names. Sizes, spring settings and tooltip styling are fixed.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Five spring-driven icon buttons and tooltips; no loops.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "Icon links have no accessible name, tooltips only show on hover, and the springs ignore reduced-motion."
+  },
+  "props": [
+    {"name": "items", "type": "{ title: string; icon: ReactNode; href: string }[]", "default": null, "required": true},
+    {"name": "desktopClassName", "type": "string", "default": null, "required": false},
+    {"name": "mobileClassName", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Icon-only links rely on a hover tooltip for their name, so keyboard and screen readers get no label.",
+    "Frames 2 to 5 show only the desktop dock; the mobile expanding menu is never captured."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp magnification and tidy tooltips; the small circles on black read softly.",
+  "unsure": ["a11y.keyboard"]
+}

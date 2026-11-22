@@ -1,0 +1,126 @@
+{
+ "name": "letter-pullup",
+ "frames": {
+  "code": "1454",
+  "best": 1,
+  "best_why": "Frame 1 shows both lines fully assembled and brightest, with every letter in place.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "Letters rise into place one by one to spell two lines.",
+ "summary": "Each character of a string rises up into position in sequence, starting transparent and low, so a headline assembles itself letter by letter.",
+ "title_fix": null,
+ "appearance": "Two lines of very large sans-serif text sit centred on black: Launch day in white and is finally here in blue. A small Replay button rests in the lower right.",
+ "behaviour": "On mount every letter starts below and invisible, then springs up into line with a small stagger from left to right. Replay restarts the whole sequence.",
+ "parts": [
+  "first line",
+  "second line",
+  "letters",
+  "replay button"
+ ],
+ "demo_content": "The words Launch day and is finally here, plus a Replay button.",
+ "states": [],
+ "kind": "text-effect",
+ "look": [
+  "dark",
+  "bold",
+  "minimal",
+  "airy"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "letters jumping into text",
+  "staggered letter animation",
+  "headline assembles letter by letter",
+  "text that drops in",
+  "animated hero words",
+  "letters fly up on load",
+  "entrance text effect",
+  "kinetic typography headline"
+ ],
+ "resembles": [],
+ "use_when": "A hero headline should arrive with a bit of character instead of a plain fade.",
+ "avoid_when": "It animates only on mount, so a headline far down the page plays before anyone sees it.",
+ "suits": [
+  "marketing",
+  "portfolio",
+  "blog"
+ ],
+ "slot_hints": [
+  "headline",
+  "hero",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "words, delay and className are props; the pull-up distance, font and drop shadow are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One motion element per letter, animating once on mount.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Each letter is its own h1 element, so screen readers may read the headline letter by letter; reduced-motion is ignored."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "words",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "delay",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Each character is rendered as a separate h1 heading, breaking the document outline."
+ ],
+ "polish": 3,
+ "polish_why": "Strong type and a pleasant stagger, but it is a very thin one-note effect.",
+ "unsure": [],
+ "title": "Letter Pullup",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "06c6af5a1792cbc6",
+  "film_hash": "8598c6802b9e28c0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

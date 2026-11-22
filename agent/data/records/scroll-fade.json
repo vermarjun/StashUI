@@ -1,0 +1,160 @@
+{
+ "name": "scroll-fade",
+ "frames": {
+  "code": null,
+  "best": null,
+  "best_why": "",
+  "usable": [],
+  "render": "blank",
+  "render_note": "no image",
+  "shows_interaction": "no",
+  "best_time": null
+ },
+ "tagline": "Lists fade, shrink and blur at whichever edge hides more content.",
+ "summary": "A scrolling list wrapper that masks its own top and bottom edges and gently scales and blurs rows as they approach the hidden edge, so cut-off content tapers away instead of being sharply clipped.",
+ "title_fix": null,
+ "appearance": "A rounded bordered card with a small header row showing 'Changelog' and a release count, above a tall scroll area. Inside, one line per release: a monospaced version, a title, and a date or small pill. Rows near a scrolled edge fade and shrink.",
+ "behaviour": "On scroll the wrapper measures how near it is to each end and fades that edge with a gradient mask; rows inside the fade zone also shrink slightly and blur. An edge with nothing hidden stays fully opaque, and values settle with a short animation.",
+ "parts": [
+  "card header",
+  "release count",
+  "scroll area",
+  "release row",
+  "version label",
+  "title text",
+  "date or tag"
+ ],
+ "demo_content": "Changelog card listing 16 releases like '2.4.0 Scroll fade', each with a version, title and date or New tag.",
+ "states": [],
+ "kind": "scroll-effect",
+ "look": [
+  "rounded",
+  "outlined",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "fade out list edges when scrolling",
+  "scroll container with gradient mask",
+  "blur items near cut off edge",
+  "soft edges for overflowing list",
+  "changelog list with fading top and bottom",
+  "scrollable panel that dims hidden rows",
+  "progressive blur at scroll boundaries",
+  "clean cut off content edge treatment"
+ ],
+ "resembles": [],
+ "use_when": "A fixed-height list or panel scrolls but hard edges make the cut-off rows look abrupt and unfinished.",
+ "avoid_when": "It edits child inline styles for scale and blur, so virtualized lists or already-transformed children can conflict.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "docs"
+ ],
+ "slot_hints": [
+  "list-item",
+  "data-table"
+ ],
+ "traits": {
+  "trigger": [
+   "scroll"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Orientation, fade size, shrink amount, blur strength, transition and an enabled flag are props; the gradient maths and edge colours are fixed in the source.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Observes scroll, resize and DOM mutations and repaints item scale and blur on each frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "Reduced-motion is honoured, but the scroll box is not focusable, so keyboard users must reach a child before arrowing through it."
+ },
+ "props": [
+  {
+   "name": "size",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "shrink",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "blur",
+   "type": "number",
+   "default": "4",
+   "required": false
+  },
+  {
+   "name": "orientation",
+   "type": "'vertical' | 'horizontal' | 'both'",
+   "default": "'vertical'",
+   "required": false
+  },
+  {
+   "name": "enabled",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "transition",
+   "type": "Transition",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 3,
+ "polish_why": "The demo card looks tidy in the code, but with no image the finish cannot really be judged.",
+ "unsure": [
+  "appearance",
+  "look",
+  "polish"
+ ],
+ "title": "Scroll Fade",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "89490f868546331e",
+  "film_hash": null,
+  "frames_from": "none",
+  "generated": "2026-11-22"
+ }
+}

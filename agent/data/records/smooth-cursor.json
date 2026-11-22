@@ -1,0 +1,117 @@
+{
+ "name": "smooth-cursor",
+ "frames": {
+  "code": "6637",
+  "best": 3,
+  "best_why": "The custom white arrow is fully in frame and visibly tilted to show the trailing tilt.",
+  "usable": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.1
+ },
+ "tagline": "A white arrow pointer trails the mouse and tilts with its motion.",
+ "summary": "Replaces the system pointer on desktop with a spring-animated arrow that lags behind the mouse, rotates toward the direction of travel and dips slightly when it moves fast.",
+ "title_fix": null,
+ "appearance": "A dark demo panel holding a small outlined pill, a bold heading, a line of grey text, and a white arrow cursor with a thin dark outline. The arrow is the only thing that moves against the flat black card.",
+ "behaviour": "The arrow chases the real pointer with a spring so it trails and overshoots slightly, turns toward the direction of travel, and shrinks for a moment whenever the pointer speeds up.",
+ "parts": [
+  "cursor arrow",
+  "demo card",
+  "pill label",
+  "heading",
+  "paragraph"
+ ],
+ "demo_content": "A dark card reading Smooth Cursor above the heading Move your mouse around and a short paragraph.",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "monochrome",
+  "minimal",
+  "rounded",
+  "dark",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "custom mouse cursor",
+  "arrow that follows the pointer",
+  "pointer that tilts while moving",
+  "replacement mouse pointer",
+  "springy animated arrow cursor",
+  "hide the default cursor",
+  "smooth lagging cursor effect",
+  "pointer that squashes as it moves"
+ ],
+ "resembles": [],
+ "use_when": "A playful portfolio or landing page wants a branded pointer that reacts to movement.",
+ "avoid_when": "Accessibility-sensitive or precision tools; hiding the native cursor can hurt usability.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "cursor"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass any node as cursor to swap the arrow and tune the follow with springConfig; the desktop-only activation rule is fixed in the source.",
+ "technique": [
+  "motion-library",
+  "svg"
+ ],
+ "weight": "light",
+ "weight_why": "One fixed element moved by pointer events; idle whenever the pointer is still.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "It hides the native cursor on desktop and never checks reduced-motion, and offers no extra focus or selection cue."
+ },
+ "props": [
+  {
+   "name": "cursor",
+   "type": "React.ReactNode",
+   "default": "<DefaultCursorSVG />",
+   "required": false
+  },
+  {
+   "name": "springConfig",
+   "type": "object",
+   "default": "{\"damping\":45,\"stiffness\":400,\"mass\":1,\"restDelta\":0.001}",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Smooth spring motion and a crisp default arrow; the demo card explains itself neatly.",
+ "unsure": [],
+ "title": "Smooth Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "26958baebd3ef4d3",
+  "film_hash": "85fa4cf0bb272aa0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

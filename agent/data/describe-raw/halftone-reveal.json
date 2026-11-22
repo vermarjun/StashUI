@@ -1,0 +1,79 @@
+{
+  "name": "halftone-reveal",
+  "frames": {
+    "code": "4576",
+    "best": 5,
+    "best_why": "A clean circular patch of the sharp photograph sits over the dot print, so the reveal is unmistakable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A dotted halftone portrait clears to a real photo under the cursor.",
+  "summary": "A photograph printed as a coarse two-colour halftone. Where the pointer moves the dots swell open and the sharp picture shows through, and a click spreads a clearing ring across the print.",
+  "title_fix": null,
+  "appearance": "A smiling woman with dark hair and a red top fills the frame, rendered as large halftone dots in brick red against pale cream. Under the cursor a soft round patch turns smooth and photographic, showing her face and hair clearly.",
+  "behaviour": "The whole picture stays as a dotted print while a soft-edged brush follows the pointer and converts the dots to the real photograph inside its reach. The revealed patch lingers briefly then fades back, and clicking sends a widening clear ring outward.",
+  "parts": ["halftone image", "reveal brush", "click rings"],
+  "demo_content": "A portrait of a smiling woman with dark hair and a red top against a warm outdoor background.",
+  "states": ["hover", "active"],
+  "kind": "image-effect",
+  "look": ["textured", "retro", "bold", "colorful"],
+  "tone": "decorative",
+  "search_phrases": [
+    "halftone photo effect",
+    "dot print image reveal",
+    "cursor reveals real photo",
+    "newspaper dot portrait",
+    "retro print image hover",
+    "comic dots image effect",
+    "spotlight photo magnifier",
+    "duotone dotted photo"
+  ],
+  "resembles": [],
+  "use_when": "A hero or gallery image that should look printed until the visitor explores it with the pointer.",
+  "avoid_when": "Reveal needs a mouse, so touch users only see the halftone, and the red ink fights other palettes.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["hero", "media"],
+  "traits": {
+    "trigger": ["pointer-move", "click"],
+    "motion": "subtle",
+    "affects": ["image"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "props",
+  "customise": "Set src plus fit, mode, dot shape, cell size, angle and the ink and paper colours. Reveal radius, softness, linger, reverse, wander and click burst are props.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full-screen halftone shader plus a brush mask pass run every frame while the pointer moves.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "The photo is drawn to a canvas with no alt text or role, and the reveal answers only to a pointer."
+  },
+  "props": [
+    {"name": "src", "type": "string", "default": "DEFAULT_SRC", "required": false},
+    {"name": "fit", "type": "'contain' | 'cover'", "default": "cover", "required": false},
+    {"name": "mode", "type": "'mono' | 'duotone' | 'color'", "default": "mono", "required": false},
+    {"name": "shape", "type": "'dot' | 'ellipse' | 'square' | 'diamond' | 'line' | 'cross'", "default": "dot", "required": false},
+    {"name": "cellSize", "type": "number", "default": "6", "required": false},
+    {"name": "angle", "type": "number", "default": "45", "required": false},
+    {"name": "dotScale", "type": "number", "default": "1", "required": false},
+    {"name": "inkColor", "type": "string", "default": "#120f17", "required": false},
+    {"name": "accentColor", "type": "string", "default": "#ff4f2a", "required": false},
+    {"name": "paperColor", "type": "string", "default": "#ffffff", "required": false},
+    {"name": "revealRadius", "type": "number", "default": "160", "required": false},
+    {"name": "wander", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "The top of the head is cropped off in every frame, so the portrait feels accidentally cut.",
+    "The dots are very large, so facial detail disappears outside the reveal."
+  ],
+  "polish": 4,
+  "polish_why": "Convincing print texture and a satisfying reveal; the crop cuts the head and the dots are coarse.",
+  "unsure": []
+}

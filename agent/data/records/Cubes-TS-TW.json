@@ -1,0 +1,190 @@
+{
+ "name": "Cubes-TS-TW",
+ "frames": {
+  "code": "1463",
+  "best": 4,
+  "best_why": "Frame 4 shows both the tilted cubes and a broad lilac ripple across the grid.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.7
+ },
+ "tagline": "Squares tip into small cubes as the pointer crosses the grid.",
+ "summary": "An eight-by-eight field of dashed purple squares sits flat until cells near the pointer rotate into 3D cubes; a click sends rings of pale lilac across the faces.",
+ "title_fix": null,
+ "appearance": "A square grid of small dark cells with thin purple dashed borders, evenly spaced on black. Cells under the pointer lift into cube shapes with lit faces, and a click turns whole rings of cells pale lilac.",
+ "behaviour": "Cells within a short radius of the pointer tilt on two axes, the nearest most, and ease back when it leaves. Left alone, a virtual pointer wanders the grid; a click washes expanding rings of colour outward.",
+ "parts": [
+  "cell",
+  "dashed border",
+  "tilted cube",
+  "lit face",
+  "ripple ring"
+ ],
+ "demo_content": "",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "technical",
+  "3d",
+  "outlined",
+  "colorful"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "grid of squares that tip into cubes",
+  "interactive 3d cube grid",
+  "pointer tilt on a square grid",
+  "purple dashed tile background",
+  "click ripple across little boxes",
+  "isometric cube wall effect",
+  "animated grid for a hero background",
+  "wave of light across a grid"
+ ],
+ "resembles": [],
+ "use_when": "A tech product wants a decorative interactive backdrop that rewards hovering and clicking.",
+ "avoid_when": "The dense dashed grid and constant motion can overwhelm copy laid over it, and the ripple is mouse-led.",
+ "suits": [
+  "devtool",
+  "saas",
+  "ai-chat"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background",
+   "border"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "none",
+ "customise": "Grid density, tilt angle and radius, gap, face and border colour, shadow, auto animation, and ripple colour and speed are props. There is no content to pass in.",
+ "technique": [
+  "gsap"
+ ],
+ "weight": "moderate",
+ "weight_why": "Sixty-four cubes with six faces each, all retweened every frame while auto-animating.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative only; the pointer and click effects have no keyboard route and the auto animation ignores reduced-motion settings."
+ },
+ "props": [
+  {
+   "name": "gridSize",
+   "type": "number",
+   "default": "10",
+   "required": false
+  },
+  {
+   "name": "maxAngle",
+   "type": "number",
+   "default": "45",
+   "required": false
+  },
+  {
+   "name": "radius",
+   "type": "number",
+   "default": "3",
+   "required": false
+  },
+  {
+   "name": "faceColor",
+   "type": "string",
+   "default": "'#120F17'",
+   "required": false
+  },
+  {
+   "name": "borderStyle",
+   "type": "string",
+   "default": "'1px solid #fff'",
+   "required": false
+  },
+  {
+   "name": "shadow",
+   "type": "boolean | string",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "autoAnimate",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "rippleOnClick",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "rippleColor",
+   "type": "string",
+   "default": "'#fff'",
+   "required": false
+  },
+  {
+   "name": "rippleSpeed",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "easing",
+   "type": "gsap.EaseString",
+   "default": "'power3.out'",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "Duration",
+   "default": "{ enter: 0.3, leave: 0.6 }",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The dashed purple borders are low contrast against the near-black faces.",
+  "Auto mode and the pointer fight over the same cells, so the motion occasionally jumps."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp isometric tilts and a satisfying ripple; the dense grid and faint dashes cost clarity.",
+ "unsure": [],
+ "title": "3D Cube Grid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a3f61a3f7fb1e21e",
+  "film_hash": "dce0b1ca4f6dca18",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

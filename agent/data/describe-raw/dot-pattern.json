@@ -1,0 +1,73 @@
+{
+  "name": "dot-pattern",
+  "frames": {
+    "code": "6615",
+    "best": 2,
+    "best_why": "The dot field reads evenly across the whole stage with several dots glowing brighter.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny white dots twinkle across a dark, edge-faded field.",
+  "summary": "A dotted backdrop for dark sections where each dot slowly breathes brighter and fades again on its own timing, and the whole field dissolves into black at the edges.",
+  "title_fix": null,
+  "appearance": "A near-black stage covered in a regular field of tiny white dots that thins to black toward the edges. A large white heading and two centred grey lines of copy sit over the dots.",
+  "behaviour": "Individual dots slowly swell and brighten before shrinking back, each on its own random delay and duration, so the field twinkles instead of beating in unison.",
+  "parts": ["dot field", "glowing dots", "edge fade"],
+  "demo_content": "The centred heading reads \"Dot Pattern\" above a two-line description of the background.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "monochrome", "minimal", "flat", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "twinkling dots on dark background",
+    "dot grid page texture",
+    "polka dot starry backdrop",
+    "glowing dot field for hero",
+    "small dots that pulse softly",
+    "radial fade dotted wallpaper",
+    "particle like dot background",
+    "subtle sprinkled dots section"
+  ],
+  "resembles": [],
+  "use_when": "A dark hero or panel wants gentle texture and depth behind its text.",
+  "avoid_when": "Behind small body text: the dots compete with thin glyphs and hurt reading.",
+  "suits": ["saas", "ai-chat", "marketing"],
+  "slot_hints": ["page-background", "section-background", "hero", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background", "fill"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Spacing, offsets and dot radius are props; toggle the glow with a flag and set the dot colour through a text class.",
+  "technique": ["svg", "motion-library"],
+  "weight": "heavy",
+  "weight_why": "Roughly a thousand SVG circles, each animated by the motion library at once.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The SVG is marked aria-hidden and carries no content; the endless twinkle ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "width", "type": "number", "default": "16", "required": false},
+    {"name": "height", "type": "number", "default": "16", "required": false},
+    {"name": "x", "type": "number", "default": "0", "required": false},
+    {"name": "y", "type": "number", "default": "0", "required": false},
+    {"name": "cx", "type": "number", "default": "1", "required": false},
+    {"name": "cy", "type": "number", "default": "1", "required": false},
+    {"name": "cr", "type": "number", "default": "1", "required": false},
+    {"name": "glow", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [],
+  "polish": 4,
+  "polish_why": "Even, well-masked dot field with a believable twinkle; the small caption is faint.",
+  "unsure": ["weight"]
+}

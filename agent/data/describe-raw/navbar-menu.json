@@ -1,0 +1,76 @@
+{
+  "name": "navbar-menu",
+  "frames": {
+    "code": "4025",
+    "best": 3,
+    "best_why": "Products dropdown is fully open with both product rows and their screenshots visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Hover a nav link and a bordered panel drops down with product previews.",
+  "summary": "A compact rounded navigation with three word links. Hovering a link opens a panel beneath the bar, either with product rows showing screenshots or with a short column of sublinks.",
+  "title_fix": null,
+  "appearance": "A dark, fully rounded pill holding three plain word links. Hovering one opens a black rounded panel below it with a thin light border, listing either two product rows with small screenshots or a short stack of text links.",
+  "behaviour": "Moving onto a link opens its panel, which scales and fades in with a spring and slides between links. Leaving the nav closes it, and links brighten slightly under the pointer.",
+  "parts": ["nav pill", "menu label", "dropdown panel", "product thumbnail", "product title", "text link"],
+  "demo_content": "Design System and Analytics product rows with screenshots; Documentation, Changelog, Blog and Community links.",
+  "states": ["hover", "open"],
+  "kind": "site-header",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "nav menu that opens on hover",
+    "dropdown with product screenshots",
+    "menu bar with hover panels",
+    "header links that reveal lists",
+    "navigation with image preview dropdown",
+    "top nav menu for a website",
+    "hover menu showing product cards",
+    "pill shaped menu with flyout"
+  ],
+  "resembles": [],
+  "use_when": "A compact top navigation where each link needs a rich panel of previews or several sublinks.",
+  "avoid_when": "Touch and keyboard use: the panels are hover-only and never open on tap or focus.",
+  "suits": ["saas", "marketing", "portfolio"],
+  "slot_hints": ["nav"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["background", "text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Compose Menu with MenuItem entries that take item, active and setActive, then put any panel content inside; colours and the spring are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A few nodes with one layout animation; nothing runs while closed.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Menu labels are plain paragraphs opened by mouse enter, so keyboard and touch users cannot open the panels."
+  },
+  "props": [
+    {"name": "setActive", "type": "function", "default": null, "required": true},
+    {"name": "active", "type": "string | null", "default": null, "required": true},
+    {"name": "item", "type": "string", "default": null, "required": true},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false},
+    {"name": "title", "type": "string", "default": null, "required": true},
+    {"name": "description", "type": "string", "default": null, "required": true},
+    {"name": "href", "type": "string", "default": null, "required": true},
+    {"name": "src", "type": "string", "default": null, "required": true}
+  ],
+  "issues": [
+    "Panels open on hover only, so touch and keyboard users cannot reach them.",
+    "Frame 2 shows the product screenshots as grey loading placeholders.",
+    "The bar sits high with a large empty area beneath until a panel opens."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp dark pill and tidy panels; hover-only opening leaves touch and keyboard out.",
+  "unsure": ["responsive", "content_from"]
+}

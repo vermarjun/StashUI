@@ -1,0 +1,148 @@
+{
+ "name": "3d-globe",
+ "frames": {
+  "code": "5651",
+  "best": 4,
+  "best_why": "Frame 4 shows the globe well lit with several avatar markers visible around its limb.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 3.5
+ },
+ "tagline": "A textured 3D Earth spins slowly while avatar pins stand off its surface.",
+ "summary": "A rotating photorealistic globe with a soft blue atmospheric glow. Small round photo markers rise from points on its surface, and the planet can be dragged to turn it.",
+ "title_fix": null,
+ "appearance": "A blue-and-green Earth sphere floats on black, wrapped in a soft blue halo. Continents show relief and cloud tones, and small circular avatar markers on short pale stems stand off the surface at scattered points, with the planet lit from one side.",
+ "behaviour": "The globe turns slowly on its own and drag orbits it, with damping carrying the motion after release. Markers facing away hide behind the sphere, and hovering one enlarges it against the surface.",
+ "parts": [
+  "globe sphere",
+  "atmosphere glow",
+  "marker stems",
+  "avatar markers"
+ ],
+ "demo_content": "Twelve avatar pins for cities including New York, London, Tokyo, Sydney and Paris.",
+ "states": [
+  "hover",
+  "loading"
+ ],
+ "kind": "3d-scene",
+ "look": [
+  "dark",
+  "3d",
+  "colorful",
+  "glow",
+  "rounded"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "rotating 3d earth globe",
+  "world map with avatar pins",
+  "interactive globe with markers",
+  "three js earth with city pins",
+  "globe showing people around the world",
+  "draggable planet with photo markers",
+  "global team map visual",
+  "sphere with pins at locations"
+ ],
+ "resembles": [
+  "Google Earth",
+  "GitHub globe"
+ ],
+ "use_when": "Show global presence or a distributed team as an explorable rotating globe with people pins.",
+ "avoid_when": "It pulls textures from a remote CDN and runs a WebGL loop, and the marker faces are tiny on small screens.",
+ "suits": [
+  "saas",
+  "marketing",
+  "devtool"
+ ],
+ "slot_hints": [
+  "hero",
+  "feature-card",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "image"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass a markers array of latitude, longitude, image and label, plus a config object for radius, textures, atmosphere, lighting, rotation and zoom.",
+ "technique": [
+  "three-js",
+  "webgl-shader"
+ ],
+ "weight": "heavy",
+ "weight_why": "A Three.js scene renders a textured sphere, shader halo and animated markers every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Marker images carry city labels, but the scene has no text alternative and auto-rotation ignores reduced-motion."
+ },
+ "props": [
+  {
+   "name": "markers",
+   "type": "GlobeMarker[]",
+   "default": "{markers}",
+   "required": false
+  },
+  {
+   "name": "config",
+   "type": "Globe3DConfig",
+   "default": "{config}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onMarkerClick",
+   "type": "(marker: GlobeMarker) => void",
+   "default": "{onMarkerClick}",
+   "required": false
+  },
+  {
+   "name": "onMarkerHover",
+   "type": "(marker: GlobeMarker | null) => void",
+   "default": "{onMarkerHover}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Markers are tiny at this size and their photo faces are hard to identify.",
+  "The Earth textures load from a remote CDN, so an offline page shows a bare sphere."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing earth texture and soft atmosphere; tiny marker faces and remote textures are weak spots.",
+ "unsure": [],
+ "title": "3D Globe",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "b017111cda6b02bc",
+  "film_hash": "0ca88bdc53c23e15",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

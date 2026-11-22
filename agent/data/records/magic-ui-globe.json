@@ -1,0 +1,127 @@
+{
+ "name": "magic-ui-globe",
+ "frames": {
+  "code": "8716",
+  "best": 4,
+  "best_why": "The sphere shows the most land and orange pins at once, with Africa and Europe filling the face.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.0
+ },
+ "tagline": "A dotted globe turns slowly with orange pins on world cities.",
+ "summary": "A WebGL globe of grey dots that spins on its own and can be dragged to turn it; small orange markers sit on chosen cities and the continents sweep past.",
+ "title_fix": null,
+ "appearance": "A sphere of dense grey dots forming the continents, set on a black stage under a large white-to-grey headline. Round orange pins sit on the surface at scattered places and the rim glows faintly.",
+ "behaviour": "The globe turns steadily on its axis; dragging the sphere spins it and it eases to a stop on release. The cursor becomes a grab hand over it.",
+ "parts": [
+  "globe",
+  "dot continents",
+  "orange markers",
+  "headline"
+ ],
+ "demo_content": "The headline above the globe reads \"Global edge\".",
+ "states": [
+  "dragging",
+  "hover"
+ ],
+ "kind": "3d-scene",
+ "look": [
+  "dark",
+  "monochrome",
+  "3d",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "rotating globe with location pins",
+  "webgl world map sphere",
+  "dotted earth that spins",
+  "global network 3d globe",
+  "drag to rotate the planet",
+  "world map with city markers",
+  "interactive globe for saas hero",
+  "dark globe made of dots"
+ ],
+ "resembles": [
+  "GitHub globe"
+ ],
+ "use_when": "A product wants to show worldwide reach behind a short headline.",
+ "avoid_when": "A sized parent and WebGL are needed; without a graphics context it renders blank.",
+ "suits": [
+  "saas",
+  "ai-chat",
+  "marketing"
+ ],
+ "slot_hints": [
+  "hero",
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "children",
+   "image",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "A single config object sets colours, glow, the marker list, elevation and density; size and placement come from the parent and a class.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL globe redrawn every animation frame in a requestAnimationFrame loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "Drag to spin is pointer-only with no keyboard path, and the canvas has no text alternative describing the map."
+ },
+ "props": [
+  {
+   "name": "config",
+   "type": "COBEOptions",
+   "default": "GLOBE_CONFIG",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "The dotted globe and orange pins read well and the drag feels right; the headline crowds the sphere.",
+ "unsure": [],
+ "title": "Globe",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f7d4fa20249b9568",
+  "film_hash": "6642dc7a9633cfd7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

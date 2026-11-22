@@ -1,0 +1,71 @@
+{
+  "name": "magic-ui-bento-grid",
+  "frames": {
+    "code": "6029",
+    "best": 1,
+    "best_why": "All five tiles are fully in frame with their previews and most Learn more links visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Five dark feature tiles preview search, files, calendar and more.",
+  "summary": "A bento-style feature grid where each dark tile pairs a title with a small live-looking preview of that feature; hovering lifts the text and reveals a link.",
+  "title_fix": null,
+  "appearance": "A three-column mosaic of dark rounded cards on black, each with an icon, a bold title, a short caption and a background illustration: search results, a mini calendar, a scrolling file list, language chips and a notification stack.",
+  "behaviour": "Hovering a card lifts its title block, shrinks its icon and slides a \"Learn more\" link into view from the bottom. Background previews such as the file list drift sideways in a loop.",
+  "parts": ["bento grid", "feature card", "icon", "title", "caption", "background preview", "learn more link"],
+  "demo_content": "Feature tiles named Full text search, Calendar, Save your files, Multilingual and Notifications.",
+  "states": ["hover"],
+  "kind": "feature-section",
+  "look": ["dark", "dense", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "bento grid of product features",
+    "feature tiles with mini previews",
+    "marketing section with app screenshots",
+    "cards that reveal a link on hover",
+    "product highlights grid layout",
+    "dashboard style feature showcase",
+    "dark tiles arranged in a mosaic",
+    "feature cards with background animation"
+  ],
+  "resembles": ["Apple product bento"],
+  "use_when": "A product page needs to show several features at once with a glimpse of each in action.",
+  "avoid_when": "Small screens: the demo relies on fixed column spans and stacks tall when narrow.",
+  "suits": ["saas", "marketing", "devtool"],
+  "slot_hints": ["feature-card"],
+  "traits": {
+    "trigger": ["hover", "always"],
+    "motion": "subtle",
+    "affects": ["layout", "children", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Each card takes an icon, name, description, link, CTA label and a background node; grid spans and row heights come from classes.",
+  "technique": ["css-transition", "css-keyframes"],
+  "weight": "moderate",
+  "weight_why": "Several looping background marquees of duplicated file cards plus hover transitions.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Desktop Learn more links stay invisible until hover, so keyboard users can focus an unseen link."
+  },
+  "props": [
+    {"name": "name", "type": "string", "default": null, "required": true},
+    {"name": "description", "type": "string", "default": null, "required": true},
+    {"name": "background", "type": "ReactNode", "default": null, "required": true},
+    {"name": "Icon", "type": "React.ElementType", "default": null, "required": true},
+    {"name": "href", "type": "string", "default": null, "required": true},
+    {"name": "cta", "type": "string", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": true}
+  ],
+  "issues": ["On desktop the Learn more link is invisible but still keyboard-focusable."],
+  "polish": 4,
+  "polish_why": "Rich, well-composed bento layout; the stacked previews and tiny paragraphs make it busy.",
+  "unsure": []
+}

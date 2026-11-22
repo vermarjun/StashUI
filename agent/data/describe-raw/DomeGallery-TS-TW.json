@@ -1,0 +1,79 @@
+{
+  "name": "DomeGallery-TS-TW",
+  "frames": {
+    "code": "5124",
+    "best": 1,
+    "best_why": "The sphere is centred and largest, with the tile grid, edge fade and curvature all clearly readable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A hollow sphere of small photos you can spin around.",
+  "summary": "Dozens of rounded photo tiles wrap around a virtual sphere that fills the view. Dragging turns the ball of images with momentum, and clicking one tile enlarges it toward the middle.",
+  "title_fix": null,
+  "appearance": "Many small rounded-square photos, all greyscale, sit in a curved grid over a black stage, forming the front of a large sphere. The outer edges fade into darkness while the centre stays sharp and dense.",
+  "behaviour": "Dragging spins the sphere sideways, with only a small vertical tilt allowed, and momentum carries it after release. Clicking a tile expands that photo toward the centre over a dimmed backdrop.",
+  "parts": ["photo tiles", "dome surface", "edge fade", "enlarged image viewer"],
+  "demo_content": "Twelve Unsplash portraits and lifestyle photos, repeated across the sphere and shown in grayscale.",
+  "states": ["hover", "focus", "open"],
+  "kind": "3d-scene",
+  "look": ["monochrome", "dark", "3d", "rounded", "dense"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "sphere made of floating photos",
+    "3d image globe you can rotate",
+    "immersive photo wall in the round",
+    "drag to spin a ball of pictures",
+    "grayscale photo globe for a landing page",
+    "curved grid of image tiles",
+    "interactive photo planet gallery",
+    "click a tile to enlarge it"
+  ],
+  "resembles": [],
+  "use_when": "A portfolio or campaign wants an immersive, browsable wall of images instead of a flat grid.",
+  "avoid_when": "It needs a sized parent and many image downloads, and the drag is pointer-only.",
+  "suits": ["portfolio", "marketing"],
+  "slot_hints": ["media", "section-background"],
+  "traits": {
+    "trigger": ["drag", "click"],
+    "motion": "pronounced",
+    "affects": ["layout", "children"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "data-array",
+  "customise": "Images, fit basis, radius bounds, segment count, grayscale, blur colour, drag feel and the opened image size and radius are props.",
+  "technique": ["js-animation", "css-transition"],
+  "weight": "heavy",
+  "weight_why": "A 3D sphere of about two hundred image tiles that all re-transform together while it spins.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Tiles are labelled buttons and Escape closes the viewer, but Enter or Space never opens a tile and no focus ring is drawn."
+  },
+  "props": [
+    {"name": "images", "type": "ImageItem[]", "default": "DEFAULT_IMAGES", "required": false},
+    {"name": "fit", "type": "number", "default": "0.5", "required": false},
+    {"name": "fitBasis", "type": "'auto' | 'min' | 'max' | 'width' | 'height'", "default": "auto", "required": false},
+    {"name": "minRadius", "type": "number", "default": "600", "required": false},
+    {"name": "maxRadius", "type": "number", "default": "Infinity", "required": false},
+    {"name": "padFactor", "type": "number", "default": "0.25", "required": false},
+    {"name": "overlayBlurColor", "type": "string", "default": "#120F17", "required": false},
+    {"name": "maxVerticalRotationDeg", "type": "number", "default": "5", "required": false},
+    {"name": "dragSensitivity", "type": "number", "default": "20", "required": false},
+    {"name": "segments", "type": "number", "default": "35", "required": false},
+    {"name": "dragDampening", "type": "number", "default": "2", "required": false},
+    {"name": "grayscale", "type": "boolean", "default": "true", "required": false}
+  ],
+  "issues": [
+    "All photos are forced to greyscale by default, which hides the colour of the imagery.",
+    "Only a fixed number of tile slots exist, so a larger image set is partly dropped with a console warning."
+  ],
+  "polish": 4,
+  "polish_why": "Immersive and coherent with a smooth edge fade, though the grey wash flattens every photo.",
+  "unsure": ["responsive"]
+}

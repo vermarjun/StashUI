@@ -1,0 +1,144 @@
+{
+ "name": "drape-background",
+ "frames": {
+  "code": "4309",
+  "best": 6,
+  "best_why": "The curtain is fully lit with clear vertical pleats and long soft folds at the base, headline still readable.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.2
+ },
+ "tagline": "A dark pleated curtain ripples and parts when the cursor pushes it.",
+ "summary": "A full-bleed simulated fabric backdrop in charcoal tones, hanging in soft vertical pleats with white copy centred over it. It sways in a slow breeze and can be pushed, grabbed and pulled aside.",
+ "title_fix": null,
+ "appearance": "The frame is filled by dark cloth in even vertical pleats, its crests catching faint grey light while valleys fall to black. Centred over it are a white headline, a tiny spaced-out eyebrow and one line of grey copy.",
+ "behaviour": "The curtain hangs and sways under a slow breeze, its lower folds drifting in long curves and settling again. Moving the pointer presses the fabric and drags it along; pressing grabs the nearest fold so it can be pulled aside.",
+ "parts": [
+  "cloth",
+  "pleats",
+  "headline",
+  "caption"
+ ],
+ "demo_content": "\"Behind the curtain\" headline, \"Autumn / Winter 2026\" eyebrow and a one-line caption.",
+ "states": [
+  "hover",
+  "dragging"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "textured",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "animated fabric background",
+  "waving cloth curtain",
+  "pleated curtain effect",
+  "fabric that moves with the mouse",
+  "dark theatre curtain backdrop",
+  "interactive cloth simulation",
+  "website background that ripples",
+  "soft black drape for a hero"
+ ],
+ "resembles": [],
+ "use_when": "An atmospheric full-bleed backdrop for fashion, launch or editorial pages where copy sits over texture.",
+ "avoid_when": "It is built for dark themes, and the full-screen fabric simulation keeps the CPU busy while it moves.",
+ "suits": [
+  "marketing",
+  "ecommerce",
+  "portfolio"
+ ],
+ "slot_hints": [
+  "page-background",
+  "hero",
+  "section-background"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "pointer-move",
+   "drag"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Pass any content as children to layer over the cloth, or null for a bare backdrop. Wind strength, pleat depth and pointer interaction are props; the cloth colours follow the page theme.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A CPU cloth simulation relaxes thousands of links every frame before each WebGL draw.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "The canvas is hidden from assistive tech; reduced motion removes the breeze and the push and grab handlers."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "wind",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "pleat",
+   "type": "number",
+   "default": "34",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The small caption under the headline is very dim against the dark cloth."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing cloth motion and light on the folds; the small copy is too faint to read.",
+ "unsure": [],
+ "title": "Drape Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bc49ff6ca041489b",
+  "film_hash": "c1848cda0c29d6af",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

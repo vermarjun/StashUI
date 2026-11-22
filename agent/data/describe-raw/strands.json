@@ -1,0 +1,78 @@
+{
+  "name": "strands",
+  "frames": {
+    "code": "4483",
+    "best": 4,
+    "best_why": "The light ribbon swells into a strong blue-white bulge inside the glass orb.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A frosted glass orb holding a glowing red-to-blue ribbon of light that swells.",
+  "summary": "A dark glass sphere with a bright spectral band twisting inside it. It swells and leans as a voice assistant listens or as the pointer moves near it.",
+  "title_fix": null,
+  "appearance": "A round dark translucent orb edged with a soft glassy rim, on a black field. A band of light crosses its middle, warm red and orange above a white-hot core and cool blue below; small grey captions sit at the bottom.",
+  "behaviour": "The band ripples and bulges continuously, guided by a simulated speech level, while its glow and lean respond to a nearby pointer or a click. It settles to a calm hum when listening stops.",
+  "parts": ["glass orb", "rim light", "light ribbon", "warm highlight", "caption"],
+  "demo_content": "Captions 'Listening…' and 'Ask about your calendar, notes or inbox'.",
+  "states": ["hover", "active"],
+  "kind": "3d-scene",
+  "look": ["dark", "glass", "glow", "gradient", "futuristic"],
+  "tone": "decorative",
+  "search_phrases": [
+    "voice assistant orb that pulses",
+    "glass sphere with light inside",
+    "siri style listening animation",
+    "glowing sphere for ai voice ui",
+    "webgl orb with flowing ribbons",
+    "animated glass bubble widget",
+    "ai listening indicator",
+    "spectral light inside a bubble"
+  ],
+  "resembles": ["Apple Siri"],
+  "use_when": "A voice or AI assistant needs a focal, ambient indicator that reacts while it listens.",
+  "avoid_when": "It is a full-size WebGL scene with its own loop, so it is heavy for many instances and needs a sized parent.",
+  "suits": ["ai-chat", "saas", "mobile-app"],
+  "slot_hints": ["hero", "loading", "decoration"],
+  "traits": {
+    "trigger": ["always", "pointer-move", "click"],
+    "motion": "continuous",
+    "affects": ["image", "background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Colours, strand count, speed, amplitude, waviness, thickness, glow, taper, spread, refraction, dispersion, glass size, energy, listening and light mode are props.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A fragment-shader scene renders every frame at up to 2x device pixel ratio.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": true,
+    "note": "The canvas is hidden from assistive tech and carries no status text, so the listening state is only visual."
+  },
+  "props": [
+    {"name": "colors", "type": "string[]", "default": "DEFAULT_COLORS", "required": false},
+    {"name": "count", "type": "number", "default": "3", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "amplitude", "type": "number", "default": "1", "required": false},
+    {"name": "thickness", "type": "number", "default": "1", "required": false},
+    {"name": "glow", "type": "number", "default": "1", "required": false},
+    {"name": "glass", "type": "boolean", "default": "true", "required": false},
+    {"name": "listening", "type": "boolean", "default": "false", "required": false},
+    {"name": "level", "type": "number", "default": null, "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "lightMode", "type": "boolean", "default": "false", "required": false},
+    {"name": "opacity", "type": "number", "default": "1", "required": false}
+  ],
+  "issues": [
+    "The demo captions sit outside the component, so the orb arrives with no label or hint."
+  ],
+  "polish": 4,
+  "polish_why": "The glass rim and refractive ribbon look rich; the motion is slow and believable.",
+  "unsure": ["kind"]
+}

@@ -1,0 +1,140 @@
+{
+ "name": "neon-gradient-card",
+ "frames": {
+  "code": "3436",
+  "best": 6,
+  "best_why": "Full card with the gradient border at its widest colour spread, pink at the top shading into a bright cyan halo.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.0
+ },
+ "tagline": "Card border drifts through pink and cyan with a soft coloured halo.",
+ "summary": "A dark rounded card whose thin border runs a pink-to-teal gradient that slides and pulses endlessly, throwing a blurred glow onto the backdrop. The content sits untouched inside.",
+ "title_fix": null,
+ "appearance": "A near-black rounded rectangle centred on a very dark stage. Its thin border carries a magenta-to-cyan gradient and casts a soft coloured haze onto the surrounding backdrop. Three lines of heavy gradient text fill the inside.",
+ "behaviour": "The gradient slides up and down the border on a slow three-second loop that alternates direction, and the blurred halo outside shifts with it. The card itself never reacts to the pointer or clicks.",
+ "parts": [
+  "card",
+  "gradient border",
+  "outer glow",
+  "gradient heading"
+ ],
+ "demo_content": "The heavy three-line text reads \"Neon Gradient Card\".",
+ "states": [],
+ "kind": "border-effect",
+ "look": [
+  "dark",
+  "neon",
+  "glow",
+  "gradient",
+  "rounded"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "card with glowing animated border",
+  "pink and teal neon outline",
+  "rgb gaming border glow",
+  "gradient border that moves",
+  "neon frame around a content box",
+  "cyberpunk card outline effect",
+  "glowing halo behind a dark panel",
+  "bright neon stroke around card"
+ ],
+ "resembles": [
+  "Cyberpunk 2077 UI"
+ ],
+ "use_when": "A promo or feature card should feel high-energy on an already dark page.",
+ "avoid_when": "Light themes: the glow and gradient border wash out against pale backgrounds.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "pricing-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "border",
+   "shadow",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Border thickness, corner radius and the two neon colours are props; the inner background, padding and animation timing need a source edit.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "Two pseudo-elements driven by one CSS keyframe loop; no canvas or JS animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Decorative and non-interactive; the endless glow ignores prefers-reduced-motion."
+ },
+ "props": [
+  {
+   "name": "neonColors",
+   "type": "NeonColorsProps",
+   "default": "{ firstColor: '#ff00aa', secondColor: '#00FFF1' }",
+   "required": false
+  },
+  {
+   "name": "borderSize",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "borderRadius",
+   "type": "number",
+   "default": "20",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp gradient border and a believable glow; the demo shows only text, hiding the card body.",
+ "unsure": [],
+ "title": "Neon Gradient Card",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "33c37afd8263e817",
+  "film_hash": "2b4a91b3ff00b997",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

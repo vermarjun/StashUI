@@ -1,0 +1,69 @@
+{
+  "name": "components-backgrounds-hexagon",
+  "frames": {
+    "code": "1534",
+    "best": 4,
+    "best_why": "A cluster of hexagons brightens under the cursor, the clearest view of the hover effect.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A faint honeycomb wall that lights up in patches under the cursor.",
+  "summary": "A full-screen grid of flat hexagons in barely-there outline on a near-black surface. Moving the pointer across it brightens the few hexagons beneath it to a slightly lighter grey.",
+  "title_fix": null,
+  "appearance": "The frame is filled edge to edge with a repeating honeycomb of hexagons, drawn in an extremely dark grey on black so the pattern reads only faintly. Where the pointer rests, a small cluster of hexagons lifts to a lighter grey, forming a soft patch. No text or other elements sit on top.",
+  "behaviour": "Each hexagon has a background that fades to a lighter grey when the pointer passes over it and eases back afterwards, so a soft trail of lit cells follows the cursor. The grid recalculates its rows and columns on window resize.",
+  "parts": ["hexagon grid", "lit hexagons", "dark surface"],
+  "demo_content": "",
+  "states": ["hover"],
+  "kind": "background",
+  "look": ["dark", "minimal", "monochrome", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "hexagon grid background",
+    "honeycomb pattern that reacts to mouse",
+    "dark hexagon wallpaper",
+    "cells light up under cursor",
+    "geometric grid hover effect",
+    "subtle honeycomb page backdrop",
+    "hex tiles highlighting on hover",
+    "black background with faint hexagons"
+  ],
+  "resembles": [],
+  "use_when": "A dark dashboard or product page that wants a quiet geometric texture and a small hover reward.",
+  "avoid_when": "The pattern is almost invisible at this contrast, and the hover cue only exists for pointer users, never keyboard.",
+  "suits": ["saas", "devtool"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "subtle",
+    "affects": ["fill", "background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Set the hexagon size, the gap between them and pass through any div or per-hexagon props; the clip-path shape and hover colours are fixed in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A grid of plain hexagon divs with hover background transitions; no canvas or loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The lighter cells only appear on pointer hover, so keyboard users get no cue, and the animation has no reduced-motion bypass."
+  },
+  "props": [
+    {"name": "hexagonSize", "type": "number", "default": "75", "required": false},
+    {"name": "hexagonMargin", "type": "number", "default": "3", "required": false},
+    {"name": "hexagonProps", "type": "React.ComponentProps<'div'>", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": ["The hexagons are so dark they are barely distinguishable from the background."],
+  "polish": 3,
+  "polish_why": "Clean geometry but the contrast is so low the grid almost disappears.",
+  "unsure": ["theme"]
+}

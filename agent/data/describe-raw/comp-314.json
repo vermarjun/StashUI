@@ -1,0 +1,63 @@
+{
+  "name": "comp-314",
+  "frames": {
+    "code": "2494",
+    "best": 3,
+    "best_why": "Frame 3 shows the full dialog with icon, both text lines and both buttons, cursor clear.",
+    "usable": [1, 2, 3, 4],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A button opens a warning panel asking if you really want to delete.",
+  "summary": "An outlined trigger button opens a centred alert with a circled warning icon, a short question, a line of explanation, and Cancel and Confirm actions.",
+  "title_fix": null,
+  "appearance": "Closed, it is a single outlined button. Open, a dark rounded panel floats over a dimmed page: a thin circle icon at the left of a bold Are you sure? heading, two grey text lines, a divider, then Cancel and a white Confirm at the lower right.",
+  "behaviour": "Clicking the trigger fades the panel in over a dimmed background. Cancel, Confirm or an outside click closes it with a short scale and fade.",
+  "parts": ["trigger button", "warning icon", "title", "description", "cancel button", "confirm button"],
+  "demo_content": "Trigger reads Alert dialog with icon; the panel asks Are you sure? about deleting the account.",
+  "states": ["hover", "focus", "open"],
+  "kind": "modal",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "delete account confirmation popup",
+    "are you sure dialog",
+    "warning modal with two buttons",
+    "confirmation dialog with icon",
+    "popup asking to confirm deletion",
+    "destructive action alert box",
+    "dialog with cancel and confirm",
+    "replace browser alert with modal"
+  ],
+  "resembles": [],
+  "use_when": "Before a destructive or irreversible action, to ask for explicit confirmation.",
+  "avoid_when": "The question, explanation and button labels are fixed in the file, so new copy needs a source edit.",
+  "suits": ["saas", "dashboard"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["background", "children"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Title, description, trigger text and button labels are hardcoded; the component accepts no props.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "One trigger and one dialog; nothing runs until it opens.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The dialog primitive traps focus and Esc closes it, and the icon is hidden; the file itself ignores reduced motion."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Balanced dialog with a clear icon; styling is the stock primitive with no flourishes.",
+  "unsure": ["technique", "theme"]
+}

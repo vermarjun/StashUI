@@ -1,0 +1,112 @@
+{
+ "name": "comp-379",
+ "frames": {
+  "code": "8515",
+  "best": 4,
+  "best_why": "Menu is open with icon tiles and two-line descriptions, and the Heading 1 row is highlighted.",
+  "usable": [
+   2,
+   3,
+   4
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.3
+ },
+ "tagline": "A plus button opens a menu of block types, each with an icon and a short hint.",
+ "summary": "A plus button beside a document title opens a menu for adding content. Five rows pair a bordered icon tile with a block type and a one-line description: text, quote, divider and two headings.",
+ "title_fix": null,
+ "appearance": "A rounded dark card shows 'Untitled document' and a grey hint, with a round ghost plus button at the right. The open menu drops below: a small 'Add block' label, then five rows, each starting with a tiny bordered icon square and holding a bold type name over a faint description.",
+ "behaviour": "Clicking the plus opens the menu; hovering a row highlights it and choosing one closes the menu. The document does not change in this demo.",
+ "parts": [
+  "document card",
+  "plus button",
+  "menu label",
+  "icon tile",
+  "block title",
+  "block description",
+  "menu panel"
+ ],
+ "demo_content": "Card 'Untitled document' with 'Add a block to keep writing'; menu has Text, Quote, Divider, Heading 1 and Heading 2.",
+ "states": [
+  "open",
+  "hover",
+  "focus"
+ ],
+ "kind": "dropdown-menu",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "menu to add text quote or heading",
+  "plus button block picker",
+  "insert content blocks from a dropdown",
+  "editor add block menu with icons",
+  "choose a text or heading block",
+  "writing app add content menu",
+  "dropdown with item descriptions",
+  "notion style add block menu"
+ ],
+ "resembles": [
+  "Notion block menu"
+ ],
+ "use_when": "An editor needs a compact menu for inserting new content blocks by type.",
+ "avoid_when": "Rows are packed into a narrow menu, so descriptions wrap and the icons crowd the text.",
+ "suits": [
+  "docs",
+  "saas"
+ ],
+ "slot_hints": [
+  "nav"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The five block options, icons and descriptions are written in the file; wiring them to an editor means adding handlers.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A small menu of five rows with static icons; nothing runs in the background.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The plus has an aria-label and rows use menu semantics; icon tiles are hidden from screen readers while titles carry meaning."
+ },
+ "props": [],
+ "issues": [
+  "The menu is narrow, so block descriptions wrap into cramped two-line rows.",
+  "Block choices are not wired to any editor action in the demo."
+ ],
+ "polish": 3,
+ "polish_why": "Clear icon-plus-label rows; the cramped narrow menu and wrapped hints hold it back.",
+ "unsure": [],
+ "title": "Content Block Picker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4229722620c5bb7d",
+  "film_hash": "62fc5a735bd1404c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,144 @@
+{
+  "name": "Carousel-TS-TW",
+  "frames": {
+    "code": "6087",
+    "best": 1,
+    "best_why": "The first slide sits fully settled with its icon, title, copy and all five dots visible, and no cursor over it.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Swipe a dark feature card sideways to page through five slides.",
+  "summary": "One rounded card at a time shows an icon, a bold title and a short blurb. Dragging it sideways, or tapping the dots, slides the next card in with a slight 3D turn.",
+  "title_fix": null,
+  "appearance": "A dark rounded card sits inside a bordered frame, holding a small round icon badge, a bold white heading and two lines of pale copy. Five small dots run beneath it, the active one larger.",
+  "behaviour": "Dragging the card sideways brings in the next or previous slide, each card turning slightly in 3D as it travels. A spring settles it into place and the dot row marks the current slide.",
+  "parts": [
+    "slide card",
+    "icon badge",
+    "slide title",
+    "description text",
+    "dot indicators"
+  ],
+  "demo_content": "Five slides titled Text Animations, Animations, Components, Backgrounds and Common UI, each with a short blurb.",
+  "states": [
+    "hover",
+    "active",
+    "dragging"
+  ],
+  "kind": "carousel",
+  "look": [
+    "dark",
+    "minimal",
+    "rounded",
+    "flat"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "swipeable cards with dots underneath",
+    "drag to change slide card gallery",
+    "3d card slider for feature list",
+    "deck of cards you can swipe through",
+    "testimonial slider with round indicators",
+    "touch friendly swipeable slide deck",
+    "stacked cards that flip sideways",
+    "one card at a time feature showcase"
+  ],
+  "resembles": [],
+  "use_when": "A small deck of feature or testimonial cards should be browsed by drag and dots rather than a full-width slider.",
+  "avoid_when": "The card is a fixed 300px wide and the default copy is baked in, so real content needs prop overrides.",
+  "suits": [
+    "saas",
+    "marketing",
+    "portfolio"
+  ],
+  "slot_hints": [
+    "feature-card",
+    "media",
+    "testimonial"
+  ],
+  "traits": {
+    "trigger": [
+      "drag",
+      "click"
+    ],
+    "motion": "pronounced",
+    "affects": [
+      "layout",
+      "fill"
+    ],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass the item list, width, autoplay, delay, pause-on-hover, loop and round mode as props; icons and the dark palette live in the source.",
+  "technique": [
+    "motion-library"
+  ],
+  "weight": "light",
+  "weight_why": "A handful of small card nodes and one spring tween per move; idle when nobody drags.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The dots are labelled focusable buttons, but dragging the card has no keyboard equivalent and motion is never reduced."
+  },
+  "props": [
+    {
+      "name": "items",
+      "type": "CarouselItem[]",
+      "default": "DEFAULT_ITEMS",
+      "required": false
+    },
+    {
+      "name": "baseWidth",
+      "type": "number",
+      "default": "300",
+      "required": false
+    },
+    {
+      "name": "autoplay",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "autoplayDelay",
+      "type": "number",
+      "default": "3000",
+      "required": false
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "round",
+      "type": "boolean",
+      "default": "false",
+      "required": false
+    }
+  ],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Tidy spring swipe and clear dots, but the flat dark card styling is fairly ordinary.",
+  "unsure": []
+}

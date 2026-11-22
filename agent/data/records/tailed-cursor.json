@@ -1,0 +1,179 @@
+{
+ "name": "tailed-cursor",
+ "frames": {
+  "code": "1986",
+  "best": 1,
+  "best_why": "Long orange, green and blue ribbons stream across the stage, showing every trail colour.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "Several coloured ribbons stream behind the cursor like ribbons in water.",
+ "summary": "Multiple flat ribbons in orange, green, yellow and blue chase the pointer with a soft spring, bending into curves as they follow. They fade toward their tails over a black surface.",
+ "title_fix": null,
+ "appearance": "On a black surface, several flat ribbon-like bands of orange, green, yellow and blue lie together in a loose bundle. Each band is a smooth curved strip and they overlap, brightest at the leading edge and thinning toward the tail. The pointer sits near the leading tips.",
+ "behaviour": "Each ribbon is a line of points pulled toward the pointer with spring and friction, so it lags and bends into sweeping curves. When the pointer stops the ribbons curl up and settle; when it moves they stream out behind it.",
+ "parts": [
+  "ribbon trails",
+  "coloured strips",
+  "faded tails",
+  "pointer"
+ ],
+ "demo_content": "The instruction Move your cursor here sits faintly behind the ribbons.",
+ "states": [],
+ "kind": "cursor-effect",
+ "look": [
+  "colorful",
+  "dark",
+  "gradient",
+  "organic"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "multicolor ribbons following the mouse",
+  "webgl cursor trail effect",
+  "colorful streaks behind pointer",
+  "flowing ribbon cursor",
+  "mouse trail with several colors",
+  "smooth band that chases the cursor",
+  "webgl ribbon animation",
+  "interactive color trail on dark background"
+ ],
+ "resembles": [],
+ "use_when": "A creative portfolio or event landing hero where a bold pointer effect should carry the page's character.",
+ "avoid_when": "Needs WebGL and a container with real height, hides the real cursor, and gives nothing for keyboard users.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "page-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "cursor"
+  ],
+  "theme": "dark",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Set the ribbon colours, spring, friction, thickness, point count, fade and an optional shader wave through props; the GLSL shading is in the source.",
+ "technique": [
+  "webgl-shader",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL render loop with several polylines rebuilding geometry every frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "A purely pointer-driven WebGL effect with no reduced-motion check and no cue to restore the hidden system cursor."
+ },
+ "props": [
+  {
+   "name": "colors",
+   "type": "string[]",
+   "default": "[\"#ff9346\", \"#7cff67\", \"#ffee51\", \"#00d8ff\"]",
+   "required": false
+  },
+  {
+   "name": "baseSpring",
+   "type": "number",
+   "default": "0.03",
+   "required": false
+  },
+  {
+   "name": "baseFriction",
+   "type": "number",
+   "default": "0.9",
+   "required": false
+  },
+  {
+   "name": "baseThickness",
+   "type": "number",
+   "default": "30",
+   "required": false
+  },
+  {
+   "name": "offsetFactor",
+   "type": "number",
+   "default": "0.05",
+   "required": false
+  },
+  {
+   "name": "maxAge",
+   "type": "number",
+   "default": "500",
+   "required": false
+  },
+  {
+   "name": "pointCount",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "speedMultiplier",
+   "type": "number",
+   "default": "0.6",
+   "required": false
+  },
+  {
+   "name": "enableFade",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "enableShaderEffect",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "effectAmplitude",
+   "type": "number",
+   "default": "2",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "[number, number, number, number]",
+   "default": "[0, 0, 0, 0]",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Vivid multicolour ribbons with nice physics; the flat strips can look a little blown out.",
+ "unsure": [
+  "theme"
+ ],
+ "title": "Tailed Cursor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "84daae9e8eb24e31",
+  "film_hash": "a267617979453e2c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "music-toggle-button",
+  "frames": {
+    "code": "6627",
+    "best": 4,
+    "best_why": "The five bars are at staggered full heights, clearly showing the playing equaliser state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tiny waveform bars bounce inside a round play button.",
+  "summary": "A compact play and pause button with five thin waveform bars that spring to random heights while playing and settle flat when paused. The pill swells on hover and press.",
+  "title_fix": null,
+  "appearance": "A black circular button holding five thin vertical white bars, sitting inside a dark rounded card beside an album thumbnail, track title, artist name and a thin progress line. The bars read like a tiny equaliser.",
+  "behaviour": "Clicking toggles playback: the bars spring to staggered heights on a fast loop while the button pads outward, then collapse to even stubs when paused. Hovering and pressing swell the pill.",
+  "parts": ["circular button", "waveform bars", "album thumbnail", "track title", "artist name", "progress line"],
+  "demo_content": "Track Night Drive by Kaia Moreno, album Lowlight, with the prompt Click to play.",
+  "states": ["hover", "active"],
+  "kind": "button",
+  "look": ["dark", "rounded", "minimal", "monochrome", "pill"],
+  "tone": "minimal",
+  "search_phrases": [
+    "play pause button with waveform",
+    "music toggle with equalizer bars",
+    "tiny audio bars button",
+    "sound on off toggle",
+    "animated waveform play button",
+    "music control for a card",
+    "click to play music button",
+    "round audio toggle"
+  ],
+  "resembles": [],
+  "use_when": "A music card or header needs a small play or pause control that signals sound with moving bars.",
+  "avoid_when": "The bars are tiny and the button has no visible text, so its purpose depends on surrounding track details.",
+  "suits": ["portfolio", "saas", "mobile-app"],
+  "slot_hints": ["media", "feature-card", "nav"],
+  "traits": {
+    "trigger": ["click", "hover"],
+    "motion": "pronounced",
+    "affects": ["layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Only the audio source, starting playing state and class name are props. Bar count, animation timing and the wrapper styling are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "A tiny five-bar animation on a single button; idle when paused.",
+  "responsive": "unknown",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "It is a div with role button and aria-pressed but no tabIndex or key handler, so it cannot be focused or activated from the keyboard."
+  },
+  "props": [
+    {"name": "src", "type": "string", "default": null, "required": false},
+    {"name": "defaultPlaying", "type": "boolean", "default": "false", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The control is a plain div, so it cannot be tabbed to or activated with Enter or Space."],
+  "polish": 4,
+  "polish_why": "Clean card and a playful equaliser, though the tiny bars carry all the character.",
+  "unsure": ["kind"]
+}

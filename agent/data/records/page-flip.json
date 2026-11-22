@@ -1,0 +1,140 @@
+{
+ "name": "page-flip",
+ "frames": {
+  "code": "3852",
+  "best": 4,
+  "best_why": "An open spread with both pages' text readable, page numbers and nav still visible.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.0
+ },
+ "tagline": "A book whose pages you drag by the corner to turn.",
+ "summary": "A two-page book styled like a printed menu. Dragging a corner folds the paper over the spine with a live shadow, and releasing springs it flat onto the next spread, with arrows and a page counter below.",
+ "title_fix": null,
+ "appearance": "An open book showing two dark grey pages with a faint gutter at the spine and small page numbers, sitting on black. Closed, it becomes a deep green cover with a thin circular emblem and a prompt to turn the corner.",
+ "behaviour": "Dragging a page corner peels the sheet across the spine, bending a folded triangle with a soft shadow. Releasing past the spine completes the turn and springs flat, while a short tap or an arrow key also advances.",
+ "parts": [
+  "book cover",
+  "paper spread",
+  "page corner",
+  "fold shadow",
+  "spine gutter",
+  "page counter",
+  "nav arrows"
+ ],
+ "demo_content": "A restaurant menu book with a green Maison Céleste cover and pages for Welcome, To start, Mains and Desserts.",
+ "states": [
+  "hover",
+  "active",
+  "dragging",
+  "disabled"
+ ],
+ "kind": "other",
+ "look": [
+  "dark",
+  "minimal",
+  "editorial",
+  "flat",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "book with pages you can turn",
+  "drag page corner to flip",
+  "realistic paper fold effect",
+  "online menu book layout",
+  "flipbook page turning animation",
+  "two page spread with page numbers",
+  "draggable book corner",
+  "restaurant menu book ui"
+ ],
+ "resembles": [],
+ "use_when": "A short collection of content should feel like a printed book or menu you leaf through.",
+ "avoid_when": "The two-page book needs width and the fold is drag-only, so it is awkward on touch layouts and small screens.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "feature-card",
+  "hero",
+  "media"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "hover",
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "shadow"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pages array, spread change handler and class name are the only props. Book size, fold timing, shadows and the demo menu content live in the source or in the pages you pass.",
+ "technique": [
+  "motion-library",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A handful of layered paper divs; animation runs only while a page turns.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Arrow keys and labelled buttons turn pages, and reduced motion makes the turn instant; dragging the paper itself is pointer-only."
+ },
+ "props": [
+  {
+   "name": "pages",
+   "type": "ReactNode[]",
+   "default": "DEFAULT_PAGES",
+   "required": false
+  },
+  {
+   "name": "onSpreadChange",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "In dark mode the zinc pages are nearly as dark as the black stage, so the book's edges almost disappear."
+ ],
+ "polish": 4,
+ "polish_why": "Convincing paper fold and a tidy spread; the dark pages blend into the black backdrop.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Page Flip",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d8dc91442d017777",
+  "film_hash": "98dddd15c2d77eba",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

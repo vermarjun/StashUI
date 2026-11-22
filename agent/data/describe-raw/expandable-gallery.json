@@ -1,0 +1,68 @@
+{
+  "name": "expandable-gallery",
+  "frames": {
+    "code": "2968",
+    "best": 5,
+    "best_why": "Frame 5 shows one photo panel stretched noticeably wider than its four neighbours.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo panels sit in a row and widen under the pointer.",
+  "summary": "A row of equally sized image panels fills the width. Hovering one lets it grow to three times its share while the others narrow, with a slow ease.",
+  "title_fix": null,
+  "appearance": "Five tall nature photos sit edge to edge in a single rounded row, each the same width. A small caption sits above, and hovering one stretches it wide while the rest squeeze thinner.",
+  "behaviour": "At rest the panels share the row equally. On hover the pointed panel grows and its neighbours shrink, easing over half a second; moving away restores the even split.",
+  "parts": ["photo panel", "row", "caption"],
+  "demo_content": "Five landscape photos: mountain sunrise, misty valley, forest, green meadow and a wooden bridge.",
+  "states": ["hover"],
+  "kind": "gallery-section",
+  "look": ["rounded", "colorful", "airy", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "hover expandable image row",
+    "photo panels that grow on hover",
+    "horizontal image accordion",
+    "gallery strip with expanding panel",
+    "five photos in a row",
+    "image accordion gallery",
+    "nature photo strip hover",
+    "expanding image cards"
+  ],
+  "resembles": [],
+  "use_when": "A page wants a compact row of images where one can be previewed larger on hover.",
+  "avoid_when": "Hover is the only trigger, so touch and keyboard users cannot expand a panel.",
+  "suits": ["portfolio", "marketing", "blog"],
+  "slot_hints": ["media", "feature-card", "hero"],
+  "traits": {
+    "trigger": ["hover"],
+    "motion": "pronounced",
+    "affects": ["layout", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "images (URLs) and className are the only props; the fixed height, gap and three-times hover growth are in the source.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "Five image panels with a single CSS flex transition; no script.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Panels expand on hover only, so keyboard and touch users get no enlargement, and alt text is just the URL."
+  },
+  "props": [
+    {"name": "images", "type": "string[]", "default": null, "required": true},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "Alt text on each photo is the raw image URL."
+  ],
+  "polish": 3,
+  "polish_why": "Clean photo row and a smooth width change, but it is a thin, standard concept.",
+  "unsure": []
+}

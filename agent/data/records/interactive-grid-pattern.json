@@ -1,0 +1,142 @@
+{
+ "name": "interactive-grid-pattern",
+ "frames": {
+  "code": "4303",
+  "best": 4,
+  "best_why": "Several cells along a diagonal are lit by the passing cursor, showing the hover trail.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "A faint square grid lights up the cell under the pointer.",
+ "summary": "An SVG grid of small square cells that fills the one you hover with a soft grey wash, then fades it out slowly, leaving a short trail as the pointer moves.",
+ "title_fix": null,
+ "appearance": "A dark field of small square cells outlined in faint grey, tiled evenly across the stage. A radial fade darkens the edges so the grid reads most clearly near the centre.",
+ "behaviour": "Squares under the pointer light up almost at once, then fade back over about a second while the cursor moves on, which leaves a brief diagonal trail of lit cells.",
+ "parts": [
+  "grid",
+  "cells",
+  "hover highlight"
+ ],
+ "demo_content": "",
+ "states": [
+  "hover"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "minimal",
+  "flat",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "grid of squares that react to mouse",
+  "hover highlight grid background",
+  "tiled square cells backdrop",
+  "faint graph paper page texture",
+  "interactive cell grid for hero",
+  "mouse tracking square pattern",
+  "subtle grid behind landing page",
+  "blueprint style background grid"
+ ],
+ "resembles": [],
+ "use_when": "A dark hero or section needs a quiet technical texture that answers the cursor.",
+ "avoid_when": "Bright screens: the grid is so low-contrast it nearly vanishes.",
+ "suits": [
+  "saas",
+  "devtool",
+  "ai-chat"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "fill",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "none",
+ "customise": "Cell size and grid count are props, and classes on the cells let you recolour the stroke and hover fill.",
+ "technique": [
+  "svg",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "An SVG of a few hundred rectangles with CSS fill transitions; idle until hover.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": false,
+  "note": "Hover only: cells cannot be highlighted from the keyboard, and the grid carries no text or labels."
+ },
+ "props": [
+  {
+   "name": "width",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "height",
+   "type": "number",
+   "default": "40",
+   "required": false
+  },
+  {
+   "name": "squares",
+   "type": "[number, number]",
+   "default": "[24, 24]",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "squaresClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The grid is so low-contrast it almost disappears on dark screens."
+ ],
+ "polish": 3,
+ "polish_why": "Clean even grid and a subtle hover wash, but the contrast is too faint to read.",
+ "unsure": [],
+ "title": "Interactive Grid Pattern",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "953385a7fae475da",
+  "film_hash": "d1b9e56d343893bb",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "name": "knob-slider",
+ "frames": {
+  "code": "2106",
+  "best": 1,
+  "best_why": "The dial is fully lit with a sharp 42 and its tick ring clear, with no cursor over the face.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.6
+ },
+ "tagline": "Round dial ringed with ticks that spins and blurs its number as you drag.",
+ "summary": "A circular knob edged with fine tick marks. Dragging around the ring turns a small triangle pointer and snaps the value to the nearest tick, while the big number rolls and blurs as it spins, then sharpens when it stops.",
+ "title_fix": null,
+ "appearance": "A large near-black circle on a black stage, ringed by dozens of short radial ticks. Inside sits a slightly lighter disc holding a very large white number, with a small grey triangle on the outer edge marking the current angle.",
+ "behaviour": "Pressing the dial jumps the value to that angle, then dragging sweeps the triangle around and snaps to one of seventy-two positions. While the pointer moves, the number blurs and rolls like a slot machine and clears as it settles.",
+ "parts": [
+  "outer disc",
+  "tick ring",
+  "inner disc",
+  "value number",
+  "angle marker"
+ ],
+ "demo_content": "The value 42 with the caption \"Volume, drag around the dial\".",
+ "states": [
+  "hover",
+  "active",
+  "dragging"
+ ],
+ "kind": "slider",
+ "look": [
+  "dark",
+  "minimal",
+  "monochrome",
+  "flat",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "turn a dial to pick a number",
+  "rotary knob volume control",
+  "circular slider with tick marks",
+  "drag around a circle to set value",
+  "old radio style dial",
+  "number that blurs while scrolling",
+  "spin a knob to choose a level",
+  "round volume knob for a web app"
+ ],
+ "resembles": [],
+ "use_when": "A single value should be set with a tactile rotary feel, such as volume or intensity.",
+ "avoid_when": "It is mouse-only, with no wheel or keyboard input, and takes a large fixed square of space.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "pointer-move"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "text",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Value, change handler, minimum, maximum and diameter are props; the tick count, digit spring and blur rule are fixed in the file.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "light",
+ "weight_why": "One SVG tick ring and spring-animated digits that idle when the dial is not dragged.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "none",
+  "reduced_motion": false,
+  "note": "The dial has no slider role, aria-valuenow, keyboard control or focus ring, so it works only with a mouse."
+ },
+ "props": [
+  {
+   "name": "value",
+   "type": "number",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "onChange",
+   "type": "(value: number) => void",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "min",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "max",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "320",
+   "required": false
+  }
+ ],
+ "issues": [
+  "No keyboard or screen-reader support: it is a div with no slider role or value.",
+  "A single click sets the value, so a stray click changes the setting."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp tick ring and a convincing slot-number blur; mouse-only use and missing semantics cost it.",
+ "unsure": [],
+ "title": "Knob Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "f9ed1b985c0bbd74",
+  "film_hash": "db665ac1808cb3c2",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

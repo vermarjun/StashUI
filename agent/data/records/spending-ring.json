@@ -1,0 +1,144 @@
+{
+ "name": "spending-ring",
+ "frames": {
+  "code": "4146",
+  "best": 6,
+  "best_why": "Groceries sits under the marker with its total, share and a green drop versus last month.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.0
+ },
+ "tagline": "Spin a spending donut and it settles with one category's total under the marker.",
+ "summary": "A monthly spending donut chart you can spin like a dial. Each slice that passes the top marker takes over the centre, showing its name, amount, share and change.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holds a multicoloured donut ring with a small dark marker at the top, a large amount and percentage in the middle, and a two-column legend of coloured dots and rounded totals below.",
+ "behaviour": "Dragging around the ring turns it and dims unselected slices while the centre readout swaps to whatever sits under the marker. A flick coasts on a spring and settles, and clicking a legend row turns straight to it.",
+ "parts": [
+  "title",
+  "total",
+  "donut ring",
+  "marker",
+  "centre readout",
+  "legend row"
+ ],
+ "demo_content": "October spending $2,748.42 split across Housing, Groceries, Shopping, Dining out, Transport and Subscriptions.",
+ "states": [
+  "hover",
+  "selected",
+  "dragging",
+  "focus"
+ ],
+ "kind": "chart",
+ "look": [
+  "dark",
+  "rounded",
+  "colorful",
+  "minimal",
+  "flat"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "spending donut chart you can spin",
+  "interactive pie chart by category",
+  "budget breakdown ring chart",
+  "drag the wheel to read a slice",
+  "finance dashboard donut widget",
+  "personal spending by category",
+  "dial chart with centre total",
+  "rotating donut graph with legend"
+ ],
+ "resembles": [],
+ "use_when": "A finance dashboard wants a compact category breakdown that people can explore by spinning.",
+ "avoid_when": "The ring needs several categories to read; with one or two slices the spin feels pointless and the gaps look odd.",
+ "suits": [
+  "fintech",
+  "dashboard",
+  "saas"
+ ],
+ "slot_hints": [
+  "stat",
+  "data-table",
+  "chart"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click",
+   "keyboard"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "fill",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Title, the category array of amounts, change and colour classes, and the currency are props; ring size, gaps and spring are constants.",
+ "technique": [
+  "js-animation",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One SVG ring and a short spring loop that stops once the dial settles.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "The ring is a labelled slider with arrow keys and a legend of buttons; the delta relies on colour plus an arrow for meaning."
+ },
+ "props": [
+  {
+   "name": "title",
+   "type": "string",
+   "default": "\"October spending\"",
+   "required": false
+  },
+  {
+   "name": "categories",
+   "type": "SpendingCategory[]",
+   "default": "DEFAULT_CATEGORIES",
+   "required": false
+  },
+  {
+   "name": "currency",
+   "type": "string",
+   "default": "\"USD\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Unselected slices drop to 40% opacity, which makes the overall breakdown hard to compare."
+ ],
+ "polish": 4,
+ "polish_why": "The dial spring and centre readout feel good; the legend is compact and legible.",
+ "unsure": [],
+ "title": "Spending Ring",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "bc9755aed00a0ff8",
+  "film_hash": "070607e9c8aea99c",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

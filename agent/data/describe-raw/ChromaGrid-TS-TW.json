@@ -1,0 +1,70 @@
+{
+  "name": "ChromaGrid-TS-TW",
+  "frames": {
+    "code": "6889",
+    "best": 5,
+    "best_why": "Two cards are fully lit in their real colours while the rest stay grey, showing the reveal at its peak.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A wall of grey portraits turns to colour under the cursor.",
+  "summary": "Six people cards sit in a neat grid, all greyscale at rest. Moving the pointer across them lifts the grey in a soft circular window, exposing each photo and its coloured card gradient.",
+  "title_fix": null,
+  "appearance": "Two rows of three rounded cards, each holding a square portrait above a name, an @handle on the right and a job title below. At rest every photo is grey and the gaps between cards read as near-black.",
+  "behaviour": "A circle of colour travels with the pointer, clearing the grey overlay only around the cursor. When the pointer leaves, the whole grid fades back to monochrome.",
+  "parts": ["portrait card", "photo", "name", "handle", "role", "colour spotlight"],
+  "demo_content": "Six stock portraits named Alex Rivera, Jordan Chen, Morgan Blake and others, each with a job title and an @handle.",
+  "states": ["hover"],
+  "kind": "image-effect",
+  "look": ["monochrome", "dark", "rounded", "minimal"],
+  "tone": "minimal",
+  "search_phrases": [
+    "greyscale team cards that colour on hover",
+    "photo grid reveals colour near cursor",
+    "profile cards with spotlight effect",
+    "black and white portraits turn colorful",
+    "team page grid with hover reveal",
+    "cursor spotlight over image cards",
+    "grey photos light up under the mouse",
+    "portfolio people grid colour reveal"
+  ],
+  "resembles": [],
+  "use_when": "A team or people grid should feel alive without video, extra images or a click.",
+  "avoid_when": "It needs a pointer, so touch users only ever see the flat grey version of every card.",
+  "suits": ["portfolio", "saas", "marketing"],
+  "slot_hints": ["feature-card", "media"],
+  "traits": {
+    "trigger": ["pointer-move", "hover"],
+    "motion": "subtle",
+    "affects": ["image", "background"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Cards come from an items array of image, title, subtitle, handle, location, border colour, gradient and link; radius, damping, fade and easing are props.",
+  "technique": ["gsap"],
+  "weight": "moderate",
+  "weight_why": "A full-cover backdrop-filter mask is repainted on every pointer move across six cards.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Each card is a clickable article with no tab stop, role or key handler, so the external links cannot be reached without a mouse."
+  },
+  "props": [
+    {"name": "items", "type": "ChromaItem[]", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": "", "required": false},
+    {"name": "radius", "type": "number", "default": "300", "required": false},
+    {"name": "damping", "type": "number", "default": "0.45", "required": false},
+    {"name": "fadeOut", "type": "number", "default": "0.6", "required": false},
+    {"name": "ease", "type": "string", "default": "power3.out", "required": false}
+  ],
+  "issues": ["Clicking anywhere on a card opens an external site, with no visible link affordance."],
+  "polish": 4,
+  "polish_why": "Sharp portraits and a smooth spotlight reveal, though the resting grey grid is quite dim.",
+  "unsure": ["kind"]
+}

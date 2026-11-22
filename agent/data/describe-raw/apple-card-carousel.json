@@ -1,0 +1,72 @@
+{
+  "name": "apple-card-carousel",
+  "frames": {
+    "code": "2264",
+    "best": 1,
+    "best_why": "Frame 1 shows three tall photo cards side by side with categories and titles, the carousel at rest.",
+    "usable": [1, 3, 4, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Photo cards scroll sideways and grow into a full read when clicked.",
+  "summary": "A sideways scroller of tall image cards, each labelled with a category and a big title. Clicking one expands it into a large centred panel with the description and a small close button over a blurred dark backdrop.",
+  "title_fix": null,
+  "appearance": "Tall portrait photo cards sit in a row on a dark page, softly rounded, with a small white category label and a large white title at the top left over a dark fade. Two round arrow buttons rest at the lower right; an open card becomes a wide light panel centred on a dimmed backdrop.",
+  "behaviour": "Arrows and trackpad drag slide the row horizontally, and the arrows dim when there is nothing further to scroll. Clicking a card expands it into a large detail panel; the close button, Escape or a click outside folds it away.",
+  "parts": ["photo card", "category label", "card title", "scroll arrows", "detail panel", "close button", "description"],
+  "demo_content": "Travel cards Mountain Peaks, Ocean Waves, Forest Path and Desert Dunes under the heading 'Explore the World'.",
+  "states": ["open", "disabled"],
+  "kind": "carousel",
+  "look": ["dark", "rounded", "colorful", "airy"],
+  "tone": "minimal",
+  "search_phrases": [
+    "horizontally scrolling photo cards",
+    "cards that expand into a detail view",
+    "photo carousel with big titles",
+    "travel gallery you can swipe sideways",
+    "click a card to open full description",
+    "app store style card gallery",
+    "image cards with category labels",
+    "horizontal card slider with arrows"
+  ],
+  "resembles": ["Apple App Store Today cards"],
+  "use_when": "Image-led items should be browsed sideways and open into a longer description in place.",
+  "avoid_when": "Cards sit at fixed pixel widths and pull remote photos, so you must supply your own imagery.",
+  "suits": ["marketing", "portfolio", "ecommerce"],
+  "slot_hints": ["media", "feature-card"],
+  "traits": {
+    "trigger": ["click", "scroll"],
+    "motion": "pronounced",
+    "affects": ["layout", "children", "image"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Feed nodes through items with an optional initialScroll; each card takes src, title, category and content, while sizes and overlay styling stay in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Five lazy-loaded images and one layout animation, idle until a card is clicked.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Cards are buttons and Escape closes the overlay, but the close button has no label and focus is not trapped."
+  },
+  "props": [
+    {"name": "items", "type": "React.ReactNode[]", "default": null, "required": true},
+    {"name": "initialScroll", "type": "number", "default": "0", "required": false},
+    {"name": "card", "type": "CardData", "default": null, "required": true},
+    {"name": "index", "type": "number", "default": null, "required": true},
+    {"name": "layout", "type": "boolean", "default": "false", "required": false}
+  ],
+  "issues": [
+    "Frames 1, 4 and 5 catch the row scrolled so the section heading is cut off at the left edge.",
+    "Frames 2 and 5 show the detail overlay mid-fade as an almost blank dark panel."
+  ],
+  "polish": 4,
+  "polish_why": "Strong photos and card proportions; blank transition frames and a clipped heading.",
+  "unsure": ["content_from"]
+}

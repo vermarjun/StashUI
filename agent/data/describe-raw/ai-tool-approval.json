@@ -1,0 +1,67 @@
+{
+  "name": "ai-tool-approval",
+  "frames": {
+    "code": "4841",
+    "best": 4,
+    "best_why": "Decided trace lines sit above the destructive call with its red badge and Hold to allow button.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Approve or deny an agent's tool call, or press and hold for a destructive one.",
+  "summary": "A stack of tool-call cards for an AI agent: each pending call shows the command or fields it wants to run, its reason and Allow or Deny, then folds into a one-line trace as its output streams in.",
+  "title_fix": null,
+  "appearance": "Rounded dark cards on black. A pending call shows a tinted tool icon, a title, a monospace tool name, a code or two-column field box, a reason line and a footer with a checkbox, Deny and a white Allow pill; destructive calls swap the pill for a red Hold to allow button and a red Destructive tag.",
+  "behaviour": "The current call is expanded while earlier ones fold into compact trace lines with a status mark and command. Allowing or denying advances to the next call, holding the red button fills it for about a second before it confirms, and a running call streams output lines that later expand on click.",
+  "parts": ["trace line", "tool icon", "title", "command box", "reason", "checkbox", "Deny button", "Allow button"],
+  "demo_content": "Three sandbox calls: bun test, editing app/checkout/form.tsx, and a destructive rm -rf .next build.",
+  "states": ["hover", "focus", "active", "loading", "success", "error", "checked", "expanded"],
+  "kind": "card",
+  "look": ["dark", "minimal", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "approve or deny an ai tool call",
+    "permission prompt for agent actions",
+    "hold to confirm a delete command",
+    "allow a terminal command the agent wants",
+    "agent action confirmation card",
+    "review a tool call before it runs",
+    "destructive action needs a long press",
+    "stream tool output after approval"
+  ],
+  "resembles": ["Claude Code permission prompt"],
+  "use_when": "An agent can run shell commands or edit files and each action needs explicit consent.",
+  "avoid_when": "Trusted, low-risk automation: asking every call, plus a hold for destructive ones, stalls the flow.",
+  "suits": ["ai-chat", "devtool", "saas"],
+  "slot_hints": ["body-text", "list-item"],
+  "traits": {
+    "trigger": ["click", "hover", "keyboard"],
+    "motion": "subtle",
+    "affects": ["layout", "text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "The calls array and an onRespond callback are props; tool icons, tints and the hold duration are fixed in the source.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "A few cards and trace lines; motion runs only on a decision or a streamed output line.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Every action is keyboard reachable, including press and hold, and controls are labelled; the hold fill ignores reduced motion."
+  },
+  "props": [
+    {"name": "calls", "type": "ToolCall[]", "default": null, "required": false},
+    {"name": "onRespond", "type": "(id: string, approved: boolean, always: boolean) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Tool names, reasons and trace text are small and dim on the dark stack."],
+  "polish": 4,
+  "polish_why": "A thoughtful approval flow with a real hold-to-confirm; small grey text is low contrast.",
+  "unsure": ["kind", "theme"]
+}

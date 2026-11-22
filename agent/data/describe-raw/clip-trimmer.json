@@ -1,0 +1,71 @@
+{
+  "name": "clip-trimmer",
+  "frames": {
+    "code": "7684",
+    "best": 6,
+    "best_why": "The trimmed range, ruler and playhead are all visible while it plays, with the kept length shown below.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drag orange handles along a filmstrip to choose the seconds you keep.",
+  "summary": "A video trimming card with a preview image, a ten-frame filmstrip and a ruler. Two orange handles set the start and end of the kept clip, dimming what gets cut, and a playhead loops over the selection.",
+  "title_fix": null,
+  "appearance": "A dark rounded card holding a wide mountain preview in a rounded frame, with a timestamp pill and a round play button on it. Beneath sits a thin filmstrip crossed by two orange handles, a small ruler labelled in seconds, and a kept-length line.",
+  "behaviour": "Dragging a handle narrows or widens the kept range, snapping to whole seconds and dimming the trimmed footage; dragging between the handles slides the whole clip. The playhead loops inside the selection, and Reset restores the full length.",
+  "parts": ["preview image", "timestamp pill", "play button", "filmstrip", "trim handles", "ruler", "kept length"],
+  "demo_content": "A panoramic photo of snowy mountain peaks above a sea of clouds, 12 seconds long.",
+  "states": ["hover", "focus", "active", "dragging"],
+  "kind": "media-player",
+  "look": ["dark", "minimal", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "video trim timeline",
+    "drag handles to cut a clip",
+    "filmstrip with start and end markers",
+    "choose a section of a video",
+    "timeline ruler with playhead",
+    "trimming range selector",
+    "video editor clip handles",
+    "scrubber with kept range"
+  ],
+  "resembles": [],
+  "use_when": "A clip, recording or media file needs a quick in and out point before upload or export.",
+  "avoid_when": "It trims numbers only, not real footage, so you must swap in your own preview and frame images.",
+  "suits": ["saas", "social"],
+  "slot_hints": ["media", "modal"],
+  "traits": {
+    "trigger": ["drag", "click", "keyboard"],
+    "motion": "subtle",
+    "affects": ["image", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Props set the preview image and alt text, clip duration, starting range, minimum length and a range-change callback; the filmstrip frame count and colours stay fixed.",
+  "technique": ["css-transition", "js-animation"],
+  "weight": "light",
+  "weight_why": "One image and ten thumbnails; a frame loop runs only while playback is on.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Handles are labelled sliders with keyboard steps, but playback and transitions ignore reduced-motion."
+  },
+  "props": [
+    {"name": "src", "type": "string", "default": "PANORAMA", "required": false},
+    {"name": "alt", "type": "string", "default": "Mountain peaks above the clouds", "required": false},
+    {"name": "duration", "type": "number", "default": "12", "required": false},
+    {"name": "defaultRange", "type": "ClipRange", "default": "{ start: 2.4, end: 9 }", "required": false},
+    {"name": "minLength", "type": "number", "default": "1", "required": false},
+    {"name": "onRangeChange", "type": "(range: ClipRange) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The filmstrip and preview use one still panorama, so every frame looks alike."],
+  "polish": 4,
+  "polish_why": "Convincing, tactile trimmer with snapping and a tidy ruler; the preview is a static stand-in.",
+  "unsure": []
+}

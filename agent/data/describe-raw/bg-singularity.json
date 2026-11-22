@@ -1,0 +1,74 @@
+{
+  "name": "bg-singularity",
+  "frames": {
+    "code": "8120",
+    "best": 4,
+    "best_why": "Frame 4 shows the brightest blue and orange rim with the clearest gas plume at the top right.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A black void ringed by a thin blue and orange halo of gas.",
+  "summary": "A full-bleed shader that renders something like a black hole: a dark circular void edged with a glowing rim that runs cold blue on one side and warm orange on the other, with wispy gas trailing into black.",
+  "title_fix": null,
+  "appearance": "Against pure black sits a large dark disc outlined by a thin luminous ring. The lower-left arc is icy blue and the upper-right arc is warm orange, and faint streaked plumes bleed off the ring toward both corners.",
+  "behaviour": "The ring and its gas drift very slowly, with the plume shape creeping around the rim and the rim fading in and out. There is no input beyond a slow continuous loop.",
+  "parts": ["dark void", "glowing ring", "gas plume", "caption"],
+  "demo_content": "The caption 'Singularity'.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "glow", "organic", "3d"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "black hole animation background",
+    "glowing ring in the dark",
+    "space singularity shader",
+    "astronomy themed hero background",
+    "swirling gas around a void",
+    "eclipse like glowing circle",
+    "interstellar style black hole effect",
+    "dark background with a bright rim"
+  ],
+  "resembles": ["Interstellar's Gargantua"],
+  "use_when": "A space or science-fiction page needs an atmospheric glowing singularity behind its copy.",
+  "avoid_when": "It is a full-frame absolute shader whose motion is slow enough that it can read as a still.",
+  "suits": ["marketing", "portfolio", "devtool"],
+  "slot_hints": ["page-background", "hero", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "hue, saturation, brightness, speed, mouseSensitivity, damping and an optional noise setting tune the shader; className adds styles.",
+  "technique": ["webgl-shader"],
+  "weight": "heavy",
+  "weight_why": "A full-screen fragment shader with a multi-step loop, run every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "Decorative shader with no reduced-motion check; the white caption only stays readable over the dark centre."
+  },
+  "props": [
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "hue", "type": "number", "default": "0", "required": false},
+    {"name": "saturation", "type": "number", "default": "1", "required": false},
+    {"name": "brightness", "type": "number", "default": "1", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "mouseSensitivity", "type": "number", "default": "0.5", "required": false},
+    {"name": "damping", "type": "number", "default": "1", "required": false},
+    {"name": "noise", "type": "{ opacity: number; scale: number }", "default": null, "required": false}
+  ],
+  "issues": [
+    "All six frames differ so little that the moving shader is easy to mistake for a static image."
+  ],
+  "polish": 4,
+  "polish_why": "Intricate rim and gas tendrils with real craft; the motion is too slow to register.",
+  "unsure": ["frames.shows_interaction"]
+}

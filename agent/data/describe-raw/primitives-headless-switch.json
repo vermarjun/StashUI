@@ -1,0 +1,77 @@
+{
+  "name": "primitives-headless-switch",
+  "frames": {
+    "code": "4222",
+    "best": 1,
+    "best_why": "One switch is off and three are on, showing both track states plus the themed row with its icons.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Settings rows whose small switches slide and stretch when tapped.",
+  "summary": "A Connections card listing four options, each with a small pill switch; tapping one slides the thumb across and the thumb widens while held, with sun and moon icons on the theme row.",
+  "title_fix": null,
+  "appearance": "A dark rounded card headed Connections with grey helper text and four rows, each with a bold title, a small grey description and a pill switch on the right. Switches are grey when off and white when on.",
+  "behaviour": "Clicking a switch moves its white thumb to the other end with a spring, and the thumb stretches wider while held before settling back. The theme switch swaps a moon on the left for a sun on the right.",
+  "parts": ["settings card", "row title", "row description", "switch track", "switch thumb", "theme icons"],
+  "demo_content": "Rows for Airplane mode, Wi-Fi, Bluetooth and Theme with short captions about wireless radios and networks.",
+  "states": ["checked", "active"],
+  "kind": "switch",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "on off toggle for settings rows",
+    "small pill switch that slides",
+    "toggles with sun and moon icons",
+    "preferences list with switches",
+    "switch that stretches when pressed",
+    "enable or disable a feature",
+    "ios style toggle in a list",
+    "airplane mode style settings toggles"
+  ],
+  "resembles": [],
+  "use_when": "A settings list needs compact on/off toggles with a clear checked state.",
+  "avoid_when": "It is renderless, so track, thumb and icon styling must all come from your own classes.",
+  "suits": ["mobile-app", "saas", "dashboard"],
+  "slot_hints": ["form-field", "list-item"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["fill", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "Children hold the thumb and optional icons; set defaultChecked or a controlled value plus a thumb pressedAnimation, while track and thumb styles come from your classes.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "Four small buttons with a moving thumb; nothing runs when idle.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The switches carry no accessible name tied to their row titles, so screen readers announce a generic switch, and focus styling is absent."
+  },
+  "props": [
+    {"name": "children", "type": "React.ReactNode", "default": null, "required": false},
+    {"name": "as", "type": "React.ElementType", "default": "motion.button", "required": false},
+    {"name": "defaultChecked", "type": "boolean", "default": null, "required": false},
+    {"name": "checked", "type": "boolean", "default": null, "required": false},
+    {"name": "onChange", "type": "(checked: boolean) => void", "default": null, "required": false},
+    {"name": "disabled", "type": "boolean", "default": null, "required": false},
+    {"name": "name", "type": "string", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "pressedAnimation", "type": "TargetAndTransition | VariantLabels | boolean", "default": null, "required": false},
+    {"name": "position", "type": "left | right | thumb", "default": null, "required": true}
+  ],
+  "issues": [
+    "Off switches are a faint grey track on the dark card, so their state is easy to miss.",
+    "The switches are unlabelled, so their row titles are not announced with them."
+  ],
+  "polish": 4,
+  "polish_why": "Tidy settings rows and a tactile stretch; faint off states are the weak point.",
+  "unsure": []
+}

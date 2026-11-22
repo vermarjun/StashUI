@@ -1,0 +1,154 @@
+{
+ "name": "topo-background",
+ "frames": {
+  "code": "4622",
+  "best": 5,
+  "best_why": "The cursor sits on a raised hill, so contour rings bunch tightly around it; other frames read flatter.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.8
+ },
+ "tagline": "Faint contour lines drift and gather into rings under the cursor.",
+ "summary": "A full-bleed map of thin topographic contour lines with small elevation numbers, slowly drifting across a dark stage. Moving the pointer raises a hill of tighter rings, and a click sends ripples outward through the terrain.",
+ "title_fix": null,
+ "appearance": "A near-black stage covered edge to edge with thin pale contour lines that loop into hills and hollows at uneven spacing. Tiny elevation numbers ride along some lines, and a centred white headline with a grey subline sits over the middle of the map.",
+ "behaviour": "The lines drift on their own, slowly. Hovering raises a hill that slides after the pointer while the rings crowd around it, and clicking sends a fading ripple train outward. The top and bottom edges fade into the page.",
+ "parts": [
+  "contour lines",
+  "elevation labels",
+  "headline",
+  "subline"
+ ],
+ "demo_content": "Heading \"Find your footing\" plus a subtitle inviting a cursor move and a click.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "background",
+ "look": [
+  "dark",
+  "monochrome",
+  "minimal",
+  "technical"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "topographic contour lines animation",
+  "interactive map background for website",
+  "terrain lines that follow the mouse",
+  "topo map hero backdrop",
+  "contour lines bend under cursor",
+  "click ripple on page background",
+  "living map texture behind heading",
+  "survey map style page wallpaper"
+ ],
+ "resembles": [],
+ "use_when": "A hero or section needs a quiet, technical backdrop that rewards pointer movement without fighting the copy.",
+ "avoid_when": "It runs a drawing loop and needs a parent with real height; touch screens get no hover hill.",
+ "suits": [
+  "marketing",
+  "saas"
+ ],
+ "slot_hints": [
+  "page-background",
+  "section-background",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "always",
+   "hover",
+   "click"
+  ],
+  "motion": "continuous",
+  "affects": [
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Props set contour spacing, drift speed, pointer interactivity, terrain seed and whether elevation numbers print; pass children to replace the default headline and copy.",
+ "technique": [
+  "canvas-2d",
+  "js-animation"
+ ],
+ "weight": "heavy",
+ "weight_why": "Rebuilds a full contour field on a canvas about every frame; idle frames are halved.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "n-a",
+  "reduced_motion": true,
+  "note": "Pointer hill and click ripple are mouse-only and the canvas is hidden from assistive tech; motion stops under reduced-motion."
+ },
+ "props": [
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "interval",
+   "type": "number",
+   "default": "0.07",
+   "required": false
+  },
+  {
+   "name": "speed",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "interactive",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "seed",
+   "type": "number",
+   "default": "26",
+   "required": false
+  },
+  {
+   "name": "labels",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp contour tracing and a believable cursor hill; labels are very faint at this size.",
+ "unsure": [],
+ "title": "Topo Background",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e4a84c8fec4fa0a9",
+  "film_hash": "e889b495c14e3b22",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

@@ -1,0 +1,111 @@
+{
+  "name": "comp-508",
+  "frames": {
+    "code": "1509",
+    "best": 1,
+    "best_why": "A complete range from 14 November to 9 December with both months banded and no cursor.",
+    "usable": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "render": "partial",
+    "render_note": "Calendar sits tiny in the centre of a large empty stage, so the day numbers are very small.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two stacked month grids for choosing a range across months.",
+  "summary": "One bordered dark panel holding November and December one above the other, each with its own weekday row. A single range runs from a day in the first month to a day in the second, both ends circled in white.",
+  "title_fix": null,
+  "appearance": "A narrow black panel with two month blocks divided by a faint gap: each has a centred month name, a row of two-letter weekdays and five or six rows of day numbers. Days in the range sit in grey cells and the two ends are solid white circles.",
+  "behaviour": "Pressing a day starts the range and moving into the next month previews the span; a second press fixes the end, and the arrows move both months together. The frames move the end from 9 December to 23 and back to 10.",
+  "parts": [
+    "month heading",
+    "nav arrows",
+    "weekday row",
+    "day grid",
+    "range band",
+    "range end circle",
+    "month divider",
+    "caption"
+  ],
+  "demo_content": "November and December 2026, with a range from 14 November to 9 December.",
+  "states": [
+    "selected",
+    "hover",
+    "focus"
+  ],
+  "kind": "calendar",
+  "look": [
+    "dark",
+    "flat",
+    "outlined",
+    "minimal",
+    "rounded"
+  ],
+  "tone": "minimal",
+  "search_phrases": [
+    "two months side by side for a date range",
+    "calendar showing november and december at once",
+    "pick a range across two months",
+    "booking calendar with two month view",
+    "date range that spans a month boundary",
+    "stacked month calendars in one box",
+    "choose start in one month end in the next",
+    "calendar with paged month navigation"
+  ],
+  "resembles": [],
+  "use_when": "Ranges regularly cross a month boundary, so seeing two months saves arrow clicks.",
+  "avoid_when": "The months stack in one narrow column, so the panel grows tall and the type becomes tiny.",
+  "suits": [
+    "saas",
+    "ecommerce",
+    "dashboard"
+  ],
+  "slot_hints": [
+    "form-field"
+  ],
+  "traits": {
+    "trigger": [
+      "click",
+      "hover",
+      "keyboard"
+    ],
+    "motion": "none",
+    "affects": [
+      "background",
+      "border"
+    ],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The opening range of today plus twenty-five days and the caption link sit in the file; month count, paged navigation and outside days come from the shared calendar.",
+  "technique": [
+    "static"
+  ],
+  "weight": "light",
+  "weight_why": "Two month grids of plain date buttons; nothing animates.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Days are buttons in labelled grids and month changes are announced politely, but nothing explains the two-click range rule."
+  },
+  "props": [],
+  "issues": [
+    "The calendar renders very small in a wide empty stage, so day numbers are hard to read.",
+    "The two months stack vertically rather than sitting side by side.",
+    "The caption credits the calendar library instead of describing the range."
+  ],
+  "polish": 3,
+  "polish_why": "Clean range band across two months, but the tiny scale and mostly empty stage weaken it.",
+  "unsure": [
+    "render",
+    "states"
+  ]
+}

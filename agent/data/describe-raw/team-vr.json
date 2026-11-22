@@ -1,0 +1,66 @@
+{
+  "name": "team-vr",
+  "frames": {
+    "code": "4927",
+    "best": 6,
+    "best_why": "All three portraits are present and the middle card shows the pink quote overlay and gradient name.",
+    "usable": [4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Team portraits that turn into a warm quote panel when hovered.",
+  "summary": "A tall dark team section ending in a magenta and orange glow. Three square portraits sit under a bold heading, and hovering one floods it with a hot gradient, a quote mark and a line of white text.",
+  "title_fix": null,
+  "appearance": "Black background with a faint square grid and a strong magenta-to-orange wash along the bottom. A tiny uppercase label and a large white heading sit above three rounded square portraits shown in greyscale, each followed by a white name and a small grey role.",
+  "behaviour": "Cards fade up one at a time when the section scrolls into view. Hovering a portrait pushes a pink-to-orange gradient panel over it with a large quote mark, zooms and colours the photo beneath, and turns the name into a gradient; leaving reverses it.",
+  "parts": ["kicker label", "heading", "portrait card", "quote overlay", "name", "role"],
+  "demo_content": "Label \"Meet the Team\", heading \"The Minds behind Social VR\", and members Michael Scott, David Brent and Lara Croft.",
+  "states": ["hover"],
+  "kind": "team-section",
+  "look": ["dark", "gradient", "glow", "minimal"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "team cards that reveal a quote on hover",
+    "dark team page with pink glow",
+    "meet the team portrait section",
+    "grayscale portraits that zoom in",
+    "quote overlay on team photos",
+    "about us founders row",
+    "hover card with pull quote",
+    "virtual reality company staff page"
+  ],
+  "resembles": [],
+  "use_when": "A startup or product team page wants portraits that flip into a short mission quote under the pointer.",
+  "avoid_when": "Light or cool-palette brands: the pink-orange gradient and glow are fixed, and quotes need a cursor to read.",
+  "suits": ["marketing", "saas"],
+  "slot_hints": ["body-text", "avatar"],
+  "traits": {
+    "trigger": ["hover", "viewport"],
+    "motion": "subtle",
+    "affects": ["image", "background", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The three people, photos, roles and shared quote are a hardcoded array in the file; the pink-orange palette and glow also need source edits.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "Three photos and hover CSS; the only running animation is a one-time entrance stagger.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "no",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Quotes appear on mouse hover only, so keyboard users never read them; no reduced-motion handling is present."
+  },
+  "props": [],
+  "issues": [
+    "The same identical quote is pasted on all three members.",
+    "Roles are 10px grey text low on the dark background, hard to read."
+  ],
+  "polish": 4,
+  "polish_why": "Strong composition and a convincing hover quote panel; tiny roles and repeated quotes let it down.",
+  "unsure": ["slot_hints"]
+}

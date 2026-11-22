@@ -1,0 +1,79 @@
+{
+  "name": "ColorBends-TS-TW",
+  "frames": {
+    "code": "1199",
+    "best": 6,
+    "best_why": "Two soft bands, blue at the top-left and cyan-white low right, fill the dark field together.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Blurred ribbons of blue, cyan and pink glow across black.",
+  "summary": "A dark animated background where soft, out-of-focus bands of blue, cyan, pink and white drift and bend across the black like light through frosted glass.",
+  "title_fix": null,
+  "appearance": "A black field with a few large, very soft colour bands: a white-hot oval edged in pink or blue low on the right, and sometimes a blue oval up on the left. Everything is heavily blurred, so the shapes read as glowing light rather than lines.",
+  "behaviour": "The bands drift, stretch and bend slowly across the frame, their edges shifting from pink to blue as they move. The motion is continuous and eased, and moving the pointer nudges the field.",
+  "parts": ["colour band", "bright core", "tinted edge", "dark field"],
+  "demo_content": "",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "gradient", "glow", "colorful", "organic"],
+  "tone": "decorative",
+  "search_phrases": [
+    "soft glowing color blobs on black",
+    "animated gradient ribbons background",
+    "blurred neon light bands",
+    "colorful abstract backdrop for a hero",
+    "out of focus glow background",
+    "flowing light streaks in the dark",
+    "dreamy gradient background animation",
+    "webgl colored light background"
+  ],
+  "resembles": [],
+  "use_when": "You want a colourful, soft-focus animated background behind a big headline or product shot on a dark page.",
+  "avoid_when": "It is heavy on the GPU and the bright white cores can overpower text placed over them.",
+  "suits": ["marketing", "portfolio"],
+  "slot_hints": ["page-background", "hero", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "dark",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Props set rotation, speed, colours, transparency, auto-rotate, scale, frequency, warp, mouse influence, parallax, noise, iterations, intensity and band width. The rest lives in the shader.",
+  "technique": ["webgl-shader", "three-js"],
+  "weight": "heavy",
+  "weight_why": "A Three.js WebGL scene renders a full-screen shader loop on every frame.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": false,
+    "note": "The animation never stops and ignores reduced-motion, and it needs a sized parent to fill."
+  },
+  "props": [
+    {"name": "colors", "type": "string[]", "default": "[]", "required": false},
+    {"name": "speed", "type": "number", "default": "0.2", "required": false},
+    {"name": "rotation", "type": "number", "default": "90", "required": false},
+    {"name": "intensity", "type": "number", "default": "1.5", "required": false},
+    {"name": "frequency", "type": "number", "default": "1", "required": false},
+    {"name": "warpStrength", "type": "number", "default": "1", "required": false},
+    {"name": "scale", "type": "number", "default": "1", "required": false},
+    {"name": "bandWidth", "type": "number", "default": "6", "required": false},
+    {"name": "noise", "type": "number", "default": "0.15", "required": false},
+    {"name": "transparent", "type": "boolean", "default": "true", "required": false},
+    {"name": "autoRotate", "type": "number", "default": "0", "required": false},
+    {"name": "mouseInfluence", "type": "number", "default": "1", "required": false}
+  ],
+  "issues": [
+    "The bright white cores can wash out text or UI placed over the background.",
+    "It ignores reduced-motion and never stops or pauses."
+  ],
+  "polish": 3,
+  "polish_why": "Soft, pleasing colour drift, but blurred blobs are generic and the white cores are heavy.",
+  "unsure": []
+}

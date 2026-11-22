@@ -1,0 +1,71 @@
+{
+  "name": "amount-pad",
+  "frames": {
+    "code": "1521",
+    "best": 6,
+    "best_why": "Amount $125 entered with the button full green and reading Sent $125.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Tap a keypad to set an amount, then send it in one press.",
+  "summary": "A send-money keypad. Digits spring into a large amount that shrinks to fit, with quick presets, a balance line and a cap that refuses amounts past the limit.",
+  "title_fix": null,
+  "appearance": "A tall dark rounded card. A small orange initials badge and a Send to Maya Chen @maya line sit at the top over a huge amount, a balance line and three preset pills. Below, a three-by-four keypad of digits, a dot and a backspace sits over a full-width Send button.",
+  "behaviour": "Tapping a key springs the digit into the amount while the number shrinks to stay on one line and commas slot in. Send wakes once a value exists, turns green with a tick after sending, then clears; typing past the cap shakes the number and shows a limit message.",
+  "parts": ["recipient badge", "recipient name", "amount", "balance line", "preset pills", "keypad", "backspace key", "send button"],
+  "demo_content": "Sending to Maya Chen @maya, balance $3,204.18, presets $20, $50 and $100.",
+  "states": ["hover", "focus", "active", "disabled", "error", "success"],
+  "kind": "input",
+  "look": ["dark", "rounded", "minimal", "flat", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "keypad to enter a payment amount",
+    "send money to a friend",
+    "number pad for a transfer",
+    "cash app style amount screen",
+    "preset amounts quick buttons",
+    "enter an amount with big digits",
+    "wallet payment number pad",
+    "transfer money keypad"
+  ],
+  "resembles": ["Cash App amount screen"],
+  "use_when": "A payment step wants a big, thumb-friendly keypad instead of a text field, with quick preset amounts.",
+  "avoid_when": "It is built for one-off transfers under a fixed cap; editing a saved amount or entering long figures is cramped.",
+  "suits": ["fintech", "ecommerce", "saas"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "keyboard"],
+    "motion": "pronounced",
+    "affects": ["text", "layout"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Recipient, currency, cap, balance, presets and an onSend callback are props; colours, key order and animation springs are fixed in the source.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "About a dozen buttons and a few spring animations; nothing runs when idle.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Keyboard entry works and the amount is announced; Send is only aria-disabled, so it stays focusable and clickable while empty."
+  },
+  "props": [
+    {"name": "recipient", "type": "{ name: string; handle?: string }", "default": "{ name: \"Maya Chen\", handle: \"@maya\" }", "required": false},
+    {"name": "currency", "type": "string", "default": "$", "required": false},
+    {"name": "max", "type": "number", "default": "2500", "required": false},
+    {"name": "balance", "type": "number", "default": "3204.18", "required": false},
+    {"name": "presets", "type": "number[]", "default": "[20, 50, 100]", "required": false},
+    {"name": "onSend", "type": "(amount: number) => void", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["Send is only aria-disabled, so it looks inert but still takes clicks when empty."],
+  "polish": 5,
+  "polish_why": "Large self-fitting amount, clear keypad rhythm and a satisfying send-to-green state.",
+  "unsure": []
+}

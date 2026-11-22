@@ -1,0 +1,63 @@
+{
+  "name": "blog-grid",
+  "frames": {
+    "code": "5144",
+    "best": 1,
+    "best_why": "Shows the full heading, subtitle, divider and two complete rows of cover-image article cards.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "Three-column journal grid whose cover photos zoom and light up under the cursor.",
+  "summary": "A blog listing with a heading, subtitle and thin divider above a grid of article cards. Each card pairs a wide cover photo with author, date, read time, title and a short excerpt.",
+  "title_fix": null,
+  "appearance": "A near-black page holds a left-aligned heading, a one-line subtitle and a hairline divider. Below, three columns of borderless cards show a 16:9 photo over a small meta row, a two-line title and a grey excerpt.",
+  "behaviour": "Cover images fade in as they enter the viewport, then scale up slightly while a card is hovered, which also tints the card background and brightens its meta row.",
+  "parts": ["heading", "subtitle", "divider", "article card", "cover photo", "meta line", "article title", "excerpt"],
+  "demo_content": "Titles like 'Design Systems That Scale', bylines Ava Mitchell and Liam Carter, and landscape cover photos.",
+  "states": ["hover", "active", "loading"],
+  "kind": "gallery-section",
+  "look": ["dark", "minimal", "editorial", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "three column blog cards with photos",
+    "article grid with author and read time",
+    "journal section for a design blog",
+    "blog posts that zoom on hover",
+    "magazine style article listing",
+    "latest posts grid with cover images",
+    "editorial card layout for writing",
+    "news and insights section"
+  ],
+  "resembles": [],
+  "use_when": "A content-heavy page needs a tidy multi-column index of articles, each previewed by a wide photo.",
+  "avoid_when": "Article data is hardcoded in the file, so wiring a CMS or blog feed means editing the source.",
+  "suits": ["blog", "marketing", "portfolio"],
+  "slot_hints": ["body-text"],
+  "traits": {
+    "trigger": ["hover", "viewport"],
+    "motion": "subtle",
+    "affects": ["image", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Every article is written into the component's own array, so changing copy, photos or links means editing the source; layout classes and colour tokens follow the surrounding theme.",
+  "technique": ["motion-library", "css-transition"],
+  "weight": "light",
+  "weight_why": "Twelve static cards; the only work is a CSS image scale and a one-time in-view check.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "no",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Cards are links, but the hover zoom and tint are mouse-only with no focus styles, and there is no reduced-motion check."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Tidy dark grid with clean type and a pleasant hover, but it is a conventional card listing.",
+  "unsure": ["shows_interaction"]
+}

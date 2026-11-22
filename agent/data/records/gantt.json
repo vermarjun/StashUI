@@ -1,0 +1,181 @@
+{
+ "name": "gantt",
+ "frames": {
+  "code": "9370",
+  "best": 1,
+  "best_why": "Every group, bar and marker is visible across the timeline with no cursor covering a label.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "partly",
+  "best_time": 0.5
+ },
+ "tagline": "A roadmap timeline with grouped tasks, coloured bars and a today line.",
+ "summary": "A project Gantt chart with a grouped task sidebar and a month timeline. Feature bars are coloured by status and can be dragged or resized, with milestone markers and a today line.",
+ "title_fix": null,
+ "appearance": "A wide dark chart split into a left list of grouped task rows and a month grid. Short rounded bars in grey, amber and green sit on the rows, with year and month labels across the top and marker tags above them.",
+ "behaviour": "Dragging a bar moves it horizontally along the timeline and its edge handles resize it; hovering an empty column offers an add button. Clicking a sidebar row scrolls the timeline to that feature, and the today line marks the current date.",
+ "parts": [
+  "sidebar group",
+  "task row",
+  "duration label",
+  "month header",
+  "feature bar",
+  "resize handle",
+  "marker tag",
+  "today line"
+ ],
+ "demo_content": "Groups Research, Design, Engineering, Launch; tasks like Customer interviews and Billing API v2; two markers.",
+ "states": [
+  "hover",
+  "focus",
+  "active",
+  "dragging"
+ ],
+ "kind": "timeline",
+ "look": [
+  "dark",
+  "flat",
+  "dense",
+  "rounded",
+  "minimal"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "project gantt chart timeline",
+  "roadmap with task bars",
+  "draggable timeline bars",
+  "task schedule with months",
+  "resizable project bars",
+  "milestone markers on a roadmap",
+  "today line on a schedule",
+  "grouped roadmap timeline"
+ ],
+ "resembles": [
+  "Linear roadmap"
+ ],
+ "use_when": "A product roadmap or project plan needs draggable bars across months with grouped tasks.",
+ "avoid_when": "You only need a simple list of dates; this ships a large Gantt with drag and extending scroll.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "data-table",
+  "list-item"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "layout",
+   "background",
+   "border"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Give the provider a range and zoom, then pass grouped features and markers; statuses carry their own colours. Row height, column width and sidebar width are provider props.",
+ "technique": [
+  "css-transition",
+  "js-animation"
+ ],
+ "weight": "moderate",
+ "weight_why": "Many positioned bars with drag listeners across a scrollable grid, but no per-frame loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Sidebar rows work from the keyboard, but moving and resizing bars needs a pointer; no reduced-motion handling."
+ },
+ "props": [
+  {
+   "name": "zoom",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "range",
+   "type": "Range",
+   "default": "\"monthly\"",
+   "required": false
+  },
+  {
+   "name": "columnWidth",
+   "type": "number",
+   "default": "150;",
+   "required": false
+  },
+  {
+   "name": "sidebarWidth",
+   "type": "number",
+   "default": "300",
+   "required": false
+  },
+  {
+   "name": "headerHeight",
+   "type": "number",
+   "default": "60",
+   "required": false
+  },
+  {
+   "name": "rowHeight",
+   "type": "number",
+   "default": "36",
+   "required": false
+  },
+  {
+   "name": "onAddItem",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"sticky top-0 z-20 grid w-full shrink-0 bg-backdrop/90 backd",
+   "required": false
+  },
+  {
+   "name": "children",
+   "type": "ReactNode",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Text in the sidebar and bars is very small, which hurts legibility.",
+  "Moving and resizing bars is pointer-only, so keyboard users cannot reschedule."
+ ],
+ "polish": 4,
+ "polish_why": "Dense but orderly roadmap with colour-coded bars; small text and pointer-only dragging.",
+ "unsure": [
+  "traits.needs_sized_parent"
+ ],
+ "title": "Gantt",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "ff06b4de80b119f8",
+  "film_hash": "b3f468b26d165a6b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

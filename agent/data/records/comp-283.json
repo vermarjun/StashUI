@@ -1,0 +1,116 @@
+{
+ "name": "comp-283",
+ "frames": {
+  "code": "8607",
+  "best": 6,
+  "best_why": "The banner is shown largest, with the warning icon, message, Fix it link and close cross all clear.",
+  "usable": [
+   1,
+   2,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.1
+ },
+ "tagline": "A slim warning strip with a Fix it link and a close cross that clears it.",
+ "summary": "A dismissible warning banner. An amber triangle sits beside a short message, a link with an arrow, and an X; clicking the X removes the banner entirely.",
+ "title_fix": null,
+ "appearance": "A wide rounded rectangle with a thin border and a soft drop shadow holds an amber triangle warning icon, one line of pale text, a bold Fix it link with a right arrow, and a small grey close cross at the right edge.",
+ "behaviour": "Hovering the cross brightens it, hovering the link nudges its arrow forward, and clicking the cross removes the whole banner, leaving the stage empty until the demo brings it back.",
+ "parts": [
+  "warning icon",
+  "message",
+  "fix link",
+  "arrow icon",
+  "close button"
+ ],
+ "demo_content": "The line \"Your billing address is missing.\" with a Fix it link.",
+ "states": [
+  "hover",
+  "focus",
+  "active"
+ ],
+ "kind": "toast",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "shadowed"
+ ],
+ "tone": "minimal",
+ "resembles": [],
+ "use_when": "A short warning should sit above content with a direct link to resolve it and a way to dismiss.",
+ "avoid_when": "Message, link label and destination are fixed in the file, and there is only the amber warning tone.",
+ "suits": [
+  "saas"
+ ],
+ "slot_hints": [
+  "toast"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "hardcoded",
+ "customise": "The message, link wording and where it points live in the file; onClose is the only prop, and the amber icon colour is fixed.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One bordered bar with an icon, a link and a button.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The close button has a proper name and both actions focus normally, but the bar has no live-region role."
+ },
+ "props": [
+  {
+   "name": "onClose",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The Fix it link points at an empty hash, so it leads nowhere."
+ ],
+ "polish": 4,
+ "polish_why": "Compact and balanced, with small hover touches on the arrow and cross.",
+ "unsure": [],
+ "search_phrases": [
+  "thin notice bar with a warning triangle",
+  "dismissible alert with a fix it link",
+  "amber warning strip across a panel",
+  "remind someone to finish their details",
+  "closeable message after a form submit",
+  "banner telling users something is missing",
+  "system warning that can be closed",
+  "alert row with an action and an x"
+ ],
+ "title": "Warning Alert Banner",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d061df51f54eb954",
+  "film_hash": "9d563f910aae45f8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

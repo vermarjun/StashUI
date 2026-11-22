@@ -1,0 +1,188 @@
+{
+ "name": "gooey-input",
+ "frames": {
+  "code": "8523",
+  "best": 5,
+  "best_why": "Shows the gooey liquid neck joining the icon circle to the expanded search field.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.2
+ },
+ "tagline": "Search pills that split apart with a liquid neck and open into a field.",
+ "summary": "A compact white search pill with a magnifier and placeholder. Clicking it springs open into a separate round icon button and a long input joined for a moment by a gooey bridge, then collapses again when left empty.",
+ "title_fix": null,
+ "appearance": "A single white pill sits on a black stage with a dark magnifier and the grey text Type to. Opened, it becomes a small white circle holding the magnifier plus a long white rounded field reading Type to search, with a thin liquid neck between them.",
+ "behaviour": "Clicking the pill springs it open: the icon slides into its own circle while the field stretches right, briefly held together by a gooey bridge. Leaving an empty field collapses it and clears the text.",
+ "parts": [
+  "pill trigger",
+  "search icon",
+  "input text",
+  "icon circle",
+  "gooey bridge"
+ ],
+ "demo_content": "Placeholder text Type to search...",
+ "states": [
+  "focus",
+  "expanded",
+  "disabled"
+ ],
+ "kind": "search",
+ "look": [
+  "light",
+  "pill",
+  "minimal",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "search box that expands when clicked",
+  "circle that turns into a text field",
+  "liquid morphing search bar",
+  "magnifier button that opens a box",
+  "morphing label and field on click",
+  "minimal search field for a dark page",
+  "click to open compact search",
+  "search icon that stretches into input"
+ ],
+ "resembles": [],
+ "use_when": "A page has little room for search and wants a compact control that opens only on demand.",
+ "avoid_when": "Fixed pixel widths and a detached offset, so it can overflow narrow containers.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "devtool"
+ ],
+ "slot_hints": [
+  "nav",
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Placeholder, widths, offset, blur, value and open state are props, plus a classNames map per part; the icon and spring are fixed.",
+ "technique": [
+  "motion-library",
+  "svg-filter"
+ ],
+ "weight": "light",
+ "weight_why": "A few nodes and one SVG filter; animation runs only on open and close.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The icon-only trigger has no aria-label, and the motion ignores reduced-motion preferences."
+ },
+ "props": [
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": "\"Type to search...\"",
+   "required": false
+  },
+  {
+   "name": "value",
+   "type": "string",
+   "default": "{searchText}",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "string",
+   "default": "\"\"",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "function",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "disabled",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "collapsedWidth",
+   "type": "number",
+   "default": "115",
+   "required": false
+  },
+  {
+   "name": "expandedWidth",
+   "type": "number",
+   "default": "200",
+   "required": false
+  },
+  {
+   "name": "expandedOffset",
+   "type": "number",
+   "default": "50",
+   "required": false
+  },
+  {
+   "name": "gooeyBlur",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"size-4 shrink-0\"",
+   "required": false
+  },
+  {
+   "name": "classNames",
+   "type": "object",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Collapsed, the placeholder is clipped to Type to in frame 1.",
+  "The icon-only trigger button has no accessible name.",
+  "The fixed widths make the opened field long relative to the small circle."
+ ],
+ "polish": 4,
+ "polish_why": "Liquid split is distinctive and smooth; the collapsed placeholder truncates awkwardly.",
+ "unsure": [],
+ "title": "Gooey Input",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "4e1a126cb6b621e9",
+  "film_hash": "21505ea1d57b3995",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

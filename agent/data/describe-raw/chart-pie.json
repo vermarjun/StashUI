@@ -1,0 +1,63 @@
+{
+  "name": "chart-pie",
+  "frames": {
+    "code": "6505",
+    "best": 3,
+    "best_why": "All three pies are fully drawn with their centre totals and slice labels, and no tooltip covers them.",
+    "usable": [3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Donut and pie charts with centre totals, labels and a month picker.",
+  "summary": "Three dark chart cards: a donut with a total in its hole, an interactive donut whose value changes with a month selector, and a pie with value labels on each slice.",
+  "title_fix": null,
+  "appearance": "Three bordered dark cards hold grey pie charts. The first two are donuts with big centre numbers and a Visitors caption, the third a full pie with number labels around the rim.",
+  "behaviour": "The sectors sweep in when the cards appear. Choosing a month in the second card re-highlights its slice and updates the centre number, while hovering any slice shows a tooltip.",
+  "parts": ["chart card", "donut ring", "centre total", "slice", "value label", "month selector", "tooltip"],
+  "demo_content": "Visitor split by browser Chrome, Safari, Firefox, Edge and Other, with months January to April.",
+  "states": ["hover", "active", "selected"],
+  "kind": "chart",
+  "look": ["dark", "monochrome", "minimal", "flat"],
+  "tone": "technical",
+  "search_phrases": [
+    "donut chart with total in the middle",
+    "pie chart with slice labels",
+    "interactive pie chart month picker",
+    "browser share pie chart",
+    "donut chart with center number",
+    "visitor breakdown chart",
+    "analytics pie chart card",
+    "chart with highlighted active sector"
+  ],
+  "resembles": [],
+  "use_when": "A dashboard needs to show a simple part-to-whole split in a compact card.",
+  "avoid_when": "Charts hardcode browser and month data, so real figures need the source arrays replaced.",
+  "suits": ["dashboard", "saas"],
+  "slot_hints": ["chart"],
+  "traits": {
+    "trigger": ["hover", "click"],
+    "motion": "pronounced",
+    "affects": ["text", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Each variant hardcodes its data, titles and chart config; adapting means replacing arrays and labels in the file.",
+  "technique": ["svg"],
+  "weight": "light",
+  "weight_why": "Three small SVG pie charts with a short draw-in; no continuous loop.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The month picker is keyboard reachable, but slices have no roles or names and tooltips are pointer-only."
+  },
+  "props": [],
+  "issues": [],
+  "polish": 3,
+  "polish_why": "Tidy standard pie cards, but all grey and visually similar.",
+  "unsure": []
+}

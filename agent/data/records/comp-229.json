@@ -1,0 +1,116 @@
+{
+ "name": "comp-229",
+ "frames": {
+  "code": "9415",
+  "best": 3,
+  "best_why": "The panel is open with the search field and a long list of framework names, with no cursor inside the rows.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.5
+ },
+ "tagline": "A dropdown you can type in to find a framework.",
+ "summary": "A labelled picker over sixteen frameworks, with a search field that filters as you type and a tick on the current choice. Picking a row closes the list and writes that name into the trigger.",
+ "title_fix": null,
+ "appearance": "A small label sits above a wide rounded trigger reading Select framework with a chevron. Opened, a dark panel with a search field on top covers the trigger and holds a tight column of framework names.",
+ "behaviour": "Clicking the trigger opens the panel; typing filters the rows on every keystroke, and choosing one closes the panel and updates the trigger. The clip types rea and settles on React.",
+ "parts": [
+  "field label",
+  "trigger button",
+  "chevron",
+  "search input",
+  "option row",
+  "check mark"
+ ],
+ "demo_content": "Select with search; frameworks Next.js, SvelteKit, Nuxt.js, Remix and others; typed rea to reach React",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "empty"
+ ],
+ "kind": "select",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "type to search a dropdown list",
+  "filter options as you type",
+  "search box inside a select",
+  "pick a framework from a list",
+  "searchable picker for a form",
+  "command menu inside a popover",
+  "long option list with searching",
+  "dropdown that filters while typing"
+ ],
+ "resembles": [],
+ "use_when": "When a picker holds too many options to scroll and people should type a few letters to find one.",
+ "avoid_when": "The list is a fixed array of sixteen frameworks in the file, so a different set or remote results need edits.",
+ "suits": [
+  "devtool",
+  "saas"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "The framework list is an array in the file; replace it with your own names and values. The placeholder, the closed trigger text and the trigger width are set in the same file.",
+ "technique": [
+  "css-keyframes",
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Sixteen text rows in a popup with one short open animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The trigger is a labelled combobox and typing filters the rows, with arrow keys and enter working; the open animation ignores reduced-motion settings."
+ },
+ "props": [],
+ "issues": [
+  "The list stops after the ninth framework with no visible hint that more rows scroll below.",
+  "The open panel hides the trigger, so the saved choice is not visible while the list is open."
+ ],
+ "polish": 3,
+ "polish_why": "Clean rows and responsive search; plain styling and a list that hides its own scroll.",
+ "unsure": [],
+ "title": "Searchable Combobox Select",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "401318ca94eeb237",
+  "film_hash": "31e0fb50b76387c0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

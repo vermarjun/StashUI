@@ -1,0 +1,66 @@
+{
+  "name": "comp-479",
+  "frames": {
+    "code": "9551",
+    "best": 1,
+    "best_why": "All five columns fit and Name carries an ascending chevron, showing the sort state.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "partial",
+    "render_note": "Later frames clip the right Balance column; only frame 1 shows every column.",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Wide dark table with click-to-sort headers and drag-to-resize columns.",
+  "summary": "A dark account table with more columns than fit, showing name, email, country flag and city, status and balance. Clicking a header sorts the rows and drags a thin divider beside it to widen or narrow the column.",
+  "title_fix": null,
+  "appearance": "Small grey header labels sit on a slightly lighter band above five rows. Names are bold, locations start with a flag emoji, emails are cut short with an ellipsis, and balances line up at the right. Thin vertical dividers mark the column edges.",
+  "behaviour": "Clicking a header sorts by that column and swaps in an up or down chevron; a second click reverses it. Dragging the divider on a header's right edge widens the column, double-clicking it restores the original width.",
+  "parts": ["header band", "column label", "sort chevron", "resize divider", "row", "country flag", "balance cell", "caption"],
+  "demo_content": "Five employees (Alex Thompson, Sarah Chen, James Wilson, Maria Garcia, Lars Nielsen) with flags, emails and balances.",
+  "states": ["hover", "focus", "dragging"],
+  "kind": "data-table",
+  "look": ["dark", "flat", "minimal", "dense"],
+  "tone": "minimal",
+  "search_phrases": [
+    "table you can sort by clicking headers",
+    "drag column dividers to resize table",
+    "data grid with sort arrows in headers",
+    "employee directory table with flags",
+    "wide table that scrolls sideways",
+    "sortable columns with up down arrows",
+    "table with truncated email addresses",
+    "keyboard sortable data table"
+  ],
+  "resembles": [],
+  "use_when": "A wide record table needs click-to-sort headers and draggable column widths without adopting a full grid product.",
+  "avoid_when": "Ten columns overflow a narrow screen and there is no responsive layout, so the right side clips or needs a scroll box.",
+  "suits": ["dashboard", "saas"],
+  "slot_hints": ["data-table"],
+  "traits": {
+    "trigger": ["click", "drag", "keyboard"],
+    "motion": "none",
+    "affects": ["layout", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Columns, sort defaults and the fetch URL are fixed in the file; adding fields, changing widths or the row limit is a source edit.",
+  "technique": ["static"],
+  "weight": "moderate",
+  "weight_why": "A table library sorts and resizes ten columns over five remote rows, with no animation loop.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Headers are focusable, sort on Enter or Space and set aria-sort, but the drag resize handles carry no label."
+  },
+  "props": [],
+  "issues": [
+    "Frames 2-6 clip the right Balance column; only frame 1 shows every column.",
+    "Every email is truncated to an ellipsis, hiding which address it is."
+  ],
+  "polish": 3,
+  "polish_why": "Sort arrows and resize grips work well, but clipped columns and chopped emails look cramped.",
+  "unsure": ["states", "responsive"]
+}

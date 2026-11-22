@@ -1,0 +1,111 @@
+{
+ "name": "comp-166",
+ "frames": {
+  "code": "2741",
+  "best": 1,
+  "best_why": "Plus is chosen with its lighter row and Popular badge, and no cursor sits over the list.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.7
+ },
+ "tagline": "Four stacked plans; the picked row lifts out of the column.",
+ "summary": "A vertical radio list of four subscription plans with their prices, joined into one bordered column. The selected plan takes a lighter background, and the Plus row carries a Popular badge.",
+ "title_fix": null,
+ "appearance": "Four rows stack flush inside a single thin grey outline on black, each row holding a radio circle, a plan name on the left and a small grey price on the right. Plus shows a white Popular pill beside its name, and its row has a lighter grey fill.",
+ "behaviour": "Clicking a row fills its radio dot and raises the row's background and border. The recording starts with Plus chosen and switches to Hobby, then back to Plus.",
+ "parts": [
+  "radio circle",
+  "plan name",
+  "popular badge",
+  "price"
+ ],
+ "demo_content": "Choose plan heading; Hobby $9/mo, Plus $29/mo, Team $49/mo, Enterprise Custom",
+ "states": [
+  "focus",
+  "selected"
+ ],
+ "kind": "pricing-card",
+ "look": [
+  "dark",
+  "outlined",
+  "minimal",
+  "dense"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "choose a subscription plan from a list",
+  "plan picker with monthly prices",
+  "radio rows for pricing tiers",
+  "select your plan at signup",
+  "popular plan badge in a list",
+  "stacked pricing options with radios",
+  "pick a tier before checkout",
+  "saas plan chooser rows"
+ ],
+ "resembles": [],
+ "use_when": "At signup or upgrade, when one of a few priced tiers must be chosen in a narrow space.",
+ "avoid_when": "Rows show only a name and price, so a plan needing a feature list is a poor fit for this shape.",
+ "suits": [
+  "saas"
+ ],
+ "slot_hints": [
+  "pricing-card",
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "border",
+   "fill"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Plans come from an items array in the file; edit names, prices, values and which row takes the badge there. Row padding, radius and the accent fill are classes in the same file.",
+ "technique": [
+  "static"
+ ],
+ "weight": "light",
+ "weight_why": "Four static rows with native radios; the state swap has no animation.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Real radios with visible labels, and each price is linked to its radio by aria-describedby; arrow keys move the choice and nothing animates."
+ },
+ "props": [],
+ "issues": [
+  "The Popular badge crowds the $29/mo price on the Plus row, with almost no gap.",
+  "Prices are tiny grey text and read weakly against black."
+ ],
+ "polish": 3,
+ "polish_why": "Clean joined rows and clear selection, spoiled by the badge colliding with the price.",
+ "unsure": [],
+ "title": "Pricing Plan Radio Picker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "9464fad8a8367219",
+  "film_hash": "fb543a2fd31cabf7",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

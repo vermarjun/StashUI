@@ -1,0 +1,72 @@
+{
+  "name": "datefield-rac",
+  "frames": {
+    "code": "5936",
+    "best": 1,
+    "best_why": "All three fields are visible with a full date and time filled in and no focus box over a digit.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Boxed fields where each part of a date is its own editable piece.",
+  "summary": "A scheduling form with Date, Start time and Follow-up fields. Each bordered box holds small editable pieces for month, day, year, hour, minute and AM/PM, with grey placeholders when empty.",
+  "title_fix": null,
+  "appearance": "A dark rounded card with a bold 'Schedule a meeting' title and a muted hint, then three labelled bordered boxes. The boxes hold padded number pieces split by slanted marks, ending in a year or an AM/PM tag, and the optional field shows a grey placeholder.",
+  "behaviour": "Clicking a number wraps it in a small grey box; typing replaces it and arrow keys step it up or down. Tab moves between pieces, the box border brightens while any part is focused, and an empty optional field keeps its placeholder.",
+  "parts": ["card", "title", "hint", "field label", "date box", "number piece", "separator"],
+  "demo_content": "Date 11/24/2026, start time 2:30 PM, and an empty follow-up date showing a mm/dd/yyyy placeholder.",
+  "states": ["focus", "disabled", "empty"],
+  "kind": "calendar",
+  "look": ["dark", "rounded", "minimal", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "type a date into separate boxes",
+    "scheduling form with time input",
+    "editable month day year pieces",
+    "arrow keys change the date parts",
+    "meeting planner with three inputs",
+    "time picker with am pm",
+    "empty optional date placeholder",
+    "form with segmented number entry"
+  ],
+  "resembles": [],
+  "use_when": "Users need to type or step through exact date and time parts without opening a calendar grid.",
+  "avoid_when": "There is no pop-up calendar, so someone who does not know the date must type it all by hand.",
+  "suits": ["saas", "dashboard", "fintech"],
+  "slot_hints": ["form-field", "modal"],
+  "traits": {
+    "trigger": ["click", "focus", "keyboard"],
+    "motion": "none",
+    "affects": ["border", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "children",
+  "customise": "You put the label and input inside a field wrapper; the field takes a default date or time, and piece colours, focus fill and box border are class overrides.",
+  "technique": ["static"],
+  "weight": "light",
+  "weight_why": "A handful of short text pieces; no animation or data fetching.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "Pieces are labelled, typed and keyboard-steppable through the date library, so entry works fully without any calendar popup."
+  },
+  "props": [
+    {"name": "defaultValue", "type": "DateValue | TimeValue", "default": null, "required": false},
+    {"name": "value", "type": "DateValue | TimeValue", "default": null, "required": false},
+    {"name": "onChange", "type": "(value) => void", "default": null, "required": false},
+    {"name": "isDisabled", "type": "boolean", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The slanted separators are tiny and tight, so the date reads as one cramped string",
+    "The focus highlight is a faint grey box that is easy to confuse with the field border"
+  ],
+  "polish": 3,
+  "polish_why": "Tidy compact scheduling form; the piece spacing is tight and the separators are faint.",
+  "unsure": []
+}

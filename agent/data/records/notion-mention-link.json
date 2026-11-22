@@ -1,0 +1,193 @@
+{
+ "name": "notion-mention-link",
+ "frames": {
+  "code": "1096",
+  "best": 6,
+  "best_why": "Frame 6 shows the loaded preview card with the mountain image, title, description and domain.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 5.3
+ },
+ "tagline": "Hover a page link to pop open a card with image, blurb and domain.",
+ "summary": "A Notion-style inline mention of a web page, shown with a tiny favicon and the page title. Hovering it brings up a card with the page's image, summary and domain without leaving the document.",
+ "title_fix": null,
+ "appearance": "Body text in a document with an inline chip made of a small square favicon, a grey site name and an underlined bold page title. On hover a rounded card drops below holding a mountain photo, a heading, a short paragraph and the domain.",
+ "behaviour": "Hovering or focusing the link waits a moment, then shows a loading skeleton that settles into the preview card; leaving closes it shortly after. Details can be fetched and cached on mount or on first hover.",
+ "parts": [
+  "document heading",
+  "paragraph",
+  "favicon chip",
+  "site name",
+  "page title link",
+  "preview card",
+  "preview image",
+  "preview text"
+ ],
+ "demo_content": "Trip planning notes mentioning an Alpine Guide article, Five days in the Dolomites, with a mountain photo.",
+ "states": [
+  "hover",
+  "focus",
+  "loading",
+  "error"
+ ],
+ "kind": "popover",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "inline link with page preview",
+  "hover link shows website card",
+  "favicon and title inside text",
+  "link preview popup with image",
+  "wiki style page reference",
+  "hover card for external links",
+  "document link with rich preview",
+  "clickable mention of a web page"
+ ],
+ "resembles": [
+  "Notion page mention",
+  "Slack link preview"
+ ],
+ "use_when": "Long documents cite other pages and readers should glimpse the target without leaving the text.",
+ "avoid_when": "It relies on a server endpoint for page metadata; without one you must pass the metadata yourself.",
+ "suits": [
+  "docs",
+  "blog",
+  "saas"
+ ],
+ "slot_hints": [
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "background",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Pass the url plus optional metadata (title, description, image, site, domain) and the preview width and height; the fetch endpoint and delays are props too.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A link and a hover card; the only work is one cached metadata fetch.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The preview opens on hover or focus, but its slide and fade have no reduced-motion fallback."
+ },
+ "props": [
+  {
+   "name": "url",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "metadata",
+   "type": "NotionMentionLinkMetadata",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "endpoint",
+   "type": "string",
+   "default": "\"/api/notion-mention-link\"",
+   "required": false
+  },
+  {
+   "name": "prefetch",
+   "type": "\"mount\" | \"hover\"",
+   "default": "\"mount\"",
+   "required": false
+  },
+  {
+   "name": "openDelay",
+   "type": "number",
+   "default": "180",
+   "required": false
+  },
+  {
+   "name": "closeDelay",
+   "type": "number",
+   "default": "120",
+   "required": false
+  },
+  {
+   "name": "previewWidth",
+   "type": "number",
+   "default": "310",
+   "required": false
+  },
+  {
+   "name": "previewHeight",
+   "type": "number",
+   "default": "140",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "\"start\" | \"end\"",
+   "default": "\"start\"",
+   "required": false
+  },
+  {
+   "name": "showPreview",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "invalidLabel",
+   "type": "string",
+   "default": "\"Enter a valid website URL.\"",
+   "required": false
+  },
+  {
+   "name": "previewClassName",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Frames 3 and 4 show the preview with an empty grey image area while it loads, which reads as missing content.",
+  "The preview card covers the paragraph under the mention, hiding text while it is open."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp inline mention and a tidy preview card; the empty loading image and overlap are rough spots.",
+ "unsure": [],
+ "title": "Notion Mention Link",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "c01cdde4594026c7",
+  "film_hash": "434b275be32cec4d",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

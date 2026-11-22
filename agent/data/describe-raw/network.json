@@ -1,0 +1,66 @@
+{
+  "name": "network",
+  "frames": {
+    "code": "8989",
+    "best": 2,
+    "best_why": "Frame 2 shows a bright connection line across the rings with names popped up at its ends.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Rings of portraits circle a centre while a coloured line links two people.",
+  "summary": "A circular diagram of two dashed rings packed with small portrait avatars around a larger central one. Every few seconds a glowing coloured line draws between two random people and their names appear as little labels.",
+  "title_fix": null,
+  "appearance": "A dark field with two faint dashed circles, the outer ring crowded with small round portraits and the inner ring a little smaller, all around one large central face. Small white name pills float above a few avatars.",
+  "behaviour": "Every four seconds the previous link vanishes and a new coloured line draws itself between two random portraits while their name pills fade in; hovering any avatar also reveals its name. The whole layout rescales with the window.",
+  "parts": ["outer ring", "inner ring", "avatar", "centre avatar", "connection line", "name label"],
+  "demo_content": "Two dozen stock portraits with names like Zane Whitaker, Maya, Jordan, Avery and Quinn around a Center Hub.",
+  "states": ["hover", "active"],
+  "kind": "avatar",
+  "look": ["dark", "colorful", "rounded", "flat"],
+  "tone": "decorative",
+  "search_phrases": [
+    "circle of faces connected by lines",
+    "avatar constellation diagram",
+    "team members orbiting a hub",
+    "random connection line between people",
+    "social graph made of portraits",
+    "faces arranged in rings",
+    "contact web visualization",
+    "people map with glowing links"
+  ],
+  "resembles": [],
+  "use_when": "A section should convey many people connected around one hub, such as a community or team map.",
+  "avoid_when": "Names and portraits are hardcoded inside the file, so adapting it to real people means editing the source.",
+  "suits": ["social", "saas", "marketing"],
+  "slot_hints": ["hero", "decoration"],
+  "traits": {
+    "trigger": ["always", "timer"],
+    "motion": "continuous",
+    "affects": ["children", "text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "It takes no props: the portrait URLs, names, ring counts and timing are fixed in the file, so adapting it means editing the arrays and the four-second interval.",
+  "technique": ["motion-library", "svg", "svg-filter"],
+  "weight": "moderate",
+  "weight_why": "Two dozen avatar images plus one SVG line that redraws every four seconds.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Names only appear on hover or while linked, and nothing is focusable, so keyboard users never see them."
+  },
+  "props": [],
+  "issues": [
+    "Names and portraits are baked in, so feeding it real people requires editing the component.",
+    "The dashed rings are so faint on the dark stage that the two-ring structure barely reads."
+  ],
+  "polish": 3,
+  "polish_why": "Lively random connections over a full avatar field; faint rings and hardcoded data cap it.",
+  "unsure": ["kind", "theme"]
+}

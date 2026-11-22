@@ -1,0 +1,79 @@
+{
+  "name": "dotted-glow-background",
+  "frames": {
+    "code": "2088",
+    "best": 4,
+    "best_why": "Frame 4 catches the dot field at a bright moment with the demo card still fully readable.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "partly"
+  },
+  "tagline": "A near-black field of tiny dots that twinkle and pick up a faint blue glow.",
+  "summary": "Covers its area with a staggered grid of tiny round dots on near-black. Each dot brightens and dims on its own rhythm, and the brightest gain a soft blue halo, so the whole field shimmers.",
+  "title_fix": null,
+  "appearance": "A near-black stage filled edge to edge with a fine grid of tiny round dots, offset row from row. Most dots sit dim grey with a few brighter ones scattered like faint stars, and a dark rounded card with a heading, paragraph and two buttons floats in the centre.",
+  "behaviour": "Each dot pulses between dim and bright on its own phase and speed, and the brightest briefly gain a soft blue glow. The field keeps shimmering in place indefinitely and never reacts to the pointer.",
+  "parts": ["dot grid", "glow", "pricing card", "heading", "buttons"],
+  "demo_content": "\"Ready to buy Pro?\" card with a license paragraph and Get Pro / Browse components buttons.",
+  "states": [],
+  "kind": "background",
+  "look": ["dark", "minimal", "dense", "technical"],
+  "tone": "minimal",
+  "search_phrases": [
+    "field of tiny glowing dots",
+    "shimmering dot grid background",
+    "dark starry particle backdrop",
+    "dots that pulse with a blue glow",
+    "subtle animated background for a cta",
+    "halftone dot wallpaper",
+    "twinkling dot pattern behind content",
+    "canvas dots fading in and out"
+  ],
+  "resembles": [],
+  "use_when": "A call-to-action or hero needs a quiet moving backdrop behind a card, cheap enough to leave running.",
+  "avoid_when": "It is tuned for dark surfaces, and the loop never stops while on screen.",
+  "suits": ["saas", "dashboard", "marketing"],
+  "slot_hints": ["page-background", "section-background", "decoration"],
+  "traits": {
+    "trigger": ["always"],
+    "motion": "continuous",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "none",
+  "customise": "Dot spacing and radius, dot and glow colours including theme variants, overall opacity and pulse speeds are props; there is no content to supply.",
+  "technique": ["canvas-2d", "js-animation"],
+  "weight": "moderate",
+  "weight_why": "Draws several thousand dots per frame, though it pauses once scrolled out of view.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "none",
+    "reduced_motion": false,
+    "note": "The decorative canvas carries no aria-hidden or role, and the endless shimmer ignores prefers-reduced-motion."
+  },
+  "props": [
+    {"name": "gap", "type": "number", "default": "12", "required": false},
+    {"name": "radius", "type": "number", "default": "2", "required": false},
+    {"name": "color", "type": "string", "default": "\"rgba(0,0,0,0.7)\"", "required": false},
+    {"name": "darkColor", "type": "string", "default": null, "required": false},
+    {"name": "glowColor", "type": "string", "default": "\"rgba(0,170,255,0.85)\"", "required": false},
+    {"name": "darkGlowColor", "type": "string", "default": null, "required": false},
+    {"name": "opacity", "type": "number", "default": "0.6", "required": false},
+    {"name": "backgroundOpacity", "type": "number", "default": "0", "required": false},
+    {"name": "speedMin", "type": "number", "default": "0.4", "required": false},
+    {"name": "speedMax", "type": "number", "default": "1.3", "required": false},
+    {"name": "speedScale", "type": "number", "default": "1", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The dots are very low contrast, so the shimmer nearly vanishes on a bright display.",
+    "The animation loop runs for as long as the layer is on screen."
+  ],
+  "polish": 3,
+  "polish_why": "Restrained and evenly spaced, but the dots are so faint the field reads almost black.",
+  "unsure": []
+}

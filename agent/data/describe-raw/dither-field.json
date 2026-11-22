@@ -1,0 +1,77 @@
+{
+  "name": "dither-field",
+  "frames": {
+    "code": "4003",
+    "best": 2,
+    "best_why": "Bright bloom near the pointer makes the purple dithered horizon and its square dots clearly visible.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Purple dithered light haze that brightens under the pointer.",
+  "summary": "A full-bleed background of purple light rendered as crisp square dots, glowing like a horizon and blooming around the mouse. It can also dither an image or video, and it holds overlaid page content.",
+  "title_fix": null,
+  "appearance": "A full-width dark stage washed in purple light that reads as a horizon glow, brightening to near-white near the bottom centre. The surface is built from tiny square dithered dots rather than smooth gradients, densest where the light is brightest, with a loose band of haze across the middle.",
+  "behaviour": "The glow drifts and flickers slowly on its own and brightens strongly around the mouse, pen or a held finger, easing back after the pointer. It pauses when scrolled out of view or when the tab is hidden; the demo centres a headline, paragraph and two buttons over it.",
+  "parts": ["dot field", "horizon glow", "pointer bloom", "overlaid heading", "buttons"],
+  "demo_content": "Overlaid headline 'Light, rendered one dot at a time', a short paragraph, and Get started / Learn more buttons.",
+  "states": ["hover", "active"],
+  "kind": "background",
+  "look": ["gradient", "dark", "colorful", "glow", "retro"],
+  "tone": "dramatic",
+  "search_phrases": [
+    "purple dotted light background",
+    "pixelated glow behind hero text",
+    "dithered gradient backdrop",
+    "retro halftone gradient background",
+    "background that glows near cursor",
+    "webgl dot grid backdrop",
+    "aurora style light field",
+    "animated retro gradient wallpaper"
+  ],
+  "resembles": [],
+  "use_when": "A landing page wants a rich animated backdrop that feels technical and reacts to the cursor without heavy artwork.",
+  "avoid_when": "It needs WebGL2 and a sized parent, falls back to a static CSS dot pattern on old devices, and never fully settles.",
+  "suits": ["marketing", "saas", "devtool"],
+  "slot_hints": ["page-background", "section-background"],
+  "traits": {
+    "trigger": ["always", "pointer-move"],
+    "motion": "continuous",
+    "affects": ["background", "fill"],
+    "theme": "both",
+    "needs_sized_parent": true
+  },
+  "content_from": "children",
+  "customise": "Pattern, image or video src, colour ramp, dot size, intensity, speed, fps and interactive are props; custom patterns and the shaders need source edits. Children sit above the dots.",
+  "technique": ["webgl-shader", "js-animation"],
+  "weight": "heavy",
+  "weight_why": "A WebGL2 shader loop runs every frame and rebuilds mipmaps; it pauses off-screen or on a hidden tab.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "n-a",
+    "reduced_motion": true,
+    "note": "The dot canvas is aria-hidden and decorative; it pauses under reduced motion or a hidden tab, needing WebGL2 or a CSS dot fallback."
+  },
+  "props": [
+    {"name": "pattern", "type": "DitherPattern", "default": "\"horizon\"", "required": false},
+    {"name": "color", "type": "DitherColor", "default": "\"currentColor\"", "required": false},
+    {"name": "src", "type": "string", "default": null, "required": false},
+    {"name": "intensity", "type": "number", "default": "0.75", "required": false},
+    {"name": "dotSize", "type": "number", "default": "1", "required": false},
+    {"name": "speed", "type": "number", "default": "1", "required": false},
+    {"name": "fps", "type": "number", "default": "30", "required": false},
+    {"name": "interactive", "type": "boolean", "default": "true", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false},
+    {"name": "children", "type": "ReactNode", "default": null, "required": false}
+  ],
+  "issues": [
+    "The glow saturates to flat white at its brightest, wiping out the dot texture.",
+    "The grey paragraph text sits on a bright purple glow and is low contrast in places."
+  ],
+  "polish": 4,
+  "polish_why": "Striking dithered glow with a convincing pointer reaction; the brightest bloom washes out the dots.",
+  "unsure": ["content_from", "theme"]
+}

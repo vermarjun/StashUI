@@ -1,0 +1,120 @@
+{
+ "name": "layout-grid",
+ "frames": {
+  "code": "2401",
+  "best": 2,
+  "best_why": "A photo is expanded in the centre with its Tokyo caption revealed while the grid dims behind.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.9
+ },
+ "tagline": "Click any photo in the mosaic and it grows into the centre with its caption.",
+ "summary": "A four-photo mosaic of travel images. Clicking one lifts it into the middle of the grid, dims the rest and slides a white title and caption up over the picture; clicking the dark area puts it back.",
+ "title_fix": null,
+ "appearance": "A four-photo mosaic on black: a wide close-up of hands fanning banknotes, a dark contour swirl, a plant against a tiled wall and a wide sea cliff. Cards sit close together with small gaps, and the whole grid dims when one is open.",
+ "behaviour": "Clicking a photo lifts it into the centre of the grid, where it enlarges while a black veil fades behind it and its title and copy slide up from the bottom. Clicking the dark area returns it.",
+ "parts": [
+  "photo tile",
+  "photo",
+  "title",
+  "description",
+  "dark veil"
+ ],
+ "demo_content": "Photos of banknotes, contour swirls, a plant and a sea cliff, labelled Tokyo, Santorini, Machu Picchu and Patagonia.",
+ "states": [
+  "open",
+  "selected"
+ ],
+ "kind": "gallery-section",
+ "look": [
+  "dark",
+  "editorial",
+  "colorful",
+  "rounded"
+ ],
+ "tone": "dramatic",
+ "search_phrases": [
+  "photo grid where a card expands on click",
+  "gallery that zooms a picture to center",
+  "image mosaic with click to enlarge",
+  "travel photo grid with captions",
+  "clickable portfolio tiles that grow",
+  "picture wall with modal zoom",
+  "grid of photos that open in place",
+  "expanding image gallery layout"
+ ],
+ "resembles": [],
+ "use_when": "An image-led section where visitors should open a single photo without leaving the page.",
+ "avoid_when": "Keyboard or screen-reader use: the tiles are clickable divs with no tab stop or roles.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card"
+ ],
+ "traits": {
+  "trigger": [
+   "click"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "layout",
+   "image",
+   "text"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "data-array",
+ "customise": "Pass a cards array of id, thumbnail, content and a className for the grid span; the expanded size, veil darkness and motion are fixed.",
+ "technique": [
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Four large photos with shared layout animations on open and close.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "no",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Cards are clickable divs with no keyboard access or roles, and the alt text is just the word thumbnail."
+ },
+ "props": [
+  {
+   "name": "cards",
+   "type": "Card[]",
+   "default": null,
+   "required": true
+  }
+ ],
+ "issues": [
+  "Tiles are divs, so the gallery cannot be opened by keyboard.",
+  "The expanded card stays only half width, so its caption sits tight over the photo.",
+  "Alt text is the generic word thumbnail on every image."
+ ],
+ "polish": 4,
+ "polish_why": "Crisp photo mosaic and a smooth zoom to centre; div tiles exclude keyboard users.",
+ "unsure": [],
+ "title": "Layout Grid",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "e354ed1870c324a9",
+  "film_hash": "6675fb9cab737c5b",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

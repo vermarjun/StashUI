@@ -1,0 +1,174 @@
+{
+ "name": "ai-orb-face",
+ "frames": {
+  "code": "6010",
+  "best": 1,
+  "best_why": "Clean neutral face with both upright eyes and the full state selector, no cursor over the orb.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 0.9
+ },
+ "tagline": "A lavender sphere with two dark eyes that shifts expression with AI state.",
+ "summary": "A round painted orb with two dark eyes that blinks, follows the pointer and swaps expression for idle, listening, thinking, streaming, done and error. A row of pills under it switches the state.",
+ "title_fix": null,
+ "appearance": "A lavender-purple sphere lit from the upper left on a black stage, with two dark vertical capsule eyes. Below it a dark rounded control bar holds six small state labels, the active one set in a white pill.",
+ "behaviour": "The eyes blink at random and follow the pointer; thinking narrows one eye and darts the gaze away, done closes both into flat arcs while the body hops and stretches, and error replaces them with spinning spirals. Clicking a state pill switches the face.",
+ "parts": [
+  "orb body",
+  "left eye",
+  "right eye",
+  "state selector",
+  "state button"
+ ],
+ "demo_content": "Six state buttons: Idle, Listening, Thinking, Streaming, Done, Error.",
+ "states": [
+  "hover",
+  "selected",
+  "error",
+  "success"
+ ],
+ "kind": "icon",
+ "look": [
+  "3d",
+  "gradient",
+  "rounded",
+  "dark",
+  "glow"
+ ],
+ "tone": "playful",
+ "search_phrases": [
+  "ai assistant face with blinking eyes",
+  "purple sphere character that watches cursor",
+  "voice assistant state indicator",
+  "animated robot face for chatbot",
+  "thinking listening done status face",
+  "webgl marble ball with cartoon eyes",
+  "speaking character eyes follow mouse",
+  "friendly orb that shows what it is doing"
+ ],
+ "resembles": [
+  "Apple Siri"
+ ],
+ "use_when": "An AI chat or voice assistant needs a friendly character that shows listening, thinking and done at a glance.",
+ "avoid_when": "It runs a WebGL shader continuously, so many on one page tax the GPU, and the eyes-only face may not fit a formal brand.",
+ "suits": [
+  "ai-chat",
+  "saas",
+  "mobile-app"
+ ],
+ "slot_hints": [
+  "avatar",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "pointer-move",
+   "timer",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "children",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "State and expression come from props, plus size, colours, a gaze toggle and a live amplitude value. The eye shapes are preset, so a new face means editing the source.",
+ "technique": [
+  "webgl-shader",
+  "motion-library",
+  "svg"
+ ],
+ "weight": "heavy",
+ "weight_why": "A WebGL2 shader redraws the marbled orb every frame while it is on screen.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "Honours reduced motion and takes an aria-label, but expression changes and state are not announced to screen readers."
+ },
+ "props": [
+  {
+   "name": "state",
+   "type": "AIState",
+   "default": "\"idle\"",
+   "required": false
+  },
+  {
+   "name": "expression",
+   "type": "ExpressionName | Expression",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "size",
+   "type": "number | string",
+   "default": "128",
+   "required": false
+  },
+  {
+   "name": "gaze",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "colors",
+   "type": "{ body?: string; bodyEdge?: string; feature?: string }",
+   "default": "{[finalColors.body, finalColors.bodyEdge]}",
+   "required": false
+  },
+  {
+   "name": "amplitude",
+   "type": "AIAmplitude",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "aria-label",
+   "type": "string",
+   "default": "{ariaLabel}",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"relative block\", className)}",
+   "required": false
+  }
+ ],
+ "issues": [
+  "Inactive state labels are dim grey on dark and read poorly at this size."
+ ],
+ "polish": 4,
+ "polish_why": "Distinctive marbled orb with readable expressions; inactive selector labels are low contrast.",
+ "unsure": [
+  "kind",
+  "traits.motion",
+  "traits.theme"
+ ],
+ "title": "AI Orb Face",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "a1fa1411557866b3",
+  "film_hash": "b1373a48c0c59af8",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

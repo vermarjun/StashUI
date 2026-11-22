@@ -1,0 +1,71 @@
+{
+  "name": "liquid-glass-music-card",
+  "frames": {
+    "code": "9413",
+    "best": 4,
+    "best_why": "The disc has visibly turned, the progress bar is part-filled, and no cursor covers the controls.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "A spinning vinyl record sits beside the track title, seek bar and controls.",
+  "summary": "A compact now-playing card with a spinning vinyl disc you can grab to scrub, a progress bar, rolling timestamps and previous, play and next buttons, optionally set on a frosted glass panel.",
+  "title_fix": null,
+  "appearance": "A small rounded panel, mildly transparent, holding a black vinyl disc with a bright printed centre label beside a five-bar level meter and the words Now Playing above a track title and artist. A thin orange progress bar and three round playback buttons sit below.",
+  "behaviour": "The record turns steadily at 33⅓ speed while the track plays; grabbing the disc and flicking it scrubs the song, and the timestamps roll over digit by digit. Play and pause spin the disc up or down, and next swaps in a new track.",
+  "parts": ["disc", "centre label", "tonearm", "level meter", "track title", "artist name", "progress bar", "playback buttons"],
+  "demo_content": "Track Low Tide by Pale Harbor, then Static Bloom by Juniper Wire, over a mountain and cloud photo.",
+  "states": ["hover", "focus", "active", "dragging"],
+  "kind": "media-player",
+  "look": ["glass", "dark", "rounded", "minimal", "shadowed"],
+  "tone": "minimal",
+  "search_phrases": [
+    "music player with spinning vinyl",
+    "now playing card ui",
+    "song progress bar and controls",
+    "scrubbable record disc",
+    "audio player floating on glass",
+    "current track widget",
+    "play pause skip music card",
+    "turntable record spinning widget"
+  ],
+  "resembles": ["Apple Music", "Spotify"],
+  "use_when": "A page needs a self-contained music widget with a tactile disc and standard playback controls.",
+  "avoid_when": "The glass refraction only renders in Chromium, and the card is capped at max-w-sm so it will not stretch wide.",
+  "suits": ["portfolio", "saas", "mobile-app"],
+  "slot_hints": ["feature-card", "media", "footer"],
+  "traits": {
+    "trigger": ["always", "drag", "click"],
+    "motion": "continuous",
+    "affects": ["layout", "background", "text"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Tracks array, starting track, autoplay, one accent colour, glass effect and class name are props. The artwork variants and timing constants are fixed in the source.",
+  "technique": ["js-animation", "css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "One card with a compositor-driven disc spin and a small meter loop; no canvas or WebGL.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": true,
+    "note": "Buttons and the seek slider have labels and keyboard control, but the vinyl disc itself only scrubs by pointer."
+  },
+  "props": [
+    {"name": "tracks", "type": "NowPlayingTrack[]", "default": "DEFAULT_TRACKS", "required": false},
+    {"name": "defaultTrack", "type": "number", "default": "0", "required": false},
+    {"name": "autoPlay", "type": "boolean", "default": "true", "required": false},
+    {"name": "accent", "type": "string", "default": "#f97316", "required": false},
+    {"name": "glassEffect", "type": "boolean", "default": "false", "required": false},
+    {"name": "onTrackChange", "type": "function", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": ["The glass filter uses a Chromium-only backdrop URL, so other browsers get a plain tinted panel."],
+  "polish": 4,
+  "polish_why": "Polished playback card with believable record spin; the glass is subtle and the busy photo competes.",
+  "unsure": []
+}

@@ -1,0 +1,67 @@
+{
+  "name": "nested-vaul-drawer",
+  "frames": {
+    "code": "4448",
+    "best": 4,
+    "best_why": "The third nested sheet is open on top of the others with its own title and button visible.",
+    "usable": [2, 3, 4, 5],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Bottom sheets that stack on top of each other as you go deeper.",
+  "summary": "A black stage with a single Open Drawer button. Clicking it raises a dark bottom sheet with a drag handle, a title and text, and buttons inside open further sheets layered on top, each dismissed by swiping or tapping away.",
+  "title_fix": "Stacked Bottom Sheet Drawer",
+  "appearance": "Idle, just a small white rounded button on black. Opened, a charcoal sheet rises from the bottom with a short grab handle, a bold title, two or three grey paragraphs and a full-width pale button. A nested sheet covers most of it, repeating the handle, title, copy and button.",
+  "behaviour": "Clicking the button slides a sheet up over a dimmed backdrop with a springy settle. The inner buttons push new sheets up on top of the previous ones, and dragging the handle down or tapping the backdrop closes them in order.",
+  "parts": ["trigger button", "dim overlay", "drag handle", "sheet", "title", "paragraph", "inner button", "footer links"],
+  "demo_content": "Sheets titled \"Drawer for React.\" and \"This drawer is nested.\" with developer notes and GitHub links.",
+  "states": ["open", "hover", "dragging"],
+  "kind": "drawer",
+  "look": ["dark", "minimal", "rounded", "flat"],
+  "tone": "minimal",
+  "search_phrases": [
+    "bottom sheet that stacks another sheet",
+    "drawer that opens from the bottom",
+    "gesture driven panel on mobile",
+    "nested bottom drawers example",
+    "swipe down to close sheet",
+    "modal replacement on tablet",
+    "layered slide up panel",
+    "mobile action sheet chain"
+  ],
+  "resembles": ["iOS bottom sheet"],
+  "use_when": "A mobile or tablet flow needs layers of detail shown as stacked bottom sheets with swipe to close.",
+  "avoid_when": "The sheets assume a dark page, and the copy talks about the drawer's own code rather than real content.",
+  "suits": ["mobile-app", "saas"],
+  "slot_hints": ["modal"],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "pronounced",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The titles, notes, footer links and three nested levels are hardcoded inside the drawers; colours come from theme tokens.",
+  "technique": ["js-animation"],
+  "weight": "light",
+  "weight_why": "Three static sheets with spring transitions; nothing runs until a drawer is opened.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The dialog library traps focus and closes on Escape, but the spring sheet motion has no reduced-motion guard."
+  },
+  "props": [],
+  "issues": [
+    "At rest the component is only a lone button, so the drawer is invisible until clicked.",
+    "Two nested sheets carry the same title, \"This drawer is nested.\", so levels are hard to tell apart.",
+    "The sheet copy describes the drawer's own implementation instead of sample content."
+  ],
+  "polish": 3,
+  "polish_why": "Tidy stacked sheets; the plain charcoal panels and developer copy read as a docs demo.",
+  "unsure": ["slot_hints"]
+}

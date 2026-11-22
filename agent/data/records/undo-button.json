@@ -1,0 +1,177 @@
+{
+ "name": "undo-button",
+ "frames": {
+  "code": "1071",
+  "best": 3,
+  "best_why": "Shows the pending pill reading \"Archived | Undo 5 ⌘Z\" with its outline freshly draining; other frames show idle buttons.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 2.8
+ },
+ "tagline": "Turns a plain action into a countdown you can still take back.",
+ "summary": "A pill action button that opens a short undo window when pressed. It widens into a past-tense label with an Undo action, a ticking number and a command-key hint while its outline slowly drains, then commits.",
+ "title_fix": null,
+ "appearance": "A small rounded pill with a thin outline, a leading line icon and a label, sitting in a row beside a second matching pill. In the pending state it stretches to fit a grey past-tense word, a divider, an Undo arrow, a large countdown digit and a small key hint.",
+ "behaviour": "Pressing swaps the label to past tense and starts a countdown as the border empties clockwise from the top. Hovering pauses the clock, pressing again or the shortcut cancels, and when time runs out a tick replaces the label.",
+ "parts": [
+  "pill button",
+  "icon",
+  "label",
+  "undo arrow",
+  "countdown digit",
+  "key hint",
+  "outline"
+ ],
+ "demo_content": "A message from Priya Raman about moving a Q3 roadmap review, with Archive and Delete buttons beneath.",
+ "states": [
+  "hover",
+  "active",
+  "loading",
+  "success"
+ ],
+ "kind": "button",
+ "look": [
+  "dark",
+  "pill",
+  "outlined",
+  "minimal"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "revert action with a countdown",
+  "archive button that can be undone",
+  "pill button with draining border",
+  "delete confirmation with undo window",
+  "cmd z to undo an action",
+  "temporary undo prompt after deleting",
+  "button that turns into undo prompt",
+  "grace period before action commits"
+ ],
+ "resembles": [
+  "Gmail undo send"
+ ],
+ "use_when": "A destructive or hard-to-reverse action needs a short take-back window without opening a full dialog.",
+ "avoid_when": "Undo lasts only a few seconds and the wide pending pill needs row space; not a substitute for real confirmation.",
+ "suits": [
+  "saas",
+  "dashboard"
+ ],
+ "slot_hints": [
+  "list-item",
+  "form-submit",
+  "toast"
+ ],
+ "traits": {
+  "trigger": [
+   "click",
+   "hover",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "border",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Props set the verb and past-tense label, the leading icon, the undo window, how long the done state lingers and three callbacks; colours and outline styling need a source edit.",
+ "technique": [
+  "motion-library",
+  "svg",
+  "js-animation"
+ ],
+ "weight": "light",
+ "weight_why": "One small button with a resize observer and a countdown frame loop that runs only while pending.",
+ "responsive": "unknown",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": true,
+  "note": "Button, shortcut, focus ring and phase labels are all present, but the global Cmd/Ctrl+Z listener can clash with a page's own undo."
+ },
+ "props": [
+  {
+   "name": "label",
+   "type": "string",
+   "default": "\"Archive\"",
+   "required": false
+  },
+  {
+   "name": "doneLabel",
+   "type": "string",
+   "default": "\"Archived\"",
+   "required": false
+  },
+  {
+   "name": "icon",
+   "type": "LucideIcon",
+   "default": "Archive",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5000",
+   "required": false
+  },
+  {
+   "name": "resetAfter",
+   "type": "number | null",
+   "default": "2400",
+   "required": false
+  },
+  {
+   "name": "onAction",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onCommit",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onUndo",
+   "type": "() => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The pending pill is wide and can push the neighbouring button off a narrow row."
+ ],
+ "polish": 4,
+ "polish_why": "Clean state change and a clever draining outline; the idle pill itself is ordinary.",
+ "unsure": [],
+ "title": "Undo Button",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "95d18e0f7dad1f2b",
+  "film_hash": "575f8d6a64c15196",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

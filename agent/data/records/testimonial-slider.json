@@ -1,0 +1,135 @@
+{
+ "name": "testimonial-slider",
+ "frames": {
+  "code": "1871",
+  "best": 5,
+  "best_why": "Quote, avatar, name and both arrows are all crisp and settled, unlike the crossfade frames.",
+  "usable": [
+   1,
+   2,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.1
+ },
+ "tagline": "Quotes fade and swap around a round photo, with arrows on either side.",
+ "summary": "A single large testimonial on a dark panel: a circular avatar under a soft halo, a bold quote and a name with role. It rotates to the next quote on a timer, or by the round arrow buttons.",
+ "title_fix": null,
+ "appearance": "One testimonial fills a wide dark slate panel. At the top a small round portrait sits inside a faint radial halo, then a bold white quote over two or three lines, and under it a name and job title in italic. Round arrow buttons sit at the left and right edges.",
+ "behaviour": "Every few seconds the current quote and portrait fade out and the next slides in on a light rotate, with a brief crossfade between the two. Clicking the round arrows jumps forward or back, pauses the timer and later resumes it.",
+ "parts": [
+  "avatar",
+  "halo",
+  "quote",
+  "name and role",
+  "arrow buttons"
+ ],
+ "demo_content": "Three short quotes from Alice Johnson, Bob Martinez and Carol Liu at fictional companies.",
+ "states": [
+  "hover",
+  "active"
+ ],
+ "kind": "testimonial-section",
+ "look": [
+  "dark",
+  "minimal",
+  "airy"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "rotating customer quotes",
+  "testimonial carousel with avatar",
+  "auto rotating review slider",
+  "single quote with next and previous arrows",
+  "social proof block for a landing page",
+  "customer testimonial with photo",
+  "fading quote slider",
+  "reviews that change on a timer"
+ ],
+ "resembles": [],
+ "use_when": "A landing or pricing page that needs one strong customer quote at a time without a wall of cards.",
+ "avoid_when": "Auto-rotates every few seconds, so a slow reader may lose the quote, and it relies on remote avatar images.",
+ "suits": [
+  "saas",
+  "marketing"
+ ],
+ "slot_hints": [
+  "testimonial"
+ ],
+ "traits": {
+  "trigger": [
+   "timer",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an array of testimonials with image, quote, name and role, plus autoRotate, duration and className; transition curves are fixed in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "A few stacked nodes crossfading with CSS transitions and a timer; no canvas or loop.",
+ "responsive": "breakpoints",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Prev and next buttons have aria-labels, but the auto-rotation keeps changing the quote with no pause control and no reduced-motion check."
+ },
+ "props": [
+  {
+   "name": "testimonials",
+   "type": "Testimonial[]",
+   "default": "[]",
+   "required": false
+  },
+  {
+   "name": "autoRotate",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "duration",
+   "type": "number",
+   "default": "5",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "During the crossfade both quotes overlap and become briefly unreadable."
+ ],
+ "polish": 3,
+ "polish_why": "Clean centered layout; the quote crossfade overlaps text and looks muddy mid-swap.",
+ "unsure": [
+  "theme",
+  "focus_visible"
+ ],
+ "title": "Testimonial Slider",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "25735ce315bdc9a1",
+  "film_hash": "31dc06dc0c0c01ee",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

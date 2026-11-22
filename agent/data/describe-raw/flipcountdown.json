@@ -1,0 +1,66 @@
+{
+  "name": "flipcountdown",
+  "frames": {
+    "code": "7047",
+    "best": 1,
+    "best_why": "All four tiles show clear digits, with the orange day tile glowing and the seconds reading 41.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Four glowing number tiles ticking down the seconds to the new year.",
+  "summary": "A black page with a small spaced caption over four square number tiles: a glowing orange days box and three navy boxes for hours, minutes and seconds. The seconds tick down live and the layout ends in a Time's Up message.",
+  "title_fix": null,
+  "appearance": "A wide black stage with a small widely tracked NEW YEAR COUNTDOWN label. Below sit four rounded square tiles split by a thin line, the first filled orange-red with white digits, the rest dark navy with cyan digits and blue glowing rims. Small grey dots separate the tiles and tiny blue unit labels sit beneath each.",
+  "behaviour": "The seconds tile changes every second while days, hours and minutes hold steady. When the clock reaches zero the tiles are replaced by a red Time's Up banner.",
+  "parts": ["caption", "day tile", "hour tile", "minute tile", "second tile", "divider line", "separator dots", "unit label"],
+  "demo_content": "Caption \"NEW YEAR COUNTDOWN\" showing 51 days, 04 hours, 14 minutes and a seconds tile ticking toward zero.",
+  "states": [],
+  "kind": "counter",
+  "look": ["dark", "neon", "rounded", "technical"],
+  "tone": "technical",
+  "search_phrases": [
+    "countdown timer with boxed digits",
+    "days hours minutes seconds clock",
+    "new year countdown for a landing page",
+    "flip clock style number tiles",
+    "time remaining counter with glow",
+    "product launch countdown",
+    "retro timer boxes with colons",
+    "live countdown to a date"
+  ],
+  "resembles": [],
+  "use_when": "A launch or event page needs a live countdown with a bold arcade-like numeric display.",
+  "avoid_when": "The target is always the current year's end, and the orange and cyan glow and black page are fixed.",
+  "suits": ["marketing", "ecommerce"],
+  "slot_hints": ["hero", "stat"],
+  "traits": {
+    "trigger": ["timer"],
+    "motion": "continuous",
+    "affects": ["text"],
+    "theme": "dark",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "The target date is computed as the end of the current year and the label is fixed; tile colours, sizes and the flip class need source edits.",
+  "technique": ["js-animation"],
+  "weight": "light",
+  "weight_why": "One interval updating four numbers each second; no canvas or heavy work.",
+  "responsive": "breakpoints",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The numbers are plain spans with no live region, so screen readers never hear the ticking; the flip class has no reduced-motion guard."
+  },
+  "props": [],
+  "issues": [
+    "The colon separators render as two small stacked blocks rather than a colon.",
+    "Digits update silently with no live region for assistive tech."
+  ],
+  "polish": 3,
+  "polish_why": "Neat neon tiles with a good glow, but the separators look like stray stacked dots.",
+  "unsure": ["slot_hints"]
+}

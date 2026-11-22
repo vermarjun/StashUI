@@ -1,0 +1,187 @@
+{
+ "name": "ascii-art",
+ "frames": {
+  "code": "2478",
+  "best": 6,
+  "best_why": "Frame 6 shows both panels fully rendered, with the dog clear and no reveal band left.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.4
+ },
+ "tagline": "Photographs rebuilt from text characters, revealed by a green diagonal sweep.",
+ "summary": "Turns an image into a grid of text characters whose density follows brightness. A panel can animate in with a green matrix sweep, a fade or a typewriter, leaving a character-drawn picture.",
+ "title_fix": null,
+ "appearance": "Two side-by-side ASCII panels on a near-black stage: on the left the outline of a dog built from dense grey characters, on the right palm trees drawn as pale block glyphs. Small grey captions sit below each panel.",
+ "behaviour": "Each picture is redrawn from character density rather than pixels. On entering view a green diagonal band sweeps the left panel, showing glowing random glyphs ahead of the front until the whole image is legible, then it holds still.",
+ "parts": [
+  "ascii panel",
+  "character grid",
+  "green reveal sweep",
+  "caption"
+ ],
+ "demo_content": "A dog drawn in characters beside a palm-tree scene in blocks, captioned \"matrix reveal\" and \"colored blocks\".",
+ "states": [
+  "loading"
+ ],
+ "kind": "image-effect",
+ "look": [
+  "dark",
+  "monochrome",
+  "technical",
+  "dense",
+  "neon"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "image made of text characters",
+  "recreate a photo with typed glyphs",
+  "matrix green reveal on a picture",
+  "ascii portrait effect for a hero",
+  "picture built from letters and symbols",
+  "block character image effect",
+  "terminal style image render",
+  "scanned image reveal in characters"
+ ],
+ "resembles": [],
+ "use_when": "A tech or portfolio page wants an image rendered as text that decodes itself on scroll.",
+ "avoid_when": "The glyphs are decorative and unreadable as text, and the source image must be readable without CORS errors.",
+ "suits": [
+  "devtool",
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card",
+  "hero",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "viewport"
+  ],
+  "motion": "pronounced",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": true
+ },
+ "content_from": "props",
+ "customise": "Set the source image, character resolution, charset preset or custom string, colour or coloured mode, animation style and timing, font and fit.",
+ "technique": [
+  "canvas-2d",
+  "js-animation",
+  "motion-library"
+ ],
+ "weight": "moderate",
+ "weight_why": "Draws thousands of glyphs to a canvas during the reveal, then holds a still frame.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "n-a",
+  "focus_visible": "n-a",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "The canvas has an image role and label, but the label only says it is ASCII art, not what the picture shows."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "resolution",
+   "type": "number",
+   "default": "80",
+   "required": false
+  },
+  {
+   "name": "charset",
+   "type": "string",
+   "default": "\"standard\"",
+   "required": false
+  },
+  {
+   "name": "color",
+   "type": "string",
+   "default": "\"#ffffff\"",
+   "required": false
+  },
+  {
+   "name": "backgroundColor",
+   "type": "string",
+   "default": "\"transparent\"",
+   "required": false
+  },
+  {
+   "name": "inverted",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "colored",
+   "type": "boolean",
+   "default": "false",
+   "required": false
+  },
+  {
+   "name": "animated",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "animationStyle",
+   "type": "\"fade\" | \"typewriter\" | \"matrix\" | \"none\"",
+   "default": "\"fade\"",
+   "required": false
+  },
+  {
+   "name": "animationDuration",
+   "type": "number",
+   "default": "1",
+   "required": false
+  },
+  {
+   "name": "fontFamily",
+   "type": "string",
+   "default": "\"monospace\"",
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "The canvas label says only that it is ASCII art, not what image it shows.",
+  "Thin characters merge into noise at small panel sizes, so the picture only reads large."
+ ],
+ "polish": 4,
+ "polish_why": "Sharp character rendering and a striking green sweep; the pictures blur into noise when small.",
+ "unsure": [],
+ "title": "ASCII Art Renderer",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "d29cc9c6ff61fa64",
+  "film_hash": "f54e45ec724d6746",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

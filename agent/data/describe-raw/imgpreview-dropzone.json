@@ -1,0 +1,65 @@
+{
+  "name": "imgpreview-dropzone",
+  "frames": {
+    "code": "4489",
+    "best": 6,
+    "best_why": "Frame 6 shows the dashed zone together with two uploaded thumbnails; the first two frames show the empty zone only.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Drop images into a dashed box and see square previews appear below.",
+  "summary": "A dashed upload box for images that lists picked files as small square thumbnails underneath. Each can be removed, and the upload is capped at four files of 1MB.",
+  "title_fix": null,
+  "appearance": "A wide dashed-border rounded rectangle on near-black, holding a small upload cloud icon and two lines of centred text. Below it sit two square image thumbnails with rounded corners, each with a small corner remove button.",
+  "behaviour": "Dragging files over the zone or clicking it opens the picture picker; chosen images appear as small square previews beneath the box, each with an X to remove. Up to four files of 1MB are accepted.",
+  "parts": ["drop zone", "upload icon", "instruction text", "thumbnail", "remove button"],
+  "demo_content": "Two blue and orange gradient sample images",
+  "states": ["hover", "dragging", "empty", "error"],
+  "kind": "file-upload",
+  "look": ["dark", "outlined", "rounded", "colorful"],
+  "tone": "minimal",
+  "search_phrases": [
+    "drag and drop image uploader",
+    "dashed box to upload photos",
+    "image picker with thumbnail previews",
+    "dropzone that shows picture previews",
+    "upload photos and see small previews",
+    "file upload area for images",
+    "attach images with drag and drop",
+    "click to upload image box"
+  ],
+  "resembles": [],
+  "use_when": "Users attach a few photos and should see what they picked before submitting.",
+  "avoid_when": "Hard limit of four files and 1MB each, with no message explaining a rejection.",
+  "suits": ["saas", "ecommerce"],
+  "slot_hints": ["form-field"],
+  "traits": {
+    "trigger": ["click", "drag"],
+    "motion": "subtle",
+    "affects": ["layout", "children"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "hardcoded",
+  "customise": "Nothing is exposed: the accepted formats, the four-file and 1MB limits and the copy are fixed in the file.",
+  "technique": ["css-transition"],
+  "weight": "light",
+  "weight_why": "A drop zone and a few thumbnails; no loops or heavy libraries.",
+  "responsive": "fixed-width",
+  "a11y": {
+    "keyboard": "partial",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "The upload copy is styled text rather than a form label; thumbnails do carry the file name through alt text."
+  },
+  "props": [],
+  "issues": [
+    "No error message appears when a file is rejected for size or type."
+  ],
+  "polish": 3,
+  "polish_why": "Clean, legible drop zone; plain thumbnails and no rejection feedback keep it ordinary.",
+  "unsure": ["resembles"]
+}

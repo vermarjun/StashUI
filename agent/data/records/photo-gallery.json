@@ -1,0 +1,142 @@
+{
+ "name": "photo-gallery",
+ "frames": {
+  "code": "6990",
+  "best": 3,
+  "best_why": "One photo expands to a rectangle while the rest dim to grey, showing the hover effect.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 1.2
+ },
+ "tagline": "Diamond photos straighten into a rectangle while the rest fade grey.",
+ "summary": "A honeycomb of diamond-cropped photos on a dark background. Pointing at one turns its diamond into a full rectangle, boosts its colour and greys out every other tile.",
+ "title_fix": null,
+ "appearance": "Ten photographs are cropped into sharp diamonds and packed into an offset honeycomb grid on a black stage, with small dark gaps between them. Colours are natural: red tulips, a green field, water, an orange sunset. On hover one diamond becomes a hard-edged rectangle while the rest turn grey.",
+ "behaviour": "Hovering or focusing a tile switches its clip from a diamond to a square, raising it above the others and boosting saturation. The rest of the gallery drops to half brightness and contrast, so only one photo stays lit. Moving away restores all diamonds.",
+ "parts": [
+  "photo tiles",
+  "diamond grid",
+  "expanded photo",
+  "dimmed tiles"
+ ],
+ "demo_content": "Ten stock photos: red tulips, green fields, a lake, a dog and an orange sunset.",
+ "states": [
+  "hover",
+  "focus"
+ ],
+ "kind": "gallery-section",
+ "look": [
+  "colorful",
+  "sharp",
+  "dense",
+  "dark"
+ ],
+ "tone": "decorative",
+ "search_phrases": [
+  "diamond shaped photo grid",
+  "images that expand on hover",
+  "honeycomb picture gallery",
+  "photo tiles that brighten under cursor",
+  "gallery where other images dim",
+  "rotated square image grid",
+  "portfolio photo mosaic",
+  "css clip path image gallery"
+ ],
+ "resembles": [],
+ "use_when": "A portfolio, lookbook or photo wall where visitors should browse images one at a time without leaving the page.",
+ "avoid_when": "Uses fixed pixel cells and :has(), so it needs recent browsers and a wide area and breaks on small screens.",
+ "suits": [
+  "portfolio",
+  "marketing"
+ ],
+ "slot_hints": [
+  "media",
+  "feature-card",
+  "decoration"
+ ],
+ "traits": {
+  "trigger": [
+   "hover",
+   "focus"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "data-array",
+ "customise": "Pass an array of image sources plus containerClass, imageClass and a cell size in pixels; the diamond clip, dimming and hover timing are fixed in an injected style block.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "Ten images and pure CSS clip-path transitions; no script runs.",
+ "responsive": "fixed-width",
+ "a11y": {
+  "keyboard": "no",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "Tiles are plain img elements with no tabindex, so the :focus style is unreachable from the keyboard; alt text is just image-0, image-1."
+ },
+ "props": [
+  {
+   "name": "items",
+   "type": "PhotoGalleryItem[]",
+   "default": null,
+   "required": true
+  },
+  {
+   "name": "size",
+   "type": "number",
+   "default": "100",
+   "required": false
+  },
+  {
+   "name": "containerClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "imageClass",
+   "type": "string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "{cn(\"pg-gallery grid grid-cols-6 gap-1\", containerClass, cla",
+   "required": false
+  }
+ ],
+ "issues": [],
+ "polish": 4,
+ "polish_why": "Crisp honeycomb of diamonds and a clear hover reveal; the dimmed state looks washed out.",
+ "unsure": [
+  "theme",
+  "focus_visible"
+ ],
+ "title": "Photo Gallery",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "fac9045e329b6a13",
+  "film_hash": "44dd3bf078bf8906",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

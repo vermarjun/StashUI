@@ -1,0 +1,75 @@
+{
+  "name": "file-tree",
+  "frames": {
+    "code": "8815",
+    "best": 6,
+    "best_why": "Both nested folders are open with every file in view, giving the fullest picture of the tree.",
+    "usable": [1, 2, 3, 4, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Nested folders open in place to reveal the files inside.",
+  "summary": "A compact panel listing folders and files with small icons and stepped indentation. Clicking a folder unfolds it to show its contents, and clicking any row highlights it as selected.",
+  "title_fix": null,
+  "appearance": "A rounded dark card holds rows of pale grey names, each led by a small line-drawn folder or document icon. Children sit indented beneath their folder, joined by a thin vertical rule, and the active row gets a slightly lighter rounded backing.",
+  "behaviour": "Pressing a folder name slides it open or shut, exposing or hiding the rows underneath. Pressing a file marks that row selected; the tree keeps its own open and selected state until changed again.",
+  "parts": ["panel", "folder row", "file row", "folder icon", "file icon", "indent rule", "row highlight"],
+  "demo_content": "A src tree with components (Button.tsx, Input.tsx, Modal.tsx), pages, and root files package.json and tsconfig.json",
+  "states": ["hover", "focus", "selected", "open"],
+  "kind": "list",
+  "look": ["dark", "minimal", "flat", "monochrome", "rounded"],
+  "tone": "minimal",
+  "search_phrases": [
+    "nested folders you can click open",
+    "directory structure browser for docs",
+    "sidebar with files and folders",
+    "expandable tree of project files",
+    "file explorer panel in a web app",
+    "collapsible list of folders",
+    "source code navigator with icons",
+    "tree view with indented children"
+  ],
+  "resembles": ["VS Code file explorer", "GitHub file tree"],
+  "use_when": "Browsing a nested hierarchy such as project files or docs sections inside a bounded panel.",
+  "avoid_when": "Flat lists, or deep trees on narrow screens where indentation crowds out the names.",
+  "suits": ["docs", "devtool"],
+  "slot_hints": ["sidebar", "nav"],
+  "traits": {
+    "trigger": ["click"],
+    "motion": "subtle",
+    "affects": ["layout", "background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "data-array",
+  "customise": "Pass an elements array of ids, names and children; initial selection, initially open folders, open and close icons, sorting and direction are props.",
+  "technique": ["css-keyframes", "css-transition"],
+  "weight": "light",
+  "weight_why": "A handful of rows animated by CSS height keyframes; nothing runs in the background.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "yes",
+    "focus_visible": "yes",
+    "labels": "partial",
+    "reduced_motion": false,
+    "note": "Rows behave as flat buttons in an accordion, so no tree role, level or expanded state is announced."
+  },
+  "props": [
+    {"name": "elements", "type": "TreeViewElement[]", "default": null, "required": false},
+    {"name": "initialExpandedItems", "type": "string[]", "default": null, "required": false},
+    {"name": "initialSelectedId", "type": "string", "default": null, "required": false},
+    {"name": "sort", "type": "TreeSortMode", "default": "\"default\"", "required": false},
+    {"name": "indicator", "type": "boolean", "default": "true", "required": false},
+    {"name": "openIcon", "type": "ReactNode", "default": null, "required": false},
+    {"name": "closeIcon", "type": "ReactNode", "default": null, "required": false},
+    {"name": "dir", "type": "\"ltr\" | \"rtl\"", "default": null, "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The selected-row highlight is only a shade lighter than the panel, so it is easy to miss."
+  ],
+  "polish": 4,
+  "polish_why": "The structure reads cleanly and expansion is tidy; the faint selection highlight is the weak spot.",
+  "unsure": []
+}

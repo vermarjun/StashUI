@@ -1,0 +1,187 @@
+{
+ "name": "selection-toolbar",
+ "frames": {
+  "code": "1091",
+  "best": 6,
+  "best_why": "Frame 6 is the only frame that shows the floating toolbar with all five actions above a selection.",
+  "usable": [
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 6.2
+ },
+ "tagline": "Select text and a small icon toolbar pops up above the highlighted words.",
+ "summary": "A floating formatting bar that appears whenever text is selected inside an editable area. It offers bold, italic, link, copy and share actions, follows the selection and stays inside the viewport.",
+ "title_fix": null,
+ "appearance": "A dark, rounded editor card holds a white heading and two grey paragraphs of body text. Selected words get a translucent highlight, and a compact dark strip of five small line icons appears above, with a thin divider after the first three.",
+ "behaviour": "Selecting text inside the card opens a small toolbar just above the highlight; it flips and shifts to stay on screen and closes on Escape, a click elsewhere or when the selection clears. The icons act on the chosen words.",
+ "parts": [
+  "editor card",
+  "heading",
+  "paragraph",
+  "selection highlight",
+  "toolbar",
+  "action icon",
+  "divider"
+ ],
+ "demo_content": "Editable card titled 'Writing release notes people read' with two paragraphs about writing good release notes.",
+ "states": [
+  "open",
+  "hover",
+  "focus",
+  "selected"
+ ],
+ "kind": "editor",
+ "look": [
+  "dark",
+  "minimal",
+  "rounded",
+  "flat"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "floating toolbar above selected text",
+  "formatting menu on text selection",
+  "highlight text and show bold italic options",
+  "copy and share selected text popup",
+  "notion style selection menu",
+  "inline editor text actions",
+  "toolbar that follows selected words",
+  "small icon bar pops up on highlight"
+ ],
+ "resembles": [
+  "Notion selection menu",
+  "Medium highlight toolbar"
+ ],
+ "use_when": "Editable article text needs quick bold, link, copy and share actions right where the user selected something.",
+ "avoid_when": "It watches one container via the browser selection API, so shadow DOM or cross-node selections can misplace it.",
+ "suits": [
+  "saas",
+  "docs",
+  "blog"
+ ],
+ "slot_hints": [
+  "tooltip",
+  "body-text"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "layout"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "children",
+ "customise": "Placement side, offsets, collision handling, open state, selection callback and the container are props; the action buttons are composed as children and their behaviour is yours.",
+ "technique": [
+  "css-keyframes"
+ ],
+ "weight": "light",
+ "weight_why": "A tiny floating strip of five buttons; work happens only on selection events.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "partial",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": true,
+  "note": "The bar is labelled and Escape closes it, but it opens only from a mouse selection and its icon buttons carry no individual labels."
+ },
+ "props": [
+  {
+   "name": "open",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onOpenChange",
+   "type": "(open: boolean) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "onSelectionChange",
+   "type": "(text: string) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "container",
+   "type": "HTMLElement | RefObject<HTMLElement | null> | null",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "side",
+   "type": "Side",
+   "default": "\"top\"",
+   "required": false
+  },
+  {
+   "name": "sideOffset",
+   "type": "number",
+   "default": "8",
+   "required": false
+  },
+  {
+   "name": "align",
+   "type": "Align",
+   "default": "\"center\"",
+   "required": false
+  },
+  {
+   "name": "alignOffset",
+   "type": "number",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "avoidCollisions",
+   "type": "boolean",
+   "default": "true",
+   "required": false
+  },
+  {
+   "name": "collisionPadding",
+   "type": "number | Partial<Record<Side, number>>",
+   "default": "0",
+   "required": false
+  },
+  {
+   "name": "asChild",
+   "type": "boolean",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "When the selection sits near the top the toolbar overlaps the heading above it."
+ ],
+ "polish": 3,
+ "polish_why": "The floating behaviour and styling are tidy; the bar is a standard icon strip with no labels.",
+ "unsure": [],
+ "title": "Selection Toolbar",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "614da03bfd54d53e",
+  "film_hash": "a0d61cac0e7279df",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

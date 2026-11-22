@@ -1,0 +1,73 @@
+{
+  "name": "primitives-texts-highlight",
+  "frames": {
+    "code": "7921",
+    "best": 3,
+    "best_why": "Both phrases are fully filled with their gradients, so the finished highlight state is clearest here.",
+    "usable": [1, 2, 3, 5, 6],
+    "render": "ok",
+    "render_note": "",
+    "shows_interaction": "yes"
+  },
+  "tagline": "Two phrases in a headline fill with colour behind their words.",
+  "summary": "A three-line headline where two phrases get coloured highlight blocks that sweep in from the left, one after the other, over a couple of seconds.",
+  "title_fix": null,
+  "appearance": "A centred three-line headline in white on black. Two phrases sit inside rounded colour blocks: indigo to violet behind the first, and sky blue to cyan behind the second.",
+  "behaviour": "Each highlight grows from zero to full width behind its phrase, left to right, with the second starting later. A Replay button clears both and runs the sweep again.",
+  "parts": ["headline", "highlight block", "body words", "replay button"],
+  "demo_content": "The headline Build stunning interfaces with smooth, composable motion primitives and a Replay button.",
+  "states": [],
+  "kind": "text-effect",
+  "look": ["dark", "colorful", "rounded", "bold"],
+  "tone": "decorative",
+  "search_phrases": [
+    "highlight marker behind words",
+    "text highlight sweeping animation",
+    "colored blocks on a headline",
+    "marker pen effect for keywords",
+    "animated emphasis on key phrases",
+    "headline where words get filled in",
+    "gradient tag behind text",
+    "scroll triggered text highlight"
+  ],
+  "resembles": [],
+  "use_when": "A hero headline should call out two key phrases as it scrolls into view.",
+  "avoid_when": "The highlight colours are fixed in demo classes, and long highlighted phrases wrap awkwardly.",
+  "suits": ["marketing", "portfolio", "saas"],
+  "slot_hints": ["headline", "hero", "body-text"],
+  "traits": {
+    "trigger": ["viewport"],
+    "motion": "subtle",
+    "affects": ["background"],
+    "theme": "both",
+    "needs_sized_parent": false
+  },
+  "content_from": "props",
+  "customise": "Pass the phrase as text, and set delay, transition and in-view options; the highlight colour and rounding come from your own background classes.",
+  "technique": ["motion-library"],
+  "weight": "light",
+  "weight_why": "One span animating its background size; idle before it enters view.",
+  "responsive": "fluid",
+  "a11y": {
+    "keyboard": "n-a",
+    "focus_visible": "n-a",
+    "labels": "good",
+    "reduced_motion": false,
+    "note": "The sweep starts on view with no reduced-motion check, though the highlighted words stay readable because the text colour is set by you."
+  },
+  "props": [
+    {"name": "text", "type": "string", "default": null, "required": true},
+    {"name": "delay", "type": "number", "default": "0", "required": false},
+    {"name": "inView", "type": "boolean", "default": "false", "required": false},
+    {"name": "inViewOnce", "type": "boolean", "default": "true", "required": false},
+    {"name": "inViewMargin", "type": "string", "default": "0px", "required": false},
+    {"name": "transition", "type": "Transition", "default": "{ duration: 2, ease: 'easeInOut' }", "required": false},
+    {"name": "className", "type": "string", "default": null, "required": false}
+  ],
+  "issues": [
+    "The Replay button is tiny and low contrast in the bottom-right corner."
+  ],
+  "polish": 4,
+  "polish_why": "Crisp headline and a pleasing left-to-right fill; the tiny Replay control is the weak spot.",
+  "unsure": []
+}

@@ -1,0 +1,154 @@
+{
+ "name": "editor",
+ "frames": {
+  "code": "9862",
+  "best": 4,
+  "best_why": "Editor content plus the selection toolbar with its Format dropdown open, showing the formatting options.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 4.2
+ },
+ "tagline": "Rich text editor with a selection toolbar and task-list content.",
+ "summary": "A rich text editor showing a launch-plan document with headings, bold and italic text, a checklist and a quote. Selecting text raises a floating toolbar with block, format and link controls, plus a word count.",
+ "title_fix": "Rich Text Editor",
+ "appearance": "A dark rounded card holds a document: a bold heading, a paragraph with bold and italic runs, a checked task list with square checkboxes, a left-bordered quote and a line of names. A word count sits in the bottom-right corner, and selection shows a rounded floating toolbar above the text.",
+ "behaviour": "Typing slash on a new line opens a command list for blocks; selecting text pops a floating toolbar with Text, Format and Link menus. Choosing Bold, a heading or a list restyles the selection in place, checkboxes toggle, and the corner word count updates.",
+ "parts": [
+  "document",
+  "heading",
+  "task list",
+  "checkboxes",
+  "blockquote",
+  "word count",
+  "floating toolbar"
+ ],
+ "demo_content": "A 'Launch plan: Billing v2' note with billing copy, a three-item checklist, and 'Owner: Maya Chen'.",
+ "states": [
+  "hover",
+  "focus",
+  "open",
+  "selected",
+  "checked"
+ ],
+ "kind": "editor",
+ "look": [
+  "dark",
+  "minimal",
+  "editorial",
+  "flat",
+  "rounded"
+ ],
+ "tone": "minimal",
+ "search_phrases": [
+  "wysiwyg content area",
+  "notion style writing surface",
+  "markdown style writing box",
+  "format text with a popup toolbar",
+  "task list with checkboxes and quotes",
+  "slash commands for blocks",
+  "rich text document panel",
+  "select text to make it bold"
+ ],
+ "resembles": [
+  "Notion"
+ ],
+ "use_when": "A product needs an in-page document editor with block commands, inline formatting and checklists, not a plain textarea.",
+ "avoid_when": "It pulls in a large Tiptap stack and several shared UI parts, so a simple comment box should use a lighter input.",
+ "suits": [
+  "saas",
+  "docs"
+ ],
+ "slot_hints": [
+  "body-text",
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "keyboard",
+   "click"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "text",
+   "background"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Content comes as HTML or JSON plus a placeholder and character limit; which toolbar items appear is decided by which subcomponents you nest, and colours follow the theme.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "heavy",
+ "weight_why": "A full Tiptap stack with tables, syntax highlighting and menus adds a large bundle.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "partial",
+  "reduced_motion": false,
+  "note": "The editor and slash menu work from the keyboard, but many icon-only toolbar buttons rely on tooltips instead of labels, and reduced motion is ignored."
+ },
+ "props": [
+  {
+   "name": "content",
+   "type": "JSONContent | string",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "placeholder",
+   "type": "string",
+   "default": "\"Paste a link\"",
+   "required": false
+  },
+  {
+   "name": "limit",
+   "type": "number",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "extensions",
+   "type": "Extensions",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": "\"border shadow\"",
+   "required": false
+  }
+ ],
+ "issues": [
+  "The floating toolbar covers the line it is formatting, hiding nearby text.",
+  "Many toolbar buttons are icon-only with no visible text label."
+ ],
+ "polish": 4,
+ "polish_why": "Clean, feature-rich editor; menus crowd the text they format and icons are unlabelled.",
+ "unsure": [
+  "content_from",
+  "props"
+ ],
+ "title": "Editor",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "89e7783415ef02bd",
+  "film_hash": "c0198ad48acfc491",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}

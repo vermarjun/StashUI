@@ -1,0 +1,161 @@
+{
+ "name": "focal-point-picker",
+ "frames": {
+  "code": "3398",
+  "best": 6,
+  "best_why": "Banner crop highlighted with its frame drawn across the photo and the crosshair at the chosen point.",
+  "usable": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "render": "ok",
+  "render_note": "",
+  "shows_interaction": "yes",
+  "best_time": 7.0
+ },
+ "tagline": "Drag a crosshair over a photo and its crops reframe as you move.",
+ "summary": "A control for setting an image's focal point. Moving the crosshair on the photo re-crops three preview shapes live: a square avatar, a wide banner and a tall story.",
+ "title_fix": null,
+ "appearance": "A dark rounded card holds a large mountain photo above a row of three crop previews. The photo carries a fine white crosshair with an orange centre dot, and a caption line under it shows a percentage pair on the right. The previews are labelled Avatar, Banner and Story.",
+ "behaviour": "Dragging on the photo moves the crosshair and every preview reframes at once; a click glides the point instead. Hovering a crop dims the photo outside that crop's window and outlines where it will cut.",
+ "parts": [
+  "card",
+  "photo",
+  "crosshair",
+  "centre dot",
+  "crop preview",
+  "crop label",
+  "coordinates",
+  "hint text"
+ ],
+ "demo_content": "A snowy mountain range above a valley of clouds, with previews labelled Avatar, Banner and Story.",
+ "states": [
+  "hover",
+  "focus",
+  "dragging"
+ ],
+ "kind": "input",
+ "look": [
+  "dark",
+  "rounded",
+  "minimal",
+  "shadowed"
+ ],
+ "tone": "technical",
+ "search_phrases": [
+  "set focal point on an image",
+  "choose crop position for a photo",
+  "image cropping tool with previews",
+  "drag a point to centre a picture",
+  "avatar banner story crop preview",
+  "photo position picker",
+  "adjust image alignment for thumbnails",
+  "visual crop selector"
+ ],
+ "resembles": [],
+ "use_when": "A product stores one image in several shapes and someone must choose a point that works for all of them.",
+ "avoid_when": "The default photo loads from a remote Unsplash URL, so the demo needs network unless you pass your own source.",
+ "suits": [
+  "saas",
+  "dashboard",
+  "social"
+ ],
+ "slot_hints": [
+  "form-field"
+ ],
+ "traits": {
+  "trigger": [
+   "drag",
+   "hover",
+   "keyboard"
+  ],
+  "motion": "subtle",
+  "affects": [
+   "image",
+   "children"
+  ],
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "content_from": "props",
+ "customise": "Photo, alt text, aspect ratio, default point and crop list are props; the three default shapes and the card styling are edited in the source.",
+ "technique": [
+  "css-transition"
+ ],
+ "weight": "light",
+ "weight_why": "One large image and three small previews with pointer handlers; no animation loop.",
+ "responsive": "fluid",
+ "a11y": {
+  "keyboard": "yes",
+  "focus_visible": "yes",
+  "labels": "good",
+  "reduced_motion": false,
+  "note": "Arrow keys move the point and the button states its coordinates; crop previews carry only their shape visually and no reduced-motion check exists."
+ },
+ "props": [
+  {
+   "name": "src",
+   "type": "string",
+   "default": "PHOTO",
+   "required": false
+  },
+  {
+   "name": "alt",
+   "type": "string",
+   "default": "\"Peaks above a sea of clouds\"",
+   "required": false
+  },
+  {
+   "name": "imageRatio",
+   "type": "number",
+   "default": "3 / 2",
+   "required": false
+  },
+  {
+   "name": "defaultValue",
+   "type": "FocalPoint",
+   "default": "{ x: 0.68, y: 0.38 }",
+   "required": false
+  },
+  {
+   "name": "crops",
+   "type": "FocalCrop[]",
+   "default": "DEFAULT_CROPS",
+   "required": false
+  },
+  {
+   "name": "onValueChange",
+   "type": "(point: FocalPoint) => void",
+   "default": null,
+   "required": false
+  },
+  {
+   "name": "className",
+   "type": "string",
+   "default": null,
+   "required": false
+  }
+ ],
+ "issues": [
+  "Default photo is fetched from Unsplash, so the card is empty without a network connection."
+ ],
+ "polish": 5,
+ "polish_why": "Thoughtful crosshair, live crop previews, keyboard support and a clean, complete card.",
+ "unsure": [
+  "kind"
+ ],
+ "title": "Focal Point Picker",
+ "_meta": {
+  "schema": 1,
+  "model": "deepseek-v4.1-flash",
+  "contract": "2a74d3b11698",
+  "source_hash": "41f1d655959c77dc",
+  "film_hash": "8c7b1837ec33ddc0",
+  "frames_from": "film",
+  "generated": "2026-11-22"
+ }
+}
