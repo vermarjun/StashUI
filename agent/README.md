@@ -22,8 +22,9 @@ vision labels (kind, look, missing descriptions) ──────────�
 | `cli/stashui.mjs` | The CLI. One file, no dependencies. Also reads the user's project (`context`), checks UI source (`review`) and installs itself (`init`). |
 | `skills/` | `stashui` (build), `stashui-explore` (choose a direction), `stashui-review` (audit). |
 | `site/` | `setup.md`, `llms.txt`, and `proposal.html`, the page a person approves. |
-| `pipeline/` | `tiles.py` (clips to images and facts), `label-*.mjs` + `label.md` (the vision pass), `kinds.json` (the taxonomy), `build.mjs` (everything to `public/`). |
-| `data/` | `facets/<name>.json` measured from pixels, `labels/<name>.json` from the vision pass. One file per component so parallel work never collides. |
+| `pipeline/` | `tiles.py` (clips to images and facts), `describe*` (the record written from frames + code, see below), `posters.py` (the chosen frame becomes the still), `search-index.mjs` (meaning vectors), `kinds.json` (the taxonomy), `build.mjs` (everything to `public/`). `label-*.mjs` + `label.md` are the earlier, narrower vision pass. |
+| `data/` | `facets/<name>.json` measured from pixels, `records/<name>.json` the full record, `describe-raw/<name>.json` the model's answer kept verbatim, `labels/<name>.json` from the earlier pass (fallback only). One file per component so parallel work never collides. |
+| `model/` | The embedding model files, fetched by `npm run agent:model`. Git-ignored. |
 | `test/` | `npm run agent:test`. |
 | `SPEC.md` | The protocol: operations, the sheet format, the catalogue schema, what is stable. |
 
@@ -35,14 +36,48 @@ After the usual steps (`npm run registry`, capture the clip):
 
 ```bash
 python3 agent/pipeline/tiles.py            # on the recording Mac: only clips newer than their tile
-node agent/pipeline/label-batches.mjs <work-dir>   # sheets of whatever has no label yet
-#   one agent per few batches follows agent/pipeline/label.md and writes <work-dir>/out/batch-NN.json
-node agent/pipeline/label-merge.mjs <work-dir>     # validates against the contract, files the labels
-npm run agent                              # rebuilds public/agent (also runs at the end of `npm run registry`)
-npm run agent:test
+npm run agent:describe -- --shards 20      # packets (frames + code) for whatever has no record yet, in .describe/
+#   one `describer` agent per shard follows agent/pipeline/describe.md (brief: describe-brief.md)
+#   and checks itself with: npm run agent:describe:check -- --shard .describe/shards/shard-NNN.txt
+npm run agent:describe:merge               # validates, corrects from source, files the records, prints review lists
+python3 agent/pipeline/posters.py          # the frame each record chose becomes its tile (--gallery: the poster too)
+npm run agent                              # rebuilds public/agent and the search vectors (also runs at the end of `npm run registry`)
+npm run agent:test && node agent/test/find.eval.mjs
 ```
 
-A component with no tile still appears (the raw poster is used) and one with no label falls back to its category, so nothing breaks while the pipeline catches up. `npm run agent` prints how many are in each state.
+A component with no tile still appears (the raw poster is used) and one with no record falls back to its earlier label, then its category, so nothing breaks while the pipeline catches up. `npm run agent` prints how many are in each state.
+
+## The record: one look at each component, kept
+
+`pipeline/describe.md` is the contract. A vision model is shown six numbered frames of the component's clip and its source, with the facts already measured from the clip, and writes one JSON record. The record is the only place a model's judgement about a component lives; the gallery, search and the agent operations are all projections of it, so none of them needs a model of its own.
+
+| Group | Fields | Used by |
+| --- | --- | --- |
+| For people | `tagline` (80 chars), `summary` (240), `title_fix` | gallery cards, detail page, agent list rows |
+| What is seen | `appearance`, `behaviour`, `parts`, `states`, `look`, `tone`, `demo_content` | search text, `view`; `demo_content` is kept out of search on purpose |
+| What it is for | `kind`, `search_phrases` (8), `resembles`, `use_when`, `avoid_when`, `suits`, `slot_hints`, `traits` | search, filters, choosing between two |
+| Cost to adopt | `content_from`, `customise`, `technique`, `weight`, `responsive`, `a11y`, `props` | `view`, filters, review |
+| Honest assessment | `frames` (best frame, usable frames, render check, whether the clip shows the interaction), `issues`, `polish`, `unsure` | the still, the lists of clips to fix |
+
+Rules that keep it trustworthy:
+
+- **The model is asked only what needs eyes or judgement.** Size, palette, motion, dependencies and prop defaults are measured and handed to it as facts.
+- **One job per field**, with a length cap, and a fixed word list wherever the field is filtered on (`describe-vocab.json`).
+- **What can be checked is checked at merge.** A prop name that is not in the source is dropped; defaults are read from the parameter list by regex; `a11y.reduced_motion` is set from a search of the code.
+- **Every image carries a four-digit code** the record must quote. A record that describes a component without having opened its image fails the check.
+- **Raw output is stored twice.** `describe-raw/` is never edited, so changing a cap or a rule is a re-merge, not a re-run.
+- **A record knows what it was made from** (`_meta`: model, contract hash, source hash, film hash). Only a component whose code or clip changed needs describing again.
+
+The run is cheap enough to repeat (a few cents per shard of 20 on DeepSeek V4.1 Flash); the schema is the part meant to last.
+
+## Search by description
+
+People and agents both describe what they want in plain words. Two signals rank the catalogue:
+
+- **Words** (`core/search.mjs`): tokens weighted by where they appear (name, kind, search phrases, tagline, description) and how rare they are.
+- **Meaning** (`core/semantic.mjs`): each component has one vector for its description and one per search phrase; the query is embedded and a component scores as its best-matching vector. The 60 closest earn points by position.
+
+`core/find.mjs` is the gallery's search (`GET /api/search?q=`); the agent's `search` operation uses the same ranking plus project fit. The vectors are one static file (`public/agent/search/vectors.bin`) scanned in about a millisecond, so there is no vector database. The model (all-MiniLM-L6-v2, 23 MB, a few milliseconds per query on a CPU) is optional at runtime: if it cannot load, search falls back to words alone and nothing else changes.
 
 ## Decisions, and why
 
@@ -56,9 +91,13 @@ A component with no tile still appears (the raw poster is used) and one with no 
 
 **Labels are drawn with a built-in bitmap font.** System text rendering gives different pixels per machine and blank labels on a server with no fonts. The same spec yields the same bytes everywhere, which is also what makes sheets testable.
 
-**The agent names the kind; the server filters and ranks; the agent chooses by looking.** No embedding model sits in the request path. Sorting a need into one of 75 kinds is something a language model does well for free, filtering by kind is exact, and the final judgement is visual. Ranking inside a kind uses text match, the human quality score, fit with the project's theme and accent, and adoption cost.
+**The agent names the kind; the server filters and ranks; the agent chooses by looking.** Sorting a need into one of 75 kinds is something a language model does well for free, filtering by kind is exact, and the final judgement is visual. Ranking inside a kind uses word match, meaning match, the human quality score, fit with the project's theme and accent, and adoption cost.
 
-**Kind and look come from a vision pass; everything else is measured.** Size, palette, motion, dependencies and hardcoded colours are computed. Only what needs eyes is asked of a model, against a fixed vocabulary, and anything outside the contract is rejected at merge.
+**A small embedding model does sit in the request path, and it is optional.** The first version had none. It was added when plain-English search came to the gallery: a person does not name a kind, and "ctrl k box" shares no word with "command palette". Measured on 37 everyday-language queries (`test/find.eval.mjs`). The intelligence is still spent at build time (the search phrases in each record did more than the model); the model covers wording nobody anticipated.
+
+**What needs eyes or judgement comes from one vision pass; everything else is measured.** Size, palette, motion, dependencies and hardcoded colours are computed. Kind, look, the descriptions and the choice of still are asked of a model once, against a written contract and fixed vocabularies, and anything outside the contract is rejected at merge.
+
+**The still is chosen, not computed.** The first tiles used the frame with the most pixels differing from the stage. That picks a mid-transition blur as often as the finished state. The describe pass names the one frame that makes the component recognisable, and `posters.py` cuts the tile from it.
 
 **The CLI is the main door, MCP the second.** An image saved to disk and opened with the agent's own file reader works in every agent that has a shell, in the session where it was installed, with no restart. MCP image results work in Claude Code (tested) but are reported unreliable or broken in several other clients, so MCP is for agents with no shell. Both doors call the same six operations.
 

@@ -1,7 +1,12 @@
 // Ranking. The caller is a language model, so the division of labour is:
 // the agent says what KIND of thing it wants (it is good at that), the server
 // filters and orders (deterministic, free, fast), and the agent makes the final
-// call by looking at the sheet. No embedding model sits in the request path.
+// call by looking at the sheet.
+//
+// Two signals say how well a component matches the words of a request: the words
+// themselves (weighted by where they appear and how rare they are), and meaning
+// (semantic.mjs: a small embedding model, optional, passed in as `o.sem`). Word
+// matching alone still works when the model is unavailable.
 import { catalog } from "./catalog.mjs";
 
 const STOP = new Set(("a an the for with and or of to in on that my is it this at by from as be are our your i we need want " +
@@ -22,11 +27,12 @@ function build() {
       hi: new Set(tokens(`${it.name} ${it.title}`)),
       kind: new Set(tokens(`${it.kind} ${(kind?.aka || []).join(" ")}`)),
       mid: new Set(tokens(`${it.blurb} ${it.use} ${(it.look || []).join(" ")} ${it.categories.join(" ")} ${it.tone || ""}`)),
+      ph: new Set(tokens((it.phrases || []).join(" "))),             // how people ask for it, written for search
       lo: new Set(tokens(it.text)),
     };
   });
   const df = new Map();
-  for (const d of docs) for (const t of new Set([...d.hi, ...d.mid, ...d.lo])) df.set(t, (df.get(t) || 0) + 1);   // rarity is about the components' own words
+  for (const d of docs) for (const t of new Set([...d.hi, ...d.mid, ...d.ph, ...d.lo])) df.set(t, (df.get(t) || 0) + 1);   // rarity is about the components' own words
   const idf = (t) => Math.log(1 + docs.length / (1 + (df.get(t) || 0)));
   // phrases that name a kind, longest first: "nav bar" must win over "bar"
   const phrases = cat.kinds.flatMap((k) => [k.id.replaceAll("-", " "), ...k.aka].map((p) => ({ kind: k.id, toks: tokens(p) })))
@@ -62,9 +68,15 @@ export function kindsIn(query) {
 }
 
 /**
- * @param {{query?: string, kind?: string|string[], theme?: string, accent?: string, clean?: boolean, like?: string}} o
+ * @param {{query?: string, kind?: string|string[], theme?: string, accent?: string, clean?: boolean, like?: string,
+ *   sem?: Map<string, number>|null, plain?: boolean}} o
+ *   `sem` is semantic.mjs's meaning(query). `plain` ranks for a person browsing the gallery: relevance and
+ *   quality only, no project fit and no adoption cost.
  * @returns {{names: string[], kinds: string[], total: number}}
  */
+const NEAR = 60;        // how many of the closest-by-meaning components earn points
+const SEM_POINTS = 14;  // what the closest one earns; the kind bonus is 12
+
 export function rank(o) {
   const { docs, idf } = build();
   const cat = catalog();
@@ -72,6 +84,9 @@ export function rank(o) {
   const asked = [o.kind].flat().filter(Boolean);
   const kinds = asked.length ? asked : kindsIn(o.query || "");
   const like = o.like ? cat.byName.get(o.like) : null;
+  // meaning: the NEAR closest components, by position. Position, not the raw similarity, because
+  // similarities bunch together and their scale shifts from query to query.
+  const near = o.sem instanceof Map ? new Map([...o.sem.entries()].sort((a, b) => b[1] - a[1]).slice(0, NEAR).map(([n], i) => [n, i])) : null;
   const scored = [];
   for (const d of docs) {
     const it = d.it;
@@ -84,16 +99,21 @@ export function rank(o) {
     for (const t of q) {
       // an item of the wanted kind already has the kind bonus: its kind words must not count twice,
       // or every globe-less 3D scene would match "globe"
-      const w = Math.max(d.hi.has(t) ? 3 : 0, !inKind && d.kind.has(t) ? 2.5 : 0, d.mid.has(t) ? 2 : 0, d.lo.has(t) ? 1 : 0);
+      const w = Math.max(d.hi.has(t) ? 3 : 0, !inKind && d.kind.has(t) ? 2.5 : 0, d.ph.has(t) ? 2.2 : 0, d.mid.has(t) ? 2 : 0, d.lo.has(t) ? 1 : 0);
       if (w) { text += w * idf(t); hits++; }
     }
     if (q.length) text *= 0.5 + 0.5 * (hits / q.length);           // matching more of the request beats matching one word hard
-    if (!inKind && !like && (!q.length || hits === 0)) continue;   // nothing ties it to the request
-    if (!inKind && kinds.length && hits < Math.min(2, q.length)) continue; // a different kind has to earn its place
-    if (!inKind && kinds.length) text *= 0.6;                      // and it earns it on fewer points: "sign up button" in a navbar request is not a sign-up form
+    const at = near?.get(it.name);                                   // undefined when not close by meaning
+    const close = at != null && at < 12;
+    if (!inKind && !like && (!q.length || hits === 0) && at == null) continue;   // nothing ties it to the request
+    if (!inKind && kinds.length && hits < Math.min(2, q.length) && !close) continue; // a different kind has to earn its place
+    if (!inKind && kinds.length && !o.plain) text *= 0.6;          // and it earns it on fewer points: "sign up button" in a navbar request is not a sign-up form
+    if (at != null) text += SEM_POINTS * (1 - at / NEAR);
 
-    let score = text + (inKind ? 12 : 0);
+    let score = text + (inKind ? (o.plain ? 5 : 12) : 0);
     score *= 0.7 + 0.1 * it.quality;                                // the human review score is the taste prior
+    if (it.render === "blank" || it.render === "broken") score -= 6; // its recording shows nothing usable
+    if (o.plain) { scored.push([score, it]); continue; }
     // fit with the project the agent is building
     if (o.theme && it.theme !== "both" && it.theme !== o.theme) score -= 3;
     if (o.accent && it.accents?.length) score += it.accents.includes(o.accent) ? 1.5 : it.colours > 0 ? -1.5 : 0;

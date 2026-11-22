@@ -6,14 +6,20 @@ import { Input } from "@/components/ui/input";
 import { ComponentCard } from "@/components/site/component-card";
 import { GRID_COLS, CARD_LAYOUT } from "@/lib/categories";
 import { cn } from "@/lib/utils";
+import { matchesWords, useSearch } from "@/lib/use-search";
 import type { ComponentMeta } from "@/__registry__/meta.gen";
 
 const PAGE = 24;
 
 /**
- * Filterable grid of component cards with INFINITE SCROLL (no "load more"). A
+ * Searchable grid of component cards with INFINITE SCROLL (no "load more"). A
  * sentinel near the bottom reveals the next page as you scroll. Layout (columns
  * + preview height) is per component type.
+ *
+ * The box takes a description in plain words ("card that tilts toward the
+ * mouse"). /api/search ranks the whole catalogue by words and meaning; this
+ * grid shows the ones it holds, best match first. Until the server answers, and
+ * if it cannot be reached, a local word match keeps the box responsive.
  */
 export function ComponentGrid({
   items,
@@ -28,16 +34,17 @@ export function ComponentGrid({
   const [limit, setLimit] = React.useState(PAGE);
   const sentinel = React.useRef<HTMLDivElement>(null);
 
+  const { names: ranked } = useSearch(query);
+
   const filtered = React.useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = query.trim();
     if (!q) return items;
-    return items.filter(
-      (i) =>
-        i.title.toLowerCase().includes(q) ||
-        i.name.toLowerCase().includes(q) ||
-        i.description.toLowerCase().includes(q),
-    );
-  }, [items, query]);
+    if (ranked) {
+      const byName = new Map(items.map((i) => [i.name, i]));
+      return ranked.flatMap((n) => byName.get(n) ?? []);
+    }
+    return items.filter((i) => matchesWords(q, i.title, i.name, i.tagline, i.description));
+  }, [items, query, ranked]);
 
   const visible = filtered.slice(0, limit);
   const hasMore = limit < filtered.length;
@@ -68,7 +75,7 @@ export function ComponentGrid({
             setQuery(e.target.value);
             setLimit(PAGE);
           }}
-          placeholder="Filter components…"
+          placeholder="Describe what you need…"
           className="pl-9"
         />
       </div>

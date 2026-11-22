@@ -9,6 +9,21 @@ const nextConfig: NextConfig = {
   // the workspace root to avoid Next inferring the wrong one.
   outputFileTracingRoot: projectRoot,
 
+  // Meaning search (agent/core/embed.mjs) runs a small embedding model through
+  // native code. Keep those packages out of the bundle, and make sure a
+  // standalone build carries them and the model files.
+  serverExternalPackages: ["@huggingface/transformers", "onnxruntime-node"],
+  outputFileTracingIncludes: {
+    "/api/**": [
+      "./agent/model/**",
+      "./node_modules/@huggingface/transformers/**",
+      "./node_modules/@huggingface/tokenizers/**",
+      "./node_modules/@huggingface/jinja/**",
+      "./node_modules/onnxruntime-node/**",
+      "./node_modules/onnxruntime-common/**",
+    ],
+  },
+
   // Lets a dev server and a production server run side by side from one
   // checkout (the recording Mac does: dev for verification, prod for takes).
   distDir: process.env.NEXT_DIST_DIR || ".next",

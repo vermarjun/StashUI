@@ -6,7 +6,7 @@
 //   GET  /api/agent/v1/sheet?s=<spec>   the image itself
 import { INSTRUCTIONS, handleMcp } from "./mcp.mjs";
 import { compose, decodeSpec, encodeSpec } from "./sheet.mjs";
-import { TOOLS, call } from "./tools.mjs";
+import { TOOLS, callWithMeaning } from "./tools.mjs";
 
 const CORS = { "access-control-allow-origin": "*", "access-control-allow-headers": "*", "access-control-allow-methods": "GET, POST, OPTIONS" };
 const json = (status, body, extra = {}) => ({ status, headers: { "content-type": "application/json; charset=utf-8", ...CORS, ...extra }, body: JSON.stringify(body) });
@@ -63,7 +63,7 @@ export async function handle(req) {
   }
   if (!TOOLS[op]) return json(404, { error: `Unknown operation "${op}".`, operations: Object.keys(TOOLS) });
   try {
-    const out = call(op, coerce(op, req.query));
+    const out = await callWithMeaning(op, coerce(op, req.query));
     return json(out.isError ? 400 : 200, {
       text: out.text,
       ...(out.sheet && { sheet: `${req.origin}/api/agent/v1/sheet?s=${encodeSpec(out.sheet)}`, tokens: out.tokens }),

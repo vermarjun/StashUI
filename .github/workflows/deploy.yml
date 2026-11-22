@@ -31,6 +31,13 @@ jobs:
       - name: Install
         run: npm ci --no-audit --no-fund
 
+      # Meaning search runs a 23 MB embedding model on the server. Fetching it here
+      # lets the standalone build carry it (next.config.ts traces agent/model), so the
+      # box never downloads anything at runtime. If this fails, search still works
+      # on word matching alone.
+      - name: Embedding model
+        run: npm run agent:model || echo "::warning::embedding model not fetched; search will use word matching only"
+
       - name: Build (standalone)
         run: |
           # Standalone output is only needed off Vercel, so add it here

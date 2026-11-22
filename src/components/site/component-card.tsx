@@ -52,6 +52,9 @@ export function ComponentCard({
           {nextOnly ? "Next.js only" : item.library ?? ""}
         </span>
       </div>
+      {item.tagline && (
+        <p className="-mt-1.5 line-clamp-1 px-0.5 text-xs text-muted-foreground">{item.tagline}</p>
+      )}
     </Link>
   );
 }

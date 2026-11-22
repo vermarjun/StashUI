@@ -6,7 +6,7 @@
 // Stateless on purpose. There is no session to lose, so any instance can answer
 // any request and the endpoint can sit behind a cache or a load balancer.
 import { compose } from "./sheet.mjs";
-import { TOOLS, call } from "./tools.mjs";
+import { TOOLS, callWithMeaning } from "./tools.mjs";
 
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
@@ -66,7 +66,7 @@ export async function handleMcp(msg, header, origin) {
       const name = msg.params?.name;
       if (!TOOLS[name]) return { status: 200, body: err(msg.id, -32602, `Unknown tool: ${name}`) };
       let out;
-      try { out = call(name, msg.params.arguments || {}); }
+      try { out = await callWithMeaning(name, msg.params.arguments || {}); }
       catch (e) { out = { text: `StashUI failed on ${name}: ${e.message}`, isError: true }; }
       const content = [];
       if (out.sheet) {

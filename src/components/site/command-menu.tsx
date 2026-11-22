@@ -13,8 +13,10 @@ import {
 } from "@/components/ui/command";
 import { componentsMeta } from "@/__registry__/meta.gen";
 import { cn } from "@/lib/utils";
+import { matchesWords, useSearch } from "@/lib/use-search";
 
 const MAX_RESULTS = 50;
+const byName = new Map(componentsMeta.map((c) => [c.name, c]));
 
 export function CommandMenu() {
   const router = useRouter();
@@ -32,18 +34,19 @@ export function CommandMenu() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  // Plain-English search over the whole catalogue (/api/search); a local word
+  // match fills in until the server answers.
+  const { names: ranked } = useSearch(open ? query : "");
+
   const results = React.useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const pool = q
-      ? componentsMeta.filter(
-          (c) =>
-            c.title.toLowerCase().includes(q) ||
-            c.name.toLowerCase().includes(q) ||
-            (c.library ?? "").toLowerCase().includes(q),
-        )
-      : componentsMeta;
+    const q = query.trim();
+    const pool = !q
+      ? componentsMeta
+      : ranked
+        ? ranked.flatMap((n) => byName.get(n) ?? [])
+        : componentsMeta.filter((c) => matchesWords(q, c.title, c.name, c.library, c.tagline));
     return pool.slice(0, MAX_RESULTS);
-  }, [query]);
+  }, [query, ranked]);
 
   const go = React.useCallback(
     (href: string) => {
@@ -74,7 +77,7 @@ export function CommandMenu() {
         commandProps={{ shouldFilter: false }}
       >
         <CommandInput
-          placeholder="Search components by name or library…"
+          placeholder="Describe what you need, or type a name…"
           value={query}
           onValueChange={setQuery}
         />
@@ -89,7 +92,10 @@ export function CommandMenu() {
                 value={c.name}
                 onSelect={() => go(`/c/${c.name}`)}
               >
-                <span className="truncate">{c.title}</span>
+                <span className="shrink-0 truncate">{c.title}</span>
+                {c.tagline && (
+                  <span className="min-w-0 truncate text-xs text-muted-foreground">{c.tagline}</span>
+                )}
                 <span className="ml-auto shrink-0 font-mono text-xs text-muted-foreground">
                   {c.library ?? c.category}
                 </span>

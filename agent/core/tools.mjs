@@ -6,6 +6,7 @@
 // and the CLI, so the three doors can never disagree.
 import { catalog, detail, nearest, registryItem } from "./catalog.mjs";
 import { HUES, rank } from "./search.mjs";
+import { meaning } from "./semantic.mjs";
 import { columnsFor, sheetTokens } from "./sheet.mjs";
 
 const PAGE = 12, DENSE = 20, MAX_RESULTS = 48;
@@ -131,7 +132,11 @@ export const TOOLS = {
           d.description,
           d.use && `Use when: ${d.use}`,
           d.avoid && `Avoid when: ${d.avoid}`,
+          d.behaves && `What it does: ${d.behaves}`,
+          d.parts?.length && `Parts: ${d.parts.join(", ")}${d.states?.length ? ` · states: ${d.states.join(", ")}` : ""}`,
           d.a11y && `Accessibility: ${d.a11y}`,
+          d.content && `Your content goes in through: ${d.content === "hardcoded" ? "nothing, it is hardcoded: edit the file" : d.content}. ${d.customise || ""}`,
+          d.weight && `Runtime weight: ${d.weight}${d.responsive && d.responsive !== "unknown" ? ` · layout: ${d.responsive}` : ""}`,
           `Footprint ${it.size ? `${it.size[0]}x${it.size[1]}px in a 1120x700 stage` : "unmeasured"} · trigger ${it.trigger?.join("/") || "none"}` +
             `${it.accents?.length ? ` · demo colours: ${it.accents.join(", ")}` : " · demo is monochrome"}`,
           `Cost: ${d.npm.length ? `npm ${d.npm.join(", ")}` : "no npm deps"}${d.registry.length ? ` · shadcn ${d.registry.join(", ")}` : ""}` +
@@ -216,6 +221,18 @@ export const TOOLS = {
     },
   },
 };
+
+/**
+ * `call` with meaning search switched on. Embedding a query is async, so the doors (HTTP, MCP) use this;
+ * `call` itself stays synchronous and matches on words only.
+ */
+export async function callWithMeaning(name, args) {
+  if (name === "search" && args?.query) {
+    const sem = await meaning(args.query).catch(() => null);
+    if (sem) return call(name, { ...args, sem });
+  }
+  return call(name, args);
+}
 
 export function call(name, args) {
   const tool = TOOLS[name];

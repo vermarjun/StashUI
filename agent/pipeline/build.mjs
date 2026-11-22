@@ -5,6 +5,7 @@
 //   registry/quality.json                 1..5 visual review score
 //   agent/data/facets/<name>.json         measured from the clip by pipeline/tiles.py
 //   agent/data/labels/<name>.json         kind + wording from the vision pass (pipeline/label.md)
+//   agent/data/records/<name>.json        the full record from frames + code (pipeline/describe.md); wins where present
 //   agent/pipeline/kinds.json             the taxonomy
 //
 // writes, all under public/ so they deploy as static files and the server reads them from disk:
@@ -61,25 +62,27 @@ function installNeeds(name) {
 
 const clip = (s, n) => (s && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s || "");
 const items = [];
-let unlabelled = 0, untiled = 0, incomplete = 0;
+let unlabelled = 0, untiled = 0, incomplete = 0, described = 0;
 
 for (const file of readdirSync(at("agent-index/index/components")).sort()) {
   const r = json(at("agent-index/index/components", file));
   const facets = json(at("agent/data/facets", `${r.name}.json`), null);
   const label = json(at("agent/data/labels", `${r.name}.json`), null);
+  const rec = json(at("agent/data/records", `${r.name}.json`), null);
+  if (rec) described++;
   const hasTile = existsSync(join(out, "tiles", `${r.name}.webp`));
   if (!hasTile) untiled++;
 
   // kind: the vision pass decides; until it has run, fall back to the category
-  let kind = label?.kind && kindById.has(label.kind) ? label.kind : null;
+  let kind = rec?.kind && kindById.has(rec.kind) ? rec.kind : label?.kind && kindById.has(label.kind) ? label.kind : null;
   if (!kind) {
     unlabelled++;
     kind = (r.categories || [r.category]).map((c) => kindFromCategory.get(c)).find(Boolean) || "other";
   }
-  const t = r.traits || {};
+  const t = rec?.traits || r.traits || {};
   const needs = installNeeds(r.name);
   if (needs.unresolved.length) incomplete++;
-  const blurb = clip(label?.blurb || r.blurb || r.description || r.title, 110);
+  const blurb = clip(rec?.tagline || label?.blurb || r.blurb || r.description || r.title, 110);
 
   items.push({
     name: r.name,
@@ -87,13 +90,19 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
     kind,
     scale: kindById.get(kind).scale,
     blurb,
-    look: label?.look || [],                       // what it looks like, in fixed words
-    use: clip(label?.use || r.use_when, 140),
-    text: clip([r.description, r.avoid_when].filter(Boolean).join(" "), 320), // searched, not shown in lists
+    look: rec?.look || label?.look || [],          // what it looks like, in fixed words
+    use: clip(rec?.use_when || label?.use || r.use_when, 140),
+    text: rec ? [rec.summary, rec.appearance, rec.behaviour, rec.parts.join(", ")].join(" ")
+      : clip([r.description, r.avoid_when].filter(Boolean).join(" "), 320), // searched, not shown in lists
+    ...(rec && {
+      phrases: [...rec.search_phrases, ...rec.resembles],   // how people ask for it; searched, not shown
+      technique: rec.technique, weight: rec.weight, content: rec.content_from, suits: rec.suits,
+      ...(rec.frames.render !== "ok" && { render: rec.frames.render }),
+    }),
     categories: r.categories || [r.category],
     origin: r.origin,
     trigger: t.trigger || [],
-    tone: label?.tone || t.tone || null,
+    tone: rec?.tone || label?.tone || t.tone || null,
     theme: t.theme || "both",
     deps: (r.npm_deps || []).length,
     colours: r.hardcoded_colors ?? 0,
@@ -109,9 +118,14 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
 
   writeFileSync(join(out, "items", `${r.name}.json`), JSON.stringify({
     name: r.name, title: r.title, kind, origin: r.origin,
-    description: r.description || blurb,
-    use: label?.use || r.use_when || "", avoid: r.avoid_when || "", a11y: r.a11y || "",
-    exports: r.exports || [], props: r.props || [],
+    description: rec?.summary || r.description || blurb,
+    use: rec?.use_when || label?.use || r.use_when || "", avoid: rec?.avoid_when || r.avoid_when || "",
+    a11y: rec ? `${rec.a11y.note} (keyboard: ${rec.a11y.keyboard}, labels: ${rec.a11y.labels}, reduced motion: ${rec.a11y.reduced_motion ? "respected" : "not handled"})` : r.a11y || "",
+    ...(rec && {
+      looks: rec.appearance, behaves: rec.behaviour, parts: rec.parts, states: rec.states,
+      content: rec.content_from, customise: rec.customise, weight: `${rec.weight}: ${rec.weight_why}`, responsive: rec.responsive,
+    }),
+    exports: r.exports || [], props: rec?.props?.length ? rec.props : r.props || [],
     npm: r.npm_deps || [], registry: needs.primitives, unresolved: needs.unresolved,
     colours: r.hardcoded_colors ?? 0, sizedParent: !!t.needs_sized_parent, css: !!r.css,
     alternatives: (r.alternatives || []).map((a) => a.name || a).slice(0, 4),
@@ -176,6 +190,7 @@ for (const dir of ["agent-skills", "skills"]) {            // current RFC path, 
 
 const kb = (p) => Math.round(statSync(p).size / 1024);
 console.log(`catalog: ${items.length} components, ${kb(join(out, "catalog.json"))} KB`);
+console.log(`  described from frames + code: ${described}   not yet: ${items.length - described}`);
 console.log(`  kind from vision pass: ${items.length - unlabelled}   from category fallback: ${unlabelled}`);
 console.log(`  with a tile: ${items.length - untiled}   without: ${untiled}`);
 console.log(`  install leaves an import unresolved: ${incomplete}   (each is flagged in view and add, and ranked lower)`);

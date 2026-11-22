@@ -46,6 +46,13 @@ const titleMap = existsSync(titlesPath)
 // registry.json, so `shadcn add` still resolves them) but are dropped from the
 // gallery, search, sidebar counts and the agent index.
 const archivedPath = join(root, "registry", "archived.json");
+// Records written from frames + code by the describe pass; one file per component.
+const recordsDir = join(dirname(registryPath), "agent", "data", "records");
+const readRecord = (name) => {
+  const p = join(recordsDir, `${name}.json`);
+  return existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null;
+};
+
 const archived = existsSync(archivedPath)
   ? JSON.parse(readFileSync(archivedPath, "utf8"))
   : {};
@@ -157,7 +164,15 @@ for (const item of manifest.items) {
   entries.push({
     name: item.name,
     title: titleMap[item.name] ?? item.title ?? item.name,
-    description: item.description ?? "",
+    // The described record (agent/pipeline/describe.md) is written for people;
+    // the registry's own description is the fallback until a component has one.
+    ...(() => {
+      const rec = readRecord(item.name);
+      return {
+        description: rec?.summary || item.description || "",
+        tagline: rec?.tagline || "",
+      };
+    })(),
     ...(() => {
       const raw = typeMap[item.name] ?? item.categories ?? ["misc"];
       const list = [...new Set(Array.isArray(raw) ? raw : [raw])].filter(Boolean);
@@ -218,6 +233,8 @@ export interface RegistryEntry {
   name: string;
   title: string;
   description: string;
+  /** One line on what it looks like or does; empty until the component has been described. */
+  tagline: string;
   /** Primary type (first of \`categories\`). */
   category: string;
   /** Every category slug: primary type, extra types, use cases. */
@@ -252,6 +269,8 @@ export interface ComponentMeta {
   name: string;
   title: string;
   description: string;
+  /** One line on what it looks like or does; empty until the component has been described. */
+  tagline: string;
   /** Primary type (first of \`categories\`). */
   category: string;
   /** Every category slug: primary type, extra types, use cases. */
@@ -278,10 +297,11 @@ export const ownCategories = ${JSON.stringify(ownCategories)} as const;
 export const libraries: LibraryInfo[] = ${JSON.stringify(libraries, null, 2)};
 
 export const componentsMeta: ComponentMeta[] = ${JSON.stringify(
-  entries.map(({ name, title, description, category, categories, frameworks, library, librarySlug }) => ({
+  entries.map(({ name, title, description, tagline, category, categories, frameworks, library, librarySlug }) => ({
     name,
     title,
     description,
+    tagline,
     category,
     categories,
     frameworks,
