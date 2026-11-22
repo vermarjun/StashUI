@@ -1,3 +1,4 @@
+import * as React from "react";
 import Link from "next/link";
 import { SiGithub } from "@/components/site/icons";
 import { CommandMenu } from "@/components/site/command-menu";
@@ -16,7 +17,10 @@ export function SiteHeader() {
         </Link>
 
         <div className="ml-auto flex items-center gap-1.5">
-          <CommandMenu />
+          {/* reads the page's ?q=, which needs a Suspense boundary on prerendered pages */}
+          <React.Suspense fallback={<div className="h-8 w-full sm:w-64" />}>
+            <CommandMenu />
+          </React.Suspense>
           <div className="mx-1 hidden h-5 w-px bg-border sm:block" />
           <Button
             asChild

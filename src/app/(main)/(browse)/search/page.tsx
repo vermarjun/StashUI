@@ -19,5 +19,5 @@ export default async function SearchPage({
   searchParams: Promise<{ q?: string | string[] }>;
 }) {
   const { q } = await searchParams;
-  return <SearchResults initialQuery={(Array.isArray(q) ? q[0] : q) ?? ""} />;
+  return <SearchResults query={(Array.isArray(q) ? q[0] : q) ?? ""} />;
 }

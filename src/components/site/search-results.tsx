@@ -1,9 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { ComponentCard } from "@/components/site/component-card";
 import { GRID_COLS, CARD_LAYOUT } from "@/lib/categories";
 import { cn } from "@/lib/utils";
@@ -14,50 +11,38 @@ const PAGE = 24;
 const byName = new Map(componentsMeta.map((c) => [c.name, c]));
 
 /** Yes/no filters, each read from the component's record. */
-const FLAGS: { id: string; label: string; test: (h: SearchHit) => boolean }[] = [
-  { id: "nodeps", label: "No dependencies", test: (h) => h.deps === 0 },
-  { id: "light", label: "Light at runtime", test: (h) => h.weight === "light" },
-  {
-    id: "content",
-    label: "Takes my content",
-    test: (h) => h.content === "props" || h.content === "children" || h.content === "data-array",
-  },
-];
+const FLAGS: { id: string; label: string; test: (h: SearchHit) => boolean }[] =
+  [
+    { id: "nodeps", label: "No dependencies", test: (h) => h.deps === 0 },
+    {
+      id: "light",
+      label: "Light at runtime",
+      test: (h) => h.weight === "light",
+    },
+    {
+      id: "content",
+      label: "Takes my content",
+      test: (h) =>
+        h.content === "props" ||
+        h.content === "children" ||
+        h.content === "data-array",
+    },
+  ];
 
 /**
  * The search results page: describe what you need, see every match as a real
- * card (clip, title, tagline), best first. The box here rewrites the URL as you
- * type, so a search can be shared and the back button works.
+ * card (clip, title, tagline), best first. The query lives in the URL, so a
+ * search can be shared and the back button works.
+ *
+ * There is no search box on this page: the one search is in the header, which
+ * shows this page's query and reopens with it for refining.
  */
-export function SearchResults({ initialQuery }: { initialQuery: string }) {
-  const router = useRouter();
-  const [query, setQuery] = React.useState(initialQuery);
+export function SearchResults({ query }: { query: string }) {
   const [kind, setKind] = React.useState<string | null>(null);
   const [flags, setFlags] = React.useState<Set<string>>(new Set());
   const [limit, setLimit] = React.useState(PAGE);
   const sentinel = React.useRef<HTMLDivElement>(null);
   const { answer, pending } = useSearch(query);
-
-  // What this page last wrote to the URL itself. A query arriving in the URL that
-  // is not this one came from outside (the header search, back/forward) and
-  // replaces the box; one we wrote must not, or it would undo typing in progress.
-  const written = React.useRef(initialQuery.trim());
-  React.useEffect(() => {
-    if (initialQuery.trim() === written.current) return;
-    written.current = initialQuery.trim();
-    setQuery(initialQuery);
-  }, [initialQuery]);
-
-  // Keep the URL in step with the box, without a history entry per keystroke.
-  React.useEffect(() => {
-    const q = query.trim();
-    if (q === written.current) return;
-    const t = setTimeout(() => {
-      written.current = q;
-      router.replace(q ? `/search?q=${encodeURIComponent(q)}` : "/search", { scroll: false });
-    }, 400);
-    return () => clearTimeout(t);
-  }, [query, router]);
 
   // A new answer starts from the top with no filters left over from the last one.
   React.useEffect(() => {
@@ -66,7 +51,10 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
     setLimit(PAGE);
   }, [answer]);
 
-  const hits = React.useMemo(() => (answer?.items ?? []).filter((h) => byName.has(h.name)), [answer]);
+  const hits = React.useMemo(
+    () => (answer?.items ?? []).filter((h) => byName.has(h.name)),
+    [answer],
+  );
 
   const kinds = React.useMemo(() => {
     const count = new Map<string, number>();
@@ -77,7 +65,9 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
   const filtered = React.useMemo(
     () =>
       hits.filter(
-        (h) => (!kind || h.kind === kind) && FLAGS.every((f) => !flags.has(f.id) || f.test(h)),
+        (h) =>
+          (!kind || h.kind === kind) &&
+          FLAGS.every((f) => !flags.has(f.id) || f.test(h)),
       ),
     [hits, kind, flags],
   );
@@ -122,7 +112,7 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
         </h1>
         <p className="mt-1.5 font-mono text-sm text-muted-foreground">
           {!q
-            ? "describe what you need in plain words"
+            ? "press ⌘K and describe what you need in plain words"
             : !answer
               ? pending
                 ? "searching…"
@@ -131,17 +121,6 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
                 ? "no close match · showing the nearest components"
                 : `${answer.total} component${answer.total === 1 ? "" : "s"} · best match first`}
         </p>
-        <div className="relative mt-5 max-w-xl">
-          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            autoFocus
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Describe what you need…"
-            aria-label="Describe what you need"
-            className="pl-9"
-          />
-        </div>
       </div>
 
       {hits.length > 0 && !answer?.weak && (
@@ -150,14 +129,24 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
             Any kind
           </Chip>
           {kinds.map(([k, n]) => (
-            <Chip key={k} pressed={kind === k} onClick={() => setKind(kind === k ? null : k)}>
+            <Chip
+              key={k}
+              pressed={kind === k}
+              onClick={() => setKind(kind === k ? null : k)}
+            >
               {k.replaceAll("-", " ")}
-              <span className="ml-1.5 font-mono text-[11px] opacity-60">{n}</span>
+              <span className="ml-1.5 font-mono text-[11px] opacity-60">
+                {n}
+              </span>
             </Chip>
           ))}
           <span aria-hidden className="mx-1 h-4 w-px bg-border" />
           {FLAGS.map((f) => (
-            <Chip key={f.id} pressed={flags.has(f.id)} onClick={() => toggle(f.id)}>
+            <Chip
+              key={f.id}
+              pressed={flags.has(f.id)}
+              onClick={() => toggle(f.id)}
+            >
               {f.label}
             </Chip>
           ))}
@@ -166,14 +155,18 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
 
       {answer && filtered.length === 0 ? (
         <p className="py-12 text-center text-sm text-muted-foreground">
-          {hits.length ? "Nothing matches those filters." : `No components match “${q}”.`}
+          {hits.length
+            ? "Nothing matches those filters."
+            : `No components match “${q}”.`}
         </p>
       ) : (
         <>
           <div
             className={cn(
               "grid",
-              CARD_LAYOUT === "gap" ? "gap-x-5 gap-y-8" : "border-l border-t border-border",
+              CARD_LAYOUT === "gap"
+                ? "gap-x-5 gap-y-8"
+                : "border-l border-t border-border",
               GRID_COLS[3],
             )}
           >
@@ -182,12 +175,15 @@ export function SearchResults({ initialQuery }: { initialQuery: string }) {
                 key={h.name}
                 item={byName.get(h.name)!}
                 className={
-                  CARD_LAYOUT === "gap" ? undefined : "border-r border-b border-border p-3 hover:bg-muted/20"
+                  CARD_LAYOUT === "gap"
+                    ? undefined
+                    : "border-r border-b border-border p-3 hover:bg-muted/20"
                 }
                 note={
                   h.match ? (
                     <>
-                      matched <span className="text-foreground/70">{h.match}</span>
+                      matched{" "}
+                      <span className="text-foreground/70">{h.match}</span>
                     </>
                   ) : undefined
                 }

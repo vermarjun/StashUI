@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Search } from "lucide-react";
 import {
   CommandDialog,
@@ -33,25 +33,43 @@ function urlsFor(name: string) {
 /**
  * The header search. Describe what you need: the list shows the best matches
  * with a thumbnail each, and the highlighted one plays on the right, so you
- * choose by looking without leaving the page you are on. Enter opens the
- * highlighted component; "See all results" (or Cmd+Enter) opens /search.
+ * choose by looking without leaving the page you are on. The first row is
+ * "See all results" (/search), so Enter on a fresh search opens the full grid;
+ * arrow down and Enter opens one component. Cmd+Enter always opens /search.
  */
 export function CommandMenu() {
   const router = useRouter();
+  // On the results page the header bar shows that page's query, and opening the
+  // popup starts from it, so there is one search box and it is this one.
+  const pathname = usePathname();
+  const params = useSearchParams();
+  const pageQuery =
+    pathname === "/search" ? (params.get("q") ?? "").trim() : "";
   const [open, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
   const [selected, setSelected] = React.useState("");
+
+  // Opening starts from the page's query (empty anywhere but the results page);
+  // closing clears the box, so the next Cmd K never appends to the last search.
+  const setOpenAndReset = React.useCallback(
+    (next: boolean) => {
+      setOpen(next);
+      setQuery(next ? pageQuery : "");
+      setSelected("");
+    },
+    [pageQuery],
+  );
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setOpen((o) => !o);
+        setOpenAndReset(!open);
       }
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [open, setOpenAndReset]);
 
   // Plain-English search over the whole catalogue (/api/search); a local word
   // match fills in until the server answers.
@@ -80,15 +98,12 @@ export function CommandMenu() {
   // highlighted (or on "See all"), the first result.
   const current = byLowerName.get(selected.toLowerCase()) ?? results[0] ?? null;
 
-  // Closing clears the box, so the next Cmd K starts a new search instead of
-  // appending to the last one.
-  const setOpenAndReset = React.useCallback((next: boolean) => {
-    setOpen(next);
-    if (!next) {
-      setQuery("");
-      setSelected("");
-    }
-  }, []);
+  // When an answer arrives its "See all" row is the highlighted one. Without
+  // this the highlight would stay on whichever row happened to be first while
+  // the request was in flight, and Enter would do different things by timing.
+  React.useEffect(() => {
+    if (q && answer && answer.total > 0) setSelected(SEE_ALL);
+  }, [q, answer]);
 
   const go = React.useCallback(
     (href: string) => {
@@ -104,13 +119,20 @@ export function CommandMenu() {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => setOpenAndReset(true)}
         className={cn(
           "inline-flex h-8 w-full items-center gap-2 rounded-md border border-border bg-muted/40 px-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted sm:w-64",
         )}
       >
         <Search className="size-3.5" />
-        <span className="flex-1 text-left">Describe what you need…</span>
+        <span
+          className={cn(
+            "min-w-0 flex-1 truncate text-left",
+            pageQuery && "text-foreground",
+          )}
+        >
+          {pageQuery || "Describe what you need…"}
+        </span>
         <kbd className="pointer-events-none hidden h-5 select-none items-center gap-0.5 rounded border border-border bg-background px-1 font-mono text-[10px] font-medium text-muted-foreground sm:inline-flex">
           ⌘K
         </kbd>
@@ -161,6 +183,22 @@ export function CommandMenu() {
                         : "Searching…"
                 }
               >
+                {/* First in the list, so Enter on a fresh search goes to the full
+                    results; arrow down to open one component instead. */}
+                {q && total != null && total > 0 && (
+                  <CommandItem
+                    value={SEE_ALL}
+                    onSelect={seeAll}
+                    className="gap-3 py-2.5"
+                  >
+                    <span className="flex h-[40px] w-16 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground">
+                      <ArrowRight className="size-4" />
+                    </span>
+                    <span className="min-w-0 flex-1 truncate">
+                      See all {total} result{total === 1 ? "" : "s"}
+                    </span>
+                  </CommandItem>
+                )}
                 {results.map((c) => (
                   <CommandItem
                     key={c.name}
@@ -179,20 +217,6 @@ export function CommandMenu() {
                     </span>
                   </CommandItem>
                 ))}
-                {q && total != null && total > 0 && (
-                  <CommandItem
-                    value={SEE_ALL}
-                    onSelect={seeAll}
-                    className="gap-3 py-2.5"
-                  >
-                    <span className="flex h-[40px] w-16 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground">
-                      <ArrowRight className="size-4" />
-                    </span>
-                    <span className="min-w-0 flex-1 truncate">
-                      See all {total} result{total === 1 ? "" : "s"}
-                    </span>
-                  </CommandItem>
-                )}
               </CommandGroup>
             </CommandList>
             <div className="flex h-10 shrink-0 items-center gap-4 border-t border-border px-4 text-xs text-muted-foreground">
