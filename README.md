@@ -146,7 +146,7 @@ Paste this into Claude Code, Codex, Cursor or any coding agent with a shell:
 
 > Set up StashUI for me: follow https://stashui.vermarjun.xyz/setup.md
 
-The agent runs three commands. They install a one-file CLI and three skills
+The agent runs one command, the same on macOS, Linux and Windows. It installs a one-file CLI and three skills
 into your home folder; nothing in your project changes, and there is no account
 or key. From then on, ask for UI the way you normally would:
 

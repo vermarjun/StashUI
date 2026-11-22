@@ -20,7 +20,7 @@
 // Run: npm run agent
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
-import { dirname, join, relative } from "node:path";
+import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -171,7 +171,7 @@ if (existsSync(at("agent/cli/stashui.mjs"))) {
 const skills = [];
 if (existsSync(at("agent/skills"))) {
   for (const p of walk(at("agent/skills"))) {
-    const rel = relative(at("agent/skills"), p);
+    const rel = relative(at("agent/skills"), p).split(sep).join("/");   // published paths use forward slashes on every OS
     files.push({ role: "skill", skill: rel.split("/")[0], file: rel.split("/").slice(1).join("/"), ...publish(p, `agent/skills/${rel}`) });
     if (rel.endsWith("/SKILL.md")) {
       const fm = readFileSync(p, "utf8").match(/^---\n([\s\S]*?)\n---/)?.[1] || "";

@@ -1,0 +1,40 @@
+name: Agent setup on macOS, Linux and Windows
+
+# Does the one-command setup in public/setup.md work, and does the command the
+# installed skills give agents run, in every shell on every major OS? This starts
+# a throwaway copy of the agent API on the runner and does what a user's agent
+# would do: bash and zsh on macOS and Linux; PowerShell, pwsh, cmd and Git Bash
+# on Windows. It never touches the deployed site.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ["agent/**", ".github/workflows/agent-setup.yml"]
+  push:
+    branches: [main, agentic]
+    paths: ["agent/**", ".github/workflows/agent-setup.yml"]
+
+jobs:
+  setup:
+    name: ${{ matrix.os }}, Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [18, 22]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # only what the agent API needs; the gallery's clips are not part of this
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /agent/
+            /agent-index/index/
+            /registry/quality.json
+            /public/agent/
+            /public/r/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node agent/test/setup.e2e.mjs

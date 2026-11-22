@@ -16,6 +16,16 @@ const API = `${SITE}/api/agent/v1`;
 const HOME = join(homedir(), ".stashui");
 const SELF = fileURLToPath(import.meta.url);
 
+/**
+ * How this file is called from a shell, written into the skills at install. `~` is expanded by bash and zsh
+ * only: PowerShell and cmd hand it to node as a literal folder name. So on Windows the full path is written,
+ * with forward slashes, which bash, PowerShell and cmd all accept. Skills installed into a repository are
+ * shared between machines, so they use $HOME, which bash, zsh and PowerShell all define.
+ */
+const selfCommand = (shared) => (shared ? 'node "$HOME/.stashui/stashui.mjs"'
+  : process.platform === "win32" ? `node "${join(HOME, "stashui.mjs").replaceAll("\\", "/")}"`
+  : "node ~/.stashui/stashui.mjs");
+
 const HELP = `stashui: find, see and install UI components
 
   stashui browse [kind…]            what exists; with up to 4 kinds, one image of the best five of each
@@ -169,7 +179,7 @@ const commands = {
     ].filter(Boolean).join("\n"));
     // context opens every build, so it is where a stale install finds out. Never fatal, never slow.
     const cli = await published();
-    if (cli && cli.sha256 !== ownSha()) console.log("\nA newer StashUI CLI and skills are published. Run `node ~/.stashui/stashui.mjs update`, then re-read the stashui skill.");
+    if (cli && cli.sha256 !== ownSha()) console.log(`\nA newer StashUI CLI and skills are published. Run \`${selfCommand(false)} update\`, then re-read the stashui skill.`);
   },
 
   async update() {
@@ -286,7 +296,7 @@ async function init() {
   mkdirSync(HOME, { recursive: true });
   const home = join(HOME, "stashui.mjs");
   if (resolve(SELF) !== resolve(home)) copyFileSync(SELF, home);
-  const command = "node ~/.stashui/stashui.mjs";
+  const command = selfCommand(!!flags.project);
   done.push(`CLI: ${home}  (run it as \`${command}\`)`);
 
   // 2. skills, checked against the published hashes
