@@ -146,6 +146,13 @@ def one(job):
         # the still: the frame that shows the most component (open menu, finished reveal)
         fill = [float(d[crop[1]:crop[3], crop[0]:crop[2]].mean()) for d in diff]
         hero = int(np.argmax(fill))
+        # ...unless the describe pass looked at the film and named the frame that shows it best
+        # (agent/pipeline/describe.md, frames.best). A re-recorded clip needs describing again.
+        try:
+            best = json.load(open(f"{out}/agent/data/records/{name}.json"))["frames"]["best"]
+            if isinstance(best, int) and 1 <= best <= len(picks): hero = picks[best - 1]
+        except (OSError, ValueError, KeyError, TypeError):
+            pass
 
         def cell(i):
             return Image.fromarray(kept[i]).crop(crop).resize((CELL_W, CELL_H), Image.LANCZOS)
