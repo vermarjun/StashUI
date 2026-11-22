@@ -6,7 +6,7 @@ const TABS = [
     value: "overview",
     label: "Overview",
     content:
-      "An overview gives stakeholders a concise picture of scope, goals, and current status. Keep it scannable — bullet-points and short sentences outperform dense paragraphs every time.",
+      "An overview gives stakeholders a concise picture of scope, goals, and current status. Keep it scannable: bullet-points and short sentences outperform dense paragraphs every time.",
   },
   {
     value: "features",
@@ -18,7 +18,7 @@ const TABS = [
     value: "pricing",
     label: "Pricing",
     content:
-      "Simple, transparent pricing builds trust. Three tiers — free, pro, and enterprise — cover most SaaS businesses without overwhelming prospective customers with choice.",
+      "Simple, transparent pricing builds trust. Three tiers (free, pro, and enterprise) cover most SaaS businesses without overwhelming prospective customers with choice.",
   },
 ];
 

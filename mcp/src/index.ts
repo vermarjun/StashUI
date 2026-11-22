@@ -85,7 +85,7 @@ const pad = (s: string, n: number) => (s.length >= n ? s : s + " ".repeat(n - s.
 function renderCategories(): string {
   const d = readJson(join(INDEX, "categories.json"));
   const lines = [
-    `StashUI — ${d.total} React components, installable with shadcn.`,
+    `StashUI: ${d.total} React components, installable with shadcn.`,
     ``,
     `Pick the category whose description matches the slot you are filling, then`,
     `call stashui_category on it. "see also" names categories that overlap.`,
@@ -118,8 +118,8 @@ function renderCategory(slug: string, f: Filters): string {
   if (f.clean_only) { rows = rows.filter((r) => !r.flags?.some((x) => /^\d+c$/.test(x))); applied.push("clean_only"); }
 
   const head = applied.length
-    ? `${slug} — ${rows.length} of ${d.count} components (${applied.join(", ")})`
-    : `${slug} — ${d.count} components`;
+    ? `${slug}: ${rows.length} of ${d.count} components (${applied.join(", ")})`
+    : `${slug}: ${d.count} components`;
   const lines = d.summary ? [head, ``, d.summary, ``] : [head, ``];
   if (!rows.length) {
     lines.push(`Nothing matched. Drop a filter, or call stashui_category("${slug}") unfiltered.`);
@@ -160,7 +160,7 @@ function renderComponent(name: string): string {
     L.push(`PROPS`);
     const w = Math.max(...r.props.map((x: Prop) => x.name.length)) + 2;
     for (const x of r.props) {
-      const d = x.required ? "required" : x.default != null ? String(x.default) : "—";
+      const d = x.required ? "required" : x.default != null ? String(x.default) : "-";
       L.push(`  ${pad(x.name, w)}${pad(x.type || "unknown", 26)}${d}`);
     }
   } else {
@@ -170,16 +170,16 @@ function renderComponent(name: string): string {
   L.push(`TRAITS       trigger ${(t.trigger || []).join("/")} · motion ${t.motion} · affects ${(t.affects || []).join("/")}`);
   L.push(`             tone ${t.tone} · theme ${t.theme} · sized parent ${t.needs_sized_parent ? "REQUIRED" : "not required"}`);
   if (r.slot_hints?.length) L.push(`SLOTS        ${r.slot_hints.join(", ")}`);
-  L.push(`EXPORTS      ${(r.exports || []).join(", ") || "—"}`);
-  L.push(`NPM DEPS     ${(r.npm_deps || []).join(", ") || "—"}`);
-  L.push(`NEEDS        ${(r.registry_deps || []).join(", ") || "—"}`);
-  L.push(`CSS          ${r.css ? "adds keyframes / CSS vars to globals.css" : "—"}`);
+  L.push(`EXPORTS      ${(r.exports || []).join(", ") || "-"}`);
+  L.push(`NPM DEPS     ${(r.npm_deps || []).join(", ") || "-"}`);
+  L.push(`NEEDS        ${(r.registry_deps || []).join(", ") || "-"}`);
+  L.push(`CSS          ${r.css ? "adds keyframes / CSS vars to globals.css" : "-"}`);
   L.push(`FRAMEWORKS   ${(r.frameworks || []).join(", ") || "react"}`);
   L.push(
     `RECOLOUR     ${
       r.hardcoded_colors
         ? `${r.hardcoded_colors} hardcoded colour${r.hardcoded_colors > 1 ? "s" : ""} to replace with tokens`
-        : "clean — no hardcoded colours"
+        : "clean: no hardcoded colours"
     }`,
   );
   if (r.alternatives?.length) {
@@ -194,7 +194,7 @@ function renderComponent(name: string): string {
   }
   L.push(``, `INSTALL   ${r.install}`);
   L.push(`PREVIEW   ${r.preview}`);
-  L.push(`CODE      stashui_code("${r.name}")  — only if you need to read the implementation`);
+  L.push(`CODE      stashui_code("${r.name}"): only if you need to read the implementation`);
   return L.join("\n");
 }
 
@@ -238,7 +238,7 @@ server.tool(
 
 server.tool(
   "stashui_category",
-  "Lists every component in one category, one line each: name, source library, what it looks like, and integration flags. This is the shortlisting layer. Optional filters narrow a large category before you read it — use them on categories with more than ~60 components.",
+  "Lists every component in one category, one line each: name, source library, what it looks like, and integration flags. This is the shortlisting layer. Optional filters narrow a large category before you read it: use them on categories with more than ~60 components.",
   {
     slug: z.string().describe(`Category slug from stashui_categories, e.g. "buttons".`),
     trigger: z.enum(["always", "hover", "click", "focus", "scroll", "viewport", "pointer-move", "drag", "timer", "keyboard"]).optional()
@@ -247,35 +247,35 @@ server.tool(
       .describe("Only components with this visual register. Match it to the design doc's mood."),
     slot: z.string().optional().describe(`Only components tagged for this page slot, e.g. "primary-cta".`),
     no_deps: z.boolean().optional().describe("Only components with zero npm dependencies."),
-    clean_only: z.boolean().optional().describe("Only components with no hardcoded colours — these drop straight into your design tokens."),
+    clean_only: z.boolean().optional().describe("Only components with no hardcoded colours: these drop straight into your design tokens."),
   },
   async ({ slug, ...f }) => text(renderCategory(slug, f as Filters)),
 );
 
 server.tool(
   "stashui_component",
-  "Everything about one component except its source: what it does, when to use it and when not to, its full prop table with defaults, dependencies, how many hardcoded colours you will have to replace, a usage example from its real demo, and the install command. Call this on the two or three candidates you shortlisted — not on every row.",
+  "Everything about one component except its source: what it does, when to use it and when not to, its full prop table with defaults, dependencies, how many hardcoded colours you will have to replace, a usage example from its real demo, and the install command. Call this on the two or three candidates you shortlisted: not on every row.",
   { name: z.string().describe("Exact component name from a stashui_category listing.") },
   async ({ name }) => text(renderComponent(name)),
 );
 
 server.tool(
   "stashui_code",
-  "The full source of one component. Only call this when you actually need to read the implementation — to check a specific behaviour, or before modifying it. stashui_component already gives you the props, the usage example and the install command, so you rarely need this to make a choice.",
+  "The full source of one component. Only call this when you actually need to read the implementation: to check a specific behaviour, or before modifying it. stashui_component already gives you the props, the usage example and the install command, so you rarely need this to make a choice.",
   { name: z.string().describe("Exact component name.") },
   async ({ name }) => text(renderCode(name)),
 );
 
 server.tool(
   "stashui_slot",
-  `Finds components for one page slot across every category — use this when you have a design doc's slot list and want candidates for a slot regardless of which category they live in. Slots: page-background, section-background, hero, headline, body-text, primary-cta, secondary-cta, nav, sidebar, footer, feature-card, pricing-card, testimonial, logo-wall, stat, form-field, form-submit, modal, toast, tooltip, badge, avatar, media, data-table, list-item, loading, empty-state, decoration, divider, chart.`,
+  `Finds components for one page slot across every category: use this when you have a design doc's slot list and want candidates for a slot regardless of which category they live in. Slots: page-background, section-background, hero, headline, body-text, primary-cta, secondary-cta, nav, sidebar, footer, feature-card, pricing-card, testimonial, logo-wall, stat, form-field, form-submit, modal, toast, tooltip, badge, avatar, media, data-table, list-item, loading, empty-state, decoration, divider, chart.`,
   { slot: z.string().describe("One slot name from the list in this description.") },
   async ({ slot }) => text(renderSlot(slot)),
 );
 
 server.tool(
   "stashui_install",
-  "Returns the single shadcn command that installs the given components into the current project. Run every component for one screen in ONE command — shadcn writes the files, merges keyframes and CSS variables into globals.css, and installs npm dependencies in one pass.",
+  "Returns the single shadcn command that installs the given components into the current project. Run every component for one screen in ONE command: shadcn writes the files, merges keyframes and CSS variables into globals.css, and installs npm dependencies in one pass.",
   { names: z.array(z.string()).min(1).describe("Component names to install together.") },
   async ({ names }) => {
     const missing = names.filter((n) => !componentExists(n));
@@ -289,7 +289,7 @@ server.tool(
     // Vendored components import shadcn primitives and assume they already exist.
     // Emit them in the same command, or the installed code will not compile.
     // A dep is needed unless it is already being installed by name. Do NOT skip it
-    // just because a StashUI component shares the slug — the import resolves to
+    // just because a StashUI component shares the slug: the import resolves to
     // components/ui/<name>, which shadcn init populates from its own registry.
     const known = new Set(names);
     const primitives = [...new Set(recs.flatMap((r) => r.registry_deps ?? []))]
@@ -304,7 +304,7 @@ server.tool(
       `Run this from the project root:\n\n  npx shadcn@latest add ${parts}\n\n` +
         (primitives.length
           ? `Includes ${primitives.length} shadcn primitive${primitives.length > 1 ? "s" : ""} ` +
-            `(${primitives.join(", ")}) that these components import — without them the ` +
+            `(${primitives.join(", ")}) that these components import: without them the ` +
             `installed files will not compile.\n\n`
           : "") +
         (bill
@@ -312,7 +312,7 @@ server.tool(
             `${colours.length} of these files with your design tokens ` +
             `(${colours.map((r) => `${r.name}: ${r.hardcoded_colors}`).join(", ")}). ` +
             `That step is what stops the page looking like a scrapbook.`
-          : `None of these carry hardcoded colours — they drop straight into your tokens.`),
+          : `None of these carry hardcoded colours: they drop straight into your tokens.`),
     );
   },
 );

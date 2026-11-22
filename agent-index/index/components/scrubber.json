@@ -1,0 +1,49 @@
+{
+ "name": "scrubber",
+ "title": "Scrubber",
+ "category": "sliders",
+ "categories": [
+  "sliders",
+  "inputs"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "Scrubber"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport Scrubber from \"./scrubber\";\n\nexport default function ScrubberDemo() {\n  const [opacity, setOpacity] = useState(0.8);\n  const [radius, setRadius] = useState(24);\n  const [rotation, setRotation] = useState(-8);\n  const [blur, setBlur] = useState(0);\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"flex w-full max-w-2xl items-stretch gap-6\">\n        <div className=\"flex flex-1 items-center justify-center rounded-2xl border border-border bg-muted/30\">\n          <div\n            className=\"size-36 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 shadow-2xl\"\n            style={{\n              borderRadius: radius,\n              filter: `blur(${blur}px)`,\n              opacity,\n              transform: `rotate(${rotation}deg)`,\n            }}\n          />\n        </div>\n        <div className=\"flex w-64 flex-col gap-2.5 rounded-2xl border border-border bg-card p-4\">\n          <p className=\"mb-1 font-medium text-muted-foreground text-xs uppercase tracking-wider\">\n            Layer · Hero shape\n          </p>\n          <Scrubber\n            label=\"Opacity\"\n            onValueChange={setOpacity}\n            value={opacity}\n          />\n          <Scrubber\n            decimals={0}\n            label=\"Radius\"\n            max={72}\n            onValueChange={setRadius}\n            step={1}\n            value={radius}\n          />\n          <Scrubber\n            decimals={0}\n            label=\"Rotation\"\n            max={45}\n            min={-45}\n            onValueChange={setRotation}\n            step={1}\n            value={rotation}\n          />\n          <Scrubber\n            decimals={1}\n            label=\"Blur\"\n            max={12}\n            onValueChange={setBlur}\n            step={0.5}\n            value={blur}\n          />\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/scrubber.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/scrubber.json",
+ "preview": "https://stashui.vercel.app/c/scrubber",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

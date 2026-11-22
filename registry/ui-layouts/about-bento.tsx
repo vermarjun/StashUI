@@ -1,27 +1,27 @@
 'use client'
-import { Card } from '@repo/shadcn'
+import { Card } from '@/components/ui/card'
 import React from 'react'
 
 export function AboutBento() {
   return (
-    <section className="bg-slate-50 py-16 px-6 font-dmSans min-h-screen">
+    <section className="bg-background py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-5xl font-bold text-foreground mb-4">
             About Our Impact
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            We've helped thousands of creators and businesses achieve their
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            We&apos;ve helped thousands of creators and businesses achieve their
             goals through innovative solutions and dedicated support.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <Card className="md:col-span-2 md:row-span-2 bg-white rounded-xl p-12 flex flex-col justify-between border border-slate-200 relative overflow-hidden group">
+          <Card className="md:col-span-2 md:row-span-2 bg-card rounded-xl p-12 flex flex-col justify-between border border-border relative overflow-hidden group">
             <svg
               width="377"
               height="368"
-              className="w-105 fill-neutral-100 absolute -bottom-16 group-hover:rotate-180 duration-2000 ease-in -right-16"
+              className="w-105 fill-muted absolute -bottom-16 group-hover:rotate-180 duration-2000 ease-in -right-16"
               viewBox="0 0 377 368"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -32,15 +32,15 @@ export function AboutBento() {
               <div className="inline-flex px-4 py-2 rounded-full bg-violet-600 text-white text-[10px] font-black uppercase tracking-widest">
                 Global Reach
               </div>
-              <h3 className="text-5xl font-black text-gray-900 tracking-tighter leading-tight">
+              <h3 className="text-5xl font-black text-foreground tracking-tighter leading-tight">
                 IMPACT WITHOUT
                 <br />
                 BOUNDARIES.
               </h3>
             </div>
             <div className="mt-12 relative z-10">
-              <p className="text-xl text-gray-500 leading-relaxed max-w-sm">
-                We've helped 500+ creators build an audience of millions across
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-sm">
+                We&apos;ve helped 500+ creators build an audience of millions across
                 every major social platform.
               </p>
             </div>
@@ -58,7 +58,7 @@ export function AboutBento() {
             </div>
           </Card>
 
-          <Card className="bg-gray-900 rounded-xl p-10 text-white flex flex-col justify-center gap-4">
+          <Card className="bg-neutral-900 border-neutral-800 rounded-xl p-10 text-white flex flex-col justify-center gap-4">
             <div className="size-10 rounded-lg bg-violet-500 flex items-center justify-center">
               <div className="size-4 bg-white rounded-full" />
             </div>
@@ -66,7 +66,7 @@ export function AboutBento() {
             <p className="text-xs text-gray-500 font-mono">System Stable V4</p>
           </Card>
 
-          <Card className="md:col-span-2 rounded-xl p-6 border flex-row border-gray-100 flex items-center justify-between cursor-pointer bg-violet-600 transition-all duration-500 overflow-hidden">
+          <Card className="md:col-span-2 rounded-xl p-6 border-none flex-row flex items-center justify-between cursor-pointer bg-violet-600 transition-all duration-500 overflow-hidden">
             <div className="space-y-2 relative z-10 transition-colors text-white">
               <h4 className="text-3xl font-black uppercase tracking-tighter">
                 Join the community

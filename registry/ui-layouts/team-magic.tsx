@@ -117,7 +117,7 @@ export const TeamMagic = () => {
             </h3>
             <p className="text-neutral-500 max-w-xl">
               We're a diverse team of problem-solvers, designers, and tech
-              lovers — passionate about creating impact through digital
+              lovers: passionate about creating impact through digital
               experiences.
             </p>
           </div>

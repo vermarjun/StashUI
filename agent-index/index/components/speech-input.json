@@ -1,0 +1,51 @@
+{
+ "name": "speech-input",
+ "title": "Speech Input",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "inputs"
+ ],
+ "origin": "Vercel AI Elements",
+ "origin_short": "verc",
+ "exports": [
+  "SpeechInput"
+ ],
+ "npm_deps": [
+  "lucide-react"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { SpeechInput } from \"./speech-input\";\n\nexport default function SpeechInputDemo() {\n  const [text, setText] = useState(\n    \"Draft a reply to Jordan confirming Thursday at 3pm, and ask if the venue has parking.\"\n  );\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-6\">\n      <div className=\"w-full max-w-lg rounded-2xl border border-border bg-background p-3 shadow-sm\">\n        <textarea\n          className=\"min-h-24 w-full resize-none bg-transparent px-2 py-1 text-sm outline-none placeholder:text-muted-foreground\"\n          onChange={(e) => setText(e.target.value)}\n          placeholder=\"Ask anything, or tap the mic and talk…\"\n          value={text}\n        />\n        <div className=\"flex items-center justify-between gap-2 px-1 pt-2\">\n          <span className=\"text-muted-foreground text-xs\">\n            Tap the mic to dictate. Tap again to stop.\n          </span>\n          <SpeechInput\n            aria-label=\"Dictate\"\n            onAudioRecorded={async () =>\n              \"Also remind me to send the slides tomorrow morning.\"\n            }\n            onTranscriptionChange={(chunk) =>\n              setText((prev) => `${prev}${prev ? \" \" : \"\"}${chunk.trim()}`)\n            }\n            size=\"icon\"\n          />\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/vercel-ai-elements/speech-input.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/speech-input.json",
+ "preview": "https://stashui.vercel.app/c/speech-input",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

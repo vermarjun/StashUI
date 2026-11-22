@@ -32,7 +32,7 @@ if (names.length === 0) {
 }
 
 // Regenerate the registry first so any demos created/edited by hand (e.g. a new
-// `<name>.demo.tsx`) are in demos.gen — otherwise the capture records a stale
+// `<name>.demo.tsx`) are in demos.gen: otherwise the capture records a stale
 // "No preview available".
 console.log("● Regenerating registry (demos.gen) before capture…");
 spawnSync("node", [join(root, "scripts/build-registry.mjs")], { stdio: "inherit" });
@@ -58,7 +58,7 @@ for (const name of names) {
     if (r.signal === "SIGKILL" || r.error?.code === "ETIMEDOUT") timedOut.push(name);
   }
 }
-// SIGKILL leaves Playwright's chromium orphaned — reap them so they don't pile up.
+// SIGKILL leaves Playwright's chromium orphaned: reap them so they don't pile up.
 if (timedOut.length) spawnSync("pkill", ["-f", "ms-playwright.*chrome|playwright.*chromium"]);
 
 console.log(

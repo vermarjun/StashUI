@@ -4,7 +4,7 @@
  * Renders a paragraph where specific words / phrases use a pixel font
  * while the rest of the text stays in the normal font.
  *
- * Setup — Geist Pixel Fonts with Tailwind CSS
+ * Setup: Geist Pixel Fonts with Tailwind CSS
  * =============================================
  *
  * All Geist fonts can be used through CSS variables:

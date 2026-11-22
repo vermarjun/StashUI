@@ -1,0 +1,47 @@
+{
+ "name": "skeleton-reveal",
+ "title": "Skeleton Reveal",
+ "category": "loaders",
+ "categories": [
+  "loaders",
+  "data-display"
+ ],
+ "origin": "Spectrum UI",
+ "origin_short": "spec",
+ "exports": [
+  "SkeletonReveal"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "pure"
+ ],
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\nimport { SkeletonReveal } from \"./skeleton-reveal\";\n\nconst people = [\n  { name: \"Maya Lin\", role: \"Product Designer\", img: 47, status: \"Online\" },\n  { name: \"Daniel Okafor\", role: \"Staff Engineer\", img: 12, status: \"In a meeting\" },\n  { name: \"Sofia Ramirez\", role: \"Design Engineer\", img: 45, status: \"Away\" },\n];\n\nfunction RowSkeleton() {\n  return (\n    <div className=\"flex items-center gap-3\">\n      <div className=\"h-10 w-10 rounded-full bg-muted\" />\n      <div className=\"flex-1 space-y-2\">\n        <div className=\"h-3 w-32 rounded bg-muted\" />\n        <div className=\"h-2.5 w-20 rounded bg-muted\" />\n      </div>\n      <div className=\"h-6 w-16 rounded-full bg-muted\" />\n    </div>\n  );\n}\n\nexport default function SkeletonRevealDemo() {\n  const [loading, setLoading] = React.useState(true);\n\n  // Every time loading starts (mount or Reload), reveal the rows 1.6s later\n  React.useEffect(() => {\n    if (loading) {\n      const t = setTimeout(() => setLoading(false), 1600);\n      return () => clearTimeout(t);\n    }\n  }, [loading]);\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-6\">\n      <div className=\"w-full max-w-sm rounded-2xl border border-border bg-card p-5 shadow-xl\">\n        <div className=\"mb-4 flex items-center justify-between\">\n          <p className=\"text-sm font-semibold text-card-foreground\">Team</p>\n          <button\n            type=\"button\"\n            onClick={() => setLoading(true)}\n            className=\"rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground\"\n          >\n            Reload\n          </button>\n        </div>\n        <div className=\"space-y-4\">\n          {people.map((p) => (\n            <SkeletonReveal key={p.name} loading={loading} skeleton={<RowSkeleton />} pulseCount={2}>\n              <div className=\"flex items-center gap-3\">\n                <img\n                  src={`https://i.pravatar.cc/150?img=${p.img}`}\n                  alt={p.name}\n                  className=\"h-10 w-10 rounded-full object-cover\"\n                />\n                <div className=\"min-w-0 flex-1\">\n                  <p className=\"truncate text-sm font-medium text-card-foreground\">{p.name}</p>\n                  <p className=\"truncate text-xs text-muted-foreground\">{p.role}</p>\n                </div>\n                <span className=\"rounded-full bg-emerald-500/15 px-2.5 py-1 text-[11px] font-medium text-emerald-400\">\n                  {p.status}\n                </span>\n              </div>\n            </SkeletonReveal>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/spectrum-ui/skeleton-reveal.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/skeleton-reveal.json",
+ "preview": "https://stashui.vercel.app/c/skeleton-reveal",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

@@ -22,7 +22,7 @@ export default function Demo() {
           </button>
         </Tooltip>
         <Tooltip
-          content="A simple string tooltip — minimal and clean."
+          content="A simple string tooltip: minimal and clean."
         >
           <button className="rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted">
             Or hover me

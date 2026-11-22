@@ -21,7 +21,7 @@ import lanyard from './lanyard.png';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-// 1x1 transparent pixel — lets useTexture be called unconditionally when a
+// 1x1 transparent pixel: lets useTexture be called unconditionally when a
 // front/back image isn't supplied.
 const BLANK_PIXEL =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';

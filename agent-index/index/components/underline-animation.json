@@ -1,0 +1,53 @@
+{
+ "name": "underline-animation",
+ "title": "Underline Animation",
+ "category": "text",
+ "categories": [
+  "text",
+  "navigation"
+ ],
+ "origin": "Fancy Components",
+ "origin_short": "fanc",
+ "exports": [
+  "CenterUnderline",
+  "ComesInGoesOutUnderline",
+  "GoesOutComesInUnderline",
+  "UnderlineToBackground"
+ ],
+ "npm_deps": [
+  "clsx",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport {\n  CenterUnderline,\n  ComesInGoesOutUnderline,\n  GoesOutComesInUnderline,\n  UnderlineToBackground,\n} from \"./underline-animation\"\n\nexport default function UnderlineAnimationDemo() {\n  return (\n    <div className=\"flex h-[520px] w-full flex-col items-center justify-center bg-background\">\n      <div className=\"flex flex-row items-start space-x-10 text-2xl uppercase text-[#4f5dff]\">\n        <div className=\"text-muted-foreground\">Contact</div>\n        <ul className=\"flex flex-col space-y-1\">\n          <li>\n            <a href=\"#\" data-underline=\"center\">\n              <CenterUnderline>LinkedIn</CenterUnderline>\n            </a>\n          </li>\n          <li>\n            <a href=\"#\" data-underline=\"comes-in-right\">\n              <ComesInGoesOutUnderline direction=\"right\">Instagram</ComesInGoesOutUnderline>\n            </a>\n          </li>\n          <li>\n            <a href=\"#\" data-underline=\"comes-in-left\">\n              <ComesInGoesOutUnderline direction=\"left\">Dribbble</ComesInGoesOutUnderline>\n            </a>\n          </li>\n          <li>\n            <a href=\"#\" data-underline=\"background\">\n              <UnderlineToBackground targetTextColor=\"#0a0a0a\" className=\"px-0.5\">\n                Read.cv\n              </UnderlineToBackground>\n            </a>\n          </li>\n          <li className=\"pt-10\">\n            <a href=\"#\" data-underline=\"goes-out-left\">\n              <GoesOutComesInUnderline direction=\"left\">hello@stashui.dev</GoesOutComesInUnderline>\n            </a>\n          </li>\n          <li>\n            <a href=\"#\" data-underline=\"goes-out-right\">\n              <GoesOutComesInUnderline direction=\"right\">press@stashui.dev</GoesOutComesInUnderline>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/fancy-components/underline-animation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/underline-animation.json",
+ "preview": "https://stashui.vercel.app/c/underline-animation",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

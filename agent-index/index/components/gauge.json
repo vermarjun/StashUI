@@ -1,0 +1,54 @@
+{
+ "name": "gauge",
+ "title": "Gauge",
+ "category": "charts",
+ "categories": [
+  "charts",
+  "dashboards",
+  "data-display"
+ ],
+ "origin": "Dice UI",
+ "origin_short": "dice",
+ "exports": [
+  "Gauge",
+  "GaugeCombined",
+  "GaugeIndicator",
+  "GaugeLabel",
+  "GaugeRange",
+  "GaugeTrack",
+  "GaugeValueText"
+ ],
+ "npm_deps": [
+  "radix-ui"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\n\nimport {\n  Gauge,\n  GaugeIndicator,\n  GaugeLabel,\n  GaugeRange,\n  GaugeTrack,\n  GaugeValueText,\n} from \"./gauge\";\n\nconst metrics = [\n  { label: \"CPU\", base: 64, swing: 18, color: \"text-sky-400\" },\n  { label: \"Memory\", base: 82, swing: 9, color: \"text-violet-400\" },\n  { label: \"Disk I/O\", base: 37, swing: 22, color: \"text-emerald-400\" },\n];\n\nexport default function GaugeDemo() {\n  const [tick, setTick] = React.useState(0);\n\n  React.useEffect(() => {\n    const id = window.setInterval(() => setTick((t) => t + 1), 1400);\n    return () => window.clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-10\">\n      {metrics.map((m, i) => {\n        const value = Math.round(\n          m.base + Math.sin(tick * 0.9 + i * 2.1) * m.swing,\n        );\n        return (\n          <div key={m.label} className=\"flex flex-col items-center gap-3\">\n            <Gauge value={value} size={160} thickness={12}>\n              <GaugeIndicator>\n                <GaugeTrack />\n                <GaugeRange className={m.color} />\n              </GaugeIndicator>\n              <GaugeValueText className=\"text-2xl font-semibold tabular-nums\" />\n              <GaugeLabel className=\"sr-only\">{m.label}</GaugeLabel>\n            </Gauge>\n            <span className=\"text-sm font-medium text-muted-foreground\">\n              {m.label}\n            </span>\n          </div>\n        );\n      })}\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/dice-ui/gauge.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/gauge.json",
+ "preview": "https://stashui.vercel.app/c/gauge",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

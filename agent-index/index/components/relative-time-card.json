@@ -1,0 +1,50 @@
+{
+ "name": "relative-time-card",
+ "title": "Relative Time Card",
+ "category": "data-display",
+ "categories": [
+  "data-display",
+  "tooltips"
+ ],
+ "origin": "Dice UI",
+ "origin_short": "dice",
+ "exports": [
+  "RelativeTimeCard"
+ ],
+ "npm_deps": [
+  "class-variance-authority",
+  "radix-ui"
+ ],
+ "registry_deps": [
+  "hover-card"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { Clock } from \"lucide-react\";\nimport * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { RelativeTimeCard } from \"./relative-time-card\";\n\nexport default function RelativeTimeCardDemo() {\n  const [now] = React.useState(() => new Date());\n  const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);\n  const oneHourAgo = new Date(now.getTime() - 60 * 60 * 1000);\n  const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);\n  const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);\n\n  const rows = [\n    { who: \"Maya Chen\", what: \"merged #482 into main\", date: fiveMinutesAgo },\n    { who: \"Leo Park\", what: \"deployed v2.14.0 to production\", date: oneHourAgo },\n    { who: \"Ana Ruiz\", what: \"opened an incident review\", date: oneDayAgo },\n    { who: \"Release bot\", what: \"scheduled the 2.15 freeze\", date: tomorrow },\n  ];\n\n  return (\n    <div className=\"flex w-full max-w-lg flex-col gap-6\">\n      <ul className=\"flex flex-col divide-y divide-border rounded-xl border bg-card\">\n        {rows.map((r) => (\n          <li\n            key={r.who}\n            className=\"flex items-center justify-between gap-4 px-4 py-3 text-sm\"\n          >\n            <span className=\"truncate\">\n              <span className=\"font-medium\">{r.who}</span>{\" \"}\n              <span className=\"text-muted-foreground\">{r.what}</span>\n            </span>\n            <RelativeTimeCard\n              date={r.date}\n              timezones={[\"America/New_York\", \"Europe/London\", \"Asia/Tokyo\"]}\n            />\n          </li>\n        ))}\n      </ul>\n      <div className=\"flex items-center gap-3\">\n        <RelativeTimeCard date={now} asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            <Clock />\n            View time details\n          </Button>\n        </RelativeTimeCard>\n        <RelativeTimeCard date={oneHourAgo} variant=\"muted\" />\n        <RelativeTimeCard date={oneHourAgo} variant=\"ghost\" />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/dice-ui/relative-time-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/relative-time-card.json",
+ "preview": "https://stashui.vercel.app/c/relative-time-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

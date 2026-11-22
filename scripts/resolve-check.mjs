@@ -62,7 +62,7 @@ function checkFile(absPath, seen = new Set()) {
   }
   if (code === null) return `missing file ${absPath}`;
 
-  // syntax check — a parse error here would break the shared demos chunk
+  // syntax check: a parse error here would break the shared demos chunk
   try {
     transformSync(code, { loader: "tsx", jsx: "automatic" });
   } catch {

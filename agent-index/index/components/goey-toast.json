@@ -1,0 +1,50 @@
+{
+ "name": "goey-toast",
+ "title": "Goey Toast",
+ "category": "notifications",
+ "categories": [
+  "notifications",
+  "feedback"
+ ],
+ "origin": "goey-toast",
+ "origin_short": "goey",
+ "exports": [
+  "GooeyToaster"
+ ],
+ "npm_deps": [
+  "framer-motion",
+  "sonner"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client'\n\nimport { Button } from '@/components/ui/button'\nimport { GooeyToaster, gooeyToast } from './goey-toast'\n\nconst deploy = () =>\n  new Promise<{ url: string }>((resolve) => setTimeout(() => resolve({ url: 'acme-web.app' }), 1800))\n\nexport default function GoeyToastDemo() {\n  return (\n    <div className=\"flex h-[520px] w-full flex-col items-center justify-center gap-6\">\n      <div className=\"text-center\">\n        <div className=\"text-lg font-semibold text-foreground\">Gooey toasts</div>\n        <div className=\"text-sm text-muted-foreground\">A pill that melts into a card, then back.</div>\n      </div>\n      <div className=\"flex flex-wrap items-center justify-center gap-3\">\n        <Button\n          variant=\"outline\"\n          onClick={() =>\n            gooeyToast.success('Deployment complete', {\n              description: 'Production is live at acme-web.app on main @ 3f8a2c1.',\n            })\n          }\n        >\n          Success\n        </Button>\n        <Button\n          variant=\"outline\"\n          onClick={() =>\n            gooeyToast.error('Payment failed', {\n              description: 'Your Visa ending in 4242 was declined. Try another card.',\n              action: { label: 'Update card', onClick: () => {}, successLabel: 'Opening…' },\n            })\n          }\n        >\n          Error\n        </Button>\n        <Button\n          variant=\"outline\"\n          onClick={() =>\n            gooeyToast.promise(deploy(), {\n              loading: 'Deploying…',\n              success: (d) => `Live at ${d.url}`,\n              error: 'Deploy failed',\n              description: { success: 'Built in 42s · 18 routes · 0 warnings.' },\n            })\n          }\n        >\n          Promise\n        </Button>\n        <Button\n          variant=\"outline\"\n          onClick={() =>\n            gooeyToast.info('Share link ready', {\n              description: 'Anyone with the link can view “Q3 Roadmap”.',\n              action: { label: 'Copy link', onClick: () => {}, successLabel: 'Copied!' },\n            })\n          }\n        >\n          Action\n        </Button>\n      </div>\n      <GooeyToaster position=\"bottom-center\" theme=\"dark\" sound={false} />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/goey-toast/goey-toast.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/goey-toast.json",
+ "preview": "https://stashui.vercel.app/c/goey-toast",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

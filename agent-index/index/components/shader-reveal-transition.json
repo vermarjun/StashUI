@@ -1,0 +1,50 @@
+{
+ "name": "shader-reveal-transition",
+ "title": "Shader Reveal Transition",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "media"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "ShaderRevealTransition"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "webgl",
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport ShaderRevealTransition, {\n  type ShaderRevealVariant,\n} from \"./shader-reveal-transition\";\n\nconst SLIDES = [\n  {\n    image:\n      \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80\",\n    kicker: \"Dolomites, Italy\",\n    title: \"Above the cloud line\",\n  },\n  {\n    image:\n      \"https://images.unsplash.com/photo-1478028928718-7bfdb1b32095?w=1200&q=80\",\n    kicker: \"Lofoten, Norway\",\n    title: \"Night shift at the fjord\",\n  },\n  {\n    image:\n      \"https://images.unsplash.com/photo-1504198266287-1659872e6590?w=1200&q=80\",\n    kicker: \"Patagonia, Chile\",\n    title: \"Wind from the south\",\n  },\n];\n\nconst VARIANTS: ShaderRevealVariant[] = [\n  \"noise\",\n  \"wipe\",\n  \"circle\",\n  \"stripes\",\n  \"zoom\",\n  \"luma\",\n  \"planetary\",\n  \"push\",\n];\n\nexport default function ShaderRevealTransitionDemo() {\n  const [index, setIndex] = useState(0);\n  const [variant, setVariant] = useState<ShaderRevealVariant>(\"noise\");\n  const slide = SLIDES[index % SLIDES.length];\n\n  return (\n    <div className=\"flex w-full max-w-3xl flex-col items-center gap-5 p-6\">\n      <ShaderRevealTransition\n        className=\"aspect-[16/9] w-full border border-border\"\n        transitionKey={index}\n        variant={variant}\n      >\n        <div className=\"relative aspect-[16/9] w-full\">\n          <img\n            alt={slide.title}\n            className=\"absolute inset-0 h-full w-full object-cover\"\n            src={slide.image}\n          />\n          <div className=\"absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent\" />\n          <div className=\"absolute bottom-6 left-6 text-white\">\n            <p className=\"text-xs uppercase tracking-[0.2em] opacity-75\">\n              {slide.kicker}\n            </p>\n            <h3 className=\"mt-1 font-semibold text-3xl\">{slide.title}</h3>\n          </div>\n        </div>\n      </ShaderRevealTransition>\n\n      <div className=\"flex flex-wrap items-center justify-center gap-2\">\n        {VARIANTS.map((v) => (\n          <button\n            className={`rounded-full border px-3 py-1 text-xs capitalize transition-colors ${\n              v === variant\n                ? \"border-foreground bg-foreground text-background\"\n                : \"border-border text-muted-foreground hover:text-foreground\"\n            }`}\n            key={v}\n            onClick={() => setVariant(v)}\n            type=\"button\"\n          >\n            {v}\n          </button>\n        ))}\n        <button\n          className=\"ml-2 rounded-full bg-foreground px-4 py-1.5 font-medium text-background text-sm\"\n          onClick={() => setIndex((i) => i + 1)}\n          type=\"button\"\n        >\n          Next scene\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/shader-reveal-transition.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/shader-reveal-transition.json",
+ "preview": "https://stashui.vercel.app/c/shader-reveal-transition",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

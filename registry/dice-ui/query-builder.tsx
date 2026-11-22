@@ -1,0 +1,1249 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { Slot as SlotPrimitive } from "radix-ui";
+import { useLayoutEffect } from "radix-ui/internal";
+import * as React from "react";
+
+import {
+  addQueryNode,
+  createQueryGroup,
+  createQueryRule,
+  getIsQueryGroup,
+  getIsQueryRuleMultiple,
+  getQueryOperatorLabel,
+  getQueryOperators,
+  type QueryCombinator,
+  type QueryField,
+  type QueryFieldOption,
+  type QueryGroup,
+  type QueryNode,
+  type QueryOperator,
+  type QueryRule,
+  type QueryValue,
+  removeQueryNode,
+  setQueryRuleField,
+  setQueryRuleOperator,
+  setQueryRuleValues,
+  updateQueryNode,
+} from "./query-builder-lib";
+import { Button } from "@/components/ui/button";
+import {
+  Faceted,
+  FacetedBadge,
+  FacetedClear,
+  FacetedContent,
+  FacetedEmpty,
+  FacetedGroup,
+  FacetedInput,
+  FacetedItem,
+  FacetedItemIndicator,
+  FacetedList,
+  FacetedTrigger,
+  FacetedValue,
+} from "./query-builder-faceted";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+import { ChevronDownIcon, ListPlusIcon, PlusIcon, Trash2Icon } from "lucide-react";
+const ROOT_NAME = "QueryBuilder";
+const GROUP_NAME = "QueryBuilderGroup";
+const GROUP_HEADER_NAME = "QueryBuilderGroupHeader";
+const GROUP_TITLE_NAME = "QueryBuilderGroupTitle";
+const GROUP_FOOTER_NAME = "QueryBuilderGroupFooter";
+const GROUP_CONTENT_NAME = "QueryBuilderGroupContent";
+const RULE_LIST_NAME = "QueryBuilderRuleList";
+const RULE_NAME = "QueryBuilderRule";
+const COMBINATOR_NAME = "QueryBuilderCombinator";
+const CONNECTOR_NAME = "QueryBuilderConnector";
+const NEGATE_NAME = "QueryBuilderNegate";
+const FIELD_NAME = "QueryBuilderField";
+const OPERATOR_NAME = "QueryBuilderOperator";
+const VALUE_NAME = "QueryBuilderValue";
+const ADD_RULE_NAME = "QueryBuilderAddRule";
+const ADD_GROUP_NAME = "QueryBuilderAddGroup";
+const REMOVE_NAME = "QueryBuilderRemove";
+
+interface DivProps extends React.ComponentProps<"div"> {
+  asChild?: boolean;
+}
+
+const DEFAULT_LABELS = {
+  where: "Where",
+  and: "And",
+  or: "Or",
+  all: "All",
+  any: "Any",
+  not: "Not",
+  combinator: "Combinator",
+  matchAll: "All of the following are true…",
+  matchAny: "Any of the following are true…",
+  matchNotAll: "Not all of the following are true…",
+  matchNone: "None of the following are true…",
+  field: "Field",
+  searchFields: "Search fields",
+  noFields: "No fields found.",
+  operator: "Operator",
+  operatorLabel: getQueryOperatorLabel,
+  searchOperators: "Search operators",
+  noOperators: "No operators found.",
+  enterValue: "Enter a value",
+  selectValue: "Select a value",
+  selectValues: "Select values",
+  searchValues: (field: string) => `Search ${field.toLowerCase()}`,
+  selected: (count: number) => `${count} selected`,
+  noValue: "no value",
+  noValues: "No results.",
+  between: "and",
+  from: "from",
+  to: "to",
+  true: "True",
+  false: "False",
+  addRule: "Add rule",
+  addGroup: "Add group",
+  removeRule: "Remove rule",
+  removeGroup: "Remove group",
+};
+
+type QueryBuilderLabels = typeof DEFAULT_LABELS;
+
+interface QueryBuilderContextValue {
+  fields: QueryField[];
+  labels: QueryBuilderLabels;
+  value: QueryGroup;
+  setValue: (updater: (value: QueryGroup) => QueryGroup) => void;
+  maxDepth: number;
+  disabled: boolean;
+}
+
+const QueryBuilderContext =
+  React.createContext<QueryBuilderContextValue | null>(null);
+
+function useQueryBuilderContext(consumerName: string) {
+  const context = React.useContext(QueryBuilderContext);
+  if (!context) {
+    throw new Error(`\`${consumerName}\` must be used within \`${ROOT_NAME}\``);
+  }
+  return context;
+}
+
+interface GroupContextValue {
+  group: QueryGroup;
+  depth: number;
+  isRoot: boolean;
+}
+
+const GroupContext = React.createContext<GroupContextValue | null>(null);
+
+function useGroupContext(consumerName: string) {
+  const context = React.useContext(GroupContext);
+  if (!context) {
+    throw new Error(
+      `\`${consumerName}\` must be used within \`${GROUP_NAME}\``,
+    );
+  }
+  return context;
+}
+
+const NestedGroupContext = React.createContext<QueryGroup | null>(null);
+
+const GroupTemplateContext = React.createContext<QueryBuilderGroupProps | null>(
+  null,
+);
+
+interface NodeContextValue {
+  index: number;
+  group: QueryGroup;
+}
+
+const NodeContext = React.createContext<NodeContextValue | null>(null);
+
+const RuleContext = React.createContext<QueryRule | null>(null);
+
+function useRuleContext(consumerName: string) {
+  const context = React.useContext(RuleContext);
+  if (!context) {
+    throw new Error(`\`${consumerName}\` must be used within \`${RULE_NAME}\``);
+  }
+  return context;
+}
+
+function useQueryActions(consumerName: string) {
+  const { setValue } = useQueryBuilderContext(consumerName);
+  return React.useMemo(
+    () => ({
+      update: (id: string, updater: (node: QueryNode) => QueryNode) =>
+        setValue((value) => updateQueryNode(value, id, updater)),
+      add: (groupId: string, node: QueryNode) =>
+        setValue((value) => addQueryNode(value, groupId, node)),
+      remove: (id: string) => setValue((value) => removeQueryNode(value, id)),
+    }),
+    [setValue],
+  );
+}
+
+interface QueryBuilderProps extends Omit<DivProps, "defaultValue"> {
+  fields: QueryField[];
+  value?: QueryGroup;
+  defaultValue?: QueryGroup;
+  onValueChange?: (value: QueryGroup) => void;
+  maxDepth?: number;
+  labels?: Partial<QueryBuilderLabels>;
+  disabled?: boolean;
+}
+
+function QueryBuilder({
+  fields,
+  value: valueProp,
+  defaultValue,
+  onValueChange: onValueChangeProp,
+  maxDepth = 2,
+  labels: labelsProp,
+  disabled = false,
+  asChild,
+  className,
+  ...props
+}: QueryBuilderProps) {
+  const [uncontrolledValue, setUncontrolledValue] = React.useState(
+    () => defaultValue ?? createQueryGroup(),
+  );
+  const isControlled = valueProp !== undefined;
+  const value = valueProp ?? uncontrolledValue;
+
+  const valueRef = React.useRef(value);
+  useLayoutEffect(() => {
+    valueRef.current = value;
+  });
+
+  const setValue = React.useCallback(
+    (updater: (value: QueryGroup) => QueryGroup) => {
+      const next = updater(valueRef.current);
+      if (next === valueRef.current) return;
+      valueRef.current = next;
+      if (!isControlled) setUncontrolledValue(next);
+      onValueChangeProp?.(next);
+    },
+    [isControlled, onValueChangeProp],
+  );
+
+  const labels = React.useMemo<QueryBuilderLabels>(
+    () => ({
+      ...DEFAULT_LABELS,
+      ...Object.fromEntries(
+        Object.entries(labelsProp ?? {}).filter(
+          ([, label]) => label !== undefined,
+        ),
+      ),
+    }),
+    [labelsProp],
+  );
+
+  const contextValue = React.useMemo<QueryBuilderContextValue>(
+    () => ({ fields, labels, value, setValue, maxDepth, disabled }),
+    [fields, labels, value, setValue, maxDepth, disabled],
+  );
+
+  const RootPrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <QueryBuilderContext.Provider value={contextValue}>
+      <RootPrimitive
+        role="group"
+        data-slot="query-builder"
+        data-disabled={disabled ? "" : undefined}
+        {...props}
+        className={cn(
+          "min-w-64 gap-2 @container/query-builder flex flex-col",
+          className,
+        )}
+      />
+    </QueryBuilderContext.Provider>
+  );
+}
+
+interface QueryBuilderGroupProps extends Omit<DivProps, "children"> {
+  children?: React.ReactNode | ((group: QueryGroup) => React.ReactNode);
+}
+
+function QueryBuilderGroup(groupProps: QueryBuilderGroupProps) {
+  const { value } = useQueryBuilderContext(GROUP_NAME);
+  const parent = React.useContext(GroupContext);
+  const nestedGroup = React.useContext(NestedGroupContext);
+  const template = React.useContext(GroupTemplateContext);
+
+  const { asChild, className, ref, id, children, ...props } =
+    parent && template
+      ? {
+          ...template,
+          ...groupProps,
+          className: cn(template.className, groupProps.className),
+        }
+      : groupProps;
+
+  const group = nestedGroup ?? value;
+  const depth = parent ? parent.depth + 1 : 0;
+
+  const groupContext = React.useMemo<GroupContextValue>(
+    () => ({ group, depth, isRoot: !parent }),
+    [group, depth, parent],
+  );
+
+  const GroupPrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  const element = (
+    <GroupContext.Provider value={groupContext}>
+      <NestedGroupContext.Provider value={null}>
+        <GroupPrimitive
+          ref={ref}
+          id={id}
+          role={parent ? "listitem" : "group"}
+          data-slot="query-builder-group"
+          data-depth={depth}
+          data-combinator={group.combinator}
+          data-not={group.not ? "" : undefined}
+          {...props}
+          className={cn("items-start gap-1.5 @max-[28rem]/query-builder:gap-1.5 @max-[28rem]/query-builder:flex-col @max-[28rem]/query-builder:items-stretch flex", className)}
+        >
+          {typeof children === "function" ? children(group) : children}
+        </GroupPrimitive>
+      </NestedGroupContext.Provider>
+    </GroupContext.Provider>
+  );
+
+  if (parent) return element;
+
+  return (
+    <GroupTemplateContext.Provider
+      value={{ asChild, className, children, ...props }}
+    >
+      {element}
+    </GroupTemplateContext.Provider>
+  );
+}
+
+function QueryBuilderGroupHeader({ asChild, className, ...props }: DivProps) {
+  const { depth } = useGroupContext(GROUP_HEADER_NAME);
+  const HeaderPrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <HeaderPrimitive
+      data-slot="query-builder-group-header"
+      data-depth={depth}
+      {...props}
+      className={cn(
+        "gap-0.5 ps-1.5 text-sm text-muted-foreground flex items-center",
+        className,
+      )}
+    />
+  );
+}
+
+function QueryBuilderGroupTitle({
+  asChild,
+  className,
+  children,
+  ...props
+}: DivProps) {
+  const { labels } = useQueryBuilderContext(GROUP_TITLE_NAME);
+  const { group } = useGroupContext(GROUP_TITLE_NAME);
+  const title =
+    group.combinator === "and"
+      ? group.not
+        ? labels.matchNotAll
+        : labels.matchAll
+      : group.not
+        ? labels.matchNone
+        : labels.matchAny;
+
+  const TitlePrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <TitlePrimitive
+      data-slot="query-builder-group-title"
+      dir="auto"
+      {...props}
+      className={cn("flex-1 truncate", className)}
+    >
+      {asChild ? (
+        <SlotPrimitive.Slottable child={children}>
+          {(content) => content ?? title}
+        </SlotPrimitive.Slottable>
+      ) : (
+        (children ?? title)
+      )}
+    </TitlePrimitive>
+  );
+}
+
+function QueryBuilderGroupFooter({ asChild, className, ...props }: DivProps) {
+  const { depth } = useGroupContext(GROUP_FOOTER_NAME);
+  const FooterPrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <FooterPrimitive
+      data-slot="query-builder-group-footer"
+      data-depth={depth}
+      {...props}
+      className={cn(
+        "gap-1 flex items-center",
+        className,
+      )}
+    />
+  );
+}
+
+function QueryBuilderGroupContent({ asChild, className, ...props }: DivProps) {
+  const { depth } = useGroupContext(GROUP_CONTENT_NAME);
+  const ContentPrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <ContentPrimitive
+      data-slot="query-builder-group-content"
+      data-depth={depth}
+      {...props}
+      className={cn(
+        "min-w-0 flex-1 gap-1.5 not-data-[depth=0]:rounded-lg not-data-[depth=0]:border not-data-[depth=0]:bg-muted/20 not-data-[depth=0]:p-2 @container/query-builder flex flex-col",
+        className,
+      )}
+    />
+  );
+}
+
+interface QueryBuilderRuleListProps extends Omit<
+  React.ComponentProps<"div">,
+  "children"
+> {
+  children?: React.ReactNode | ((node: QueryNode) => React.ReactNode);
+}
+
+function QueryBuilderRuleList({
+  className,
+  children,
+  ...props
+}: QueryBuilderRuleListProps) {
+  const { group } = useGroupContext(RULE_LIST_NAME);
+
+  return (
+    <div
+      role="list"
+      data-slot="query-builder-rule-list"
+      {...props}
+      className={cn("gap-1.5 flex flex-col", className)}
+    >
+      {group.rules.map((node, index) => (
+        <NodeContext.Provider key={node.id} value={{ index, group }}>
+          {getIsQueryGroup(node) ? (
+            <NestedGroupContext.Provider value={node}>
+              {typeof children === "function" ? (
+                children(node)
+              ) : (
+                <QueryBuilderGroup />
+              )}
+            </NestedGroupContext.Provider>
+          ) : (
+            <RuleContext.Provider value={node}>
+              {typeof children === "function" ? children(node) : children}
+            </RuleContext.Provider>
+          )}
+        </NodeContext.Provider>
+      ))}
+    </div>
+  );
+}
+
+function QueryBuilderRule({ asChild, className, ...props }: DivProps) {
+  const rule = useRuleContext(RULE_NAME);
+
+  const RulePrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <RulePrimitive
+      role="listitem"
+      data-slot="query-builder-rule"
+      data-operator={rule.operator}
+      {...props}
+      className={cn("gap-1.5 *:data-[slot=button-group]:min-w-0 @max-[28rem]/query-builder:gap-1.5 @max-[28rem]/query-builder:*:data-[slot=button-group]:flex-1 @max-[28rem]/query-builder:**:data-[slot=query-builder-select-icon]:hidden has-data-[operator=isBetween]:*:data-[slot=button-group]:flex-1 [&>[data-slot=button-group]>*:not(:first-child):focus-visible]:outline-1 [&>[data-slot=button-group]>*:not(:first-child):focus-visible]:outline-solid [&>[data-slot=button-group]>*:not(:first-child):focus-visible]:outline-ring [&>[data-slot=button-group]>*:not(:first-child):focus-visible]:-outline-offset-1 @max-[40rem]/query-builder:data-[operator=isBetween]:items-start @max-[40rem]/query-builder:data-[operator=isBetween]:*:data-[slot=button-group]:flex-wrap @max-[40rem]/query-builder:data-[operator=isBetween]:*:data-[slot=button-group]:gap-y-1 flex items-center", className)}
+    />
+  );
+}
+
+interface CombinatorSelectProps extends React.ComponentProps<
+  typeof SelectTrigger
+> {
+  group: QueryGroup;
+  items: Record<QueryCombinator, string>;
+}
+
+function CombinatorSelect({
+  group,
+  items,
+  disabled: disabledProp,
+  ...props
+}: CombinatorSelectProps) {
+  const { disabled, labels } = useQueryBuilderContext(COMBINATOR_NAME);
+  const isDisabled = disabled || disabledProp;
+  const { update } = useQueryActions(COMBINATOR_NAME);
+
+  return (
+    <Select
+      value={group.combinator}
+      onValueChange={(combinator) =>
+        update(group.id, (node) => ({
+          ...node,
+          combinator: combinator as QueryCombinator,
+        }))
+      }
+      disabled={isDisabled}
+    >
+      <SelectTrigger size="sm" aria-label={labels.combinator} {...props}>
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        {(["and", "or"] as const).map((combinator) => (
+          <SelectItem key={combinator} value={combinator}>
+            {items[combinator]}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+}
+
+function QueryBuilderCombinator({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectTrigger>) {
+  const { labels } = useQueryBuilderContext(COMBINATOR_NAME);
+  const { group } = useGroupContext(COMBINATOR_NAME);
+
+  return (
+    <CombinatorSelect
+      group={group}
+      items={{ and: labels.all, or: labels.any }}
+      data-slot="query-builder-combinator"
+      {...props}
+      className={cn("w-20", className)}
+    />
+  );
+}
+
+function QueryBuilderConnector({
+  asChild,
+  className,
+  children,
+  ...props
+}: DivProps) {
+  const { labels } = useQueryBuilderContext(CONNECTOR_NAME);
+  const node = React.useContext(NodeContext);
+
+  if (!node) return null;
+
+  const { index, group } = node;
+  const target = group.rules[index];
+  const items = { and: labels.and, or: labels.or };
+
+  const ConnectorPrimitive = asChild ? SlotPrimitive.Slot : "div";
+
+  return (
+    <ConnectorPrimitive
+      data-slot="query-builder-connector"
+      data-type={target && getIsQueryGroup(target) ? "group" : "rule"}
+      {...props}
+      className={cn("h-7 w-18 shrink-0 data-[type=group]:mt-2 @max-[28rem]/query-builder:w-15 @max-[28rem]/query-builder:data-[type=group]:mt-0 flex items-center", className)}
+    >
+      {asChild && <SlotPrimitive.Slottable>{children}</SlotPrimitive.Slottable>}
+      {index === 1 ? (
+        <CombinatorSelect
+          group={group}
+          items={items}
+          className="w-full rounded-lg data-[size=sm]:rounded-lg @max-[28rem]/query-builder:gap-1 @max-[28rem]/query-builder:px-1.5 @max-[28rem]/query-builder:[&_svg]:hidden"
+        />
+      ) : (
+        <span className="ps-2 text-sm text-muted-foreground @max-[28rem]/query-builder:ps-1">
+          {index === 0 ? labels.where : items[group.combinator]}
+        </span>
+      )}
+    </ConnectorPrimitive>
+  );
+}
+
+function QueryBuilderNegate({
+  onClick,
+  children,
+  className,
+  disabled: disabledProp,
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { disabled, labels } = useQueryBuilderContext(NEGATE_NAME);
+  const isDisabled = disabled || disabledProp;
+  const { group } = useGroupContext(NEGATE_NAME);
+  const { update } = useQueryActions(NEGATE_NAME);
+
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      aria-pressed={!!group.not}
+      data-slot="query-builder-negate"
+      data-state={group.not ? "on" : "off"}
+      disabled={isDisabled}
+      {...props}
+      onClick={(event) => {
+        onClick?.(event);
+        if (event.defaultPrevented) return;
+        update(group.id, (node) =>
+          getIsQueryGroup(node) ? { ...node, not: !node.not } : node,
+        );
+      }}
+      className={cn("text-muted-foreground aria-pressed:bg-muted aria-pressed:text-foreground", className)}
+    >
+      {children ?? labels.not}
+    </Button>
+  );
+}
+
+function QueryBuilderField({
+  id,
+  "aria-labelledby": ariaLabelledBy,
+  className,
+  disabled: disabledProp,
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { fields, labels, disabled } = useQueryBuilderContext(FIELD_NAME);
+  const isDisabled = disabled || disabledProp;
+  const generatedId = React.useId();
+  const triggerId = id ?? generatedId;
+  const rule = useRuleContext(FIELD_NAME);
+  const { update } = useQueryActions(FIELD_NAME);
+  const currentField = fields.find((field) => field.value === rule.field);
+
+  return (
+    <Faceted
+      items={fields}
+      value={rule.field}
+      onValueChange={(value) => {
+        const field = fields.find((item) => item.value === value);
+        if (!field) return;
+        update(rule.id, (node) =>
+          setQueryRuleField(node as QueryRule, currentField, field),
+        );
+      }}
+    >
+      <FacetedTrigger asChild>
+        <Button
+          variant="outline"
+          size="sm"
+          aria-label={
+            ariaLabelledBy
+              ? currentField
+                ? currentField.label
+                : labels.field
+              : currentField
+                ? `${labels.field}: ${currentField.label}`
+                : labels.field
+          }
+          aria-labelledby={
+            ariaLabelledBy ? `${ariaLabelledBy} ${triggerId}` : undefined
+          }
+          title={currentField?.label}
+          id={triggerId}
+          data-slot="query-builder-field"
+          disabled={isDisabled}
+          {...props}
+          className={cn(
+            "w-24 min-w-0 @max-[28rem]/query-builder:w-auto @max-[28rem]/query-builder:not-in-data-[operator=isBetween]:flex-1 @max-[40rem]/query-builder:in-data-[operator=isBetween]:basis-1/2 justify-between gap-1 font-normal transition-[color,background-color,border-color,box-shadow] has-data-[slot=query-builder-value-list]:pl-1",
+            className,
+          )}
+        >
+          <FacetedValue>
+            {([item]) => (
+              <bdi
+                className={cn(
+                  "min-w-0 truncate",
+                  !item && "text-muted-foreground",
+                )}
+              >
+                {item ? item.label : labels.field}
+              </bdi>
+            )}
+          </FacetedValue>
+          <ChevronDownIcon data-slot="query-builder-select-icon" className="size-4 shrink-0 opacity-50" />
+        </Button>
+      </FacetedTrigger>
+      <FacetedContent align="start">
+        <FacetedInput placeholder={labels.searchFields} />
+        <FacetedList>
+          <FacetedEmpty>{labels.noFields}</FacetedEmpty>
+          <FacetedGroup>
+            {fields.map((field) => (
+              <FacetedItem key={field.value} value={field.value}>
+                <bdi className="flex-1 truncate">{field.label}</bdi>
+                <FacetedItemIndicator />
+              </FacetedItem>
+            ))}
+          </FacetedGroup>
+        </FacetedList>
+      </FacetedContent>
+    </Faceted>
+  );
+}
+
+function QueryBuilderOperator({
+  id,
+  "aria-labelledby": ariaLabelledBy,
+  className,
+  disabled: disabledProp,
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { fields, labels, disabled } = useQueryBuilderContext(OPERATOR_NAME);
+  const isDisabled = disabled || disabledProp;
+  const generatedId = React.useId();
+  const triggerId = id ?? generatedId;
+  const rule = useRuleContext(OPERATOR_NAME);
+  const { update } = useQueryActions(OPERATOR_NAME);
+  const field = fields.find((item) => item.value === rule.field);
+
+  if (!field) return null;
+
+  const operators = getQueryOperators(field).map((operator) => ({
+    label: labels.operatorLabel(operator, field.type),
+    value: operator,
+  }));
+
+  return (
+    <Faceted
+      items={operators}
+      value={rule.operator}
+      onValueChange={(next) => {
+        if (!next) return;
+        update(rule.id, (node) =>
+          setQueryRuleOperator(node as QueryRule, field, next as QueryOperator),
+        );
+      }}
+    >
+      <FacetedTrigger asChild>
+        <Button
+          variant="outline"
+          size="sm"
+          aria-label={
+            ariaLabelledBy
+              ? labels.operatorLabel(rule.operator, field.type)
+              : `${labels.operator}: ${labels.operatorLabel(rule.operator, field.type)}`
+          }
+          aria-labelledby={
+            ariaLabelledBy ? `${ariaLabelledBy} ${triggerId}` : undefined
+          }
+          title={labels.operatorLabel(rule.operator, field.type)}
+          id={triggerId}
+          data-slot="query-builder-operator"
+          disabled={isDisabled}
+          {...props}
+          className={cn(
+            "w-28 min-w-0 @max-[28rem]/query-builder:w-auto @max-[28rem]/query-builder:not-in-data-[operator=isBetween]:flex-1 @max-[40rem]/query-builder:in-data-[operator=isBetween]:basis-1/2 @max-[40rem]/query-builder:in-data-[operator=isBetween]:rounded-r-lg! justify-between gap-1 font-normal transition-[color,background-color,border-color,box-shadow] has-data-[slot=query-builder-value-list]:pl-1",
+            className,
+          )}
+        >
+          <FacetedValue>
+            {([item]) => (
+              <bdi className="min-w-0 truncate">{item?.label}</bdi>
+            )}
+          </FacetedValue>
+          <ChevronDownIcon data-slot="query-builder-select-icon" className="size-4 shrink-0 opacity-50" />
+        </Button>
+      </FacetedTrigger>
+      <FacetedContent align="start">
+        <FacetedInput placeholder={labels.searchOperators} />
+        <FacetedList>
+          <FacetedEmpty>{labels.noOperators}</FacetedEmpty>
+          <FacetedGroup>
+            {operators.map((operator) => (
+              <FacetedItem key={operator.value} value={operator.value}>
+                <bdi className="flex-1 truncate">{operator.label}</bdi>
+                <FacetedItemIndicator />
+              </FacetedItem>
+            ))}
+          </FacetedGroup>
+        </FacetedList>
+      </FacetedContent>
+    </Faceted>
+  );
+}
+
+function getSelectedValues(value: QueryValue | undefined) {
+  if (Array.isArray(value)) return value;
+  return value ? [value] : [];
+}
+
+function QueryBuilderValueList({ options }: { options: QueryFieldOption[] }) {
+  const listRef = React.useRef<HTMLSpanElement>(null);
+  const itemRefs = React.useRef<(HTMLSpanElement | null)[]>([]);
+  const labelRefs = React.useRef<(HTMLElement | null)[]>([]);
+  const countRef = React.useRef<HTMLSpanElement>(null);
+  const [visibleCount, setVisibleCount] = React.useState(options.length);
+
+  React.useLayoutEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+
+    function measure() {
+      if (!list) return;
+      const widths = options.map((_, index) => {
+        const item = itemRefs.current[index];
+        const label = labelRefs.current[index];
+        if (!item) return 0;
+        if (!label) return item.getBoundingClientRect().width;
+        return (
+          item.getBoundingClientRect().width -
+          label.getBoundingClientRect().width +
+          label.scrollWidth
+        );
+      });
+      const gap = Number.parseFloat(getComputedStyle(list).columnGap) || 0;
+      const available = list.getBoundingClientRect().width;
+      const total = widths.reduce((sum, width) => sum + width + gap, -gap);
+      if (total <= available) {
+        setVisibleCount(widths.length);
+        return;
+      }
+      let used = countRef.current?.getBoundingClientRect().width ?? 24;
+      let count = 0;
+      for (const width of widths) {
+        if (used + gap + width > available) break;
+        used += gap + width;
+        count++;
+      }
+      setVisibleCount(Math.max(1, count));
+    }
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(list);
+    return () => observer.disconnect();
+  });
+
+  const hiddenCount = Math.max(0, options.length - visibleCount);
+
+  return (
+    <span
+      ref={listRef}
+      data-slot="query-builder-value-list"
+      className="relative flex min-w-0 flex-1 items-center gap-1 overflow-hidden"
+    >
+      {options.map(({ label, value }, index) => (
+        <span
+          key={value}
+          ref={(node) => {
+            itemRefs.current[index] = node;
+          }}
+          data-slot="query-builder-value-item"
+          data-hidden={index >= visibleCount ? "" : undefined}
+          className="flex min-w-0 shrink-0 items-center first:shrink data-hidden:invisible data-hidden:absolute"
+        >
+          <FacetedBadge>
+            <bdi
+              ref={(node) => {
+                labelRefs.current[index] = node;
+              }}
+              className="truncate"
+            >
+              {label}
+            </bdi>
+          </FacetedBadge>
+        </span>
+      ))}
+      {hiddenCount > 0 && (
+        <FacetedBadge ref={countRef} className="shrink-0">
+          +{hiddenCount}
+        </FacetedBadge>
+      )}
+    </span>
+  );
+}
+
+interface QueryBuilderValueProps extends Omit<
+  React.HTMLAttributes<HTMLElement>,
+  "children" | "defaultValue" | "onChange"
+> {
+  display?: "list" | "summary";
+  disabled?: boolean;
+}
+
+function QueryBuilderValue({
+  display = "list",
+  id,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
+  className,
+  disabled: disabledProp,
+  ...props
+}: QueryBuilderValueProps) {
+  const { fields, labels, disabled } = useQueryBuilderContext(VALUE_NAME);
+  const isDisabled = disabled || disabledProp;
+  const rule = useRuleContext(VALUE_NAME);
+  const { update } = useQueryActions(VALUE_NAME);
+  const field = fields.find((item) => item.value === rule.field);
+
+  const generatedId = React.useId();
+
+  if (!field) return null;
+
+  const label = ariaLabel ?? field.label;
+
+  const onChange = (value: QueryValue) =>
+    update(rule.id, (node) => ({ ...node, value }));
+
+  const inputType =
+    field.type === "number"
+      ? "number"
+      : field.type === "date"
+        ? "date"
+        : "text";
+
+  const valueClassName = cn("cn-query-builder-value", className);
+
+  if (rule.operator === "isEmpty" || rule.operator === "isNotEmpty") {
+    return (
+      <Input
+        aria-hidden="true"
+        tabIndex={-1}
+        id={id}
+        {...props}
+        value=""
+        readOnly
+        data-slot="query-builder-value"
+        data-operator={rule.operator}
+        className={cn("pointer-events-none", valueClassName)}
+      />
+    );
+  }
+
+  if (rule.operator === "isBetween") {
+    const [start = "", end = ""] = Array.isArray(rule.value) ? rule.value : [];
+    const fromId = id ?? `${generatedId}-from`;
+    const toId = `${generatedId}-to`;
+    return (
+      <>
+        <Input
+          type={inputType}
+          id={fromId}
+          placeholder={labels.from}
+          aria-label={ariaLabelledBy ? labels.from : `${label} ${labels.from}`}
+          aria-labelledby={
+            ariaLabelledBy ? `${ariaLabelledBy} ${fromId}` : undefined
+          }
+          {...props}
+          data-slot="query-builder-value"
+          data-operator={rule.operator}
+          value={start}
+          onChange={(event) => onChange([event.target.value, end])}
+          disabled={isDisabled}
+          className={valueClassName}
+        />
+        <span className="flex h-7 items-center border-y border-e border-input bg-transparent dark:bg-input/30 px-1.5 text-sm text-muted-foreground @max-[40rem]/query-builder:hidden">
+          {labels.between}
+        </span>
+        <Input
+          type={inputType}
+          id={toId}
+          placeholder={labels.to}
+          aria-label={ariaLabelledBy ? labels.to : `${label} ${labels.to}`}
+          aria-labelledby={
+            ariaLabelledBy ? `${ariaLabelledBy} ${toId}` : undefined
+          }
+          {...props}
+          data-slot="query-builder-value"
+          data-operator={rule.operator}
+          value={end}
+          onChange={(event) => onChange([start, event.target.value])}
+          disabled={isDisabled}
+          className={valueClassName}
+        />
+      </>
+    );
+  }
+
+  if (
+    field.type === "boolean" ||
+    field.type === "select" ||
+    field.type === "multiSelect"
+  ) {
+    const options =
+      field.type === "boolean"
+        ? [
+            { label: labels.true, value: "true" },
+            { label: labels.false, value: "false" },
+          ]
+        : (field.options ?? []);
+    const multiple = getIsQueryRuleMultiple(rule, field);
+    const selected = getSelectedValues(rule.value).flatMap((value) =>
+      options.filter((option) => option.value === value),
+    );
+    const selectedLabels = selected.map((option) => option.label).join(", ");
+
+    return (
+      <Faceted
+        items={options}
+        multiple={multiple}
+        value={multiple ? getSelectedValues(rule.value) : rule.value}
+        onValueChange={(next) =>
+          update(rule.id, (node) =>
+            setQueryRuleValues(
+              node as QueryRule,
+              field,
+              getSelectedValues(next),
+            ),
+          )
+        }
+      >
+        <FacetedTrigger asChild>
+          <Button
+            variant="outline"
+            size="sm"
+            aria-label={
+              ariaLabelledBy
+                ? selectedLabels || labels.noValue
+                : `${label}: ${selectedLabels || labels.noValue}`
+            }
+            aria-labelledby={
+              ariaLabelledBy
+                ? `${ariaLabelledBy} ${id ?? generatedId}`
+                : undefined
+            }
+            title={selectedLabels || undefined}
+            id={id ?? generatedId}
+            {...props}
+            data-slot="query-builder-value"
+            data-operator={rule.operator}
+            disabled={isDisabled}
+            className={cn("justify-between gap-1 font-normal transition-[color,background-color,border-color,box-shadow] has-data-[slot=query-builder-value-list]:pl-1", valueClassName)}
+          >
+            <FacetedValue>
+              {() => {
+                if (selected.length > 0 && display === "summary") {
+                  return (
+                    <bdi className="min-w-0 truncate">
+                      {selected.length > 1
+                        ? labels.selected(selected.length)
+                        : selected[0]?.label}
+                    </bdi>
+                  );
+                }
+                if (selected.length > 0) {
+                  return <QueryBuilderValueList options={selected} />;
+                }
+                return (
+                  <bdi className="min-w-0 truncate text-muted-foreground">
+                    {field.placeholder ??
+                      (multiple ? labels.selectValues : labels.selectValue)}
+                  </bdi>
+                );
+              }}
+            </FacetedValue>
+            <ChevronDownIcon data-slot="query-builder-select-icon" className="size-4 shrink-0 opacity-50" />
+          </Button>
+        </FacetedTrigger>
+        <FacetedContent align="start">
+          <FacetedInput placeholder={labels.searchValues(field.label)} />
+          <FacetedList>
+            <FacetedEmpty>{labels.noValues}</FacetedEmpty>
+            <FacetedGroup>
+              {options.map((option) => (
+                <FacetedItem key={option.value} value={option.value}>
+                  {option.icon && <option.icon aria-hidden="true" />}
+                  <bdi className="flex-1 truncate">{option.label}</bdi>
+                  <FacetedItemIndicator />
+                </FacetedItem>
+              ))}
+            </FacetedGroup>
+            {multiple && <FacetedClear />}
+          </FacetedList>
+        </FacetedContent>
+      </Faceted>
+    );
+  }
+
+  return (
+    <Input
+      type={inputType}
+      aria-label={label}
+      aria-labelledby={ariaLabelledBy}
+      placeholder={field.placeholder ?? labels.enterValue}
+      id={id}
+      {...props}
+      value={typeof rule.value === "string" ? rule.value : ""}
+      onChange={(event) => onChange(event.target.value)}
+      disabled={isDisabled}
+      data-slot="query-builder-value"
+      data-operator={rule.operator}
+      className={valueClassName}
+    />
+  );
+}
+
+function getField(fields: QueryField[], value?: string) {
+  return value === undefined
+    ? fields[0]
+    : fields.find((field) => field.value === value);
+}
+
+interface QueryBuilderAddRuleProps extends React.ComponentProps<typeof Button> {
+  field?: string;
+}
+
+function QueryBuilderAddRule({
+  field: fieldProp,
+  onClick,
+  children,
+  className,
+  disabled: disabledProp,
+  ...props
+}: QueryBuilderAddRuleProps) {
+  const { fields, labels, disabled } = useQueryBuilderContext(ADD_RULE_NAME);
+  const isDisabled = disabled || disabledProp;
+  const { group } = useGroupContext(ADD_RULE_NAME);
+  const { add } = useQueryActions(ADD_RULE_NAME);
+  const field = getField(fields, fieldProp);
+
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      data-slot="query-builder-add-rule"
+      disabled={isDisabled || !field}
+      {...props}
+      onClick={(event) => {
+        onClick?.(event);
+        if (event.defaultPrevented || !field) return;
+        add(group.id, createQueryRule(field));
+      }}
+      className={cn("text-muted-foreground", className)}
+    >
+      {children ?? (
+        <>
+          <PlusIcon />
+          {labels.addRule}
+        </>
+      )}
+    </Button>
+  );
+}
+
+interface QueryBuilderAddGroupProps extends React.ComponentProps<
+  typeof Button
+> {
+  field?: string;
+}
+
+function QueryBuilderAddGroup({
+  field: fieldProp,
+  onClick,
+  children,
+  className,
+  disabled: disabledProp,
+  ...props
+}: QueryBuilderAddGroupProps) {
+  const { fields, labels, disabled, maxDepth } =
+    useQueryBuilderContext(ADD_GROUP_NAME);
+  const isDisabled = disabled || disabledProp;
+  const { group, depth } = useGroupContext(ADD_GROUP_NAME);
+  const { add } = useQueryActions(ADD_GROUP_NAME);
+  const field = getField(fields, fieldProp);
+
+  if (depth >= maxDepth) return null;
+
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      data-slot="query-builder-add-group"
+      disabled={isDisabled || !field}
+      {...props}
+      onClick={(event) => {
+        onClick?.(event);
+        if (event.defaultPrevented || !field) return;
+        add(
+          group.id,
+          createQueryGroup(group.combinator === "and" ? "or" : "and", [
+            createQueryRule(field),
+          ]),
+        );
+      }}
+      className={cn("text-muted-foreground", className)}
+    >
+      {children ?? (
+        <>
+          <ListPlusIcon />
+          {labels.addGroup}
+        </>
+      )}
+    </Button>
+  );
+}
+
+function QueryBuilderRemove({
+  onClick,
+  children,
+  className,
+  disabled: disabledProp,
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { disabled, labels } = useQueryBuilderContext(REMOVE_NAME);
+  const isDisabled = disabled || disabledProp;
+  const rule = React.useContext(RuleContext);
+  const group = useGroupContext(REMOVE_NAME);
+  const { remove } = useQueryActions(REMOVE_NAME);
+
+  const id = rule?.id ?? (group.isRoot ? undefined : group.group.id);
+  if (!id) return null;
+
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon-sm"
+      aria-label={rule ? labels.removeRule : labels.removeGroup}
+      data-slot="query-builder-remove"
+      disabled={isDisabled}
+      {...props}
+      onClick={(event) => {
+        onClick?.(event);
+        if (event.defaultPrevented) return;
+        remove(id);
+      }}
+      className={cn("text-muted-foreground", className)}
+    >
+      {children ?? (
+        <Trash2Icon />
+      )}
+    </Button>
+  );
+}
+
+export {
+  QueryBuilder,
+  QueryBuilderAddGroup,
+  QueryBuilderAddRule,
+  QueryBuilderCombinator,
+  QueryBuilderConnector,
+  QueryBuilderField,
+  QueryBuilderGroup,
+  QueryBuilderGroupContent,
+  QueryBuilderGroupFooter,
+  QueryBuilderGroupHeader,
+  QueryBuilderGroupTitle,
+  QueryBuilderNegate,
+  QueryBuilderOperator,
+  QueryBuilderRemove,
+  QueryBuilderRule,
+  QueryBuilderRuleList,
+  QueryBuilderValue,
+};

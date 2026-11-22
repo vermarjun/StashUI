@@ -1,7 +1,7 @@
 "use client"
 
 /**
- * `DitherImage` — compound figure that applies a CSS-only Bayer dither effect
+ * `DitherImage`: compound figure that applies a CSS-only Bayer dither effect
  * to an image via the `dither-plugin` Tailwind utility. Safari-compatible (no
  * SVG filters), fully static (no JS runtime cost), and respects all the
  * plugin's tunable CSS custom properties as typed props.
@@ -104,7 +104,7 @@ const DITHER_IMAGE_URL =
 
 const DITHER_CSS = `.stashui-dither{--dither-gray:1;--dither-contrast:120;--dither-bright:1;--dither-blur:0px;--dither-opacity:1;--dither-image:${DITHER_IMAGE_URL};position:relative;isolation:isolate;overflow:hidden;z-index:0;background:#000;filter:grayscale(var(--dither-gray)) brightness(var(--dither-bright)) blur(var(--dither-blur)) contrast(var(--dither-contrast))}.stashui-dither::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background-image:var(--dither-image);background-repeat:repeat;background-size:var(--dither-cell) var(--dither-cell);background-position:0 0;image-rendering:pixelated;opacity:var(--dither-opacity);mix-blend-mode:screen}`
 
-/** Cell size of the underlying dither matrix — maps to plugin `--dither-cell-*` theme tokens. */
+/** Cell size of the underlying dither matrix: maps to plugin `--dither-cell-*` theme tokens. */
 export type DitherSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
 
 const NUMERIC_SIZE_RE = /^\d+$/
@@ -189,19 +189,19 @@ DitherImage.displayName = "DitherImage"
 
 export interface DitherImageFrameProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "style"> {
-  /** Cell size — maps to `dither-{size}` utility. Defaults to `lg` (matches the plugin's bare `dither` class). */
+  /** Cell size: maps to `dither-{size}` utility. Defaults to `lg` (matches the plugin's bare `dither` class). */
   size?: DitherSize
   /** Shorthand: `"square" | "video" | "portrait" | "wide"` or any valid `aspect-ratio` string. */
   aspectRatio?: DitherAspectRatio
   /** `--dither-gray` (0 = color, 1 = grayscale). Default `1`. */
   grayscale?: number
-  /** `--dither-contrast` — unitless CSS `contrast()` value. Plugin default `120` (crushes to 1-bit). */
+  /** `--dither-contrast`: unitless CSS `contrast()` value. Plugin default `120` (crushes to 1-bit). */
   contrast?: number
-  /** `--dither-bright` — unitless CSS `brightness()` value. Default `1`. */
+  /** `--dither-bright`: unitless CSS `brightness()` value. Default `1`. */
   brightness?: number
-  /** `--dither-blur` — accepts a number (px) or any CSS length. Default `0`. */
+  /** `--dither-blur`: accepts a number (px) or any CSS length. Default `0`. */
   blur?: number | string
-  /** `--dither-opacity` — dot-pattern overlay opacity (0–1). Default `1`. */
+  /** `--dither-opacity`: dot-pattern overlay opacity (0–1). Default `1`. */
   opacity?: number
   /** Round the frame corners. `true` uses `rounded-xl`; pass a string for a custom class. */
   rounded?: boolean | string
@@ -216,7 +216,7 @@ export interface DitherImageFrameProps
 
 /**
  * The element that actually wears the dither class. Must be a direct parent
- * of the `<img>`/`<video>` — the plugin paints via `::after` which media
+ * of the `<img>`/`<video>`: the plugin paints via `::after` which media
  * elements don't support.
  */
 const DitherImageFrame = forwardRef<HTMLDivElement, DitherImageFrameProps>(
@@ -358,7 +358,7 @@ export type DitherImageOverlayProps = Omit<ImageProps, "style"> & {
   from?: number
   /** Mask end % (0–100). Default `65`. */
   to?: number
-  /** Overrides typed mask utilities — use Tailwind `mask-*` classes or arbitrary values. */
+  /** Overrides typed mask utilities: use Tailwind `mask-*` classes or arbitrary values. */
   maskClassName?: string
   style?: CSSProperties
 }

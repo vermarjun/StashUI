@@ -1,0 +1,69 @@
+{
+ "name": "app-shell",
+ "title": "App Shell",
+ "category": "dashboards",
+ "categories": [
+  "dashboards",
+  "navigation"
+ ],
+ "origin": "Efferd",
+ "origin_short": "effe",
+ "exports": [
+  "AppShell",
+  "AppHeader",
+  "AppSidebar",
+  "NavGroup",
+  "AppBreadcrumbs",
+  "CustomSidebarTrigger",
+  "LatestChange",
+  "NavUser",
+  "DashboardSkeleton",
+  "LogoIcon"
+ ],
+ "npm_deps": [
+  "class-variance-authority",
+  "lucide-react",
+  "radix-ui"
+ ],
+ "registry_deps": [
+  "avatar",
+  "breadcrumb",
+  "button",
+  "collapsible",
+  "dropdown-menu",
+  "separator",
+  "sheet",
+  "tooltip"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "heavy"
+ ],
+ "usage": "import { AppShell } from \"./app-shell\";\n\nconst stats = [\n\t{ label: \"Open conversations\", value: \"128\", note: \"+12 since 9am\" },\n\t{ label: \"First response\", value: \"4m 12s\", note: \"-38s vs last week\" },\n\t{ label: \"CSAT\", value: \"94%\", note: \"412 ratings\" },\n\t{ label: \"Resolved today\", value: \"312\", note: \"Best day this month\" },\n];\n\nconst queue = [\n\t{ name: \"Priya Raman\", subject: \"Invoice shows the old VAT number\", age: \"2m\" },\n\t{ name: \"Lucas Moreau\", subject: \"Webhook retries stopped on Friday\", age: \"9m\" },\n\t{ name: \"Hana Sato\", subject: \"Can we add a second admin seat?\", age: \"14m\" },\n\t{ name: \"Diego Alvarez\", subject: \"SSO login loops back to the start\", age: \"21m\" },\n];\n\nexport default function AppShellDemo() {\n\treturn (\n\t\t<AppShell pathname=\"#/overview\">\n\t\t\t<div className=\"flex flex-col gap-1\">\n\t\t\t\t<h1 className=\"font-semibold text-xl\">Good morning, Maya</h1>\n\t\t\t\t<p className=\"text-muted-foreground text-sm\">\n\t\t\t\t\tHere is what is waiting in your queue today.\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t\t<div className=\"grid grid-cols-2 gap-4 lg:grid-cols-4\">\n\t\t\t\t{stats.map((s) => (\n\t\t\t\t\t<div className=\"flex flex-col gap-1 rounded-lg border bg-card p-4\" key={s.label}>\n\t\t\t\t\t\t<span className=\"text-muted-foreground text-xs\">{s.label}</span>\n\t\t\t\t\t\t<span className=\"font-mono font-semibold text-2xl tabular-nums\">{s.value}</span>\n\t\t\t\t\t\t<span className=\"text-muted-foreground text-xs\">{s.note}</span>\n\t\t\t\t\t</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t\t<div className=\"rounded-lg border bg-card\">\n\t\t\t\t<div className=\"border-b px-4 py-3 font-medium text-sm\">Needs a reply</div>\n\t\t\t\t<ul className=\"divide-y\">\n\t\t\t\t\t{queue.map((q) => (\n\t\t\t\t\t\t<li className=\"flex items-center justify-between gap-4 px-4 py-3 text-sm\" key={q.name}>\n\t\t\t\t\t\t\t<div className=\"min-w-0\">\n\t\t\t\t\t\t\t\t<p className=\"font-medium\">{q.name}</p>\n\t\t\t\t\t\t\t\t<p className=\"truncate text-muted-foreground text-xs\">{q.subject}</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<span className=\"shrink-0 text-muted-foreground text-xs tabular-nums\">{q.age}</span>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t))}\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</AppShell>\n\t);\n}",
+ "usage_source": "demo",
+ "file": "registry/efferd/app-shell.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/app-shell.json",
+ "preview": "https://stashui.vercel.app/c/app-shell",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

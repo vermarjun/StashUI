@@ -56,7 +56,7 @@ export interface StepIndicatorProps
 /**
  * Headless step indicator primitive.
  * Renders a list of step dots with proper ARIA for progress indication.
- * No visual styling—consumer provides via className.
+ * No visual styling: consumer provides via className.
  */
 export function StepIndicator({
   currentStep,
@@ -808,7 +808,7 @@ export interface TipsListProps extends React.ComponentPropsWithoutRef<"div"> {
 /**
  * Headless tips list primitive.
  * Renders an ordered list with optional title.
- * No visual styling—consumer provides via className.
+ * No visual styling: consumer provides via className.
  */
 function TipsListRoot({ title, children, className, ...props }: TipsListProps) {
   const titleId = useId()

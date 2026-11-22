@@ -1,0 +1,51 @@
+{
+ "name": "jelly-radio",
+ "title": "Jelly Radio",
+ "category": "checkboxes",
+ "categories": [
+  "checkboxes",
+  "pricing",
+  "selects"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "JellyRadio"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "motion",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport JellyRadio from \"@/components/ui/jelly-radio\";\n\nconst PLANS = [\"Hobby\", \"Starter\", \"Pro\", \"Team\", \"Enterprise\"];\nconst PRICE: Record<string, string> = { Hobby: \"$0\", Starter: \"$9\", Pro: \"$24\", Team: \"$59\", Enterprise: \"Custom\" };\n\nexport default function Demo() {\n  const [plan, setPlan] = useState(\"Pro\");\n  return (\n    <div className=\"flex min-h-[400px] w-full flex-col items-center justify-center gap-6 bg-background px-6\">\n      <span className=\"text-sm text-muted-foreground\">Choose a plan</span>\n      <JellyRadio items={PLANS} defaultValue=\"Pro\" onChange={value => setPlan(value)} ariaLabel=\"Plan\" size=\"lg\" />\n      <div className=\"text-center\">\n        <span className=\"text-4xl font-semibold tracking-tight text-foreground\">{PRICE[plan]}</span>\n        {plan !== \"Enterprise\" ? <span className=\"text-muted-foreground\"> / month</span> : null}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/jelly-radio.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/jelly-radio.json",
+ "preview": "https://stashui.vercel.app/c/jelly-radio",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

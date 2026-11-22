@@ -1,0 +1,54 @@
+{
+ "name": "cursor-attractor-and-gravity",
+ "title": "Cursor Attractor & Gravity",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "backgrounds"
+ ],
+ "origin": "Fancy Components",
+ "origin_short": "fanc",
+ "exports": [
+  "MatterBody",
+  "Gravity"
+ ],
+ "npm_deps": [
+  "@types/matter-js",
+  "matter-js",
+  "poly-decomp",
+  "svg-path-commander"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 13,
+ "flags": [
+  "heavy",
+  "13 colors"
+ ],
+ "usage": "\"use client\"\n\nimport Gravity, { MatterBody } from \"./cursor-attractor-and-gravity\"\n\n// Deterministic pseudo-random so server and client render the same layout.\nfunction rand(seed: number) {\n  const x = Math.sin(seed * 9301 + 49297) * 233280\n  return x - Math.floor(x)\n}\n\nconst avatars = Array.from({ length: 70 }, (_, i) => ({\n  id: i,\n  size: Math.max(22, rand(i + 1) * 60),\n  x: `${rand(i + 101) * 100}%`,\n  y: `${rand(i + 201) * 30}%`,\n  src: `https://i.pravatar.cc/120?img=${(i % 70) + 1}`,\n}))\n\nexport default function CursorAttractorAndGravityDemo() {\n  return (\n    <div className=\"relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-background md:items-end\">\n      <p className=\"z-20 text-2xl text-foreground sm:text-3xl md:pr-24\">\n        join the <span className=\"font-serif italic\">community</span>\n      </p>\n      <Gravity\n        attractorPoint={{ x: \"33%\", y: \"50%\" }}\n        attractorStrength={0.0005}\n        cursorStrength={-0.004}\n        cursorFieldRadius={200}\n        className=\"h-full w-full\"\n      >\n        {avatars.map((a) => (\n          <MatterBody\n            key={a.id}\n            matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}\n            x={a.x}\n            y={a.y}\n          >\n            <img\n              src={a.src}\n              alt={`Community member ${a.id + 1}`}\n              className=\"rounded-full object-cover hover:cursor-pointer\"\n              style={{ width: `${a.size}px`, height: `${a.size}px` }}\n            />\n          </MatterBody>\n        ))}\n      </Gravity>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/fancy-components/cursor-attractor-and-gravity.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/cursor-attractor-and-gravity.json",
+ "preview": "https://stashui.vercel.app/c/cursor-attractor-and-gravity",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

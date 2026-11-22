@@ -1,0 +1,53 @@
+{
+ "name": "swipe-row",
+ "title": "Swipe Row",
+ "category": "data-display",
+ "categories": [
+  "data-display",
+  "tables"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "SwipeRow"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 9,
+ "flags": [
+  "motion",
+  "heavy",
+  "9 colors"
+ ],
+ "usage": "\"use client\";\n\nimport SwipeRow from \"./swipe-row\";\n\nconst MAIL = [\n  { from: \"Maya Chen\", subject: \"Q3 roadmap review\", time: \"9:41\" },\n  { from: \"Daniel Okafor\", subject: \"Invoice #4821 is ready\", time: \"8:15\" },\n  { from: \"Priya Raman\", subject: \"Re: launch checklist\", time: \"Yesterday\" },\n  { from: \"Lucas Martin\", subject: \"Design crit moved to Thu\", time: \"Mon\" },\n];\n\nexport default function SwipeRowDemo() {\n  return (\n    <div className=\"flex min-h-[460px] w-full items-center justify-center bg-background p-8\">\n      <div className=\"flex w-full max-w-md flex-col gap-2\">\n        {MAIL.map((m) => (\n          <SwipeRow key={m.subject} height={68} label={`${m.from}: ${m.subject}`}>\n            <div className=\"flex h-full w-full items-center gap-3 px-4\">\n              <div className=\"flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-medium\">\n                {m.from.split(\" \").map((p) => p[0]).join(\"\")}\n              </div>\n              <div className=\"min-w-0 flex-1\">\n                <div className=\"flex items-center justify-between gap-2\">\n                  <p className=\"truncate text-sm font-medium\">{m.from}</p>\n                  <span className=\"text-xs opacity-50\">{m.time}</span>\n                </div>\n                <p className=\"truncate text-sm opacity-60\">{m.subject}</p>\n              </div>\n            </div>\n          </SwipeRow>\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/swipe-row.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/swipe-row.json",
+ "preview": "https://stashui.vercel.app/c/swipe-row",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

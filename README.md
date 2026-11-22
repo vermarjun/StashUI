@@ -2,7 +2,7 @@
 
 # StashUI
 
-**790 curated React components. One visual gallery. One agent-friendly registry.**
+**The agentic UI library. 790 curated React components your agent can search, pick from and install.**
 
 Browse, preview, copy, and install shadcn-style components, or let an AI agent
 navigate the same library through a purpose-built MCP server.

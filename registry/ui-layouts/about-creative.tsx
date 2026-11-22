@@ -42,7 +42,7 @@ export const AboutCreative = () => {
           </h2>
           <div className="max-w-md space-y-6">
             <p className="text-zinc-500 text-lg md:text-xl text-pretty leading-relaxed">
-              At Kreativy, we take pride in our values — service, integrity, and
+              At Kreativy, we take pride in our values: service, integrity, and
               excellence. We're driven by the desire to build something
               meaningful.
             </p>

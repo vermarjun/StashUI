@@ -1,6 +1,7 @@
 import { componentsMeta } from "@/__registry__/meta.gen";
 import { CATEGORY_CONFIG } from "@/lib/categories";
 import { HomeSections } from "@/components/site/home-sections";
+import { siteConfig } from "@/lib/site";
 
 const ROW_SIZE = 3;
 
@@ -30,18 +31,25 @@ export default function Home() {
       {/* Hero */}
       <section className="border-b border-border py-14 sm:py-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          Personal Component Library
+          {siteConfig.tagline}
         </p>
         <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          Every component I love,{" "}
+          Describe the screen.{" "}
           <br className="hidden sm:block" />
-          in one clean place.
+          Your agent picks the parts.
         </h1>
         <p className="mt-4 max-w-xl text-balance text-muted-foreground">
-          {total.toLocaleString()} components, organized by what they are and
-          where you&apos;d use them — every button together, and every sign-in
-          piece together. Browse the rows below, pick
-          a type from the sidebar, or press{" "}
+          {total.toLocaleString()} hand-picked components, indexed so an agent
+          can search them by slot, tone and trigger. Connect the{" "}
+          <a
+            href={siteConfig.mcp}
+            target="_blank"
+            rel="noreferrer"
+            className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
+          >
+            MCP server
+          </a>
+          , or browse below and press{" "}
           <kbd className="rounded border border-border bg-muted px-1 font-mono text-xs">
             ⌘K
           </kbd>{" "}
@@ -54,6 +62,9 @@ export default function Home() {
           </span>
           <span>
             <span className="text-foreground">{sections.length}</span> categories
+          </span>
+          <span>
+            <span className="text-foreground">6</span> MCP tools
           </span>
         </div>
       </section>

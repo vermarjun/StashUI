@@ -1,5 +1,5 @@
 /**
- * One place for the things that were previously hardcoded — or worse, guessed —
+ * One place for the things that were previously hardcoded (or worse, guessed)
  * in several files: the name in the header, the repo the GitHub icon points at,
  * and the origin the install command is built from.
  *
@@ -11,9 +11,12 @@ export const siteConfig = {
   name: "StashUI",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://stashui.vercel.app",
   repo: "https://github.com/vermarjun/StashUI",
+  tagline: "Agentic UI library",
   description:
-    "A curated component library built on shadcn. Browse, preview, copy, and " +
-    "install nearly 800 hand-picked components from one place — or let an agent navigate them over MCP.",
+    "An agentic UI library. Nearly 800 hand-picked shadcn components, indexed " +
+    "so your agent can search them by what the screen needs and install the " +
+    "best fit over MCP. People can browse, preview and copy them too.",
+  mcp: "https://github.com/vermarjun/StashUI/tree/main/mcp",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

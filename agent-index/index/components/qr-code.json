@@ -1,0 +1,48 @@
+{
+ "name": "qr-code",
+ "title": "QR Code",
+ "category": "data-display",
+ "categories": [
+  "data-display",
+  "social"
+ ],
+ "origin": "Kibo UI",
+ "origin_short": "kibo",
+ "exports": [
+  "QRCode"
+ ],
+ "npm_deps": [
+  "culori",
+  "qrcode"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Input } from \"@/components/ui/input\";\nimport { QRCode } from \"./qr-code\";\n\nexport default function QRCodeDemo() {\n  const [url, setUrl] = useState(\"https://en.wikipedia.org/wiki/QR_code\");\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"flex w-full max-w-2xl items-center gap-8 rounded-2xl border bg-background p-8\">\n        <div className=\"size-52 shrink-0 rounded-xl border bg-background p-4\">\n          <QRCode data={url || \" \"} robustness=\"H\" />\n        </div>\n        <div className=\"flex flex-1 flex-col gap-4\">\n          <div>\n            <p className=\"font-semibold text-lg\">Share this page</p>\n            <p className=\"text-muted-foreground text-sm\">\n              The code is generated on the client and picks up your theme\n              colours. Edit the link and it redraws.\n            </p>\n          </div>\n          <Input\n            aria-label=\"Link\"\n            onChange={(e) => setUrl(e.target.value)}\n            value={url}\n          />\n          <p className=\"text-muted-foreground text-xs\">\n            Custom foreground colours (OKLCH)\n          </p>\n          <div className=\"flex gap-3\">\n            {[\n              \"oklch(0.72 0.16 290)\",\n              \"oklch(0.78 0.15 165)\",\n              \"oklch(0.84 0.16 85)\",\n            ].map((fg) => (\n              <div\n                className=\"size-20 rounded-lg border p-2\"\n                key={fg}\n                style={{ background: \"oklch(0.18 0.01 280)\" }}\n              >\n                <QRCode\n                  background=\"oklch(0.18 0.01 280)\"\n                  data={url || \" \"}\n                  foreground={fg}\n                />\n              </div>\n            ))}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/kibo-ui/qr-code.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/qr-code.json",
+ "preview": "https://stashui.vercel.app/c/qr-code",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

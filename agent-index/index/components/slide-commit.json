@@ -1,0 +1,54 @@
+{
+ "name": "slide-commit",
+ "title": "Slide Commit",
+ "category": "buttons",
+ "categories": [
+  "buttons",
+  "payments",
+  "feedback"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "SlideCommit"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 7,
+ "flags": [
+  "motion",
+  "heavy",
+  "7 colors"
+ ],
+ "usage": "\"use client\";\n\nimport SlideCommit from \"@/components/ui/slide-commit\";\n\nconst wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center bg-background px-6\">\n      <div className=\"flex w-[340px] flex-col gap-6 rounded-3xl border border-border bg-card p-6\">\n        <div className=\"flex items-start justify-between\">\n          <div>\n            <p className=\"text-sm text-muted-foreground\">Pay Northwind Studio</p>\n            <p className=\"mt-1 text-3xl font-semibold tracking-tight text-foreground\">$1,250.00</p>\n          </div>\n          <span className=\"rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground\">Invoice #2041</span>\n        </div>\n        <div className=\"space-y-2 text-sm\">\n          <div className=\"flex justify-between text-muted-foreground\">\n            <span>From</span>\n            <span className=\"text-foreground\">Checking •• 4821</span>\n          </div>\n          <div className=\"flex justify-between text-muted-foreground\">\n            <span>Arrives</span>\n            <span className=\"text-foreground\">Today, 3:40 PM</span>\n          </div>\n        </div>\n        <SlideCommit label=\"Slide to pay\" doneLabel=\"Paid\" width={292} onConfirm={() => wait(1400)} />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/slide-commit.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/slide-commit.json",
+ "preview": "https://stashui.vercel.app/c/slide-commit",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

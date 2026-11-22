@@ -6,7 +6,7 @@ export default function Demo() {
   return (
     <div className="flex flex-col items-center justify-center gap-6 min-h-[260px]">
       <p className="text-muted-foreground text-sm select-none">
-        Click &amp; hold — then drag to spray particles
+        Click &amp; hold, then drag to spray particles
       </p>
       <div className="flex gap-4">
         <CoolMode>

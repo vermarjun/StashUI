@@ -1,0 +1,55 @@
+{
+ "name": "speed-dial",
+ "title": "Speed Dial",
+ "category": "buttons",
+ "categories": [
+  "buttons",
+  "menus"
+ ],
+ "origin": "Dice UI",
+ "origin_short": "dice",
+ "exports": [
+  "SpeedDial",
+  "SpeedDialAction",
+  "SpeedDialContent",
+  "SpeedDialItem",
+  "SpeedDialLabel",
+  "SpeedDialTrigger"
+ ],
+ "npm_deps": [
+  "class-variance-authority",
+  "radix-ui"
+ ],
+ "registry_deps": [
+  "button"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { Copy, Heart, Plus, Share2 } from \"lucide-react\";\nimport * as React from \"react\";\n\nimport {\n  SpeedDial,\n  SpeedDialAction,\n  SpeedDialContent,\n  SpeedDialItem,\n  SpeedDialLabel,\n  SpeedDialTrigger,\n} from \"./speed-dial\";\n\nexport default function SpeedDialDemo() {\n  const [last, setLast] = React.useState<string | null>(null);\n\n  return (\n    <div className=\"flex h-[360px] w-full max-w-md flex-col items-center justify-end gap-6\">\n      <p className=\"h-5 text-sm text-muted-foreground\">\n        {last ? `${last} ✓` : \"Open the menu to see quick actions\"}\n      </p>\n      <SpeedDial>\n        <SpeedDialTrigger className=\"transition-transform duration-200 ease-out data-[state=closed]:rotate-0 data-[state=open]:rotate-135\">\n          <Plus />\n        </SpeedDialTrigger>\n        <SpeedDialContent>\n          <SpeedDialItem>\n            <SpeedDialLabel>Share</SpeedDialLabel>\n            <SpeedDialAction onSelect={() => setLast(\"Link shared\")}>\n              <Share2 />\n            </SpeedDialAction>\n          </SpeedDialItem>\n          <SpeedDialItem>\n            <SpeedDialLabel>Copy</SpeedDialLabel>\n            <SpeedDialAction onSelect={() => setLast(\"Copied to clipboard\")}>\n              <Copy />\n            </SpeedDialAction>\n          </SpeedDialItem>\n          <SpeedDialItem>\n            <SpeedDialLabel>Like</SpeedDialLabel>\n            <SpeedDialAction onSelect={() => setLast(\"Added to favourites\")}>\n              <Heart />\n            </SpeedDialAction>\n          </SpeedDialItem>\n        </SpeedDialContent>\n      </SpeedDial>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/dice-ui/speed-dial.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/speed-dial.json",
+ "preview": "https://stashui.vercel.app/c/speed-dial",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

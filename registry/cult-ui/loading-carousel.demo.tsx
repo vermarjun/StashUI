@@ -12,7 +12,7 @@ const tips = [
     image: "https://images.unsplash.com/photo-1523612192437-66de9804ac3c?w=1200&h=675&fit=crop&auto=format&q=80",
   },
   {
-    text: "Framer Motion, shadcn, and Tailwind — the perfect landing page stack.",
+    text: "Framer Motion, shadcn, and Tailwind: the perfect landing page stack.",
     image: "https://images.unsplash.com/photo-1548192746-dd526f154ed9?w=1200&h=675&fit=crop&auto=format&q=80",
   },
   {

@@ -1,0 +1,51 @@
+{
+ "name": "tree-code-viewer",
+ "title": "Tree Code Viewer",
+ "category": "code",
+ "categories": [
+  "code",
+  "data-display"
+ ],
+ "origin": "UI Layouts",
+ "origin_short": "uil",
+ "exports": [
+  "TreeCodeViewer"
+ ],
+ "npm_deps": [
+  "motion",
+  "shiki"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "motion",
+  "6 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\n\nimport { TreeCodeViewer } from \"./tree-code-viewer\"\n\ntype SourceFile = {\n  fileName: string\n  virtualPath: string[]\n  ext: string\n  raw: string\n}\n\nconst SOURCES: SourceFile[] = [\n  {\n    fileName: \"pricing-card.tsx\",\n    virtualPath: [\"pricing-card\"],\n    ext: \"tsx\",\n    raw: `'use client';\n\nimport { motion } from 'motion/react';\nimport { Button } from '@/components/ui/button';\nimport { cn } from '@/lib/utils';\n\nexport function PricingCard({ plan, price, features, featured }: PricingCardProps) {\n  return (\n    <motion.div\n      whileHover={{ y: -4 }}\n      className={cn('rounded-2xl border p-6', featured && 'border-blue-500')}\n    >\n      <h3 className='text-lg font-semibold'>{plan}</h3>\n      <p className='mt-2 text-4xl font-bold'>\\${price}<span className='text-sm'>/mo</span></p>\n      <ul className='mt-6 space-y-2 text-sm'>\n        {features.map((f) => (\n          <li key={f}>✓ {f}</li>\n        ))}\n      </ul>\n      <Button className='mt-8 w-full'>Start free trial</Button>\n    </motion.div>\n  );\n}`,\n  },\n  {\n    fileName: \"use-billing-cycle.ts\",\n    virtualPath: [\"pricing-card\"],\n    ext: \"ts\",\n    raw: `import { useState } from 'react';\n\nexport type Cycle = 'monthly' | 'yearly';\n\nexport function useBillingCycle(initial: Cycle = 'monthly') {\n  const [cycle, setCycle] = useState<Cycle>(initial);\n  const discount = cycle === 'yearly' ? 0.8 : 1;\n  return { cycle, setCycle, price: (base: number) => Math.round(base * discount) };\n}`,\n  },\n  {\n    fileName: \"button.tsx\",\n    virtualPath: [\"ui\"],\n    ext: \"tsx\",\n    raw: `import * as React from 'react';\nimport { cn } from '@/lib/utils';\n\nexport function Button({ className, ...props }: React.ComponentProps<'button'>) {\n  return (\n    <button\n      className={cn('inline-flex h-10 items-center justify-center rounded-md px-4', className)}\n      {...props}\n    />\n  );\n}`,\n  },\n  {\n    fileName: \"utils.ts\",\n    virtualPath: [\"lib\"],\n    ext: \"ts\",\n    raw: `import { type ClassValue, clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}`,\n  },\n  {\n    fileName: \"package.json\",\n    virtualPath: [],\n    ext: \"json\",\n    raw: JSON.stringify(\n      {\n        name: \"pricing-card\",\n        private: true,\n        dependencies: { react: \"19.x\", motion: \"^12\", clsx: \"^2\", \"tailwind-merge\": \"^3\" },\n      },\n      null,\n      2\n    ),\n  },\n]\n\nconst escape = (s: string) =>\n  s.replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\")\n\nconst plain = (raw: string) =>\n  `<pre style=\"padding:16px;margin:0;background:#0d1117;color:#e6edf3\"><code>${escape(raw)}</code></pre>`\n\nexport default function TreeCodeViewerDemo() {\n  const [files, setFiles] = useState(() =>\n    SOURCES.map((f) => ({\n      ...f,\n      id: [...f.virtualPath, f.fileName].join(\"/\"),\n      html: plain(f.raw),\n    }))\n  )\n\n  useEffect(() => {\n    let cancelled = false\n    import(\"shiki\").then(async ({ codeToHtml }) => {\n      const highlighted = await Promise.all(\n        SOURCES.map(async (f) => ({\n          ...f,\n          id: [...f.virtualPath, f.fileName].join(\"/\"),\n          html: await codeToHtml(f.raw, { lang: f.ext, theme: \"github-dark\" }),\n        }))\n      )\n      if (!cancelled) setFiles(highlighted)\n    })\n    return () => {\n      cancelled = true\n    }\n  }, [])\n\n  return (\n    <div className=\"dark w-full max-w-4xl p-6 [&_pre]:p-4 [&_pre]:text-[13px]\">\n      <TreeCodeViewer files={files} />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/tree-code-viewer.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/tree-code-viewer.json",
+ "preview": "https://stashui.vercel.app/c/tree-code-viewer",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

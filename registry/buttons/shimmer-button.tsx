@@ -14,7 +14,7 @@ export interface ShimmerButtonProps
 
 /**
  * A button with an animated shimmer that sweeps around its border.
- * Pure CSS — no JS animation loop.
+ * Pure CSS: no JS animation loop.
  */
 export const ShimmerButton = React.forwardRef<
   HTMLButtonElement,

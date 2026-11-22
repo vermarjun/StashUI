@@ -1,0 +1,50 @@
+{
+ "name": "ai-context-meter",
+ "title": "AI Context Meter",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "data-display"
+ ],
+ "origin": "Kokonut UI",
+ "origin_short": "koko",
+ "exports": [
+  "AIContextMeter"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 85,
+ "flags": [
+  "motion",
+  "85 colors"
+ ],
+ "usage": "\"use client\";\n\nimport AIContextMeter from \"@/components/ui/ai-context-meter\";\n\nconst MESSAGES = [\n  {\n    from: \"user\",\n    text: \"Can you refactor the invoice exporter so it streams rows instead of building the whole CSV in memory?\",\n  },\n  {\n    from: \"assistant\",\n    text: \"Done. exportInvoices now yields rows through a ReadableStream, and the 40k-row fixture peaks at 18 MB instead of 610 MB.\",\n  },\n  {\n    from: \"user\",\n    text: \"Nice. Add a test for the empty-month case too.\",\n  },\n];\n\nexport default function AIContextMeterDemo() {\n  return (\n    <div className=\"flex h-[560px] w-full items-end justify-center p-6\">\n      <div className=\"flex w-full max-w-sm flex-col gap-3\">\n        {MESSAGES.map((message) => (\n          <p\n            className={\n              message.from === \"user\"\n                ? \"ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-foreground px-3.5 py-2 text-background text-sm leading-relaxed\"\n                : \"mr-auto max-w-[85%] rounded-2xl rounded-bl-md bg-muted px-3.5 py-2 text-foreground text-sm leading-relaxed\"\n            }\n            key={message.text}\n          >\n            {message.text}\n          </p>\n        ))}\n        <AIContextMeter className=\"mt-2\" model=\"Atlas Pro\" />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/kokonut-ui/ai-context-meter.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ai-context-meter.json",
+ "preview": "https://stashui.vercel.app/c/ai-context-meter",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

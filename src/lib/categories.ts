@@ -1,7 +1,7 @@
 // The component taxonomy + per-type display tuning.
 //
-// `cols`        — cards per row at desktop.
-// `designWidth` — the viewport width (px) the component renders at inside its
+// `cols`: cards per row at desktop.
+// `designWidth`: the viewport width (px) the component renders at inside its
 //                 iframe before being scaled to fit the card. Small UI (buttons)
 //                 use a small width so they're not shrunk to nothing; big blocks
 //                 (heroes, backgrounds) use a desktop width and scale down to
@@ -82,7 +82,7 @@ export const CATEGORY_CONFIG: CategoryConfig[] = [
   { slug: "empty-states", label: "Empty & 404", group: "use", cols: 2, designWidth: 900 },
 ];
 
-// Category-grid card layout. Flip this ONE value — neither has per-card borders:
+// Category-grid card layout. Flip this ONE value: neither has per-card borders:
 //   "lines" → tight 21st.dev grid with shared thin grid lines, no gap (current)
 //   "gap"   → spaced borderless tiles with a subtle fill, no grid lines
 export const CARD_LAYOUT: "gap" | "lines" = "gap";

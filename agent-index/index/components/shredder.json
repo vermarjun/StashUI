@@ -1,0 +1,49 @@
+{
+ "name": "shredder",
+ "title": "Shredder",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "data-display"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "Shredder"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "canvas",
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport Shredder from \"./shredder\";\n\nconst FILES = [\n  { id: 1, name: \"Invoice_March_2024.pdf\", kind: \"PDF\", size: \"184 KB\", tone: \"#e5484d\" },\n  { id: 2, name: \"old-logo-final-v7.png\", kind: \"PNG\", size: \"2.1 MB\", tone: \"#3b82f6\" },\n  { id: 3, name: \"Offsite agenda (draft).docx\", kind: \"DOC\", size: \"42 KB\", tone: \"#6366f1\" },\n  { id: 4, name: \"meeting-notes-2023.txt\", kind: \"TXT\", size: \"3 KB\", tone: \"#71717a\" },\n  { id: 5, name: \"Q2_forecast_backup.xlsx\", kind: \"XLS\", size: \"96 KB\", tone: \"#22c55e\" },\n];\n\nexport default function ShredderDemo() {\n  return (\n    <div className=\"flex min-h-[560px] w-full items-center justify-center p-6\">\n      <Shredder\n        items={FILES}\n        autoAnimate\n        loop\n        renderItem={item => (\n          <div className=\"flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3\">\n            <span\n              className=\"grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[10px] font-bold text-white\"\n              style={{ background: item.tone }}\n            >\n              {item.kind}\n            </span>\n            <div className=\"min-w-0\">\n              <p className=\"truncate text-sm font-medium text-foreground\">{item.name}</p>\n              <p className=\"text-xs text-muted-foreground\">{item.size}</p>\n            </div>\n          </div>\n        )}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/shredder.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/shredder.json",
+ "preview": "https://stashui.vercel.app/c/shredder",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

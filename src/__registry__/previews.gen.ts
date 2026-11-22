@@ -74,6 +74,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "d3rhv0e1",
     "tiers": true
   },
+  "3d-perspective-text": {
+    "device": "desktop",
+    "height": 700,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
   "3d-pin": {
     "device": "desktop",
     "height": 620,
@@ -1382,6 +1390,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "_mhjRN1L",
     "tiers": true
   },
+  "about-bento": {
+    "device": "desktop",
+    "height": 900,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
   "about-ecommerse": {
     "device": "desktop",
     "height": 650,
@@ -1476,6 +1492,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "9oWEuN1s"
   },
+  "acid-squares": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "action-bar": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "activity-terrain": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "advanced-stats": {
     "device": "desktop",
     "height": 520,
@@ -1484,6 +1524,99 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "Wbq1pxOA"
+  },
+  "agent-avatar": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "agent-suggest-card-stack": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "ai-agent-lanes": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "PMi6NxqW"
+  },
+  "ai-approval": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "ai-autocomplete": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "oKb4ZRkC"
+  },
+  "ai-blob-warp": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "ai-branches": {
+    "device": "desktop",
+    "height": 540,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "msdj9u-m"
+  },
+  "ai-citations": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "QtWEmeSS"
+  },
+  "ai-context-meter": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "ai-diff-review": {
+    "device": "desktop",
+    "height": 600,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "win7NNPJ"
+  },
+  "ai-inline-edit": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "ai-instructions": {
     "device": "desktop",
@@ -1495,6 +1628,83 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "BbSIFXgj",
     "tiers": true
   },
+  "ai-message-queue": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "QuCdTf-l"
+  },
+  "ai-model-selector": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "bIT_t2Is"
+  },
+  "ai-orb-face": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "ai-sources": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "ai-task-list": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "ai-text-loading": {
+    "device": "desktop",
+    "height": 320,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "ig2XaWk9"
+  },
+  "ai-token-alternatives": {
+    "device": "desktop",
+    "height": 500,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "ai-tool-approval": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "B2yA3i6F"
+  },
+  "ai-voice": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "WYsGDRGZ"
+  },
   "alert-dialog": {
     "device": "desktop",
     "height": 640,
@@ -1504,6 +1714,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "QjbA8i6D",
     "tiers": true
+  },
+  "amount-pad": {
+    "device": "desktop",
+    "height": 660,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "vNKzdbmn"
   },
   "android": {
     "device": "mobile",
@@ -1552,6 +1771,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Q6fM29oz"
   },
+  "animated-chart": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "animated-circular-progress-bar": {
     "device": "desktop",
     "height": 600,
@@ -1570,6 +1797,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "e8A_TEzv"
+  },
+  "animated-frameworks": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "animated-gradient-text": {
     "device": "desktop",
@@ -1599,6 +1834,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "EDMMY7Ov",
     "tiers": true
+  },
+  "animated-lucide-icons": {
+    "device": "desktop",
+    "height": 540,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "animated-modal": {
     "device": "desktop",
@@ -1672,6 +1915,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": false
   },
+  "app-shell": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "apple-activity-card": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "apple-card-carousel": {
     "device": "desktop",
     "height": 580,
@@ -1691,6 +1950,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "9U_c4BRP"
   },
+  "apple-invites": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "apple-pro-display-xdr": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "arcade-pixel": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "ascii-art": {
     "device": "desktop",
     "height": 600,
@@ -1700,6 +1983,31 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "_9h30WrV",
     "tiers": true
+  },
+  "attachment": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "attract-button": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "vU_et5Fj"
+  },
+  "audio-meters": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "aurora-background": {
     "device": "desktop",
@@ -1720,6 +2028,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "I2V9WKL4",
     "tiers": true
+  },
+  "auto-height": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "autoscroll-slider": {
     "device": "desktop",
@@ -1780,6 +2096,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "5TU-JWah",
     "tiers": true
   },
+  "background-cubes-grid": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "background-gradient": {
     "device": "desktop",
     "height": 600,
@@ -1800,6 +2124,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "QcxVwTVW",
     "tiers": true
   },
+  "background-lights": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "background-lines": {
     "device": "desktop",
     "height": 600,
@@ -1809,6 +2141,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "-g-JZO6z",
     "tiers": true
+  },
+  "background-paths": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "VAOqw9x0"
   },
   "background-ripple-effect": {
     "device": "desktop",
@@ -1850,6 +2191,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "xAu_7wkr",
     "tiers": true
   },
+  "bar-list": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "bell-button": {
+    "device": "desktop",
+    "height": 320,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "bending-gallery": {
     "device": "desktop",
     "height": 560,
@@ -1869,6 +2226,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "YkNWzwI8",
     "tiers": true
+  },
+  "bento-grid-draggable": {
+    "device": "desktop",
+    "height": 680,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "LiOvJE8Q"
   },
   "bg-animate-button": {
     "device": "desktop",
@@ -2015,6 +2381,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "0WT7Pl4v",
     "tiers": true
   },
+  "blob-card": {
+    "device": "desktop",
+    "height": 700,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "blog-grid": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
   "blur-fade": {
     "device": "desktop",
     "height": 580,
@@ -2119,6 +2501,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "7IiE2KfT"
   },
+  "bottom-navigation": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "box-carousel": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "box-reveal": {
     "device": "desktop",
     "height": 560,
@@ -2128,6 +2526,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "nskzU5dF",
     "tiers": true
+  },
+  "branched-menu": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "BTDyHK7X"
   },
   "breadcrumb": {
     "device": "desktop",
@@ -2309,6 +2716,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "pm300cqp"
   },
+  "bubble": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "bubble-board": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "button": {
     "device": "desktop",
     "height": 350,
@@ -2327,6 +2750,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "qu3-LZiI"
+  },
+  "button-group": {
+    "device": "desktop",
+    "height": 500,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "button-hover-right": {
     "device": "desktop",
@@ -2367,6 +2798,32 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Vq38bKqa"
   },
+  "call-chip": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "F1HONUDT"
+  },
+  "canvas": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "canvas-crowd": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "Quh0kMal"
+  },
   "canvas-fractal-grid": {
     "device": "desktop",
     "height": 600,
@@ -2405,6 +2862,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "Am5lHOow"
+  },
+  "card-field": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "card-flip-physics": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "card-globe": {
     "device": "desktop",
@@ -2453,6 +2926,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "ASb_k-3H",
     "tiers": true
+  },
+  "card-swipe-deck": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "cards-demo-1": {
     "device": "desktop",
@@ -2503,6 +2984,47 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "DDC0I7fY",
     "tiers": true
   },
+  "carousel-cards": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "G-gcd6cy"
+  },
+  "cart-button": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "cascader": {
+    "device": "desktop",
+    "height": 560,
+    "align": "top",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "category-bar": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "caustics-background": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "center-image-masking": {
     "device": "desktop",
     "height": 660,
@@ -2519,6 +3041,86 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "ovZW7rmq"
+  },
+  "changeable-pricing-section": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-area": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-bar": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-kit": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-line": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-pie": {
+    "device": "desktop",
+    "height": 540,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-radar": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chart-radial": {
+    "device": "desktop",
+    "height": 540,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "chat-coss": {
+    "device": "desktop",
+    "height": 680,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "chat-form-dropzone": {
     "device": "desktop",
@@ -2569,6 +3171,30 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "4cotCIBY",
     "tiers": true
   },
+  "chromatic-image": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "circling-elements": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "circuit-board": {
+    "device": "desktop",
+    "height": 720,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "classname-slider": {
     "device": "desktop",
     "height": 540,
@@ -2577,6 +3203,23 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "bqmvFaL4"
+  },
+  "clerk-otp": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "clip-path-carousel": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "c0xmJmNL"
   },
   "clip-path-corporate": {
     "device": "desktop",
@@ -2618,6 +3261,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": false
   },
+  "clip-trimmer": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "cloud-shader": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "code-block": {
     "device": "desktop",
     "height": 560,
@@ -2637,6 +3296,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "tTby-7tH",
     "tiers": true
+  },
+  "code-slots": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "FgYwwBTk"
+  },
+  "code-tabs-animate": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "code-tabs-mdx": {
     "device": "desktop",
@@ -2687,6 +3363,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "I4gMWx3j",
     "tiers": true
   },
+  "comet-dial": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "ZPbM_eO-"
+  },
   "comic-text": {
     "device": "desktop",
     "height": 480,
@@ -2706,6 +3391,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "tJNlPwJV",
     "tiers": true
+  },
+  "command-button": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "t9PQzDE0"
+  },
+  "commit": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "comp-01": {
     "device": "desktop",
@@ -7632,6 +8334,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "GXlyP6zX",
     "tiers": true
   },
+  "contact-section": {
+    "device": "desktop",
+    "height": 760,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
+  "contact-us": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
   "container-scroll": {
     "device": "desktop",
     "height": 680,
@@ -7660,6 +8378,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "UMI-xZWM",
     "tiers": true
+  },
+  "context-menu-animated": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "contextual-ai-bar": {
+    "device": "desktop",
+    "height": 320,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "continuous-pagination": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "cool-mode": {
     "device": "desktop",
@@ -7699,6 +8441,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "GwqOuvb9",
     "tiers": true
+  },
+  "cover": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "cradle-text": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "HsWXmy8o"
   },
   "creative-clippath": {
     "device": "desktop",
@@ -7764,6 +8523,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "yFKG0NJW"
   },
+  "credit-usage-card": {
+    "device": "desktop",
+    "height": 720,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "cropper": {
     "device": "desktop",
     "height": 560,
@@ -7773,6 +8540,24 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "konJWGIs",
     "tiers": true
+  },
+  "crt-warp": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "wkOCpzF9"
+  },
+  "crystalized-ball": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "b0N7foyc"
   },
   "css-card-stacking": {
     "device": "desktop",
@@ -7822,6 +8607,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "DztpbX9X"
   },
+  "currency-transfer": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "cursor-attractor-and-gravity": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "custom-kanban": {
+    "device": "desktop",
+    "height": 600,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "customer-experience": {
     "device": "desktop",
     "height": 800,
@@ -7841,6 +8650,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "O6yAPJII",
     "tiers": true
+  },
+  "dashboard-01": {
+    "device": "desktop",
+    "height": 750,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
   },
   "date-picker": {
     "device": "desktop",
@@ -7871,6 +8688,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "V2w4gyw1",
     "tiers": true
+  },
+  "day-night-theme-switch": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "default-color-picker": {
     "device": "desktop",
@@ -7911,6 +8736,24 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "_UKhdcA-",
     "tiers": true
   },
+  "depth-carousel": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "vhU34-vu"
+  },
+  "depth-text": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "1SlgrFnb"
+  },
   "design-testimonials": {
     "device": "desktop",
     "height": 600,
@@ -7920,6 +8763,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "t8VKSB-C",
     "tiers": true
+  },
+  "detent-dial": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "dia-text-reveal": {
     "device": "desktop",
@@ -7950,6 +8801,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "2DsIzXez",
     "tiers": true
+  },
+  "dialog-stack": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "direction-aware-hover": {
     "device": "desktop",
@@ -8000,6 +8859,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "oVIRqHpC",
     "tiers": true
   },
+  "dither-chart": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "dither-field": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "dither-image": {
     "device": "desktop",
     "height": 500,
@@ -8037,6 +8912,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "fDGz9ngL",
     "tiers": true
+  },
+  "dotmatrix-loaders": {
+    "device": "desktop",
+    "height": 680,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "dotted-glow-background": {
     "device": "desktop",
@@ -8078,6 +8961,23 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "hDi2YVOz",
     "tiers": true
   },
+  "drape-background": {
+    "device": "desktop",
+    "height": 640,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "SZiXZ0nL"
+  },
+  "draw-line-text": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "dropdown-menu": {
     "device": "desktop",
     "height": 600,
@@ -8098,6 +8998,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "YEuz2WOp",
     "tiers": true
   },
+  "echo-text": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "u7IXDdM0"
+  },
   "edge-blur": {
     "device": "desktop",
     "height": 580,
@@ -8106,6 +9015,81 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "-G6HsKcs"
+  },
+  "editor": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "editor-toolbar-dock": {
+    "device": "desktop",
+    "height": 540,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "CSdtJx_X"
+  },
+  "elastic-line": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "elastic-mesh": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "-gqhHmn4"
+  },
+  "electric-logo": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "siJIyeGS"
+  },
+  "emoji-picker": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "emoji-reaction": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "emoji-spree-choice-chips": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "empty-states": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "encrypted-text": {
     "device": "desktop",
@@ -8116,6 +9100,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "0EEdu7Gv",
     "tiers": true
+  },
+  "event-calendar-reui": {
+    "device": "desktop",
+    "height": 700,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "evervault-card": {
     "device": "desktop",
@@ -8137,6 +9129,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "GL-q_NQz",
     "tiers": true
   },
+  "expandable-card": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "expandable-gallery": {
     "device": "desktop",
     "height": 560,
@@ -8156,6 +9156,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "411S-pb8",
     "tiers": true
+  },
+  "exposure-slider": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "face-rating": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "family-button": {
     "device": "desktop",
@@ -8205,6 +9221,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "rAv0JSA6",
     "tiers": true
+  },
+  "faq-search": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
   },
   "feature-bento": {
     "device": "desktop",
@@ -8315,6 +9339,46 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "_UgkH8Ti",
     "tiers": true
   },
+  "feedback-popover": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "fey-cards": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "figma-comment": {
+    "device": "desktop",
+    "height": 500,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "figma-cursor": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "file-icons": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "file-tree": {
     "device": "tablet",
     "height": 480,
@@ -8325,6 +9389,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "T85Xjzxx",
     "tiers": true
   },
+  "file-type": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "file-upload": {
     "device": "desktop",
     "height": 600,
@@ -8334,6 +9406,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "72mC5ClC",
     "tiers": true
+  },
+  "filters-reui": {
+    "device": "desktop",
+    "height": 600,
+    "align": "top",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "fixed-bg-image-masking": {
     "device": "desktop",
@@ -8352,6 +9432,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "41s5r3O2",
     "tiers": true
+  },
+  "flex-carousel": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "BmObo1Hm"
   },
   "flickering-grid": {
     "device": "desktop",
@@ -8422,6 +9511,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "eYZ-Oram",
     "tiers": true
   },
+  "flow-field": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "fluid-cursor": {
     "device": "desktop",
     "height": 580,
@@ -8430,6 +9527,32 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "4lRBrLFj"
+  },
+  "fluted-glass": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "flying-button": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "v3KUs1cD"
+  },
+  "focal-point-picker": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "3A7QWAI_"
   },
   "focus": {
     "device": "desktop",
@@ -8450,6 +9573,32 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "te7B-wty",
     "tiers": true
   },
+  "fold-text": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "pXjLnRaa"
+  },
+  "folder-float": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "6Oaiegjb"
+  },
+  "follow-button": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "following-pointer": {
     "device": "desktop",
     "height": 600,
@@ -8459,6 +9608,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "ek393_qG",
     "tiers": true
+  },
+  "footer-bento": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "footer-blocks": {
+    "device": "desktop",
+    "height": 760,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "footer-bold": {
     "device": "desktop",
@@ -8565,6 +9730,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "1ussBUUr",
     "tiers": true
   },
+  "fuse-button": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "YSP9BBRG"
+  },
   "gallery-modal-accordion": {
     "device": "desktop",
     "height": 680,
@@ -8575,6 +9749,31 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "hG65pTTA",
     "tiers": true
   },
+  "gantt": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "gauge": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "ghost-fibers": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "3cFoXMrF"
+  },
   "github-globe": {
     "device": "desktop",
     "height": 580,
@@ -8583,6 +9782,22 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "i8oXMnrr"
+  },
+  "github-stars": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "github-stars-wheel": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "glare-card": {
     "device": "desktop",
@@ -8603,6 +9818,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "YSbI3X3b",
     "tiers": true
+  },
+  "glide-select": {
+    "device": "desktop",
+    "height": 420,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "zUiJbeko"
+  },
+  "glitch-vault": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "globe": {
     "device": "desktop",
@@ -8642,6 +9874,38 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "MSRSdFMw",
     "tiers": true
   },
+  "glyph-background": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "glyph-matrix": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "goey-toast": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "gooey-dropdown": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "gooey-input": {
     "device": "desktop",
     "height": 360,
@@ -8651,6 +9915,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "z-11ms1Q",
     "tiers": true
+  },
+  "gooey-svg-filter": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "google-gemini-effect": {
     "device": "desktop",
@@ -8751,6 +10023,15 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "UApGXHAu"
+  },
+  "gradient-ascii": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "Lk9JpVs_"
   },
   "gradient-awesome-pine": {
     "device": "desktop",
@@ -10213,6 +11494,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "m0eSSzoL"
   },
+  "gradient-waves": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "PEF2HSPF"
+  },
   "gradient-wide-matrix": {
     "device": "desktop",
     "height": 600,
@@ -10278,6 +11568,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "3sHArC9E"
   },
+  "gravity": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "grid": {
     "device": "desktop",
     "height": 600,
@@ -10316,6 +11614,39 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "oHjHjIxu"
+  },
+  "hacker-background": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "halftone-reveal": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "SeWIcLUp"
+  },
+  "halo-card": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "halo-dropzone": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "halo-search": {
     "device": "desktop",
@@ -10484,6 +11815,23 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "MXZnsst9",
     "tiers": true
   },
+  "hold-button": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "7OVKgYUR"
+  },
+  "holo-card": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "horizontal-progressive-carousel": {
     "device": "desktop",
     "height": 560,
@@ -10599,6 +11947,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "q5trCfye",
     "tiers": true
+  },
+  "illustration-fluid-rendering": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "illustration-globe-vercel": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "image-generation-loader": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "image-hover-accordion": {
     "device": "desktop",
@@ -10744,6 +12116,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "5DiLLIpo",
     "tiers": true
   },
+  "infinite-spiral": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "infinity-band-scroll": {
     "device": "desktop",
     "height": 200,
@@ -10760,6 +12140,31 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "XVMbGLR-"
+  },
+  "ink-background": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "f-vMzz7p"
+  },
+  "inline-edit": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "inline-testimonials": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "input": {
     "device": "desktop",
@@ -11310,6 +12715,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "o6Zvwb_H"
   },
+  "integrations": {
+    "device": "desktop",
+    "height": 500,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "interactive-grid-pattern": {
     "device": "desktop",
     "height": 600,
@@ -11330,6 +12743,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "lzo-dE4w",
     "tiers": true
   },
+  "interface-craft-cards": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "intro-disclosure": {
     "device": "desktop",
     "height": 680,
@@ -11339,6 +12760,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "WQMm_X3y",
     "tiers": true
+  },
+  "ipad": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "iphone": {
     "device": "mobile",
@@ -11359,6 +12788,38 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "cugs0uQ8"
   },
+  "jelly-radio": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "json-viewer": {
+    "device": "desktop",
+    "height": 600,
+    "align": "top",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "kanban-board": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "key-value": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "keyboard": {
     "device": "desktop",
     "height": 450,
@@ -11378,6 +12839,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "ALVoRigB",
     "tiers": true
+  },
+  "knob-slider": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "label": {
     "device": "mobile",
@@ -11407,6 +12876,32 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "c4Pl-ee1"
+  },
+  "lanyard-react-bits": {
+    "device": "desktop",
+    "height": 680,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "BlTVLaLT"
+  },
+  "lattice-loader": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "YeQFIqzS"
+  },
+  "layered-progressive-disclosure": {
+    "device": "desktop",
+    "height": 720,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "layout-grid": {
     "device": "desktop",
@@ -11476,6 +12971,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "5cDXOj-i",
     "tiers": true
   },
+  "light-tunnel": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "UFpxnnkY"
+  },
   "lightboard": {
     "device": "desktop",
     "height": 520,
@@ -11486,6 +12990,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "AOYCIqBf",
     "tiers": true
   },
+  "lightbox-grid": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "odRNsYlH"
+  },
   "line-shadow-text": {
     "device": "desktop",
     "height": 480,
@@ -11495,6 +13008,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "-riJo6bk",
     "tiers": true
+  },
+  "line-sidebar": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "RJoXbZvA"
   },
   "linear-modal": {
     "device": "desktop",
@@ -11543,6 +13065,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "3U70ZChr"
   },
+  "liquid-gauge": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "xQ6bh398"
+  },
   "liquid-glass": {
     "device": "desktop",
     "height": 500,
@@ -11562,6 +13093,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "hvOBCxXP",
     "tiers": true
+  },
+  "liquid-glass-music-card": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "dvzS2UCU"
   },
   "liquid-glass-notification": {
     "device": "desktop",
@@ -11613,6 +13153,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "eug2_JXI",
     "tiers": true
   },
+  "liquid-slider": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "loader": {
     "device": "desktop",
     "height": 560,
@@ -11632,6 +13180,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "mIe2OwnR",
     "tiers": true
+  },
+  "location-picker": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "dGCo0_Pn"
   },
   "logo-carousel": {
     "device": "desktop",
@@ -11663,6 +13220,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "Vjw480gu",
     "tiers": true
   },
+  "logo-timeline": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "logos-marquee": {
     "device": "desktop",
     "height": 480,
@@ -11682,6 +13247,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "_LbrAcMS",
     "tiers": true
+  },
+  "macbook-pro": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "macbook-scroll": {
     "device": "desktop",
@@ -11781,6 +13354,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "f2XMVP3C",
     "tiers": true
   },
+  "magnetic-field": {
+    "device": "desktop",
+    "height": 500,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "magnified-doc": {
     "device": "desktop",
     "height": 380,
@@ -11790,6 +13371,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "iLCAqrAy",
     "tiers": true
+  },
+  "management-bar": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "markdown": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "marking-menu": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "marque-testimonial": {
     "device": "desktop",
@@ -11810,6 +13415,31 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "N7gd0Ts5"
   },
+  "marquee-along-svg-path": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "y7TwyyiG"
+  },
+  "mask-input": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "media-between-text": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "media-modal": {
     "device": "desktop",
     "height": 680,
@@ -11828,6 +13458,38 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "42_VHQrV",
     "tiers": true
+  },
+  "media-player": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "mention": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "menubar-animated": {
+    "device": "desktop",
+    "height": 520,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "merging-bubbles": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "mesh-gradient-background": {
     "device": "desktop",
@@ -11867,6 +13529,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "1eaa7gE9",
     "tiers": true
   },
+  "message-scroller": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "messenger-testimonial": {
     "device": "desktop",
     "height": 600,
@@ -11897,6 +13567,31 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "-V1nDjqu",
     "tiers": true
   },
+  "metric-card": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "micro-slats": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "B46Rbsp9"
+  },
+  "mini-calendar": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "minimal-card": {
     "device": "desktop",
     "height": 460,
@@ -11917,6 +13612,24 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "wvY9r5oQ",
     "tiers": true
   },
+  "molten-metal": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "MC0XEs6l"
+  },
+  "morph-slider": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "X6Q8y3-N"
+  },
   "morph-surface": {
     "device": "desktop",
     "height": 560,
@@ -11926,6 +13639,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "EXMiP6kU",
     "tiers": true
+  },
+  "morphic-navbar": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "NU49ZZrL"
+  },
+  "morphing-discovery-bar": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "morphing-tabs": {
     "device": "desktop",
@@ -11985,6 +13715,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "CWnYKCmL",
     "tiers": true
+  },
+  "mouse-wave-text": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "mousetrail": {
     "device": "desktop",
@@ -12064,6 +13802,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "9RELyE-9",
     "tiers": true
   },
+  "music-toggle": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "music-toggle-button": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "navbar-menu": {
     "device": "desktop",
     "height": 640,
@@ -12113,6 +13867,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "0cl8En4u",
     "tiers": true
+  },
+  "network": {
+    "device": "desktop",
+    "height": 740,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "neumorph-button": {
     "device": "desktop",
@@ -12170,6 +13932,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "h-GyOo6h"
   },
+  "not-found-page": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "notch": {
     "device": "desktop",
     "height": 560,
@@ -12179,6 +13949,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Uw9L91KS",
     "tiers": true
+  },
+  "notification-stack": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "notion-mention-link": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "novatrix-background": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "number-flow-trading": {
     "device": "desktop",
@@ -12220,6 +14014,23 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "rpkxrrVd",
     "tiers": true
   },
+  "open-in-chat": {
+    "device": "desktop",
+    "height": 460,
+    "align": "top",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "option-wheel": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "Tol-RLwu"
+  },
   "orbit": {
     "device": "desktop",
     "height": 560,
@@ -12228,6 +14039,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "_8EojzGv"
+  },
+  "orbit-carousel": {
+    "device": "desktop",
+    "height": 580,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "orbiting-circles": {
     "device": "desktop",
@@ -12312,6 +14131,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "8QMkyTWx",
     "tiers": true
   },
+  "page-flip": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "3xeYf66O"
+  },
   "pagination": {
     "device": "desktop",
     "height": 512,
@@ -12320,6 +14148,31 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "7VCbEnW2"
+  },
+  "pagination-animated": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "paper-crumple": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "asJCoUof"
+  },
+  "parallax-floating": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "parallax-hero-images": {
     "device": "desktop",
@@ -12350,6 +14203,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "6WiCikhg",
     "tiers": true
+  },
+  "particle-button": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "Y7pI_ZOS"
   },
   "particle-image": {
     "device": "desktop",
@@ -12427,6 +14289,24 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Ev69gcnA"
   },
+  "pattern-waves": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "WwM1Mpgv"
+  },
+  "peek-rating": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "L9Oa_i_D"
+  },
   "phone-input": {
     "device": "desktop",
     "height": 380,
@@ -12456,6 +14336,30 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "1P6ylhcY",
     "tiers": true
   },
+  "photon-beam": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "pixel-flow-field": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "pixel-heading-character": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "pixel-image": {
     "device": "desktop",
     "height": 520,
@@ -12465,6 +14369,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "x9vvJfpY",
     "tiers": true
+  },
+  "pixel-liquid-bg": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "pixelated-canvas": {
     "device": "desktop",
@@ -12485,6 +14397,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "G5tGyKb7",
     "tiers": true
+  },
+  "playful-todolist": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "plucked-text": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "pointer": {
     "device": "desktop",
@@ -12544,6 +14472,38 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "HYMazHRY",
     "tiers": true
   },
+  "power-off-slide": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "predictive-text": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "presentation": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "pricing-frequency-toggle": {
+    "device": "desktop",
+    "height": 760,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "pricing-grow-business": {
     "device": "desktop",
     "height": 600,
@@ -12552,6 +14512,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "GFqlD-LX"
+  },
+  "pricing-tiers": {
+    "device": "desktop",
+    "height": 760,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
   },
   "primitives-animate-code-block": {
     "device": "desktop",
@@ -12815,6 +14783,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "SWtXWDzZ",
     "tiers": true
   },
+  "profile-dropdown": {
+    "device": "desktop",
+    "height": 580,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "ntdQERy-"
+  },
   "progress": {
     "device": "desktop",
     "height": 600,
@@ -12844,6 +14821,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "XPRVgW85",
     "tiers": true
   },
+  "prompt-bar": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "BIoJOr2q"
+  },
   "proxy-admin": {
     "device": "desktop",
     "height": 720,
@@ -12852,6 +14838,15 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "igffxipQ"
+  },
+  "pull-cord": {
+    "device": "desktop",
+    "height": 500,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "m3l05z7W"
   },
   "pulsating-button": {
     "device": "desktop",
@@ -12862,6 +14857,39 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Q4VB2Dd_",
     "tiers": true
+  },
+  "pulse-heart": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "E93PhPsj"
+  },
+  "qr-code": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "query-builder": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "questionnaire": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "r3f-blob": {
     "device": "desktop",
@@ -12900,6 +14928,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "6yCSdy6I",
     "tiers": true
   },
+  "rain-glass-background": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "rainbow-button": {
     "device": "desktop",
     "height": 350,
@@ -12919,6 +14955,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "pC79M_20"
   },
+  "ransom-note": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "raws-color-picker": {
     "device": "desktop",
     "height": 500,
@@ -12927,6 +14971,31 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "fGGRZTnS"
+  },
+  "receipt-printer": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "maLSQMAu"
+  },
+  "reel": {
+    "device": "desktop",
+    "height": 680,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "refine-frame": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "register-tab": {
     "device": "desktop",
@@ -12938,12 +15007,28 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "qnyPk2eC",
     "tiers": true
   },
+  "relative-time-card": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "repeat-scroll": {
     "device": "desktop",
     "height": 750,
     "align": "top",
     "scroll": true,
     "background": "none",
+    "hasVideo": false
+  },
+  "resizable": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
     "hasVideo": false
   },
   "resizable-navbar": {
@@ -12955,6 +15040,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "zvST6P_B",
     "tiers": true
+  },
+  "resize-handle": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "responsive-dialog": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "retro-grid": {
     "device": "desktop",
@@ -12995,6 +15096,24 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "GB1s9vRS",
     "tiers": true
   },
+  "ripple-distortion": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "AKSTUcaT"
+  },
+  "rubber-segment": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "hUtqwm_c"
+  },
   "safari": {
     "device": "desktop",
     "height": 480,
@@ -13013,6 +15132,23 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "lFRNbPWM"
+  },
+  "sandbox": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "save-button": {
+    "device": "desktop",
+    "height": 540,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "Ia1NH1Ys"
   },
   "scale-slider": {
     "device": "desktop",
@@ -13041,6 +15177,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "sGKAXuA4",
     "tiers": true
+  },
+  "screensaver": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "scroll-and-swap": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "scroll-animation": {
     "device": "desktop",
@@ -13106,6 +15258,30 @@ export const previews: Record<string, PreviewConfig> = {
     "align": "top",
     "scroll": true,
     "background": "none",
+    "hasVideo": false
+  },
+  "scroll-fade": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "scroll-images-reveal-003": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
+  "scroll-index": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
     "hasVideo": false
   },
   "scroll-island": {
@@ -13181,6 +15357,39 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "6766L13d"
   },
+  "scrub-field": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "LxfVL-op"
+  },
+  "scrubber": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "seat-map": {
+    "device": "desktop",
+    "height": 680,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "security-checkpoint": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "select": {
     "device": "desktop",
     "height": 600,
@@ -13201,6 +15410,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "yVjDJpus",
     "tiers": true
   },
+  "selection-toolbar": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "settings-page": {
+    "device": "desktop",
+    "height": 750,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
   "shader-lens-blur": {
     "device": "desktop",
     "height": 560,
@@ -13211,6 +15436,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "vEg-A_fd",
     "tiers": true
   },
+  "shader-reveal-transition": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "shader-toy": {
     "device": "desktop",
     "height": 640,
@@ -13219,6 +15452,40 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "gTlJYMob"
+  },
+  "shadow-text": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "cTaEf5Ac"
+  },
+  "shape-hero": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "4dcegJaQ"
+  },
+  "shape-waves": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "shared-tooltip": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "shift-card": {
     "device": "desktop",
@@ -13230,6 +15497,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "9I1y0GP3",
     "tiers": true
   },
+  "shifting-dropdown": {
+    "device": "desktop",
+    "height": 480,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "shimmer-button": {
     "device": "desktop",
     "height": 350,
@@ -13238,6 +15513,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "vhaShLdC"
+  },
+  "shimmer-loader": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "shine-border": {
     "device": "desktop",
@@ -13278,6 +15561,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "lF1uARoV"
   },
+  "shredder": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "5DGONN8l"
+  },
+  "shuffle-hero": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "side-panel": {
     "device": "desktop",
     "height": 560,
@@ -13298,6 +15598,23 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "YCI4d6T1",
     "tiers": true
   },
+  "sidebar-animated": {
+    "device": "desktop",
+    "height": 640,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "signature-pad": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "p_Qny96S"
+  },
   "single-layout-accordion": {
     "device": "desktop",
     "height": 520,
@@ -13306,6 +15623,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "none",
     "hasVideo": true,
     "v": "m1a0DZxC"
+  },
+  "skeleton-reveal": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "sleek-line-cursor": {
     "device": "desktop",
@@ -13317,6 +15642,24 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "OPZ2HMKQ",
     "tiers": true
   },
+  "sliced-waves": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "Sd8a_XUp"
+  },
+  "slide-commit": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "3UavXYqG"
+  },
   "slider": {
     "device": "desktop",
     "height": 600,
@@ -13326,6 +15669,24 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "ovQcgndN",
     "tiers": true
+  },
+  "slot-picker": {
+    "device": "desktop",
+    "height": 780,
+    "align": "top",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "K50rq3ED"
+  },
+  "smooth-caret-input": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "CG1GVMbm"
   },
   "smooth-cursor": {
     "device": "desktop",
@@ -13383,6 +15744,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "Sp9AiGlw",
     "tiers": true
   },
+  "spark-chart": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "sparkles": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "sparkles-text": {
     "device": "desktop",
     "height": 360,
@@ -13393,6 +15770,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "QjGgt5iu",
     "tiers": true
   },
+  "sparkles-title": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "special-offer": {
     "device": "desktop",
     "height": 520,
@@ -13402,6 +15787,40 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Tv08Li7M",
     "tiers": true
+  },
+  "specular-button": {
+    "device": "desktop",
+    "height": 360,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "4g_zpjlm"
+  },
+  "speech-input": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "speed-dial": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "spending-ring": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "I2-_s-C9"
   },
   "spinning-text": {
     "device": "desktop",
@@ -13431,6 +15850,24 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "xKUYVLRG",
     "tiers": true
+  },
+  "split-flap-text": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "bJ5Tedjq"
+  },
+  "spoiler-text": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "jxcdj8Um"
   },
   "spotlight": {
     "device": "desktop",
@@ -13519,6 +15956,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "9foH13yf",
     "tiers": true
   },
+  "spring-element": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "squiggle-arrow": {
     "device": "mobile",
     "height": 420,
@@ -13538,6 +15983,32 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "0OGTXlp-",
     "tiers": true
+  },
+  "squish-switch": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "b-83fqSI"
+  },
+  "stack-panel": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "BhsRDoap"
+  },
+  "stack-trace": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "stacking-card": {
     "device": "desktop",
@@ -13627,6 +16098,32 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "GCDFrb6c",
     "tiers": true
   },
+  "status-island": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "status-mark": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "NnqNhOSI"
+  },
+  "stay-picker": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "yneDZzKF"
+  },
   "stepper": {
     "device": "desktop",
     "height": 600,
@@ -13686,6 +16183,31 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "PSPRw3LK",
     "tiers": true
   },
+  "stories": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "strands": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "T6xNLkHE"
+  },
+  "streak-calendar": {
+    "device": "desktop",
+    "height": 760,
+    "align": "top",
+    "scroll": true,
+    "background": "dots",
+    "hasVideo": false
+  },
   "stripe-bg-guides": {
     "device": "desktop",
     "height": 600,
@@ -13734,6 +16256,23 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "SSwPd7UU"
   },
+  "svg-draw-on-scroll": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "svg-follow-scroll": {
+    "device": "desktop",
+    "height": 720,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": true,
+    "v": "54xrkAXm"
+  },
   "svg-mask": {
     "device": "desktop",
     "height": 620,
@@ -13752,6 +16291,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "REpVqLcN",
     "tiers": true
+  },
+  "svg-path-morphing": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "svg-shapes": {
     "device": "desktop",
@@ -13808,6 +16355,33 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "jyjbwdkZ"
   },
+  "swarm-cursor": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "gbOUc5oE"
+  },
+  "swipe-row": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "LEuWfdiv"
+  },
+  "swipe-toast": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "eMewhtmY"
+  },
   "switch": {
     "device": "desktop",
     "height": 600,
@@ -13827,6 +16401,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "QibyNOpi",
     "tiers": true
+  },
+  "synced-transcript": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "table": {
     "device": "desktop",
@@ -13956,6 +16538,24 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "VqUEmHgB",
     "tiers": true
   },
+  "tear-ticket": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "dNtdZhcT"
+  },
+  "tech-text": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "cAB3dV_g"
+  },
   "terminal": {
     "device": "desktop",
     "height": 460,
@@ -13974,6 +16574,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Yf7UwOpn",
     "tiers": true
+  },
+  "terminal-ui": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "test-results": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "testimonial-basic": {
     "device": "desktop",
@@ -14025,6 +16641,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "JQyZf1tR",
     "tiers": true
   },
+  "text-along-path": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "text-animate": {
     "device": "desktop",
     "height": 400,
@@ -14034,6 +16658,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "OwwP491k",
     "tiers": true
+  },
+  "text-cursor-proximity": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "text-flipping-board": {
     "device": "desktop",
@@ -14093,6 +16725,15 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "x19ua_Qi",
     "tiers": true
   },
+  "text-loop": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "pXX5n0-U"
+  },
   "text-randomized": {
     "device": "desktop",
     "height": 360,
@@ -14120,6 +16761,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "aqPL_A65",
     "tiers": true
+  },
+  "text-roll-navigation": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "b7PLM53L"
   },
   "text-scroll": {
     "device": "desktop",
@@ -14185,6 +16835,15 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "5SpdRiuo"
   },
+  "thought-line": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "MACj4-Gg"
+  },
   "three-d-carousel": {
     "device": "desktop",
     "height": 540,
@@ -14204,6 +16863,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "zMLUcgJY",
     "tiers": true
+  },
+  "time-machine-stack": {
+    "device": "desktop",
+    "height": 580,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "time-picker": {
     "device": "desktop",
@@ -14242,6 +16909,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "fLEjCzyu",
     "tiers": true
+  },
+  "timezone-planner": {
+    "device": "desktop",
+    "height": 580,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "toast": {
     "device": "desktop",
@@ -14311,6 +16986,32 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "vEDoGod_"
   },
+  "topo-background": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "HVLqbYsg"
+  },
+  "topography": {
+    "device": "desktop",
+    "height": 640,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": true,
+    "v": "v3YGzTii"
+  },
+  "tour": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "tracing-beam": {
     "device": "desktop",
     "height": 680,
@@ -14321,6 +17022,30 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "Svj2-o7m",
     "tiers": true
   },
+  "transaction-list": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "transcription": {
+    "device": "desktop",
+    "height": 460,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "transfer-funds-card": {
+    "device": "desktop",
+    "height": 680,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "tree": {
     "device": "tablet",
     "height": 480,
@@ -14330,6 +17055,22 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "FJb4aZKc",
     "tiers": true
+  },
+  "tree-code-viewer": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "truck-loader": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "tweet-card": {
     "device": "desktop",
@@ -14369,6 +17110,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "0Rpt0xZN",
     "tiers": true
+  },
+  "typewriter-loader": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "typing-animation": {
     "device": "desktop",
@@ -14465,6 +17214,48 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "POhSV9m7",
     "tiers": true
   },
+  "underline-animation": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "undo-button": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "i-LwNF65"
+  },
+  "undo-pill": {
+    "device": "desktop",
+    "height": 440,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "unlock-face-id": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "uptime-card": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": true,
+    "v": "aGhahNEv"
+  },
   "vanishing-input": {
     "device": "desktop",
     "height": 380,
@@ -14473,6 +17264,14 @@ export const previews: Record<string, PreviewConfig> = {
     "background": "dots",
     "hasVideo": true,
     "v": "l5u4XSOp"
+  },
+  "variable-font-and-cursor": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "vertical-progressive-carousel": {
     "device": "desktop",
@@ -14520,6 +17319,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "Wyhxedag"
   },
+  "video-ambient": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "video-blur-vignette": {
     "device": "desktop",
     "height": 460,
@@ -14529,6 +17336,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "gyM09dTE",
     "tiers": true
+  },
+  "video-gallery": {
+    "device": "desktop",
+    "height": 750,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
   },
   "video-text": {
     "device": "desktop",
@@ -14559,6 +17374,30 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "ROom8fMt"
   },
+  "waitlist": {
+    "device": "desktop",
+    "height": 720,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "wake-slider": {
+    "device": "desktop",
+    "height": 380,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "wallet-card": {
+    "device": "desktop",
+    "height": 600,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "warp-background": {
     "device": "desktop",
     "height": 600,
@@ -14568,6 +17407,14 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "p374-yjI",
     "tiers": true
+  },
+  "warp-text": {
+    "device": "desktop",
+    "height": 520,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
   },
   "water-splash-image-masking": {
     "device": "desktop",
@@ -14597,6 +17444,14 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "3bZm92nw",
     "tiers": true
   },
+  "waveform-scrub": {
+    "device": "desktop",
+    "height": 480,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
   "wavy-background": {
     "device": "desktop",
     "height": 600,
@@ -14607,6 +17462,22 @@ export const previews: Record<string, PreviewConfig> = {
     "v": "WMhMSkfr",
     "tiers": true
   },
+  "web-analytics-dashboard": {
+    "device": "desktop",
+    "height": 750,
+    "align": "top",
+    "scroll": true,
+    "background": "none",
+    "hasVideo": false
+  },
+  "web-threads": {
+    "device": "desktop",
+    "height": 560,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
   "webcam-pixel-grid": {
     "device": "desktop",
     "height": 620,
@@ -14616,6 +17487,38 @@ export const previews: Record<string, PreviewConfig> = {
     "hasVideo": true,
     "v": "qn9gJ8DF",
     "tiers": true
+  },
+  "weight-widget": {
+    "device": "desktop",
+    "height": 420,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "wheel-picker": {
+    "device": "desktop",
+    "height": 400,
+    "align": "center",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
+  },
+  "wispr-flow-text-animation": {
+    "device": "desktop",
+    "height": 620,
+    "align": "center",
+    "scroll": false,
+    "background": "none",
+    "hasVideo": false
+  },
+  "wizard-expandable": {
+    "device": "desktop",
+    "height": 620,
+    "align": "top",
+    "scroll": false,
+    "background": "dots",
+    "hasVideo": false
   },
   "wobble-card": {
     "device": "desktop",

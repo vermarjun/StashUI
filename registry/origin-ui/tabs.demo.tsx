@@ -12,17 +12,17 @@ export default function Demo() {
       </TabsList>
       <TabsContent value="overview">
         <p className="p-4 text-center text-muted-foreground text-xs">
-          Overview panel — key metrics at a glance.
+          Overview panel: key metrics at a glance.
         </p>
       </TabsContent>
       <TabsContent value="analytics">
         <p className="p-4 text-center text-muted-foreground text-xs">
-          Analytics panel — charts and trends.
+          Analytics panel: charts and trends.
         </p>
       </TabsContent>
       <TabsContent value="settings">
         <p className="p-4 text-center text-muted-foreground text-xs">
-          Settings panel — configure your preferences.
+          Settings panel: configure your preferences.
         </p>
       </TabsContent>
     </Tabs>

@@ -50,7 +50,7 @@ export const FeatureHero = () => {
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-20 text-pretty">
             Leverage cutting-edge AI tools to optimize campaigns, allocate
-            budgets, and unlock actionable insights—all in one platform.
+            budgets, and unlock actionable insights: all in one platform.
           </p>
         </motion.div>
 

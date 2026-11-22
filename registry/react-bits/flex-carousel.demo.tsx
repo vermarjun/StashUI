@@ -1,0 +1,21 @@
+"use client";
+
+import FlexCarousel, { type FlexCarouselItem } from "./flex-carousel";
+
+const ITEMS: FlexCarouselItem[] = [
+  { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", title: "Alpine Dawn", subtitle: "Dolomites, Italy" },
+  { src: "https://images.unsplash.com/photo-1548192746-dd526f154ed9?w=1200&q=80", title: "Still Water", subtitle: "Lake Bled, Slovenia" },
+  { src: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200&q=80", title: "Good Boy", subtitle: "Studio portrait" },
+  { src: "https://images.unsplash.com/photo-1618220649687-ba860f3176e7?w=1200&q=80", title: "Quiet Room", subtitle: "Copenhagen" },
+  { src: "https://images.unsplash.com/photo-1572851899646-a1f69c664e1e?w=1200&q=80", title: "Night Shift", subtitle: "Tokyo" },
+  { src: "https://images.unsplash.com/photo-1661980494567-40a5e01b699b?w=1200&q=80", title: "Soft Light", subtitle: "Lisbon" },
+  { src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=80", title: "Golden Hour", subtitle: "Portrait series" },
+];
+
+export default function FlexCarouselDemo() {
+  return (
+    <div className="relative h-[560px] w-full overflow-hidden bg-black">
+      <FlexCarousel items={ITEMS} autoplay interval={3} />
+    </div>
+  );
+}

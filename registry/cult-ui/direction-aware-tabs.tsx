@@ -17,7 +17,7 @@ interface OgImageSectionProps {
   className?: string
   /** Outer container radius (e.g. `rounded-lg`) */
   rounded?: string
-  /** Inner tab/bubble radius — should be outer radius minus container padding (~3px) */
+  /** Inner tab/bubble radius: should be outer radius minus container padding (~3px) */
   roundedInner?: string
   onChange?: () => void
 }

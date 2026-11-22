@@ -21,7 +21,7 @@ const TABS = [
     value: "motion",
     title: "Motion & Animation",
     description:
-      "Purposeful motion guides attention, communicates state, and adds delight — making interfaces feel alive without sacrificing performance.",
+      "Purposeful motion guides attention, communicates state, and adds delight: making interfaces feel alive without sacrificing performance.",
     imageUrl: "https://images.unsplash.com/photo-1718524767487-7f98d4e5eeeb?w=1200&h=800&fit=crop&auto=format&q=80",
   },
   {

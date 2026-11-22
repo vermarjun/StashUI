@@ -1,0 +1,49 @@
+{
+ "name": "agent-avatar",
+ "title": "Agent Avatar",
+ "category": "avatars",
+ "categories": [
+  "avatars",
+  "chat"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "AgentAvatar"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "canvas",
+  "pure",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport AgentAvatar from \"./agent-avatar\";\n\nconst AGENTS = [\n  { name: \"Atlas\", role: \"Research\", status: \"Reading 14 sources\" },\n  { name: \"Juniper\", role: \"Code review\", status: \"Reviewing PR #482\" },\n  { name: \"Orion\", role: \"Data analyst\", status: \"Building Q3 cohort chart\" },\n  { name: \"Wren\", role: \"Support triage\", status: \"3 tickets in queue\" },\n  { name: \"Sable\", role: \"Copywriter\", status: \"Drafting launch email\" },\n  { name: \"Kestrel\", role: \"QA\", status: \"Running 212 tests\" },\n];\n\nexport default function AgentAvatarDemo() {\n  return (\n    <div className=\"flex w-full flex-col items-center gap-10 p-8\">\n      <AgentAvatar seed=\"atlas-research\" size={128} />\n      <div className=\"grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3\">\n        {AGENTS.map((agent) => (\n          <div\n            className=\"flex items-center gap-3 rounded-xl border border-border bg-card p-3\"\n            key={agent.name}\n          >\n            <AgentAvatar seed={agent.name.toLowerCase()} size={40} />\n            <div className=\"min-w-0\">\n              <p className=\"font-medium text-foreground text-sm\">\n                {agent.name}\n                <span className=\"ml-1.5 font-normal text-muted-foreground text-xs\">\n                  {agent.role}\n                </span>\n              </p>\n              <p className=\"truncate text-muted-foreground text-xs\">\n                {agent.status}\n              </p>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/agent-avatar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/agent-avatar.json",
+ "preview": "https://stashui.vercel.app/c/agent-avatar",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

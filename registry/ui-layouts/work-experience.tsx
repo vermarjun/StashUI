@@ -19,7 +19,7 @@ const history: WorkHistory[] = [
   {
     company: 'OpenAI',
     role: 'Principal Product Engineer',
-    period: '2021 — Present',
+    period: '2021–Present',
     location: 'San Francisco, CA',
     description:
       'Leading the development of high-performance desktop and mobile surfaces for project management tools.',
@@ -30,7 +30,7 @@ const history: WorkHistory[] = [
   {
     company: 'Stripe',
     role: 'Senior Software Engineer',
-    period: '2018 — 2021',
+    period: '2018–2021',
     location: 'Remote',
     description:
       'Architected critical payment processing infrastructure used by millions of global businesses.',
@@ -41,7 +41,7 @@ const history: WorkHistory[] = [
   {
     company: 'Airbnb',
     role: 'Software Engineer',
-    period: '2015 — 2018',
+    period: '2015–2018',
     location: 'San Francisco, CA',
     description:
       'Developed core search and discovery experiences within the guest-facing application.',

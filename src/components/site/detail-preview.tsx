@@ -106,7 +106,7 @@ export function DetailPreview({
   }, []);
 
   // Desktop fills the stage; narrower devices render at their real width,
-  // centered (never wider than the stage — no horizontal scroll).
+  // centered (never wider than the stage: no horizontal scroll).
   const targetWidth =
     device === "desktop" ? boxWidth : Math.min(DEVICE_WIDTHS[device], boxWidth);
   const frameWidth = boxWidth ? Math.max(280, targetWidth) : 0;

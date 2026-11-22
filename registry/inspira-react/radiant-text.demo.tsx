@@ -14,7 +14,7 @@ export default function RadiantTextDemo() {
       </RadiantText>
 
       <RadiantText duration={6} radiantWidth={80} className="text-base">
-        Fast radiant sweep — speed things up.
+        Fast radiant sweep: speed things up.
       </RadiantText>
     </div>
   );

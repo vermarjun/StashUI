@@ -53,7 +53,7 @@ export const BoldFooter = () => {
               © 2026 UI-Layouts{' '}
             </span>
             <div className="flex gap-8">
-              <span className="text-xs  text-zinc-400">001 — 2024</span>
+              <span className="text-xs  text-zinc-400">001–2024</span>
               <button className="text-xs font-bold uppercase tracking-widest hover:text-zinc-500 transition-colors">
                 Back to top ↑
               </button>

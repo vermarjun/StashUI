@@ -76,7 +76,7 @@ export const FaqFounder = () => {
     {
       question: 'Who is this product best suited for?',
       answer:
-        'It is designed for developers, founders, and small teams who care about speed, consistency, and maintainability. If you are shipping real products—not demos—this is built for you.',
+        'It is designed for developers, founders, and small teams who care about speed, consistency, and maintainability. If you are shipping real products: not demos: this is built for you.',
     },
     {
       question: 'Can I customize the components for my own design system?',

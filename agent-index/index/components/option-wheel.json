@@ -1,0 +1,48 @@
+{
+ "name": "option-wheel",
+ "title": "Option Wheel",
+ "category": "selects",
+ "categories": [
+  "selects",
+  "3d"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "OptionWheel"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "pure",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport OptionWheel from \"@/components/ui/option-wheel\";\n\nconst GENRES = [\"Ambient\", \"House\", \"Techno\", \"Jazz\", \"Lo-Fi\", \"Synthwave\", \"Trance\", \"Funk\", \"Disco\", \"Hip-Hop\", \"Chillwave\", \"Drum & Bass\"];\n\nexport default function Demo() {\n  const [genre, setGenre] = useState(GENRES[4]);\n  return (\n    <div className=\"flex h-[560px] w-full items-stretch bg-background\">\n      <div className=\"relative w-1/2\">\n        <OptionWheel items={GENRES} defaultSelected={4} onChange={(_, item) => setGenre(item)} loop />\n      </div>\n      <div className=\"flex w-1/2 flex-col justify-center gap-3 pr-12\">\n        <span className=\"text-xs uppercase tracking-[0.25em] text-muted-foreground\">Now tuning</span>\n        <span className=\"text-4xl font-semibold tracking-tight text-foreground\">{genre}</span>\n        <span className=\"text-sm text-muted-foreground\">Scroll, drag or use the arrow keys to spin the wheel.</span>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/option-wheel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/option-wheel.json",
+ "preview": "https://stashui.vercel.app/c/option-wheel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

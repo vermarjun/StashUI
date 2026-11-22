@@ -1,0 +1,52 @@
+{
+ "name": "refine-frame",
+ "title": "Refine Frame",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "media",
+  "loaders"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "RefineFrame"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "canvas",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useEffect, useRef, useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport RefineFrame, { type RefineFrameStatus } from \"@/components/ui/refine-frame\";\n\nconst ORDER: RefineFrameStatus[] = [\"queued\", \"generating\", \"refining\", \"complete\"];\n\nexport default function Demo() {\n  const [step, setStep] = useState(0);\n  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  useEffect(() => {\n    if (step >= ORDER.length - 1) return;\n    timer.current = setTimeout(() => setStep(s => s + 1), step === 0 ? 700 : 1500);\n    return () => {\n      if (timer.current) clearTimeout(timer.current);\n    };\n  }, [step]);\n\n  return (\n    <div className=\"flex min-h-[560px] w-full flex-col items-center justify-center gap-5 bg-background px-6\">\n      <p className=\"max-w-[340px] text-center text-sm text-muted-foreground\">\n        &ldquo;Alpine lake at dawn, mist over the water, soft film grain&rdquo;\n      </p>\n      <RefineFrame status={ORDER[step]} width={340} aspectRatio=\"4 / 3\">\n        <img\n          src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80\"\n          alt=\"Mountains above a sea of clouds\"\n          className=\"h-full w-full object-cover\"\n        />\n      </RefineFrame>\n      <Button variant=\"outline\" size=\"sm\" onClick={() => setStep(0)}>\n        Regenerate\n      </Button>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/refine-frame.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/refine-frame.json",
+ "preview": "https://stashui.vercel.app/c/refine-frame",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

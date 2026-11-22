@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "background-lights",
+  "title": "Background Lights",
+  "description": "Blurred blue-cyan-yellow conic glow that rises behind a hero section.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/lukacho-ui/background-lights.tsx",
+      "content": "import { cn } from '@/lib/utils'\n\nexport const Lights: React.FC<{ className?: string }> = ({ className }) => (\n  <div className={cn('w-full h-full overflow-hidden', className)}>\n    <div\n      className={'w-full h-full relative bottom-[-200px] '}\n      style={{\n        background:\n          'conic-gradient(from 180deg at 50% 50%,var(--color-blue-500) 0deg,var(--color-cyan-400) 180deg,var(--color-yellow-400) 1turn)',\n        filter: 'blur(75px)',\n        opacity: '20%'\n      }}\n    />\n  </div>\n)\n",
+      "type": "registry:component",
+      "target": "components/ui/background-lights.tsx"
+    }
+  ],
+  "categories": [
+    "Lukacho UI"
+  ],
+  "type": "registry:component"
+}

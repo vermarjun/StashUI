@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "not-found-page",
+  "title": "Not Found Page",
+  "description": "A minimal 404 page with oversized, bottom-masked numerals and home/explore actions.",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/efferd/not-found-page.tsx",
+      "content": "import { CompassIcon, HomeIcon } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n\tEmpty,\n\tEmptyContent,\n\tEmptyDescription,\n\tEmptyHeader,\n\tEmptyTitle,\n} from \"./not-found-page-empty\";\n\nexport function NotFoundPage() {\n\treturn (\n\t\t<div className=\"relative flex min-h-screen w-full items-center justify-center overflow-hidden\">\n\t\t\t<Empty>\n\t\t\t\t<EmptyHeader>\n\t\t\t\t\t<EmptyTitle className=\"mask-b-from-20% mask-b-to-80% font-extrabold font-heading text-9xl\">\n\t\t\t\t\t\t404\n\t\t\t\t\t</EmptyTitle>\n\t\t\t\t\t<EmptyDescription className=\"-mt-8 text-nowrap text-foreground/80\">\n\t\t\t\t\t\tThe page you&apos;re looking for might have been <br />\n\t\t\t\t\t\tmoved or doesn&apos;t exist.\n\t\t\t\t\t</EmptyDescription>\n\t\t\t\t</EmptyHeader>\n\t\t\t\t<EmptyContent>\n\t\t\t\t\t<div className=\"flex gap-2\">\n\t\t\t\t\t\t<Button asChild>\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<HomeIcon data-icon=\"inline-start\" />\n\t\t\t\t\t\t\t\tGo Home\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</Button>\n\n\t\t\t\t\t\t<Button asChild variant=\"outline\">\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<CompassIcon data-icon=\"inline-start\" />{\" \"}\n\t\t\t\t\t\t\t\tExplore\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</EmptyContent>\n\t\t\t</Empty>\n\t\t</div>\n\t);\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/not-found-page.tsx"
+    },
+    {
+      "path": "registry/efferd/not-found-page-empty.tsx",
+      "content": "import type * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n// shadcn/ui Empty primitive, inlined so the block installs self-contained.\nfunction Empty({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\n\t\t\t\t\"flex min-w-0 flex-1 flex-col items-center justify-center gap-6 text-balance rounded-lg border-dashed p-6 text-center md:p-12\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t\tdata-slot=\"empty\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction EmptyHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\"flex max-w-sm flex-col items-center gap-2 text-center\", className)}\n\t\t\tdata-slot=\"empty-header\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nconst emptyMediaVariants = cva(\n\t\"mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n\t{\n\t\tvariants: {\n\t\t\tvariant: {\n\t\t\t\tdefault: \"bg-transparent\",\n\t\t\t\ticon: \"flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground [&_svg:not([class*='size-'])]:size-6\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: { variant: \"default\" },\n\t}\n);\n\nfunction EmptyMedia({\n\tclassName,\n\tvariant = \"default\",\n\t...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof emptyMediaVariants>) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(emptyMediaVariants({ variant, className }))}\n\t\t\tdata-slot=\"empty-icon\"\n\t\t\tdata-variant={variant}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction EmptyTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\"font-medium text-lg tracking-tight\", className)}\n\t\t\tdata-slot=\"empty-title\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction EmptyDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\n\t\t\t\t\"text-muted-foreground text-sm/relaxed [&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t\tdata-slot=\"empty-description\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction EmptyContent({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\n\t\t\t\t\"flex w-full min-w-0 max-w-sm flex-col items-center gap-4 text-balance text-sm\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t\tdata-slot=\"empty-content\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle };\n",
+      "type": "registry:component",
+      "target": "components/ui/not-found-page-empty.tsx"
+    }
+  ],
+  "categories": [
+    "Efferd"
+  ],
+  "type": "registry:component"
+}

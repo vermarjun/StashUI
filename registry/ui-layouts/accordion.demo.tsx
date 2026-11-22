@@ -14,7 +14,7 @@ export default function Demo() {
           <AccordionHeader>What is a UI component?</AccordionHeader>
           <AccordionPanel>
             A UI component is a modular, reusable element that serves a specific function within a
-            graphical user interface — buttons, inputs, dropdowns, sliders, and more.
+            graphical user interface: buttons, inputs, dropdowns, sliders, and more.
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem value="item-2">

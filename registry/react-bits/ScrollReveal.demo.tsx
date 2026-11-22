@@ -13,7 +13,7 @@ export default function Demo() {
         containerClassName="text-foreground"
         textClassName="text-foreground"
       >
-        Good design is as little design as possible. Less, but better — because it concentrates on the essential aspects.
+        Good design is as little design as possible. Less, but better, because it concentrates on the essential aspects.
       </ScrollReveal>
       <ScrollReveal
         enableBlur={true}
@@ -23,7 +23,7 @@ export default function Demo() {
         containerClassName="text-muted-foreground"
         textClassName="text-muted-foreground"
       >
-        Scroll down to watch each word come into focus as it enters the viewport — a simple technique that guides the reader's attention.
+        Scroll down to watch each word come into focus as it enters the viewport: a simple technique that guides the reader's attention.
       </ScrollReveal>
     </div>
   )

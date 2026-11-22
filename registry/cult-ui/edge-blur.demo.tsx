@@ -18,7 +18,7 @@ export default function Demo() {
           </div>
         ))}
       </div>
-      {/* EdgeBlur overlaid — uses relative positioning within the container */}
+      {/* EdgeBlur overlaid: uses relative positioning within the container */}
       <div className="absolute inset-x-0 bottom-0 h-20 isolate pointer-events-none">
         {[1, 2, 3, 6, 12].map((blur) => (
           <div

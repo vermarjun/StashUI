@@ -1,0 +1,50 @@
+{
+ "name": "undo-pill",
+ "title": "Undo Pill",
+ "category": "notifications",
+ "categories": [
+  "notifications",
+  "buttons"
+ ],
+ "origin": "Spectrum UI",
+ "origin_short": "spec",
+ "exports": [
+  "UndoPill"
+ ],
+ "npm_deps": [
+  "framer-motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 17,
+ "flags": [
+  "motion",
+  "17 colors"
+ ],
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\nimport { Trash2 } from \"lucide-react\";\nimport { UndoPill } from \"./undo-pill\";\n\nconst initial = [\n  { id: 1, from: \"Maya Lin\", subject: \"Q3 roadmap review notes\", time: \"9:41\" },\n  { id: 2, from: \"Daniel Okafor\", subject: \"Re: Deploy window moved to Thursday\", time: \"8:15\" },\n  { id: 3, from: \"Sofia Ramirez\", subject: \"Updated icon set, v2.4\", time: \"Yesterday\" },\n];\n\nexport default function UndoPillDemo() {\n  const [mail, setMail] = React.useState(initial);\n  const [deleted, setDeleted] = React.useState<(typeof initial)[number] | null>(null);\n\n  const remove = (id: number) => {\n    const item = mail.find((m) => m.id === id);\n    if (!item) return;\n    setMail((m) => m.filter((x) => x.id !== id));\n    setDeleted(item);\n  };\n\n  const undo = () => {\n    if (deleted) setMail((m) => [...m, deleted].sort((a, b) => a.id - b.id));\n    setDeleted(null);\n  };\n\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center gap-6 p-6\">\n      <div className=\"w-full max-w-md rounded-2xl border border-border bg-card p-2 shadow-xl\">\n        <p className=\"px-3 pb-1 pt-2 text-xs font-medium uppercase tracking-wider text-muted-foreground\">\n          Inbox\n        </p>\n        <ul className=\"min-h-[12.5rem]\">\n          {mail.map((m) => (\n            <li\n              key={m.id}\n              className=\"group flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-muted/60\"\n            >\n              <div className=\"min-w-0 flex-1\">\n                <p className=\"truncate text-sm font-medium text-card-foreground\">{m.from}</p>\n                <p className=\"truncate text-xs text-muted-foreground\">{m.subject}</p>\n              </div>\n              <span className=\"text-xs text-muted-foreground\">{m.time}</span>\n              <button\n                type=\"button\"\n                aria-label={`Delete ${m.subject}`}\n                onClick={() => remove(m.id)}\n                className=\"rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-rose-500/15 hover:text-rose-400\"\n              >\n                <Trash2 className=\"h-4 w-4\" />\n              </button>\n            </li>\n          ))}\n        </ul>\n      </div>\n      <div className=\"flex h-10 items-center\">\n        <UndoPill\n          open={deleted !== null}\n          label=\"Message deleted\"\n          duration={5}\n          onUndo={undo}\n          onExpire={() => setDeleted(null)}\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/spectrum-ui/undo-pill.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/undo-pill.json",
+ "preview": "https://stashui.vercel.app/c/undo-pill",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

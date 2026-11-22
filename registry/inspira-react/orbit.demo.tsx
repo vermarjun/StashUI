@@ -17,7 +17,7 @@ export default function OrbitDemo() {
         </div>
       </Orbit>
 
-      {/* Outer orbit — counter-clockwise */}
+      {/* Outer orbit: counter-clockwise */}
       <Orbit
         radius={130}
         duration={14}

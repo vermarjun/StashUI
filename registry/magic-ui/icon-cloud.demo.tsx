@@ -1,6 +1,6 @@
 import { IconCloud } from "@/registry/magic-ui/icon-cloud"
 
-// Brand icons fetched from simpleicons CDN — PNG at 64×64.
+// Brand icons fetched from simpleicons CDN: PNG at 64×64.
 const slugs = [
   "typescript", "javascript", "react", "nextdotjs", "vercel",
   "tailwindcss", "nodedotjs", "prisma", "postgresql", "mongodb",

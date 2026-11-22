@@ -1,0 +1,77 @@
+{
+ "name": "gantt",
+ "title": "Gantt",
+ "category": "data-display",
+ "categories": [
+  "data-display",
+  "dashboards"
+ ],
+ "origin": "Kibo UI",
+ "origin_short": "kibo",
+ "exports": [
+  "GanttContentHeader",
+  "GanttHeader",
+  "GanttSidebarItem",
+  "GanttSidebarHeader",
+  "GanttSidebarGroup",
+  "GanttSidebar",
+  "GanttAddFeatureHelper",
+  "GanttColumn",
+  "GanttColumns",
+  "GanttCreateMarkerTrigger",
+  "GanttFeatureDragHelper",
+  "GanttFeatureItemCard",
+  "GanttFeatureItem",
+  "GanttFeatureListGroup",
+  "GanttFeatureRow",
+  "GanttFeatureList",
+  "GanttMarker",
+  "GanttProvider",
+  "GanttTimeline",
+  "GanttToday"
+ ],
+ "npm_deps": [
+  "@dnd-kit/core",
+  "@dnd-kit/modifiers",
+  "@uidotdev/usehooks",
+  "date-fns",
+  "jotai",
+  "lodash.throttle",
+  "lucide-react"
+ ],
+ "registry_deps": [
+  "card",
+  "context-menu"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "heavy"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  type GanttFeature,\n  GanttFeatureItem,\n  GanttFeatureList,\n  GanttFeatureListGroup,\n  GanttHeader,\n  GanttMarker,\n  GanttProvider,\n  GanttSidebar,\n  GanttSidebarGroup,\n  GanttSidebarItem,\n  type GanttStatus,\n  GanttTimeline,\n  GanttToday,\n} from \"./gantt\";\n\n// The provider centres its timeline on the middle of the current year, so the\n// roadmap is pinned to February–August of whatever year it is.\nconst Y = new Date().getFullYear();\nconst d = (month: number, day: number) => new Date(Y, month, day);\n\nconst planned: GanttStatus = { id: \"planned\", name: \"Planned\", color: \"oklch(0.7 0.02 260)\" };\nconst progress: GanttStatus = { id: \"progress\", name: \"In progress\", color: \"oklch(0.78 0.15 75)\" };\nconst done: GanttStatus = { id: \"done\", name: \"Done\", color: \"oklch(0.72 0.17 155)\" };\n\nconst initial: { group: string; features: GanttFeature[] }[] = [\n  {\n    group: \"Research\",\n    features: [\n      { id: \"r1\", name: \"Customer interviews\", startAt: d(1, 3), endAt: d(1, 28), status: done },\n      { id: \"r2\", name: \"Competitive audit\", startAt: d(1, 17), endAt: d(2, 14), status: done },\n    ],\n  },\n  {\n    group: \"Design\",\n    features: [\n      { id: \"d1\", name: \"Information architecture\", startAt: d(2, 3), endAt: d(2, 31), status: done },\n      { id: \"d2\", name: \"Hi-fi mockups\", startAt: d(3, 1), endAt: d(4, 9), status: progress },\n      { id: \"d3\", name: \"Design system tokens\", startAt: d(3, 14), endAt: d(4, 2), status: progress },\n    ],\n  },\n  {\n    group: \"Engineering\",\n    features: [\n      { id: \"e1\", name: \"Billing API v2\", startAt: d(3, 20), endAt: d(5, 5), status: progress },\n      { id: \"e2\", name: \"Web app rebuild\", startAt: d(4, 4), endAt: d(6, 18), status: planned },\n      { id: \"e3\", name: \"Mobile beta\", startAt: d(5, 8), endAt: d(7, 1), status: planned },\n    ],\n  },\n  {\n    group: \"Launch\",\n    features: [\n      { id: \"l1\", name: \"Public beta\", startAt: d(6, 6), endAt: d(6, 31), status: planned },\n      { id: \"l2\", name: \"Press & launch week\", startAt: d(7, 3), endAt: d(7, 21), status: planned },\n    ],\n  },\n];\n\nconst markers = [\n  { id: \"m1\", date: d(2, 31), label: \"Design freeze\" },\n  { id: \"m2\", date: d(6, 6), label: \"Beta\" },\n];\n\nexport default function GanttDemo() {\n  const [groups, setGroups] = useState(initial);\n\n  const handleMove = (id: string, startAt: Date, endAt: Date | null) => {\n    if (!endAt) return;\n    setGroups((gs) =>\n      gs.map((g) => ({\n        ...g,\n        features: g.features.map((f) => (f.id === id ? { ...f, startAt, endAt } : f)),\n      }))\n    );\n  };\n\n  return (\n    <div className=\"h-[600px] w-full p-4\">\n      <GanttProvider className=\"border\" range=\"monthly\" zoom={100}>\n        <GanttSidebar>\n          {groups.map((g) => (\n            <GanttSidebarGroup key={g.group} name={g.group}>\n              {g.features.map((f) => (\n                <GanttSidebarItem feature={f} key={f.id} />\n              ))}\n            </GanttSidebarGroup>\n          ))}\n        </GanttSidebar>\n        <GanttTimeline>\n          <GanttHeader />\n          <GanttFeatureList>\n            {groups.map((g) => (\n              <GanttFeatureListGroup key={g.group}>\n                {g.features.map((f) => (\n                  <div className=\"flex\" key={f.id}>\n                    <GanttFeatureItem onMove={handleMove} {...f}>\n                      <p className=\"flex-1 truncate text-xs\">{f.name}</p>\n                    </GanttFeatureItem>\n                  </div>\n                ))}\n              </GanttFeatureListGroup>\n            ))}\n          </GanttFeatureList>\n          {markers.map((m) => (\n            <GanttMarker key={m.id} {...m} />\n          ))}\n          <GanttToday />\n        </GanttTimeline>\n      </GanttProvider>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/kibo-ui/gantt.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/gantt.json",
+ "preview": "https://stashui.vercel.app/c/gantt",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

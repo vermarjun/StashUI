@@ -1,0 +1,49 @@
+{
+ "name": "text-along-path",
+ "title": "Text Along Path",
+ "category": "text",
+ "categories": [
+  "text",
+  "effects"
+ ],
+ "origin": "Fancy Components",
+ "origin_short": "fanc",
+ "exports": [
+  "AnimatedPathText"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport { useCallback, useState } from \"react\"\nimport { AnimatePresence, motion } from \"motion/react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport AnimatedPathText from \"./text-along-path\"\n\nexport default function TextAlongPathDemo() {\n  // Rounded rectangle path\n  const rectPath =\n    \"M 20,20 L 180,20 A 20,20 0 0,1 200,40 L 200,160 A 20,20 0 0,1 180,180 L 20,180 A 20,20 0 0,1 0,160 L 0,40 A 20,20 0 0,1 20,20\"\n  const [buttonState, setButtonState] = useState<\n    \"idle\" | \"loading\" | \"success\"\n  >(\"idle\")\n  const [email, setEmail] = useState(\"\")\n\n  const buttonCopy = {\n    idle: \"Subscribe\",\n    loading: (\n      <motion.div className=\"h-2 w-2 sm:h-4 sm:w-4 animate-spin rounded-full border-2 border-white border-t-transparent\" />\n    ),\n    success: \"Done ✓\",\n  } as const\n\n  const handleSubmit = useCallback(() => {\n    if (buttonState === \"success\") return\n\n    setButtonState(\"loading\")\n\n    setTimeout(() => {\n      setButtonState(\"success\")\n    }, 1750)\n\n    setTimeout(() => {\n      setButtonState(\"idle\")\n      setEmail(\"\")\n    }, 3500)\n  }, [buttonState])\n\n  return (\n    <div className=\"relative flex h-[520px] w-full items-center justify-center bg-background text-[#4f5dff]\">\n      <AnimatedPathText\n        path={rectPath}\n        svgClassName=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-2 sm:py-8\"\n        viewBox=\"-20 10 240 180\"\n        text=\"JOIN THE WAITLIST ✉ JOIN THE WAITLIST ✉ JOIN THE WAITLIST ✉ JOIN THE WAITLIST ✉ JOIN THE WAITLIST ✉ \"\n        textClassName=\"text-[10.6px] lowercase font-mono text-[#4f5dff]\"\n        duration={20}\n        preserveAspectRatio=\"none\"\n        textAnchor=\"start\"\n      />\n\n      {/* This is just fluff for the demo */}\n      <div className=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 sm:w-80 p-6 \">\n        <div className=\"space-y-2\">\n          <input\n            type=\"email\"\n            placeholder=\"Enter your email\"\n            value={email}\n            onChange={(e) => setEmail(e.target.value)}\n            className=\"w-full px-3 py-2 sm:px-4 sm:py-2 border border-[#4f5dff] focus:outline-hidden font-mono text-xs sm:text-base text-foreground placeholder:text-[#4f5dff] rounded-lg bg-background\"\n          />\n          <Button\n            type=\"submit\"\n            onClick={handleSubmit}\n            disabled={buttonState === \"loading\"}\n            className=\"w-full px-3 py-2 h-9 sm:h-11 sm:px-8 sm:py-2 bg-[#4f5dff] text-white hover:bg-[#4f5dff]/90 transition-colors font-mono text-xs sm:text-base rounded-lg\"\n          >\n            <AnimatePresence mode=\"popLayout\" initial={false}>\n              <motion.span\n                transition={{ type: \"spring\", duration: 0.3, bounce: 0 }}\n                initial={{ opacity: 0, y: -25 }}\n                animate={{ opacity: 1, y: 0 }}\n                exit={{ opacity: 0, y: 25 }}\n                key={buttonState}\n              >\n                {buttonCopy[buttonState]}\n              </motion.span>\n            </AnimatePresence>\n          </Button>\n        </div>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/fancy-components/text-along-path.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/text-along-path.json",
+ "preview": "https://stashui.vercel.app/c/text-along-path",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

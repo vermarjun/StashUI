@@ -1,0 +1,51 @@
+{
+ "name": "emoji-reaction",
+ "title": "Emoji Reaction",
+ "category": "social",
+ "categories": [
+  "social",
+  "buttons"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "EmojiReaction"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 1,
+ "flags": [
+  "motion",
+  "1 colors"
+ ],
+ "usage": "\"use client\";\n\nimport EmojiReaction from \"./emoji-reaction\";\n\nexport default function EmojiReactionDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-md rounded-2xl border border-border bg-card p-5 shadow-sm\">\n        <div className=\"flex items-center gap-3\">\n          <img\n            alt=\"Priya Nair\"\n            className=\"size-9 rounded-full object-cover\"\n            src=\"https://i.pravatar.cc/80?img=45\"\n          />\n          <div>\n            <p className=\"font-medium text-foreground text-sm\">Priya Nair</p>\n            <p className=\"text-muted-foreground text-xs\">#launch · 2m ago</p>\n          </div>\n        </div>\n        <p className=\"mt-3 text-foreground/90 text-sm leading-relaxed\">\n          v2.4 is live 🎉 Checkout is 38% faster and the new onboarding flow\n          shipped to everyone. Huge thanks to the payments squad.\n        </p>\n        <EmojiReaction\n          allowMultiple\n          className=\"mt-4\"\n          reactions={[\n            { count: 24, emoji: \"❤️\", id: \"heart\", label: \"Heart\" },\n            { count: 12, emoji: \"🚀\", id: \"rocket\", label: \"Rocket\", reacted: true },\n            { count: 7, emoji: \"👏\", id: \"clap\", label: \"Clap\" },\n            { count: 3, emoji: \"😂\", id: \"laugh\", label: \"Laugh\" },\n          ]}\n          showPicker\n          size=\"lg\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/emoji-reaction.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/emoji-reaction.json",
+ "preview": "https://stashui.vercel.app/c/emoji-reaction",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

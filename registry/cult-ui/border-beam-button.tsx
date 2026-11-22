@@ -1,7 +1,7 @@
 "use client"
 
 /**
- * `border-beam` around `Button` — compact `beamSize="sm"` glow for controls.
+ * `border-beam` around `Button`: compact `beamSize="sm"` glow for controls.
  * `className` styles the button; `borderBeamClassName` styles the beam wrapper.
  */
 import type { ComponentProps, CSSProperties } from "react"

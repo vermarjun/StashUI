@@ -76,7 +76,7 @@ export function TextRevealCard({
       {header}
 
       <div className="relative flex h-40 items-center overflow-hidden">
-        {/* Revealed text layer — clipped to cursor position */}
+        {/* Revealed text layer: clipped to cursor position */}
         <div
           style={{
             width: "100%",

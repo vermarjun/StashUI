@@ -25,7 +25,7 @@ export default async function CodeTabsMdx({ children }: any) {
   const highlighted = await Promise.all(parsed.map((t) => highlightCode(t.value, t.lang)));
 
   // -------------------------
-  // CASE 1 — Only one block
+  // CASE 1: Only one block
   // -------------------------
   if (parsed.length === 1) {
     return (
@@ -37,7 +37,7 @@ export default async function CodeTabsMdx({ children }: any) {
   }
 
   // -------------------------
-  // CASE 2 — Always two blocks → fixed tabs
+  // CASE 2: Always two blocks → fixed tabs
   // -------------------------
   const tabs = [
     { meta: 'ui-layouts', html: highlighted[0], code: parsed[0].value },

@@ -68,7 +68,7 @@ export const AboutSass = () => {
             <p className="text-xl text-zinc-500 text-pretty leading-relaxed mb-12">
               We started as a small team of engineers tired of fighting
               infrastructure. Today, we're building the operating system for
-              modern software companies—handling the complexity so you can ship
+              modern software companies: handling the complexity so you can ship
               features faster.
             </p>
 

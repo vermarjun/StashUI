@@ -1,0 +1,48 @@
+{
+ "name": "draw-line-text",
+ "title": "Draw Line Text",
+ "category": "text",
+ "categories": [
+  "text",
+  "effects"
+ ],
+ "origin": "PaceUI",
+ "origin_short": "pace",
+ "exports": [
+  "DrawLineText"
+ ],
+ "npm_deps": [
+  "@gsap/react",
+  "gsap"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\n\nimport { DrawLineText } from \"./draw-line-text\";\n\nexport default function DrawLineTextDemo() {\n    // Replay the handwriting every few seconds so the stroke is always in motion.\n    const [run, setRun] = useState(0);\n    useEffect(() => {\n        const id = setInterval(() => setRun((r) => r + 1), 8500);\n        return () => clearInterval(id);\n    }, []);\n\n    return (\n        <div className=\"flex min-h-[460px] w-full flex-col items-center justify-center gap-6 p-6\">\n            <DrawLineText\n                key={run}\n                text=\"Hello\"\n                color=\"var(--foreground)\"\n                fontSize={140}\n                strokeWidth={1.2}\n                oneByOne\n                className=\"font-serif italic\"\n            />\n            <p className=\"text-sm text-muted-foreground\">Drawn stroke by stroke, then filled in.</p>\n        </div>\n    );\n}",
+ "usage_source": "demo",
+ "file": "registry/paceui/draw-line-text.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/draw-line-text.json",
+ "preview": "https://stashui.vercel.app/c/draw-line-text",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

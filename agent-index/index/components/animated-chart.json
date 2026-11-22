@@ -1,0 +1,50 @@
+{
+ "name": "animated-chart",
+ "title": "Animated Chart",
+ "category": "charts",
+ "categories": [
+  "charts",
+  "dashboards"
+ ],
+ "origin": "Lukacho UI",
+ "origin_short": "luka",
+ "exports": [
+  "Chart"
+ ],
+ "npm_deps": [
+  "framer-motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 12,
+ "flags": [
+  "motion",
+  "12 colors"
+ ],
+ "usage": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { Chart } from './animated-chart'\n\nexport default function AnimatedChartDemo() {\n  // replay the draw-in so the preview loops\n  const [run, setRun] = useState(0)\n  useEffect(() => {\n    const id = setInterval(() => setRun((r) => r + 1), 4000)\n    return () => clearInterval(id)\n  }, [])\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      <Chart key={`a${run}`} label=\"Revenue, this month\" value=\"+300%\" className=\"w-[360px]\" />\n      <Chart key={`b${run}`} label=\"Active users\" value=\"48.2k\" className=\"w-[360px]\" />\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/lukacho-ui/animated-chart.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-chart.json",
+ "preview": "https://stashui.vercel.app/c/animated-chart",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

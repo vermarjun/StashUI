@@ -1,0 +1,53 @@
+{
+ "name": "arcade-pixel",
+ "title": "Arcade Pixel",
+ "category": "text",
+ "categories": [
+  "text",
+  "effects"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "PIXEL_FONT_5X7",
+  "ARCADE_SPRITES",
+  "ArcadePixel"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 18,
+ "flags": [
+  "canvas",
+  "motion",
+  "18 colors"
+ ],
+ "usage": "\"use client\";\n\nimport ArcadePixel, { ARCADE_SPRITES } from \"./arcade-pixel\";\n\nexport default function ArcadePixelDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"flex w-full max-w-2xl flex-col items-center gap-7 rounded-3xl border border-border bg-black px-8 py-10\">\n        <div className=\"flex items-end gap-6\">\n          <ArcadePixel\n            glow\n            palette={[\"transparent\", \"#4ade80\"]}\n            pixelSize={6}\n            sprite={ARCADE_SPRITES.alien}\n          />\n          <ArcadePixel\n            glow\n            palette={[\"transparent\", \"#f472b6\"]}\n            pixelSize={6}\n            sprite={ARCADE_SPRITES.alienAlt}\n          />\n          <ArcadePixel\n            glow\n            palette={[\"transparent\", \"#facc15\"]}\n            pixelSize={6}\n            sprite={ARCADE_SPRITES.heart}\n          />\n        </div>\n        <ArcadePixel\n          animate=\"type\"\n          crt\n          glow={0.8}\n          loop\n          palette={[\"transparent\", \"oklch(0.72 0.2 352.53)\"]}\n          pixelSize={9}\n          scanlines\n          text=\"GAME OVER\"\n        />\n        <ArcadePixel\n          animate=\"marquee\"\n          columns={64}\n          glow\n          palette={[\"transparent\", \"#38bdf8\"]}\n          pixelSize={4}\n          text=\"HIGH SCORE 098400   PLAYER 1   \"\n        />\n        <ArcadePixel\n          animate=\"blink\"\n          loop\n          palette={[\"transparent\", \"#fafafa\"]}\n          pixelSize={3}\n          text=\"INSERT COIN\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/arcade-pixel.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/arcade-pixel.json",
+ "preview": "https://stashui.vercel.app/c/arcade-pixel",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

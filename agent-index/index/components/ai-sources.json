@@ -1,0 +1,50 @@
+{
+ "name": "ai-sources",
+ "title": "AI Sources",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "data-display"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "AISources"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport AISources, { type AISource } from \"./ai-sources\";\n\nconst tile = (letter: string, bg: string) => (\n  <span\n    className=\"flex items-center justify-center font-semibold text-[9px] text-white\"\n    style={{ background: bg }}\n  >\n    {letter}\n  </span>\n);\n\nconst SOURCES: AISource[] = [\n  {\n    favicon: tile(\"N\", \"#e11d48\"),\n    id: \"nature\",\n    snippet: \"Deep-sea mineral nodules produce measurable oxygen in darkness\",\n    title: \"Dark oxygen production at the abyssal seafloor\",\n    url: \"https://journal.example.org/articles/dark-oxygen\",\n  },\n  {\n    favicon: tile(\"O\", \"#0284c7\"),\n    id: \"noaa\",\n    snippet: \"Survey of the Clarion-Clipperton Zone, 2013-2024\",\n    title: \"Polymetallic nodule fields: a field report\",\n    url: \"https://ocean.example.gov/ccz-survey\",\n  },\n  {\n    favicon: tile(\"W\", \"#52525b\"),\n    id: \"wiki\",\n    snippet: \"Overview of formation, composition and distribution\",\n    title: \"Manganese nodule\",\n    url: \"https://encyclopedia.example.org/wiki/Manganese_nodule\",\n  },\n  {\n    favicon: tile(\"S\", \"#16a34a\"),\n    id: \"sci\",\n    snippet: \"Electrolysis hypothesis and the voltage measured on nodules\",\n    title: \"How rocks could split seawater\",\n    url: \"https://science-news.example.com/rocks-split-seawater\",\n  },\n  {\n    favicon: tile(\"G\", \"#ca8a04\"),\n    id: \"geo\",\n    snippet: \"Why mining moratorium talks stalled in Kingston\",\n    title: \"Seabed mining and the oxygen question\",\n    url: \"https://geo-weekly.example.com/seabed-mining\",\n  },\n];\n\nexport default function AISourcesDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-lg rounded-2xl border border-border bg-card p-5\">\n        <p className=\"text-foreground text-sm leading-relaxed\">\n          Yes. In 2024 researchers measured oxygen being produced 4,000 m below\n          the surface, with no sunlight, around metallic nodules on the Pacific\n          seafloor. The leading explanation is that the nodules act like tiny\n          batteries, carrying enough voltage to split seawater into hydrogen and\n          oxygen.\n        </p>\n        <AISources className=\"mt-3\" sources={SOURCES} />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/ai-sources.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ai-sources.json",
+ "preview": "https://stashui.vercel.app/c/ai-sources",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

@@ -1,0 +1,49 @@
+{
+ "name": "screensaver",
+ "title": "Screensaver",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "backgrounds"
+ ],
+ "origin": "Fancy Components",
+ "origin_short": "fanc",
+ "exports": [
+  "Screensaver"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport React from \"react\"\n\nimport Screensaver from \"./screensaver\"\n\nconst images = [\n  \"photo-1506905925346-21bda4d32df4\",\n  \"photo-1548192746-dd526f154ed9\",\n  \"photo-1460999158988-6f0380f81f4d\",\n  \"photo-1517849845537-4d257902454a\",\n  \"photo-1618220649687-ba860f3176e7\",\n  \"photo-1572851899646-a1f69c664e1e\",\n  \"photo-1518599904199-0ca897819ddb\",\n  \"photo-1584043204475-8cc101d6c77a\",\n]\n\nexport default function ScreensaverDemo() {\n  const containerRef = React.useRef<HTMLDivElement>(null)\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"relative flex h-[600px] w-full items-center justify-center overflow-hidden bg-background text-foreground\"\n    >\n      <h1 className=\"z-30 text-6xl font-medium tracking-tight\">page not found</h1>\n      {[...images, ...images].map((id, index) => (\n        <Screensaver\n          key={index}\n          speed={1}\n          startPosition={{ x: index * 6, y: index * 5 }}\n          startAngle={40}\n          containerRef={containerRef}\n        >\n          <div className=\"h-32 w-32 overflow-hidden\">\n            <img\n              src={`https://images.unsplash.com/${id}?w=400&q=80`}\n              alt={`Floating photo ${index + 1}`}\n              className=\"h-full w-full object-cover\"\n            />\n          </div>\n        </Screensaver>\n      ))}\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/fancy-components/screensaver.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/screensaver.json",
+ "preview": "https://stashui.vercel.app/c/screensaver",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

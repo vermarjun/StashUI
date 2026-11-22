@@ -15,7 +15,7 @@ import { motion, useReducedMotion } from "motion/react"
 import { cn } from "@/lib/utils"
 
 // ============================================================================
-// Tokens — optional chrome for demos / quick styling
+// Tokens: optional chrome for demos / quick styling
 // ============================================================================
 
 /** Border + shadow stack using theme tokens so elevation reads in light and dark. */
@@ -31,7 +31,7 @@ export const cutoutCardSurfaceClassName = cn(
   cutoutCardSurfaceShadowClassName
 )
 
-/** Staggered text/footer entrance inside `CutoutCardContent` — use with `motion.div` children. */
+/** Staggered text/footer entrance inside `CutoutCardContent`: use with `motion.div` children. */
 export function useCutoutContentStaggerVariants() {
   const reduceMotion = useReducedMotion()
 

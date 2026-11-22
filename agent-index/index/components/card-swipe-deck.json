@@ -1,0 +1,49 @@
+{
+ "name": "card-swipe-deck",
+ "title": "Card Swipe Deck",
+ "category": "cards",
+ "categories": [
+  "cards",
+  "carousels"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "CardSwipeDeck"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { Heart, RotateCcw, X } from \"lucide-react\";\nimport { useRef } from \"react\";\nimport CardSwipeDeck, {\n  type CardSwipeDeckHandle,\n  type CardSwipeDeckItem,\n} from \"./card-swipe-deck\";\n\nconst PLACES = [\n  {\n    image: \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80\",\n    meta: \"4 nights · from $1,240\",\n    name: \"Dolomites, Italy\",\n  },\n  {\n    image: \"https://images.unsplash.com/photo-1478028928718-7bfdb1b32095?w=800&q=80\",\n    meta: \"6 nights · from $1,890\",\n    name: \"Lofoten, Norway\",\n  },\n  {\n    image: \"https://images.unsplash.com/photo-1504198266287-1659872e6590?w=800&q=80\",\n    meta: \"8 nights · from $2,310\",\n    name: \"Patagonia, Chile\",\n  },\n  {\n    image: \"https://images.unsplash.com/photo-1460999158988-6f0380f81f4d?w=800&q=80\",\n    meta: \"3 nights · from $980\",\n    name: \"Lisbon, Portugal\",\n  },\n  {\n    image: \"https://images.unsplash.com/photo-1548192746-dd526f154ed9?w=800&q=80\",\n    meta: \"5 nights · from $1,450\",\n    name: \"Kyoto, Japan\",\n  },\n];\n\nconst ITEMS: CardSwipeDeckItem[] = PLACES.map((place) => ({\n  content: (\n    <div className=\"relative h-full w-full\">\n      <img\n        alt={place.name}\n        className=\"absolute inset-0 h-full w-full object-cover\"\n        draggable={false}\n        src={place.image}\n      />\n      <div className=\"absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent\" />\n      <div className=\"absolute right-5 bottom-5 left-5 text-white\">\n        <p className=\"font-semibold text-2xl\">{place.name}</p>\n        <p className=\"mt-1 text-sm text-white/75\">{place.meta}</p>\n      </div>\n    </div>\n  ),\n  id: place.name,\n}));\n\nexport default function CardSwipeDeckDemo() {\n  const deck = useRef<CardSwipeDeckHandle>(null);\n\n  return (\n    <div className=\"flex w-full flex-col items-center gap-6 p-8\">\n      <CardSwipeDeck\n        className=\"h-[420px] w-[300px]\"\n        items={ITEMS}\n        labels={{ left: \"Skip\", right: \"Save\" }}\n        onEmpty={() => setTimeout(() => deck.current?.reset(), 900)}\n        ref={deck}\n      />\n      <div className=\"flex items-center gap-4\">\n        <button\n          aria-label=\"Skip\"\n          className=\"flex size-12 items-center justify-center rounded-full border border-border bg-card text-rose-400\"\n          onClick={() => deck.current?.swipeLeft()}\n          type=\"button\"\n        >\n          <X className=\"size-5\" />\n        </button>\n        <button\n          aria-label=\"Reset deck\"\n          className=\"flex size-9 items-center justify-center rounded-full border border-border bg-card text-muted-foreground\"\n          onClick={() => deck.current?.reset()}\n          type=\"button\"\n        >\n          <RotateCcw className=\"size-4\" />\n        </button>\n        <button\n          aria-label=\"Save\"\n          className=\"flex size-12 items-center justify-center rounded-full border border-border bg-card text-emerald-400\"\n          onClick={() => deck.current?.swipeRight()}\n          type=\"button\"\n        >\n          <Heart className=\"size-5\" />\n        </button>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/card-swipe-deck.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/card-swipe-deck.json",
+ "preview": "https://stashui.vercel.app/c/card-swipe-deck",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

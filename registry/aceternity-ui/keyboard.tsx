@@ -628,7 +628,7 @@ export const Keypad = () => {
           <span>0</span>
         </Key>
         <Key keyCode="Minus">
-          <span>—</span>
+          <span>-</span>
           <span>_</span>
         </Key>
         <Key keyCode="Equal">

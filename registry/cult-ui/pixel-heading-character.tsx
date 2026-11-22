@@ -3,7 +3,7 @@
  *
  * Per-character pixel-font heading with four animation modes.
  *
- * Setup — Geist Pixel Fonts with Tailwind CSS
+ * Setup: Geist Pixel Fonts with Tailwind CSS
  * =============================================
  *
  * All Geist fonts can be used through CSS variables:
@@ -91,10 +91,10 @@ function resolveIsolateFont(value: string): string {
   return ISOLATE_FONT_MAP[value] ?? value
 }
 
-/** Golden ratio — maximises spacing between identical values in a sequence. */
+/** Golden ratio: maximises spacing between identical values in a sequence. */
 const PHI = (1 + Math.sqrt(5)) / 2
 
-/** Internal tick rate in ms — drives the stagger resolution. */
+/** Internal tick rate in ms: drives the stagger resolution. */
 const TICK_MS = 50
 
 /* ─── Distribution algorithms ─── */
@@ -145,7 +145,7 @@ function extractText(children: React.ReactNode): string {
  * | Mode       | At rest                         | On hover                                           |
  * |------------|---------------------------------|----------------------------------------------------|
  * | `uniform`  | Single font (original behavior) | Cycles one font for all characters                 |
- * | `multi`    | Golden-ratio distribution       | Staggered cascade — each char cycles independently |
+ * | `multi`    | Golden-ratio distribution       | Staggered cascade: each char cycles independently |
  * | `wave`     | Position-based gradient         | Fonts flow left→right in a continuous wave         |
  * | `random`   | Golden-ratio distribution       | Each character scrambles independently              |
  */
@@ -181,10 +181,10 @@ export interface PixelHeadingProps extends React.ComponentProps<"h1"> {
   /**
    * Controls how fonts are distributed across characters.
    *
-   * - `"uniform"` — all characters share one font; cycles on hover (original)
-   * - `"multi"`   — golden-ratio distribution; staggered cascade on hover
-   * - `"wave"`    — fonts flow left-to-right in a continuous wave
-   * - `"random"`  — each character scrambles independently per tick
+   * - `"uniform"`: all characters share one font; cycles on hover (original)
+   * - `"multi"`: golden-ratio distribution; staggered cascade on hover
+   * - `"wave"`: fonts flow left-to-right in a continuous wave
+   * - `"random"`: each character scrambles independently per tick
    *
    * @default "multi"
    */
@@ -197,7 +197,7 @@ export interface PixelHeadingProps extends React.ComponentProps<"h1"> {
    */
   staggerDelay?: number
   /**
-   * When true the animation runs automatically on mount —
+   * When true the animation runs automatically on mount:
    * no hover or focus required. Hover/focus still work to
    * restart the cascade.
    * @default false
@@ -205,7 +205,7 @@ export interface PixelHeadingProps extends React.ComponentProps<"h1"> {
   autoPlay?: boolean
   /**
    * Static text rendered before the animated children.
-   * Does not animate — stays locked to the font set by `prefixFont`.
+   * Does not animate: stays locked to the font set by `prefixFont`.
    * A trailing space is added automatically.
    */
   prefix?: string
@@ -231,7 +231,7 @@ export interface PixelHeadingProps extends React.ComponentProps<"h1"> {
 
 /**
  * Interactive heading where **each character** can display a different
- * pixel font. On hover the fonts animate — the distribution algorithm
+ * pixel font. On hover the fonts animate: the distribution algorithm
  * and cascade timing are controlled via the `mode` and `staggerDelay` props.
  *
  * @example
@@ -419,7 +419,7 @@ export function PixelHeading({
 
   const stopCycling = useCallback(() => {
     if (autoPlay) {
-      // Auto-play keeps running — just restart the cascade
+      // Auto-play keeps running: just restart the cascade
       setIsActive(true)
       return
     }

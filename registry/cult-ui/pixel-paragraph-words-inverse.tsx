@@ -7,7 +7,7 @@
  * This is the inverse of `PixelParagraph`: instead of highlighting
  * words *in* pixel, everything is pixel *except* the specified words.
  *
- * Setup — Geist Pixel Fonts with Tailwind CSS
+ * Setup: Geist Pixel Fonts with Tailwind CSS
  * =============================================
  *
  * All Geist fonts can be used through CSS variables:

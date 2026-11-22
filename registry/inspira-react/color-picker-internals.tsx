@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Internal helpers for ColorPicker — ObjectColorInput and ContrastRatio.
+ * Internal helpers for ColorPicker: ObjectColorInput and ContrastRatio.
  * Not intended to be imported directly by consumers; use color-picker.tsx.
  */
 

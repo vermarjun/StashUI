@@ -166,7 +166,7 @@ export const PortfolioExperience = () => {
         <ExperienceItem
           company="Vertex AI"
           tagline="Enterprise Model Ops & Governance"
-          period="2023 — Present"
+          period="2023–Present"
           position="Senior Product Engineer"
           location="Palo Alto, CA"
           industry="B2B SaaS / Artificial Intelligence"
@@ -186,7 +186,7 @@ export const PortfolioExperience = () => {
         <ExperienceItem
           company="ClarityFlow"
           tagline="Product-Led Growth (PLG) Engine"
-          period="2021 — 2023"
+          period="2021–2023"
           position="Founding Frontend Engineer"
           location="Remote (Global)"
           industry="SaaS / Marketing Tech"
@@ -202,7 +202,7 @@ export const PortfolioExperience = () => {
         <ExperienceItem
           company="SecureStack"
           tagline="Cloud-Native Security Platform"
-          period="2019 — 2021"
+          period="2019–2021"
           position="Software Engineer"
           location="London, UK"
           industry="SaaS / Cybersecurity"

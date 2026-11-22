@@ -1,0 +1,60 @@
+{
+ "name": "stories",
+ "title": "Stories",
+ "category": "media",
+ "categories": [
+  "media",
+  "carousels"
+ ],
+ "origin": "Kibo UI",
+ "origin_short": "kibo",
+ "exports": [
+  "Stories",
+  "StoriesContent",
+  "Story",
+  "StoryVideo",
+  "StoryImage",
+  "StoryAuthor",
+  "StoryAuthorImage",
+  "StoryAuthorName",
+  "StoryTitle",
+  "StoryOverlay"
+ ],
+ "npm_deps": [],
+ "registry_deps": [
+  "avatar",
+  "carousel"
+ ],
+ "css": false,
+ "hardcoded_colors": 6,
+ "flags": [
+  "pure",
+  "6 colors"
+ ],
+ "usage": "\"use client\";\n\nimport {\n  Stories,\n  StoriesContent,\n  Story,\n  StoryAuthor,\n  StoryAuthorImage,\n  StoryAuthorName,\n  StoryImage,\n  StoryOverlay,\n  StoryVideo,\n} from \"./stories\";\n\nconst u = (id: string) => `https://images.unsplash.com/photo-${id}?w=600&q=80`;\n\nconst stories = [\n  { id: 1, author: \"Maya Chen\", avatar: 47, image: u(\"1506905925346-21bda4d32df4\") },\n  {\n    id: 2,\n    author: \"Leo Park\",\n    avatar: 12,\n    video: \"https://cdn.pixabay.com/video/2023/10/19/185726-876210695_large.mp4\",\n  },\n  { id: 3, author: \"Priya Nair\", avatar: 32, image: u(\"1548192746-dd526f154ed9\") },\n  { id: 4, author: \"Tom Becker\", avatar: 15, image: u(\"1460999158988-6f0380f81f4d\") },\n  {\n    id: 5,\n    author: \"Ana Souza\",\n    avatar: 44,\n    video: \"https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4\",\n  },\n  { id: 6, author: \"Sam Okafor\", avatar: 53, image: u(\"1517849845537-4d257902454a\") },\n  { id: 7, author: \"Hana Ito\", avatar: 25, image: u(\"1504198266287-1659872e6590\") },\n  { id: 8, author: \"Jonas Weber\", avatar: 59, image: u(\"1478028928718-7bfdb1b32095\") },\n];\n\nexport default function StoriesDemo() {\n  return (\n    <div className=\"flex w-full items-center p-8\">\n      <Stories>\n        <StoriesContent>\n          {stories.map((s) => (\n            <Story className=\"aspect-[3/4] w-[200px]\" key={s.id}>\n              {s.video ? (\n                <StoryVideo src={s.video} />\n              ) : (\n                <StoryImage alt={`Story by ${s.author}`} src={s.image} />\n              )}\n              <StoryOverlay side=\"top\" />\n              <StoryOverlay className=\"h-16 from-black/60\" />\n              <StoryAuthor>\n                <StoryAuthorImage\n                  name={s.author}\n                  src={`https://i.pravatar.cc/150?img=${s.avatar}`}\n                />\n                <StoryAuthorName>{s.author}</StoryAuthorName>\n              </StoryAuthor>\n            </Story>\n          ))}\n        </StoriesContent>\n      </Stories>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/kibo-ui/stories.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/stories.json",
+ "preview": "https://stashui.vercel.app/c/stories",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

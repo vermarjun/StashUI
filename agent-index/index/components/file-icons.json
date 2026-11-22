@@ -1,0 +1,47 @@
+{
+ "name": "file-icons",
+ "title": "File Icons",
+ "category": "file-upload",
+ "categories": [
+  "file-upload",
+  "code"
+ ],
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "Icons"
+ ],
+ "npm_deps": [
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { getIconForLanguageExtension, Icons } from \"./file-icons\"\n\nconst iconKeys = Object.keys(Icons) as (keyof typeof Icons)[]\n\nconst files = [\n  { name: \"package.json\", ext: \"json\" },\n  { name: \"globals.css\", ext: \"css\" },\n  { name: \"button.tsx\", ext: \"tsx\" },\n  { name: \"utils.ts\", ext: \"ts\" },\n  { name: \"README.md\", ext: \"md\" },\n  { name: \"index.js\", ext: \"js\" },\n]\n\nexport default function FileIconsDemo() {\n  return (\n    <div className=\"flex w-full max-w-3xl flex-col gap-8 p-8\">\n      <ul className=\"grid grid-cols-4 gap-3 sm:grid-cols-6\">\n        {iconKeys.map((key) => {\n          const Icon = Icons[key]\n          return (\n            <li\n              className=\"flex flex-col items-center gap-2 rounded-lg border border-border bg-card p-3 transition-colors hover:bg-muted\"\n              key={key}\n            >\n              <Icon aria-hidden className=\"size-7 text-foreground\" />\n              <span className=\"text-muted-foreground text-xs\">{key}</span>\n            </li>\n          )\n        })}\n      </ul>\n      <div className=\"rounded-lg border border-border bg-card p-2\">\n        <p className=\"px-2 pt-1 pb-2 font-medium text-muted-foreground text-xs uppercase tracking-wider\">\n          src/\n        </p>\n        <ul className=\"flex flex-col\">\n          {files.map((f) => (\n            <li\n              className=\"flex items-center gap-2.5 rounded-md px-2 py-1.5 text-foreground text-sm hover:bg-muted [&_svg]:size-4\"\n              key={f.name}\n            >\n              {getIconForLanguageExtension(f.ext)}\n              <span className=\"font-mono\">{f.name}</span>\n            </li>\n          ))}\n        </ul>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/file-icons.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/file-icons.json",
+ "preview": "https://stashui.vercel.app/c/file-icons",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

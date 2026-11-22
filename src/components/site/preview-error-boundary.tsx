@@ -5,7 +5,7 @@ import { TriangleAlert } from "lucide-react";
 
 interface Props {
   children: React.ReactNode;
-  /** Component name — reported to window.__broken for the audit script. */
+  /** Component name: reported to window.__broken for the audit script. */
   name?: string;
 }
 
@@ -21,7 +21,7 @@ declare global {
 
 /**
  * Isolates a single component preview. With thousands of imported components,
- * some demos will throw (missing props, browser-only APIs) — this keeps one bad
+ * some demos will throw (missing props, browser-only APIs): this keeps one bad
  * preview from taking down the whole gallery page, and records the failure so
  * an audit can drop demos that can't render.
  */

@@ -27,7 +27,7 @@ export default function Demo() {
             <DialogTitle>Confirm your action</DialogTitle>
             <DialogDescription>
               This will permanently update your account settings. This action
-              cannot be undone — please review before continuing.
+              cannot be undone: please review before continuing.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

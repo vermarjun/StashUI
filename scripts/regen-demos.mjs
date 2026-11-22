@@ -41,7 +41,7 @@ for (const item of registry.items) {
   const abs = join(root, primary);
   if (!existsSync(abs)) continue;
   const base = basename(primary).replace(/\.(tsx?)$/, "");
-  // Only fill MISSING demos — never clobber hand-authored or agent-ported ones.
+  // Only fill MISSING demos: never clobber hand-authored or agent-ported ones.
   if (existsSync(join(dirname(abs), `${base}.demo.tsx`))) continue;
 
   const code = readFileSync(abs, "utf8");

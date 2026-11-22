@@ -22,7 +22,7 @@ const items = [
     id: "3",
     title: "Is it optimized for performance?",
     content:
-      "Yes — tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.",
+      "Yes: tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.",
   },
 ];
 

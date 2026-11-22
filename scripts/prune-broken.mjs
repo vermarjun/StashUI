@@ -1,5 +1,5 @@
 // Removes registry items whose COMPONENT file doesn't compile (unresolvable
-// imports / syntax) — dead weight you can neither preview nor copy usefully.
+// imports / syntax): dead weight you can neither preview nor copy usefully.
 // Uses esbuild with the same resolution rules as Turbopack (direct deps only).
 //
 //   node scripts/prune-broken.mjs --apply

@@ -62,7 +62,7 @@ export function TeamClipPath() {
           timelineRef={timelineRef}
           className="text-neutral-600 mb-2 text-center"
         >
-          We lead with care — our core value — and a shared passion for
+          We lead with care (our core value) and a shared passion for
           connecting the world.
         </TimelineAnimation>
         <div className="flex gap-6 justify-center items-center h-[420px]">

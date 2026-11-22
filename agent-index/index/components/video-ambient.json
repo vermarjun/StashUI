@@ -1,0 +1,50 @@
+{
+ "name": "video-ambient",
+ "title": "Video Ambient",
+ "category": "media",
+ "categories": [
+  "media",
+  "effects"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "VideoAmbient"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "canvas",
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport VideoAmbient from \"./video-ambient\";\n\nexport default function VideoAmbientDemo() {\n  const [glow, setGlow] = useState(true);\n\n  return (\n    <div className=\"flex w-full flex-col items-center gap-8 px-16 py-14\">\n      <div className=\"w-full max-w-2xl\">\n        <VideoAmbient\n          alt=\"Slow aerial footage with shifting colour\"\n          glow={glow}\n          src=\"https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4\"\n        />\n      </div>\n      <button\n        className=\"relative z-10 rounded-full border border-border bg-card px-4 py-1.5 text-foreground text-xs\"\n        onClick={() => setGlow((g) => !g)}\n        type=\"button\"\n      >\n        Ambient glow: {glow ? \"On\" : \"Off\"}\n      </button>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/video-ambient.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/video-ambient.json",
+ "preview": "https://stashui.vercel.app/c/video-ambient",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

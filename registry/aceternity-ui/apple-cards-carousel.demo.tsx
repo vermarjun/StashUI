@@ -11,7 +11,7 @@ const cards = [
     src: "https://images.unsplash.com/photo-1718524767487-7f98d4e5eeeb?w=1200&h=800&fit=crop&auto=format&q=80",
     content: (
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        Towering peaks bathed in golden morning light — a scene of quiet
+        Towering peaks bathed in golden morning light: a scene of quiet
         grandeur that reminds us how vast the world truly is.
       </p>
     ),

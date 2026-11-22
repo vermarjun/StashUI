@@ -1,0 +1,50 @@
+{
+ "name": "music-toggle",
+ "title": "Music Toggle",
+ "category": "media",
+ "categories": [
+  "media",
+  "buttons"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "MusicToggle"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport MusicToggle from \"./music-toggle\";\n\nconst TRACK_SECONDS = 214;\n\nexport default function MusicToggleDemo() {\n  const [playing, setPlaying] = useState(false);\n  const [progress, setProgress] = useState(0.18);\n\n  useEffect(() => {\n    if (!playing) {\n      return;\n    }\n    const id = setInterval(\n      () => setProgress((p) => (p >= 1 ? 0 : p + 0.25 / TRACK_SECONDS)),\n      250\n    );\n    return () => clearInterval(id);\n  }, [playing]);\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"rounded-3xl border border-border bg-card px-6 py-5\">\n        <MusicToggle\n          artist=\"Nils Halvorsen\"\n          cover=\"https://images.unsplash.com/photo-1478028928718-7bfdb1b32095?w=400&q=80\"\n          onPlayingChange={setPlaying}\n          onSeek={setProgress}\n          playing={playing}\n          progress={progress}\n          size={96}\n          title=\"Northern Lights, Slowly\"\n        />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/music-toggle.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/music-toggle.json",
+ "preview": "https://stashui.vercel.app/c/music-toggle",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

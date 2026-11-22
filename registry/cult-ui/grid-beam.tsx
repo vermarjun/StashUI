@@ -628,7 +628,7 @@ export type GridBeamDividersProps = ComponentProps<"svg"> &
     dividerStroke?: string
   }>
 
-/** SVG grid lines only — pair with {@link GridBeamCanvas} and your own layout. */
+/** SVG grid lines only: pair with {@link GridBeamCanvas} and your own layout. */
 export function GridBeamDividers({
   rows,
   cols,
@@ -704,7 +704,7 @@ export const GridBeamCanvas = forwardRef<
 
 export type GridBeamContentProps = ComponentProps<"div">
 
-/** Slot above the beam layers — default `z-index` stacks content on top. */
+/** Slot above the beam layers: default `z-index` stacks content on top. */
 export function GridBeamContent({ className, ...props }: GridBeamContentProps) {
   return (
     <div

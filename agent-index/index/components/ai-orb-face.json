@@ -1,0 +1,50 @@
+{
+ "name": "ai-orb-face",
+ "title": "AI Orb Face",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "avatars"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "EXPRESSIONS",
+  "AIOrbFace"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport AIOrbFace from \"./ai-orb-face\";\nimport type { AIState } from \"./ai-orb-face-core\";\n\nconst STATES: { label: string; state: AIState }[] = [\n  { label: \"Idle\", state: \"idle\" },\n  { label: \"Listening\", state: \"listening\" },\n  { label: \"Thinking\", state: \"thinking\" },\n  { label: \"Streaming\", state: \"streaming\" },\n  { label: \"Done\", state: \"done\" },\n  { label: \"Error\", state: \"error\" },\n];\n\nexport default function AIOrbFaceDemo() {\n  const [state, setState] = useState<AIState>(\"idle\");\n\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center gap-8 p-8\">\n      <AIOrbFace aria-label={`Assistant is ${state}`} size={240} state={state} />\n      <div className=\"flex flex-wrap justify-center gap-1.5 rounded-full border border-border bg-card p-1\">\n        {STATES.map((item) => (\n          <button\n            className={`rounded-full px-3 py-1.5 text-xs transition-colors ${\n              item.state === state\n                ? \"bg-foreground text-background\"\n                : \"text-muted-foreground hover:text-foreground\"\n            }`}\n            key={item.state}\n            onClick={() => setState(item.state)}\n            type=\"button\"\n          >\n            {item.label}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/ai-orb-face.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/ai-orb-face.json",
+ "preview": "https://stashui.vercel.app/c/ai-orb-face",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

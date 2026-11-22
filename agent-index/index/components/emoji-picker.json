@@ -1,0 +1,67 @@
+{
+ "name": "emoji-picker",
+ "title": "Emoji Picker",
+ "category": "inputs",
+ "categories": [
+  "inputs",
+  "chat",
+  "social"
+ ],
+ "origin": "ReUI",
+ "origin_short": "reui",
+ "exports": [
+  "DEFAULT_EMOJI_PICKER_I18N",
+  "EMOJI_PICKER_DATA_URL",
+  "EMOJI_PICKER_CATEGORIES",
+  "EmojiPicker",
+  "EmojiPickerValue",
+  "EmojiPickerTrigger",
+  "EmojiPickerContent",
+  "EmojiPickerPanel",
+  "EmojiPickerHeader",
+  "EmojiPickerSearch",
+  "EmojiPickerSkinTone",
+  "EmojiPickerCategories",
+  "EmojiPickerList",
+  "EmojiPickerFooter",
+  "EmojiPickerPreview"
+ ],
+ "npm_deps": [
+  "@base-ui/react",
+  "class-variance-authority",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "heavy",
+  "2 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { EmojiPicker, EmojiPickerPanel } from \"./emoji-picker\"\n\nexport default function EmojiPickerDemo() {\n  const [value, setValue] = useState<string | null>(null)\n\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center gap-4 p-6\">\n      <div className=\"w-fit overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm\">\n        <EmojiPicker value={value} onValueChange={setValue}>\n          <EmojiPickerPanel />\n        </EmojiPicker>\n      </div>\n      <p className=\"text-sm text-muted-foreground\">\n        Status for #design-crit:{\" \"}\n        <span className=\"text-base text-foreground\">{value ?? \"-\"}</span>\n      </p>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/reui/emoji-picker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/emoji-picker.json",
+ "preview": "https://stashui.vercel.app/c/emoji-picker",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

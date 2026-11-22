@@ -111,7 +111,7 @@ export const Ripple = React.forwardRef<HTMLDivElement, RippleProps>(
 Ripple.displayName = "Ripple";
 
 // ---------------------------------------------------------------------------
-// RippleContainer (convenience wrapper — matches Vue's RippleContainer.vue)
+// RippleContainer (convenience wrapper: matches Vue's RippleContainer.vue)
 // ---------------------------------------------------------------------------
 
 export interface RippleContainerProps extends React.HTMLAttributes<HTMLDivElement> {

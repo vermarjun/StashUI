@@ -76,7 +76,7 @@ export function BgStars({
       onMouseMove={handleMouseMove}
     >
       <motion.div style={{ x: springX, y: springY }}>
-        {/* Layer 1 — 1px stars */}
+        {/* Layer 1: 1px stars */}
         <motion.div
           className="absolute left-0 top-0 h-[2000px] w-full"
           animate={{ y: [0, -2000] }}
@@ -92,7 +92,7 @@ export function BgStars({
           />
         </motion.div>
 
-        {/* Layer 2 — 2px stars */}
+        {/* Layer 2: 2px stars */}
         <motion.div
           className="absolute left-0 top-0 h-[2000px] w-full"
           animate={{ y: [0, -2000] }}
@@ -108,7 +108,7 @@ export function BgStars({
           />
         </motion.div>
 
-        {/* Layer 3 — 3px stars */}
+        {/* Layer 3: 3px stars */}
         <motion.div
           className="absolute left-0 top-0 h-[2000px] w-full"
           animate={{ y: [0, -2000] }}

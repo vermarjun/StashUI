@@ -21,7 +21,7 @@ export default async function PreviewPage({
   const decoded = decodeURIComponent(name);
 
   // Detail view: the iframe is the component's real viewport. No scaling, no
-  // forced aspect — the component fills the box's width and either centers
+  // forced aspect: the component fills the box's width and either centers
   // (self-contained widgets) or top-aligns and scrolls (multi-screen heroes).
   if (view === "detail") {
     const topAligned = align === "top";

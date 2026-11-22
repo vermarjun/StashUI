@@ -222,7 +222,7 @@ export const SubscriptionDetails = () => {
                 </p>
                 <p className="text-neutral-500 text-sm leading-relaxed text-pretty">
                   Go for a deep brutalist frame in dark suede or stonewashed
-                  linen — think low, wide, grounded. See Mario Bellini
+                  linen: think low, wide, grounded. See Mario Bellini
                   Camaleonda, or a custom slab-style bench sofa in ecru mohair.
                 </p>
               </TimelineAnimation>

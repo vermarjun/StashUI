@@ -1,0 +1,49 @@
+{
+ "name": "exposure-slider",
+ "title": "Exposure Slider",
+ "category": "sliders",
+ "categories": [
+  "sliders",
+  "media"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "ExposureSlider"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport ExposureSlider from \"./exposure-slider\";\n\nexport default function ExposureSliderDemo() {\n  const [ev, setEv] = useState(0);\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-6\">\n      <div className=\"w-full max-w-md overflow-hidden rounded-3xl border border-border bg-black\">\n        <div className=\"relative aspect-[4/3] w-full overflow-hidden\">\n          <img\n            alt=\"Mountain ridge at dawn\"\n            className=\"h-full w-full object-cover transition-[filter] duration-150\"\n            src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&q=80\"\n            style={{ filter: `brightness(${1 + ev * 0.035})` }}\n          />\n          <span className=\"absolute top-3 left-3 rounded-full bg-black/50 px-2.5 py-1 font-medium text-[11px] text-amber-300 tracking-wide backdrop-blur\">\n            EV {ev > 0 ? `+${(ev / 10).toFixed(1)}` : (ev / 10).toFixed(1)}\n          </span>\n        </div>\n        <div className=\"px-4 pt-4 pb-5\">\n          <ExposureSlider accentColor=\"#fbbf24\" onChange={setEv} />\n        </div>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/exposure-slider.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/exposure-slider.json",
+ "preview": "https://stashui.vercel.app/c/exposure-slider",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

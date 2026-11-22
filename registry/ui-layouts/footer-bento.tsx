@@ -1,5 +1,5 @@
 import { Rainbow } from 'lucide-react'
-import { Button } from '@repo/shadcn'
+import { Button } from '@/components/ui/button'
 
 export const BentoFooter = () => {
   return (
@@ -9,7 +9,7 @@ export const BentoFooter = () => {
           {/* Main Info Card */}
           <div className="md:col-span-2 row-span-2 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-8 flex flex-col justify-between">
             <div>
-              <div className="size-10 rounded-xl bg-neutral-900 dark:bg-neutral-100 mb-6 flex items-center justify-center">
+              <div className="size-10 rounded-xl bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 mb-6 flex items-center justify-center">
                 <Rainbow />
               </div>
               <h3 className="text-2xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50 mb-4">
@@ -132,7 +132,7 @@ export const BentoFooter = () => {
               </a>
             </div>
             <span className="text-xs text-neutral-400 dark:text-neutral-600">
-              © 2024
+              © 2026
             </span>
           </div>
         </div>

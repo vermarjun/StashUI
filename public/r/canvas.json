@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "canvas",
+  "title": "Canvas",
+  "description": "React Flow workflow canvas with themed background, pan-on-scroll and node selection, for agent and automation graphs.",
+  "dependencies": [
+    "@xyflow/react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/vercel-ai-elements/canvas.tsx",
+      "content": "\"use client\";\n\nimport type { ReactFlowProps } from \"@xyflow/react\";\nimport { Background, ReactFlow } from \"@xyflow/react\";\nimport type { ReactNode } from \"react\";\n\nimport \"@xyflow/react/dist/style.css\";\n\ntype CanvasProps = ReactFlowProps & {\n  children?: ReactNode;\n};\n\nconst deleteKeyCode = [\"Backspace\", \"Delete\"];\n\nexport const Canvas = ({ children, ...props }: CanvasProps) => (\n  <ReactFlow\n    deleteKeyCode={deleteKeyCode}\n    fitView\n    panOnDrag={false}\n    panOnScroll\n    selectionOnDrag={true}\n    zoomOnDoubleClick={false}\n    {...props}\n  >\n    <Background bgColor=\"var(--sidebar)\" />\n    {children}\n  </ReactFlow>\n);\n",
+      "type": "registry:component",
+      "target": "components/ui/canvas.tsx"
+    }
+  ],
+  "categories": [
+    "Vercel AI Elements"
+  ],
+  "type": "registry:component"
+}

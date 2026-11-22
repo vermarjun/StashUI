@@ -1,6 +1,6 @@
 'use client';
-import { ShimmerLoader } from '@/components/ui/shimmer-loader';
-import { TypeWritter } from '@/components/ui/typing-writter';
+import { ShimmerLoader } from './terminal-ui-shimmer-loader';
+import { TypeWritter } from './terminal-ui-typing-writter';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 type Phase =
@@ -66,7 +66,7 @@ const SEQUENCE: Phase[] = [
     labels: ['Booting…', 'Loading…', 'Preparing…', 'Initializing…'],
     icons: ['✦', '◆', '✶', '❋', '✸'],
     duration: 3000,
-    showPercent: false, // no percent, no tokens — clean spinner
+    showPercent: false, // no percent, no tokens: clean spinner
   },
   { type: 'message', text: "Let's build something great 🚀" },
   { type: 'divider' },

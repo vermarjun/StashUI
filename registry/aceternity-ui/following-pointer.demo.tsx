@@ -18,7 +18,7 @@ export default function Demo() {
             Building with Motion
           </h3>
           <p className="text-sm text-muted-foreground">
-            Hover anywhere on this card — a custom pointer trails your cursor
+            Hover anywhere on this card: a custom pointer trails your cursor
             with a coloured label in tow.
           </p>
           <div className="mt-4 flex items-center gap-2">

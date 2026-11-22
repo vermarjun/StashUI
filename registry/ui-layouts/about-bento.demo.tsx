@@ -1,5 +1,5 @@
-import { AboutBento } from "@/registry/ui-layouts/about-bento";
+import { AboutBento } from "./about-bento"
 
-export default function Demo() {
-  return <AboutBento />;
+export default function AboutBentoDemo() {
+  return <AboutBento />
 }

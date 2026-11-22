@@ -15,7 +15,7 @@ const projects = [
   {
     title: 'Clément Chapillon',
     description:
-      'This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément.',
+      'This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”, so French photographer Clément.',
     src: 'tree.jpg',
     link: 'https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60',
     color: '#8f89ff',
@@ -39,7 +39,7 @@ const projects = [
   {
     title: 'Mark Rammers',
     description:
-      'Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, ‘all over again’—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.',
+      'Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, ‘all over again’: captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.',
     src: 'cactus.jpg',
     link: 'https://images.unsplash.com/photo-1506792006437-256b665541e2?w=500&auto=format&fit=crop',
     color: '#fd521a',

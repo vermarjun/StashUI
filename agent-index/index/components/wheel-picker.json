@@ -1,0 +1,51 @@
+{
+ "name": "wheel-picker",
+ "title": "Wheel Picker",
+ "category": "selects",
+ "categories": [
+  "selects",
+  "inputs"
+ ],
+ "origin": "Kokonut UI",
+ "origin_short": "koko",
+ "exports": [
+  "WheelPicker"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 17,
+ "flags": [
+  "3d",
+  "motion",
+  "17 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport WheelPicker from \"@/components/ui/wheel-picker\";\n\nexport default function WheelPickerDemo() {\n  const [value, setValue] = useState<Record<string, string>>({\n    hour: \"8\",\n    minute: \"41\",\n    period: \"am\",\n  });\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <p className=\"text-sm text-muted-foreground\">Wake me up at</p>\n      <WheelPicker label=\"Alarm time\" onValueChange={setValue} value={value} />\n      <p className=\"font-mono text-xs text-muted-foreground tabular-nums\">\n        Alarm set for {value.hour}:{value.minute} {value.period}\n      </p>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/kokonut-ui/wheel-picker.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/wheel-picker.json",
+ "preview": "https://stashui.vercel.app/c/wheel-picker",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

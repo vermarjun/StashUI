@@ -1,0 +1,49 @@
+{
+ "name": "circling-elements",
+ "title": "Circling Elements",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "media"
+ ],
+ "origin": "Fancy Components",
+ "origin_short": "fanc",
+ "exports": [
+  "CirclingElements"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport CirclingElements from \"./circling-elements\"\n\nconst images = [\n  \"photo-1506905925346-21bda4d32df4\",\n  \"photo-1548192746-dd526f154ed9\",\n  \"photo-1460999158988-6f0380f81f4d\",\n  \"photo-1517849845537-4d257902454a\",\n  \"photo-1618220649687-ba860f3176e7\",\n  \"photo-1572851899646-a1f69c664e1e\",\n]\n\nexport default function CirclingElementsDemo() {\n  return (\n    <div className=\"flex h-[560px] w-full items-center justify-center bg-background\">\n      <CirclingElements radius={150} duration={10} easing=\"linear\" pauseOnHover>\n        {images.map((id, index) => (\n          <div\n            key={id}\n            className=\"relative h-28 w-28 cursor-pointer overflow-hidden duration-200 ease-out hover:scale-125\"\n          >\n            <img\n              src={`https://images.unsplash.com/${id}?w=400&q=80`}\n              alt={`Gallery image ${index + 1}`}\n              className=\"absolute inset-0 h-full w-full object-cover\"\n            />\n          </div>\n        ))}\n      </CirclingElements>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/fancy-components/circling-elements.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/circling-elements.json",
+ "preview": "https://stashui.vercel.app/c/circling-elements",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

@@ -1,7 +1,7 @@
 /**
  * @module PixelHeading
  *
- * Setup — Geist Pixel Fonts with Tailwind CSS
+ * Setup: Geist Pixel Fonts with Tailwind CSS
  * =============================================
  *
  * All Geist fonts can be used through CSS variables:
@@ -131,7 +131,7 @@ export interface PixelHeadingProps extends React.ComponentProps<"h1"> {
 /**
  * Interactive heading that swaps or cycles through pixel font styles on hover.
  *
- * **Swap mode** — set `initialFont` and `hoverFont` to swap between two
+ * **Swap mode**: set `initialFont` and `hoverFont` to swap between two
  * specific fonts on hover:
  *
  * @example
@@ -139,7 +139,7 @@ export interface PixelHeadingProps extends React.ComponentProps<"h1"> {
  *   Swap on hover
  * </PixelHeading>
  *
- * **Cycle mode** — omit `hoverFont` to cycle through every pixel font on
+ * **Cycle mode**: omit `hoverFont` to cycle through every pixel font on
  * hover (the original behavior):
  *
  * @example

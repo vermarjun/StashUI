@@ -1,0 +1,53 @@
+{
+ "name": "inline-edit",
+ "title": "Inline Edit",
+ "category": "inputs",
+ "categories": [
+  "inputs",
+  "forms"
+ ],
+ "origin": "Watermelon UI",
+ "origin_short": "wate",
+ "exports": [
+  "InlineEditCard"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 48,
+ "flags": [
+  "motion",
+  "heavy",
+  "48 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport { InlineEditCard, type EventData } from \"./inline-edit\";\n\nexport default function InlineEditDemo() {\n  const [data, setData] = useState<EventData>({\n    event: \"Design Systems Meetup\",\n    date: \"Thursday, 12 March\",\n    start: \"6:30 PM\",\n    end: \"9:00 PM\",\n    location: \"Lisbon, PT\",\n    url: \"stashui.dev/meetup\",\n    desc: \"An evening of short talks on tokens, theming and component APIs, followed by drinks on the terrace.\",\n  });\n  return (\n    <div className=\"flex min-h-[600px] w-full items-center justify-center p-6\">\n      <InlineEditCard\n        title=\"Event details\"\n        data={data}\n        onDataChange={setData}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/watermelon-ui/inline-edit.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inline-edit.json",
+ "preview": "https://stashui.vercel.app/c/inline-edit",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

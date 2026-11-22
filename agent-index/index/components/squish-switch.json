@@ -1,0 +1,50 @@
+{
+ "name": "squish-switch",
+ "title": "Squish Switch",
+ "category": "switches",
+ "categories": [
+  "switches",
+  "settings"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "SquishSwitch"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 2,
+ "flags": [
+  "motion",
+  "2 colors"
+ ],
+ "usage": "\"use client\";\n\nimport SquishSwitch from \"./squish-switch\";\n\nconst SETTINGS = [\n  { id: \"push\", title: \"Push notifications\", hint: \"Mentions, replies and DMs\", on: true },\n  { id: \"digest\", title: \"Weekly digest\", hint: \"A Monday summary of your projects\", on: false },\n  { id: \"focus\", title: \"Focus mode\", hint: \"Mute everything 9:00 to 12:00\", on: false },\n];\n\nexport default function SquishSwitchDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-md divide-y divide-border rounded-2xl border border-border bg-card\">\n        {SETTINGS.map(s => (\n          <div key={s.id} className=\"flex items-center justify-between gap-6 px-6 py-5\">\n            <div>\n              <p className=\"text-sm font-medium text-foreground\">{s.title}</p>\n              <p className=\"mt-0.5 text-xs text-muted-foreground\">{s.hint}</p>\n            </div>\n            <SquishSwitch id={s.id} defaultChecked={s.on} ariaLabel={s.title} />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/squish-switch.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/squish-switch.json",
+ "preview": "https://stashui.vercel.app/c/squish-switch",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

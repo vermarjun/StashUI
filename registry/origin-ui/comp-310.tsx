@@ -84,7 +84,7 @@ export default function Component() {
               <p className="font-medium text-sm">Black Friday Sale!</p>
               <p className="text-muted-foreground text-sm">
                 It kicks off today and is available for just 24
-                hours—don&lsquo;t miss out!
+                hours: don&lsquo;t miss out!
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">

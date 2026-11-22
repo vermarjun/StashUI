@@ -1,0 +1,47 @@
+{
+ "name": "pixel-heading-character",
+ "title": "Pixel Heading",
+ "category": "text",
+ "categories": [
+  "text"
+ ],
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "RootLayout",
+  "PixelHeading"
+ ],
+ "npm_deps": [
+  "geist"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { PixelHeading, type PixelHeadingMode } from \"./pixel-heading-character\"\n\n// Geist Pixel faces, loaded from the geist npm package on jsDelivr so the\n// `font-pixel-*` classes the component uses resolve without app-level setup.\nconst GEIST_PIXEL = \"https://cdn.jsdelivr.net/npm/geist@1.7.2/dist/fonts/geist-pixel\"\nconst FACES = [\"Square\", \"Grid\", \"Circle\", \"Triangle\", \"Line\"]\nconst fontCss = FACES.map(\n  (f) => `@font-face{font-family:\"Geist Pixel ${f}\";src:url(${GEIST_PIXEL}/GeistPixel-${f}.woff2) format(\"woff2\");font-display:swap}\n.font-pixel-${f.toLowerCase()}{font-family:\"Geist Pixel ${f}\",ui-monospace,monospace}`\n).join(\"\\n\")\n\nconst MODES: PixelHeadingMode[] = [\"wave\", \"multi\", \"random\", \"uniform\"]\n\nexport default function PixelHeadingCharacterDemo() {\n  const [mode, setMode] = useState<PixelHeadingMode>(\"wave\")\n\n  return (\n    <div className=\"flex min-h-[420px] w-full flex-col items-center justify-center gap-10 p-8\">\n      <style>{fontCss}</style>\n      <PixelHeading\n        autoPlay\n        className=\"text-center text-6xl text-foreground tracking-tight md:text-8xl\"\n        cycleInterval={340}\n        defaultFontIndex={3}\n        key={mode}\n        mode={mode}\n        showLabel\n        staggerDelay={200}\n      >\n        Ship Pixels\n      </PixelHeading>\n      <div className=\"flex gap-2\">\n        {MODES.map((m) => (\n          <button\n            className={\n              m === mode\n                ? \"rounded-full bg-foreground px-3.5 py-1.5 font-mono text-background text-xs\"\n                : \"rounded-full bg-muted px-3.5 py-1.5 font-mono text-muted-foreground text-xs hover:text-foreground\"\n            }\n            key={m}\n            onClick={() => setMode(m)}\n            type=\"button\"\n          >\n            {m}\n          </button>\n        ))}\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/pixel-heading-character.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/pixel-heading-character.json",
+ "preview": "https://stashui.vercel.app/c/pixel-heading-character",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

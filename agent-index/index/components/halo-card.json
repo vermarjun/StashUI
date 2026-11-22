@@ -1,0 +1,56 @@
+{
+ "name": "halo-card",
+ "title": "Halo Card",
+ "category": "cards",
+ "categories": [
+  "cards"
+ ],
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "HaloCard",
+  "HaloCardAction",
+  "HaloCardButton",
+  "HaloCardContent",
+  "HaloCardDescription",
+  "HaloCardFooter",
+  "HaloCardHeader",
+  "HaloCardTitle"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 37,
+ "flags": [
+  "motion",
+  "37 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { MoreHorizontalIcon } from \"lucide-react\"\n\nimport {\n  HaloCard,\n  HaloCardAction,\n  HaloCardButton,\n  HaloCardContent,\n  HaloCardDescription,\n  HaloCardFooter,\n  HaloCardHeader,\n  HaloCardTitle,\n} from \"./halo-card\"\n\nexport default function HaloCardDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <HaloCard aria-label=\"Invite teammates\" className=\"w-full max-w-lg\">\n        <HaloCardHeader>\n          <HaloCardTitle>Invite your team</HaloCardTitle>\n          <HaloCardDescription>\n            Northwind Studio has 3 of 10 seats in use. Invites expire after\n            seven days.\n          </HaloCardDescription>\n          <HaloCardAction>\n            <HaloCardButton\n              aria-label=\"More options\"\n              size=\"icon\"\n              type=\"button\"\n              variant=\"secondary\"\n            >\n              <MoreHorizontalIcon aria-hidden className=\"size-4\" />\n            </HaloCardButton>\n          </HaloCardAction>\n        </HaloCardHeader>\n\n        <HaloCardContent>\n          <ul className=\"space-y-3\">\n            {[\n              { name: \"Priya Raman\", email: \"priya@northwind.studio\", img: 32, role: \"Admin\" },\n              { name: \"Marcus Webb\", email: \"marcus@northwind.studio\", img: 14, role: \"Editor\" },\n              { name: \"Lena Fischer\", email: \"lena@northwind.studio\", img: 45, role: \"Viewer\" },\n            ].map((p) => (\n              <li className=\"flex items-center gap-3\" key={p.email}>\n                <img\n                  alt=\"\"\n                  className=\"size-8 rounded-full object-cover\"\n                  src={`https://i.pravatar.cc/80?img=${p.img}`}\n                />\n                <div className=\"min-w-0 flex-1\">\n                  <p className=\"font-medium text-foreground text-sm\">{p.name}</p>\n                  <p className=\"truncate text-muted-foreground text-xs\">{p.email}</p>\n                </div>\n                <span className=\"text-muted-foreground text-xs\">{p.role}</span>\n              </li>\n            ))}\n          </ul>\n        </HaloCardContent>\n\n        <HaloCardFooter className=\"justify-between gap-3\">\n          <HaloCardButton type=\"button\" variant=\"secondary\">\n            Cancel\n          </HaloCardButton>\n          <HaloCardButton type=\"button\" variant=\"primary\">\n            Send invites\n          </HaloCardButton>\n        </HaloCardFooter>\n      </HaloCard>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/halo-card.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/halo-card.json",
+ "preview": "https://stashui.vercel.app/c/halo-card",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

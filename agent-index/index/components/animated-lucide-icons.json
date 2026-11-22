@@ -1,0 +1,51 @@
+{
+ "name": "animated-lucide-icons",
+ "title": "Animated Lucide Icons",
+ "category": "effects",
+ "categories": [
+  "effects",
+  "buttons"
+ ],
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "IconPathStyle",
+  "AnimateIcon",
+  "IconWrapper"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "'use client';\n\nimport { AnimateIcon } from './animated-lucide-icons';\nimport { Activity } from './animated-lucide-icons-activity';\nimport { ArrowRight } from './animated-lucide-icons-arrow-right';\nimport { Bell } from './animated-lucide-icons-bell';\nimport { Check } from './animated-lucide-icons-check';\nimport { Copy } from './animated-lucide-icons-copy';\nimport { Download } from './animated-lucide-icons-download';\nimport { Heart } from './animated-lucide-icons-heart';\nimport { House } from './animated-lucide-icons-house';\nimport { Loader } from './animated-lucide-icons-loader';\nimport { Menu } from './animated-lucide-icons-menu';\nimport { MessageCircle } from './animated-lucide-icons-message-circle';\nimport { Search } from './animated-lucide-icons-search';\nimport { Send } from './animated-lucide-icons-send';\nimport { Settings } from './animated-lucide-icons-settings';\nimport { Sparkles } from './animated-lucide-icons-sparkles';\nimport { Star } from './animated-lucide-icons-star';\nimport { Trash2 } from './animated-lucide-icons-trash-2';\nimport { User } from './animated-lucide-icons-user';\nimport { X } from './animated-lucide-icons-x';\nimport { Zap } from './animated-lucide-icons-zap';\n\nconst ICONS = [\n  { name: 'activity', Icon: Activity },\n  { name: 'arrow-right', Icon: ArrowRight },\n  { name: 'bell', Icon: Bell },\n  { name: 'check', Icon: Check },\n  { name: 'copy', Icon: Copy },\n  { name: 'download', Icon: Download },\n  { name: 'heart', Icon: Heart },\n  { name: 'house', Icon: House },\n  { name: 'loader', Icon: Loader },\n  { name: 'menu', Icon: Menu },\n  { name: 'message-circle', Icon: MessageCircle },\n  { name: 'search', Icon: Search },\n  { name: 'send', Icon: Send },\n  { name: 'settings', Icon: Settings },\n  { name: 'sparkles', Icon: Sparkles },\n  { name: 'star', Icon: Star },\n  { name: 'trash-2', Icon: Trash2 },\n  { name: 'user', Icon: User },\n  { name: 'x', Icon: X },\n  { name: 'zap', Icon: Zap },\n];\n\nexport default function AnimatedLucideIconsDemo() {\n  return (\n    <div className=\"flex min-h-[520px] w-full items-center justify-center p-6\">\n      <div className=\"grid grid-cols-5 gap-3\">\n        {ICONS.map(({ name, Icon }) => (\n          <AnimateIcon key={name} animateOnHover asChild>\n            <button\n              type=\"button\"\n              data-icon={name}\n              className=\"flex h-24 w-28 flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card text-foreground transition-colors hover:bg-accent\"\n            >\n              <Icon size={28} />\n              <span className=\"text-[11px] text-muted-foreground\">{name}</span>\n            </button>\n          </AnimateIcon>\n        ))}\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/animated-lucide-icons.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/animated-lucide-icons.json",
+ "preview": "https://stashui.vercel.app/c/animated-lucide-icons",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

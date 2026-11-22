@@ -1,0 +1,49 @@
+{
+ "name": "svg-draw-on-scroll",
+ "title": "SVG Draw On Scroll",
+ "category": "scroll",
+ "categories": [
+  "scroll",
+  "effects"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "SvgDrawOnScroll"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport { useRef } from \"react\";\nimport SvgDrawOnScroll from \"./svg-draw-on-scroll\";\n\nconst ROUTE =\n  \"M 60 20 C 60 90, 340 80, 330 160 S 70 230, 80 310 S 330 370, 320 450 S 120 520, 200 580\";\n\nconst STOPS = [\n  { label: \"Trailhead · 0 km\", top: \"2%\", left: \"4%\" },\n  { label: \"Lake Sorapis · 6.2 km\", top: \"26%\", right: \"2%\" },\n  { label: \"Forcella Marcuoira · 11 km\", top: \"50%\", left: \"2%\" },\n  { label: \"Summit hut · 18.4 km\", top: \"94%\", left: \"56%\" },\n];\n\nexport default function SvgDrawOnScrollDemo() {\n  const scrollRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-[560px] w-full overflow-y-auto overscroll-contain\"\n      ref={scrollRef}\n    >\n      <div className=\"mx-auto flex h-[380px] max-w-md flex-col items-center justify-center text-center\">\n        <p className=\"text-muted-foreground text-xs uppercase tracking-[0.25em]\">\n          Day 3 · Dolomites\n        </p>\n        <h3 className=\"mt-2 font-semibold text-3xl text-foreground\">\n          The long way to the hut\n        </h3>\n        <p className=\"mt-3 text-muted-foreground text-sm\">Scroll to walk the route ↓</p>\n      </div>\n\n      <div className=\"relative mx-auto h-[640px] w-full max-w-md\">\n        <SvgDrawOnScroll\n          className=\"h-full w-full text-foreground\"\n          container={scrollRef}\n          marker={\n            <span className=\"block size-4 rounded-full border-2 border-background bg-[oklch(0.72_0.2_352.53)] shadow-[0_0_0_6px_color-mix(in_oklab,oklch(0.72_0.2_352.53)_30%,transparent)]\" />\n          }\n          offset={[\"start 0.85\", \"end 0.75\"]}\n          path={ROUTE}\n          strokeWidth={3}\n          viewBox=\"0 0 400 600\"\n        />\n        {STOPS.map((stop) => (\n          <span\n            className=\"absolute rounded-full border border-border bg-card px-2.5 py-1 text-[11px] text-muted-foreground\"\n            key={stop.label}\n            style={{ left: stop.left, right: stop.right, top: stop.top }}\n          >\n            {stop.label}\n          </span>\n        ))}\n      </div>\n\n      <div className=\"flex h-[360px] items-center justify-center text-muted-foreground text-sm\">\n        18.4 km · 1,240 m elevation gain · 7h 10m\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/svg-draw-on-scroll.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/svg-draw-on-scroll.json",
+ "preview": "https://stashui.vercel.app/c/svg-draw-on-scroll",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

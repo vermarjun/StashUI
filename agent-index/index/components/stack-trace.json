@@ -1,0 +1,60 @@
+{
+ "name": "stack-trace",
+ "title": "Stack Trace",
+ "category": "code",
+ "categories": [
+  "code",
+  "feedback"
+ ],
+ "origin": "Vercel AI Elements",
+ "origin_short": "verc",
+ "exports": [
+  "StackTrace",
+  "StackTraceHeader",
+  "StackTraceError",
+  "StackTraceErrorType",
+  "StackTraceErrorMessage",
+  "StackTraceActions",
+  "StackTraceCopyButton",
+  "StackTraceExpandButton",
+  "StackTraceContent",
+  "StackTraceFrames"
+ ],
+ "npm_deps": [
+  "@radix-ui/react-use-controllable-state",
+  "lucide-react"
+ ],
+ "registry_deps": [
+  "button",
+  "collapsible"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport {\n  StackTrace,\n  StackTraceActions,\n  StackTraceContent,\n  StackTraceCopyButton,\n  StackTraceError,\n  StackTraceErrorMessage,\n  StackTraceErrorType,\n  StackTraceExpandButton,\n  StackTraceFrames,\n  StackTraceHeader,\n} from \"./stack-trace\";\n\nconst trace = `TypeError: Cannot read properties of undefined (reading 'lineItems')\n    at calculateTotals (/app/src/lib/cart/totals.ts:48:27)\n    at CheckoutSummary (/app/src/components/checkout/summary.tsx:112:19)\n    at renderWithHooks (/app/node_modules/react-dom/cjs/react-dom.development.js:16305:18)\n    at mountIndeterminateComponent (/app/node_modules/react-dom/cjs/react-dom.development.js:20069:13)\n    at handleCheckout (/app/src/app/checkout/actions.ts:31:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async POST (/app/src/app/api/orders/route.ts:22:5)`;\n\nexport default function StackTraceDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-6\">\n      <StackTrace className=\"w-full max-w-2xl\" defaultOpen trace={trace}>\n        <StackTraceHeader>\n          <StackTraceError>\n            <StackTraceErrorType />\n            <StackTraceErrorMessage />\n          </StackTraceError>\n          <StackTraceActions>\n            <StackTraceCopyButton />\n            <StackTraceExpandButton />\n          </StackTraceActions>\n        </StackTraceHeader>\n        <StackTraceContent>\n          <StackTraceFrames />\n        </StackTraceContent>\n      </StackTrace>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/vercel-ai-elements/stack-trace.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/stack-trace.json",
+ "preview": "https://stashui.vercel.app/c/stack-trace",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

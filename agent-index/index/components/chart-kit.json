@@ -1,0 +1,83 @@
+{
+ "name": "chart-kit",
+ "title": "Chart Kit",
+ "category": "charts",
+ "categories": [
+  "charts",
+  "dashboards"
+ ],
+ "origin": "Spectrum UI",
+ "origin_short": "spec",
+ "exports": [
+  "MONTHLY_TRAFFIC",
+  "BROWSER_SHARE",
+  "RADAR_METRICS",
+  "SOL_CANDLES",
+  "AAPL_CANDLES",
+  "SOL_PRICE",
+  "NVDA_PRICE",
+  "ETH_PRICE",
+  "SOLANA_TVL",
+  "WATCHLIST",
+  "SERIES",
+  "CHART_COLORS",
+  "EASE_OUT",
+  "BAR_STAGGER",
+  "BAR_GROW",
+  "REVEAL_DURATION",
+  "HOVER_MS",
+  "HOVER_OPACITY",
+  "HOVER_TRANSITION",
+  "HoverIndexProvider",
+  "ChartFrame",
+  "ChartPlotSurface",
+  "ChartLegend",
+  "ChartTooltipContent",
+  "ChartGlowFilter",
+  "RevealMask",
+  "AnimatedDashedStroke",
+  "ChartRestingDot",
+  "ChartActiveDot",
+  "GrowBar",
+  "BarFillDefs",
+  "AreaFillDefs",
+  "ChartLoadingBars"
+ ],
+ "npm_deps": [
+  "framer-motion",
+  "recharts"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 54,
+ "flags": [
+  "motion",
+  "54 colors"
+ ],
+ "usage": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  Area,\n  AreaChart,\n  Bar,\n  BarChart,\n  CartesianGrid,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\nimport {\n  AreaFillDefs,\n  BarFillDefs,\n  ChartActiveDot,\n  ChartFrame,\n  ChartLegend,\n  ChartPlotSurface,\n  ChartTooltipContent,\n  HoverIndexProvider,\n  MONTHLY_TRAFFIC,\n  RevealMask,\n  SERIES,\n  SOL_PRICE,\n  areaFillUrl,\n  barFillUrl,\n  chartGrid,\n  chartXAxis,\n  chartYAxis,\n  createGrowBarShape,\n  formatPct,\n  formatUsd,\n  readActiveTooltipIndex,\n  seriesDelta,\n  useChartId,\n  useChartMotion,\n  useIntroStartedAt,\n} from \"./chart-kit\";\n\nfunction TrafficBars() {\n  const id = useChartId(\"traffic\");\n  const { reduce } = useChartMotion();\n  const introStartedAt = useIntroStartedAt();\n  const [hover, setHover] = React.useState<number | null>(null);\n\n  const desktopShape = React.useMemo(\n    () =>\n      createGrowBarShape({\n        introStartedAt,\n        dataLength: MONTHLY_TRAFFIC.length,\n        reduce,\n        radius: [4, 4, 0, 0],\n      }),\n    [introStartedAt, reduce]\n  );\n  const mobileShape = React.useMemo(\n    () =>\n      createGrowBarShape({\n        introStartedAt: introStartedAt + 80,\n        dataLength: MONTHLY_TRAFFIC.length,\n        reduce,\n        radius: [4, 4, 0, 0],\n      }),\n    [introStartedAt, reduce]\n  );\n\n  return (\n    <ChartFrame className=\"flex h-[300px] flex-col\">\n      <ChartLegend />\n      <ChartPlotSurface>\n        <HoverIndexProvider value={hover}>\n          <ResponsiveContainer width=\"100%\" height=\"100%\">\n            <BarChart\n              data={MONTHLY_TRAFFIC}\n              barGap={3}\n              onMouseMove={(state) => setHover(readActiveTooltipIndex(state as { activeTooltipIndex?: number | string | null }))}\n              onMouseLeave={() => setHover(null)}\n            >\n              <defs>\n                <BarFillDefs id={`${id}-d`} color={SERIES.desktop.color} variant=\"gradient\" />\n                <BarFillDefs id={`${id}-m`} color={SERIES.mobile.color} variant=\"hatched\" />\n              </defs>\n              <CartesianGrid {...chartGrid} />\n              <XAxis dataKey=\"month\" {...chartXAxis} />\n              <YAxis {...chartYAxis} />\n              <Tooltip cursor={false} content={<ChartTooltipContent />} />\n              <Bar\n                dataKey=\"desktop\"\n                name={SERIES.desktop.label}\n                fill={barFillUrl(`${id}-d`, \"gradient\", SERIES.desktop.color)}\n                shape={desktopShape}\n                isAnimationActive={false}\n              />\n              <Bar\n                dataKey=\"mobile\"\n                name={SERIES.mobile.label}\n                fill={barFillUrl(`${id}-m`, \"hatched\", SERIES.mobile.color)}\n                shape={mobileShape}\n                isAnimationActive={false}\n              />\n            </BarChart>\n          </ResponsiveContainer>\n        </HoverIndexProvider>\n      </ChartPlotSurface>\n    </ChartFrame>\n  );\n}\n\nfunction PriceArea() {\n  const id = useChartId(\"price\");\n  const { reduce } = useChartMotion();\n  const introStartedAt = useIntroStartedAt();\n  const color = \"var(--spectrum-chart-3)\";\n\n  return (\n    <ChartFrame className=\"h-[300px]\">\n      <ResponsiveContainer width=\"100%\" height=\"100%\">\n        <AreaChart data={SOL_PRICE} margin={{ top: 8, right: 4, left: 0, bottom: 0 }}>\n          <defs>\n            <AreaFillDefs id={id} color={color} variant=\"gradient\" />\n            <RevealMask id={`${id}-mask`} introStartedAt={introStartedAt} reduce={reduce} />\n          </defs>\n          <CartesianGrid {...chartGrid} />\n          <XAxis dataKey=\"time\" {...chartXAxis} tickFormatter={(t: string) => t.replace(\"t\", \"D\")} />\n          <YAxis {...chartYAxis} domain={[\"dataMin - 4\", \"dataMax + 4\"]} tickFormatter={(v: number) => `$${Math.round(v)}`} />\n          <Tooltip\n            cursor={{ stroke: \"currentColor\", strokeOpacity: 0.3, strokeDasharray: \"3 3\" }}\n            content={<ChartTooltipContent />}\n          />\n          <Area\n            type=\"monotone\"\n            dataKey=\"price\"\n            name=\"Price\"\n            stroke={color}\n            strokeWidth={2}\n            fill={areaFillUrl(id, \"gradient\", color)}\n            mask={`url(#${id}-mask)`}\n            isAnimationActive={false}\n            activeDot={(props: { cx?: number; cy?: number }) => (\n              <ChartActiveDot cx={props.cx} cy={props.cy} color={color} />\n            )}\n          />\n        </AreaChart>\n      </ResponsiveContainer>\n    </ChartFrame>\n  );\n}\n\nexport default function ChartKitDemo() {\n  const prices = SOL_PRICE.map((p) => p.price);\n  const last = prices[prices.length - 1];\n  const delta = seriesDelta(prices);\n\n  return (\n    <div className=\"grid w-full max-w-5xl grid-cols-1 gap-4 p-6 md:grid-cols-2\">\n      <div className=\"rounded-2xl border border-border bg-card p-5\">\n        <p className=\"text-sm font-medium text-muted-foreground\">Visitors</p>\n        <p className=\"text-2xl font-semibold tabular-nums text-card-foreground\">\n          4,862 <span className=\"text-sm font-medium text-emerald-400\">+12.4%</span>\n        </p>\n        <TrafficBars />\n      </div>\n      <div className=\"rounded-2xl border border-border bg-card p-5\">\n        <p className=\"text-sm font-medium text-muted-foreground\">SOL / USD · 24 days</p>\n        <p className=\"text-2xl font-semibold tabular-nums text-card-foreground\">\n          {formatUsd(last)}{\" \"}\n          <span className=\"text-sm font-medium text-emerald-400\">{formatPct(delta)}</span>\n        </p>\n        <PriceArea />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/spectrum-ui/chart-kit.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/chart-kit.json",
+ "preview": "https://stashui.vercel.app/c/chart-kit",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

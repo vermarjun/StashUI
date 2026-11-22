@@ -101,7 +101,7 @@ export function castleWallBandPath(toothCount: number): string {
 }
 
 /**
- * Band: crenellated / battlement top (castle-wall silhouette) — 12 alternating merlons and crenels.
+ * Band: crenellated / battlement top (castle-wall silhouette): 12 alternating merlons and crenels.
  * Flip vertical for a bottom trim with teeth pointing downward.
  */
 export function CastleWallBandSvg({ className }: { className?: string }) {
@@ -188,7 +188,7 @@ export function zigzagSawtoothBandPath(teeth: number): string {
 
 /**
  * Band: zigzag / sawtooth profile (sharp peaks & valleys). Flip vertical with `origin-bottom -scale-y-100` for a bottom trim.
- * @param teeth — default 12 (~200px period); use 8 / 16 / 24 for chunkier / finer zigzag.
+ * @param teeth: default 12 (~200px period); use 8 / 16 / 24 for chunkier / finer zigzag.
  */
 export function ZigzagSawtoothBandSvg({
   className,
@@ -211,7 +211,7 @@ export function ZigzagSawtoothBandSvg({
 }
 
 /**
- * Band: flat top with a single centered rectangular tab (SKILL — 2400×200). Tab ~300px; flip vertical for bottom variant.
+ * Band: flat top with a single centered rectangular tab (SKILL: 2400×200). Tab ~300px; flip vertical for bottom variant.
  */
 export function CenterTabBandSvg({ className }: { className?: string }) {
   return (
@@ -230,7 +230,7 @@ export function CenterTabBandSvg({ className }: { className?: string }) {
   )
 }
 
-/** Band: parallelogram slash — diagonal left edge, flat top, vertical right. */
+/** Band: parallelogram slash: diagonal left edge, flat top, vertical right. */
 export function DiagonalSlashBandSvg({ className }: { className?: string }) {
   return (
     <svg
@@ -310,7 +310,7 @@ export function SteppedLeftSteepRightBandSvg({
 }
 
 /**
- * Panel: inset stepped frame — outer rectangle with rectangular bite inward on all four sides
+ * Panel: inset stepped frame: outer rectangle with rectangular bite inward on all four sides
  * (skill gallery). Distinct from dual-notch ornamental frame.
  */
 export function SteppedInsetFrameSvg({ className }: { className?: string }) {
@@ -330,7 +330,7 @@ export function SteppedInsetFrameSvg({ className }: { className?: string }) {
   )
 }
 
-/** Panel: chamfered rectangle — equal angled cuts on all four corners; good for hero or card frames. */
+/** Panel: chamfered rectangle: equal angled cuts on all four corners; good for hero or card frames. */
 export function AngledCornerPanelSvg({ className }: { className?: string }) {
   return (
     <svg
@@ -412,7 +412,7 @@ export function TopBandSteepBothSvg({ className }: { className?: string }) {
 }
 
 /**
- * Horizontal mirror of TopBandSteepRightSvg — steep apex at the upper-left, shallow
+ * Horizontal mirror of TopBandSteepRightSvg: steep apex at the upper-left, shallow
  * slope on the right.
  */
 export function TopBandSteepLeftSvg({ className }: { className?: string }) {
@@ -434,7 +434,7 @@ export function TopBandSteepLeftSvg({ className }: { className?: string }) {
   )
 }
 
-/** Bottom edge band — vertical flip of TopBandSteepRightSvg for section footers. */
+/** Bottom edge band: vertical flip of TopBandSteepRightSvg for section footers. */
 export function BottomBandSteepRightSvg({ className }: { className?: string }) {
   return (
     <svg
@@ -491,7 +491,7 @@ export function CenterTabTopBandSvg({ className }: { className?: string }) {
   )
 }
 
-/** Tall panel with angled header and vertical sides — hero / feature backdrop. */
+/** Tall panel with angled header and vertical sides: hero / feature backdrop. */
 export function TallAngledHeroPanelSvg({ className }: { className?: string }) {
   return (
     <svg
@@ -511,7 +511,7 @@ export function TallAngledHeroPanelSvg({ className }: { className?: string }) {
 
 /**
  * Truncated pyramid profile: four up-steps, flat top plateau, four down-steps (symmetric).
- * Closed band — filled lid + stroke — aligned to 2400-wide ornaments.
+ * Closed band (filled lid + stroke) aligned to 2400-wide ornaments.
  */
 export function PyramidStepBandSvg({ className }: { className?: string }) {
   return (
@@ -538,7 +538,7 @@ export function PyramidStepBandSvg({ className }: { className?: string }) {
 
 /**
  * Truncated pyramid profile: 12 up-steps, flat top plateau, 12 down-steps (symmetric).
- * Closed band — filled lid + stroke — aligned to 2400-wide ornaments.
+ * Closed band (filled lid + stroke) aligned to 2400-wide ornaments.
  */
 export function PyramidStepBandLotsOfStepsSvg({
   className,

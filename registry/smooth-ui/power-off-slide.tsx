@@ -1,0 +1,143 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { Power } from "lucide-react";
+import {
+  motion,
+  useAnimation,
+  useAnimationFrame,
+  useMotionValue,
+  useReducedMotion,
+} from "motion/react";
+import { type RefObject, useRef, useState } from "react";
+
+const SLIDE_THRESHOLD = 160;
+const SLIDE_MAX_DISTANCE = 168;
+const PERCENTAGE_MULTIPLIER = 100;
+
+export interface PowerOffSlideProps {
+  className?: string;
+  disabled?: boolean;
+  duration?: number;
+  label?: string;
+  onPowerOff?: () => void;
+}
+
+export default function PowerOffSlide({
+  onPowerOff,
+  label = "Slide to power off",
+  className = "",
+  duration = 2000,
+  disabled = false,
+}: PowerOffSlideProps) {
+  const [isPoweringOff, setIsPoweringOff] = useState(false);
+  const x = useMotionValue(0);
+  const controls = useAnimation();
+  const constraintsRef = useRef(null);
+  const textRef: RefObject<HTMLDivElement | null> = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  useAnimationFrame((t) => {
+    if (shouldReduceMotion) {
+      return;
+    }
+    const animDuration = duration;
+    const progress = (t % animDuration) / animDuration;
+    if (textRef.current) {
+      textRef.current.style.setProperty(
+        "--x",
+        `${(1 - progress) * PERCENTAGE_MULTIPLIER}%`
+      );
+    }
+  });
+
+  const handleDragEnd = async () => {
+    if (disabled) {
+      return;
+    }
+    const dragDistance = x.get();
+    if (dragDistance > SLIDE_THRESHOLD) {
+      await controls.start({ x: SLIDE_MAX_DISTANCE });
+      setIsPoweringOff(true);
+      if (onPowerOff) {
+        onPowerOff();
+      }
+      setTimeout(() => {
+        setIsPoweringOff(false);
+        controls.start({ x: 0 });
+        x.set(0);
+      }, duration);
+    } else {
+      controls.start({ x: 0 });
+    }
+  };
+
+  return (
+    <div className={cn("flex h-auto items-center justify-center", className)}>
+      {/* SmoothUI ships this shimmer in its global CSS; scoped here so the
+          component installs self-contained. --x is driven per frame above. */}
+      <style>{`
+        .loading-shimmer {
+          color: transparent;
+          background: linear-gradient(
+              90deg,
+              color-mix(in oklab, var(--foreground) 35%, transparent) 0%,
+              color-mix(in oklab, var(--foreground) 35%, transparent) 40%,
+              var(--foreground) 50%,
+              color-mix(in oklab, var(--foreground) 35%, transparent) 60%,
+              color-mix(in oklab, var(--foreground) 35%, transparent) 100%
+            );
+          background-size: 300% 100%;
+          background-position: var(--x, 100%) 0;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+      `}</style>
+      <div className="w-56">
+        {isPoweringOff ? (
+          <div className="text-center text-foreground">
+            <p className="mb-2 font-light text-xl">Shutting down...</p>
+          </div>
+        ) : (
+          <div
+            className="relative h-14 overflow-hidden rounded-full border bg-secondary"
+            ref={constraintsRef}
+          >
+            <div className="absolute inset-0 left-8 z-0 flex items-center justify-center overflow-hidden">
+              <div
+                className="loading-shimmer relative w-full select-none text-center font-normal text-base text-foreground"
+                ref={textRef}
+              >
+                {label}
+              </div>
+            </div>
+            <motion.div
+              animate={controls}
+              aria-disabled={disabled}
+              className={cn(
+                "absolute top-1 left-1 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-background shadow-md",
+                disabled
+                  ? "cursor-not-allowed opacity-50"
+                  : "cursor-grab active:cursor-grabbing"
+              )}
+              drag={disabled || shouldReduceMotion ? false : "x"}
+              dragConstraints={{ left: 0, right: SLIDE_MAX_DISTANCE }}
+              dragElastic={0}
+              dragMomentum={false}
+              onDragEnd={handleDragEnd}
+              style={{ x }}
+              tabIndex={disabled ? -1 : 0}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.25, type: "spring" as const }
+              }
+            >
+              <Power className="text-red-600" size={32} />
+            </motion.div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

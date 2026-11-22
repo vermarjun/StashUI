@@ -35,7 +35,7 @@ interface App {
 const WIN_W = 420;
 const WIN_H = 330;
 const DUR = 500;
-// DPR is read lazily inside setupCanvas — never at module scope, which would
+// DPR is read lazily inside setupCanvas: never at module scope, which would
 // run during SSR and either crash or hardcode a value.
 
 // Magnification config
@@ -952,7 +952,7 @@ const MacWindow = ({
 };
 
 // ─── Magnified Dock Icon ──────────────────────────────────────────────────────
-// This component uses framer-motion's useSpring/useTransform — both produce
+// This component uses framer-motion's useSpring/useTransform: both produce
 // floating-point values whose last-digit precision can differ between Node
 // (server) and V8 (client), which causes hydration mismatches. So this whole
 // component only renders client-side via the `mounted` flag in <GenieEffect>.
@@ -1062,14 +1062,14 @@ function SnapshotStage({
   useEffect(() => {
     let cancelled = false;
 
-    // Capture work — runs after the page has painted.
+    // Capture work: runs after the page has painted.
     const run = async () => {
       try {
         // Wait one more frame so the offscreen MacWindows have laid out.
         await new Promise((r) => requestAnimationFrame(() => r(null)));
         if (cancelled) return;
 
-        // Parallel snapshots — html-to-image's bottleneck is the Image
+        // Parallel snapshots: html-to-image's bottleneck is the Image
         // element rasterizing the SVG, which the browser does off the main
         // thread, so 6 in parallel is faster than 6 sequential without
         // overwhelming anything.
@@ -1279,7 +1279,7 @@ export default function GenieEffect() {
         // flushSync forces React to commit the MacWindow into the DOM
         // synchronously, before clearCanvas runs. Without this, setPhase
         // batches and the canvas would clear one frame BEFORE the MacWindow
-        // mounts — the page background shows through that gap, producing
+        // mounts: the page background shows through that gap, producing
         // the white-shutter flash. With flushSync, by the time clearCanvas
         // runs the MacWindow (z-40) is already on top of the canvas (z-30),
         // so the clear is visually invisible.
@@ -1395,7 +1395,7 @@ export default function GenieEffect() {
         />
       </div>
 
-      {/* Menubar — safe to SSR (no motion values, no client-only state) */}
+      {/* Menubar: safe to SSR (no motion values, no client-only state) */}
       <div
         className="absolute top-0 left-0 right-0 flex items-center justify-between px-3"
         style={{
@@ -1413,14 +1413,14 @@ export default function GenieEffect() {
         <span className="text-white/60 text-[11px] font-medium">9:41 AM</span>
       </div>
 
-      {/* Genie canvas — safe to SSR (just an empty <canvas>) */}
+      {/* Genie canvas: safe to SSR (just an empty <canvas>) */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
         style={{ width: "100%", height: "100%", zIndex: 30 }}
       />
 
-      {/* Live MacWindow — only renders when phase is open/closing, which can
+      {/* Live MacWindow: only renders when phase is open/closing, which can
           only happen post-mount, so no SSR concern. */}
       {(phase === "open" || phase === "closing") && app && (
         <MacWindow
@@ -1433,7 +1433,7 @@ export default function GenieEffect() {
         />
       )}
 
-      {/* Everything below is gated on `mounted` — server skips it entirely,
+      {/* Everything below is gated on `mounted`: server skips it entirely,
           client renders it after the first effect fires. */}
       {mounted && (
         <>

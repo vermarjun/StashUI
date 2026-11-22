@@ -1,0 +1,55 @@
+{
+ "name": "prompt-bar",
+ "title": "Prompt Bar",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "inputs",
+  "forms"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "PromptBar"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 4,
+ "flags": [
+  "canvas",
+  "motion",
+  "heavy",
+  "4 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useEffect, useRef, useState } from \"react\";\nimport PromptBar from \"@/components/ui/prompt-bar\";\n\nexport default function Demo() {\n  const [busy, setBusy] = useState(false);\n  const [sent, setSent] = useState<string | null>(null);\n  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  useEffect(() => () => {\n    if (timer.current) clearTimeout(timer.current);\n  }, []);\n\n  return (\n    <div className=\"flex min-h-[560px] w-full flex-col items-center justify-end gap-5 bg-background px-6 pb-14 pt-10\">\n      <div className=\"flex w-full max-w-[520px] flex-col gap-3 text-sm\">\n        <div className=\"self-end rounded-2xl rounded-br-md bg-muted px-4 py-2.5 text-foreground\">\n          How did September close compared to August?\n        </div>\n        <div className=\"max-w-[90%] text-muted-foreground\">\n          Revenue landed at $1.42M, up 8.3% month over month. Net churn dipped to 2.1%, the lowest since March.\n        </div>\n        {sent ? (\n          <div className=\"self-end rounded-2xl rounded-br-md bg-muted px-4 py-2.5 text-foreground\">{sent}</div>\n        ) : null}\n      </div>\n      <PromptBar\n        width={520}\n        placeholder=\"Ask about revenue, churn, anything\"\n        busy={busy}\n        onSend={text => {\n          setSent(text);\n          setBusy(true);\n          if (timer.current) clearTimeout(timer.current);\n          timer.current = setTimeout(() => setBusy(false), 2400);\n        }}\n        onStop={() => setBusy(false)}\n        onAttach={() => [\"q3-board-deck.pdf\"]}\n        onDictate={() => \"Break down churn by region for September\"}\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/prompt-bar.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/prompt-bar.json",
+ "preview": "https://stashui.vercel.app/c/prompt-bar",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

@@ -29,7 +29,7 @@ const steps = [
     step: 3,
     title: "Shipped",
     date: "Jun 12, 2024",
-    content: "Your package is on its way — tracking ID: 1Z999AA10123456784.",
+    content: "Your package is on its way: tracking ID: 1Z999AA10123456784.",
   },
   {
     step: 4,

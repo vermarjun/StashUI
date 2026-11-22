@@ -1,0 +1,50 @@
+{
+ "name": "call-chip",
+ "title": "Call Chip",
+ "category": "chat",
+ "categories": [
+  "chat",
+  "loaders"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "CallChip"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "3 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport CallChip, { type CallChipStatus } from \"./call-chip\";\n\nconst CYCLE: CallChipStatus[] = [\"running\", \"done\", \"running\", \"error\"];\n\nexport default function CallChipDemo() {\n  const [step, setStep] = useState(0);\n\n  useEffect(() => {\n    const id = window.setInterval(() => setStep((s) => (s + 1) % CYCLE.length), 2200);\n    return () => window.clearInterval(id);\n  }, []);\n\n  const status = CYCLE[step];\n\n  return (\n    <div className=\"flex min-h-[380px] w-full items-center justify-center bg-background p-8\">\n      <div className=\"flex w-full max-w-md flex-col gap-3 text-sm text-foreground\">\n        <p className=\"text-muted-foreground\">Running checks on the release branch…</p>\n        <CallChip icon=\"search\" name=\"grep\" argument={'\"TODO\" src/'} status=\"done\" size={15} />\n        <CallChip icon=\"file\" name=\"read\" argument=\"src/app/checkout.tsx\" status=\"done\" size={15} />\n        <CallChip icon=\"terminal\" name=\"bash\" argument=\"npm run test -- --ci\" status={status} expectedMs={1800} size={15} showTimer />\n        <CallChip icon=\"edit\" name=\"edit\" argument=\"src/lib/cart.ts\" status={status === \"done\" ? \"running\" : \"idle\"} size={15} />\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/call-chip.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/call-chip.json",
+ "preview": "https://stashui.vercel.app/c/call-chip",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

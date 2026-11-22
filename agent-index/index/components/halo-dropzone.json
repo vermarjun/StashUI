@@ -1,0 +1,55 @@
+{
+ "name": "halo-dropzone",
+ "title": "Halo Dropzone",
+ "category": "file-upload",
+ "categories": [
+  "file-upload",
+  "forms"
+ ],
+ "origin": "Cult UI",
+ "origin_short": "cult",
+ "exports": [
+  "DropzoneFileTypeGlyph",
+  "HaloDropzone",
+  "DropzoneUploadFileRow",
+  "DropzoneUploadFileList",
+  "FileTypePlaceholder"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 214,
+ "flags": [
+  "motion",
+  "214 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useCallback, useEffect, useState } from \"react\"\n\nimport {\n  DropzoneUploadFileList,\n  fileKey,\n  HaloDropzone,\n  type QueuedFile,\n} from \"./halo-dropzone\"\n\nfunction sampleFile(name: string, type: string, kb: number) {\n  return new File([new Uint8Array(kb * 1024)], name, { type })\n}\n\nexport default function HaloDropzoneDemo() {\n  const [queue, setQueue] = useState<QueuedFile[]>([])\n\n  // Seed a couple of realistic uploads so the list is visible on load.\n  useEffect(() => {\n    setQueue([\n      {\n        id: \"seed-1\",\n        file: sampleFile(\"q3-board-deck.pdf\", \"application/pdf\", 2380),\n        progress: 100,\n        done: true,\n      },\n      {\n        id: \"seed-2\",\n        file: sampleFile(\"launch-hero@2x.png\", \"image/png\", 1460),\n        progress: 18,\n        done: false,\n      },\n    ])\n  }, [])\n\n  const handleFiles = useCallback((files: File[]) => {\n    const stamp = Date.now()\n    setQueue((prev) => [\n      ...prev,\n      ...files.map((file, i) => ({\n        id: `${fileKey(file)}-${stamp}-${i}`,\n        file,\n        progress: 0,\n        done: false,\n      })),\n    ])\n  }, [])\n\n  const remove = useCallback((id: string) => {\n    setQueue((prev) => prev.filter((r) => r.id !== id))\n  }, [])\n\n  const hasActiveUploads = queue.some((r) => !r.done)\n\n  useEffect(() => {\n    if (!hasActiveUploads) return\n    const id = window.setInterval(() => {\n      setQueue((prev) =>\n        prev.map((row) => {\n          if (row.done) return row\n          const next = Math.min(100, row.progress + 1.5 + Math.random() * 3)\n          return next >= 100\n            ? { ...row, progress: 100, done: true }\n            : { ...row, progress: next }\n        })\n      )\n    }, 120)\n    return () => window.clearInterval(id)\n  }, [hasActiveUploads])\n\n  return (\n    <div className=\"flex w-full items-center justify-center p-8\">\n      <div className=\"w-full max-w-xl space-y-5\">\n        <HaloDropzone\n          accept=\"image/*,application/pdf,text/plain,application/json,text/markdown,.doc,.docx,.xlsx,.ppt,.pptx,.csv\"\n          formatHint=\"Images, PDF, Office docs, JSON or Markdown\"\n          multiple\n          onFiles={handleFiles}\n          showSuccessThumbnails={false}\n          successResetMs={4000}\n          translucent\n        />\n        <DropzoneUploadFileList className=\"w-full\" items={queue} onRemove={remove} />\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/cult-ui/halo-dropzone.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/halo-dropzone.json",
+ "preview": "https://stashui.vercel.app/c/halo-dropzone",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

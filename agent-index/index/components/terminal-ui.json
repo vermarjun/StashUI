@@ -1,0 +1,48 @@
+{
+ "name": "terminal-ui",
+ "title": "Terminal UI",
+ "category": "code",
+ "categories": [
+  "code",
+  "loaders"
+ ],
+ "origin": "UI Layouts",
+ "origin_short": "uil",
+ "exports": [
+  "NewIntroSequence"
+ ],
+ "npm_deps": [],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 3,
+ "flags": [
+  "pure",
+  "3 colors"
+ ],
+ "usage": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { NewIntroSequence } from \"./terminal-ui\"\n\nexport default function TerminalUiDemo() {\n  const [run, setRun] = useState(0)\n\n  return (\n    <div className=\"flex min-h-[520px] w-full items-center justify-center bg-background p-6\">\n      <div className=\"overflow-hidden rounded-xl border border-white/10 shadow-2xl\">\n        <div className=\"flex items-center gap-1.5 border-b border-white/10 bg-[#16151f] px-4 py-3\">\n          <span className=\"h-3 w-3 rounded-full bg-[#ff5f57]\" />\n          <span className=\"h-3 w-3 rounded-full bg-[#febc2e]\" />\n          <span className=\"h-3 w-3 rounded-full bg-[#28c840]\" />\n          <span className=\"ml-3 font-mono text-xs text-white/40\">~/onboarding: zsh</span>\n        </div>\n        <NewIntroSequence\n          key={run}\n          className=\"h-[400px] w-[560px]\"\n          onComplete={() => setTimeout(() => setRun((r) => r + 1), 2500)}\n        />\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/ui-layouts/terminal-ui.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/terminal-ui.json",
+ "preview": "https://stashui.vercel.app/c/terminal-ui",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

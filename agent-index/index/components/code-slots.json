@@ -1,0 +1,53 @@
+{
+ "name": "code-slots",
+ "title": "Code Slots",
+ "category": "auth",
+ "categories": [
+  "auth",
+  "inputs"
+ ],
+ "origin": "React Bits",
+ "origin_short": "rb",
+ "exports": [
+  "CodeSlots"
+ ],
+ "npm_deps": [
+  "@hugeicons/core-free-icons",
+  "@hugeicons/react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 5,
+ "flags": [
+  "motion",
+  "heavy",
+  "5 colors"
+ ],
+ "usage": "\"use client\";\n\nimport { useState } from \"react\";\nimport CodeSlots, { type CodeSlotsStatus } from \"./code-slots\";\n\nconst CORRECT = \"428193\";\n\nexport default function CodeSlotsDemo() {\n  const [status, setStatus] = useState<CodeSlotsStatus>(\"idle\");\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <div className=\"flex w-full max-w-md flex-col items-center rounded-2xl border border-border bg-card px-8 py-10 text-center\">\n        <h3 className=\"text-lg font-semibold text-foreground\">Check your inbox</h3>\n        <p className=\"mt-1.5 text-sm text-muted-foreground\">\n          We sent a 6-digit code to <span className=\"text-foreground\">maya@stashui.dev</span>\n        </p>\n        <div className=\"mt-8\">\n          <CodeSlots\n            length={6}\n            status={status}\n            onChange={() => setStatus(\"idle\")}\n            onComplete={code => setStatus(code === CORRECT ? \"success\" : \"error\")}\n          />\n        </div>\n        <p className=\"mt-6 text-xs text-muted-foreground\">\n          {status === \"success\"\n            ? \"Verified. Signing you in…\"\n            : status === \"error\"\n              ? \"That code didn’t match. Try again.\"\n              : \"Didn’t get it? Resend in 0:42\"}\n        </p>\n      </div>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/react-bits/code-slots.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/code-slots.json",
+ "preview": "https://stashui.vercel.app/c/code-slots",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

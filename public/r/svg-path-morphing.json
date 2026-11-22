@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "svg-path-morphing",
+  "title": "SVG Path Morphing",
+  "description": "A pause/play button whose two bars spring-morph into a play triangle by interpolating matching SVG paths.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/aceternity-ui/svg-path-morphing.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { motion } from \"motion/react\";\n\n// Both icons are built from two 4-point shapes (M, L, L, L, Z) so the path\n// command structure stays identical and motion can interpolate `d` smoothly.\n// The play triangle is split down its vertical midline into two quadrilaterals,\n// so each pause bar morphs into one half of the triangle.\nconst PAUSE = {\n  left: \"M5 5L9 5L9 19L5 19Z\",\n  right: \"M15 5L19 5L19 19L15 19Z\",\n} as const;\n\nconst PLAY = {\n  // top-left, top-mid, bottom-mid, bottom-left\n  left: \"M7 5L13 8.5L13 15.5L7 19Z\",\n  // top-mid, apex, apex, bottom-mid (two corners collapse to the apex)\n  right: \"M13 8.5L19 12L19 12L13 15.5Z\",\n} as const;\n\ntype SpringConfig = {\n  type: \"spring\";\n  stiffness?: number;\n  damping?: number;\n  mass?: number;\n  bounce?: number;\n  visualDuration?: number;\n};\n\nexport type SvgPathMorphingProps = {\n  size?: number;\n  strokeWidth?: number;\n  startPlaying?: boolean;\n  spring?: SpringConfig;\n  className?: string;\n};\n\nconst DEFAULT_SPRING: SpringConfig = {\n  type: \"spring\",\n  stiffness: 260,\n  damping: 26,\n  mass: 0.9,\n};\n\nexport function SvgPathMorphing({\n  size = 100,\n  strokeWidth = 1.5,\n  startPlaying = false,\n  spring = DEFAULT_SPRING,\n  className,\n}: SvgPathMorphingProps) {\n  const [isPlaying, setIsPlaying] = useState(startPlaying);\n  const target = isPlaying ? PLAY : PAUSE;\n\n  return (\n    <button\n      type=\"button\"\n      onClick={() => setIsPlaying((prev) => !prev)}\n      aria-label={isPlaying ? \"Pause\" : \"Play\"}\n      className={`group text-foreground ${className ?? \"\"}`}\n    >\n      <svg\n        width={size}\n        height={size}\n        viewBox=\"0 0 24 24\"\n        fill=\"currentColor\"\n        stroke=\"currentColor\"\n        strokeWidth={strokeWidth}\n        strokeLinejoin=\"round\"\n        strokeLinecap=\"round\"\n      >\n        <motion.path\n          animate={{ d: target.left }}\n          transition={spring}\n          initial={false}\n        />\n        <motion.path\n          animate={{ d: target.right }}\n          transition={spring}\n          initial={false}\n        />\n      </svg>\n    </button>\n  );\n}\n\nexport const controls = {\n  size: [100, 16, 120, 2],\n  strokeWidth: [1.5, 0, 4, 0.5],\n  startPlaying: false,\n  spring: { type: \"spring\", stiffness: 260, damping: 26, mass: 0.9 },\n};\n\nexport default function SvgPathMorphingDemo(props: SvgPathMorphingProps) {\n  return (\n    <div className=\"flex h-dvh w-full items-center justify-center bg-background\">\n      <SvgPathMorphing {...props} />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/svg-path-morphing.tsx"
+    }
+  ],
+  "categories": [
+    "Aceternity UI"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,54 @@
+{
+ "name": "bottom-navigation",
+ "title": "Bottom Navigation",
+ "category": "navigation",
+ "categories": [
+  "navigation",
+  "devices"
+ ],
+ "origin": "Animate UI",
+ "origin_short": "anim",
+ "exports": [
+  "BottomNavigation",
+  "BottomNavigationHighlight",
+  "BottomNavigationHighlightItem",
+  "BottomNavigationItem",
+  "BottomNavigationLabel",
+  "BottomNavigationAccessory"
+ ],
+ "npm_deps": [
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  BottomNavigation,\n  BottomNavigationHighlight,\n  BottomNavigationHighlightItem,\n  BottomNavigationAccessory,\n  BottomNavigationItem,\n  BottomNavigationLabel,\n} from \"./bottom-navigation\"\nimport { House, Plus, Search, User, Wallet } from \"lucide-react\"\n\nconst ITEMS = [\n  { value: \"home\", label: \"Home\", Icon: House },\n  { value: \"search\", label: \"Search\", Icon: Search },\n  { value: \"wallet\", label: \"Wallet\", Icon: Wallet },\n  { value: \"profile\", label: \"Profile\", Icon: User },\n]\n\nconst PAYMENTS = [\n  { name: \"Corner Bakery\", time: \"08:12\", amount: \"€4.60\" },\n  { name: \"Metro Transit\", time: \"09:30\", amount: \"€2.40\" },\n  { name: \"Maya Chen\", time: \"12:42\", amount: \"€18.00\" },\n  { name: \"Green Grocer\", time: \"14:05\", amount: \"€36.15\" },\n  { name: \"Hotel Lumen\", time: \"17:03\", amount: \"€256.73\" },\n  { name: \"City Gym\", time: \"18:21\", amount: \"€29.00\" },\n  { name: \"Book Nook\", time: \"19:18\", amount: \"€12.99\" },\n  { name: \"Trattoria Sole\", time: \"20:47\", amount: \"€52.92\" },\n  { name: \"Cinema Odeon\", time: \"21:15\", amount: \"€13.49\" },\n  { name: \"Night Taxi\", time: \"22:02\", amount: \"€15.80\" },\n]\n\n// Labels below the icons make wider items, beside them only the selected one.\nconst LAYOUT = {\n  below: \"w-[4.875rem] flex-col pt-[5px] data-[minimized]:w-12 data-[minimized]:pt-0\",\n  beside: \"px-5 data-[minimized]:w-12 data-[minimized]:px-0\",\n}\n\nexport default function BottomNavigationDemo({\n  scrollBehavior = \"minimize\",\n  labels = \"below\",\n  accessory = true,\n}: {\n  scrollBehavior?: \"none\" | \"hide\" | \"minimize\"\n  labels?: \"below\" | \"beside\" | \"none\"\n  accessory?: boolean | string\n}) {\n  const layout = LAYOUT[labels === \"below\" ? \"below\" : \"beside\"]\n  const showAccessory = String(accessory) === \"true\"\n  const [value, setValue] = React.useState(\"home\")\n  const [presses, setPresses] = React.useState(0)\n  const scrollRef = React.useRef<HTMLDivElement>(null)\n\n  return (\n    <div className=\"relative h-[440px] w-[420px] overflow-hidden rounded-[2rem] border bg-background shadow-sm\">\n      <div ref={scrollRef} className=\"h-full overflow-y-auto px-5 pt-6 pb-24\">\n        <p className=\"mb-3 text-xs font-medium tracking-wide text-muted-foreground uppercase\">\n          Today\n        </p>\n        <ul className=\"flex flex-col gap-4\">\n          {PAYMENTS.map((payment) => (\n            <li key={payment.name} className=\"flex items-center gap-3\">\n              <span className=\"flex size-9 items-center justify-center rounded-full bg-muted text-sm font-medium\">\n                {payment.name[0]}\n              </span>\n              <span className=\"flex flex-1 flex-col\">\n                <span className=\"text-sm font-medium\">{payment.name}</span>\n                <span className=\"text-xs text-muted-foreground\">\n                  {payment.time}\n                </span>\n              </span>\n              <span className=\"text-sm font-medium tabular-nums\">\n                {payment.amount}\n              </span>\n            </li>\n          ))}\n        </ul>\n      </div>\n      <div className=\"pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-background to-transparent\" />\n      <div className=\"pointer-events-none absolute inset-x-0 bottom-4 flex justify-center\">\n        <BottomNavigation\n          value={value}\n          onValueChange={setValue}\n          scrollBehavior={scrollBehavior}\n          scrollContainer={scrollRef}\n          aria-label=\"Main\"\n          className=\"pointer-events-auto flex items-center gap-2.5\"\n        >\n          <BottomNavigationHighlight className=\"absolute inset-x-0 inset-y-1 z-0 rounded-full bg-muted\">\n            <ul className=\"flex items-center rounded-full bg-background/80 px-1 shadow-lg ring-1 ring-border backdrop-blur\">\n              {ITEMS.map(({ value: item, label, Icon }) => (\n                <li key={item}>\n                  <BottomNavigationHighlightItem value={item}>\n                    <BottomNavigationItem value={item} asChild>\n                      <button\n                        type=\"button\"\n                        aria-label={label}\n                        className={`relative z-10 flex h-[3.875rem] items-center justify-center overflow-hidden rounded-full text-muted-foreground outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-ring/50 hover:text-foreground data-[minimized]:h-12 data-[state=active]:text-foreground ${layout}`}\n                      >\n                        <Icon size={22} className=\"shrink-0\" />\n                        {labels === \"below\" && (\n                          <BottomNavigationLabel className=\"pt-[5px] text-xs leading-4 font-medium\">\n                            {label}\n                          </BottomNavigationLabel>\n                        )}\n                        {labels === \"beside\" && (\n                          <BottomNavigationLabel\n                            show=\"active\"\n                            className=\"pl-2 text-sm font-medium\"\n                          >\n                            {label}\n                          </BottomNavigationLabel>\n                        )}\n                      </button>\n                    </BottomNavigationItem>\n                  </BottomNavigationHighlightItem>\n                </li>\n              ))}\n            </ul>\n          </BottomNavigationHighlight>\n          {showAccessory && (\n            <BottomNavigationAccessory\n              className=\"size-[3.875rem] rounded-full bg-background/80 p-1 shadow-lg ring-1 ring-border backdrop-blur data-[minimized]:size-12\"\n            >\n              <button\n                type=\"button\"\n                aria-label=\"New payment\"\n                onClick={() => setPresses((count) => count + 1)}\n                className=\"flex size-full items-center justify-center rounded-full text-muted-foreground outline-none transition-colors duration-300 ease-out hover:bg-muted hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n              >\n                <Plus size={22} className=\"transition-transform duration-300\" style={{ transform: `rotate(${presses * 90}deg)` }} />\n              </button>\n            </BottomNavigationAccessory>\n          )}\n        </BottomNavigation>\n      </div>\n    </div>\n  )\n}",
+ "usage_source": "demo",
+ "file": "registry/animate-ui/bottom-navigation.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/bottom-navigation.json",
+ "preview": "https://stashui.vercel.app/c/bottom-navigation",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

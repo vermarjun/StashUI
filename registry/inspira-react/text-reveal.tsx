@@ -15,7 +15,7 @@ interface TextRevealProps {
 
 /**
  * Splits children text into words and animates them up from below the overflow
- * boundary — equivalent to the GSAP SplitText + mask-lines reveal from the
+ * boundary: equivalent to the GSAP SplitText + mask-lines reveal from the
  * original Vue implementation.
  */
 export function TextReveal({

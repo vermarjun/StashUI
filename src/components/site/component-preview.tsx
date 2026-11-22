@@ -8,7 +8,7 @@ interface ComponentPreviewProps {
   className?: string;
   /** Viewport width the component renders at before being scaled to fit. */
   designWidth?: number;
-  /** Always active (detail page) — never deactivates. */
+  /** Always active (detail page): never deactivates. */
   eager?: boolean;
   /** Allow interacting with the component (detail page). Grid cards are not. */
   interactive?: boolean;
@@ -20,7 +20,7 @@ interface ComponentPreviewProps {
  * - Isolation: renders `/preview/<name>` in its own <iframe>; styles, portals,
  *   fixed elements, and listeners can't leak onto the gallery.
  * - Fit: the iframe is a fixed 1200×750 viewport, then transform-scaled to the
- *   card's measured width — so any component (tiny button → giant hero) fits the
+ *   card's measured width, so any component (tiny button → giant hero) fits the
  *   box at the right aspect ratio with no overflow.
  * - Compute: only mounted while in/near view; unmounts ~0.7s after leaving,
  *   stopping its animation/WebGL work.
@@ -108,7 +108,7 @@ export function ComponentPreview({
           )}
         />
       ) : (
-        // blends with the cell while loading/off-screen — no boxed outline
+        // blends with the cell while loading/off-screen: no boxed outline
         <div className="absolute inset-0 animate-pulse bg-white/[0.02]" />
       )}
     </div>

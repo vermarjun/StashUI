@@ -1,0 +1,51 @@
+{
+ "name": "changeable-pricing-section",
+ "title": "Changeable Pricing Section",
+ "category": "pricing",
+ "categories": [
+  "pricing",
+  "cards"
+ ],
+ "origin": "Watermelon UI",
+ "origin_short": "wate",
+ "exports": [
+  "ChangeablePricingSection"
+ ],
+ "npm_deps": [
+  "framer-motion",
+  "lucide-react"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 56,
+ "flags": [
+  "motion",
+  "56 colors"
+ ],
+ "usage": "import ChangeablePricingSection, {\n  type Plan,\n} from \"./changeable-pricing-section\";\n\nconst plans: Plan[] = [\n  {\n    id: \"starter\",\n    name: \"Starter\",\n    description: \"For solo makers shipping their first product.\",\n    priceMonthly: \"$12\",\n    priceYearly: \"$9\",\n    featuresLabel: \"Everything to get going\",\n    features: [\n      { text: \"Up to 3 projects\" },\n      { text: \"5 GB asset storage\" },\n      { text: \"Community support\", hasInfo: true },\n    ],\n  },\n  {\n    id: \"team\",\n    name: \"Team\",\n    description: \"Shared workspaces and reviews for small teams.\",\n    priceMonthly: \"$29\",\n    priceYearly: \"$24\",\n    badge: \"Popular\",\n    featuresLabel: \"Everything in Starter, plus\",\n    features: [\n      { text: \"Unlimited projects\" },\n      { text: \"Roles and permissions\", hasInfo: true },\n      { text: \"Version history for 90 days\" },\n      { text: \"Priority email support\" },\n    ],\n  },\n  {\n    id: \"enterprise\",\n    name: \"Enterprise\",\n    description: \"SSO, audit logs and a dedicated success manager.\",\n    priceMonthly: \"$79\",\n    priceYearly: \"$64\",\n    featuresLabel: \"Everything in Team, plus\",\n    features: [\n      { text: \"SAML single sign-on\" },\n      { text: \"Audit log export\", hasInfo: true },\n      { text: \"99.99% uptime SLA\" },\n    ],\n  },\n];\n\nexport default function ChangeablePricingSectionDemo() {\n  return (\n    <div className=\"flex min-h-[640px] w-full items-center justify-center p-6\">\n      <ChangeablePricingSection plans={plans} defaultPlanId=\"team\" />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/watermelon-ui/changeable-pricing-section.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/changeable-pricing-section.json",
+ "preview": "https://stashui.vercel.app/c/changeable-pricing-section",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

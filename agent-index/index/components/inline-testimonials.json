@@ -1,0 +1,50 @@
+{
+ "name": "inline-testimonials",
+ "title": "Inline Testimonials",
+ "category": "testimonials",
+ "categories": [
+  "testimonials",
+  "text"
+ ],
+ "origin": "SmoothUI",
+ "origin_short": "smoo",
+ "exports": [
+  "InlineTestimonials"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "motion"
+ ],
+ "registry_deps": [],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [
+  "motion"
+ ],
+ "usage": "\"use client\";\n\nimport InlineTestimonials, { type Testimonial } from \"./inline-testimonials\";\n\nconst TESTIMONIALS: Testimonial[] = [\n  {\n    avatar: \"https://i.pravatar.cc/120?img=32\",\n    id: \"sofia\",\n    name: \"Sofia Alvarez\",\n    quote:\n      \"We replaced three internal tools in a week. Our support queue dropped by a third before the end of the first month.\",\n    rating: 5,\n    role: \"Head of Ops, Northwind\",\n  },\n  {\n    avatar: \"https://i.pravatar.cc/120?img=12\",\n    id: \"daniel\",\n    name: \"Daniel Okafor\",\n    quote:\n      \"The API is the cleanest I've integrated this year. Two engineers, one sprint, and it was in production.\",\n    rating: 5,\n    role: \"CTO, Fieldnote\",\n  },\n  {\n    avatar: \"https://i.pravatar.cc/120?img=47\",\n    id: \"hana\",\n    name: \"Hana Sato\",\n    quote:\n      \"Finally a dashboard my finance team opens without being asked. The weekly digest alone paid for the plan.\",\n    rating: 4,\n    role: \"VP Finance, Kettle & Co\",\n  },\n];\n\nexport default function InlineTestimonialsDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center px-8 py-16\">\n      <InlineTestimonials\n        className=\"max-w-2xl text-2xl\"\n        testimonials={TESTIMONIALS}\n        text=\"Teams like {{sofia}} at Northwind cut their support queue by a third, engineers like {{daniel}} ship integrations in a single sprint, and finance leads like {{hana}} actually read the weekly numbers.\"\n      />\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/smooth-ui/inline-testimonials.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/inline-testimonials.json",
+ "preview": "https://stashui.vercel.app/c/inline-testimonials",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

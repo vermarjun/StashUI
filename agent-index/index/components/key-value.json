@@ -1,0 +1,61 @@
+{
+ "name": "key-value",
+ "title": "Key Value",
+ "category": "forms",
+ "categories": [
+  "forms",
+  "inputs",
+  "settings"
+ ],
+ "origin": "Dice UI",
+ "origin_short": "dice",
+ "exports": [
+  "KeyValueItemData",
+  "KeyValue",
+  "KeyValueAdd",
+  "KeyValueError",
+  "KeyValueItem",
+  "KeyValueKeyInput",
+  "KeyValueList",
+  "KeyValueRemove",
+  "KeyValueValueInput"
+ ],
+ "npm_deps": [
+  "lucide-react",
+  "radix-ui"
+ ],
+ "registry_deps": [
+  "button",
+  "input",
+  "textarea"
+ ],
+ "css": false,
+ "hardcoded_colors": 0,
+ "flags": [],
+ "usage": "\"use client\";\n\nimport {\n  KeyValue,\n  KeyValueAdd,\n  KeyValueItem,\n  KeyValueKeyInput,\n  KeyValueList,\n  KeyValueRemove,\n  KeyValueValueInput,\n} from \"./key-value\";\n\nconst defaultEnv = [\n  { id: \"db\", key: \"DATABASE_URL\", value: \"postgres://app:5432/orders\" },\n  { id: \"region\", key: \"AWS_REGION\", value: \"eu-west-1\" },\n  { id: \"sentry\", key: \"SENTRY_DSN\", value: \"https://4f2a@o812.ingest.io/77\" },\n];\n\nexport default function KeyValueDemo() {\n  return (\n    <div className=\"flex w-full max-w-xl flex-col gap-3\">\n      <div className=\"flex flex-col gap-1\">\n        <h3 className=\"text-sm font-semibold\">Environment variables</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Paste a .env file or add variables one by one.\n        </p>\n      </div>\n      <KeyValue defaultValue={defaultEnv}>\n        <KeyValueList>\n          <KeyValueItem>\n            <KeyValueKeyInput placeholder=\"KEY\" className=\"font-mono\" />\n            <KeyValueValueInput placeholder=\"value\" className=\"font-mono\" />\n            <KeyValueRemove />\n          </KeyValueItem>\n        </KeyValueList>\n        <KeyValueAdd />\n      </KeyValue>\n    </div>\n  );\n}",
+ "usage_source": "demo",
+ "file": "registry/dice-ui/key-value.tsx",
+ "install": "npx shadcn@latest add https://stashui.vercel.app/r/key-value.json",
+ "preview": "https://stashui.vercel.app/c/key-value",
+ "dupe_group": null,
+ "alternatives": [],
+ "blurb": "",
+ "description": "",
+ "use_when": "",
+ "avoid_when": "",
+ "a11y": "",
+ "props": [],
+ "traits": {
+  "trigger": [
+   "always"
+  ],
+  "motion": "none",
+  "affects": [
+   "fill"
+  ],
+  "tone": "minimal",
+  "theme": "both",
+  "needs_sized_parent": false
+ },
+ "slot_hints": []
+}

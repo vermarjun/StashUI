@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sparkles",
+  "title": "Sparkles",
+  "description": "A tsParticles sparkle field with density, size, speed, direction, hover-grab and click-to-burst options.",
+  "dependencies": [
+    "@tsparticles/engine",
+    "@tsparticles/react",
+    "@tsparticles/slim"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/ui-layouts/sparkles.tsx",
+      "content": "'use client';\n/* eslint-disable @typescript-eslint/no-explicit-any */\n\nimport { useId } from 'react';\nimport type { Engine, ISourceOptions } from '@tsparticles/engine';\nimport Particles, { ParticlesProvider } from '@tsparticles/react';\nimport { loadSlim } from '@tsparticles/slim';\n\n// @tsparticles/react v4 replaced initParticlesEngine with a provider whose\n// init callback must stay stable, so it lives at module scope.\nconst initEngine = async (engine: Engine) => {\n  await loadSlim(engine);\n};\n\ninterface SparklesProps {\n  className?: string;\n  size?: number;\n  minSize?: number | null;\n  density?: number;\n  speed?: number;\n  minSpeed?: number | null;\n  opacity?: number;\n  direction?: string;\n  opacitySpeed?: number;\n  minOpacity?: number | null;\n  color?: string;\n  mousemove?: boolean;\n  hover?: boolean;\n  background?: string;\n  options?: Record<string, any>; // Adjust type as needed based on `options` structure\n}\n\nexport function Sparkles({\n  className,\n  size = 1.2,\n  minSize = null,\n  density = 800,\n  speed = 1.5,\n  minSpeed = null,\n  opacity = 1,\n  direction = '',\n  opacitySpeed = 3,\n  minOpacity = null,\n  color = '#ffffff',\n  mousemove = false,\n  hover = false,\n  background = 'transparent',\n  options = {},\n}: SparklesProps) {\n  const id = useId();\n  const defaultOptions = {\n    background: {\n      color: {\n        value: background,\n      },\n    },\n    fullScreen: {\n      enable: false,\n      zIndex: 1,\n    },\n    fpsLimit: 300,\n\n    interactivity: {\n      events: {\n        onClick: {\n          enable: true,\n          mode: 'push',\n        },\n        onHover: {\n          enable: hover,\n          mode: 'grab',\n          parallax: {\n            enable: mousemove,\n            force: 60,\n            smooth: 10,\n          },\n        },\n        resize: true as any,\n      },\n      modes: {\n        push: {\n          quantity: 4,\n        },\n        repulse: {\n          distance: 200,\n          duration: 0.4,\n        },\n      },\n    },\n    particles: {\n      color: {\n        value: color,\n      },\n      move: {\n        enable: true,\n        direction,\n        speed: {\n          min: minSpeed || speed / 130,\n          max: speed,\n        },\n        straight: true,\n      },\n      collisions: {\n        absorb: {\n          speed: 2,\n        },\n        bounce: {\n          horizontal: {\n            value: 1,\n          },\n          vertical: {\n            value: 1,\n          },\n        },\n        enable: false,\n        maxSpeed: 50,\n        mode: 'bounce',\n        overlap: {\n          enable: true,\n          retries: 0,\n        },\n      },\n      number: {\n        value: density,\n      },\n      opacity: {\n        value: {\n          min: minOpacity || opacity / 10,\n          max: opacity,\n        },\n        animation: {\n          enable: true,\n          sync: false,\n          speed: opacitySpeed,\n        },\n      },\n      size: {\n        value: {\n          min: minSize || size / 1.5,\n          max: size,\n        },\n      },\n    },\n    detectRetina: true,\n  };\n  return (\n    <ParticlesProvider init={initEngine}>\n      <Particles\n        id={id}\n        options={{ ...defaultOptions, ...options } as unknown as ISourceOptions}\n        className={className}\n      />\n    </ParticlesProvider>\n  );\n}",
+      "type": "registry:component",
+      "target": "components/ui/sparkles.tsx"
+    }
+  ],
+  "categories": [
+    "UI Layouts"
+  ],
+  "type": "registry:component"
+}

@@ -14,7 +14,7 @@ import { CodeBlock, InstallCommand } from "@/components/site/code-block";
 import { CopyButton } from "@/components/site/copy-button";
 import { categoryConfig } from "@/lib/categories";
 
-// With ~2,000 components we don't prerender every detail page at build time —
+// With ~2,000 components we don't prerender every detail page at build time:
 // they render on-demand. (Flip this to return all names for a fully static export.)
 export function generateStaticParams(): { name: string }[] {
   return [];

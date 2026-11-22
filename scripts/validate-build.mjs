@@ -1,6 +1,6 @@
 // Ground-truth validation: bundle every demo with esbuild (real module
-// resolution + syntax). Any file that fails — and every component that
-// transitively imports it — is quarantined. One pass, converges.
+// resolution + syntax). Any file that fails, and every component that
+// transitively imports it: is quarantined. One pass, converges.
 //
 //   node scripts/validate-build.mjs           # report
 //   node scripts/validate-build.mjs --apply    # quarantine broken components
@@ -14,7 +14,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const apply = process.argv.includes("--apply");
 
 // Match Turbopack: only DIRECT dependencies are resolvable. Externalize those;
-// anything else (incl. transitive-only deps) errors — exactly as Next will.
+// anything else (incl. transitive-only deps) errors: exactly as Next will.
 const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
 const installed = new Set([
   ...Object.keys(pkg.dependencies || {}),
@@ -39,7 +39,7 @@ for (const item of registry.items) {
 }
 
 // Packages we BUNDLE (so esbuild verifies their named exports) instead of
-// externalizing — these are where vendor components hit export mismatches.
+// externalizing: these are where vendor components hit export mismatches.
 const VERIFY = new Set([
   "lucide-react",
   "@tsparticles/react",
@@ -165,11 +165,11 @@ console.log(`Broken components: ${broken.length} / ${registry.items.length}`);
 if (errors.length)
   console.log(
     "\nSample errors:\n" +
-      errors.slice(0, 12).map((e) => `  ${e.location?.file || "?"} — ${e.text}`).join("\n"),
+      errors.slice(0, 12).map((e) => `  ${e.location?.file || "?"}: ${e.text}`).join("\n"),
   );
 
 if (apply && broken.length) {
-  // Keep the components listed (code + install + attribution) — only remove the
+  // Keep the components listed (code + install + attribution): only remove the
   // broken demo so it no longer enters the compile graph. Shows "No preview".
   const set = new Set(broken);
   let del = 0;

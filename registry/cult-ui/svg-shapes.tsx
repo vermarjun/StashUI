@@ -46,7 +46,7 @@ export interface CrosshairReticleSvgProps extends ShapeSvgProps {
 /* ------------------------------------------------------------------ */
 
 /**
- * Shape: equilateral triangle — point at top center, flat base.
+ * Shape: equilateral triangle: point at top center, flat base.
  */
 export function TriangleShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
   return (
@@ -97,7 +97,7 @@ export function EllipseShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
 }
 
 /**
- * Panel: semicircle / D-shape — flat left side, arc on the right. Flip horizontally for the opposite.
+ * Panel: semicircle / D-shape: flat left side, arc on the right. Flip horizontally for the opposite.
  */
 export function SemicircleShapeSvg({
   className,
@@ -121,7 +121,7 @@ export function SemicircleShapeSvg({
 /* ------------------------------------------------------------------ */
 
 /**
- * Shape: right triangle — right angle at bottom-left, hypotenuse from top-left to bottom-right.
+ * Shape: right triangle: right angle at bottom-left, hypotenuse from top-left to bottom-right.
  */
 export function RightTriangleShapeSvg({
   className,
@@ -141,7 +141,7 @@ export function RightTriangleShapeSvg({
 }
 
 /**
- * Shape: kite — diamond variant, taller above center than below.
+ * Shape: kite: diamond variant, taller above center than below.
  * Top vertex at y=2, bottom at y=750, left/right at y=350.
  */
 export function KiteShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
@@ -159,7 +159,7 @@ export function KiteShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
 }
 
 /**
- * Shape: pennant / tapered flag — rectangle on the left that tapers to a point on the right.
+ * Shape: pennant / tapered flag: rectangle on the left that tapers to a point on the right.
  */
 export function PennantShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
   return (
@@ -180,7 +180,7 @@ export function PennantShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
 /* ------------------------------------------------------------------ */
 
 /**
- * Shape: rounded square — uniform large corner radius (rx=80).
+ * Shape: rounded square: uniform large corner radius (rx=80).
  */
 export function RoundedSquareShapeSvg({
   className,
@@ -207,7 +207,7 @@ export function RoundedSquareShapeSvg({
 }
 
 /**
- * Shape: rounded triangle — equilateral triangle with heavily rounded corners (~60px radius beziers).
+ * Shape: rounded triangle: equilateral triangle with heavily rounded corners (~60px radius beziers).
  */
 export function RoundedTriangleShapeSvg({
   className,
@@ -239,7 +239,7 @@ export function RoundedTriangleShapeSvg({
 }
 
 /**
- * Shape: squircle / superellipse — the iOS icon shape, between a circle and a rounded square.
+ * Shape: squircle / superellipse: the iOS icon shape, between a circle and a rounded square.
  * Uses cubic beziers to approximate a superellipse (n≈4).
  */
 export function SquircleShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
@@ -283,7 +283,7 @@ export function SquircleShapeSvg({ className, flip = "none" }: ShapeSvgProps) {
 /* ------------------------------------------------------------------ */
 
 /**
- * Panel: gothic / pointed arch — rectangular body with a pointed arch top (two curved sides meeting at a peak).
+ * Panel: gothic / pointed arch: rectangular body with a pointed arch top (two curved sides meeting at a peak).
  */
 export function GothicArchPanelSvg({
   className,
@@ -309,7 +309,7 @@ export function GothicArchPanelSvg({
 }
 
 /**
- * Shape: quarter circle / fan — a 90° wedge anchored at bottom-left corner.
+ * Shape: quarter circle / fan: a 90° wedge anchored at bottom-left corner.
  */
 export function QuarterCircleShapeSvg({
   className,
@@ -333,7 +333,7 @@ export function QuarterCircleShapeSvg({
 /* ------------------------------------------------------------------ */
 
 /**
- * Shape: single bracket — a rectangular C-shaped bracket open on the right, used as a side accent.
+ * Shape: single bracket: a rectangular C-shaped bracket open on the right, used as a side accent.
  * Bracket arms are 400px long, spine is full height.
  */
 export function SingleBracketShapeSvg({
@@ -357,7 +357,7 @@ export function SingleBracketShapeSvg({
 }
 
 /**
- * Shape: arrow / pentagon — flat left edge, pointed right edge. Like a flowchart arrow block.
+ * Shape: arrow / pentagon: flat left edge, pointed right edge. Like a flowchart arrow block.
  */
 export function ArrowPentagonShapeSvg({
   className,
@@ -398,7 +398,7 @@ export function VesicaPiscisSvg({ className, flip = "none" }: ShapeSvgProps) {
       viewBox="0 0 2400 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Vesica Piscis — two overlapping circles</title>
+      <title>Vesica Piscis: two overlapping circles</title>
       <circle cx={cx - offset} cy={cy} r={r} stroke="currentColor" />
       <circle cx={cx + offset} cy={cy} r={r} stroke="currentColor" />
     </svg>
@@ -427,7 +427,7 @@ export function SeedOfLifeSvg({ className, flip = "none" }: ShapeSvgProps) {
       viewBox="0 0 2400 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Seed of Life — seven overlapping circles</title>
+      <title>Seed of Life: seven overlapping circles</title>
       <circle cx={cx} cy={cy} r={r} stroke="currentColor" />
       {petals.map((p) => (
         <circle
@@ -481,7 +481,7 @@ export function FlowerOfLifeSvg({ className, flip = "none" }: ShapeSvgProps) {
       viewBox="0 0 2400 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Flower of Life — 19 overlapping circles</title>
+      <title>Flower of Life: 19 overlapping circles</title>
       <circle cx={cx} cy={cy} r={outerR} stroke="currentColor" />
       {allCircles.map((p) => (
         <circle
@@ -543,7 +543,7 @@ export function MetatronsCubeSvg({ className, flip = "none" }: ShapeSvgProps) {
       viewBox="0 0 2400 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Metatron&apos;s Cube — 13 circles connected by lines</title>
+      <title>Metatron&apos;s Cube: 13 circles connected by lines</title>
       {lines.map((l) => (
         <line
           key={`mline-${l.x1}-${l.y1}-${l.x2}-${l.y2}`}
@@ -605,7 +605,7 @@ export function SriYantraSvg({ className, flip = "none" }: ShapeSvgProps) {
       viewBox="0 0 2400 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Sri Yantra — nine interlocking triangles</title>
+      <title>Sri Yantra: nine interlocking triangles</title>
       {/* Outer circles */}
       <circle cx={cx} cy={cy} r={outerR + 20} stroke="currentColor" />
       <circle cx={cx} cy={cy} r={outerR + 35} stroke="currentColor" />
@@ -637,11 +637,11 @@ export function SriYantraSvg({ className, flip = "none" }: ShapeSvgProps) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  6. Platonic Solids — Wireshape 2D Projections                     */
+/*  6. Platonic Solids: Wireshape 2D Projections                     */
 /*  All five solids as flat orthographic projections.                  */
 /* ------------------------------------------------------------------ */
 
-/** Tetrahedron — 4 vertices, 6 edges. Projected as triangle with center. */
+/** Tetrahedron: 4 vertices, 6 edges. Projected as triangle with center. */
 export function TetrahedronWireshapeSvg({
   className,
   flip = "none",
@@ -686,7 +686,7 @@ export function TetrahedronWireshapeSvg({
   )
 }
 
-/** Cube (Hexahedron) — projected as nested squares rotated 45°. */
+/** Cube (Hexahedron): projected as nested squares rotated 45°. */
 export function CubeWireshapeSvg({ className, flip = "none" }: ShapeSvgProps) {
   const cx = 1200
   const cy = 500
@@ -734,7 +734,7 @@ export function CubeWireshapeSvg({ className, flip = "none" }: ShapeSvgProps) {
   )
 }
 
-/** Octahedron — 6 vertices, projected as a square with both diagonals and a center diamond. */
+/** Octahedron: 6 vertices, projected as a square with both diagonals and a center diamond. */
 export function OctahedronWireshapeSvg({
   className,
   flip = "none",
@@ -782,7 +782,7 @@ export function OctahedronWireshapeSvg({
   )
 }
 
-/** Icosahedron — 12 vertices, 30 edges. Simplified front-face projection. */
+/** Icosahedron: 12 vertices, 30 edges. Simplified front-face projection. */
 export function IcosahedronWireshapeSvg({
   className,
   flip = "none",
@@ -875,7 +875,7 @@ export function IcosahedronWireshapeSvg({
   )
 }
 
-/** Dodecahedron — 20 vertices, 30 edges. Projected as nested pentagons. */
+/** Dodecahedron: 20 vertices, 30 edges. Projected as nested pentagons. */
 export function DodecahedronWireshapeSvg({
   className,
   flip = "none",
@@ -1065,7 +1065,7 @@ export function TorusTubeSvg({ className, flip = "none" }: ShapeSvgProps) {
       viewBox="0 0 2400 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Tube torus — overlapping rings</title>
+      <title>Tube torus: overlapping rings</title>
       {/* Outer boundary ellipse */}
       <ellipse
         cx={cx}
