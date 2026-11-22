@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>StashUI proposal</title>
+<!--
+  The page a person approves before an agent builds anything.
+  The whole plan travels in the URL after the #, so nothing is stored anywhere
+  and the link can be shared. Everything is rendered with textContent: a plan is
+  untrusted input written by an agent.
+-->
+<style>
+  :root { --bg:#0a0a0a; --fg:#f4f4f5; --muted:#a1a1aa; --line:#27272a; --card:#111113; --ok:#fafafa; }
+  @media (prefers-color-scheme: light) { :root { --bg:#fafafa; --fg:#18181b; --muted:#52525b; --line:#e4e4e7; --card:#fff; --ok:#18181b; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:1080px; margin:0 auto; padding:40px 20px 140px; }
+  h1 { font-size:28px; letter-spacing:-.02em; margin:0 0 6px; }
+  .direction { color:var(--muted); margin:0 0 20px; max-width:70ch; }
+  .tabs { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 24px; }
+  .tab { border:1px solid var(--line); background:none; color:var(--muted); padding:8px 14px; border-radius:999px; font:inherit; cursor:pointer; }
+  .tab[aria-selected=true] { color:var(--bg); background:var(--fg); border-color:var(--fg); }
+  .swatches { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 28px; }
+  .swatch { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); }
+  .swatch i { width:22px; height:22px; border-radius:6px; border:1px solid var(--line); display:block; }
+  section { border-top:1px solid var(--line); padding:26px 0; }
+  .slot { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+  .options { display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:14px; align-items:start; }
+  .alts { display:grid; gap:14px; }
+  label.opt { display:block; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--card); cursor:pointer; position:relative; }
+  label.opt:has(input:checked) { border-color:var(--ok); box-shadow:0 0 0 1px var(--ok); }
+  label.opt:has(input:focus-visible) { outline:2px solid var(--ok); outline-offset:2px; }
+  label.opt input { position:absolute; opacity:0; }
+  video { display:block; width:100%; aspect-ratio:8/5; object-fit:cover; background:#000; }
+  .meta { display:flex; justify-content:space-between; gap:10px; padding:9px 12px; font-size:13px; }
+  .meta a { color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+  .tag { color:var(--muted); }
+  .why { margin:12px 0 0; max-width:70ch; }
+  .build { margin:8px 0 0; color:var(--muted); max-width:70ch; }
+  .bar { position:fixed; left:0; right:0; bottom:0; background:color-mix(in srgb, var(--bg) 92%, transparent); border-top:1px solid var(--line); backdrop-filter:blur(8px); }
+  .bar div { max-width:1080px; margin:0 auto; padding:12px 20px; display:flex; gap:10px; align-items:center; }
+  .bar input { flex:1; min-width:0; background:var(--card); border:1px solid var(--line); color:var(--fg); border-radius:10px; padding:10px 12px; font:inherit; }
+  .bar button { background:var(--fg); color:var(--bg); border:0; border-radius:10px; padding:10px 16px; font:inherit; font-weight:600; cursor:pointer; white-space:nowrap; }
+  .empty { color:var(--muted); padding:80px 0; }
+  @media (max-width:720px) { .options { grid-template-columns:1fr; } .alts { grid-template-columns:1fr 1fr; } .bar div { flex-wrap:wrap; } }
+</style>
+</head>
+<body>
+<main id="app"><p class="empty">This link carries no plan. Ask your agent to run <code>stashui propose plan.json</code> again.</p></main>
+<div class="bar" hidden><div>
+  <input id="note" placeholder="Anything to change? (optional)" aria-label="Note for the agent">
+  <button id="copy">Copy my decision</button>
+</div></div>
+<script>
+(() => {
+  let plan;
+  try {
+    const b64 = location.hash.slice(1).replace(/-/g, "+").replace(/_/g, "/");
+    plan = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))));
+  } catch { return; }
+  const directions = Array.isArray(plan.directions) && plan.directions.length ? plan.directions : [plan];
+  const app = document.getElementById("app"), bar = document.querySelector(".bar");
+  const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+  const safe = (name) => encodeURIComponent(String(name));
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;   // then: poster and controls, no autoplay
+  let current = 0;
+
+  function option(name, group, checked, tag) {
+    const wrap = el("label", "opt");
+    const radio = Object.assign(el("input"), { type: "radio", name: group, value: name, checked });
+    const video = Object.assign(el("video"), { muted: true, loop: true, playsInline: true, autoplay: !still, controls: still, preload: "metadata",
+      poster: `/previews/${safe(name)}.jpg`, src: `/previews/${safe(name)}.mp4` });
+    const meta = el("div", "meta");
+    const left = el("span", null, name); if (tag) left.append(" ", el("span", "tag", tag));
+    const link = Object.assign(el("a", null, "open live"), { href: `/c/${safe(name)}`, target: "_blank", rel: "noopener" });
+    meta.append(left, link);
+    wrap.append(radio, video, meta);
+    return wrap;
+  }
+
+  function render() {
+    const d = directions[current];
+    app.replaceChildren();
+    app.append(el("h1", null, plan.title || "Proposal"));
+    if (directions.length > 1) {
+      const tabs = el("div", "tabs"); tabs.setAttribute("role", "tablist");
+      directions.forEach((x, i) => {
+        const t = el("button", "tab", x.name || `Direction ${i + 1}`);
+        t.setAttribute("role", "tab"); t.setAttribute("aria-selected", String(i === current));
+        t.onclick = () => { current = i; render(); };
+        tabs.append(t);
+      });
+      app.append(tabs);
+    }
+    app.append(el("p", "direction", [d.idea, d.direction || plan.direction].filter(Boolean).join(" ")));
+    const tokens = d.tokens || plan.tokens;
+    if (tokens && typeof tokens === "object") {
+      const row = el("div", "swatches");
+      for (const [k, v] of Object.entries(tokens)) {
+        if (typeof v !== "string" || !CSS.supports("color", v)) continue;
+        const s = el("span", "swatch"), chip = el("i"); chip.style.background = v;
+        s.append(chip, document.createTextNode(`${k} ${v}`)); row.append(s);
+      }
+      app.append(row);
+    }
+    (d.slots || []).forEach((slot, i) => {
+      const sec = el("section");
+      sec.append(el("p", "slot", slot.slot || `Section ${i + 1}`));
+      const grid = el("div", "options"), group = `slot-${current}-${i}`;
+      grid.append(option(slot.pick, group, true, "agent's pick"));
+      const alts = (slot.alternatives || []).slice(0, 3);
+      if (alts.length) { const col = el("div", "alts"); alts.forEach((a) => col.append(option(a, group, false))); grid.append(col); }
+      sec.append(grid);
+      if (slot.why) sec.append(el("p", "why", slot.why));
+      if (slot.build) sec.append(el("p", "build", `Built by hand: ${slot.build}`));
+      app.append(sec);
+    });
+    bar.hidden = false;
+  }
+
+  document.getElementById("copy").onclick = async (e) => {
+    const d = directions[current], lines = [];
+    if (directions.length > 1) lines.push(`Direction: ${d.name || current + 1}.`);
+    (d.slots || []).forEach((slot, i) => {
+      const chosen = document.querySelector(`input[name="slot-${current}-${i}"]:checked`)?.value || slot.pick;
+      lines.push(`${slot.slot}: ${chosen}${chosen !== slot.pick ? ` (instead of ${slot.pick})` : ""}`);
+    });
+    const note = document.getElementById("note").value.trim();
+    const text = `Approved. Build it with these.\n${lines.join("\n")}${note ? `\nAlso: ${note}` : ""}`;
+    try { await navigator.clipboard.writeText(text); e.target.textContent = "Copied. Paste it to your agent."; }
+    catch { prompt("Copy this and paste it to your agent:", text); }
+  };
+  render();
+})();
+</script>
+</body>
+</html>

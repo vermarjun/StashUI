@@ -11,13 +11,16 @@
     "import": "node scripts/import-lib.mjs",
     "registry:gen": "node scripts/build-registry.mjs",
     "registry:build": "shadcn build",
-    "registry": "node scripts/build-registry.mjs && shadcn build && npm run index",
+    "registry": "node scripts/build-registry.mjs && shadcn build && npm run index && npm run agent",
     "previews": "node scripts/build-previews.mjs",
     "encode": "node scripts/encode-previews.mjs",
     "capture": "node scripts/capture-preview.mjs",
     "capture:category": "node scripts/capture-category.mjs",
     "index": "python3 agent-index/scripts/extract_records.py && python3 agent-index/scripts/merge_records.py && python3 agent-index/scripts/build_index.py",
-    "mcp:build": "npm --prefix mcp run build"
+    "agent": "node agent/pipeline/build.mjs",
+    "agent:tiles": "python3 agent/pipeline/tiles.py",
+    "agent:dev": "node agent/dev-server.mjs",
+    "agent:test": "node --test agent/test/"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
