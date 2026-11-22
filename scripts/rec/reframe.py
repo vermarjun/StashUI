@@ -264,3 +264,8 @@ if __name__ == "__main__":
     json.dump(log, open(log_path, "w"), indent=1)
     bad = [n for n in names if not log.get(n, {}).get("ok", DRY)]
     print(f"done {len(names)}  failed {len(bad)} {bad[:10]}")
+    if not DRY:
+        # refresh the hi/md/lo renditions + poster/lq webps from the new masters
+        # (incremental: only clips whose master changed get re-encoded)
+        import subprocess
+        subprocess.run(["node", os.path.join(ROOT, "scripts", "encode-previews.mjs"), *names])

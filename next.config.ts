@@ -24,6 +24,26 @@ const nextConfig: NextConfig = {
   // Hide the dev indicator so it doesn't show inside every preview iframe.
   devIndicators: false,
 
+  async headers() {
+    return [
+      // Grid clips + posters are requested with ?v=<content hash> (see
+      // scripts/build-previews.mjs), so a versioned URL never changes and the
+      // browser can keep it forever without even revalidating.
+      {
+        source: "/previews/:path*",
+        has: [{ type: "query", key: "v" }],
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      // The service worker must always be fresh so updates roll out.
+      {
+        source: "/sw.js",
+        headers: [{ key: "Cache-Control", value: "no-cache" }],
+      },
+    ];
+  },
+
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/site/site-header";
 import { siteConfig } from "@/lib/site";
+import { ServiceWorker } from "@/components/site/service-worker";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,6 +52,7 @@ export default function MainLayout({
             <SiteHeader />
             <div className="flex-1">{children}</div>
             <Toaster position="bottom-right" />
+            <ServiceWorker />
           </TooltipProvider>
         </ThemeProvider>
       </body>

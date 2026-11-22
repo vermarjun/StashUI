@@ -161,7 +161,7 @@ ffmpeg("mp4", [
 ]);
 // Poster: seek to mid-clip (where reveal/typing animations have played out and
 // content is fully on screen), then let `thumbnail` pick the best nearby frame
-// — so the poster is never the faint pre-reveal frame 0.
+//, so the poster is never the faint pre-reveal frame 0.
 function probeDuration(file) {
   const r = spawnSync(
     "ffprobe",
@@ -177,6 +177,11 @@ ffmpeg("poster", [
 ]);
 
 if (!keep) rmSync(tmp, { recursive: true, force: true });
+
+// Bandwidth renditions (hi/md/lo) + poster/lq webps the grid actually serves.
+spawnSync(process.execPath, [join(root, "scripts", "encode-previews.mjs"), name], {
+  stdio: "inherit",
+});
 
 const { statSync } = await import("node:fs");
 const kb = (p) => Math.round(statSync(p).size / 1024);

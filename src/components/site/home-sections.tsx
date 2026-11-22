@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { ComponentCard } from "@/components/site/component-card";
 import { categoryConfig } from "@/lib/categories";
+import { getPreview } from "@/__registry__/previews.gen";
+import { warmPosters } from "@/lib/preview-quality";
 import type { ComponentMeta } from "@/__registry__/meta.gen";
 
 export interface HomeSection {
@@ -19,7 +21,7 @@ const PAGE = 5;
 
 /**
  * The "all components" rows: one horizontal preview row per category, with
- * infinite scroll over the CATEGORIES — only a handful of rows render at first,
+ * infinite scroll over the CATEGORIES: only a handful of rows render at first,
  * and more categories appear as you reach the bottom. Combined with the
  * deactivate-when-offscreen previews, the page stays light no matter how many
  * shader-heavy components exist.
@@ -43,6 +45,15 @@ export function HomeSections({ sections }: { sections: HomeSection[] }) {
     io.observe(el);
     return () => io.disconnect();
   }, [hasMore, visible.length]);
+
+  // While the user reads the rows on screen, fetch the posters of the next
+  // batch of categories so they appear fully painted when loaded.
+  React.useEffect(() => {
+    const next = sections.slice(limit, limit + PAGE).flatMap((s) =>
+      s.items.slice(0, ROW_SIZE).map((m) => ({ name: m.name, ...getPreview(m.name) })),
+    );
+    warmPosters(next.filter((n) => n.hasVideo));
+  }, [sections, limit]);
 
   return (
     <div>
