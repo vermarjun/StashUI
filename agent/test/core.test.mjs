@@ -12,7 +12,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 process.env.STASHUI_PUBLIC = join(ROOT, "public");
 const { compose, layout, sheetTokens, encodeSpec, decodeSpec, SHEET_W, SHEET_MAX_H } = await import("../core/sheet.mjs");
 const { catalog } = await import("../core/catalog.mjs");
-const { call, TOOLS } = await import("../core/tools.mjs");
+const { call, callWithMeaning, TOOLS } = await import("../core/tools.mjs");
 const { handleMcp } = await import("../core/mcp.mjs");
 const { handle } = await import("../core/http.mjs");
 const { kindsIn, rank } = await import("../core/search.mjs");
@@ -78,11 +78,62 @@ test("search routes a plain sentence to the kind it names, and filters hold", ()
   for (const n of rank({ query: "glow", kind: "button" }).names) assert.equal(cat.byName.get(n).kind, "button");
 });
 
-test("ranking: plain requests land on the right kind of thing", async () => {
-  const { evaluate } = await import("./search.eval.mjs");
-  const { kindRecall, namedHit } = evaluate();
-  assert.ok(kindRecall >= 0.9, `right kind on page one: ${(kindRecall * 100).toFixed(0)}%`);
-  assert.ok(namedHit >= 0.9, `named component in top five: ${(namedHit * 100).toFixed(0)}%`);
+test("hard limits drop what breaks them", () => {
+  const names = (avoid) => rank({ query: "", kind: "background", avoid }).names.map((n) => cat.byName.get(n));
+  const all = names([]), limited = names(["webgl", "motion", "heavy"]);
+  assert.ok(limited.length > 0 && limited.length < all.length);
+  for (const it of limited) {
+    assert.ok(!(it.technique || []).some((t) => t === "webgl-shader" || t === "three-js"), `${it.name} uses WebGL`);
+    assert.ok(it.motion !== "continuous" && it.motion !== "pronounced", `${it.name} moves: ${it.motion}`);
+    assert.notEqual(it.weight, "heavy");
+  }
+  for (const n of rank({ query: "", kind: "button", avoid: ["hover"] }).names) assert.ok(!cat.byName.get(n).trigger.every((t) => t === "hover" || t === "pointer-move"));
+  assert.match(call("search", { query: "x", avoid: ["nope"] }).text, /Unknown limit "nope".*motion, webgl, heavy, hover, hardcoded/);
+});
+
+test("ranking: the agent's search finds what a plain request meant", async () => {
+  const { evaluate } = await import("./agent.eval.mjs");
+  const e = await evaluate();
+  // with the embedding model: 37 of 37 on page one, 34 in the top five. Words alone: 35 and 31.
+  const [page, top5] = e.withMeaning ? [35, 32] : [32, 28];
+  assert.ok(e.page >= page, `intended component on page one: ${e.page} of ${e.total} (${e.withMeaning ? "words + meaning" : "words only"})`);
+  assert.ok(e.top5 >= top5, `intended component in the top five: ${e.top5} of ${e.total}`);
+  assert.ok(e.kindRecall >= 0.8, `right kind on page one: ${(e.kindRecall * 100).toFixed(0)}%`);
+});
+
+test("search shows what matches, counts it honestly, and says so when nothing does", async () => {
+  const { meaning } = await import("../core/semantic.mjs");
+  const on = !!(await meaning("navbar"));
+  const real = await callWithMeaning("search", { query: "box you open with ctrl k to jump anywhere" });
+  const first = real.text.split("\n")[0];
+  assert.match(first, /· \d+ matches · page 1 of \d+$|· best 48 of \d+ matches · page 1 of 4$/);
+  assert.ok(!/· 48 matches|best 48/.test(first), `a seven-word description should not match 48 components: ${first}`);
+  if (on) assert.ok(real.sheet.cells.some((c) => c.name === "command"), "the command palette is on page one");
+  const junk = await callWithMeaning("search", { query: "zxqv plorb" });
+  if (on) {                                                         // nothing matches: the nearest twelve, labelled as such
+    assert.match(junk.text.split("\n")[0], /no close match, 12 nearest shown/);
+    assert.match(junk.text, /Nothing matches this well/);
+    assert.equal(junk.sheet.cells.length, 12);
+  } else assert.ok(!junk.sheet && /no matches/.test(junk.text));
+  // an exact kind is the agent's own constraint: every component of that kind is a match
+  const kind = await callWithMeaning("search", { query: "glow", kind: "button" });
+  assert.match(kind.text.split("\n")[0], /· kind button · /);
+  // the sync path (the model failed to load) answers in the same shape
+  assert.match(call("search", { query: "navbar with links" }).text.split("\n")[0], /read as site-header/);
+});
+
+test("like ranks what reads and looks like the chosen component", async () => {
+  const { similar } = await import("../core/semantic.mjs");
+  const sim = similar("comp-578");
+  if (sim) {                                                        // needs only the stored vectors, not the model
+    assert.ok(!sim.has("comp-578") && sim.size === cat.items.length - 1);
+    const nearest = [...sim.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([n]) => cat.byName.get(n).kind);
+    assert.ok(nearest.filter((k) => k === "site-header").length >= 5, `nearest to a navbar: ${nearest.join(", ")}`);
+  }
+  const out = call("search", { query: "navbar", like: "comp-578" });
+  assert.match(out.text.split("\n")[0], /like comp-578/);
+  assert.ok(!out.sheet.cells.some((c) => c.name === "comp-578"), "the model component is not offered back");
+  assert.ok(out.sheet.cells.filter((c) => cat.byName.get(c.name).kind === "site-header").length >= 9);
 });
 
 test("operations fail in words an agent can act on", () => {
@@ -92,6 +143,16 @@ test("operations fail in words an agent can act on", () => {
   assert.ok(call("search", { query: "x", kind: "nope" }).isError);
   assert.ok(call("nope", {}).isError);
   assert.ok(!call("search", { query: "zzzzqqqq xkcdfoo" }).sheet);
+});
+
+test("view says what the recording is worth", () => {
+  const text = (name) => call("view", { name }).text;
+  const full = cat.items.find((i) => i.film?.length === 6 && !i.render);
+  assert.match(text(full.name), /Frames 1-6 are .* Frame [1-6] shows it best\./);
+  assert.match(text("comp-578"), /^Looks: /m);
+  assert.match(text("comp-578"), /^Demo content to replace: /m);
+  const bad = cat.items.find((i) => i.render && i.film?.length);
+  if (bad) assert.match(text(bad.name), /The recording is (partial|blank|broken)/);
 });
 
 test("view shows six frames numbered 1 to 6, and add returns one command", () => {

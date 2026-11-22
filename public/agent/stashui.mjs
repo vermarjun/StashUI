@@ -19,8 +19,9 @@ const SELF = fileURLToPath(import.meta.url);
 const HELP = `stashui: find, see and install UI components
 
   stashui browse [kind…]            what exists; with up to 4 kinds, one image of the best five of each
-  stashui search <what it must do>  one image of numbered matches, plus a line per number
-      --kind K  --page N  --dense  --clean  --like NAME  --theme dark|light  --accent HUE  --no-context
+  stashui search <describe it>      one image of numbered matches, plus a line per number
+      --kind K  --like NAME  --avoid motion,webgl,heavy,hover,hardcoded  --clean  --page N  --dense
+      --theme dark|light  --accent HUE  --no-context
   stashui view <name>               six frames of one component in motion, with props and cost
   stashui board <name…>             your picks together in one image   --labels header,hero,…
   stashui code <name>               source, for a component you are about to modify
@@ -39,7 +40,7 @@ for (let i = 0; i < rest.length; i++) {
   const a = rest[i];
   if (!a.startsWith("--")) { words.push(a); continue; }
   const [k, v] = a.slice(2).split("=");
-  const takesValue = ["kind", "page", "like", "theme", "accent", "labels", "out"].includes(k);
+  const takesValue = ["kind", "page", "like", "theme", "accent", "labels", "avoid", "out"].includes(k);
   flags[k] = v ?? (takesValue ? rest[++i] : true);
 }
 const die = (msg) => { console.error(msg); process.exit(1); };
@@ -126,11 +127,11 @@ const baseStyleNote = (style) => (style.startsWith("base")
 
 // ── commands ────────────────────────────────────────────────────────────────
 const commands = {
-  async browse() { await show("browse", { kinds: words.join(","), ...ctx() }, "browse"); },
+  async browse() { await show("browse", { kinds: words.join(","), avoid: flags.avoid, ...ctx() }, "browse"); },
 
   async search() {
-    if (!words.length) die("search needs words: what the piece must do.");
-    await show("search", { query: words.join(" "), kind: flags.kind, page: flags.page, dense: flags.dense, clean: flags.clean, like: flags.like, ...ctx() }, "search");
+    if (!words.length) die("search needs words: describe the piece.");
+    await show("search", { query: words.join(" "), kind: flags.kind, page: flags.page, dense: flags.dense, clean: flags.clean, like: flags.like, avoid: flags.avoid, ...ctx() }, "search");
   },
 
   async view() { if (!words[0]) die("view needs a component name."); await show("view", { name: words[0] }, `view-${words[0]}`); },

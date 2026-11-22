@@ -3,15 +3,8 @@
 // search (words + meaning + the quality score), without the parts that are about
 // an agent's project (theme and accent fit, adoption cost).
 import { catalog } from "./catalog.mjs";
-import { rank, tokens } from "./search.mjs";
+import { gate, rank, tokens } from "./search.mjs";
 import { meaning } from "./semantic.mjs";
-
-// Measured on real queries (agent/test/find.eval.json plus junk such as "normal", "asdf"):
-// a component someone meant scores 0.5 or more by meaning; nonsense tops out near 0.4.
-const KEEP_SIM = 0.42;     // close enough by meaning to show
-const KEEP_WORDS = 0.5;    // or it contains at least half the words asked for
-const STRONG_SIM = 0.45;   // at least one result this close, or the whole answer is "closest matches"
-const CLOSEST = 12;        // how many to show when nothing really matches
 
 /** The search phrase that best explains why this component came back, or null. */
 function matched(it, queryTokens, which) {
@@ -39,11 +32,7 @@ export async function find(query, o = {}) {
   const cat = catalog();                                        // throws early, with a clear error, if the build has not run
   const sem = await meaning(q).catch(() => null);
   const r = rank({ query: q, plain: true, sem });
-  const good = (n) => { const i = r.info.get(n); return i.sim >= KEEP_SIM || (r.words > 0 && i.hits / r.words >= KEEP_WORDS); };
-  const solid = (n) => { const i = r.info.get(n); return i.sim >= STRONG_SIM || (r.words > 0 && i.hits / r.words >= KEEP_WORDS); };
-  let names = r.names.filter(good);
-  const weak = !names.some(solid);
-  if (weak) names = r.names.slice(0, CLOSEST);
+  let { names, weak } = gate(r);                                // the same cut the agent's search uses
   const total = names.length;
   names = names.slice(0, o.limit || 400);
   const qt = tokens(q);

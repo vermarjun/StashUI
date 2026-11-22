@@ -100,7 +100,7 @@
         <ol>
           <li><b>browse</b> with no kinds: the map of what exists.</li>
           <li><b>browse</b> with up to four kinds, for example <code>site-header, hero, pricing-section, footer</code>.</li>
-          <li><b>search</b> for a need a row did not cover. Read the image first, then the lines.</li>
+          <li><b>search</b> for a need a row did not cover. Describe it in plain words; the first line of the reply says how it was read and how many really match.</li>
           <li><b>view</b> your top two. Use the buttons under any result.</li>
           <li><b>+ pick</b> what you choose, then <b>Board</b> to see the set together.</li>
           <li><b>Propose</b> opens the page a person approves. <b>Add</b> returns the install command.</li>
@@ -165,8 +165,8 @@
   const q = (s) => (/^[\w./-]+$/.test(s) ? s : `"${String(s).replaceAll('"', '\\"')}"`);
   function asCli(op, a) {
     const flag = (k) => (a[k] == null ? "" : a[k] === true ? ` --${k}` : ` --${k} ${q(a[k])}`);
-    if (op === "search") return `stashui search ${q(a.query || "")}${["kind", "theme", "accent", "like", "page", "clean", "dense"].map(flag).join("")}`;
-    if (op === "browse") return `stashui browse ${(a.kinds || []).join(" ")}${flag("theme")}${flag("accent")}`.trim();
+    if (op === "search") return `stashui search ${q(a.query || "")}${["kind", "like", "avoid", "theme", "accent", "page", "clean", "dense"].map(flag).join("")}`;
+    if (op === "browse") return `stashui browse ${(a.kinds || []).join(" ")}${flag("avoid")}${flag("theme")}${flag("accent")}`.trim();
     if (op === "board") return `stashui board ${(a.names || []).join(" ")}${a.labels ? ` --labels ${a.labels.join(",")}` : ""}`;
     if (op === "add") return `stashui add ${(a.names || []).join(" ")}`;
     return `stashui ${op} ${a.name || ""}`.trim();

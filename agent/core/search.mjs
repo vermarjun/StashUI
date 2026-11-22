@@ -1,12 +1,16 @@
-// Ranking. The caller is a language model, so the division of labour is:
-// the agent says what KIND of thing it wants (it is good at that), the server
-// filters and orders (deterministic, free, fast), and the agent makes the final
-// call by looking at the sheet.
+// Ranking, for the gallery and for agents alike.
 //
-// Two signals say how well a component matches the words of a request: the words
-// themselves (weighted by where they appear and how rare they are), and meaning
-// (semantic.mjs: a small embedding model, optional, passed in as `o.sem`). Word
-// matching alone still works when the model is unavailable.
+// How well a component matches a request is decided once, the same way for both:
+//   words    tokens weighted by where they appear and how rare they are
+//   meaning  semantic.mjs: a small embedding model, optional, passed in as `o.sem`
+//   kind     what the request is about ("navbar ..." is a site-header)
+//   quality  the human review score, as the taste prior
+// An agent's search then adds what only an agent has: a project to fit (theme,
+// accent), a cost to adopt (dependencies, colours to replace, install gaps), hard
+// limits to respect (`avoid`), and a component to stay consistent with (`like`).
+//
+// `gate()` decides which results are worth showing at all. Twelve good matches
+// and an honest count beat forty-eight rows padded with whatever shared a word.
 import { catalog } from "./catalog.mjs";
 
 const STOP = new Set(("a an the for with and or of to in on that my is it this at by from as be are our your i we need want " +
@@ -15,6 +19,15 @@ const stem = (t) => (t.length > 4 && t.endsWith("ies") ? t.slice(0, -3) + "y" : 
 export const tokens = (s) => String(s || "").toLowerCase().split(/[^a-z0-9]+/).filter((t) => t && !STOP.has(t)).map(stem);
 
 export const HUES = ["red", "orange", "yellow", "green", "teal", "blue", "purple", "pink"];
+
+/** Hard limits an agent can state. Each drops components the limit rules out. Facts come from the record and the clip. */
+export const AVOID = {
+  motion: { says: "anything that moves a lot or never stops", drops: (it) => it.motion === "pronounced" || it.motion === "continuous" },
+  webgl: { says: "WebGL and three.js", drops: (it) => (it.technique || []).some((t) => t === "webgl-shader" || t === "three-js") },
+  heavy: { says: "components that are heavy at runtime", drops: (it) => it.weight === "heavy" },
+  hover: { says: "components that only react to hover, which is dead on touch", drops: (it) => it.trigger?.length > 0 && it.trigger.every((t) => t === "hover" || t === "pointer-move") },
+  hardcoded: { says: "components whose copy is written inside the file", drops: (it) => it.content === "hardcoded" },
+};
 
 let index = null;
 function build() {
@@ -67,16 +80,26 @@ export function kindsIn(query) {
   return [...new Set(picked.map((f) => f.kind))].slice(0, 2);
 }
 
-/**
- * @param {{query?: string, kind?: string|string[], theme?: string, accent?: string, clean?: boolean, like?: string,
- *   sem?: Map<string, number>|null, plain?: boolean}} o
- *   `sem` is semantic.mjs's meaning(query). `plain` ranks for a person browsing the gallery: relevance and
- *   quality only, no project fit and no adoption cost.
- * @returns {{names: string[], kinds: string[], total: number}}
- */
 const NEAR = 60;        // how many of the closest-by-meaning components earn points
-const SEM_POINTS = 14;  // what the closest one earns; the kind bonus is 12
+const SEM_POINTS = 14;  // what the closest one earns
+// What being the kind the request names earns. A nudge, not a filter, because the kind was only inferred from the
+// words: discounting other kinds was measured (agent.eval) and loses the component the request meant more often
+// than it removes a wrong-kind one. An agent that wants only one kind passes `kind`, which is exact.
+const KIND_POINTS = 5;        // the gallery: best on find.eval
+const KIND_POINTS_AGENT = 10; // an agent's search: same hit rate on agent.eval, more of the named kind on page one
+const LIKE_POINTS = 12; // what the most similar component earns when `like` is given
 
+/** Positions of the `n` highest values of a name -> number map. */
+const topPositions = (map, n) => new Map([...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([name], i) => [name, i]));
+
+/**
+ * @param {{query?: string, kind?: string|string[], theme?: string, accent?: string, clean?: boolean, avoid?: string[],
+ *   like?: string, sem?: Map<string, number>|null, likeSim?: Map<string, number>|null, plain?: boolean, explain?: boolean}} o
+ *   `sem` is semantic.mjs's meaning(query); `likeSim` its similar(name). `plain` ranks for a person browsing the
+ *   gallery: relevance and quality only, no project fit and no adoption cost.
+ * @returns {{names: string[], kinds: string[], asked: boolean, words: number, meaning: boolean,
+ *   info: Map<string, {hits: number, sim: number, inKind: boolean}>}}
+ */
 export function rank(o) {
   const { docs, idf } = build();
   const cat = catalog();
@@ -84,14 +107,18 @@ export function rank(o) {
   const asked = [o.kind].flat().filter(Boolean);
   const kinds = asked.length ? asked : kindsIn(o.query || "");
   const like = o.like ? cat.byName.get(o.like) : null;
+  const avoid = (o.avoid || []).map((a) => AVOID[a]).filter(Boolean);
+  const hasSem = o.sem instanceof Map;
   // meaning: the NEAR closest components, by position. Position, not the raw similarity, because
   // similarities bunch together and their scale shifts from query to query.
-  const near = o.sem instanceof Map ? new Map([...o.sem.entries()].sort((a, b) => b[1] - a[1]).slice(0, NEAR).map(([n], i) => [n, i])) : null;
+  const near = hasSem ? topPositions(o.sem, NEAR) : null;
+  const alike = like && o.likeSim instanceof Map ? topPositions(o.likeSim, NEAR) : null;
   const scored = [];
   for (const d of docs) {
     const it = d.it;
     if (asked.length && !asked.includes(it.kind)) continue;
     if (o.clean && it.colours > 0) continue;
+    if (avoid.some((a) => a.drops(it))) continue;
     if (like && it.name === like.name) continue;
 
     const inKind = kinds.includes(it.kind);
@@ -104,29 +131,34 @@ export function rank(o) {
     }
     if (q.length) text *= 0.5 + 0.5 * (hits / q.length);           // matching more of the request beats matching one word hard
     const at = near?.get(it.name);                                   // undefined when not close by meaning
+    const likeAt = alike?.get(it.name);
     const close = at != null && at < 12;
     if (!inKind && !like && (!q.length || hits === 0) && at == null) continue;   // nothing ties it to the request
-    if (!inKind && kinds.length && hits < Math.min(2, q.length) && !close) continue; // a different kind has to earn its place
-    if (!inKind && kinds.length && !o.plain) text *= 0.6;          // and it earns it on fewer points: "sign up button" in a navbar request is not a sign-up form
+    if (!inKind && !like && kinds.length && hits < Math.min(2, q.length) && !close) continue; // a different kind has to earn its place
+    if (like && !inKind && hits === 0 && at == null && likeAt == null && it.kind !== like.kind) continue; // nothing ties it to the request or to the model component
     if (at != null) text += SEM_POINTS * (1 - at / NEAR);
 
-    let score = text + (inKind ? (o.plain ? 5 : 12) : 0);
+    let score = text + (inKind ? (o.plain ? KIND_POINTS : KIND_POINTS_AGENT) : 0);
     score *= 0.7 + 0.1 * it.quality;                                // the human review score is the taste prior
     if (it.render === "blank" || it.render === "broken") score -= 6; // its recording shows nothing usable
-    if (o.plain) { scored.push([score, it, hits, o.sem instanceof Map ? o.sem.get(it.name) ?? 0 : 0]); continue; }
-    // fit with the project the agent is building
-    if (o.theme && it.theme !== "both" && it.theme !== o.theme) score -= 3;
-    if (o.accent && it.accents?.length) score += it.accents.includes(o.accent) ? 1.5 : it.colours > 0 ? -1.5 : 0;
-    if (it.colours === 0) score += 0.6;                             // takes the project's tokens untouched
-    score -= 0.15 * it.deps + 0.01 * Math.min(it.colours, 60);
-    if (!it.tile) score -= 4;                                       // cannot be shown, so cannot be judged
-    if (it.unresolved) score -= 3;                                  // installs with a missing import
-    if (like) {
-      score += (it.kind === like.kind ? 6 : 0) + (it.tone && it.tone === like.tone ? 2 : 0)
-        + 3 * (it.accents || []).filter((a) => (like.accents || []).includes(a)).length
-        - 4 * Math.abs((it.lum ?? 0.1) - (like.lum ?? 0.1)) - 6 * Math.abs((it.vivid ?? 0) - (like.vivid ?? 0));
+    if (!o.plain) {
+      score += 0.3 * ((it.polish ?? 3) - 3);                       // the record's own 1-5 for finish: a second opinion that breaks ties in the human score
+      // fit with the project the agent is building, and what it costs to adopt. Small on purpose:
+      // these settle ties between components that match equally well, they do not outrank a better match.
+      if (o.theme && it.theme !== "both" && it.theme !== o.theme) score -= 3;
+      if (o.accent && it.accents?.length) score += it.accents.includes(o.accent) ? 1.5 : it.colours > 0 ? -1.5 : 0;
+      if (it.colours === 0) score += 0.6;                           // takes the project's tokens untouched
+      score -= 0.15 * it.deps + 0.01 * Math.min(it.colours, 60);
+      if (!it.tile) score -= 4;                                     // cannot be shown, so cannot be judged
+      if (it.unresolved) score -= 3;                                // installs with a missing import
+      if (like) {
+        if (likeAt != null) score += LIKE_POINTS * (1 - likeAt / NEAR);   // reads alike, from the records
+        score += (it.kind === like.kind ? 6 : 0) + (it.tone && it.tone === like.tone ? 2 : 0)
+          + 3 * (it.accents || []).filter((a) => (like.accents || []).includes(a)).length
+          - 4 * Math.abs((it.lum ?? 0.1) - (like.lum ?? 0.1)) - 6 * Math.abs((it.vivid ?? 0) - (like.vivid ?? 0));   // and looks alike, from the pixels
+      }
     }
-    scored.push([score, it]);
+    scored.push([score, it, hits, hasSem ? o.sem.get(it.name) ?? 0 : 0, inKind]);
   }
   scored.sort((a, b) => b[0] - a[0] || a[1].name.localeCompare(b[1].name));
   const seen = new Set(), names = [];
@@ -135,9 +167,50 @@ export function rank(o) {
     names.push(it.name);
   }
   return {
-    names, kinds, total: names.length,
+    names, kinds, asked: asked.length > 0, total: names.length, words: q.length, meaning: hasSem,
+    // how each result matched, so weak matches can be told from strong ones
+    info: new Map(scored.map(([score, it, hits, sim, inKind]) => [it.name, { hits, sim, inKind, score }])),
     ...(o.explain && { scores: scored.slice(0, 20).map(([sc, it]) => [it.name, +sc.toFixed(1)]) }),
-    // for the gallery: how each result matched, so weak matches can be told from strong ones
-    ...(o.plain && { words: q.length, info: new Map(scored.map(([, it, hits, sim]) => [it.name, { hits, sim }])) }),
   };
+}
+
+// Measured on real queries (agent/test/find.eval.json plus junk such as "normal", "asdf"):
+// a component someone meant scores 0.5 or more by meaning; nonsense tops out near 0.4.
+const KEEP_SIM = 0.42;     // close enough by meaning to show
+const KEEP_WORDS = 0.5;    // or it contains at least half the words asked for
+const STRONG_SIM = 0.45;   // at least one result this close, or the whole answer is "closest matches"
+const CLOSEST = 12;        // how many to show when nothing really matches
+
+/**
+ * Which ranked results the gallery shows: everything close by meaning or sharing half the words.
+ * @param {ReturnType<typeof rank>} r
+ * @returns {{names: string[], weak: boolean}} `weak` is true when nothing matched well and `names` are only the nearest.
+ */
+export function gate(r) {
+  const ratio = (i) => (r.words > 0 ? i.hits / r.words : 0);
+  const good = (n) => { const i = r.info.get(n); return i.sim >= KEEP_SIM || ratio(i) >= KEEP_WORDS; };
+  const solid = (n) => { const i = r.info.get(n); return i.sim >= STRONG_SIM || ratio(i) >= KEEP_WORDS; };
+  const names = r.names.filter(good);
+  if (names.some(solid)) return { names, weak: false };
+  return { names: r.names.slice(0, CLOSEST), weak: true };
+}
+
+const CUT = 0.5;       // an agent is shown what scores at least half as well as the best match
+const AT_LEAST = 6;    // and never fewer than this, so there is always something to compare
+
+/**
+ * Which ranked results an agent is shown. The cut is relative to the best score rather than a fixed
+ * similarity, because a fixed one drops right answers: "box you open with ctrl k to jump anywhere" puts the
+ * command palette fifth overall with a similarity of 0.40, under the gallery's 0.42 line. Across the 40
+ * evaluated requests the intended component never scored below 0.66 of the best, so 0.5 keeps it with room.
+ * @param {ReturnType<typeof rank>} r
+ * @returns {{names: string[], weak: boolean}}
+ */
+export function shortlist(r) {
+  if (!r.names.length) return { names: [], weak: false };
+  const solid = (n) => { const i = r.info.get(n); return i.inKind || i.sim >= STRONG_SIM || (r.words > 0 && i.hits / r.words >= KEEP_WORDS); };
+  if (!r.names.slice(0, CLOSEST).some(solid)) return { names: r.names.slice(0, CLOSEST), weak: true };
+  const best = r.info.get(r.names[0]).score;
+  const keep = best > 0 ? r.names.filter((n) => r.info.get(n).score >= CUT * best) : [];
+  return { names: keep.length >= AT_LEAST ? keep : r.names.slice(0, AT_LEAST), weak: false };
 }

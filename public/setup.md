@@ -20,7 +20,7 @@ Invoke-WebRequest https://stashui.vermarjun.xyz/agent/stashui.mjs -OutFile "$HOM
 node "$HOME\.stashui\stashui.mjs" init
 ```
 
-They write only `~/.stashui/stashui.mjs` and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes and nothing is added to your PATH. The script's SHA-256 is `de59c79c1d668c110b060dac4c3728803113ea30bcfbd6911398723d91fb142f`; `init` checks every skill file against its published hash before writing it.
+They write only `~/.stashui/stashui.mjs` and the skill folders `~/.claude/skills/` and `~/.agents/skills/`. Nothing in the project changes and nothing is added to your PATH. The script's SHA-256 is `11a43e84df33dfc41c539040e658e297ef85b312d99664fa671b356f3ce409e7`; `init` checks every skill file against its published hash before writing it.
 
 Then:
 

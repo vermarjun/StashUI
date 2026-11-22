@@ -58,5 +58,30 @@ export async function meaning(query) {
   return out;
 }
 
+/**
+ * How alike every component reads to one named component: description against description.
+ * Needs only the stored vectors, no model, so it is synchronous and always available once the index is built.
+ * @returns {null | Map<string, number>} name -> cosine similarity, without the component itself
+ */
+export function similar(name) {
+  const ix = index();
+  if (!ix) return null;
+  if (!ix.first) {                                             // each component's description is its first row
+    ix.first = new Int32Array(ix.names.length).fill(-1);
+    ix.owner.forEach((o, r) => { if (ix.first[o] < 0) ix.first[o] = r; });
+    ix.at = new Map(ix.names.map((n, i) => [n, i]));
+  }
+  const me = ix.at.get(name);
+  if (me == null) return null;
+  const a = ix.first[me] * DIM, out = new Map();
+  for (let i = 0; i < ix.names.length; i++) {
+    if (i === me) continue;
+    let s = 0;
+    for (let k = 0, b = ix.first[i] * DIM; k < DIM; k++) s += ix.vectors[a + k] * ix.vectors[b + k];
+    out.set(ix.names[i], s / (127 * 127));
+  }
+  return out;
+}
+
 /** True when meaning search can answer (index on disk; the model is checked on first use). */
 export const hasIndex = () => !!index();
