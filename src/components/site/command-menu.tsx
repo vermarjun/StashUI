@@ -121,8 +121,11 @@ export function CommandMenu() {
         onOpenChange={setOpenAndReset}
         title="Search components"
         description="Describe what you need, or type a name."
-        className="top-[12vh] sm:max-w-[min(920px,calc(100%-2rem))]"
+        className="top-[10vh] sm:max-w-[min(940px,calc(100%-2rem))]"
         commandProps={{
+          // No padding on the shell: the divider and the hairlines have to reach
+          // the popup's edges, and the clip sits flush in its corner.
+          className: "p-0",
           shouldFilter: false,
           value: selected,
           onValueChange: setSelected,
@@ -136,14 +139,16 @@ export function CommandMenu() {
       >
         {/* Two columns for the whole height: the search (box, results, keys) on the
             left, the highlighted component on the right. */}
-        <div className="grid min-h-0 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-          <div className="flex min-h-0 min-w-0 flex-col md:border-r md:border-border">
-            <CommandInput
-              placeholder="Describe what you need, or type a name…"
-              value={query}
-              onValueChange={setQuery}
-            />
-            <CommandList className="h-[min(480px,60vh)] max-h-none">
+        <div className="grid h-[min(500px,78vh)] min-h-0 md:grid-cols-[minmax(0,11fr)_minmax(0,13fr)]">
+          <div className="flex min-h-0 min-w-0 flex-col">
+            <div className="shrink-0 px-1 pt-1">
+              <CommandInput
+                placeholder="Describe what you need, or type a name…"
+                value={query}
+                onValueChange={setQuery}
+              />
+            </div>
+            <CommandList className="max-h-none min-h-0 flex-1 px-1">
               <CommandEmpty>No components found.</CommandEmpty>
               <CommandGroup
                 heading={
@@ -190,7 +195,7 @@ export function CommandMenu() {
                 )}
               </CommandGroup>
             </CommandList>
-            <div className="flex items-center gap-4 border-t border-border px-3 py-2 text-xs text-muted-foreground">
+            <div className="flex h-10 shrink-0 items-center gap-4 border-t border-border px-4 text-xs text-muted-foreground">
               <span>
                 <Key>↑</Key>
                 <Key>↓</Key> move
@@ -210,7 +215,7 @@ export function CommandMenu() {
             </div>
           </div>
 
-          <div className="hidden min-w-0 md:block">
+          <div className="hidden min-h-0 min-w-0 flex-col border-l border-border md:flex">
             {current && <Preview item={current} hit={hits.get(current.name)} />}
           </div>
         </div>
@@ -267,10 +272,15 @@ function Preview({ item, hit }: { item: ComponentMeta; hit?: SearchHit }) {
           ? null
           : `content: ${hit.content}`),
   ].filter(Boolean) as string[];
+  // With no search there are no per-result facts yet: say what it is, so the
+  // bottom line of the pane is never empty.
+  const chips = facts.length ? facts : [item.category.replaceAll("-", " ")];
 
   return (
-    <div className="flex h-full flex-col gap-3 p-3">
-      <div className="preview-stage relative aspect-[8/5] w-full shrink-0 overflow-hidden rounded-lg border border-border bg-[#0a0a0a]">
+    <>
+      {/* The clip sits flush against the pane's top and sides, at the clip's own
+          shape, so it is never letterboxed or cropped. */}
+      <div className="preview-stage relative aspect-[8/5] w-full shrink-0 overflow-hidden bg-[#0a0a0a]">
         {preview.hasVideo ? (
           <video
             key={item.name}
@@ -289,14 +299,23 @@ function Preview({ item, hit }: { item: ComponentMeta; hit?: SearchHit }) {
           </div>
         )}
       </div>
-      <div className="min-w-0 px-1">
-        <div className="flex items-baseline gap-2">
-          <span className="truncate text-base font-semibold">{item.title}</span>
+      {/* Details fill what is left: text from the top, facts pinned to the bottom,
+          so the pane has no dead space whatever the description's length. */}
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col border-t border-border px-4 pb-3 pt-3.5">
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="truncate text-[15px] font-semibold">
+            {item.title}
+          </span>
           <span className="shrink-0 text-xs text-muted-foreground">
             {item.library ?? ""}
           </span>
         </div>
-        <p className="mt-1 line-clamp-3 text-sm text-muted-foreground">
+        <p
+          className={cn(
+            "mt-1 text-[13px] leading-5 text-muted-foreground",
+            hit?.match ? "line-clamp-2" : "line-clamp-3",
+          )}
+        >
           {item.description || item.tagline}
         </p>
         {hit?.match && (
@@ -304,19 +323,17 @@ function Preview({ item, hit }: { item: ComponentMeta; hit?: SearchHit }) {
             matched <span className="text-foreground/70">{hit.match}</span>
           </p>
         )}
-        {facts.length > 0 && (
-          <div className="mt-2.5 flex flex-wrap gap-1.5">
-            {facts.map((f) => (
-              <span
-                key={f}
-                className="rounded-full border border-border px-2 py-0.5 text-[11px] text-muted-foreground"
-              >
-                {f}
-              </span>
-            ))}
-          </div>
-        )}
+        <div className="mt-auto flex min-w-0 items-center gap-1.5 overflow-hidden pt-2">
+          {chips.map((f) => (
+            <span
+              key={f}
+              className="shrink-0 rounded-full border border-border px-2 py-0.5 text-[11px] text-muted-foreground"
+            >
+              {f}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
