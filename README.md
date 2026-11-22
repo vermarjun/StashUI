@@ -29,8 +29,8 @@ StashUI is an open component library built for two kinds of discovery:
   <kbd>⌘ K</kbd>, watch lightweight previews, inspect live components, copy
   source, and get an install command.
 - **Agents** ask in words and get back one image: a numbered grid of real
-  components. They choose by looking, check their picks side by side, show you
-  a proposal, and install a whole screen in one command.
+  components. They choose by looking, check their picks side by side, and
+  install a whole screen in one command.
 
 The components follow the shadcn model: source code is installed into your
 project and becomes yours to edit. StashUI is a registry and discovery system,
@@ -163,10 +163,13 @@ What the agent does with that:
    motion, so hover and click behaviour is visible in a still image.
 4. **Checks the set.** `stashui board` puts all its picks in one image, to see
    whether they look like one product.
-5. **Asks you.** `stashui propose` gives you a link showing each pick as a live
-   clip with its runners-up. You swap what you dislike and approve.
-6. **Builds and verifies.** `stashui add` installs through shadcn;
-   `stashui review` returns counts that have to reach zero.
+5. **Builds and verifies.** `stashui add` installs through shadcn;
+   `stashui review` returns counts that have to reach zero. It reports each
+   pick with its runner-up.
+
+Ask for a mockup first ("show me a mockup before you build") and the agent
+runs `stashui propose` instead: a link showing each pick as a live clip beside
+its runners-up, where you swap what you dislike and approve.
 
 Agents with no shell (Claude Desktop, claude.ai, ChatGPT) add
 `https://stashui.vermarjun.xyz/api/mcp` as a remote MCP server instead. It has

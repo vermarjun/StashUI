@@ -21,7 +21,7 @@ records (one per component, from frames + code) ──────────�
 | `core/` | Framework-free ESM. `sheet.mjs` composes images, `search.mjs` ranks, `tools.mjs` defines the six operations once, `mcp.mjs` and `http.mjs` expose them. |
 | `cli/stashui.mjs` | The CLI. One file, no dependencies. Also reads the user's project (`context`), checks UI source (`review`) and installs itself (`init`). |
 | `skills/` | `stashui` (build), `stashui-explore` (choose a direction), `stashui-review` (audit). |
-| `site/` | `setup.md`, `llms.txt`, and `proposal.html`, the page a person approves. |
+| `site/` | `setup.md`, `llms.txt`, and `proposal.html`, the mockup an agent builds when the user asks for one. |
 | `pipeline/` | `tiles.py` (clips to images and facts), `describe*` (the record written from frames + code, see below), `posters.py` (the chosen frame becomes the still), `search-index.mjs` (meaning vectors), `kinds.json` (the taxonomy), `build.mjs` (everything to `public/`). |
 | `data/` | `facets/<name>.json` measured from pixels, `records/<name>.json` the full record, `describe-raw/<name>.json` the model's answer kept verbatim . One file per component so parallel work never collides. |
 | `model/` | The embedding model files, fetched by `npm run agent:model`. Git-ignored. |
@@ -122,9 +122,9 @@ The vectors are one static file (`public/agent/search/vectors.bin`) scanned in a
 
 **`add` says what an install really needs.** The registry items are read at build time. 193 of them import shadcn primitives they do not declare, so `add` names those primitives in the command. 95 import a sibling file the item does not ship; each is flagged in `view` and `add` ("NOT installed") and ranked lower, and `npm run agent` prints the count. That number should be driven to zero in the registry itself; until then the agent is told before the type checker tells it.
 
-**The design doc is the open DESIGN.md format** plus a Decisions log, read before shopping and appended to after every approval. Tokens live in the project's global CSS under shadcn's names so installed components pick them up with no mapping.
+**The design doc is the open DESIGN.md format** plus a Decisions log, read before shopping and appended to after every build. Tokens live in the project's global CSS under shadcn's names so installed components pick them up with no mapping.
 
-**A person approves before anything is built.** Studies of models judging UI agree on one thing: a model's pick is a good shortlist and an unreliable final say. So the agent proposes, with runners-up, and waits.
+**The mockup is on request, not a gate.** The agent builds by default and reports each pick with its runner-up, so a choice can be overturned after the fact. It builds the HTML mockup (`propose`) and waits for an answer only when the user asks for a mockup, a preview, or to approve first. The first version stopped for approval on every build; the owner found that too slow for the common case. Studies of models judging UI say a model's pick is a good shortlist and an unreliable final say, which is why the runner-up stays in the report and the mockup stays one request away.
 
 **Review returns numbers.** Deterministic source checks with counts that must reach zero, then a look at the rendered page, keeping a change only if nothing got worse. Unstructured self-critique loops are known to drift; a number does not.
 

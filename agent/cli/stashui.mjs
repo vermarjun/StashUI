@@ -27,7 +27,7 @@ const HELP = `stashui: find, see and install UI components
   stashui code <name>               source, for a component you are about to modify
   stashui add <name…>               install into this project (shadcn)   --print to only show the command
   stashui context                   what this project already has: stack, tokens, installed components
-  stashui propose <plan.json>       the page a human approves: picks, runners-up, reasons   --no-open
+  stashui propose <plan.json>       an HTML mockup of the picks, only when the user asks for one   --no-open
   stashui review [path…]            deterministic UI checks with counts   --json
   stashui init [--project] [--mcp]  install the skills (and optionally the MCP server) for your agent
   stashui update                    fetch the CLI and skills the site publishes now

@@ -1,6 +1,6 @@
 ---
 name: stashui
-description: Builds web UI from the StashUI catalogue of ready-made, tested React components instead of writing components from scratch. Shows real images of the components so the choice is made by look, proposes the picks to the user for approval, installs them and verifies the result. Use for any request to build, design, redesign or polish a page, screen, section or component in a React and Tailwind project (landing page, dashboard, hero, pricing, navbar, form, modal), and whenever the user asks to find, pick or add a UI component.
+description: Builds web UI from the StashUI catalogue of ready-made, tested React components instead of writing components from scratch. Shows real images of the components so the choice is made by look, installs them and verifies the result, and can show an HTML mockup of the picks first when the user asks for one. Use for any request to build, design, redesign or polish a page, screen, section or component in a React and Tailwind project (landing page, dashboard, hero, pricing, navbar, form, modal), and whenever the user asks to find, pick or add a UI component.
 ---
 
 # Build UI from StashUI
@@ -30,13 +30,13 @@ Ask for page 2 only when page 1 gave fewer than two candidates. "No close match"
 ## 4. Check the set
 `{{CLI}} board <picks in page order> --labels header,hero,…` shows them together. A pick that looks like it came from another product gets replaced.
 
-## 5. Ask
-Write `plan.json` ([references/plan.md](references/plan.md)), run `{{CLI}} propose plan.json`, give the user the link, and stop. Build nothing before they approve. Skip this only when the user said to just build.
+## 5. Mockup, only when asked
+Go straight to step 6 unless the user asked for a mockup, a preview, or to approve the picks before you build. Only then: write `plan.json` ([references/plan.md](references/plan.md)), run `{{CLI}} propose plan.json`, give the user the link, and build nothing until they answer.
 
 ## 6. Build
 `{{CLI}} add <names>`, then do what its notes say: supply any import it flags as not installed, replace hardcoded colours with tokens, wrap sized-parent components. Run the type check. Delete demo code and use the product's real copy. `{{CLI}} code <name>` only for a component you are changing.
 
 ## 7. Verify
-Run `{{CLI}} review` until every FAIL row is 0. Then open the built page at 375, 768 and 1440 wide and look at it: no overflow, no blank section, one accent, and it still looks like the board. Keep a fix only if it made nothing worse. Append the approved picks to the Decisions section of DESIGN.md.
+Run `{{CLI}} review` until every FAIL row is 0. Then open the built page at 375, 768 and 1440 wide and look at it: no overflow, no blank section, one accent, and it still looks like the board. Keep a fix only if it made nothing worse. Append the picks to the Decisions section of DESIGN.md.
 
-Report in a few lines: each pick and why, what you built by hand, the review numbers.
+Report in a few lines: each pick, its runner-up and why, what you built by hand, the review numbers.

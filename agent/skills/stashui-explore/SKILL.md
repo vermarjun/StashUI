@@ -11,8 +11,8 @@ Give the user a real choice between looks, made of components that exist, before
 2. Name three directions. Each must differ from the others on at least two of: hierarchy, density, composition, motion, tone. A different colour alone is not a direction.
 3. For each direction, shop the two or three sections that carry the look (usually header, hero and one content section): `{{CLI}} browse` and `{{CLI}} search`, opening every image. Use `--like <first pick>` to keep a direction coherent.
 4. `{{CLI}} board <picks>` once per direction. A direction whose board does not look like one product is not ready.
-5. Write `plan.json` with `directions` (shape in the stashui skill's references/plan.md). Per direction: a name, the idea in one sentence, who it suits, its risk.
-6. `{{CLI}} propose plan.json`, give the user the link, recommend one with your reason, and stop.
+5. Present the three in your reply. Per direction: a name, the idea in one sentence, who it suits, its risk, its components, and the path of its board image. Recommend one with your reason, and stop.
+6. Only if the user asks for a mockup or a page to compare them on: write `plan.json` with `directions` (shape in the stashui skill's references/plan.md) and run `{{CLI}} propose plan.json`.
 7. When they choose: record it in the Decisions section of DESIGN.md, drop the other two, and continue with the `stashui` skill.
 
 Three boards cost three images. That is the whole price of not building the wrong page.

@@ -1,6 +1,6 @@
 # plan.json
 
-What `{{CLI}} propose` turns into the page a human approves. Names are component names from search, browse or view.
+Only when the user asks for a mockup or to approve picks first. It is what `{{CLI}} propose` turns into that page. Names are component names from search, browse or view.
 
 ```json
 {

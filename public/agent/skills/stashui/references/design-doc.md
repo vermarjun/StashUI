@@ -42,10 +42,10 @@ What moves, how fast, and what must stay still.
 ## Do's and Don'ts
 Five lines each, specific to this product.
 ## Decisions
-- 2026-01-15 · hero: shape-hero over parallax-floating · quieter, keeps the headline first. (approved)
+- 2026-01-15 · hero: shape-hero over parallax-floating · quieter, keeps the headline first.
 ```
 
 ## Then
 Write the colours into the global CSS as the shadcn variables of the same names (`--background`, `--primary`, …) **before installing anything**: components pick tokens up on arrival. Use the colour format that file already uses (oklch if it is oklch), and set what follows from your choices too: `--primary-foreground`, `--ring`, `--card`, `--popover`, and the default theme class.
-Every approved proposal adds one dated line per pick to Decisions. Read Decisions before shopping: a past choice is a constraint.
+Every build adds one dated line per pick to Decisions. Read Decisions before shopping: a past choice is a constraint.
 Optional check: `npx @google/design.md lint DESIGN.md` reports contrast and broken references.

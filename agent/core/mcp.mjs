@@ -17,7 +17,7 @@ const SERVER = { name: "stashui", title: "StashUI", version: "1.0.0" };
 export const INSTRUCTIONS =
   "StashUI is a catalogue of ready-made React components you can SEE. " +
   "Plan the page, then: browse (what exists) -> search (a numbered image of matches) -> view (six frames of your top two) -> " +
-  "board (all picks together; they must look like one product) -> show the user and wait for approval -> add (install). " +
+  "board (all picks together; they must look like one product) -> add (install). " +
   "Choose from the image first and the cost in the text second. Never choose a component you have not viewed. " +
   "Prefer a catalogue component over writing one; when two searches find nothing, say so and build that piece yourself.";
 

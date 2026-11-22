@@ -103,7 +103,7 @@
           <li><b>search</b> for a need a row did not cover. Describe it in plain words; the first line of the reply says how it was read and how many really match.</li>
           <li><b>view</b> your top two. Use the buttons under any result.</li>
           <li><b>+ pick</b> what you choose, then <b>Board</b> to see the set together.</li>
-          <li><b>Propose</b> opens the page a person approves. <b>Add</b> returns the install command.</li>
+          <li><b>Add</b> returns the install command. <b>Propose</b> opens the HTML mockup an agent builds only when the user asks for one.</li>
         </ol>
         <p>The other tab shows the instructions an agent has in its context before it makes its first call.</p>
       </div>
@@ -262,7 +262,7 @@
         const plan = { title: "Playground proposal", direction: "Built by hand in the playground.", slots: state.picks.map((p, i) => ({ slot: p.label.trim() || `Section ${i + 1}`, pick: p.name, why: "Chosen in the playground." })) };
         const bytes = new TextEncoder().encode(JSON.stringify(plan));
         window.open(`/agent/proposal.html#${btoa(String.fromCharCode(...bytes)).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "")}`, "_blank", "noopener");
-      }, "Open the page a person approves"),
+      }, "Open the HTML mockup of the picks (agents build it only when asked)"),
       act("Add", names.length >= 1, () => call("add", { names }), "The install command for the picks"),
       el("span", { className: "total", text: `${state.calls} calls · ~${(state.imageTokens + state.textTokens).toLocaleString()} tokens (${state.imageTokens.toLocaleString()} in images)` }),
     );
@@ -290,14 +290,14 @@
       el("h3", { text: "2. Loaded when a skill triggers" }),
       ...skills.skills.map((s, i) => fold(`${s.name}/SKILL.md · ${skillBodies[i].split("\n").length} lines`, skillBodies[i].replaceAll("{{CLI}}", "stashui"))),
       fold("stashui/references/design-doc.md · read when there is no DESIGN.md", refs[0].replaceAll("{{CLI}}", "stashui")),
-      fold("stashui/references/plan.md · read before proposing", refs[1].replaceAll("{{CLI}}", "stashui")),
+      fold("stashui/references/plan.md · read only when the user asks for a mockup", refs[1].replaceAll("{{CLI}}", "stashui")),
       el("h3", { text: "3. MCP clients get this instead" }),
       fold("server instructions", root.instructions, true),
       fold(`tools/list · ${tools.length} tools · ~${Math.round(JSON.stringify(tools).length / 4)} tokens of schema`, tools.map((t) => `${t.name}\n  ${t.description}\n  input: ${JSON.stringify(t.inputSchema.properties, null, 1).replace(/\n\s*/g, " ")}`).join("\n\n")),
       el("h3", { text: "4. The setup page a user's agent follows" }),
       fold("setup.md", setup),
       el("h3", { text: "5. Runs on the agent's machine, not here" }),
-      el("p", { className: "sub", text: "context (reads the project), review (checks its source), propose (builds the approval link) and init are CLI commands that work on local files, so this page cannot run them. The Propose button below builds the same link." }),
+      el("p", { className: "sub", text: "context (reads the project), review (checks its source), propose (builds the mockup link, on request) and init are CLI commands that work on local files, so this page cannot run them. The Propose button below builds the same link." }),
     );
   }
 
