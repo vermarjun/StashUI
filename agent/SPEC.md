@@ -17,14 +17,30 @@ Six operations, defined once in `agent/core/tools.mjs`. The same names, inputs a
 | Operation | Input | Text | Image |
 | --- | --- | --- | --- |
 | `browse` | none | kinds with counts, by scale | none |
-| `browse` | `kinds` (1 to 4), `theme`, `accent` | one line per component | one row per kind, its best five |
-| `search` | `query` (required), `kind`, `theme`, `accent`, `clean`, `like`, `page`, `dense` | one line per match | 12 matches, or 20 with `dense` |
-| `view` | `name` | description, use and avoid, accessibility, footprint, cost, props, usage | six frames of its recorded interaction |
+| `browse` | `kinds` (1 to 4), `theme`, `accent`, `avoid` | one line per component | one row per kind, its best five |
+| `search` | `query` (required), `kind`, `like`, `avoid`, `clean`, `theme`, `accent`, `page`, `dense` | a first line saying how the request was read and how many components match, then one line per match | 12 matches, or 20 with `dense` |
+| `view` | `name` | what it looks like and does, use and avoid, known issues, accessibility, how content goes in, footprint, cost, props, usage, and which of the six frames to trust | six frames of its recorded interaction |
 | `board` | `names` (2 to 12), `labels` | one line per component, and the accent hues across the set | the set, at the largest cells that fit |
 | `code` | `name` | source files | none |
 | `add` | `names` (1 to 20) | one `npx shadcn@latest add …` command, and what each component needs after install | none |
 
+`avoid` states hard limits; each drops every component that breaks it: `motion` (moves a lot or never stops), `webgl` (WebGL or three.js), `heavy` (heavy at runtime), `hover` (reacts only to hover, so dead on touch), `hardcoded` (copy written inside the file).
+
+`search` is a description in plain words. Its first line reports what happened:
+
+```
+search "navbar with links and a sign up button" · read as site-header · 14 matches · page 1 of 2
+search "glow" · kind button · avoiding webgl · best 48 of 57 matches · page 1 of 4
+search "zxqv plorb" · no close match, 12 nearest shown · page 1 of 1
+```
+
+- With `kind`, every component of that kind matches, best first.
+- Without it, the server reads the kind from the words ("read as …") as a preference, not a filter, and shows only what scores at least half as well as the best match (never fewer than six).
+- "no close match" means nothing was near by meaning or by words; the twelve nearest are shown so the agent can see what the catalogue has instead.
+
 Errors are sentences that say what to do next (`No component named "x". Closest: a, b, c.`). MCP marks them `isError: true`; HTTP answers 400.
+
+People use the same ranking through `GET /api/search?q=…`, which returns names for the gallery and no image.
 
 ## The sheet
 
@@ -47,7 +63,7 @@ One line per cell:
  6  comp-578   site-header   Mega menu navbar with icon, description, and simple submenu types.  (click/hover · 0 deps · 0 colours · q4)
 ```
 
-number, name, kind, what it visibly is, then in brackets: what triggers it, npm dependencies, hardcoded colours to replace with tokens, and the human quality score from 1 to 5.
+number, name, kind, what it visibly is, then in brackets: what triggers it, npm dependencies, hardcoded colours to replace with tokens, any warnings, and the human quality score from 1 to 5. Warnings appear only when true: `copy in file` (its text is hardcoded), `heavy`, `install gap` (it imports a file the install does not ship), `recording partial|blank|broken`.
 
 ## The catalogue
 
@@ -56,10 +72,13 @@ number, name, kind, what it visibly is, then in brackets: what triggers it, npm 
 | Field | Meaning | Source |
 | --- | --- | --- |
 | `name`, `title`, `origin`, `categories` | identity | registry |
-| `kind`, `scale` | what it is, from the fixed taxonomy; scale is section, block, element or effect | vision pass |
-| `blurb`, `use`, `look`, `tone` | what it visibly is, when to pick it, 3 to 5 fixed look words, one tone | vision pass, or the earlier text pass |
-| `trigger`, `theme` | interaction triggers; light, dark or both | text pass |
-| `deps`, `colours` | npm dependency count; hardcoded colours to replace | counted from source |
+| `kind`, `scale` | what it is, from the fixed taxonomy; scale is section, block, element or effect | record |
+| `blurb`, `use`, `look`, `tone` | what it visibly is (the record's tagline), when to pick it, 3 to 5 fixed look words, one tone | record |
+| `text`, `phrases` | the long description and the ways people ask for it; searched, not shown | record |
+| `trigger`, `motion`, `theme` | interaction triggers; none, subtle, pronounced or continuous; light, dark or both | record |
+| `technique`, `weight`, `content`, `suits` | how it is drawn; light, moderate or heavy; where its content comes from (props, children, data-array, hardcoded, none); the kinds of product it suits | record |
+| `polish`, `render` | the record's 1 to 5 for finish; `partial`, `blank` or `broken` when the recording is not usable (absent when fine) | record |
+| `deps`, `colours`, `unresolved` | npm dependency count; hardcoded colours to replace; imports the install does not ship | counted from source |
 | `quality` | 1 to 5 | human review |
 | `size`, `bleed` | the component's own width and height in a 1120 x 700 stage; whether it fills the stage | measured from the clip |
 | `accents`, `vivid`, `lum` | accent hues, share of saturated pixels, mean luminance | measured from the clip |
@@ -70,12 +89,18 @@ number, name, kind, what it visibly is, then in brackets: what triggers it, npm 
 
 ## Ranking
 
-1. If `kind` is given, only that kind. Otherwise the first kind the query names (through each kind's `aka` words) is preferred, and other kinds must match at least two query words to appear.
-2. Text match on name and title, kind words, description fields, weighted by how rare each word is.
-3. Multiplied by the quality score.
-4. Adjusted for fit: `theme` mismatch down; `accent` match up; no hardcoded colours up; dependencies and hardcoded colours slightly down; no tile down.
-5. `like` adds similarity to the named component: same kind, same tone, shared accent hues, close luminance and saturation.
-6. The same component ported by several libraries is shown once.
+One ranking serves the gallery and agents (`agent/core/search.mjs`).
+
+1. Filters first: `kind` (only that kind), `avoid`, `clean`.
+2. Words: query words matched against name and title, the search phrases, the tagline and look words, and the long description, weighted by how rare each word is.
+3. Meaning: the query is embedded and compared with each component's description vector and each of its search-phrase vectors; the 60 nearest earn points by position. If the embedding model cannot load, this step is skipped and the answer keeps its shape.
+4. Kind read from the words (through each kind's `aka` list) earns a bonus. It is a preference, not a filter.
+5. Multiplied by the human quality score. A blank or broken recording counts against.
+6. For agents only, small adjustments that settle ties: the record's finish score; `theme` mismatch down; `accent` match up; no hardcoded colours up; dependencies, hardcoded colours, a missing tile and an install gap down.
+7. `like` adds similarity to the named component: how alike the two records read (their description vectors), the same kind and tone, and how alike they look (accent hues, luminance, saturation, measured from the clips).
+8. The same component ported by several libraries is shown once.
+
+The ranking is scored by `node agent/test/agent.eval.mjs` (the agent's search) and `node agent/test/find.eval.mjs` (the gallery's), on the same requests.
 
 ## MCP
 

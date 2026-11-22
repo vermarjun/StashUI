@@ -2,9 +2,10 @@
 // The agent API without Next.js: the same handler the site mounts, plus the
 // static files under public/. For tests and for trying the CLI locally.
 //   node agent/dev-server.mjs [port]      then  STASHUI_URL=http://127.0.0.1:4317 stashui search "…"
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, realpathSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize } from "node:path";
+import { fileURLToPath } from "node:url";
 import { handle } from "./core/http.mjs";
 import { publicDir } from "./core/sheet.mjs";
 
@@ -31,7 +32,7 @@ export function start(port = 4317) {
   return new Promise((resolve) => server.listen(port, "127.0.0.1", () => resolve(server)));
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))) {   // run directly, not imported
   const port = Number(process.argv[2]) || 4317;
   await start(port);
   console.log(`StashUI agent API on http://127.0.0.1:${port}  (MCP at /api/mcp)`);

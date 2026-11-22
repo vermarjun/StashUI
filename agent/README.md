@@ -7,7 +7,7 @@ The gallery is for people. This folder is how an agent does the same job: find a
 ```
 clips ──tiles.py──▶ tile + six-frame film + measured facts ┐
 index records ─────────────────────────────────────────────┼─build.mjs─▶ public/agent/  (static files: the whole database)
-vision labels (kind, look, missing descriptions) ──────────┘
+records (one per component, from frames + code) ───────────┘
                                                                    │
                                               agent/core  (search · sheet composer · six operations)
                                                     │ one handler, three doors
@@ -21,9 +21,9 @@ vision labels (kind, look, missing descriptions) ──────────�
 | `core/` | Framework-free ESM. `sheet.mjs` composes images, `search.mjs` ranks, `tools.mjs` defines the six operations once, `mcp.mjs` and `http.mjs` expose them. |
 | `cli/stashui.mjs` | The CLI. One file, no dependencies. Also reads the user's project (`context`), checks UI source (`review`) and installs itself (`init`). |
 | `skills/` | `stashui` (build), `stashui-explore` (choose a direction), `stashui-review` (audit). |
-| `site/` | `setup.md`, `llms.txt`, and `proposal.html`, the page a person approves. |
-| `pipeline/` | `tiles.py` (clips to images and facts), `describe*` (the record written from frames + code, see below), `posters.py` (the chosen frame becomes the still), `search-index.mjs` (meaning vectors), `kinds.json` (the taxonomy), `build.mjs` (everything to `public/`). `label-*.mjs` + `label.md` are the earlier, narrower vision pass. |
-| `data/` | `facets/<name>.json` measured from pixels, `records/<name>.json` the full record, `describe-raw/<name>.json` the model's answer kept verbatim, `labels/<name>.json` from the earlier pass (fallback only). One file per component so parallel work never collides. |
+| `site/` | `setup.md`, `llms.txt`, and `proposal.html`, the mockup an agent builds when the user asks for one. |
+| `pipeline/` | `tiles.py` (clips to images and facts), `describe*` (the record written from frames + code, see below), `posters.py` (the chosen frame becomes the still), `search-index.mjs` (meaning vectors), `kinds.json` (the taxonomy), `build.mjs` (everything to `public/`). |
+| `data/` | `facets/<name>.json` measured from pixels, `records/<name>.json` the full record, `describe-raw/<name>.json` the model's answer kept verbatim . One file per component so parallel work never collides. |
 | `model/` | The embedding model files, fetched by `npm run agent:model`. Git-ignored. |
 | `test/` | `npm run agent:test`. |
 | `SPEC.md` | The protocol: operations, the sheet format, the catalogue schema, what is stable. |
@@ -42,10 +42,10 @@ npm run agent:describe -- --shards 20      # packets (frames + code) for whateve
 npm run agent:describe:merge               # validates, corrects from source, files the records, prints review lists
 python3 agent/pipeline/posters.py          # the frame each record chose becomes its tile (--gallery: the poster too)
 npm run agent                              # rebuilds public/agent and the search vectors (also runs at the end of `npm run registry`)
-npm run agent:test && node agent/test/find.eval.mjs
+npm run agent:test && node agent/test/agent.eval.mjs && node agent/test/find.eval.mjs
 ```
 
-A component with no tile still appears (the raw poster is used) and one with no record falls back to its earlier label, then its category, so nothing breaks while the pipeline catches up. `npm run agent` prints how many are in each state.
+A component with no tile still appears (the raw poster is used) and one with no record falls back to its category and its older text, so nothing breaks while the pipeline catches up. `npm run agent` prints how many are in each state.
 
 ## The record: one look at each component, kept
 
@@ -77,7 +77,16 @@ People and agents both describe what they want in plain words. Two signals rank 
 - **Words** (`core/search.mjs`): tokens weighted by where they appear (name, kind, search phrases, tagline, description) and how rare they are.
 - **Meaning** (`core/semantic.mjs`): each component has one vector for its description and one per search phrase; the query is embedded and a component scores as its best-matching vector. The 60 closest earn points by position.
 
-`core/find.mjs` is the gallery's search (`GET /api/search?q=`); the agent's `search` operation uses the same ranking plus project fit. The vectors are one static file (`public/agent/search/vectors.bin`) scanned in about a millisecond, so there is no vector database. The model (all-MiniLM-L6-v2, 23 MB, a few milliseconds per query on a CPU) is optional at runtime: if it cannot load, search falls back to words alone and nothing else changes.
+`core/find.mjs` is the gallery's search (`GET /api/search?q=`); the agent's `search` operation uses the same ranking. What an agent's search adds, because only an agent has them:
+
+- **A project to fit and a cost to pay**: theme, accent, dependencies, colours to replace, install gaps. These are small on purpose and only settle ties.
+- **Hard limits** (`avoid`): no motion, no WebGL, nothing heavy, nothing hover-only, no hardcoded copy. Filters, read from the record.
+- **A component to stay consistent with** (`like`): how alike two records read (their description vectors, no model call) and how alike two clips look (measured palette).
+- **An honest shortlist**: only what scores at least half as well as the best match is shown, never fewer than six, and when nothing is close the answer says so. Twelve cells are precious; padding them with whatever shared a word wastes the image.
+
+Both are scored on the same 37 requests (`test/find.eval.json`, one intended component each): `node agent/test/agent.eval.mjs` for the agent's search, `node agent/test/find.eval.mjs` for the gallery's. Today both put the intended component first 21 times, in the top five 34 times, and the agent's search has it on page one 37 times.
+
+The vectors are one static file (`public/agent/search/vectors.bin`) scanned in about a millisecond, so there is no vector database. The model (all-MiniLM-L6-v2, 23 MB, a few milliseconds per query on a CPU) is optional at runtime: if it cannot load, search falls back to words alone and nothing else changes.
 
 ## Decisions, and why
 
@@ -91,7 +100,9 @@ People and agents both describe what they want in plain words. Two signals rank 
 
 **Labels are drawn with a built-in bitmap font.** System text rendering gives different pixels per machine and blank labels on a server with no fonts. The same spec yields the same bytes everywhere, which is also what makes sheets testable.
 
-**The agent names the kind; the server filters and ranks; the agent chooses by looking.** Sorting a need into one of 75 kinds is something a language model does well for free, filtering by kind is exact, and the final judgement is visual. Ranking inside a kind uses word match, meaning match, the human quality score, fit with the project's theme and accent, and adoption cost.
+**The agent describes; the server matches by words and meaning; the agent chooses by looking.** When the agent also names one of the 75 kinds, that is an exact filter. When it does not, the kind read from its words is a preference only. Treating an inferred kind as a filter, or discounting other kinds, was measured and rejected: it removes the component the request meant (35 of 37 on page one instead of 37) more often than it removes a wrong-kind one.
+
+**An agent's shortlist is cut relative to the best match, not at a fixed similarity.** The gallery hides anything under a similarity of 0.42. For an agent that drops right answers: "box you open with ctrl k to jump anywhere" ranks the command palette fifth with a similarity of 0.40. Across 40 requests the intended component never scored below 0.66 of the best, so the agent is shown everything at 0.5 or above.
 
 **A small embedding model does sit in the request path, and it is optional.** The first version had none. It was added when plain-English search came to the gallery: a person does not name a kind, and "ctrl k box" shares no word with "command palette". Measured on 37 everyday-language queries (`test/find.eval.mjs`). The intelligence is still spent at build time (the search phrases in each record did more than the model); the model covers wording nobody anticipated.
 
@@ -107,13 +118,13 @@ People and agents both describe what they want in plain words. Two signals rank 
 
 **The MCP endpoint speaks both protocol eras** (the `initialize` handshake up to 2025-11-25, and per-request versions from 2026-07-28), because clients in the field are split.
 
-**Setup is three commands an agent can run, served from this site.** No npm publish, no account, no `curl | sh`. `init` verifies every skill file against a published SHA-256 and writes only `~/.stashui/stashui.mjs` and the two skill folders, `~/.claude/skills` and `~/.agents/skills`. It adds nothing to PATH; skills call the CLI by its path. An earlier version linked itself into a PATH directory, and a test run left a stale link behind on the first machine it touched, which is the reason.
+**Setup is one command an agent can run, the same in every shell on macOS, Linux and Windows.** It uses Node to download the CLI and run its `init`, so it needs no curl, wget or PowerShell cmdlet, and nothing depends on how a shell expands `~` (PowerShell and cmd do not). `agent/test/setup.e2e.mjs` runs it, and then the command the installed skill gives agents, in every shell on the machine; `.github/workflows/agent-setup.yml` runs that on all three systems. No npm publish, no account, no `curl | sh`. `init` verifies every skill file against a published SHA-256 and writes only `~/.stashui/stashui.mjs` and the two skill folders, `~/.claude/skills` and `~/.agents/skills`. It adds nothing to PATH; skills call the CLI by its path. An earlier version linked itself into a PATH directory, and a test run left a stale link behind on the first machine it touched, which is the reason.
 
 **`add` says what an install really needs.** The registry items are read at build time. 193 of them import shadcn primitives they do not declare, so `add` names those primitives in the command. 95 import a sibling file the item does not ship; each is flagged in `view` and `add` ("NOT installed") and ranked lower, and `npm run agent` prints the count. That number should be driven to zero in the registry itself; until then the agent is told before the type checker tells it.
 
-**The design doc is the open DESIGN.md format** plus a Decisions log, read before shopping and appended to after every approval. Tokens live in the project's global CSS under shadcn's names so installed components pick them up with no mapping.
+**The design doc is the open DESIGN.md format** plus a Decisions log, read before shopping and appended to after every build. Tokens live in the project's global CSS under shadcn's names so installed components pick them up with no mapping.
 
-**A person approves before anything is built.** Studies of models judging UI agree on one thing: a model's pick is a good shortlist and an unreliable final say. So the agent proposes, with runners-up, and waits.
+**The mockup is on request, not a gate.** The agent builds by default and reports each pick with its runner-up, so a choice can be overturned after the fact. It builds the HTML mockup (`propose`) and waits for an answer only when the user asks for a mockup, a preview, or to approve first. The first version stopped for approval on every build; the owner found that too slow for the common case. Studies of models judging UI say a model's pick is a good shortlist and an unreliable final say, which is why the runner-up stays in the report and the mockup stays one request away.
 
 **Review returns numbers.** Deterministic source checks with counts that must reach zero, then a look at the rendered page, keeping a change only if nothing got worse. Unstructured self-critique loops are known to drift; a number does not.
 

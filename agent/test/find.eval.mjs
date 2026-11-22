@@ -6,7 +6,7 @@
 //   node agent/test/find.eval.mjs            scoreboard, with the misses
 //   node agent/test/find.eval.mjs --quiet    just the totals
 //   STASHUI_NO_EMBED=1 node agent/test/find.eval.mjs    word matching only
-import { readFileSync } from "node:fs";
+import { readFileSync, realpathSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,7 +27,7 @@ export async function evaluate() {
   return { rows, total: rows.length, top1: within(1), top5: within(5), top10: within(10), top20: within(20), withMeaning };
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))) {   // run directly, not imported
   const e = await evaluate();
   if (!process.argv.includes("--quiet")) for (const r of e.rows.filter((r) => r.at < 0 || r.at >= 10))
     console.log(`MISS ${r.q}  (wanted ${r.want}, ${r.at < 0 ? "not returned" : `at ${r.at + 1}`})  -> ${r.first.join(", ")}`);

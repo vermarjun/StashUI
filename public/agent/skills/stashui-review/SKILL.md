@@ -18,6 +18,6 @@ Separate what is provably wrong from what is opinion. Fix the first, report the 
    - every interactive thing has a hover, a visible focus and a pressed state;
    - text is the product's own, with no demo copy left behind.
 4. Fix deterministic defects. After each round re-run step 1 and look again; keep the change only if no number got worse and the page did not get worse. Three rounds at most.
-5. A section that still looks wrong after that is usually the wrong component, not the wrong CSS: `{{CLI}} search "<what it must do>" --like <a neighbour that looks right>` and swap it.
+5. A section that still looks wrong after that is usually the wrong component, not the wrong CSS: `{{CLI}} search "<the piece in plain words>" --like <a neighbour that looks right>` and swap it.
 
 Report: the numbers before and after, what you fixed, and opinions listed separately as opinions.

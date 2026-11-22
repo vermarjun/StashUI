@@ -4,8 +4,7 @@
 //   agent-index/index/components/*.json   text record per component (upstream pipeline)
 //   registry/quality.json                 1..5 visual review score
 //   agent/data/facets/<name>.json         measured from the clip by pipeline/tiles.py
-//   agent/data/labels/<name>.json         kind + wording from the vision pass (pipeline/label.md)
-//   agent/data/records/<name>.json        the full record from frames + code (pipeline/describe.md); wins where present
+//   agent/data/records/<name>.json        the full record from frames + code (pipeline/describe.md)
 //   agent/pipeline/kinds.json             the taxonomy
 //
 // writes, all under public/ so they deploy as static files and the server reads them from disk:
@@ -21,7 +20,7 @@
 // Run: npm run agent
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
-import { dirname, join, relative } from "node:path";
+import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -67,14 +66,13 @@ let unlabelled = 0, untiled = 0, incomplete = 0, described = 0;
 for (const file of readdirSync(at("agent-index/index/components")).sort()) {
   const r = json(at("agent-index/index/components", file));
   const facets = json(at("agent/data/facets", `${r.name}.json`), null);
-  const label = json(at("agent/data/labels", `${r.name}.json`), null);
   const rec = json(at("agent/data/records", `${r.name}.json`), null);
   if (rec) described++;
   const hasTile = existsSync(join(out, "tiles", `${r.name}.webp`));
   if (!hasTile) untiled++;
 
-  // kind: the vision pass decides; until it has run, fall back to the category
-  let kind = rec?.kind && kindById.has(rec.kind) ? rec.kind : label?.kind && kindById.has(label.kind) ? label.kind : null;
+  // kind: the record decides; a component not yet described falls back to its category
+  let kind = rec?.kind && kindById.has(rec.kind) ? rec.kind : null;
   if (!kind) {
     unlabelled++;
     kind = (r.categories || [r.category]).map((c) => kindFromCategory.get(c)).find(Boolean) || "other";
@@ -82,7 +80,7 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
   const t = rec?.traits || r.traits || {};
   const needs = installNeeds(r.name);
   if (needs.unresolved.length) incomplete++;
-  const blurb = clip(rec?.tagline || label?.blurb || r.blurb || r.description || r.title, 110);
+  const blurb = clip(rec?.tagline || r.blurb || r.description || r.title, 110);
 
   items.push({
     name: r.name,
@@ -90,19 +88,20 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
     kind,
     scale: kindById.get(kind).scale,
     blurb,
-    look: rec?.look || label?.look || [],          // what it looks like, in fixed words
-    use: clip(rec?.use_when || label?.use || r.use_when, 140),
+    look: rec?.look || [],                         // what it looks like, in fixed words
+    use: clip(rec?.use_when || r.use_when, 140),
     text: rec ? [rec.summary, rec.appearance, rec.behaviour, rec.parts.join(", ")].join(" ")
       : clip([r.description, r.avoid_when].filter(Boolean).join(" "), 320), // searched, not shown in lists
     ...(rec && {
       phrases: [...rec.search_phrases, ...rec.resembles],   // how people ask for it; searched, not shown
       technique: rec.technique, weight: rec.weight, content: rec.content_from, suits: rec.suits,
+      motion: rec.traits.motion, polish: rec.polish,
       ...(rec.frames.render !== "ok" && { render: rec.frames.render }),
     }),
     categories: r.categories || [r.category],
     origin: r.origin,
     trigger: t.trigger || [],
-    tone: rec?.tone || label?.tone || t.tone || null,
+    tone: rec?.tone || t.tone || null,
     theme: t.theme || "both",
     deps: (r.npm_deps || []).length,
     colours: r.hardcoded_colors ?? 0,
@@ -119,11 +118,14 @@ for (const file of readdirSync(at("agent-index/index/components")).sort()) {
   writeFileSync(join(out, "items", `${r.name}.json`), JSON.stringify({
     name: r.name, title: r.title, kind, origin: r.origin,
     description: rec?.summary || r.description || blurb,
-    use: rec?.use_when || label?.use || r.use_when || "", avoid: rec?.avoid_when || r.avoid_when || "",
+    use: rec?.use_when || r.use_when || "", avoid: rec?.avoid_when || r.avoid_when || "",
     a11y: rec ? `${rec.a11y.note} (keyboard: ${rec.a11y.keyboard}, labels: ${rec.a11y.labels}, reduced motion: ${rec.a11y.reduced_motion ? "respected" : "not handled"})` : r.a11y || "",
     ...(rec && {
       looks: rec.appearance, behaves: rec.behaviour, parts: rec.parts, states: rec.states,
       content: rec.content_from, customise: rec.customise, weight: `${rec.weight}: ${rec.weight_why}`, responsive: rec.responsive,
+      demo: rec.demo_content, issues: rec.issues, suits: rec.suits, polish: rec.polish, polishWhy: rec.polish_why,
+      // what the recording is worth: which of the six frames to trust, and whether it shows the interaction at all
+      frames: { best: rec.frames.best, usable: rec.frames.usable, shows: rec.frames.shows_interaction, render: rec.frames.render, note: rec.frames.render_note },
     }),
     exports: r.exports || [], props: rec?.props?.length ? rec.props : r.props || [],
     npm: r.npm_deps || [], registry: needs.primitives, unresolved: needs.unresolved,
@@ -169,7 +171,7 @@ if (existsSync(at("agent/cli/stashui.mjs"))) {
 const skills = [];
 if (existsSync(at("agent/skills"))) {
   for (const p of walk(at("agent/skills"))) {
-    const rel = relative(at("agent/skills"), p);
+    const rel = relative(at("agent/skills"), p).split(sep).join("/");   // published paths use forward slashes on every OS
     files.push({ role: "skill", skill: rel.split("/")[0], file: rel.split("/").slice(1).join("/"), ...publish(p, `agent/skills/${rel}`) });
     if (rel.endsWith("/SKILL.md")) {
       const fm = readFileSync(p, "utf8").match(/^---\n([\s\S]*?)\n---/)?.[1] || "";

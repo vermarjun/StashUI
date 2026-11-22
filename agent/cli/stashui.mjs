@@ -16,19 +16,31 @@ const API = `${SITE}/api/agent/v1`;
 const HOME = join(homedir(), ".stashui");
 const SELF = fileURLToPath(import.meta.url);
 
+/**
+ * How this file is called from a shell, written into the skills at install. `~` is expanded by bash and zsh
+ * only: PowerShell and cmd hand it to node as a literal folder name. So on Windows the full path is written,
+ * with forward slashes, which bash, PowerShell and cmd all accept. Skills installed into a repository are
+ * shared between machines, so they use $HOME, which bash, zsh and PowerShell all define.
+ */
+const selfCommand = (shared) => (shared ? 'node "$HOME/.stashui/stashui.mjs"'
+  : process.platform === "win32" ? `node "${join(HOME, "stashui.mjs").replaceAll("\\", "/")}"`
+  : "node ~/.stashui/stashui.mjs");
+
 const HELP = `stashui: find, see and install UI components
 
   stashui browse [kind…]            what exists; with up to 4 kinds, one image of the best five of each
-  stashui search <what it must do>  one image of numbered matches, plus a line per number
-      --kind K  --page N  --dense  --clean  --like NAME  --theme dark|light  --accent HUE  --no-context
+  stashui search <describe it>      one image of numbered matches, plus a line per number
+      --kind K  --like NAME  --avoid motion,webgl,heavy,hover,hardcoded  --clean  --page N  --dense
+      --theme dark|light  --accent HUE  --no-context
   stashui view <name>               six frames of one component in motion, with props and cost
   stashui board <name…>             your picks together in one image   --labels header,hero,…
   stashui code <name>               source, for a component you are about to modify
   stashui add <name…>               install into this project (shadcn)   --print to only show the command
   stashui context                   what this project already has: stack, tokens, installed components
-  stashui propose <plan.json>       the page a human approves: picks, runners-up, reasons   --no-open
+  stashui propose <plan.json>       an HTML mockup of the picks, only when the user asks for one   --no-open
   stashui review [path…]            deterministic UI checks with counts   --json
   stashui init [--project] [--mcp]  install the skills (and optionally the MCP server) for your agent
+  stashui update                    fetch the CLI and skills the site publishes now
 
 Images are saved under .stashui/sheets/ and their path is printed. Open that file to see the components.`;
 
@@ -39,7 +51,7 @@ for (let i = 0; i < rest.length; i++) {
   const a = rest[i];
   if (!a.startsWith("--")) { words.push(a); continue; }
   const [k, v] = a.slice(2).split("=");
-  const takesValue = ["kind", "page", "like", "theme", "accent", "labels", "out"].includes(k);
+  const takesValue = ["kind", "page", "like", "theme", "accent", "labels", "avoid", "out"].includes(k);
   flags[k] = v ?? (takesValue ? rest[++i] : true);
 }
 const die = (msg) => { console.error(msg); process.exit(1); };
@@ -126,11 +138,11 @@ const baseStyleNote = (style) => (style.startsWith("base")
 
 // ── commands ────────────────────────────────────────────────────────────────
 const commands = {
-  async browse() { await show("browse", { kinds: words.join(","), ...ctx() }, "browse"); },
+  async browse() { await show("browse", { kinds: words.join(","), avoid: flags.avoid, ...ctx() }, "browse"); },
 
   async search() {
-    if (!words.length) die("search needs words: what the piece must do.");
-    await show("search", { query: words.join(" "), kind: flags.kind, page: flags.page, dense: flags.dense, clean: flags.clean, like: flags.like, ...ctx() }, "search");
+    if (!words.length) die("search needs words: describe the piece.");
+    await show("search", { query: words.join(" "), kind: flags.kind, page: flags.page, dense: flags.dense, clean: flags.clean, like: flags.like, avoid: flags.avoid, ...ctx() }, "search");
   },
 
   async view() { if (!words[0]) die("view needs a component name."); await show("view", { name: words[0] }, `view-${words[0]}`); },
@@ -165,6 +177,22 @@ const commands = {
         ? `Already installed (${p.installed.length}), reuse before adding a twin: ${p.installed.join(", ")}`
         : "No components installed yet.",
     ].filter(Boolean).join("\n"));
+    // context opens every build, so it is where a stale install finds out. Never fatal, never slow.
+    const cli = await published();
+    if (cli && cli.sha256 !== ownSha()) console.log(`\nA newer StashUI CLI and skills are published. Run \`${selfCommand(false)} update\`, then re-read the stashui skill.`);
+  },
+
+  async update() {
+    const cli = await published();
+    if (!cli) die(`Cannot reach ${SITE}/agent/manifest.json.`);
+    if (cli.sha256 === ownSha() && !flags.force) return console.log("StashUI is up to date. (`update --force` reinstalls the skills anyway.)");
+    const body = Buffer.from(await (await fetch(`${SITE}${cli.path}`)).arrayBuffer());
+    if (createHash("sha256").update(body).digest("hex") !== cli.sha256) die("Checksum mismatch for the CLI. Nothing was changed. Stop and tell the user.");
+    const home = join(HOME, "stashui.mjs");
+    mkdirSync(HOME, { recursive: true });
+    writeFileSync(home, body);
+    console.log(`Updated ${home}. Reinstalling the skills:`);
+    process.exit(spawnSync(process.execPath, [home, "init", ...(flags.project ? ["--project"] : [])], { stdio: "inherit" }).status ?? 1);
   },
 
   async propose() {
@@ -182,6 +210,15 @@ const commands = {
 
   async init() { await init(); },
 };
+
+/** The CLI the site currently publishes, or null when the site cannot be reached quickly. */
+async function published() {
+  try {
+    const res = await fetch(`${SITE}/agent/manifest.json`, { signal: AbortSignal.timeout(3000) });
+    return (await res.json()).files.find((f) => f.role === "cli") || null;
+  } catch { return null; }
+}
+const ownSha = () => createHash("sha256").update(readFileSync(SELF)).digest("hex");
 
 /** Rank against the project's own look unless told otherwise. */
 function ctx() {
@@ -259,7 +296,7 @@ async function init() {
   mkdirSync(HOME, { recursive: true });
   const home = join(HOME, "stashui.mjs");
   if (resolve(SELF) !== resolve(home)) copyFileSync(SELF, home);
-  const command = "node ~/.stashui/stashui.mjs";
+  const command = selfCommand(!!flags.project);
   done.push(`CLI: ${home}  (run it as \`${command}\`)`);
 
   // 2. skills, checked against the published hashes
