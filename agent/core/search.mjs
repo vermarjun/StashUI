@@ -90,6 +90,7 @@ export function rank(o) {
     if (q.length) text *= 0.5 + 0.5 * (hits / q.length);           // matching more of the request beats matching one word hard
     if (!inKind && !like && (!q.length || hits === 0)) continue;   // nothing ties it to the request
     if (!inKind && kinds.length && hits < Math.min(2, q.length)) continue; // a different kind has to earn its place
+    if (!inKind && kinds.length) text *= 0.6;                      // and it earns it on fewer points: "sign up button" in a navbar request is not a sign-up form
 
     let score = text + (inKind ? 12 : 0);
     score *= 0.7 + 0.1 * it.quality;                                // the human review score is the taste prior

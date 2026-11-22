@@ -68,7 +68,9 @@ A component with no tile still appears (the raw poster is used) and one with no 
 
 **The MCP endpoint speaks both protocol eras** (the `initialize` handshake up to 2025-11-25, and per-request versions from 2026-07-28), because clients in the field are split.
 
-**Setup is three commands an agent can run, served from this site.** No npm publish, no account, no `curl | sh`. `init` verifies every skill file against a published SHA-256 and writes only to `~/.stashui`, `~/.claude/skills` and `~/.agents/skills`.
+**Setup is three commands an agent can run, served from this site.** No npm publish, no account, no `curl | sh`. `init` verifies every skill file against a published SHA-256 and writes only `~/.stashui/stashui.mjs` and the two skill folders, `~/.claude/skills` and `~/.agents/skills`. It adds nothing to PATH; skills call the CLI by its path. An earlier version linked itself into a PATH directory, and a test run left a stale link behind on the first machine it touched, which is the reason.
+
+**`add` says what an install really needs.** The registry items are read at build time. 193 of them import shadcn primitives they do not declare, so `add` names those primitives in the command. 95 import a sibling file the item does not ship; each is flagged in `view` and `add` ("NOT installed") and ranked lower, and `npm run agent` prints the count. That number should be driven to zero in the registry itself; until then the agent is told before the type checker tells it.
 
 **The design doc is the open DESIGN.md format** plus a Decisions log, read before shopping and appended to after every approval. Tokens live in the project's global CSS under shadcn's names so installed components pick them up with no mapping.
 
