@@ -164,7 +164,8 @@ if (existsSync(at("agent/skills"))) {
     }
   }
 }
-for (const [from, to] of [["agent/site/setup.md", "setup.md"], ["agent/site/llms.txt", "llms.txt"], ["agent/site/proposal.html", "agent/proposal.html"]]) {
+for (const [from, to] of [["agent/site/setup.md", "setup.md"], ["agent/site/llms.txt", "llms.txt"], ["agent/site/proposal.html", "agent/proposal.html"],
+  ["agent/site/playground.html", "agent/playground.html"]]) {
   if (existsSync(at(from))) publish(at(from), to);
 }
 writeFileSync(join(out, "manifest.json"), JSON.stringify({ protocol: config.protocol, site: config.site, files }, null, 2));

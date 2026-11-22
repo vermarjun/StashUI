@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>StashUI agent playground</title>
+<!--
+  Be the agent. Every call here goes to the same endpoints an agent uses, and the
+  page shows exactly what comes back: the text, the image, and what it costs.
+  Nothing is mocked. Forms are generated from the API's own description of itself.
+-->
+<style>
+  :root { --bg:#0a0a0a; --fg:#f4f4f5; --muted:#a1a1aa; --dim:#71717a; --line:#27272a; --card:#111113; --raise:#18181b; --ok:#fafafa; --mark:#ffd60a; }
+  @media (prefers-color-scheme: light) { :root { --bg:#fafafa; --fg:#18181b; --muted:#52525b; --dim:#71717a; --line:#e4e4e7; --card:#fff; --raise:#f4f4f5; --ok:#18181b; --mark:#b58900; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+  code, pre, .mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .app { display:grid; grid-template-columns:360px minmax(0,1fr); min-height:100dvh; }
+  aside { border-right:1px solid var(--line); padding:20px 18px 120px; position:sticky; top:0; height:100dvh; overflow-y:auto; }
+  main { padding:20px 24px 160px; min-width:0; }
+  h1 { font-size:16px; margin:0 0 2px; letter-spacing:-.01em; }
+  .sub { color:var(--muted); margin:0 0 16px; font-size:13px; }
+  .tabs, .seg { display:flex; gap:4px; background:var(--raise); padding:3px; border-radius:9px; margin:0 0 14px; }
+  .tabs button, .seg button { flex:1; border:0; background:none; color:var(--muted); padding:6px 8px; border-radius:7px; font:inherit; cursor:pointer; }
+  .tabs button[aria-selected=true], .seg button[aria-pressed=true] { background:var(--card); color:var(--fg); box-shadow:0 0 0 1px var(--line); }
+  .ops { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin:0 0 14px; }
+  .ops button { border:1px solid var(--line); background:none; color:var(--muted); padding:8px 4px; border-radius:8px; font:inherit; cursor:pointer; }
+  .ops button[aria-pressed=true] { color:var(--bg); background:var(--fg); border-color:var(--fg); }
+  .desc { color:var(--muted); font-size:12.5px; margin:0 0 14px; }
+  label.field { display:block; margin:0 0 12px; }
+  label.field span { display:block; font-size:12px; color:var(--muted); margin:0 0 4px; }
+  label.field span b { color:var(--fg); font-weight:600; }
+  label.field small { display:block; color:var(--dim); font-size:11.5px; margin-top:3px; }
+  input[type=text], input[type=number], select, textarea { width:100%; background:var(--card); border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:8px 10px; font:inherit; }
+  label.check { display:flex; gap:8px; align-items:flex-start; margin:0 0 10px; color:var(--muted); font-size:12.5px; }
+  label.check b { color:var(--fg); font-weight:600; }
+  .run { width:100%; background:var(--fg); color:var(--bg); border:0; border-radius:9px; padding:10px; font:inherit; font-weight:600; cursor:pointer; margin-top:4px; }
+  .run:disabled { opacity:.5; cursor:progress; }
+  :focus-visible { outline:2px solid var(--ok); outline-offset:2px; }
+  .told h3 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:18px 0 6px; }
+  .told pre { white-space:pre-wrap; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:12px; margin:0 0 8px; max-height:340px; overflow:auto; }
+  .told details { margin:0 0 6px; } .told summary { cursor:pointer; color:var(--fg); padding:4px 0; }
+  .empty { color:var(--muted); max-width:62ch; padding:40px 0; }
+  .empty ol { padding-left:20px; } .empty li { margin-bottom:6px; }
+  .turn { border:1px solid var(--line); border-radius:12px; background:var(--card); margin:0 0 18px; overflow:hidden; }
+  .turn header { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; padding:10px 14px; border-bottom:1px solid var(--line); }
+  .turn header .who { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+  .turn header .cost { margin-left:auto; color:var(--muted); font-size:12px; white-space:nowrap; }
+  .call { padding:10px 14px; border-bottom:1px solid var(--line); background:var(--raise); }
+  .call pre { margin:0; white-space:pre-wrap; word-break:break-word; font-size:12.5px; }
+  .call .forms { display:flex; gap:10px; margin:0 0 6px; font-size:12px; }
+  .call .forms button { border:0; background:none; color:var(--dim); padding:0; font:inherit; cursor:pointer; }
+  .call .forms button[aria-pressed=true] { color:var(--fg); text-decoration:underline; text-underline-offset:3px; }
+  .reply { padding:12px 14px; }
+  .reply pre { margin:0 0 12px; white-space:pre; overflow-x:auto; font-size:12.5px; line-height:1.55; }
+  .reply pre.error { color:#f87171; white-space:pre-wrap; }
+  .reply img { display:block; width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
+  .block { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--dim); margin:0 0 6px; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; padding:0 14px 12px; }
+  .chip { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; font-size:12px; }
+  .chip span { padding:3px 4px 3px 10px; color:var(--muted); }
+  .chip button { border:0; border-left:1px solid var(--line); background:none; color:var(--fg); padding:3px 9px; font:inherit; cursor:pointer; }
+  .chip button:hover { background:var(--raise); }
+  .tray { position:fixed; left:360px; right:0; bottom:0; background:color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter:blur(8px); border-top:1px solid var(--line); padding:10px 24px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .tray .label { color:var(--muted); font-size:12px; margin-right:4px; }
+  .pick { display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); border-radius:8px; padding:3px 4px 3px 8px; font-size:12.5px; background:var(--card); }
+  .pick input { width:84px; padding:2px 6px; font-size:12px; border-radius:5px; }
+  .pick button, .tray .act { border:1px solid var(--line); background:none; color:var(--fg); border-radius:7px; padding:5px 10px; font:inherit; cursor:pointer; }
+  .pick button { border:0; color:var(--dim); padding:0 4px; }
+  .tray .act:disabled { opacity:.4; cursor:not-allowed; }
+  .tray .total { margin-left:auto; color:var(--muted); font-size:12px; }
+  @media (max-width:860px) { .app { grid-template-columns:1fr; } aside { position:static; height:auto; border-right:0; border-bottom:1px solid var(--line); padding-bottom:20px; } .tray { left:0; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h1>StashUI agent playground</h1>
+    <p class="sub">You are the agent. Each call hits the real endpoint and shows exactly what an agent receives.</p>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-call" aria-selected="true">Make a call</button>
+      <button role="tab" id="tab-told" aria-selected="false">What the agent is told</button>
+    </div>
+    <section id="panel-call">
+      <div class="seg" aria-label="Door">
+        <button id="door-http" aria-pressed="true" title="GET /api/agent/v1/<op>: what the CLI calls. The image arrives as a URL the CLI saves to a file.">CLI / HTTP</button>
+        <button id="door-mcp" aria-pressed="false" title="POST /api/mcp tools/call: what an MCP client calls. The image arrives inline as a content block.">MCP</button>
+      </div>
+      <div class="ops" id="ops"></div>
+      <p class="desc" id="op-desc"></p>
+      <form id="form"></form>
+    </section>
+    <section id="panel-told" class="told" hidden></section>
+  </aside>
+  <main>
+    <div id="log">
+      <div class="empty">
+        <p>Role-play a build the way the skill tells an agent to do it:</p>
+        <ol>
+          <li><b>browse</b> with no kinds: the map of what exists.</li>
+          <li><b>browse</b> with up to four kinds, for example <code>site-header, hero, pricing-section, footer</code>.</li>
+          <li><b>search</b> for a need a row did not cover. Read the image first, then the lines.</li>
+          <li><b>view</b> your top two. Use the buttons under any result.</li>
+          <li><b>+ pick</b> what you choose, then <b>Board</b> to see the set together.</li>
+          <li><b>Propose</b> opens the page a person approves. <b>Add</b> returns the install command.</li>
+        </ol>
+        <p>The other tab shows the instructions an agent has in its context before it makes its first call.</p>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="tray" id="tray"></div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) k === "text" ? (n.textContent = v) : k in n ? (n[k] = v) : n.setAttribute(k, v);
+    n.append(...kids.filter((k) => k != null));
+    return n;
+  };
+  const API = "/api/agent/v1";
+  const state = { ops: {}, op: "browse", door: "http", picks: [], calls: 0, imageTokens: 0, textTokens: 0, values: {} };
+
+  // ── the form is generated from the API's own description ──────────────────
+  function drawOps() {
+    $("ops").replaceChildren(...Object.keys(state.ops).map((name) => {
+      const b = el("button", { type: "button", text: name });
+      b.setAttribute("aria-pressed", String(name === state.op));
+      b.onclick = () => { state.op = name; drawOps(); drawForm(); };
+      return b;
+    }));
+  }
+  function drawForm() {
+    const op = state.ops[state.op], form = $("form"), saved = state.values[state.op] || {};
+    $("op-desc").textContent = op.description;
+    const required = new Set(op.input.required || []);
+    const fields = Object.entries(op.input.properties || {}).map(([key, p]) => {
+      const title = el("span", {}, el("b", { text: key }), required.has(key) ? " required" : "", p.type === "array" ? " · comma separated" : "");
+      if (p.type === "boolean") return el("label", { className: "check" }, el("input", { type: "checkbox", name: key, checked: !!saved[key] }), el("span", {}, el("b", { text: key }), ` ${p.description || ""}`));
+      let input;
+      if (p.enum) input = el("select", { name: key }, el("option", { value: "", text: "(not set)" }), ...p.enum.map((v) => el("option", { value: v, text: v, selected: saved[key] === v })));
+      else input = el("input", { type: p.type === "integer" ? "number" : "text", name: key, value: saved[key] ?? "", autocomplete: "off", spellcheck: false });
+      return el("label", { className: "field" }, title, input, p.description ? el("small", { text: p.description }) : null);
+    });
+    form.replaceChildren(...fields, el("button", { className: "run", type: "submit", text: `Call ${state.op}` }));
+  }
+  function readForm() {
+    const op = state.ops[state.op], args = {};
+    for (const [key, p] of Object.entries(op.input.properties || {})) {
+      const input = $("form").elements[key];
+      if (!input) continue;
+      if (p.type === "boolean") { if (input.checked) args[key] = true; continue; }
+      const v = input.value.trim();
+      if (!v) continue;
+      args[key] = p.type === "array" ? v.split(",").map((s) => s.trim()).filter(Boolean) : p.type === "integer" ? parseInt(v, 10) : v;
+    }
+    state.values[state.op] = Object.fromEntries(Object.entries(args).map(([k, v]) => [k, Array.isArray(v) ? v.join(", ") : v]));
+    return args;
+  }
+
+  // ── the three ways the same call is written ───────────────────────────────
+  const q = (s) => (/^[\w./-]+$/.test(s) ? s : `"${String(s).replaceAll('"', '\\"')}"`);
+  function asCli(op, a) {
+    const flag = (k) => (a[k] == null ? "" : a[k] === true ? ` --${k}` : ` --${k} ${q(a[k])}`);
+    if (op === "search") return `stashui search ${q(a.query || "")}${["kind", "theme", "accent", "like", "page", "clean", "dense"].map(flag).join("")}`;
+    if (op === "browse") return `stashui browse ${(a.kinds || []).join(" ")}${flag("theme")}${flag("accent")}`.trim();
+    if (op === "board") return `stashui board ${(a.names || []).join(" ")}${a.labels ? ` --labels ${a.labels.join(",")}` : ""}`;
+    if (op === "add") return `stashui add ${(a.names || []).join(" ")}`;
+    return `stashui ${op} ${a.name || ""}`.trim();
+  }
+  const asUrl = (op, a) => `${API}/${op}?${new URLSearchParams(Object.entries(a).map(([k, v]) => [k, Array.isArray(v) ? v.join(",") : String(v)]))}`;
+  const asMcp = (op, a, id) => ({ jsonrpc: "2.0", id, method: "tools/call", params: { name: op, arguments: a } });
+
+  // ── make the call and show exactly what came back ─────────────────────────
+  async function call(op, args) {
+    const id = ++state.calls, started = performance.now();
+    const turn = el("article", { className: "turn" });
+    const cost = el("span", { className: "cost", text: "calling…" });
+    turn.append(el("header", {}, el("span", { className: "who", text: `call ${id} · ${state.door === "mcp" ? "MCP tools/call" : "CLI / HTTP"}` }), cost));
+    const forms = { CLI: asCli(op, args), HTTP: `GET ${asUrl(op, args)}`, MCP: `POST /api/mcp\n${JSON.stringify(asMcp(op, args, id), null, 2)}` };
+    const shown = el("pre", { text: forms[state.door === "mcp" ? "MCP" : "CLI"] });
+    const switcher = el("div", { className: "forms" }, ...Object.keys(forms).map((k) => {
+      const b = el("button", { type: "button", text: k });
+      b.setAttribute("aria-pressed", String(k === (state.door === "mcp" ? "MCP" : "CLI")));
+      b.onclick = () => { shown.textContent = forms[k]; switcher.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); };
+      return b;
+    }));
+    turn.append(el("div", { className: "call" }, switcher, shown));
+    const reply = el("div", { className: "reply" });
+    turn.append(reply);
+    const log = $("log");
+    log.querySelector(".empty")?.remove();
+    log.append(turn);
+    turn.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    let text = "", image = null, isError = false, tokens = 0, note = "";
+    try {
+      if (state.door === "mcp") {
+        const res = await fetch("/api/mcp", { method: "POST", headers: { "content-type": "application/json", accept: "application/json, text/event-stream" }, body: JSON.stringify(asMcp(op, args, id)) });
+        const body = await res.json();
+        if (body.error) { text = `JSON-RPC error ${body.error.code}: ${body.error.message}`; isError = true; }
+        else {
+          isError = !!body.result.isError;
+          for (const c of body.result.content) {
+            if (c.type === "text") text += c.text;
+            if (c.type === "image") { image = `data:${c.mimeType};base64,${c.data}`; note = `image block, ${Math.round(c.data.length * 0.75 / 1024)} KB`; }
+          }
+        }
+      } else {
+        const res = await fetch(asUrl(op, args));
+        const body = await res.json();
+        text = body.text || body.error || `HTTP ${res.status}`;
+        isError = !res.ok;
+        if (body.sheet) { image = body.sheet; tokens = body.tokens; note = "the CLI saves this image to .stashui/sheets/ and prints its path"; }
+      }
+    } catch (e) { text = `Request failed: ${e.message}`; isError = true; }
+
+    reply.append(el("p", { className: "block", text: "text" }), el("pre", { className: isError ? "error" : "", text }));
+    if (image) {
+      const img = el("img", { alt: `Sheet returned by ${op}`, src: image });
+      reply.append(el("p", { className: "block", text: `image${note ? ` · ${note}` : ""}` }), img);
+      await new Promise((done) => { img.onload = img.onerror = done; });
+      if (!tokens) tokens = Math.ceil(img.naturalWidth / 28) * Math.ceil(img.naturalHeight / 28);   // Claude: one token per 28px patch
+      note = `${img.naturalWidth}x${img.naturalHeight}`;
+    }
+    const textTokens = Math.round(text.length / 4);
+    state.imageTokens += tokens; state.textTokens += textTokens;
+    cost.textContent = `${Math.round(performance.now() - started)} ms · text ~${textTokens} tokens${image ? ` · image ${tokens} tokens (${note})` : ""}`;
+
+    // names in the reply become the next move
+    // legend lines start "<number>  <name>  …"; on a board the second column is the label, so use the names that were sent
+    const listed = op === "board" ? args.names : [...new Set([...text.matchAll(/^\s*\d+\s{2}(\S+)\s{2}/gm)].map((m) => m[1]))];
+    if (!isError && listed?.length && op !== "add" && op !== "code") {
+      turn.append(el("div", { className: "chips" }, ...listed.slice(0, 24).map((name) => el("span", { className: "chip" }, el("span", { text: name }),
+        Object.assign(el("button", { type: "button", text: "view" }), { onclick: () => call("view", { name }) }),
+        Object.assign(el("button", { type: "button", text: "+ pick" }), { onclick: () => pick(name) })))));
+    }
+    if (op === "view" && !isError) {
+      turn.append(el("div", { className: "chips" }, el("span", { className: "chip" }, el("span", { text: args.name }),
+        Object.assign(el("button", { type: "button", text: "+ pick" }), { onclick: () => pick(args.name) }),
+        Object.assign(el("button", { type: "button", text: "more like this" }), { onclick: () => call("search", { query: args.name.replaceAll("-", " "), like: args.name }) }),
+        Object.assign(el("button", { type: "button", text: "code" }), { onclick: () => call("code", { name: args.name }) }))));
+    }
+    drawTray();
+  }
+
+  // ── picks: the set the agent is assembling ────────────────────────────────
+  function pick(name) { if (!state.picks.some((p) => p.name === name)) state.picks.push({ name, label: "" }); drawTray(); }
+  function drawTray() {
+    const names = state.picks.map((p) => p.name), labels = state.picks.map((p) => p.label.trim());
+    const act = (text, enabled, fn, title) => Object.assign(el("button", { className: "act", type: "button", text, title, disabled: !enabled }), { onclick: fn });
+    $("tray").replaceChildren(
+      el("span", { className: "label", text: names.length ? "Picks, in page order:" : "No picks yet. Use + pick under a result." }),
+      ...state.picks.map((p, i) => el("span", { className: "pick" }, el("span", { text: p.name }),
+        Object.assign(el("input", { type: "text", placeholder: "section", value: p.label, "aria-label": `What ${p.name} is for` }), { oninput: (e) => (p.label = e.target.value) }),
+        Object.assign(el("button", { type: "button", text: "✕", "aria-label": `Remove ${p.name}` }), { onclick: () => { state.picks.splice(i, 1); drawTray(); } }))),
+      act("Board", names.length >= 2, () => call("board", { names, ...(labels.every(Boolean) && { labels }) }), "See the picks together in one image"),
+      act("Propose", names.length >= 1, () => {
+        const plan = { title: "Playground proposal", direction: "Built by hand in the playground.", slots: state.picks.map((p, i) => ({ slot: p.label.trim() || `Section ${i + 1}`, pick: p.name, why: "Chosen in the playground." })) };
+        const bytes = new TextEncoder().encode(JSON.stringify(plan));
+        window.open(`/agent/proposal.html#${btoa(String.fromCharCode(...bytes)).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "")}`, "_blank", "noopener");
+      }, "Open the page a person approves"),
+      act("Add", names.length >= 1, () => call("add", { names }), "The install command for the picks"),
+      el("span", { className: "total", text: `${state.calls} calls · ~${(state.imageTokens + state.textTokens).toLocaleString()} tokens (${state.imageTokens.toLocaleString()} in images)` }),
+    );
+  }
+
+  // ── what the agent has in context before its first call ───────────────────
+  async function drawTold(root) {
+    const panel = $("panel-told");
+    panel.replaceChildren(el("p", { className: "sub", text: "Loading…" }));
+    const text = (url) => fetch(url).then((r) => (r.ok ? r.text() : `(${r.status} for ${url})`)).catch((e) => `(${e.message})`);
+    const [skills, setup, list] = await Promise.all([
+      fetch("/.well-known/agent-skills/index.json").then((r) => r.json()).catch(() => ({ skills: [] })),
+      text("/setup.md"),
+      fetch("/api/mcp", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "tools/list" }) }).then((r) => r.json()).catch(() => null),
+    ]);
+    const fold = (title, body, open) => el("details", { open: !!open }, el("summary", { text: title }), el("pre", { text: body }));
+    const local = (u) => new URL(u).pathname;
+    const skillBodies = await Promise.all(skills.skills.map((s) => text(local(s.url))));
+    const refs = await Promise.all(["design-doc.md", "plan.md"].map((f) => text(`/agent/skills/stashui/references/${f}`)));
+    const tools = list?.result?.tools || [];
+    panel.replaceChildren(
+      el("h3", { text: "1. Always in context: skill descriptions" }),
+      el("p", { className: "sub", text: "About 100 tokens each. The agent sees only these until a request matches one." }),
+      ...skills.skills.map((s) => fold(s.name, s.description, true)),
+      el("h3", { text: "2. Loaded when a skill triggers" }),
+      ...skills.skills.map((s, i) => fold(`${s.name}/SKILL.md · ${skillBodies[i].split("\n").length} lines`, skillBodies[i].replaceAll("{{CLI}}", "stashui"))),
+      fold("stashui/references/design-doc.md · read when there is no DESIGN.md", refs[0].replaceAll("{{CLI}}", "stashui")),
+      fold("stashui/references/plan.md · read before proposing", refs[1].replaceAll("{{CLI}}", "stashui")),
+      el("h3", { text: "3. MCP clients get this instead" }),
+      fold("server instructions", root.instructions, true),
+      fold(`tools/list · ${tools.length} tools · ~${Math.round(JSON.stringify(tools).length / 4)} tokens of schema`, tools.map((t) => `${t.name}\n  ${t.description}\n  input: ${JSON.stringify(t.inputSchema.properties, null, 1).replace(/\n\s*/g, " ")}`).join("\n\n")),
+      el("h3", { text: "4. The setup page a user's agent follows" }),
+      fold("setup.md", setup),
+      el("h3", { text: "5. Runs on the agent's machine, not here" }),
+      el("p", { className: "sub", text: "context (reads the project), review (checks its source), propose (builds the approval link) and init are CLI commands that work on local files, so this page cannot run them. The Propose button below builds the same link." }),
+    );
+  }
+
+  // ── wiring ────────────────────────────────────────────────────────────────
+  $("form").onsubmit = async (e) => {
+    e.preventDefault();
+    const args = readForm(), btn = $("form").querySelector(".run");
+    btn.disabled = true;
+    await call(state.op, args);
+    btn.disabled = false;
+  };
+  for (const door of ["http", "mcp"]) $(`door-${door}`).onclick = () => {
+    state.door = door;
+    $("door-http").setAttribute("aria-pressed", String(door === "http")); $("door-mcp").setAttribute("aria-pressed", String(door === "mcp"));
+  };
+  let told = false, root = null;
+  for (const tab of ["call", "told"]) $(`tab-${tab}`).onclick = () => {
+    $("tab-call").setAttribute("aria-selected", String(tab === "call")); $("tab-told").setAttribute("aria-selected", String(tab === "told"));
+    $("panel-call").hidden = tab !== "call"; $("panel-told").hidden = tab !== "told";
+    if (tab === "told" && !told && root) { told = true; drawTold(root); }
+  };
+  fetch(API).then((r) => r.json()).then((r) => { root = r; state.ops = r.operations; drawOps(); drawForm(); drawTray(); })
+    .catch((e) => { $("op-desc").textContent = `Cannot reach the agent API at ${API} (${e.message}). Start it with: npm run agent:dev`; });
+})();
+</script>
+</body>
+</html>

@@ -191,3 +191,9 @@ test("skills follow the open spec and stay short", () => {
     assert.ok(text.split("\n").length <= 60, `${dir}: ${text.split("\n").length} lines`);
   }
 });
+
+test("the playground is published and talks to the real endpoints", () => {
+  const page = readFileSync(join(ROOT, "public/agent/playground.html"), "utf8");
+  assert.ok(page.includes('"/api/agent/v1"') && page.includes('"/api/mcp"'), "it must call the same doors an agent uses");
+  assert.ok(!page.includes("{{SITE}}"));
+});
